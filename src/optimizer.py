@@ -1,17 +1,16 @@
 """
-LP team optimizer — finds the three best holdet.dk team compositions.
+LP team optimizer — finds the best holdet.dk team compositions.
 
 Uses PuLP (COIN-BC) for integer programming:
   - Maximize expected fantasy points
-  - Budget ≤ 50M kr
+  - Budget ≤ 50M kr (or transfer-adjusted budget if current team provided)
   - Exactly 8 riders
   - Max 2 riders per real-world team
   - 1 captain (doubles expected points for that rider)
 
-Returns three teams:
-  1. SAFE   – maximise expected value, captain = highest EV rider
-  2. VALUE  – same but force ≥2 budget picks (price ≤ 4M)
-  3. ATTACK – allow one "high-variance" outsider, captain = aggressive pick
+Returns:
+  make_three_teams()  → 3 transfer-aware strategies (SAFE / VALUE / ATTACK)
+  make_best_team()    → unconstrained best possible team (fresh 50M budget)
 """
 from __future__ import annotations
 import json
@@ -25,12 +24,16 @@ except ImportError:
     HAS_PULP = False
 
 
-BUDGET       = 50_000_000  # kr
-TEAM_SIZE    = 8
-MAX_PER_TEAM = 2
-BUDGET_PRICE_THRESHOLD = 4_000_000   # riders at ≤4M count as "budget picks"
-VALUE_MIN_BUDGET_PICKS = 2
+BUDGET            = 50_000_000   # kr
+TEAM_SIZE         = 8
+MAX_PER_TEAM      = 2
+BUDGET_PRICE_THRESHOLD = 4_000_000   # riders at ≤4M = "budget picks"
+TRANSFER_FEE      = 0.01             # 1% fee on purchases
 
+
+# ---------------------------------------------------------------------------
+# Core MILP solver
+# ---------------------------------------------------------------------------
 
 def _solve(
     predictions: list[dict],
@@ -49,10 +52,9 @@ def _solve(
 
     prob = pulp.LpProblem(f"tdf_{label}", pulp.LpMaximize)
 
-    n = len(predictions)
-    ids = [p["rider_id"] for p in predictions]
-    x = [pulp.LpVariable(f"x_{i}", cat="Binary") for i in range(n)]
-    c = [pulp.LpVariable(f"c_{i}", cat="Binary") for i in range(n)]
+    n   = len(predictions)
+    x   = [pulp.LpVariable(f"x_{i}", cat="Binary") for i in range(n)]
+    c   = [pulp.LpVariable(f"c_{i}", cat="Binary") for i in range(n)]
 
     # Objective: sum(expected_pts * x) + sum(expected_pts * c)  [captain doubles]
     prob += pulp.lpSum(
@@ -61,22 +63,22 @@ def _solve(
     )
 
     # Constraints
-    prob += pulp.lpSum(x) == TEAM_SIZE                          # 8 riders
-    prob += pulp.lpSum(c) == 1                                  # 1 captain
-    prob += pulp.lpSum(predictions[i]["price"] * 1_000_000 * x[i]
-                       for i in range(n)) <= budget             # budget
+    prob += pulp.lpSum(x) == TEAM_SIZE                                # 8 riders
+    prob += pulp.lpSum(c) == 1                                        # 1 captain
+    prob += pulp.lpSum(
+        predictions[i]["price"] * 1_000_000 * x[i] for i in range(n)
+    ) <= budget                                                        # budget
     for i in range(n):
-        prob += c[i] <= x[i]                                    # captain on team
+        prob += c[i] <= x[i]                                          # captain on team
 
     # Max 2 per real-world team
-    teams = {}
+    rteams: dict[str, list[int]] = {}
     for i, p in enumerate(predictions):
-        t = p.get("team", "UNK")
-        teams.setdefault(t, []).append(i)
-    for t, idxs in teams.items():
+        rteams.setdefault(p.get("team", "UNK"), []).append(i)
+    for t, idxs in rteams.items():
         prob += pulp.lpSum(x[i] for i in idxs) <= MAX_PER_TEAM
 
-    # Force inclusions / exclusions
+    # Forced inclusions / exclusions
     for rid in (forced_in or []):
         idx = next((i for i, p in enumerate(predictions) if p["rider_id"] == rid), None)
         if idx is not None:
@@ -92,42 +94,41 @@ def _solve(
     if pulp.LpStatus[prob.status] != "Optimal":
         return None
 
-    selected = []
+    selected   = []
     captain_id = None
     for i in range(n):
         if pulp.value(x[i]) > 0.5:
             is_cap = pulp.value(c[i]) > 0.5
-            entry = dict(predictions[i])
+            entry  = dict(predictions[i])
             entry["is_captain"] = is_cap
             selected.append(entry)
             if is_cap:
                 captain_id = predictions[i]["rider_id"]
 
-    total_pts    = sum(p["expected_pts"] for p in selected)
-    captain_pts  = next((p["expected_pts"] for p in selected if p["is_captain"]), 0)
-    total_cost   = sum(p["price"] for p in selected)
+    total_pts   = sum(p["expected_pts"] for p in selected)
+    captain_pts = next((p["expected_pts"] for p in selected if p["is_captain"]), 0)
+    total_cost  = sum(p["price"] for p in selected)
 
     return {
-        "label":       label,
-        "team":        selected,
-        "captain_id":  captain_id,
-        "expected_pts":total_pts + captain_pts,  # captain doubles
-        "total_cost_M":round(total_cost, 2),
+        "label":         label,
+        "team":          selected,
+        "captain_id":    captain_id,
+        "expected_pts":  total_pts + captain_pts,
+        "total_cost_M":  round(total_cost, 2),
         "budget_left_M": round(BUDGET / 1_000_000 - total_cost, 2),
     }
 
 
 def _greedy_fallback(predictions, budget, forced_in, forced_out, label):
     """Simple greedy fallback when PuLP is not installed."""
-    pool = [p for p in predictions if (forced_out or p["rider_id"] not in forced_out)]
-    # Force-in first
-    selected = []
+    pool = [p for p in predictions if p["rider_id"] not in (forced_out or [])]
+    selected: list[dict] = []
     team_counts: dict[str, int] = {}
     spent = 0.0
 
     for p in pool:
         if p["rider_id"] in (forced_in or []):
-            selected.append(p)
+            selected.append(dict(p))
             team_counts[p["team"]] = team_counts.get(p["team"], 0) + 1
             spent += p["price"] * 1_000_000
 
@@ -140,7 +141,7 @@ def _greedy_fallback(predictions, budget, forced_in, forced_out, label):
             continue
         if spent + p["price"] * 1_000_000 > budget:
             continue
-        selected.append(p)
+        selected.append(dict(p))
         team_counts[p["team"]] = team_counts.get(p["team"], 0) + 1
         spent += p["price"] * 1_000_000
 
@@ -154,85 +155,199 @@ def _greedy_fallback(predictions, budget, forced_in, forced_out, label):
     total_pts   = sum(p["expected_pts"] for p in selected)
     captain_pts = best_cap["expected_pts"]
     return {
-        "label": label, "team": selected, "captain_id": best_cap["rider_id"],
-        "expected_pts": total_pts + captain_pts,
-        "total_cost_M": round(spent / 1_000_000, 2),
+        "label":         label,
+        "team":          selected,
+        "captain_id":    best_cap["rider_id"],
+        "expected_pts":  total_pts + captain_pts,
+        "total_cost_M":  round(spent / 1_000_000, 2),
         "budget_left_M": round((budget - spent) / 1_000_000, 2),
     }
 
 
+# ---------------------------------------------------------------------------
+# Transfer analysis helper
+# ---------------------------------------------------------------------------
+
+def _transfer_analysis(
+    team: dict,
+    current_ids: set,
+    preds_by_id: dict,
+    bank_M: float,
+) -> dict:
+    """
+    Calculate what transfers are needed to go from current team to recommended team.
+
+    Returns:
+      to_sell / to_buy — rider lists
+      n_transfers       — number of new riders to acquire
+      proceeds_M        — money received from selling riders
+      buy_cost_M        — money paid for new riders (incl. 1% fee)
+      net_cost_M        — buy_cost_M - proceeds_M  (negative = net gain)
+      balance_after_M   — bank balance after all transfers
+      affordable        — True if balance_after_M >= 0
+    """
+    rec_ids     = {r["rider_id"] for r in team["team"]}
+    to_sell_ids = current_ids - rec_ids
+    to_buy_ids  = rec_ids - current_ids
+
+    to_sell = [preds_by_id[rid] for rid in to_sell_ids if rid in preds_by_id]
+    to_buy  = [r for r in team["team"] if r["rider_id"] in to_buy_ids]
+
+    proceeds_M    = sum(r["price"] for r in to_sell)
+    buy_cost_M    = sum(r["price"] * (1 + TRANSFER_FEE) for r in to_buy)
+    balance_after = bank_M + proceeds_M - buy_cost_M
+
+    return {
+        "to_sell": [
+            {"rider_id": r["rider_id"],
+             "full_name": r.get("full_name", r["rider_id"]),
+             "price_M": round(r["price"], 2)}
+            for r in sorted(to_sell, key=lambda x: x["price"], reverse=True)
+        ],
+        "to_buy": [
+            {"rider_id": r["rider_id"],
+             "full_name": r.get("full_name", r["rider_id"]),
+             "price_M": round(r["price"], 2)}
+            for r in sorted(to_buy, key=lambda x: x["price"], reverse=True)
+        ],
+        "n_transfers":     len(to_buy_ids),
+        "proceeds_M":      round(proceeds_M, 2),
+        "buy_cost_M":      round(buy_cost_M, 2),
+        "net_cost_M":      round(buy_cost_M - proceeds_M, 2),
+        "balance_after_M": round(balance_after, 2),
+        "affordable":      balance_after >= -0.01,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Main public functions
+# ---------------------------------------------------------------------------
+
 def make_three_teams(
     predictions: list[dict],
-    current_team: list[str] | None = None,
+    current_team_data: dict | None = None,
     transfer_budget_M: float | None = None,
 ) -> list[dict]:
     """
     Generate three optimised team suggestions.
 
-    current_team: list of rider IDs currently on the user's team (optional)
-    transfer_budget_M: remaining budget in millions (optional, defaults to 50M fresh)
+    current_team_data (optional):
+      {"rider_ids": [...], "bank_M": 5.0}
+      When provided:
+        - budget = bank_M + current team total value  (≈ 50M)
+        - riders NOT in current team get 1% price surcharge (transfer fee)
+        - each team receives a transfer_analysis showing what to buy/sell
+
+    transfer_budget_M (optional): override budget in millions (legacy param)
     """
-    budget = (transfer_budget_M * 1_000_000) if transfer_budget_M else BUDGET
+    current_ids     = set()
+    bank_M          = 0.0
+    current_total_M = 0.0
 
-    # Team 1 — SAFE: pure expected-value maximisation
-    team1 = _solve(predictions, budget=budget, label="safe")
+    if current_team_data:
+        current_ids = set(current_team_data.get("rider_ids", []))
+        bank_M      = float(current_team_data.get("bank_M", 0.0))
+        by_id       = {p["rider_id"]: p for p in predictions}
+        current_total_M = sum(
+            by_id[rid]["price"] for rid in current_ids if rid in by_id
+        )
+        effective_budget = (bank_M + current_total_M) * 1_000_000
 
-    # Team 2 — VALUE: force at least 2 budget picks (≤4M), frees up money for a star
-    budget_rider_ids = [p["rider_id"] for p in predictions
-                        if p["price"] <= BUDGET_PRICE_THRESHOLD / 1_000_000]
-    # We inject a soft constraint by boosting cheap riders' scores temporarily
+        # Adjust prices: 1% surcharge for riders not already on the team
+        base_preds = []
+        for p in predictions:
+            adj = dict(p)
+            if p["rider_id"] not in current_ids:
+                adj["price"] = round(p["price"] * (1 + TRANSFER_FEE), 4)
+            base_preds.append(adj)
+    else:
+        effective_budget = (transfer_budget_M * 1_000_000) if transfer_budget_M else BUDGET
+        base_preds       = predictions
+
+    # ── Team 1: SAFE — pure EV maximisation ───────────────────────────────
+    team1 = _solve(base_preds, budget=effective_budget, label="safe")
+
+    # ── Team 2: VALUE — 15% boost for budget riders (≤4M) ─────────────────
     value_preds = []
-    for p in predictions:
+    for p in base_preds:
         adj = dict(p)
-        if p["price"] <= BUDGET_PRICE_THRESHOLD / 1_000_000:
-            adj["expected_pts"] = int(p["expected_pts"] * 1.15)  # 15% bonus for value
+        # Compare against raw threshold (before fee) — use real price lookup
+        real_price = next(
+            (rp["price"] for rp in predictions if rp["rider_id"] == p["rider_id"]),
+            p["price"]
+        )
+        if real_price <= BUDGET_PRICE_THRESHOLD / 1_000_000:
+            adj["expected_pts"] = int(p["expected_pts"] * 1.15)
         value_preds.append(adj)
-    team2 = _solve(value_preds, budget=budget, label="value")
-    # Restore real expected_pts in team2 for display
-    if team2:
-        real_pts = {p["rider_id"]: p["expected_pts"] for p in predictions}
-        for r in team2["team"]:
-            r["expected_pts"] = real_pts.get(r["rider_id"], r["expected_pts"])
-        total = sum(r["expected_pts"] for r in team2["team"])
-        cap   = next((r["expected_pts"] for r in team2["team"] if r["is_captain"]), 0)
-        team2["expected_pts"] = total + cap
+    team2 = _solve(value_preds, budget=effective_budget, label="value")
 
-    # Team 3 — ATTACK: boost high-variance riders to surface potential outsiders
+    # ── Team 3: ATTACK — variance boost for potential outsiders ───────────
     attack_preds = []
-    for p in predictions:
+    for p in base_preds:
         adj = dict(p)
-        # High variance = high uncertainty = possible outsider upside
-        variance_boost = p.get("variance", 0) * 0.0003
-        adj["expected_pts"] = int(p["expected_pts"] + variance_boost)
+        adj["expected_pts"] = int(p["expected_pts"] + p.get("variance", 0) * 0.0003)
         attack_preds.append(adj)
-    team3 = _solve(attack_preds, budget=budget, label="attack")
-    if team3:
-        real_pts = {p["rider_id"]: p["expected_pts"] for p in predictions}
-        for r in team3["team"]:
-            r["expected_pts"] = real_pts.get(r["rider_id"], r["expected_pts"])
-        total = sum(r["expected_pts"] for r in team3["team"])
-        cap   = next((r["expected_pts"] for r in team3["team"] if r["is_captain"]), 0)
-        team3["expected_pts"] = total + cap
+    team3 = _solve(attack_preds, budget=effective_budget, label="attack")
 
     teams = [t for t in [team1, team2, team3] if t is not None]
 
-    # De-duplicate: if two teams are identical, nudge team3 differently
-    _deduplicate(teams, predictions, budget)
-
-    # Add qualitative assessment to each team
+    # Restore real expected_pts and prices (undo fee / boost adjustments)
+    real_pts    = {p["rider_id"]: p["expected_pts"] for p in predictions}
+    real_prices = {p["rider_id"]: p["price"]        for p in predictions}
     for team in teams:
+        for r in team["team"]:
+            r["expected_pts"] = real_pts.get(r["rider_id"],    r["expected_pts"])
+            r["price"]        = real_prices.get(r["rider_id"], r["price"])
+        total = sum(r["expected_pts"] for r in team["team"])
+        cap   = next((r["expected_pts"] for r in team["team"] if r["is_captain"]), 0)
+        team["expected_pts"] = total + cap
+        team["total_cost_M"] = round(sum(r["price"] for r in team["team"]), 2)
+
+    # De-duplicate (uses base_preds so fee-adjusted budget is respected)
+    _deduplicate(teams, base_preds, effective_budget)
+
+    # Restore prices again after deduplication (deduplicate may add new riders via _solve)
+    for team in teams:
+        for r in team["team"]:
+            r["price"] = real_prices.get(r["rider_id"], r["price"])
+        team["total_cost_M"] = round(sum(r["price"] for r in team["team"]), 2)
+
+    # Compute budget_left and transfer analysis, then full assessment
+    preds_by_id = {p["rider_id"]: p for p in predictions}
+    for team in teams:
+        if current_ids:
+            ta = _transfer_analysis(team, current_ids, preds_by_id, bank_M)
+            team["transfer_analysis"] = ta
+            team["budget_left_M"]     = ta["balance_after_M"]
+        else:
+            team["budget_left_M"] = round(BUDGET / 1_000_000 - team["total_cost_M"], 2)
         team["assessment"] = _assess(team, predictions)
 
     return teams
 
 
+def make_best_team(predictions: list[dict]) -> dict | None:
+    """
+    Unconstrained 'best possible' team — full 50M budget, no transfer fees.
+    Shown as the 4th recommendation card on the website.
+    """
+    team = _solve(predictions, budget=BUDGET, label="best")
+    if team:
+        team["budget_left_M"] = round(BUDGET / 1_000_000 - team["total_cost_M"], 2)
+        team["assessment"]    = _assess(team, predictions)
+    return team
+
+
+# ---------------------------------------------------------------------------
+# Deduplication
+# ---------------------------------------------------------------------------
+
 def _deduplicate(teams: list[dict], predictions: list[dict], budget: float):
     """Ensure the three teams are not identical."""
-    seen_ids: list[set] = []
+    seen_ids: list[frozenset] = []
     for team in teams:
         ids = frozenset(p["rider_id"] for p in team["team"])
         if ids in seen_ids:
-            # Force out the most expensive rider and re-solve
             most_exp = max(team["team"], key=lambda x: x["price"])
             rerun = _solve(
                 predictions, budget=budget,
@@ -245,18 +360,20 @@ def _deduplicate(teams: list[dict], predictions: list[dict], budget: float):
         seen_ids.append(frozenset(p["rider_id"] for p in team["team"]))
 
 
+# ---------------------------------------------------------------------------
+# Assessment
+# ---------------------------------------------------------------------------
+
 def _assess(team: dict, all_predictions: list[dict]) -> dict:
     """Generate qualitative + quantitative assessment of a team."""
-    riders = team["team"]
+    riders  = team["team"]
     captain = next((r for r in riders if r["is_captain"]), riders[0])
 
-    # Price distribution
-    prices = [r["price"] for r in riders]
+    prices    = [r["price"] for r in riders]
     avg_price = sum(prices) / len(prices)
     n_premium = sum(1 for p in prices if p >= 8.0)
     n_budget  = sum(1 for p in prices if p <= 4.0)
 
-    # Expected top-15 count (rough estimate)
     top_riders = sorted(all_predictions, key=lambda x: x["expected_pts"], reverse=True)
     top15_ids  = {p["rider_id"] for p in top_riders[:15]}
     est_top15  = sum(1 for r in riders if r["rider_id"] in top15_ids)
@@ -264,7 +381,6 @@ def _assess(team: dict, all_predictions: list[dict]) -> dict:
     from .scoring import etapebonus
     est_etapebonus = etapebonus(est_top15)
 
-    # Risk profile
     total_variance = sum(r.get("variance", 0) for r in riders)
     if total_variance > 1_500_000:
         risk = "Høj"
@@ -273,21 +389,28 @@ def _assess(team: dict, all_predictions: list[dict]) -> dict:
     else:
         risk = "Lav"
 
-    # Diversity across teams
     teams_rep = list({r["team"] for r in riders})
 
+    ta = team.get("transfer_analysis", {})
+
     return {
-        "captain_name":        captain["full_name"],
-        "captain_reasoning":   captain.get("reasoning", ""),
-        "expected_pts_total":  team["expected_pts"],
-        "est_etapebonus":      est_etapebonus,
-        "est_top15_count":     est_top15,
-        "total_cost_M":        team["total_cost_M"],
-        "budget_left_M":       team["budget_left_M"],
-        "avg_price_M":         round(avg_price, 1),
-        "n_premium_riders":    n_premium,
-        "n_budget_riders":     n_budget,
-        "risk_profile":        risk,
-        "teams_represented":   teams_rep,
-        "n_teams":             len(teams_rep),
+        "captain_name":       captain["full_name"],
+        "captain_reasoning":  captain.get("reasoning", ""),
+        "expected_pts_total": team["expected_pts"],
+        "est_etapebonus":     est_etapebonus,
+        "est_top15_count":    est_top15,
+        "total_cost_M":       team["total_cost_M"],
+        "budget_left_M":      team.get("budget_left_M",
+                                       round(BUDGET / 1_000_000 - team["total_cost_M"], 2)),
+        "avg_price_M":        round(avg_price, 1),
+        "n_premium_riders":   n_premium,
+        "n_budget_riders":    n_budget,
+        "risk_profile":       risk,
+        "teams_represented":  teams_rep,
+        "n_teams":            len(teams_rep),
+        # Transfer details (populated when current_team_data is provided)
+        "n_transfers":        ta.get("n_transfers", 0),
+        "affordable":         ta.get("affordable", True),
+        "balance_after_M":    ta.get("balance_after_M",
+                                     team.get("budget_left_M", 0)),
     }

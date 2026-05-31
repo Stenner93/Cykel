@@ -12,14 +12,19 @@ const STAGE_TYPE_META = {
 };
 
 const LABEL_META = {
-  safe:   { dk: 'SIKKER',  desc: 'Maksimér forventet score med lave risici' },
-  value:  { dk: 'VÆRDI',   desc: 'Budget-ryttere frigiver penge til en stjerne' },
-  attack: { dk: 'ANGREB',  desc: 'Høj variance — potentiel overraskelse vinder' },
+  safe:   { dk: 'SIKKER',         desc: 'Maksimér forventet score med lave risici' },
+  value:  { dk: 'VÆRDI',          desc: 'Budget-ryttere frigiver penge til en stjerne' },
+  attack: { dk: 'ANGREB',         desc: 'Høj variance — potentiel overraskelse vinder' },
+  best:   { dk: 'BEDST MULIGT',   desc: 'Ubegrænset hold — 50M fra scratch, ingen transferomkostninger' },
 };
 
 function fmt(n) {
   if (n == null || isNaN(n)) return '–';
   return n.toLocaleString('da-DK');
+}
+function fmtM(n) {
+  if (n == null || isNaN(n)) return '–';
+  return n.toFixed(1) + 'M';
 }
 function fmtK(n) {
   if (n == null || isNaN(n)) return '–';
@@ -38,7 +43,7 @@ function signalBar(signals) {
   const segs = keys.map(k => {
     const v = signals?.[k] ?? 0;
     const filled = v > 0.3 ? 'filled' : '';
-    return `<div class="signal-segment ${filled}" title="${k}: ${(v*100).toFixed(0)}%"></div>`;
+    return `<div class="signal-segment ${filled}" title="${k}: ${(v * 100).toFixed(0)}%"></div>`;
   }).join('');
   return `<div class="signal-bar">${segs}</div>`;
 }
@@ -64,84 +69,149 @@ function renderGeneratedAt(iso) {
     'Opdateret: ' + d.toLocaleString('da-DK');
 }
 
+// ── Current team ───────────────────────────────────────────────────────────
+function renderCurrentTeam(currentTeam) {
+  if (!currentTeam || !currentTeam.matched_riders || !currentTeam.matched_riders.length) return;
+
+  document.getElementById('currentTeamSection').style.display = 'block';
+
+  const grid = document.getElementById('currentTeamGrid');
+  grid.innerHTML = currentTeam.matched_riders.map(r => `
+    <div class="ct-rider">
+      <div class="ct-name">${r.full_name}</div>
+      <div class="ct-team">${r.team}</div>
+      <div class="ct-price ${priceClass(r.price_M)}">${fmtM(r.price_M)}</div>
+    </div>`).join('');
+
+  const totalM = currentTeam.matched_riders.reduce((s, r) => s + (r.price_M || 0), 0);
+  const bankM  = currentTeam.bank_M || 0;
+  document.getElementById('currentTeamMeta').innerHTML = `
+    <span class="meta-pill">💰 Holdværdi: ${fmtM(totalM)}</span>
+    <span class="meta-pill">🏦 Bank: ${fmtM(bankM)}</span>
+    <span class="meta-pill">📊 Total: ${fmtM(totalM + bankM)}</span>`;
+}
+
+// ── Team card builder (shared by 3-team grid and best-team grid) ───────────
+function buildTeamCard(team) {
+  const lm          = LABEL_META[team.label] || { dk: team.label.toUpperCase(), desc: '' };
+  const ass         = team.assessment || {};
+  const captain     = team.team.find(r => r.is_captain) || team.team[0];
+  const sortedRiders = [...team.team].sort((a, b) => b.expected_pts - a.expected_pts);
+  const ta          = team.transfer_analysis;
+
+  // Riders HTML
+  const ridersHtml = sortedRiders.map(r => `
+    <div class="rider-row">
+      <div>
+        <div class="rider-name ${r.is_captain ? 'is-captain' : ''}">${r.full_name}</div>
+        <div class="rider-team">${r.team}</div>
+      </div>
+      <div class="rider-price ${priceClass(r.price)}">${r.price.toFixed(1)}M</div>
+      <div class="rider-pts">${fmtK(r.expected_pts)}</div>
+      <div></div>
+    </div>`).join('');
+
+  // Transfer block (only for the 3 constrained teams)
+  let transferHtml = '';
+  if (ta) {
+    const affordClass = ta.affordable ? 'transfer-ok' : 'transfer-warn';
+    const netSign     = ta.net_cost_M >= 0 ? '+' : '';
+    const sellList    = ta.to_sell.length
+      ? ta.to_sell.map(r => `<span class="tx-rider tx-sell">${r.full_name} (${fmtM(r.price_M)})</span>`).join(' ')
+      : '<span class="tx-none">–</span>';
+    const buyList     = ta.to_buy.length
+      ? ta.to_buy.map(r => `<span class="tx-rider tx-buy">${r.full_name} (${fmtM(r.price_M)})</span>`).join(' ')
+      : '<span class="tx-none">–</span>';
+
+    transferHtml = `
+      <div class="transfer-block ${affordClass}">
+        <div class="transfer-header">
+          <span class="transfer-count">${ta.n_transfers === 0 ? '✓ Ingen udskiftninger' : `${ta.n_transfers} udskiftning${ta.n_transfers > 1 ? 'er' : ''}`}</span>
+          <span class="transfer-net ${ta.net_cost_M > 0 ? 'cost-pos' : 'cost-neg'}">${netSign}${fmtM(ta.net_cost_M)} nettoomkostning</span>
+          <span class="transfer-balance ${ta.affordable ? '' : 'insufficient'}">Bank efter: ${fmtM(ta.balance_after_M)}</span>
+        </div>
+        ${ta.to_sell.length || ta.to_buy.length ? `
+        <div class="transfer-detail">
+          <div class="tx-row"><span class="tx-label">Sælg:</span> ${sellList}</div>
+          <div class="tx-row"><span class="tx-label">Køb:</span>  ${buyList}</div>
+        </div>` : ''}
+      </div>`;
+  }
+
+  // Risk colour
+  const riskClass = { 'Lav': 'risk-low', 'Middel': 'risk-mid', 'Høj': 'risk-high' }[ass.risk_profile] || '';
+
+  const card = document.createElement('div');
+  card.className = `team-card${team.label === 'best' ? ' team-card-best' : ''}`;
+  card.innerHTML = `
+    <div class="team-header ${team.label}">
+      <div>
+        <div class="team-label">${lm.dk}</div>
+        <div style="font-size:0.78rem;color:var(--muted);margin-top:2px">${lm.desc}</div>
+      </div>
+      <div style="text-align:right">
+        <div class="team-score">${fmtK(team.expected_pts)}</div>
+        <div class="team-score-sub">forv. score inkl. kaptajn</div>
+      </div>
+    </div>
+
+    <div class="team-meta">
+      <div class="meta-pill">💰 ${ass.total_cost_M}M brugt</div>
+      <div class="meta-pill">💵 ${fmtM(ass.budget_left_M)} tilbage</div>
+      <div class="meta-pill">🏆 ~${ass.est_top15_count} i top 15</div>
+      <div class="meta-pill">+${fmtK(ass.est_etapebonus)} etapebonus</div>
+    </div>
+
+    ${transferHtml}
+
+    <div class="captain-strip">
+      <div class="cap-label">★ Kaptajn</div>
+      <div class="cap-name">${captain.full_name} (${captain.team})</div>
+      <div class="cap-why">${captain.reasoning || '–'}</div>
+    </div>
+
+    <div class="rider-list">
+      <div class="rider-row" style="font-size:0.7rem;color:var(--muted);padding-bottom:4px">
+        <div>Rytter</div><div>Pris</div><div>Forv.</div><div></div>
+      </div>
+      ${ridersHtml}
+    </div>
+
+    <div class="assessment-bar">
+      <div class="assess-item">
+        <div class="assess-val ${riskClass}">${ass.risk_profile}</div>
+        <div class="assess-lbl">Risiko</div>
+      </div>
+      <div class="assess-item">
+        <div class="assess-val">${ass.n_premium_riders}</div>
+        <div class="assess-lbl">Premium (≥8M)</div>
+      </div>
+      <div class="assess-item">
+        <div class="assess-val">${ass.n_budget_riders}</div>
+        <div class="assess-lbl">Budget (≤4M)</div>
+      </div>
+    </div>`;
+
+  return card;
+}
+
+// ── Render 3 strategy teams ────────────────────────────────────────────────
 function renderTeams(teams) {
   const grid = document.getElementById('teamsGrid');
   grid.innerHTML = '';
-
-  teams.forEach((team, i) => {
-    const lm = LABEL_META[team.label] || { dk: team.label.toUpperCase(), desc: '' };
-    const ass = team.assessment || {};
-    const captain = team.team.find(r => r.is_captain) || team.team[0];
-    const sortedRiders = [...team.team].sort((a, b) => b.expected_pts - a.expected_pts);
-
-    // Riders HTML
-    const ridersHtml = sortedRiders.map(r => `
-      <div class="rider-row">
-        <div>
-          <div class="rider-name ${r.is_captain ? 'is-captain' : ''}">${r.full_name}</div>
-          <div class="rider-team">${r.team}</div>
-        </div>
-        <div class="rider-price ${priceClass(r.price)}">${r.price.toFixed(1)}M</div>
-        <div class="rider-pts">${fmtK(r.expected_pts)}</div>
-        <div></div>
-      </div>`).join('');
-
-    // Risk colour
-    const riskClass = { 'Lav': 'risk-low', 'Middel': 'risk-mid', 'Høj': 'risk-high' }[ass.risk_profile] || '';
-
-    const card = document.createElement('div');
-    card.className = 'team-card';
-    card.innerHTML = `
-      <div class="team-header ${team.label}">
-        <div>
-          <div class="team-label">${lm.dk}</div>
-          <div style="font-size:0.78rem;color:var(--muted);margin-top:2px">${lm.desc}</div>
-        </div>
-        <div style="text-align:right">
-          <div class="team-score">${fmtK(team.expected_pts)}</div>
-          <div class="team-score-sub">forv. score inkl. kaptajn</div>
-        </div>
-      </div>
-
-      <div class="team-meta">
-        <div class="meta-pill">💰 ${ass.total_cost_M}M brugt</div>
-        <div class="meta-pill">💵 ${ass.budget_left_M}M tilbage</div>
-        <div class="meta-pill">🏆 ~${ass.est_top15_count} i top 15</div>
-        <div class="meta-pill">+${fmtK(ass.est_etapebonus)} etapebonus</div>
-      </div>
-
-      <div class="captain-strip">
-        <div class="cap-label">★ Kaptajn</div>
-        <div class="cap-name">${captain.full_name} (${captain.team})</div>
-        <div class="cap-why">${captain.reasoning || '–'}</div>
-      </div>
-
-      <div class="rider-list">
-        <div class="rider-row" style="font-size:0.7rem;color:var(--muted);padding-bottom:4px">
-          <div>Rytter</div><div>Pris</div><div>Forv.</div><div></div>
-        </div>
-        ${ridersHtml}
-      </div>
-
-      <div class="assessment-bar">
-        <div class="assess-item">
-          <div class="assess-val ${riskClass}">${ass.risk_profile}</div>
-          <div class="assess-lbl">Risiko</div>
-        </div>
-        <div class="assess-item">
-          <div class="assess-val">${ass.n_premium_riders}</div>
-          <div class="assess-lbl">Premium (≥9M)</div>
-        </div>
-        <div class="assess-item">
-          <div class="assess-val">${ass.n_budget_riders}</div>
-          <div class="assess-lbl">Budget (≤4M)</div>
-        </div>
-      </div>`;
-
-    grid.appendChild(card);
-  });
+  teams.forEach(team => grid.appendChild(buildTeamCard(team)));
 }
 
+// ── Render best-possible team ──────────────────────────────────────────────
+function renderBestTeam(bestTeam) {
+  if (!bestTeam) return;
+  document.getElementById('bestTeamSection').style.display = 'block';
+  const grid = document.getElementById('bestTeamGrid');
+  grid.innerHTML = '';
+  grid.appendChild(buildTeamCard(bestTeam));
+}
+
+// ── VeloScore table ────────────────────────────────────────────────────────
 function renderVeloScore(predictions) {
   if (!predictions || predictions.length === 0) return;
   document.getElementById('veloscoreSection').style.display = 'block';
@@ -156,6 +226,7 @@ function renderVeloScore(predictions) {
     </tr>`).join('');
 }
 
+// ── Top picks table ────────────────────────────────────────────────────────
 function renderTopPicks(picks) {
   if (!picks || picks.length === 0) return;
   document.getElementById('picksSection').style.display = 'block';
@@ -172,13 +243,16 @@ function renderTopPicks(picks) {
     </tr>`).join('');
 }
 
+// ── Init ───────────────────────────────────────────────────────────────────
 async function init() {
   try {
     const data = await loadData();
 
     renderStageBadge(data.stage, data.stage_type);
     renderGeneratedAt(data.generated);
+    renderCurrentTeam(data.current_team);
     renderTeams(data.teams || []);
+    renderBestTeam(data.best_team);
     renderVeloScore(data.veloscore || []);
     renderTopPicks(data.top_picks || []);
 

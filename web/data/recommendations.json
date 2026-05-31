@@ -2,6 +2,79 @@
   "stage": 21,
   "stage_type": "sprint",
   "generated": "2026-05-31T17:44:42.876286+00:00",
+  "current_team": {
+    "bank_M": 5.0,
+    "rider_ids": [
+      "jonas_vingegaard",
+      "jonathan_milan",
+      "tim_merlier",
+      "cian_uijtdebroeks",
+      "soeren_kragh_andersen",
+      "phil_bauhaus",
+      "ben_healy",
+      "fabio_jakobsen"
+    ],
+    "rider_names": [
+      "Jonas Vingegaard",
+      "Jonathan Milan",
+      "Tim Merlier",
+      "Cian Uijtdebroeks",
+      "Søren Kragh Andersen",
+      "Phil Bauhaus",
+      "Ben Healy",
+      "Fabio Jakobsen"
+    ],
+    "matched_riders": [
+      {
+        "rider_id": "jonas_vingegaard",
+        "full_name": "Jonas Vingegaard",
+        "team": "TJV",
+        "price_M": 17.5
+      },
+      {
+        "rider_id": "jonathan_milan",
+        "full_name": "Jonathan Milan",
+        "team": "L-T",
+        "price_M": 11.5
+      },
+      {
+        "rider_id": "tim_merlier",
+        "full_name": "Tim Merlier",
+        "team": "SQ",
+        "price_M": 9.0
+      },
+      {
+        "rider_id": "cian_uijtdebroeks",
+        "full_name": "Cian Uijtdebroeks",
+        "team": "BGS",
+        "price_M": 6.0
+      },
+      {
+        "rider_id": "soeren_kragh_andersen",
+        "full_name": "Søren Kragh Andersen",
+        "team": "TJV",
+        "price_M": 9.0
+      },
+      {
+        "rider_id": "phil_bauhaus",
+        "full_name": "Phil Bauhaus",
+        "team": "TBH",
+        "price_M": 6.0
+      },
+      {
+        "rider_id": "ben_healy",
+        "full_name": "Ben Healy",
+        "team": "EFE",
+        "price_M": 6.0
+      },
+      {
+        "rider_id": "fabio_jakobsen",
+        "full_name": "Fabio Jakobsen",
+        "team": "SQ",
+        "price_M": 6.0
+      }
+    ]
+  },
   "teams": [
     {
       "label": "safe",
@@ -146,7 +219,7 @@
       "captain_id": "paul_magnier",
       "expected_pts": 2051280,
       "total_cost_M": 50.0,
-      "budget_left_M": 0.0,
+      "budget_left_M": 25.5,
       "assessment": {
         "captain_name": "Paul Magnier",
         "captain_reasoning": "VeloScore top-1",
@@ -154,7 +227,7 @@
         "est_etapebonus": 400000,
         "est_top15_count": 8,
         "total_cost_M": 50.0,
-        "budget_left_M": 0.0,
+        "budget_left_M": 25.5,
         "avg_price_M": 6.2,
         "n_premium_riders": 2,
         "n_budget_riders": 2,
@@ -169,7 +242,102 @@
           "XDSAT",
           "SQ"
         ],
-        "n_teams": 8
+        "n_teams": 8,
+        "n_transfers": 8,
+        "affordable": true,
+        "balance_after_M": 25.5
+      },
+      "transfer_analysis": {
+        "to_sell": [
+          {
+            "rider_id": "jonas_vingegaard",
+            "full_name": "Jonas Vingegaard",
+            "price_M": 17.5
+          },
+          {
+            "rider_id": "jonathan_milan",
+            "full_name": "Jonathan Milan",
+            "price_M": 11.5
+          },
+          {
+            "rider_id": "soeren_kragh_andersen",
+            "full_name": "Søren Kragh Andersen",
+            "price_M": 9.0
+          },
+          {
+            "rider_id": "tim_merlier",
+            "full_name": "Tim Merlier",
+            "price_M": 9.0
+          },
+          {
+            "rider_id": "phil_bauhaus",
+            "full_name": "Phil Bauhaus",
+            "price_M": 6.0
+          },
+          {
+            "rider_id": "cian_uijtdebroeks",
+            "full_name": "Cian Uijtdebroeks",
+            "price_M": 6.0
+          },
+          {
+            "rider_id": "fabio_jakobsen",
+            "full_name": "Fabio Jakobsen",
+            "price_M": 6.0
+          },
+          {
+            "rider_id": "ben_healy",
+            "full_name": "Ben Healy",
+            "price_M": 6.0
+          }
+        ],
+        "to_buy": [
+          {
+            "rider_id": "dylan_groenewegen",
+            "full_name": "Dylan Groenewegen",
+            "price_M": 10.0
+          },
+          {
+            "rider_id": "paul_magnier",
+            "full_name": "Paul Magnier",
+            "price_M": 9.0
+          },
+          {
+            "rider_id": "ben_turner",
+            "full_name": "Ben Turner",
+            "price_M": 6.0
+          },
+          {
+            "rider_id": "paul_penhoët",
+            "full_name": "Paul Penhoët",
+            "price_M": 6.0
+          },
+          {
+            "rider_id": "casper_van_uden",
+            "full_name": "Casper van Uden",
+            "price_M": 5.5
+          },
+          {
+            "rider_id": "matteo_malucelli",
+            "full_name": "Matteo Malucelli",
+            "price_M": 5.5
+          },
+          {
+            "rider_id": "luca_mozzato",
+            "full_name": "Luca Mozzato",
+            "price_M": 4.0
+          },
+          {
+            "rider_id": "jensen_plowright",
+            "full_name": "Jensen Plowright",
+            "price_M": 4.0
+          }
+        ],
+        "n_transfers": 8,
+        "proceeds_M": 71.0,
+        "buy_cost_M": 50.5,
+        "net_cost_M": -20.5,
+        "balance_after_M": 25.5,
+        "affordable": true
       }
     },
     {
@@ -315,7 +483,7 @@
       "captain_id": "paul_magnier",
       "expected_pts": 2023560,
       "total_cost_M": 49.5,
-      "budget_left_M": 0.5,
+      "budget_left_M": 26.12,
       "assessment": {
         "captain_name": "Paul Magnier",
         "captain_reasoning": "VeloScore top-1",
@@ -323,7 +491,7 @@
         "est_etapebonus": 400000,
         "est_top15_count": 8,
         "total_cost_M": 49.5,
-        "budget_left_M": 0.5,
+        "budget_left_M": 26.12,
         "avg_price_M": 6.2,
         "n_premium_riders": 2,
         "n_budget_riders": 3,
@@ -338,7 +506,92 @@
           "XDSAT",
           "SQ"
         ],
-        "n_teams": 8
+        "n_teams": 8,
+        "n_transfers": 7,
+        "affordable": true,
+        "balance_after_M": 26.12
+      },
+      "transfer_analysis": {
+        "to_sell": [
+          {
+            "rider_id": "jonas_vingegaard",
+            "full_name": "Jonas Vingegaard",
+            "price_M": 17.5
+          },
+          {
+            "rider_id": "soeren_kragh_andersen",
+            "full_name": "Søren Kragh Andersen",
+            "price_M": 9.0
+          },
+          {
+            "rider_id": "tim_merlier",
+            "full_name": "Tim Merlier",
+            "price_M": 9.0
+          },
+          {
+            "rider_id": "phil_bauhaus",
+            "full_name": "Phil Bauhaus",
+            "price_M": 6.0
+          },
+          {
+            "rider_id": "cian_uijtdebroeks",
+            "full_name": "Cian Uijtdebroeks",
+            "price_M": 6.0
+          },
+          {
+            "rider_id": "fabio_jakobsen",
+            "full_name": "Fabio Jakobsen",
+            "price_M": 6.0
+          },
+          {
+            "rider_id": "ben_healy",
+            "full_name": "Ben Healy",
+            "price_M": 6.0
+          }
+        ],
+        "to_buy": [
+          {
+            "rider_id": "paul_magnier",
+            "full_name": "Paul Magnier",
+            "price_M": 9.0
+          },
+          {
+            "rider_id": "ben_turner",
+            "full_name": "Ben Turner",
+            "price_M": 6.0
+          },
+          {
+            "rider_id": "casper_van_uden",
+            "full_name": "Casper van Uden",
+            "price_M": 5.5
+          },
+          {
+            "rider_id": "matteo_malucelli",
+            "full_name": "Matteo Malucelli",
+            "price_M": 5.5
+          },
+          {
+            "rider_id": "luca_mozzato",
+            "full_name": "Luca Mozzato",
+            "price_M": 4.0
+          },
+          {
+            "rider_id": "jensen_plowright",
+            "full_name": "Jensen Plowright",
+            "price_M": 4.0
+          },
+          {
+            "rider_id": "giovanni_lonardi",
+            "full_name": "Giovanni Lonardi",
+            "price_M": 4.0
+          }
+        ],
+        "n_transfers": 7,
+        "proceeds_M": 59.5,
+        "buy_cost_M": 38.38,
+        "net_cost_M": -21.12,
+        "balance_after_M": 26.12,
+        "affordable": true
       }
     },
     {
@@ -484,7 +737,7 @@
       "captain_id": "paul_magnier",
       "expected_pts": 2023560,
       "total_cost_M": 49.5,
-      "budget_left_M": 0.5,
+      "budget_left_M": 26.12,
       "assessment": {
         "captain_name": "Paul Magnier",
         "captain_reasoning": "VeloScore top-1",
@@ -492,7 +745,7 @@
         "est_etapebonus": 400000,
         "est_top15_count": 8,
         "total_cost_M": 49.5,
-        "budget_left_M": 0.5,
+        "budget_left_M": 26.12,
         "avg_price_M": 6.2,
         "n_premium_riders": 2,
         "n_budget_riders": 3,
@@ -507,10 +760,267 @@
           "XDSAT",
           "SQ"
         ],
-        "n_teams": 8
+        "n_teams": 8,
+        "n_transfers": 7,
+        "affordable": true,
+        "balance_after_M": 26.12
+      },
+      "transfer_analysis": {
+        "to_sell": [
+          {
+            "rider_id": "jonas_vingegaard",
+            "full_name": "Jonas Vingegaard",
+            "price_M": 17.5
+          },
+          {
+            "rider_id": "soeren_kragh_andersen",
+            "full_name": "Søren Kragh Andersen",
+            "price_M": 9.0
+          },
+          {
+            "rider_id": "tim_merlier",
+            "full_name": "Tim Merlier",
+            "price_M": 9.0
+          },
+          {
+            "rider_id": "phil_bauhaus",
+            "full_name": "Phil Bauhaus",
+            "price_M": 6.0
+          },
+          {
+            "rider_id": "cian_uijtdebroeks",
+            "full_name": "Cian Uijtdebroeks",
+            "price_M": 6.0
+          },
+          {
+            "rider_id": "fabio_jakobsen",
+            "full_name": "Fabio Jakobsen",
+            "price_M": 6.0
+          },
+          {
+            "rider_id": "ben_healy",
+            "full_name": "Ben Healy",
+            "price_M": 6.0
+          }
+        ],
+        "to_buy": [
+          {
+            "rider_id": "paul_magnier",
+            "full_name": "Paul Magnier",
+            "price_M": 9.0
+          },
+          {
+            "rider_id": "ben_turner",
+            "full_name": "Ben Turner",
+            "price_M": 6.0
+          },
+          {
+            "rider_id": "casper_van_uden",
+            "full_name": "Casper van Uden",
+            "price_M": 5.5
+          },
+          {
+            "rider_id": "matteo_malucelli",
+            "full_name": "Matteo Malucelli",
+            "price_M": 5.5
+          },
+          {
+            "rider_id": "luca_mozzato",
+            "full_name": "Luca Mozzato",
+            "price_M": 4.0
+          },
+          {
+            "rider_id": "jensen_plowright",
+            "full_name": "Jensen Plowright",
+            "price_M": 4.0
+          },
+          {
+            "rider_id": "giovanni_lonardi",
+            "full_name": "Giovanni Lonardi",
+            "price_M": 4.0
+          }
+        ],
+        "n_transfers": 7,
+        "proceeds_M": 59.5,
+        "buy_cost_M": 38.38,
+        "net_cost_M": -21.12,
+        "balance_after_M": 26.12,
+        "affordable": true
       }
     }
   ],
+  "best_team": {
+    "label": "best",
+    "team": [
+      {
+        "rider_id": "paul_magnier",
+        "full_name": "Paul Magnier",
+        "team": "SQ",
+        "price": 9.0,
+        "expected_pts": 330960,
+        "win_prob": 0.591,
+        "variance": 137200,
+        "reasoning": "VeloScore top-1",
+        "signal_scores": {
+          "veloscore": 0.98,
+          "odds": 0.0,
+          "discipline": 0.5,
+          "form": 0.5
+        },
+        "is_captain": true
+      },
+      {
+        "rider_id": "jonathan_milan",
+        "full_name": "Jonathan Milan",
+        "team": "L-T",
+        "price": 11.5,
+        "expected_pts": 303240,
+        "win_prob": 0.5415,
+        "variance": 121800,
+        "reasoning": "VeloScore top-2",
+        "signal_scores": {
+          "veloscore": 0.87,
+          "odds": 0.0,
+          "discipline": 0.5,
+          "form": 0.5
+        },
+        "is_captain": false
+      },
+      {
+        "rider_id": "dylan_groenewegen",
+        "full_name": "Dylan Groenewegen",
+        "team": "UTR",
+        "price": 10.0,
+        "expected_pts": 298200,
+        "win_prob": 0.5325,
+        "variance": 119000,
+        "reasoning": "VeloScore top-3",
+        "signal_scores": {
+          "veloscore": 0.85,
+          "odds": 0.0,
+          "discipline": 0.5,
+          "form": 0.5
+        },
+        "is_captain": false
+      },
+      {
+        "rider_id": "casper_van_uden",
+        "full_name": "Casper van Uden",
+        "team": "TPP",
+        "price": 5.5,
+        "expected_pts": 220080,
+        "win_prob": 0.393,
+        "variance": 75600,
+        "reasoning": "VeloScore top-5",
+        "signal_scores": {
+          "veloscore": 0.54,
+          "odds": 0.0,
+          "discipline": 0.5,
+          "form": 0.5
+        },
+        "is_captain": false
+      },
+      {
+        "rider_id": "matteo_malucelli",
+        "full_name": "Matteo Malucelli",
+        "team": "XDSAT",
+        "price": 5.5,
+        "expected_pts": 207480,
+        "win_prob": 0.3705,
+        "variance": 68600,
+        "reasoning": "VeloScore rank 6",
+        "signal_scores": {
+          "veloscore": 0.49,
+          "odds": 0.0,
+          "discipline": 0.5,
+          "form": 0.5
+        },
+        "is_captain": false
+      },
+      {
+        "rider_id": "ben_turner",
+        "full_name": "Ben Turner",
+        "team": "INEOSG",
+        "price": 6.0,
+        "expected_pts": 189840,
+        "win_prob": 0.339,
+        "variance": 58800,
+        "reasoning": "VeloScore rank 8",
+        "signal_scores": {
+          "veloscore": 0.42,
+          "odds": 0.0,
+          "discipline": 0.5,
+          "form": 0.5
+        },
+        "is_captain": false
+      },
+      {
+        "rider_id": "luca_mozzato",
+        "full_name": "Luca Mozzato",
+        "team": "TPCT",
+        "price": 4.0,
+        "expected_pts": 157080,
+        "win_prob": 0.2805,
+        "variance": 40600,
+        "reasoning": "VeloScore rank 10",
+        "signal_scores": {
+          "veloscore": 0.29,
+          "odds": 0.0,
+          "discipline": 0.5,
+          "form": 0.5
+        },
+        "is_captain": false
+      },
+      {
+        "rider_id": "jensen_plowright",
+        "full_name": "Jensen Plowright",
+        "team": "A-D",
+        "price": 4.0,
+        "expected_pts": 149520,
+        "win_prob": 0.267,
+        "variance": 36400,
+        "reasoning": "budget-pick",
+        "signal_scores": {
+          "veloscore": 0.26,
+          "odds": 0.0,
+          "discipline": 0.5,
+          "form": 0.5
+        },
+        "is_captain": false
+      }
+    ],
+    "captain_id": "paul_magnier",
+    "expected_pts": 2051280,
+    "total_cost_M": 50.0,
+    "budget_left_M": 0.0,
+    "assessment": {
+      "captain_name": "Paul Magnier",
+      "captain_reasoning": "VeloScore top-1",
+      "expected_pts_total": 2051280,
+      "est_etapebonus": 400000,
+      "est_top15_count": 8,
+      "total_cost_M": 50.0,
+      "budget_left_M": 0.0,
+      "avg_price_M": 6.9,
+      "n_premium_riders": 3,
+      "n_budget_riders": 2,
+      "risk_profile": "Lav",
+      "teams_represented": [
+        "SQ",
+        "L-T",
+        "UTR",
+        "TPP",
+        "XDSAT",
+        "INEOSG",
+        "TPCT",
+        "A-D"
+      ],
+      "n_teams": 8,
+      "n_transfers": 6,
+      "affordable": true,
+      "balance_after_M": 2.6
+    }
+  },
   "veloscore": [
     {
       "rank": 1,

@@ -253,6 +253,76 @@ h2 {
 }
 @keyframes spin-text { from { opacity: 0.4; } 50% { opacity: 1; } to { opacity: 0.4; } }
 
+/* ── Best team card ── */
+.team-header.best {
+  background: linear-gradient(135deg, #3d2c00 0%, #1a1d27 100%);
+  border-left: 4px solid var(--yellow);
+}
+.best .team-label { color: var(--yellow); }
+.team-card-best { border-color: rgba(255, 215, 0, 0.3); }
+
+/* ── Section description ── */
+.section-desc {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: -12px 0 20px;
+}
+
+/* ── Current team section ── */
+.current-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.ct-rider {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.82rem;
+}
+.ct-name  { font-weight: 600; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ct-team  { color: var(--muted); font-size: 0.72rem; margin-bottom: 4px; }
+.ct-price { font-weight: 700; font-size: 0.85rem; }
+.current-team-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── Transfer block (inside team card) ── */
+.transfer-block {
+  margin: 0 20px 12px;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.78rem;
+}
+.transfer-ok   { background: rgba(0, 200, 83, 0.06);  border: 1px solid rgba(0, 200, 83, 0.2); }
+.transfer-warn { background: rgba(255, 87, 34, 0.08); border: 1px solid rgba(255, 87, 34, 0.3); }
+
+.transfer-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.transfer-count   { font-weight: 700; color: var(--text); }
+.transfer-net     { font-weight: 600; }
+.cost-pos         { color: var(--red); }
+.cost-neg         { color: var(--green); }
+.transfer-balance { color: var(--muted); }
+.transfer-balance.insufficient { color: var(--red); font-weight: 700; }
+
+.transfer-detail { display: flex; flex-direction: column; gap: 4px; }
+.tx-row     { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.tx-label   { color: var(--muted); font-weight: 600; min-width: 36px; }
+.tx-rider   { padding: 1px 6px; border-radius: 4px; font-size: 0.74rem; }
+.tx-sell    { background: rgba(229, 57, 53, 0.15);  color: #ef5350; border: 1px solid rgba(229, 57, 53, 0.3); }
+.tx-buy     { background: rgba(0, 200, 83, 0.12);   color: #00c853; border: 1px solid rgba(0, 200, 83, 0.3); }
+.tx-none    { color: var(--muted); font-style: italic; }
+
 /* ── Footer ── */
 footer {
   text-align: center;
