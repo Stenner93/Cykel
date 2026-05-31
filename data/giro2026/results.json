@@ -1,0 +1,181 @@
+[
+  {
+    "stage": 1, "stage_type": "sprint",
+    "note": "Magnier wins — VeloScore had Milan #1",
+    "top_results": [
+      {"rank":1,"rider":"Paul Magnier","points":560000,"sprint_pts":50},
+      {"rank":2,"rider":"Tobias Lund Andresen","points":375000,"sprint_pts":35},
+      {"rank":3,"rider":"Ethan Vernon","points":295000,"sprint_pts":25},
+      {"rank":4,"rider":"Manuel Tarozzi","points":175000},
+      {"rank":5,"rider":"Jonathan Milan","points":175000,"sprint_pts":5},
+      {"rank":6,"rider":"Pablo Sevilla Diego","points":144000},
+      {"rank":7,"rider":"Madis Mihkels","points":140000}
+    ]
+  },
+  {
+    "stage": 2, "stage_type": "mountain",
+    "note": "No VeloScore prediction (missed)",
+    "top_results": [
+      {"rank":1,"rider":"Guillermo Thomas Silva","points":475000},
+      {"rank":2,"rider":"Florian Stork","points":324000},
+      {"rank":3,"rider":"Giulio Ciccone","points":350000}
+    ]
+  },
+  {
+    "stage": 3, "stage_type": "sprint",
+    "note": "No VeloScore prediction (missed)",
+    "top_results": [
+      {"rank":1,"rider":"Paul Magnier","points":435000},
+      {"rank":2,"rider":"Jonathan Milan","points":294000},
+      {"rank":3,"rider":"Dylan Mihkels","points":229000}
+    ]
+  },
+  {
+    "stage": 4, "stage_type": "mountain",
+    "note": "Narvaez wins — VeloScore had Scaroni #1",
+    "top_results": [
+      {"rank":1,"rider":"Jhonatan Narváez","points":410000},
+      {"rank":2,"rider":"Giulio Ciccone","points":350000},
+      {"rank":3,"rider":"Orluis Aular","points":309000},
+      {"rank":4,"rider":"Ben Turner","points":174000},
+      {"rank":5,"rider":"Lennert Van Eetvelt","points":165000}
+    ]
+  },
+  {
+    "stage": 5, "stage_type": "mountain",
+    "note": "Arrieta wins with KOM bonus — VeloScore had sprint picks",
+    "top_results": [
+      {"rank":1,"rider":"Igor Arrieta","points":494000,"sprint_pts":30,"kom_pts":18},
+      {"rank":2,"rider":"Afonso Eulálio","points":413000,"sprint_pts":21,"kom_pts":10},
+      {"rank":3,"rider":"Christian Scaroni","points":231000,"sprint_pts":6,"kom_pts":2},
+      {"rank":4,"rider":"Andrea Raccagni Noviero","points":152000},
+      {"rank":5,"rider":"Johannes Kulset","points":150000}
+    ]
+  },
+  {
+    "stage": 6, "stage_type": "hilly",
+    "note": "Ballerini wins — breakaway stage",
+    "top_results": [
+      {"rank":1,"rider":"Davide Ballerini","points":410000},
+      {"rank":2,"rider":"Jensen Plowright","points":250000},
+      {"rank":3,"rider":"Paul Magnier","points":174000}
+    ]
+  },
+  {
+    "stage": 7, "stage_type": "mountain",
+    "note": "Vingegaard wins — VeloScore had Christen/Valgren on top",
+    "top_results": [
+      {"rank":1,"rider":"Jonas Vingegaard","points":570000,"kom_pts":50},
+      {"rank":2,"rider":"Felix Gall","points":368000,"kom_pts":24},
+      {"rank":3,"rider":"Jai Hindley","points":292000,"kom_pts":16},
+      {"rank":4,"rider":"Giulio Pellizzari","points":245000,"kom_pts":9},
+      {"rank":5,"rider":"Ben O'Connor","points":193000,"kom_pts":6}
+    ]
+  },
+  {
+    "stage": 8, "stage_type": "hilly",
+    "note": "Narvaez wins punchy stage",
+    "top_results": [
+      {"rank":1,"rider":"Jhonatan Narváez","points":312000},
+      {"rank":2,"rider":"Andreas Leknessund","points":285000},
+      {"rank":3,"rider":"Martin Tjøtta","points":196000}
+    ]
+  },
+  {
+    "stage": 9, "stage_type": "mountain",
+    "note": "Vingegaard wins again",
+    "top_results": [
+      {"rank":1,"rider":"Jonas Vingegaard","points":590000,"kom_pts":50},
+      {"rank":2,"rider":"Felix Gall","points":368000,"kom_pts":24},
+      {"rank":3,"rider":"Afonso Eulálio","points":286000,"kom_pts":6},
+      {"rank":4,"rider":"Davide Piganzoli","points":285000,"kom_pts":16},
+      {"rank":5,"rider":"Thymen Arensman","points":218000,"kom_pts":9}
+    ]
+  },
+  {
+    "stage": 10, "stage_type": "tt",
+    "note": "Arensman wins TT — VeloScore had Ganna #1",
+    "top_results": [
+      {"rank":1,"rider":"Thymen Arensman","points":353000},
+      {"rank":2,"rider":"Filippo Ganna","points":335000},
+      {"rank":3,"rider":"Rémi Cavagna","points":174000}
+    ]
+  },
+  {
+    "stage": 11, "stage_type": "hilly",
+    "note": "Narvaez wins punchy stage",
+    "top_results": [
+      {"rank":1,"rider":"Jhonatan Narváez","points":347000},
+      {"rank":2,"rider":"Enric Mas","points":252000},
+      {"rank":3,"rider":"Diego Ulissi","points":198000},
+      {"rank":4,"rider":"Chris Harper","points":196000}
+    ]
+  },
+  {
+    "stage": 12, "stage_type": "mountain",
+    "note": "MISSING from FantasyTool dataset"
+  },
+  {
+    "stage": 13, "stage_type": "mountain",
+    "note": "Bettiol wins breakaway — surprise result",
+    "top_results": [
+      {"rank":1,"rider":"Alberto Bettiol","points":362000},
+      {"rank":2,"rider":"Andreas Leknessund","points":246000},
+      {"rank":3,"rider":"Jasper Stuyven","points":186000}
+    ]
+  },
+  {
+    "stage": 14, "stage_type": "mountain",
+    "note": "Vingegaard wins big mountain stage",
+    "top_results": [
+      {"rank":1,"rider":"Jonas Vingegaard","points":635000},
+      {"rank":2,"rider":"Felix Gall","points":386000},
+      {"rank":3,"rider":"Jai Hindley","points":294000}
+    ]
+  },
+  {
+    "stage": 15, "stage_type": "hilly",
+    "note": "Dversnes wins — surprise breakaway. Top picks completely missed.",
+    "top_results": [
+      {"rank":1,"rider":"Fredrik Dversnes","points":425000},
+      {"rank":2,"rider":"Mirco Maestri","points":294000},
+      {"rank":3,"rider":"Mattia Bais","points":228000}
+    ]
+  },
+  {
+    "stage": 16, "stage_type": "mountain",
+    "note": "Vingegaard wins again",
+    "top_results": [
+      {"rank":1,"rider":"Jonas Vingegaard","points":605000,"kom_pts":50},
+      {"rank":2,"rider":"Felix Gall","points":375000,"kom_pts":24},
+      {"rank":3,"rider":"Jai Hindley","points":292000,"kom_pts":16}
+    ]
+  },
+  {
+    "stage": 17, "stage_type": "hilly",
+    "note": "Valgren wins — punchy day",
+    "top_results": [
+      {"rank":1,"rider":"Michael Valgren","points":350000},
+      {"rank":2,"rider":"Andreas Leknessund","points":200000},
+      {"rank":3,"rider":"Damiano Caruso","points":160000}
+    ]
+  },
+  {
+    "stage": 19, "stage_type": "mountain",
+    "note": "Ciccone wins big mountain stage with KOM bonus",
+    "top_results": [
+      {"rank":1,"rider":"Giulio Ciccone","points":661000,"kom_pts":152},
+      {"rank":2,"rider":"Sepp Kuss","points":null,"kom_pts":62},
+      {"rank":3,"rider":"Derek Gee","points":416000,"kom_pts":52}
+    ]
+  },
+  {
+    "stage": 20, "stage_type": "mountain",
+    "note": "Vingegaard wins final mountain stage",
+    "top_results": [
+      {"rank":1,"rider":"Jonas Vingegaard","points":580000},
+      {"rank":2,"rider":"Felix Gall","points":375000},
+      {"rank":3,"rider":"Jai Hindley","points":352000}
+    ]
+  }
+]

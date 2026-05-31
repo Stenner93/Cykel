@@ -1,0 +1,1570 @@
+[
+  {
+    "id": "ayco_bastiaens",
+    "full_name": "Ayco Bastiaens",
+    "short_name": "A. Bastiaens",
+    "team": "SQ",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "alberto_bettiol",
+    "full_name": "Alberto Bettiol",
+    "short_name": "A. Bettiol",
+    "team": "XDSAT",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "arnaud_de_lie",
+    "full_name": "Arnaud De Lie",
+    "short_name": "A. De Lie",
+    "team": "LOTTO",
+    "price": 8.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "afonso_eulálio",
+    "full_name": "Afonso Eulálio",
+    "short_name": "A. Eulálio",
+    "team": "B-V",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "amanuel_ghebreigzabhier",
+    "full_name": "Amanuel Ghebreigzabhier",
+    "short_name": "A. Ghebreigzabhier",
+    "team": "L-T",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "alan_hatherly",
+    "full_name": "Alan Hatherly",
+    "short_name": "A. Hatherly",
+    "team": "TJA",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "axel_huens",
+    "full_name": "Axel Huens",
+    "short_name": "A. Huens",
+    "team": "G-F",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "andreas_leknessund",
+    "full_name": "Andreas Leknessund",
+    "short_name": "A. Leknessund",
+    "team": "UM",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "arjen_livyns",
+    "full_name": "Arjen Livyns",
+    "short_name": "A. Livyns",
+    "team": "XDSAT",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "alessio_martinelli",
+    "full_name": "Alessio Martinelli",
+    "short_name": "A. Martinelli",
+    "team": "GP-B",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "andrea_mifsud",
+    "full_name": "Andrea Mifsud",
+    "short_name": "A. Mifsud",
+    "team": "TPV",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "antónio_morgado",
+    "full_name": "António Morgado",
+    "short_name": "A. Morgado",
+    "team": "UAETEXRG",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "andrea_pietrobon",
+    "full_name": "Andrea Pietrobon",
+    "short_name": "A. Pietrobon",
+    "team": "TPV",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "alessandro_pinarello",
+    "full_name": "Alessandro Pinarello",
+    "short_name": "A. Pinarello",
+    "team": "I-PT",
+    "price": 4.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "andrea_raccagni_noviero",
+    "full_name": "Andrea Raccagni Noviero",
+    "short_name": "A. R. Noviero",
+    "team": "SQ",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "alec_segaert",
+    "full_name": "Alec Segaert",
+    "short_name": "A. Segaert",
+    "team": "B-V",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "anders_skaarseth",
+    "full_name": "Anders Skaarseth",
+    "short_name": "A. Skaarseth",
+    "team": "UM",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "andrea_vendrame",
+    "full_name": "Andrea Vendrame",
+    "short_name": "A. Vendrame",
+    "team": "TJA",
+    "price": 5.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "aleksandr_vlasov",
+    "full_name": "Aleksandr Vlasov",
+    "short_name": "A. Vlasov",
+    "team": "RB-B",
+    "price": 6.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "adam_yates",
+    "full_name": "Adam Yates",
+    "short_name": "A. Yates",
+    "team": "UAETEXRG",
+    "price": 7.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "bart_lemmen",
+    "full_name": "Bart Lemmen",
+    "short_name": "B. Lemmen",
+    "team": "TV|L",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "ben_oconnor",
+    "full_name": "Ben O'Connor",
+    "short_name": "B. O'connor",
+    "team": "TJA",
+    "price": 7.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "brieuc_rolland",
+    "full_name": "Brieuc Rolland",
+    "short_name": "B. Rolland",
+    "team": "G-F",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "ben_turner",
+    "full_name": "Ben Turner",
+    "short_name": "B. Turner",
+    "team": "INEOSG",
+    "price": 6.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "ben_zwiehoff",
+    "full_name": "Ben Zwiehoff",
+    "short_name": "B. Zwiehoff",
+    "team": "RB-B",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "cyril_barthe",
+    "full_name": "Cyril Barthe",
+    "short_name": "C. Barthe",
+    "team": "G-F",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "chris_hamilton",
+    "full_name": "Chris Hamilton",
+    "short_name": "C. Hamilton",
+    "team": "TPP",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "chris_harper",
+    "full_name": "Chris Harper",
+    "short_name": "C. Harper",
+    "team": "QPCT",
+    "price": 4.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "christopher_juul_jensen",
+    "full_name": "Christopher Juul-Jensen",
+    "short_name": "C. J. jensen",
+    "team": "TJA",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "christian_scaroni",
+    "full_name": "Christian Scaroni",
+    "short_name": "C. Scaroni",
+    "team": "XDSAT",
+    "price": 5.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "callum_scotson",
+    "full_name": "Callum Scotson",
+    "short_name": "C. Scotson",
+    "team": "DALM",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "corbin_strong",
+    "full_name": "Corbin Strong",
+    "short_name": "C. Strong",
+    "team": "I-PT",
+    "price": 6.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "connor_swift",
+    "full_name": "Connor Swift",
+    "short_name": "C. Swift",
+    "team": "INEOSG",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "casper_van_uden",
+    "full_name": "Casper van Uden",
+    "short_name": "C. Van Uden",
+    "team": "TPP",
+    "price": 5.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "davide_ballerini",
+    "full_name": "Davide Ballerini",
+    "short_name": "D. Ballerini",
+    "team": "XDSAT",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "damiano_caruso",
+    "full_name": "Damiano Caruso",
+    "short_name": "D. Caruso",
+    "team": "B-V",
+    "price": 6.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "derek_gee",
+    "full_name": "Derek Gee",
+    "short_name": "D. Gee",
+    "team": "L-T",
+    "price": 8.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "david_gonzález",
+    "full_name": "David González",
+    "short_name": "D. González",
+    "team": "QPCT",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "dylan_groenewegen",
+    "full_name": "Dylan Groenewegen",
+    "short_name": "D. Groenewegen",
+    "team": "UTR",
+    "price": 10.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "david_de_la_cruz_melgarejo",
+    "full_name": "David de la Cruz Melgarejo",
+    "short_name": "D. L. De Cruz",
+    "team": "QPCT",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "pablo_sevilla_diego",
+    "full_name": "Pablo Sevilla Diego",
+    "short_name": "D. P. Sevilla",
+    "team": "TPV",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "davide_piganzoli",
+    "full_name": "Davide Piganzoli",
+    "short_name": "D. Piganzoli",
+    "team": "TV|L",
+    "price": 5.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "darren_rafferty",
+    "full_name": "Darren Rafferty",
+    "short_name": "D. Rafferty",
+    "team": "EFEEP",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "dion_smith",
+    "full_name": "Dion Smith",
+    "short_name": "D. Smith",
+    "team": "I-PT",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "diego_ulissi",
+    "full_name": "Diego Ulissi",
+    "short_name": "D. Ulissi",
+    "team": "XDSAT",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "dries_van_gestel",
+    "full_name": "Dries Van Gestel",
+    "short_name": "D. Van Gestel",
+    "team": "SQ",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "danny_van_poppel",
+    "full_name": "Danny van Poppel",
+    "short_name": "D. Van Poppel",
+    "team": "RB-B",
+    "price": 7.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "edoardo_affini",
+    "full_name": "Edoardo Affini",
+    "short_name": "E. Affini",
+    "team": "TV|L",
+    "price": 5.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "egan_bernal",
+    "full_name": "Egan Bernal",
+    "short_name": "E. Bernal",
+    "team": "INEOSG",
+    "price": 7.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "erlend_blikra",
+    "full_name": "Erlend Blikra",
+    "short_name": "E. Blikra",
+    "team": "UM",
+    "price": 6.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "enric_mas",
+    "full_name": "Enric Mas",
+    "short_name": "E. Mas",
+    "team": "MT",
+    "price": 7.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "edward_planckaert",
+    "full_name": "Edward Planckaert",
+    "short_name": "E. Planckaert",
+    "team": "A-D",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "elmar_reinders",
+    "full_name": "Elmar Reinders",
+    "short_name": "E. Reinders",
+    "team": "UTR",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "einer_rubio",
+    "full_name": "Einer Rubio",
+    "short_name": "E. Rubio",
+    "team": "MT",
+    "price": 5.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "embret_svestad_bårdseng",
+    "full_name": "Embret Svestad-Bårdseng",
+    "short_name": "E. S. bårdseng",
+    "team": "INEOSG",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "ethan_vernon",
+    "full_name": "Ethan Vernon",
+    "short_name": "E. Vernon",
+    "team": "I-PT",
+    "price": 8.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "edoardo_zambanini",
+    "full_name": "Edoardo Zambanini",
+    "short_name": "E. Zambanini",
+    "team": "B-V",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "enrico_zanoncello",
+    "full_name": "Enrico Zanoncello",
+    "short_name": "E. Zanoncello",
+    "team": "GP-B",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "francesco_busatto",
+    "full_name": "Francesco Busatto",
+    "short_name": "F. Busatto",
+    "team": "A-D",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "fabio_christen",
+    "full_name": "Fabio Christen",
+    "short_name": "F. Christen",
+    "team": "QPCT",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "filippo_conca",
+    "full_name": "Filippo Conca",
+    "short_name": "F. Conca",
+    "team": "TJA",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "frank_van_den_broek",
+    "full_name": "Frank van den Broek",
+    "short_name": "F. D. Van Broek",
+    "team": "TPP",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "fredrik_dversnes",
+    "full_name": "Fredrik Dversnes",
+    "short_name": "F. Dversnes",
+    "team": "UM",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "felix_engelhardt",
+    "full_name": "Felix Engelhardt",
+    "short_name": "F. Engelhardt",
+    "team": "TJA",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "felix_gall",
+    "full_name": "Felix Gall",
+    "short_name": "F. Gall",
+    "team": "DALM",
+    "price": 9.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "filippo_ganna",
+    "full_name": "Filippo Ganna",
+    "short_name": "F. Ganna",
+    "team": "INEOSG",
+    "price": 9.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "filippo_magli",
+    "full_name": "Filippo Magli",
+    "short_name": "F. Magli",
+    "team": "GP-B",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "fran_miholjević",
+    "full_name": "Fran Miholjević",
+    "short_name": "F. Miholjević",
+    "team": "B-V",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "florian_stork",
+    "full_name": "Florian Stork",
+    "short_name": "F. Stork",
+    "team": "TPCT",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "filippo_turconi",
+    "full_name": "Filippo Turconi",
+    "short_name": "F. Turconi",
+    "team": "GP-B",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "frederik_wandahl",
+    "full_name": "Frederik Wandahl",
+    "short_name": "F. Wandahl",
+    "team": "RB-B",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "filippo_zana",
+    "full_name": "Filippo Zana",
+    "short_name": "F. Zana",
+    "team": "SQ",
+    "price": 4.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "giovanni_aleotti",
+    "full_name": "Giovanni Aleotti",
+    "short_name": "G. Aleotti",
+    "team": "RB-B",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "giulio_ciccone",
+    "full_name": "Giulio Ciccone",
+    "short_name": "G. Ciccone",
+    "team": "L-T",
+    "price": 8.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "gianmarco_garofoli",
+    "full_name": "Gianmarco Garofoli",
+    "short_name": "G. Garofoli",
+    "team": "SQ",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "gijs_leemreize",
+    "full_name": "Gijs Leemreize",
+    "short_name": "G. Leemreize",
+    "team": "TPP",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "giovanni_lonardi",
+    "full_name": "Giovanni Lonardi",
+    "short_name": "G. Lonardi",
+    "team": "TPV",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "gianni_moscon",
+    "full_name": "Gianni Moscon",
+    "short_name": "G. Moscon",
+    "team": "RB-B",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "gregor_mühlberger",
+    "full_name": "Gregor Mühlberger",
+    "short_name": "G. Mühlberger",
+    "team": "DALM",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "giulio_pellizzari",
+    "full_name": "Giulio Pellizzari",
+    "short_name": "G. Pellizzari",
+    "team": "RB-B",
+    "price": 9.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "guillermo_thomas_silva",
+    "full_name": "Guillermo Thomas Silva",
+    "short_name": "G. T. Silva",
+    "team": "XDSAT",
+    "price": 4.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "hartthijs_de_vries",
+    "full_name": "Hartthijs de Vries",
+    "short_name": "H. De Vries",
+    "team": "UTR",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "harold_martín_lópez",
+    "full_name": "Harold Martín López",
+    "short_name": "H. M. López",
+    "team": "XDSAT",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "igor_arrieta",
+    "full_name": "Igor Arrieta",
+    "short_name": "I. Arrieta",
+    "team": "UAETEXRG",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "iván_garcía_cortina",
+    "full_name": "Iván García Cortina",
+    "short_name": "I. G. Cortina",
+    "team": "MT",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jefferson_alexander_cepeda",
+    "full_name": "Jefferson Alexander Cepeda",
+    "short_name": "J. A. Cepeda",
+    "team": "EFEEP",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "joao_almeida",
+    "full_name": "Joao Almeida",
+    "short_name": "J. Almeida",
+    "team": "UAETEXRG",
+    "price": 10.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jardi_christiaan_van_der_lee",
+    "full_name": "Jardi Christiaan van der Lee",
+    "short_name": "J. C. Van Der Lee",
+    "team": "EFEEP",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jan_christen",
+    "full_name": "Jan Christen",
+    "short_name": "J. Christen",
+    "team": "UAETEXRG",
+    "price": 6.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jasper_de_buyst",
+    "full_name": "Jasper De Buyst",
+    "short_name": "J. De Buyst",
+    "team": "LOTTO",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "—_(ikke_fundet_sikkert)",
+    "full_name": "— (ikke fundet sikkert)",
+    "short_name": "J. G. Martinez",
+    "team": "TPP",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jonas_geens",
+    "full_name": "Jonas Geens",
+    "short_name": "J. Geens",
+    "team": "A-D",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jack_haig",
+    "full_name": "Jack Haig",
+    "short_name": "J. Haig",
+    "team": "INEOSG",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jai_hindley",
+    "full_name": "Jai Hindley",
+    "short_name": "J. Hindley",
+    "team": "RB-B",
+    "price": 8.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jan_hirt",
+    "full_name": "Jan Hirt",
+    "short_name": "J. Hirt",
+    "team": "I-PT",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "johan_jacobs",
+    "full_name": "Johan Jacobs",
+    "short_name": "J. Jacobs",
+    "team": "G-F",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "joshua_kench",
+    "full_name": "Joshua Kench",
+    "short_name": "J. Kench",
+    "team": "G-F",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "james_knox",
+    "full_name": "James Knox",
+    "short_name": "J. Knox",
+    "team": "TPP",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "johannes_kulset",
+    "full_name": "Johannes Kulset",
+    "short_name": "J. Kulset",
+    "team": "UM",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jonathan_milan",
+    "full_name": "Jonathan Milan",
+    "short_name": "J. Milan",
+    "team": "L-T",
+    "price": 11.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jhonatan_narváez",
+    "full_name": "Jhonatan Narváez",
+    "short_name": "J. Narváez",
+    "team": "UAETEXRG",
+    "price": 5.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "juan_pedro_lópez",
+    "full_name": "Juan Pedro López",
+    "short_name": "J. P. López",
+    "team": "MT",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "johan_price_pejtersen",
+    "full_name": "Johan Price-Pejtersen",
+    "short_name": "J. P. pejtersen",
+    "team": "A-D",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jensen_plowright",
+    "full_name": "Jensen Plowright",
+    "short_name": "J. Plowright",
+    "team": "A-D",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "javier_romo",
+    "full_name": "Javier Romo",
+    "short_name": "J. Romo",
+    "team": "MT",
+    "price": 6.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jonas_rutsch",
+    "full_name": "Jonas Rutsch",
+    "short_name": "J. Rutsch",
+    "team": "LOTTO",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "johannes_staune_mittet",
+    "full_name": "Johannes Staune-Mittet",
+    "short_name": "J. S. mittet",
+    "team": "DALM",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "james_shaw",
+    "full_name": "James Shaw",
+    "short_name": "J. Shaw",
+    "team": "EFEEP",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jake_stewart",
+    "full_name": "Jake Stewart",
+    "short_name": "J. Stewart",
+    "team": "I-PT",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jasper_stuyven",
+    "full_name": "Jasper Stuyven",
+    "short_name": "J. Stuyven",
+    "team": "SQ",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jay_vine",
+    "full_name": "Jay Vine",
+    "short_name": "J. Vine",
+    "team": "UAETEXRG",
+    "price": 8.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "jonas_vingegaard",
+    "full_name": "Jonas Vingegaard",
+    "short_name": "J. Vingegaard",
+    "team": "TV|L",
+    "price": 17.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "koen_bouwman",
+    "full_name": "Koen Bouwman",
+    "short_name": "K. Bouwman",
+    "team": "TJA",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "kaden_groves",
+    "full_name": "Kaden Groves",
+    "short_name": "K. Groves",
+    "team": "A-D",
+    "price": 8.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "karsten_larsen_feldmann",
+    "full_name": "Karsten Larsen Feldmann",
+    "short_name": "K. L. Feldmann",
+    "team": "UTR",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "lorenzo_covili",
+    "full_name": "Lorenzo Covili",
+    "short_name": "L. Covili",
+    "team": "GP-B",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "lorenzo_crescioli",
+    "full_name": "Lorenzo Crescioli",
+    "short_name": "L. Crescioli",
+    "team": "TPV",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "lorenzo_fortunato",
+    "full_name": "Lorenzo Fortunato",
+    "short_name": "L. Fortunato",
+    "team": "XDSAT",
+    "price": 5.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "lorenzo_germani",
+    "full_name": "Lorenzo Germani",
+    "short_name": "L. Germani",
+    "team": "G-F",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "lukáš_kubiš",
+    "full_name": "Lukáš Kubiš",
+    "short_name": "L. Kubiš",
+    "team": "UTR",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "luka_mezgec",
+    "full_name": "Luka Mezgec",
+    "short_name": "L. Mezgec",
+    "team": "TJA",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "lorenzo_milesi",
+    "full_name": "Lorenzo Milesi",
+    "short_name": "L. Milesi",
+    "team": "MT",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "luca_mozzato",
+    "full_name": "Luca Mozzato",
+    "short_name": "L. Mozzato",
+    "team": "TPCT",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "luca_paletti",
+    "full_name": "Luca Paletti",
+    "short_name": "L. Paletti",
+    "team": "GP-B",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "lorenzo_rota",
+    "full_name": "Lorenzo Rota",
+    "short_name": "L. Rota",
+    "team": "LOTTO",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "liam_slock",
+    "full_name": "Liam Slock",
+    "short_name": "L. Slock",
+    "team": "LOTTO",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "liam_tuckwell",
+    "full_name": "Liam Tuckwell",
+    "short_name": "L. Tuckwell",
+    "team": "RB-B",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "lennert_van_eetvelt",
+    "full_name": "Lennert Van Eetvelt",
+    "short_name": "L. Van Eetvelt",
+    "team": "LOTTO",
+    "price": 7.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "luca_vergallito",
+    "full_name": "Luca Vergallito",
+    "short_name": "L. Vergallito",
+    "team": "A-D",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "larry_warbasse",
+    "full_name": "Larry Warbasse",
+    "short_name": "L. Warbasse",
+    "team": "TPCT",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "mattia_bais",
+    "full_name": "Mattia Bais",
+    "short_name": "M. Bais",
+    "team": "TPV",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "mark_donovan",
+    "full_name": "Mark Donovan",
+    "short_name": "M. Donovan",
+    "team": "QPCT",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "matevz_govekar",
+    "full_name": "Matevz Govekar",
+    "short_name": "M. Govekar",
+    "team": "B-V",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "marc_hirschi",
+    "full_name": "Marc Hirschi",
+    "short_name": "M. Hirschi",
+    "team": "TPCT",
+    "price": 5.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "markus_hoelgaard",
+    "full_name": "Markus Hoelgaard",
+    "short_name": "M. Hoelgaard",
+    "team": "UM",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "mathieu_kockelmann",
+    "full_name": "Mathieu Kockelmann",
+    "short_name": "M. Kockelmann",
+    "team": "LOTTO",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "mikel_landa",
+    "full_name": "Mikel Landa",
+    "short_name": "M. Landa",
+    "team": "SQ",
+    "price": 7.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "mirco_maestri",
+    "full_name": "Mirco Maestri",
+    "short_name": "M. Maestri",
+    "team": "TPV",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "matteo_malucelli",
+    "full_name": "Matteo Malucelli",
+    "short_name": "M. Malucelli",
+    "team": "XDSAT",
+    "price": 5.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "martin_marcellusi",
+    "full_name": "Martin Marcellusi",
+    "short_name": "M. Marcellusi",
+    "team": "GP-B",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "milan_menten",
+    "full_name": "Milan Menten",
+    "short_name": "M. Menten",
+    "team": "LOTTO",
+    "price": 5.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "matteo_moschetti",
+    "full_name": "Matteo Moschetti",
+    "short_name": "M. Moschetti",
+    "team": "QPCT",
+    "price": 5.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "mathijs_paasschens",
+    "full_name": "Mathijs Paasschens",
+    "short_name": "M. Paasschens",
+    "team": "B-V",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "max_poole",
+    "full_name": "Max Poole",
+    "short_name": "M. Poole",
+    "team": "TPP",
+    "price": 6.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "mathis_rondel",
+    "full_name": "Mathis Rondel",
+    "short_name": "M. Rondel",
+    "team": "TPCT",
+    "price": 5.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "magnus_sheffield",
+    "full_name": "Magnus Sheffield",
+    "short_name": "M. Sheffield",
+    "team": "INEOSG",
+    "price": 5.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "matteo_sobrero",
+    "full_name": "Matteo Sobrero",
+    "short_name": "M. Sobrero",
+    "team": "L-T",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "marc_soler",
+    "full_name": "Marc Soler",
+    "short_name": "M. Soler",
+    "team": "UAETEXRG",
+    "price": 5.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "michael_storer",
+    "full_name": "Michael Storer",
+    "short_name": "M. Storer",
+    "team": "TPCT",
+    "price": 7.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "manuele_tarozzi",
+    "full_name": "Manuele Tarozzi",
+    "short_name": "M. Tarozzi",
+    "team": "GP-B",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "martin_tjøtta",
+    "full_name": "Martin Tjøtta",
+    "short_name": "M. Tjøtta",
+    "team": "UM",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "michael_valgren",
+    "full_name": "Michael Valgren",
+    "short_name": "M. Valgren",
+    "team": "EFEEP",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "mick_van_dijke",
+    "full_name": "Mick van Dijke",
+    "short_name": "M. Van Dijke",
+    "team": "RB-B",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "maximilian_walscheid",
+    "full_name": "Maximilian Walscheid",
+    "short_name": "M. Walscheid",
+    "team": "L-T",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "niklas_larsen",
+    "full_name": "Niklas Larsen",
+    "short_name": "N. Larsen",
+    "team": "UTR",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "nelson_oliveira",
+    "full_name": "Nelson Oliveira",
+    "short_name": "N. Oliveira",
+    "team": "MT",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "nick_schultz",
+    "full_name": "Nick Schultz",
+    "short_name": "N. Schultz",
+    "team": "I-PT",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "nickolas_zukowsky",
+    "full_name": "Nickolas Zukowsky",
+    "short_name": "N. Zukowsky",
+    "team": "QPCT",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "orluis_aular",
+    "full_name": "Orluis Aular",
+    "short_name": "O. Aular",
+    "team": "MT",
+    "price": 6.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "oliver_naesen",
+    "full_name": "Oliver Naesen",
+    "short_name": "O. Naesen",
+    "team": "DALM",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "pascal_ackermann",
+    "full_name": "Pascal Ackermann",
+    "short_name": "P. Ackermann",
+    "team": "TJA",
+    "price": 6.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "paul_magnier",
+    "full_name": "Paul Magnier",
+    "short_name": "P. Magnier",
+    "team": "SQ",
+    "price": 9.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "paul_penhoët",
+    "full_name": "Paul Penhoët",
+    "short_name": "P. Penhoët",
+    "team": "G-F",
+    "price": 6.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "richard_carapaz",
+    "full_name": "Richard Carapaz",
+    "short_name": "R. Carapaz",
+    "team": "EFEEP",
+    "price": 8.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "rémi_cavagna",
+    "full_name": "Rémi Cavagna",
+    "short_name": "R. Cavagna",
+    "team": "G-F",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "robert_donaldson",
+    "full_name": "Robert Donaldson",
+    "short_name": "R. Donaldson",
+    "team": "TJA",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "robin_froidevaux",
+    "full_name": "Robin Froidevaux",
+    "short_name": "R. Froidevaux",
+    "team": "TPCT",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "ryan_mullen",
+    "full_name": "Ryan Mullen",
+    "short_name": "R. Mullen",
+    "team": "I-PT",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "remy_rochas",
+    "full_name": "Remy Rochas",
+    "short_name": "R. Rochas",
+    "team": "G-F",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "søjberg_pedersen_rasmus",
+    "full_name": "Søjberg Pedersen Rasmus",
+    "short_name": "R. S. Pedersen",
+    "team": "DALM",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "samuele_battistella",
+    "full_name": "Samuele Battistella",
+    "short_name": "S. Battistella",
+    "team": "EFEEP",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "sjoerd_bax",
+    "full_name": "Sjoerd Bax",
+    "short_name": "S. Bax",
+    "team": "QPCT",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "santiago_buitrago",
+    "full_name": "Santiago Buitrago",
+    "short_name": "S. Buitrago",
+    "team": "B-V",
+    "price": 6.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "simone_consonni",
+    "full_name": "Simone Consonni",
+    "short_name": "S. Consonni",
+    "team": "L-T",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "sean_flynn",
+    "full_name": "Sean Flynn",
+    "short_name": "S. Flynn",
+    "team": "TPP",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "simone_gualdi",
+    "full_name": "Simone Gualdi",
+    "short_name": "S. Gualdi",
+    "team": "LOTTO",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "sakarias_koller_løland",
+    "full_name": "Sakarias Koller Løland",
+    "short_name": "S. K. Løland",
+    "team": "UM",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "sepp_kuss",
+    "full_name": "Sepp Kuss",
+    "short_name": "S. Kuss",
+    "team": "TV|L",
+    "price": 6.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "sean_quinn",
+    "full_name": "Sean Quinn",
+    "short_name": "S. Quinn",
+    "team": "EFEEP",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "toon_aerts",
+    "full_name": "Toon Aerts",
+    "short_name": "T. Aerts",
+    "team": "LOTTO",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "thymen_arensman",
+    "full_name": "Thymen Arensman",
+    "short_name": "T. Arensman",
+    "team": "INEOSG",
+    "price": 7.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "tobias_bayer",
+    "full_name": "Tobias Bayer",
+    "short_name": "T. Bayer",
+    "team": "A-D",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "timo_de_jong",
+    "full_name": "Timo de Jong",
+    "short_name": "T. De Jong",
+    "team": "TPP",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "tord_gudmestad",
+    "full_name": "Tord Gudmestad",
+    "short_name": "T. Gudmestad",
+    "team": "DALM",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "timo_kielich",
+    "full_name": "Timo Kielich",
+    "short_name": "T. Kielich",
+    "team": "TV|L",
+    "price": 3.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "tomáš_kopecký",
+    "full_name": "Tomáš Kopecký",
+    "short_name": "T. Kopecký",
+    "team": "UTR",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "lund_andresen_tobias",
+    "full_name": "Lund Andresen Tobias",
+    "short_name": "T. L. Andresen",
+    "team": "DALM",
+    "price": 9.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "tim_naberman",
+    "full_name": "Tim Naberman",
+    "short_name": "T. Naberman",
+    "team": "TPP",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "tommaso_pesenti",
+    "full_name": "Tommaso Pesenti",
+    "short_name": "T. Pesenti",
+    "team": "TPV",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "tim_rex",
+    "full_name": "Tim Rex",
+    "short_name": "T. Rex",
+    "team": "TV|L",
+    "price": 3.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "torn_teutenberg_tim",
+    "full_name": "Torn Teutenberg Tim",
+    "short_name": "T. T. Teutenberg",
+    "team": "L-T",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "victor_campenaerts",
+    "full_name": "Victor Campenaerts",
+    "short_name": "V. Campenaerts",
+    "team": "TV|L",
+    "price": 4.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "william_barta",
+    "full_name": "William Barta",
+    "short_name": "W. Barta",
+    "team": "TPCT",
+    "price": 2.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "wilco_kelderman",
+    "full_name": "Wilco Kelderman",
+    "short_name": "W. Kelderman",
+    "team": "TV|L",
+    "price": 4.0,
+    "own_pct": 0.0
+  },
+  {
+    "id": "wout_poels",
+    "full_name": "Wout Poels",
+    "short_name": "W. Poels",
+    "team": "UTR",
+    "price": 4.5,
+    "own_pct": 0.0
+  },
+  {
+    "id": "ådne_holter",
+    "full_name": "Ådne Holter",
+    "short_name": "Å. Holter",
+    "team": "UM",
+    "price": 3.0,
+    "own_pct": 0.0
+  }
+]

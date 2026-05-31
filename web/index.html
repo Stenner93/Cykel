@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TdF Manager 2026</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo">🚴 TdF Manager 2026</div>
+    <div class="stage-badge" id="stageBadge">Indlæser…</div>
+  </div>
+</header>
+
+<main>
+  <!-- Stage info bar -->
+  <section class="stage-bar" id="stageBar" style="display:none">
+    <div class="stage-info">
+      <span class="stage-type-icon" id="stageTypeIcon"></span>
+      <span id="stageTypeName"></span>
+    </div>
+    <div class="stage-meta" id="stageMeta"></div>
+    <div class="generated-at" id="generatedAt"></div>
+  </section>
+
+  <!-- Team cards -->
+  <section class="teams-section">
+    <h2>3 Holdanbefalinger</h2>
+    <div class="teams-grid" id="teamsGrid">
+      <div class="loading-spinner">⟳ Indlæser anbefalinger…</div>
+    </div>
+  </section>
+
+  <!-- VeloScore table -->
+  <section class="veloscore-section" id="veloscoreSection" style="display:none">
+    <h2>VeloScore Predictions</h2>
+    <div class="table-wrapper">
+      <table class="vs-table" id="vsTable">
+        <thead>
+          <tr>
+            <th>#</th><th>Rytter</th><th>Total</th>
+            <th>VeloScore</th><th>Stjerner</th>
+          </tr>
+        </thead>
+        <tbody id="vsBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Top picks table -->
+  <section class="picks-section" id="picksSection" style="display:none">
+    <h2>Top 25 Ryttere — Forventet Score</h2>
+    <div class="table-wrapper">
+      <table class="picks-table" id="picksTable">
+        <thead>
+          <tr>
+            <th>#</th><th>Rytter</th><th>Hold</th><th>Pris</th>
+            <th>Forv. point</th><th>Signal</th><th>Begrundelse</th>
+          </tr>
+        </thead>
+        <tbody id="picksBody"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Data: VeloScore · ProcyclingStats · CyclingOracle · The Odds API &nbsp;|&nbsp;
+     Model kalibreret på Giro 2026-data</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

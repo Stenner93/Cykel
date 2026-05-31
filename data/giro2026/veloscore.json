@@ -1,0 +1,259 @@
+[
+  {
+    "stage": 1, "stage_type": "sprint",
+    "predictions": [
+      {"rank":1,"rider":"Jonathan Milan","total":699,"veloscore":6.1,"stars":4},
+      {"rank":2,"rider":"Dylan Groenewegen","total":576,"veloscore":5.1,"stars":3},
+      {"rank":3,"rider":"Paul Magnier","total":535,"veloscore":4.7,"stars":3},
+      {"rank":4,"rider":"Tobias Lund Andresen","total":533,"veloscore":4.7,"stars":3},
+      {"rank":5,"rider":"Kaden Groves","total":375,"veloscore":3.3,"stars":2},
+      {"rank":6,"rider":"Arnaud De Lie","total":356,"veloscore":3.1,"stars":2},
+      {"rank":7,"rider":"Ethan Vernon","total":327,"veloscore":2.9,"stars":2},
+      {"rank":8,"rider":"Ben Turner","total":154,"veloscore":1.3,"stars":2},
+      {"rank":9,"rider":"Casper van Uden","total":245,"veloscore":2.1,"stars":1},
+      {"rank":10,"rider":"Matteo Malucelli","total":286,"veloscore":2.5,"stars":2},
+      {"rank":11,"rider":"Pascal Ackermann","total":228,"veloscore":2.0,"stars":1},
+      {"rank":12,"rider":"Matteo Moschetti","total":132,"veloscore":1.1,"stars":1},
+      {"rank":13,"rider":"Erlend Blikra","total":174,"veloscore":1.5,"stars":1},
+      {"rank":14,"rider":"Orluis Aular","total":127,"veloscore":1.1,"stars":1},
+      {"rank":15,"rider":"Giovanni Lonardi","total":84,"veloscore":0.7,"stars":1},
+      {"rank":16,"rider":"Paul Penhoët","total":163,"veloscore":1.4,"stars":1},
+      {"rank":17,"rider":"Luca Mozzato","total":37,"veloscore":0.3,"stars":1},
+      {"rank":18,"rider":"Madis Mihkels","total":67,"veloscore":0.6,"stars":1}
+    ]
+  },
+  {
+    "stage": 4, "stage_type": "mountain",
+    "predictions": [
+      {"rank":1,"rider":"Christian Scaroni","total":874,"veloscore":null,"stars":4},
+      {"rank":2,"rider":"Javier Romo","total":802,"veloscore":null,"stars":4},
+      {"rank":3,"rider":"Jhonatan Narváez","total":730,"veloscore":null,"stars":4},
+      {"rank":4,"rider":"Jan Christen","total":701,"veloscore":null,"stars":4},
+      {"rank":5,"rider":"Giulio Ciccone","total":642,"veloscore":null,"stars":3},
+      {"rank":6,"rider":"Michael Valgren","total":626,"veloscore":null,"stars":3},
+      {"rank":7,"rider":"Lennert Van Eetvelt","total":568,"veloscore":null,"stars":3},
+      {"rank":8,"rider":"Andreas Leknessund","total":517,"veloscore":null,"stars":3},
+      {"rank":9,"rider":"Igor Arrieta","total":489,"veloscore":null,"stars":2},
+      {"rank":10,"rider":"Alessandro Pinarello","total":489,"veloscore":null,"stars":2},
+      {"rank":11,"rider":"Jonas Vingegaard","total":337,"veloscore":null,"stars":2},
+      {"rank":12,"rider":"Giulio Pellizzari","total":292,"veloscore":null,"stars":2},
+      {"rank":13,"rider":"Filippo Zana","total":248,"veloscore":null,"stars":2}
+    ]
+  },
+  {
+    "stage": 5, "stage_type": "sprint",
+    "predictions": [
+      {"rank":1,"rider":"Paul Magnier","total":1238,"veloscore":null,"stars":4},
+      {"rank":2,"rider":"Jonathan Milan","total":1154,"veloscore":null,"stars":4},
+      {"rank":3,"rider":"Tobias Lund Andresen","total":1066,"veloscore":null,"stars":3},
+      {"rank":4,"rider":"Dylan Groenewegen","total":971,"veloscore":null,"stars":3},
+      {"rank":5,"rider":"Ethan Vernon","total":863,"veloscore":null,"stars":3},
+      {"rank":6,"rider":"Madis Mihkels","total":639,"veloscore":null,"stars":2},
+      {"rank":7,"rider":"Matteo Malucelli","total":594,"veloscore":null,"stars":2},
+      {"rank":8,"rider":"Orluis Aular","total":474,"veloscore":null,"stars":2},
+      {"rank":9,"rider":"Ben Turner","total":446,"veloscore":null,"stars":2},
+      {"rank":10,"rider":"Pascal Ackermann","total":445,"veloscore":null,"stars":2}
+    ]
+  },
+  {
+    "stage": 6, "stage_type": "mountain",
+    "predictions": [
+      {"rank":1,"rider":"Jonas Vingegaard","total":1300,"veloscore":10.0,"stars":5},
+      {"rank":2,"rider":"Giulio Pellizzari","total":1214,"veloscore":8.1,"stars":4},
+      {"rank":3,"rider":"Felix Gall","total":1065,"veloscore":5.7,"stars":3},
+      {"rank":4,"rider":"Javier Romo","total":856,"veloscore":5.7,"stars":3},
+      {"rank":5,"rider":"Thymen Arensman","total":856,"veloscore":5.7,"stars":3},
+      {"rank":6,"rider":"Lennert Van Eetvelt","total":765,"veloscore":5.7,"stars":3},
+      {"rank":7,"rider":"Giulio Ciccone","total":467,"veloscore":3.0,"stars":2},
+      {"rank":8,"rider":"Jhonatan Narváez","total":389,"veloscore":3.0,"stars":2},
+      {"rank":9,"rider":"Michael Valgren","total":218,"veloscore":1.5,"stars":1}
+    ]
+  },
+  {
+    "stage": 7, "stage_type": "mountain",
+    "predictions": [
+      {"rank":1,"rider":"Jan Christen","total":836,"veloscore":7.0,"stars":4},
+      {"rank":2,"rider":"Michael Valgren","total":749,"veloscore":6.2,"stars":3},
+      {"rank":3,"rider":"Jhonatan Narváez","total":747,"veloscore":6.2,"stars":3},
+      {"rank":4,"rider":"Christian Scaroni","total":648,"veloscore":5.4,"stars":3},
+      {"rank":5,"rider":"Giulio Ciccone","total":636,"veloscore":5.3,"stars":3},
+      {"rank":6,"rider":"Michael Valgren","total":572,"veloscore":4.8,"stars":3},
+      {"rank":7,"rider":"Jonas Vingegaard","total":491,"veloscore":4.1,"stars":2},
+      {"rank":8,"rider":"Filippo Zana","total":464,"veloscore":3.9,"stars":2},
+      {"rank":9,"rider":"Thomas Silva","total":416,"veloscore":3.5,"stars":2},
+      {"rank":10,"rider":"Diego Ulissi","total":204,"veloscore":2.5,"stars":2}
+    ]
+  },
+  {
+    "stage": 8, "stage_type": "mountain",
+    "predictions": [
+      {"rank":1,"rider":"Jonas Vingegaard","total":1219,"veloscore":null,"stars":4},
+      {"rank":2,"rider":"Lennart Van Eetvelt","total":945,"veloscore":null,"stars":4},
+      {"rank":3,"rider":"Mathys Rondel","total":751,"veloscore":null,"stars":3},
+      {"rank":4,"rider":"Javier Romo","total":751,"veloscore":null,"stars":3},
+      {"rank":5,"rider":"Jan Christen","total":625,"veloscore":null,"stars":3},
+      {"rank":6,"rider":"Eimer Rubio","total":467,"veloscore":null,"stars":2},
+      {"rank":7,"rider":"Thymen Arensman","total":407,"veloscore":null,"stars":2}
+    ]
+  },
+  {
+    "stage": 9, "stage_type": "tt",
+    "predictions": [
+      {"rank":1,"rider":"Filippo Ganna","total":1500,"veloscore":10.0,"stars":5},
+      {"rank":2,"rider":"Thymen Arensman","total":1128,"veloscore":null,"stars":4},
+      {"rank":3,"rider":"Alex Segaert","total":1008,"veloscore":6.7,"stars":3},
+      {"rank":4,"rider":"Jai Medley","total":856,"veloscore":5.7,"stars":3},
+      {"rank":5,"rider":"Thymen Arensman","total":856,"veloscore":5.7,"stars":3},
+      {"rank":6,"rider":"Lennert Van Eetvelt","total":765,"veloscore":5.7,"stars":3},
+      {"rank":7,"rider":"Michael Storer","total":515,"veloscore":3.4,"stars":2},
+      {"rank":8,"rider":"Ben O'Connor","total":265,"veloscore":2.3,"stars":2},
+      {"rank":9,"rider":"Derek Gee-West","total":338,"veloscore":2.3,"stars":2}
+    ]
+  },
+  {
+    "stage": 10, "stage_type": "mountain",
+    "predictions": [
+      {"rank":1,"rider":"Giulio Ciccone","total":1224,"veloscore":null,"stars":4},
+      {"rank":2,"rider":"Jan Christen","total":1238,"veloscore":null,"stars":4},
+      {"rank":3,"rider":"Jhonatan Narváez","total":1129,"veloscore":null,"stars":4},
+      {"rank":4,"rider":"Javier Romo","total":793,"veloscore":null,"stars":3},
+      {"rank":5,"rider":"Filippo Zana","total":793,"veloscore":null,"stars":3},
+      {"rank":6,"rider":"Christian Scaroni","total":793,"veloscore":null,"stars":3},
+      {"rank":7,"rider":"Andreas Leknessund","total":345,"veloscore":null,"stars":2}
+    ]
+  },
+  {
+    "stage": 11, "stage_type": "hilly",
+    "predictions": [
+      {"rank":1,"rider":"Tobias Lund Andresen","total":851,"veloscore":7.7,"stars":4},
+      {"rank":2,"rider":"Paul Magnier","total":888,"veloscore":7.7,"stars":4},
+      {"rank":3,"rider":"Ben Turner","total":834,"veloscore":7.6,"stars":4},
+      {"rank":4,"rider":"Orluis Aular","total":848,"veloscore":6.1,"stars":3},
+      {"rank":5,"rider":"Jhonatan Narváez","total":665,"veloscore":5.3,"stars":3},
+      {"rank":6,"rider":"Jonathan Milan","total":614,"veloscore":5.6,"stars":3},
+      {"rank":7,"rider":"Dylan Groenewegen","total":432,"veloscore":3.9,"stars":2},
+      {"rank":8,"rider":"Ethan Vernon","total":432,"veloscore":3.5,"stars":2},
+      {"rank":9,"rider":"Jan Christen","total":242,"veloscore":2.2,"stars":2},
+      {"rank":10,"rider":"Filippo Ganna","total":152,"veloscore":3.7,"stars":2}
+    ]
+  },
+  {
+    "stage": 12, "stage_type": "mountain",
+    "predictions": [
+      {"rank":1,"rider":"Jhonatan Narváez","total":2352,"veloscore":null,"stars":4},
+      {"rank":2,"rider":"Giulio Ciccone","total":2391,"veloscore":null,"stars":4},
+      {"rank":3,"rider":"Christian Scaroni","total":1800,"veloscore":null,"stars":3},
+      {"rank":4,"rider":"Jan Christen","total":1067,"veloscore":null,"stars":3},
+      {"rank":5,"rider":"Filippo Ganna","total":987,"veloscore":null,"stars":3},
+      {"rank":6,"rider":"Lorenzo Strong","total":908,"veloscore":null,"stars":3}
+    ]
+  },
+  {
+    "stage": 13, "stage_type": "mountain",
+    "predictions": [
+      {"rank":1,"rider":"Jonas Vingegaard","total":1299,"veloscore":10.0,"stars":5},
+      {"rank":2,"rider":"Felix Gall","total":1055,"veloscore":6.8,"stars":3},
+      {"rank":3,"rider":"Thymen Arensman","total":887,"veloscore":6.8,"stars":3},
+      {"rank":4,"rider":"Giulio Ciccone","total":830,"veloscore":4.1,"stars":2},
+      {"rank":5,"rider":"Einer Rubio","total":529,"veloscore":4.1,"stars":2},
+      {"rank":6,"rider":"Giulio Pellizzari","total":578,"veloscore":3.6,"stars":2},
+      {"rank":7,"rider":"Ben O'Connor","total":481,"veloscore":3.5,"stars":2},
+      {"rank":8,"rider":"Jai Hindley","total":449,"veloscore":3.5,"stars":2},
+      {"rank":9,"rider":"Ben O'Connor","total":420,"veloscore":3.2,"stars":2},
+      {"rank":10,"rider":"Michael Storer","total":385,"veloscore":3.0,"stars":2}
+    ]
+  },
+  {
+    "stage": 14, "stage_type": "sprint",
+    "predictions": [
+      {"rank":1,"rider":"Jonathan Milan","total":1015,"veloscore":9.2,"stars":4},
+      {"rank":2,"rider":"Paul Magnier","total":998,"veloscore":8.3,"stars":4},
+      {"rank":3,"rider":"Dylan Groenewegen","total":913,"veloscore":8.3,"stars":4},
+      {"rank":4,"rider":"Tobias Lund Andresen","total":708,"veloscore":5.7,"stars":3},
+      {"rank":5,"rider":"Ethan Vernon","total":566,"veloscore":5.7,"stars":3},
+      {"rank":6,"rider":"Madis Mihkels","total":506,"veloscore":5.1,"stars":3},
+      {"rank":7,"rider":"Matteo Malucelli","total":506,"veloscore":4.3,"stars":2},
+      {"rank":8,"rider":"Pascal Ackermann","total":461,"veloscore":4.3,"stars":2},
+      {"rank":9,"rider":"Casper van Uden","total":258,"veloscore":2.0,"stars":1},
+      {"rank":10,"rider":"Ben Turner","total":288,"veloscore":2.6,"stars":2}
+    ]
+  },
+  {
+    "stage": 15, "stage_type": "mountain",
+    "predictions": [
+      {"rank":1,"rider":"Jonas Vingegaard","total":1203,"veloscore":9.7,"stars":4},
+      {"rank":2,"rider":"Felix Gall","total":1055,"veloscore":null,"stars":4},
+      {"rank":3,"rider":"Giulio Ciccone","total":909,"veloscore":null,"stars":3},
+      {"rank":4,"rider":"Davide Piganzoli","total":558,"veloscore":null,"stars":3},
+      {"rank":5,"rider":"Wood Poels","total":751,"veloscore":null,"stars":3},
+      {"rank":6,"rider":"Javier Romo","total":712,"veloscore":null,"stars":3},
+      {"rank":7,"rider":"Michael Storer","total":506,"veloscore":null,"stars":2},
+      {"rank":8,"rider":"Mathys Rondel","total":302,"veloscore":null,"stars":2}
+    ]
+  },
+  {
+    "stage": 16, "stage_type": "mountain",
+    "predictions": [
+      {"rank":1,"rider":"Jhonatan Narváez","total":2551,"veloscore":null,"stars":4},
+      {"rank":2,"rider":"Giulio Ciccone","total":2395,"veloscore":null,"stars":4},
+      {"rank":3,"rider":"Christian Scaroni","total":1800,"veloscore":null,"stars":4},
+      {"rank":4,"rider":"Jan Christen","total":1400,"veloscore":null,"stars":3},
+      {"rank":5,"rider":"Filippo Ganna","total":1100,"veloscore":null,"stars":3}
+    ]
+  },
+  {
+    "stage": 17, "stage_type": "mountain",
+    "predictions": [
+      {"rank":1,"rider":"Jhonatan Narváez","total":1670,"veloscore":8.3,"stars":4},
+      {"rank":2,"rider":"Jensen Plowright","total":1470,"veloscore":8.1,"stars":4},
+      {"rank":3,"rider":"Alberto Bettiol","total":1260,"veloscore":null,"stars":3},
+      {"rank":4,"rider":"Trym Andersen","total":960,"veloscore":null,"stars":3},
+      {"rank":5,"rider":"Giulio Ciccone","total":628,"veloscore":null,"stars":3},
+      {"rank":6,"rider":"Ben Turner","total":628,"veloscore":null,"stars":3}
+    ]
+  },
+  {
+    "stage": 18, "stage_type": "mountain",
+    "predictions": [
+      {"rank":1,"rider":"Jonas Vingegaard","total":1759,"veloscore":8.3,"stars":4},
+      {"rank":2,"rider":"Giulio Ciccone","total":1366,"veloscore":7.2,"stars":4},
+      {"rank":3,"rider":"Felix Gall","total":1090,"veloscore":5.7,"stars":3},
+      {"rank":4,"rider":"Einer Rubio","total":1071,"veloscore":5.6,"stars":3},
+      {"rank":5,"rider":"Wood Poels","total":909,"veloscore":4.8,"stars":3},
+      {"rank":6,"rider":"Davide Piganzoli","total":787,"veloscore":4.1,"stars":2},
+      {"rank":7,"rider":"Enric Mas","total":684,"veloscore":3.6,"stars":2},
+      {"rank":8,"rider":"Damiano Caruso","total":440,"veloscore":2.3,"stars":2}
+    ]
+  },
+  {
+    "stage": 19, "stage_type": "mountain",
+    "predictions": [
+      {"rank":1,"rider":"Jonas Vingegaard","total":1439,"veloscore":9.0,"stars":4},
+      {"rank":2,"rider":"Giulio Ciccone","total":1000,"veloscore":6.9,"stars":3},
+      {"rank":3,"rider":"Felix Gall","total":920,"veloscore":5.9,"stars":3},
+      {"rank":4,"rider":"Jai Hindley","total":570,"veloscore":3.5,"stars":2},
+      {"rank":5,"rider":"Thymen Arensman","total":450,"veloscore":2.8,"stars":2},
+      {"rank":6,"rider":"Einer Rubio","total":420,"veloscore":2.5,"stars":2}
+    ]
+  },
+  {
+    "stage": 21, "stage_type": "sprint",
+    "predictions": [
+      {"rank":1,"rider":"Paul Magnier","total":1077,"veloscore":9.8,"stars":4},
+      {"rank":2,"rider":"Jonathan Milan","total":953,"veloscore":8.7,"stars":4},
+      {"rank":3,"rider":"Dylan Groenewegen","total":933,"veloscore":8.5,"stars":4},
+      {"rank":4,"rider":"Tobias Lund Andresen","total":754,"veloscore":6.9,"stars":3},
+      {"rank":5,"rider":"Casper van Uden","total":598,"veloscore":5.4,"stars":3},
+      {"rank":6,"rider":"Matteo Malucelli","total":542,"veloscore":4.9,"stars":2},
+      {"rank":7,"rider":"Madis Mihkels","total":485,"veloscore":4.4,"stars":2},
+      {"rank":8,"rider":"Ben Turner","total":467,"veloscore":4.2,"stars":2},
+      {"rank":9,"rider":"Paul Penhoët","total":367,"veloscore":3.3,"stars":2},
+      {"rank":10,"rider":"Luca Mozzato","total":319,"veloscore":2.9,"stars":2},
+      {"rank":11,"rider":"Jensen Plowright","total":288,"veloscore":2.6,"stars":1},
+      {"rank":12,"rider":"Corbin Strong","total":283,"veloscore":2.6,"stars":1},
+      {"rank":13,"rider":"Orluis Aular","total":278,"veloscore":2.5,"stars":1},
+      {"rank":14,"rider":"Giovanni Lonardi","total":225,"veloscore":2.0,"stars":1},
+      {"rank":15,"rider":"Toon Aerts","total":107,"veloscore":1.0,"stars":1}
+    ]
+  }
+]

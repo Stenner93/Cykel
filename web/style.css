@@ -1,0 +1,271 @@
+/* ============================================================
+   TdF Manager 2026 — Cycling-themed dark UI
+   ============================================================ */
+:root {
+  --yellow:  #FFD700;
+  --green:   #00C853;
+  --red:     #E53935;
+  --blue:    #1E88E5;
+  --bg:      #0F1117;
+  --surface: #1A1D27;
+  --card:    #21263A;
+  --border:  #2E3450;
+  --text:    #E8EAF0;
+  --muted:   #7B82A0;
+  --safe:    #00C853;
+  --value:   #1E88E5;
+  --attack:  #E53935;
+  --font:    'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* ── Header ── */
+header {
+  background: linear-gradient(135deg, #1A1D27 0%, #0F1117 100%);
+  border-bottom: 2px solid var(--yellow);
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--yellow);
+  letter-spacing: 0.5px;
+}
+.stage-badge {
+  background: var(--yellow);
+  color: #000;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ── Stage bar ── */
+.stage-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+}
+.stage-bar > * { max-width: 1200px; margin: 0 auto; }
+.stage-info { font-size: 1rem; font-weight: 600; display: flex; gap: 10px; align-items: center; }
+.stage-type-icon { font-size: 1.4rem; }
+.stage-meta { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.generated-at { color: var(--muted); font-size: 0.75rem; margin-top: 2px; }
+
+/* ── Main layout ── */
+main { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+
+section + section { margin-top: 48px; }
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Team grid ── */
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.team-card {
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.15s;
+}
+.team-card:hover { transform: translateY(-2px); }
+
+.team-header {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.team-header.safe   { background: linear-gradient(135deg, #00432e 0%, #1a1d27 100%); border-left: 4px solid var(--safe); }
+.team-header.value  { background: linear-gradient(135deg, #0d3060 0%, #1a1d27 100%); border-left: 4px solid var(--value); }
+.team-header.attack { background: linear-gradient(135deg, #5c0d0d 0%, #1a1d27 100%); border-left: 4px solid var(--attack); }
+
+.team-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+.safe   .team-label { color: var(--safe); }
+.value  .team-label { color: var(--value); }
+.attack .team-label { color: var(--attack); }
+
+.team-score {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--yellow);
+}
+.team-score-sub { font-size: 0.75rem; color: var(--muted); }
+
+.team-meta {
+  display: flex;
+  gap: 16px;
+  padding: 0 20px 12px;
+  flex-wrap: wrap;
+}
+.meta-pill {
+  background: rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* Captain strip */
+.captain-strip {
+  margin: 0 20px 12px;
+  padding: 10px 14px;
+  background: rgba(255, 215, 0, 0.07);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 8px;
+}
+.captain-strip .cap-label { font-size: 0.7rem; color: var(--yellow); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+.captain-strip .cap-name  { font-size: 1rem; font-weight: 700; margin: 2px 0; }
+.captain-strip .cap-why   { font-size: 0.78rem; color: var(--muted); }
+
+/* Rider list */
+.rider-list { padding: 0 20px 20px; }
+.rider-row {
+  display: grid;
+  grid-template-columns: 1fr 48px 70px 60px;
+  gap: 6px;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.rider-row:last-child { border-bottom: none; }
+.rider-name { font-weight: 500; }
+.rider-name.is-captain { color: var(--yellow); }
+.rider-name.is-captain::after { content: " ★"; font-size: 0.8em; }
+.rider-team { color: var(--muted); font-size: 0.75rem; }
+.rider-price { color: var(--muted); text-align: right; font-size: 0.8rem; }
+.rider-pts { text-align: right; font-size: 0.8rem; color: var(--green); font-weight: 600; }
+
+/* Assessment bar */
+.assessment-bar {
+  padding: 12px 20px 16px;
+  background: rgba(0,0,0,0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+}
+.assess-item { text-align: center; }
+.assess-val  { font-size: 1rem; font-weight: 700; }
+.assess-lbl  { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.risk-low  { color: var(--green); }
+.risk-mid  { color: var(--yellow); }
+.risk-high { color: var(--red); }
+
+/* ── Tables ── */
+.table-wrapper { overflow-x: auto; }
+
+.vs-table, .picks-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.vs-table th, .picks-table th {
+  text-align: left;
+  padding: 8px 12px;
+  background: var(--surface);
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--border);
+}
+.vs-table td, .picks-table td {
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.vs-table tr:hover td, .picks-table tr:hover td {
+  background: rgba(255,255,255,0.03);
+}
+
+.stars { color: var(--yellow); letter-spacing: -1px; }
+.veloscore-val { font-weight: 700; color: var(--yellow); }
+.total-val { font-weight: 600; }
+
+.signal-bar {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+.signal-segment {
+  height: 6px;
+  border-radius: 3px;
+  flex: 1;
+  background: var(--border);
+}
+.signal-segment.filled { background: var(--green); }
+
+/* Price colouring */
+.price-high  { color: var(--red); font-weight: 700; }
+.price-mid   { color: var(--yellow); }
+.price-low   { color: var(--green); }
+
+/* Loading */
+.loading-spinner {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px;
+  color: var(--muted);
+  font-size: 1.1rem;
+  animation: spin-text 1.5s linear infinite;
+}
+@keyframes spin-text { from { opacity: 0.4; } 50% { opacity: 1; } to { opacity: 0.4; } }
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  border-top: 1px solid var(--border);
+  margin-top: 64px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .teams-grid { grid-template-columns: 1fr; }
+  main { padding: 16px; }
+  .assessment-bar { grid-template-columns: 1fr 1fr; }
+}
