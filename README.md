@@ -5,6 +5,9 @@ Fantasy cycling optimizer for holdet.dk — Tour de France 2026.
 ## Daglig brug
 
 ```bash
+# 0. (Én gang) Opdater dit nuværende hold i:
+#    data/current_team.json  ← redigér manuelt med dine 8 ryttere + bank-saldo
+
 # 1. Upload VeloScore-screenshot til Claude → Claude gemmer JSON til data/stage_XX_veloscore.json
 
 # 2. Kør optimizer
@@ -13,6 +16,19 @@ python run_daily.py --stage 5 --type sprint
 # 3. Push til GitHub → siden opdaterer automatisk
 git add web/data/recommendations.json && git commit -m "Etape 5" && git push
 ```
+
+### data/current_team.json
+```json
+{
+  "bank_M": 5.2,
+  "riders": [
+    "Jonas Vingegaard",
+    "Jonathan Milan",
+    "..."
+  ]
+}
+```
+Hold-anbefalingerne beregner automatisk hvilke ryttere du skal købe/sælge og hvad det koster (inkl. 1% gebyr). Siden viser også et ubegrænset "Bedst muligt"-hold nederst.
 
 ## Etapetyper
 - `sprint` — massespurt
