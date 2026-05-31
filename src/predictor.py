@@ -163,6 +163,10 @@ def predict_rider(
         "win_prob":      round(composite, 4),
         "variance":      round(variance),
         "reasoning":     ", ".join(reasons),
+        # disc_key / disc_raw expose the exact CyclingOracle rating used
+        # so the UI can show e.g. "SPR: 87" instead of generic "discipline"
+        "disc_key":      disc_key,          # e.g. "SPR", "MTN", "ITT"
+        "disc_raw":      round(disc_raw, 1), # 0-100 raw CyclingOracle value
         "signal_scores": {
             "veloscore":  round(vs_signal, 3),
             "odds":       round(odds_signal, 3),

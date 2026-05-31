@@ -337,7 +337,9 @@
         "buy_cost_M": 50.5,
         "net_cost_M": -20.5,
         "balance_after_M": 25.5,
-        "affordable": true
+        "affordable": true,
+        "face_buy_M": 50.0,
+        "fee_M": 0.5
       }
     },
     {
@@ -591,7 +593,9 @@
         "buy_cost_M": 38.38,
         "net_cost_M": -21.12,
         "balance_after_M": 26.12,
-        "affordable": true
+        "affordable": true,
+        "face_buy_M": 38.0,
+        "fee_M": 0.38
       }
     },
     {
@@ -845,7 +849,9 @@
         "buy_cost_M": 38.38,
         "net_cost_M": -21.12,
         "balance_after_M": 26.12,
-        "affordable": true
+        "affordable": true,
+        "face_buy_M": 38.0,
+        "fee_M": 0.38
       }
     }
   ],
@@ -1143,7 +1149,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "jonathan_milan",
@@ -1159,7 +1167,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "dylan_groenewegen",
@@ -1175,7 +1185,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "lund_andresen_tobias",
@@ -1191,7 +1203,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "casper_van_uden",
@@ -1207,7 +1221,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "matteo_malucelli",
@@ -1223,7 +1239,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "ben_turner",
@@ -1239,7 +1257,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "paul_penhoët",
@@ -1255,7 +1275,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "luca_mozzato",
@@ -1271,7 +1293,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "corbin_strong",
@@ -1287,7 +1311,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "jensen_plowright",
@@ -1303,7 +1329,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "orluis_aular",
@@ -1319,7 +1347,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "giovanni_lonardi",
@@ -1335,7 +1365,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "toon_aerts",
@@ -1351,7 +1383,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "ayco_bastiaens",
@@ -1367,7 +1401,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "alberto_bettiol",
@@ -1383,7 +1419,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "arnaud_de_lie",
@@ -1399,7 +1437,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "afonso_eulálio",
@@ -1415,7 +1455,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "amanuel_ghebreigzabhier",
@@ -1431,7 +1473,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "alan_hatherly",
@@ -1447,7 +1491,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "axel_huens",
@@ -1463,7 +1509,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "andreas_leknessund",
@@ -1479,7 +1527,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "arjen_livyns",
@@ -1495,7 +1545,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "alessio_martinelli",
@@ -1511,7 +1563,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     },
     {
       "rider_id": "andrea_mifsud",
@@ -1527,7 +1581,9 @@
         "odds": 0.0,
         "discipline": 0.5,
         "form": 0.5
-      }
+      },
+      "disc_key": "SPR",
+      "disc_raw": 50.0
     }
   ]
 }

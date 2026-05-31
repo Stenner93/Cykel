@@ -194,7 +194,9 @@ def _transfer_analysis(
     to_buy  = [r for r in team["team"] if r["rider_id"] in to_buy_ids]
 
     proceeds_M    = sum(r["price"] for r in to_sell)
-    buy_cost_M    = sum(r["price"] * (1 + TRANSFER_FEE) for r in to_buy)
+    face_buy_M    = sum(r["price"] for r in to_buy)            # sticker price
+    fee_M         = face_buy_M * TRANSFER_FEE                  # 1% gebyr
+    buy_cost_M    = face_buy_M + fee_M                         # total outlay
     balance_after = bank_M + proceeds_M - buy_cost_M
 
     return {
@@ -212,7 +214,9 @@ def _transfer_analysis(
         ],
         "n_transfers":     len(to_buy_ids),
         "proceeds_M":      round(proceeds_M, 2),
-        "buy_cost_M":      round(buy_cost_M, 2),
+        "face_buy_M":      round(face_buy_M, 2),   # købers listepris
+        "fee_M":           round(fee_M, 2),         # 1% transfergebyr
+        "buy_cost_M":      round(buy_cost_M, 2),    # total (inkl. gebyr)
         "net_cost_M":      round(buy_cost_M - proceeds_M, 2),
         "balance_after_M": round(balance_after, 2),
         "affordable":      balance_after >= -0.01,

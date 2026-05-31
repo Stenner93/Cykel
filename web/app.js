@@ -12,19 +12,27 @@ const STAGE_TYPE_META = {
 };
 
 const LABEL_META = {
-  safe:   { dk: 'SIKKER',         desc: 'Maksimér forventet score med lave risici' },
-  value:  { dk: 'VÆRDI',          desc: 'Budget-ryttere frigiver penge til en stjerne' },
-  attack: { dk: 'ANGREB',         desc: 'Høj variance — potentiel overraskelse vinder' },
-  best:   { dk: 'BEDST MULIGT',   desc: 'Ubegrænset hold — 50M fra scratch, ingen transferomkostninger' },
+  safe:   { dk: 'SIKKER',       desc: 'Maksimér forventet score med lave risici' },
+  value:  { dk: 'VÆRDI',        desc: 'Budget-ryttere frigiver penge til en stjerne' },
+  attack: { dk: 'ANGREB',       desc: 'Høj variance — potentiel overraskelse vinder' },
+  best:   { dk: 'BEDST MULIGT', desc: 'Ubegrænset hold — 50M fra scratch, ingen transferomkostninger' },
+};
+
+// CyclingOracle discipline key → human label
+const DISC_LABELS = {
+  SPR: 'Sprint', MTN: 'Bjerg', ITT: 'Enkeltstart',
+  HLL: 'Bakket', COB: 'Brosten', GC: 'GC', AVG: 'Disciplin',
 };
 
 function fmt(n) {
   if (n == null || isNaN(n)) return '–';
   return n.toLocaleString('da-DK');
 }
-function fmtM(n) {
+function fmtM(n, forceSign) {
   if (n == null || isNaN(n)) return '–';
-  return n.toFixed(1) + 'M';
+  const s = Math.abs(n).toFixed(2) + 'M';
+  if (forceSign) return (n >= 0 ? '+' : '−') + s;
+  return s;
 }
 function fmtK(n) {
   if (n == null || isNaN(n)) return '–';
@@ -38,14 +46,32 @@ function priceClass(p) {
   if (p >= 6) return 'price-mid';
   return 'price-low';
 }
-function signalBar(signals) {
-  const keys = ['veloscore', 'odds', 'discipline', 'form'];
-  const segs = keys.map(k => {
-    const v = signals?.[k] ?? 0;
+
+/**
+ * 4-segment signal bar.
+ * disc_key: "SPR" / "MTN" / "ITT" etc. — shown as tooltip label on disc segment.
+ * disc_raw: raw 0-100 CyclingOracle value — shown in tooltip.
+ */
+function signalBar(signals, discKey, discRaw) {
+  const dk    = (discKey || 'AVG').toUpperCase();
+  const label = DISC_LABELS[dk] || dk;
+  const segs  = [
+    { k: 'veloscore',  lbl: 'VeloScore' },
+    { k: 'odds',       lbl: 'Odds' },
+    { k: 'discipline', lbl: discRaw != null ? `${label}: ${discRaw.toFixed(0)}/100` : label },
+    { k: 'form',       lbl: 'Form' },
+  ].map(({ k, lbl }) => {
+    const v      = signals?.[k] ?? 0;
     const filled = v > 0.3 ? 'filled' : '';
-    return `<div class="signal-segment ${filled}" title="${k}: ${(v * 100).toFixed(0)}%"></div>`;
+    const title  = k === 'discipline'
+      ? lbl   // already has the nice label from above
+      : `${lbl}: ${(v * 100).toFixed(0)}%`;
+    return `<div class="signal-segment ${filled}" title="${title}"></div>`;
   }).join('');
-  return `<div class="signal-bar">${segs}</div>`;
+
+  // Compact label beneath the bar showing the discipline type
+  const discBadge = `<span class="disc-badge" title="${label}">${dk}</span>`;
+  return `<div class="signal-wrap">${discBadge}<div class="signal-bar">${segs}</div></div>`;
 }
 
 async function loadData() {
@@ -54,6 +80,7 @@ async function loadData() {
   return await res.json();
 }
 
+// ── Stage badge ────────────────────────────────────────────────────────────
 function renderStageBadge(stage, stageType) {
   const meta = STAGE_TYPE_META[stageType] || STAGE_TYPE_META.unknown;
   document.getElementById('stageBadge').textContent = `Etape ${stage}`;
@@ -71,8 +98,7 @@ function renderGeneratedAt(iso) {
 
 // ── Current team ───────────────────────────────────────────────────────────
 function renderCurrentTeam(currentTeam) {
-  if (!currentTeam || !currentTeam.matched_riders || !currentTeam.matched_riders.length) return;
-
+  if (!currentTeam?.matched_riders?.length) return;
   document.getElementById('currentTeamSection').style.display = 'block';
 
   const grid = document.getElementById('currentTeamGrid');
@@ -91,15 +117,69 @@ function renderCurrentTeam(currentTeam) {
     <span class="meta-pill">📊 Total: ${fmtM(totalM + bankM)}</span>`;
 }
 
+// ── Transfer block HTML (appended at bottom of card) ───────────────────────
+function buildTransferBlock(ta) {
+  if (!ta) return '';
+
+  const affordClass = ta.affordable ? 'transfer-ok' : 'transfer-warn';
+
+  const sellChips = ta.to_sell?.length
+    ? ta.to_sell.map(r => `<span class="tx-chip tx-sell">${r.full_name}<span class="tx-price">${fmtM(r.price_M)}</span></span>`).join('')
+    : '<span class="tx-none">–</span>';
+
+  const buyChips = ta.to_buy?.length
+    ? ta.to_buy.map(r => `<span class="tx-chip tx-buy">${r.full_name}<span class="tx-price">${fmtM(r.price_M)}</span></span>`).join('')
+    : '<span class="tx-none">–</span>';
+
+  const header = ta.n_transfers === 0
+    ? '<span class="tx-ok-text">✓ Ingen udskiftninger nødvendige</span>'
+    : `<span class="tx-count">${ta.n_transfers} udskiftning${ta.n_transfers > 1 ? 'er' : ''}</span>`;
+
+  // Financial breakdown
+  const hasFee  = ta.fee_M != null;
+  const feeRow  = hasFee
+    ? `<div class="tx-fin-row"><span>Transfergebyr (1%)</span><span class="cost-pos">−${fmtM(ta.fee_M)}</span></div>`
+    : '';
+  const proceedsRow = ta.proceeds_M > 0
+    ? `<div class="tx-fin-row"><span>Salgsindtægt</span><span class="cost-neg">+${fmtM(ta.proceeds_M)}</span></div>`
+    : '';
+  const buyRow  = ta.face_buy_M != null
+    ? `<div class="tx-fin-row"><span>Købspris (listepris)</span><span class="cost-pos">−${fmtM(ta.face_buy_M)}</span></div>`
+    : `<div class="tx-fin-row"><span>Køb inkl. gebyr</span><span class="cost-pos">−${fmtM(ta.buy_cost_M)}</span></div>`;
+
+  const balanceClass = ta.affordable ? 'cost-neg' : 'cost-pos';
+  const balanceMark  = ta.affordable ? '✓' : '⚠️';
+  const balanceRow   = `
+    <div class="tx-fin-row tx-fin-total ${ta.affordable ? '' : 'tx-unaffordable'}">
+      <span>Bank efter</span>
+      <span class="${balanceClass}">${fmtM(ta.balance_after_M)} ${balanceMark}</span>
+    </div>`;
+
+  return `
+    <div class="transfer-block ${affordClass}">
+      <div class="tx-header">${header}</div>
+      ${ta.n_transfers > 0 ? `
+      <div class="tx-riders">
+        <div class="tx-row"><span class="tx-label">Sælg</span><div class="tx-chips">${sellChips}</div></div>
+        <div class="tx-row"><span class="tx-label">Køb</span><div class="tx-chips">${buyChips}</div></div>
+      </div>
+      <div class="tx-fin">
+        ${proceedsRow}
+        ${buyRow}
+        ${feeRow}
+        ${balanceRow}
+      </div>` : ''}
+    </div>`;
+}
+
 // ── Team card builder (shared by 3-team grid and best-team grid) ───────────
 function buildTeamCard(team) {
-  const lm          = LABEL_META[team.label] || { dk: team.label.toUpperCase(), desc: '' };
-  const ass         = team.assessment || {};
-  const captain     = team.team.find(r => r.is_captain) || team.team[0];
+  const lm           = LABEL_META[team.label] || { dk: team.label.toUpperCase(), desc: '' };
+  const ass          = team.assessment || {};
+  const captain      = team.team.find(r => r.is_captain) || team.team[0];
   const sortedRiders = [...team.team].sort((a, b) => b.expected_pts - a.expected_pts);
-  const ta          = team.transfer_analysis;
+  const ta           = team.transfer_analysis;
 
-  // Riders HTML
   const ridersHtml = sortedRiders.map(r => `
     <div class="rider-row">
       <div>
@@ -111,34 +191,6 @@ function buildTeamCard(team) {
       <div></div>
     </div>`).join('');
 
-  // Transfer block (only for the 3 constrained teams)
-  let transferHtml = '';
-  if (ta) {
-    const affordClass = ta.affordable ? 'transfer-ok' : 'transfer-warn';
-    const netSign     = ta.net_cost_M >= 0 ? '+' : '';
-    const sellList    = ta.to_sell.length
-      ? ta.to_sell.map(r => `<span class="tx-rider tx-sell">${r.full_name} (${fmtM(r.price_M)})</span>`).join(' ')
-      : '<span class="tx-none">–</span>';
-    const buyList     = ta.to_buy.length
-      ? ta.to_buy.map(r => `<span class="tx-rider tx-buy">${r.full_name} (${fmtM(r.price_M)})</span>`).join(' ')
-      : '<span class="tx-none">–</span>';
-
-    transferHtml = `
-      <div class="transfer-block ${affordClass}">
-        <div class="transfer-header">
-          <span class="transfer-count">${ta.n_transfers === 0 ? '✓ Ingen udskiftninger' : `${ta.n_transfers} udskiftning${ta.n_transfers > 1 ? 'er' : ''}`}</span>
-          <span class="transfer-net ${ta.net_cost_M > 0 ? 'cost-pos' : 'cost-neg'}">${netSign}${fmtM(ta.net_cost_M)} nettoomkostning</span>
-          <span class="transfer-balance ${ta.affordable ? '' : 'insufficient'}">Bank efter: ${fmtM(ta.balance_after_M)}</span>
-        </div>
-        ${ta.to_sell.length || ta.to_buy.length ? `
-        <div class="transfer-detail">
-          <div class="tx-row"><span class="tx-label">Sælg:</span> ${sellList}</div>
-          <div class="tx-row"><span class="tx-label">Køb:</span>  ${buyList}</div>
-        </div>` : ''}
-      </div>`;
-  }
-
-  // Risk colour
   const riskClass = { 'Lav': 'risk-low', 'Middel': 'risk-mid', 'Høj': 'risk-high' }[ass.risk_profile] || '';
 
   const card = document.createElement('div');
@@ -161,8 +213,6 @@ function buildTeamCard(team) {
       <div class="meta-pill">🏆 ~${ass.est_top15_count} i top 15</div>
       <div class="meta-pill">+${fmtK(ass.est_etapebonus)} etapebonus</div>
     </div>
-
-    ${transferHtml}
 
     <div class="captain-strip">
       <div class="cap-label">★ Kaptajn</div>
@@ -190,7 +240,9 @@ function buildTeamCard(team) {
         <div class="assess-val">${ass.n_budget_riders}</div>
         <div class="assess-lbl">Budget (≤4M)</div>
       </div>
-    </div>`;
+    </div>
+
+    ${buildTransferBlock(ta)}`;
 
   return card;
 }
@@ -213,7 +265,7 @@ function renderBestTeam(bestTeam) {
 
 // ── VeloScore table ────────────────────────────────────────────────────────
 function renderVeloScore(predictions) {
-  if (!predictions || predictions.length === 0) return;
+  if (!predictions?.length) return;
   document.getElementById('veloscoreSection').style.display = 'block';
   const tbody = document.getElementById('vsBody');
   tbody.innerHTML = predictions.map(p => `
@@ -228,19 +280,35 @@ function renderVeloScore(predictions) {
 
 // ── Top picks table ────────────────────────────────────────────────────────
 function renderTopPicks(picks) {
-  if (!picks || picks.length === 0) return;
+  if (!picks?.length) return;
   document.getElementById('picksSection').style.display = 'block';
+
+  // Determine the discipline key from first pick that has it
+  const firstKey = picks.find(p => p.disc_key)?.disc_key;
+  const discLabel = firstKey ? (DISC_LABELS[firstKey] || firstKey) : 'Disciplin';
+
+  // Update table header dynamically
+  const thDisc = document.getElementById('thDisc');
+  if (thDisc) thDisc.textContent = discLabel;
+
   const tbody = document.getElementById('picksBody');
-  tbody.innerHTML = picks.slice(0, 25).map((p, i) => `
+  tbody.innerHTML = picks.slice(0, 25).map((p, i) => {
+    const coVal = p.disc_raw != null
+      ? `<span class="co-val">${p.disc_raw.toFixed(0)}</span>`
+      : '<span class="co-val co-missing">–</span>';
+
+    return `
     <tr>
       <td>${i + 1}</td>
       <td><strong>${p.full_name}</strong></td>
       <td>${p.team}</td>
       <td class="${priceClass(p.price)}">${p.price.toFixed(1)}M</td>
       <td style="font-weight:600;color:var(--green)">${fmtK(p.expected_pts)}</td>
-      <td>${signalBar(p.signal_scores)}</td>
+      <td>${signalBar(p.signal_scores, p.disc_key, p.disc_raw)}</td>
+      <td class="co-cell">${coVal}</td>
       <td style="font-size:0.78rem;color:var(--muted)">${p.reasoning || '–'}</td>
-    </tr>`).join('');
+    </tr>`;
+  }).join('');
 }
 
 // ── Init ───────────────────────────────────────────────────────────────────
