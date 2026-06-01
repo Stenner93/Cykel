@@ -149,6 +149,9 @@ def main():
     parser.add_argument("--veloscore", type=str,  help="Path to VeloScore JSON file")
     parser.add_argument("--budget",    type=float, default=None,
                         help="Override available budget in millions (default: use current_team.json)")
+    parser.add_argument("--force-top", type=int, default=3,
+                        help="Lock top-N consensus picks into SAFE+VALUE teams (default: 3). "
+                             "Use 0 to let the LP decide freely.")
     parser.add_argument("--scrape-co", action="store_true",
                         help="Re-scrape CyclingOracle discipline data")
     args = parser.parse_args()
@@ -203,6 +206,7 @@ def main():
         predictions,
         current_team_data=current_team_data,
         transfer_budget_M=args.budget,
+        force_top_n=args.force_top,
     )
 
     # ── Unconstrained best possible team ─────────────────────

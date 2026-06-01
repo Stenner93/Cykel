@@ -231,9 +231,21 @@ def make_three_teams(
     predictions: list[dict],
     current_team_data: dict | None = None,
     transfer_budget_M: float | None = None,
+    force_top_n: int = 3,
 ) -> list[dict]:
     """
     Generate three optimised team suggestions.
+
+    force_top_n (default 3):
+      Force the top-N predicted riders (by expected_pts, i.e. the VeloScore
+      consensus picks) into SAFE and VALUE teams.  Prevents the LP from
+      "logically but unintuively" swapping an obvious top pick for cheaper
+      mid-tier riders.
+
+      ATTACK gets only the top-1 pick forced in; the top 2-3 are EXCLUDED,
+      producing a genuinely contrarian team.
+
+      Set force_top_n=0 to disable (pure LP, no constraints on top picks).
 
     current_team_data (optional):
       {"rider_ids": [...], "bank_M": 5.0}
@@ -268,14 +280,17 @@ def make_three_teams(
         effective_budget = (transfer_budget_M * 1_000_000) if transfer_budget_M else BUDGET
         base_preds       = predictions
 
-    # ── Team 1: SAFE — pure EV maximisation ───────────────────────────────
-    team1 = _solve(base_preds, budget=effective_budget, label="safe")
+    # Build the consensus forced-in list (top N by expected_pts = VeloScore picks)
+    top_n = [p["rider_id"] for p in predictions[:force_top_n]] if force_top_n > 0 else []
 
-    # ── Team 2: VALUE — 15% boost for budget riders (≤4M) ─────────────────
+    # ── Team 1: SAFE — top-N locked in, then pure EV maximisation ─────────
+    team1 = _solve(base_preds, budget=effective_budget, label="safe",
+                   forced_in=top_n)
+
+    # ── Team 2: VALUE — top-N locked in, 15% boost for budget riders ──────
     value_preds = []
     for p in base_preds:
         adj = dict(p)
-        # Compare against raw threshold (before fee) — use real price lookup
         real_price = next(
             (rp["price"] for rp in predictions if rp["rider_id"] == p["rider_id"]),
             p["price"]
@@ -283,15 +298,21 @@ def make_three_teams(
         if real_price <= BUDGET_PRICE_THRESHOLD / 1_000_000:
             adj["expected_pts"] = int(p["expected_pts"] * 1.15)
         value_preds.append(adj)
-    team2 = _solve(value_preds, budget=effective_budget, label="value")
+    team2 = _solve(value_preds, budget=effective_budget, label="value",
+                   forced_in=top_n)
 
-    # ── Team 3: ATTACK — variance boost for potential outsiders ───────────
+    # ── Team 3: ATTACK — contrarian: only top-1 in, top 2-3 OUT ──────────
+    # This forces genuinely different wildcards instead of just boosting variance
+    # on a team that still has the obvious top picks.
+    attack_forced_in  = top_n[:1]           # lock in the #1 consensus pick only
+    attack_forced_out = top_n[1:3]          # explicitly exclude #2 and #3
     attack_preds = []
     for p in base_preds:
         adj = dict(p)
         adj["expected_pts"] = int(p["expected_pts"] + p.get("variance", 0) * 0.0003)
         attack_preds.append(adj)
-    team3 = _solve(attack_preds, budget=effective_budget, label="attack")
+    team3 = _solve(attack_preds, budget=effective_budget, label="attack",
+                   forced_in=attack_forced_in, forced_out=attack_forced_out)
 
     teams = [t for t in [team1, team2, team3] if t is not None]
 
