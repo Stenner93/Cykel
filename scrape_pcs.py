@@ -62,11 +62,67 @@ HEADERS = {
 }
 
 DELAY          = 0.8   # seconds between requests
-FORM_DAYS      = 90    # look back this many days
+FORM_DAYS      = 180   # look back this many days (was 90 — extended for better form baseline)
 TODAY          = date.today()                   # reference date
 CURRENT_SEASON = TODAY.year                     # used to interpret "DD.MM" dates without year
 
-STAGE_TYPES_CACHE_PATH = CACHE_DIR / "pcs_stage_types.json"
+STAGE_TYPES_CACHE_PATH   = CACHE_DIR / "pcs_stage_types.json"
+PROFILE_SCORES_CACHE_PATH = CACHE_DIR / "pcs_profile_scores.json"
+
+
+def _load_profile_scores_cache() -> dict:
+    if PROFILE_SCORES_CACHE_PATH.exists():
+        return json.loads(PROFILE_SCORES_CACHE_PATH.read_text(encoding="utf-8"))
+    return {}
+
+
+def _save_profile_scores_cache(cache: dict) -> None:
+    PROFILE_SCORES_CACHE_PATH.write_text(
+        json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+
+def fetch_race_profile_scores(
+    race_base: str,
+    stage_nums: list[int],
+    session: requests.Session,
+    disk_cache: dict,
+) -> dict[int, int]:
+    """
+    Fetch PCS ProfileScore for each stage of a race from individual stage pages.
+    The overview page does NOT include profile scores — only individual pages do.
+
+    Returns {stage_num: profile_score}.  Cached to avoid re-fetching.
+
+    Profile score guide (from procyclingstats.com/info/profile-score-explained):
+      0–40:   flat / sprint stage
+      40–100: slightly rolling
+      100–200: clearly hilly
+      200–350: mountain stage (flat/downhill finish)
+      350+:   high mountain / summit finish
+    """
+    cache_key = race_base + "_scores"
+    if cache_key in disk_cache:
+        return {int(k): v for k, v in disk_cache[cache_key].items()}
+
+    scores: dict[int, int] = {}
+    print(f"  Henter profile scores for {len(stage_nums)} etaper "
+          f"({race_base})…", flush=True)
+
+    for sn in sorted(stage_nums):
+        url = f"https://www.procyclingstats.com/race/{race_base}/stage-{sn}"
+        try:
+            r = session.get(url, headers=HEADERS, timeout=15)
+            if r.status_code == 200:
+                m = re.search(r"ProfileScore[:\s]*(\d+)", r.text)
+                if m:
+                    scores[sn] = int(m.group(1))
+        except requests.RequestException:
+            pass
+        time.sleep(0.35)
+
+    disk_cache[cache_key] = scores
+    return scores
 
 # PCS profile class → our stage_type
 #
@@ -568,8 +624,16 @@ def scrape_all(riders: list[dict], reset: bool = False, test: bool = False) -> d
 
 def main():
     parser = argparse.ArgumentParser(description="PCS form scraper")
-    parser.add_argument("--reset", action="store_true", help="Ryd cache og hent alt")
-    parser.add_argument("--test",  action="store_true", help="Test kun 5 ryttere")
+    parser.add_argument("--reset",          action="store_true",
+                        help="Ryd cache og hent alt")
+    parser.add_argument("--test",           action="store_true",
+                        help="Test kun 5 ryttere")
+    parser.add_argument("--race",           default="tour-de-france/2026",
+                        help="PCS race base path til profile-score-hentning "
+                             "(default: tour-de-france/2026)")
+    parser.add_argument("--profile-scores", action="store_true",
+                        help="Hent ProfileScore per etape fra PCS (gemmes i "
+                             "data/cache/pcs_profile_scores.json)")
     args = parser.parse_args()
 
     print("-" * 60)
@@ -580,6 +644,26 @@ def main():
     print(f"  Ryttere i riders.json: {len(riders)}")
 
     cache = scrape_all(riders, reset=args.reset, test=args.test)
+
+    # ── Profile scores (optional) ──────────────────────────────────────────────
+    if args.profile_scores:
+        print(f"\n  Henter profile scores for {args.race}…")
+        session      = requests.Session()
+        ps_cache     = _load_profile_scores_cache()
+        stage_types  = _load_stage_types_cache().get(args.race, {})
+
+        # Fetch stage types first if not cached
+        if not stage_types:
+            st_disk = _load_stage_types_cache()
+            stage_types = fetch_race_stage_types(args.race, session, st_disk)
+            _save_stage_types_cache(st_disk)
+
+        stage_nums   = sorted(int(k) for k in stage_types.keys())
+        scores       = fetch_race_profile_scores(args.race, stage_nums, session, ps_cache)
+        _save_profile_scores_cache(ps_cache)
+        print(f"  Profile scores gemt: {len(scores)} etaper")
+        for sn in sorted(scores.keys()):
+            print(f"    Stage {sn:>2}: {scores[sn]:>4}  ({stage_types.get(sn, '?')})")
 
     # --- Summary ---
     found     = [v for v in cache.values() if not v.get("not_found")]

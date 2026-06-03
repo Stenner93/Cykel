@@ -81,6 +81,47 @@ HOLDET_STAGE_TYPE_MAP: dict[str, str] = {
     "team_time_trial":       "tt",
 }
 
+# Holdet cartridge slug → PCS race base path
+# Used to look up PCS stage types (which distinguish p4/p5) when Holdet
+# only returns a generic "mountain" type without knowing summit finish vs. not.
+CARTRIDGE_TO_PCS_RACE: dict[str, str] = {
+    "giro-d-italia-2026":  "giro-d-italia/2026",
+    "tour-de-france-2026": "tour-de-france/2026",
+    "vuelta-a-espana-2026":"vuelta-a-espana/2026",
+}
+
+# Per-game raw action cache directories (created on demand)
+CARTRIDGE_RAW_CACHE: dict[str, Path] = {
+    "giro-d-italia-2026":  CACHE_DIR / "giro2026_raw",
+    "tour-de-france-2026": CACHE_DIR / "tdf2026_raw",
+    "vuelta-a-espana-2026":CACHE_DIR / "vuelta2026_raw",
+}
+
+# Holdet ruleId → sprint/KOM/team-bonus category
+RULE_SPRINT    = 874    # sprint pts (amount = number of pts scored)
+RULE_KOM       = 875    # KOM pts
+RULE_TEAM_BEST = {885: 1, 886: 2, 887: 3}   # team rank → rule id mapping
+
+def _load_pcs_stage_type_cache() -> dict:
+    """Load PCS stage types cache (same file as scrape_pcs.py uses)."""
+    p = CACHE_DIR / "pcs_stage_types.json"
+    if p.exists():
+        return json.loads(p.read_text(encoding="utf-8"))
+    return {}
+
+def pcs_override_stage_type(cartridge: str, stage_num: int) -> str | None:
+    """
+    Return the PCS-derived stage type for a given stage, if available.
+    PCS distinguishes p4 (hilly) from p5 (mountain summit) — Holdet does not.
+    Returns None if no PCS data is cached for this race/stage.
+    """
+    pcs_race = CARTRIDGE_TO_PCS_RACE.get(cartridge)
+    if not pcs_race:
+        return None
+    cache = _load_pcs_stage_type_cache()
+    stage_map = cache.get(pcs_race, {})
+    return stage_map.get(stage_num) or stage_map.get(str(stage_num))
+
 
 # ── Rate-limited HTTP ─────────────────────────────────────────────────────────
 
@@ -293,7 +334,10 @@ def last_completed_event(events: list[int], event_info: dict[int, dict]) -> int 
     return finished[-1] if finished else None
 
 
-def detect_next_stage(game_id: int) -> tuple[int | None, str | None]:
+def detect_next_stage(
+    game_id: int,
+    cartridge: str = DEFAULT_CARTRIDGE,
+) -> tuple[int | None, str | None]:
     """
     Auto-detect which stage to predict next, based on Holdet's live schedule.
 
@@ -302,6 +346,11 @@ def detect_next_stage(game_id: int) -> tuple[int | None, str | None]:
       • The next entry in the schedule is the upcoming stage to predict.
       • If no stage has finished yet (race not started) → predict stage 1.
       • If all stages are finished (race over) → return (None, None).
+
+    Stage type priority:
+      1. PCS cache (distinguishes p4 hilly from p5 mountain summit finish)
+      2. Holdet's own stageType (if provided)
+      3. Fallback: "sprint"
 
     Returns:
       (stage_num, stage_type)  — 1-indexed stage number + our internal type string
@@ -328,13 +377,23 @@ def detect_next_stage(game_id: int) -> tuple[int | None, str | None]:
         # All stages done — race is over
         return None, None
 
-    next_eid   = events[next_idx]
+    next_eid    = events[next_idx]
     holdet_type = event_info.get(next_eid, {}).get("stageType", "")
-    stage_type  = HOLDET_STAGE_TYPE_MAP.get(holdet_type.lower(), "sprint")
-    stage_num   = next_idx + 1  # convert 0-based index → 1-based stage number
+    stage_num   = next_idx + 1   # 0-based index → 1-based stage number
 
-    print(f"  Auto-detekteret: etape {stage_num}, type '{stage_type}' "
-          f"(Holdet stageType='{holdet_type}')")
+    # 1. Try PCS override (more granular: distinguishes p4 vs p5)
+    pcs_type = pcs_override_stage_type(cartridge, stage_num)
+    if pcs_type:
+        stage_type = pcs_type
+        source = f"PCS (p-klasse cache)"
+    elif holdet_type:
+        stage_type = HOLDET_STAGE_TYPE_MAP.get(holdet_type.lower(), "sprint")
+        source = f"Holdet stageType='{holdet_type}'"
+    else:
+        stage_type = "sprint"
+        source = "fallback"
+
+    print(f"  Auto-detekteret: etape {stage_num}, type '{stage_type}' ({source})")
     return stage_num, stage_type
 
 
@@ -376,6 +435,116 @@ def extract_gc_and_jerseys(
                 jerseys_by_person[pid].append(jcode)
 
     return gc_by_person, jerseys_by_person
+
+
+# ── Sprint / KOM / team-bonus standings ──────────────────────────────────────
+
+def _fetch_and_cache_actions(
+    game_id: int,
+    event_id: int,
+    stage_num: int,
+    raw_dir: Path,
+) -> list[dict]:
+    """Load cached stage actions, or fetch + cache from Holdet API."""
+    raw_dir.mkdir(parents=True, exist_ok=True)
+    path = raw_dir / f"actions_s{stage_num:02d}.json"
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+    actions = fetch_fantasy_actions(game_id, event_id)
+    path.write_text(json.dumps(actions, ensure_ascii=False), encoding="utf-8")
+    return actions
+
+
+def compute_sprint_kom_standings(
+    all_actions: list[list[dict]],     # list of per-stage action lists
+    person_to_rid: dict[int, str],
+) -> dict[str, dict]:
+    """
+    Aggregate sprint (rule 874) and KOM (rule 875) points across all completed
+    stages and return classification standings.
+
+    Returns:
+      {rider_id: {"sprint_pts": N, "sprint_rank": R,
+                  "kom_pts": N,    "kom_rank": R}}
+
+    Only riders with at least 1 point appear in the output.
+    """
+    sprint: dict[str, int] = {}
+    kom:    dict[str, int] = {}
+
+    for stage_actions in all_actions:
+        for item in stage_actions:
+            pid  = item.get("personId")
+            rid  = person_to_rid.get(pid)
+            if not rid:
+                continue
+            rule = item.get("ruleId")
+            amt  = item.get("amount", 0) or 0
+            if rule == RULE_SPRINT and amt > 0:
+                sprint[rid] = sprint.get(rid, 0) + amt
+            elif rule == RULE_KOM and amt > 0:
+                kom[rid] = kom.get(rid, 0) + amt
+
+    result: dict[str, dict] = {}
+    for rank, (rid, pts) in enumerate(
+            sorted(sprint.items(), key=lambda x: x[1], reverse=True), 1):
+        result.setdefault(rid, {}).update(sprint_pts=pts, sprint_rank=rank)
+    for rank, (rid, pts) in enumerate(
+            sorted(kom.items(), key=lambda x: x[1], reverse=True), 1):
+        result.setdefault(rid, {}).update(kom_pts=pts, kom_rank=rank)
+    return result
+
+
+def compute_team_bonus_expectations(
+    all_actions: list[list[dict]],
+    person_to_rid: dict[int, str],
+    rid_to_team: dict[str, str],
+) -> dict[str, int]:
+    """
+    Look at the team bonus (rules 885/886/887) from recent stages and
+    estimate the expected team bonus per rider for the next stage.
+
+    Method:
+      For each of the last N stages, identify which professional team placed
+      1st / 2nd / 3rd.  Compute a per-team expected bonus as the average
+      across those stages.  Return {rider_id: expected_bonus_kr} for all
+      riders whose team has a non-zero expectation.
+
+    Returns e.g. {"jonas_vingegaard": 42000, "wout_van_aert": 42000, ...}
+    (all riders on the same team get the same expected bonus).
+    """
+    BONUS = {1: 60_000, 2: 30_000, 3: 20_000}
+    n     = len(all_actions)
+    if n == 0:
+        return {}
+
+    team_bonus_sum: dict[str, float] = {}   # team_code → cumulative expected bonus
+
+    for stage_actions in all_actions:
+        # Identify which pro team placed 1st / 2nd / 3rd this stage
+        bonuses: dict[int, set[int]] = {885: set(), 886: set(), 887: set()}
+        for item in stage_actions:
+            rule = item.get("ruleId")
+            if rule in bonuses:
+                bonuses[rule].add(item.get("personId"))
+
+        for rule_id, rank in RULE_TEAM_BEST.items():
+            teams: set[str] = set()
+            for pid in bonuses[rule_id]:
+                rid  = person_to_rid.get(pid, "")
+                team = rid_to_team.get(rid, "")
+                if team:
+                    teams.add(team)
+            for team in teams:
+                team_bonus_sum[team] = team_bonus_sum.get(team, 0) + BONUS[rank]
+
+    # Average over N stages to get expected bonus per stage
+    team_expected: dict[str, int] = {
+        team: round(total / n)
+        for team, total in team_bonus_sum.items()
+        if total / n >= 1_000   # ignore negligible expectations
+    }
+    return team_expected  # {team_code: expected_kr_per_rider_per_stage}
 
 
 # ── Name matching ──────────────────────────────────────────────────────────────
@@ -613,6 +782,71 @@ def main() -> None:
         rid = person_to_rid.get(person_id)
         if rid:
             jersey_leaders[rid] = jersey_list
+
+    # ── Sprint/KOM + team-bonus from recent stages ───────────────────────────
+    # Fetch the last up-to-5 completed stages' actions (cached per game)
+    raw_dir     = CARTRIDGE_RAW_CACHE.get(cartridge, CACHE_DIR / "holdet_raw")
+    n_to_fetch  = min(5, len([eid for eid in events
+                               if event_info.get(eid, {}).get("status") == "finished"]))
+    finished    = [eid for eid in events
+                   if event_info.get(eid, {}).get("status") == "finished"]
+    recent_events = finished[-n_to_fetch:]   # last N completed events
+
+    all_stage_actions: list[list[dict]] = []
+    if recent_events:
+        print(f"  Henter actions for seneste {len(recent_events)} etaper "
+              f"(sprint/KOM/hold-bonus)…")
+        for eid in recent_events:
+            sn = events.index(eid) + 1   # 1-based stage number
+            try:
+                acts = _fetch_and_cache_actions(game_id, eid, sn, raw_dir)
+                all_stage_actions.append(acts)
+            except Exception as exc:
+                print(f"    [WARN] etape {sn} actions fejlede: {exc}")
+
+    # Build rid → team lookup
+    id_to_rider = {r["id"]: r for r in riders}
+    rid_to_team = {rid: id_to_rider[rid].get("team", "") for rid in id_to_rider}
+
+    # Sprint/KOM standings
+    sprint_kom = compute_sprint_kom_standings(all_stage_actions, person_to_rid)
+
+    sk_path = CACHE_DIR / "holdet_sprint_kom.json"
+    sk_path.write_text(json.dumps(sprint_kom, ensure_ascii=False, indent=2),
+                       encoding="utf-8")
+    top_sprint = sorted(
+        [(rid, d) for rid, d in sprint_kom.items() if "sprint_rank" in d],
+        key=lambda x: x[1]["sprint_rank"]
+    )[:5]
+    top_kom = sorted(
+        [(rid, d) for rid, d in sprint_kom.items() if "kom_rank" in d],
+        key=lambda x: x[1]["kom_rank"]
+    )[:5]
+    id2name = {r["id"]: r["full_name"] for r in riders}
+    spr_str = ", ".join(f"{id2name.get(rid, rid)} ({d['sprint_pts']}pt)"
+                        for rid, d in top_sprint)
+    kom_str = ", ".join(f"{id2name.get(rid, rid)} ({d['kom_pts']}pt)"
+                        for rid, d in top_kom)
+    print(f"  Sprint-klassement (top 5): {spr_str or '(ingen data)'}")
+    print(f"  Bjerg-klassement  (top 5): {kom_str or '(ingen data)'}")
+
+    # Team bonus expectations
+    team_expected = compute_team_bonus_expectations(
+        all_stage_actions, person_to_rid, rid_to_team
+    )
+    # Expand to per-rider expectations
+    rider_team_bonus: dict[str, int] = {}
+    for r in riders:
+        team = r.get("team", "")
+        if team in team_expected:
+            rider_team_bonus[r["id"]] = team_expected[team]
+
+    tb_path = CACHE_DIR / "holdet_team_bonus.json"
+    tb_path.write_text(json.dumps(rider_team_bonus, ensure_ascii=False, indent=2),
+                       encoding="utf-8")
+    top_teams = sorted(team_expected.items(), key=lambda x: x[1], reverse=True)[:5]
+    teams_str = ", ".join(f"{t}: {v//1000}k" for t, v in top_teams)
+    print(f"  Forventet holdbonus (top 5 hold): {teams_str or '(ingen data)'}")
 
     # ── Save cache files ──────────────────────────────────────────────────────
     # holdet_players.json

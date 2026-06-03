@@ -57,15 +57,80 @@ def _rank_scale(rank: int) -> float:
     return max(0.0, 1.0 / (1.0 + 0.5 * (rank - 1) ** 1.1))
 
 
-# GC bonus model: expected GC points based on current standing + stage type
+def _profile_scale(profile_score: int | None, stage_type: str) -> float:
+    """
+    Scale WINNER_POINTS up or down based on stage difficulty (PCS ProfileScore).
+
+    Profile score guide:
+      0–40:   flat/sprint        sprint stages: scale = 1.0 (unchanged)
+      40–100: slightly rolling
+      100–200: hilly
+      200–350: mountain (p4, often no summit finish → now classified as hilly)
+      350+:   high mountain summit finish
+
+    Scale factors:
+      sprint / tt / cobbled  → always 1.0 (profile score not relevant)
+      hilly  → 0.85 at score=0  …  1.0 at score=180  …  1.15 at score=300
+      mountain → 0.82 at score=200 … 1.0 at score=330 … 1.35 at score=500
+    """
+    if profile_score is None:
+        return 1.0
+    if stage_type in ("sprint", "tt", "cobbled"):
+        return 1.0
+    if stage_type == "hilly":
+        # Linear: score 0 → 0.85, score 300 → 1.15
+        return max(0.80, min(1.20, 0.85 + profile_score / 300.0 * 0.30))
+    if stage_type == "mountain":
+        # Anchored at 330 → 1.0; steep climb above and below
+        return max(0.80, min(1.40, 0.82 + (profile_score - 200) / 330.0 * 0.58))
+    return 1.0
+
+
+# Expected sprint/KOM classification bonus per stage, by classification rank (1-5)
+# Reflects the expected fantasy pts from ongoing sprint/KOM point accumulation.
+# Higher on the stage type where specialists score most.
+_SPRINT_CLASS_BONUS: dict[str, list[int]] = {
+    "sprint":   [30_000, 18_000, 10_000,  6_000, 3_000],
+    "hilly":    [12_000,  7_000,  4_000,  2_000, 1_000],
+    "cobbled":  [ 6_000,  4_000,  2_000,  1_000,   500],
+    "mountain": [ 3_000,  2_000,  1_000,    500,   200],
+    "tt":       [     0,      0,      0,      0,     0],
+}
+_KOM_CLASS_BONUS: dict[str, list[int]] = {
+    "mountain": [24_000, 15_000,  9_000,  5_000, 2_000],
+    "hilly":    [ 9_000,  6_000,  3_000,  1_500,   750],
+    "cobbled":  [ 3_000,  2_000,  1_000,    500,   200],
+    "sprint":   [ 1_500,  1_000,    500,    200,   100],
+    "tt":       [     0,      0,      0,      0,     0],
+}
+
+
+# GC bonus model: expected GC points based on current standing + stage type.
+# Extended to include probabilistic entry into top-10 for ranks 11-20.
 def _expected_gc_bonus(gc_rank: int | None, stage_type: str) -> float:
     from .scoring import GC_PTS
     if gc_rank is None or gc_rank > 20:
         return 0.0
-    # On mountain stages, GC riders shift up; on sprints, they stay stable
+
+    # Deterministic rank shift: mountain stages pull GC riders up
     shift = {"mountain": -1, "gc": -2, "sprint": 1, "tt": 0, "hilly": 0, "cobbled": 1}
     effective_rank = max(1, gc_rank + shift.get(stage_type, 0))
-    return GC_PTS.get(effective_rank, 0)
+
+    if effective_rank <= 10:
+        return GC_PTS.get(effective_rank, 0)
+
+    # Ranks 11-20: probabilistic chance of entering top-10 on hard stages
+    # (e.g. a GC breakaway, time bonus, or a rival losing time)
+    if stage_type in ("mountain", "gc"):
+        if gc_rank <= 12:
+            return 0.20 * GC_PTS.get(10, 10_000)   # 20% chance → ~2000 kr
+        if gc_rank <= 15:
+            return 0.08 * GC_PTS.get(10, 10_000)   # 8% chance  → ~800 kr
+    elif stage_type == "hilly":
+        if gc_rank <= 12:
+            return 0.08 * GC_PTS.get(10, 10_000)   # 8% chance
+
+    return 0.0
 
 
 def predict_rider(
@@ -79,6 +144,11 @@ def predict_rider(
     gc_rank: int | None = None,
     jerseys: list[str] | None = None,
     weights: dict[str, float] | None = None,
+    # ── New signals ────────────────────────────────────────────────────
+    profile_score: int | None = None,       # PCS ProfileScore for this stage
+    sprint_class_rank: int | None = None,   # Position in sprint classification
+    kom_class_rank: int | None = None,      # Position in KOM classification
+    expected_team_bonus: int = 0,           # Expected holdbonus kr from recent stages
 ) -> dict[str, Any]:
     """
     Predict expected fantasy points for a rider on a specific stage.
@@ -131,11 +201,14 @@ def predict_rider(
         w["form"]       * form_signal
     )
 
-    # Scale to expected points
+    # Scale winner_pts by stage difficulty (ProfileScore)
     winner_pts   = WINNER_POINTS.get(stage_type, 500_000)
+    winner_pts  *= _profile_scale(profile_score, stage_type)
+
+    # Scale to expected points
     expected_pts = composite * winner_pts
 
-    # Add expected GC bonus
+    # Add expected GC bonus (probabilistic for ranks 11–20)
     gc_bonus = _expected_gc_bonus(gc_rank, stage_type)
     expected_pts += gc_bonus
 
@@ -146,6 +219,19 @@ def predict_rider(
         # Leader jersey is nearly certain to carry over; be conservative
         jersey_bonus += JERSEY.get(jersey, 0) * 0.90
     expected_pts += jersey_bonus
+
+    # Add expected sprint classification bonus
+    if sprint_class_rank and 1 <= sprint_class_rank <= 5:
+        bonus_table = _SPRINT_CLASS_BONUS.get(stage_type, [])
+        expected_pts += bonus_table[sprint_class_rank - 1] if bonus_table else 0
+
+    # Add expected KOM classification bonus
+    if kom_class_rank and 1 <= kom_class_rank <= 5:
+        bonus_table = _KOM_CLASS_BONUS.get(stage_type, [])
+        expected_pts += bonus_table[kom_class_rank - 1] if bonus_table else 0
+
+    # Add expected team bonus (from recent stage history)
+    expected_pts += expected_team_bonus
 
     # --- Variance estimate (for team 3 aggressive picks) ---
     # High VeloScore + low discipline = underdog pick = high variance
@@ -165,6 +251,18 @@ def predict_rider(
         reasons.append(f"GC-stilling #{gc_rank}")
     if jerseys:
         reasons.append(f"trøje: {', '.join(jerseys)}")
+    if sprint_class_rank and sprint_class_rank <= 3:
+        reasons.append(f"sprint-klass. #{sprint_class_rank}")
+    if kom_class_rank and kom_class_rank <= 3:
+        reasons.append(f"bjerg-klass. #{kom_class_rank}")
+    if expected_team_bonus >= 20_000:
+        reasons.append(f"holdbonus ~{expected_team_bonus//1000}k")
+    if profile_score is not None:
+        scale = _profile_scale(profile_score, stage_type)
+        if scale >= 1.15:
+            reasons.append(f"hård etape (score {profile_score})")
+        elif scale <= 0.90:
+            reasons.append(f"let etape (score {profile_score})")
     if not reasons:
         reasons.append("budget-pick")
 
@@ -185,11 +283,15 @@ def predict_rider(
         # For form_by_type dicts: 70% type-specific + 30% overall
         "form_score":    round(form_val, 1),
         "signal_scores": {
-            "veloscore":  round(vs_signal, 3),
-            "odds":       round(odds_signal, 3),
-            "discipline": round(disc_signal, 3),
-            "form":       round(form_signal, 3),
+            "veloscore":    round(vs_signal, 3),
+            "odds":         round(odds_signal, 3),
+            "discipline":   round(disc_signal, 3),
+            "form":         round(form_signal, 3),
         },
+        "profile_scale":     round(_profile_scale(profile_score, stage_type), 3),
+        "sprint_class_rank": sprint_class_rank,
+        "kom_class_rank":    kom_class_rank,
+        "team_bonus_exp":    expected_team_bonus,
     }
 
 
@@ -203,6 +305,10 @@ def predict_all(
     current_gc: dict[str, int] | None = None,
     current_jerseys: dict[str, list[str]] | None = None,
     weights: dict[str, float] | None = None,
+    # ── New signals ────────────────────────────────────────────────────
+    profile_score: int | None = None,
+    sprint_kom_data: dict[str, dict] | None = None,     # from holdet_sprint_kom.json
+    team_bonus_data: dict[str, int] | None = None,      # from holdet_team_bonus.json
 ) -> list[dict]:
     """
     Predict expected points for ALL riders and return sorted list.
@@ -247,6 +353,7 @@ def predict_all(
                             vs_entry = v
                             break
 
+        sk = (sprint_kom_data or {}).get(rider["id"], {})
         pred = predict_rider(
             rider=rider,
             stage_type=stage_type,
@@ -254,10 +361,14 @@ def predict_all(
             veloscore_score=vs_entry.get("veloscore") if vs_entry else None,
             odds_prob=(odds_data or {}).get(name_lower),
             cyclingoracle=(cyclingoracle_data or {}).get(rider["id"]),
-            pcs_form=(pcs_form_data or {}).get(rider["id"]),   # dict or float
+            pcs_form=(pcs_form_data or {}).get(rider["id"]),
             gc_rank=(current_gc or {}).get(rider["id"]),
             jerseys=(current_jerseys or {}).get(rider["id"]),
             weights=weights,
+            profile_score=profile_score,
+            sprint_class_rank=sk.get("sprint_rank"),
+            kom_class_rank=sk.get("kom_rank"),
+            expected_team_bonus=(team_bonus_data or {}).get(rider["id"], 0),
         )
         results.append(pred)
 

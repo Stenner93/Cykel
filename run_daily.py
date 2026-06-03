@@ -26,6 +26,7 @@ sys.path.insert(0, str(ROOT))
 from src.predictor import predict_all
 from src.optimizer import make_three_teams, make_best_team
 from src.strategy  import get_strategy, describe as describe_strategy
+from scrape_holdet import CARTRIDGE_TO_PCS_RACE, DEFAULT_CARTRIDGE
 
 DATA_DIR = ROOT / "data"
 WEB_DATA = ROOT / "web" / "data"
@@ -119,6 +120,36 @@ def load_jerseys() -> dict[str, list[str]]:
     if not path.exists():
         return {}
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_sprint_kom() -> dict[str, dict]:
+    """Load sprint/KOM classification standings. Returns {rider_id: {sprint_rank, kom_rank, ...}}."""
+    path = DATA_DIR / "cache" / "holdet_sprint_kom.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_team_bonus() -> dict[str, int]:
+    """Load expected team bonus per rider. Returns {rider_id: expected_kr}."""
+    path = DATA_DIR / "cache" / "holdet_team_bonus.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_profile_score(stage: int) -> int | None:
+    """
+    Load PCS ProfileScore for a specific stage of the current race.
+    Returns None if not available.
+    """
+    path = DATA_DIR / "cache" / "pcs_profile_scores.json"
+    if not path.exists():
+        return None
+    cache     = json.loads(path.read_text(encoding="utf-8"))
+    pcs_race  = CARTRIDGE_TO_PCS_RACE.get(DEFAULT_CARTRIDGE, "")
+    scores    = cache.get(pcs_race + "_scores", {})
+    return scores.get(stage) or scores.get(str(stage))
 
 
 def load_current_team(predictions: list[dict]) -> dict | None:
@@ -311,6 +342,10 @@ def main():
     pcs_form     = load_pcs_form()
     gc_standings = load_gc_standings()
     jerseys      = load_jerseys()
+    sprint_kom   = load_sprint_kom()
+    team_bonus   = load_team_bonus()
+    profile_sc   = load_profile_score(stage)
+
     print(f"  CyclingOracle: {len(co_data)} ryttere i cache")
     print(f"  PCS form:      {len(pcs_form)} ryttere i cache")
     if gc_standings:
@@ -327,6 +362,18 @@ def main():
             for k, v in jerseys.items()
         )
         print(f"  Trøjer:        {jersey_str}")
+    if sprint_kom:
+        id_to_name = {r["id"]: r["full_name"] for r in riders}
+        top_s = sorted([(r,d) for r,d in sprint_kom.items() if "sprint_rank" in d],
+                       key=lambda x: x[1]["sprint_rank"])[:3]
+        top_k = sorted([(r,d) for r,d in sprint_kom.items() if "kom_rank" in d],
+                       key=lambda x: x[1]["kom_rank"])[:3]
+        print(f"  Sprint-klass.: {', '.join(id_to_name.get(r,r) for r,_ in top_s)}")
+        print(f"  Bjerg-klass.:  {', '.join(id_to_name.get(r,r) for r,_ in top_k)}")
+    if profile_sc is not None:
+        from src.predictor import _profile_scale
+        scale = _profile_scale(profile_sc, stage_type)
+        print(f"  Profile score: {profile_sc}  →  WINNER_POINTS × {scale:.2f}")
 
     # ── Run predictions ───────────────────────────────────────
     print("\n  Beregner forventede point...")
@@ -338,6 +385,9 @@ def main():
         pcs_form_data=pcs_form,
         current_gc=gc_standings or None,
         current_jerseys=jerseys or None,
+        profile_score=profile_sc,
+        sprint_kom_data=sprint_kom or None,
+        team_bonus_data=team_bonus or None,
     )
 
     # ── Load current team ─────────────────────────────────────
