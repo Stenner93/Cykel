@@ -1,7 +1,10 @@
 __pycache__/
 *.pyc
 *.pyo
-data/cache/
+# Cache: commit the main JSON files so GitHub Actions can use them,
+# but skip large raw API response dumps
+data/cache/giro2026_raw/
+data/cache/pcs_raw/
 .env
 *.egg-info/
 dist/

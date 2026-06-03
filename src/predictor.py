@@ -107,7 +107,21 @@ def predict_rider(
     disc_signal = disc_raw / 100.0
 
     # --- Signal 4: Recent form ---
-    form_signal = (pcs_form or 50.0) / 100.0
+    # pcs_form may be a float (old format) or a dict with per-type scores.
+    #
+    # Blending strategy: 70% stage-type-specific + 30% overall form.
+    # Rationale: a rider who is "in good shape" (high overall) should get some
+    # credit even on stages where they haven't scored type-specific results.
+    # E.g. Narváez won 3 Giro stages (mountain/hilly/rolling) → overall=44.
+    # On a mountain stage, mountain_form=11 but overall reflects true fitness.
+    # Pure type-specific would give 11; blend gives 0.7*11 + 0.3*44 ≈ 21.
+    if isinstance(pcs_form, dict):
+        type_form    = float(pcs_form.get(stage_type) or 0.0)
+        overall_form = float(pcs_form.get("overall") or 50.0)
+        form_val = 0.7 * type_form + 0.3 * overall_form
+    else:
+        form_val = float(pcs_form) if pcs_form is not None else 50.0
+    form_signal = form_val / 100.0
 
     # --- Composite win-probability estimate ---
     composite = (
@@ -165,8 +179,11 @@ def predict_rider(
         "reasoning":     ", ".join(reasons),
         # disc_key / disc_raw expose the exact CyclingOracle rating used
         # so the UI can show e.g. "SPR: 87" instead of generic "discipline"
-        "disc_key":      disc_key,          # e.g. "SPR", "MTN", "ITT"
+        "disc_key":      disc_key,           # e.g. "SPR", "MTN", "ITT"
         "disc_raw":      round(disc_raw, 1), # 0-100 raw CyclingOracle value
+        # form_score: the stage-type-blended form value actually used (0-100)
+        # For form_by_type dicts: 70% type-specific + 30% overall
+        "form_score":    round(form_val, 1),
         "signal_scores": {
             "veloscore":  round(vs_signal, 3),
             "odds":       round(odds_signal, 3),
@@ -202,15 +219,33 @@ def predict_all(
         name_lower = rider["full_name"].lower()
         short_lower = rider.get("short_name", "").lower()
 
-        # Try to match by full name or short name
+        # 1. Exact full name or short name match
         vs_entry = vs_by_name.get(name_lower) or vs_by_name.get(short_lower)
-        # Fuzzy: try last name
-        last = name_lower.split()[-1]
+
+        # 2. Fuzzy last-name match (handles missing first name in VeloScore data)
         if not vs_entry:
-            for k, v in vs_by_name.items():
-                if last in k:
-                    vs_entry = v
-                    break
+            last  = name_lower.split()[-1]
+            first = name_lower.split()[0] if " " in name_lower else ""
+            # Find all VS entries whose last word equals our last name
+            candidates = [
+                (k, v) for k, v in vs_by_name.items()
+                if k.split()[-1] == last
+            ]
+            if len(candidates) == 1:
+                # Unique last-name match — safe to use
+                vs_entry = candidates[0][1]
+            elif len(candidates) > 1 and first:
+                # Multiple riders share last name → require first-name match
+                for k, v in candidates:
+                    k_words = k.split()
+                    if k_words[0] == first:        # exact first name
+                        vs_entry = v
+                        break
+                if not vs_entry:
+                    for k, v in candidates:
+                        if k.split()[0][0] == first[0]:    # first initial
+                            vs_entry = v
+                            break
 
         pred = predict_rider(
             rider=rider,
@@ -219,7 +254,7 @@ def predict_all(
             veloscore_score=vs_entry.get("veloscore") if vs_entry else None,
             odds_prob=(odds_data or {}).get(name_lower),
             cyclingoracle=(cyclingoracle_data or {}).get(rider["id"]),
-            pcs_form=(pcs_form_data or {}).get(rider["id"]),
+            pcs_form=(pcs_form_data or {}).get(rider["id"]),   # dict or float
             gc_rank=(current_gc or {}).get(rider["id"]),
             jerseys=(current_jerseys or {}).get(rider["id"]),
             weights=weights,

@@ -3,11 +3,11 @@
 const DATA_URL = './data/recommendations.json';
 
 const STAGE_TYPE_META = {
-  sprint:   { icon: '⚡', name: 'Sprintereape',       color: '#FFD700' },
+  sprint:   { icon: '⚡', name: 'Sprinteretape',      color: '#FFD700' },
   mountain: { icon: '⛰️', name: 'Bjergetape',         color: '#00C853' },
   tt:       { icon: '⏱️', name: 'Enkeltstart (TT)',    color: '#1E88E5' },
   hilly:    { icon: '〰️', name: 'Kuperet / Punch',    color: '#FF7043' },
-  cobbled:  { icon: '🧱', name: 'Brosteenseape',      color: '#AB47BC' },
+  cobbled:  { icon: '🧱', name: 'Brosteenetape',      color: '#AB47BC' },
   unknown:  { icon: '❓', name: 'Ukendt etapetype',   color: '#9E9E9E' },
 };
 
@@ -49,22 +49,26 @@ function priceClass(p) {
 
 /**
  * 4-segment signal bar.
- * disc_key: "SPR" / "MTN" / "ITT" etc. — shown as tooltip label on disc segment.
- * disc_raw: raw 0-100 CyclingOracle value — shown in tooltip.
+ * disc_key:   "SPR" / "MTN" / "ITT" etc. — shown as tooltip label on disc segment.
+ * disc_raw:   raw 0-100 CyclingOracle value — shown in tooltip.
+ * form_score: 0-100 blended form score (70% type-specific + 30% overall) — shown in form tooltip.
  */
-function signalBar(signals, discKey, discRaw) {
+function signalBar(signals, discKey, discRaw, formScore) {
   const dk    = (discKey || 'AVG').toUpperCase();
   const label = DISC_LABELS[dk] || dk;
+  const formLbl = formScore != null
+    ? `Form: ${formScore.toFixed(0)}/100`
+    : `Form: ${((signals?.form ?? 0) * 100).toFixed(0)}%`;
   const segs  = [
     { k: 'veloscore',  lbl: 'VeloScore' },
     { k: 'odds',       lbl: 'Odds' },
     { k: 'discipline', lbl: discRaw != null ? `${label}: ${discRaw.toFixed(0)}/100` : label },
-    { k: 'form',       lbl: 'Form' },
+    { k: 'form',       lbl: formLbl },
   ].map(({ k, lbl }) => {
     const v      = signals?.[k] ?? 0;
     const filled = v > 0.3 ? 'filled' : '';
-    const title  = k === 'discipline'
-      ? lbl   // already has the nice label from above
+    const title  = (k === 'discipline' || k === 'form')
+      ? lbl   // already has the numeric value
       : `${lbl}: ${(v * 100).toFixed(0)}%`;
     return `<div class="signal-segment ${filled}" title="${title}"></div>`;
   }).join('');
@@ -304,7 +308,7 @@ function renderTopPicks(picks) {
       <td>${p.team}</td>
       <td class="${priceClass(p.price)}">${p.price.toFixed(1)}M</td>
       <td style="font-weight:600;color:var(--green)">${fmtK(p.expected_pts)}</td>
-      <td>${signalBar(p.signal_scores, p.disc_key, p.disc_raw)}</td>
+      <td>${signalBar(p.signal_scores, p.disc_key, p.disc_raw, p.form_score)}</td>
       <td class="co-cell">${coVal}</td>
       <td style="font-size:0.78rem;color:var(--muted)">${p.reasoning || '–'}</td>
     </tr>`;

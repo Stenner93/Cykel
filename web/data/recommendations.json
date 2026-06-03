@@ -1,80 +1,8 @@
 {
   "stage": 21,
   "stage_type": "sprint",
-  "generated": "2026-05-31T17:44:42.876286+00:00",
-  "current_team": {
-    "bank_M": 5.0,
-    "rider_ids": [
-      "jonas_vingegaard",
-      "jonathan_milan",
-      "tim_merlier",
-      "cian_uijtdebroeks",
-      "soeren_kragh_andersen",
-      "phil_bauhaus",
-      "ben_healy",
-      "fabio_jakobsen"
-    ],
-    "rider_names": [
-      "Jonas Vingegaard",
-      "Jonathan Milan",
-      "Tim Merlier",
-      "Cian Uijtdebroeks",
-      "Søren Kragh Andersen",
-      "Phil Bauhaus",
-      "Ben Healy",
-      "Fabio Jakobsen"
-    ],
-    "matched_riders": [
-      {
-        "rider_id": "jonas_vingegaard",
-        "full_name": "Jonas Vingegaard",
-        "team": "TJV",
-        "price_M": 17.5
-      },
-      {
-        "rider_id": "jonathan_milan",
-        "full_name": "Jonathan Milan",
-        "team": "L-T",
-        "price_M": 11.5
-      },
-      {
-        "rider_id": "tim_merlier",
-        "full_name": "Tim Merlier",
-        "team": "SQ",
-        "price_M": 9.0
-      },
-      {
-        "rider_id": "cian_uijtdebroeks",
-        "full_name": "Cian Uijtdebroeks",
-        "team": "BGS",
-        "price_M": 6.0
-      },
-      {
-        "rider_id": "soeren_kragh_andersen",
-        "full_name": "Søren Kragh Andersen",
-        "team": "TJV",
-        "price_M": 9.0
-      },
-      {
-        "rider_id": "phil_bauhaus",
-        "full_name": "Phil Bauhaus",
-        "team": "TBH",
-        "price_M": 6.0
-      },
-      {
-        "rider_id": "ben_healy",
-        "full_name": "Ben Healy",
-        "team": "EFE",
-        "price_M": 6.0
-      },
-      {
-        "rider_id": "fabio_jakobsen",
-        "full_name": "Fabio Jakobsen",
-        "team": "SQ",
-        "price_M": 6.0
-      }
-    ]
-  },
+  "generated": "2026-06-03T07:40:18.208194+00:00",
+  "current_team": null,
   "teams": [
     {
       "label": "safe",
@@ -84,18 +12,19 @@
           "full_name": "Paul Magnier",
           "team": "SQ",
           "price": 9.0,
-          "expected_pts": 330960,
-          "win_prob": 0.591,
-          "variance": 137200,
-          "reasoning": "VeloScore top-1",
+          "expected_pts": 404364,
+          "win_prob": 0.6819,
+          "variance": 13720,
+          "reasoning": "VeloScore top-1, høj disciplinrating (SPR: 95), trøje: sprint",
+          "disc_key": "SPR",
+          "disc_raw": 95.0,
+          "form_score": 50.9,
           "signal_scores": {
             "veloscore": 0.98,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.95,
+            "form": 0.509
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": true
         },
         {
@@ -103,18 +32,19 @@
           "full_name": "Jonathan Milan",
           "team": "L-T",
           "price": 11.5,
-          "expected_pts": 303240,
-          "win_prob": 0.5415,
-          "variance": 121800,
-          "reasoning": "VeloScore top-2",
+          "expected_pts": 351848,
+          "win_prob": 0.6283,
+          "variance": 9744,
+          "reasoning": "VeloScore top-2, høj disciplinrating (SPR: 96)",
+          "disc_key": "SPR",
+          "disc_raw": 96.0,
+          "form_score": 44.8,
           "signal_scores": {
             "veloscore": 0.87,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.96,
+            "form": 0.448
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": false
         },
         {
@@ -122,18 +52,39 @@
           "full_name": "Dylan Groenewegen",
           "team": "UTR",
           "price": 10.0,
-          "expected_pts": 298200,
-          "win_prob": 0.5325,
-          "variance": 119000,
-          "reasoning": "VeloScore top-3",
+          "expected_pts": 334432,
+          "win_prob": 0.5972,
+          "variance": 4760,
+          "reasoning": "VeloScore top-3, høj disciplinrating (SPR: 98)",
+          "disc_key": "SPR",
+          "disc_raw": 98.0,
+          "form_score": 18.7,
           "signal_scores": {
             "veloscore": 0.85,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.98,
+            "form": 0.187
           },
+          "is_captain": false
+        },
+        {
+          "rider_id": "casper_van_uden",
+          "full_name": "Casper van Uden",
+          "team": "TPP",
+          "price": 5.5,
+          "expected_pts": 241976,
+          "win_prob": 0.4321,
+          "variance": 16632,
+          "reasoning": "VeloScore top-5, høj disciplinrating (SPR: 89)",
           "disc_key": "SPR",
-          "disc_raw": 50.0,
+          "disc_raw": 89.0,
+          "form_score": 11.1,
+          "signal_scores": {
+            "veloscore": 0.54,
+            "odds": 0.0,
+            "discipline": 0.89,
+            "form": 0.111
+          },
           "is_captain": false
         },
         {
@@ -141,18 +92,19 @@
           "full_name": "Luca Mozzato",
           "team": "TPCT",
           "price": 4.0,
-          "expected_pts": 157080,
-          "win_prob": 0.2805,
-          "variance": 40600,
-          "reasoning": "VeloScore rank 10",
+          "expected_pts": 178416,
+          "win_prob": 0.3186,
+          "variance": 8120,
+          "reasoning": "VeloScore rank 10, høj disciplinrating (SPR: 90)",
+          "disc_key": "SPR",
+          "disc_raw": 90.0,
+          "form_score": 8.1,
           "signal_scores": {
             "veloscore": 0.29,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.9,
+            "form": 0.081
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": false
         },
         {
@@ -160,192 +112,91 @@
           "full_name": "Jensen Plowright",
           "team": "A-D",
           "price": 4.0,
-          "expected_pts": 149520,
-          "win_prob": 0.267,
-          "variance": 36400,
-          "reasoning": "budget-pick",
+          "expected_pts": 168840,
+          "win_prob": 0.3015,
+          "variance": 10192,
+          "reasoning": "høj disciplinrating (SPR: 86)",
+          "disc_key": "SPR",
+          "disc_raw": 86.0,
+          "form_score": 12.5,
           "signal_scores": {
             "veloscore": 0.26,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.86,
+            "form": 0.125
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": false
         },
         {
-          "rider_id": "giovanni_lonardi",
-          "full_name": "Giovanni Lonardi",
-          "team": "TPV",
-          "price": 4.0,
-          "expected_pts": 134400,
-          "win_prob": 0.24,
-          "variance": 28000,
+          "rider_id": "maximilian_walscheid",
+          "full_name": "Maximilian Walscheid",
+          "team": "L-T",
+          "price": 3.0,
+          "expected_pts": 119840,
+          "win_prob": 0.214,
+          "variance": 0,
+          "reasoning": "høj disciplinrating (SPR: 82)",
+          "disc_key": "SPR",
+          "disc_raw": 82.0,
+          "form_score": 50.0,
+          "signal_scores": {
+            "veloscore": 0.0,
+            "odds": 0.0,
+            "discipline": 0.82,
+            "form": 0.5
+          },
+          "is_captain": false
+        },
+        {
+          "rider_id": "filippo_magli",
+          "full_name": "Filippo Magli",
+          "team": "GP-B",
+          "price": 2.5,
+          "expected_pts": 108640,
+          "win_prob": 0.194,
+          "variance": 0,
           "reasoning": "budget-pick",
+          "disc_key": "SPR",
+          "disc_raw": 72.0,
+          "form_score": 50.0,
           "signal_scores": {
-            "veloscore": 0.2,
+            "veloscore": 0.0,
             "odds": 0.0,
-            "discipline": 0.5,
+            "discipline": 0.72,
             "form": 0.5
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
-          "is_captain": false
-        },
-        {
-          "rider_id": "corbin_strong",
-          "full_name": "Corbin Strong",
-          "team": "IBK",
-          "price": 3.5,
-          "expected_pts": 112000,
-          "win_prob": 0.2,
-          "variance": 18000,
-          "reasoning": "VeloScore rank 12",
-          "signal_scores": {
-            "veloscore": 0.26,
-            "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
-          },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
-          "is_captain": false
-        },
-        {
-          "rider_id": "orluis_aular",
-          "full_name": "Orluis Aular",
-          "team": "MOV",
-          "price": 3.5,
-          "expected_pts": 106000,
-          "win_prob": 0.19,
-          "variance": 17000,
-          "reasoning": "VeloScore rank 13",
-          "signal_scores": {
-            "veloscore": 0.25,
-            "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
-          },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": false
         }
       ],
       "captain_id": "paul_magnier",
-      "expected_pts": 1922360,
+      "expected_pts": 2312720,
       "total_cost_M": 49.5,
-      "budget_left_M": 26.12,
-      "transfer_analysis": {
-        "to_sell": [
-          {
-            "rider_id": "jonas_vingegaard",
-            "full_name": "Jonas Vingegaard",
-            "price_M": 17.5
-          },
-          {
-            "rider_id": "soeren_kragh_andersen",
-            "full_name": "Søren Kragh Andersen",
-            "price_M": 9.0
-          },
-          {
-            "rider_id": "tim_merlier",
-            "full_name": "Tim Merlier",
-            "price_M": 9.0
-          },
-          {
-            "rider_id": "fabio_jakobsen",
-            "full_name": "Fabio Jakobsen",
-            "price_M": 6.0
-          },
-          {
-            "rider_id": "phil_bauhaus",
-            "full_name": "Phil Bauhaus",
-            "price_M": 6.0
-          },
-          {
-            "rider_id": "cian_uijtdebroeks",
-            "full_name": "Cian Uijtdebroeks",
-            "price_M": 6.0
-          },
-          {
-            "rider_id": "ben_healy",
-            "full_name": "Ben Healy",
-            "price_M": 6.0
-          }
-        ],
-        "to_buy": [
-          {
-            "rider_id": "dylan_groenewegen",
-            "full_name": "Dylan Groenewegen",
-            "price_M": 10.0
-          },
-          {
-            "rider_id": "paul_magnier",
-            "full_name": "Paul Magnier",
-            "price_M": 9.0
-          },
-          {
-            "rider_id": "luca_mozzato",
-            "full_name": "Luca Mozzato",
-            "price_M": 4.0
-          },
-          {
-            "rider_id": "jensen_plowright",
-            "full_name": "Jensen Plowright",
-            "price_M": 4.0
-          },
-          {
-            "rider_id": "giovanni_lonardi",
-            "full_name": "Giovanni Lonardi",
-            "price_M": 4.0
-          },
-          {
-            "rider_id": "corbin_strong",
-            "full_name": "Corbin Strong",
-            "price_M": 3.5
-          },
-          {
-            "rider_id": "orluis_aular",
-            "full_name": "Orluis Aular",
-            "price_M": 3.5
-          }
-        ],
-        "n_transfers": 7,
-        "proceeds_M": 59.5,
-        "face_buy_M": 38.0,
-        "fee_M": 0.38,
-        "buy_cost_M": 38.38,
-        "net_cost_M": -21.12,
-        "balance_after_M": 26.12,
-        "affordable": true
-      },
+      "budget_left_M": 0.5,
       "assessment": {
         "captain_name": "Paul Magnier",
-        "captain_reasoning": "VeloScore top-1",
-        "expected_pts_total": 1922360,
-        "est_etapebonus": 240000,
-        "est_top15_count": 5,
+        "captain_reasoning": "VeloScore top-1, høj disciplinrating (SPR: 95), trøje: sprint",
+        "expected_pts_total": 2312720,
+        "est_etapebonus": 120000,
+        "est_top15_count": 6,
         "total_cost_M": 49.5,
-        "budget_left_M": 26.12,
+        "budget_left_M": 0.5,
         "avg_price_M": 6.2,
-        "n_premium_riders": 2,
+        "n_premium_riders": 3,
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "A-D",
-          "IBK",
-          "TPV",
-          "SQ",
           "UTR",
-          "MOV",
-          "TPCT",
-          "L-T"
+          "TPP",
+          "A-D",
+          "L-T",
+          "GP-B",
+          "SQ",
+          "TPCT"
         ],
-        "n_teams": 8,
-        "n_transfers": 7,
+        "n_teams": 7,
+        "n_transfers": 0,
         "affordable": true,
-        "balance_after_M": 26.12
+        "balance_after_M": 0.5
       }
     },
     {
@@ -356,56 +207,99 @@
           "full_name": "Paul Magnier",
           "team": "SQ",
           "price": 9.0,
-          "expected_pts": 330960,
-          "win_prob": 0.591,
-          "variance": 137200,
-          "reasoning": "VeloScore top-1",
+          "expected_pts": 404364,
+          "win_prob": 0.6819,
+          "variance": 13720,
+          "reasoning": "VeloScore top-1, høj disciplinrating (SPR: 95), trøje: sprint",
+          "disc_key": "SPR",
+          "disc_raw": 95.0,
+          "form_score": 50.9,
           "signal_scores": {
             "veloscore": 0.98,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.95,
+            "form": 0.509
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": true
-        },
-        {
-          "rider_id": "jonathan_milan",
-          "full_name": "Jonathan Milan",
-          "team": "L-T",
-          "price": 11.5,
-          "expected_pts": 303240,
-          "win_prob": 0.5415,
-          "variance": 121800,
-          "reasoning": "VeloScore top-2",
-          "signal_scores": {
-            "veloscore": 0.87,
-            "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
-          },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
-          "is_captain": false
         },
         {
           "rider_id": "dylan_groenewegen",
           "full_name": "Dylan Groenewegen",
           "team": "UTR",
           "price": 10.0,
-          "expected_pts": 298200,
-          "win_prob": 0.5325,
-          "variance": 119000,
-          "reasoning": "VeloScore top-3",
+          "expected_pts": 334432,
+          "win_prob": 0.5972,
+          "variance": 4760,
+          "reasoning": "VeloScore top-3, høj disciplinrating (SPR: 98)",
+          "disc_key": "SPR",
+          "disc_raw": 98.0,
+          "form_score": 18.7,
           "signal_scores": {
             "veloscore": 0.85,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.98,
+            "form": 0.187
           },
+          "is_captain": false
+        },
+        {
+          "rider_id": "tobias_lund_andresen",
+          "full_name": "Tobias Lund Andresen",
+          "team": "DALM",
+          "price": 9.0,
+          "expected_pts": 287168,
+          "win_prob": 0.5128,
+          "variance": 15456,
+          "reasoning": "VeloScore top-4, høj disciplinrating (SPR: 92)",
           "disc_key": "SPR",
-          "disc_raw": 50.0,
+          "disc_raw": 92.0,
+          "form_score": 18.3,
+          "signal_scores": {
+            "veloscore": 0.69,
+            "odds": 0.0,
+            "discipline": 0.92,
+            "form": 0.183
+          },
+          "is_captain": false
+        },
+        {
+          "rider_id": "casper_van_uden",
+          "full_name": "Casper van Uden",
+          "team": "TPP",
+          "price": 5.5,
+          "expected_pts": 241976,
+          "win_prob": 0.4321,
+          "variance": 16632,
+          "reasoning": "VeloScore top-5, høj disciplinrating (SPR: 89)",
+          "disc_key": "SPR",
+          "disc_raw": 89.0,
+          "form_score": 11.1,
+          "signal_scores": {
+            "veloscore": 0.54,
+            "odds": 0.0,
+            "discipline": 0.89,
+            "form": 0.111
+          },
+          "is_captain": false
+        },
+        {
+          "rider_id": "matteo_malucelli",
+          "full_name": "Matteo Malucelli",
+          "team": "XDSAT",
+          "price": 5.5,
+          "expected_pts": 232232,
+          "win_prob": 0.4147,
+          "variance": 12348,
+          "reasoning": "VeloScore rank 6, høj disciplinrating (SPR: 91)",
+          "disc_key": "SPR",
+          "disc_raw": 91.0,
+          "form_score": 12.2,
+          "signal_scores": {
+            "veloscore": 0.49,
+            "odds": 0.0,
+            "discipline": 0.91,
+            "form": 0.122
+          },
           "is_captain": false
         },
         {
@@ -413,18 +307,19 @@
           "full_name": "Luca Mozzato",
           "team": "TPCT",
           "price": 4.0,
-          "expected_pts": 157080,
-          "win_prob": 0.2805,
-          "variance": 40600,
-          "reasoning": "VeloScore rank 10",
+          "expected_pts": 178416,
+          "win_prob": 0.3186,
+          "variance": 8120,
+          "reasoning": "VeloScore rank 10, høj disciplinrating (SPR: 90)",
+          "disc_key": "SPR",
+          "disc_raw": 90.0,
+          "form_score": 8.1,
           "signal_scores": {
             "veloscore": 0.29,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.9,
+            "form": 0.081
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": false
         },
         {
@@ -432,192 +327,72 @@
           "full_name": "Jensen Plowright",
           "team": "A-D",
           "price": 4.0,
-          "expected_pts": 149520,
-          "win_prob": 0.267,
-          "variance": 36400,
-          "reasoning": "budget-pick",
+          "expected_pts": 168840,
+          "win_prob": 0.3015,
+          "variance": 10192,
+          "reasoning": "høj disciplinrating (SPR: 86)",
+          "disc_key": "SPR",
+          "disc_raw": 86.0,
+          "form_score": 12.5,
           "signal_scores": {
             "veloscore": 0.26,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.86,
+            "form": 0.125
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": false
         },
         {
-          "rider_id": "giovanni_lonardi",
-          "full_name": "Giovanni Lonardi",
-          "team": "TPV",
-          "price": 4.0,
-          "expected_pts": 134400,
-          "win_prob": 0.24,
-          "variance": 28000,
-          "reasoning": "budget-pick",
+          "rider_id": "maximilian_walscheid",
+          "full_name": "Maximilian Walscheid",
+          "team": "L-T",
+          "price": 3.0,
+          "expected_pts": 119840,
+          "win_prob": 0.214,
+          "variance": 0,
+          "reasoning": "høj disciplinrating (SPR: 82)",
+          "disc_key": "SPR",
+          "disc_raw": 82.0,
+          "form_score": 50.0,
           "signal_scores": {
-            "veloscore": 0.2,
+            "veloscore": 0.0,
             "odds": 0.0,
-            "discipline": 0.5,
+            "discipline": 0.82,
             "form": 0.5
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
-          "is_captain": false
-        },
-        {
-          "rider_id": "corbin_strong",
-          "full_name": "Corbin Strong",
-          "team": "IBK",
-          "price": 3.5,
-          "expected_pts": 112000,
-          "win_prob": 0.2,
-          "variance": 18000,
-          "reasoning": "VeloScore rank 12",
-          "signal_scores": {
-            "veloscore": 0.26,
-            "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
-          },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
-          "is_captain": false
-        },
-        {
-          "rider_id": "orluis_aular",
-          "full_name": "Orluis Aular",
-          "team": "MOV",
-          "price": 3.5,
-          "expected_pts": 106000,
-          "win_prob": 0.19,
-          "variance": 17000,
-          "reasoning": "VeloScore rank 13",
-          "signal_scores": {
-            "veloscore": 0.25,
-            "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
-          },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": false
         }
       ],
       "captain_id": "paul_magnier",
-      "expected_pts": 1922360,
-      "total_cost_M": 49.5,
-      "budget_left_M": 26.12,
-      "transfer_analysis": {
-        "to_sell": [
-          {
-            "rider_id": "jonas_vingegaard",
-            "full_name": "Jonas Vingegaard",
-            "price_M": 17.5
-          },
-          {
-            "rider_id": "soeren_kragh_andersen",
-            "full_name": "Søren Kragh Andersen",
-            "price_M": 9.0
-          },
-          {
-            "rider_id": "tim_merlier",
-            "full_name": "Tim Merlier",
-            "price_M": 9.0
-          },
-          {
-            "rider_id": "fabio_jakobsen",
-            "full_name": "Fabio Jakobsen",
-            "price_M": 6.0
-          },
-          {
-            "rider_id": "phil_bauhaus",
-            "full_name": "Phil Bauhaus",
-            "price_M": 6.0
-          },
-          {
-            "rider_id": "cian_uijtdebroeks",
-            "full_name": "Cian Uijtdebroeks",
-            "price_M": 6.0
-          },
-          {
-            "rider_id": "ben_healy",
-            "full_name": "Ben Healy",
-            "price_M": 6.0
-          }
-        ],
-        "to_buy": [
-          {
-            "rider_id": "dylan_groenewegen",
-            "full_name": "Dylan Groenewegen",
-            "price_M": 10.0
-          },
-          {
-            "rider_id": "paul_magnier",
-            "full_name": "Paul Magnier",
-            "price_M": 9.0
-          },
-          {
-            "rider_id": "luca_mozzato",
-            "full_name": "Luca Mozzato",
-            "price_M": 4.0
-          },
-          {
-            "rider_id": "jensen_plowright",
-            "full_name": "Jensen Plowright",
-            "price_M": 4.0
-          },
-          {
-            "rider_id": "giovanni_lonardi",
-            "full_name": "Giovanni Lonardi",
-            "price_M": 4.0
-          },
-          {
-            "rider_id": "corbin_strong",
-            "full_name": "Corbin Strong",
-            "price_M": 3.5
-          },
-          {
-            "rider_id": "orluis_aular",
-            "full_name": "Orluis Aular",
-            "price_M": 3.5
-          }
-        ],
-        "n_transfers": 7,
-        "proceeds_M": 59.5,
-        "face_buy_M": 38.0,
-        "fee_M": 0.38,
-        "buy_cost_M": 38.38,
-        "net_cost_M": -21.12,
-        "balance_after_M": 26.12,
-        "affordable": true
-      },
+      "expected_pts": 2371632,
+      "total_cost_M": 50.0,
+      "budget_left_M": 0.0,
       "assessment": {
         "captain_name": "Paul Magnier",
-        "captain_reasoning": "VeloScore top-1 + budgetpicks",
-        "expected_pts_total": 1922360,
-        "est_etapebonus": 240000,
-        "est_top15_count": 5,
-        "total_cost_M": 49.5,
-        "budget_left_M": 26.12,
+        "captain_reasoning": "VeloScore top-1, høj disciplinrating (SPR: 95), trøje: sprint",
+        "expected_pts_total": 2371632,
+        "est_etapebonus": 220000,
+        "est_top15_count": 7,
+        "total_cost_M": 50.0,
+        "budget_left_M": 0.0,
         "avg_price_M": 6.2,
-        "n_premium_riders": 2,
-        "n_budget_riders": 4,
+        "n_premium_riders": 3,
+        "n_budget_riders": 3,
         "risk_profile": "Lav",
         "teams_represented": [
-          "A-D",
-          "IBK",
-          "TPV",
-          "SQ",
+          "XDSAT",
+          "DALM",
           "UTR",
-          "MOV",
-          "TPCT",
-          "L-T"
+          "TPP",
+          "A-D",
+          "L-T",
+          "SQ",
+          "TPCT"
         ],
         "n_teams": 8,
-        "n_transfers": 7,
+        "n_transfers": 0,
         "affordable": true,
-        "balance_after_M": 26.12
+        "balance_after_M": 0.0
       }
     },
     {
@@ -628,37 +403,59 @@
           "full_name": "Paul Magnier",
           "team": "SQ",
           "price": 9.0,
-          "expected_pts": 330960,
-          "win_prob": 0.591,
-          "variance": 137200,
-          "reasoning": "VeloScore top-1",
+          "expected_pts": 404364,
+          "win_prob": 0.6819,
+          "variance": 13720,
+          "reasoning": "VeloScore top-1, høj disciplinrating (SPR: 95), trøje: sprint",
+          "disc_key": "SPR",
+          "disc_raw": 95.0,
+          "form_score": 50.9,
           "signal_scores": {
             "veloscore": 0.98,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.95,
+            "form": 0.509
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": true
+        },
+        {
+          "rider_id": "tobias_lund_andresen",
+          "full_name": "Tobias Lund Andresen",
+          "team": "DALM",
+          "price": 9.0,
+          "expected_pts": 287168,
+          "win_prob": 0.5128,
+          "variance": 15456,
+          "reasoning": "VeloScore top-4, høj disciplinrating (SPR: 92)",
+          "disc_key": "SPR",
+          "disc_raw": 92.0,
+          "form_score": 18.3,
+          "signal_scores": {
+            "veloscore": 0.69,
+            "odds": 0.0,
+            "discipline": 0.92,
+            "form": 0.183
+          },
+          "is_captain": false
         },
         {
           "rider_id": "casper_van_uden",
           "full_name": "Casper van Uden",
           "team": "TPP",
           "price": 5.5,
-          "expected_pts": 220080,
-          "win_prob": 0.393,
-          "variance": 75600,
-          "reasoning": "VeloScore top-5",
+          "expected_pts": 241976,
+          "win_prob": 0.4321,
+          "variance": 16632,
+          "reasoning": "VeloScore top-5, høj disciplinrating (SPR: 89)",
+          "disc_key": "SPR",
+          "disc_raw": 89.0,
+          "form_score": 11.1,
           "signal_scores": {
             "veloscore": 0.54,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.89,
+            "form": 0.111
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": false
         },
         {
@@ -666,18 +463,19 @@
           "full_name": "Matteo Malucelli",
           "team": "XDSAT",
           "price": 5.5,
-          "expected_pts": 207480,
-          "win_prob": 0.3705,
-          "variance": 68600,
-          "reasoning": "VeloScore rank 6",
+          "expected_pts": 232232,
+          "win_prob": 0.4147,
+          "variance": 12348,
+          "reasoning": "VeloScore rank 6, høj disciplinrating (SPR: 91)",
+          "disc_key": "SPR",
+          "disc_raw": 91.0,
+          "form_score": 12.2,
           "signal_scores": {
             "veloscore": 0.49,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.91,
+            "form": 0.122
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": false
         },
         {
@@ -685,18 +483,19 @@
           "full_name": "Ben Turner",
           "team": "INEOSG",
           "price": 6.0,
-          "expected_pts": 189840,
-          "win_prob": 0.339,
-          "variance": 58800,
-          "reasoning": "VeloScore rank 8",
+          "expected_pts": 207021,
+          "win_prob": 0.3697,
+          "variance": 16464,
+          "reasoning": "VeloScore rank 8, høj disciplinrating (SPR: 86)",
+          "disc_key": "SPR",
+          "disc_raw": 86.0,
+          "form_score": 8.7,
           "signal_scores": {
             "veloscore": 0.42,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.86,
+            "form": 0.087
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": false
         },
         {
@@ -704,18 +503,19 @@
           "full_name": "Paul Penhoët",
           "team": "G-F",
           "price": 6.0,
-          "expected_pts": 167160,
-          "win_prob": 0.2985,
-          "variance": 46200,
-          "reasoning": "VeloScore rank 9",
+          "expected_pts": 194936,
+          "win_prob": 0.3481,
+          "variance": 8316,
+          "reasoning": "VeloScore rank 9, høj disciplinrating (SPR: 91)",
+          "disc_key": "SPR",
+          "disc_raw": 91.0,
+          "form_score": 17.6,
           "signal_scores": {
             "veloscore": 0.33,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.91,
+            "form": 0.176
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": false
         },
         {
@@ -723,18 +523,19 @@
           "full_name": "Luca Mozzato",
           "team": "TPCT",
           "price": 4.0,
-          "expected_pts": 157080,
-          "win_prob": 0.2805,
-          "variance": 40600,
-          "reasoning": "VeloScore rank 10",
+          "expected_pts": 178416,
+          "win_prob": 0.3186,
+          "variance": 8120,
+          "reasoning": "VeloScore rank 10, høj disciplinrating (SPR: 90)",
+          "disc_key": "SPR",
+          "disc_raw": 90.0,
+          "form_score": 8.1,
           "signal_scores": {
             "veloscore": 0.29,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.9,
+            "form": 0.081
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": false
         },
         {
@@ -742,164 +543,52 @@
           "full_name": "Jensen Plowright",
           "team": "A-D",
           "price": 4.0,
-          "expected_pts": 149520,
-          "win_prob": 0.267,
-          "variance": 36400,
-          "reasoning": "budget-pick",
+          "expected_pts": 168840,
+          "win_prob": 0.3015,
+          "variance": 10192,
+          "reasoning": "høj disciplinrating (SPR: 86)",
+          "disc_key": "SPR",
+          "disc_raw": 86.0,
+          "form_score": 12.5,
           "signal_scores": {
             "veloscore": 0.26,
             "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
+            "discipline": 0.86,
+            "form": 0.125
           },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
-          "is_captain": false
-        },
-        {
-          "rider_id": "giovanni_lonardi",
-          "full_name": "Giovanni Lonardi",
-          "team": "TPV",
-          "price": 4.0,
-          "expected_pts": 134400,
-          "win_prob": 0.24,
-          "variance": 28000,
-          "reasoning": "budget-pick",
-          "signal_scores": {
-            "veloscore": 0.2,
-            "odds": 0.0,
-            "discipline": 0.5,
-            "form": 0.5
-          },
-          "disc_key": "SPR",
-          "disc_raw": 50.0,
           "is_captain": false
         }
       ],
       "captain_id": "paul_magnier",
-      "expected_pts": 1887480,
-      "total_cost_M": 44.0,
-      "budget_left_M": 31.56,
-      "transfer_analysis": {
-        "to_sell": [
-          {
-            "rider_id": "jonas_vingegaard",
-            "full_name": "Jonas Vingegaard",
-            "price_M": 17.5
-          },
-          {
-            "rider_id": "jonathan_milan",
-            "full_name": "Jonathan Milan",
-            "price_M": 11.5
-          },
-          {
-            "rider_id": "soeren_kragh_andersen",
-            "full_name": "Søren Kragh Andersen",
-            "price_M": 9.0
-          },
-          {
-            "rider_id": "tim_merlier",
-            "full_name": "Tim Merlier",
-            "price_M": 9.0
-          },
-          {
-            "rider_id": "fabio_jakobsen",
-            "full_name": "Fabio Jakobsen",
-            "price_M": 6.0
-          },
-          {
-            "rider_id": "phil_bauhaus",
-            "full_name": "Phil Bauhaus",
-            "price_M": 6.0
-          },
-          {
-            "rider_id": "cian_uijtdebroeks",
-            "full_name": "Cian Uijtdebroeks",
-            "price_M": 6.0
-          },
-          {
-            "rider_id": "ben_healy",
-            "full_name": "Ben Healy",
-            "price_M": 6.0
-          }
-        ],
-        "to_buy": [
-          {
-            "rider_id": "paul_magnier",
-            "full_name": "Paul Magnier",
-            "price_M": 9.0
-          },
-          {
-            "rider_id": "ben_turner",
-            "full_name": "Ben Turner",
-            "price_M": 6.0
-          },
-          {
-            "rider_id": "paul_penhoët",
-            "full_name": "Paul Penhoët",
-            "price_M": 6.0
-          },
-          {
-            "rider_id": "casper_van_uden",
-            "full_name": "Casper van Uden",
-            "price_M": 5.5
-          },
-          {
-            "rider_id": "matteo_malucelli",
-            "full_name": "Matteo Malucelli",
-            "price_M": 5.5
-          },
-          {
-            "rider_id": "luca_mozzato",
-            "full_name": "Luca Mozzato",
-            "price_M": 4.0
-          },
-          {
-            "rider_id": "jensen_plowright",
-            "full_name": "Jensen Plowright",
-            "price_M": 4.0
-          },
-          {
-            "rider_id": "giovanni_lonardi",
-            "full_name": "Giovanni Lonardi",
-            "price_M": 4.0
-          }
-        ],
-        "n_transfers": 8,
-        "proceeds_M": 71.0,
-        "face_buy_M": 44.0,
-        "fee_M": 0.44,
-        "buy_cost_M": 44.44,
-        "net_cost_M": -26.56,
-        "balance_after_M": 31.56,
-        "affordable": true
-      },
+      "expected_pts": 2319317,
+      "total_cost_M": 49.0,
+      "budget_left_M": 1.0,
       "assessment": {
         "captain_name": "Paul Magnier",
-        "captain_reasoning": "VeloScore #1 ankerpunkt — Milan+Groenewegen bevidst udeladt",
-        "expected_pts_total": 1887480,
-        "est_etapebonus": 240000,
-        "est_top15_count": 5,
-        "total_cost_M": 44.0,
-        "budget_left_M": 31.56,
-        "avg_price_M": 5.5,
-        "n_premium_riders": 1,
-        "n_budget_riders": 3,
-        "risk_profile": "Høj",
+        "captain_reasoning": "VeloScore top-1, høj disciplinrating (SPR: 95), trøje: sprint",
+        "expected_pts_total": 2319317,
+        "est_etapebonus": 400000,
+        "est_top15_count": 8,
+        "total_cost_M": 49.0,
+        "budget_left_M": 1.0,
+        "avg_price_M": 6.1,
+        "n_premium_riders": 2,
+        "n_budget_riders": 2,
+        "risk_profile": "Lav",
         "teams_represented": [
-          "A-D",
-          "TPV",
-          "INEOSG",
-          "SQ",
           "XDSAT",
+          "DALM",
           "G-F",
           "TPP",
-          "TPCT"
+          "A-D",
+          "SQ",
+          "TPCT",
+          "INEOSG"
         ],
         "n_teams": 8,
-        "n_transfers": 8,
+        "n_transfers": 0,
         "affordable": true,
-        "balance_after_M": 31.56
+        "balance_after_M": 1.0
       }
     }
   ],
@@ -911,56 +600,99 @@
         "full_name": "Paul Magnier",
         "team": "SQ",
         "price": 9.0,
-        "expected_pts": 330960,
-        "win_prob": 0.591,
-        "variance": 137200,
-        "reasoning": "VeloScore top-1",
+        "expected_pts": 404364,
+        "win_prob": 0.6819,
+        "variance": 13720,
+        "reasoning": "VeloScore top-1, høj disciplinrating (SPR: 95), trøje: sprint",
+        "disc_key": "SPR",
+        "disc_raw": 95.0,
+        "form_score": 50.9,
         "signal_scores": {
           "veloscore": 0.98,
           "odds": 0.0,
-          "discipline": 0.5,
-          "form": 0.5
+          "discipline": 0.95,
+          "form": 0.509
         },
-        "disc_key": "SPR",
-        "disc_raw": 50.0,
         "is_captain": true
-      },
-      {
-        "rider_id": "jonathan_milan",
-        "full_name": "Jonathan Milan",
-        "team": "L-T",
-        "price": 11.5,
-        "expected_pts": 303240,
-        "win_prob": 0.5415,
-        "variance": 121800,
-        "reasoning": "VeloScore top-2",
-        "signal_scores": {
-          "veloscore": 0.87,
-          "odds": 0.0,
-          "discipline": 0.5,
-          "form": 0.5
-        },
-        "disc_key": "SPR",
-        "disc_raw": 50.0,
-        "is_captain": false
       },
       {
         "rider_id": "dylan_groenewegen",
         "full_name": "Dylan Groenewegen",
         "team": "UTR",
         "price": 10.0,
-        "expected_pts": 298200,
-        "win_prob": 0.5325,
-        "variance": 119000,
-        "reasoning": "VeloScore top-3",
+        "expected_pts": 334432,
+        "win_prob": 0.5972,
+        "variance": 4760,
+        "reasoning": "VeloScore top-3, høj disciplinrating (SPR: 98)",
+        "disc_key": "SPR",
+        "disc_raw": 98.0,
+        "form_score": 18.7,
         "signal_scores": {
           "veloscore": 0.85,
           "odds": 0.0,
-          "discipline": 0.5,
-          "form": 0.5
+          "discipline": 0.98,
+          "form": 0.187
         },
+        "is_captain": false
+      },
+      {
+        "rider_id": "tobias_lund_andresen",
+        "full_name": "Tobias Lund Andresen",
+        "team": "DALM",
+        "price": 9.0,
+        "expected_pts": 287168,
+        "win_prob": 0.5128,
+        "variance": 15456,
+        "reasoning": "VeloScore top-4, høj disciplinrating (SPR: 92)",
         "disc_key": "SPR",
-        "disc_raw": 50.0,
+        "disc_raw": 92.0,
+        "form_score": 18.3,
+        "signal_scores": {
+          "veloscore": 0.69,
+          "odds": 0.0,
+          "discipline": 0.92,
+          "form": 0.183
+        },
+        "is_captain": false
+      },
+      {
+        "rider_id": "casper_van_uden",
+        "full_name": "Casper van Uden",
+        "team": "TPP",
+        "price": 5.5,
+        "expected_pts": 241976,
+        "win_prob": 0.4321,
+        "variance": 16632,
+        "reasoning": "VeloScore top-5, høj disciplinrating (SPR: 89)",
+        "disc_key": "SPR",
+        "disc_raw": 89.0,
+        "form_score": 11.1,
+        "signal_scores": {
+          "veloscore": 0.54,
+          "odds": 0.0,
+          "discipline": 0.89,
+          "form": 0.111
+        },
+        "is_captain": false
+      },
+      {
+        "rider_id": "matteo_malucelli",
+        "full_name": "Matteo Malucelli",
+        "team": "XDSAT",
+        "price": 5.5,
+        "expected_pts": 232232,
+        "win_prob": 0.4147,
+        "variance": 12348,
+        "reasoning": "VeloScore rank 6, høj disciplinrating (SPR: 91)",
+        "disc_key": "SPR",
+        "disc_raw": 91.0,
+        "form_score": 12.2,
+        "signal_scores": {
+          "veloscore": 0.49,
+          "odds": 0.0,
+          "discipline": 0.91,
+          "form": 0.122
+        },
         "is_captain": false
       },
       {
@@ -968,18 +700,19 @@
         "full_name": "Luca Mozzato",
         "team": "TPCT",
         "price": 4.0,
-        "expected_pts": 157080,
-        "win_prob": 0.2805,
-        "variance": 40600,
-        "reasoning": "VeloScore rank 10",
+        "expected_pts": 178416,
+        "win_prob": 0.3186,
+        "variance": 8120,
+        "reasoning": "VeloScore rank 10, høj disciplinrating (SPR: 90)",
+        "disc_key": "SPR",
+        "disc_raw": 90.0,
+        "form_score": 8.1,
         "signal_scores": {
           "veloscore": 0.29,
           "odds": 0.0,
-          "discipline": 0.5,
-          "form": 0.5
+          "discipline": 0.9,
+          "form": 0.081
         },
-        "disc_key": "SPR",
-        "disc_raw": 50.0,
         "is_captain": false
       },
       {
@@ -987,108 +720,72 @@
         "full_name": "Jensen Plowright",
         "team": "A-D",
         "price": 4.0,
-        "expected_pts": 149520,
-        "win_prob": 0.267,
-        "variance": 36400,
-        "reasoning": "budget-pick",
+        "expected_pts": 168840,
+        "win_prob": 0.3015,
+        "variance": 10192,
+        "reasoning": "høj disciplinrating (SPR: 86)",
+        "disc_key": "SPR",
+        "disc_raw": 86.0,
+        "form_score": 12.5,
         "signal_scores": {
           "veloscore": 0.26,
           "odds": 0.0,
-          "discipline": 0.5,
-          "form": 0.5
+          "discipline": 0.86,
+          "form": 0.125
         },
-        "disc_key": "SPR",
-        "disc_raw": 50.0,
         "is_captain": false
       },
       {
-        "rider_id": "giovanni_lonardi",
-        "full_name": "Giovanni Lonardi",
-        "team": "TPV",
-        "price": 4.0,
-        "expected_pts": 134400,
-        "win_prob": 0.24,
-        "variance": 28000,
-        "reasoning": "budget-pick",
+        "rider_id": "maximilian_walscheid",
+        "full_name": "Maximilian Walscheid",
+        "team": "L-T",
+        "price": 3.0,
+        "expected_pts": 119840,
+        "win_prob": 0.214,
+        "variance": 0,
+        "reasoning": "høj disciplinrating (SPR: 82)",
+        "disc_key": "SPR",
+        "disc_raw": 82.0,
+        "form_score": 50.0,
         "signal_scores": {
-          "veloscore": 0.2,
+          "veloscore": 0.0,
           "odds": 0.0,
-          "discipline": 0.5,
+          "discipline": 0.82,
           "form": 0.5
         },
-        "disc_key": "SPR",
-        "disc_raw": 50.0,
-        "is_captain": false
-      },
-      {
-        "rider_id": "corbin_strong",
-        "full_name": "Corbin Strong",
-        "team": "IBK",
-        "price": 3.5,
-        "expected_pts": 112000,
-        "win_prob": 0.2,
-        "variance": 18000,
-        "reasoning": "VeloScore rank 12",
-        "signal_scores": {
-          "veloscore": 0.26,
-          "odds": 0.0,
-          "discipline": 0.5,
-          "form": 0.5
-        },
-        "disc_key": "SPR",
-        "disc_raw": 50.0,
-        "is_captain": false
-      },
-      {
-        "rider_id": "orluis_aular",
-        "full_name": "Orluis Aular",
-        "team": "MOV",
-        "price": 3.5,
-        "expected_pts": 106000,
-        "win_prob": 0.19,
-        "variance": 17000,
-        "reasoning": "VeloScore rank 13",
-        "signal_scores": {
-          "veloscore": 0.25,
-          "odds": 0.0,
-          "discipline": 0.5,
-          "form": 0.5
-        },
-        "disc_key": "SPR",
-        "disc_raw": 50.0,
         "is_captain": false
       }
     ],
     "captain_id": "paul_magnier",
-    "expected_pts": 1922360,
-    "total_cost_M": 49.5,
-    "budget_left_M": 0.5,
+    "expected_pts": 2371632,
+    "total_cost_M": 50.0,
+    "budget_left_M": 0.0,
     "assessment": {
       "captain_name": "Paul Magnier",
-      "captain_reasoning": "VeloScore top-1",
-      "expected_pts_total": 1922360,
-      "est_etapebonus": 240000,
-      "est_top15_count": 5,
-      "total_cost_M": 49.5,
-      "budget_left_M": 0.5,
+      "captain_reasoning": "VeloScore top-1, høj disciplinrating (SPR: 95), trøje: sprint",
+      "expected_pts_total": 2371632,
+      "est_etapebonus": 220000,
+      "est_top15_count": 7,
+      "total_cost_M": 50.0,
+      "budget_left_M": 0.0,
       "avg_price_M": 6.2,
-      "n_premium_riders": 2,
-      "n_budget_riders": 4,
+      "n_premium_riders": 3,
+      "n_budget_riders": 3,
       "risk_profile": "Lav",
       "teams_represented": [
-        "A-D",
-        "IBK",
-        "TPV",
-        "SQ",
+        "XDSAT",
+        "DALM",
         "UTR",
-        "MOV",
-        "TPCT",
-        "L-T"
+        "TPP",
+        "A-D",
+        "L-T",
+        "SQ",
+        "TPCT"
       ],
       "n_teams": 8,
-      "n_transfers": 7,
+      "n_transfers": 0,
       "affordable": true,
-      "balance_after_M": 26.12
+      "balance_after_M": 0.0
     }
   },
   "veloscore": [
@@ -1204,450 +901,380 @@
       "full_name": "Paul Magnier",
       "team": "SQ",
       "price": 9.0,
-      "expected_pts": 330960,
-      "win_prob": 0.591,
-      "variance": 137200,
-      "reasoning": "VeloScore top-1",
+      "expected_pts": 404364,
+      "win_prob": 0.6819,
+      "variance": 13720,
+      "reasoning": "VeloScore top-1, høj disciplinrating (SPR: 95), trøje: sprint",
+      "disc_key": "SPR",
+      "disc_raw": 95.0,
+      "form_score": 50.9,
       "signal_scores": {
         "veloscore": 0.98,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.95,
+        "form": 0.509
+      }
     },
     {
       "rider_id": "jonathan_milan",
       "full_name": "Jonathan Milan",
       "team": "L-T",
       "price": 11.5,
-      "expected_pts": 303240,
-      "win_prob": 0.5415,
-      "variance": 121800,
-      "reasoning": "VeloScore top-2",
+      "expected_pts": 351848,
+      "win_prob": 0.6283,
+      "variance": 9744,
+      "reasoning": "VeloScore top-2, høj disciplinrating (SPR: 96)",
+      "disc_key": "SPR",
+      "disc_raw": 96.0,
+      "form_score": 44.8,
       "signal_scores": {
         "veloscore": 0.87,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.96,
+        "form": 0.448
+      }
     },
     {
       "rider_id": "dylan_groenewegen",
       "full_name": "Dylan Groenewegen",
       "team": "UTR",
       "price": 10.0,
-      "expected_pts": 298200,
-      "win_prob": 0.5325,
-      "variance": 119000,
-      "reasoning": "VeloScore top-3",
+      "expected_pts": 334432,
+      "win_prob": 0.5972,
+      "variance": 4760,
+      "reasoning": "VeloScore top-3, høj disciplinrating (SPR: 98)",
+      "disc_key": "SPR",
+      "disc_raw": 98.0,
+      "form_score": 18.7,
       "signal_scores": {
         "veloscore": 0.85,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.98,
+        "form": 0.187
+      }
     },
     {
-      "rider_id": "lund_andresen_tobias",
-      "full_name": "Lund Andresen Tobias",
+      "rider_id": "tobias_lund_andresen",
+      "full_name": "Tobias Lund Andresen",
       "team": "DALM",
       "price": 9.0,
-      "expected_pts": 257880,
-      "win_prob": 0.4605,
-      "variance": 96600,
-      "reasoning": "VeloScore top-4",
+      "expected_pts": 287168,
+      "win_prob": 0.5128,
+      "variance": 15456,
+      "reasoning": "VeloScore top-4, høj disciplinrating (SPR: 92)",
+      "disc_key": "SPR",
+      "disc_raw": 92.0,
+      "form_score": 18.3,
       "signal_scores": {
         "veloscore": 0.69,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.92,
+        "form": 0.183
+      }
     },
     {
       "rider_id": "casper_van_uden",
       "full_name": "Casper van Uden",
       "team": "TPP",
       "price": 5.5,
-      "expected_pts": 220080,
-      "win_prob": 0.393,
-      "variance": 75600,
-      "reasoning": "VeloScore top-5",
+      "expected_pts": 241976,
+      "win_prob": 0.4321,
+      "variance": 16632,
+      "reasoning": "VeloScore top-5, høj disciplinrating (SPR: 89)",
+      "disc_key": "SPR",
+      "disc_raw": 89.0,
+      "form_score": 11.1,
       "signal_scores": {
         "veloscore": 0.54,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.89,
+        "form": 0.111
+      }
     },
     {
       "rider_id": "matteo_malucelli",
       "full_name": "Matteo Malucelli",
       "team": "XDSAT",
       "price": 5.5,
-      "expected_pts": 207480,
-      "win_prob": 0.3705,
-      "variance": 68600,
-      "reasoning": "VeloScore rank 6",
+      "expected_pts": 232232,
+      "win_prob": 0.4147,
+      "variance": 12348,
+      "reasoning": "VeloScore rank 6, høj disciplinrating (SPR: 91)",
+      "disc_key": "SPR",
+      "disc_raw": 91.0,
+      "form_score": 12.2,
       "signal_scores": {
         "veloscore": 0.49,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.91,
+        "form": 0.122
+      }
     },
     {
       "rider_id": "ben_turner",
       "full_name": "Ben Turner",
       "team": "INEOSG",
       "price": 6.0,
-      "expected_pts": 189840,
-      "win_prob": 0.339,
-      "variance": 58800,
-      "reasoning": "VeloScore rank 8",
+      "expected_pts": 207021,
+      "win_prob": 0.3697,
+      "variance": 16464,
+      "reasoning": "VeloScore rank 8, høj disciplinrating (SPR: 86)",
+      "disc_key": "SPR",
+      "disc_raw": 86.0,
+      "form_score": 8.7,
       "signal_scores": {
         "veloscore": 0.42,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
+        "discipline": 0.86,
+        "form": 0.087
+      }
+    },
+    {
+      "rider_id": "jonas_vingegaard",
+      "full_name": "Jonas Vingegaard",
+      "team": "TV|L",
+      "price": 17.5,
+      "expected_pts": 197844,
+      "win_prob": 0.1524,
+      "variance": 0,
+      "reasoning": "GC-stilling #1, trøje: leader",
       "disc_key": "SPR",
-      "disc_raw": 50.0
+      "disc_raw": 63.0,
+      "form_score": 26.4,
+      "signal_scores": {
+        "veloscore": 0.0,
+        "odds": 0.0,
+        "discipline": 0.63,
+        "form": 0.264
+      }
     },
     {
       "rider_id": "paul_penhoët",
       "full_name": "Paul Penhoët",
       "team": "G-F",
       "price": 6.0,
-      "expected_pts": 167160,
-      "win_prob": 0.2985,
-      "variance": 46200,
-      "reasoning": "VeloScore rank 9",
+      "expected_pts": 194936,
+      "win_prob": 0.3481,
+      "variance": 8316,
+      "reasoning": "VeloScore rank 9, høj disciplinrating (SPR: 91)",
+      "disc_key": "SPR",
+      "disc_raw": 91.0,
+      "form_score": 17.6,
       "signal_scores": {
         "veloscore": 0.33,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.91,
+        "form": 0.176
+      }
     },
     {
       "rider_id": "luca_mozzato",
       "full_name": "Luca Mozzato",
       "team": "TPCT",
       "price": 4.0,
-      "expected_pts": 157080,
-      "win_prob": 0.2805,
-      "variance": 40600,
-      "reasoning": "VeloScore rank 10",
+      "expected_pts": 178416,
+      "win_prob": 0.3186,
+      "variance": 8120,
+      "reasoning": "VeloScore rank 10, høj disciplinrating (SPR: 90)",
+      "disc_key": "SPR",
+      "disc_raw": 90.0,
+      "form_score": 8.1,
       "signal_scores": {
         "veloscore": 0.29,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.9,
+        "form": 0.081
+      }
     },
     {
       "rider_id": "corbin_strong",
       "full_name": "Corbin Strong",
       "team": "I-PT",
       "price": 6.5,
-      "expected_pts": 149520,
-      "win_prob": 0.267,
-      "variance": 36400,
-      "reasoning": "budget-pick",
+      "expected_pts": 169064,
+      "win_prob": 0.3019,
+      "variance": 10920,
+      "reasoning": "høj disciplinrating (SPR: 85)",
+      "disc_key": "SPR",
+      "disc_raw": 85.0,
+      "form_score": 14.9,
       "signal_scores": {
         "veloscore": 0.26,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.85,
+        "form": 0.149
+      }
     },
     {
       "rider_id": "jensen_plowright",
       "full_name": "Jensen Plowright",
       "team": "A-D",
       "price": 4.0,
-      "expected_pts": 149520,
-      "win_prob": 0.267,
-      "variance": 36400,
-      "reasoning": "budget-pick",
+      "expected_pts": 168840,
+      "win_prob": 0.3015,
+      "variance": 10192,
+      "reasoning": "høj disciplinrating (SPR: 86)",
+      "disc_key": "SPR",
+      "disc_raw": 86.0,
+      "form_score": 12.5,
       "signal_scores": {
         "veloscore": 0.26,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.86,
+        "form": 0.125
+      }
     },
     {
       "rider_id": "orluis_aular",
       "full_name": "Orluis Aular",
       "team": "MT",
       "price": 6.0,
-      "expected_pts": 147000,
-      "win_prob": 0.2625,
-      "variance": 35000,
-      "reasoning": "budget-pick",
+      "expected_pts": 166460,
+      "win_prob": 0.2973,
+      "variance": 9100,
+      "reasoning": "høj disciplinrating (SPR: 87)",
+      "disc_key": "SPR",
+      "disc_raw": 87.0,
+      "form_score": 10.8,
       "signal_scores": {
         "veloscore": 0.25,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.87,
+        "form": 0.107
+      }
     },
     {
       "rider_id": "giovanni_lonardi",
       "full_name": "Giovanni Lonardi",
       "team": "TPV",
       "price": 4.0,
-      "expected_pts": 134400,
-      "win_prob": 0.24,
-      "variance": 28000,
-      "reasoning": "budget-pick",
+      "expected_pts": 163520,
+      "win_prob": 0.292,
+      "variance": 5600,
+      "reasoning": "høj disciplinrating (SPR: 90)",
+      "disc_key": "SPR",
+      "disc_raw": 90.0,
+      "form_score": 22.0,
       "signal_scores": {
         "veloscore": 0.2,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.9,
+        "form": 0.22
+      }
     },
     {
-      "rider_id": "toon_aerts",
-      "full_name": "Toon Aerts",
-      "team": "LOTTO",
-      "price": 3.5,
-      "expected_pts": 109200,
-      "win_prob": 0.195,
-      "variance": 14000,
-      "reasoning": "budget-pick",
-      "signal_scores": {
-        "veloscore": 0.1,
-        "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
-    },
-    {
-      "rider_id": "ayco_bastiaens",
-      "full_name": "Ayco Bastiaens",
-      "team": "SQ",
-      "price": 2.5,
-      "expected_pts": 84000,
-      "win_prob": 0.15,
+      "rider_id": "felix_gall",
+      "full_name": "Felix Gall",
+      "team": "DALM",
+      "price": 9.0,
+      "expected_pts": 138873,
+      "win_prob": 0.1051,
       "variance": 0,
-      "reasoning": "budget-pick",
+      "reasoning": "GC-stilling #2",
+      "disc_key": "SPR",
+      "disc_raw": 43.0,
+      "form_score": 19.1,
       "signal_scores": {
         "veloscore": 0.0,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.43,
+        "form": 0.191
+      }
     },
     {
-      "rider_id": "alberto_bettiol",
-      "full_name": "Alberto Bettiol",
-      "team": "XDSAT",
-      "price": 3.5,
-      "expected_pts": 84000,
-      "win_prob": 0.15,
-      "variance": 0,
-      "reasoning": "budget-pick",
-      "signal_scores": {
-        "veloscore": 0.0,
-        "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
-    },
-    {
-      "rider_id": "arnaud_de_lie",
-      "full_name": "Arnaud De Lie",
-      "team": "LOTTO",
+      "rider_id": "jai_hindley",
+      "full_name": "Jai Hindley",
+      "team": "RB-B",
       "price": 8.0,
-      "expected_pts": 84000,
-      "win_prob": 0.15,
+      "expected_pts": 135150,
+      "win_prob": 0.1163,
       "variance": 0,
-      "reasoning": "budget-pick",
+      "reasoning": "GC-stilling #3",
+      "disc_key": "SPR",
+      "disc_raw": 51.0,
+      "form_score": 14.3,
       "signal_scores": {
         "veloscore": 0.0,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.51,
+        "form": 0.143
+      }
     },
     {
-      "rider_id": "afonso_eulálio",
-      "full_name": "Afonso Eulálio",
-      "team": "B-V",
-      "price": 4.0,
-      "expected_pts": 84000,
-      "win_prob": 0.15,
-      "variance": 0,
-      "reasoning": "budget-pick",
-      "signal_scores": {
-        "veloscore": 0.0,
-        "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
-    },
-    {
-      "rider_id": "amanuel_ghebreigzabhier",
-      "full_name": "Amanuel Ghebreigzabhier",
+      "rider_id": "maximilian_walscheid",
+      "full_name": "Maximilian Walscheid",
       "team": "L-T",
-      "price": 2.5,
-      "expected_pts": 84000,
-      "win_prob": 0.15,
-      "variance": 0,
-      "reasoning": "budget-pick",
-      "signal_scores": {
-        "veloscore": 0.0,
-        "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
-    },
-    {
-      "rider_id": "alan_hatherly",
-      "full_name": "Alan Hatherly",
-      "team": "TJA",
-      "price": 4.0,
-      "expected_pts": 84000,
-      "win_prob": 0.15,
-      "variance": 0,
-      "reasoning": "budget-pick",
-      "signal_scores": {
-        "veloscore": 0.0,
-        "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
-    },
-    {
-      "rider_id": "axel_huens",
-      "full_name": "Axel Huens",
-      "team": "G-F",
       "price": 3.0,
-      "expected_pts": 84000,
-      "win_prob": 0.15,
+      "expected_pts": 119840,
+      "win_prob": 0.214,
       "variance": 0,
-      "reasoning": "budget-pick",
+      "reasoning": "høj disciplinrating (SPR: 82)",
+      "disc_key": "SPR",
+      "disc_raw": 82.0,
+      "form_score": 50.0,
       "signal_scores": {
         "veloscore": 0.0,
         "odds": 0.0,
-        "discipline": 0.5,
+        "discipline": 0.82,
         "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+      }
     },
     {
-      "rider_id": "andreas_leknessund",
-      "full_name": "Andreas Leknessund",
-      "team": "UM",
-      "price": 4.0,
-      "expected_pts": 84000,
-      "win_prob": 0.15,
+      "rider_id": "derek_gee",
+      "full_name": "Derek Gee",
+      "team": "L-T",
+      "price": 8.0,
+      "expected_pts": 115313,
+      "win_prob": 0.1166,
       "variance": 0,
-      "reasoning": "budget-pick",
+      "reasoning": "GC-stilling #5",
+      "disc_key": "SPR",
+      "disc_raw": 52.0,
+      "form_score": 12.6,
       "signal_scores": {
         "veloscore": 0.0,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.52,
+        "form": 0.126
+      }
     },
     {
-      "rider_id": "arjen_livyns",
-      "full_name": "Arjen Livyns",
+      "rider_id": "davide_ballerini",
+      "full_name": "Davide Ballerini",
       "team": "XDSAT",
-      "price": 2.5,
-      "expected_pts": 84000,
-      "win_prob": 0.15,
+      "price": 4.0,
+      "expected_pts": 114419,
+      "win_prob": 0.2043,
       "variance": 0,
-      "reasoning": "budget-pick",
+      "reasoning": "høj disciplinrating (SPR: 89)",
+      "disc_key": "SPR",
+      "disc_raw": 89.0,
+      "form_score": 26.3,
       "signal_scores": {
         "veloscore": 0.0,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.89,
+        "form": 0.263
+      }
     },
     {
-      "rider_id": "alessio_martinelli",
-      "full_name": "Alessio Martinelli",
-      "team": "GP-B",
-      "price": 2.5,
-      "expected_pts": 84000,
-      "win_prob": 0.15,
+      "rider_id": "thymen_arensman",
+      "full_name": "Thymen Arensman",
+      "team": "INEOSG",
+      "price": 7.5,
+      "expected_pts": 114051,
+      "win_prob": 0.0965,
       "variance": 0,
-      "reasoning": "budget-pick",
+      "reasoning": "GC-stilling #4",
+      "disc_key": "SPR",
+      "disc_raw": 42.0,
+      "form_score": 12.5,
       "signal_scores": {
         "veloscore": 0.0,
         "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
-    },
-    {
-      "rider_id": "andrea_mifsud",
-      "full_name": "Andrea Mifsud",
-      "team": "TPV",
-      "price": 3.0,
-      "expected_pts": 84000,
-      "win_prob": 0.15,
-      "variance": 0,
-      "reasoning": "budget-pick",
-      "signal_scores": {
-        "veloscore": 0.0,
-        "odds": 0.0,
-        "discipline": 0.5,
-        "form": 0.5
-      },
-      "disc_key": "SPR",
-      "disc_raw": 50.0
+        "discipline": 0.42,
+        "form": 0.125
+      }
     }
   ]
 }

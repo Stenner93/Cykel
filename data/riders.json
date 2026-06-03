@@ -720,14 +720,6 @@
     "own_pct": 0.0
   },
   {
-    "id": "—_(ikke_fundet_sikkert)",
-    "full_name": "— (ikke fundet sikkert)",
-    "short_name": "J. G. Martinez",
-    "team": "TPP",
-    "price": 3.0,
-    "own_pct": 0.0
-  },
-  {
     "id": "jonas_geens",
     "full_name": "Jonas Geens",
     "short_name": "J. Geens",
@@ -1352,9 +1344,9 @@
     "own_pct": 0.0
   },
   {
-    "id": "søjberg_pedersen_rasmus",
-    "full_name": "Søjberg Pedersen Rasmus",
-    "short_name": "R. S. Pedersen",
+    "id": "rasmus_søjberg_pedersen",
+    "full_name": "Rasmus Søjberg Pedersen",
+    "short_name": "R. Søjberg Pedersen",
     "team": "DALM",
     "price": 3.0,
     "own_pct": 0.0
@@ -1488,9 +1480,9 @@
     "own_pct": 0.0
   },
   {
-    "id": "lund_andresen_tobias",
-    "full_name": "Lund Andresen Tobias",
-    "short_name": "T. L. Andresen",
+    "id": "tobias_lund_andresen",
+    "full_name": "Tobias Lund Andresen",
+    "short_name": "T. Lund Andresen",
     "team": "DALM",
     "price": 9.0,
     "own_pct": 0.0
@@ -1520,9 +1512,9 @@
     "own_pct": 0.0
   },
   {
-    "id": "torn_teutenberg_tim",
-    "full_name": "Torn Teutenberg Tim",
-    "short_name": "T. T. Teutenberg",
+    "id": "tim_torn_teutenberg",
+    "full_name": "Tim Torn Teutenberg",
+    "short_name": "T. Torn Teutenberg",
     "team": "L-T",
     "price": 4.0,
     "own_pct": 0.0

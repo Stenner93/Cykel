@@ -25,6 +25,7 @@ sys.path.insert(0, str(ROOT))
 
 from src.predictor import predict_all
 from src.optimizer import make_three_teams, make_best_team
+from src.strategy  import get_strategy, describe as describe_strategy
 
 DATA_DIR = ROOT / "data"
 WEB_DATA = ROOT / "web" / "data"
@@ -39,13 +40,30 @@ def load_riders() -> list[dict]:
 
 
 def load_veloscore(path: Path | None, stage: int) -> list[dict]:
+    """
+    Load VeloScore predictions for a specific stage.
+
+    Accepts two file formats:
+      • Single-stage: {"stage": N, "predictions": [...]}   (per-stage files)
+      • Multi-stage:  [{"stage": 1, ...}, {"stage": 2, ...}]  (combined file)
+    """
+    def _extract(data, stage_num: int) -> list[dict]:
+        if isinstance(data, list):
+            # Multi-stage file — find the matching stage entry
+            for entry in data:
+                if entry.get("stage") == stage_num:
+                    return entry.get("predictions", [])
+            return []
+        # Single-stage dict
+        return data.get("predictions", [])
+
     if path and path.exists():
         data = json.loads(path.read_text(encoding="utf-8"))
-        return data.get("predictions", [])
+        return _extract(data, stage)
     auto = DATA_DIR / f"stage_{stage:02d}_veloscore.json"
     if auto.exists():
         data = json.loads(auto.read_text(encoding="utf-8"))
-        return data.get("predictions", [])
+        return _extract(data, stage)
     print(f"  [WARNING] No VeloScore data found for stage {stage}. Proceeding without it.")
     return []
 
@@ -59,6 +77,48 @@ def load_cyclingoracle() -> dict:
             result[name] = data.get("ratings", {})
         return result
     return {}
+
+
+def load_pcs_form() -> dict[str, dict]:
+    """
+    Load PCS form scores from data/cache/pcs_form.json.
+
+    Returns {rider_id: form_by_type_dict} where form_by_type_dict has keys:
+      "overall", "sprint", "mountain", "hilly", "tt", "cobbled"  (all 0-100)
+
+    Riders not in cache get no entry; predictor.py uses 50.0 as fallback.
+    Old-format entries (with only "form_score") are wrapped transparently.
+    """
+    pcs_path = DATA_DIR / "cache" / "pcs_form.json"
+    if not pcs_path.exists():
+        return {}
+    raw = json.loads(pcs_path.read_text(encoding="utf-8"))
+    result = {}
+    for rider_id, entry in raw.items():
+        if entry.get("not_found"):
+            continue
+        if "form_by_type" in entry:
+            result[rider_id] = entry["form_by_type"]
+        else:
+            # backward compat: old cache without per-type breakdown
+            result[rider_id] = {"overall": entry.get("form_score", 50.0)}
+    return result
+
+
+def load_gc_standings() -> dict[str, int]:
+    """Load GC standings from cache. Returns {rider_id: gc_rank}."""
+    path = DATA_DIR / "cache" / "gc_standings.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_jerseys() -> dict[str, list[str]]:
+    """Load jersey leaders from cache. Returns {rider_id: [jersey_codes]}."""
+    path = DATA_DIR / "cache" / "jerseys.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def load_current_team(predictions: list[dict]) -> dict | None:
@@ -149,11 +209,22 @@ def main():
     parser.add_argument("--veloscore", type=str,  help="Path to VeloScore JSON file")
     parser.add_argument("--budget",    type=float, default=None,
                         help="Override available budget in millions (default: use current_team.json)")
-    parser.add_argument("--force-top", type=int, default=3,
-                        help="Lock top-N consensus picks into SAFE+VALUE teams (default: 3). "
+    parser.add_argument("--force-top", type=int, default=None,
+                        help="Lock top-N consensus picks into SAFE+VALUE teams. "
+                             "Default: auto from stage-type strategy (sprint=3, mountain/hilly/tt/cobbled=2). "
                              "Use 0 to let the LP decide freely.")
     parser.add_argument("--scrape-co", action="store_true",
                         help="Re-scrape CyclingOracle discipline data")
+    parser.add_argument("--scrape-pcs", action="store_true",
+                        help="Re-scrape PCS recent form data (adds ~3 min)")
+    parser.add_argument("--scrape-gc", action="store_true",
+                        help="Re-scrape GC standings + jersey leaders from PCS (fallback)")
+    parser.add_argument("--race", type=str, default="tour-de-france/2026",
+                        help="PCS race path for GC scrape (default: tour-de-france/2026)")
+    parser.add_argument("--scrape-holdet", action="store_true",
+                        help="Re-scrape Holdet.dk: priser, GC-stilling og trøjer")
+    parser.add_argument("--update-riders", action="store_true",
+                        help="Skriv Holdet-priser tilbage til riders.json (kræver --scrape-holdet)")
     args = parser.parse_args()
 
     # Interactive prompts for missing args
@@ -168,9 +239,19 @@ def main():
         if stage_type not in STAGE_TYPES:
             stage_type = "hilly"
 
+    # ── Resolve stage-type strategy ───────────────────────────
+    strategy     = get_strategy(stage_type)
+    force_top_n  = args.force_top if args.force_top is not None else strategy["force_top_n"]
+    budget_boost = strategy["budget_rider_boost"]
+    attack_out_n = strategy["attack_out_n"]
+
     print(f"\n{'='*60}")
     print(f"  TdF Manager — Etape {stage} ({stage_type.upper()})")
-    print(f"{'='*60}\n")
+    print(f"{'='*60}")
+    print(f"  Strategi:  force_top={force_top_n}  budget_boost={budget_boost}x"
+          f"  attack_out={attack_out_n}")
+    print(f"  {strategy['rationale']}")
+    print()
 
     # ── Load data ─────────────────────────────────────────────
     riders = load_riders()
@@ -181,12 +262,56 @@ def main():
     print(f"  VeloScore-data: {len(veloscore_data)} ryttere")
 
     if args.scrape_co:
-        print("  Henter CyclingOracle data...")
-        from src.scrapers import scrape_cyclingoracle_all
-        scrape_cyclingoracle_all()
+        print("  Henter CyclingOracle data (kør scrape_co.py for fuld opdatering)…")
+        import scrape_co
+        scrape_co.main()
 
-    co_data = load_cyclingoracle()
+    if args.scrape_pcs:
+        print("  Henter PCS form-data (kør scrape_pcs.py for fuld opdatering)…")
+        import scrape_pcs
+        scrape_pcs.main()
+
+    if args.scrape_holdet:
+        print("  Henter Holdet-data (priser, GC, trøjer)…")
+        import scrape_holdet
+        import sys as _sys
+        holdet_argv = ["scrape_holdet.py"]
+        if args.update_riders:
+            holdet_argv.append("--update-riders")
+        _sys.argv = holdet_argv
+        scrape_holdet.main()
+        # Reload riders if prices were updated
+        if args.update_riders:
+            riders = load_riders()
+            print(f"  Ryttere genindlæst: {len(riders)} (priser opdateret)")
+    elif args.scrape_gc:
+        # Fallback: scrape GC from PCS (less reliable than Holdet)
+        print("  Henter GC-stilling + trøjeledere fra PCS…")
+        import scrape_gc
+        import sys as _sys
+        _sys.argv = ["scrape_gc.py", "--race", args.race]
+        scrape_gc.main()
+
+    co_data      = load_cyclingoracle()
+    pcs_form     = load_pcs_form()
+    gc_standings = load_gc_standings()
+    jerseys      = load_jerseys()
     print(f"  CyclingOracle: {len(co_data)} ryttere i cache")
+    print(f"  PCS form:      {len(pcs_form)} ryttere i cache")
+    if gc_standings:
+        top3 = sorted(gc_standings.items(), key=lambda x: x[1])[:3]
+        id_to_name = {r["id"]: r["full_name"] for r in riders}
+        top3_names = ", ".join(f"{r}. {id_to_name.get(k, k)}" for k, r in top3)
+        print(f"  GC-stilling:   {len(gc_standings)} ryttere  (top3: {top3_names})")
+    else:
+        print("  GC-stilling:   (ingen data — kør med --scrape-gc)")
+    if jerseys:
+        id_to_name = {r["id"]: r["full_name"] for r in riders}
+        jersey_str = ", ".join(
+            f"{id_to_name.get(k, k)}: {'+'.join(v)}"
+            for k, v in jerseys.items()
+        )
+        print(f"  Trøjer:        {jersey_str}")
 
     # ── Run predictions ───────────────────────────────────────
     print("\n  Beregner forventede point...")
@@ -195,6 +320,9 @@ def main():
         stage_type=stage_type,
         veloscore_data=veloscore_data,
         cyclingoracle_data=co_data,
+        pcs_form_data=pcs_form,
+        current_gc=gc_standings or None,
+        current_jerseys=jerseys or None,
     )
 
     # ── Load current team ─────────────────────────────────────
@@ -206,7 +334,9 @@ def main():
         predictions,
         current_team_data=current_team_data,
         transfer_budget_M=args.budget,
-        force_top_n=args.force_top,
+        force_top_n=force_top_n,
+        budget_rider_boost=budget_boost,
+        attack_out_n=attack_out_n,
     )
 
     # ── Unconstrained best possible team ─────────────────────
