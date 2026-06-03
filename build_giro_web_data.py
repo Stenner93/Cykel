@@ -286,12 +286,18 @@ def main() -> None:
 
     stages_meta: list[dict] = []
     for i, eid in enumerate(events):
-        info  = event_info.get(eid, {})
-        stype = _h.HOLDET_STAGE_TYPE_MAP.get(info.get("stageType", ""), "hilly")
+        info      = event_info.get(eid, {})
+        stage_num = i + 1
+
+        # Priority: PCS cache (distinguishes p4-hilly from p5-mountain) > Holdet
+        stype = _h.pcs_override_stage_type(GIRO_CARTRIDGE, stage_num)
+        if not stype:
+            stype = _h.HOLDET_STAGE_TYPE_MAP.get(info.get("stageType", ""), "hilly")
+
         stages_meta.append({
-            "num":      i + 1,
+            "num":      stage_num,
             "event_id": eid,
-            "name":     info.get("name", f"Etape {i+1}"),
+            "name":     info.get("name", f"Etape {stage_num}"),
             "type":     stype,
             "status":   info.get("status", "unknown"),
         })
@@ -479,7 +485,8 @@ def main() -> None:
 
     for entry in vs_all:
         snum    = entry["stage"]
-        stype   = entry.get("stage_type", "hilly")
+        stype   = (_h.pcs_override_stage_type(GIRO_CARTRIDGE, snum)
+                   or entry.get("stage_type", "hilly"))
         vs_data = entry.get("predictions", [])
 
         print(f"    Etape {snum:2d} ({stype}, {len(vs_data)} VS-ryttere)…")
