@@ -70,19 +70,23 @@ STAGE_TYPES_CACHE_PATH = CACHE_DIR / "pcs_stage_types.json"
 
 # PCS profile class → our stage_type
 #
-# p1 = flat → sprint
-# p2 = rolling/slightly hilly → sprint
-#      (p2 stages regularly end in bunch sprints; sprint specialists win them,
-#       not climbers — classifying them as "hilly" gave Magnier/Milan too low sprint form)
-# p3 = clearly hilly → hilly  (puncheur territory: short steep climbs, reduced bunch)
-# p4 = mountain summit finish → mountain
-# p5 = high mountain          → mountain
-# TT override: stage name contains "ITT" or "(TT)" → "tt" regardless of profile
+# p1 = flat (score ~0-40)         → sprint
+# p2 = rolling / slightly hilly   → sprint
+#      (p2 stages end in bunch sprints; classifying as "hilly" gave sprinters
+#       too low sprint form)
+# p3 = clearly hilly (score ~100-200) → hilly  (puncheur / short climbs)
+# p4 = mountain WITHOUT summit finish → hilly
+#      (high-category climbs but the finish is in a valley or on a descent;
+#       breakaway specialists and puncheurs win these, not pure climbers.
+#       Giro 2026 examples: stage 2 Narváez score=108, stage 4 Narváez score=89)
+# p5 = mountain WITH summit finish    → mountain
+#      (race ends at the top of a categorised climb; GC riders dominate)
+# TT override: stage name contains "ITT" or "TT" → "tt" regardless of profile
 PCS_PROFILE_TO_TYPE: dict[str, str] = {
     "1": "sprint",
     "2": "sprint",
     "3": "hilly",
-    "4": "mountain",
+    "4": "hilly",    # was "mountain" — p4 has flat/downhill finish, not a summit
     "5": "mountain",
 }
 
@@ -297,6 +301,9 @@ def fetch_race_stage_types(
     """
     Fetch stage profiles for a race and return {stage_num: stage_type}.
 
+    Also writes enriched metadata (p_class, stage_type) into
+    disk_cache[race_base + "_meta"] for inspection / future use.
+
     Results are cached in disk_cache[race_base] to avoid re-fetching.
     """
     if race_base in disk_cache:
@@ -312,8 +319,9 @@ def fetch_race_stage_types(
         disk_cache[race_base] = {}
         return {}
 
-    soup       = BeautifulSoup(r.text, "html.parser")
-    stage_map: dict[int, str] = {}
+    soup          = BeautifulSoup(r.text, "html.parser")
+    stage_map:  dict[int, str]  = {}
+    stage_meta: dict[int, dict] = {}
     stage_href_re = re.compile(r"/stage-(\d+)$")
     profile_re    = re.compile(r"\bp([1-9])\b")
 
@@ -321,10 +329,10 @@ def fetch_race_stage_types(
         a = row.find("a", href=stage_href_re)
         if not a:
             continue
-        sn = int(stage_href_re.search(a["href"]).group(1))
+        sn         = int(stage_href_re.search(a["href"]).group(1))
         stage_name = a.get_text(" ", strip=True)
 
-        # Detect profile class
+        # Detect PCS profile class (p1–p5) from span CSS class
         profiles = []
         for span in row.find_all("span", class_=True):
             for cls in span.get("class", []):
@@ -334,16 +342,19 @@ def fetch_race_stage_types(
 
         if profiles:
             p = profiles[0]
-            if p == "1" and re.search(r"\b(ITT|TT)\b", stage_name, re.I):
+            if re.search(r"\b(ITT|TT)\b", stage_name, re.I):
                 stype = "tt"
             else:
                 stype = PCS_PROFILE_TO_TYPE.get(p, "hilly")
         else:
+            p     = "?"
             stype = "hilly"   # safe fallback
 
-        stage_map[sn] = stype
+        stage_map[sn]  = stype
+        stage_meta[sn] = {"p_class": p, "stage_type": stype, "name": stage_name}
 
-    disk_cache[race_base] = stage_map
+    disk_cache[race_base]            = stage_map
+    disk_cache[race_base + "_meta"]  = stage_meta   # richer data for inspection
     time.sleep(0.4)
     return stage_map
 
