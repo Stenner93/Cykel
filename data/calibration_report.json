@@ -6,18 +6,21 @@
     "form": 0.184
   },
   "metrics": {
-    "mae": 75664,
-    "rank_correlation": 0.8924,
-    "n_samples": 138
+    "mae": 90490,
+    "rank_correlation": 0.8545,
+    "n_samples": 72
   },
-  "vs1_accuracy": 0.6,
-  "top5_accuracy": 0.9333,
-  "n_stages": 15,
-  "n_samples": 138,
+  "vs1_accuracy": 0.0,
+  "top5_accuracy": 0.5714,
+  "n_stages": 7,
+  "n_stages_skipped": 11,
+  "n_samples": 72,
+  "note": "Kun etaper med matchende stage_type i veloscore.json og results.json bruges til kalibrering.  Udeladte etaper er stadig listet med type_matched=false.",
   "per_stage": [
     {
       "stage": 1,
       "stage_type": "sprint",
+      "type_matched": true,
       "vs_top_pick": "Jonathan Milan",
       "actual_winner": "Paul Magnier",
       "actual_winner_pts": 560000,
@@ -33,6 +36,7 @@
     {
       "stage": 4,
       "stage_type": "mountain",
+      "type_matched": true,
       "vs_top_pick": "Christian Scaroni",
       "actual_winner": "Jhonatan Narváez",
       "actual_winner_pts": 410000,
@@ -48,36 +52,33 @@
     {
       "stage": 5,
       "stage_type": "sprint",
-      "vs_top_pick": "Paul Magnier",
-      "actual_winner": "Paul Magnier",
-      "actual_winner_pts": 0,
-      "vs1_correct": true,
-      "winner_in_vs_top5": true,
-      "avg_pts_by_vs_rank": {
-        "1-3": 0,
-        "4-8": 0,
-        "9-15": 0,
-        "16+": 0
-      }
+      "actual_type": "mountain",
+      "type_matched": false,
+      "skipped_reason": "Etapetype-mismatch: VeloScore=sprint, Resultater=mountain. Forskelligt etapenummer i de to datasæt.",
+      "vs_top_pick": null,
+      "actual_winner": "Igor Arrieta",
+      "actual_winner_pts": 494000,
+      "vs1_correct": false,
+      "winner_in_vs_top5": false,
+      "avg_pts_by_vs_rank": {}
     },
     {
       "stage": 6,
       "stage_type": "mountain",
-      "vs_top_pick": "Jonas Vingegaard",
-      "actual_winner": "Jonas Vingegaard",
-      "actual_winner_pts": 0,
-      "vs1_correct": true,
-      "winner_in_vs_top5": true,
-      "avg_pts_by_vs_rank": {
-        "1-3": 0,
-        "4-8": 0,
-        "9-15": 0,
-        "16+": 0
-      }
+      "actual_type": "hilly",
+      "type_matched": false,
+      "skipped_reason": "Etapetype-mismatch: VeloScore=mountain, Resultater=hilly. Forskelligt etapenummer i de to datasæt.",
+      "vs_top_pick": null,
+      "actual_winner": "Davide Ballerini",
+      "actual_winner_pts": 410000,
+      "vs1_correct": false,
+      "winner_in_vs_top5": false,
+      "avg_pts_by_vs_rank": {}
     },
     {
       "stage": 7,
       "stage_type": "mountain",
+      "type_matched": true,
       "vs_top_pick": "Jan Christen",
       "actual_winner": "Jonas Vingegaard",
       "actual_winner_pts": 570000,
@@ -93,51 +94,46 @@
     {
       "stage": 8,
       "stage_type": "mountain",
-      "vs_top_pick": "Jonas Vingegaard",
-      "actual_winner": "Jonas Vingegaard",
-      "actual_winner_pts": 0,
-      "vs1_correct": true,
-      "winner_in_vs_top5": true,
-      "avg_pts_by_vs_rank": {
-        "1-3": 0,
-        "4-8": 0,
-        "9-15": 0,
-        "16+": 0
-      }
+      "actual_type": "hilly",
+      "type_matched": false,
+      "skipped_reason": "Etapetype-mismatch: VeloScore=mountain, Resultater=hilly. Forskelligt etapenummer i de to datasæt.",
+      "vs_top_pick": null,
+      "actual_winner": "Jhonatan Narváez",
+      "actual_winner_pts": 312000,
+      "vs1_correct": false,
+      "winner_in_vs_top5": false,
+      "avg_pts_by_vs_rank": {}
     },
     {
       "stage": 9,
       "stage_type": "tt",
-      "vs_top_pick": "Filippo Ganna",
-      "actual_winner": "Thymen Arensman",
-      "actual_winner_pts": 218000,
+      "actual_type": "mountain",
+      "type_matched": false,
+      "skipped_reason": "Etapetype-mismatch: VeloScore=tt, Resultater=mountain. Forskelligt etapenummer i de to datasæt.",
+      "vs_top_pick": null,
+      "actual_winner": "Jonas Vingegaard",
+      "actual_winner_pts": 590000,
       "vs1_correct": false,
-      "winner_in_vs_top5": true,
-      "avg_pts_by_vs_rank": {
-        "1-3": 72667,
-        "4-8": 43600,
-        "9-15": 0,
-        "16+": 0
-      }
+      "winner_in_vs_top5": false,
+      "avg_pts_by_vs_rank": {}
     },
     {
       "stage": 10,
       "stage_type": "mountain",
-      "vs_top_pick": "Giulio Ciccone",
-      "actual_winner": "Giulio Ciccone",
-      "actual_winner_pts": 0,
-      "vs1_correct": true,
-      "winner_in_vs_top5": true,
-      "avg_pts_by_vs_rank": {
-        "1-3": 0,
-        "4-8": 0,
-        "9-15": 0,
-        "16+": 0
-      }
+      "actual_type": "tt",
+      "type_matched": false,
+      "skipped_reason": "Etapetype-mismatch: VeloScore=mountain, Resultater=tt. Forskelligt etapenummer i de to datasæt.",
+      "vs_top_pick": null,
+      "actual_winner": "Thymen Arensman",
+      "actual_winner_pts": 353000,
+      "vs1_correct": false,
+      "winner_in_vs_top5": false,
+      "avg_pts_by_vs_rank": {}
     },
     {
       "stage": 11,
       "stage_type": "hilly",
+      "type_matched": true,
       "vs_top_pick": "Tobias Lund Andresen",
       "actual_winner": "Jhonatan Narváez",
       "actual_winner_pts": 347000,
@@ -151,13 +147,27 @@
       }
     },
     {
+      "stage": 12,
+      "stage_type": "mountain",
+      "actual_type": "mountain",
+      "type_matched": false,
+      "skipped_reason": "Resultater mangler (top_results tom)",
+      "vs_top_pick": null,
+      "actual_winner": "",
+      "actual_winner_pts": 0,
+      "vs1_correct": false,
+      "winner_in_vs_top5": false,
+      "avg_pts_by_vs_rank": {}
+    },
+    {
       "stage": 13,
       "stage_type": "mountain",
+      "type_matched": true,
       "vs_top_pick": "Jonas Vingegaard",
-      "actual_winner": "Jonas Vingegaard",
-      "actual_winner_pts": 0,
-      "vs1_correct": true,
-      "winner_in_vs_top5": true,
+      "actual_winner": "Alberto Bettiol",
+      "actual_winner_pts": 362000,
+      "vs1_correct": false,
+      "winner_in_vs_top5": false,
       "avg_pts_by_vs_rank": {
         "1-3": 0,
         "4-8": 0,
@@ -168,41 +178,38 @@
     {
       "stage": 14,
       "stage_type": "sprint",
-      "vs_top_pick": "Jonathan Milan",
-      "actual_winner": "Jonathan Milan",
-      "actual_winner_pts": 0,
-      "vs1_correct": true,
-      "winner_in_vs_top5": true,
-      "avg_pts_by_vs_rank": {
-        "1-3": 0,
-        "4-8": 0,
-        "9-15": 0,
-        "16+": 0
-      }
+      "actual_type": "mountain",
+      "type_matched": false,
+      "skipped_reason": "Etapetype-mismatch: VeloScore=sprint, Resultater=mountain. Forskelligt etapenummer i de to datasæt.",
+      "vs_top_pick": null,
+      "actual_winner": "Jonas Vingegaard",
+      "actual_winner_pts": 635000,
+      "vs1_correct": false,
+      "winner_in_vs_top5": false,
+      "avg_pts_by_vs_rank": {}
     },
     {
       "stage": 15,
       "stage_type": "mountain",
-      "vs_top_pick": "Jonas Vingegaard",
-      "actual_winner": "Jonas Vingegaard",
-      "actual_winner_pts": 0,
-      "vs1_correct": true,
-      "winner_in_vs_top5": true,
-      "avg_pts_by_vs_rank": {
-        "1-3": 0,
-        "4-8": 0,
-        "9-15": 0,
-        "16+": 0
-      }
+      "actual_type": "hilly",
+      "type_matched": false,
+      "skipped_reason": "Etapetype-mismatch: VeloScore=mountain, Resultater=hilly. Forskelligt etapenummer i de to datasæt.",
+      "vs_top_pick": null,
+      "actual_winner": "Fredrik Dversnes",
+      "actual_winner_pts": 425000,
+      "vs1_correct": false,
+      "winner_in_vs_top5": false,
+      "avg_pts_by_vs_rank": {}
     },
     {
       "stage": 16,
       "stage_type": "mountain",
+      "type_matched": true,
       "vs_top_pick": "Jhonatan Narváez",
-      "actual_winner": "Jhonatan Narváez",
-      "actual_winner_pts": 0,
-      "vs1_correct": true,
-      "winner_in_vs_top5": true,
+      "actual_winner": "Jonas Vingegaard",
+      "actual_winner_pts": 605000,
+      "vs1_correct": false,
+      "winner_in_vs_top5": false,
       "avg_pts_by_vs_rank": {
         "1-3": 0,
         "4-8": 0,
@@ -213,21 +220,33 @@
     {
       "stage": 17,
       "stage_type": "mountain",
-      "vs_top_pick": "Jhonatan Narváez",
-      "actual_winner": "Jhonatan Narváez",
+      "actual_type": "hilly",
+      "type_matched": false,
+      "skipped_reason": "Etapetype-mismatch: VeloScore=mountain, Resultater=hilly. Forskelligt etapenummer i de to datasæt.",
+      "vs_top_pick": null,
+      "actual_winner": "Michael Valgren",
+      "actual_winner_pts": 350000,
+      "vs1_correct": false,
+      "winner_in_vs_top5": false,
+      "avg_pts_by_vs_rank": {}
+    },
+    {
+      "stage": 18,
+      "stage_type": "mountain",
+      "actual_type": "?",
+      "type_matched": false,
+      "skipped_reason": "Ingen resultater fundet for etape-nr.",
+      "vs_top_pick": null,
+      "actual_winner": "",
       "actual_winner_pts": 0,
-      "vs1_correct": true,
-      "winner_in_vs_top5": true,
-      "avg_pts_by_vs_rank": {
-        "1-3": 0,
-        "4-8": 0,
-        "9-15": 0,
-        "16+": 0
-      }
+      "vs1_correct": false,
+      "winner_in_vs_top5": false,
+      "avg_pts_by_vs_rank": {}
     },
     {
       "stage": 19,
       "stage_type": "mountain",
+      "type_matched": true,
       "vs_top_pick": "Jonas Vingegaard",
       "actual_winner": "Giulio Ciccone",
       "actual_winner_pts": 661000,
@@ -239,6 +258,19 @@
         "9-15": 0,
         "16+": 0
       }
+    },
+    {
+      "stage": 21,
+      "stage_type": "sprint",
+      "actual_type": "?",
+      "type_matched": false,
+      "skipped_reason": "Ingen resultater fundet for etape-nr.",
+      "vs_top_pick": null,
+      "actual_winner": "",
+      "actual_winner_pts": 0,
+      "vs1_correct": false,
+      "winner_in_vs_top5": false,
+      "avg_pts_by_vs_rank": {}
     }
   ]
 }

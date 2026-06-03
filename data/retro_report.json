@@ -1,0 +1,2235 @@
+{
+  "summary": {
+    "n_stages_analyzed": 15,
+    "n_type_matched": 7,
+    "n_type_mismatched": 8,
+    "avg_efficiency_all": 0.1786,
+    "avg_efficiency_matched": 0.3282,
+    "winner_in_model_rate": 0.4667,
+    "avg_riders_scored": 0.6,
+    "avg_riders_top15": 0.6,
+    "caveat": "Priser er TdF 2026-tilnærmelser (Giro 2026-priser utilgængelige). Efficiency-tal er vejledende, ikke absolutte. Stage-numre matches direkte (VS nr. N ↔ resultater nr. N); type-mismatch (✗) afspejler fejlforudsagte etapetyper."
+  },
+  "stages": [
+    {
+      "stage": 1,
+      "vs_type": "sprint",
+      "actual_type": "sprint",
+      "type_match": true,
+      "note": "Magnier wins — VeloScore had Milan #1",
+      "winner": "Paul Magnier",
+      "winner_in_model": true,
+      "oracle_pts": 1909000,
+      "oracle_riders_scored": 5,
+      "oracle_team": [
+        {
+          "name": "Paul Magnier",
+          "team": "SQ",
+          "price_M": 9.0,
+          "is_captain": true,
+          "pred_pts": 560000,
+          "actual_pts": 560000
+        },
+        {
+          "name": "Ethan Vernon",
+          "team": "I-PT",
+          "price_M": 8.0,
+          "is_captain": false,
+          "pred_pts": 295000,
+          "actual_pts": 295000
+        },
+        {
+          "name": "Jonathan Milan",
+          "team": "L-T",
+          "price_M": 11.5,
+          "is_captain": false,
+          "pred_pts": 175000,
+          "actual_pts": 175000
+        },
+        {
+          "name": "Manuele Tarozzi",
+          "team": "GP-B",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 175000,
+          "actual_pts": 175000
+        },
+        {
+          "name": "Pablo Sevilla Diego",
+          "team": "TPV",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 144000,
+          "actual_pts": 144000
+        },
+        {
+          "name": "Edward Planckaert",
+          "team": "A-D",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Gregor Mühlberger",
+          "team": "DALM",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Matteo Moschetti",
+          "team": "QPCT",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1410599,
+      "model_actual_pts": 910000,
+      "model_riders_scored": 2,
+      "model_riders_top15": 2,
+      "model_team": [
+        {
+          "name": "Jonathan Milan",
+          "team": "L-T",
+          "price_M": 11.5,
+          "is_captain": true,
+          "pred_pts": 192882,
+          "actual_pts": 175000
+        },
+        {
+          "name": "Paul Magnier",
+          "team": "SQ",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 183487,
+          "actual_pts": 560000
+        },
+        {
+          "name": "Kaden Groves",
+          "team": "A-D",
+          "price_M": 8.5,
+          "is_captain": false,
+          "pred_pts": 166880,
+          "actual_pts": 0
+        },
+        {
+          "name": "Dylan Groenewegen",
+          "team": "UTR",
+          "price_M": 10.0,
+          "is_captain": false,
+          "pred_pts": 154788,
+          "actual_pts": 0
+        },
+        {
+          "name": "Ayco Bastiaens",
+          "team": "SQ",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 129920,
+          "actual_pts": 0
+        },
+        {
+          "name": "Amanuel Ghebreigzabhier",
+          "team": "L-T",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 129920,
+          "actual_pts": 0
+        },
+        {
+          "name": "Larry Warbasse",
+          "team": "TPCT",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 129920,
+          "actual_pts": 0
+        },
+        {
+          "name": "Tomáš Kopecký",
+          "team": "UTR",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 129920,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.4767
+    },
+    {
+      "stage": 4,
+      "vs_type": "mountain",
+      "actual_type": "mountain",
+      "type_match": true,
+      "note": "Narvaez wins — VeloScore had Scaroni #1",
+      "winner": "Jhonatan Narváez",
+      "winner_in_model": true,
+      "oracle_pts": 1818000,
+      "oracle_riders_scored": 5,
+      "oracle_team": [
+        {
+          "name": "Jhonatan Narváez",
+          "team": "UAETEXRG",
+          "price_M": 5.5,
+          "is_captain": true,
+          "pred_pts": 410000,
+          "actual_pts": 410000
+        },
+        {
+          "name": "Giulio Ciccone",
+          "team": "L-T",
+          "price_M": 8.0,
+          "is_captain": false,
+          "pred_pts": 350000,
+          "actual_pts": 350000
+        },
+        {
+          "name": "Orluis Aular",
+          "team": "MT",
+          "price_M": 6.0,
+          "is_captain": false,
+          "pred_pts": 309000,
+          "actual_pts": 309000
+        },
+        {
+          "name": "Ben Turner",
+          "team": "INEOSG",
+          "price_M": 6.0,
+          "is_captain": false,
+          "pred_pts": 174000,
+          "actual_pts": 174000
+        },
+        {
+          "name": "Lennert Van Eetvelt",
+          "team": "LOTTO",
+          "price_M": 7.5,
+          "is_captain": false,
+          "pred_pts": 165000,
+          "actual_pts": 165000
+        },
+        {
+          "name": "Edward Planckaert",
+          "team": "A-D",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Gregor Mühlberger",
+          "team": "DALM",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Mathijs Paasschens",
+          "team": "B-V",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1644804,
+      "model_actual_pts": 410000,
+      "model_riders_scored": 1,
+      "model_riders_top15": 1,
+      "model_team": [
+        {
+          "name": "Christian Scaroni",
+          "team": "XDSAT",
+          "price_M": 5.5,
+          "is_captain": true,
+          "pred_pts": 233559,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jhonatan Narváez",
+          "team": "UAETEXRG",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 200486,
+          "actual_pts": 410000
+        },
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": false,
+          "pred_pts": 198557,
+          "actual_pts": 0
+        },
+        {
+          "name": "Javier Romo",
+          "team": "MT",
+          "price_M": 6.0,
+          "is_captain": false,
+          "pred_pts": 177648,
+          "actual_pts": 0
+        },
+        {
+          "name": "Andreas Leknessund",
+          "team": "UM",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 155314,
+          "actual_pts": 0
+        },
+        {
+          "name": "Michael Valgren",
+          "team": "EFEEP",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 153361,
+          "actual_pts": 0
+        },
+        {
+          "name": "Amanuel Ghebreigzabhier",
+          "team": "L-T",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Pablo Sevilla Diego",
+          "team": "TPV",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.2255
+    },
+    {
+      "stage": 5,
+      "vs_type": "sprint",
+      "actual_type": "mountain",
+      "type_match": false,
+      "note": "Arrieta wins with KOM bonus — VeloScore had sprint picks",
+      "winner": "Igor Arrieta",
+      "winner_in_model": false,
+      "oracle_pts": 1934000,
+      "oracle_riders_scored": 5,
+      "oracle_team": [
+        {
+          "name": "Igor Arrieta",
+          "team": "UAETEXRG",
+          "price_M": 4.0,
+          "is_captain": true,
+          "pred_pts": 494000,
+          "actual_pts": 494000
+        },
+        {
+          "name": "Afonso Eulálio",
+          "team": "B-V",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 413000,
+          "actual_pts": 413000
+        },
+        {
+          "name": "Christian Scaroni",
+          "team": "XDSAT",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 231000,
+          "actual_pts": 231000
+        },
+        {
+          "name": "Andrea Raccagni Noviero",
+          "team": "SQ",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 152000,
+          "actual_pts": 152000
+        },
+        {
+          "name": "Johannes Kulset",
+          "team": "UM",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 150000,
+          "actual_pts": 150000
+        },
+        {
+          "name": "Einer Rubio",
+          "team": "MT",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Juan Pedro López",
+          "team": "MT",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Max Poole",
+          "team": "TPP",
+          "price_M": 6.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1482007,
+      "model_actual_pts": 0,
+      "model_riders_scored": 0,
+      "model_riders_top15": 0,
+      "model_team": [
+        {
+          "name": "Paul Magnier",
+          "team": "SQ",
+          "price_M": 9.0,
+          "is_captain": true,
+          "pred_pts": 242847,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jonathan Milan",
+          "team": "L-T",
+          "price_M": 11.5,
+          "is_captain": false,
+          "pred_pts": 199229,
+          "actual_pts": 0
+        },
+        {
+          "name": "Dylan Groenewegen",
+          "team": "UTR",
+          "price_M": 10.0,
+          "is_captain": false,
+          "pred_pts": 139550,
+          "actual_pts": 0
+        },
+        {
+          "name": "Felix Gall",
+          "team": "DALM",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 137854,
+          "actual_pts": 0
+        },
+        {
+          "name": "Ayco Bastiaens",
+          "team": "SQ",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 129920,
+          "actual_pts": 0
+        },
+        {
+          "name": "Pablo Sevilla Diego",
+          "team": "TPV",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 129920,
+          "actual_pts": 0
+        },
+        {
+          "name": "Joshua Kench",
+          "team": "G-F",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 129920,
+          "actual_pts": 0
+        },
+        {
+          "name": "Larry Warbasse",
+          "team": "TPCT",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 129920,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.0
+    },
+    {
+      "stage": 6,
+      "vs_type": "mountain",
+      "actual_type": "hilly",
+      "type_match": false,
+      "note": "Ballerini wins — breakaway stage",
+      "winner": "Davide Ballerini",
+      "winner_in_model": false,
+      "oracle_pts": 1244000,
+      "oracle_riders_scored": 3,
+      "oracle_team": [
+        {
+          "name": "Davide Ballerini",
+          "team": "XDSAT",
+          "price_M": 4.0,
+          "is_captain": true,
+          "pred_pts": 410000,
+          "actual_pts": 410000
+        },
+        {
+          "name": "Jensen Plowright",
+          "team": "A-D",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 250000,
+          "actual_pts": 250000
+        },
+        {
+          "name": "Paul Magnier",
+          "team": "SQ",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 174000,
+          "actual_pts": 174000
+        },
+        {
+          "name": "Einer Rubio",
+          "team": "MT",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Guillermo Thomas Silva",
+          "team": "XDSAT",
+          "price_M": 4.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jasper Stuyven",
+          "team": "SQ",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Mathijs Paasschens",
+          "team": "B-V",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Toon Aerts",
+          "team": "LOTTO",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1802783,
+      "model_actual_pts": 0,
+      "model_riders_scored": 0,
+      "model_riders_top15": 0,
+      "model_team": [
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": true,
+          "pred_pts": 307284,
+          "actual_pts": 0
+        },
+        {
+          "name": "Felix Gall",
+          "team": "DALM",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 226906,
+          "actual_pts": 0
+        },
+        {
+          "name": "Thymen Arensman",
+          "team": "INEOSG",
+          "price_M": 7.5,
+          "is_captain": false,
+          "pred_pts": 199201,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jhonatan Narváez",
+          "team": "UAETEXRG",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 177468,
+          "actual_pts": 0
+        },
+        {
+          "name": "Amanuel Ghebreigzabhier",
+          "team": "L-T",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Pablo Sevilla Diego",
+          "team": "TPV",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Filippo Magli",
+          "team": "GP-B",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Hartthijs de Vries",
+          "team": "UTR",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.0
+    },
+    {
+      "stage": 7,
+      "vs_type": "mountain",
+      "actual_type": "mountain",
+      "type_match": true,
+      "note": "Vingegaard wins — VeloScore had Christen/Valgren on top",
+      "winner": "Jonas Vingegaard",
+      "winner_in_model": true,
+      "oracle_pts": 1800000,
+      "oracle_riders_scored": 3,
+      "oracle_team": [
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": true,
+          "pred_pts": 570000,
+          "actual_pts": 570000
+        },
+        {
+          "name": "Felix Gall",
+          "team": "DALM",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 368000,
+          "actual_pts": 368000
+        },
+        {
+          "name": "Jai Hindley",
+          "team": "RB-B",
+          "price_M": 8.0,
+          "is_captain": false,
+          "pred_pts": 292000,
+          "actual_pts": 292000
+        },
+        {
+          "name": "Cyril Barthe",
+          "team": "G-F",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Dion Smith",
+          "team": "I-PT",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Hartthijs de Vries",
+          "team": "UTR",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Liam Slock",
+          "team": "LOTTO",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Sean Flynn",
+          "team": "TPP",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1736472,
+      "model_actual_pts": 1140000,
+      "model_riders_scored": 1,
+      "model_riders_top15": 1,
+      "model_team": [
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": true,
+          "pred_pts": 232944,
+          "actual_pts": 570000
+        },
+        {
+          "name": "Jhonatan Narváez",
+          "team": "UAETEXRG",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 217788,
+          "actual_pts": 0
+        },
+        {
+          "name": "Guillermo Thomas Silva",
+          "team": "XDSAT",
+          "price_M": 4.5,
+          "is_captain": false,
+          "pred_pts": 190260,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jan Christen",
+          "team": "UAETEXRG",
+          "price_M": 6.0,
+          "is_captain": false,
+          "pred_pts": 182080,
+          "actual_pts": 0
+        },
+        {
+          "name": "Michael Valgren",
+          "team": "EFEEP",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 181833,
+          "actual_pts": 0
+        },
+        {
+          "name": "Fabio Christen",
+          "team": "QPCT",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 176864,
+          "actual_pts": 0
+        },
+        {
+          "name": "Christian Scaroni",
+          "team": "XDSAT",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 175599,
+          "actual_pts": 0
+        },
+        {
+          "name": "Ayco Bastiaens",
+          "team": "SQ",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.6333
+    },
+    {
+      "stage": 8,
+      "vs_type": "mountain",
+      "actual_type": "hilly",
+      "type_match": false,
+      "note": "Narvaez wins punchy stage",
+      "winner": "Jhonatan Narváez",
+      "winner_in_model": false,
+      "oracle_pts": 1105000,
+      "oracle_riders_scored": 3,
+      "oracle_team": [
+        {
+          "name": "Jhonatan Narváez",
+          "team": "UAETEXRG",
+          "price_M": 5.5,
+          "is_captain": true,
+          "pred_pts": 312000,
+          "actual_pts": 312000
+        },
+        {
+          "name": "Andreas Leknessund",
+          "team": "UM",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 285000,
+          "actual_pts": 285000
+        },
+        {
+          "name": "Martin Tjøtta",
+          "team": "UM",
+          "price_M": 3.0,
+          "is_captain": false,
+          "pred_pts": 196000,
+          "actual_pts": 196000
+        },
+        {
+          "name": "Einer Rubio",
+          "team": "MT",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Guillermo Thomas Silva",
+          "team": "XDSAT",
+          "price_M": 4.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jasper Stuyven",
+          "team": "SQ",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Mathijs Paasschens",
+          "team": "B-V",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Toon Aerts",
+          "team": "LOTTO",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1741701,
+      "model_actual_pts": 0,
+      "model_riders_scored": 0,
+      "model_riders_top15": 0,
+      "model_team": [
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": true,
+          "pred_pts": 307284,
+          "actual_pts": 0
+        },
+        {
+          "name": "Mathis Rondel",
+          "team": "TPCT",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 206977,
+          "actual_pts": 0
+        },
+        {
+          "name": "Lennert Van Eetvelt",
+          "team": "LOTTO",
+          "price_M": 7.5,
+          "is_captain": false,
+          "pred_pts": 180430,
+          "actual_pts": 0
+        },
+        {
+          "name": "Felix Gall",
+          "team": "DALM",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 155086,
+          "actual_pts": 0
+        },
+        {
+          "name": "Ayco Bastiaens",
+          "team": "SQ",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Amanuel Ghebreigzabhier",
+          "team": "L-T",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Pablo Sevilla Diego",
+          "team": "TPV",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Tomáš Kopecký",
+          "team": "UTR",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.0
+    },
+    {
+      "stage": 9,
+      "vs_type": "tt",
+      "actual_type": "mountain",
+      "type_match": false,
+      "note": "Vingegaard wins again",
+      "winner": "Jonas Vingegaard",
+      "winner_in_model": true,
+      "oracle_pts": 2119000,
+      "oracle_riders_scored": 4,
+      "oracle_team": [
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": true,
+          "pred_pts": 590000,
+          "actual_pts": 590000
+        },
+        {
+          "name": "Felix Gall",
+          "team": "DALM",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 368000,
+          "actual_pts": 368000
+        },
+        {
+          "name": "Afonso Eulálio",
+          "team": "B-V",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 286000,
+          "actual_pts": 286000
+        },
+        {
+          "name": "Davide Piganzoli",
+          "team": "TV|L",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 285000,
+          "actual_pts": 285000
+        },
+        {
+          "name": "Filippo Conca",
+          "team": "TJA",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Hartthijs de Vries",
+          "team": "UTR",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jonas Rutsch",
+          "team": "LOTTO",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Mathijs Paasschens",
+          "team": "B-V",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 982415,
+      "model_actual_pts": 808000,
+      "model_riders_scored": 2,
+      "model_riders_top15": 2,
+      "model_team": [
+        {
+          "name": "Filippo Ganna",
+          "team": "INEOSG",
+          "price_M": 9.0,
+          "is_captain": true,
+          "pred_pts": 140387,
+          "actual_pts": 0
+        },
+        {
+          "name": "Thymen Arensman",
+          "team": "INEOSG",
+          "price_M": 7.5,
+          "is_captain": false,
+          "pred_pts": 120153,
+          "actual_pts": 218000
+        },
+        {
+          "name": "Alec Segaert",
+          "team": "B-V",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 119502,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": false,
+          "pred_pts": 109346,
+          "actual_pts": 590000
+        },
+        {
+          "name": "Pablo Sevilla Diego",
+          "team": "TPV",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 88160,
+          "actual_pts": 0
+        },
+        {
+          "name": "— (ikke fundet sikkert)",
+          "team": "TPP",
+          "price_M": 3.0,
+          "is_captain": false,
+          "pred_pts": 88160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Karsten Larsen Feldmann",
+          "team": "UTR",
+          "price_M": 3.0,
+          "is_captain": false,
+          "pred_pts": 88160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Maximilian Walscheid",
+          "team": "L-T",
+          "price_M": 3.0,
+          "is_captain": false,
+          "pred_pts": 88160,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.3813
+    },
+    {
+      "stage": 10,
+      "vs_type": "mountain",
+      "actual_type": "tt",
+      "type_match": false,
+      "note": "Arensman wins TT — VeloScore had Ganna #1",
+      "winner": "Thymen Arensman",
+      "winner_in_model": false,
+      "oracle_pts": 1215000,
+      "oracle_riders_scored": 3,
+      "oracle_team": [
+        {
+          "name": "Thymen Arensman",
+          "team": "INEOSG",
+          "price_M": 7.5,
+          "is_captain": true,
+          "pred_pts": 353000,
+          "actual_pts": 353000
+        },
+        {
+          "name": "Filippo Ganna",
+          "team": "INEOSG",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 335000,
+          "actual_pts": 335000
+        },
+        {
+          "name": "Rémi Cavagna",
+          "team": "G-F",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 174000,
+          "actual_pts": 174000
+        },
+        {
+          "name": "David González",
+          "team": "QPCT",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Elmar Reinders",
+          "team": "UTR",
+          "price_M": 3.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Guillermo Thomas Silva",
+          "team": "XDSAT",
+          "price_M": 4.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Matteo Moschetti",
+          "team": "QPCT",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Sean Quinn",
+          "team": "EFEEP",
+          "price_M": 3.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1673485,
+      "model_actual_pts": 0,
+      "model_riders_scored": 0,
+      "model_riders_top15": 0,
+      "model_team": [
+        {
+          "name": "Giulio Ciccone",
+          "team": "L-T",
+          "price_M": 8.0,
+          "is_captain": true,
+          "pred_pts": 245035,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jhonatan Narváez",
+          "team": "UAETEXRG",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 200486,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": false,
+          "pred_pts": 181284,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jan Christen",
+          "team": "UAETEXRG",
+          "price_M": 6.0,
+          "is_captain": false,
+          "pred_pts": 177880,
+          "actual_pts": 0
+        },
+        {
+          "name": "Fabio Christen",
+          "team": "QPCT",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 172664,
+          "actual_pts": 0
+        },
+        {
+          "name": "Andreas Leknessund",
+          "team": "UM",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 158781,
+          "actual_pts": 0
+        },
+        {
+          "name": "Ayco Bastiaens",
+          "team": "SQ",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Amanuel Ghebreigzabhier",
+          "team": "L-T",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.0
+    },
+    {
+      "stage": 11,
+      "vs_type": "hilly",
+      "actual_type": "hilly",
+      "type_match": true,
+      "note": "Narvaez wins punchy stage",
+      "winner": "Jhonatan Narváez",
+      "winner_in_model": true,
+      "oracle_pts": 1340000,
+      "oracle_riders_scored": 4,
+      "oracle_team": [
+        {
+          "name": "Jhonatan Narváez",
+          "team": "UAETEXRG",
+          "price_M": 5.5,
+          "is_captain": true,
+          "pred_pts": 347000,
+          "actual_pts": 347000
+        },
+        {
+          "name": "Enric Mas",
+          "team": "MT",
+          "price_M": 7.0,
+          "is_captain": false,
+          "pred_pts": 252000,
+          "actual_pts": 252000
+        },
+        {
+          "name": "Diego Ulissi",
+          "team": "XDSAT",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 198000,
+          "actual_pts": 198000
+        },
+        {
+          "name": "Chris Harper",
+          "team": "QPCT",
+          "price_M": 4.5,
+          "is_captain": false,
+          "pred_pts": 196000,
+          "actual_pts": 196000
+        },
+        {
+          "name": "Embret Svestad-Bårdseng",
+          "team": "INEOSG",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Guillermo Thomas Silva",
+          "team": "XDSAT",
+          "price_M": 4.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Juan Pedro López",
+          "team": "MT",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Max Poole",
+          "team": "TPP",
+          "price_M": 6.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1369388,
+      "model_actual_pts": 347000,
+      "model_riders_scored": 1,
+      "model_riders_top15": 1,
+      "model_team": [
+        {
+          "name": "Paul Magnier",
+          "team": "SQ",
+          "price_M": 9.0,
+          "is_captain": true,
+          "pred_pts": 193828,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jonathan Milan",
+          "team": "L-T",
+          "price_M": 11.5,
+          "is_captain": false,
+          "pred_pts": 167216,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jhonatan Narváez",
+          "team": "UAETEXRG",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 163848,
+          "actual_pts": 347000
+        },
+        {
+          "name": "Ben Turner",
+          "team": "INEOSG",
+          "price_M": 6.0,
+          "is_captain": false,
+          "pred_pts": 156948,
+          "actual_pts": 0
+        },
+        {
+          "name": "Orluis Aular",
+          "team": "MT",
+          "price_M": 6.0,
+          "is_captain": false,
+          "pred_pts": 145720,
+          "actual_pts": 0
+        },
+        {
+          "name": "Ayco Bastiaens",
+          "team": "SQ",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 116000,
+          "actual_pts": 0
+        },
+        {
+          "name": "Amanuel Ghebreigzabhier",
+          "team": "L-T",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 116000,
+          "actual_pts": 0
+        },
+        {
+          "name": "Pablo Sevilla Diego",
+          "team": "TPV",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 116000,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.259
+    },
+    {
+      "stage": 13,
+      "vs_type": "mountain",
+      "actual_type": "mountain",
+      "type_match": true,
+      "note": "Bettiol wins breakaway — surprise result",
+      "winner": "Alberto Bettiol",
+      "winner_in_model": false,
+      "oracle_pts": 1156000,
+      "oracle_riders_scored": 3,
+      "oracle_team": [
+        {
+          "name": "Alberto Bettiol",
+          "team": "XDSAT",
+          "price_M": 3.5,
+          "is_captain": true,
+          "pred_pts": 362000,
+          "actual_pts": 362000
+        },
+        {
+          "name": "Andreas Leknessund",
+          "team": "UM",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 246000,
+          "actual_pts": 246000
+        },
+        {
+          "name": "Jasper Stuyven",
+          "team": "SQ",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 186000,
+          "actual_pts": 186000
+        },
+        {
+          "name": "Embret Svestad-Bårdseng",
+          "team": "INEOSG",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Guillermo Thomas Silva",
+          "team": "XDSAT",
+          "price_M": 4.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Hartthijs de Vries",
+          "team": "UTR",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jhonatan Narváez",
+          "team": "UAETEXRG",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Max Poole",
+          "team": "TPP",
+          "price_M": 6.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1809008,
+      "model_actual_pts": 0,
+      "model_riders_scored": 0,
+      "model_riders_top15": 0,
+      "model_team": [
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": true,
+          "pred_pts": 307284,
+          "actual_pts": 0
+        },
+        {
+          "name": "Felix Gall",
+          "team": "DALM",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 240766,
+          "actual_pts": 0
+        },
+        {
+          "name": "Thymen Arensman",
+          "team": "INEOSG",
+          "price_M": 7.5,
+          "is_captain": false,
+          "pred_pts": 213061,
+          "actual_pts": 0
+        },
+        {
+          "name": "Einer Rubio",
+          "team": "MT",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 155973,
+          "actual_pts": 0
+        },
+        {
+          "name": "Amanuel Ghebreigzabhier",
+          "team": "L-T",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Pablo Sevilla Diego",
+          "team": "TPV",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Filippo Magli",
+          "team": "GP-B",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Joshua Kench",
+          "team": "G-F",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.0
+    },
+    {
+      "stage": 14,
+      "vs_type": "sprint",
+      "actual_type": "mountain",
+      "type_match": false,
+      "note": "Vingegaard wins big mountain stage",
+      "winner": "Jonas Vingegaard",
+      "winner_in_model": false,
+      "oracle_pts": 1950000,
+      "oracle_riders_scored": 3,
+      "oracle_team": [
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": true,
+          "pred_pts": 635000,
+          "actual_pts": 635000
+        },
+        {
+          "name": "Felix Gall",
+          "team": "DALM",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 386000,
+          "actual_pts": 386000
+        },
+        {
+          "name": "Jai Hindley",
+          "team": "RB-B",
+          "price_M": 8.0,
+          "is_captain": false,
+          "pred_pts": 294000,
+          "actual_pts": 294000
+        },
+        {
+          "name": "David González",
+          "team": "QPCT",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Elmar Reinders",
+          "team": "UTR",
+          "price_M": 3.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Filippo Conca",
+          "team": "TJA",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Sean Flynn",
+          "team": "TPP",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Toon Aerts",
+          "team": "LOTTO",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1553403,
+      "model_actual_pts": 0,
+      "model_riders_scored": 0,
+      "model_riders_top15": 0,
+      "model_team": [
+        {
+          "name": "Jonathan Milan",
+          "team": "L-T",
+          "price_M": 11.5,
+          "is_captain": true,
+          "pred_pts": 227602,
+          "actual_pts": 0
+        },
+        {
+          "name": "Paul Magnier",
+          "team": "SQ",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 223807,
+          "actual_pts": 0
+        },
+        {
+          "name": "Dylan Groenewegen",
+          "team": "UTR",
+          "price_M": 10.0,
+          "is_captain": false,
+          "pred_pts": 190628,
+          "actual_pts": 0
+        },
+        {
+          "name": "Ethan Vernon",
+          "team": "I-PT",
+          "price_M": 8.0,
+          "is_captain": false,
+          "pred_pts": 164084,
+          "actual_pts": 0
+        },
+        {
+          "name": "Ayco Bastiaens",
+          "team": "SQ",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 129920,
+          "actual_pts": 0
+        },
+        {
+          "name": "Amanuel Ghebreigzabhier",
+          "team": "L-T",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 129920,
+          "actual_pts": 0
+        },
+        {
+          "name": "Larry Warbasse",
+          "team": "TPCT",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 129920,
+          "actual_pts": 0
+        },
+        {
+          "name": "Tomáš Kopecký",
+          "team": "UTR",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 129920,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.0
+    },
+    {
+      "stage": 15,
+      "vs_type": "mountain",
+      "actual_type": "hilly",
+      "type_match": false,
+      "note": "Dversnes wins — surprise breakaway. Top picks completely missed.",
+      "winner": "Fredrik Dversnes",
+      "winner_in_model": false,
+      "oracle_pts": 1372000,
+      "oracle_riders_scored": 3,
+      "oracle_team": [
+        {
+          "name": "Fredrik Dversnes",
+          "team": "UM",
+          "price_M": 3.0,
+          "is_captain": true,
+          "pred_pts": 425000,
+          "actual_pts": 425000
+        },
+        {
+          "name": "Mirco Maestri",
+          "team": "TPV",
+          "price_M": 3.0,
+          "is_captain": false,
+          "pred_pts": 294000,
+          "actual_pts": 294000
+        },
+        {
+          "name": "Mattia Bais",
+          "team": "TPV",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 228000,
+          "actual_pts": 228000
+        },
+        {
+          "name": "David González",
+          "team": "QPCT",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Elmar Reinders",
+          "team": "UTR",
+          "price_M": 3.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Guillermo Thomas Silva",
+          "team": "XDSAT",
+          "price_M": 4.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Max Poole",
+          "team": "TPP",
+          "price_M": 6.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Toon Aerts",
+          "team": "LOTTO",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1780738,
+      "model_actual_pts": 0,
+      "model_riders_scored": 0,
+      "model_riders_top15": 0,
+      "model_team": [
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": true,
+          "pred_pts": 303504,
+          "actual_pts": 0
+        },
+        {
+          "name": "Felix Gall",
+          "team": "DALM",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 239086,
+          "actual_pts": 0
+        },
+        {
+          "name": "Giulio Ciccone",
+          "team": "L-T",
+          "price_M": 8.0,
+          "is_captain": false,
+          "pred_pts": 179852,
+          "actual_pts": 0
+        },
+        {
+          "name": "Mathis Rondel",
+          "team": "TPCT",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 170152,
+          "actual_pts": 0
+        },
+        {
+          "name": "Ayco Bastiaens",
+          "team": "SQ",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Amanuel Ghebreigzabhier",
+          "team": "L-T",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Pablo Sevilla Diego",
+          "team": "TPV",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Tomáš Kopecký",
+          "team": "UTR",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.0
+    },
+    {
+      "stage": 16,
+      "vs_type": "mountain",
+      "actual_type": "mountain",
+      "type_match": true,
+      "note": "Vingegaard wins again",
+      "winner": "Jonas Vingegaard",
+      "winner_in_model": true,
+      "oracle_pts": 1877000,
+      "oracle_riders_scored": 3,
+      "oracle_team": [
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": true,
+          "pred_pts": 605000,
+          "actual_pts": 605000
+        },
+        {
+          "name": "Felix Gall",
+          "team": "DALM",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 375000,
+          "actual_pts": 375000
+        },
+        {
+          "name": "Jai Hindley",
+          "team": "RB-B",
+          "price_M": 8.0,
+          "is_captain": false,
+          "pred_pts": 292000,
+          "actual_pts": 292000
+        },
+        {
+          "name": "David González",
+          "team": "QPCT",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Elmar Reinders",
+          "team": "UTR",
+          "price_M": 3.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Filippo Conca",
+          "team": "TJA",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Sean Flynn",
+          "team": "TPP",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Toon Aerts",
+          "team": "LOTTO",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1668671,
+      "model_actual_pts": 605000,
+      "model_riders_scored": 1,
+      "model_riders_top15": 1,
+      "model_team": [
+        {
+          "name": "Jhonatan Narváez",
+          "team": "UAETEXRG",
+          "price_M": 5.5,
+          "is_captain": true,
+          "pred_pts": 265668,
+          "actual_pts": 0
+        },
+        {
+          "name": "Giulio Ciccone",
+          "team": "L-T",
+          "price_M": 8.0,
+          "is_captain": false,
+          "pred_pts": 203035,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": false,
+          "pred_pts": 181284,
+          "actual_pts": 605000
+        },
+        {
+          "name": "Christian Scaroni",
+          "team": "XDSAT",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 168376,
+          "actual_pts": 0
+        },
+        {
+          "name": "Ayco Bastiaens",
+          "team": "SQ",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Amanuel Ghebreigzabhier",
+          "team": "L-T",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Pablo Sevilla Diego",
+          "team": "TPV",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Tomáš Kopecký",
+          "team": "UTR",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.3223
+    },
+    {
+      "stage": 17,
+      "vs_type": "mountain",
+      "actual_type": "hilly",
+      "type_match": false,
+      "note": "Valgren wins — punchy day",
+      "winner": "Michael Valgren",
+      "winner_in_model": false,
+      "oracle_pts": 1060000,
+      "oracle_riders_scored": 3,
+      "oracle_team": [
+        {
+          "name": "Michael Valgren",
+          "team": "EFEEP",
+          "price_M": 4.0,
+          "is_captain": true,
+          "pred_pts": 350000,
+          "actual_pts": 350000
+        },
+        {
+          "name": "Andreas Leknessund",
+          "team": "UM",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 200000,
+          "actual_pts": 200000
+        },
+        {
+          "name": "Damiano Caruso",
+          "team": "B-V",
+          "price_M": 6.0,
+          "is_captain": false,
+          "pred_pts": 160000,
+          "actual_pts": 160000
+        },
+        {
+          "name": "Embret Svestad-Bårdseng",
+          "team": "INEOSG",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Guillermo Thomas Silva",
+          "team": "XDSAT",
+          "price_M": 4.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Hartthijs de Vries",
+          "team": "UTR",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jhonatan Narváez",
+          "team": "UAETEXRG",
+          "price_M": 5.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Mathijs Paasschens",
+          "team": "B-V",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1639213,
+      "model_actual_pts": 0,
+      "model_riders_scored": 0,
+      "model_riders_top15": 0,
+      "model_team": [
+        {
+          "name": "Jhonatan Narváez",
+          "team": "UAETEXRG",
+          "price_M": 5.5,
+          "is_captain": true,
+          "pred_pts": 244248,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jensen Plowright",
+          "team": "A-D",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 204750,
+          "actual_pts": 0
+        },
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": false,
+          "pred_pts": 181284,
+          "actual_pts": 0
+        },
+        {
+          "name": "Alberto Bettiol",
+          "team": "XDSAT",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 168956,
+          "actual_pts": 0
+        },
+        {
+          "name": "Giulio Ciccone",
+          "team": "L-T",
+          "price_M": 8.0,
+          "is_captain": false,
+          "pred_pts": 157247,
+          "actual_pts": 0
+        },
+        {
+          "name": "Ayco Bastiaens",
+          "team": "SQ",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Amanuel Ghebreigzabhier",
+          "team": "L-T",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Tomáš Kopecký",
+          "team": "UTR",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.0
+    },
+    {
+      "stage": 19,
+      "vs_type": "mountain",
+      "actual_type": "mountain",
+      "type_match": true,
+      "note": "Ciccone wins big mountain stage with KOM bonus",
+      "winner": "Giulio Ciccone",
+      "winner_in_model": true,
+      "oracle_pts": 1738000,
+      "oracle_riders_scored": 2,
+      "oracle_team": [
+        {
+          "name": "Giulio Ciccone",
+          "team": "L-T",
+          "price_M": 8.0,
+          "is_captain": true,
+          "pred_pts": 661000,
+          "actual_pts": 661000
+        },
+        {
+          "name": "Derek Gee",
+          "team": "L-T",
+          "price_M": 8.0,
+          "is_captain": false,
+          "pred_pts": 416000,
+          "actual_pts": 416000
+        },
+        {
+          "name": "David de la Cruz Melgarejo",
+          "team": "QPCT",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Embret Svestad-Bårdseng",
+          "team": "INEOSG",
+          "price_M": 3.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Hartthijs de Vries",
+          "team": "UTR",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Harold Martín López",
+          "team": "XDSAT",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Juan Pedro López",
+          "team": "MT",
+          "price_M": 4.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        },
+        {
+          "name": "Max Poole",
+          "team": "TPP",
+          "price_M": 6.0,
+          "is_captain": false,
+          "pred_pts": 0,
+          "actual_pts": 0
+        }
+      ],
+      "model_pred_pts": 1755569,
+      "model_actual_pts": 661000,
+      "model_riders_scored": 1,
+      "model_riders_top15": 1,
+      "model_team": [
+        {
+          "name": "Jonas Vingegaard",
+          "team": "TV|L",
+          "price_M": 17.5,
+          "is_captain": true,
+          "pred_pts": 294684,
+          "actual_pts": 0
+        },
+        {
+          "name": "Felix Gall",
+          "team": "DALM",
+          "price_M": 9.0,
+          "is_captain": false,
+          "pred_pts": 229426,
+          "actual_pts": 0
+        },
+        {
+          "name": "Giulio Ciccone",
+          "team": "L-T",
+          "price_M": 8.0,
+          "is_captain": false,
+          "pred_pts": 205975,
+          "actual_pts": 661000
+        },
+        {
+          "name": "Ayco Bastiaens",
+          "team": "SQ",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Amanuel Ghebreigzabhier",
+          "team": "L-T",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Pablo Sevilla Diego",
+          "team": "TPV",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Larry Warbasse",
+          "team": "TPCT",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        },
+        {
+          "name": "Tomáš Kopecký",
+          "team": "UTR",
+          "price_M": 2.5,
+          "is_captain": false,
+          "pred_pts": 146160,
+          "actual_pts": 0
+        }
+      ],
+      "efficiency": 0.3803
+    }
+  ]
+}
