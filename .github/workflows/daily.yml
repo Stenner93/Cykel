@@ -4,25 +4,27 @@ name: 🚴 TdF Manager — Daglig opdatering
 on:
 
   # 1. Automatisk kl. 21:30 dansk tid (19:30 UTC) hver dag under løbet.
-  #    Bruges til at hente friske Holdet-priser, GC-stilling og trøjer.
+  #    Scraper Holdet + kører forudsigelser for næste etape automatisk.
   schedule:
     - cron: '30 19 * * *'
 
-  # 2. Manuel kørsel — kan startes fra GitHub-app eller browser på telefon.
-  #    Udfyld etapenummer og etapetype for at generere holdanbefalinger.
+  # 2. Manuel kørsel fra GitHub-app eller browser (også på telefon).
+  #    Alle felter er valgfrie — lades de tomme, auto-detekteres etape + type
+  #    fra Holdets live-program.
   workflow_dispatch:
     inputs:
       stage:
-        description: 'Etapenummer (f.eks. 5)'
-        required: true
-        default: '1'
+        description: 'Etapenummer (lad tomt = auto-detect fra Holdet)'
+        required: false
+        default: ''
         type: string
       stage_type:
-        description: 'Etapetype'
-        required: true
-        default: 'sprint'
+        description: 'Etapetype (lad tom = auto-detect fra Holdet)'
+        required: false
+        default: ''
         type: choice
         options:
+          - ''
           - sprint
           - mountain
           - tt
@@ -68,30 +70,32 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
         run: |
-          # Forsøg at auto-opdage TdF 2026 cartridge.
-          # Når TdF ikke er live endnu, falder scriptet blot stille tilbage.
           python scrape_holdet.py \
             --cartridge tour-de-france-2026 \
             ${{ inputs.update_riders == 'true' && '--update-riders' || '' }} \
             || echo "⚠️  Holdet-scrape slog fejl (TdF ikke live endnu?) — fortsætter med cached data"
 
-      # ── 4. Kør forudsigelser (kun ved manuel dispatch) ─────────────────────
+      # ── 4. Kør forudsigelser ────────────────────────────────────────────────
+      #    Altid — enten med bruger-angivne værdier eller auto-detekteret etape.
+      #    Scriptet finder selv etape + type fra Holdets program hvis ikke angivet.
       - name: Kør holdanbefalinger
-        if: github.event_name == 'workflow_dispatch'
         env:
           PYTHONIOENCODING: utf-8
         run: |
-          # Bestem VeloScore-sti
+          # Byg argumentliste — udelad tom stage/type så run_daily.py auto-detecter
+          ARGS=""
+          if [ -n "${{ inputs.stage }}" ]; then
+            ARGS="$ARGS --stage ${{ inputs.stage }}"
+          fi
+          if [ -n "${{ inputs.stage_type }}" ]; then
+            ARGS="$ARGS --type ${{ inputs.stage_type }}"
+          fi
           if [ -n "${{ inputs.veloscore_path }}" ]; then
-            VS_ARG="--veloscore ${{ inputs.veloscore_path }}"
-          else
-            VS_ARG=""
+            ARGS="$ARGS --veloscore ${{ inputs.veloscore_path }}"
           fi
 
-          python run_daily.py \
-            --stage ${{ inputs.stage }} \
-            --type  ${{ inputs.stage_type }} \
-            $VS_ARG
+          python run_daily.py $ARGS \
+            || echo "⚠️  Forudsigelser slog fejl (ingen aktiv etape?) — fortsætter"
 
       # ── 5. Commit og push opdateret data ───────────────────────────────────
       - name: Commit og push resultater
@@ -108,10 +112,10 @@ jobs:
           if git diff --staged --quiet; then
             echo "Ingen ændringer — intet at committe"
           else
-            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ inputs.stage }}" ]; then
               MSG="🚴 Etape ${{ inputs.stage }} (${{ inputs.stage_type }}) — $(date -u +%Y-%m-%d)"
             else
-              MSG="⏰ Daglig Holdet-opdatering — $(date -u +%Y-%m-%d)"
+              MSG="⏰ Daglig opdatering — $(date -u +%Y-%m-%d %H:%M UTC)"
             fi
             git commit -m "$MSG"
             git push

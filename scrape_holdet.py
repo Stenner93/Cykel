@@ -293,6 +293,51 @@ def last_completed_event(events: list[int], event_info: dict[int, dict]) -> int 
     return finished[-1] if finished else None
 
 
+def detect_next_stage(game_id: int) -> tuple[int | None, str | None]:
+    """
+    Auto-detect which stage to predict next, based on Holdet's live schedule.
+
+    Logic:
+      • Find the last "finished" event → that was the most recent stage.
+      • The next entry in the schedule is the upcoming stage to predict.
+      • If no stage has finished yet (race not started) → predict stage 1.
+      • If all stages are finished (race over) → return (None, None).
+
+    Returns:
+      (stage_num, stage_type)  — 1-indexed stage number + our internal type string
+      (None, None)             — if the race is over or schedule is empty
+    """
+    try:
+        events, event_info = fetch_schedule(game_id)
+    except Exception as exc:
+        print(f"  [WARN] detect_next_stage: could not fetch schedule — {exc}")
+        return None, None
+
+    if not events:
+        return None, None
+
+    # Index of last finished event (or -1 if none finished yet)
+    last_finished_idx = -1
+    for i, eid in enumerate(events):
+        if event_info.get(eid, {}).get("status", "") == "finished":
+            last_finished_idx = i
+
+    next_idx = last_finished_idx + 1  # 0 if race hasn't started
+
+    if next_idx >= len(events):
+        # All stages done — race is over
+        return None, None
+
+    next_eid   = events[next_idx]
+    holdet_type = event_info.get(next_eid, {}).get("stageType", "")
+    stage_type  = HOLDET_STAGE_TYPE_MAP.get(holdet_type.lower(), "sprint")
+    stage_num   = next_idx + 1  # convert 0-based index → 1-based stage number
+
+    print(f"  Auto-detekteret: etape {stage_num}, type '{stage_type}' "
+          f"(Holdet stageType='{holdet_type}')")
+    return stage_num, stage_type
+
+
 # ── Stage fantasy-actions parser ──────────────────────────────────────────────
 
 def fetch_fantasy_actions(game_id: int, event_id: int) -> list[dict]:

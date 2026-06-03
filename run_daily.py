@@ -227,12 +227,27 @@ def main():
                         help="Skriv Holdet-priser tilbage til riders.json (kræver --scrape-holdet)")
     args = parser.parse_args()
 
-    # Interactive prompts for missing args
-    stage = args.stage
+    # Auto-detect stage + type from Holdet schedule if not supplied
+    stage      = args.stage
+    stage_type = args.type
+
+    if not stage or not stage_type:
+        print("  Auto-detekterer etape fra Holdet-program...")
+        try:
+            from scrape_holdet import detect_next_stage, DEFAULT_GAME_ID
+            det_stage, det_type = detect_next_stage(DEFAULT_GAME_ID)
+        except Exception as exc:
+            print(f"  [WARN] Auto-detect slog fejl: {exc}")
+            det_stage, det_type = None, None
+
+        if det_stage and not stage:
+            stage = det_stage
+        if det_type and not stage_type:
+            stage_type = det_type
+
+    # Interactive fallback if auto-detect also failed (local dev only)
     if not stage:
         stage = int(input("Etapenummer: ").strip())
-
-    stage_type = args.type
     if not stage_type:
         print(f"Etapetype ({'/'.join(STAGE_TYPES)}): ", end="")
         stage_type = input().strip().lower()
