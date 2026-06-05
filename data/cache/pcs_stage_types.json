@@ -303,5 +303,57 @@
       "stage_type": "sprint",
       "name": "Stage 21 | Rome - Rome"
     }
+  },
+  "criterium-du-dauphine/2026": {
+    "1": "hilly",
+    "2": "sprint",
+    "3": "hilly",
+    "4": "sprint",
+    "5": "sprint",
+    "6": "mountain",
+    "7": "mountain",
+    "8": "mountain"
+  },
+  "criterium-du-dauphine/2026_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Vizille - Saint-Ismier"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Saint-Martin-le-Vinoux - Le Puy-en-Velay"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 (TTT) | Perreux - Perreux"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Le Puy-en-Velay - Montrond-les-Bains"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Saint-Chamond - Parc des Oiseaux Villars-les-Dombes"
+    },
+    "6": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 6 | Saint-Vulbas - Crest-Voland"
+    },
+    "7": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 7 | La Bridoire - Grand Colombier"
+    },
+    "8": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 8 | Beaufort - Plateau de Solaison - Brison"
+    }
   }
 }

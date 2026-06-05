@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Critérium du Dauphiné 2026 — TdF Manager</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── Tab bar ── */
+.tab-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+.tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  padding: 10px 20px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.tab-btn:hover  { color: var(--text); }
+.tab-btn.active { color: var(--yellow); border-bottom-color: var(--yellow); }
+
+/* ── Stage selector pills ── */
+.stage-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.stage-pill {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--muted);
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.stage-pill:hover  { color: var(--text); border-color: var(--muted); }
+.stage-pill.active { background: var(--yellow); color: #000; border-color: var(--yellow); }
+.stage-pill.finished { border-style: solid; }
+.stage-pill.finished::before { content: "✓ "; font-size: 0.7em; }
+
+/* ── Predictions table ── */
+.pred-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.pred-table th {
+  text-align: left;
+  padding: 7px 10px;
+  background: var(--surface);
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+.pred-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.pred-table tr:hover td { background: rgba(255,255,255,0.03); }
+.pred-table tr.in-opt  { background: rgba(30,136,229,0.06); }
+.pred-table tr.in-opt td.col-name-p { color: var(--blue); }
+.pred-table tr.is-cap  td.col-name-p { color: var(--yellow) !important; }
+.pred-table tr.is-cap  td.col-name-p::after { content: " ★"; font-size: 0.8em; }
+
+.pts-exp  { font-weight: 700; color: var(--green); }
+.pts-act  { font-weight: 700; }
+.pts-beat { color: var(--green); }
+.pts-miss { color: var(--red); }
+.pts-ok   { color: var(--yellow); }
+
+/* ── Rank badge ── */
+.rank-num { color: var(--muted); font-size: 0.72rem; }
+.rank-top { color: var(--yellow); font-weight: 700; }
+
+/* ── Mini signal bar ── */
+.mini-signals { display: flex; gap: 2px; align-items: center; }
+.mini-seg {
+  width: 12px; height: 5px;
+  border-radius: 2px;
+  background: var(--border);
+}
+.mini-seg.on { background: var(--green); }
+
+/* ── Hold tab: stage header ── */
+.stage-info-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.stage-type-badge {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.stage-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.stage-subtitle {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.stage-status-chip {
+  margin-left: auto;
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+  background: var(--surface);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.stage-status-chip.upcoming { color: var(--yellow); border-color: var(--yellow); }
+
+/* ── Team card (Hold tab) ── */
+.team-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.team-card-title {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 8px;
+}
+.rider-chip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.rider-chip.is-cap { border-color: var(--yellow); background: rgba(255,208,0,0.06); }
+.rider-chip-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rider-chip.is-cap .rider-chip-name { color: var(--yellow); }
+.rider-chip-meta {
+  font-size: 0.7rem;
+  color: var(--muted);
+  display: flex;
+  gap: 8px;
+}
+
+/* ── Info/loading box ── */
+.info-box {
+  text-align: center;
+  padding: 60px 24px;
+  color: var(--muted);
+}
+.info-box .icon { font-size: 2rem; margin-bottom: 12px; }
+.info-box code  { background: var(--surface); padding: 2px 6px; border-radius: 3px; font-size: 0.82rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">🚴 TdF Manager 2026</div>
+    <nav class="page-nav" style="display:flex;gap:4px">
+      <a href="index.html"   style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">TdF 2026</a>
+      <a href="giro.html"    style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">Giro 2026</a>
+      <a href="dauphine.html" style="color:#000;background:var(--yellow);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:700">Dauphiné 2026</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Tab bar -->
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="hold">🏆 Hold & Picks</button>
+    <button class="tab-btn"        data-tab="preds">🔮 Forudsigelser</button>
+  </div>
+
+  <!-- ── Tab 1: Hold & Picks ───────────────────────────────────────────── -->
+  <div id="tab-hold">
+    <div id="holdContent">
+      <div class="info-box"><div class="icon">⟳</div><div>Indlæser…</div></div>
+    </div>
+  </div>
+
+  <!-- ── Tab 2: Forudsigelser ─────────────────────────────────────────── -->
+  <div id="tab-preds" style="display:none">
+    <div class="stage-selector" id="stagePills"></div>
+    <div id="predContent">
+      <div class="info-box"><div class="icon">⟳</div><div>Indlæser forudsigelser…</div></div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>Data: Holdet.dk (Dauphiné-spillet) · ProcyclingStats · CyclingOracle
+    &nbsp;|&nbsp; Ingen personlig Holdet-konto — bruges til model-kalibrering</p>
+</footer>
+
+<script src="dauphine.js"></script>
+</body>
+</html>

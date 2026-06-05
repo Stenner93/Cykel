@@ -85,16 +85,25 @@ HOLDET_STAGE_TYPE_MAP: dict[str, str] = {
 # Used to look up PCS stage types (which distinguish p4/p5) when Holdet
 # only returns a generic "mountain" type without knowing summit finish vs. not.
 CARTRIDGE_TO_PCS_RACE: dict[str, str] = {
-    "giro-d-italia-2026":  "giro-d-italia/2026",
-    "tour-de-france-2026": "tour-de-france/2026",
-    "vuelta-a-espana-2026":"vuelta-a-espana/2026",
+    "giro-d-italia-2026":           "giro-d-italia/2026",
+    "criterium-du-dauphine-2026":   "criterium-du-dauphine/2026",
+    "tour-de-france-2026":          "tour-de-france/2026",
+    "vuelta-a-espana-2026":         "vuelta-a-espana/2026",
 }
 
 # Per-game raw action cache directories (created on demand)
 CARTRIDGE_RAW_CACHE: dict[str, Path] = {
-    "giro-d-italia-2026":  CACHE_DIR / "giro2026_raw",
-    "tour-de-france-2026": CACHE_DIR / "tdf2026_raw",
-    "vuelta-a-espana-2026":CACHE_DIR / "vuelta2026_raw",
+    "giro-d-italia-2026":           CACHE_DIR / "giro2026_raw",
+    "criterium-du-dauphine-2026":   CACHE_DIR / "dauphine2026_raw",
+    "tour-de-france-2026":          CACHE_DIR / "tdf2026_raw",
+    "vuelta-a-espana-2026":         CACHE_DIR / "vuelta2026_raw",
+}
+
+# Game IDs for known races (populated once discovered via --discover)
+KNOWN_GAME_IDS: dict[str, int] = {
+    "giro-d-italia-2026":           612,
+    "criterium-du-dauphine-2026":   622,
+    # "tour-de-france-2026":        ???  — populate when live
 }
 
 # Holdet ruleId → sprint/KOM/team-bonus category

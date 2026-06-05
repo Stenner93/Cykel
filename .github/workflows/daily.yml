@@ -97,7 +97,15 @@ jobs:
           python run_daily.py $ARGS \
             || echo "⚠️  Forudsigelser slog fejl (ingen aktiv etape?) — fortsætter"
 
-      # ── 5. Commit og push opdateret data ───────────────────────────────────
+      # ── 5. Byg Dauphiné web-data ───────────────────────────────────────────
+      - name: Byg Dauphiné 2026 dashboard-data
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python build_dauphine_web_data.py --delay 0.5 \
+            || echo "⚠️  Dauphiné build slog fejl — fortsætter"
+
+      # ── 6. Commit og push opdateret data ───────────────────────────────────
       - name: Commit og push resultater
         env:
           PYTHONIOENCODING: utf-8
