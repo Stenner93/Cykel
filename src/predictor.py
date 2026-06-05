@@ -194,12 +194,36 @@ def predict_rider(
     form_signal = form_val / 100.0
 
     # --- Composite win-probability estimate ---
-    composite = (
-        w["veloscore"]  * vs_signal  +
-        w["odds_prob"]  * odds_signal +
-        w["discipline"] * disc_signal +
-        w["form"]       * form_signal
-    )
+    # If external signals (VeloScore, odds) are absent, normalize the remaining
+    # weights so discipline + form carry the full weight.  This prevents the
+    # ~70% dead-weight that would otherwise make every rider look identical when
+    # running on discipline/form data alone (e.g. Dauphiné without VeloScore).
+    # When VeloScore IS available the original weights apply unchanged.
+    has_vs   = veloscore_rank is not None or veloscore_score is not None
+    has_odds = odds_prob is not None
+
+    if not has_vs and not has_odds:
+        # Only discipline + form available → normalize to full capacity
+        total_avail = w["discipline"] + w["form"]
+        nw_disc = w["discipline"] / total_avail if total_avail else 0.5
+        nw_form = w["form"]       / total_avail if total_avail else 0.5
+        composite = nw_disc * disc_signal + nw_form * form_signal
+    elif not has_vs:
+        # Odds + discipline + form — normalize (no VeloScore)
+        total_avail = w["odds_prob"] + w["discipline"] + w["form"]
+        composite = (
+            w["odds_prob"]  / total_avail * odds_signal +
+            w["discipline"] / total_avail * disc_signal +
+            w["form"]       / total_avail * form_signal
+        )
+    else:
+        # Normal path — VeloScore present, use configured weights as-is
+        composite = (
+            w["veloscore"]  * vs_signal  +
+            w["odds_prob"]  * odds_signal +
+            w["discipline"] * disc_signal +
+            w["form"]       * form_signal
+        )
 
     # Scale winner_pts by stage difficulty (ProfileScore)
     winner_pts   = WINNER_POINTS.get(stage_type, 500_000)

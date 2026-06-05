@@ -171,13 +171,35 @@ def scrape_rider(url: str) -> dict | None:
 # ---------------------------------------------------------------------------
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="CyclingOracle scraper")
+    parser.add_argument("--riders-file", default=None,
+                        help="Alternativ JSON-fil med rytterliste "
+                             "(f.eks. data/cache/dauphine2026_players.json). "
+                             "Henter kun ryttere der mangler i cachen.")
+    args = parser.parse_args()
+
     # Load or resume cache
     cache: dict = {}
     if CACHE_PATH.exists():
         cache = json.loads(CACHE_PATH.read_text(encoding="utf-8"))
         print(f"Resuming from existing cache: {len(cache)} riders already scraped")
 
-    riders = json.loads((DATA / "riders.json").read_text(encoding="utf-8"))
+    if args.riders_file:
+        alt_path = Path(args.riders_file)
+        alt_data = json.loads(alt_path.read_text(encoding="utf-8"))
+        if isinstance(alt_data, list):
+            riders = [{"id": r["id"], "full_name": r["full_name"]} for r in alt_data
+                      if r.get("id") and r.get("full_name")]
+        else:
+            riders = [{"id": k, "full_name": v.get("holdet_name", k)}
+                      for k, v in alt_data.items()]
+        # Only riders missing from cache
+        riders = [r for r in riders if r["id"] not in cache]
+        print(f"Ryttere fra {alt_path.name} manglende i cache: {len(riders)}")
+    else:
+        riders = json.loads((DATA / "riders.json").read_text(encoding="utf-8"))
+
     print(f"\nHenter CyclingOracle sitemap URLs ({3} sider)...")
     co_urls = fetch_all_co_urls()
     print(f"Total CO rider URLs: {len(co_urls)}")

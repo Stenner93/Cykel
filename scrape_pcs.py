@@ -634,14 +634,37 @@ def main():
     parser.add_argument("--profile-scores", action="store_true",
                         help="Hent ProfileScore per etape fra PCS (gemmes i "
                              "data/cache/pcs_profile_scores.json)")
+    parser.add_argument("--riders-file",    default=None,
+                        help="Alternativ JSON-fil med rytterliste (f.eks. "
+                             "data/cache/dauphine2026_players.json). "
+                             "Henter kun ryttere der mangler i cachen.")
     args = parser.parse_args()
 
     print("-" * 60)
     print("  PCS Form Scraper")
     print("-" * 60)
 
-    riders = json.loads((DATA / "riders.json").read_text(encoding="utf-8"))
-    print(f"  Ryttere i riders.json: {len(riders)}")
+    if args.riders_file:
+        # Load alternate riders list (e.g. Dauphiné players)
+        alt_path = Path(args.riders_file)
+        alt_data = json.loads(alt_path.read_text(encoding="utf-8"))
+        # Support both list-of-dicts (dauphine players) and plain list
+        if isinstance(alt_data, list):
+            riders = [{"id": r["id"], "full_name": r["full_name"]} for r in alt_data
+                      if r.get("id") and r.get("full_name")]
+        else:
+            riders = [{"id": k, "full_name": v.get("holdet_name", k)}
+                      for k, v in alt_data.items()]
+        print(f"  Ryttere fra {alt_path.name}: {len(riders)}")
+        # Only scrape riders missing from cache
+        existing_cache = {}
+        if CACHE_PATH.exists():
+            existing_cache = json.loads(CACHE_PATH.read_text(encoding="utf-8"))
+        riders = [r for r in riders if r["id"] not in existing_cache]
+        print(f"  Mangler i cache: {len(riders)} ryttere")
+    else:
+        riders = json.loads((DATA / "riders.json").read_text(encoding="utf-8"))
+        print(f"  Ryttere i riders.json: {len(riders)}")
 
     cache = scrape_all(riders, reset=args.reset, test=args.test)
 
