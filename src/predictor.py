@@ -149,6 +149,7 @@ def predict_rider(
     sprint_class_rank: int | None = None,   # Position in sprint classification
     kom_class_rank: int | None = None,      # Position in KOM classification
     expected_team_bonus: int = 0,           # Expected holdbonus kr from recent stages
+    winner_pts_override: dict[str, int] | None = None,  # Race-specific winner points
 ) -> dict[str, Any]:
     """
     Predict expected fantasy points for a rider on a specific stage.
@@ -226,8 +227,10 @@ def predict_rider(
         )
 
     # Scale winner_pts by stage difficulty (ProfileScore)
-    winner_pts   = WINNER_POINTS.get(stage_type, 500_000)
-    winner_pts  *= _profile_scale(profile_score, stage_type)
+    # Use race-specific override if provided (e.g. Dauphiné has different point scale)
+    _wp_table  = winner_pts_override if winner_pts_override else WINNER_POINTS
+    winner_pts = _wp_table.get(stage_type, _wp_table.get("hilly", 500_000))
+    winner_pts *= _profile_scale(profile_score, stage_type)
 
     # Scale to expected points
     expected_pts = composite * winner_pts
@@ -333,6 +336,7 @@ def predict_all(
     profile_score: int | None = None,
     sprint_kom_data: dict[str, dict] | None = None,     # from holdet_sprint_kom.json
     team_bonus_data: dict[str, int] | None = None,      # from holdet_team_bonus.json
+    winner_pts_override: dict[str, int] | None = None,  # Race-specific winner points
 ) -> list[dict]:
     """
     Predict expected points for ALL riders and return sorted list.
@@ -393,6 +397,7 @@ def predict_all(
             sprint_class_rank=sk.get("sprint_rank"),
             kom_class_rank=sk.get("kom_rank"),
             expected_team_bonus=(team_bonus_data or {}).get(rider["id"], 0),
+            winner_pts_override=winner_pts_override,
         )
         results.append(pred)
 

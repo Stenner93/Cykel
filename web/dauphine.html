@@ -192,6 +192,215 @@
 }
 .info-box .icon { font-size: 2rem; margin-bottom: 12px; }
 .info-box code  { background: var(--surface); padding: 2px 6px; border-radius: 3px; font-size: 0.82rem; }
+
+/* ── Scores controls ── */
+.scores-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.ctrl-input {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: var(--text);
+  font-size: 0.82rem;
+  min-width: 200px;
+}
+.ctrl-input:focus { outline: none; border-color: var(--yellow); }
+.ctrl-select {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: var(--text);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+.ctrl-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.source-note {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-left: auto;
+  font-style: italic;
+}
+
+/* ── Matrix table ── */
+.matrix-wrap {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: calc(100vh - 280px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.matrix-table {
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  min-width: 600px;
+}
+.matrix-table th {
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  z-index: 5;
+  padding: 6px 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+.matrix-table th:hover { color: var(--text); }
+.matrix-table th.sort-asc::after  { content: " ▲"; font-size: 0.6em; }
+.matrix-table th.sort-desc::after { content: " ▼"; font-size: 0.6em; }
+.matrix-table th.col-name,
+.matrix-table td.col-name {
+  position: sticky;
+  left: 0;
+  background: var(--surface);
+  z-index: 6;
+  text-align: left;
+  min-width: 150px;
+  max-width: 180px;
+}
+.matrix-table thead th.col-name { z-index: 12; }
+.matrix-table th.col-team,
+.matrix-table td.col-team {
+  position: sticky;
+  left: 150px;
+  background: var(--surface);
+  z-index: 5;
+  text-align: left;
+  min-width: 70px;
+  max-width: 90px;
+}
+.matrix-table thead th.col-team { z-index: 11; }
+.matrix-table td {
+  padding: 5px 8px;
+  text-align: center;
+  border-bottom: 1px solid rgba(46,52,80,0.5);
+  white-space: nowrap;
+}
+.matrix-table td.col-name {
+  text-align: left;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.matrix-table td.col-team {
+  color: var(--muted);
+  font-size: 0.72rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.matrix-table tr:hover td { filter: brightness(1.25); }
+.matrix-table tr:hover td.col-name,
+.matrix-table tr:hover td.col-team {
+  background: var(--card) !important;
+  filter: none;
+}
+.cell-pts  { font-weight: 600; cursor: pointer; border-radius: 3px; font-size: 0.72rem; }
+.cell-pts:hover { filter: brightness(1.4) !important; }
+.cell-zero { color: transparent; cursor: default; }
+.cell-neg  { color: #ff6b6b !important; }
+.col-total {
+  font-weight: 700;
+  font-size: 0.8rem;
+  border-left: 2px solid var(--border);
+  position: sticky;
+  right: 0;
+  background: var(--surface);
+  z-index: 5;
+  min-width: 70px;
+}
+.matrix-table thead th.col-total { z-index: 11; }
+.stage-header { cursor: pointer; }
+
+/* Stage status dots */
+.stage-dot {
+  display: inline-block;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+.dot-finished { background: var(--green); }
+.dot-upcoming { background: var(--muted); }
+.dot-live     { background: var(--yellow); animation: blink 1s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* ── Breakdown modal ── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 300px;
+  max-width: 420px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+}
+.modal-title    { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+.modal-subtitle { font-size: 0.75rem; color: var(--muted); margin-bottom: 16px; }
+.modal-rule {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+.modal-rule:last-child { border-bottom: none; }
+.rule-desc { color: var(--text); }
+.rule-amt  { font-weight: 700; color: var(--green); text-align: right; }
+.rule-amt.negative { color: var(--red); }
+.modal-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0 0;
+  margin-top: 6px;
+  border-top: 2px solid var(--border);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.modal-close {
+  display: block;
+  margin: 16px auto 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 20px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.82rem;
+}
+.modal-close:hover { color: var(--text); border-color: var(--yellow); }
 </style>
 </head>
 <body>
@@ -211,18 +420,37 @@
 
   <!-- Tab bar -->
   <div class="tab-bar">
-    <button class="tab-btn active" data-tab="hold">🏆 Hold & Picks</button>
+    <button class="tab-btn active" data-tab="scores">📊 Pointmatrix</button>
+    <button class="tab-btn"        data-tab="hold">🏆 Hold & Picks</button>
     <button class="tab-btn"        data-tab="preds">🔮 Forudsigelser</button>
   </div>
 
-  <!-- ── Tab 1: Hold & Picks ───────────────────────────────────────────── -->
-  <div id="tab-hold">
+  <!-- ── Tab 1: Pointmatrix ────────────────────────────────────────────── -->
+  <div id="tab-scores">
+    <div class="scores-controls">
+      <span class="ctrl-label">Søg:</span>
+      <input type="text" id="riderFilter" class="ctrl-input" placeholder="Rytternavn…" autocomplete="off">
+      <span class="ctrl-label">Sortér:</span>
+      <select id="sortSelect" class="ctrl-select">
+        <option value="total">Total point</option>
+        <option value="name">Navn (A–Z)</option>
+        <option value="price">Pris</option>
+      </select>
+      <span class="source-note" id="sourceNote"></span>
+    </div>
+    <div class="matrix-wrap" id="matrixWrap">
+      <div class="info-box"><div class="icon">⟳</div><div>Indlæser pointmatrix…</div></div>
+    </div>
+  </div>
+
+  <!-- ── Tab 2: Hold & Picks ───────────────────────────────────────────── -->
+  <div id="tab-hold" style="display:none">
     <div id="holdContent">
       <div class="info-box"><div class="icon">⟳</div><div>Indlæser…</div></div>
     </div>
   </div>
 
-  <!-- ── Tab 2: Forudsigelser ─────────────────────────────────────────── -->
+  <!-- ── Tab 3: Forudsigelser ─────────────────────────────────────────── -->
   <div id="tab-preds" style="display:none">
     <div class="stage-selector" id="stagePills"></div>
     <div id="predContent">
@@ -231,6 +459,16 @@
   </div>
 
 </main>
+
+<!-- ── Breakdown modal ── -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-title"    id="modalTitle"></div>
+    <div class="modal-subtitle" id="modalSubtitle"></div>
+    <div id="modalRules"></div>
+    <button class="modal-close" id="modalClose">Luk</button>
+  </div>
+</div>
 
 <footer>
   <p>Data: Holdet.dk (Dauphiné-spillet) · ProcyclingStats · CyclingOracle

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-03T13:57:34.555033+00:00",
+  "generated": "2026-06-03T19:58:17.827602+00:00",
   "game_id": 612,
   "cartridge": "giro-d-italia-2026",
   "summary_source": "scoring-summary",
@@ -8,7 +8,7 @@
       "num": 1,
       "event_id": 48281,
       "name": "Nessebar - Burgas",
-      "type": "hilly",
+      "type": "sprint",
       "status": "finished"
     },
     {
@@ -22,7 +22,7 @@
       "num": 3,
       "event_id": 48283,
       "name": "Plovdiv - Sofia",
-      "type": "hilly",
+      "type": "sprint",
       "status": "finished"
     },
     {
@@ -36,21 +36,21 @@
       "num": 5,
       "event_id": 48285,
       "name": "Praia a Mare - Potenza",
-      "type": "hilly",
+      "type": "sprint",
       "status": "finished"
     },
     {
       "num": 6,
       "event_id": 48286,
       "name": "Paestum - Napoli",
-      "type": "hilly",
+      "type": "sprint",
       "status": "finished"
     },
     {
       "num": 7,
       "event_id": 48287,
       "name": "Formia - Blockhaus",
-      "type": "hilly",
+      "type": "mountain",
       "status": "finished"
     },
     {
@@ -64,56 +64,56 @@
       "num": 9,
       "event_id": 48289,
       "name": "Cervia - Corno alle Scale",
-      "type": "hilly",
+      "type": "mountain",
       "status": "finished"
     },
     {
       "num": 10,
       "event_id": 48290,
       "name": "Viareggio - Massa TUDOR ITT",
-      "type": "hilly",
+      "type": "tt",
       "status": "finished"
     },
     {
       "num": 11,
       "event_id": 48291,
       "name": "Porcari - Chiavari",
-      "type": "hilly",
+      "type": "sprint",
       "status": "finished"
     },
     {
       "num": 12,
       "event_id": 48292,
       "name": "Imperia - Novi Ligure",
-      "type": "hilly",
+      "type": "sprint",
       "status": "finished"
     },
     {
       "num": 13,
       "event_id": 48293,
       "name": "Alessandria - Verbania",
-      "type": "hilly",
+      "type": "sprint",
       "status": "finished"
     },
     {
       "num": 14,
       "event_id": 48294,
       "name": "Aosta - Pila",
-      "type": "hilly",
+      "type": "mountain",
       "status": "finished"
     },
     {
       "num": 15,
       "event_id": 48295,
       "name": "Voghera - Milano",
-      "type": "hilly",
+      "type": "sprint",
       "status": "finished"
     },
     {
       "num": 16,
       "event_id": 48296,
       "name": "Bellinzona - Carì",
-      "type": "hilly",
+      "type": "mountain",
       "status": "finished"
     },
     {
@@ -127,28 +127,28 @@
       "num": 18,
       "event_id": 48298,
       "name": "Fai della Paganella - Pieve di Soligo",
-      "type": "hilly",
+      "type": "sprint",
       "status": "finished"
     },
     {
       "num": 19,
       "event_id": 48299,
       "name": "Feltre - Alleghe (Piani di Pezzè)",
-      "type": "hilly",
+      "type": "mountain",
       "status": "finished"
     },
     {
       "num": 20,
       "event_id": 48300,
       "name": "Gemona del Friuli 1976-2026 - Piancavallo",
-      "type": "hilly",
+      "type": "mountain",
       "status": "finished"
     },
     {
       "num": 21,
       "event_id": 48301,
       "name": "Roma - Roma",
-      "type": "hilly",
+      "type": "sprint",
       "status": "finished"
     }
   ],
@@ -35988,7 +35988,7 @@
       }
     },
     {
-      "id": "jhonatan_narvaez",
+      "id": "jhonatan_narváez",
       "name": "Jhonatan Narváez",
       "team": "UAETEXRG",
       "price": 6.57,

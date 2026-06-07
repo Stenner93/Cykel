@@ -1,6 +1,7 @@
 /* Critérium du Dauphiné 2026 — Dashboard */
 
-const PREDS_URL = './data/dauphine2026_predictions.json';
+const SCORES_URL = './data/dauphine2026_scores.json';
+const PREDS_URL  = './data/dauphine2026_predictions.json';
 
 const STAGE_ICONS = {
   sprint:   '⚡',
@@ -24,9 +25,15 @@ const DISC_LABELS = {
 };
 
 // ── State ──────────────────────────────────────────────────────────────────────
+let SCORES      = null;
 let PREDS       = null;
-let activeTab   = 'hold';
+let activeTab   = 'scores';
 let predStage   = null;   // currently selected stage number in preds tab
+
+// Matrix state
+let sortBy      = 'total';   // 'total' | 'name' | 'price' | stage number
+let sortDir     = -1;        // -1 = desc, 1 = asc
+let filterText  = '';
 
 // ── Utilities ──────────────────────────────────────────────────────────────────
 function esc(s) {
@@ -49,6 +56,25 @@ function actClass(actual, exp) {
   return 'pts-miss';
 }
 
+function fmtFull(n) {
+  if (n == null) return '–';
+  return n.toLocaleString('da-DK');
+}
+
+/** Heatmap colour for a matrix cell */
+function cellBg(pts) {
+  if (!pts) return '';
+  if (pts < 0) {
+    const t = Math.min(1, Math.abs(pts) / 90_000);
+    return `background: hsl(0, ${60 + t * 30}%, ${15 + t * 10}%)`;
+  }
+  const t   = Math.min(1, pts / 600_000);
+  const hue = Math.round(220 - t * 220);
+  const sat = Math.round(55 + t * 35);
+  const lit = Math.round(16 + t * 22);
+  return `background: hsl(${hue}, ${sat}%, ${lit}%)`;
+}
+
 /** Find the stage to show by default in Hold tab:
  *  - If any stage has no actuals (upcoming) → show first upcoming
  *  - If all finished → show last stage */
@@ -69,25 +95,253 @@ async function loadJSON(url) {
 
 // ── Init ───────────────────────────────────────────────────────────────────────
 async function init() {
-  try {
-    PREDS = await loadJSON(PREDS_URL);
-  } catch(e) {
-    document.getElementById('holdContent').innerHTML =
+  // Load both files in parallel; tolerate individual failures gracefully
+  [SCORES, PREDS] = await Promise.all([
+    loadJSON(SCORES_URL).catch(e => { console.warn('scores:', e); return null; }),
+    loadJSON(PREDS_URL).catch(e  => { console.warn('preds:',  e); return null; }),
+  ]);
+
+  // Scores tab
+  if (SCORES) {
+    renderScoresTab();
+  } else {
+    document.getElementById('matrixWrap').innerHTML =
       `<div class="info-box"><div class="icon">⚠️</div>
-       <div style="color:#E53935;margin-bottom:8px">${esc(e.message)}</div>
-       <div style="color:var(--muted);font-size:0.8rem">Kør: <code>python build_dauphine_web_data.py</code></div></div>`;
-    document.getElementById('predContent').innerHTML = document.getElementById('holdContent').innerHTML;
-    setupTabs();
-    return;
+       <div>Pointmatrix-data ikke fundet</div>
+       <div style="color:var(--muted);font-size:0.8rem;margin-top:8px">Kør: <code>python build_dauphine_web_data.py</code></div></div>`;
   }
 
-  const cur = currentStage();
-  predStage = cur?.num ?? PREDS.stages[0]?.num;
+  // Hold & Predictions tabs
+  if (PREDS) {
+    const cur = currentStage();
+    predStage = cur?.num ?? PREDS.stages[0]?.num;
+    renderHoldTab(cur);
+    buildPills();
+    renderPredStage(predStage);
+  } else {
+    const msg = `<div class="info-box"><div class="icon">⚠️</div><div>Forudsigelsesdata ikke fundet</div></div>`;
+    document.getElementById('holdContent').innerHTML = msg;
+    document.getElementById('predContent').innerHTML = msg;
+  }
 
-  renderHoldTab(cur);
-  buildPills();
-  renderPredStage(predStage);
   setupTabs();
+  setupControls();
+  setupModal();
+}
+
+// ── Tab: Pointmatrix ──────────────────────────────────────────────────────────
+function renderScoresTab() {
+  const note = document.getElementById('sourceNote');
+  if (note && SCORES) {
+    note.textContent = SCORES.summary_source === 'scoring-summary'
+      ? 'Point: officielle Holdet-totaler'
+      : 'Point: beregnet fra regler (approx.)';
+  }
+  renderMatrix();
+}
+
+function setupControls() {
+  document.getElementById('riderFilter')?.addEventListener('input', e => {
+    filterText = e.target.value.toLowerCase().trim();
+    if (SCORES) renderMatrix();
+  });
+  document.getElementById('sortSelect')?.addEventListener('change', e => {
+    sortBy  = e.target.value;
+    sortDir = -1;
+    if (SCORES) renderMatrix();
+  });
+}
+
+function getFilteredSortedRiders() {
+  let riders = [...(SCORES?.riders ?? [])];
+  if (filterText) {
+    riders = riders.filter(r =>
+      r.name.toLowerCase().includes(filterText) ||
+      (r.team || '').toLowerCase().includes(filterText)
+    );
+  }
+  riders.forEach(r => {
+    r._total = Object.values(r.pts ?? {}).reduce((a, b) => a + b, 0);
+  });
+  riders.sort((a, b) => {
+    if (sortBy === 'name')  return a.name.localeCompare(b.name, 'da') * sortDir;
+    if (sortBy === 'price') return ((b.price ?? 0) - (a.price ?? 0)) * sortDir;
+    if (sortBy === 'total') return (b._total - a._total) * sortDir;
+    // Sort by specific stage number
+    const sk = String(sortBy);
+    return (((b.pts ?? {})[sk] ?? 0) - ((a.pts ?? {})[sk] ?? 0)) * sortDir;
+  });
+  return riders;
+}
+
+function renderMatrix() {
+  const wrap = document.getElementById('matrixWrap');
+  if (!SCORES || !wrap) return;
+
+  const stages = SCORES.stages;
+  const riders = getFilteredSortedRiders();
+  const labels = SCORES.rule_labels ?? {};
+
+  // ── Header ──
+  const totSort = sortBy === 'total' ? ` sort-${sortDir === -1 ? 'desc' : 'asc'}` : '';
+  let header = `<thead><tr>
+    <th class="col-name${sortBy === 'name' ? ' sort-' + (sortDir === -1 ? 'desc' : 'asc') : ''}"
+        data-sort="name">Rytter</th>
+    <th class="col-team" style="cursor:default">Hold</th>`;
+
+  for (const s of stages) {
+    const icon   = STAGE_ICONS[s.type] ?? '';
+    const dotCls = s.status === 'finished' ? 'dot-finished'
+                 : s.status === 'live'     ? 'dot-live' : 'dot-upcoming';
+    const active = sortBy === s.num ? ` sort-${sortDir === -1 ? 'desc' : 'asc'}` : '';
+    header += `<th class="stage-header${active}" data-sort="${s.num}"
+                   title="Etape ${s.num} — ${esc(s.type)}: ${esc(s.name)}">
+                 <span class="stage-dot ${dotCls}"></span>${icon}${s.num}
+               </th>`;
+  }
+  header += `<th class="col-total${totSort}" data-sort="total" title="Sum">Total</th>
+  </tr></thead>`;
+
+  // ── Body ──
+  let body = '<tbody>';
+  for (const r of riders) {
+    body += `<tr data-rid="${esc(r.id)}">
+      <td class="col-name" title="${esc(r.name)}">${esc(r.name)}</td>
+      <td class="col-team" title="${esc(r.team)}">${esc(r.team ?? '')}</td>`;
+    for (const s of stages) {
+      const skey = String(s.num);
+      const pts  = (r.pts ?? {})[skey] ?? 0;
+      const bg   = cellBg(pts);
+      const cls  = pts < 0 ? 'cell-pts cell-neg' : pts > 0 ? 'cell-pts' : 'cell-pts cell-zero';
+      body += `<td class="${cls}" style="${bg}"
+                   data-pts="${pts}" data-stage="${s.num}" data-rid="${esc(r.id)}"
+                   title="${pts ? esc(r.name) + ' E' + s.num + ': ' + fmtFull(pts) + ' pt' : ''}"
+               >${pts ? fmtK(pts) : ''}</td>`;
+    }
+    const tbg = cellBg(r._total);
+    body += `<td class="col-total" style="${tbg}" title="Total: ${fmtFull(r._total)} pt">${fmtK(r._total)}</td>
+    </tr>`;
+  }
+  body += '</tbody>';
+
+  wrap.innerHTML = `<table class="matrix-table">${header}${body}</table>`;
+  const table = wrap.querySelector('.matrix-table');
+
+  // Sort on header click
+  table.querySelectorAll('th[data-sort]').forEach(th => {
+    th.addEventListener('click', () => {
+      const key    = th.dataset.sort;
+      const numKey = isNaN(key) ? key : parseInt(key);
+      if (sortBy === numKey) sortDir = -sortDir;
+      else { sortBy = numKey; sortDir = -1; }
+      const sel = document.getElementById('sortSelect');
+      if (sel && ['total','name','price'].includes(key)) sel.value = key;
+      renderMatrix();
+    });
+  });
+
+  // Cell click → breakdown modal
+  table.querySelectorAll('.cell-pts:not(.cell-zero)').forEach(cell => {
+    cell.addEventListener('click', () => {
+      const rid  = cell.dataset.rid;
+      const snum = parseInt(cell.dataset.stage);
+      const pts  = parseInt(cell.dataset.pts);
+      if (pts !== 0) openBreakdownModal(rid, snum, labels);
+    });
+  });
+}
+
+// ── Breakdown Modal ─────────────────────────────────────────────────────────
+function setupModal() {
+  const overlay = document.getElementById('modalOverlay');
+  const closeBtn = document.getElementById('modalClose');
+  closeBtn?.addEventListener('click', () => overlay?.classList.remove('open'));
+  overlay?.addEventListener('click', e => {
+    if (e.target === overlay) overlay.classList.remove('open');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') overlay?.classList.remove('open');
+  });
+}
+
+function openBreakdownModal(riderId, stageNum, labels) {
+  const rider = SCORES?.riders?.find(r => r.id === riderId);
+  if (!rider) return;
+  const stageMeta = SCORES.stages.find(s => s.num === stageNum) ?? { type: 'hilly' };
+  const skey      = String(stageNum);
+  const total     = (rider.pts ?? {})[skey] ?? 0;
+  const rules     = (rider.rules ?? {})[skey] ?? [];
+
+  document.getElementById('modalTitle').textContent    = rider.name;
+  document.getElementById('modalSubtitle').textContent =
+    `Etape ${stageNum} — ${STAGE_ICONS[stageMeta.type] ?? ''} ${stageMeta.name ?? stageMeta.type}`;
+
+  const sortedRules = [...rules].sort(([aId, aAmt], [bId, bAmt]) => {
+    const ap = ruleDisplayAmount(aId, aAmt).pts;
+    const bp = ruleDisplayAmount(bId, bAmt).pts;
+    if (ap !== 0 && bp === 0) return -1;
+    if (ap === 0 && bp !== 0) return 1;
+    return Math.abs(bp) - Math.abs(ap);
+  });
+
+  const rulesHtml = sortedRules.length
+    ? sortedRules.map(([ruleId, amount]) => {
+        const desc    = labels[String(ruleId)] ?? `Regel ${ruleId}`;
+        const display = ruleDisplayAmount(ruleId, amount);
+        const negCls  = display.pts < 0 ? ' negative' : '';
+        const info    = display.pts === 0;
+        return `<div class="modal-rule" style="${info ? 'opacity:0.55;font-size:0.75rem' : ''}">
+          <span class="rule-desc">${esc(desc)}${display.suffix
+            ? ` <small style="color:var(--muted)">${esc(display.suffix)}</small>` : ''}</span>
+          <span class="rule-amt${negCls}">${info ? '–'
+            : (display.pts >= 0 ? '+' : '') + fmtFull(display.pts)}</span>
+        </div>`;
+      }).join('')
+    : '<div style="color:var(--muted);font-size:0.82rem;padding:12px 0">Ingen regeldata tilgængeligt</div>';
+
+  document.getElementById('modalRules').innerHTML = rulesHtml + `
+    <div class="modal-total-row">
+      <span>Total</span>
+      <span style="color:${total < 0 ? 'var(--red)' : 'var(--yellow)'}">
+        ${total >= 0 ? '+' : ''}${fmtFull(total)} pt
+      </span>
+    </div>`;
+
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function ruleDisplayAmount(ruleId, amount) {
+  const SP  = {1:200000,2:150000,3:130000,4:120000,5:110000,
+               6:100000,7:95000,8:90000,9:85000,10:80000,
+               11:70000,12:55000,13:40000,14:30000,15:15000};
+  const GC  = {1:100000,2:90000,3:80000,4:70000,5:60000,
+               6:50000,7:40000,8:30000,9:20000,10:10000};
+  const JRS = {leader:25000,sprint:25000,mountain:25000,youth:15000,most_aggressive:50000};
+  const TM  = {1:60000,2:30000,3:20000};
+  const a   = Math.round(amount);
+  if (ruleId >= 849 && ruleId <= 863) return { pts: SP[ruleId-848] ?? 0, suffix: '' };
+  if (ruleId >= 864 && ruleId <= 873) return { pts: GC[ruleId-863] ?? 0, suffix: '' };
+  if (ruleId === 874) return { pts: a * 3000, suffix: `×${a} sprint-pt` };
+  if (ruleId === 875) return { pts: a * 3000, suffix: `×${a} KOM-pt` };
+  if (ruleId === 876) return { pts: JRS.leader,          suffix: '' };
+  if (ruleId === 877) return { pts: JRS.sprint,          suffix: '' };
+  if (ruleId === 878) return { pts: JRS.mountain,        suffix: '' };
+  if (ruleId === 879) return { pts: JRS.youth,           suffix: '' };
+  if (ruleId === 1044) return { pts: JRS.most_aggressive, suffix: '' };
+  if (ruleId === 1080) return { pts: -50000,             suffix: '' };
+  if (ruleId === 895)  return { pts: Math.max(-90000, a * -3000), suffix: `${a} min. forsinket` };
+  if (ruleId === 891)  return { pts: 0,                  suffix: `GC #${a}` };
+  if (ruleId === 885)  return { pts: TM[1],              suffix: '1. bedste hold' };
+  if (ruleId === 886)  return { pts: TM[2],              suffix: '2. bedste hold' };
+  if (ruleId === 887)  return { pts: TM[3],              suffix: '3. bedste hold' };
+  if (ruleId === 888)  return { pts: 0,                  suffix: `etapepl. #${a}` };
+  if (ruleId === 889)  return { pts: 0,                  suffix: `sprint-klass. ×${a}` };
+  if (ruleId === 890)  return { pts: 0,                  suffix: `KOM-klass. ×${a}` };
+  if (ruleId === 892)  return { pts: 0,                  suffix: `pointklass. #${a}` };
+  if (ruleId === 893)  return { pts: 0,                  suffix: `bjergklass. #${a}` };
+  if (ruleId === 894)  return { pts: 0,                  suffix: 'etapepræmie' };
+  if (ruleId === 904)  return { pts: 0,                  suffix: 'særpræmie' };
+  return { pts: a, suffix: `regel ${ruleId}` };
 }
 
 // ── Tab: Hold & Picks ──────────────────────────────────────────────────────────
@@ -106,7 +360,6 @@ function renderHoldTab(stage) {
 
   // Sort riders by expected points
   const sorted = [...stage.riders].sort((a,b) => b.exp - a.exp);
-  const top25  = sorted.slice(0, 25);
 
   // Best team riders
   const bestIds = new Set(stage.best_team || []);
@@ -145,7 +398,7 @@ function renderHoldTab(stage) {
 
   // Top picks table
   html += `
-    <h2 style="margin-bottom:12px">Top 25 ryttere — forventet score</h2>
+    <h2 style="margin-bottom:12px">Alle ryttere — forventet score</h2>
     <div class="table-wrapper">
     <table class="pred-table">
       <thead><tr>
@@ -159,7 +412,7 @@ function renderHoldTab(stage) {
         <th>Begrundelse</th>
       </tr></thead>
       <tbody>
-        ${top25.map((r, i) => {
+        ${sorted.map((r, i) => {
           const dk = (r.disc_key || 'AVG').toUpperCase();
           const dLabel = DISC_LABELS[dk] || dk;
           const rankCls = i < 3 ? 'rank-top' : 'rank-num';
@@ -254,7 +507,6 @@ function renderPredStage(num) {
       <tbody>`;
 
   sorted.forEach((r, i) => {
-    if (i >= 30 && !r.in_opt && !r.is_cap) return;  // show top 30 + optimal picks
     const rowCls  = [r.in_opt ? 'in-opt' : '', r.is_cap ? 'is-cap' : ''].filter(Boolean).join(' ');
     const rankCls = i < 3 ? 'rank-top' : 'rank-num';
 
@@ -316,8 +568,9 @@ function setupTabs() {
       activeTab = tab;
       document.querySelectorAll('.tab-btn').forEach(b =>
         b.classList.toggle('active', b.dataset.tab === tab));
-      document.getElementById('tab-hold').style.display  = tab === 'hold'  ? '' : 'none';
-      document.getElementById('tab-preds').style.display = tab === 'preds' ? '' : 'none';
+      document.getElementById('tab-scores').style.display = tab === 'scores' ? '' : 'none';
+      document.getElementById('tab-hold').style.display   = tab === 'hold'   ? '' : 'none';
+      document.getElementById('tab-preds').style.display  = tab === 'preds'  ? '' : 'none';
     });
   });
 }

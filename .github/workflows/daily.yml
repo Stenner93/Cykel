@@ -123,9 +123,10 @@ jobs:
             if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ inputs.stage }}" ]; then
               MSG="🚴 Etape ${{ inputs.stage }} (${{ inputs.stage_type }}) — $(date -u +%Y-%m-%d)"
             else
-              MSG="⏰ Daglig opdatering — $(date -u +%Y-%m-%d %H:%M UTC)"
+              MSG="⏰ Daglig opdatering — $(date -u '+%Y-%m-%d %H:%M UTC')"
             fi
             git commit -m "$MSG"
-            git push
+            # Push med rebase-fallback i tilfælde af samtidige kørsler
+            git push || (git pull --rebase origin main && git push)
             echo "✅ Push lykkedes: $MSG"
           fi

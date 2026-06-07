@@ -355,5 +355,207 @@
       "stage_type": "mountain",
       "name": "Stage 8 | Beaufort - Plateau de Solaison - Brison"
     }
+  },
+  "boucles-de-la-mayenne/2026": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint"
+  },
+  "boucles-de-la-mayenne/2026_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Saint-Berthevin  - Château-Gontier-sur-Mayenne"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Aron - Pré-en-Pail-Saint-Samson"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Cossé-le-Vivien - Laval"
+    }
+  },
+  "thuringen-rundfahrt/2009": {
+    "1": "hilly",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "hilly",
+    "5": "hilly",
+    "6": "hilly",
+    "7": "hilly"
+  },
+  "thuringen-rundfahrt/2009_meta": {
+    "1": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Erfurt - Erfurt"
+    },
+    "2": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Oberhof - Oberhof"
+    },
+    "3": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Fröttstädt - Eisenach"
+    },
+    "4": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Großbreitenbach - Großbreitenbach"
+    },
+    "5": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 5 (ITT) | Oberhof - Oberhof"
+    },
+    "6": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 6 | Neuhaus/Rwg - Neuhaus/Rwg"
+    },
+    "7": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 7 | Hildburghausen - Hildburghausen"
+    }
+  },
+  "mainfranken-tour/2009": {
+    "1": "hilly",
+    "2": "hilly"
+  },
+  "mainfranken-tour/2009_meta": {
+    "1": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Schweinfurt - Stadtlauringen"
+    },
+    "2": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Werneck - Hofheim"
+    }
+  },
+  "volta-ciclistica-internacional-de-gravatai/2011": {
+    "1": "hilly",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "hilly",
+    "5": "hilly"
+  },
+  "volta-ciclistica-internacional-de-gravatai/2011_meta": {
+    "1": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Gravataí - Torres"
+    },
+    "2": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Torres - Cambará do Sul"
+    },
+    "3": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Cambará do Sul - Canela"
+    },
+    "4": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Canela - Gravataí"
+    },
+    "5": {
+      "p_class": "?",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Gravataí - Gravataí"
+    }
+  },
+  "vuelta-asturias/2026": {
+    "1": "hilly",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "sprint"
+  },
+  "vuelta-asturias/2026_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Oviedo - Benia de Onís"
+    },
+    "2": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Llanes - Pola de Lena"
+    },
+    "3": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Figueras (Castropol) - Vegadeo"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Lugones  - Oviedo"
+    }
+  },
+  "gp-anicolor/2026": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "hilly"
+  },
+  "gp-anicolor/2026_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Porto de Mós - Oliveira do Bairro"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Oiã (Anicolor)  - Costa Nova"
+    },
+    "3": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Mortágua  - Águeda"
+    }
+  },
+  "giro-di-sardegna/2026": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "sprint",
+    "4": "hilly",
+    "5": "sprint"
+  },
+  "giro-di-sardegna/2026_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Castelsardo - Bosa"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Oristano - Carbonia"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Cagliari - Tortoli"
+    },
+    "4": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Arbatax - Nuoro"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Nuoro - Olbia"
+    }
   }
 }

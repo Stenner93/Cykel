@@ -27,6 +27,7 @@ sys.path.insert(0, str(ROOT))
 import scrape_holdet as _h
 from src.predictor import predict_all
 from src.optimizer import make_best_team
+from src.scoring import STAGE_PTS, GC_PTS, JERSEY, SPT_PER_PT, LATE_MAX, LATE_PER_MIN, DNF_PEN
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -40,6 +41,60 @@ DAUPHINÉ_CARTRIDGE = "criterium-du-dauphine-2026"
 DAUPHINÉ_PCS_RACE  = "criterium-du-dauphine/2026"
 DAUPHINÉ_RAW_DIR   = DATA / "cache" / "dauphine2026_raw"
 PLAYERS_CACHE      = DATA / "cache" / "dauphine2026_players.json"
+
+# ── Rule labels (Danish) — same rule IDs as Giro (same Holdet platform) ───────
+RULE_LABELS: dict[int, str] = {
+    849: "Etapesejr",  850: "2. plads",  851: "3. plads",
+    852: "4. plads",   853: "5. plads",  854: "6. plads",
+    855: "7. plads",   856: "8. plads",  857: "9. plads",
+    858: "10. plads",  859: "11. plads", 860: "12. plads",
+    861: "13. plads",  862: "14. plads", 863: "15. plads",
+    864: "GC #1",  865: "GC #2",  866: "GC #3",  867: "GC #4",
+    868: "GC #5",  869: "GC #6",  870: "GC #7",  871: "GC #8",
+    872: "GC #9",  873: "GC #10",
+    874: "Sprint-point",
+    875: "KOM-point",
+    876: "Ledertrøje",
+    877: "Pointtrøje",
+    878: "Bjergtrøje",
+    879: "Ungdomstrøje",
+    885: "Holdbonus (1. bedste hold)",
+    886: "Holdbonus (2. bedste hold)",
+    887: "Holdbonus (3. bedste hold)",
+    888: "Etapeplacering",
+    889: "Sprint-point (klassement)",
+    890: "KOM-point (klassement)",
+    891: "GC-stilling",
+    892: "Pointklassement-rang",
+    893: "Bjergklassement-rang",
+    894: "Etapepræmie",
+    895: "Forsinkelse",
+    904: "Særpræmie",
+    905: "Gruppetto",
+    1044: "Angreb",
+    1080: "DNF",
+}
+
+# Dauphiné-specific expected-points ceiling for a stage winner.
+#
+# Official Dauphiné scoring:
+#   Stage win:    200 000 kr
+#   Team bonus:   up to 60 000 kr (1st place team per rider)
+#   Jersey day:   25 000 kr (leader), 15 000 kr (youth)
+#   KOM/Sprint:   3 000 kr / point
+#
+# We set WINNER_POINTS ≈ 230–250 k (stage win + typical bonuses for the best rider).
+# A composite of 0.75 (strong specialist, no VeloScore) then yields ~170–190 k —
+# a realistic top-pick expectation versus the actual 200 k stage win ceiling.
+# This replaces the Giro/TdF defaults (560–630 k) which are ~3× too high.
+DAUPHINÉ_WINNER_POINTS: dict[str, int] = {
+    "sprint":   230_000,   # 200k win + sprint pts bonus
+    "mountain": 240_000,   # 200k win + KOM pts bonus; hard stages scaled by _profile_scale
+    "hilly":    220_000,   # 200k win + team bonus
+    "tt":       210_000,   # 200k win; narrower field, less upside
+    "cobbled":  225_000,
+    "gc":       240_000,
+}
 
 # ── Known WorldTour team abbreviations ─────────────────────────────────────────
 _TEAM_MAP: list[tuple[str, str]] = [
@@ -120,40 +175,67 @@ def _save_raw(name: str, data) -> None:
 
 # ── Fetch helpers ───────────────────────────────────────────────────────────────
 
-def fetch_summary(game_id: int, event_id: int) -> dict[int, int]:
+def fetch_stage_actions(game_id: int, event_id: int) -> list[dict]:
+    """GET /api/games/{gameId}/events/{eventId}/fantasy-actions"""
+    return _h.HTTP.get(
+        f"{_h.BASE}/api/games/{game_id}/events/{event_id}/fantasy-actions"
+    ).json().get("items", [])
+
+
+def fetch_scoring_summary(game_id: int, event_id: int) -> dict[int, int]:
     """
-    Returns {personId: total_fantasy_points} for a completed stage.
-    Tries the /scoring-summary endpoint; falls back to reconstructing from actions.
+    GET /api/games/{gameId}/events/{eventId}/scoring-summary
+    Returns {personId: total_score} or {} if endpoint unavailable.
     """
-    # Try summary endpoint
     try:
         resp = _h.HTTP.get(
             f"{_h.BASE}/api/games/{game_id}/events/{event_id}/scoring-summary"
         )
-        data = resp.json()
+        data  = resp.json()
         items = data if isinstance(data, list) else data.get("items", [])
         result: dict[int, int] = {}
         for item in items:
-            pid = item.get("personId") or item.get("person_id")
-            pts = item.get("score") or item.get("total") or item.get("points") or 0
+            pid = (
+                item.get("personId")
+                or item.get("person_id")
+                or item.get("playerId")
+            )
+            score = (
+                item.get("score")
+                or item.get("total")
+                or item.get("points")
+                or item.get("fantasyPoints")
+                or 0
+            )
             if pid is not None:
-                result[int(pid)] = int(pts)
-        if result:
-            return result
-    except Exception:
-        pass
+                result[int(pid)] = int(score)
+        return result
+    except Exception as exc:
+        print(f"    [INFO] scoring-summary unavailable for event {event_id}: {exc}")
+        return {}
 
-    # Fall back to per-rule actions → use cached summary_sXX.json if available
-    actions_raw = _load_raw(f"actions_e{event_id}.json")
-    if not actions_raw:
-        actions_raw = _h.HTTP.get(
-            f"{_h.BASE}/api/games/{game_id}/events/{event_id}/fantasy-actions"
-        ).json().get("items", [])
-        _save_raw(f"actions_e{event_id}.json", actions_raw)
 
-    # The summary files from giro already have {personId: net_points}
-    # For actions we only have ruleId+amount without point values — skip reconstruction
-    return {}
+def _action_pts(rule_id: int, amount: float, has_gc_specific: bool) -> int:
+    """Convert a Holdet rule action to fantasy points (fallback reconstruction)."""
+    if 849 <= rule_id <= 863:
+        return STAGE_PTS.get(rule_id - 848, 0)
+    if 864 <= rule_id <= 873:
+        return GC_PTS.get(rule_id - 863, 0)
+    if rule_id == 874:
+        return int(amount) * SPT_PER_PT
+    if rule_id == 875:
+        return int(amount) * SPT_PER_PT
+    if rule_id == 876: return JERSEY["leader"]
+    if rule_id == 877: return JERSEY["sprint"]
+    if rule_id == 878: return JERSEY["mountain"]
+    if rule_id == 879: return JERSEY["youth"]
+    if rule_id == 1044: return JERSEY.get("most_aggressive", 50_000)
+    if rule_id == 1080: return DNF_PEN
+    if rule_id == 895:
+        return max(LATE_MAX, int(amount) * LATE_PER_MIN)
+    if rule_id == 891 and not has_gc_specific:
+        return GC_PTS.get(int(amount), 0)
+    return 0
 
 
 # ── Rider pool ─────────────────────────────────────────────────────────────────
@@ -287,42 +369,61 @@ def main() -> None:
     print(f"  PCS stage types: {len(stage_types)} etaper  "
           f"profile scores: {len(stage_scores)} etaper")
 
-    # ── Fetch actuals for completed stages ──────────────────────────────────
+    # ── Fetch actuals + actions for completed stages ─────────────────────────
     print(f"  Henter actual-point for {len(finished)} afsluttede etaper…")
 
     # {stage_num: {rider_id: actual_pts}}
     actuals: dict[int, dict[str, int]] = {}
+    # {stage_num: list[action]}  — for rule breakdown in matrix
+    all_actions: dict[int, list] = {}
+    # {stage_num: {personId: total}}  — from scoring-summary or reconstructed
+    all_summaries: dict[int, dict[int, int]] = {}
+    summary_available = False
 
     for stage_num, eid in enumerate(events, start=1):
         if event_info.get(eid, {}).get("status") != "finished":
             continue
 
-        cache_name = f"summary_s{stage_num:02d}.json"
-        cached     = _load_raw(cache_name)
+        # ── Actions ──────────────────────────────────────────────────────────
+        act_cache = _load_raw(f"actions_e{eid}.json")
+        if act_cache is None and not args.no_holdet:
+            act_cache = fetch_stage_actions(DAUPHINÉ_GAME_ID, eid)
+            _save_raw(f"actions_e{eid}.json", act_cache)
+        if act_cache:
+            all_actions[stage_num] = act_cache
 
-        if cached is None and not args.no_holdet:
-            # Try /scoring-summary endpoint first
-            summary_by_pid = fetch_summary(DAUPHINÉ_GAME_ID, eid)
-            if not summary_by_pid:
-                # Fall back: fetch actions and build summary from them
-                actions = _h.HTTP.get(
-                    f"{_h.BASE}/api/games/{DAUPHINÉ_GAME_ID}/events/{eid}/fantasy-actions"
-                ).json().get("items", [])
-                _save_raw(f"actions_e{eid}.json", actions)
+        # ── Scoring summary ───────────────────────────────────────────────────
+        sum_cache_name = f"summary_s{stage_num:02d}.json"
+        cached_sum     = _load_raw(sum_cache_name)
 
-                # We don't reconstruct points from rules here — save empty summary
-                # to avoid re-fetching. Actuals will be filled from scoring-summary
-                # if/when the endpoint becomes available.
-                summary_by_pid = {}
+        if cached_sum is None and not args.no_holdet:
+            summary_by_pid = fetch_scoring_summary(DAUPHINÉ_GAME_ID, eid)
 
-            # Save as {str(personId): points}
-            _save_raw(cache_name, {str(k): v for k, v in summary_by_pid.items()})
-            cached = {str(k): v for k, v in summary_by_pid.items()}
+            if not summary_by_pid and act_cache:
+                # Reconstruct from actions as fallback
+                print(f"    Etape {stage_num}: rekonstruerer point fra actions…")
+                for action in act_cache:
+                    pid = action.get("personId")
+                    if pid is None:
+                        continue
+                    has_gc = any(864 <= a["ruleId"] <= 873
+                                 for a in act_cache if a.get("personId") == pid)
+                    pts = _action_pts(action["ruleId"], action.get("amount", 1), has_gc)
+                    summary_by_pid[pid] = summary_by_pid.get(pid, 0) + pts
 
-        if cached:
+            _save_raw(sum_cache_name, {str(k): v for k, v in summary_by_pid.items()})
+            cached_sum = {str(k): v for k, v in summary_by_pid.items()}
+
+        if cached_sum:
+            summary: dict[int, int] = {int(k): v for k, v in cached_sum.items()}
+            all_summaries[stage_num] = summary
+            if summary:
+                summary_available = True
+
+            # Build rider_id → pts lookup for predictions actuals
             stage_actuals: dict[str, int] = {}
-            for pid_str, pts in cached.items():
-                rider = pid_to_rider.get(int(pid_str))
+            for pid_int, pts in summary.items():
+                rider = pid_to_rider.get(pid_int)
                 if rider:
                     stage_actuals[rider["id"]] = int(pts)
             actuals[stage_num] = stage_actuals
@@ -391,6 +492,7 @@ def main() -> None:
             current_gc=gc_standings or None,
             current_jerseys=jersey_leaders or None,
             profile_score=profile_score,
+            winner_pts_override=DAUPHINÉ_WINNER_POINTS,
         )
 
         stage_actuals = actuals.get(stage_num, {})
@@ -441,6 +543,82 @@ def main() -> None:
             "best_team":     sorted(best_ids),
             "cap_id":        cap_id,
         })
+
+    # ── Build score matrix ────────────────────────────────────────────────────
+    print(f"  Bygger pointmatrix ({len(all_summaries)} etaper med data)…")
+
+    act_idx: dict[tuple, list] = {}
+    for snum, acts in all_actions.items():
+        for a in acts:
+            act_idx.setdefault((snum, a["personId"]), []).append(a)
+
+    stages_meta_matrix = []
+    for stage_num, eid in enumerate(events, start=1):
+        info  = event_info.get(eid, {})
+        stype = (
+            _h.pcs_override_stage_type(DAUPHINÉ_CARTRIDGE, stage_num)
+            or _h.HOLDET_STAGE_TYPE_MAP.get(info.get("stageType", ""), "")
+            or "hilly"
+        )
+        stages_meta_matrix.append({
+            "num":    stage_num,
+            "name":   info.get("name", f"Etape {stage_num}"),
+            "type":   stype,
+            "status": info.get("status", "none"),
+        })
+
+    riders_matrix: list[dict] = []
+    for rider in sorted(riders, key=lambda r: r["full_name"]):
+        pid = rider.get("holdet_person_id")
+        if not pid:
+            continue
+        pts_by_stage:   dict[str, int]  = {}
+        rules_by_stage: dict[str, list] = {}
+
+        for stage in stages_meta_matrix:
+            snum = stage["num"]
+            if snum in all_summaries and pid in all_summaries[snum]:
+                total = all_summaries[snum][pid]
+            elif snum in all_actions:
+                rider_acts = act_idx.get((snum, pid), [])
+                has_gc     = any(864 <= a["ruleId"] <= 873 for a in rider_acts)
+                total      = sum(_action_pts(a["ruleId"], a.get("amount", 1), has_gc)
+                                 for a in rider_acts)
+            else:
+                total = 0
+
+            if total:
+                pts_by_stage[str(snum)] = total
+            rider_acts = act_idx.get((snum, pid), [])
+            if rider_acts:
+                rules_by_stage[str(snum)] = [
+                    [a["ruleId"], a.get("amount", 1)] for a in rider_acts
+                ]
+
+        riders_matrix.append({
+            "id":    rider["id"],
+            "name":  rider["full_name"],
+            "team":  rider["team"],
+            "price": rider["price"],
+            "pid":   pid,
+            "pts":   pts_by_stage,
+            "rules": rules_by_stage,
+        })
+
+    scores_out = {
+        "generated":      datetime.now(timezone.utc).isoformat(),
+        "game_id":        DAUPHINÉ_GAME_ID,
+        "cartridge":      DAUPHINÉ_CARTRIDGE,
+        "summary_source": "scoring-summary" if summary_available else "computed",
+        "stages":         stages_meta_matrix,
+        "rule_labels":    {str(k): v for k, v in RULE_LABELS.items()},
+        "riders":         riders_matrix,
+    }
+    scores_path = WEB_DIR / "dauphine2026_scores.json"
+    scores_path.write_text(
+        json.dumps(scores_out, ensure_ascii=False, indent=None), encoding="utf-8"
+    )
+    print(f"  Gemt: {scores_path}  ({len(riders_matrix)} ryttere)")
 
     # ── Write output ─────────────────────────────────────────────────────────
     out = {
