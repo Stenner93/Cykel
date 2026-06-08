@@ -281,11 +281,21 @@ def scrape_tv2_axelgaard(cartridge: str, stage_num: int) -> dict[str, float]:
             continue
 
         # Split on commas — allows multi-rider lines like "Van Aert, Fisher-Black"
-        for raw_name in re.split(r"[,/]", name_part):
+        for raw_name in re.split(r"[,/|]", name_part):
             raw_name = raw_name.strip(" .:–-")
             if len(raw_name) < 4 or len(raw_name) > 60:
                 continue
             norm = _norm(raw_name)
+            # Skip team names (contain known team keywords)
+            if re.search(
+                r"\b(team|visma|ineos|lidl|trek|groupama|fdj|bahrain|movistar|"
+                r"bora|soudal|quick.step|decathlon|intermarche|cofidis|arkea|"
+                r"uno-x|lotto|astana|tudor|jayco|alpecin|red bull|ef education|"
+                r"lease a bike|netcompany|quick step|ag2r|total.nergies|"
+                r"uae emirates|israel|human powered)\b",
+                norm, re.IGNORECASE
+            ):
+                continue
             words = norm.split()
             if len(words) < 2 or len(words) > 5:
                 continue

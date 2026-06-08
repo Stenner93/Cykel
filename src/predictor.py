@@ -348,11 +348,51 @@ def predict_all(
     team_bonus_data: dict[str, int] | None = None,      # from holdet_team_bonus.json
     winner_pts_override: dict[str, int] | None = None,  # Race-specific winner points
     rider_context: dict[str, dict] | None = None,       # {rider_id: {status, note}}
+    pcs_specialty_data: dict[str, dict] | None = None,  # {rider_id: {climber, sprint, tt, ...}}
 ) -> list[dict]:
     """
     Predict expected points for ALL riders and return sorted list.
     """
-    # Build lookup maps
+    # ── PCS specialty → CyclingOracle normalisation ──────────────────────────
+    # PCS specialty keys: climber, sprint, tt, hills, onedayraces, gc
+    # CO keys:            MTN,     SPR,    ITT, HLL,  COB,         GC
+    _PCS_TO_CO: dict[str, str] = {
+        "climber":    "MTN",
+        "sprint":     "SPR",
+        "tt":         "ITT",
+        "hills":      "HLL",
+        "onedayraces":"COB",
+        "gc":         "GC",
+    }
+    # Compute per-specialty 95th-percentile maxima across this race field
+    # for normalisation → this gives a field-relative 0-100 score.
+    pcs_field_maxima: dict[str, float] = {}
+    if pcs_specialty_data:
+        from collections import defaultdict
+        vals: dict[str, list[float]] = defaultdict(list)
+        for spec_dict in pcs_specialty_data.values():
+            for k, v in spec_dict.items():
+                vals[k].append(float(v))
+        for k, lst in vals.items():
+            lst.sort()
+            idx = max(0, int(len(lst) * 0.95) - 1)
+            pcs_field_maxima[k] = lst[idx] or 1.0
+
+    def _pcs_to_co(rider_id: str) -> dict[str, float] | None:
+        """Convert PCS specialty scores to CO-style dict (0-100 scale) for one rider."""
+        spec = (pcs_specialty_data or {}).get(rider_id)
+        if not spec or not pcs_field_maxima:
+            return None
+        co: dict[str, float] = {}
+        for pcs_k, co_k in _PCS_TO_CO.items():
+            if pcs_k in spec and pcs_k in pcs_field_maxima:
+                co[co_k] = min(100.0, spec[pcs_k] / pcs_field_maxima[pcs_k] * 100.0)
+        # AVG = mean of all available
+        if co:
+            co["AVG"] = round(sum(co.values()) / len(co), 1)
+        return co or None
+
+    # ── Build lookup maps ────────────────────────────────────────────────────
     vs_by_name: dict[str, dict] = {}
     if veloscore_data:
         for entry in veloscore_data:
@@ -393,13 +433,28 @@ def predict_all(
                             break
 
         sk = (sprint_kom_data or {}).get(rider["id"], {})
+
+        # Discipline data: CO primary, PCS specialty fallback/blend
+        co_entry  = (cyclingoracle_data or {}).get(rider["id"])
+        pcs_entry = _pcs_to_co(rider["id"])
+        if co_entry and pcs_entry:
+            # Blend: CO 70% + PCS-normalised 30%
+            blended = {
+                k: round(co_entry.get(k, 50.0) * 0.70 + pcs_entry.get(k, 50.0) * 0.30, 1)
+                for k in set(co_entry) | set(pcs_entry)
+            }
+        elif pcs_entry:
+            blended = pcs_entry      # CO missing — use PCS only
+        else:
+            blended = co_entry       # PCS missing — use CO only (or None)
+
         pred = predict_rider(
             rider=rider,
             stage_type=stage_type,
             veloscore_rank=vs_entry.get("rank") if vs_entry else None,
             veloscore_score=vs_entry.get("veloscore") if vs_entry else None,
             odds_prob=(odds_data or {}).get(name_lower),
-            cyclingoracle=(cyclingoracle_data or {}).get(rider["id"]),
+            cyclingoracle=blended,
             pcs_form=(pcs_form_data or {}).get(rider["id"]),
             gc_rank=(current_gc or {}).get(rider["id"]),
             jerseys=(current_jerseys or {}).get(rider["id"]),

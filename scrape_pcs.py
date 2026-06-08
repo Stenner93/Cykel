@@ -234,6 +234,31 @@ def _rider_to_pcs_slug(rider: dict) -> str:
 # HTML parsers
 # ---------------------------------------------------------------------------
 
+_SPEC_LABELS = {"climber", "sprint", "tt", "hills", "onedayraces", "gc"}
+
+
+def _parse_specialties(html: str) -> dict[str, int]:
+    """
+    Extract PCS specialty points from a rider page.
+    Returns e.g. {"climber": 882, "sprint": 273, "tt": 525, "hills": 2240,
+                  "onedayraces": 1836, "gc": 584}
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    for ul in soup.find_all("ul"):
+        tokens = ul.get_text(" ", strip=True).split()
+        found: dict[str, int] = {}
+        i = 0
+        while i < len(tokens) - 1:
+            if tokens[i].isdigit() and tokens[i + 1].lower() in _SPEC_LABELS:
+                found[tokens[i + 1].lower()] = int(tokens[i])
+                i += 2
+            else:
+                i += 1
+        if len(found) >= 3:   # require at least 3 labels to avoid false matches
+            return found
+    return {}
+
+
 def _parse_results_table(html: str, rider_name: str) -> list[dict]:
     """
     Parse the rdrResults table in a PCS rider page.
@@ -567,7 +592,8 @@ def scrape_all(riders: list[dict], reset: bool = False, test: bool = False) -> d
         html, url_used = _fetch_rider_page(slug, session)
 
         if html:
-            results = _parse_results_table(html, rider["full_name"])
+            results      = _parse_results_table(html, rider["full_name"])
+            specialties  = _parse_specialties(html)
             # Annotate each result with stage_type (fetches race pages as needed)
             results = annotate_stage_types(results, session, stage_types_disk)
 
@@ -584,6 +610,7 @@ def scrape_all(riders: list[dict], reset: bool = False, test: bool = False) -> d
                 "pcs_url":          url_used,
                 "form_score":       form_scores["overall"],   # backward compat key
                 "form_by_type":     form_scores,              # sprint/mountain/hilly/tt/cobbled
+                "pcs_specialties":  specialties,              # {"climber":882, "sprint":273, ...}
                 "n_results":        len(recent),
                 "last_result_date": last_date,
                 "results":          recent[:15],
@@ -616,6 +643,67 @@ def scrape_all(riders: list[dict], reset: bool = False, test: bool = False) -> d
                           encoding="utf-8")
     _save_stage_types_cache(stage_types_disk)
     return cache
+
+
+# ---------------------------------------------------------------------------
+# PCS startlist — DNS detection
+# ---------------------------------------------------------------------------
+
+def fetch_pcs_startlist(pcs_race: str, session: requests.Session | None = None) -> list[str]:
+    """
+    Fetch the startlist from PCS and return a list of rider slugs.
+    pcs_race: e.g. "tour-auvergne-rhone-alpes/2026"
+    Returns list of PCS slugs like ["dorian-godon", "wout-van-aert", ...]
+    """
+    url = f"https://www.procyclingstats.com/race/{pcs_race}/startlist"
+    sess = session or requests.Session()
+    try:
+        r = sess.get(url, headers=HEADERS, timeout=15)
+        if r.status_code != 200:
+            return []
+        soup = BeautifulSoup(r.text, "html.parser")
+        slugs: list[str] = []
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            if href.startswith("rider/"):
+                slug = href.split("/")[1].split("?")[0]
+                if slug and slug not in slugs:
+                    slugs.append(slug)
+        return slugs
+    except Exception:
+        return []
+
+
+def check_dns(
+    riders: list[dict],
+    pcs_race: str,
+    session: requests.Session | None = None,
+) -> list[str]:
+    """
+    Compare our rider list against the PCS startlist.
+    Returns list of rider IDs that appear to be DNS (not on PCS startlist).
+    Only flags riders where we HAVE a known PCS slug (to avoid false positives).
+    """
+    startlist_slugs = set(fetch_pcs_startlist(pcs_race, session))
+    if not startlist_slugs:
+        return []   # couldn't fetch — don't flag anyone
+
+    # Load existing cache to get known PCS URLs → slugs
+    cache: dict = {}
+    if CACHE_PATH.exists():
+        cache = json.loads(CACHE_PATH.read_text(encoding="utf-8"))
+
+    dns: list[str] = []
+    for rider in riders:
+        entry = cache.get(rider["id"], {})
+        pcs_url = entry.get("pcs_url", "")
+        if not pcs_url:
+            continue   # no known PCS URL → can't check
+        slug = pcs_url.rstrip("/").split("/")[-1]
+        if slug and slug not in startlist_slugs:
+            dns.append(rider["id"])
+
+    return dns
 
 
 # ---------------------------------------------------------------------------

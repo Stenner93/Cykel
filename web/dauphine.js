@@ -152,6 +152,20 @@ function renderScoresTab() {
       ? 'Point: officielle Holdet-totaler'
       : 'Point: beregnet fra regler (approx.)';
   }
+
+  // Default sort: latest finished stage descending
+  if (SCORES?.stages) {
+    const finished = SCORES.stages.filter(s => s.status === 'finished');
+    if (finished.length) {
+      const latestStage = finished[finished.length - 1].num;
+      sortBy  = latestStage;
+      sortDir = -1;
+      // Sync the dropdown back to "total" display since we're sorting by a stage
+      const sel = document.getElementById('sortSelect');
+      if (sel) sel.value = 'total';   // keep dropdown on "total" (stage sort is via header click)
+    }
+  }
+
   renderMatrix();
 }
 

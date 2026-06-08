@@ -29,6 +29,7 @@ from src.predictor import predict_all
 from src.optimizer import make_best_team
 from src.scoring import STAGE_PTS, GC_PTS, JERSEY, SPT_PER_PT, LATE_MAX, LATE_PER_MIN, DNF_PEN
 from src.scrape_predictions import get_stage_predictions
+from scrape_pcs import check_dns
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -352,6 +353,7 @@ def main() -> None:
 
     pcs_raw  = _load_json(DATA / "cache" / "pcs_form.json")
     pcs_form = {}
+    pcs_specialties: dict[str, dict] = {}   # {rider_id: {climber, sprint, tt, hills, ...}}
     for rid, entry in pcs_raw.items():
         if entry.get("not_found"):
             continue
@@ -359,6 +361,8 @@ def main() -> None:
             pcs_form[rid] = entry["form_by_type"]
         else:
             pcs_form[rid] = {"overall": entry.get("form_score", 50.0)}
+        if "pcs_specialties" in entry and entry["pcs_specialties"]:
+            pcs_specialties[rid] = entry["pcs_specialties"]
 
     pcs_scores = _load_json(DATA / "cache" / "pcs_profile_scores.json")
     stage_scores = pcs_scores.get(DAUPHINÉ_PCS_RACE + "_scores", {})
@@ -386,7 +390,21 @@ def main() -> None:
     else:
         print("  Rytterkontekst: ingen (data/stage_context.json mangler)")
 
-    print(f"  CyclingOracle: {len(co_data)}  PCS form: {len(pcs_form)}")
+    # ── DNS check via PCS startlist ─────────────────────────────────────────
+    print("  Tjekker DNS mod PCS startliste…")
+    dns_ids: set[str] = set()
+    if not args.no_holdet:
+        dns_list = check_dns(riders, DAUPHINÉ_PCS_RACE)
+        dns_ids  = set(dns_list)
+        if dns_ids:
+            id_to_name = {r["id"]: r["full_name"] for r in riders}
+            print(f"  DNS ryttere ({len(dns_ids)}): "
+                  + ", ".join(id_to_name.get(r, r) for r in sorted(dns_ids)))
+        else:
+            print("  Alle ryttere ser ud til at starte")
+
+    print(f"  CyclingOracle: {len(co_data)}  PCS form: {len(pcs_form)}"
+          f"  PCS specialties: {len(pcs_specialties)}")
     print(f"  PCS stage types: {len(stage_types)} etaper  "
           f"profile scores: {len(stage_scores)} etaper")
 
@@ -517,6 +535,12 @@ def main() -> None:
             if not odds_data:
                 odds_data = None
 
+        # Build context with auto-DNS from startlist check
+        stage_ctx = dict(all_stage_context.get(stage_num) or {})
+        for dns_id in dns_ids:
+            if dns_id not in stage_ctx:
+                stage_ctx[dns_id] = {"status": "dns", "note": "Ikke på PCS startliste"}
+
         preds = predict_all(
             riders=riders,
             stage_type=stype,
@@ -528,7 +552,8 @@ def main() -> None:
             current_jerseys=jersey_leaders or None,
             profile_score=profile_score,
             winner_pts_override=DAUPHINÉ_WINNER_POINTS,
-            rider_context=all_stage_context.get(stage_num) or None,
+            rider_context=stage_ctx or None,
+            pcs_specialty_data=pcs_specialties or None,
         )
 
         stage_actuals = actuals.get(stage_num, {})
