@@ -42,6 +42,21 @@ function esc(s) {
 function fmt(n)   { return n == null ? '–' : Number(n).toLocaleString('da-DK'); }
 function fmtK(n)  { if (!n) return ''; return (Math.abs(n)>=1e6 ? (n/1e6).toFixed(1)+'M' : Math.round(n/1000)+'k'); }
 
+/** Render a context status badge for a rider */
+function ctxBadge(status, note, mult) {
+  if (!status || status === 'normal') return '';
+  const CTX_LABELS = {
+    fresh:     'Frisk',
+    fatigued:  'Traet',
+    defending: 'GC',
+    sick:      'Syg',
+    dns:       'DNS',
+  };
+  const label = CTX_LABELS[status] || status;
+  const multStr = mult != null && mult !== 1.0 ? ` x${mult}` : '';
+  return `<span class="ctx-badge ctx-${esc(status)}" title="${esc(note || status)}">${label}${multStr}</span>`;
+}
+
 function miniBar(signals) {
   const labels = ['VeloScore','Odds','Disciplin','Form'];
   return `<div class="mini-signals">${signals.map((v,i)=>
@@ -419,7 +434,7 @@ function renderHoldTab(stage) {
           const rowCls  = [r.in_opt ? 'in-opt' : '', r.is_cap ? 'is-cap' : ''].filter(Boolean).join(' ');
           return `<tr class="${rowCls}">
             <td class="${rankCls}">${i+1}</td>
-            <td class="col-name-p">${esc(r.name)}</td>
+            <td class="col-name-p">${esc(r.name)}${ctxBadge(r.ctx_status, r.ctx_note, r.ctx_mult)}</td>
             <td style="color:var(--muted);font-size:0.75rem">${esc(r.team)}</td>
             <td style="font-size:0.78rem">${r.price?.toFixed?.(1) ?? '?'}M</td>
             <td class="pts-exp">${fmt(r.exp)}</td>
@@ -525,7 +540,7 @@ function renderPredStage(num) {
 
     html += `<tr class="${rowCls}">
       <td class="${rankCls}">${i+1}</td>
-      <td class="col-name-p">${esc(r.name)}</td>
+      <td class="col-name-p">${esc(r.name)}${ctxBadge(r.ctx_status, r.ctx_note, r.ctx_mult)}</td>
       <td style="color:var(--muted);font-size:0.75rem">${esc(r.team)}</td>
       <td style="font-size:0.78rem">${r.price?.toFixed?.(1) ?? '?'}M</td>
       <td class="pts-exp">${fmt(r.exp)}</td>

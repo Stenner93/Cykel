@@ -366,6 +366,26 @@ def main() -> None:
     pcs_types_cache = _load_json(DATA / "cache" / "pcs_stage_types.json")
     stage_types = pcs_types_cache.get(DAUPHINÉ_PCS_RACE, {})
 
+    # ── Load rider context (status from previous stage) ──────────────────────
+    context_path = DATA / "stage_context.json"
+    all_stage_context: dict[str, dict] = {}
+    if context_path.exists():
+        raw_ctx = json.loads(context_path.read_text(encoding="utf-8"))
+        race_ctx = raw_ctx.get(DAUPHINÉ_CARTRIDGE, {})
+        # {stage_num_str: {"riders": {rider_id: {status, note}}}}
+        for snum_str, sdata in race_ctx.items():
+            if snum_str.startswith("_"):
+                continue
+            try:
+                all_stage_context[int(snum_str)] = sdata.get("riders", {})
+            except ValueError:
+                pass
+        n_ctx = sum(len(v) for v in all_stage_context.values())
+        print(f"  Rytterkontekst: {n_ctx} noter fordelt over "
+              f"{len(all_stage_context)} etaper")
+    else:
+        print("  Rytterkontekst: ingen (data/stage_context.json mangler)")
+
     print(f"  CyclingOracle: {len(co_data)}  PCS form: {len(pcs_form)}")
     print(f"  PCS stage types: {len(stage_types)} etaper  "
           f"profile scores: {len(stage_scores)} etaper")
@@ -508,6 +528,7 @@ def main() -> None:
             current_jerseys=jersey_leaders or None,
             profile_score=profile_score,
             winner_pts_override=DAUPHINÉ_WINNER_POINTS,
+            rider_context=all_stage_context.get(stage_num) or None,
         )
 
         stage_actuals = actuals.get(stage_num, {})
@@ -545,6 +566,9 @@ def main() -> None:
                 "actual":   actual,
                 "in_opt":   rid in best_ids,
                 "is_cap":   rid == cap_id,
+                "ctx_status": p.get("context_status", "normal"),
+                "ctx_note":   p.get("context_note", ""),
+                "ctx_mult":   p.get("context_mult", 1.0),
             })
 
         # Top odds for display in dashboard sources tab

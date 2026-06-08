@@ -1,0 +1,22 @@
+{
+  "_readme": "Rytterstatus til næste etape. Rediger inden den daglige kørsel. Persisterer hele løbet.",
+  "_status_values": {
+    "fresh":     "Holdt kræfter — ×1.15 på forventet score",
+    "normal":    "Standard — ingen justering (default hvis ikke angivet)",
+    "defending": "Kører for GC/hold, ikke etapesejr — ×0.85",
+    "fatigued":  "Brugte kræfter (langt udbrud, forsvar osv.) — ×0.55",
+    "sick":      "Sygdom — ×0.30",
+    "dns":       "Starter ikke — fjernes fra forudsigelser"
+  },
+  "criterium-du-dauphine-2026": {
+    "3": {
+      "_notes": "Etape 2 (234 km hilly): Finn Fisher-Black sad i udbruddet. Ben Healy vandt. Van Aert kørte forsigtigt.",
+      "riders": {
+        "finn_fisher-black": { "status": "fatigued", "note": "Langt i udbrud E2 — 200+ km" },
+        "ben_healy":         { "status": "fatigued", "note": "Vandt E2 solo efter langt angreb" },
+        "wout_van_aert":     { "status": "fresh",    "note": "Holdt kræfter på E2, endnu ikke testet" },
+        "alex_baudin":       { "status": "defending","note": "GC-leder — rider defensivt" }
+      }
+    }
+  }
+}

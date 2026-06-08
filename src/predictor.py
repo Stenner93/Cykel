@@ -322,6 +322,16 @@ def predict_rider(
     }
 
 
+STATUS_MULTIPLIERS: dict[str, float] = {
+    "fresh":     1.15,
+    "normal":    1.00,
+    "defending": 0.85,
+    "fatigued":  0.55,
+    "sick":      0.30,
+    "dns":       0.00,
+}
+
+
 def predict_all(
     riders: list[dict],
     stage_type: str,
@@ -337,6 +347,7 @@ def predict_all(
     sprint_kom_data: dict[str, dict] | None = None,     # from holdet_sprint_kom.json
     team_bonus_data: dict[str, int] | None = None,      # from holdet_team_bonus.json
     winner_pts_override: dict[str, int] | None = None,  # Race-specific winner points
+    rider_context: dict[str, dict] | None = None,       # {rider_id: {status, note}}
 ) -> list[dict]:
     """
     Predict expected points for ALL riders and return sorted list.
@@ -399,6 +410,20 @@ def predict_all(
             expected_team_bonus=(team_bonus_data or {}).get(rider["id"], 0),
             winner_pts_override=winner_pts_override,
         )
+        # Apply rider context multiplier (status from previous stage)
+        ctx = (rider_context or {}).get(rider["id"])
+        if ctx:
+            status = ctx.get("status", "normal")
+            mult   = STATUS_MULTIPLIERS.get(status, 1.0)
+            pred["expected_pts"]     = round(pred["expected_pts"] * mult)
+            pred["context_status"]   = status
+            pred["context_note"]     = ctx.get("note", "")
+            pred["context_mult"]     = mult
+        else:
+            pred["context_status"]   = "normal"
+            pred["context_note"]     = ""
+            pred["context_mult"]     = 1.0
+
         results.append(pred)
 
     results.sort(key=lambda x: x["expected_pts"], reverse=True)

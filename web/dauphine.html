@@ -184,6 +184,25 @@
   gap: 8px;
 }
 
+/* ── Rider context status badges ── */
+.ctx-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 6px;
+  margin-left: 5px;
+  vertical-align: middle;
+  cursor: default;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.ctx-fresh     { background:rgba(46,204,113,0.2);  color:#2ecc71; border:1px solid rgba(46,204,113,0.4); }
+.ctx-fatigued  { background:rgba(231,76,60,0.2);   color:#e74c3c; border:1px solid rgba(231,76,60,0.4); }
+.ctx-defending { background:rgba(241,196,15,0.2);  color:#f1c40f; border:1px solid rgba(241,196,15,0.4); }
+.ctx-sick      { background:rgba(155,89,182,0.2);  color:#9b59b6; border:1px solid rgba(155,89,182,0.4); }
+.ctx-dns       { background:rgba(127,140,141,0.25);color:var(--muted); border:1px solid var(--border); text-decoration:line-through; }
+
 /* ── Odds & Kilder tab ── */
 .odds-grid {
   display: grid;
