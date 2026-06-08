@@ -407,12 +407,14 @@ def get_stage_predictions(
     cartridge: str,
     stage_num: int,
     verbose: bool = True,
-) -> dict[str, float]:
+) -> tuple[dict[str, float], str]:
     """
-    Try all sources in priority order and return win probabilities.
+    Try all sources in priority order and return win probabilities + source name.
 
     Returns:
-        {rider_name_lower: win_probability} — empty dict if all sources fail.
+        (odds_dict, source_name)
+        odds_dict: {rider_name_lower: win_probability} — empty if all fail
+        source_name: e.g. "spilxperten.com", "TV2 Axelgaard", "IDLProCycling", or ""
         Keys are lowercase full names with spaces (matching predictor.py's name_lower).
     """
     if verbose:
@@ -422,21 +424,21 @@ def get_stage_predictions(
     result = scrape_spilxperten(cartridge, stage_num)
     if result:
         print(f"    OK Kilde: spilxperten.com ({len(result)} ryttere)")
-        return result
+        return result, "spilxperten.com"
     time.sleep(DELAY)
 
     # 2. TV2 Axelgaard (star ratings)
     result = scrape_tv2_axelgaard(cartridge, stage_num)
     if result:
         print(f"    OK Kilde: TV2 Axelgaard ({len(result)} ryttere)")
-        return result
+        return result, "TV2 Axelgaard"
     time.sleep(DELAY)
 
     # 3. IDLProCycling (tier ratings)
     result = scrape_idl(cartridge, stage_num)
     if result:
         print(f"    OK Kilde: IDLProCycling ({len(result)} ryttere)")
-        return result
+        return result, "IDLProCycling"
 
     print(f"    [!] Ingen forudsigelsesdata fundet til etape {stage_num}")
-    return {}
+    return {}, ""

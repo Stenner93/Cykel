@@ -184,6 +184,72 @@
   gap: 8px;
 }
 
+/* ── Odds & Kilder tab ── */
+.odds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 4px;
+}
+.odds-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.odds-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.odds-stage-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+.odds-stage-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+.odds-source-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.source-spilxperten { background:rgba(46,204,113,0.15); color:#2ecc71; border:1px solid rgba(46,204,113,0.3); }
+.source-tv2         { background:rgba(231,76,60,0.15);  color:#e74c3c; border:1px solid rgba(231,76,60,0.3); }
+.source-idl         { background:rgba(52,152,219,0.15); color:#3498db; border:1px solid rgba(52,152,219,0.3); }
+.source-none        { background:rgba(127,140,141,0.15);color:var(--muted);border:1px solid var(--border); }
+.odds-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(46,52,80,0.4);
+  font-size: 0.78rem;
+}
+.odds-row:last-child { border-bottom: none; }
+.odds-rank  { font-size:0.68rem; color:var(--muted); width:18px; text-align:right; flex-shrink:0; }
+.odds-name  { flex:1; font-weight:500; }
+.odds-bar-wrap { width:80px; height:5px; background:var(--border); border-radius:3px; flex-shrink:0; }
+.odds-bar-fill { height:100%; background:var(--green); border-radius:3px; }
+.odds-prob  { font-size:0.72rem; font-weight:700; color:var(--green); width:38px; text-align:right; flex-shrink:0; }
+.odds-no-data { font-size:0.78rem; color:var(--muted); font-style:italic; padding:8px 0; }
+
 /* ── Info/loading box ── */
 .info-box {
   text-align: center;
@@ -423,6 +489,7 @@
     <button class="tab-btn active" data-tab="scores">📊 Pointmatrix</button>
     <button class="tab-btn"        data-tab="hold">🏆 Hold & Picks</button>
     <button class="tab-btn"        data-tab="preds">🔮 Forudsigelser</button>
+    <button class="tab-btn"        data-tab="odds">📡 Odds & Kilder</button>
   </div>
 
   <!-- ── Tab 1: Pointmatrix ────────────────────────────────────────────── -->
@@ -455,6 +522,13 @@
     <div class="stage-selector" id="stagePills"></div>
     <div id="predContent">
       <div class="info-box"><div class="icon">⟳</div><div>Indlæser forudsigelser…</div></div>
+    </div>
+  </div>
+
+  <!-- ── Tab 4: Odds & Kilder ──────────────────────────────────────────── -->
+  <div id="tab-odds" style="display:none">
+    <div id="oddsContent">
+      <div class="info-box"><div class="icon">⟳</div><div>Indlæser…</div></div>
     </div>
   </div>
 

@@ -487,12 +487,15 @@ def main() -> None:
         # For upcoming stages: try to fetch web predictions as odds signal
         # For finished stages: no point predicting, but keep for display
         odds_data: dict | None = None
+        odds_source: str = ""
         if status != "finished":
-            odds_data = get_stage_predictions(
+            odds_data, odds_source = get_stage_predictions(
                 cartridge=DAUPHINÉ_CARTRIDGE,
                 stage_num=stage_num,
                 verbose=True,
-            ) or None
+            )
+            if not odds_data:
+                odds_data = None
 
         preds = predict_all(
             riders=riders,
@@ -544,6 +547,14 @@ def main() -> None:
                 "is_cap":   rid == cap_id,
             })
 
+        # Top odds for display in dashboard sources tab
+        odds_top = []
+        if odds_data:
+            odds_top = [
+                {"name": name.title(), "prob": round(prob, 4)}
+                for name, prob in sorted(odds_data.items(), key=lambda x: -x[1])[:15]
+            ]
+
         stages_pred.append({
             "num":           stage_num,
             "type":          stype,
@@ -554,6 +565,8 @@ def main() -> None:
             "riders":        riders_out,
             "best_team":     sorted(best_ids),
             "cap_id":        cap_id,
+            "odds_source":   odds_source,
+            "odds_top":      odds_top,
         })
 
     # ── Build score matrix ────────────────────────────────────────────────────

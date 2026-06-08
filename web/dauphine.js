@@ -560,6 +560,71 @@ function renderPredStage(num) {
   document.getElementById('predContent').innerHTML = html;
 }
 
+// ── Tab: Odds & Kilder ─────────────────────────────────────────────────────────
+function renderOddsTab() {
+  const stages = PREDS?.stages ?? [];
+  const SOURCE_META = {
+    'spilxperten.com': { label: 'Spilxperten',    cls: 'source-spilxperten', desc: 'Bet365 decimalodds' },
+    'TV2 Axelgaard':   { label: 'TV2 Axelgaard',   cls: 'source-tv2',         desc: 'Stjerne-ratings (1-5)' },
+    'IDLProCycling':   { label: 'IDL Pro Cycling',  cls: 'source-idl',         desc: 'Tier-kategorier' },
+    '':                { label: 'Ingen data',       cls: 'source-none',        desc: '' },
+  };
+  const SICONS = { sprint:'⚡', mountain:'⛰️', tt:'⏱️', hilly:'〰️', cobbled:'🧱' };
+
+  let html = `
+    <p style="font-size:0.78rem;color:var(--muted);margin-bottom:20px;line-height:1.6">
+      Systemet prøver disse kilder automatisk i prioriteret rækkefølge:<br>
+      <span style="color:#2ecc71;font-weight:600">1. Spilxperten.com</span> — faktiske Bet365 decimalodds →
+      <span style="color:#e74c3c;font-weight:600">2. TV2 Axelgaard</span> — stjerneratings fra Axelgaards optakter →
+      <span style="color:#3498db;font-weight:600">3. IDL Pro Cycling</span> — tier-bud (Top/Outsiders/Long shots).<br>
+      Kommende etaper mangler data indtil artiklerne er skrevet (typisk dagen før).
+    </p>
+    <div class="odds-grid">`;
+
+  for (const stage of stages) {
+    const src    = stage.odds_source ?? '';
+    const top    = stage.odds_top   ?? [];
+    const meta   = SOURCE_META[src] ?? SOURCE_META[''];
+    const icon   = SICONS[stage.type] ?? '🚴';
+    const isFinished = stage.status === 'finished';
+    const maxProb = top.length ? top[0].prob : 1;
+
+    html += `
+      <div class="odds-card">
+        <div class="odds-card-header">
+          <span class="odds-stage-badge">${icon} E${stage.num}</span>
+          <span class="odds-stage-name" title="${esc(stage.name ?? '')}">${esc(stage.name ?? '')}</span>
+          <span class="odds-source-badge ${meta.cls}" title="${esc(meta.desc)}">${meta.label}</span>
+        </div>`;
+
+    if (isFinished) {
+      html += `<div class="odds-no-data">Afsluttet — ingen forudsigelse</div>`;
+    } else if (!top.length) {
+      html += `<div class="odds-no-data">Ingen data endnu</div>`;
+    } else {
+      top.forEach((r, i) => {
+        const barPct = Math.round((r.prob / maxProb) * 100);
+        const probPct = (r.prob * 100).toFixed(1) + '%';
+        html += `
+          <div class="odds-row">
+            <span class="odds-rank">${i + 1}</span>
+            <span class="odds-name">${esc(r.name)}</span>
+            <div class="odds-bar-wrap"><div class="odds-bar-fill" style="width:${barPct}%"></div></div>
+            <span class="odds-prob">${probPct}</span>
+          </div>`;
+      });
+    }
+    html += `</div>`;
+  }
+
+  html += `</div>`;
+  const genTime = PREDS?.generated
+    ? new Date(PREDS.generated).toLocaleString('da-DK', {dateStyle:'short', timeStyle:'short'})
+    : '';
+  if (genTime) html += `<p style="font-size:0.7rem;color:var(--muted);margin-top:16px;text-align:right">Beregnet: ${genTime}</p>`;
+  document.getElementById('oddsContent').innerHTML = html;
+}
+
 // ── Tab switching ──────────────────────────────────────────────────────────────
 function setupTabs() {
   document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -571,6 +636,8 @@ function setupTabs() {
       document.getElementById('tab-scores').style.display = tab === 'scores' ? '' : 'none';
       document.getElementById('tab-hold').style.display   = tab === 'hold'   ? '' : 'none';
       document.getElementById('tab-preds').style.display  = tab === 'preds'  ? '' : 'none';
+      document.getElementById('tab-odds').style.display   = tab === 'odds'   ? '' : 'none';
+      if (tab === 'odds' && PREDS) renderOddsTab();
     });
   });
 }
