@@ -28,6 +28,7 @@ import scrape_holdet as _h
 from src.predictor import predict_all
 from src.optimizer import make_best_team
 from src.scoring import STAGE_PTS, GC_PTS, JERSEY, SPT_PER_PT, LATE_MAX, LATE_PER_MIN, DNF_PEN
+from src.scrape_predictions import get_stage_predictions
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -483,10 +484,21 @@ def main() -> None:
 
         print(f"    Etape {stage_num:2d} ({stype}, status={status})…")
 
+        # For upcoming stages: try to fetch web predictions as odds signal
+        # For finished stages: no point predicting, but keep for display
+        odds_data: dict | None = None
+        if status != "finished":
+            odds_data = get_stage_predictions(
+                cartridge=DAUPHINÉ_CARTRIDGE,
+                stage_num=stage_num,
+                verbose=True,
+            ) or None
+
         preds = predict_all(
             riders=riders,
             stage_type=stype,
             veloscore_data=None,        # no VeloScore for Dauphiné
+            odds_data=odds_data,
             cyclingoracle_data=co_data,
             pcs_form_data=pcs_form,
             current_gc=gc_standings or None,
