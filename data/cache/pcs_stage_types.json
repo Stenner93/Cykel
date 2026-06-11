@@ -557,5 +557,109 @@
       "stage_type": "sprint",
       "name": "Stage 5 | Nuoro - Olbia"
     }
+  },
+  "tour-auvergne-rhone-alpes/2026": {
+    "1": "hilly",
+    "2": "sprint",
+    "3": "hilly",
+    "4": "sprint",
+    "5": "sprint",
+    "6": "mountain",
+    "7": "mountain",
+    "8": "mountain"
+  },
+  "tour-auvergne-rhone-alpes/2026_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Vizille - Saint-Ismier"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Saint-Martin-le-Vinoux - Le Puy-en-Velay"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 (TTT) | Perreux - Perreux"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Le Puy-en-Velay - Montrond-les-Bains"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Saint-Chamond - Parc des Oiseaux Villars-les-Dombes"
+    },
+    "6": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 6 | Saint-Vulbas - Crest-Voland"
+    },
+    "7": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 7 | La Bridoire - Grand Colombier"
+    },
+    "8": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 8 | Beaufort - Plateau de Solaison - Brison"
+    }
+  },
+  "ras-tailteann/2015": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "sprint",
+    "6": "sprint",
+    "7": "sprint",
+    "8": "sprint"
+  },
+  "ras-tailteann/2015_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Dunboyne - Carlow"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Carlow - Tipperary"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Tipperary - Bearna"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Bearna - Newport"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Newport - Ballina"
+    },
+    "6": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 6 | Ballina - Ballinamore"
+    },
+    "7": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 7 | Ballinamore - Drogheda"
+    },
+    "8": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 8 | Drogheda - Skerries"
+    }
   }
 }
