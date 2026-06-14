@@ -469,6 +469,10 @@ def predict_all(
         ctx = (rider_context or {}).get(rider["id"])
         if ctx:
             status = ctx.get("status", "normal")
+            if status not in STATUS_MULTIPLIERS:
+                print(f"  [WARN] Ukendt status {status!r} for {rider['id']}"
+                      f" — brug: {list(STATUS_MULTIPLIERS)}")
+                status = "normal"
             mult   = STATUS_MULTIPLIERS.get(status, 1.0)
             pred["expected_pts"]     = round(pred["expected_pts"] * mult)
             pred["context_status"]   = status

@@ -230,10 +230,13 @@ def main():
     print(f"Estimeret tid: ~{estimated:.0f}s ({estimated/60:.1f} min)")
     print()
 
+    # Build lookup dict once so loop doesn't scan all riders on every iteration
+    rider_by_id = {r["id"]: r for r in riders}
+
     done = 0
     errors = 0
     for i, (rid, url) in enumerate(to_scrape):
-        rider = next(r for r in riders if r["id"] == rid)
+        rider = rider_by_id[rid]
         ratings = scrape_rider(url)
         if ratings:
             cache[rid] = {

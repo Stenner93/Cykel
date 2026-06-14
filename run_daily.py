@@ -310,11 +310,15 @@ def main():
     if args.scrape_co:
         print("  Henter CyclingOracle data (kør scrape_co.py for fuld opdatering)…")
         import scrape_co
+        import sys as _sys
+        _sys.argv = ["scrape_co.py"]
         scrape_co.main()
 
     if args.scrape_pcs:
         print("  Henter PCS form-data (kør scrape_pcs.py for fuld opdatering)…")
         import scrape_pcs
+        import sys as _sys
+        _sys.argv = ["scrape_pcs.py"]
         scrape_pcs.main()
 
     if args.scrape_holdet:

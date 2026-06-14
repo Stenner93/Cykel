@@ -598,9 +598,10 @@ def scrape_all(riders: list[dict], reset: bool = False, test: bool = False) -> d
             results = annotate_stage_types(results, session, stage_types_disk)
 
             cutoff = TODAY - timedelta(days=FORM_DAYS)
-            recent = [r for r in results
-                      if _parse_date(r["date"]) is not None
-                      and _parse_date(r["date"]) >= cutoff]
+            recent = [
+                r for r in results
+                if (d := _parse_date(r["date"])) is not None and d >= cutoff
+            ]
 
             form_scores = compute_all_form_scores(results)
             last_date   = recent[0]["date"] if recent else ""
