@@ -248,10 +248,6 @@ def main():
                         help="Re-scrape CyclingOracle discipline data")
     parser.add_argument("--scrape-pcs", action="store_true",
                         help="Re-scrape PCS recent form data (adds ~3 min)")
-    parser.add_argument("--scrape-gc", action="store_true",
-                        help="Re-scrape GC standings + jersey leaders from PCS (fallback)")
-    parser.add_argument("--race", type=str, default="tour-de-france/2026",
-                        help="PCS race path for GC scrape (default: tour-de-france/2026)")
     parser.add_argument("--scrape-holdet", action="store_true",
                         help="Re-scrape Holdet.dk: priser, GC-stilling og trøjer")
     parser.add_argument("--update-riders", action="store_true",
@@ -265,8 +261,14 @@ def main():
     if not stage or not stage_type:
         print("  Auto-detekterer etape fra Holdet-program...")
         try:
-            from scrape_holdet import detect_next_stage, DEFAULT_GAME_ID
-            det_stage, det_type = detect_next_stage(DEFAULT_GAME_ID)
+            from scrape_holdet import detect_next_stage, DEFAULT_CARTRIDGE, KNOWN_GAME_IDS
+            auto_game_id = KNOWN_GAME_IDS.get(DEFAULT_CARTRIDGE)
+            if auto_game_id is None:
+                print(f"  [WARN] Game ID ikke konfigureret for '{DEFAULT_CARTRIDGE}' "
+                      f"— tilføj det til KNOWN_GAME_IDS i scrape_holdet.py")
+                det_stage, det_type = None, None
+            else:
+                det_stage, det_type = detect_next_stage(auto_game_id, DEFAULT_CARTRIDGE)
         except Exception as exc:
             print(f"  [WARN] Auto-detect slog fejl: {exc}")
             det_stage, det_type = None, None
@@ -334,14 +336,6 @@ def main():
         if args.update_riders:
             riders = load_riders()
             print(f"  Ryttere genindlæst: {len(riders)} (priser opdateret)")
-    elif args.scrape_gc:
-        # Fallback: scrape GC from PCS (less reliable than Holdet)
-        print("  Henter GC-stilling + trøjeledere fra PCS…")
-        import scrape_gc
-        import sys as _sys
-        _sys.argv = ["scrape_gc.py", "--race", args.race]
-        scrape_gc.main()
-
     co_data      = load_cyclingoracle()
     pcs_form     = load_pcs_form()
     gc_standings = load_gc_standings()

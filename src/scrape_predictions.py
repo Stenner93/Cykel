@@ -313,101 +313,122 @@ def scrape_tv2_axelgaard(cartridge: str, stage_num: int) -> dict[str, float]:
 
 
 # ── Source 3: IDLProCycling ─────────────────────────────────────────────────────
+# IDL publishes stage previews with a sitemap at:
+#   https://www.idlprocycling.com/sitemap/news-latest.xml
+# URL pattern: /cycling/{race-slug}-stage-{N}-preview-{description}
+# Favorites section uses: "Top favorites: ... | Outsiders: ... | Long shots: ..."
+
+_IDL_SITEMAP   = "https://www.idlprocycling.com/sitemap/news-latest.xml"
+_IDL_SITEMAP_CACHE: list[str] = []   # module-level cache to avoid re-fetching
+
+
+def _idl_sitemap_urls() -> list[str]:
+    """Fetch and cache IDL sitemap URL list."""
+    global _IDL_SITEMAP_CACHE
+    if _IDL_SITEMAP_CACHE:
+        return _IDL_SITEMAP_CACHE
+    resp = _get(_IDL_SITEMAP)
+    if not resp:
+        return []
+    soup = BeautifulSoup(resp.text, "xml")
+    _IDL_SITEMAP_CACHE = [l.text for l in soup.find_all("loc")]
+    return _IDL_SITEMAP_CACHE
+
 
 def scrape_idl(cartridge: str, stage_num: int) -> dict[str, float]:
     """
-    Scrape tier favourites from idlprocycling.com stage preview.
-    Uses Google-search approach since IDL URLs aren't predictable.
+    Scrape tier favourites from idlprocycling.com stage preview via sitemap.
     Returns {rider_name_lower: win_probability}.
     """
     race_slug = IDL_RACE_SLUG.get(cartridge)
     if not race_slug:
         return {}
 
-    # IDL URL pattern: /cycling/{race-slug}-stage-{N}-preview-...
-    # Try a search-style fetch via Google to find the article URL
-    search_url = (
-        f"https://www.idlprocycling.com/cycling/"
-        f"{race_slug}-stage-{stage_num}-preview"
-    )
-    resp = _get(search_url)
+    # Find the preview article in the sitemap
+    urls = _idl_sitemap_urls()
+    pattern = f"{race_slug}-stage-{stage_num}-preview"
+    candidates = [u for u in urls if pattern in u.lower()]
+    if not candidates:
+        print(f"    [idl] Ingen artikel i sitemap for etape {stage_num}")
+        return {}
+
+    article_url = candidates[0]
+    resp = _get(article_url)
     time.sleep(DELAY)
+    if not resp:
+        return {}
 
-    # That won't work (slug is too vague) — try via Google
-    if not resp or resp.status_code != 200:
-        search_url = (
-            f"https://www.google.com/search?q=site:idlprocycling.com+"
-            f"{race_slug}+stage+{stage_num}+preview"
-        )
-        resp = _get(search_url)
-        time.sleep(DELAY)
-        if not resp:
-            return {}
-
-        # Extract IDL URL from search results
-        soup = BeautifulSoup(resp.text, "html.parser")
-        idl_url = None
-        for a in soup.find_all("a", href=True):
-            href = a["href"]
-            if "idlprocycling.com/cycling/" in href and f"stage-{stage_num}" in href:
-                # Clean up Google redirect
-                m = re.search(r"https?://www\.idlprocycling\.com[^\s&\"]+", href)
-                if m:
-                    idl_url = m.group(0)
-                    break
-
-        if not idl_url:
-            print(f"    [idl] Ingen artikel-URL fundet for etape {stage_num}")
-            return {}
-
-        resp = _get(idl_url)
-        time.sleep(DELAY)
-        if not resp:
-            return {}
-
+    print(f"    [idl] Fandt artikel: {article_url.split('/')[-1][:60]}")
     soup = BeautifulSoup(resp.text, "html.parser")
     text = soup.get_text("\n", strip=True)
 
-    # IDL uses tier keywords: "Top favorites:", "Outsiders:", "Long shots:"
-    TIER_MAP = {
-        "top": 4,       # map to star equivalent
-        "favorite": 4,
-        "favourit": 4,
-        "outsider": 2,
-        "long shot": 1,
-        "longshot": 1,
-        "dark horse": 1,
-    }
+    # IDL favorites block:
+    # "IDL Pro Cycling top picks, ..."
+    # "Top favorites: Name (Team) and Name (Team)"
+    # "Outsiders: Name (Team), Name (Team)"
+    # "Long shots: Name (Team)"
+    #
+    # Names may wrap across lines: "Isaac\ndel Toro (UAE...)"
+    # Strategy: join all lines in the favorites block, then parse tier groups.
 
+    TIER_WEIGHTS = {"top": 4, "outsider": 2, "long shot": 1, "longshot": 1}
     star_dict: dict[str, int] = {}
-    current_tier = 2    # default tier
 
+    # Locate start of top-picks block
     lines = text.split("\n")
-    for line in lines:
-        line_l = line.strip().lower()
+    start_idx = next(
+        (i for i, l in enumerate(lines)
+         if "top picks" in l.lower() or "top favorites" in l.lower()),
+        None,
+    )
+    if start_idx is None:
+        print(f"    [idl] Ingen top-picks sektion fundet")
+        return {}
 
-        # Detect tier heading
-        for kw, tier in TIER_MAP.items():
-            if kw in line_l and len(line_l) < 60:
-                current_tier = tier
-                break
+    # Join the next ~10 lines into one blob and parse
+    block = " ".join(l.strip() for l in lines[start_idx: start_idx + 15])
 
-        # Extract names — lines with team in parentheses
-        if "(" in line and ")" in line and len(line.strip()) > 10:
-            # Pattern: "Name (Team)"
-            name_part = re.sub(r"\(.*?\)", "", line).strip()
-            name_part = re.sub(r"[-–•*#\d\.]+", "", name_part).strip()
-            if len(name_part) > 4:
-                norm = _norm(name_part)
-                words = norm.split()
-                if len(words) >= 2 and all(re.match(r"[a-z\-']{2,}", w) for w in words):
-                    star_dict[norm] = max(star_dict.get(norm, 0), current_tier)
+    # Split on tier keywords
+    # e.g. "Top favorites: A (T) and B (T) Outsiders: C (T), D Long shots: E (T)"
+    tier_pat = re.compile(
+        r"(top\s+favorites?|outsiders?|long\s+shots?|dark\s+horses?)",
+        re.IGNORECASE,
+    )
+    parts = tier_pat.split(block)
+
+    current_tier = 0
+    for part in parts:
+        part = part.strip()
+        m = tier_pat.match(part)
+        if m:
+            kw = part.lower().split()[0]
+            current_tier = TIER_WEIGHTS.get(kw, TIER_WEIGHTS.get("outsider"))
+            continue
+        if current_tier == 0:
+            continue
+
+        # Extract "Name (Team)" entries from this tier's text
+        # Remove team info in parentheses, then split on comma/and
+        name_blob = re.sub(r"\([^)]*\)", "", part)
+        name_blob = re.sub(r"\bADVERTISEMENT\b", "", name_blob, flags=re.I)
+        for raw_name in re.split(r"[,\n]|\band\b", name_blob):
+            raw_name = raw_name.strip(" .:-–")
+            if len(raw_name) < 4 or len(raw_name) > 50:
+                continue
+            norm = _norm(raw_name)
+            words = norm.split()
+            if len(words) < 2 or len(words) > 5:
+                continue
+            if all(re.match(r"[a-z\-']{2,}", w) for w in words):
+                star_dict[norm] = max(star_dict.get(norm, 0), current_tier)
 
     if not star_dict:
+        print(f"    [idl] Ingen ryttere parset fra top-picks blok")
         return {}
 
     result = _stars_to_probs(star_dict)
-    print(f"    [idl] {len(result)} ryttere med tier-ratings til etape {stage_num}")
+    print(f"    [idl] {len(result)} ryttere med tier-ratings "
+          f"(top: {max(result, key=result.get)!r} {max(result.values()):.1%})")
     return result
 
 

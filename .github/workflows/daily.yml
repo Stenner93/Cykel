@@ -113,8 +113,21 @@ jobs:
           git config user.name  "TdF Manager Bot"
           git config user.email "bot@users.noreply.github.com"
 
-          # Tilføj alle ændrede datafiler
-          git add web/data/ data/cache/ data/riders.json || true
+          # Tilføj web-output (predictions + scores — formålet med CI-kørslen)
+          git add web/data/ data/riders.json || true
+
+          # Tilføj kun de Holdet-caches der ændres løbende (GC, trøjer, hold, priser)
+          # pcs_form.json og cyclingoracle.json committes KUN ved manuelle scrape-kørsler
+          git add \
+            data/cache/gc_standings.json \
+            data/cache/jerseys.json \
+            data/cache/holdet_sprint_kom.json \
+            data/cache/holdet_team_bonus.json \
+            data/cache/dauphine2026_players.json \
+            data/cache/pcs_stage_types.json \
+            data/cache/pcs_profile_scores.json \
+            data/stage_context.json \
+            || true
 
           # Commit kun hvis der er ændringer
           if git diff --staged --quiet; then
