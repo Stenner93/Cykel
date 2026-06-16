@@ -1041,5 +1041,2995 @@
       "stage_type": "tt",
       "name": "Stage 8 (ITT) | Beckenried - Stockhütte"
     }
+  },
+  "tour-de-pologne/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "sprint",
+    "4": "hilly",
+    "5": "hilly",
+    "6": "mountain",
+    "7": "tt"
+  },
+  "tour-de-pologne/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Wrocław - Legnica"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Hotel Gołębiewski Karpacz - Karpacz"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Wałbrzych - Wałbrzych"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Rybnik - Cieszyn"
+    },
+    "5": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Katowice - Zakopane"
+    },
+    "6": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 6 | Bukowina Resort - Bukowina Tatrzańska"
+    },
+    "7": {
+      "p_class": "2",
+      "stage_type": "tt",
+      "name": "Stage 7 (ITT) | Wieliczka - Wieliczka"
+    }
+  },
+  "alula-tour/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "sprint"
+  },
+  "alula-tour/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Al Manshiyah Train Station - Al Manshiyah Train Station"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | AlUla Old Town - Bir Jaydah Mountain Wirkah"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Hegra - Tayma Fort"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Maraya - Skyviews of Harrat Uwayrid"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | AlUla Camel Cup Track - AlUla Camel Cup Track"
+    }
+  },
+  "tour-of-holland/2025": {
+    "1": "sprint",
+    "2": "tt",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "sprint"
+  },
+  "tour-of-holland/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Dordrecht - Dordrecht"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 2 (ITT) | Etten-Leur - Etten-Leur"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Sittard - Watersley"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Emmen - VAM-Berg"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Arnhem - Arnhem"
+    }
+  },
+  "paris-nice/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "mountain",
+    "5": "hilly",
+    "6": "sprint",
+    "7": "mountain",
+    "8": "hilly"
+  },
+  "paris-nice/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Le Perray-en-Yvelines - Le Perray-en-Yvelines"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Montesson - Bellegarde"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 (TTT) | Circuit Nevers Magny-Cours - Nevers"
+    },
+    "4": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 4 | Vichy - La Loge des Gardes"
+    },
+    "5": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Saint-Just-en-Chevalet - La Côte-Saint-André (Côte de Notre-Dame-de-Sciez)"
+    },
+    "6": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 6 | Saint-Julien-en-Saint-Alban - Berre l'Étang"
+    },
+    "7": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 7 | Nice - Auron"
+    },
+    "8": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 8 | Nice - Nice"
+    }
+  },
+  "renewi-tour/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "hilly",
+    "4": "hilly",
+    "5": "sprint"
+  },
+  "renewi-tour/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Terneuzen - Breskens (Sluis)"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Blankenberge - Ardooie"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Aalter - Geraardsbergen"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Riemst - Bilzen-Hoeselt"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Leuven - Leuven"
+    }
+  },
+  "uae-tour/2025": {
+    "1": "sprint",
+    "2": "tt",
+    "3": "mountain",
+    "4": "sprint",
+    "5": "sprint",
+    "6": "sprint",
+    "7": "mountain"
+  },
+  "uae-tour/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Madinat Zayed Shams Solar Park - Liwa Palace"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 2 (ITT) | Al Hudayriyat Island - Al Hudayriyat Island"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Ras al Khaimah - Jebel Jais"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Fujairah Qidfa Beach - Umm al Quwain"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 | American University Dubai - Hamdan Bin Mohammed Smart University"
+    },
+    "6": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 6 | Abu Dhabi Cycling Club - Abu Dhabi Breakwater"
+    },
+    "7": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 7 | Al Ain Hazza Bin Zayed Stadium - Jebel Hafeet"
+    }
+  },
+  "tirreno-adriatico/2025": {
+    "1": "tt",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "sprint",
+    "6": "mountain",
+    "7": "sprint"
+  },
+  "tirreno-adriatico/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 1 (ITT) | Lido di Camaiore - Lido di Camaiore"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Camaiore - Follonica"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Follonica - Colfiorito"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Norcia - Trasacco"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Ascoli Piceno - Pergola"
+    },
+    "6": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 6 | Cartoceto - Frontignano"
+    },
+    "7": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 7 | Porto Potenza Picena - San Benedetto del Tronto"
+    }
+  },
+  "4-jours-de-dunkerque/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "hilly",
+    "5": "sprint"
+  },
+  "4-jours-de-dunkerque/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Sainte-Catherine - Amiens"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Avesnes-sur-Helpe - Crépy-en-Valois"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Valenciennes - Famars"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | La Chapelle d’Armentières - Cassel"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Wormhout - Dunkerque"
+    }
+  },
+  "tour-de-romandie/2025": {
+    "1": "hilly",
+    "2": "hilly",
+    "3": "mountain",
+    "4": "mountain",
+    "5": "tt"
+  },
+  "tour-de-romandie/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Münchenstein - Fribourg"
+    },
+    "2": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 2 | La Grande Béroche - La Grande Béroche"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Cossonay - Cossonay"
+    },
+    "4": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 4 | Sion - Thyon 2000"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 5 (ITT) | Genève - Genève"
+    }
+  },
+  "settimana-internazionale-coppi-e-bartali/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "sprint",
+    "4": "hilly",
+    "5": "sprint"
+  },
+  "settimana-internazionale-coppi-e-bartali/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Ferrara - Bondeno"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Riccione - Sogliano al Rubicone"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Riccione - Cesena"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Brisighella - Brisighella"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Brisighella - Forli"
+    }
+  },
+  "tour-down-under/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "hilly",
+    "6": "sprint"
+  },
+  "tour-down-under/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Prospect - Gumeracha"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Tanunda - Tanunda"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Norwood - Uraidla"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Glenelg - Victor Harbor"
+    },
+    "5": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 5 | McLaren Vale - Willunga Hill"
+    },
+    "6": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 6 | Adelaide - Adelaide"
+    }
+  },
+  "etoile-de-besseges/2025": {
+    "1": "hilly",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "hilly",
+    "5": "tt"
+  },
+  "etoile-de-besseges/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Bellegarde - Bellegarde"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Domessargues - Marguerittes"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Bessèges - Bessèges"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Vauvert - Le Mont Bouquet"
+    },
+    "5": {
+      "p_class": "3",
+      "stage_type": "tt",
+      "name": "Stage 5 (ITT) | Alès - L'Hermitage"
+    }
+  },
+  "tour-of-britain/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "hilly",
+    "5": "mountain",
+    "6": "sprint"
+  },
+  "tour-of-britain/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Woodbridge - Southwold"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Stowmarket - Stowmarket"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Milton Keynes - Ampthill"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Atherstone - Burton Dassett"
+    },
+    "5": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 5 | Pontypool - The Tumble"
+    },
+    "6": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 6 | Newport - Cardiff"
+    }
+  },
+  "tour-of-the-alps/2025": {
+    "1": "mountain",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "mountain",
+    "5": "hilly"
+  },
+  "tour-of-the-alps/2025_meta": {
+    "1": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 1 | San Lorenzo Dorsino - San Lorenzo Dorsino"
+    },
+    "2": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Mezzolombardo - Sterzing"
+    },
+    "3": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Sterzing - Innichen"
+    },
+    "4": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 4 | Sillian - Obertilliach"
+    },
+    "5": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Lienz - Lienz"
+    }
+  },
+  "volta-a-catalunya/2025": {
+    "1": "hilly",
+    "2": "sprint",
+    "3": "mountain",
+    "4": "mountain",
+    "5": "sprint",
+    "6": "mountain",
+    "7": "sprint"
+  },
+  "volta-a-catalunya/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Sant Feliu de Guíxols - Sant Feliu de Guíxols"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Banyoles - Figueres"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Viladecans The Style Outlets - La Molina"
+    },
+    "4": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 4 | Sant Vicenç de Castellet - Montserrat Mil·lenari"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Paüls - Amposta"
+    },
+    "6": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 6 | Berga - Berga"
+    },
+    "7": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 7 | Barcelona - Barcelona"
+    }
+  },
+  "giro-d-italia/2025": {
+    "1": "sprint",
+    "2": "tt",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "hilly",
+    "6": "sprint",
+    "7": "mountain",
+    "8": "sprint",
+    "9": "hilly",
+    "10": "tt",
+    "11": "hilly",
+    "12": "sprint",
+    "13": "hilly",
+    "14": "sprint",
+    "15": "sprint",
+    "16": "mountain",
+    "17": "hilly",
+    "18": "sprint",
+    "19": "hilly",
+    "20": "mountain",
+    "21": "sprint"
+  },
+  "giro-d-italia/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Durrës - Tirana"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "tt",
+      "name": "Stage 2 (ITT) | Tirana - Tirana"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Vlorë - Vlorë"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Alberobello (Pietramadre) - Lecce"
+    },
+    "5": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Ceglie Messapica - Matera"
+    },
+    "6": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 6 | Potenza - Napoli"
+    },
+    "7": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 7 | Castel di Sangro - Tagliacozzo (Marsia)"
+    },
+    "8": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 8 | Giulianova - Castelraimondo"
+    },
+    "9": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 9 | Gubbio - Siena"
+    },
+    "10": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 10 (ITT) | Lucca - Pisa"
+    },
+    "11": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 11 | Viareggio - Castelnovo ne' Monti"
+    },
+    "12": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 12 | Modena - Viadana (Oglio-Po)"
+    },
+    "13": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 13 | Rovigo - Vicenza"
+    },
+    "14": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 14 | Treviso - Nova Gorica"
+    },
+    "15": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 15 | Fiume Veneto - Asiago"
+    },
+    "16": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 16 | Piazzola sul Brenta - San Valentino (Brentonico)"
+    },
+    "17": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 17 | San Michele all’Adige (Fondazione Edmund Mach) - Bormio"
+    },
+    "18": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 18 | Morbegno - Cesano Maderno"
+    },
+    "19": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 19 | Biella - Champoluc"
+    },
+    "20": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 20 | Verrès - Sestrière (Vialattea)"
+    },
+    "21": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 21 | Roma - Roma"
+    }
+  },
+  "vuelta-a-burgos/2025": {
+    "1": "hilly",
+    "2": "sprint",
+    "3": "hilly",
+    "4": "sprint",
+    "5": "mountain"
+  },
+  "vuelta-a-burgos/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Olmillos de Sasamón - Burgos"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Cilleruelo de Abajo - Buniel"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Monasterio de San Pedro de Cardeña - Valpuesta"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Doña Santos - Regumiel de la Sierra"
+    },
+    "5": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 5 | Quintana del Pidio - Lagunas de Neila"
+    }
+  },
+  "vuelta-a-espana/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "hilly",
+    "5": "sprint",
+    "6": "mountain",
+    "7": "mountain",
+    "8": "sprint",
+    "9": "hilly",
+    "10": "hilly",
+    "11": "sprint",
+    "12": "sprint",
+    "13": "mountain",
+    "14": "mountain",
+    "15": "sprint",
+    "16": "hilly",
+    "17": "mountain",
+    "18": "tt",
+    "19": "sprint",
+    "20": "mountain",
+    "21": "sprint"
+  },
+  "vuelta-a-espana/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Torino-Reggia di Venaria - Novara"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Alba - Limone Piemonte"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | San Maurizio Canavese - Ceres"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Susa - Voiron"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 (TTT) | Figueres - Figueres"
+    },
+    "6": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 6 | Olot - Pal. Andorra"
+    },
+    "7": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 7 | Andorra la Vella - Cerler. Huesca La Magia"
+    },
+    "8": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 8 | Monzón Templario - Zaragoza"
+    },
+    "9": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 9 | Alfaro - Estación de Esquí de Valdezcaray"
+    },
+    "10": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 10 | Parque de la Naturaleza Sendaviva - El Ferial Larra Belagua"
+    },
+    "11": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 11 | Bilbao - Bilbao"
+    },
+    "12": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 12 | Laredo - Los Corrales de Buelna"
+    },
+    "13": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 13 | Cabezón de la Sal - L'Angliru"
+    },
+    "14": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 14 | Avilés - La Farrapona. Lagos de Somiedo"
+    },
+    "15": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 15 | A Veiga/Vegadeo - Monforte de Lemos"
+    },
+    "16": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 16 | Poio - Mos. Castro de Herville"
+    },
+    "17": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 17 | O Barco de Valdeorras - Alto de El Morredero"
+    },
+    "18": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 18 (ITT) | Valladolid - Valladolid"
+    },
+    "19": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 19 | Rueda - Guijuelo"
+    },
+    "20": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 20 | Robledo de Chavela - Bola del Mundo. Puerto de Navacerrada"
+    },
+    "21": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 21 | Alalpardo - Madrid"
+    }
+  },
+  "vuelta-a-la-comunidad-valenciana/2025": {
+    "1": "sprint",
+    "2": "mountain",
+    "3": "mountain",
+    "4": "hilly",
+    "5": "sprint"
+  },
+  "vuelta-a-la-comunidad-valenciana/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 (TTT) | Orihuela - Orihuela"
+    },
+    "2": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 2 | La Nucía - Benifato (Font de Partegat)"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Algemesí - Alpuente"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Oropesa del Mar - Portell de Morella"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Alfafar - Valencia"
+    }
+  },
+  "tour-auvergne-rhone-alpes/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "tt",
+    "5": "sprint",
+    "6": "mountain",
+    "7": "mountain",
+    "8": "mountain"
+  },
+  "tour-auvergne-rhone-alpes/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Domérat - Montluçon"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Prémilhat - Issoire"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Brioude - Charantonnay"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "tt",
+      "name": "Stage 4 (ITT) | Charmes-sur-Rhône - Saint-Péray"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Saint-Priest - Mâcon"
+    },
+    "6": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 6 | Valserhône - Combloux"
+    },
+    "7": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 7 | Grand-Algueblanche - Valmeinier 1800"
+    },
+    "8": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 8 | Val-d'Arc - Plateau du Mont-Cenis"
+    }
+  },
+  "ruta-del-sol/2025": {
+    "1": "hilly",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "hilly",
+    "5": "hilly"
+  },
+  "ruta-del-sol/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Torrox - Cueva de Nerja"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Alcaudete - Torredelcampo"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Arjona - Pozoblanco"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Córdoba - Alhaurín de la Torre"
+    },
+    "5": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Benahavís - La Línea de la Concepción"
+    }
+  },
+  "tour-of-guangxi/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "hilly",
+    "6": "sprint"
+  },
+  "tour-of-guangxi/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Fangchenggang - Fangchenggang"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Chongzuo - Jingxi"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Jingxi - Bama"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Bama - Jinchengjiang"
+    },
+    "5": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Yizhou - Nongla"
+    },
+    "6": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 6 | Nanning - Nanning"
+    }
+  },
+  "itzulia-basque-country/2025": {
+    "1": "tt",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "sprint",
+    "6": "sprint"
+  },
+  "itzulia-basque-country/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 1 (ITT) | Vitoria-Gasteiz - Vitoria-Gasteiz (Baskonia-Alavés)"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Pamplona-Iruña - Lodosa"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Zarautz - Beasain"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Beasain - Markina-Xemein"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Urduña - Gernika-Lumo"
+    },
+    "6": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 6 | Eibar - Eibar"
+    }
+  },
+  "arctic-race-of-norway/2025": {
+    "1": "hilly",
+    "2": "sprint",
+    "3": "hilly",
+    "4": "sprint"
+  },
+  "arctic-race-of-norway/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Borkenes (Kvæfjord) - Harstad"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Tennevoll (Lavangen) - Sørreisa"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Husøy (Senja) - Målselv"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Tromsø - Tromsø"
+    }
+  },
+  "tour-of-belgium/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "tt",
+    "4": "hilly",
+    "5": "sprint"
+  },
+  "tour-of-belgium/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Merelbeke-Melle - Knokke-Heist"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Beringen - Putte"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 3 (ITT) | Tessenderlo - Ham"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Durbuy - Durbuy"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Brussels - Brussels"
+    }
+  },
+  "tour-of-austria/2025": {
+    "1": "sprint",
+    "2": "mountain",
+    "3": "mountain",
+    "4": "mountain",
+    "5": "sprint"
+  },
+  "tour-of-austria/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Steyr - Steyr"
+    },
+    "2": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 2 | Bischofshofen - St. Johann Alpendorf"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Salzburg/Hellbrunn - Salzburg/Gaisberg"
+    },
+    "4": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 4 | Innsbruck - Kühtai"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Feldkirch - Feldkirch"
+    }
+  },
+  "tour-des-alpes-maritimes/2025": {
+    "1": "mountain",
+    "2": "sprint"
+  },
+  "tour-des-alpes-maritimes/2025_meta": {
+    "1": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 1 | Contes - Gourdon"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Villefranche-sur-Mer - Vence"
+    }
+  },
+  "region-pays-de-la-loire/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "sprint"
+  },
+  "region-pays-de-la-loire/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Machecoul-Saint-Même - La Baule-Escoublac"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Cugand-la-Bernardière - Beaupréau-en-Mauges"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Tiercé  - Hambers (La Butte de Montaigu)"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Sillé-le-Guillaume - Le Mans"
+    }
+  },
+  "tour-of-norway/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "sprint"
+  },
+  "tour-of-norway/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Solakrossen - Solakrossen"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Egersund - Oltedal"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Jørpeland - Heja"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Stavanger - Stavanger"
+    }
+  },
+  "tour-de-wallonie/2025": {
+    "1": "hilly",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "hilly"
+  },
+  "tour-de-wallonie/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Nassogne - Nassogne"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Huy - Sambreville"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Estinnes - Antoing"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Welkenraedt - Seraing"
+    },
+    "5": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Bertrix - Bertrix"
+    }
+  },
+  "tour-du-limousin/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "sprint",
+    "4": "sprint"
+  },
+  "tour-du-limousin/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Panazol - La Courtine"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Thiviers - Grèzes (Les Côteaux Périgourdins)"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Saint-Jal - Masseret"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Saint-Hilaire-Bonneval - Limoges"
+    }
+  },
+  "la-route-d-occitanie/2025": {
+    "1": "tt",
+    "2": "sprint",
+    "3": "mountain",
+    "4": "hilly"
+  },
+  "la-route-d-occitanie/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "tt",
+      "name": "Stage 1 (ITT) | Saint-Affrique - Roquefort-sur-Soulzon"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Gignac Vallée de L'Herault - Carmaux Ségala"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Pujaudran - Luz-Ardiden"
+    },
+    "4": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Saint-Gaudens - Saint-Girons"
+    }
+  },
+  "tour-de-l-ain/2025": {
+    "1": "hilly",
+    "2": "hilly",
+    "3": "hilly"
+  },
+  "tour-de-l-ain/2025_meta": {
+    "1": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Feillens - Lagnieu"
+    },
+    "2": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Saint-Vulbas - Lélex Monts-Jura"
+    },
+    "3": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Plateau d'Hauteville - Belley"
+    }
+  },
+  "tour-du-poitou-charentes-et-de-la-vienne/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "tt",
+    "4": "hilly"
+  },
+  "tour-du-poitou-charentes-et-de-la-vienne/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Sauzé-entre-Bois - La Génétouze"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Jonzac - Gond Pontouvre"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 3 (ITT) | Chauvigny - Jardres"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | La Rochefoucauld - Poitiers"
+    }
+  },
+  "tour-cycliste-international-la-provence/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "sprint"
+  },
+  "tour-cycliste-international-la-provence/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Marseille - Saint-Victoret"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Forcalquier - Manosque"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Rognac - Arles"
+    }
+  },
+  "vuelta-asturias/2025": {
+    "1": "hilly",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "sprint"
+  },
+  "vuelta-asturias/2025_meta": {
+    "1": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Oviedo - Llanes"
+    },
+    "2": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Benia de Onís - Pola de Lena"
+    },
+    "3": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Castropol - Vegadeo"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Navia - Oviedo"
+    }
+  },
+  "tour-of-slovenia/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "mountain",
+    "5": "sprint"
+  },
+  "tour-of-slovenia/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Piran - Škofljica"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Velenje - Rogaška Slatina"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Majšperk - Ormož"
+    },
+    "4": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 4 | Maribor - Golte"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Litija - Novo mesto"
+    }
+  },
+  "giro-della-regione-friuli-venezia-giulia/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "mountain",
+    "4": "hilly"
+  },
+  "giro-della-regione-friuli-venezia-giulia/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Palazzolo dello Stella - Buttrio"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Porpetto - Teor"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Ampezzo - Ravascletto"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Cervignano del Friuli - San Daniele del Friuli"
+    }
+  },
+  "tour-of-hainan/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "sprint"
+  },
+  "tour-of-hainan/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Qionghai - Qionghai"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Qionghai - Lingshui"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Lingshui - Baoting"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Baoting - Dongfang"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Changjiang - Sanya"
+    }
+  },
+  "gran-camino/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "tt",
+    "4": "hilly",
+    "5": "hilly"
+  },
+  "gran-camino/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Maia - Matosinhos"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Marín - A Estrada"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "tt",
+      "name": "Stage 3 (ITT) | Ourense - Pereiro de Aguiar"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | A Pobra do Brollón - O Cebreiro"
+    },
+    "5": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Betanzos - Santiago de Compostela"
+    }
+  },
+  "tour-de-luxembourg/2025": {
+    "1": "hilly",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "tt",
+    "5": "sprint"
+  },
+  "tour-de-luxembourg/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Luxembourg - Luxembourg"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Remich - Mamer"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Mertert - Vianden"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "tt",
+      "name": "Stage 4 (ITT) | Niederanven - Niederanven"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Mersch - Luxembourg"
+    }
+  },
+  "okolo-slovenska/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "mountain"
+  },
+  "okolo-slovenska/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Bardejov - Bardejov"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Svidník - Košice"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Kežmarok - Banská Bystrica"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Vráble - Sládkovičovo"
+    },
+    "5": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 5 | Nová Dubnica - Kohútka"
+    }
+  },
+  "deutschland-tour/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint"
+  },
+  "deutschland-tour/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Essen - Herford"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Herford - Arnsberg"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Arnsberg - Kassel"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Halle (Saale) - Magdeburg"
+    }
+  },
+  "tour-of-denmark/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "tt",
+    "4": "hilly",
+    "5": "hilly"
+  },
+  "tour-of-denmark/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Nexø - Rønne"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Rødovre - Gladsaxe"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 3 (ITT) | Kerteminde - Kerteminde"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Svendborg - Vejle"
+    },
+    "5": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Hobro - Silkeborg"
+    }
+  },
+  "tour-de-langkawi/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "hilly",
+    "4": "sprint",
+    "5": "mountain",
+    "6": "sprint",
+    "7": "sprint",
+    "8": "sprint"
+  },
+  "tour-de-langkawi/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Langkawi (Kuah) - Langkawi (Kuah)"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Padang Besar - Kepala Batas"
+    },
+    "3": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Gerik - Pasir Puteh"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Kuala Terengganu - Kemaman"
+    },
+    "5": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 5 | Temerloh - Fraser's Hill"
+    },
+    "6": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 6 | Shah Alam - Port Dickson"
+    },
+    "7": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 7 | Melaka - Medini"
+    },
+    "8": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 8 | Tangkak - Kuala Lumpur"
+    }
+  },
+  "tour-of-oman/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "sprint",
+    "5": "mountain"
+  },
+  "tour-of-oman/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Bushar - Bimmah Sink Hole"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Al Rustaq Fort - Yitti Hills"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Fanja - Eastern Mountain"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Oman Across Ages Museum - Oman Convention and Exhibition Center"
+    },
+    "5": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 5 | Imty - Jabal Al Akhdhar (Green Mountain)"
+    }
+  },
+  "tour-of-croatia/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "hilly",
+    "5": "sprint",
+    "6": "sprint"
+  },
+  "tour-of-croatia/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Split - Sinj"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Biograd na Moru - Jovići"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Gospić - Rijeka"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Krk - Labin"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Karlovac - Sveta Nedelja"
+    },
+    "6": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 6 | Samobor - Zagreb"
+    }
+  },
+  "boucles-de-la-mayenne/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint"
+  },
+  "boucles-de-la-mayenne/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Saint-Berthevin - Juvigné"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Sainte-Suzanne - Bais"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Javron-les-Chapelles - Laval"
+    }
+  },
+  "tour-of-turkey/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "mountain",
+    "5": "sprint",
+    "6": "hilly",
+    "7": "sprint",
+    "8": "sprint"
+  },
+  "tour-of-turkey/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Antalya - Antalya"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Kemer - Kalkan"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Fethiye - Marmaris"
+    },
+    "4": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 4 | Marmaris - Akyaka (Kıran)"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Marmaris - Aydın"
+    },
+    "6": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 6 | Selçuk - Selçuk (Meryem Ana)"
+    },
+    "7": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 7 | Selçuk - Çeşme"
+    },
+    "8": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 8 | Çeşme - İzmir (Karşıyaka)"
+    }
+  },
+  "tour-of-hellas/2025": {
+    "1": "sprint",
+    "2": "mountain",
+    "3": "sprint",
+    "4": "hilly",
+    "5": "sprint"
+  },
+  "tour-of-hellas/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Patra - Agrinio"
+    },
+    "2": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 2 | Agrinio - Arachova"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Delphi - Chelkida"
+    },
+    "4": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Chalkida - Athens"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Marathon - Syntagma, Athens"
+    }
+  },
+  "tour-de-hongrie/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "mountain",
+    "4": "sprint",
+    "5": "hilly"
+  },
+  "tour-de-hongrie/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Budapest - Győr"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Veszprém - Siófok"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Gödöllő - Gyöngyös-Kékestető"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Tata - Székesfehérvár"
+    },
+    "5": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Etyek - Esztergom"
+    }
+  },
+  "giro-d-abruzzo/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "mountain",
+    "4": "sprint"
+  },
+  "giro-d-abruzzo/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Scerni - Crecchio"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Tocco da Casauria - Penne"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | San Demetrio ne' Vestini - Roccaraso (Aremogna)"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Corropoli - Isola del Gran Sasso (Santuario di San Gabriele)"
+    }
+  },
+  "sibiu-cycling-tour/2025": {
+    "1": "sprint",
+    "2": "mountain",
+    "3": "mountain",
+    "4": "tt"
+  },
+  "sibiu-cycling-tour/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Șura Mică - Sibiu"
+    },
+    "2": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 2 | Sibiu - Bâlea Lac"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Sibiu - Păltiniș Arena"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 4 (ITT) | Sibiu - Sibiu"
+    }
+  },
+  "czech-tour/2025": {
+    "1": "sprint",
+    "2": "mountain",
+    "3": "sprint",
+    "4": "mountain"
+  },
+  "czech-tour/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Prague - Karlovy Vary"
+    },
+    "2": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 2 | Pardubice - Dlouhé Stráně"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Prostějov - Ostrava"
+    },
+    "4": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 4 | Kroměříž - Pustevny"
+    }
+  },
+  "tour-of-taihu-lake/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint"
+  },
+  "tour-of-taihu-lake/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Nanjing - Nanjing"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Suzhou Wujiang - Suzhou Wujiang"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Huilongzhen - Binhan Village"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Wuxi - Wuxi"
+    }
+  },
+  "tour-of-magnificent-qinghai/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "sprint",
+    "5": "hilly",
+    "6": "sprint",
+    "7": "sprint",
+    "8": "sprint"
+  },
+  "tour-of-magnificent-qinghai/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Xining - Xining"
+    },
+    "2": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Duoba - Huzhu"
+    },
+    "3": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Huzhu - Menyuan"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Menyuan - Qilian"
+    },
+    "5": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Qilian - Gangcha"
+    },
+    "6": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 6 | Gangcha - Gonghe"
+    },
+    "7": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 7 | Gonghe - Haiyan"
+    },
+    "8": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 8 | Xihaizhen - Xihaizhen"
+    }
+  },
+  "oberosterreichrundfahrt/2025": {
+    "1": "hilly",
+    "2": "sprint",
+    "3": "hilly",
+    "4": "mountain"
+  },
+  "oberosterreichrundfahrt/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Linz Hauptplatz - Pöstlingberg"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Eferding - Ried im Innkreis"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Bad Schallerbach - Aigen-Schlägl"
+    },
+    "4": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 4 | St. Florian/Asten - Hinterstoder, Hutterer Höss"
+    }
+  },
+  "giro-ciclistico-d-italia/2025": {
+    "1": "tt",
+    "2": "sprint",
+    "3": "mountain",
+    "4": "sprint",
+    "5": "sprint",
+    "6": "sprint",
+    "7": "mountain",
+    "8": "sprint"
+  },
+  "giro-ciclistico-d-italia/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 1 (ITT) | Rho - Rho"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Rho Fiera Milano - Cantù"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Albese Con Cassano - Passo del Maniva"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Manerbio - Salsomaggiore Terme"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Fiorenzuola d'Arda - Gavi"
+    },
+    "6": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 6 | Ovada - Acqui Terme"
+    },
+    "7": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 7 | Bra - Prato Nevoso"
+    },
+    "8": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 8 | Pinerolo - Pinerolo"
+    }
+  },
+  "tour-alsace/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "mountain",
+    "4": "hilly",
+    "5": "mountain"
+  },
+  "tour-alsace/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 (TTT) | Sausheim - Sausheim"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Rust (Europa-Park) - Sélestat"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Velleminfroy - La Planche des Belles Filles"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Ferrette - Altkirch"
+    },
+    "5": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 5 | Ribeauvillé - Champ du Feu"
+    }
+  },
+  "tour-de-l-avenir/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "mountain",
+    "6": "mountain"
+  },
+  "tour-de-l-avenir/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Aoste - Saint-Galmier"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Saint-Symphorien-sur-Coise - Vitry-en-Charollais"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Etang-sur-Arroux - Châtillon-sur-Chalaronne"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Montagnat - Val-Suran"
+    },
+    "5": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 5 | Saint-Gervais-Mont-Blanc - Tignes 2100"
+    },
+    "6": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 6a | La Rosière - La Rosière"
+    }
+  },
+  "orlen-nations-grand-prix/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "hilly"
+  },
+  "orlen-nations-grand-prix/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Łańcut - Jasło"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Jarosław - Arłamów"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Ustrzyki Dolne - Arłamów"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Lesko - Arłamów"
+    }
+  },
+  "tour-of-istanbul/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "sprint"
+  },
+  "tour-of-istanbul/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Şile - Şile"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Arnavutköy - Arnavutköy"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Fatih - Fatih"
+    }
+  },
+  "olympias-tour/2025": {
+    "1": "tt",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "sprint"
+  },
+  "olympias-tour/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 1 (ITT) | Beltrum - Beltrum"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Beek - Beek"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Kerkdriel - Rossum"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Zwolle - Zwolle"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Neede - Tiel"
+    }
+  },
+  "tour-du-loir-et-cher/2025": {
+    "1": "hilly",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "hilly"
+  },
+  "tour-du-loir-et-cher/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Blois - Valencisse (Molineuf)"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Monlivault - Mont-près-Chambord"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Beauce-la-Romaine - Naveil"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Pruniers-en-Sologne - Pruniers-en-Sologne"
+    },
+    "5": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Blois - Blois"
+    }
+  },
+  "okolo-jiznich-cech/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint"
+  },
+  "okolo-jiznich-cech/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Třeboň - Jemnice"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Nové Hrady - Studená"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Český Krumlov - Horská Kvilda"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Trhové Sviny - Jindřichův Hradec"
+    }
+  },
+  "south-aegean-tour/2025": {
+    "1": "hilly",
+    "2": "hilly"
+  },
+  "south-aegean-tour/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Rhodes - Koskinou"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Rhodes - Salakos"
+    }
+  },
+  "tour-de-kyushu/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint"
+  },
+  "tour-de-kyushu/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Chikugo - Yame"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Minamioguni - Minamiaso"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Nobeoka - Saiki"
+    }
+  },
+  "course-de-la-paix-u23/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "mountain",
+    "4": "sprint"
+  },
+  "course-de-la-paix-u23/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Krnov - Šternberk"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Uničov - Rýmařov"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Zábřeh - Dlouhé stráně"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Jeseník - Šumperk"
+    }
+  },
+  "tour-of-rwanda/2025": {
+    "1": "hilly",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "hilly",
+    "6": "hilly",
+    "7": "hilly"
+  },
+  "tour-of-rwanda/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Rukomo - Kayonza"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Kigali - Musanze"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Musanze - Gisenyi (Rubavu)"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Gisenyi (Rubavu) - Gitesi (Karongi)"
+    },
+    "5": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 5 | Rusizi - Butare (Huye)"
+    },
+    "6": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 6 | Nyanza - Kigali"
+    },
+    "7": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 7 | Kigali - Kigali"
+    }
+  },
+  "kreiz-breizh-elites/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "hilly"
+  },
+  "kreiz-breizh-elites/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Calanhel - Gourin"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Domaine de Trévarez - Carhaix"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Grâces - Rostrenen"
+    }
+  },
+  "tour-of-estonia/2025": {
+    "1": "sprint",
+    "2": "sprint"
+  },
+  "tour-of-estonia/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Tallinn - Tartu"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Tartu - Tartu"
+    }
+  },
+  "circuit-des-ardennes/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "hilly",
+    "4": "sprint",
+    "5": "sprint"
+  },
+  "circuit-des-ardennes/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Sedan - Nouvion-sur-Meuse"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Rethel - Rethel"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Boulzicourt - Saint-Marceau"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Lac de Bairon - Lac des Vieilles Forges"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Chooz - Charleville-Mézières"
+    }
+  },
+  "fleche-du-sud/2025": {
+    "1": "tt",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "hilly",
+    "5": "sprint"
+  },
+  "fleche-du-sud/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "tt",
+      "name": "Stage 1 (ITT) | Dudelange - Dudelange"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Rumelange - Rumelange"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Sanem - Sanem"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Canach - Canach"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Esch-sur-Alzette - Esch-sur-Alzette"
+    }
+  },
+  "le-tour-de-bretagne/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "hilly",
+    "4": "sprint",
+    "5": "sprint",
+    "6": "hilly",
+    "7": "hilly"
+  },
+  "le-tour-de-bretagne/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Hirel - Le Fresnais"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | La Gouesnière - Le Cambout"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Loudéac - Plonéour-Lanvern"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Plonéour-Lanvern - Landévant"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Erdeven - Guenrouët"
+    },
+    "6": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 6 | Missillac - Le Pertre"
+    },
+    "7": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 7 | Landébia - Plancoët"
+    }
+  },
+  "giro-ciclistico-della-valle-d-aosta-mont-blanc/2025": {
+    "1": "sprint",
+    "2": "tt",
+    "3": "mountain",
+    "4": "mountain",
+    "5": "mountain"
+  },
+  "giro-ciclistico-della-valle-d-aosta-mont-blanc/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Aosta - Aosta"
+    },
+    "2": {
+      "p_class": "5",
+      "stage_type": "tt",
+      "name": "Stage 2 (ITT) | Passy - Plaine Joux"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Pré-Saint-Didier - Colle del Gran San Bernardo"
+    },
+    "4": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 4 | Saint-Pierre - Valsavarenche (Pont)"
+    },
+    "5": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 5 | Valtournenche - Breuil Cervinia"
+    }
+  },
+  "istrian-spring-tour/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "sprint"
+  },
+  "istrian-spring-tour/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Poreč - Funtana"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Novigrad - Motovun"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Pazin - Umag"
+    }
+  },
+  "gp-int-torres-vedras/2025": {
+    "0": "sprint",
+    "1": "hilly",
+    "2": "hilly",
+    "3": "sprint"
+  },
+  "gp-int-torres-vedras/2025_meta": {
+    "0": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Prologue | Turcifal - Turcifal"
+    },
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Arruda dos Vinhos - Sobral de Monte Agraço"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Bombarral - Alto do Montejunto"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Lourinha - Torres Vedras"
+    }
+  },
+  "tour-de-taiwan/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "sprint"
+  },
+  "tour-de-taiwan/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Taipei City Hall - Taipei City Hall"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Taoyuan City Hall - Green Pond Park"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Baozhong Yimin Temple, Xinpu - Shigang Visitor Information Center"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Fo Guang Shan Buddha Museum - Kaohsiung National Stadium"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Meinong Hakka Cultural Museum - Liudui Hakka Cultural Park"
+    }
+  },
+  "volta-a-portugal/2025": {
+    "0": "sprint",
+    "1": "mountain",
+    "2": "hilly",
+    "3": "sprint",
+    "4": "mountain",
+    "5": "sprint",
+    "6": "mountain",
+    "7": "mountain",
+    "8": "hilly",
+    "9": "mountain",
+    "10": "tt"
+  },
+  "volta-a-portugal/2025_meta": {
+    "0": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Prologue | Maia - Maia"
+    },
+    "1": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 1 | Viana do Castelo - Braga (Sameiro)"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Felgueiras - Fafe"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Boticas - Bragança"
+    },
+    "4": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 4 | Bragança - Mondim de Basto (Senhora da Graça)"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Lamego - Viseu"
+    },
+    "6": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 6 | Águeda - Guarda"
+    },
+    "7": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 7 | Sabugal - Torre"
+    },
+    "8": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 8 | Ferreira do Zêzere - Santarém"
+    },
+    "9": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 9 | Alcobaça - Montejunto"
+    },
+    "10": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 10 (ITT) | Lisbon - Lisbon"
+    }
+  },
+  "tour-of-rhodes/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "sprint"
+  },
+  "tour-of-rhodes/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Rhodes - Soroni"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Rhodes - Kalithies"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Kremasti - Kremasti"
+    }
+  },
+  "west-bohemia-tour/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint"
+  },
+  "west-bohemia-tour/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Rokycany - Rokycany"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Klatovy - Klatovy"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Plzeň - Plzeň"
+    }
+  },
+  "rhone-alpes-isere-tour/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "hilly",
+    "5": "mountain"
+  },
+  "rhone-alpes-isere-tour/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Charvieu-Chavagnieux - Charvieu-Chavagnieux"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Dolomieu - Satolas-et-Bonce"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Colombier-Saugnieu - Jons"
+    },
+    "4": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Primarette - Saint-Maurice-L'Exil"
+    },
+    "5": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 5 | Saint-Joseph-de-Rivière - La Mure"
+    }
+  },
+  "dookola-mazowsza/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint"
+  },
+  "dookola-mazowsza/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Teresin - Teresin"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Grodzisk Mazowiecki - Grodzisk Mazowiecki"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Blone - Leszno"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Kozienice - Kozienice"
+    }
   }
 }

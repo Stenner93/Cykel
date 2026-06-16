@@ -436,6 +436,7 @@ def main() -> None:
 
     pcs_raw  = _load_json(DATA / "cache" / "pcs_form.json")
     pcs_form: dict[str, dict] = {}
+    pcs_form_long: dict[str, dict] = {}     # multi-season form (slow decay)
     pcs_specialties: dict[str, dict] = {}   # {rider_id: {climber, sprint, tt, hills, ...}}
     for rid, entry in pcs_raw.items():
         if entry.get("not_found"):
@@ -444,6 +445,8 @@ def main() -> None:
             pcs_form[rid] = entry["form_by_type"]
         else:
             pcs_form[rid] = {"overall": entry.get("form_score", 50.0)}
+        if entry.get("form_long_by_type"):
+            pcs_form_long[rid] = entry["form_long_by_type"]
         if "pcs_specialties" in entry and entry["pcs_specialties"]:
             pcs_specialties[rid] = entry["pcs_specialties"]
 
@@ -632,6 +635,7 @@ def main() -> None:
             odds_data=odds_data,
             cyclingoracle_data=co_data,
             pcs_form_data=pcs_form,
+            pcs_form_long_data=pcs_form_long,
             current_gc=gc_standings or None,
             current_jerseys=jersey_leaders or None,
             profile_score=profile_score,

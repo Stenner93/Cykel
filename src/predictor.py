@@ -43,6 +43,48 @@ STAGE_DISCIPLINE = {
     "gc":        "GC",
 }
 
+# Empirically-informed discipline BLEND per stage_type — a single CO key
+# (above) doesn't capture stage outcomes well in isolation. Sampled 42
+# historical stages (2025 Giro + 2025 TdF) and looked at each winner's
+# dominant PCS specialty vs. the stage's ProfileScore:
+#   profile_score 100-200 ("hilly"):  44% onedayraces, 22% climber,
+#                                      22% tt,  only 11% hills-dominant
+#   profile_score  40-100 ("sprint"): 67% onedayraces,  8% sprint
+#   profile_score   0-40  ("sprint"): 64% sprint — genuinely flat stages
+#                                      behave as expected
+# "Hilly" and the rolling end of "sprint" are won by classics/puncheur
+# riders (COB) far more often than a pure HLL/SPR rating would suggest.
+# Sample size is modest (9-12 stages per bucket) so treat these as
+# directional, not precision-calibrated — but the gap is large enough
+# (11% vs 44%) to be worth correcting rather than ignoring.
+STAGE_DISCIPLINE_BLEND: dict[str, dict[str, float]] = {
+    "sprint":    {"SPR": 0.65, "COB": 0.35},
+    "mountain":  {"MTN": 1.0},
+    "tt":        {"ITT": 1.0},
+    "ttt":       {"ITT": 1.0},
+    "hilly":     {"COB": 0.40, "HLL": 0.35, "MTN": 0.25},
+    "cobbled":   {"COB": 1.0},
+    "gc":        {"GC": 1.0},
+}
+
+
+def _dominant_disc_key(stage_type: str) -> str:
+    """Heaviest-weighted CO key in this stage type's blend — used for display."""
+    blend = STAGE_DISCIPLINE_BLEND.get(stage_type, {"AVG": 1.0})
+    return max(blend, key=blend.get)
+
+
+def _disc_blend_value(cyclingoracle: dict[str, float] | None, stage_type: str) -> tuple[float, str]:
+    """
+    Compute the discipline rating for a stage as a weighted blend of CO
+    discipline keys (see STAGE_DISCIPLINE_BLEND), and return the dominant
+    component key for display/labelling purposes.
+    """
+    blend = STAGE_DISCIPLINE_BLEND.get(stage_type, {"AVG": 1.0})
+    co = cyclingoracle or {}
+    raw = sum(weight * co.get(key, 50.0) for key, weight in blend.items())
+    return raw, _dominant_disc_key(stage_type)
+
 # Expected fantasy points IF a rider wins (by stage type)
 # Derived from Giro 2026 FantasyTool data
 WINNER_POINTS = {
@@ -147,6 +189,7 @@ def predict_rider(
     odds_prob: float | None = None,
     cyclingoracle: dict[str, float] | None = None,
     pcs_form: float | None = None,
+    pcs_form_long: dict[str, float] | None = None,  # multi-season form (slow decay)
     gc_rank: int | None = None,
     jerseys: list[str] | None = None,
     weights: dict[str, float] | None = None,
@@ -156,6 +199,7 @@ def predict_rider(
     kom_class_rank: int | None = None,      # Position in KOM classification
     expected_team_bonus: int = 0,           # Expected holdbonus kr from recent stages
     winner_pts_override: dict[str, int] | None = None,  # Race-specific winner points
+    disc_raw_override: float | None = None,  # pre-rescaled field-relative disc value
 ) -> dict[str, Any]:
     """
     Predict expected fantasy points for a rider on a specific stage.
@@ -178,26 +222,49 @@ def predict_rider(
     # --- Signal 2: Odds-implied win probability ---
     odds_signal = odds_prob if odds_prob is not None else 0.0
 
-    # --- Signal 3: Discipline match ---
-    disc_key = STAGE_DISCIPLINE.get(stage_type, "AVG")
-    disc_raw = (cyclingoracle or {}).get(disc_key, 50.0)
+    # --- Signal 3: Discipline match (empirically-blended, see STAGE_DISCIPLINE_BLEND) ---
+    if disc_raw_override is not None:
+        # Already computed + field-rescaled by predict_all() — use as-is.
+        disc_raw, disc_key = disc_raw_override, _dominant_disc_key(stage_type)
+    else:
+        disc_raw, disc_key = _disc_blend_value(cyclingoracle, stage_type)
     disc_signal = disc_raw / 100.0
 
-    # --- Signal 4: Recent form ---
+    # --- Signal 4: Recent + long-term form ---
     # pcs_form may be a float (old format) or a dict with per-type scores.
     #
-    # Blending strategy: 70% stage-type-specific + 30% overall form.
+    # Blending strategy: 50% stage-type-specific SHORT-term (current form,
+    # ~1 month half-life) + 20% overall short-term + 30% stage-type-specific
+    # LONG-term (multi-season, ~4 month half-life, see scrape_pcs.py's
+    # compute_all_form_scores_long).
+    #
     # Rationale: a rider who is "in good shape" (high overall) should get some
-    # credit even on stages where they haven't scored type-specific results.
-    # E.g. Narváez won 3 Giro stages (mountain/hilly/rolling) → overall=44.
-    # On a mountain stage, mountain_form=11 but overall reflects true fitness.
-    # Pure type-specific would give 11; blend gives 0.7*11 + 0.3*44 ≈ 21.
+    # credit even on stages where they haven't scored type-specific results
+    # recently. E.g. Narváez won 3 Giro stages (mountain/hilly/rolling) →
+    # overall=44. On a mountain stage, mountain_form=11 but overall reflects
+    # true fitness — pure type-specific would give 11, blend lifts it.
+    #
+    # The long-term component guards against a different failure mode: a
+    # known climber who simply hasn't had a mountain stage to show for it
+    # yet this season (early in the year, or racing classics) would
+    # otherwise default to neutral 50 on type-specific AND short-term
+    # overall, hiding real climbing pedigree from last season. Long-term
+    # form, computed over ~18 months with a slower decay, still credits
+    # that pedigree without letting it dominate (30% weight, decays over
+    # ~1-2 seasons).
     if isinstance(pcs_form, dict):
         type_form    = float(pcs_form.get(stage_type) or 0.0)
         overall_form = float(pcs_form.get("overall") or 50.0)
-        form_val = 0.7 * type_form + 0.3 * overall_form
+        short_term   = 0.7 * type_form + 0.3 * overall_form
     else:
-        form_val = float(pcs_form) if pcs_form is not None else 50.0
+        short_term = float(pcs_form) if pcs_form is not None else 50.0
+
+    if pcs_form_long:
+        long_type_form = float(pcs_form_long.get(stage_type) or short_term)
+        form_val = 0.7 * short_term + 0.3 * long_type_form
+    else:
+        form_val = short_term
+
     form_signal = form_val / 100.0
 
     # --- Composite win-probability estimate ---
@@ -223,8 +290,21 @@ def predict_rider(
             w["discipline"] / total_avail * disc_signal +
             w["form"]       / total_avail * form_signal
         )
+    elif not has_odds:
+        # VeloScore present but no odds (common case — odds coverage is
+        # usually sparse/absent). Without this branch, odds_prob's 25%
+        # weight was silently multiplied by a zero signal and lost,
+        # suppressing VeloScore's effective weight from 45% to 45% of 75%
+        # — exactly the riders we have VeloScore for were being under-
+        # differentiated. Renormalize veloscore+discipline+form instead.
+        total_avail = w["veloscore"] + w["discipline"] + w["form"]
+        composite = (
+            w["veloscore"]  / total_avail * vs_signal +
+            w["discipline"] / total_avail * disc_signal +
+            w["form"]       / total_avail * form_signal
+        )
     else:
-        # Normal path — VeloScore present, use configured weights as-is
+        # Full signal set available — use configured weights as-is
         composite = (
             w["veloscore"]  * vs_signal  +
             w["odds_prob"]  * odds_signal +
@@ -345,6 +425,7 @@ def predict_all(
     odds_data: dict[str, float] | None = None,
     cyclingoracle_data: dict[str, dict] | None = None,
     pcs_form_data: dict[str, float] | None = None,
+    pcs_form_long_data: dict[str, dict] | None = None,  # multi-season form (slow decay)
     current_gc: dict[str, int] | None = None,
     current_jerseys: dict[str, list[str]] | None = None,
     weights: dict[str, float] | None = None,
@@ -414,9 +495,8 @@ def predict_all(
     # the field's discipline values to the FULL 0-100 range before computing
     # the composite restores meaningful differentiation while preserving
     # rank order and relative magnitude (best in field → 100, worst → 0).
-    disc_key = STAGE_DISCIPLINE.get(stage_type, "AVG")
     rider_blended: dict[str, dict | None] = {}
-    field_vals: dict[str, float] = {}
+    field_vals: dict[str, float] = {}   # per-rider STAGE_DISCIPLINE_BLEND value
 
     for rider in riders:
         co_entry  = (cyclingoracle_data or {}).get(rider["id"])
@@ -433,7 +513,7 @@ def predict_all(
         else:
             blended = {}
         rider_blended[rider["id"]] = blended
-        field_vals[rider["id"]] = blended.get(disc_key, 50.0)
+        field_vals[rider["id"]], _ = _disc_blend_value(blended, stage_type)
 
     # ── TTT: replace individual rating with TEAM strength ────────────────
     # In a team time trial, the whole team finishes together and every rider
@@ -459,11 +539,14 @@ def predict_all(
                 if rid in field_vals:
                     field_vals[rid] = team_avg
 
+    disc_rescaled: dict[str, float] = dict(field_vals)
     if field_vals:
         lo, hi = min(field_vals.values()), max(field_vals.values())
         if hi > lo:
-            for rid, v in field_vals.items():
-                rider_blended[rid][disc_key] = round((v - lo) / (hi - lo) * 100, 1)
+            disc_rescaled = {
+                rid: round((v - lo) / (hi - lo) * 100, 1)
+                for rid, v in field_vals.items()
+            }
         # if hi == lo, every rider is identical on this discipline — leave as-is
 
     results = []
@@ -510,6 +593,7 @@ def predict_all(
             odds_prob=(odds_data or {}).get(name_lower),
             cyclingoracle=blended,
             pcs_form=(pcs_form_data or {}).get(rider["id"]),
+            pcs_form_long=(pcs_form_long_data or {}).get(rider["id"]),
             gc_rank=(current_gc or {}).get(rider["id"]),
             jerseys=(current_jerseys or {}).get(rider["id"]),
             weights=weights,
@@ -518,6 +602,7 @@ def predict_all(
             kom_class_rank=sk.get("kom_rank"),
             expected_team_bonus=(team_bonus_data or {}).get(rider["id"], 0),
             winner_pts_override=winner_pts_override,
+            disc_raw_override=disc_rescaled.get(rider["id"]),
         )
         # Apply rider context multiplier (status from previous stage)
         ctx = (rider_context or {}).get(rider["id"])

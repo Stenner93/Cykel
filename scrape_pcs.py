@@ -202,10 +202,22 @@ def _pos_score(pos: int) -> float:
 
 
 # ---------------------------------------------------------------------------
-# Recency weight: half-life ~20 days
+# Recency weight: half-life ~20 days (short-term "current form" signal)
 # ---------------------------------------------------------------------------
 def _recency_weight(days_ago: int) -> float:
     return math.exp(-days_ago / 29.0)
+
+
+# ---------------------------------------------------------------------------
+# Long-term recency weight: half-life ~125 days (~4 months) for the
+# multi-season "underlying ability" signal — slow enough that a strong
+# result from last season still counts meaningfully, but a result from
+# 2+ years ago is mostly faded out.
+# ---------------------------------------------------------------------------
+LONG_FORM_DAYS = 540   # ~18 months lookback
+
+def _recency_weight_long(days_ago: int) -> float:
+    return math.exp(-days_ago / 125.0)
 
 
 # ---------------------------------------------------------------------------
@@ -507,6 +519,8 @@ def annotate_stage_types(
 def compute_form_score(
     results: list[dict],
     stage_type_filter: str | None = None,
+    lookback_days: int = FORM_DAYS,
+    recency_fn=_recency_weight,
 ) -> float:
     """
     Compute form score 0-100 from parsed results.
@@ -515,12 +529,16 @@ def compute_form_score(
     stage_type matches are used.  This lets a sprint specialist score
     high on sprint stages even if they finish last on mountain stages.
 
+    lookback_days/recency_fn let callers compute a slower-decaying,
+    longer-window variant (see compute_all_form_scores_long) without
+    duplicating this function.
+
     Strategy: average of top-5 recency-weighted position scores.
     """
     if not results:
         return 0.0
 
-    cutoff = TODAY - timedelta(days=FORM_DAYS)
+    cutoff = TODAY - timedelta(days=lookback_days)
     weighted_scores: list[float] = []
 
     for r in results:
@@ -534,7 +552,7 @@ def compute_form_score(
             continue
 
         days_ago = (TODAY - d).days
-        w        = _recency_weight(days_ago)
+        w        = recency_fn(days_ago)
 
         pos_s = _pos_score(r["result"])
         pcs_s = math.log1p(r["pcs_pts"]) * 2.4 if r["pcs_pts"] > 0 else 0.0
@@ -550,12 +568,37 @@ def compute_form_score(
 
 def compute_all_form_scores(results: list[dict]) -> dict[str, float]:
     """
-    Compute overall + per-stage-type form scores.
+    Compute overall + per-stage-type SHORT-TERM form scores (current form,
+    29-day half-life, 180-day lookback).
     Returns {"overall": x, "sprint": x, "mountain": x, "hilly": x, "tt": x, "cobbled": x}.
     """
     scores = {"overall": compute_form_score(results, stage_type_filter=None)}
     for stype in ALL_STAGE_TYPES:
         scores[stype] = compute_form_score(results, stage_type_filter=stype)
+    return scores
+
+
+def compute_all_form_scores_long(results: list[dict]) -> dict[str, float]:
+    """
+    Compute overall + per-stage-type LONG-TERM form scores — multi-season
+    "underlying ability" signal (125-day half-life, 540-day/~18mo lookback).
+
+    Distinct from compute_all_form_scores: this answers "how good is this
+    rider at this discipline over the last season-and-a-half", as opposed
+    to "are they hot right now". A rider who's had a quiet last 2 months
+    but a strong climbing record over the past year should still show up
+    as a credible climbing threat — the short-term signal alone would
+    miss that.
+    """
+    scores = {"overall": compute_form_score(
+        results, stage_type_filter=None,
+        lookback_days=LONG_FORM_DAYS, recency_fn=_recency_weight_long,
+    )}
+    for stype in ALL_STAGE_TYPES:
+        scores[stype] = compute_form_score(
+            results, stage_type_filter=stype,
+            lookback_days=LONG_FORM_DAYS, recency_fn=_recency_weight_long,
+        )
     return scores
 
 
@@ -595,11 +638,36 @@ def _fetch_rider_page(slug: str, session: requests.Session) -> tuple[str | None,
     return None, ""
 
 
+def _fetch_prev_season_html(rider_url: str, session: requests.Session) -> str | None:
+    """
+    Fetch a rider's PREVIOUS season results page for long-term form.
+
+    PCS rider pages take the season as a path segment:
+        procyclingstats.com/rider/{slug}/{year}
+    The default (year-less) page only shows the CURRENT season — last
+    year's results aren't in there, so this is a separate fetch.
+    """
+    prev_year = TODAY.year - 1
+    url = rider_url.rstrip("/") + f"/{prev_year}"
+    try:
+        r = session.get(url, headers=HEADERS, timeout=15)
+        if r.status_code == 200 and "rdrResults" in r.text:
+            return r.text
+    except requests.RequestException:
+        pass
+    return None
+
+
 # ---------------------------------------------------------------------------
 # Main scraping loop
 # ---------------------------------------------------------------------------
 
-def scrape_all(riders: list[dict], reset: bool = False, test: bool = False) -> dict:
+def scrape_all(
+    riders: list[dict],
+    reset: bool = False,
+    test: bool = False,
+    with_history: bool = True,
+) -> dict:
     # Load existing caches
     if CACHE_PATH.exists() and not reset:
         cache = json.loads(CACHE_PATH.read_text(encoding="utf-8"))
@@ -641,11 +709,26 @@ def scrape_all(riders: list[dict], reset: bool = False, test: bool = False) -> d
             form_scores = compute_all_form_scores(results)
             last_date   = recent[0]["date"] if recent else ""
 
+            # ── Long-term form: fetch last season too, blend in for the
+            # multi-season "underlying ability" signal (see compute_all_
+            # form_scores_long). A quiet current season shouldn't erase a
+            # rider's known climbing/sprint pedigree from the year before.
+            form_scores_long: dict[str, float] = {}
+            if with_history:
+                prev_html = _fetch_prev_season_html(url_used, session)
+                if prev_html:
+                    prev_results = _parse_results_table(prev_html, rider["full_name"])
+                    prev_results = annotate_stage_types(prev_results, session, stage_types_disk)
+                    combined = results + prev_results
+                    form_scores_long = compute_all_form_scores_long(combined)
+                time.sleep(0.3)
+
             cache[rider["id"]] = {
                 "name":             rider["full_name"],
                 "pcs_url":          url_used,
                 "form_score":       form_scores["overall"],   # backward compat key
                 "form_by_type":     form_scores,              # sprint/mountain/hilly/tt/cobbled
+                "form_long_by_type": form_scores_long,         # multi-season, slow decay
                 "pcs_specialties":  specialties,              # {"climber":882, "sprint":273, ...}
                 "n_results":        len(recent),
                 "last_result_date": last_date,
@@ -658,6 +741,7 @@ def scrape_all(riders: list[dict], reset: bool = False, test: bool = False) -> d
                 "pcs_url":      "",
                 "form_score":   50.0,
                 "form_by_type": {t: 50.0 for t in ["overall"] + ALL_STAGE_TYPES},
+                "form_long_by_type": {},
                 "n_results":    0,
                 "last_result_date": "",
                 "results":      [],
@@ -762,6 +846,10 @@ def main():
                         help="Alternativ JSON-fil med rytterliste (f.eks. "
                              "data/cache/dauphine2026_players.json). "
                              "Henter kun ryttere der mangler i cachen.")
+    parser.add_argument("--no-history",     action="store_true",
+                        help="Spring multi-saeson langtids-form over (kun "
+                             "denne saesons data, hurtigere men mister "
+                             "langsigtet form-signal)")
     args = parser.parse_args()
 
     print("-" * 60)
@@ -790,7 +878,8 @@ def main():
         riders = json.loads((DATA / "riders.json").read_text(encoding="utf-8"))
         print(f"  Ryttere i riders.json: {len(riders)}")
 
-    cache = scrape_all(riders, reset=args.reset, test=args.test)
+    cache = scrape_all(riders, reset=args.reset, test=args.test,
+                       with_history=not args.no_history)
 
     # ── Profile scores (optional) ──────────────────────────────────────────────
     if args.profile_scores:

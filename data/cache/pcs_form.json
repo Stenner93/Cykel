@@ -164,7 +164,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 1.4,
+      "sprint": 1.2,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "alberto_bettiol": {
     "name": "Alberto Bettiol",
@@ -331,7 +340,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 48.0,
+      "sprint": 3.6,
+      "mountain": 13.2,
+      "hilly": 23.6,
+      "tt": 20.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "arnaud_de_lie": {
     "name": "Arnaud De Lie",
@@ -448,7 +466,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": "tt"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 79.3,
+      "mountain": 0.0,
+      "hilly": 37.6,
+      "tt": 0.5,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "afonso_eulálio": {
     "name": "Afonso Eulálio",
@@ -615,7 +642,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 56.1,
+      "sprint": 5.0,
+      "mountain": 18.1,
+      "hilly": 26.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "amanuel_ghebreigzabhier": {
     "name": "Amanuel Ghebreigzabhier",
@@ -782,7 +818,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 29.9,
+      "sprint": 29.3,
+      "mountain": 1.1,
+      "hilly": 0.5,
+      "tt": 0.5,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "alan_hatherly": {
     "name": "Alan Hatherly",
@@ -949,7 +994,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 22.9,
+      "sprint": 15.8,
+      "mountain": 0.0,
+      "hilly": 12.6,
+      "tt": 4.3,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "axel_huens": {
     "name": "Axel Huens",
@@ -1116,7 +1170,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 15.1,
+      "sprint": 14.2,
+      "mountain": 0.9,
+      "hilly": 7.2,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "andreas_leknessund": {
     "name": "Andreas Leknessund",
@@ -1283,7 +1346,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 48.7,
+      "sprint": 11.1,
+      "mountain": 3.9,
+      "hilly": 8.0,
+      "tt": 3.9,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "arjen_livyns": {
     "name": "Arjen Livyns",
@@ -1450,7 +1522,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 18.9,
+      "sprint": 17.2,
+      "mountain": 0.0,
+      "hilly": 5.4,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "alessio_martinelli": {
     "name": "Alessio Martinelli",
@@ -1567,7 +1648,16 @@
         "race_base": "tour-of-hainan/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 20.1,
+      "sprint": 11.7,
+      "mountain": 1.2,
+      "hilly": 3.6,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "andrea_mifsud": {
     "name": "Andrea Mifsud",
@@ -1734,7 +1824,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 14.9,
+      "sprint": 2.3,
+      "mountain": 2.6,
+      "hilly": 3.5,
+      "tt": 2.9,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "antónio_morgado": {
     "name": "António Morgado",
@@ -1901,7 +2000,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 15.0,
+      "sprint": 1.6,
+      "mountain": 0.0,
+      "hilly": 7.4,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "andrea_pietrobon": {
     "name": "Andrea Pietrobon",
@@ -2068,7 +2176,16 @@
         "race_base": "settimana-internazionale-coppi-e-bartali/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 9.5,
+      "sprint": 1.4,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.5,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "alessandro_pinarello": {
     "name": "Alessandro Pinarello",
@@ -2235,7 +2352,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 39.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "andrea_raccagni_noviero": {
     "name": "Andrea Raccagni Noviero",
@@ -2402,7 +2528,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 39.1,
+      "sprint": 16.1,
+      "mountain": 55.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "alec_segaert": {
     "name": "Alec Segaert",
@@ -2569,7 +2704,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 3.3,
+      "mountain": 0.0,
+      "hilly": 9.7,
+      "tt": 100.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "anders_skaarseth": {
     "name": "Anders Skaarseth",
@@ -2734,6 +2878,15 @@
       "sprint": 64,
       "climber": 22,
       "hills": 266
+    },
+    "form_long_by_type": {
+      "overall": 8.3,
+      "sprint": 3.4,
+      "mountain": 5.9,
+      "hilly": 10.3,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "andrea_vendrame": {
@@ -2841,7 +2994,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": "tt"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 8.4,
+      "mountain": 0.0,
+      "hilly": 89.5,
+      "tt": 2.4,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "aleksandr_vlasov": {
     "name": "Aleksandr Vlasov",
@@ -3008,7 +3170,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 32.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "adam_yates": {
     "name": "Adam Yates",
@@ -3095,7 +3266,16 @@
         "race_base": "gran-camino/2026",
         "stage_type": "tt"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 37.5,
+      "sprint": 1.5,
+      "mountain": 28.6,
+      "hilly": 17.1,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "bart_lemmen": {
     "name": "Bart Lemmen",
@@ -3262,7 +3442,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 67.8,
+      "sprint": 9.1,
+      "mountain": 100.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "ben_oconnor": {
     "name": "Ben O'Connor",
@@ -3429,7 +3618,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 67.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "brieuc_rolland": {
     "name": "Brieuc Rolland",
@@ -3596,7 +3794,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 61.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 8.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "ben_turner": {
     "name": "Ben Turner",
@@ -3763,7 +3970,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 100.0,
+      "mountain": 0.0,
+      "hilly": 11.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "ben_zwiehoff": {
     "name": "Ben Zwiehoff",
@@ -3930,7 +4146,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 43.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "cyril_barthe": {
     "name": "Cyril Barthe",
@@ -4097,7 +4322,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 40.1,
+      "sprint": 11.3,
+      "mountain": 0.0,
+      "hilly": 36.9,
+      "tt": 3.9,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "chris_hamilton": {
     "name": "Chris Hamilton",
@@ -4264,7 +4498,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 12.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "chris_harper": {
     "name": "Chris Harper",
@@ -4431,7 +4674,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 35.2,
+      "sprint": 1.2,
+      "mountain": 6.2,
+      "hilly": 4.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "christopher_juul_jensen": {
     "name": "Christopher Juul-Jensen",
@@ -4598,7 +4850,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 10.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "christian_scaroni": {
     "name": "Christian Scaroni",
@@ -4765,7 +5026,16 @@
         "race_base": "itzulia-basque-country/2026",
         "stage_type": "hilly"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 62.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "callum_scotson": {
     "name": "Callum Scotson",
@@ -4932,7 +5202,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 18.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "corbin_strong": {
     "name": "Corbin Strong",
@@ -5099,7 +5378,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "connor_swift": {
     "name": "Connor Swift",
@@ -5266,7 +5554,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 13.3,
+      "sprint": 1.3,
+      "mountain": 0.0,
+      "hilly": 7.7,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "casper_van_uden": {
     "name": "Casper van Uden",
@@ -5433,7 +5730,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 51.7,
+      "sprint": 7.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "davide_ballerini": {
     "name": "Davide Ballerini",
@@ -5600,7 +5906,16 @@
         "race_base": "tour-of-turkey/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 88.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "damiano_caruso": {
     "name": "Damiano Caruso",
@@ -5767,7 +6082,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 64.8,
+      "sprint": 3.4,
+      "mountain": 0.0,
+      "hilly": 9.3,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "derek_gee": {
     "name": "Derek Gee",
@@ -5934,7 +6258,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 48.2,
+      "sprint": 1.2,
+      "mountain": 0.0,
+      "hilly": 13.0,
+      "tt": 45.2,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "david_gonzález": {
     "name": "David González",
@@ -6118,7 +6451,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 80.3,
+      "sprint": 77.2,
+      "mountain": 0.0,
+      "hilly": 3.2,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "david_de_la_cruz_melgarejo": {
     "name": "David de la Cruz Melgarejo",
@@ -6285,7 +6627,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 46.1,
+      "sprint": 2.8,
+      "mountain": 47.2,
+      "hilly": 3.1,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "pablo_sevilla_diego": {
     "name": "Pablo Sevilla Diego",
@@ -6469,7 +6820,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 44.5,
+      "sprint": 2.8,
+      "mountain": 78.6,
+      "hilly": 13.2,
+      "tt": 16.6,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "darren_rafferty": {
     "name": "Darren Rafferty",
@@ -6636,7 +6996,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 7.2,
+      "sprint": 0.7,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "dion_smith": {
     "name": "Dion Smith",
@@ -6803,7 +7172,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 12.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "diego_ulissi": {
     "name": "Diego Ulissi",
@@ -6970,7 +7348,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 38.7,
+      "sprint": 1.2,
+      "mountain": 17.6,
+      "hilly": 17.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "dries_van_gestel": {
     "name": "Dries Van Gestel",
@@ -7137,7 +7524,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 27.6,
+      "sprint": 23.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "danny_van_poppel": {
     "name": "Danny van Poppel",
@@ -7274,7 +7670,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": "tt"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 100.0,
+      "mountain": 0.0,
+      "hilly": 33.1,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "edoardo_affini": {
     "name": "Edoardo Affini",
@@ -7369,6 +7774,15 @@
       "sprint": 220,
       "climber": 15,
       "hills": 140
+    },
+    "form_long_by_type": {
+      "overall": 56.9,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "egan_bernal": {
@@ -7536,7 +7950,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 92.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "erlend_blikra": {
     "name": "Erlend Blikra",
@@ -7683,7 +8106,16 @@
         "race_base": "region-pays-de-la-loire/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 100.0,
+      "mountain": 0.0,
+      "hilly": 43.7,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "enric_mas": {
     "name": "Enric Mas",
@@ -7850,7 +8282,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 40.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "edward_planckaert": {
     "name": "Edward Planckaert",
@@ -8017,7 +8458,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 44.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "elmar_reinders": {
     "name": "Elmar Reinders",
@@ -8184,7 +8634,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 5.7,
+      "sprint": 0.7,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "einer_rubio": {
     "name": "Einer Rubio",
@@ -8351,7 +8810,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 26.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "embret_svestad_bårdseng": {
     "name": "Embret Svestad-Bårdseng",
@@ -8518,7 +8986,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 12.4,
+      "sprint": 0.8,
+      "mountain": 8.0,
+      "hilly": 3.0,
+      "tt": 3.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "ethan_vernon": {
     "name": "Ethan Vernon",
@@ -8685,7 +9162,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 97.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "edoardo_zambanini": {
     "name": "Edoardo Zambanini",
@@ -8852,7 +9338,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 68.6,
+      "mountain": 0.0,
+      "hilly": 100.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "enrico_zanoncello": {
     "name": "Enrico Zanoncello",
@@ -9019,7 +9514,16 @@
         "race_base": "tour-of-hainan/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 95.6,
+      "sprint": 94.2,
+      "mountain": 0.0,
+      "hilly": 23.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "francesco_busatto": {
     "name": "Francesco Busatto",
@@ -9186,7 +9690,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 29.4,
+      "sprint": 4.4,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "fabio_christen": {
     "name": "Fabio Christen",
@@ -9323,7 +9836,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 62.6,
+      "sprint": 35.6,
+      "mountain": 6.5,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "filippo_conca": {
     "name": "Filippo Conca",
@@ -9450,7 +9972,16 @@
         "race_base": "settimana-internazionale-coppi-e-bartali/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 7.1,
+      "sprint": 0.0,
+      "mountain": 5.8,
+      "hilly": 7.2,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "frank_van_den_broek": {
     "name": "Frank van den Broek",
@@ -9617,7 +10148,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 41.2,
+      "sprint": 2.5,
+      "mountain": 29.5,
+      "hilly": 4.2,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "fredrik_dversnes": {
     "name": "Fredrik Dversnes",
@@ -9784,7 +10324,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 66.9,
+      "sprint": 0.5,
+      "mountain": 0.0,
+      "hilly": 1.4,
+      "tt": 7.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "felix_engelhardt": {
     "name": "Felix Engelhardt",
@@ -9949,6 +10498,15 @@
       "sprint": 12,
       "climber": 308,
       "hills": 504
+    },
+    "form_long_by_type": {
+      "overall": 49.1,
+      "sprint": 6.5,
+      "mountain": 46.5,
+      "hilly": 7.8,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "felix_gall": {
@@ -10116,7 +10674,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 74.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "filippo_ganna": {
     "name": "Filippo Ganna",
@@ -10283,7 +10850,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 99.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "filippo_magli": {
     "name": "Filippo Magli",
@@ -10467,7 +11043,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 10.9,
+      "sprint": 8.9,
+      "mountain": 0.0,
+      "hilly": 9.8,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "florian_stork": {
     "name": "Florian Stork",
@@ -10634,7 +11219,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 41.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "filippo_turconi": {
     "name": "Filippo Turconi",
@@ -10801,7 +11395,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 38.6,
+      "sprint": 27.6,
+      "mountain": 9.1,
+      "hilly": 13.2,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "frederik_wandahl": {
     "name": "Frederik Wandahl",
@@ -10888,7 +11491,16 @@
         "race_base": "volta-a-catalunya/2026",
         "stage_type": "hilly"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 8.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 6.2,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "filippo_zana": {
     "name": "Filippo Zana",
@@ -11055,7 +11667,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 35.3,
+      "sprint": 9.3,
+      "mountain": 0.0,
+      "hilly": 49.4,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "giovanni_aleotti": {
     "name": "Giovanni Aleotti",
@@ -11222,7 +11843,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 36.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "giulio_ciccone": {
     "name": "Giulio Ciccone",
@@ -11389,7 +12019,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "gianmarco_garofoli": {
     "name": "Gianmarco Garofoli",
@@ -11556,7 +12195,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 27.1,
+      "sprint": 1.5,
+      "mountain": 2.6,
+      "hilly": 1.1,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "gijs_leemreize": {
     "name": "Gijs Leemreize",
@@ -11731,6 +12379,15 @@
       "sprint": 0,
       "climber": 504,
       "hills": 190
+    },
+    "form_long_by_type": {
+      "overall": 9.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "giovanni_lonardi": {
@@ -11898,7 +12555,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 79.2,
+      "mountain": 0.0,
+      "hilly": 75.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "gianni_moscon": {
     "name": "Gianni Moscon",
@@ -12065,7 +12731,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 5.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "gregor_mühlberger": {
     "name": "Gregor Mühlberger",
@@ -12232,7 +12907,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 19.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "giulio_pellizzari": {
     "name": "Giulio Pellizzari",
@@ -12399,7 +13083,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "guillermo_thomas_silva": {
     "name": "Guillermo Thomas Silva",
@@ -12583,7 +13276,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 21.3,
+      "sprint": 4.0,
+      "mountain": 0.0,
+      "hilly": 5.7,
+      "tt": 3.8,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "harold_martín_lópez": {
     "name": "Harold Martín López",
@@ -12750,7 +13452,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 64.7,
+      "sprint": 17.7,
+      "mountain": 59.8,
+      "hilly": 24.6,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "igor_arrieta": {
     "name": "Igor Arrieta",
@@ -12917,7 +13628,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 46.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 2.9,
+      "tt": 8.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "iván_garcía_cortina": {
     "name": "Iván García Cortina",
@@ -13084,7 +13804,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 44.8,
+      "sprint": 2.9,
+      "mountain": 0.9,
+      "hilly": 22.1,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jefferson_alexander_cepeda": {
     "name": "Jefferson Alexander Cepeda",
@@ -13251,7 +13980,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 8.0,
+      "sprint": 1.8,
+      "mountain": 4.2,
+      "hilly": 1.6,
+      "tt": 3.9,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "joao_almeida": {
     "name": "Joao Almeida",
@@ -13346,6 +14084,15 @@
       "sprint": 127,
       "climber": 4868,
       "hills": 1494
+    },
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "jardi_christiaan_van_der_lee": {
@@ -13513,7 +14260,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 9.2,
+      "sprint": 0.0,
+      "mountain": 4.3,
+      "hilly": 4.0,
+      "tt": 6.6,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jan_christen": {
     "name": "Jan Christen",
@@ -13680,7 +14436,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 46.8,
+      "sprint": 5.3,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jasper_de_buyst": {
     "name": "Jasper De Buyst",
@@ -13696,7 +14461,16 @@
     },
     "n_results": 0,
     "last_result_date": "",
-    "results": []
+    "results": [],
+    "form_long_by_type": {
+      "overall": 11.6,
+      "sprint": 4.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jonas_geens": {
     "name": "Jonas Geens",
@@ -13863,7 +14637,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 13.7,
+      "sprint": 2.8,
+      "mountain": 0.0,
+      "hilly": 3.5,
+      "tt": 5.2,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jack_haig": {
     "name": "Jack Haig",
@@ -14030,7 +14813,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 9.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jai_hindley": {
     "name": "Jai Hindley",
@@ -14197,7 +14989,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jan_hirt": {
     "name": "Jan Hirt",
@@ -14364,7 +15165,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 13.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "johan_jacobs": {
     "name": "Johan Jacobs",
@@ -14531,7 +15341,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 6.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "joshua_kench": {
     "name": "Joshua Kench",
@@ -14703,6 +15522,15 @@
       "sprint": 10,
       "climber": 818,
       "hills": 356
+    },
+    "form_long_by_type": {
+      "overall": 4.5,
+      "sprint": 0.0,
+      "mountain": 3.4,
+      "hilly": 0.7,
+      "tt": 0.7,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "johannes_kulset": {
@@ -14870,7 +15698,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 28.8,
+      "sprint": 10.2,
+      "mountain": 23.5,
+      "hilly": 18.0,
+      "tt": 5.4,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jonathan_milan": {
     "name": "Jonathan Milan",
@@ -15037,7 +15874,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 71.9,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jhonatan_narváez": {
     "name": "Jhonatan Narváez",
@@ -15204,7 +16050,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 43.8,
+      "mountain": 0.0,
+      "hilly": 44.4,
+      "tt": 9.1,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "juan_pedro_lópez": {
     "name": "Juan Pedro López",
@@ -15371,7 +16226,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 13.9,
+      "sprint": 2.9,
+      "mountain": 9.3,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "johan_price_pejtersen": {
     "name": "Johan Price-Pejtersen",
@@ -15538,7 +16402,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 25.9,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 29.7,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jensen_plowright": {
     "name": "Jensen Plowright",
@@ -15705,7 +16578,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 45.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "javier_romo": {
     "name": "Javier Romo",
@@ -15872,7 +16754,16 @@
         "race_base": "itzulia-basque-country/2026",
         "stage_type": "hilly"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 74.5,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jonas_rutsch": {
     "name": "Jonas Rutsch",
@@ -16039,7 +16930,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 6.6,
+      "sprint": 5.5,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "johannes_staune_mittet": {
     "name": "Johannes Staune-Mittet",
@@ -16206,7 +17106,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 28.9,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "james_shaw": {
     "name": "James Shaw",
@@ -16373,7 +17282,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 27.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jake_stewart": {
     "name": "Jake Stewart",
@@ -16540,7 +17458,16 @@
         "race_base": "volta-a-catalunya/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 65.0,
+      "sprint": 4.7,
+      "mountain": 0.0,
+      "hilly": 3.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jasper_stuyven": {
     "name": "Jasper Stuyven",
@@ -16707,7 +17634,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 39.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jay_vine": {
     "name": "Jay Vine",
@@ -16754,7 +17690,16 @@
         "race_base": "volta-a-catalunya/2026",
         "stage_type": "hilly"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.9,
+      "mountain": 4.8,
+      "hilly": 0.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jonas_vingegaard": {
     "name": "Jonas Vingegaard",
@@ -16921,7 +17866,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "koen_bouwman": {
     "name": "Koen Bouwman",
@@ -17088,7 +18042,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 14.5,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "kaden_groves": {
     "name": "Kaden Groves",
@@ -17135,7 +18098,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 89.7,
+      "sprint": 17.5,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "karsten_larsen_feldmann": {
     "name": "Karsten Larsen Feldmann",
@@ -17202,7 +18174,16 @@
         "race_base": "4-jours-de-dunkerque/2026",
         "stage_type": "hilly"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 51.5,
+      "sprint": 35.8,
+      "mountain": 0.0,
+      "hilly": 3.1,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "lorenzo_covili": {
     "name": "Lorenzo Covili",
@@ -17411,6 +18392,15 @@
       "sprint": 37,
       "climber": 1907,
       "hills": 363
+    },
+    "form_long_by_type": {
+      "overall": 76.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "lorenzo_germani": {
@@ -17578,7 +18568,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": "hilly"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 26.1,
+      "sprint": 2.6,
+      "mountain": 0.0,
+      "hilly": 18.0,
+      "tt": 16.2,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "lukáš_kubiš": {
     "name": "Lukáš Kubiš",
@@ -17745,7 +18744,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 100.0,
+      "mountain": 8.0,
+      "hilly": 14.2,
+      "tt": 36.2,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "luka_mezgec": {
     "name": "Luka Mezgec",
@@ -17792,7 +18800,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 8.9,
+      "sprint": 2.1,
+      "mountain": 0.0,
+      "hilly": 2.4,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "lorenzo_milesi": {
     "name": "Lorenzo Milesi",
@@ -17959,7 +18976,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 78.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "luca_mozzato": {
     "name": "Luca Mozzato",
@@ -18126,7 +19152,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 28.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 9.9,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "luca_paletti": {
     "name": "Luca Paletti",
@@ -18293,7 +19328,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 11.7,
+      "sprint": 4.9,
+      "mountain": 5.0,
+      "hilly": 2.7,
+      "tt": 1.7,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "lorenzo_rota": {
     "name": "Lorenzo Rota",
@@ -18460,7 +19504,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 8.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "liam_slock": {
     "name": "Liam Slock",
@@ -18627,7 +19680,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 23.3,
+      "sprint": 1.5,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "liam_tuckwell": {
     "name": "Liam Tuckwell",
@@ -18781,7 +19843,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": "tt"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 25.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "luca_vergallito": {
     "name": "Luca Vergallito",
@@ -18948,7 +20019,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 12.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "larry_warbasse": {
     "name": "Larry Warbasse",
@@ -19132,7 +20212,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 22.5,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 6.1,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "mark_donovan": {
     "name": "Mark Donovan",
@@ -19299,7 +20388,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 19.9,
+      "sprint": 10.1,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "matevz_govekar": {
     "name": "Matevz Govekar",
@@ -19384,6 +20482,15 @@
       "sprint": 363,
       "climber": 84,
       "hills": 466
+    },
+    "form_long_by_type": {
+      "overall": 41.5,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "marc_hirschi": {
@@ -19400,7 +20507,16 @@
     },
     "n_results": 0,
     "last_result_date": "",
-    "results": []
+    "results": [],
+    "form_long_by_type": {
+      "overall": 49.4,
+      "sprint": 44.8,
+      "mountain": 0.0,
+      "hilly": 62.7,
+      "tt": 14.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "markus_hoelgaard": {
     "name": "Markus Hoelgaard",
@@ -19567,7 +20683,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 7.5,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "mathieu_kockelmann": {
     "name": "Mathieu Kockelmann",
@@ -19642,6 +20767,15 @@
       "sprint": 62,
       "climber": 3,
       "hills": 140
+    },
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 77.5,
+      "mountain": 0.0,
+      "hilly": 51.3,
+      "tt": 6.3,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "mikel_landa": {
@@ -19749,7 +20883,16 @@
         "race_base": "volta-a-catalunya/2026",
         "stage_type": "hilly"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 49.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "mirco_maestri": {
     "name": "Mirco Maestri",
@@ -19916,7 +21059,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 39.5,
+      "sprint": 8.9,
+      "mountain": 2.3,
+      "hilly": 11.1,
+      "tt": 2.9,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "matteo_malucelli": {
     "name": "Matteo Malucelli",
@@ -20083,7 +21235,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 100.0,
+      "mountain": 0.0,
+      "hilly": 100.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "martin_marcellusi": {
     "name": "Martin Marcellusi",
@@ -20250,7 +21411,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 28.0,
+      "sprint": 5.6,
+      "mountain": 1.9,
+      "hilly": 8.0,
+      "tt": 1.7,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "milan_menten": {
     "name": "Milan Menten",
@@ -20367,7 +21537,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 100.0,
+      "mountain": 0.0,
+      "hilly": 10.9,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "matteo_moschetti": {
     "name": "Matteo Moschetti",
@@ -20434,7 +21613,16 @@
         "race_base": "settimana-internazionale-coppi-e-bartali/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 74.8,
+      "sprint": 26.1,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "mathijs_paasschens": {
     "name": "Mathijs Paasschens",
@@ -20601,7 +21789,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 9.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "max_poole": {
     "name": "Max Poole",
@@ -20617,7 +21814,16 @@
     },
     "n_results": 0,
     "last_result_date": "",
-    "results": []
+    "results": [],
+    "form_long_by_type": {
+      "overall": 16.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "mathis_rondel": {
     "name": "Mathis Rondel",
@@ -20801,7 +22007,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 52.6,
+      "sprint": 12.3,
+      "mountain": 0.0,
+      "hilly": 76.2,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "matteo_sobrero": {
     "name": "Matteo Sobrero",
@@ -20968,7 +22183,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 54.5,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "marc_soler": {
     "name": "Marc Soler",
@@ -21135,7 +22359,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 71.9,
+      "mountain": 0.0,
+      "hilly": 29.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "michael_storer": {
     "name": "Michael Storer",
@@ -21302,7 +22535,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 55.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "manuele_tarozzi": {
     "name": "Manuele Tarozzi",
@@ -21469,7 +22711,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 11.1,
+      "sprint": 4.9,
+      "mountain": 0.0,
+      "hilly": 5.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "martin_tjøtta": {
     "name": "Martin Tjøtta",
@@ -21636,7 +22887,16 @@
         "race_base": "itzulia-basque-country/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 34.7,
+      "sprint": 3.8,
+      "mountain": 0.0,
+      "hilly": 11.7,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "michael_valgren": {
     "name": "Michael Valgren",
@@ -21803,7 +23063,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 44.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "mick_van_dijke": {
     "name": "Mick van Dijke",
@@ -21970,7 +23239,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 17.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "maximilian_walscheid": {
     "name": "Maximilian Walscheid",
@@ -22154,7 +23432,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 86.1,
+      "sprint": 30.6,
+      "mountain": 0.0,
+      "hilly": 63.5,
+      "tt": 68.9,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "nelson_oliveira": {
     "name": "Nelson Oliveira",
@@ -22321,7 +23608,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 13.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 1.1,
+      "tt": 4.2,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "nick_schultz": {
     "name": "Nick Schultz",
@@ -22488,7 +23784,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 7.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "nickolas_zukowsky": {
     "name": "Nickolas Zukowsky",
@@ -22655,7 +23960,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 10.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "orluis_aular": {
     "name": "Orluis Aular",
@@ -22822,7 +24136,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 98.4,
+      "sprint": 11.1,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "oliver_naesen": {
     "name": "Oliver Naesen",
@@ -22989,7 +24312,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 11.9,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "pascal_ackermann": {
     "name": "Pascal Ackermann",
@@ -23156,7 +24488,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 30.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "paul_magnier": {
     "name": "Paul Magnier",
@@ -23323,7 +24664,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 100.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "paul_penhoët": {
     "name": "Paul Penhoët",
@@ -23490,7 +24840,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 91.9,
+      "sprint": 17.9,
+      "mountain": 0.0,
+      "hilly": 9.6,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "richard_carapaz": {
     "name": "Richard Carapaz",
@@ -23647,7 +25006,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": "tt"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 59.9,
+      "sprint": 69.2,
+      "mountain": 0.0,
+      "hilly": 15.9,
+      "tt": 35.9,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "rémi_cavagna": {
     "name": "Rémi Cavagna",
@@ -23814,7 +25182,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 29.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "robert_donaldson": {
     "name": "Robert Donaldson",
@@ -23981,7 +25358,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 40.5,
+      "sprint": 27.5,
+      "mountain": 0.0,
+      "hilly": 7.9,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "robin_froidevaux": {
     "name": "Robin Froidevaux",
@@ -24148,7 +25534,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 12.9,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "ryan_mullen": {
     "name": "Ryan Mullen",
@@ -24315,7 +25710,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 7.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "remy_rochas": {
     "name": "Remy Rochas",
@@ -24482,7 +25886,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 33.3,
+      "sprint": 2.4,
+      "mountain": 0.0,
+      "hilly": 2.6,
+      "tt": 2.9,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "samuele_battistella": {
     "name": "Samuele Battistella",
@@ -24639,7 +26052,16 @@
         "race_base": "settimana-internazionale-coppi-e-bartali/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 8.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "sjoerd_bax": {
     "name": "Sjoerd Bax",
@@ -24806,7 +26228,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": "hilly"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 23.8,
+      "sprint": 15.8,
+      "mountain": 2.0,
+      "hilly": 3.7,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "santiago_buitrago": {
     "name": "Santiago Buitrago",
@@ -24981,6 +26412,15 @@
       "sprint": 43,
       "climber": 2161,
       "hills": 888
+    },
+    "form_long_by_type": {
+      "overall": 57.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "simone_consonni": {
@@ -25148,7 +26588,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 16.5,
+      "sprint": 4.5,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "sean_flynn": {
     "name": "Sean Flynn",
@@ -25315,7 +26764,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 13.4,
+      "sprint": 0.8,
+      "mountain": 1.5,
+      "hilly": 10.7,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "simone_gualdi": {
     "name": "Simone Gualdi",
@@ -25482,7 +26940,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 29.6,
+      "sprint": 19.6,
+      "mountain": 16.1,
+      "hilly": 23.4,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "sakarias_koller_løland": {
     "name": "Sakarias Koller Løland",
@@ -25649,7 +27116,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 39.6,
+      "sprint": 6.6,
+      "mountain": 0.4,
+      "hilly": 0.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "sepp_kuss": {
     "name": "Sepp Kuss",
@@ -25816,7 +27292,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "sean_quinn": {
     "name": "Sean Quinn",
@@ -25911,6 +27396,15 @@
       "sprint": 7,
       "climber": 302,
       "hills": 266
+    },
+    "form_long_by_type": {
+      "overall": 36.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "toon_aerts": {
@@ -26078,7 +27572,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 36.5,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "thymen_arensman": {
     "name": "Thymen Arensman",
@@ -26245,7 +27748,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "tobias_bayer": {
     "name": "Tobias Bayer",
@@ -26412,7 +27924,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 6.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "timo_de_jong": {
     "name": "Timo de Jong",
@@ -26579,7 +28100,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": "hilly"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 97.4,
+      "sprint": 38.3,
+      "mountain": 13.0,
+      "hilly": 0.0,
+      "tt": 23.3,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "tord_gudmestad": {
     "name": "Tord Gudmestad",
@@ -26746,7 +28276,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 50.5,
+      "sprint": 1.7,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "timo_kielich": {
     "name": "Timo Kielich",
@@ -26913,7 +28452,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 13.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "tomáš_kopecký": {
     "name": "Tomáš Kopecký",
@@ -27080,7 +28628,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 15.8,
+      "sprint": 1.8,
+      "mountain": 0.0,
+      "hilly": 0.9,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "tim_naberman": {
     "name": "Tim Naberman",
@@ -27247,7 +28804,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 2.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "tommaso_pesenti": {
     "name": "Tommaso Pesenti",
@@ -27431,7 +28997,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 13.6,
+      "sprint": 8.9,
+      "mountain": 3.7,
+      "hilly": 7.6,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "victor_campenaerts": {
     "name": "Victor Campenaerts",
@@ -27598,7 +29173,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 80.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "william_barta": {
     "name": "William Barta",
@@ -27765,7 +29349,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 16.8,
+      "sprint": 1.1,
+      "mountain": 0.0,
+      "hilly": 3.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "wilco_kelderman": {
     "name": "Wilco Kelderman",
@@ -27892,7 +29485,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 50.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 11.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "wout_poels": {
     "name": "Wout Poels",
@@ -28059,7 +29661,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 34.5,
+      "sprint": 2.7,
+      "mountain": 41.9,
+      "hilly": 20.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "ådne_holter": {
     "name": "Ådne Holter",
@@ -28156,7 +29767,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": "tt"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 16.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 2.6,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "tobias_lund_andresen": {
     "name": "Lund Andresen Tobias",
@@ -28323,7 +29943,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 78.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "tim_torn_teutenberg": {
     "name": "Torn Teutenberg Tim",
@@ -28490,7 +30119,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": "mountain"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 77.1,
+      "sprint": 45.1,
+      "mountain": 0.0,
+      "hilly": 44.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "rasmus_søjberg_pedersen": {
     "name": "Søjberg Pedersen Rasmus",
@@ -28634,7 +30272,16 @@
         "race_base": "vuelta-ciclista-a-la-region-de-murcia/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 16.3,
+      "sprint": 9.7,
+      "mountain": 6.1,
+      "hilly": 0.9,
+      "tt": 2.5,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "alex_baudin": {
     "name": "Alex Baudin",
@@ -28809,6 +30456,15 @@
       "sprint": 5,
       "climber": 752,
       "hills": 569
+    },
+    "form_long_by_type": {
+      "overall": 50.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "alex_diaz": {
@@ -29001,6 +30657,15 @@
       "sprint": 0,
       "climber": 53,
       "hills": 6
+    },
+    "form_long_by_type": {
+      "overall": 7.2,
+      "sprint": 0.0,
+      "mountain": 1.9,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "andreas_kron": {
@@ -29176,6 +30841,15 @@
       "sprint": 20,
       "climber": 1084,
       "hills": 1170
+    },
+    "form_long_by_type": {
+      "overall": 16.2,
+      "sprint": 5.8,
+      "mountain": 2.4,
+      "hilly": 3.1,
+      "tt": 1.3,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "anthon_charmig": {
@@ -29351,6 +31025,15 @@
       "sprint": 17,
       "climber": 338,
       "hills": 560
+    },
+    "form_long_by_type": {
+      "overall": 40.8,
+      "sprint": 2.7,
+      "mountain": 0.8,
+      "hilly": 0.8,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "aurelien_paret-peintre": {
@@ -29456,6 +31139,15 @@
       "sprint": 60,
       "climber": 1578,
       "hills": 874
+    },
+    "form_long_by_type": {
+      "overall": 55.5,
+      "sprint": 31.3,
+      "mountain": 0.0,
+      "hilly": 13.1,
+      "tt": 42.2,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "baptiste_veistroffer": {
@@ -29631,6 +31323,15 @@
       "sprint": 39,
       "climber": 32,
       "hills": 92
+    },
+    "form_long_by_type": {
+      "overall": 19.4,
+      "sprint": 0.4,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 7.1,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "ben_healy": {
@@ -29786,6 +31487,15 @@
       "sprint": 40,
       "climber": 1548,
       "hills": 570
+    },
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 100.0,
+      "mountain": 0.0,
+      "hilly": 11.7,
+      "tt": 100.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "benjamin_thomas": {
@@ -29901,6 +31611,15 @@
       "sprint": 0,
       "climber": 0,
       "hills": 0
+    },
+    "form_long_by_type": {
+      "overall": 1.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "benoit_cosnefroy": {
@@ -30076,6 +31795,15 @@
       "sprint": 420,
       "climber": 1206,
       "hills": 1978
+    },
+    "form_long_by_type": {
+      "overall": 61.2,
+      "sprint": 2.6,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "bruno_armirail": {
@@ -30251,6 +31979,15 @@
       "sprint": 5,
       "climber": 435,
       "hills": 264
+    },
+    "form_long_by_type": {
+      "overall": 72.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "bryan_coquard": {
@@ -30426,6 +32163,15 @@
       "sprint": 5527,
       "climber": 238,
       "hills": 2795
+    },
+    "form_long_by_type": {
+      "overall": 44.0,
+      "sprint": 18.9,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "callum_thornley": {
@@ -30601,6 +32347,15 @@
       "sprint": 56,
       "climber": 37,
       "hills": 58
+    },
+    "form_long_by_type": {
+      "overall": 61.9,
+      "sprint": 24.1,
+      "mountain": 23.0,
+      "hilly": 5.2,
+      "tt": 88.6,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "carlos_rodriguez": {
@@ -30646,6 +32401,15 @@
       "sprint": 0,
       "climber": 0,
       "hills": 0
+    },
+    "form_long_by_type": {
+      "overall": 0.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "cian_uijtdebroeks": {
@@ -30821,6 +32585,15 @@
       "sprint": 0,
       "climber": 1248,
       "hills": 272
+    },
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 5.1,
+      "mountain": 73.7,
+      "hilly": 59.6,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "clement_berthet": {
@@ -30906,6 +32679,15 @@
       "sprint": 2,
       "climber": 793,
       "hills": 372
+    },
+    "form_long_by_type": {
+      "overall": 31.1,
+      "sprint": 7.8,
+      "mountain": 0.0,
+      "hilly": 9.2,
+      "tt": 98.6,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "daan_hoole": {
@@ -31031,6 +32813,15 @@
       "sprint": 58,
       "climber": 16,
       "hills": 132
+    },
+    "form_long_by_type": {
+      "overall": 69.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "daniel_felipe_martinez": {
@@ -31206,6 +32997,15 @@
       "sprint": 34,
       "climber": 2612,
       "hills": 786
+    },
+    "form_long_by_type": {
+      "overall": 20.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "dillon_corkery": {
@@ -31361,6 +33161,15 @@
       "sprint": 106,
       "climber": 3,
       "hills": 30
+    },
+    "form_long_by_type": {
+      "overall": 25.2,
+      "sprint": 17.9,
+      "mountain": 0.0,
+      "hilly": 1.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "dorian_godon": {
@@ -31536,6 +33345,15 @@
       "sprint": 275,
       "climber": 882,
       "hills": 2252
+    },
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 39.5,
+      "mountain": 0.0,
+      "hilly": 100.0,
+      "tt": 50.1,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "emanuel_buchmann": {
@@ -31671,6 +33489,15 @@
       "sprint": 13,
       "climber": 2966,
       "hills": 858
+    },
+    "form_long_by_type": {
+      "overall": 10.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "ethan_hayter": {
@@ -31846,6 +33673,15 @@
       "sprint": 326,
       "climber": 714,
       "hills": 1510
+    },
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 3.2,
+      "mountain": 0.0,
+      "hilly": 4.8,
+      "tt": 100.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "ewen_costiou": {
@@ -32013,7 +33849,16 @@
         "race_base": "etoile-de-besseges/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 83.9,
+      "sprint": 0.9,
+      "mountain": 0.0,
+      "hilly": 1.8,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "fabien_grellier": {
     "name": "Fabien Grellier",
@@ -32170,7 +34015,16 @@
         "race_base": "alula-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 2.3,
+      "sprint": 0.7,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "gal_glivar": {
     "name": "Gal Glivar",
@@ -32345,6 +34199,15 @@
       "sprint": 62,
       "climber": 130,
       "hills": 254
+    },
+    "form_long_by_type": {
+      "overall": 17.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "geoffrey_bouchard": {
@@ -32520,6 +34383,15 @@
       "sprint": 3,
       "climber": 778,
       "hills": 166
+    },
+    "form_long_by_type": {
+      "overall": 12.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 17.3,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "georg_steinhauser": {
@@ -32695,6 +34567,15 @@
       "sprint": 0,
       "climber": 586,
       "hills": 284
+    },
+    "form_long_by_type": {
+      "overall": 25.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "georg_zimmermann": {
@@ -32870,6 +34751,15 @@
       "sprint": 63,
       "climber": 758,
       "hills": 842
+    },
+    "form_long_by_type": {
+      "overall": 16.3,
+      "sprint": 4.6,
+      "mountain": 47.1,
+      "hilly": 5.8,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "george_bennett": {
@@ -33045,6 +34935,15 @@
       "sprint": 56,
       "climber": 3034,
       "hills": 1121
+    },
+    "form_long_by_type": {
+      "overall": 20.1,
+      "sprint": 12.9,
+      "mountain": 4.3,
+      "hilly": 19.6,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "gorka_sorarrain_agirrezabala": {
@@ -33220,6 +35119,15 @@
       "sprint": 34,
       "climber": 34,
       "hills": 126
+    },
+    "form_long_by_type": {
+      "overall": 26.7,
+      "sprint": 22.5,
+      "mountain": 2.6,
+      "hilly": 4.1,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "guillaume_martin": {
@@ -33395,6 +35303,15 @@
       "sprint": 74,
       "climber": 4193,
       "hills": 1809
+    },
+    "form_long_by_type": {
+      "overall": 13.9,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "guillermo_juan_martinez": {
@@ -33570,6 +35487,15 @@
       "sprint": 0,
       "climber": 121,
       "hills": 16
+    },
+    "form_long_by_type": {
+      "overall": 19.1,
+      "sprint": 3.2,
+      "mountain": 38.6,
+      "hilly": 7.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "harold_tejada": {
@@ -33745,6 +35671,15 @@
       "sprint": 12,
       "climber": 1188,
       "hills": 876
+    },
+    "form_long_by_type": {
+      "overall": 53.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "henri-francois_renard-haquin": {
@@ -33920,6 +35855,15 @@
       "sprint": 10,
       "climber": 55,
       "hills": 63
+    },
+    "form_long_by_type": {
+      "overall": 29.5,
+      "sprint": 3.9,
+      "mountain": 0.0,
+      "hilly": 6.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "hugo_hofstetter": {
@@ -34045,6 +35989,15 @@
       "sprint": 2448,
       "climber": 29,
       "hills": 1017
+    },
+    "form_long_by_type": {
+      "overall": 70.3,
+      "sprint": 18.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "hugo_houle": {
@@ -34130,6 +36083,15 @@
       "sprint": 244,
       "climber": 512,
       "hills": 764
+    },
+    "form_long_by_type": {
+      "overall": 9.3,
+      "sprint": 1.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 5.5,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "ion_izagirre_insausti": {
@@ -34297,7 +36259,16 @@
         "race_base": "ruta-del-sol/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 43.2,
+      "sprint": 4.6,
+      "mountain": 0.0,
+      "hilly": 68.8,
+      "tt": 17.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "isaac_del_toro": {
     "name": "Isaac Del Toro",
@@ -34472,6 +36443,15 @@
       "sprint": 1,
       "climber": 1824,
       "hills": 954
+    },
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "ivan_romeo": {
@@ -34647,6 +36627,15 @@
       "sprint": 55,
       "climber": 298,
       "hills": 324
+    },
+    "form_long_by_type": {
+      "overall": 58.0,
+      "sprint": 9.1,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "ivo_oliveira": {
@@ -34839,6 +36828,15 @@
       "sprint": 2,
       "climber": 109,
       "hills": 70
+    },
+    "form_long_by_type": {
+      "overall": 23.1,
+      "sprint": 4.7,
+      "mountain": 29.2,
+      "hilly": 3.8,
+      "tt": 2.3,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "joan_bou": {
@@ -35014,6 +37012,15 @@
       "sprint": 20,
       "climber": 298,
       "hills": 246
+    },
+    "form_long_by_type": {
+      "overall": 18.9,
+      "sprint": 9.9,
+      "mountain": 8.3,
+      "hilly": 8.3,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "jordan_jegat": {
@@ -35119,6 +37126,15 @@
       "sprint": 3,
       "climber": 835,
       "hills": 590
+    },
+    "form_long_by_type": {
+      "overall": 71.3,
+      "sprint": 28.0,
+      "mountain": 0.0,
+      "hilly": 56.8,
+      "tt": 4.3,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "jose_felix_parra": {
@@ -35294,6 +37310,15 @@
       "sprint": 0,
       "climber": 452,
       "hills": 122
+    },
+    "form_long_by_type": {
+      "overall": 20.2,
+      "sprint": 4.6,
+      "mountain": 15.4,
+      "hilly": 2.8,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "joshua_tarling": {
@@ -35469,6 +37494,15 @@
       "sprint": 41,
       "climber": 28,
       "hills": 30
+    },
+    "form_long_by_type": {
+      "overall": 62.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "juan_ayuso": {
@@ -35670,7 +37704,16 @@
         "race_base": "volta-ao-algarve/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 72.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jørgen_nordhagen": {
     "name": "Jørgen Nordhagen",
@@ -35845,6 +37888,15 @@
       "sprint": 8,
       "climber": 372,
       "hills": 129
+    },
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 27.9,
+      "mountain": 63.0,
+      "hilly": 11.1,
+      "tt": 27.8,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "kevin_vauquelin": {
@@ -36020,6 +38072,15 @@
       "sprint": 91,
       "climber": 1262,
       "hills": 1155
+    },
+    "form_long_by_type": {
+      "overall": 64.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "kevin_vermaerke": {
@@ -36195,6 +38256,15 @@
       "sprint": 16,
       "climber": 718,
       "hills": 590
+    },
+    "form_long_by_type": {
+      "overall": 43.3,
+      "sprint": 0.8,
+      "mountain": 2.2,
+      "hilly": 2.1,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "laurens_de_plus": {
@@ -36370,6 +38440,15 @@
       "sprint": 23,
       "climber": 1066,
       "hills": 592
+    },
+    "form_long_by_type": {
+      "overall": 30.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "lennart_jasch": {
@@ -36545,6 +38624,15 @@
       "sprint": 4,
       "climber": 82,
       "hills": 28
+    },
+    "form_long_by_type": {
+      "overall": 74.8,
+      "sprint": 13.6,
+      "mountain": 19.0,
+      "hilly": 70.1,
+      "tt": 3.3,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "louis_rouland": {
@@ -36720,6 +38808,15 @@
       "sprint": 19,
       "climber": 133,
       "hills": 34
+    },
+    "form_long_by_type": {
+      "overall": 44.4,
+      "sprint": 1.7,
+      "mountain": 0.0,
+      "hilly": 36.6,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "luke_plapp": {
@@ -36895,6 +38992,15 @@
       "sprint": 23,
       "climber": 886,
       "hills": 458
+    },
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.6,
+      "mountain": 59.4,
+      "hilly": 1.1,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "luke_tuckwell": {
@@ -37070,6 +39176,15 @@
       "sprint": 0,
       "climber": 138,
       "hills": 41
+    },
+    "form_long_by_type": {
+      "overall": 38.5,
+      "sprint": 12.5,
+      "mountain": 23.7,
+      "hilly": 0.0,
+      "tt": 9.9,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "leo_bisiaux": {
@@ -37215,6 +39330,15 @@
       "sprint": 4,
       "climber": 268,
       "hills": 104
+    },
+    "form_long_by_type": {
+      "overall": 66.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "martin_svrcek": {
@@ -37390,6 +39514,15 @@
       "sprint": 32,
       "climber": 24,
       "hills": 44
+    },
+    "form_long_by_type": {
+      "overall": 9.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "matej_mohoric": {
@@ -37425,6 +39558,15 @@
       "sprint": 732,
       "climber": 1644,
       "hills": 3004
+    },
+    "form_long_by_type": {
+      "overall": 27.3,
+      "sprint": 2.9,
+      "mountain": 0.0,
+      "hilly": 28.9,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "mathieu_burgaudeau": {
@@ -37550,6 +39692,15 @@
       "sprint": 20,
       "climber": 598,
       "hills": 884
+    },
+    "form_long_by_type": {
+      "overall": 18.7,
+      "sprint": 4.4,
+      "mountain": 0.0,
+      "hilly": 13.1,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "mathis_le_berre": {
@@ -37725,6 +39876,15 @@
       "sprint": 42,
       "climber": 101,
       "hills": 287
+    },
+    "form_long_by_type": {
+      "overall": 18.0,
+      "sprint": 0.8,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "matteo_jorgenson": {
@@ -37820,6 +39980,15 @@
       "sprint": 178,
       "climber": 2129,
       "hills": 1490
+    },
+    "form_long_by_type": {
+      "overall": 79.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "matteo_trentin": {
@@ -37925,6 +40094,15 @@
       "sprint": 3198,
       "climber": 1090,
       "hills": 4472
+    },
+    "form_long_by_type": {
+      "overall": 26.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "matteo_vercher": {
@@ -38117,6 +40295,15 @@
       "sprint": 8,
       "climber": 1178,
       "hills": 152
+    },
+    "form_long_by_type": {
+      "overall": 74.9,
+      "sprint": 0.0,
+      "mountain": 100.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "mattia_cattaneo": {
@@ -38274,7 +40461,16 @@
         "race_base": "uae-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 14.0,
+      "sprint": 4.9,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "mattias_skjelmose": {
     "name": "Mattias Skjelmose",
@@ -38466,6 +40662,15 @@
       "sprint": 0,
       "climber": 1084,
       "hills": 682
+    },
+    "form_long_by_type": {
+      "overall": 9.4,
+      "sprint": 0.4,
+      "mountain": 1.0,
+      "hilly": 3.1,
+      "tt": 2.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "maxim_van_gils": {
@@ -38490,6 +40695,15 @@
       "sprint": 72,
       "climber": 1344,
       "hills": 1255
+    },
+    "form_long_by_type": {
+      "overall": 68.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "michael_matthews": {
@@ -38514,6 +40728,15 @@
       "sprint": 3153,
       "climber": 2374,
       "hills": 7788
+    },
+    "form_long_by_type": {
+      "overall": 12.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "michal_kwiatkowski": {
@@ -38661,7 +40884,16 @@
         "race_base": "tour-down-under/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 56.4,
+      "sprint": 14.1,
+      "mountain": 0.0,
+      "hilly": 100.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "nicola_conci": {
     "name": "Nicola Conci",
@@ -38836,6 +41068,15 @@
       "sprint": 54,
       "climber": 602,
       "hills": 547
+    },
+    "form_long_by_type": {
+      "overall": 15.5,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "nicolas_breuillard": {
@@ -38971,6 +41212,15 @@
       "sprint": 4,
       "climber": 150,
       "hills": 171
+    },
+    "form_long_by_type": {
+      "overall": 27.1,
+      "sprint": 2.9,
+      "mountain": 0.0,
+      "hilly": 17.3,
+      "tt": 4.5,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "nicolas_prodhomme": {
@@ -39146,6 +41396,15 @@
       "sprint": 15,
       "climber": 774,
       "hills": 321
+    },
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 11.1,
+      "mountain": 100.0,
+      "hilly": 74.3,
+      "tt": 5.3,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "oscar_onley": {
@@ -39321,6 +41580,15 @@
       "sprint": 8,
       "climber": 1770,
       "hills": 1166
+    },
+    "form_long_by_type": {
+      "overall": 90.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "pablo_castrillo": {
@@ -39362,6 +41630,15 @@
       "sprint": 10,
       "climber": 83,
       "hills": 70
+    },
+    "form_long_by_type": {
+      "overall": 0.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "pascal_eenkhoorn": {
@@ -39537,6 +41814,15 @@
       "sprint": 282,
       "climber": 200,
       "hills": 566
+    },
+    "form_long_by_type": {
+      "overall": 28.9,
+      "sprint": 8.2,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "paul_seixas": {
@@ -39672,6 +41958,15 @@
       "sprint": 2,
       "climber": 945,
       "hills": 188
+    },
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 3.7,
+      "mountain": 100.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "pavel_sivakov": {
@@ -39847,6 +42142,15 @@
       "sprint": 78,
       "climber": 2134,
       "hills": 780
+    },
+    "form_long_by_type": {
+      "overall": 19.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "pello_bilbao": {
@@ -40012,6 +42316,15 @@
       "sprint": 396,
       "climber": 5320,
       "hills": 2402
+    },
+    "form_long_by_type": {
+      "overall": 58.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "pepijn_reinderink": {
@@ -40137,6 +42450,15 @@
       "sprint": 16,
       "climber": 97,
       "hills": 100
+    },
+    "form_long_by_type": {
+      "overall": 32.9,
+      "sprint": 22.4,
+      "mountain": 0.0,
+      "hilly": 14.2,
+      "tt": 19.4,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "robbe_dhondt": {
@@ -40272,6 +42594,15 @@
       "sprint": 10,
       "climber": 25,
       "hills": 49
+    },
+    "form_long_by_type": {
+      "overall": 7.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "rudy_molard": {
@@ -40447,6 +42778,15 @@
       "sprint": 388,
       "climber": 1840,
       "hills": 1178
+    },
+    "form_long_by_type": {
+      "overall": 28.2,
+      "sprint": 0.0,
+      "mountain": 2.2,
+      "hilly": 1.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "samuel_watson": {
@@ -40612,6 +42952,15 @@
       "sprint": 299,
       "climber": 83,
       "hills": 588
+    },
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 28.3,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "sergi_darder": {
@@ -40787,6 +43136,15 @@
       "sprint": 125,
       "climber": 28,
       "hills": 206
+    },
+    "form_long_by_type": {
+      "overall": 45.3,
+      "sprint": 19.4,
+      "mountain": 0.0,
+      "hilly": 21.9,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "sergio_samitier": {
@@ -40962,6 +43320,15 @@
       "sprint": 0,
       "climber": 164,
       "hills": 104
+    },
+    "form_long_by_type": {
+      "overall": 8.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 4.4,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "stefan_bissegger": {
@@ -41137,6 +43504,15 @@
       "sprint": 228,
       "climber": 18,
       "hills": 407
+    },
+    "form_long_by_type": {
+      "overall": 23.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 3.3,
+      "tt": 8.2,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "steff_cras": {
@@ -41312,6 +43688,15 @@
       "sprint": 8,
       "climber": 982,
       "hills": 466
+    },
+    "form_long_by_type": {
+      "overall": 40.3,
+      "sprint": 1.2,
+      "mountain": 56.8,
+      "hilly": 27.1,
+      "tt": 16.9,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "tim_wellens": {
@@ -41389,7 +43774,16 @@
         "race_base": "vuelta-ciclista-a-la-region-de-murcia/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 65.3,
+      "sprint": 1.8,
+      "mountain": 0.0,
+      "hilly": 22.7,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "tobias_halland_johannessen": {
     "name": "Tobias Halland Johannessen",
@@ -41564,6 +43958,15 @@
       "sprint": 28,
       "climber": 1881,
       "hills": 1130
+    },
+    "form_long_by_type": {
+      "overall": 58.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "toms_skujins": {
@@ -41679,6 +44082,15 @@
       "sprint": 646,
       "climber": 1532,
       "hills": 1346
+    },
+    "form_long_by_type": {
+      "overall": 30.0,
+      "sprint": 5.8,
+      "mountain": 0.0,
+      "hilly": 12.2,
+      "tt": 18.3,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "torstein_træen": {
@@ -41844,6 +44256,15 @@
       "sprint": 49,
       "climber": 665,
       "hills": 192
+    },
+    "form_long_by_type": {
+      "overall": 61.3,
+      "sprint": 1.6,
+      "mountain": 6.2,
+      "hilly": 1.8,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "valentin_paret-peintre": {
@@ -42019,6 +44440,15 @@
       "sprint": 16,
       "climber": 983,
       "hills": 310
+    },
+    "form_long_by_type": {
+      "overall": 58.4,
+      "sprint": 1.3,
+      "mountain": 40.1,
+      "hilly": 21.8,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "william_junior_lecerf": {
@@ -42131,6 +44561,15 @@
       "sprint": 2603,
       "climber": 2172,
       "hills": 5179
+    },
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 11.6,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "yannis_voisard": {
@@ -42306,6 +44745,15 @@
       "sprint": 19,
       "climber": 532,
       "hills": 325
+    },
+    "form_long_by_type": {
+      "overall": 51.1,
+      "sprint": 5.1,
+      "mountain": 100.0,
+      "hilly": 5.6,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     }
   },
   "alastair_mackellar": {
@@ -42481,7 +44929,16 @@
         "race_base": "settimana-internazionale-coppi-e-bartali/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 14.5,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 6.1,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "alessandro_covi": {
     "name": "Alessandro Covi",
@@ -42636,7 +45093,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 54.3,
+      "sprint": 17.6,
+      "mountain": 35.2,
+      "hilly": 28.9,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "anders_halland_johannessen": {
     "name": "Anders Halland Johannessen",
@@ -42811,7 +45277,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 79.8,
+      "sprint": 30.2,
+      "mountain": 100.0,
+      "hilly": 9.3,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "anton_kuzmin": {
     "name": "Anton Kuzmin",
@@ -42986,7 +45461,16 @@
         "race_base": "alula-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 2.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "ben_tulett": {
     "name": "Ben Tulett",
@@ -43151,7 +45635,16 @@
         "race_base": "uae-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 89.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 54.9,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "brady_gilmore": {
     "name": "Brady Gilmore",
@@ -43326,7 +45819,16 @@
         "race_base": "tour-down-under/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 74.1,
+      "mountain": 52.7,
+      "hilly": 14.4,
+      "tt": 14.8,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "carlos_verona": {
     "name": "Carlos Verona",
@@ -43501,7 +46003,16 @@
         "race_base": "volta-ao-algarve/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 52.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "clement_braz_afonso": {
     "name": "Clément Braz Afonso",
@@ -43676,7 +46187,16 @@
         "race_base": "ruta-del-sol/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 30.3,
+      "sprint": 0.8,
+      "mountain": 0.0,
+      "hilly": 3.9,
+      "tt": 1.6,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "cristian_rodriguez_martin": {
     "name": "Cristian Rodriguez Martin",
@@ -43851,7 +46371,16 @@
         "race_base": "volta-a-catalunya/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 35.9,
+      "sprint": 2.5,
+      "mountain": 3.7,
+      "hilly": 0.0,
+      "tt": 77.4,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "diego_pescador": {
     "name": "Diego Pescador",
@@ -43986,7 +46515,16 @@
         "race_base": "tour-of-oman/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 20.2,
+      "sprint": 9.2,
+      "mountain": 0.0,
+      "hilly": 3.1,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "finn_fisher-black": {
     "name": "Finn Fisher-Black",
@@ -44161,7 +46699,16 @@
         "race_base": "uae-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 56.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "florian_samuel_kajamini": {
     "name": "Florian Samuel Kajamini",
@@ -44336,7 +46883,16 @@
         "race_base": "tour-down-under/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 8.0,
+      "sprint": 5.7,
+      "mountain": 0.0,
+      "hilly": 5.2,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "gianni_vermeersch": {
     "name": "Gianni Vermeersch",
@@ -44431,7 +46987,16 @@
         "race_base": "volta-ao-algarve/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 14.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "haimar_etxeberria": {
     "name": "Haimar Etxeberria",
@@ -44596,7 +47161,16 @@
         "race_base": "tour-down-under/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 16.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "hamish_mckenzie": {
     "name": "Hamish McKenzie",
@@ -44761,7 +47335,16 @@
         "race_base": "tour-down-under/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 17.9,
+      "sprint": 5.7,
+      "mountain": 0.0,
+      "hilly": 2.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "hannes_wilksch": {
     "name": "Hannes Wilksch",
@@ -44936,7 +47519,16 @@
         "race_base": "uae-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 4.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "henri_uhlig": {
     "name": "Henri Uhlig",
@@ -45081,7 +47673,16 @@
         "race_base": "etoile-de-besseges/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 29.8,
+      "sprint": 13.4,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jacob_eriksson": {
     "name": "Jacob Eriksson",
@@ -45256,7 +47857,16 @@
         "race_base": "itzulia-basque-country/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 4.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jasha_sutterlin": {
     "name": "Jasha Sütterlin",
@@ -45381,7 +47991,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 18.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jefferson_alveiro_cepeda": {
     "name": "Jefferson Alveiro Cepeda",
@@ -45573,7 +48192,16 @@
         "race_base": "tour-cycliste-international-la-provence/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 43.2,
+      "sprint": 0.5,
+      "mountain": 0.0,
+      "hilly": 1.7,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "kevin_geniets": {
     "name": "Kevin Geniets",
@@ -45748,7 +48376,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 10.2,
+      "sprint": 2.3,
+      "mountain": 3.3,
+      "hilly": 2.8,
+      "tt": 3.3,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "lars_craps": {
     "name": "Lars Craps",
@@ -45833,7 +48470,16 @@
         "race_base": "boucles-de-la-mayenne/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 20.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "lennard_kamna": {
     "name": "Lennard Kämna",
@@ -46008,7 +48654,16 @@
         "race_base": "volta-ao-algarve/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 30.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "lennert_belmans": {
     "name": "Lennert Belmans",
@@ -46183,7 +48838,16 @@
         "race_base": "itzulia-basque-country/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 5.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "luke_durbridge": {
     "name": "Luke Durbridge",
@@ -46358,7 +49022,16 @@
         "race_base": "uae-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 5.6,
+      "sprint": 0.0,
+      "mountain": 2.5,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "marco_frigo": {
     "name": "Marco Frigo",
@@ -46533,7 +49206,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 90.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.5,
+      "tt": 3.6,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "martin_urianstad": {
     "name": "Martin Urianstad",
@@ -46708,7 +49390,16 @@
         "race_base": "tour-down-under/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 6.8,
+      "sprint": 1.8,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "matthew_fox": {
     "name": "Matthew Fox",
@@ -46900,7 +49591,16 @@
         "race_base": "tour-down-under/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 19.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 8.6,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "maxime_decomble": {
     "name": "Maxime Decomble",
@@ -47075,7 +49775,16 @@
         "race_base": "itzulia-basque-country/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 36.7,
+      "sprint": 20.7,
+      "mountain": 21.9,
+      "hilly": 2.6,
+      "tt": 19.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "michael_gogl": {
     "name": "Michael Gogl",
@@ -47240,7 +49949,16 @@
         "race_base": "tour-down-under/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 5.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "michael_leonard": {
     "name": "Michael Leonard",
@@ -47345,7 +50063,16 @@
         "race_base": "ras-tailteann/2015",
         "stage_type": "sprint"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 0.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "michel_hessmann": {
     "name": "Michel Hessmann",
@@ -47520,7 +50247,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 19.1,
+      "sprint": 3.7,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "nadav_raisberg": {
     "name": "Nadav Raisberg",
@@ -47695,7 +50431,16 @@
         "race_base": "gran-camino/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 14.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "nikias_arndt": {
     "name": "Nikias Arndt",
@@ -47870,7 +50615,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 6.6,
+      "sprint": 4.3,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "pau_marti": {
     "name": "Pau Marti",
@@ -47992,7 +50746,16 @@
         "race_base": "tour-down-under/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 36.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "phil_bauhaus": {
     "name": "Phil Bauhaus",
@@ -48167,7 +50930,16 @@
         "race_base": "alula-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 58.0,
+      "sprint": 29.8,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "quentin_pacher": {
     "name": "Quentin Pacher",
@@ -48342,7 +51114,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 10.5,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "quinn_simmons": {
     "name": "Quinn Simmons",
@@ -48437,7 +51218,16 @@
         "race_base": "itzulia-basque-country/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 82.9,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "ramses_debruyne": {
     "name": "Ramses Debruyne",
@@ -48612,7 +51402,16 @@
         "race_base": "volta-a-catalunya/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 29.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "raul_garcia_pierna": {
     "name": "Raul Garcia Pierna",
@@ -48787,7 +51586,16 @@
         "race_base": "vuelta-a-la-comunidad-valenciana/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 73.4,
+      "sprint": 3.6,
+      "mountain": 0.0,
+      "hilly": 3.7,
+      "tt": 100.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "robin_donze": {
     "name": "Robin Donzé",
@@ -48962,7 +51770,16 @@
         "race_base": "tour-of-oman/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 10.3,
+      "sprint": 8.0,
+      "mountain": 7.3,
+      "hilly": 7.4,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "roel_van_sintmaartensdijk": {
     "name": "Roel van Sintmaartensdijk",
@@ -49137,7 +51954,16 @@
         "race_base": "uae-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 3.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "roland_thalmann": {
     "name": "Roland Thalmann",
@@ -49312,7 +52138,16 @@
         "race_base": "volta-ao-algarve/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 7.0,
+      "sprint": 2.7,
+      "mountain": 5.5,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "rotem_tene": {
     "name": "Rotem Tene",
@@ -49487,7 +52322,16 @@
         "race_base": "tour-de-romandie/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 59.7,
+      "sprint": 24.3,
+      "mountain": 0.0,
+      "hilly": 42.0,
+      "tt": 10.7,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "sam_maisonobe": {
     "name": "Sam Maisonobe",
@@ -49662,7 +52506,16 @@
         "race_base": "tour-of-oman/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 24.8,
+      "sprint": 11.3,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "senna_remijn": {
     "name": "Senna Remijn",
@@ -49817,7 +52670,16 @@
         "race_base": "volta-a-catalunya/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 46.2,
+      "sprint": 30.9,
+      "mountain": 0.0,
+      "hilly": 9.5,
+      "tt": 1.1,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "simone_velasco": {
     "name": "Simone Velasco",
@@ -49992,7 +52854,16 @@
         "race_base": "tour-down-under/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 34.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "thibault_guernalec": {
     "name": "Thibault Guernalec",
@@ -50077,7 +52948,16 @@
         "race_base": "region-pays-de-la-loire/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 36.8,
+      "sprint": 7.8,
+      "mountain": 0.0,
+      "hilly": 6.1,
+      "tt": 69.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "valentin_ferron": {
     "name": "Valentin Ferron",
@@ -50212,7 +53092,16 @@
         "race_base": "region-pays-de-la-loire/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 4.8,
+      "sprint": 2.1,
+      "mountain": 0.0,
+      "hilly": 3.4,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "vito_braet": {
     "name": "Vito Braet",
@@ -50387,7 +53276,16 @@
         "race_base": "tour-of-oman/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 22.2,
+      "sprint": 1.4,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "vlad_van_mechelen": {
     "name": "Vlad Van Mechelen",
@@ -50492,7 +53390,16 @@
         "race_base": "tour-de-romandie/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 23.6,
+      "sprint": 3.6,
+      "mountain": 0.0,
+      "hilly": 6.7,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "alex_aranburu": {
     "name": "Alex Aranburu",
@@ -50618,7 +53525,16 @@
         "race_base": "ruta-del-sol/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 39.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "alex_kirsch": {
     "name": "Alex Kirsch",
@@ -50794,7 +53710,16 @@
         "race_base": "ruta-del-sol/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 7.5,
+      "sprint": 0.6,
+      "mountain": 0.0,
+      "hilly": 3.9,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "alex_molenaar": {
     "name": "Alex Molenaar",
@@ -50970,7 +53895,16 @@
         "race_base": "volta-ao-algarve/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 33.9,
+      "sprint": 27.8,
+      "mountain": 4.6,
+      "hilly": 12.8,
+      "tt": 4.6,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "antonio_tiberi": {
     "name": "Antonio Tiberi",
@@ -51146,7 +54080,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 54.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "bert_van_lerberghe": {
     "name": "Bert van Lerberghe",
@@ -51322,7 +54265,16 @@
         "race_base": "alula-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 5.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "biniam_girmay": {
     "name": "Biniam Girmay",
@@ -51468,7 +54420,16 @@
         "race_base": "vuelta-a-la-comunidad-valenciana/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 72.2,
+      "sprint": 48.4,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "brandon_mcnulty": {
     "name": "Brandon McNulty",
@@ -51644,7 +54605,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 28.8,
+      "mountain": 0.0,
+      "hilly": 99.0,
+      "tt": 100.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "david_gaudu": {
     "name": "David Gaudu",
@@ -51820,7 +54790,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 94.5,
+      "sprint": 0.8,
+      "mountain": 20.8,
+      "hilly": 32.2,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "dylan_van_baarle": {
     "name": "Dylan Van Baarle",
@@ -51896,7 +54875,16 @@
         "race_base": "volta-ao-algarve/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 41.2,
+      "sprint": 4.6,
+      "mountain": 0.0,
+      "hilly": 21.2,
+      "tt": 11.2,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "emiel_verstrynge": {
     "name": "Emiel Verstrynge",
@@ -52052,7 +55040,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 8.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "florian_lipowitz": {
     "name": "Florian Lipowitz",
@@ -52228,7 +55225,16 @@
         "race_base": "volta-a-catalunya/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 62.5,
+      "sprint": 1.5,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "florian_vermeersch": {
     "name": "Florian Vermeersch",
@@ -52374,7 +55380,16 @@
         "race_base": "vuelta-a-la-comunidad-valenciana/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 38.4,
+      "sprint": 3.6,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "fred_wright": {
     "name": "Fred Wright",
@@ -52488,7 +55503,16 @@
         "race_base": "alula-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 34.9,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "ilan_van_wilder": {
     "name": "Ilan van Wilder",
@@ -52664,7 +55688,16 @@
         "race_base": "uae-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 31.6,
+      "sprint": 6.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jan_tratnik": {
     "name": "Jan Tratnik",
@@ -52840,7 +55873,16 @@
         "race_base": "volta-ao-algarve/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 19.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jasper_philipsen": {
     "name": "Jasper Philipsen",
@@ -52986,7 +56028,16 @@
         "race_base": "volta-ao-algarve/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 34.2,
+      "mountain": 0.0,
+      "hilly": 2.1,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jenthe_biermans": {
     "name": "Jenthe Biermans",
@@ -53052,7 +56103,16 @@
         "race_base": "etoile-de-besseges/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 51.9,
+      "sprint": 3.2,
+      "mountain": 0.0,
+      "hilly": 0.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jonas_rickaert": {
     "name": "Jonas Rickaert",
@@ -53228,7 +56288,16 @@
         "race_base": "uae-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 9.2,
+      "sprint": 1.1,
+      "mountain": 1.7,
+      "hilly": 2.2,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "jordi_meeus": {
     "name": "Jordi Meeus",
@@ -53404,7 +56473,16 @@
         "race_base": "volta-ao-algarve/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 21.6,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "kasper_asgreen": {
     "name": "Kasper Asgreen",
@@ -53580,7 +56658,16 @@
         "race_base": "volta-ao-algarve/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 25.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "lenny_martinez": {
     "name": "Lenny Martinez",
@@ -53756,7 +56843,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 68.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "louis_vervaeke": {
     "name": "Louis Vervaeke",
@@ -53932,7 +57028,16 @@
         "race_base": "giro-di-sardegna/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 36.1,
+      "sprint": 0.0,
+      "mountain": 1.1,
+      "hilly": 19.6,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "magnus_cort": {
     "name": "Magnus Cort",
@@ -54126,7 +57231,16 @@
         "race_base": "vuelta-a-la-comunidad-valenciana/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 73.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "mathieu_van_der_poel": {
     "name": "Mathieu van der Poel",
@@ -54222,7 +57336,16 @@
         "race_base": "tirreno-adriatico/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "mauro_schmid": {
     "name": "Mauro Schmid",
@@ -54398,7 +57521,16 @@
         "race_base": "tour-down-under/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 55.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "mike_teunissen": {
     "name": "Mike Teunissen",
@@ -54554,7 +57686,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 24.5,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "milan_fretin": {
     "name": "Milan Fretin",
@@ -54720,7 +57861,16 @@
         "race_base": "alula-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 58.6,
+      "sprint": 6.5,
+      "mountain": 0.0,
+      "hilly": 21.2,
+      "tt": 4.5,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "nico_denz": {
     "name": "Nico Denz",
@@ -54896,7 +58046,16 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 67.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "nils_politt": {
     "name": "Nils Politt",
@@ -55072,7 +58231,16 @@
         "race_base": "uae-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 16.8,
+      "sprint": 5.9,
+      "mountain": 0.0,
+      "hilly": 1.9,
+      "tt": 44.5,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "olav_kooij": {
     "name": "Olav Kooij",
@@ -55138,7 +58306,16 @@
         "race_base": "boucles-de-la-mayenne/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 39.3,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "pavel_bittner": {
     "name": "Pavel Bittner",
@@ -55284,7 +58461,16 @@
         "race_base": "volta-ao-algarve/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 18.5,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "piet_allegaert": {
     "name": "Piet Allegaert",
@@ -55390,7 +58576,16 @@
         "race_base": "ruta-del-sol/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 6.3,
+      "sprint": 3.4,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "remco_evenepoel": {
     "name": "Remco Evenepoel",
@@ -55566,7 +58761,16 @@
         "race_base": "vuelta-a-la-comunidad-valenciana/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "rick_pluimers": {
     "name": "Rick Pluimers",
@@ -55692,7 +58896,16 @@
         "race_base": "tour-of-oman/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 40.3,
+      "sprint": 7.4,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "roger_adria": {
     "name": "Roger Adria",
@@ -55868,7 +59081,16 @@
         "race_base": "tour-of-oman/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 49.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "sergio_higuita": {
     "name": "Sergio Higuita",
@@ -56044,7 +59266,16 @@
         "race_base": "uae-tour/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 20.6,
+      "sprint": 0.0,
+      "mountain": 3.4,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "simon_carr": {
     "name": "Simon Carr",
@@ -56100,7 +59331,16 @@
         "race_base": "tour-cycliste-international-la-provence/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 5.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "stefan_kung": {
     "name": "Stefan Küng",
@@ -56176,7 +59416,16 @@
         "race_base": "volta-ao-algarve/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 30.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "søren_kragh_andersen": {
     "name": "Søren Kragh Andersen",
@@ -56322,7 +59571,16 @@
         "race_base": "paris-nice/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 55.7,
+      "sprint": 6.0,
+      "mountain": 0.0,
+      "hilly": 31.6,
+      "tt": 20.9,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "tadej_pogacar": {
     "name": "Tadej Pogacar",
@@ -56408,7 +59666,16 @@
         "race_base": "tour-de-romandie/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "thomas_pidcock": {
     "name": "Thomas Pidcock",
@@ -56602,7 +59869,16 @@
         "race_base": "tour-de-france/2025",
         "stage_type": "hilly"
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 9.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "tim_merlier": {
     "name": "Tim Merlier",
@@ -56678,7 +59954,16 @@
         "race_base": "tour-de-hongrie/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 100.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   },
   "warren_barguil": {
     "name": "Warren Barguil",
@@ -56854,6 +60139,15 @@
         "race_base": "giro-d-italia/2026",
         "stage_type": null
       }
-    ]
+    ],
+    "form_long_by_type": {
+      "overall": 8.9,
+      "sprint": 0.5,
+      "mountain": 1.1,
+      "hilly": 2.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    }
   }
 }
