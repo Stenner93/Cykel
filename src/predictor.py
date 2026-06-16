@@ -435,6 +435,30 @@ def predict_all(
         rider_blended[rider["id"]] = blended
         field_vals[rider["id"]] = blended.get(disc_key, 50.0)
 
+    # ── TTT: replace individual rating with TEAM strength ────────────────
+    # In a team time trial, the whole team finishes together and every rider
+    # receives the SAME stage-position points in Holdet's scoring — an
+    # individual's own ITT rating is the wrong signal. What matters is the
+    # team's collective TTT strength. We use the average of each team's
+    # 6 strongest riders (a TTT squad typically drops its weakest 1-2
+    # riders, but the recorded time still reflects the front group's pace),
+    # then give every rider on that team this same team-level value.
+    if stage_type == "ttt":
+        from collections import defaultdict
+        team_to_rids: dict[str, list[str]] = defaultdict(list)
+        for rider in riders:
+            team_to_rids[rider.get("team", "")].append(rider["id"])
+
+        for team, rids in team_to_rids.items():
+            vals = sorted((field_vals[rid] for rid in rids if rid in field_vals), reverse=True)
+            if not vals:
+                continue
+            top6 = vals[:6] if len(vals) >= 6 else vals
+            team_avg = sum(top6) / len(top6)
+            for rid in rids:
+                if rid in field_vals:
+                    field_vals[rid] = team_avg
+
     if field_vals:
         lo, hi = min(field_vals.values()), max(field_vals.values())
         if hi > lo:

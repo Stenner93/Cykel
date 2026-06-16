@@ -265,9 +265,10 @@ def build_riders(
         if last not in name_lut:
             name_lut[last] = r["id"]
 
-    # Build Holdet name → person_id + price mapping
+    # Build Holdet name → person_id + price + team mapping
     holdet_prices: dict[str, tuple[int, float]] = {}  # rider_id → (person_id, price_M)
     holdet_pid_to_rid: dict[int, str] = {}
+    holdet_team: dict[str, str] = {}  # rider_id → Holdet teamName (authoritative)
 
     for pid_str, p in player_by_id.items():
         person_id = p.get("personId")
@@ -292,6 +293,7 @@ def build_riders(
         price_M = round(p.get("price", 0) / 1_000_000, 2)
         holdet_prices[rid] = (int(person_id), price_M)
         holdet_pid_to_rid[int(person_id)] = rid
+        holdet_team[rid] = person.get("teamName", "")
 
     # Merge: start from riders.json, overlay Holdet price + person_id.
     # Only keep riders actually confirmed in Holdet's TdF game — riders.json
@@ -317,8 +319,13 @@ def build_riders(
 
         full_name  = base["full_name"]
         short_name = base.get("short_name", full_name.split()[-1])
-        team       = base.get("team", "")
-        team_full  = base.get("team_full", "")
+        # Always recompute team abbreviation from Holdet's authoritative
+        # teamName — riders.json's own "team" field uses an inconsistent
+        # abbreviation scheme from earlier races (e.g. "TV|L" vs "VLB" for
+        # the same Visma squad), which would silently split teammates into
+        # different "teams" for TTT clustering and team-bonus calculations.
+        team_full  = holdet_team.get(rid) or base.get("team_full", "")
+        team       = team_abbrev(team_full) if team_full else base.get("team", "")
 
         riders.append({
             "id":               rid,
