@@ -103,7 +103,7 @@ CARTRIDGE_RAW_CACHE: dict[str, Path] = {
 KNOWN_GAME_IDS: dict[str, int] = {
     "giro-d-italia-2026":           612,
     "criterium-du-dauphine-2026":   622,
-    # "tour-de-france-2026":        ???  — populate when live
+    "tour-de-france-2026":          618,
 }
 
 # Holdet ruleId → sprint/KOM/team-bonus category

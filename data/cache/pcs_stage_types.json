@@ -661,5 +661,135 @@
       "stage_type": "sprint",
       "name": "Stage 8 | Drogheda - Skerries"
     }
+  },
+  "tour-de-france/2026": {
+    "1": "tt",
+    "2": "sprint",
+    "3": "mountain",
+    "4": "mountain",
+    "5": "hilly",
+    "6": "mountain",
+    "7": "sprint",
+    "8": "sprint",
+    "9": "hilly",
+    "10": "mountain",
+    "11": "sprint",
+    "12": "sprint",
+    "13": "hilly",
+    "14": "mountain",
+    "15": "mountain",
+    "16": "tt",
+    "17": "hilly",
+    "18": "mountain",
+    "19": "mountain",
+    "20": "mountain",
+    "21": "sprint"
+  },
+  "tour-de-france/2026_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 (TTT) | Barcelona - Barcelona"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Tarragona - Barcelona"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Granollers - Les Angles"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Carcassonne - Foix"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Lannemezan - Pau"
+    },
+    "6": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 6 | Pau - Gavarnie-Gèdre"
+    },
+    "7": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 7 | Hagetmau - Bordeaux"
+    },
+    "8": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 8 | Périgueux - Bergerac"
+    },
+    "9": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 9 | Malemort - Ussel"
+    },
+    "10": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 10 | Aurillac - Le Lioran"
+    },
+    "11": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 11 | Vichy - Nevers"
+    },
+    "12": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 12 | Circuit de Nevers Magny-Cours - Chalon-sur-Saône"
+    },
+    "13": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 13 | Dole - Belfort"
+    },
+    "14": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 14 | Mulhouse - Le Markstein"
+    },
+    "15": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 15 | Champagnole - Plateau de Solaison"
+    },
+    "16": {
+      "p_class": "2",
+      "stage_type": "tt",
+      "name": "Stage 16 (ITT) | Évian Les-Bains - Thonon Les-Bains"
+    },
+    "17": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 17 | Chambéry - Voiron"
+    },
+    "18": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 18 | Voiron - Orcières Merlette"
+    },
+    "19": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 19 | Gap - Alpe d'Huez"
+    },
+    "20": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 20 | Le Bourg d'Oisans - Alpe d'Huez"
+    },
+    "21": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 21 | Thoiry - Paris"
+    }
   }
 }

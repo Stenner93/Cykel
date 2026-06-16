@@ -296,7 +296,7 @@ function renderTopPicks(picks) {
   if (thDisc) thDisc.textContent = discLabel;
 
   const tbody = document.getElementById('picksBody');
-  tbody.innerHTML = picks.slice(0, 25).map((p, i) => {
+  tbody.innerHTML = picks.map((p, i) => {
     const coVal = p.disc_raw != null
       ? `<span class="co-val">${p.disc_raw.toFixed(0)}</span>`
       : '<span class="co-val co-missing">–</span>';

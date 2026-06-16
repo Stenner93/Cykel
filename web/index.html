@@ -5,91 +5,356 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TdF Manager 2026</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* ── Tab bar ── */
+.tab-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+.tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  padding: 10px 20px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.tab-btn:hover  { color: var(--text); }
+.tab-btn.active { color: var(--yellow); border-bottom-color: var(--yellow); }
+
+/* ── Scores controls (Pointmatrix) ── */
+.scores-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.ctrl-input {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: var(--text);
+  font-size: 0.82rem;
+  min-width: 200px;
+}
+.ctrl-input:focus { outline: none; border-color: var(--yellow); }
+.ctrl-select {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: var(--text);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+.ctrl-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+.source-note { font-size: 0.72rem; color: var(--muted); margin-left: auto; font-style: italic; }
+.matrix-wrap {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: calc(100vh - 280px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.matrix-table { border-collapse: collapse; font-size: 0.78rem; min-width: 600px; }
+.matrix-table th {
+  position: sticky; top: 0; background: var(--surface); z-index: 5;
+  padding: 6px 10px; text-align: center; font-weight: 600;
+  font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px;
+  color: var(--muted); border-bottom: 2px solid var(--border);
+  white-space: nowrap; cursor: pointer; user-select: none;
+}
+.matrix-table th:hover { color: var(--text); }
+.matrix-table th.sort-asc::after  { content: " ▲"; font-size: 0.6em; }
+.matrix-table th.sort-desc::after { content: " ▼"; font-size: 0.6em; }
+.matrix-table th.col-name, .matrix-table td.col-name {
+  position: sticky; left: 0; background: var(--surface); z-index: 6;
+  text-align: left; min-width: 150px; max-width: 180px;
+}
+.matrix-table thead th.col-name { z-index: 12; }
+.matrix-table th.col-team, .matrix-table td.col-team {
+  position: sticky; left: 150px; background: var(--surface); z-index: 5;
+  text-align: left; min-width: 60px; max-width: 80px;
+}
+.matrix-table thead th.col-team { z-index: 11; }
+.matrix-table td {
+  padding: 5px 8px; text-align: center;
+  border-bottom: 1px solid rgba(46,52,80,0.5); white-space: nowrap;
+}
+.matrix-table td.col-name { text-align: left; font-weight: 500; overflow: hidden; text-overflow: ellipsis; }
+.matrix-table td.col-team { color: var(--muted); font-size: 0.72rem; overflow: hidden; text-overflow: ellipsis; }
+.matrix-table tr:hover td { filter: brightness(1.25); }
+.matrix-table tr:hover td.col-name, .matrix-table tr:hover td.col-team { background: var(--card) !important; filter: none; }
+.cell-pts { font-weight: 600; cursor: pointer; border-radius: 3px; font-size: 0.72rem; }
+.cell-pts:hover { filter: brightness(1.4) !important; }
+.cell-zero { color: transparent; cursor: default; }
+.cell-neg  { color: #ff6b6b !important; }
+.col-total {
+  font-weight: 700; font-size: 0.8rem; border-left: 2px solid var(--border);
+  position: sticky; right: 0; background: var(--surface); z-index: 5; min-width: 70px;
+}
+.matrix-table thead th.col-total { z-index: 11; }
+.stage-header { cursor: pointer; }
+.stage-dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; margin-right: 3px; vertical-align: middle; }
+.dot-finished { background: var(--green); }
+.dot-upcoming { background: var(--muted); }
+.dot-live     { background: var(--yellow); animation: blink 1s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* ── Predictions ── */
+.stage-selector { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.stage-pill {
+  background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+  padding: 4px 12px; font-size: 0.75rem; font-weight: 600;
+  cursor: pointer; color: var(--muted); transition: all 0.15s; white-space: nowrap;
+}
+.stage-pill:hover  { color: var(--text); border-color: var(--muted); }
+.stage-pill.active { background: var(--yellow); color: #000; border-color: var(--yellow); }
+.pred-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.pred-table th {
+  text-align: left; padding: 7px 10px; background: var(--surface);
+  color: var(--muted); font-weight: 600; font-size: 0.7rem;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--border); white-space: nowrap;
+}
+.pred-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.pred-table tr:hover td { background: rgba(255,255,255,0.03); }
+.pred-table tr.in-opt { background: rgba(30,136,229,0.06); }
+.pred-table tr.in-opt td.col-name-p { color: var(--blue); }
+.pred-table tr.is-cap td.col-name-p { color: var(--yellow) !important; }
+.pred-table tr.is-cap td.col-name-p::after { content: " ★"; font-size: 0.8em; }
+.pts-exp { font-weight: 700; color: var(--green); }
+.pts-act { font-weight: 700; }
+.pts-beat { color: var(--green); }
+.pts-miss { color: var(--red); }
+.pts-ok   { color: var(--yellow); }
+.mini-signals { display: flex; gap: 2px; align-items: center; }
+.mini-seg { width: 12px; height: 5px; border-radius: 2px; background: var(--border); }
+.mini-seg.on { background: var(--green); }
+.rank-num { color: var(--muted); font-size: 0.72rem; }
+.rank-top { color: var(--yellow); font-weight: 700; }
+
+/* ── Rider context badges ── */
+.ctx-badge {
+  display: inline-block; font-size: 0.62rem; font-weight: 700;
+  padding: 1px 5px; border-radius: 6px; margin-left: 5px;
+  vertical-align: middle; cursor: default; text-transform: uppercase; letter-spacing: 0.3px;
+}
+.ctx-fresh     { background:rgba(46,204,113,0.2);  color:#2ecc71; border:1px solid rgba(46,204,113,0.4); }
+.ctx-fatigued  { background:rgba(231,76,60,0.2);   color:#e74c3c; border:1px solid rgba(231,76,60,0.4); }
+.ctx-defending { background:rgba(241,196,15,0.2);  color:#f1c40f; border:1px solid rgba(241,196,15,0.4); }
+.ctx-sick      { background:rgba(155,89,182,0.2);  color:#9b59b6; border:1px solid rgba(155,89,182,0.4); }
+.ctx-dns       { background:rgba(127,140,141,0.25);color:var(--muted); border:1px solid var(--border); text-decoration:line-through; }
+
+/* ── Odds & Kilder ── */
+.odds-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 16px; margin-top: 4px; }
+.odds-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+.odds-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+.odds-stage-badge { font-size: 0.72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
+.odds-stage-name { font-size: 0.8rem; font-weight: 600; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; }
+.odds-source-badge { font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; }
+.source-spilxperten { background:rgba(46,204,113,0.15); color:#2ecc71; border:1px solid rgba(46,204,113,0.3); }
+.source-tv2         { background:rgba(231,76,60,0.15);  color:#e74c3c; border:1px solid rgba(231,76,60,0.3); }
+.source-idl         { background:rgba(52,152,219,0.15); color:#3498db; border:1px solid rgba(52,152,219,0.3); }
+.source-none        { background:rgba(127,140,141,0.15);color:var(--muted); border:1px solid var(--border); }
+.odds-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; border-bottom: 1px solid rgba(46,52,80,0.4); font-size: 0.78rem; }
+.odds-row:last-child { border-bottom: none; }
+.odds-rank  { font-size:0.68rem; color:var(--muted); width:18px; text-align:right; flex-shrink:0; }
+.odds-name  { flex:1; font-weight:500; }
+.odds-bar-wrap { width:80px; height:5px; background:var(--border); border-radius:3px; flex-shrink:0; }
+.odds-bar-fill { height:100%; background:var(--green); border-radius:3px; }
+.odds-prob  { font-size:0.72rem; font-weight:700; color:var(--green); width:38px; text-align:right; flex-shrink:0; }
+.odds-no-data { font-size:0.78rem; color:var(--muted); font-style:italic; padding:8px 0; }
+
+/* ── Info box ── */
+.info-box { text-align: center; padding: 60px 24px; color: var(--muted); }
+.info-box .icon { font-size: 2rem; margin-bottom: 12px; }
+.info-box code  { background: var(--surface); padding: 2px 6px; border-radius: 3px; font-size: 0.82rem; }
+
+/* ── Breakdown modal ── */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+  z-index: 200; align-items: center; justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 24px; min-width: 300px; max-width: 420px; max-height: 80vh;
+  overflow-y: auto; box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+}
+.modal-title    { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+.modal-subtitle { font-size: 0.75rem; color: var(--muted); margin-bottom: 16px; }
+.modal-rule {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 0.82rem;
+}
+.modal-rule:last-child { border-bottom: none; }
+.rule-desc { color: var(--text); }
+.rule-amt  { font-weight: 700; color: var(--green); text-align: right; }
+.rule-amt.negative { color: var(--red); }
+.modal-total-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0 0; margin-top: 6px; border-top: 2px solid var(--border);
+  font-weight: 700; font-size: 0.9rem;
+}
+.modal-close {
+  display: block; margin: 16px auto 0; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 6px; padding: 7px 20px;
+  color: var(--muted); cursor: pointer; font-size: 0.82rem;
+}
+.modal-close:hover { color: var(--text); border-color: var(--yellow); }
+</style>
 </head>
 <body>
+
 <header>
   <div class="header-inner">
     <div class="logo">🚴 TdF Manager 2026</div>
     <nav class="page-nav" style="display:flex;gap:4px">
-      <a href="index.html" class="active" style="color:#000;background:var(--yellow);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:700">TdF 2026</a>
+      <a href="index.html" style="color:#000;background:var(--yellow);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:700">TdF 2026</a>
       <a href="giro.html"     style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">Giro 2026</a>
       <a href="dauphine.html" style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">Dauphiné 2026</a>
     </nav>
-    <div class="stage-badge" id="stageBadge">Indlæser…</div>
+    <div class="stage-badge" id="stageBadge" style="display:none">Indlæser…</div>
   </div>
 </header>
 
 <main>
-  <!-- Stage info bar -->
-  <section class="stage-bar" id="stageBar" style="display:none">
-    <div class="stage-info">
-      <span class="stage-type-icon" id="stageTypeIcon"></span>
-      <span id="stageTypeName"></span>
+
+  <!-- Tab bar -->
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="hold">🏆 Holdanbefalinger</button>
+    <button class="tab-btn"        data-tab="scores">📊 Pointmatrix</button>
+    <button class="tab-btn"        data-tab="preds">🔮 Forudsigelser</button>
+    <button class="tab-btn"        data-tab="odds">📡 Odds & Kilder</button>
+  </div>
+
+  <!-- ── Tab 1: Holdanbefalinger (existing content) ────────────────────── -->
+  <div id="tab-hold">
+
+    <!-- Stage info bar -->
+    <section class="stage-bar" id="stageBar" style="display:none">
+      <div class="stage-info">
+        <span class="stage-type-icon" id="stageTypeIcon"></span>
+        <span id="stageTypeName"></span>
+      </div>
+      <div class="stage-meta" id="stageMeta"></div>
+      <div class="generated-at" id="generatedAt"></div>
+    </section>
+
+    <!-- Current team -->
+    <section class="current-team-section" id="currentTeamSection" style="display:none">
+      <h2>Dit nuværende hold</h2>
+      <div class="current-team-grid" id="currentTeamGrid"></div>
+      <div class="current-team-meta" id="currentTeamMeta"></div>
+    </section>
+
+    <!-- Team cards -->
+    <section class="teams-section">
+      <h2>3 Holdanbefalinger</h2>
+      <div class="teams-grid" id="teamsGrid">
+        <div class="loading-spinner">⟳ Indlæser anbefalinger…</div>
+      </div>
+    </section>
+
+    <!-- Best possible team -->
+    <section class="best-team-section" id="bestTeamSection" style="display:none">
+      <h2>Bedst muligt — ubegrænset hold</h2>
+      <p class="section-desc">Det teoretisk bedste hold med 50M fra scratch — ingen transferbegrænsninger.</p>
+      <div class="teams-grid" id="bestTeamGrid"></div>
+    </section>
+
+    <!-- VeloScore table -->
+    <section class="veloscore-section" id="veloscoreSection" style="display:none">
+      <h2>VeloScore Predictions</h2>
+      <div class="table-wrapper">
+        <table class="vs-table" id="vsTable">
+          <thead><tr><th>#</th><th>Rytter</th><th>Total</th><th>VeloScore</th><th>Stjerner</th></tr></thead>
+          <tbody id="vsBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Top picks table -->
+    <section class="picks-section" id="picksSection" style="display:none">
+      <h2>Alle Ryttere — Forventet Score</h2>
+      <div class="table-wrapper">
+        <table class="picks-table" id="picksTable">
+          <thead>
+            <tr>
+              <th>#</th><th>Rytter</th><th>Hold</th><th>Pris</th>
+              <th>Forv. point</th><th>Signal</th><th id="thDisc">Disciplin</th><th>Begrundelse</th>
+            </tr>
+          </thead>
+          <tbody id="picksBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </div><!-- end tab-hold -->
+
+  <!-- ── Tab 2: Pointmatrix ────────────────────────────────────────────── -->
+  <div id="tab-scores" style="display:none">
+    <div class="scores-controls">
+      <span class="ctrl-label">Søg:</span>
+      <input type="text" id="riderFilter" class="ctrl-input" placeholder="Rytternavn…" autocomplete="off">
+      <span class="ctrl-label">Sortér:</span>
+      <select id="sortSelect" class="ctrl-select">
+        <option value="total">Total point</option>
+        <option value="name">Navn (A–Z)</option>
+        <option value="price">Pris</option>
+      </select>
+      <span class="source-note" id="sourceNote"></span>
     </div>
-    <div class="stage-meta" id="stageMeta"></div>
-    <div class="generated-at" id="generatedAt"></div>
-  </section>
-
-  <!-- Current team -->
-  <section class="current-team-section" id="currentTeamSection" style="display:none">
-    <h2>Dit nuværende hold</h2>
-    <div class="current-team-grid" id="currentTeamGrid"></div>
-    <div class="current-team-meta" id="currentTeamMeta"></div>
-  </section>
-
-  <!-- Team cards -->
-  <section class="teams-section">
-    <h2>3 Holdanbefalinger</h2>
-    <div class="teams-grid" id="teamsGrid">
-      <div class="loading-spinner">⟳ Indlæser anbefalinger…</div>
+    <div class="matrix-wrap" id="matrixWrap">
+      <div class="info-box"><div class="icon">⟳</div><div>Indlæser pointmatrix…</div></div>
     </div>
-  </section>
+  </div>
 
-  <!-- Best possible team -->
-  <section class="best-team-section" id="bestTeamSection" style="display:none">
-    <h2>Bedst muligt — ubegrænset hold</h2>
-    <p class="section-desc">Det teoretisk bedste hold med 50M fra scratch — ingen transferbegrænsninger.</p>
-    <div class="teams-grid" id="bestTeamGrid"></div>
-  </section>
-
-  <!-- VeloScore table -->
-  <section class="veloscore-section" id="veloscoreSection" style="display:none">
-    <h2>VeloScore Predictions</h2>
-    <div class="table-wrapper">
-      <table class="vs-table" id="vsTable">
-        <thead>
-          <tr>
-            <th>#</th><th>Rytter</th><th>Total</th>
-            <th>VeloScore</th><th>Stjerner</th>
-          </tr>
-        </thead>
-        <tbody id="vsBody"></tbody>
-      </table>
+  <!-- ── Tab 3: Forudsigelser ──────────────────────────────────────────── -->
+  <div id="tab-preds" style="display:none">
+    <div class="stage-selector" id="stagePills"></div>
+    <div id="predContent">
+      <div class="info-box"><div class="icon">⟳</div><div>Indlæser forudsigelser…</div></div>
     </div>
-  </section>
+  </div>
 
-  <!-- Top picks table -->
-  <section class="picks-section" id="picksSection" style="display:none">
-    <h2>Top 25 Ryttere — Forventet Score</h2>
-    <div class="table-wrapper">
-      <table class="picks-table" id="picksTable">
-        <thead>
-          <tr>
-            <th>#</th><th>Rytter</th><th>Hold</th><th>Pris</th>
-            <th>Forv. point</th><th>Signal</th><th id="thDisc">Disciplin</th><th>Begrundelse</th>
-          </tr>
-        </thead>
-        <tbody id="picksBody"></tbody>
-      </table>
+  <!-- ── Tab 4: Odds & Kilder ──────────────────────────────────────────── -->
+  <div id="tab-odds" style="display:none">
+    <div id="oddsContent">
+      <div class="info-box"><div class="icon">⟳</div><div>Indlæser…</div></div>
     </div>
-  </section>
+  </div>
+
 </main>
 
+<!-- ── Breakdown modal ──────────────────────────────────────────────── -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-title"  id="modalTitle"></div>
+    <div class="modal-subtitle" id="modalSubtitle"></div>
+    <div id="modalRules"></div>
+    <button class="modal-close" id="modalClose">Luk</button>
+  </div>
+</div>
+
 <footer>
-  <p>Data: VeloScore · ProcyclingStats · CyclingOracle · The Odds API &nbsp;|&nbsp;
-     Model kalibreret på Giro 2026-data</p>
+  <p>Data: Holdet.dk (Tour de France 2026) · VeloScore · ProcyclingStats · CyclingOracle · Spilxperten · TV2 Axelgaard
+    &nbsp;|&nbsp; Modellen er kalibreret på Giro 2026-data</p>
 </footer>
 
 <script src="app.js"></script>
+<script src="tdf.js"></script>
 </body>
 </html>

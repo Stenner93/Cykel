@@ -5,6 +5,7 @@ __pycache__/
 # but skip large raw API response dumps
 data/cache/giro2026_raw/
 data/cache/dauphine2026_raw/
+data/cache/tdf2026_raw/
 data/cache/pcs_raw/
 .env
 *.egg-info/
