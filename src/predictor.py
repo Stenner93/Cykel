@@ -29,10 +29,15 @@ DEFAULT_WEIGHTS = {
 }
 
 # Mapping stage_type → CyclingOracle discipline key
+# NOTE: "ttt" (team time trial) uses ITT as the best available proxy — we
+# don't have team-level TTT strength data, so individual TT rating is the
+# closest signal we can use. The type is still kept distinct from "tt" so
+# the UI/labels correctly show "Holdtidskørsel" rather than "Enkeltstart".
 STAGE_DISCIPLINE = {
     "sprint":    "SPR",
     "mountain":  "MTN",
     "tt":        "ITT",
+    "ttt":       "ITT",
     "hilly":     "HLL",
     "cobbled":   "COB",
     "gc":        "GC",
@@ -44,6 +49,7 @@ WINNER_POINTS = {
     "sprint":   560_000,
     "mountain": 630_000,
     "tt":       380_000,
+    "ttt":      380_000,
     "hilly":    500_000,
     "cobbled":  500_000,
     "gc":       630_000,
@@ -399,6 +405,43 @@ def predict_all(
             name = entry.get("rider", "").lower()
             vs_by_name[name] = entry
 
+    # ── Pass 1: blend CO+PCS discipline data, then field-relative rescale ────
+    # Raw CO/PCS discipline ratings for capable riders often cluster tightly
+    # (e.g. 70-95 for ITT specialists). Left as-is, that narrow band barely
+    # moves the composite score once divided by 100, so without VeloScore/
+    # odds to spread riders out, everyone ends up within ~50-80k of each
+    # other regardless of how strong they actually are. Min-max rescaling
+    # the field's discipline values to the FULL 0-100 range before computing
+    # the composite restores meaningful differentiation while preserving
+    # rank order and relative magnitude (best in field → 100, worst → 0).
+    disc_key = STAGE_DISCIPLINE.get(stage_type, "AVG")
+    rider_blended: dict[str, dict | None] = {}
+    field_vals: dict[str, float] = {}
+
+    for rider in riders:
+        co_entry  = (cyclingoracle_data or {}).get(rider["id"])
+        pcs_entry = _pcs_to_co(rider["id"])
+        if co_entry and pcs_entry:
+            blended = {
+                k: round(co_entry.get(k, 50.0) * 0.70 + pcs_entry.get(k, 50.0) * 0.30, 1)
+                for k in set(co_entry) | set(pcs_entry)
+            }
+        elif pcs_entry:
+            blended = dict(pcs_entry)
+        elif co_entry:
+            blended = dict(co_entry)
+        else:
+            blended = {}
+        rider_blended[rider["id"]] = blended
+        field_vals[rider["id"]] = blended.get(disc_key, 50.0)
+
+    if field_vals:
+        lo, hi = min(field_vals.values()), max(field_vals.values())
+        if hi > lo:
+            for rid, v in field_vals.items():
+                rider_blended[rid][disc_key] = round((v - lo) / (hi - lo) * 100, 1)
+        # if hi == lo, every rider is identical on this discipline — leave as-is
+
     results = []
     for rider in riders:
         name_lower = rider["full_name"].lower()
@@ -433,20 +476,7 @@ def predict_all(
                             break
 
         sk = (sprint_kom_data or {}).get(rider["id"], {})
-
-        # Discipline data: CO primary, PCS specialty fallback/blend
-        co_entry  = (cyclingoracle_data or {}).get(rider["id"])
-        pcs_entry = _pcs_to_co(rider["id"])
-        if co_entry and pcs_entry:
-            # Blend: CO 70% + PCS-normalised 30%
-            blended = {
-                k: round(co_entry.get(k, 50.0) * 0.70 + pcs_entry.get(k, 50.0) * 0.30, 1)
-                for k in set(co_entry) | set(pcs_entry)
-            }
-        elif pcs_entry:
-            blended = pcs_entry      # CO missing — use PCS only
-        else:
-            blended = co_entry       # PCS missing — use CO only (or None)
+        blended = rider_blended.get(rider["id"]) or None
 
         pred = predict_rider(
             rider=rider,

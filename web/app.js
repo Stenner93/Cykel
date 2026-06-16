@@ -6,6 +6,7 @@ const STAGE_TYPE_META = {
   sprint:   { icon: '⚡', name: 'Sprinteretape',      color: '#FFD700' },
   mountain: { icon: '⛰️', name: 'Bjergetape',         color: '#00C853' },
   tt:       { icon: '⏱️', name: 'Enkeltstart (TT)',    color: '#1E88E5' },
+  ttt:      { icon: '👥', name: 'Holdtidskørsel (TTT)', color: '#1E88E5' },
   hilly:    { icon: '〰️', name: 'Kuperet / Punch',    color: '#FF7043' },
   cobbled:  { icon: '🧱', name: 'Brosteenetape',      color: '#AB47BC' },
   unknown:  { icon: '❓', name: 'Ukendt etapetype',   color: '#9E9E9E' },

@@ -7,6 +7,7 @@ const STAGE_ICONS = {
   sprint:   '⚡',
   mountain: '⛰️',
   tt:       '⏱️',
+  ttt:      '👥',
   hilly:    '〰️',
   cobbled:  '🧱',
 };
@@ -15,6 +16,7 @@ const STAGE_TYPE_NAMES = {
   sprint:   'Sprinteretape',
   mountain: 'Bjergetape',
   tt:       'Enkeltstart',
+  ttt:      'Holdtidskørsel',
   hilly:    'Kuperet',
   cobbled:  'Brosten',
 };
@@ -193,12 +195,15 @@ function getFilteredSortedRiders() {
     r._total = Object.values(r.pts ?? {}).reduce((a, b) => a + b, 0);
   });
   riders.sort((a, b) => {
+    // sortDir = -1 means descending (highest first). Numeric comparators
+    // use (a - b) so a "larger" rider sorts before a "smaller" one when
+    // multiplied by -1 — the old (b - a) form was inverted.
     if (sortBy === 'name')  return a.name.localeCompare(b.name, 'da') * sortDir;
-    if (sortBy === 'price') return ((b.price ?? 0) - (a.price ?? 0)) * sortDir;
-    if (sortBy === 'total') return (b._total - a._total) * sortDir;
+    if (sortBy === 'price') return ((a.price ?? 0) - (b.price ?? 0)) * sortDir;
+    if (sortBy === 'total') return (a._total - b._total) * sortDir;
     // Sort by specific stage number
     const sk = String(sortBy);
-    return (((b.pts ?? {})[sk] ?? 0) - ((a.pts ?? {})[sk] ?? 0)) * sortDir;
+    return (((a.pts ?? {})[sk] ?? 0) - ((b.pts ?? {})[sk] ?? 0)) * sortDir;
   });
   return riders;
 }
@@ -598,7 +603,7 @@ function renderOddsTab() {
     'IDLProCycling':   { label: 'IDL Pro Cycling',  cls: 'source-idl',         desc: 'Tier-kategorier' },
     '':                { label: 'Ingen data',       cls: 'source-none',        desc: '' },
   };
-  const SICONS = { sprint:'⚡', mountain:'⛰️', tt:'⏱️', hilly:'〰️', cobbled:'🧱' };
+  const SICONS = { sprint:'⚡', mountain:'⛰️', tt:'⏱️', ttt:'👥', hilly:'〰️', cobbled:'🧱' };
 
   let html = `
     <p style="font-size:0.78rem;color:var(--muted);margin-bottom:20px;line-height:1.6">

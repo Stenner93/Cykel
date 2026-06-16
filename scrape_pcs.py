@@ -82,6 +82,34 @@ def _save_profile_scores_cache(cache: dict) -> None:
     )
 
 
+def _parse_profile_and_vmeters(html: str) -> tuple[int | None, int | None]:
+    """
+    Extract ProfileScore and Vertical meters from a PCS stage page.
+
+    NOTE: these labels and values sit in separate HTML elements
+    (e.g. <li>ProfileScore:</li><li>151</li>), so a regex against the raw
+    HTML never matches across the tag boundary. We must extract via
+    BeautifulSoup's get_text() (which normalises to plain lines) instead.
+    """
+    soup  = BeautifulSoup(html, "html.parser")
+    lines = soup.get_text("\n", strip=True).split("\n")
+
+    profile_score: int | None = None
+    vert_meters:   int | None = None
+
+    for i, line in enumerate(lines):
+        if line.strip().lower() == "profilescore:" and i + 1 < len(lines):
+            m = re.match(r"(\d+)", lines[i + 1].strip())
+            if m:
+                profile_score = int(m.group(1))
+        elif line.strip().lower() == "vertical meters:" and i + 1 < len(lines):
+            m = re.match(r"(\d+)", lines[i + 1].strip())
+            if m:
+                vert_meters = int(m.group(1))
+
+    return profile_score, vert_meters
+
+
 def fetch_race_profile_scores(
     race_base: str,
     stage_nums: list[int],
@@ -89,10 +117,12 @@ def fetch_race_profile_scores(
     disk_cache: dict,
 ) -> dict[int, int]:
     """
-    Fetch PCS ProfileScore for each stage of a race from individual stage pages.
-    The overview page does NOT include profile scores — only individual pages do.
+    Fetch PCS ProfileScore (+ vertical meters, stored alongside) for each
+    stage of a race from individual stage pages. The overview page does
+    NOT include profile scores — only individual stage pages do.
 
     Returns {stage_num: profile_score}.  Cached to avoid re-fetching.
+    Vertical meters are cached under "{race_base}_vmeters" in disk_cache.
 
     Profile score guide (from procyclingstats.com/info/profile-score-explained):
       0–40:   flat / sprint stage
@@ -101,11 +131,13 @@ def fetch_race_profile_scores(
       200–350: mountain stage (flat/downhill finish)
       350+:   high mountain / summit finish
     """
-    cache_key = race_base + "_scores"
+    cache_key  = race_base + "_scores"
+    vkey       = race_base + "_vmeters"
     if cache_key in disk_cache:
         return {int(k): v for k, v in disk_cache[cache_key].items()}
 
-    scores: dict[int, int] = {}
+    scores:  dict[int, int] = {}
+    vmeters: dict[int, int] = {}
     print(f"  Henter profile scores for {len(stage_nums)} etaper "
           f"({race_base})…", flush=True)
 
@@ -114,14 +146,17 @@ def fetch_race_profile_scores(
         try:
             r = session.get(url, headers=HEADERS, timeout=15)
             if r.status_code == 200:
-                m = re.search(r"ProfileScore[:\s]*(\d+)", r.text)
-                if m:
-                    scores[sn] = int(m.group(1))
+                ps, vm = _parse_profile_and_vmeters(r.text)
+                if ps is not None:
+                    scores[sn] = ps
+                if vm is not None:
+                    vmeters[sn] = vm
         except requests.RequestException:
             pass
         time.sleep(0.35)
 
     disk_cache[cache_key] = scores
+    disk_cache[vkey]      = vmeters
     return scores
 
 # PCS profile class → our stage_type
@@ -146,7 +181,7 @@ PCS_PROFILE_TO_TYPE: dict[str, str] = {
     "5": "mountain",
 }
 
-ALL_STAGE_TYPES = ["sprint", "mountain", "hilly", "tt", "cobbled"]
+ALL_STAGE_TYPES = ["sprint", "mountain", "hilly", "tt", "ttt", "cobbled"]
 
 # ---------------------------------------------------------------------------
 # Position-based score (for a single result)

@@ -8,6 +8,7 @@ const TDF_STAGE_ICONS = {
   sprint:   '⚡',
   mountain: '⛰️',
   tt:       '⏱️',
+  ttt:      '👥',
   hilly:    '〰️',
   cobbled:  '🧱',
 };
@@ -16,6 +17,7 @@ const TDF_STAGE_TYPE_NAMES = {
   sprint:   'Sprinteretape',
   mountain: 'Bjergetape',
   tt:       'Enkeltstart',
+  ttt:      'Holdtidskørsel',
   hilly:    'Kuperet',
   cobbled:  'Brosten',
 };
@@ -167,11 +169,15 @@ function tdfGetFilteredSortedRiders() {
   }
   riders.forEach(r => { r._total = Object.values(r.pts ?? {}).reduce((a,b) => a+b, 0); });
   riders.sort((a, b) => {
+    // NOTE: tdfSortDir = -1 means descending (highest first). The numeric
+    // comparators must use (a - b) so that a "larger" rider sorts BEFORE a
+    // "smaller" one when multiplied by -1. The old code used (b - a), which
+    // inverted the result — selecting "desc" was actually showing ascending.
     if (tdfSortBy === 'name')  return a.name.localeCompare(b.name, 'da') * tdfSortDir;
-    if (tdfSortBy === 'price') return ((b.price ?? 0) - (a.price ?? 0)) * tdfSortDir;
-    if (tdfSortBy === 'total') return (b._total - a._total) * tdfSortDir;
+    if (tdfSortBy === 'price') return ((a.price ?? 0) - (b.price ?? 0)) * tdfSortDir;
+    if (tdfSortBy === 'total') return (a._total - b._total) * tdfSortDir;
     const sk = String(tdfSortBy);
-    return (((b.pts ?? {})[sk] ?? 0) - ((a.pts ?? {})[sk] ?? 0)) * tdfSortDir;
+    return (((a.pts ?? {})[sk] ?? 0) - ((b.pts ?? {})[sk] ?? 0)) * tdfSortDir;
   });
   return riders;
 }
@@ -459,7 +465,7 @@ function tdfRenderOddsTab() {
     'IDLProCycling':   { label: 'IDL Pro Cycling', cls: 'source-idl',         desc: 'Tier-kategorier' },
     '':                { label: 'Ingen data',      cls: 'source-none',       desc: '' },
   };
-  const SICONS = { sprint:'⚡', mountain:'⛰️', tt:'⏱️', hilly:'〰️', cobbled:'🧱' };
+  const SICONS = { sprint:'⚡', mountain:'⛰️', tt:'⏱️', ttt:'👥', hilly:'〰️', cobbled:'🧱' };
 
   let html = `
     <p style="font-size:0.78rem;color:var(--muted);margin-bottom:20px;line-height:1.6">

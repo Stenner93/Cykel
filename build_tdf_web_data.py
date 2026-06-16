@@ -91,6 +91,7 @@ TDF_WINNER_POINTS: dict[str, int] = {
     "mountain": 630_000,
     "hilly":    500_000,
     "tt":       380_000,
+    "ttt":      380_000,
     "cobbled":  500_000,
     "gc":       630_000,
 }

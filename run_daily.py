@@ -33,7 +33,7 @@ WEB_DATA = ROOT / "web" / "data"
 WEB_DATA.mkdir(parents=True, exist_ok=True)
 
 
-STAGE_TYPES = ["sprint", "mountain", "tt", "hilly", "cobbled"]
+STAGE_TYPES = ["sprint", "mountain", "tt", "ttt", "hilly", "cobbled"]
 
 
 def load_riders() -> list[dict]:

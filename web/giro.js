@@ -198,7 +198,9 @@ function getFilteredSortedRiders() {
       va = (a.pts ?? {})[skey] ?? 0;
       vb = (b.pts ?? {})[skey] ?? 0;
     }
-    return (vb - va) * sortDir;
+    // sortDir = -1 means descending (highest first); (va - vb) ensures a
+    // "larger" rider sorts before a "smaller" one when multiplied by -1.
+    return (va - vb) * sortDir;
   });
 
   return riders;

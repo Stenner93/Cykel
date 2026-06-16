@@ -78,7 +78,7 @@ HOLDET_STAGE_TYPE_MAP: dict[str, str] = {
     "mountain":   "mountain",
     "tt":         "tt",
     "individual_time_trial": "tt",
-    "team_time_trial":       "tt",
+    "team_time_trial":       "ttt",   # holdtidskørsel — distinct from individual TT
 }
 
 # Holdet cartridge slug → PCS race base path
