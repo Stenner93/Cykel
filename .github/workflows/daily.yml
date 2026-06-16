@@ -114,6 +114,14 @@ jobs:
           python build_tdf_web_data.py --delay 0.5 \
             || echo "⚠️  TdF build slog fejl — fortsætter"
 
+      # ── 5c. Byg rytterdatabase (diagnostik-side, tvaers af alle loeb) ──────
+      - name: Byg rytterdatabase
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python build_rider_database.py \
+            || echo "⚠️  Rytterdatabase-build slog fejl — fortsætter"
+
       # ── 6. Commit og push opdateret data ───────────────────────────────────
       - name: Commit og push resultater
         env:

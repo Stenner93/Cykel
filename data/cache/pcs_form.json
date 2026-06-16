@@ -167,7 +167,7 @@
     ],
     "form_long_by_type": {
       "overall": 1.4,
-      "sprint": 1.2,
+      "sprint": 1.4,
       "mountain": 0.0,
       "hilly": 0.0,
       "tt": 0.0,
@@ -343,10 +343,10 @@
     ],
     "form_long_by_type": {
       "overall": 48.0,
-      "sprint": 3.6,
-      "mountain": 13.2,
-      "hilly": 23.6,
-      "tt": 20.0,
+      "sprint": 22.2,
+      "mountain": 7.9,
+      "hilly": 24.1,
+      "tt": 12.9,
       "ttt": 0.0,
       "cobbled": 0.0
     }
@@ -469,10 +469,10 @@
     ],
     "form_long_by_type": {
       "overall": 100.0,
-      "sprint": 79.3,
+      "sprint": 100.0,
       "mountain": 0.0,
-      "hilly": 37.6,
-      "tt": 0.5,
+      "hilly": 30.6,
+      "tt": 0.2,
       "ttt": 0.0,
       "cobbled": 0.0
     }
@@ -645,10 +645,10 @@
     ],
     "form_long_by_type": {
       "overall": 56.1,
-      "sprint": 5.0,
-      "mountain": 18.1,
-      "hilly": 26.0,
-      "tt": 0.0,
+      "sprint": 17.6,
+      "mountain": 30.5,
+      "hilly": 33.1,
+      "tt": 0.7,
       "ttt": 0.0,
       "cobbled": 0.0
     }
@@ -822,7 +822,7 @@
     "form_long_by_type": {
       "overall": 29.9,
       "sprint": 29.3,
-      "mountain": 1.1,
+      "mountain": 1.4,
       "hilly": 0.5,
       "tt": 0.5,
       "ttt": 0.0,
@@ -995,15 +995,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 22.9,
-      "sprint": 15.8,
-      "mountain": 0.0,
-      "hilly": 12.6,
-      "tt": 4.3,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "axel_huens": {
     "name": "Axel Huens",
@@ -1171,15 +1163,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 15.1,
-      "sprint": 14.2,
-      "mountain": 0.9,
-      "hilly": 7.2,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "andreas_leknessund": {
     "name": "Andreas Leknessund",
@@ -1347,15 +1331,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 48.7,
-      "sprint": 11.1,
-      "mountain": 3.9,
-      "hilly": 8.0,
-      "tt": 3.9,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "arjen_livyns": {
     "name": "Arjen Livyns",
@@ -1523,15 +1499,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 18.9,
-      "sprint": 17.2,
-      "mountain": 0.0,
-      "hilly": 5.4,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "alessio_martinelli": {
     "name": "Alessio Martinelli",
@@ -1649,15 +1617,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 20.1,
-      "sprint": 11.7,
-      "mountain": 1.2,
-      "hilly": 3.6,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "andrea_mifsud": {
     "name": "Andrea Mifsud",
@@ -1825,15 +1785,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 14.9,
-      "sprint": 2.3,
-      "mountain": 2.6,
-      "hilly": 3.5,
-      "tt": 2.9,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "antónio_morgado": {
     "name": "António Morgado",
@@ -2001,15 +1953,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 15.0,
-      "sprint": 1.6,
-      "mountain": 0.0,
-      "hilly": 7.4,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "andrea_pietrobon": {
     "name": "Andrea Pietrobon",
@@ -2177,15 +2121,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 9.5,
-      "sprint": 1.4,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.5,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "alessandro_pinarello": {
     "name": "Alessandro Pinarello",
@@ -2353,15 +2289,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 39.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "andrea_raccagni_noviero": {
     "name": "Andrea Raccagni Noviero",
@@ -2529,15 +2457,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 39.1,
-      "sprint": 16.1,
-      "mountain": 55.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "alec_segaert": {
     "name": "Alec Segaert",
@@ -2705,15 +2625,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 3.3,
-      "mountain": 0.0,
-      "hilly": 9.7,
-      "tt": 100.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "anders_skaarseth": {
     "name": "Anders Skaarseth",
@@ -2879,15 +2791,7 @@
       "climber": 22,
       "hills": 266
     },
-    "form_long_by_type": {
-      "overall": 8.3,
-      "sprint": 3.4,
-      "mountain": 5.9,
-      "hilly": 10.3,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "andrea_vendrame": {
     "name": "Andrea Vendrame",
@@ -2995,15 +2899,7 @@
         "stage_type": "tt"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 8.4,
-      "mountain": 0.0,
-      "hilly": 89.5,
-      "tt": 2.4,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "aleksandr_vlasov": {
     "name": "Aleksandr Vlasov",
@@ -3171,15 +3067,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 32.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "adam_yates": {
     "name": "Adam Yates",
@@ -3267,15 +3155,7 @@
         "stage_type": "tt"
       }
     ],
-    "form_long_by_type": {
-      "overall": 37.5,
-      "sprint": 1.5,
-      "mountain": 28.6,
-      "hilly": 17.1,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "bart_lemmen": {
     "name": "Bart Lemmen",
@@ -3443,15 +3323,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 67.8,
-      "sprint": 9.1,
-      "mountain": 100.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ben_oconnor": {
     "name": "Ben O'Connor",
@@ -3619,15 +3491,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 67.2,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "brieuc_rolland": {
     "name": "Brieuc Rolland",
@@ -3795,15 +3659,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 61.7,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 8.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ben_turner": {
     "name": "Ben Turner",
@@ -3971,15 +3827,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 100.0,
-      "mountain": 0.0,
-      "hilly": 11.5,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ben_zwiehoff": {
     "name": "Ben Zwiehoff",
@@ -4147,15 +3995,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 43.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "cyril_barthe": {
     "name": "Cyril Barthe",
@@ -4323,15 +4163,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 40.1,
-      "sprint": 11.3,
-      "mountain": 0.0,
-      "hilly": 36.9,
-      "tt": 3.9,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "chris_hamilton": {
     "name": "Chris Hamilton",
@@ -4499,15 +4331,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 12.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "chris_harper": {
     "name": "Chris Harper",
@@ -4675,15 +4499,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 35.2,
-      "sprint": 1.2,
-      "mountain": 6.2,
-      "hilly": 4.5,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "christopher_juul_jensen": {
     "name": "Christopher Juul-Jensen",
@@ -4851,15 +4667,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 10.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "christian_scaroni": {
     "name": "Christian Scaroni",
@@ -5027,15 +4835,7 @@
         "stage_type": "hilly"
       }
     ],
-    "form_long_by_type": {
-      "overall": 62.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "callum_scotson": {
     "name": "Callum Scotson",
@@ -5203,15 +5003,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 18.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "corbin_strong": {
     "name": "Corbin Strong",
@@ -5379,15 +5171,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "connor_swift": {
     "name": "Connor Swift",
@@ -5555,15 +5339,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 13.3,
-      "sprint": 1.3,
-      "mountain": 0.0,
-      "hilly": 7.7,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "casper_van_uden": {
     "name": "Casper van Uden",
@@ -5731,15 +5507,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 51.7,
-      "sprint": 7.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "davide_ballerini": {
     "name": "Davide Ballerini",
@@ -5907,15 +5675,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 88.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "damiano_caruso": {
     "name": "Damiano Caruso",
@@ -6083,15 +5843,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 64.8,
-      "sprint": 3.4,
-      "mountain": 0.0,
-      "hilly": 9.3,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "derek_gee": {
     "name": "Derek Gee",
@@ -6259,15 +6011,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 48.2,
-      "sprint": 1.2,
-      "mountain": 0.0,
-      "hilly": 13.0,
-      "tt": 45.2,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "david_gonzález": {
     "name": "David González",
@@ -6452,15 +6196,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 80.3,
-      "sprint": 77.2,
-      "mountain": 0.0,
-      "hilly": 3.2,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "david_de_la_cruz_melgarejo": {
     "name": "David de la Cruz Melgarejo",
@@ -6628,15 +6364,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 46.1,
-      "sprint": 2.8,
-      "mountain": 47.2,
-      "hilly": 3.1,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "pablo_sevilla_diego": {
     "name": "Pablo Sevilla Diego",
@@ -6821,15 +6549,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 44.5,
-      "sprint": 2.8,
-      "mountain": 78.6,
-      "hilly": 13.2,
-      "tt": 16.6,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "darren_rafferty": {
     "name": "Darren Rafferty",
@@ -6997,15 +6717,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 7.2,
-      "sprint": 0.7,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "dion_smith": {
     "name": "Dion Smith",
@@ -7173,15 +6885,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 12.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "diego_ulissi": {
     "name": "Diego Ulissi",
@@ -7349,15 +7053,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 38.7,
-      "sprint": 1.2,
-      "mountain": 17.6,
-      "hilly": 17.5,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "dries_van_gestel": {
     "name": "Dries Van Gestel",
@@ -7525,15 +7221,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 27.6,
-      "sprint": 23.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "danny_van_poppel": {
     "name": "Danny van Poppel",
@@ -7671,15 +7359,7 @@
         "stage_type": "tt"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 100.0,
-      "mountain": 0.0,
-      "hilly": 33.1,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "edoardo_affini": {
     "name": "Edoardo Affini",
@@ -7775,15 +7455,7 @@
       "climber": 15,
       "hills": 140
     },
-    "form_long_by_type": {
-      "overall": 56.9,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "egan_bernal": {
     "name": "Egan Bernal",
@@ -7951,15 +7623,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 92.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "erlend_blikra": {
     "name": "Erlend Blikra",
@@ -8107,15 +7771,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 100.0,
-      "mountain": 0.0,
-      "hilly": 43.7,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "enric_mas": {
     "name": "Enric Mas",
@@ -8283,15 +7939,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 40.2,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "edward_planckaert": {
     "name": "Edward Planckaert",
@@ -8459,15 +8107,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 44.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "elmar_reinders": {
     "name": "Elmar Reinders",
@@ -8635,15 +8275,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 5.7,
-      "sprint": 0.7,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "einer_rubio": {
     "name": "Einer Rubio",
@@ -8811,15 +8443,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 26.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "embret_svestad_bårdseng": {
     "name": "Embret Svestad-Bårdseng",
@@ -8987,15 +8611,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 12.4,
-      "sprint": 0.8,
-      "mountain": 8.0,
-      "hilly": 3.0,
-      "tt": 3.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ethan_vernon": {
     "name": "Ethan Vernon",
@@ -9163,15 +8779,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 97.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "edoardo_zambanini": {
     "name": "Edoardo Zambanini",
@@ -9339,15 +8947,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 68.6,
-      "mountain": 0.0,
-      "hilly": 100.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "enrico_zanoncello": {
     "name": "Enrico Zanoncello",
@@ -9515,15 +9115,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 95.6,
-      "sprint": 94.2,
-      "mountain": 0.0,
-      "hilly": 23.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "francesco_busatto": {
     "name": "Francesco Busatto",
@@ -9691,15 +9283,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 29.4,
-      "sprint": 4.4,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "fabio_christen": {
     "name": "Fabio Christen",
@@ -9837,15 +9421,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 62.6,
-      "sprint": 35.6,
-      "mountain": 6.5,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "filippo_conca": {
     "name": "Filippo Conca",
@@ -9973,15 +9549,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 7.1,
-      "sprint": 0.0,
-      "mountain": 5.8,
-      "hilly": 7.2,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "frank_van_den_broek": {
     "name": "Frank van den Broek",
@@ -10149,15 +9717,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 41.2,
-      "sprint": 2.5,
-      "mountain": 29.5,
-      "hilly": 4.2,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "fredrik_dversnes": {
     "name": "Fredrik Dversnes",
@@ -10325,15 +9885,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 66.9,
-      "sprint": 0.5,
-      "mountain": 0.0,
-      "hilly": 1.4,
-      "tt": 7.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "felix_engelhardt": {
     "name": "Felix Engelhardt",
@@ -10499,15 +10051,7 @@
       "climber": 308,
       "hills": 504
     },
-    "form_long_by_type": {
-      "overall": 49.1,
-      "sprint": 6.5,
-      "mountain": 46.5,
-      "hilly": 7.8,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "felix_gall": {
     "name": "Felix Gall",
@@ -10675,15 +10219,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 74.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "filippo_ganna": {
     "name": "Filippo Ganna",
@@ -10851,15 +10387,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 99.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "filippo_magli": {
     "name": "Filippo Magli",
@@ -11044,15 +10572,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 10.9,
-      "sprint": 8.9,
-      "mountain": 0.0,
-      "hilly": 9.8,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "florian_stork": {
     "name": "Florian Stork",
@@ -11220,15 +10740,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 41.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "filippo_turconi": {
     "name": "Filippo Turconi",
@@ -11396,15 +10908,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 38.6,
-      "sprint": 27.6,
-      "mountain": 9.1,
-      "hilly": 13.2,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "frederik_wandahl": {
     "name": "Frederik Wandahl",
@@ -11492,15 +10996,7 @@
         "stage_type": "hilly"
       }
     ],
-    "form_long_by_type": {
-      "overall": 8.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 6.2,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "filippo_zana": {
     "name": "Filippo Zana",
@@ -11668,15 +11164,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 35.3,
-      "sprint": 9.3,
-      "mountain": 0.0,
-      "hilly": 49.4,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "giovanni_aleotti": {
     "name": "Giovanni Aleotti",
@@ -11844,15 +11332,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 36.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "giulio_ciccone": {
     "name": "Giulio Ciccone",
@@ -12020,15 +11500,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "gianmarco_garofoli": {
     "name": "Gianmarco Garofoli",
@@ -12196,15 +11668,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 27.1,
-      "sprint": 1.5,
-      "mountain": 2.6,
-      "hilly": 1.1,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "gijs_leemreize": {
     "name": "Gijs Leemreize",
@@ -12380,15 +11844,7 @@
       "climber": 504,
       "hills": 190
     },
-    "form_long_by_type": {
-      "overall": 9.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "giovanni_lonardi": {
     "name": "Giovanni Lonardi",
@@ -12556,15 +12012,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 79.2,
-      "mountain": 0.0,
-      "hilly": 75.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "gianni_moscon": {
     "name": "Gianni Moscon",
@@ -12732,15 +12180,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 5.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "gregor_mühlberger": {
     "name": "Gregor Mühlberger",
@@ -12908,15 +12348,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 19.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "giulio_pellizzari": {
     "name": "Giulio Pellizzari",
@@ -13084,15 +12516,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "guillermo_thomas_silva": {
     "name": "Guillermo Thomas Silva",
@@ -13277,15 +12701,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 21.3,
-      "sprint": 4.0,
-      "mountain": 0.0,
-      "hilly": 5.7,
-      "tt": 3.8,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "harold_martín_lópez": {
     "name": "Harold Martín López",
@@ -13453,15 +12869,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 64.7,
-      "sprint": 17.7,
-      "mountain": 59.8,
-      "hilly": 24.6,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "igor_arrieta": {
     "name": "Igor Arrieta",
@@ -13629,15 +13037,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 46.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 2.9,
-      "tt": 8.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "iván_garcía_cortina": {
     "name": "Iván García Cortina",
@@ -13805,15 +13205,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 44.8,
-      "sprint": 2.9,
-      "mountain": 0.9,
-      "hilly": 22.1,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jefferson_alexander_cepeda": {
     "name": "Jefferson Alexander Cepeda",
@@ -13981,15 +13373,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 8.0,
-      "sprint": 1.8,
-      "mountain": 4.2,
-      "hilly": 1.6,
-      "tt": 3.9,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "joao_almeida": {
     "name": "Joao Almeida",
@@ -14085,15 +13469,7 @@
       "climber": 4868,
       "hills": 1494
     },
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jardi_christiaan_van_der_lee": {
     "name": "Jardi Christiaan van der Lee",
@@ -14261,15 +13637,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 9.2,
-      "sprint": 0.0,
-      "mountain": 4.3,
-      "hilly": 4.0,
-      "tt": 6.6,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jan_christen": {
     "name": "Jan Christen",
@@ -14437,15 +13805,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 46.8,
-      "sprint": 5.3,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jasper_de_buyst": {
     "name": "Jasper De Buyst",
@@ -14462,15 +13822,7 @@
     "n_results": 0,
     "last_result_date": "",
     "results": [],
-    "form_long_by_type": {
-      "overall": 11.6,
-      "sprint": 4.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jonas_geens": {
     "name": "Jonas Geens",
@@ -14638,15 +13990,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 13.7,
-      "sprint": 2.8,
-      "mountain": 0.0,
-      "hilly": 3.5,
-      "tt": 5.2,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jack_haig": {
     "name": "Jack Haig",
@@ -14814,15 +14158,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 9.2,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jai_hindley": {
     "name": "Jai Hindley",
@@ -14990,15 +14326,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jan_hirt": {
     "name": "Jan Hirt",
@@ -15166,15 +14494,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 13.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "johan_jacobs": {
     "name": "Johan Jacobs",
@@ -15342,15 +14662,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 6.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "joshua_kench": {
     "name": "Joshua Kench",
@@ -15523,15 +14835,7 @@
       "climber": 818,
       "hills": 356
     },
-    "form_long_by_type": {
-      "overall": 4.5,
-      "sprint": 0.0,
-      "mountain": 3.4,
-      "hilly": 0.7,
-      "tt": 0.7,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "johannes_kulset": {
     "name": "Johannes Kulset",
@@ -15699,15 +15003,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 28.8,
-      "sprint": 10.2,
-      "mountain": 23.5,
-      "hilly": 18.0,
-      "tt": 5.4,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jonathan_milan": {
     "name": "Jonathan Milan",
@@ -15875,15 +15171,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 71.9,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jhonatan_narváez": {
     "name": "Jhonatan Narváez",
@@ -16051,15 +15339,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 43.8,
-      "mountain": 0.0,
-      "hilly": 44.4,
-      "tt": 9.1,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "juan_pedro_lópez": {
     "name": "Juan Pedro López",
@@ -16227,15 +15507,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 13.9,
-      "sprint": 2.9,
-      "mountain": 9.3,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "johan_price_pejtersen": {
     "name": "Johan Price-Pejtersen",
@@ -16403,15 +15675,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 25.9,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 29.7,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jensen_plowright": {
     "name": "Jensen Plowright",
@@ -16579,15 +15843,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 45.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "javier_romo": {
     "name": "Javier Romo",
@@ -16755,15 +16011,7 @@
         "stage_type": "hilly"
       }
     ],
-    "form_long_by_type": {
-      "overall": 74.5,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jonas_rutsch": {
     "name": "Jonas Rutsch",
@@ -16931,15 +16179,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 6.6,
-      "sprint": 5.5,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "johannes_staune_mittet": {
     "name": "Johannes Staune-Mittet",
@@ -17107,15 +16347,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 28.9,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "james_shaw": {
     "name": "James Shaw",
@@ -17283,15 +16515,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 27.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jake_stewart": {
     "name": "Jake Stewart",
@@ -17459,15 +16683,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 65.0,
-      "sprint": 4.7,
-      "mountain": 0.0,
-      "hilly": 3.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jasper_stuyven": {
     "name": "Jasper Stuyven",
@@ -17635,15 +16851,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 39.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jay_vine": {
     "name": "Jay Vine",
@@ -17691,15 +16899,7 @@
         "stage_type": "hilly"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.9,
-      "mountain": 4.8,
-      "hilly": 0.5,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jonas_vingegaard": {
     "name": "Jonas Vingegaard",
@@ -17867,15 +17067,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "koen_bouwman": {
     "name": "Koen Bouwman",
@@ -18043,15 +17235,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 14.5,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "kaden_groves": {
     "name": "Kaden Groves",
@@ -18099,15 +17283,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 89.7,
-      "sprint": 17.5,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "karsten_larsen_feldmann": {
     "name": "Karsten Larsen Feldmann",
@@ -18175,15 +17351,7 @@
         "stage_type": "hilly"
       }
     ],
-    "form_long_by_type": {
-      "overall": 51.5,
-      "sprint": 35.8,
-      "mountain": 0.0,
-      "hilly": 3.1,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "lorenzo_covili": {
     "name": "Lorenzo Covili",
@@ -18393,15 +17561,7 @@
       "climber": 1907,
       "hills": 363
     },
-    "form_long_by_type": {
-      "overall": 76.7,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "lorenzo_germani": {
     "name": "Lorenzo Germani",
@@ -18569,15 +17729,7 @@
         "stage_type": "hilly"
       }
     ],
-    "form_long_by_type": {
-      "overall": 26.1,
-      "sprint": 2.6,
-      "mountain": 0.0,
-      "hilly": 18.0,
-      "tt": 16.2,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "lukáš_kubiš": {
     "name": "Lukáš Kubiš",
@@ -18745,15 +17897,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 100.0,
-      "mountain": 8.0,
-      "hilly": 14.2,
-      "tt": 36.2,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "luka_mezgec": {
     "name": "Luka Mezgec",
@@ -18801,15 +17945,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 8.9,
-      "sprint": 2.1,
-      "mountain": 0.0,
-      "hilly": 2.4,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "lorenzo_milesi": {
     "name": "Lorenzo Milesi",
@@ -18977,15 +18113,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 78.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "luca_mozzato": {
     "name": "Luca Mozzato",
@@ -19153,15 +18281,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 28.7,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 9.9,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "luca_paletti": {
     "name": "Luca Paletti",
@@ -19329,15 +18449,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 11.7,
-      "sprint": 4.9,
-      "mountain": 5.0,
-      "hilly": 2.7,
-      "tt": 1.7,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "lorenzo_rota": {
     "name": "Lorenzo Rota",
@@ -19505,15 +18617,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 8.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "liam_slock": {
     "name": "Liam Slock",
@@ -19681,15 +18785,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 23.3,
-      "sprint": 1.5,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "liam_tuckwell": {
     "name": "Liam Tuckwell",
@@ -19844,15 +18940,7 @@
         "stage_type": "tt"
       }
     ],
-    "form_long_by_type": {
-      "overall": 25.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "luca_vergallito": {
     "name": "Luca Vergallito",
@@ -20020,15 +19108,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 12.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "larry_warbasse": {
     "name": "Larry Warbasse",
@@ -20213,15 +19293,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 22.5,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 6.1,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mark_donovan": {
     "name": "Mark Donovan",
@@ -20389,15 +19461,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 19.9,
-      "sprint": 10.1,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "matevz_govekar": {
     "name": "Matevz Govekar",
@@ -20483,15 +19547,7 @@
       "climber": 84,
       "hills": 466
     },
-    "form_long_by_type": {
-      "overall": 41.5,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "marc_hirschi": {
     "name": "Marc Hirschi",
@@ -20508,15 +19564,7 @@
     "n_results": 0,
     "last_result_date": "",
     "results": [],
-    "form_long_by_type": {
-      "overall": 49.4,
-      "sprint": 44.8,
-      "mountain": 0.0,
-      "hilly": 62.7,
-      "tt": 14.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "markus_hoelgaard": {
     "name": "Markus Hoelgaard",
@@ -20684,15 +19732,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 7.5,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mathieu_kockelmann": {
     "name": "Mathieu Kockelmann",
@@ -20768,15 +19808,7 @@
       "climber": 3,
       "hills": 140
     },
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 77.5,
-      "mountain": 0.0,
-      "hilly": 51.3,
-      "tt": 6.3,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mikel_landa": {
     "name": "Mikel Landa",
@@ -20884,15 +19916,7 @@
         "stage_type": "hilly"
       }
     ],
-    "form_long_by_type": {
-      "overall": 49.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mirco_maestri": {
     "name": "Mirco Maestri",
@@ -21060,15 +20084,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 39.5,
-      "sprint": 8.9,
-      "mountain": 2.3,
-      "hilly": 11.1,
-      "tt": 2.9,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "matteo_malucelli": {
     "name": "Matteo Malucelli",
@@ -21236,15 +20252,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 100.0,
-      "mountain": 0.0,
-      "hilly": 100.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "martin_marcellusi": {
     "name": "Martin Marcellusi",
@@ -21412,15 +20420,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 28.0,
-      "sprint": 5.6,
-      "mountain": 1.9,
-      "hilly": 8.0,
-      "tt": 1.7,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "milan_menten": {
     "name": "Milan Menten",
@@ -21538,15 +20538,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 100.0,
-      "mountain": 0.0,
-      "hilly": 10.9,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "matteo_moschetti": {
     "name": "Matteo Moschetti",
@@ -21614,15 +20606,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 74.8,
-      "sprint": 26.1,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mathijs_paasschens": {
     "name": "Mathijs Paasschens",
@@ -21790,15 +20774,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 9.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "max_poole": {
     "name": "Max Poole",
@@ -21815,15 +20791,7 @@
     "n_results": 0,
     "last_result_date": "",
     "results": [],
-    "form_long_by_type": {
-      "overall": 16.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mathis_rondel": {
     "name": "Mathis Rondel",
@@ -22008,15 +20976,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 52.6,
-      "sprint": 12.3,
-      "mountain": 0.0,
-      "hilly": 76.2,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "matteo_sobrero": {
     "name": "Matteo Sobrero",
@@ -22184,15 +21144,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 54.5,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "marc_soler": {
     "name": "Marc Soler",
@@ -22360,15 +21312,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 71.9,
-      "mountain": 0.0,
-      "hilly": 29.5,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "michael_storer": {
     "name": "Michael Storer",
@@ -22536,15 +21480,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 55.2,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "manuele_tarozzi": {
     "name": "Manuele Tarozzi",
@@ -22712,15 +21648,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 11.1,
-      "sprint": 4.9,
-      "mountain": 0.0,
-      "hilly": 5.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "martin_tjøtta": {
     "name": "Martin Tjøtta",
@@ -22888,15 +21816,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 34.7,
-      "sprint": 3.8,
-      "mountain": 0.0,
-      "hilly": 11.7,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "michael_valgren": {
     "name": "Michael Valgren",
@@ -23064,15 +21984,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 44.2,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mick_van_dijke": {
     "name": "Mick van Dijke",
@@ -23240,15 +22152,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 17.2,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "maximilian_walscheid": {
     "name": "Maximilian Walscheid",
@@ -23433,15 +22337,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 86.1,
-      "sprint": 30.6,
-      "mountain": 0.0,
-      "hilly": 63.5,
-      "tt": 68.9,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "nelson_oliveira": {
     "name": "Nelson Oliveira",
@@ -23609,15 +22505,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 13.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 1.1,
-      "tt": 4.2,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "nick_schultz": {
     "name": "Nick Schultz",
@@ -23785,15 +22673,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 7.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "nickolas_zukowsky": {
     "name": "Nickolas Zukowsky",
@@ -23961,15 +22841,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 10.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "orluis_aular": {
     "name": "Orluis Aular",
@@ -24137,15 +23009,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 98.4,
-      "sprint": 11.1,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "oliver_naesen": {
     "name": "Oliver Naesen",
@@ -24313,15 +23177,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 11.9,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "pascal_ackermann": {
     "name": "Pascal Ackermann",
@@ -24489,15 +23345,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 30.7,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "paul_magnier": {
     "name": "Paul Magnier",
@@ -24665,15 +23513,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 100.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "paul_penhoët": {
     "name": "Paul Penhoët",
@@ -24841,15 +23681,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 91.9,
-      "sprint": 17.9,
-      "mountain": 0.0,
-      "hilly": 9.6,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "richard_carapaz": {
     "name": "Richard Carapaz",
@@ -25007,15 +23839,7 @@
         "stage_type": "tt"
       }
     ],
-    "form_long_by_type": {
-      "overall": 59.9,
-      "sprint": 69.2,
-      "mountain": 0.0,
-      "hilly": 15.9,
-      "tt": 35.9,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "rémi_cavagna": {
     "name": "Rémi Cavagna",
@@ -25183,15 +24007,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 29.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "robert_donaldson": {
     "name": "Robert Donaldson",
@@ -25359,15 +24175,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 40.5,
-      "sprint": 27.5,
-      "mountain": 0.0,
-      "hilly": 7.9,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "robin_froidevaux": {
     "name": "Robin Froidevaux",
@@ -25535,15 +24343,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 12.9,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ryan_mullen": {
     "name": "Ryan Mullen",
@@ -25711,15 +24511,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 7.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "remy_rochas": {
     "name": "Remy Rochas",
@@ -25887,15 +24679,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 33.3,
-      "sprint": 2.4,
-      "mountain": 0.0,
-      "hilly": 2.6,
-      "tt": 2.9,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "samuele_battistella": {
     "name": "Samuele Battistella",
@@ -26053,15 +24837,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 8.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "sjoerd_bax": {
     "name": "Sjoerd Bax",
@@ -26229,15 +25005,7 @@
         "stage_type": "hilly"
       }
     ],
-    "form_long_by_type": {
-      "overall": 23.8,
-      "sprint": 15.8,
-      "mountain": 2.0,
-      "hilly": 3.7,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "santiago_buitrago": {
     "name": "Santiago Buitrago",
@@ -26413,15 +25181,7 @@
       "climber": 2161,
       "hills": 888
     },
-    "form_long_by_type": {
-      "overall": 57.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "simone_consonni": {
     "name": "Simone Consonni",
@@ -26589,15 +25349,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 16.5,
-      "sprint": 4.5,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "sean_flynn": {
     "name": "Sean Flynn",
@@ -26765,15 +25517,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 13.4,
-      "sprint": 0.8,
-      "mountain": 1.5,
-      "hilly": 10.7,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "simone_gualdi": {
     "name": "Simone Gualdi",
@@ -26941,15 +25685,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 29.6,
-      "sprint": 19.6,
-      "mountain": 16.1,
-      "hilly": 23.4,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "sakarias_koller_løland": {
     "name": "Sakarias Koller Løland",
@@ -27117,15 +25853,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 39.6,
-      "sprint": 6.6,
-      "mountain": 0.4,
-      "hilly": 0.5,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "sepp_kuss": {
     "name": "Sepp Kuss",
@@ -27293,15 +26021,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "sean_quinn": {
     "name": "Sean Quinn",
@@ -27397,15 +26117,7 @@
       "climber": 302,
       "hills": 266
     },
-    "form_long_by_type": {
-      "overall": 36.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "toon_aerts": {
     "name": "Toon Aerts",
@@ -27573,15 +26285,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 36.5,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "thymen_arensman": {
     "name": "Thymen Arensman",
@@ -27749,15 +26453,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "tobias_bayer": {
     "name": "Tobias Bayer",
@@ -27925,15 +26621,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 6.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "timo_de_jong": {
     "name": "Timo de Jong",
@@ -28101,15 +26789,7 @@
         "stage_type": "hilly"
       }
     ],
-    "form_long_by_type": {
-      "overall": 97.4,
-      "sprint": 38.3,
-      "mountain": 13.0,
-      "hilly": 0.0,
-      "tt": 23.3,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "tord_gudmestad": {
     "name": "Tord Gudmestad",
@@ -28277,15 +26957,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 50.5,
-      "sprint": 1.7,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "timo_kielich": {
     "name": "Timo Kielich",
@@ -28453,15 +27125,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 13.7,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "tomáš_kopecký": {
     "name": "Tomáš Kopecký",
@@ -28629,15 +27293,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 15.8,
-      "sprint": 1.8,
-      "mountain": 0.0,
-      "hilly": 0.9,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "tim_naberman": {
     "name": "Tim Naberman",
@@ -28805,15 +27461,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 2.7,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "tommaso_pesenti": {
     "name": "Tommaso Pesenti",
@@ -28998,15 +27646,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 13.6,
-      "sprint": 8.9,
-      "mountain": 3.7,
-      "hilly": 7.6,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "victor_campenaerts": {
     "name": "Victor Campenaerts",
@@ -29174,15 +27814,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 80.2,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "william_barta": {
     "name": "William Barta",
@@ -29350,15 +27982,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 16.8,
-      "sprint": 1.1,
-      "mountain": 0.0,
-      "hilly": 3.5,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "wilco_kelderman": {
     "name": "Wilco Kelderman",
@@ -29486,15 +28110,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 50.2,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 11.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "wout_poels": {
     "name": "Wout Poels",
@@ -29662,15 +28278,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 34.5,
-      "sprint": 2.7,
-      "mountain": 41.9,
-      "hilly": 20.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ådne_holter": {
     "name": "Ådne Holter",
@@ -29768,15 +28376,7 @@
         "stage_type": "tt"
       }
     ],
-    "form_long_by_type": {
-      "overall": 16.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 2.6,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "tobias_lund_andresen": {
     "name": "Lund Andresen Tobias",
@@ -29944,15 +28544,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 78.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "tim_torn_teutenberg": {
     "name": "Torn Teutenberg Tim",
@@ -30120,15 +28712,7 @@
         "stage_type": "mountain"
       }
     ],
-    "form_long_by_type": {
-      "overall": 77.1,
-      "sprint": 45.1,
-      "mountain": 0.0,
-      "hilly": 44.5,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "rasmus_søjberg_pedersen": {
     "name": "Søjberg Pedersen Rasmus",
@@ -30273,15 +28857,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 16.3,
-      "sprint": 9.7,
-      "mountain": 6.1,
-      "hilly": 0.9,
-      "tt": 2.5,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "alex_baudin": {
     "name": "Alex Baudin",
@@ -30457,15 +29033,7 @@
       "climber": 752,
       "hills": 569
     },
-    "form_long_by_type": {
-      "overall": 50.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "alex_diaz": {
     "name": "Alex Diaz",
@@ -30658,15 +29226,7 @@
       "climber": 53,
       "hills": 6
     },
-    "form_long_by_type": {
-      "overall": 7.2,
-      "sprint": 0.0,
-      "mountain": 1.9,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "andreas_kron": {
     "name": "Andreas Kron",
@@ -30842,15 +29402,7 @@
       "climber": 1084,
       "hills": 1170
     },
-    "form_long_by_type": {
-      "overall": 16.2,
-      "sprint": 5.8,
-      "mountain": 2.4,
-      "hilly": 3.1,
-      "tt": 1.3,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "anthon_charmig": {
     "name": "Anthon Charmig",
@@ -31026,15 +29578,7 @@
       "climber": 338,
       "hills": 560
     },
-    "form_long_by_type": {
-      "overall": 40.8,
-      "sprint": 2.7,
-      "mountain": 0.8,
-      "hilly": 0.8,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "aurelien_paret-peintre": {
     "name": "Aurelien Paret-Peintre",
@@ -31140,15 +29684,7 @@
       "climber": 1578,
       "hills": 874
     },
-    "form_long_by_type": {
-      "overall": 55.5,
-      "sprint": 31.3,
-      "mountain": 0.0,
-      "hilly": 13.1,
-      "tt": 42.2,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "baptiste_veistroffer": {
     "name": "Baptiste Veistroffer",
@@ -31324,15 +29860,7 @@
       "climber": 32,
       "hills": 92
     },
-    "form_long_by_type": {
-      "overall": 19.4,
-      "sprint": 0.4,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 7.1,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ben_healy": {
     "name": "Ben Healy",
@@ -31488,15 +30016,7 @@
       "climber": 1548,
       "hills": 570
     },
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 100.0,
-      "mountain": 0.0,
-      "hilly": 11.7,
-      "tt": 100.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "benjamin_thomas": {
     "name": "Benjamin Thomas",
@@ -31612,15 +30132,7 @@
       "climber": 0,
       "hills": 0
     },
-    "form_long_by_type": {
-      "overall": 1.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "benoit_cosnefroy": {
     "name": "Benoit Cosnefroy",
@@ -31796,15 +30308,7 @@
       "climber": 1206,
       "hills": 1978
     },
-    "form_long_by_type": {
-      "overall": 61.2,
-      "sprint": 2.6,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "bruno_armirail": {
     "name": "Bruno Armirail",
@@ -31980,15 +30484,7 @@
       "climber": 435,
       "hills": 264
     },
-    "form_long_by_type": {
-      "overall": 72.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "bryan_coquard": {
     "name": "Bryan Coquard",
@@ -32164,15 +30660,7 @@
       "climber": 238,
       "hills": 2795
     },
-    "form_long_by_type": {
-      "overall": 44.0,
-      "sprint": 18.9,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "callum_thornley": {
     "name": "Callum Thornley",
@@ -32348,15 +30836,7 @@
       "climber": 37,
       "hills": 58
     },
-    "form_long_by_type": {
-      "overall": 61.9,
-      "sprint": 24.1,
-      "mountain": 23.0,
-      "hilly": 5.2,
-      "tt": 88.6,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "carlos_rodriguez": {
     "name": "Carlos Rodriguez",
@@ -32402,15 +30882,7 @@
       "climber": 0,
       "hills": 0
     },
-    "form_long_by_type": {
-      "overall": 0.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "cian_uijtdebroeks": {
     "name": "Cian Uijtdebroeks",
@@ -32586,15 +31058,7 @@
       "climber": 1248,
       "hills": 272
     },
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 5.1,
-      "mountain": 73.7,
-      "hilly": 59.6,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "clement_berthet": {
     "name": "Clement Berthet",
@@ -32680,15 +31144,7 @@
       "climber": 793,
       "hills": 372
     },
-    "form_long_by_type": {
-      "overall": 31.1,
-      "sprint": 7.8,
-      "mountain": 0.0,
-      "hilly": 9.2,
-      "tt": 98.6,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "daan_hoole": {
     "name": "Daan Hoole",
@@ -32814,15 +31270,7 @@
       "climber": 16,
       "hills": 132
     },
-    "form_long_by_type": {
-      "overall": 69.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "daniel_felipe_martinez": {
     "name": "Daniel Felipe Martinez",
@@ -32998,15 +31446,7 @@
       "climber": 2612,
       "hills": 786
     },
-    "form_long_by_type": {
-      "overall": 20.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "dillon_corkery": {
     "name": "Dillon Corkery",
@@ -33162,15 +31602,7 @@
       "climber": 3,
       "hills": 30
     },
-    "form_long_by_type": {
-      "overall": 25.2,
-      "sprint": 17.9,
-      "mountain": 0.0,
-      "hilly": 1.5,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "dorian_godon": {
     "name": "Dorian Godon",
@@ -33346,15 +31778,7 @@
       "climber": 882,
       "hills": 2252
     },
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 39.5,
-      "mountain": 0.0,
-      "hilly": 100.0,
-      "tt": 50.1,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "emanuel_buchmann": {
     "name": "Emanuel Buchmann",
@@ -33490,15 +31914,7 @@
       "climber": 2966,
       "hills": 858
     },
-    "form_long_by_type": {
-      "overall": 10.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ethan_hayter": {
     "name": "Ethan Hayter",
@@ -33674,15 +32090,7 @@
       "climber": 714,
       "hills": 1510
     },
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 3.2,
-      "mountain": 0.0,
-      "hilly": 4.8,
-      "tt": 100.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ewen_costiou": {
     "name": "Ewen Costiou",
@@ -33850,15 +32258,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 83.9,
-      "sprint": 0.9,
-      "mountain": 0.0,
-      "hilly": 1.8,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "fabien_grellier": {
     "name": "Fabien Grellier",
@@ -34016,15 +32416,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 2.3,
-      "sprint": 0.7,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "gal_glivar": {
     "name": "Gal Glivar",
@@ -34200,15 +32592,7 @@
       "climber": 130,
       "hills": 254
     },
-    "form_long_by_type": {
-      "overall": 17.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "geoffrey_bouchard": {
     "name": "Geoffrey Bouchard",
@@ -34384,15 +32768,7 @@
       "climber": 778,
       "hills": 166
     },
-    "form_long_by_type": {
-      "overall": 12.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 17.3,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "georg_steinhauser": {
     "name": "Georg Steinhauser",
@@ -34568,15 +32944,7 @@
       "climber": 586,
       "hills": 284
     },
-    "form_long_by_type": {
-      "overall": 25.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "georg_zimmermann": {
     "name": "Georg Zimmermann",
@@ -34752,15 +33120,7 @@
       "climber": 758,
       "hills": 842
     },
-    "form_long_by_type": {
-      "overall": 16.3,
-      "sprint": 4.6,
-      "mountain": 47.1,
-      "hilly": 5.8,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "george_bennett": {
     "name": "George Bennett",
@@ -34936,15 +33296,7 @@
       "climber": 3034,
       "hills": 1121
     },
-    "form_long_by_type": {
-      "overall": 20.1,
-      "sprint": 12.9,
-      "mountain": 4.3,
-      "hilly": 19.6,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "gorka_sorarrain_agirrezabala": {
     "name": "Gorka Sorarrain Agirrezabala",
@@ -35120,15 +33472,7 @@
       "climber": 34,
       "hills": 126
     },
-    "form_long_by_type": {
-      "overall": 26.7,
-      "sprint": 22.5,
-      "mountain": 2.6,
-      "hilly": 4.1,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "guillaume_martin": {
     "name": "Guillaume Martin",
@@ -35304,15 +33648,7 @@
       "climber": 4193,
       "hills": 1809
     },
-    "form_long_by_type": {
-      "overall": 13.9,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "guillermo_juan_martinez": {
     "name": "Guillermo Juan Martinez",
@@ -35488,15 +33824,7 @@
       "climber": 121,
       "hills": 16
     },
-    "form_long_by_type": {
-      "overall": 19.1,
-      "sprint": 3.2,
-      "mountain": 38.6,
-      "hilly": 7.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "harold_tejada": {
     "name": "Harold Tejada",
@@ -35672,15 +34000,7 @@
       "climber": 1188,
       "hills": 876
     },
-    "form_long_by_type": {
-      "overall": 53.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "henri-francois_renard-haquin": {
     "name": "Henri-Francois Renard-Haquin",
@@ -35856,15 +34176,7 @@
       "climber": 55,
       "hills": 63
     },
-    "form_long_by_type": {
-      "overall": 29.5,
-      "sprint": 3.9,
-      "mountain": 0.0,
-      "hilly": 6.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "hugo_hofstetter": {
     "name": "Hugo Hofstetter",
@@ -35990,15 +34302,7 @@
       "climber": 29,
       "hills": 1017
     },
-    "form_long_by_type": {
-      "overall": 70.3,
-      "sprint": 18.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "hugo_houle": {
     "name": "Hugo Houle",
@@ -36084,15 +34388,7 @@
       "climber": 512,
       "hills": 764
     },
-    "form_long_by_type": {
-      "overall": 9.3,
-      "sprint": 1.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 5.5,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ion_izagirre_insausti": {
     "name": "Ion Izagirre Insausti",
@@ -36260,15 +34556,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 43.2,
-      "sprint": 4.6,
-      "mountain": 0.0,
-      "hilly": 68.8,
-      "tt": 17.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "isaac_del_toro": {
     "name": "Isaac Del Toro",
@@ -36444,15 +34732,7 @@
       "climber": 1824,
       "hills": 954
     },
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ivan_romeo": {
     "name": "Ivan Romeo",
@@ -36628,15 +34908,7 @@
       "climber": 298,
       "hills": 324
     },
-    "form_long_by_type": {
-      "overall": 58.0,
-      "sprint": 9.1,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ivo_oliveira": {
     "name": "Ivo Oliveira",
@@ -36829,15 +35101,7 @@
       "climber": 109,
       "hills": 70
     },
-    "form_long_by_type": {
-      "overall": 23.1,
-      "sprint": 4.7,
-      "mountain": 29.2,
-      "hilly": 3.8,
-      "tt": 2.3,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "joan_bou": {
     "name": "Joan Bou",
@@ -37013,15 +35277,7 @@
       "climber": 298,
       "hills": 246
     },
-    "form_long_by_type": {
-      "overall": 18.9,
-      "sprint": 9.9,
-      "mountain": 8.3,
-      "hilly": 8.3,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jordan_jegat": {
     "name": "Jordan Jegat",
@@ -37127,15 +35383,7 @@
       "climber": 835,
       "hills": 590
     },
-    "form_long_by_type": {
-      "overall": 71.3,
-      "sprint": 28.0,
-      "mountain": 0.0,
-      "hilly": 56.8,
-      "tt": 4.3,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jose_felix_parra": {
     "name": "Jose Felix Parra",
@@ -37311,15 +35559,7 @@
       "climber": 452,
       "hills": 122
     },
-    "form_long_by_type": {
-      "overall": 20.2,
-      "sprint": 4.6,
-      "mountain": 15.4,
-      "hilly": 2.8,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "joshua_tarling": {
     "name": "Joshua Tarling",
@@ -37495,15 +35735,7 @@
       "climber": 28,
       "hills": 30
     },
-    "form_long_by_type": {
-      "overall": 62.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "juan_ayuso": {
     "name": "Juan Ayuso",
@@ -37705,15 +35937,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 72.2,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jørgen_nordhagen": {
     "name": "Jørgen Nordhagen",
@@ -37889,15 +36113,7 @@
       "climber": 372,
       "hills": 129
     },
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 27.9,
-      "mountain": 63.0,
-      "hilly": 11.1,
-      "tt": 27.8,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "kevin_vauquelin": {
     "name": "Kevin Vauquelin",
@@ -38073,15 +36289,7 @@
       "climber": 1262,
       "hills": 1155
     },
-    "form_long_by_type": {
-      "overall": 64.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "kevin_vermaerke": {
     "name": "Kevin Vermaerke",
@@ -38257,15 +36465,7 @@
       "climber": 718,
       "hills": 590
     },
-    "form_long_by_type": {
-      "overall": 43.3,
-      "sprint": 0.8,
-      "mountain": 2.2,
-      "hilly": 2.1,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "laurens_de_plus": {
     "name": "Laurens De Plus",
@@ -38441,15 +36641,7 @@
       "climber": 1066,
       "hills": 592
     },
-    "form_long_by_type": {
-      "overall": 30.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "lennart_jasch": {
     "name": "Lennart Jasch",
@@ -38625,15 +36817,7 @@
       "climber": 82,
       "hills": 28
     },
-    "form_long_by_type": {
-      "overall": 74.8,
-      "sprint": 13.6,
-      "mountain": 19.0,
-      "hilly": 70.1,
-      "tt": 3.3,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "louis_rouland": {
     "name": "Louis Rouland",
@@ -38809,15 +36993,7 @@
       "climber": 133,
       "hills": 34
     },
-    "form_long_by_type": {
-      "overall": 44.4,
-      "sprint": 1.7,
-      "mountain": 0.0,
-      "hilly": 36.6,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "luke_plapp": {
     "name": "Luke Plapp",
@@ -38993,15 +37169,7 @@
       "climber": 886,
       "hills": 458
     },
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.6,
-      "mountain": 59.4,
-      "hilly": 1.1,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "luke_tuckwell": {
     "name": "Luke Tuckwell",
@@ -39177,15 +37345,7 @@
       "climber": 138,
       "hills": 41
     },
-    "form_long_by_type": {
-      "overall": 38.5,
-      "sprint": 12.5,
-      "mountain": 23.7,
-      "hilly": 0.0,
-      "tt": 9.9,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "leo_bisiaux": {
     "name": "Léo Bisiaux",
@@ -39331,15 +37491,7 @@
       "climber": 268,
       "hills": 104
     },
-    "form_long_by_type": {
-      "overall": 66.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "martin_svrcek": {
     "name": "Martin Svrcek",
@@ -39515,15 +37667,7 @@
       "climber": 24,
       "hills": 44
     },
-    "form_long_by_type": {
-      "overall": 9.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "matej_mohoric": {
     "name": "Matej Mohoric",
@@ -39559,15 +37703,7 @@
       "climber": 1644,
       "hills": 3004
     },
-    "form_long_by_type": {
-      "overall": 27.3,
-      "sprint": 2.9,
-      "mountain": 0.0,
-      "hilly": 28.9,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mathieu_burgaudeau": {
     "name": "Mathieu Burgaudeau",
@@ -39693,15 +37829,7 @@
       "climber": 598,
       "hills": 884
     },
-    "form_long_by_type": {
-      "overall": 18.7,
-      "sprint": 4.4,
-      "mountain": 0.0,
-      "hilly": 13.1,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mathis_le_berre": {
     "name": "Mathis Le Berre",
@@ -39877,15 +38005,7 @@
       "climber": 101,
       "hills": 287
     },
-    "form_long_by_type": {
-      "overall": 18.0,
-      "sprint": 0.8,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "matteo_jorgenson": {
     "name": "Matteo Jorgenson",
@@ -39981,15 +38101,7 @@
       "climber": 2129,
       "hills": 1490
     },
-    "form_long_by_type": {
-      "overall": 79.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "matteo_trentin": {
     "name": "Matteo Trentin",
@@ -40095,15 +38207,7 @@
       "climber": 1090,
       "hills": 4472
     },
-    "form_long_by_type": {
-      "overall": 26.7,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "matteo_vercher": {
     "name": "Matteo Vercher",
@@ -40296,15 +38400,7 @@
       "climber": 1178,
       "hills": 152
     },
-    "form_long_by_type": {
-      "overall": 74.9,
-      "sprint": 0.0,
-      "mountain": 100.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mattia_cattaneo": {
     "name": "Mattia Cattaneo",
@@ -40462,15 +38558,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 14.0,
-      "sprint": 4.9,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mattias_skjelmose": {
     "name": "Mattias Skjelmose",
@@ -40663,15 +38751,7 @@
       "climber": 1084,
       "hills": 682
     },
-    "form_long_by_type": {
-      "overall": 9.4,
-      "sprint": 0.4,
-      "mountain": 1.0,
-      "hilly": 3.1,
-      "tt": 2.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "maxim_van_gils": {
     "name": "Maxim Van Gils",
@@ -40696,15 +38776,7 @@
       "climber": 1344,
       "hills": 1255
     },
-    "form_long_by_type": {
-      "overall": 68.2,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "michael_matthews": {
     "name": "Michael Matthews",
@@ -40729,15 +38801,7 @@
       "climber": 2374,
       "hills": 7788
     },
-    "form_long_by_type": {
-      "overall": 12.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "michal_kwiatkowski": {
     "name": "Michal Kwiatkowski",
@@ -40885,15 +38949,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 56.4,
-      "sprint": 14.1,
-      "mountain": 0.0,
-      "hilly": 100.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "nicola_conci": {
     "name": "Nicola Conci",
@@ -41069,15 +39125,7 @@
       "climber": 602,
       "hills": 547
     },
-    "form_long_by_type": {
-      "overall": 15.5,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "nicolas_breuillard": {
     "name": "Nicolas Breuillard",
@@ -41213,15 +39261,7 @@
       "climber": 150,
       "hills": 171
     },
-    "form_long_by_type": {
-      "overall": 27.1,
-      "sprint": 2.9,
-      "mountain": 0.0,
-      "hilly": 17.3,
-      "tt": 4.5,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "nicolas_prodhomme": {
     "name": "Nicolas Prodhomme",
@@ -41397,15 +39437,7 @@
       "climber": 774,
       "hills": 321
     },
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 11.1,
-      "mountain": 100.0,
-      "hilly": 74.3,
-      "tt": 5.3,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "oscar_onley": {
     "name": "Oscar Onley",
@@ -41581,15 +39613,7 @@
       "climber": 1770,
       "hills": 1166
     },
-    "form_long_by_type": {
-      "overall": 90.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "pablo_castrillo": {
     "name": "Pablo Castrillo",
@@ -41631,15 +39655,7 @@
       "climber": 83,
       "hills": 70
     },
-    "form_long_by_type": {
-      "overall": 0.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "pascal_eenkhoorn": {
     "name": "Pascal Eenkhoorn",
@@ -41815,15 +39831,7 @@
       "climber": 200,
       "hills": 566
     },
-    "form_long_by_type": {
-      "overall": 28.9,
-      "sprint": 8.2,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "paul_seixas": {
     "name": "Paul Seixas",
@@ -41959,15 +39967,7 @@
       "climber": 945,
       "hills": 188
     },
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 3.7,
-      "mountain": 100.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "pavel_sivakov": {
     "name": "Pavel Sivakov",
@@ -42143,15 +40143,7 @@
       "climber": 2134,
       "hills": 780
     },
-    "form_long_by_type": {
-      "overall": 19.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "pello_bilbao": {
     "name": "Pello Bilbao",
@@ -42317,15 +40309,7 @@
       "climber": 5320,
       "hills": 2402
     },
-    "form_long_by_type": {
-      "overall": 58.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "pepijn_reinderink": {
     "name": "Pepijn Reinderink",
@@ -42451,15 +40435,7 @@
       "climber": 97,
       "hills": 100
     },
-    "form_long_by_type": {
-      "overall": 32.9,
-      "sprint": 22.4,
-      "mountain": 0.0,
-      "hilly": 14.2,
-      "tt": 19.4,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "robbe_dhondt": {
     "name": "Robbe Dhondt",
@@ -42595,15 +40571,7 @@
       "climber": 25,
       "hills": 49
     },
-    "form_long_by_type": {
-      "overall": 7.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.5,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "rudy_molard": {
     "name": "Rudy Molard",
@@ -42779,15 +40747,7 @@
       "climber": 1840,
       "hills": 1178
     },
-    "form_long_by_type": {
-      "overall": 28.2,
-      "sprint": 0.0,
-      "mountain": 2.2,
-      "hilly": 1.5,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "samuel_watson": {
     "name": "Samuel Watson",
@@ -42953,15 +40913,7 @@
       "climber": 83,
       "hills": 588
     },
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 28.3,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "sergi_darder": {
     "name": "Sergi Darder",
@@ -43137,15 +41089,7 @@
       "climber": 28,
       "hills": 206
     },
-    "form_long_by_type": {
-      "overall": 45.3,
-      "sprint": 19.4,
-      "mountain": 0.0,
-      "hilly": 21.9,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "sergio_samitier": {
     "name": "Sergio Samitier",
@@ -43321,15 +41265,7 @@
       "climber": 164,
       "hills": 104
     },
-    "form_long_by_type": {
-      "overall": 8.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 4.4,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "stefan_bissegger": {
     "name": "Stefan Bissegger",
@@ -43505,15 +41441,7 @@
       "climber": 18,
       "hills": 407
     },
-    "form_long_by_type": {
-      "overall": 23.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 3.3,
-      "tt": 8.2,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "steff_cras": {
     "name": "Steff Cras",
@@ -43689,15 +41617,7 @@
       "climber": 982,
       "hills": 466
     },
-    "form_long_by_type": {
-      "overall": 40.3,
-      "sprint": 1.2,
-      "mountain": 56.8,
-      "hilly": 27.1,
-      "tt": 16.9,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "tim_wellens": {
     "name": "Tim Wellens",
@@ -43775,15 +41695,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 65.3,
-      "sprint": 1.8,
-      "mountain": 0.0,
-      "hilly": 22.7,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "tobias_halland_johannessen": {
     "name": "Tobias Halland Johannessen",
@@ -43959,15 +41871,7 @@
       "climber": 1881,
       "hills": 1130
     },
-    "form_long_by_type": {
-      "overall": 58.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "toms_skujins": {
     "name": "Toms Skujins",
@@ -44083,15 +41987,7 @@
       "climber": 1532,
       "hills": 1346
     },
-    "form_long_by_type": {
-      "overall": 30.0,
-      "sprint": 5.8,
-      "mountain": 0.0,
-      "hilly": 12.2,
-      "tt": 18.3,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "torstein_træen": {
     "name": "Torstein Træen",
@@ -44257,15 +42153,7 @@
       "climber": 665,
       "hills": 192
     },
-    "form_long_by_type": {
-      "overall": 61.3,
-      "sprint": 1.6,
-      "mountain": 6.2,
-      "hilly": 1.8,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "valentin_paret-peintre": {
     "name": "Valentin Paret-Peintre",
@@ -44441,15 +42329,7 @@
       "climber": 983,
       "hills": 310
     },
-    "form_long_by_type": {
-      "overall": 58.4,
-      "sprint": 1.3,
-      "mountain": 40.1,
-      "hilly": 21.8,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "william_junior_lecerf": {
     "name": "William Junior Lecerf",
@@ -44562,15 +42442,7 @@
       "climber": 2172,
       "hills": 5179
     },
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 11.6,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "yannis_voisard": {
     "name": "Yannis Voisard",
@@ -44746,15 +42618,7 @@
       "climber": 532,
       "hills": 325
     },
-    "form_long_by_type": {
-      "overall": 51.1,
-      "sprint": 5.1,
-      "mountain": 100.0,
-      "hilly": 5.6,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "alastair_mackellar": {
     "name": "Alastair MacKellar",
@@ -44930,15 +42794,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 14.5,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 6.1,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "alessandro_covi": {
     "name": "Alessandro Covi",
@@ -45094,15 +42950,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 54.3,
-      "sprint": 17.6,
-      "mountain": 35.2,
-      "hilly": 28.9,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "anders_halland_johannessen": {
     "name": "Anders Halland Johannessen",
@@ -45278,15 +43126,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 79.8,
-      "sprint": 30.2,
-      "mountain": 100.0,
-      "hilly": 9.3,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "anton_kuzmin": {
     "name": "Anton Kuzmin",
@@ -45462,15 +43302,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 2.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ben_tulett": {
     "name": "Ben Tulett",
@@ -45636,15 +43468,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 89.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 54.9,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "brady_gilmore": {
     "name": "Brady Gilmore",
@@ -45820,15 +43644,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 74.1,
-      "mountain": 52.7,
-      "hilly": 14.4,
-      "tt": 14.8,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "carlos_verona": {
     "name": "Carlos Verona",
@@ -46004,15 +43820,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 52.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "clement_braz_afonso": {
     "name": "Clément Braz Afonso",
@@ -46188,15 +43996,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 30.3,
-      "sprint": 0.8,
-      "mountain": 0.0,
-      "hilly": 3.9,
-      "tt": 1.6,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "cristian_rodriguez_martin": {
     "name": "Cristian Rodriguez Martin",
@@ -46372,15 +44172,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 35.9,
-      "sprint": 2.5,
-      "mountain": 3.7,
-      "hilly": 0.0,
-      "tt": 77.4,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "diego_pescador": {
     "name": "Diego Pescador",
@@ -46516,15 +44308,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 20.2,
-      "sprint": 9.2,
-      "mountain": 0.0,
-      "hilly": 3.1,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "finn_fisher-black": {
     "name": "Finn Fisher-Black",
@@ -46700,15 +44484,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 56.2,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "florian_samuel_kajamini": {
     "name": "Florian Samuel Kajamini",
@@ -46884,15 +44660,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 8.0,
-      "sprint": 5.7,
-      "mountain": 0.0,
-      "hilly": 5.2,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "gianni_vermeersch": {
     "name": "Gianni Vermeersch",
@@ -46988,15 +44756,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 14.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "haimar_etxeberria": {
     "name": "Haimar Etxeberria",
@@ -47162,15 +44922,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 16.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "hamish_mckenzie": {
     "name": "Hamish McKenzie",
@@ -47336,15 +45088,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 17.9,
-      "sprint": 5.7,
-      "mountain": 0.0,
-      "hilly": 2.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "hannes_wilksch": {
     "name": "Hannes Wilksch",
@@ -47520,15 +45264,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 4.2,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "henri_uhlig": {
     "name": "Henri Uhlig",
@@ -47674,15 +45410,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 29.8,
-      "sprint": 13.4,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jacob_eriksson": {
     "name": "Jacob Eriksson",
@@ -47858,15 +45586,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 4.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jasha_sutterlin": {
     "name": "Jasha Sütterlin",
@@ -47992,15 +45712,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 18.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jefferson_alveiro_cepeda": {
     "name": "Jefferson Alveiro Cepeda",
@@ -48193,15 +45905,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 43.2,
-      "sprint": 0.5,
-      "mountain": 0.0,
-      "hilly": 1.7,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "kevin_geniets": {
     "name": "Kevin Geniets",
@@ -48377,15 +46081,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 10.2,
-      "sprint": 2.3,
-      "mountain": 3.3,
-      "hilly": 2.8,
-      "tt": 3.3,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "lars_craps": {
     "name": "Lars Craps",
@@ -48471,15 +46167,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 20.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "lennard_kamna": {
     "name": "Lennard Kämna",
@@ -48655,15 +46343,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 30.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "lennert_belmans": {
     "name": "Lennert Belmans",
@@ -48839,15 +46519,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 5.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "luke_durbridge": {
     "name": "Luke Durbridge",
@@ -49023,15 +46695,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 5.6,
-      "sprint": 0.0,
-      "mountain": 2.5,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "marco_frigo": {
     "name": "Marco Frigo",
@@ -49207,15 +46871,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 90.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.5,
-      "tt": 3.6,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "martin_urianstad": {
     "name": "Martin Urianstad",
@@ -49391,15 +47047,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 6.8,
-      "sprint": 1.8,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "matthew_fox": {
     "name": "Matthew Fox",
@@ -49592,15 +47240,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 19.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 8.6,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "maxime_decomble": {
     "name": "Maxime Decomble",
@@ -49776,15 +47416,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 36.7,
-      "sprint": 20.7,
-      "mountain": 21.9,
-      "hilly": 2.6,
-      "tt": 19.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "michael_gogl": {
     "name": "Michael Gogl",
@@ -49950,15 +47582,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 5.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "michael_leonard": {
     "name": "Michael Leonard",
@@ -50064,15 +47688,7 @@
         "stage_type": "sprint"
       }
     ],
-    "form_long_by_type": {
-      "overall": 0.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "michel_hessmann": {
     "name": "Michel Hessmann",
@@ -50248,15 +47864,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 19.1,
-      "sprint": 3.7,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "nadav_raisberg": {
     "name": "Nadav Raisberg",
@@ -50432,15 +48040,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 14.7,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "nikias_arndt": {
     "name": "Nikias Arndt",
@@ -50616,15 +48216,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 6.6,
-      "sprint": 4.3,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "pau_marti": {
     "name": "Pau Marti",
@@ -50747,15 +48339,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 36.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "phil_bauhaus": {
     "name": "Phil Bauhaus",
@@ -50931,15 +48515,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 58.0,
-      "sprint": 29.8,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "quentin_pacher": {
     "name": "Quentin Pacher",
@@ -51115,15 +48691,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 10.5,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "quinn_simmons": {
     "name": "Quinn Simmons",
@@ -51219,15 +48787,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 82.9,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ramses_debruyne": {
     "name": "Ramses Debruyne",
@@ -51403,15 +48963,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 29.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "raul_garcia_pierna": {
     "name": "Raul Garcia Pierna",
@@ -51587,15 +49139,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 73.4,
-      "sprint": 3.6,
-      "mountain": 0.0,
-      "hilly": 3.7,
-      "tt": 100.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "robin_donze": {
     "name": "Robin Donzé",
@@ -51771,15 +49315,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 10.3,
-      "sprint": 8.0,
-      "mountain": 7.3,
-      "hilly": 7.4,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "roel_van_sintmaartensdijk": {
     "name": "Roel van Sintmaartensdijk",
@@ -51955,15 +49491,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 3.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "roland_thalmann": {
     "name": "Roland Thalmann",
@@ -52139,15 +49667,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 7.0,
-      "sprint": 2.7,
-      "mountain": 5.5,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "rotem_tene": {
     "name": "Rotem Tene",
@@ -52323,15 +49843,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 59.7,
-      "sprint": 24.3,
-      "mountain": 0.0,
-      "hilly": 42.0,
-      "tt": 10.7,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "sam_maisonobe": {
     "name": "Sam Maisonobe",
@@ -52507,15 +50019,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 24.8,
-      "sprint": 11.3,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "senna_remijn": {
     "name": "Senna Remijn",
@@ -52671,15 +50175,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 46.2,
-      "sprint": 30.9,
-      "mountain": 0.0,
-      "hilly": 9.5,
-      "tt": 1.1,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "simone_velasco": {
     "name": "Simone Velasco",
@@ -52855,15 +50351,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 34.4,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "thibault_guernalec": {
     "name": "Thibault Guernalec",
@@ -52949,15 +50437,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 36.8,
-      "sprint": 7.8,
-      "mountain": 0.0,
-      "hilly": 6.1,
-      "tt": 69.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "valentin_ferron": {
     "name": "Valentin Ferron",
@@ -53093,15 +50573,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 4.8,
-      "sprint": 2.1,
-      "mountain": 0.0,
-      "hilly": 3.4,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "vito_braet": {
     "name": "Vito Braet",
@@ -53277,15 +50749,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 22.2,
-      "sprint": 1.4,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "vlad_van_mechelen": {
     "name": "Vlad Van Mechelen",
@@ -53391,15 +50855,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 23.6,
-      "sprint": 3.6,
-      "mountain": 0.0,
-      "hilly": 6.7,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "alex_aranburu": {
     "name": "Alex Aranburu",
@@ -53526,15 +50982,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 39.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "alex_kirsch": {
     "name": "Alex Kirsch",
@@ -53711,15 +51159,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 7.5,
-      "sprint": 0.6,
-      "mountain": 0.0,
-      "hilly": 3.9,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "alex_molenaar": {
     "name": "Alex Molenaar",
@@ -53896,15 +51336,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 33.9,
-      "sprint": 27.8,
-      "mountain": 4.6,
-      "hilly": 12.8,
-      "tt": 4.6,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "antonio_tiberi": {
     "name": "Antonio Tiberi",
@@ -54081,15 +51513,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 54.2,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "bert_van_lerberghe": {
     "name": "Bert van Lerberghe",
@@ -54266,15 +51690,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 5.1,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "biniam_girmay": {
     "name": "Biniam Girmay",
@@ -54421,15 +51837,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 72.2,
-      "sprint": 48.4,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "brandon_mcnulty": {
     "name": "Brandon McNulty",
@@ -54606,15 +52014,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 28.8,
-      "mountain": 0.0,
-      "hilly": 99.0,
-      "tt": 100.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "david_gaudu": {
     "name": "David Gaudu",
@@ -54791,15 +52191,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 94.5,
-      "sprint": 0.8,
-      "mountain": 20.8,
-      "hilly": 32.2,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "dylan_van_baarle": {
     "name": "Dylan Van Baarle",
@@ -54876,15 +52268,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 41.2,
-      "sprint": 4.6,
-      "mountain": 0.0,
-      "hilly": 21.2,
-      "tt": 11.2,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "emiel_verstrynge": {
     "name": "Emiel Verstrynge",
@@ -55041,15 +52425,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 8.8,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "florian_lipowitz": {
     "name": "Florian Lipowitz",
@@ -55226,15 +52602,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 62.5,
-      "sprint": 1.5,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "florian_vermeersch": {
     "name": "Florian Vermeersch",
@@ -55381,15 +52749,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 38.4,
-      "sprint": 3.6,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "fred_wright": {
     "name": "Fred Wright",
@@ -55504,15 +52864,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 34.9,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "ilan_van_wilder": {
     "name": "Ilan van Wilder",
@@ -55689,15 +53041,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 31.6,
-      "sprint": 6.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jan_tratnik": {
     "name": "Jan Tratnik",
@@ -55874,15 +53218,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 19.7,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jasper_philipsen": {
     "name": "Jasper Philipsen",
@@ -56029,15 +53365,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 34.2,
-      "mountain": 0.0,
-      "hilly": 2.1,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jenthe_biermans": {
     "name": "Jenthe Biermans",
@@ -56104,15 +53432,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 51.9,
-      "sprint": 3.2,
-      "mountain": 0.0,
-      "hilly": 0.5,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jonas_rickaert": {
     "name": "Jonas Rickaert",
@@ -56289,15 +53609,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 9.2,
-      "sprint": 1.1,
-      "mountain": 1.7,
-      "hilly": 2.2,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "jordi_meeus": {
     "name": "Jordi Meeus",
@@ -56474,15 +53786,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 21.6,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "kasper_asgreen": {
     "name": "Kasper Asgreen",
@@ -56659,15 +53963,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 25.3,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "lenny_martinez": {
     "name": "Lenny Martinez",
@@ -56844,15 +54140,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 68.7,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "louis_vervaeke": {
     "name": "Louis Vervaeke",
@@ -57029,15 +54317,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 36.1,
-      "sprint": 0.0,
-      "mountain": 1.1,
-      "hilly": 19.6,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "magnus_cort": {
     "name": "Magnus Cort",
@@ -57232,15 +54512,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 73.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mathieu_van_der_poel": {
     "name": "Mathieu van der Poel",
@@ -57337,15 +54609,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mauro_schmid": {
     "name": "Mauro Schmid",
@@ -57522,15 +54786,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 55.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "mike_teunissen": {
     "name": "Mike Teunissen",
@@ -57687,15 +54943,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 24.5,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "milan_fretin": {
     "name": "Milan Fretin",
@@ -57862,15 +55110,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 58.6,
-      "sprint": 6.5,
-      "mountain": 0.0,
-      "hilly": 21.2,
-      "tt": 4.5,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "nico_denz": {
     "name": "Nico Denz",
@@ -58047,15 +55287,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 67.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "nils_politt": {
     "name": "Nils Politt",
@@ -58232,15 +55464,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 16.8,
-      "sprint": 5.9,
-      "mountain": 0.0,
-      "hilly": 1.9,
-      "tt": 44.5,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "olav_kooij": {
     "name": "Olav Kooij",
@@ -58307,15 +55531,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 39.3,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "pavel_bittner": {
     "name": "Pavel Bittner",
@@ -58462,15 +55678,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 18.5,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "piet_allegaert": {
     "name": "Piet Allegaert",
@@ -58577,15 +55785,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 6.3,
-      "sprint": 3.4,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "remco_evenepoel": {
     "name": "Remco Evenepoel",
@@ -58762,15 +55962,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "rick_pluimers": {
     "name": "Rick Pluimers",
@@ -58897,15 +56089,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 40.3,
-      "sprint": 7.4,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "roger_adria": {
     "name": "Roger Adria",
@@ -59082,15 +56266,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 49.7,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "sergio_higuita": {
     "name": "Sergio Higuita",
@@ -59267,15 +56443,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 20.6,
-      "sprint": 0.0,
-      "mountain": 3.4,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "simon_carr": {
     "name": "Simon Carr",
@@ -59332,15 +56500,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 5.7,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "stefan_kung": {
     "name": "Stefan Küng",
@@ -59417,15 +56577,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 30.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "søren_kragh_andersen": {
     "name": "Søren Kragh Andersen",
@@ -59572,15 +56724,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 55.7,
-      "sprint": 6.0,
-      "mountain": 0.0,
-      "hilly": 31.6,
-      "tt": 20.9,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "tadej_pogacar": {
     "name": "Tadej Pogacar",
@@ -59667,15 +56811,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "thomas_pidcock": {
     "name": "Thomas Pidcock",
@@ -59870,15 +57006,7 @@
         "stage_type": "hilly"
       }
     ],
-    "form_long_by_type": {
-      "overall": 9.6,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "tim_merlier": {
     "name": "Tim Merlier",
@@ -59955,15 +57083,7 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 100.0,
-      "sprint": 0.0,
-      "mountain": 0.0,
-      "hilly": 0.0,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   },
   "warren_barguil": {
     "name": "Warren Barguil",
@@ -60140,14 +57260,6 @@
         "stage_type": null
       }
     ],
-    "form_long_by_type": {
-      "overall": 8.9,
-      "sprint": 0.5,
-      "mountain": 1.1,
-      "hilly": 2.5,
-      "tt": 0.0,
-      "ttt": 0.0,
-      "cobbled": 0.0
-    }
+    "form_long_by_type": {}
   }
 }

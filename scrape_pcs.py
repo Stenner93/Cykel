@@ -507,7 +507,14 @@ def annotate_stage_types(
         rb = r.get("race_base", "")
         sn = r.get("stage_num")
         if rb and sn is not None and rb in disk_cache:
-            r["stage_type"] = disk_cache[rb].get(sn)
+            sub = disk_cache[rb]
+            # disk_cache loaded fresh this run has int keys; disk_cache
+            # round-tripped through JSON (_load_stage_types_cache) has
+            # string keys — JSON object keys are always strings. Try both
+            # so a cache hit from THIS run and a cache hit loaded from disk
+            # both resolve correctly (a string-only lookup here used to
+            # silently return None for every already-cached race).
+            r["stage_type"] = sub.get(sn, sub.get(str(sn)))
 
     return results
 

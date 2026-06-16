@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rytterdatabase — TdF Manager</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.rd-controls {
+  display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.rd-input {
+  background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+  padding: 6px 12px; color: var(--text); font-size: 0.82rem; min-width: 220px;
+}
+.rd-input:focus { outline: none; border-color: var(--yellow); }
+.rd-select {
+  background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+  padding: 6px 10px; color: var(--text); font-size: 0.82rem; cursor: pointer;
+}
+.rd-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+.rd-stats { font-size: 0.72rem; color: var(--muted); margin-left: auto; }
+
+.rd-wrap { overflow-x: auto; overflow-y: auto; max-height: calc(100vh - 280px); border: 1px solid var(--border); border-radius: 8px; }
+.rd-table { border-collapse: collapse; font-size: 0.76rem; min-width: 1400px; }
+.rd-table th {
+  position: sticky; top: 0; background: var(--surface); z-index: 5;
+  padding: 6px 9px; text-align: center; font-weight: 600; font-size: 0.66rem;
+  text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted);
+  border-bottom: 2px solid var(--border); white-space: nowrap; cursor: pointer; user-select: none;
+}
+.rd-table th:hover { color: var(--text); }
+.rd-table th.sort-asc::after  { content: " ▲"; font-size: 0.6em; }
+.rd-table th.sort-desc::after { content: " ▼"; font-size: 0.6em; }
+.rd-table th.col-name, .rd-table td.col-name {
+  position: sticky; left: 0; background: var(--surface); z-index: 6;
+  text-align: left; min-width: 170px; max-width: 190px;
+}
+.rd-table thead th.col-name { z-index: 12; }
+.rd-table th.col-team, .rd-table td.col-team {
+  position: sticky; left: 170px; background: var(--surface); z-index: 5;
+  text-align: left; min-width: 55px;
+}
+.rd-table thead th.col-team { z-index: 11; }
+.rd-table td {
+  padding: 5px 9px; text-align: center; border-bottom: 1px solid rgba(46,52,80,0.5); white-space: nowrap;
+}
+.rd-table td.col-name { text-align: left; font-weight: 500; overflow: hidden; text-overflow: ellipsis; }
+.rd-table td.col-team { color: var(--muted); font-size: 0.7rem; }
+.rd-table tr:hover td { filter: brightness(1.2); }
+.rd-table tr:hover td.col-name, .rd-table tr:hover td.col-team { background: var(--card) !important; filter: none; }
+
+.rd-races { display: flex; gap: 3px; justify-content: center; }
+.rd-race-badge {
+  font-size: 0.6rem; font-weight: 700; padding: 1px 4px; border-radius: 4px;
+  background: var(--border); color: var(--muted);
+}
+.rd-race-badge.active-giro     { background: rgba(229,57,53,0.2); color: #ff8a80; }
+.rd-race-badge.active-dauphine { background: rgba(255,215,0,0.2); color: var(--yellow); }
+.rd-race-badge.active-tdf      { background: rgba(30,136,229,0.2); color: var(--blue); }
+
+.rd-section-divider { border-left: 2px solid var(--border); }
+.rd-flag { font-size: 0.78rem; }
+.rd-yes { color: var(--green); }
+.rd-no  { color: var(--muted); opacity: 0.4; }
+.rd-num { font-variant-numeric: tabular-nums; }
+.rd-na  { color: var(--muted); opacity: 0.35; }
+
+.rd-legend {
+  font-size: 0.72rem; color: var(--muted); margin-bottom: 14px; line-height: 1.6;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">🚴 TdF Manager 2026</div>
+    <nav class="page-nav" style="display:flex;gap:4px">
+      <a href="index.html"    style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">TdF 2026</a>
+      <a href="giro.html"     style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">Giro 2026</a>
+      <a href="dauphine.html" style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">Dauphiné 2026</a>
+      <a href="riders.html"   style="color:#000;background:var(--yellow);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:700">Rytterdatabase</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1 style="font-size:1.1rem;margin-bottom:6px">📋 Rytterdatabase — alle baggrundssignaler</h1>
+  <p class="rd-legend">
+    Alle ryttere der har optrådt i Giro/Dauphiné/TdF 2026, med den fulde signal-stak modellen bruger.
+    <strong style="color:var(--text)">CO</strong> = CyclingOracle 0-100 rating ·
+    <strong style="color:var(--text)">Spec</strong> = PCS karriere-UCI-point pr. disciplin ·
+    <strong style="color:var(--text)">Form K</strong> = kortsigtet form (180 dage, hurtig decay) ·
+    <strong style="color:var(--text)">Form L</strong> = langsigtet form (18 mdr, langsom decay) ·
+    Klik kolonneoverskrift for at sortere. <span class="rd-yes">✓</span>/<span class="rd-no">✗</span> = har data for denne kilde.
+  </p>
+
+  <div class="rd-controls">
+    <span class="rd-label">Søg:</span>
+    <input type="text" id="rdFilter" class="rd-input" placeholder="Rytternavn eller hold…" autocomplete="off">
+    <span class="rd-label">Løb:</span>
+    <select id="rdRaceFilter" class="rd-select">
+      <option value="">Alle</option>
+      <option value="giro">Giro</option>
+      <option value="dauphine">Dauphiné</option>
+      <option value="tdf">TdF</option>
+    </select>
+    <span class="rd-label">Vis kun:</span>
+    <select id="rdGapFilter" class="rd-select">
+      <option value="">Alle ryttere</option>
+      <option value="no_co">Mangler CyclingOracle</option>
+      <option value="no_pcs">Mangler PCS form</option>
+      <option value="no_spec">Mangler PCS specialties</option>
+      <option value="no_long">Mangler langtids-form</option>
+    </select>
+    <span class="rd-stats" id="rdStats"></span>
+  </div>
+
+  <div class="rd-wrap" id="rdWrap">
+    <div class="info-box" style="text-align:center;padding:60px;color:var(--muted)">
+      <div style="font-size:2rem;margin-bottom:12px">⟳</div>
+      <div>Indlæser rytterdatabase…</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>Diagnostik-side til selvvalidering af modellens baggrundsdata · Opdateres af build_rider_database.py</p>
+</footer>
+
+<script src="riders.js"></script>
+</body>
+</html>
