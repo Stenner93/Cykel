@@ -293,7 +293,15 @@ def build_riders(
         holdet_prices[rid] = (int(person_id), price_M)
         holdet_pid_to_rid[int(person_id)] = rid
 
-    # Merge: start from riders.json, overlay Holdet price + person_id
+    # Merge: start from riders.json, overlay Holdet price + person_id.
+    # Only keep riders actually confirmed in Holdet's TdF game — riders.json
+    # is a cross-race pool (built for Giro/Dauphiné) and contains many names
+    # that aren't part of this race. Showing them in predictions would mean
+    # ranking riders who may not even start, and — worse — some of the
+    # biggest TdF stars (Pogačar, Evenepoel, Roglič, van der Poel, ...)
+    # simply aren't in riders.json yet, so they'd be silently excluded from
+    # the very top of the field while padding the bottom with irrelevant
+    # leftover names. Holdet's player list is the authoritative TdF roster.
     riders: list[dict] = []
     seen_ids: set[str] = set()
 
@@ -301,9 +309,11 @@ def build_riders(
         rid = base["id"]
         if rid in seen_ids:
             continue
-        seen_ids.add(rid)
 
         person_id, price_M = holdet_prices.get(rid, (None, base.get("price", 0.0)))
+        if person_id is None:
+            continue   # not in Holdet's TdF game — skip
+        seen_ids.add(rid)
 
         full_name  = base["full_name"]
         short_name = base.get("short_name", full_name.split()[-1])

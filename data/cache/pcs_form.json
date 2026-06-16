@@ -50493,5 +50493,6367 @@
         "stage_type": null
       }
     ]
+  },
+  "alex_aranburu": {
+    "name": "Alex Aranburu",
+    "pcs_url": "https://www.procyclingstats.com/rider/alex-aranburu",
+    "form_score": 2.7,
+    "form_by_type": {
+      "overall": 2.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 2865,
+      "gc": 1013,
+      "tt": 301,
+      "sprint": 397,
+      "climber": 2015,
+      "hills": 2767
+    },
+    "n_results": 10,
+    "last_result_date": "10.04",
+    "results": [
+      {
+        "date": "10.04",
+        "result": 65,
+        "race": "S5 Stage 5 - Eibar › Eibar 77k",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.04",
+        "result": 1,
+        "race": "S4 Stage 4 - Galdakao › Galdakao 95k",
+        "pcs_pts": 50,
+        "stage_href": "race/itzulia-basque-country/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.04",
+        "result": 76,
+        "race": "S3 Stage 3 - Basauri › Basauri",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.04",
+        "result": 95,
+        "race": "S2 Stage 2 - Pamplona-Iruña › Cuevas de Mendukilo",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "06.04",
+        "result": 31,
+        "race": "S1 (ITT) Stage 1 (ITT) - Bilbao › Bilbao",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 4,
+        "race": "S5 Stage 5 - La Roda de Andalucía › Lucena",
+        "pcs_pts": 7,
+        "stage_href": "race/ruta-del-sol/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 4,
+        "race": "S4 Stage 4 - Montoro › Pozoblanco",
+        "pcs_pts": 7,
+        "stage_href": "race/ruta-del-sol/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 6,
+        "race": "S3 Stage 3 - Jaén › Lopera",
+        "pcs_pts": 3,
+        "stage_href": "race/ruta-del-sol/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 3,
+        "race": "S2 Stage 2 - Torrox › Otura",
+        "pcs_pts": 12,
+        "stage_href": "race/ruta-del-sol/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 17,
+        "race": "S1 Stage 1 - Benahavís › Pizarra",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "alex_kirsch": {
+    "name": "Alex Kirsch",
+    "pcs_url": "https://www.procyclingstats.com/rider/alex-kirsch",
+    "form_score": 0.1,
+    "form_by_type": {
+      "overall": 0.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 649,
+      "gc": 504,
+      "tt": 746,
+      "sprint": 373,
+      "climber": 127,
+      "hills": 478
+    },
+    "n_results": 22,
+    "last_result_date": "24.05",
+    "results": [
+      {
+        "date": "24.05",
+        "result": 71,
+        "race": "S5 Stage 5 - Saint-Omer › Dunkirk",
+        "pcs_pts": 0,
+        "stage_href": "race/4-jours-de-dunkerque/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "4-jours-de-dunkerque/2026",
+        "stage_type": null
+      },
+      {
+        "date": "23.05",
+        "result": 69,
+        "race": "S4 Stage 4 - Bergues › Cassel",
+        "pcs_pts": 0,
+        "stage_href": "race/4-jours-de-dunkerque/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "4-jours-de-dunkerque/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.05",
+        "result": 93,
+        "race": "S3 Stage 3 - La Sentinelle › Wallers Arenberg",
+        "pcs_pts": 0,
+        "stage_href": "race/4-jours-de-dunkerque/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "4-jours-de-dunkerque/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.05",
+        "result": 67,
+        "race": "S2 Stage 2 - Glisy › Liévin",
+        "pcs_pts": 0,
+        "stage_href": "race/4-jours-de-dunkerque/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "4-jours-de-dunkerque/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.05",
+        "result": 76,
+        "race": "S1 Stage 1 - Lagny-le-Sec › Laon",
+        "pcs_pts": 0,
+        "stage_href": "race/4-jours-de-dunkerque/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "4-jours-de-dunkerque/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 107,
+        "race": "S7 Stage 7 - Pont Louis Nucera › Isola",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 101,
+        "race": "S6 Stage 6 - Barbentane › Apt",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 69,
+        "race": "S5 Stage 5 - Cormoranche-sur-Saône › Colombier-le-Vieux",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 95,
+        "race": "S4 Stage 4 - Bourges › Uchon",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 10,
+        "race": "S3 (TTT) Stage 3 (TTT) - Cosne-Cours-sur-Loire › Pouilly-sur-Loire",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 115,
+        "race": "S2 Stage 2 - Épône › Montargis",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.03",
+        "result": 146,
+        "race": "S1 Stage 1 - Achères › Carrières-sous-Poissy",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 91,
+        "race": "S5 Stage 5 - La Roda de Andalucía › Lucena",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 94,
+        "race": "S4 Stage 4 - Montoro › Pozoblanco",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 91,
+        "race": "S3 Stage 3 - Jaén › Lopera",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "alex_molenaar": {
+    "name": "Alex Molenaar",
+    "pcs_url": "https://www.procyclingstats.com/rider/alex-molenaar",
+    "form_score": 0.2,
+    "form_by_type": {
+      "overall": 0.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 376,
+      "gc": 317,
+      "tt": 130,
+      "sprint": 100,
+      "climber": 148,
+      "hills": 462
+    },
+    "n_results": 18,
+    "last_result_date": "11.04",
+    "results": [
+      {
+        "date": "11.04",
+        "result": 69,
+        "race": "S6 Stage 6 - Goizper-Antzuola › Bergara 61k",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.04",
+        "result": 99,
+        "race": "S5 Stage 5 - Eibar › Eibar",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.04",
+        "result": 95,
+        "race": "S4 Stage 4 - Galdakao › Galdakao",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.04",
+        "result": 57,
+        "race": "S3 Stage 3 - Basauri › Basauri",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.04",
+        "result": 128,
+        "race": "S2 Stage 2 - Pamplona-Iruña › Cuevas de Mendukilo",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "06.04",
+        "result": 55,
+        "race": "S1 (ITT) Stage 1 (ITT) - Bilbao › Bilbao",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.03",
+        "result": 33,
+        "race": "S7 Stage 7 - Civitanova Marche › San Benedetto del Tronto",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 53,
+        "race": "S6 Stage 6 - San Severino Marche › Camerino",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 51,
+        "race": "S5 Stage 5 - Marotta-Mondolfo › Mombaroccio",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 52,
+        "race": "S4 Stage 4 - Tagliacozzo › Martinsicuro",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 13,
+        "race": "S3 Stage 3 - Cortona › Magliano de' Marsi",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 54,
+        "race": "S2 Stage 2 - Camaiore › San Gimignano",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 74,
+        "race": "S1 (ITT) Stage 1 (ITT) - Lido di Camaiore › Lido di Camaiore",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 16,
+        "race": "S5 Stage 5 - Faro › Malhão (Loulé)",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 33,
+        "race": "S4 Stage 4 - Albufeira › Lagos",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "antonio_tiberi": {
+    "name": "Antonio Tiberi",
+    "pcs_url": "https://www.procyclingstats.com/rider/antonio-tiberi",
+    "form_score": 1.9,
+    "form_by_type": {
+      "overall": 1.9,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 273,
+      "gc": 1685,
+      "tt": 973,
+      "sprint": 2,
+      "climber": 1477,
+      "hills": 952
+    },
+    "n_results": 30,
+    "last_result_date": "03.05",
+    "results": [
+      {
+        "date": "03.05",
+        "result": 40,
+        "race": "S5 Stage 5 - Lucens › Leysin",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "02.05",
+        "result": 38,
+        "race": "S4 Stage 4 - Broc › Charmey",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "01.05",
+        "result": 52,
+        "race": "S3 Stage 3 - Orbe › Orbe",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.04",
+        "result": 15,
+        "race": "S2 Stage 2 - Rue › Vucherens",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.04",
+        "result": 7,
+        "race": "S1 Stage 1 - Martigny › Martigny",
+        "pcs_pts": 4,
+        "stage_href": "race/tour-de-romandie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.04",
+        "result": 21,
+        "race": "Prologue Prologue - Villars-sur-Glâne › Villars-sur-Glâne",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/prologue",
+        "stage_num": null,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.04",
+        "result": 68,
+        "race": "S5 Stage 5 - Eibar › Eibar",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.04",
+        "result": 111,
+        "race": "S4 Stage 4 - Galdakao › Galdakao",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.04",
+        "result": 33,
+        "race": "S3 Stage 3 - Basauri › Basauri",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.04",
+        "result": 87,
+        "race": "S2 Stage 2 - Pamplona-Iruña › Cuevas de Mendukilo",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "06.04",
+        "result": 48,
+        "race": "S1 (ITT) Stage 1 (ITT) - Bilbao › Bilbao",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.03",
+        "result": 56,
+        "race": "S7 Stage 7 - Civitanova Marche › San Benedetto del Tronto",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 70,
+        "race": "S6 Stage 6 - San Severino Marche › Camerino",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 40,
+        "race": "S5 Stage 5 - Marotta-Mondolfo › Mombaroccio",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 49,
+        "race": "S4 Stage 4 - Tagliacozzo › Martinsicuro",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "bert_van_lerberghe": {
+    "name": "Bert van Lerberghe",
+    "pcs_url": "https://www.procyclingstats.com/rider/bert-van-lerberghe",
+    "form_score": 0.4,
+    "form_by_type": {
+      "overall": 0.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1224,
+      "gc": 196,
+      "tt": 48,
+      "sprint": 864,
+      "climber": 0,
+      "hills": 140
+    },
+    "n_results": 18,
+    "last_result_date": "15.05",
+    "results": [
+      {
+        "date": "15.05",
+        "result": 38,
+        "race": "S3 Stage 3 - Kaposvár › Szekszárd",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-hongrie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.05",
+        "result": 79,
+        "race": "S2 Stage 2 - Szarvas › Paks",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-hongrie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.05",
+        "result": 51,
+        "race": "S1 Stage 1 - Gyula › Békéscsaba",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-hongrie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 13,
+        "race": "S3 (TTT) Stage 3 (TTT) - Cosne-Cours-sur-Loire › Pouilly-sur-Loire",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 36,
+        "race": "S2 Stage 2 - Épône › Montargis",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.03",
+        "result": 36,
+        "race": "S1 Stage 1 - Achères › Carrières-sous-Poissy",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 71,
+        "race": "S7 Stage 7 - Zayed National Museum › Abu Dhabi Breakwater",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 99,
+        "race": "S6 Stage 6 - Al Ain Museum › Jebel Hafeet",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 25,
+        "race": "S5 Stage 5 - Dubai Al Mamzar Park › Hamdan Bin Mohammed Smart University",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 115,
+        "race": "S4 Stage 4 - Fujairah › Fujairah",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 111,
+        "race": "S3 Stage 3 - Umm al Quwain › Jebel Mobrah",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "17.02",
+        "result": 113,
+        "race": "S2 (ITT) Stage 2 (ITT) - Hudayriyat Island › Hudayriyat Island",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "16.02",
+        "result": 111,
+        "race": "S1 Stage 1 - Madinat Zayed Majlis › Liwa Palace",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "31.01",
+        "result": 80,
+        "race": "S5 Stage 5 - AlUla Old Town › Skyviews of Harrat Uwayrid",
+        "pcs_pts": 0,
+        "stage_href": "race/alula-tour/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "alula-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.01",
+        "result": 8,
+        "race": "S4 Stage 4 - Winter Park › Hegra",
+        "pcs_pts": 1,
+        "stage_href": "race/alula-tour/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "alula-tour/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "biniam_girmay": {
+    "name": "Biniam Girmay",
+    "pcs_url": "https://www.procyclingstats.com/rider/biniam-girmay",
+    "form_score": 1.2,
+    "form_by_type": {
+      "overall": 1.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 3519,
+      "gc": 121,
+      "tt": 112,
+      "sprint": 1545,
+      "climber": 272,
+      "hills": 2211
+    },
+    "n_results": 12,
+    "last_result_date": "14.03",
+    "results": [
+      {
+        "date": "14.03",
+        "result": 2,
+        "race": "S7 Stage 7 - Pont Louis Nucera › Isola",
+        "pcs_pts": 30,
+        "stage_href": "race/paris-nice/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 49,
+        "race": "S6 Stage 6 - Barbentane › Apt",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 96,
+        "race": "S5 Stage 5 - Cormoranche-sur-Saône › Colombier-le-Vieux",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 120,
+        "race": "S4 Stage 4 - Bourges › Uchon",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 18,
+        "race": "S3 (TTT) Stage 3 (TTT) - Cosne-Cours-sur-Loire › Pouilly-sur-Loire",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 42,
+        "race": "S2 Stage 2 - Épône › Montargis",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.03",
+        "result": 5,
+        "race": "S1 Stage 1 - Achères › Carrières-sous-Poissy",
+        "pcs_pts": 10,
+        "stage_href": "race/paris-nice/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.02",
+        "result": 80,
+        "race": "S5 Stage 5 - Bétera › Valencia",
+        "pcs_pts": 0,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.02",
+        "result": 103,
+        "race": "S4 Stage 4 - La Nucía › Teulada Moraira",
+        "pcs_pts": 0,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      },
+      {
+        "date": "06.02",
+        "result": 5,
+        "race": "S3 Stage 3 - Orihuela › San Vicente del Raspeig",
+        "pcs_pts": 4,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      },
+      {
+        "date": "05.02",
+        "result": 86,
+        "race": "S2 (ITT) Stage 2 (ITT) - Carlet › Alginet",
+        "pcs_pts": 0,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      },
+      {
+        "date": "04.02",
+        "result": 1,
+        "race": "S1 Stage 1 - Segorbe › Torreblanca",
+        "pcs_pts": 30,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "brandon_mcnulty": {
+    "name": "Brandon McNulty",
+    "pcs_url": "https://www.procyclingstats.com/rider/brandon-mcnulty",
+    "form_score": 1.1,
+    "form_by_type": {
+      "overall": 1.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1407,
+      "gc": 2963,
+      "tt": 2475,
+      "sprint": 60,
+      "climber": 2345,
+      "hills": 1274
+    },
+    "n_results": 25,
+    "last_result_date": "10.04",
+    "results": [
+      {
+        "date": "10.04",
+        "result": 88,
+        "race": "S5 Stage 5 - Eibar › Eibar",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.04",
+        "result": 118,
+        "race": "S4 Stage 4 - Galdakao › Galdakao 76k",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.04",
+        "result": 92,
+        "race": "S3 Stage 3 - Basauri › Basauri",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.04",
+        "result": 64,
+        "race": "S2 Stage 2 - Pamplona-Iruña › Cuevas de Mendukilo",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "06.04",
+        "result": 8,
+        "race": "S1 (ITT) Stage 1 (ITT) - Bilbao › Bilbao",
+        "pcs_pts": 3,
+        "stage_href": "race/itzulia-basque-country/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.03",
+        "result": 89,
+        "race": "S7 Stage 7 - Barcelona › Barcelona 51k",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.03",
+        "result": 75,
+        "race": "S6 Stage 6 - Berga › Queralt",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "27.03",
+        "result": 26,
+        "race": "S5 Stage 5 - La Seu d'Urgell › La Molina/Coll de Pal",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "26.03",
+        "result": 4,
+        "race": "S4 Stage 4 - Mataró › Camprodón",
+        "pcs_pts": 13,
+        "stage_href": "race/volta-a-catalunya/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "25.03",
+        "result": 56,
+        "race": "S3 Stage 3 - Mont-roig del Camp › Vila-seca",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "24.03",
+        "result": 26,
+        "race": "S2 Stage 2 - Figueres › Banyoles",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "23.03",
+        "result": 44,
+        "race": "S1 Stage 1 - Sant Feliu de Guíxols › Sant Feliu de Guíxols",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 8,
+        "race": "S3 (TTT) Stage 3 (TTT) - Cosne-Cours-sur-Loire › Pouilly-sur-Loire",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 46,
+        "race": "S2 Stage 2 - Épône › Montargis",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.03",
+        "result": 56,
+        "race": "S1 Stage 1 - Achères › Carrières-sous-Poissy",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "david_gaudu": {
+    "name": "David Gaudu",
+    "pcs_url": "https://www.procyclingstats.com/rider/david-gaudu",
+    "form_score": 0.5,
+    "form_by_type": {
+      "overall": 0.5,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1790,
+      "gc": 3194,
+      "tt": 160,
+      "sprint": 17,
+      "climber": 4184,
+      "hills": 1370
+    },
+    "n_results": 24,
+    "last_result_date": "03.05",
+    "results": [
+      {
+        "date": "03.05",
+        "result": 65,
+        "race": "S5 Stage 5 - Lucens › Leysin",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "02.05",
+        "result": 55,
+        "race": "S4 Stage 4 - Broc › Charmey",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "01.05",
+        "result": 55,
+        "race": "S3 Stage 3 - Orbe › Orbe",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.04",
+        "result": 71,
+        "race": "S2 Stage 2 - Rue › Vucherens",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.04",
+        "result": 64,
+        "race": "S1 Stage 1 - Martigny › Martigny",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.04",
+        "result": 97,
+        "race": "Prologue Prologue - Villars-sur-Glâne › Villars-sur-Glâne",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/prologue",
+        "stage_num": null,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.03",
+        "result": 13,
+        "race": "S7 Stage 7 - Barcelona › Barcelona",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.03",
+        "result": 14,
+        "race": "S6 Stage 6 - Berga › Queralt",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "27.03",
+        "result": 84,
+        "race": "S5 Stage 5 - La Seu d'Urgell › La Molina/Coll de Pal",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "26.03",
+        "result": 107,
+        "race": "S4 Stage 4 - Mataró › Camprodón",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "25.03",
+        "result": 87,
+        "race": "S3 Stage 3 - Mont-roig del Camp › Vila-seca",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "24.03",
+        "result": 131,
+        "race": "S2 Stage 2 - Figueres › Banyoles",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "23.03",
+        "result": 112,
+        "race": "S1 Stage 1 - Sant Feliu de Guíxols › Sant Feliu de Guíxols",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 8,
+        "race": "S4 Stage 4 - Bourges › Uchon 159k",
+        "pcs_pts": 3,
+        "stage_href": "race/paris-nice/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 9,
+        "race": "S3 (TTT) Stage 3 (TTT) - Cosne-Cours-sur-Loire › Pouilly-sur-Loire",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "dylan_van_baarle": {
+    "name": "Dylan Van Baarle",
+    "pcs_url": "https://www.procyclingstats.com/rider/dylan-van-baarle",
+    "form_score": 0.1,
+    "form_by_type": {
+      "overall": 0.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 2724,
+      "gc": 1510,
+      "tt": 1346,
+      "sprint": 232,
+      "climber": 534,
+      "hills": 1524
+    },
+    "n_results": 5,
+    "last_result_date": "22.02",
+    "results": [
+      {
+        "date": "22.02",
+        "result": 10,
+        "race": "S5 Stage 5 - Faro › Malhão (Loulé)",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 150,
+        "race": "S4 Stage 4 - Albufeira › Lagos",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 35,
+        "race": "S3 (ITT) Stage 3 (ITT) - Vilamoura › Vilamoura",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 24,
+        "race": "S2 Stage 2 - Portimão  › Fóia (Monchique)",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 144,
+        "race": "S1 Stage 1 - Vila Real de Santo António › Tavira",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "emiel_verstrynge": {
+    "name": "Emiel Verstrynge",
+    "pcs_url": "https://www.procyclingstats.com/rider/emiel-verstrynge",
+    "form_score": 1.0,
+    "form_by_type": {
+      "overall": 1.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 269,
+      "gc": 98,
+      "tt": 30,
+      "sprint": 22,
+      "climber": 278,
+      "hills": 83
+    },
+    "n_results": 13,
+    "last_result_date": "11.04",
+    "results": [
+      {
+        "date": "11.04",
+        "result": 6,
+        "race": "S6 Stage 6 - Goizper-Antzuola › Bergara 99k",
+        "pcs_pts": 7,
+        "stage_href": "race/itzulia-basque-country/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.04",
+        "result": 125,
+        "race": "S5 Stage 5 - Eibar › Eibar",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.04",
+        "result": 11,
+        "race": "S4 Stage 4 - Galdakao › Galdakao 87k",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.04",
+        "result": 25,
+        "race": "S3 Stage 3 - Basauri › Basauri",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.04",
+        "result": 19,
+        "race": "S2 Stage 2 - Pamplona-Iruña › Cuevas de Mendukilo",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "06.04",
+        "result": 58,
+        "race": "S1 (ITT) Stage 1 (ITT) - Bilbao › Bilbao",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.03",
+        "result": 82,
+        "race": "S7 Stage 7 - Civitanova Marche › San Benedetto del Tronto",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 95,
+        "race": "S6 Stage 6 - San Severino Marche › Camerino",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 35,
+        "race": "S5 Stage 5 - Marotta-Mondolfo › Mombaroccio 101k",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 87,
+        "race": "S4 Stage 4 - Tagliacozzo › Martinsicuro",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 74,
+        "race": "S3 Stage 3 - Cortona › Magliano de' Marsi",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 33,
+        "race": "S2 Stage 2 - Camaiore › San Gimignano",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 72,
+        "race": "S1 (ITT) Stage 1 (ITT) - Lido di Camaiore › Lido di Camaiore",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "florian_lipowitz": {
+    "name": "Florian Lipowitz",
+    "pcs_url": "https://www.procyclingstats.com/rider/florian-lipowitz",
+    "form_score": 12.0,
+    "form_by_type": {
+      "overall": 12.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 81,
+      "gc": 2060,
+      "tt": 663,
+      "sprint": 4,
+      "climber": 1680,
+      "hills": 404
+    },
+    "n_results": 24,
+    "last_result_date": "03.05",
+    "results": [
+      {
+        "date": "03.05",
+        "result": 2,
+        "race": "S5 Stage 5 - Lucens › Leysin",
+        "pcs_pts": 30,
+        "stage_href": "race/tour-de-romandie/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "02.05",
+        "result": 2,
+        "race": "S4 Stage 4 - Broc › Charmey",
+        "pcs_pts": 30,
+        "stage_href": "race/tour-de-romandie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "01.05",
+        "result": 21,
+        "race": "S3 Stage 3 - Orbe › Orbe",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.04",
+        "result": 24,
+        "race": "S2 Stage 2 - Rue › Vucherens",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.04",
+        "result": 2,
+        "race": "S1 Stage 1 - Martigny › Martigny",
+        "pcs_pts": 30,
+        "stage_href": "race/tour-de-romandie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.04",
+        "result": 10,
+        "race": "Prologue Prologue - Villars-sur-Glâne › Villars-sur-Glâne",
+        "pcs_pts": 1,
+        "stage_href": "race/tour-de-romandie/2026/prologue",
+        "stage_num": null,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.04",
+        "result": 22,
+        "race": "S6 Stage 6 - Goizper-Antzuola › Bergara",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.04",
+        "result": 2,
+        "race": "S5 Stage 5 - Eibar › Eibar",
+        "pcs_pts": 30,
+        "stage_href": "race/itzulia-basque-country/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.04",
+        "result": 17,
+        "race": "S4 Stage 4 - Galdakao › Galdakao",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.04",
+        "result": 17,
+        "race": "S3 Stage 3 - Basauri › Basauri",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.04",
+        "result": 8,
+        "race": "S2 Stage 2 - Pamplona-Iruña › Cuevas de Mendukilo",
+        "pcs_pts": 3,
+        "stage_href": "race/itzulia-basque-country/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "06.04",
+        "result": 6,
+        "race": "S1 (ITT) Stage 1 (ITT) - Bilbao › Bilbao",
+        "pcs_pts": 7,
+        "stage_href": "race/itzulia-basque-country/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.03",
+        "result": 21,
+        "race": "S7 Stage 7 - Barcelona › Barcelona",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.03",
+        "result": 3,
+        "race": "S6 Stage 6 - Berga › Queralt",
+        "pcs_pts": 18,
+        "stage_href": "race/volta-a-catalunya/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "27.03",
+        "result": 4,
+        "race": "S5 Stage 5 - La Seu d'Urgell › La Molina/Coll de Pal",
+        "pcs_pts": 13,
+        "stage_href": "race/volta-a-catalunya/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "florian_vermeersch": {
+    "name": "Florian Vermeersch",
+    "pcs_url": "https://www.procyclingstats.com/rider/florian-vermeersch",
+    "form_score": 0.3,
+    "form_by_type": {
+      "overall": 0.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1865,
+      "gc": 614,
+      "tt": 579,
+      "sprint": 571,
+      "climber": 93,
+      "hills": 632
+    },
+    "n_results": 12,
+    "last_result_date": "22.02",
+    "results": [
+      {
+        "date": "22.02",
+        "result": 100,
+        "race": "S7 Stage 7 - Zayed National Museum › Abu Dhabi Breakwater",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 84,
+        "race": "S6 Stage 6 - Al Ain Museum › Jebel Hafeet",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 24,
+        "race": "S5 Stage 5 - Dubai Al Mamzar Park › Hamdan Bin Mohammed Smart University",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 124,
+        "race": "S4 Stage 4 - Fujairah › Fujairah",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 68,
+        "race": "S3 Stage 3 - Umm al Quwain › Jebel Mobrah",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "17.02",
+        "result": 8,
+        "race": "S2 (ITT) Stage 2 (ITT) - Hudayriyat Island › Hudayriyat Island",
+        "pcs_pts": 3,
+        "stage_href": "race/uae-tour/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "16.02",
+        "result": 87,
+        "race": "S1 Stage 1 - Madinat Zayed Majlis › Liwa Palace",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.02",
+        "result": 32,
+        "race": "S5 Stage 5 - Bétera › Valencia",
+        "pcs_pts": 0,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.02",
+        "result": 57,
+        "race": "S4 Stage 4 - La Nucía › Teulada Moraira",
+        "pcs_pts": 0,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      },
+      {
+        "date": "06.02",
+        "result": 3,
+        "race": "S3 Stage 3 - Orihuela › San Vicente del Raspeig",
+        "pcs_pts": 12,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      },
+      {
+        "date": "05.02",
+        "result": 5,
+        "race": "S2 (ITT) Stage 2 (ITT) - Carlet › Alginet",
+        "pcs_pts": 4,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      },
+      {
+        "date": "04.02",
+        "result": 13,
+        "race": "S1 Stage 1 - Segorbe › Torreblanca",
+        "pcs_pts": 0,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "fred_wright": {
+    "name": "Fred Wright",
+    "pcs_url": "",
+    "form_score": 50.0,
+    "form_by_type": {
+      "overall": 50.0,
+      "sprint": 50.0,
+      "mountain": 50.0,
+      "hilly": 50.0,
+      "tt": 50.0,
+      "ttt": 50.0,
+      "cobbled": 50.0
+    },
+    "n_results": 0,
+    "last_result_date": "",
+    "results": [],
+    "not_found": true
+  },
+  "hugo_page": {
+    "name": "Hugo Page",
+    "pcs_url": "https://www.procyclingstats.com/rider/hugo-page",
+    "form_score": 0.2,
+    "form_by_type": {
+      "overall": 0.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 725,
+      "gc": 192,
+      "tt": 77,
+      "sprint": 303,
+      "climber": 53,
+      "hills": 666
+    },
+    "n_results": 7,
+    "last_result_date": "14.02",
+    "results": [
+      {
+        "date": "14.02",
+        "result": 77,
+        "race": "S2 Stage 2 - Forcalquier › Montagne de Lure",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-cycliste-international-la-provence/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-cycliste-international-la-provence/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.02",
+        "result": 5,
+        "race": "S1 Stage 1 - Marseille › Saint-Victoret",
+        "pcs_pts": 4,
+        "stage_href": "race/tour-cycliste-international-la-provence/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-cycliste-international-la-provence/2026",
+        "stage_type": null
+      },
+      {
+        "date": "31.01",
+        "result": 34,
+        "race": "S5 Stage 5 - AlUla Old Town › Skyviews of Harrat Uwayrid",
+        "pcs_pts": 0,
+        "stage_href": "race/alula-tour/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "alula-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.01",
+        "result": 22,
+        "race": "S4 Stage 4 - Winter Park › Hegra",
+        "pcs_pts": 0,
+        "stage_href": "race/alula-tour/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "alula-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.01",
+        "result": 48,
+        "race": "S3 Stage 3 - Winter Park › Bir Jaydah Mountain Wirkah",
+        "pcs_pts": 0,
+        "stage_href": "race/alula-tour/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "alula-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.01",
+        "result": 53,
+        "race": "S2 Stage 2 - AlManshiyah Train Station › AlManshiyah Train Station",
+        "pcs_pts": 0,
+        "stage_href": "race/alula-tour/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "alula-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "27.01",
+        "result": 6,
+        "race": "S1 Stage 1 - AlUla Camel Cup Track › AlUla Camel Cup Track",
+        "pcs_pts": 3,
+        "stage_href": "race/alula-tour/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "alula-tour/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "ilan_van_wilder": {
+    "name": "Ilan van Wilder",
+    "pcs_url": "https://www.procyclingstats.com/rider/ilan-van-wilder",
+    "form_score": 1.6,
+    "form_by_type": {
+      "overall": 1.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 540,
+      "gc": 1803,
+      "tt": 1090,
+      "sprint": 26,
+      "climber": 1471,
+      "hills": 818
+    },
+    "n_results": 16,
+    "last_result_date": "10.04",
+    "results": [
+      {
+        "date": "10.04",
+        "result": 104,
+        "race": "S5 Stage 5 - Eibar › Eibar",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.04",
+        "result": 69,
+        "race": "S4 Stage 4 - Galdakao › Galdakao",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.04",
+        "result": 4,
+        "race": "S3 Stage 3 - Basauri › Basauri 93k",
+        "pcs_pts": 13,
+        "stage_href": "race/itzulia-basque-country/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.04",
+        "result": 27,
+        "race": "S2 Stage 2 - Pamplona-Iruña › Cuevas de Mendukilo",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "06.04",
+        "result": 5,
+        "race": "S1 (ITT) Stage 1 (ITT) - Bilbao › Bilbao",
+        "pcs_pts": 10,
+        "stage_href": "race/itzulia-basque-country/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 116,
+        "race": "S4 Stage 4 - Tagliacozzo › Martinsicuro",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 85,
+        "race": "S3 Stage 3 - Cortona › Magliano de' Marsi",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 31,
+        "race": "S2 Stage 2 - Camaiore › San Gimignano",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 20,
+        "race": "S1 (ITT) Stage 1 (ITT) - Lido di Camaiore › Lido di Camaiore",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 43,
+        "race": "S7 Stage 7 - Zayed National Museum › Abu Dhabi Breakwater",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 18,
+        "race": "S6 Stage 6 - Al Ain Museum › Jebel Hafeet",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 102,
+        "race": "S5 Stage 5 - Dubai Al Mamzar Park › Hamdan Bin Mohammed Smart University",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 65,
+        "race": "S4 Stage 4 - Fujairah › Fujairah",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 9,
+        "race": "S3 Stage 3 - Umm al Quwain › Jebel Mobrah",
+        "pcs_pts": 2,
+        "stage_href": "race/uae-tour/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "17.02",
+        "result": 12,
+        "race": "S2 (ITT) Stage 2 (ITT) - Hudayriyat Island › Hudayriyat Island",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "jan_tratnik": {
+    "name": "Jan Tratnik",
+    "pcs_url": "https://www.procyclingstats.com/rider/jan-tratnik",
+    "form_score": 0.1,
+    "form_by_type": {
+      "overall": 0.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1274,
+      "gc": 898,
+      "tt": 1856,
+      "sprint": 158,
+      "climber": 606,
+      "hills": 836
+    },
+    "n_results": 18,
+    "last_result_date": "03.05",
+    "results": [
+      {
+        "date": "03.05",
+        "result": 72,
+        "race": "S5 Stage 5 - Lucens › Leysin 160k",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "02.05",
+        "result": 54,
+        "race": "S4 Stage 4 - Broc › Charmey",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "01.05",
+        "result": 63,
+        "race": "S3 Stage 3 - Orbe › Orbe",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.04",
+        "result": 78,
+        "race": "S2 Stage 2 - Rue › Vucherens",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.04",
+        "result": 75,
+        "race": "S1 Stage 1 - Martigny › Martigny",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.04",
+        "result": 101,
+        "race": "Prologue Prologue - Villars-sur-Glâne › Villars-sur-Glâne",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/prologue",
+        "stage_num": null,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.03",
+        "result": 115,
+        "race": "S7 Stage 7 - Civitanova Marche › San Benedetto del Tronto",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 36,
+        "race": "S6 Stage 6 - San Severino Marche › Camerino",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 133,
+        "race": "S5 Stage 5 - Marotta-Mondolfo › Mombaroccio",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 154,
+        "race": "S4 Stage 4 - Tagliacozzo › Martinsicuro",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 153,
+        "race": "S3 Stage 3 - Cortona › Magliano de' Marsi",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 116,
+        "race": "S2 Stage 2 - Camaiore › San Gimignano",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 26,
+        "race": "S1 (ITT) Stage 1 (ITT) - Lido di Camaiore › Lido di Camaiore",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 76,
+        "race": "S5 Stage 5 - Faro › Malhão (Loulé) 94k",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 102,
+        "race": "S4 Stage 4 - Albufeira › Lagos",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "jasper_philipsen": {
+    "name": "Jasper Philipsen",
+    "pcs_url": "https://www.procyclingstats.com/rider/jasper-philipsen",
+    "form_score": 0.6,
+    "form_by_type": {
+      "overall": 0.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 6129,
+      "gc": 649,
+      "tt": 155,
+      "sprint": 6628,
+      "climber": 192,
+      "hills": 2571
+    },
+    "n_results": 12,
+    "last_result_date": "15.03",
+    "results": [
+      {
+        "date": "15.03",
+        "result": 129,
+        "race": "S7 Stage 7 - Civitanova Marche › San Benedetto del Tronto",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 109,
+        "race": "S6 Stage 6 - San Severino Marche › Camerino",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 104,
+        "race": "S5 Stage 5 - Marotta-Mondolfo › Mombaroccio",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 25,
+        "race": "S4 Stage 4 - Tagliacozzo › Martinsicuro",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 3,
+        "race": "S3 Stage 3 - Cortona › Magliano de' Marsi",
+        "pcs_pts": 18,
+        "stage_href": "race/tirreno-adriatico/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 152,
+        "race": "S2 Stage 2 - Camaiore › San Gimignano",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 91,
+        "race": "S1 (ITT) Stage 1 (ITT) - Lido di Camaiore › Lido di Camaiore",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 72,
+        "race": "S5 Stage 5 - Faro › Malhão (Loulé)",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 10,
+        "race": "S4 Stage 4 - Albufeira › Lagos",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 104,
+        "race": "S3 (ITT) Stage 3 (ITT) - Vilamoura › Vilamoura",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 134,
+        "race": "S2 Stage 2 - Portimão  › Fóia (Monchique)",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 4,
+        "race": "S1 Stage 1 - Vila Real de Santo António › Tavira",
+        "pcs_pts": 7,
+        "stage_href": "race/volta-ao-algarve/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "jenthe_biermans": {
+    "name": "Jenthe Biermans",
+    "pcs_url": "https://www.procyclingstats.com/rider/jenthe-biermans",
+    "form_score": 0.1,
+    "form_by_type": {
+      "overall": 0.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1590,
+      "gc": 297,
+      "tt": 56,
+      "sprint": 591,
+      "climber": 116,
+      "hills": 710
+    },
+    "n_results": 4,
+    "last_result_date": "07.02",
+    "results": [
+      {
+        "date": "07.02",
+        "result": 96,
+        "race": "S4 Stage 4 - Saint-Christol-lez-Alès › Vauvert",
+        "pcs_pts": 0,
+        "stage_href": "race/etoile-de-besseges/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "etoile-de-besseges/2026",
+        "stage_type": null
+      },
+      {
+        "date": "06.02",
+        "result": 5,
+        "race": "S3 Stage 3 - Bessèges › Bessèges",
+        "pcs_pts": 4,
+        "stage_href": "race/etoile-de-besseges/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "etoile-de-besseges/2026",
+        "stage_type": null
+      },
+      {
+        "date": "05.02",
+        "result": 25,
+        "race": "S2 Stage 2 - Saint-Gilles › Domessargues",
+        "pcs_pts": 0,
+        "stage_href": "race/etoile-de-besseges/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "etoile-de-besseges/2026",
+        "stage_type": null
+      },
+      {
+        "date": "04.02",
+        "result": 69,
+        "race": "S1 Stage 1 - Bellegarde › Bellegarde",
+        "pcs_pts": 0,
+        "stage_href": "race/etoile-de-besseges/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "etoile-de-besseges/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "jonas_rickaert": {
+    "name": "Jonas Rickaert",
+    "pcs_url": "https://www.procyclingstats.com/rider/jonas-rickaert",
+    "form_score": 1.0,
+    "form_by_type": {
+      "overall": 1.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 835,
+      "gc": 248,
+      "tt": 128,
+      "sprint": 674,
+      "climber": 10,
+      "hills": 90
+    },
+    "n_results": 15,
+    "last_result_date": "03.05",
+    "results": [
+      {
+        "date": "03.05",
+        "result": 46,
+        "race": "S8 Stage 8 - Ankara › Ankara",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-turkey/2026/stage-8",
+        "stage_num": 8,
+        "race_base": "tour-of-turkey/2026",
+        "stage_type": null
+      },
+      {
+        "date": "02.05",
+        "result": 114,
+        "race": "S7 Stage 7 - Antalya › Antalya",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-turkey/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "tour-of-turkey/2026",
+        "stage_type": null
+      },
+      {
+        "date": "01.05",
+        "result": 47,
+        "race": "S6 Stage 6 - Antalya › Feslikan 60k",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-turkey/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "tour-of-turkey/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.04",
+        "result": 9,
+        "race": "S5 Stage 5 - Patara › Kemer 50k",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-turkey/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-of-turkey/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.04",
+        "result": 50,
+        "race": "S4 Stage 4 - Marmaris › Fethiye",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-turkey/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-of-turkey/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.04",
+        "result": 54,
+        "race": "S3 Stage 3 - Marmaris › Kıran",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-turkey/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-of-turkey/2026",
+        "stage_type": null
+      },
+      {
+        "date": "27.04",
+        "result": 22,
+        "race": "S2 Stage 2 - Aydın › Marmaris",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-turkey/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-of-turkey/2026",
+        "stage_type": null
+      },
+      {
+        "date": "26.04",
+        "result": 121,
+        "race": "S1 Stage 1 - Çeşme › Selçuk",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-turkey/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-of-turkey/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 78,
+        "race": "S7 Stage 7 - Zayed National Museum › Abu Dhabi Breakwater",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 62,
+        "race": "S6 Stage 6 - Al Ain Museum › Jebel Hafeet",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 131,
+        "race": "S5 Stage 5 - Dubai Al Mamzar Park › Hamdan Bin Mohammed Smart University",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 67,
+        "race": "S4 Stage 4 - Fujairah › Fujairah",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 127,
+        "race": "S3 Stage 3 - Umm al Quwain › Jebel Mobrah 168k",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "17.02",
+        "result": 106,
+        "race": "S2 (ITT) Stage 2 (ITT) - Hudayriyat Island › Hudayriyat Island",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "16.02",
+        "result": 75,
+        "race": "S1 Stage 1 - Madinat Zayed Majlis › Liwa Palace",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "jordi_meeus": {
+    "name": "Jordi Meeus",
+    "pcs_url": "https://www.procyclingstats.com/rider/jordi-meeus",
+    "form_score": 30.1,
+    "form_by_type": {
+      "overall": 30.1,
+      "sprint": 21.4,
+      "mountain": 0.0,
+      "hilly": 7.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 2856,
+      "gc": 116,
+      "tt": 61,
+      "sprint": 2234,
+      "climber": 32,
+      "hills": 1226
+    },
+    "n_results": 15,
+    "last_result_date": "05.06",
+    "results": [
+      {
+        "date": "05.06",
+        "result": 49,
+        "race": "S5 Stage 5 - Bassenge › Aubel",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-wallonie/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-wallonie/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "04.06",
+        "result": 77,
+        "race": "S4 Stage 4 - Dison › Eupen",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-wallonie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-wallonie/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "03.06",
+        "result": 10,
+        "race": "S3 Stage 3 - Habay › Vaux-sur-Sûre",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-wallonie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-wallonie/2026",
+        "stage_type": "hilly"
+      },
+      {
+        "date": "02.06",
+        "result": 5,
+        "race": "S2 Stage 2 - Jodoigne › Libramont-Chevigny",
+        "pcs_pts": 4,
+        "stage_href": "race/tour-de-wallonie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-wallonie/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "01.06",
+        "result": 1,
+        "race": "S1 Stage 1 - Manage › Lobbes",
+        "pcs_pts": 30,
+        "stage_href": "race/tour-de-wallonie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-wallonie/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "24.05",
+        "result": 1,
+        "race": "S5 Stage 5 - Saint-Omer › Dunkirk",
+        "pcs_pts": 30,
+        "stage_href": "race/4-jours-de-dunkerque/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "4-jours-de-dunkerque/2026",
+        "stage_type": null
+      },
+      {
+        "date": "23.05",
+        "result": 101,
+        "race": "S4 Stage 4 - Bergues › Cassel",
+        "pcs_pts": 0,
+        "stage_href": "race/4-jours-de-dunkerque/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "4-jours-de-dunkerque/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.05",
+        "result": 57,
+        "race": "S3 Stage 3 - La Sentinelle › Wallers Arenberg",
+        "pcs_pts": 0,
+        "stage_href": "race/4-jours-de-dunkerque/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "4-jours-de-dunkerque/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.05",
+        "result": 6,
+        "race": "S2 Stage 2 - Glisy › Liévin",
+        "pcs_pts": 3,
+        "stage_href": "race/4-jours-de-dunkerque/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "4-jours-de-dunkerque/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.05",
+        "result": 111,
+        "race": "S1 Stage 1 - Lagny-le-Sec › Laon",
+        "pcs_pts": 0,
+        "stage_href": "race/4-jours-de-dunkerque/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "4-jours-de-dunkerque/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 130,
+        "race": "S5 Stage 5 - Faro › Malhão (Loulé)",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 2,
+        "race": "S4 Stage 4 - Albufeira › Lagos",
+        "pcs_pts": 18,
+        "stage_href": "race/volta-ao-algarve/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 76,
+        "race": "S3 (ITT) Stage 3 (ITT) - Vilamoura › Vilamoura",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 135,
+        "race": "S2 Stage 2 - Portimão  › Fóia (Monchique)",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 2,
+        "race": "S1 Stage 1 - Vila Real de Santo António › Tavira",
+        "pcs_pts": 18,
+        "stage_href": "race/volta-ao-algarve/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "kasper_asgreen": {
+    "name": "Kasper Asgreen",
+    "pcs_url": "https://www.procyclingstats.com/rider/kasper-asgreen",
+    "form_score": 1.1,
+    "form_by_type": {
+      "overall": 1.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1690,
+      "gc": 856,
+      "tt": 2474,
+      "sprint": 359,
+      "climber": 504,
+      "hills": 1528
+    },
+    "n_results": 15,
+    "last_result_date": "21.05",
+    "results": [
+      {
+        "date": "21.05",
+        "result": 23,
+        "race": "S2 Stage 2 - Glisy › Liévin",
+        "pcs_pts": 0,
+        "stage_href": "race/4-jours-de-dunkerque/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "4-jours-de-dunkerque/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.05",
+        "result": 19,
+        "race": "S1 Stage 1 - Lagny-le-Sec › Laon",
+        "pcs_pts": 0,
+        "stage_href": "race/4-jours-de-dunkerque/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "4-jours-de-dunkerque/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.03",
+        "result": 65,
+        "race": "S8 Stage 8 - Nice › Nice",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-8",
+        "stage_num": 8,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 36,
+        "race": "S7 Stage 7 - Pont Louis Nucera › Isola",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 63,
+        "race": "S6 Stage 6 - Barbentane › Apt",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 66,
+        "race": "S5 Stage 5 - Cormoranche-sur-Saône › Colombier-le-Vieux",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 35,
+        "race": "S4 Stage 4 - Bourges › Uchon 144k",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 6,
+        "race": "S3 (TTT) Stage 3 (TTT) - Cosne-Cours-sur-Loire › Pouilly-sur-Loire",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 35,
+        "race": "S2 Stage 2 - Épône › Montargis",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.03",
+        "result": 61,
+        "race": "S1 Stage 1 - Achères › Carrières-sous-Poissy",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 124,
+        "race": "S5 Stage 5 - Faro › Malhão (Loulé)",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 121,
+        "race": "S4 Stage 4 - Albufeira › Lagos",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 25,
+        "race": "S3 (ITT) Stage 3 (ITT) - Vilamoura › Vilamoura",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 73,
+        "race": "S2 Stage 2 - Portimão  › Fóia (Monchique)",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 69,
+        "race": "S1 Stage 1 - Vila Real de Santo António › Tavira",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "lenny_martinez": {
+    "name": "Lenny Martinez",
+    "pcs_url": "https://www.procyclingstats.com/rider/lenny-martinez",
+    "form_score": 5.9,
+    "form_by_type": {
+      "overall": 5.9,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1293,
+      "gc": 1461,
+      "tt": 290,
+      "sprint": 4,
+      "climber": 2036,
+      "hills": 588
+    },
+    "n_results": 21,
+    "last_result_date": "03.05",
+    "results": [
+      {
+        "date": "03.05",
+        "result": 6,
+        "race": "S5 Stage 5 - Lucens › Leysin",
+        "pcs_pts": 7,
+        "stage_href": "race/tour-de-romandie/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "02.05",
+        "result": 15,
+        "race": "S4 Stage 4 - Broc › Charmey",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "01.05",
+        "result": 11,
+        "race": "S3 Stage 3 - Orbe › Orbe",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.04",
+        "result": 21,
+        "race": "S2 Stage 2 - Rue › Vucherens",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.04",
+        "result": 3,
+        "race": "S1 Stage 1 - Martigny › Martigny",
+        "pcs_pts": 18,
+        "stage_href": "race/tour-de-romandie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.04",
+        "result": 25,
+        "race": "Prologue Prologue - Villars-sur-Glâne › Villars-sur-Glâne",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/prologue",
+        "stage_num": null,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.03",
+        "result": 9,
+        "race": "S7 Stage 7 - Barcelona › Barcelona",
+        "pcs_pts": 2,
+        "stage_href": "race/volta-a-catalunya/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.03",
+        "result": 2,
+        "race": "S6 Stage 6 - Berga › Queralt",
+        "pcs_pts": 30,
+        "stage_href": "race/volta-a-catalunya/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "27.03",
+        "result": 3,
+        "race": "S5 Stage 5 - La Seu d'Urgell › La Molina/Coll de Pal",
+        "pcs_pts": 18,
+        "stage_href": "race/volta-a-catalunya/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "26.03",
+        "result": 81,
+        "race": "S4 Stage 4 - Mataró › Camprodón",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "25.03",
+        "result": 70,
+        "race": "S3 Stage 3 - Mont-roig del Camp › Vila-seca",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "24.03",
+        "result": 23,
+        "race": "S2 Stage 2 - Figueres › Banyoles",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "23.03",
+        "result": 6,
+        "race": "S1 Stage 1 - Sant Feliu de Guíxols › Sant Feliu de Guíxols",
+        "pcs_pts": 7,
+        "stage_href": "race/volta-a-catalunya/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.03",
+        "result": 1,
+        "race": "S8 Stage 8 - Nice › Nice",
+        "pcs_pts": 50,
+        "stage_href": "race/paris-nice/2026/stage-8",
+        "stage_num": 8,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 58,
+        "race": "S7 Stage 7 - Pont Louis Nucera › Isola",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "louis_vervaeke": {
+    "name": "Louis Vervaeke",
+    "pcs_url": "https://www.procyclingstats.com/rider/louis-vervaeke",
+    "form_score": 1.1,
+    "form_by_type": {
+      "overall": 1.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 398,
+      "gc": 584,
+      "tt": 175,
+      "sprint": 2,
+      "climber": 534,
+      "hills": 323
+    },
+    "n_results": 18,
+    "last_result_date": "03.05",
+    "results": [
+      {
+        "date": "03.05",
+        "result": 32,
+        "race": "S5 Stage 5 - Lucens › Leysin",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "02.05",
+        "result": 41,
+        "race": "S4 Stage 4 - Broc › Charmey 122k",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "01.05",
+        "result": 19,
+        "race": "S3 Stage 3 - Orbe › Orbe",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.04",
+        "result": 20,
+        "race": "S2 Stage 2 - Rue › Vucherens",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.04",
+        "result": 48,
+        "race": "S1 Stage 1 - Martigny › Martigny 125k",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.04",
+        "result": 31,
+        "race": "Prologue Prologue - Villars-sur-Glâne › Villars-sur-Glâne",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/prologue",
+        "stage_num": null,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.03",
+        "result": 131,
+        "race": "S7 Stage 7 - Civitanova Marche › San Benedetto del Tronto",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 96,
+        "race": "S6 Stage 6 - San Severino Marche › Camerino",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 43,
+        "race": "S5 Stage 5 - Marotta-Mondolfo › Mombaroccio",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 39,
+        "race": "S4 Stage 4 - Tagliacozzo › Martinsicuro",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 106,
+        "race": "S3 Stage 3 - Cortona › Magliano de' Marsi",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 22,
+        "race": "S2 Stage 2 - Camaiore › San Gimignano",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 61,
+        "race": "S1 (ITT) Stage 1 (ITT) - Lido di Camaiore › Lido di Camaiore",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "01.03",
+        "result": 126,
+        "race": "S5 Stage 5 - Nuoro › Olbia",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-di-sardegna/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "giro-di-sardegna/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.02",
+        "result": 3,
+        "race": "S4 Stage 4 - Arbatax › Nuoro",
+        "pcs_pts": 7,
+        "stage_href": "race/giro-di-sardegna/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "giro-di-sardegna/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "magnus_cort": {
+    "name": "Magnus Cort",
+    "pcs_url": "",
+    "form_score": 50.0,
+    "form_by_type": {
+      "overall": 50.0,
+      "sprint": 50.0,
+      "mountain": 50.0,
+      "hilly": 50.0,
+      "tt": 50.0,
+      "ttt": 50.0,
+      "cobbled": 50.0
+    },
+    "n_results": 0,
+    "last_result_date": "",
+    "results": [],
+    "not_found": true
+  },
+  "mathias_vacek": {
+    "name": "Mathias Vacek",
+    "pcs_url": "https://www.procyclingstats.com/rider/mathias-vacek",
+    "form_score": 0.8,
+    "form_by_type": {
+      "overall": 0.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 608,
+      "gc": 544,
+      "tt": 793,
+      "sprint": 193,
+      "climber": 266,
+      "hills": 530
+    },
+    "n_results": 16,
+    "last_result_date": "15.03",
+    "results": [
+      {
+        "date": "15.03",
+        "result": 56,
+        "race": "S8 Stage 8 - Nice › Nice",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-8",
+        "stage_num": 8,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 24,
+        "race": "S7 Stage 7 - Pont Louis Nucera › Isola",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 11,
+        "race": "S6 Stage 6 - Barbentane › Apt",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 64,
+        "race": "S5 Stage 5 - Cormoranche-sur-Saône › Colombier-le-Vieux",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 28,
+        "race": "S4 Stage 4 - Bourges › Uchon 144k",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 2,
+        "race": "S3 (TTT) Stage 3 (TTT) - Cosne-Cours-sur-Loire › Pouilly-sur-Loire",
+        "pcs_pts": 16,
+        "stage_href": "race/paris-nice/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 85,
+        "race": "S2 Stage 2 - Épône › Montargis",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.03",
+        "result": 26,
+        "race": "S1 Stage 1 - Achères › Carrières-sous-Poissy",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.02",
+        "result": 11,
+        "race": "S3 Stage 3 - Rognac › Arles",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-cycliste-international-la-provence/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-cycliste-international-la-provence/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.02",
+        "result": 30,
+        "race": "S2 Stage 2 - Forcalquier › Montagne de Lure",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-cycliste-international-la-provence/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-cycliste-international-la-provence/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.02",
+        "result": 11,
+        "race": "S1 Stage 1 - Marseille › Saint-Victoret",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-cycliste-international-la-provence/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-cycliste-international-la-provence/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.02",
+        "result": 9,
+        "race": "S5 Stage 5 - Bétera › Valencia",
+        "pcs_pts": 0,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.02",
+        "result": 54,
+        "race": "S4 Stage 4 - La Nucía › Teulada Moraira",
+        "pcs_pts": 0,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      },
+      {
+        "date": "06.02",
+        "result": 8,
+        "race": "S3 Stage 3 - Orihuela › San Vicente del Raspeig",
+        "pcs_pts": 1,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      },
+      {
+        "date": "05.02",
+        "result": 3,
+        "race": "S2 (ITT) Stage 2 (ITT) - Carlet › Alginet",
+        "pcs_pts": 12,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "mathieu_van_der_poel": {
+    "name": "Mathieu van der Poel",
+    "pcs_url": "https://www.procyclingstats.com/rider/mathieu-van-der-poel",
+    "form_score": 1.6,
+    "form_by_type": {
+      "overall": 1.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 8836,
+      "gc": 1324,
+      "tt": 1050,
+      "sprint": 1661,
+      "climber": 1165,
+      "hills": 4534
+    },
+    "n_results": 7,
+    "last_result_date": "15.03",
+    "results": [
+      {
+        "date": "15.03",
+        "result": 107,
+        "race": "S7 Stage 7 - Civitanova Marche › San Benedetto del Tronto",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 87,
+        "race": "S6 Stage 6 - San Severino Marche › Camerino",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 34,
+        "race": "S5 Stage 5 - Marotta-Mondolfo › Mombaroccio",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 1,
+        "race": "S4 Stage 4 - Tagliacozzo › Martinsicuro",
+        "pcs_pts": 50,
+        "stage_href": "race/tirreno-adriatico/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 125,
+        "race": "S3 Stage 3 - Cortona › Magliano de' Marsi",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 1,
+        "race": "S2 Stage 2 - Camaiore › San Gimignano",
+        "pcs_pts": 50,
+        "stage_href": "race/tirreno-adriatico/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 144,
+        "race": "S1 (ITT) Stage 1 (ITT) - Lido di Camaiore › Lido di Camaiore",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "mauro_schmid": {
+    "name": "Mauro Schmid",
+    "pcs_url": "https://www.procyclingstats.com/rider/mauro-schmid",
+    "form_score": 5.8,
+    "form_by_type": {
+      "overall": 5.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1358,
+      "gc": 1306,
+      "tt": 774,
+      "sprint": 6,
+      "climber": 1269,
+      "hills": 1371
+    },
+    "n_results": 18,
+    "last_result_date": "29.04",
+    "results": [
+      {
+        "date": "29.04",
+        "result": 59,
+        "race": "S1 Stage 1 - Martigny › Martigny",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.04",
+        "result": 4,
+        "race": "Prologue Prologue - Villars-sur-Glâne › Villars-sur-Glâne",
+        "pcs_pts": 13,
+        "stage_href": "race/tour-de-romandie/2026/prologue",
+        "stage_num": null,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.03",
+        "result": 1,
+        "race": "S5 Stage 5 - Cormons › Gemona del Friuli",
+        "pcs_pts": 20,
+        "stage_href": "race/settimana-internazionale-coppi-e-bartali/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "settimana-internazionale-coppi-e-bartali/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.03",
+        "result": 2,
+        "race": "S4 Stage 4 - Ponte di Piave › Valdobbiadene",
+        "pcs_pts": 12,
+        "stage_href": "race/settimana-internazionale-coppi-e-bartali/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "settimana-internazionale-coppi-e-bartali/2026",
+        "stage_type": null
+      },
+      {
+        "date": "27.03",
+        "result": 2,
+        "race": "S3 Stage 3 - Erbusco › Iseo",
+        "pcs_pts": 12,
+        "stage_href": "race/settimana-internazionale-coppi-e-bartali/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "settimana-internazionale-coppi-e-bartali/2026",
+        "stage_type": null
+      },
+      {
+        "date": "26.03",
+        "result": 47,
+        "race": "S2 Stage 2 - Lodi › Massalengo",
+        "pcs_pts": 0,
+        "stage_href": "race/settimana-internazionale-coppi-e-bartali/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "settimana-internazionale-coppi-e-bartali/2026",
+        "stage_type": null
+      },
+      {
+        "date": "25.03",
+        "result": 2,
+        "race": "S1 Stage 1 - Barbaresco › Barolo",
+        "pcs_pts": 12,
+        "stage_href": "race/settimana-internazionale-coppi-e-bartali/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "settimana-internazionale-coppi-e-bartali/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.02",
+        "result": 13,
+        "race": "S5 Stage 5 - Nizwa › Jabal Al Akhdhar (Green Mountain)",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-oman/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.02",
+        "result": 31,
+        "race": "S4 Stage 4 - Al Sawadi Beach › Sohar",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-oman/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.02",
+        "result": 1,
+        "race": "S3 Stage 3 - Samail \"Al Fayhaa Resthouse\" › Eastern Mountain",
+        "pcs_pts": 30,
+        "stage_href": "race/tour-of-oman/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.02",
+        "result": 15,
+        "race": "S2 Stage 2 - Al Rustaq Fort › Yitti Hills",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-oman/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.02",
+        "result": 106,
+        "race": "S1 Stage 1 - Ministry of Tourism › Bimmah Sink Hole",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-oman/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      },
+      {
+        "date": "25.01",
+        "result": 18,
+        "race": "S5 Stage 5 - Stirling › Stirling",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-down-under/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-down-under/2026",
+        "stage_type": null
+      },
+      {
+        "date": "24.01",
+        "result": 18,
+        "race": "S4 Stage 4 - Brighton › Willunga",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-down-under/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-down-under/2026",
+        "stage_type": null
+      },
+      {
+        "date": "23.01",
+        "result": 34,
+        "race": "S3 Stage 3 - Henley Beach › Nairne",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-down-under/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-down-under/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "mike_teunissen": {
+    "name": "Mike Teunissen",
+    "pcs_url": "https://www.procyclingstats.com/rider/mike-teunissen",
+    "form_score": 1.6,
+    "form_by_type": {
+      "overall": 1.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 2640,
+      "gc": 1508,
+      "tt": 338,
+      "sprint": 1370,
+      "climber": 210,
+      "hills": 1612
+    },
+    "n_results": 13,
+    "last_result_date": "17.05",
+    "results": [
+      {
+        "date": "17.05",
+        "result": 32,
+        "race": "S5 Stage 5 - Balatonalmádi › Veszprém",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-hongrie/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "16.05",
+        "result": 19,
+        "race": "S4 Stage 4 - Mohács › Pécs",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-hongrie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.05",
+        "result": 19,
+        "race": "S3 Stage 3 - Kaposvár › Szekszárd",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-hongrie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.05",
+        "result": 29,
+        "race": "S2 Stage 2 - Szarvas › Paks",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-hongrie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.05",
+        "result": 40,
+        "race": "S1 Stage 1 - Gyula › Békéscsaba",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-hongrie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.03",
+        "result": 54,
+        "race": "S8 Stage 8 - Nice › Nice",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-8",
+        "stage_num": 8,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 6,
+        "race": "S7 Stage 7 - Pont Louis Nucera › Isola",
+        "pcs_pts": 7,
+        "stage_href": "race/paris-nice/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 71,
+        "race": "S6 Stage 6 - Barbentane › Apt",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 28,
+        "race": "S5 Stage 5 - Cormoranche-sur-Saône › Colombier-le-Vieux",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 108,
+        "race": "S4 Stage 4 - Bourges › Uchon",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 17,
+        "race": "S3 (TTT) Stage 3 (TTT) - Cosne-Cours-sur-Loire › Pouilly-sur-Loire",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 17,
+        "race": "S2 Stage 2 - Épône › Montargis",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.03",
+        "result": 7,
+        "race": "S1 Stage 1 - Achères › Carrières-sous-Poissy",
+        "pcs_pts": 4,
+        "stage_href": "race/paris-nice/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "milan_fretin": {
+    "name": "Milan Fretin",
+    "pcs_url": "https://www.procyclingstats.com/rider/milan-fretin",
+    "form_score": 0.9,
+    "form_by_type": {
+      "overall": 0.9,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1250,
+      "gc": 92,
+      "tt": 15,
+      "sprint": 1210,
+      "climber": 48,
+      "hills": 392
+    },
+    "n_results": 14,
+    "last_result_date": "11.03",
+    "results": [
+      {
+        "date": "11.03",
+        "result": 101,
+        "race": "S4 Stage 4 - Bourges › Uchon",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 10,
+        "race": "S3 (TTT) Stage 3 (TTT) - Cosne-Cours-sur-Loire › Pouilly-sur-Loire",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 129,
+        "race": "S2 Stage 2 - Épône › Montargis",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.03",
+        "result": 4,
+        "race": "S1 Stage 1 - Achères › Carrières-sous-Poissy",
+        "pcs_pts": 13,
+        "stage_href": "race/paris-nice/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 90,
+        "race": "S5 Stage 5 - La Roda de Andalucía › Lucena",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 17,
+        "race": "S4 Stage 4 - Montoro › Pozoblanco",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 1,
+        "race": "S3 Stage 3 - Jaén › Lopera",
+        "pcs_pts": 30,
+        "stage_href": "race/ruta-del-sol/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 100,
+        "race": "S2 Stage 2 - Torrox › Otura",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 95,
+        "race": "S1 Stage 1 - Benahavís › Pizarra",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "31.01",
+        "result": 90,
+        "race": "S5 Stage 5 - AlUla Old Town › Skyviews of Harrat Uwayrid 137k",
+        "pcs_pts": 0,
+        "stage_href": "race/alula-tour/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "alula-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.01",
+        "result": 11,
+        "race": "S4 Stage 4 - Winter Park › Hegra",
+        "pcs_pts": 0,
+        "stage_href": "race/alula-tour/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "alula-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.01",
+        "result": 65,
+        "race": "S3 Stage 3 - Winter Park › Bir Jaydah Mountain Wirkah",
+        "pcs_pts": 0,
+        "stage_href": "race/alula-tour/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "alula-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.01",
+        "result": 8,
+        "race": "S2 Stage 2 - AlManshiyah Train Station › AlManshiyah Train Station",
+        "pcs_pts": 1,
+        "stage_href": "race/alula-tour/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "alula-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "27.01",
+        "result": 2,
+        "race": "S1 Stage 1 - AlUla Camel Cup Track › AlUla Camel Cup Track",
+        "pcs_pts": 18,
+        "stage_href": "race/alula-tour/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "alula-tour/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "nico_denz": {
+    "name": "Nico Denz",
+    "pcs_url": "https://www.procyclingstats.com/rider/nico-denz",
+    "form_score": 0.3,
+    "form_by_type": {
+      "overall": 0.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 492,
+      "gc": 438,
+      "tt": 329,
+      "sprint": 195,
+      "climber": 324,
+      "hills": 684
+    },
+    "n_results": 38,
+    "last_result_date": "31.05",
+    "results": [
+      {
+        "date": "31.05",
+        "result": 125,
+        "race": "S21 Stage 21 - Rome › Rome",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-21",
+        "stage_num": 21,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.05",
+        "result": 103,
+        "race": "S20 Stage 20 - Gemona del Friuli 1976-2026 › Piancavallo",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-20",
+        "stage_num": 20,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.05",
+        "result": 122,
+        "race": "S19 Stage 19 - Feltre › Alleghe (Piani di Pezzè)",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-19",
+        "stage_num": 19,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.05",
+        "result": 90,
+        "race": "S18 Stage 18 - Fai della Paganella › Pieve di Soligo",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-18",
+        "stage_num": 18,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "27.05",
+        "result": 103,
+        "race": "S17 Stage 17 - Cassano d'Adda › Andalo",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-17",
+        "stage_num": 17,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "26.05",
+        "result": 104,
+        "race": "S16 Stage 16 - Bellinzona › Carì",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-16",
+        "stage_num": 16,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "24.05",
+        "result": 139,
+        "race": "S15 Stage 15 - Voghera › Milan",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-15",
+        "stage_num": 15,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "23.05",
+        "result": 141,
+        "race": "S14 Stage 14 - Aosta › Pila (Gressan)",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-14",
+        "stage_num": 14,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.05",
+        "result": 147,
+        "race": "S13 Stage 13 - Alessandria › Verbania",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-13",
+        "stage_num": 13,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.05",
+        "result": 148,
+        "race": "S12 Stage 12 - Imperia › Novi Ligure",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-12",
+        "stage_num": 12,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.05",
+        "result": 83,
+        "race": "S11 Stage 11 - Porcari (Paper District) › Chiavari 76k",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-11",
+        "stage_num": 11,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.05",
+        "result": 135,
+        "race": "S10 (ITT) Stage 10 (ITT) - Viareggio › Massa",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-10",
+        "stage_num": 10,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "17.05",
+        "result": 93,
+        "race": "S9 Stage 9 - Cervia › Corno alle Scale",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-9",
+        "stage_num": 9,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "16.05",
+        "result": 123,
+        "race": "S8 Stage 8 - Chieti › Fermo",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-8",
+        "stage_num": 8,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.05",
+        "result": 148,
+        "race": "S7 Stage 7 - Formia › Blockhaus",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "nils_politt": {
+    "name": "Nils Politt",
+    "pcs_url": "https://www.procyclingstats.com/rider/nils-politt",
+    "form_score": 0.2,
+    "form_by_type": {
+      "overall": 0.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 2415,
+      "gc": 1088,
+      "tt": 1352,
+      "sprint": 516,
+      "climber": 156,
+      "hills": 1481
+    },
+    "n_results": 15,
+    "last_result_date": "15.03",
+    "results": [
+      {
+        "date": "15.03",
+        "result": 39,
+        "race": "S8 Stage 8 - Nice › Nice",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-8",
+        "stage_num": 8,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 52,
+        "race": "S7 Stage 7 - Pont Louis Nucera › Isola",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 55,
+        "race": "S6 Stage 6 - Barbentane › Apt",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 31,
+        "race": "S5 Stage 5 - Cormoranche-sur-Saône › Colombier-le-Vieux",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 59,
+        "race": "S4 Stage 4 - Bourges › Uchon 144k",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 8,
+        "race": "S3 (TTT) Stage 3 (TTT) - Cosne-Cours-sur-Loire › Pouilly-sur-Loire",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 97,
+        "race": "S2 Stage 2 - Épône › Montargis",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.03",
+        "result": 101,
+        "race": "S1 Stage 1 - Achères › Carrières-sous-Poissy",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 79,
+        "race": "S7 Stage 7 - Zayed National Museum › Abu Dhabi Breakwater",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 83,
+        "race": "S6 Stage 6 - Al Ain Museum › Jebel Hafeet",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 62,
+        "race": "S5 Stage 5 - Dubai Al Mamzar Park › Hamdan Bin Mohammed Smart University",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 91,
+        "race": "S4 Stage 4 - Fujairah › Fujairah",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 67,
+        "race": "S3 Stage 3 - Umm al Quwain › Jebel Mobrah",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "17.02",
+        "result": 64,
+        "race": "S2 (ITT) Stage 2 (ITT) - Hudayriyat Island › Hudayriyat Island",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "16.02",
+        "result": 86,
+        "race": "S1 Stage 1 - Madinat Zayed Majlis › Liwa Palace",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "olav_kooij": {
+    "name": "Olav Kooij",
+    "pcs_url": "https://www.procyclingstats.com/rider/olav-kooij",
+    "form_score": 30.1,
+    "form_by_type": {
+      "overall": 30.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1917,
+      "gc": 712,
+      "tt": 102,
+      "sprint": 3512,
+      "climber": 88,
+      "hills": 1146
+    },
+    "n_results": 4,
+    "last_result_date": "31.05",
+    "results": [
+      {
+        "date": "31.05",
+        "result": 1,
+        "race": "S3 Stage 3 - Cossé-le-Vivien › Laval",
+        "pcs_pts": 30,
+        "stage_href": "race/boucles-de-la-mayenne/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "boucles-de-la-mayenne/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.05",
+        "result": 74,
+        "race": "S2 Stage 2 - Aron › Pré-en-Pail-Saint-Samson",
+        "pcs_pts": 0,
+        "stage_href": "race/boucles-de-la-mayenne/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "boucles-de-la-mayenne/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.05",
+        "result": 1,
+        "race": "S1 Stage 1 - Saint-Berthevin  › Château-Gontier-sur-Mayenne",
+        "pcs_pts": 30,
+        "stage_href": "race/boucles-de-la-mayenne/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "boucles-de-la-mayenne/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.05",
+        "result": 54,
+        "race": "Prologue Prologue - Laval (Espace Mayenne) › Laval (Espace Mayenne)",
+        "pcs_pts": 0,
+        "stage_href": "race/boucles-de-la-mayenne/2026/prologue",
+        "stage_num": null,
+        "race_base": "boucles-de-la-mayenne/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "pavel_bittner": {
+    "name": "Pavel Bittner",
+    "pcs_url": "https://www.procyclingstats.com/rider/pavel-bittner",
+    "form_score": 0.6,
+    "form_by_type": {
+      "overall": 0.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 804,
+      "gc": 219,
+      "tt": 52,
+      "sprint": 829,
+      "climber": 44,
+      "hills": 721
+    },
+    "n_results": 12,
+    "last_result_date": "15.03",
+    "results": [
+      {
+        "date": "15.03",
+        "result": 5,
+        "race": "S7 Stage 7 - Civitanova Marche › San Benedetto del Tronto",
+        "pcs_pts": 10,
+        "stage_href": "race/tirreno-adriatico/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 119,
+        "race": "S6 Stage 6 - San Severino Marche › Camerino",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 142,
+        "race": "S5 Stage 5 - Marotta-Mondolfo › Mombaroccio",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 59,
+        "race": "S4 Stage 4 - Tagliacozzo › Martinsicuro",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 10,
+        "race": "S3 Stage 3 - Cortona › Magliano de' Marsi",
+        "pcs_pts": 1,
+        "stage_href": "race/tirreno-adriatico/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 75,
+        "race": "S2 Stage 2 - Camaiore › San Gimignano",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 44,
+        "race": "S1 (ITT) Stage 1 (ITT) - Lido di Camaiore › Lido di Camaiore",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 78,
+        "race": "S5 Stage 5 - Faro › Malhão (Loulé)",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 14,
+        "race": "S4 Stage 4 - Albufeira › Lagos",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 43,
+        "race": "S3 (ITT) Stage 3 (ITT) - Vilamoura › Vilamoura",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 144,
+        "race": "S2 Stage 2 - Portimão  › Fóia (Monchique)",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 3,
+        "race": "S1 Stage 1 - Vila Real de Santo António › Tavira",
+        "pcs_pts": 12,
+        "stage_href": "race/volta-ao-algarve/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "piet_allegaert": {
+    "name": "Piet Allegaert",
+    "pcs_url": "https://www.procyclingstats.com/rider/piet-allegaert",
+    "form_score": 0.1,
+    "form_by_type": {
+      "overall": 0.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1446,
+      "gc": 147,
+      "tt": 140,
+      "sprint": 826,
+      "climber": 19,
+      "hills": 485
+    },
+    "n_results": 8,
+    "last_result_date": "10.03",
+    "results": [
+      {
+        "date": "10.03",
+        "result": 10,
+        "race": "S3 (TTT) Stage 3 (TTT) - Cosne-Cours-sur-Loire › Pouilly-sur-Loire",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 22,
+        "race": "S2 Stage 2 - Épône › Montargis",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.03",
+        "result": 110,
+        "race": "S1 Stage 1 - Achères › Carrières-sous-Poissy",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 99,
+        "race": "S5 Stage 5 - La Roda de Andalucía › Lucena",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 22,
+        "race": "S4 Stage 4 - Montoro › Pozoblanco",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 81,
+        "race": "S3 Stage 3 - Jaén › Lopera",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 99,
+        "race": "S2 Stage 2 - Torrox › Otura",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 107,
+        "race": "S1 Stage 1 - Benahavís › Pizarra",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "remco_evenepoel": {
+    "name": "Remco Evenepoel",
+    "pcs_url": "https://www.procyclingstats.com/rider/remco-evenepoel",
+    "form_score": 2.7,
+    "form_by_type": {
+      "overall": 2.7,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 4615,
+      "gc": 4704,
+      "tt": 4921,
+      "sprint": 120,
+      "climber": 4886,
+      "hills": 2044
+    },
+    "n_results": 19,
+    "last_result_date": "29.03",
+    "results": [
+      {
+        "date": "29.03",
+        "result": 3,
+        "race": "S7 Stage 7 - Barcelona › Barcelona",
+        "pcs_pts": 18,
+        "stage_href": "race/volta-a-catalunya/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.03",
+        "result": 5,
+        "race": "S6 Stage 6 - Berga › Queralt",
+        "pcs_pts": 10,
+        "stage_href": "race/volta-a-catalunya/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "27.03",
+        "result": 6,
+        "race": "S5 Stage 5 - La Seu d'Urgell › La Molina/Coll de Pal",
+        "pcs_pts": 7,
+        "stage_href": "race/volta-a-catalunya/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "26.03",
+        "result": 16,
+        "race": "S4 Stage 4 - Mataró › Camprodón",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "25.03",
+        "result": 106,
+        "race": "S3 Stage 3 - Mont-roig del Camp › Vila-seca",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "24.03",
+        "result": 25,
+        "race": "S2 Stage 2 - Figueres › Banyoles",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-a-catalunya/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "23.03",
+        "result": 2,
+        "race": "S1 Stage 1 - Sant Feliu de Guíxols › Sant Feliu de Guíxols",
+        "pcs_pts": 30,
+        "stage_href": "race/volta-a-catalunya/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "volta-a-catalunya/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 27,
+        "race": "S7 Stage 7 - Zayed National Museum › Abu Dhabi Breakwater",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 15,
+        "race": "S6 Stage 6 - Al Ain Museum › Jebel Hafeet",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 97,
+        "race": "S5 Stage 5 - Dubai Al Mamzar Park › Hamdan Bin Mohammed Smart University",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 41,
+        "race": "S4 Stage 4 - Fujairah › Fujairah",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 18,
+        "race": "S3 Stage 3 - Umm al Quwain › Jebel Mobrah",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "17.02",
+        "result": 1,
+        "race": "S2 (ITT) Stage 2 (ITT) - Hudayriyat Island › Hudayriyat Island",
+        "pcs_pts": 50,
+        "stage_href": "race/uae-tour/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "16.02",
+        "result": 20,
+        "race": "S1 Stage 1 - Madinat Zayed Majlis › Liwa Palace",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.02",
+        "result": 19,
+        "race": "S5 Stage 5 - Bétera › Valencia",
+        "pcs_pts": 0,
+        "stage_href": "race/vuelta-a-la-comunidad-valenciana/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "vuelta-a-la-comunidad-valenciana/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "rick_pluimers": {
+    "name": "Rick Pluimers",
+    "pcs_url": "https://www.procyclingstats.com/rider/rick-pluimers",
+    "form_score": 0.4,
+    "form_by_type": {
+      "overall": 0.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 639,
+      "gc": 172,
+      "tt": 82,
+      "sprint": 230,
+      "climber": 174,
+      "hills": 557
+    },
+    "n_results": 10,
+    "last_result_date": "12.03",
+    "results": [
+      {
+        "date": "12.03",
+        "result": 47,
+        "race": "S5 Stage 5 - Cormoranche-sur-Saône › Colombier-le-Vieux",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 76,
+        "race": "S4 Stage 4 - Bourges › Uchon",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 12,
+        "race": "S3 (TTT) Stage 3 (TTT) - Cosne-Cours-sur-Loire › Pouilly-sur-Loire",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 6,
+        "race": "S2 Stage 2 - Épône › Montargis",
+        "pcs_pts": 7,
+        "stage_href": "race/paris-nice/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.03",
+        "result": 24,
+        "race": "S1 Stage 1 - Achères › Carrières-sous-Poissy",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.02",
+        "result": 40,
+        "race": "S5 Stage 5 - Nizwa › Jabal Al Akhdhar (Green Mountain)",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-oman/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.02",
+        "result": 6,
+        "race": "S4 Stage 4 - Al Sawadi Beach › Sohar",
+        "pcs_pts": 3,
+        "stage_href": "race/tour-of-oman/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.02",
+        "result": 29,
+        "race": "S3 Stage 3 - Samail \"Al Fayhaa Resthouse\" › Eastern Mountain",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-oman/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.02",
+        "result": 13,
+        "race": "S2 Stage 2 - Al Rustaq Fort › Yitti Hills",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-oman/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.02",
+        "result": 6,
+        "race": "S1 Stage 1 - Ministry of Tourism › Bimmah Sink Hole",
+        "pcs_pts": 3,
+        "stage_href": "race/tour-of-oman/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "roger_adria": {
+    "name": "Roger Adria",
+    "pcs_url": "https://www.procyclingstats.com/rider/roger-adria",
+    "form_score": 0.1,
+    "form_by_type": {
+      "overall": 0.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1203,
+      "gc": 396,
+      "tt": 43,
+      "sprint": 48,
+      "climber": 722,
+      "hills": 888
+    },
+    "n_results": 15,
+    "last_result_date": "08.04",
+    "results": [
+      {
+        "date": "08.04",
+        "result": 139,
+        "race": "S3 Stage 3 - Basauri › Basauri",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.04",
+        "result": 144,
+        "race": "S2 Stage 2 - Pamplona-Iruña › Cuevas de Mendukilo",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "06.04",
+        "result": 119,
+        "race": "S1 (ITT) Stage 1 (ITT) - Bilbao › Bilbao",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.03",
+        "result": 146,
+        "race": "S7 Stage 7 - Civitanova Marche › San Benedetto del Tronto",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 97,
+        "race": "S6 Stage 6 - San Severino Marche › Camerino",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 71,
+        "race": "S5 Stage 5 - Marotta-Mondolfo › Mombaroccio",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 48,
+        "race": "S4 Stage 4 - Tagliacozzo › Martinsicuro",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 116,
+        "race": "S3 Stage 3 - Cortona › Magliano de' Marsi",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 30,
+        "race": "S2 Stage 2 - Camaiore › San Gimignano",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 101,
+        "race": "S1 (ITT) Stage 1 (ITT) - Lido di Camaiore › Lido di Camaiore",
+        "pcs_pts": 0,
+        "stage_href": "race/tirreno-adriatico/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tirreno-adriatico/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.02",
+        "result": 73,
+        "race": "S5 Stage 5 - Nizwa › Jabal Al Akhdhar (Green Mountain)",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-oman/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.02",
+        "result": 21,
+        "race": "S4 Stage 4 - Al Sawadi Beach › Sohar",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-oman/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.02",
+        "result": 16,
+        "race": "S3 Stage 3 - Samail \"Al Fayhaa Resthouse\" › Eastern Mountain",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-oman/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.02",
+        "result": 10,
+        "race": "S2 Stage 2 - Al Rustaq Fort › Yitti Hills",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-oman/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.02",
+        "result": 44,
+        "race": "S1 Stage 1 - Ministry of Tourism › Bimmah Sink Hole",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-oman/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-of-oman/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "sergio_higuita": {
+    "name": "Sergio Higuita",
+    "pcs_url": "https://www.procyclingstats.com/rider/sergio-higuita",
+    "form_score": 4.6,
+    "form_by_type": {
+      "overall": 4.6,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1189,
+      "gc": 2525,
+      "tt": 130,
+      "sprint": 70,
+      "climber": 2631,
+      "hills": 1412
+    },
+    "n_results": 21,
+    "last_result_date": "03.05",
+    "results": [
+      {
+        "date": "03.05",
+        "result": 16,
+        "race": "S5 Stage 5 - Lucens › Leysin",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "02.05",
+        "result": 5,
+        "race": "S4 Stage 4 - Broc › Charmey",
+        "pcs_pts": 10,
+        "stage_href": "race/tour-de-romandie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "01.05",
+        "result": 5,
+        "race": "S3 Stage 3 - Orbe › Orbe",
+        "pcs_pts": 10,
+        "stage_href": "race/tour-de-romandie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.04",
+        "result": 11,
+        "race": "S2 Stage 2 - Rue › Vucherens",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.04",
+        "result": 6,
+        "race": "S1 Stage 1 - Martigny › Martigny",
+        "pcs_pts": 7,
+        "stage_href": "race/tour-de-romandie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.04",
+        "result": 81,
+        "race": "Prologue Prologue - Villars-sur-Glâne › Villars-sur-Glâne",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/prologue",
+        "stage_num": null,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.04",
+        "result": 28,
+        "race": "S3 Stage 3 - Basauri › Basauri",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "07.04",
+        "result": 14,
+        "race": "S2 Stage 2 - Pamplona-Iruña › Cuevas de Mendukilo",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "06.04",
+        "result": 79,
+        "race": "S1 (ITT) Stage 1 (ITT) - Bilbao › Bilbao",
+        "pcs_pts": 0,
+        "stage_href": "race/itzulia-basque-country/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "itzulia-basque-country/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.02",
+        "result": 94,
+        "race": "S7 Stage 7 - Zayed National Museum › Abu Dhabi Breakwater",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 19,
+        "race": "S6 Stage 6 - Al Ain Museum › Jebel Hafeet",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 79,
+        "race": "S5 Stage 5 - Dubai Al Mamzar Park › Hamdan Bin Mohammed Smart University",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 59,
+        "race": "S4 Stage 4 - Fujairah › Fujairah",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 46,
+        "race": "S3 Stage 3 - Umm al Quwain › Jebel Mobrah",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      },
+      {
+        "date": "17.02",
+        "result": 81,
+        "race": "S2 (ITT) Stage 2 (ITT) - Hudayriyat Island › Hudayriyat Island",
+        "pcs_pts": 0,
+        "stage_href": "race/uae-tour/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "uae-tour/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "simon_carr": {
+    "name": "Simon Carr",
+    "pcs_url": "https://www.procyclingstats.com/rider/simon-carr",
+    "form_score": 0.2,
+    "form_by_type": {
+      "overall": 0.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 411,
+      "gc": 289,
+      "tt": 91,
+      "sprint": 8,
+      "climber": 466,
+      "hills": 92
+    },
+    "n_results": 3,
+    "last_result_date": "15.02",
+    "results": [
+      {
+        "date": "15.02",
+        "result": 5,
+        "race": "S3 Stage 3 - Rognac › Arles 147k",
+        "pcs_pts": 4,
+        "stage_href": "race/tour-cycliste-international-la-provence/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-cycliste-international-la-provence/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.02",
+        "result": 57,
+        "race": "S2 Stage 2 - Forcalquier › Montagne de Lure",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-cycliste-international-la-provence/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-cycliste-international-la-provence/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.02",
+        "result": 77,
+        "race": "S1 Stage 1 - Marseille › Saint-Victoret",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-cycliste-international-la-provence/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-cycliste-international-la-provence/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "stefan_kung": {
+    "name": "Stefan Küng",
+    "pcs_url": "https://www.procyclingstats.com/rider/stefan-kung",
+    "form_score": 0.1,
+    "form_by_type": {
+      "overall": 0.1,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 2900,
+      "gc": 1694,
+      "tt": 6230,
+      "sprint": 412,
+      "climber": 552,
+      "hills": 1756
+    },
+    "n_results": 5,
+    "last_result_date": "22.02",
+    "results": [
+      {
+        "date": "22.02",
+        "result": 25,
+        "race": "S5 Stage 5 - Faro › Malhão (Loulé)",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.02",
+        "result": 103,
+        "race": "S4 Stage 4 - Albufeira › Lagos",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.02",
+        "result": 7,
+        "race": "S3 (ITT) Stage 3 (ITT) - Vilamoura › Vilamoura",
+        "pcs_pts": 2,
+        "stage_href": "race/volta-ao-algarve/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.02",
+        "result": 71,
+        "race": "S2 Stage 2 - Portimão  › Fóia (Monchique)",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      },
+      {
+        "date": "18.02",
+        "result": 82,
+        "race": "S1 Stage 1 - Vila Real de Santo António › Tavira",
+        "pcs_pts": 0,
+        "stage_href": "race/volta-ao-algarve/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "volta-ao-algarve/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "søren_kragh_andersen": {
+    "name": "Søren Kragh Andersen",
+    "pcs_url": "https://www.procyclingstats.com/rider/soren-kragh-andersen",
+    "form_score": 4.4,
+    "form_by_type": {
+      "overall": 4.4,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 1641,
+      "gc": 1543,
+      "tt": 1935,
+      "sprint": 738,
+      "climber": 466,
+      "hills": 1472
+    },
+    "n_results": 12,
+    "last_result_date": "31.05",
+    "results": [
+      {
+        "date": "31.05",
+        "result": 12,
+        "race": "S3 Stage 3 - Cossé-le-Vivien › Laval",
+        "pcs_pts": 0,
+        "stage_href": "race/boucles-de-la-mayenne/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "boucles-de-la-mayenne/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.05",
+        "result": 25,
+        "race": "S2 Stage 2 - Aron › Pré-en-Pail-Saint-Samson",
+        "pcs_pts": 0,
+        "stage_href": "race/boucles-de-la-mayenne/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "boucles-de-la-mayenne/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.05",
+        "result": 52,
+        "race": "S1 Stage 1 - Saint-Berthevin  › Château-Gontier-sur-Mayenne",
+        "pcs_pts": 0,
+        "stage_href": "race/boucles-de-la-mayenne/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "boucles-de-la-mayenne/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.05",
+        "result": 7,
+        "race": "Prologue Prologue - Laval (Espace Mayenne) › Laval (Espace Mayenne)",
+        "pcs_pts": 2,
+        "stage_href": "race/boucles-de-la-mayenne/2026/prologue",
+        "stage_num": null,
+        "race_base": "boucles-de-la-mayenne/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.03",
+        "result": 66,
+        "race": "S8 Stage 8 - Nice › Nice",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-8",
+        "stage_num": 8,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.03",
+        "result": 31,
+        "race": "S7 Stage 7 - Pont Louis Nucera › Isola",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.03",
+        "result": 62,
+        "race": "S6 Stage 6 - Barbentane › Apt",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "12.03",
+        "result": 80,
+        "race": "S5 Stage 5 - Cormoranche-sur-Saône › Colombier-le-Vieux",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "11.03",
+        "result": 29,
+        "race": "S4 Stage 4 - Bourges › Uchon",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "10.03",
+        "result": 2,
+        "race": "S3 (TTT) Stage 3 (TTT) - Cosne-Cours-sur-Loire › Pouilly-sur-Loire",
+        "pcs_pts": 16,
+        "stage_href": "race/paris-nice/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "09.03",
+        "result": 132,
+        "race": "S2 Stage 2 - Épône › Montargis",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      },
+      {
+        "date": "08.03",
+        "result": 147,
+        "race": "S1 Stage 1 - Achères › Carrières-sous-Poissy",
+        "pcs_pts": 0,
+        "stage_href": "race/paris-nice/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "paris-nice/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "tadej_pogacar": {
+    "name": "Tadej Pogacar",
+    "pcs_url": "https://www.procyclingstats.com/rider/tadej-pogacar",
+    "form_score": 19.8,
+    "form_by_type": {
+      "overall": 19.8,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 9983,
+      "gc": 7594,
+      "tt": 3287,
+      "sprint": 297,
+      "climber": 9989,
+      "hills": 4368
+    },
+    "n_results": 6,
+    "last_result_date": "03.05",
+    "results": [
+      {
+        "date": "03.05",
+        "result": 1,
+        "race": "S5 Stage 5 - Lucens › Leysin",
+        "pcs_pts": 50,
+        "stage_href": "race/tour-de-romandie/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "02.05",
+        "result": 1,
+        "race": "S4 Stage 4 - Broc › Charmey",
+        "pcs_pts": 50,
+        "stage_href": "race/tour-de-romandie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "01.05",
+        "result": 4,
+        "race": "S3 Stage 3 - Orbe › Orbe",
+        "pcs_pts": 13,
+        "stage_href": "race/tour-de-romandie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.04",
+        "result": 1,
+        "race": "S2 Stage 2 - Rue › Vucherens",
+        "pcs_pts": 50,
+        "stage_href": "race/tour-de-romandie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.04",
+        "result": 1,
+        "race": "S1 Stage 1 - Martigny › Martigny",
+        "pcs_pts": 50,
+        "stage_href": "race/tour-de-romandie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.04",
+        "result": 6,
+        "race": "Prologue Prologue - Villars-sur-Glâne › Villars-sur-Glâne",
+        "pcs_pts": 7,
+        "stage_href": "race/tour-de-romandie/2026/prologue",
+        "stage_num": null,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "thomas_pidcock": {
+    "name": "Thomas Pidcock",
+    "pcs_url": "",
+    "form_score": 50.0,
+    "form_by_type": {
+      "overall": 50.0,
+      "sprint": 50.0,
+      "mountain": 50.0,
+      "hilly": 50.0,
+      "tt": 50.0,
+      "ttt": 50.0,
+      "cobbled": 50.0
+    },
+    "n_results": 0,
+    "last_result_date": "",
+    "results": [],
+    "not_found": true
+  },
+  "tiesj_benoot": {
+    "name": "Tiesj Benoot",
+    "pcs_url": "https://www.procyclingstats.com/rider/tiesj-benoot",
+    "form_score": 13.4,
+    "form_by_type": {
+      "overall": 13.4,
+      "sprint": 8.8,
+      "mountain": 6.2,
+      "hilly": 9.1,
+      "tt": 1.3,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 5450,
+      "gc": 1942,
+      "tt": 85,
+      "sprint": 487,
+      "climber": 2894,
+      "hills": 3062
+    },
+    "n_results": 33,
+    "last_result_date": "27.07",
+    "results": [
+      {
+        "date": "27.07",
+        "result": 81,
+        "race": "S21 Stage 21 - Mantes-la-Ville › Paris (Champs-Élysées)",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-21",
+        "stage_num": 21,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "26.07",
+        "result": 89,
+        "race": "S20 Stage 20 - Nantua › Pontarlier",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-20",
+        "stage_num": 20,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "25.07",
+        "result": 76,
+        "race": "S19 Stage 19 - Albertville › La Plagne",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-19",
+        "stage_num": 19,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "mountain"
+      },
+      {
+        "date": "24.07",
+        "result": 38,
+        "race": "S18 Stage 18 - Vif › Courchevel (Col de la Loze)",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-18",
+        "stage_num": 18,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "mountain"
+      },
+      {
+        "date": "23.07",
+        "result": 30,
+        "race": "S17 Stage 17 - Bollène › Valence",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-17",
+        "stage_num": 17,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "22.07",
+        "result": 33,
+        "race": "S16 Stage 16 - Montpellier › Mont Ventoux 88k",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-16",
+        "stage_num": 16,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "mountain"
+      },
+      {
+        "date": "20.07",
+        "result": 132,
+        "race": "S15 Stage 15 - Muret › Carcassonne",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-15",
+        "stage_num": 15,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "19.07",
+        "result": 107,
+        "race": "S14 Stage 14 - Pau › Luchon-Superbagnères",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-14",
+        "stage_num": 14,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "mountain"
+      },
+      {
+        "date": "18.07",
+        "result": 111,
+        "race": "S13 (ITT) Stage 13 (ITT) - Loudenvielle › Peyragudes",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-13",
+        "stage_num": 13,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "tt"
+      },
+      {
+        "date": "17.07",
+        "result": 61,
+        "race": "S12 Stage 12 - Auch › Hautacam 102k",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-12",
+        "stage_num": 12,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "mountain"
+      },
+      {
+        "date": "16.07",
+        "result": 95,
+        "race": "S11 Stage 11 - Toulouse › Toulouse",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-11",
+        "stage_num": 11,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "14.07",
+        "result": 45,
+        "race": "S10 Stage 10 - Ennezat › Le Mont-Dore Puy de Sancy",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-10",
+        "stage_num": 10,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "hilly"
+      },
+      {
+        "date": "13.07",
+        "result": 75,
+        "race": "S9 Stage 9 - Chinon › Châteauroux",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-9",
+        "stage_num": 9,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "12.07",
+        "result": 75,
+        "race": "S8 Stage 8 - Saint-Méen-le-Grand › Laval (Espace Mayenne)",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-8",
+        "stage_num": 8,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "11.07",
+        "result": 24,
+        "race": "S7 Stage 7 - Saint-Malo › Mûr-de-Bretagne (Guerlédan)",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-france/2025/stage-7",
+        "stage_num": 7,
+        "race_base": "tour-de-france/2025",
+        "stage_type": "hilly"
+      }
+    ]
+  },
+  "tim_merlier": {
+    "name": "Tim Merlier",
+    "pcs_url": "https://www.procyclingstats.com/rider/tim-merlier",
+    "form_score": 23.2,
+    "form_by_type": {
+      "overall": 23.2,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 4562,
+      "gc": 144,
+      "tt": 3,
+      "sprint": 6004,
+      "climber": 4,
+      "hills": 561
+    },
+    "n_results": 5,
+    "last_result_date": "17.05",
+    "results": [
+      {
+        "date": "17.05",
+        "result": 1,
+        "race": "S5 Stage 5 - Balatonalmádi › Veszprém",
+        "pcs_pts": 30,
+        "stage_href": "race/tour-de-hongrie/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "16.05",
+        "result": 95,
+        "race": "S4 Stage 4 - Mohács › Pécs",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-hongrie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.05",
+        "result": 1,
+        "race": "S3 Stage 3 - Kaposvár › Szekszárd",
+        "pcs_pts": 30,
+        "stage_href": "race/tour-de-hongrie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "14.05",
+        "result": 6,
+        "race": "S2 Stage 2 - Szarvas › Paks",
+        "pcs_pts": 3,
+        "stage_href": "race/tour-de-hongrie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": null
+      },
+      {
+        "date": "13.05",
+        "result": 1,
+        "race": "S1 Stage 1 - Gyula › Békéscsaba",
+        "pcs_pts": 30,
+        "stage_href": "race/tour-de-hongrie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": null
+      }
+    ]
+  },
+  "warren_barguil": {
+    "name": "Warren Barguil",
+    "pcs_url": "https://www.procyclingstats.com/rider/warren-barguil",
+    "form_score": 2.3,
+    "form_by_type": {
+      "overall": 2.3,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 2746,
+      "gc": 3141,
+      "tt": 100,
+      "sprint": 104,
+      "climber": 4021,
+      "hills": 1990
+    },
+    "n_results": 24,
+    "last_result_date": "31.05",
+    "results": [
+      {
+        "date": "31.05",
+        "result": 147,
+        "race": "S21 Stage 21 - Rome › Rome",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-21",
+        "stage_num": 21,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "30.05",
+        "result": 65,
+        "race": "S20 Stage 20 - Gemona del Friuli 1976-2026 › Piancavallo",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-20",
+        "stage_num": 20,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "29.05",
+        "result": 28,
+        "race": "S19 Stage 19 - Feltre › Alleghe (Piani di Pezzè)",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-19",
+        "stage_num": 19,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "28.05",
+        "result": 105,
+        "race": "S18 Stage 18 - Fai della Paganella › Pieve di Soligo",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-18",
+        "stage_num": 18,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "27.05",
+        "result": 70,
+        "race": "S17 Stage 17 - Cassano d'Adda › Andalo",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-17",
+        "stage_num": 17,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "26.05",
+        "result": 40,
+        "race": "S16 Stage 16 - Bellinzona › Carì",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-16",
+        "stage_num": 16,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "24.05",
+        "result": 128,
+        "race": "S15 Stage 15 - Voghera › Milan",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-15",
+        "stage_num": 15,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "23.05",
+        "result": 74,
+        "race": "S14 Stage 14 - Aosta › Pila (Gressan)",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-14",
+        "stage_num": 14,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "22.05",
+        "result": 122,
+        "race": "S13 Stage 13 - Alessandria › Verbania",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-13",
+        "stage_num": 13,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "21.05",
+        "result": 159,
+        "race": "S12 Stage 12 - Imperia › Novi Ligure",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-12",
+        "stage_num": 12,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "20.05",
+        "result": 9,
+        "race": "S11 Stage 11 - Porcari (Paper District) › Chiavari 88k",
+        "pcs_pts": 8,
+        "stage_href": "race/giro-d-italia/2026/stage-11",
+        "stage_num": 11,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "19.05",
+        "result": 131,
+        "race": "S10 (ITT) Stage 10 (ITT) - Viareggio › Massa",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-10",
+        "stage_num": 10,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "17.05",
+        "result": 57,
+        "race": "S9 Stage 9 - Cervia › Corno alle Scale",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-9",
+        "stage_num": 9,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "16.05",
+        "result": 80,
+        "race": "S8 Stage 8 - Chieti › Fermo",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-8",
+        "stage_num": 8,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      },
+      {
+        "date": "15.05",
+        "result": 75,
+        "race": "S7 Stage 7 - Formia › Blockhaus",
+        "pcs_pts": 0,
+        "stage_href": "race/giro-d-italia/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "giro-d-italia/2026",
+        "stage_type": null
+      }
+    ]
   }
 }

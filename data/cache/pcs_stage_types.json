@@ -791,5 +791,255 @@
       "stage_type": "sprint",
       "name": "Stage 21 | Thoiry - Paris"
     }
+  },
+  "tour-de-wallonie/2026": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "hilly",
+    "4": "sprint",
+    "5": "sprint"
+  },
+  "tour-de-wallonie/2026_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Manage - Lobbes"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Jodoigne - Libramont-Chevigny"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Habay - Vaux-sur-Sûre"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Dison - Eupen"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Bassenge - Aubel"
+    }
+  },
+  "volta-ao-algarve/2025": {
+    "1": "sprint",
+    "2": "mountain",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "tt"
+  },
+  "volta-ao-algarve/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Portimão - Lagos"
+    },
+    "2": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 2 | Lagoa - Alto da Foia"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Vila Real Santo António - Tavira"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Albufeira - Faro"
+    },
+    "5": {
+      "p_class": "3",
+      "stage_type": "tt",
+      "name": "Stage 5 (ITT) | Salir - Malhão"
+    }
+  },
+  "tour-de-france/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "tt",
+    "6": "hilly",
+    "7": "hilly",
+    "8": "sprint",
+    "9": "sprint",
+    "10": "hilly",
+    "11": "sprint",
+    "12": "mountain",
+    "13": "tt",
+    "14": "mountain",
+    "15": "sprint",
+    "16": "mountain",
+    "17": "sprint",
+    "18": "mountain",
+    "19": "mountain",
+    "20": "sprint",
+    "21": "sprint"
+  },
+  "tour-de-france/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Lille Métropole - Lille Métropole"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Lauwin-Planque - Boulogne-sur-Mer"
+    },
+    "3": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Valenciennes - Dunkerque"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Amiens Métropole - Rouen"
+    },
+    "5": {
+      "p_class": "1",
+      "stage_type": "tt",
+      "name": "Stage 5 (ITT) | Caen - Caen"
+    },
+    "6": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 6 | Bayeux - Vire Normandie"
+    },
+    "7": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 7 | Saint-Malo - Mûr-de-Bretagne (Guerlédan)"
+    },
+    "8": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 8 | Saint-Méen-le-Grand - Laval (Espace Mayenne)"
+    },
+    "9": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 9 | Chinon - Châteauroux"
+    },
+    "10": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 10 | Ennezat - Le Mont-Dore Puy de Sancy"
+    },
+    "11": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 11 | Toulouse - Toulouse"
+    },
+    "12": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 12 | Auch - Hautacam"
+    },
+    "13": {
+      "p_class": "5",
+      "stage_type": "tt",
+      "name": "Stage 13 (ITT) | Loudenvielle - Peyragudes"
+    },
+    "14": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 14 | Pau - Luchon-Superbagnères"
+    },
+    "15": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 15 | Muret - Carcassonne"
+    },
+    "16": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 16 | Montpellier - Mont Ventoux"
+    },
+    "17": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 17 | Bollène - Valence"
+    },
+    "18": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 18 | Vif - Courchevel (Col de la Loze)"
+    },
+    "19": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 19 | Albertville - La Plagne"
+    },
+    "20": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 20 | Nantua - Pontarlier"
+    },
+    "21": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 21 | Mantes-la-Ville - Paris (Champs-Élysées)"
+    }
+  },
+  "tour-de-suisse/2025": {
+    "1": "sprint",
+    "2": "hilly",
+    "3": "hilly",
+    "4": "mountain",
+    "5": "mountain",
+    "6": "sprint",
+    "7": "mountain",
+    "8": "tt"
+  },
+  "tour-de-suisse/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Küssnacht - Küssnacht"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Aarau - Schwarzsee"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Aarau - Heiden"
+    },
+    "4": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 4 | Heiden - Piuro (Valchiavenna)"
+    },
+    "5": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 5 | La Punt - Santa Maria in Calanca"
+    },
+    "6": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 6 | Chur - Neuhausen am Rheinfall"
+    },
+    "7": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 7 | Neuhausen am Rheinfall - Emmetten"
+    },
+    "8": {
+      "p_class": "5",
+      "stage_type": "tt",
+      "name": "Stage 8 (ITT) | Beckenried - Stockhütte"
+    }
   }
 }
