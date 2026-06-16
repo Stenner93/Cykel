@@ -762,7 +762,7 @@ def main() -> None:
                 "holdet_person_id": person_id,
                 "price_M":    round(p.get("price", 0) / 1_000_000, 2),
                 "start_price_M": round(p.get("startPrice", 0) / 1_000_000, 2),
-                "own_pct":    round(p.get("popularity", 0) * 100, 2),  # as %
+                "own_pct":    round((p.get("popularity") or 0) * 100, 2),  # as %
                 "is_out":     p.get("isOut", False),
                 "is_injured": person.get("isInjured", False),
             }

@@ -352,7 +352,7 @@ def main():
         top3_names = ", ".join(f"{r}. {id_to_name.get(k, k)}" for k, r in top3)
         print(f"  GC-stilling:   {len(gc_standings)} ryttere  (top3: {top3_names})")
     else:
-        print("  GC-stilling:   (ingen data — kør med --scrape-gc)")
+        print("  GC-stilling:   (ingen data — kør med --scrape-holdet)")
     if jerseys:
         id_to_name = {r["id"]: r["full_name"] for r in riders}
         jersey_str = ", ".join(
