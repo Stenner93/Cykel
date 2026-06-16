@@ -19,13 +19,26 @@ from typing import Any
 
 
 # ---------------------------------------------------------------------------
-# Default calibrated weights (updated by calibrate.py)
-# ---------------------------------------------------------------------------
+# Default weights.
+#
+# Re-calibrated from a correlation analysis against 539 rider-stages with
+# known actual results (Giro 2026, 18 finished stages). calibrate.py had
+# only grid-searched the VeloScore weight; the odds/discipline/form split
+# was a fixed manual prior, not data-fitted. Measured Pearson r² against
+# actual points (only counting rows where the signal was actually present):
+#   form        r²=0.220  (n=507) — strongest single predictor
+#   discipline  r²=0.150  (n=539)
+#   veloscore   r²=0.015  (n=71)  — weak, but small/uncertain sample
+#   odds        n=0 in this sample — no Giro odds coverage to validate
+# Form was previously underweighted (10%) relative to its measured
+# predictive power; veloscore was overweighted (45%) relative to its weak
+# (if noisily-measured) correlation. Odds kept a meaningful prior weight
+# despite no validation data, since it's theoretically sound when present.
 DEFAULT_WEIGHTS = {
-    "veloscore":     0.45,   # VeloScore normalised 0-10
-    "odds_prob":     0.25,   # Bookmaker implied win probability
-    "discipline":    0.20,   # CyclingOracle discipline match 0-100
-    "form":          0.10,   # PCS recent form 0-100
+    "veloscore":     0.30,   # VeloScore normalised 0-10
+    "odds_prob":     0.20,   # Bookmaker implied win probability
+    "discipline":    0.25,   # CyclingOracle discipline match 0-100
+    "form":          0.25,   # PCS recent form 0-100 (short + long-term blend)
 }
 
 # Mapping stage_type → CyclingOracle discipline key
