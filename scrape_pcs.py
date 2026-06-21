@@ -187,7 +187,7 @@ ALL_STAGE_TYPES = ["sprint", "mountain", "hilly", "tt", "ttt", "cobbled"]
 # Position-based score (for a single result)
 # ---------------------------------------------------------------------------
 POSITION_SCORE = {
-    1: 100, 2: 70, 3: 50, 4: 38, 5: 28,
+    1: 140, 2: 70, 3: 50, 4: 38, 5: 28,
     6: 22,  7: 18, 8: 15, 9: 13, 10: 11,
 }
 
@@ -202,10 +202,14 @@ def _pos_score(pos: int) -> float:
 
 
 # ---------------------------------------------------------------------------
-# Recency weight: half-life ~20 days (short-term "current form" signal)
+# Recency weight: half-life ~42 days (short-term "current form" signal)
+# Tuned for pre-GT preparation races (Romandie, Dauphiné) which happen
+# 4-6 weeks before a Grand Tour and are the most relevant form signal.
+# Previous 29-day half-life penalised these races too heavily (only ~21%
+# weight at 45 days vs. ~36% with 42-day half-life).
 # ---------------------------------------------------------------------------
 def _recency_weight(days_ago: int) -> float:
-    return math.exp(-days_ago / 29.0)
+    return math.exp(-days_ago / 42.0)
 
 
 # ---------------------------------------------------------------------------
@@ -746,8 +750,8 @@ def scrape_all(
             cache[rider["id"]] = {
                 "name":         rider["full_name"],
                 "pcs_url":      "",
-                "form_score":   50.0,
-                "form_by_type": {t: 50.0 for t in ["overall"] + ALL_STAGE_TYPES},
+                "form_score":   25.0,
+                "form_by_type": {t: 25.0 for t in ["overall"] + ALL_STAGE_TYPES},
                 "form_long_by_type": {},
                 "n_results":    0,
                 "last_result_date": "",

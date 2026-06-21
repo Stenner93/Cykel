@@ -1,0 +1,155 @@
+name: 🤖 ML — Scrape historik + træn model
+
+# ── Hvornår kører dette workflow? ────────────────────────────────────────────
+# KUN manuelt — klik "Run workflow" i GitHub.
+# Trin 1 (scrape) tager ~45-60 min og henter 5 år med GT-resultater.
+# Du behøver kun køre det igen når du vil opdatere historikken (f.eks. efter TdF 2025).
+on:
+  workflow_dispatch:
+    inputs:
+      skip_scrape:
+        description: 'Spring datascrape over (brug allerede hentet data)?'
+        required: false
+        default: false
+        type: boolean
+      years:
+        description: 'Årstal at scrape (blank = 2021-2025)'
+        required: false
+        default: ''
+        type: string
+      races:
+        description: 'Løb at scrape (blank = alle tre)'
+        required: false
+        default: ''
+        type: choice
+        options:
+          - ''
+          - tdf
+          - giro
+          - vuelta
+
+permissions:
+  contents: write
+
+jobs:
+  # ── JOB 1: Scrape historiske GT-resultater fra PCS ────────────────────────
+  scrape:
+    name: "Trin 1 — Scrape PCS historik (2021-2025)"
+    runs-on: ubuntu-latest
+    if: ${{ inputs.skip_scrape != 'true' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sæt Python op
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Installér afhængigheder
+        run: pip install -r requirements.txt
+
+      - name: Scrape historiske etaperesultater
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.years }}" ]; then
+            ARGS="$ARGS --years ${{ inputs.years }}"
+          fi
+          if [ -n "${{ inputs.races }}" ]; then
+            ARGS="$ARGS --races ${{ inputs.races }}"
+          fi
+
+          echo "Starter scrape med args: $ARGS"
+          python scrape_pcs_history.py $ARGS
+          echo "Scrape færdig."
+          ls -lh data/ml/historical_results.json || echo "⚠️  Ingen historikfil genereret"
+
+      - name: Upload historik som artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: historical-results
+          path: data/ml/historical_results.json
+          retention-days: 7
+
+  # ── JOB 2: Byg features + træn model ─────────────────────────────────────
+  train:
+    name: "Trin 2 — Byg features og træn LightGBM"
+    runs-on: ubuntu-latest
+    needs: [scrape]
+    if: always()
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sæt Python op
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Installér afhængigheder
+        run: pip install -r requirements.txt
+
+      - name: Hent historik-artifact (hvis scrape kørte)
+        if: ${{ inputs.skip_scrape != 'true' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: historical-results
+          path: data/ml/
+
+      - name: Tjek at historikfil findes
+        run: |
+          if [ ! -f "data/ml/historical_results.json" ]; then
+            echo "❌ data/ml/historical_results.json mangler. Kør Trin 1 (scrape) først."
+            exit 1
+          fi
+          echo "✅ Historikfil fundet:"
+          wc -l data/ml/historical_results.json
+          python -c "
+          import json
+          data = json.load(open('data/ml/historical_results.json'))
+          print(f'  {len(data):,} resultater')
+          years = sorted(set(r[\"year\"] for r in data))
+          races = sorted(set(r[\"race\"] for r in data))
+          print(f'  Årstal: {years}')
+          print(f'  Løb: {races}')
+          "
+
+      - name: Byg feature-datasæt
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python build_training_data.py
+          echo "Feature-datasæt:"
+          ls -lh data/ml/training_data.csv
+
+      - name: Træn LightGBM-model
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python train_model.py
+          echo "Validerings-JSON:"
+          ls -lh web/data/ml_validation.json || echo "⚠️  Ingen validerings-JSON"
+
+      - name: Commit og push resultater
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          git config user.name  "TdF Manager Bot"
+          git config user.email "bot@users.noreply.github.com"
+
+          # Gem historikdata og model-output
+          git add data/ml/ web/data/ml_validation.json || true
+
+          if git diff --staged --quiet; then
+            echo "Ingen ændringer"
+          else
+            git commit -m "🤖 ML-model trænet — $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push || (git pull --rebase origin main && git push)
+            echo "✅ Resultater pushet"
+          fi

@@ -268,6 +268,17 @@ def predict_rider(
     if isinstance(pcs_form, dict):
         type_form    = float(pcs_form.get(stage_type) or 0.0)
         overall_form = float(pcs_form.get("overall") or 50.0)
+
+        # GC-rider sprint correction: a rider with significant mountain form AND
+        # significant sprint form is likely a GC/all-rounder who won a sprint-
+        # classified stage in a preparation race (small-group finish, not a GT
+        # bunch sprint). In a GT they will finish safely in the peloton rather
+        # than contesting the sprint. Blend toward overall to moderate the signal.
+        if stage_type == "sprint":
+            mtn_form = float(pcs_form.get("mountain") or 0.0)
+            if mtn_form >= 25 and type_form >= 25:
+                type_form = 0.5 * type_form + 0.5 * (overall_form * 0.55)
+
         short_term   = 0.7 * type_form + 0.3 * overall_form
     else:
         short_term = float(pcs_form) if pcs_form is not None else 50.0

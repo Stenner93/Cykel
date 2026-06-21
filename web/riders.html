@@ -6,6 +6,64 @@
 <title>Rytterdatabase — TdF Manager</title>
 <link rel="stylesheet" href="style.css">
 <style>
+/* ── Internal section tabs ── */
+.sec-tabs {
+  display: flex; gap: 4px; margin-bottom: 18px; border-bottom: 2px solid var(--border); padding-bottom: 2px;
+}
+.sec-tab {
+  background: none; border: none; color: var(--muted); font-size: 0.82rem; font-weight: 600;
+  padding: 6px 14px; cursor: pointer; border-radius: 6px 6px 0 0; transition: background 0.15s, color 0.15s;
+}
+.sec-tab:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+.sec-tab.active { color: var(--yellow); border-bottom: 2px solid var(--yellow); margin-bottom: -2px; }
+.sec-panel { display: none; }
+.sec-panel.active { display: block; }
+
+/* ── ML Validation styles ── */
+.ml-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+@media (max-width: 700px) { .ml-grid { grid-template-columns: 1fr; } }
+.ml-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px;
+}
+.ml-card-title {
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+  color: var(--muted); margin-bottom: 12px;
+}
+.ml-metric-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font-size: 0.82rem; }
+.ml-metric-label { color: var(--muted); }
+.ml-metric-val   { font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+.ml-metric-val.good { color: var(--green); }
+.ml-metric-val.warn { color: var(--yellow); }
+
+.ml-bar-wrap { margin-bottom: 7px; }
+.ml-bar-label { font-size: 0.72rem; color: var(--text); margin-bottom: 3px; display: flex; justify-content: space-between; }
+.ml-bar-label span { color: var(--muted); font-size: 0.68rem; }
+.ml-bar-bg { background: var(--border); border-radius: 3px; height: 8px; overflow: hidden; }
+.ml-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--blue), var(--yellow)); transition: width 0.4s; }
+
+.ml-stages-wrap { overflow-x: auto; max-height: 500px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; margin-top: 12px; }
+.ml-stages-table { border-collapse: collapse; font-size: 0.74rem; width: 100%; min-width: 600px; }
+.ml-stages-table th {
+  position: sticky; top: 0; background: var(--surface); padding: 6px 10px;
+  text-align: left; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.4px;
+  color: var(--muted); border-bottom: 2px solid var(--border); white-space: nowrap; z-index: 5;
+}
+.ml-stages-table td { padding: 5px 10px; border-bottom: 1px solid rgba(46,52,80,0.4); }
+.ml-stages-table tr:hover td { filter: brightness(1.15); }
+.ml-hit   { color: var(--green); }
+.ml-miss  { color: var(--red); }
+.ml-badge { font-size: 0.6rem; font-weight: 700; padding: 1px 5px; border-radius: 4px; margin-right: 3px; }
+.ml-badge.sprint   { background: rgba(255,215,0,0.15); color: var(--yellow); }
+.ml-badge.mountain { background: rgba(30,136,229,0.15); color: var(--blue); }
+.ml-badge.hilly    { background: rgba(0,200,83,0.15); color: var(--green); }
+.ml-badge.tt       { background: rgba(229,57,53,0.15); color: #ff8a80; }
+.ml-empty { text-align: center; padding: 60px; color: var(--muted); }
+.ml-status-badge {
+  display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 10px;
+  background: rgba(229,57,53,0.15); color: #ff8a80; margin-left: 10px;
+}
+.ml-status-badge.ready { background: rgba(0,200,83,0.15); color: var(--green); }
+
 .rd-controls {
   display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
   margin-bottom: 16px;
@@ -87,41 +145,61 @@
 </header>
 
 <main>
-  <h1 style="font-size:1.1rem;margin-bottom:6px">📋 Rytterdatabase — alle baggrundssignaler</h1>
-  <p class="rd-legend">
-    Alle ryttere der har optrådt i Giro/Dauphiné/TdF 2026, med den fulde signal-stak modellen bruger.
-    <strong style="color:var(--text)">CO</strong> = CyclingOracle 0-100 rating ·
-    <strong style="color:var(--text)">Spec</strong> = PCS karriere-UCI-point pr. disciplin ·
-    <strong style="color:var(--text)">Form K</strong> = kortsigtet form (180 dage, hurtig decay) ·
-    <strong style="color:var(--text)">Form L</strong> = langsigtet form (18 mdr, langsom decay) ·
-    Klik kolonneoverskrift for at sortere. <span class="rd-yes">✓</span>/<span class="rd-no">✗</span> = har data for denne kilde.
-  </p>
+  <h1 style="font-size:1.1rem;margin-bottom:12px">📋 Rytterdatabase</h1>
 
-  <div class="rd-controls">
-    <span class="rd-label">Søg:</span>
-    <input type="text" id="rdFilter" class="rd-input" placeholder="Rytternavn eller hold…" autocomplete="off">
-    <span class="rd-label">Løb:</span>
-    <select id="rdRaceFilter" class="rd-select">
-      <option value="">Alle</option>
-      <option value="giro">Giro</option>
-      <option value="dauphine">Dauphiné</option>
-      <option value="tdf">TdF</option>
-    </select>
-    <span class="rd-label">Vis kun:</span>
-    <select id="rdGapFilter" class="rd-select">
-      <option value="">Alle ryttere</option>
-      <option value="no_co">Mangler CyclingOracle</option>
-      <option value="no_pcs">Mangler PCS form</option>
-      <option value="no_spec">Mangler PCS specialties</option>
-      <option value="no_long">Mangler langtids-form</option>
-    </select>
-    <span class="rd-stats" id="rdStats"></span>
+  <!-- Section tabs -->
+  <div class="sec-tabs">
+    <button class="sec-tab active" data-sec="riders">Rytteroversigt</button>
+    <button class="sec-tab" data-sec="ml">ML Validering</button>
   </div>
 
-  <div class="rd-wrap" id="rdWrap">
-    <div class="info-box" style="text-align:center;padding:60px;color:var(--muted)">
-      <div style="font-size:2rem;margin-bottom:12px">⟳</div>
-      <div>Indlæser rytterdatabase…</div>
+  <!-- ── PANEL 1: Rytteroversigt ── -->
+  <div class="sec-panel active" id="sec-riders">
+    <p class="rd-legend">
+      Alle ryttere der har optrådt i Giro/Dauphiné/TdF 2026, med den fulde signal-stak modellen bruger.
+      <strong style="color:var(--text)">CO</strong> = CyclingOracle 0-100 rating ·
+      <strong style="color:var(--text)">Spec</strong> = PCS karriere-UCI-point pr. disciplin ·
+      <strong style="color:var(--text)">Form K</strong> = kortsigtet form (180 dage, hurtig decay) ·
+      <strong style="color:var(--text)">Form L</strong> = langsigtet form (18 mdr, langsom decay) ·
+      Klik kolonneoverskrift for at sortere. <span class="rd-yes">✓</span>/<span class="rd-no">✗</span> = har data for denne kilde.
+    </p>
+
+    <div class="rd-controls">
+      <span class="rd-label">Søg:</span>
+      <input type="text" id="rdFilter" class="rd-input" placeholder="Rytternavn eller hold…" autocomplete="off">
+      <span class="rd-label">Løb:</span>
+      <select id="rdRaceFilter" class="rd-select">
+        <option value="">Alle</option>
+        <option value="giro">Giro</option>
+        <option value="dauphine">Dauphiné</option>
+        <option value="tdf">TdF</option>
+      </select>
+      <span class="rd-label">Vis kun:</span>
+      <select id="rdGapFilter" class="rd-select">
+        <option value="">Alle ryttere</option>
+        <option value="no_co">Mangler CyclingOracle</option>
+        <option value="no_pcs">Mangler PCS form</option>
+        <option value="no_spec">Mangler PCS specialties</option>
+        <option value="no_long">Mangler langtids-form</option>
+      </select>
+      <span class="rd-stats" id="rdStats"></span>
+    </div>
+
+    <div class="rd-wrap" id="rdWrap">
+      <div class="info-box" style="text-align:center;padding:60px;color:var(--muted)">
+        <div style="font-size:2rem;margin-bottom:12px">⟳</div>
+        <div>Indlæser rytterdatabase…</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PANEL 2: ML Validering ── -->
+  <div class="sec-panel" id="sec-ml">
+    <div id="mlContent">
+      <div class="ml-empty">
+        <div style="font-size:2rem;margin-bottom:12px">⟳</div>
+        <div>Indlæser ML-validering…</div>
+      </div>
     </div>
   </div>
 </main>
@@ -130,6 +208,18 @@
   <p>Diagnostik-side til selvvalidering af modellens baggrundsdata · Opdateres af build_rider_database.py</p>
 </footer>
 
+<script>
+// Section tab switching
+document.querySelectorAll('.sec-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.sec-tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.sec-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('sec-' + btn.dataset.sec).classList.add('active');
+  });
+});
+</script>
 <script src="riders.js"></script>
+<script src="ml.js"></script>
 </body>
 </html>
