@@ -1,0 +1,1647 @@
+{
+ "trained_on_years": [
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "validated_on_year": 2025,
+ "n_train": 40787,
+ "n_val": 10427,
+ "n_features": 18,
+ "train_metrics": {
+  "auc_top5": 0.8207,
+  "ap_top5": 0.2483,
+  "auc_sprint": 0.7738,
+  "auc_mountain": 0.8652,
+  "auc_hilly": 0.847,
+  "auc_tt": 0.8529
+ },
+ "val_metrics": {
+  "auc_top5": 0.785,
+  "ap_top5": 0.2009,
+  "auc_sprint": 0.7188,
+  "auc_mountain": 0.8812,
+  "auc_hilly": 0.8027,
+  "auc_tt": 0.6531
+ },
+ "feature_importances": [
+  {
+   "feature": "profile_score",
+   "importance": 444
+  },
+  {
+   "feature": "gt_form_10",
+   "importance": 435
+  },
+  {
+   "feature": "gt_form_5",
+   "importance": 378
+  },
+  {
+   "feature": "gt_wins_so_far",
+   "importance": 113
+  },
+  {
+   "feature": "is_tt",
+   "importance": 43
+  },
+  {
+   "feature": "is_sprint",
+   "importance": 25
+  },
+  {
+   "feature": "is_hilly",
+   "importance": 22
+  },
+  {
+   "feature": "is_mountain",
+   "importance": 10
+  },
+  {
+   "feature": "co_SPR",
+   "importance": 0
+  },
+  {
+   "feature": "co_MTN",
+   "importance": 0
+  },
+  {
+   "feature": "co_COB",
+   "importance": 0
+  },
+  {
+   "feature": "co_ITT",
+   "importance": 0
+  },
+  {
+   "feature": "co_HLL",
+   "importance": 0
+  },
+  {
+   "feature": "co_GC",
+   "importance": 0
+  },
+  {
+   "feature": "spec_tt",
+   "importance": 0
+  },
+  {
+   "feature": "spec_sprint",
+   "importance": 0
+  },
+  {
+   "feature": "spec_climber",
+   "importance": 0
+  },
+  {
+   "feature": "spec_hills",
+   "importance": 0
+  }
+ ],
+ "winner_hit_rate": 0.4032,
+ "avg_top5_overlap": 1.2581,
+ "stage_predictions": [
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 1,
+   "stype": "sprint",
+   "predicted_top5": [
+    "wout-van-aert",
+    "kaden-groves",
+    "mads-pedersen",
+    "primoz-roglic",
+    "brandon-mcnulty"
+   ],
+   "actual_winner": [
+    "mads-pedersen"
+   ],
+   "actual_top5": [
+    "mads-pedersen",
+    "wout-van-aert",
+    "orluis-aular",
+    "francesco-busatto",
+    "tom-pidcock"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 2,
+   "stype": "tt",
+   "predicted_top5": [
+    "primoz-roglic",
+    "richard-carapaz",
+    "wout-van-aert",
+    "mads-pedersen",
+    "simon-yates"
+   ],
+   "actual_winner": [
+    "joshua-tarling"
+   ],
+   "actual_top5": [
+    "joshua-tarling",
+    "primoz-roglic",
+    "jay-vine",
+    "edoardo-affini",
+    "mathias-vacek"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 3,
+   "stype": "sprint",
+   "predicted_top5": [
+    "mads-pedersen",
+    "wout-van-aert",
+    "kaden-groves",
+    "primoz-roglic",
+    "richard-carapaz"
+   ],
+   "actual_winner": [
+    "mads-pedersen"
+   ],
+   "actual_top5": [
+    "mads-pedersen",
+    "corbin-strong",
+    "orluis-aular",
+    "brandon-smith-rivera-vargas",
+    "edoardo-zambanini"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 4,
+   "stype": "sprint",
+   "predicted_top5": [
+    "wout-van-aert",
+    "kaden-groves",
+    "mads-pedersen",
+    "dries-de-bondt",
+    "kasper-asgreen"
+   ],
+   "actual_winner": [
+    "casper-van-uden"
+   ],
+   "actual_top5": [
+    "casper-van-uden",
+    "olav-kooij",
+    "maikel-zijlaard",
+    "mads-pedersen",
+    "kaden-groves"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 5,
+   "stype": "hilly",
+   "predicted_top5": [
+    "primoz-roglic",
+    "richard-carapaz",
+    "wout-van-aert",
+    "mads-pedersen",
+    "kaden-groves"
+   ],
+   "actual_winner": [
+    "mads-pedersen"
+   ],
+   "actual_top5": [
+    "mads-pedersen",
+    "edoardo-zambanini",
+    "tom-pidcock",
+    "orluis-aular",
+    "filippo-fiorelli"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 6,
+   "stype": "sprint",
+   "predicted_top5": [
+    "kaden-groves",
+    "wout-van-aert",
+    "mads-pedersen",
+    "primoz-roglic",
+    "nico-denz"
+   ],
+   "actual_winner": [
+    "kaden-groves"
+   ],
+   "actual_top5": [
+    "kaden-groves",
+    "milan-fretin",
+    "paul-magnier",
+    "max-kanter",
+    "giovanni-lonardi"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 7,
+   "stype": "mountain",
+   "predicted_top5": [
+    "primoz-roglic",
+    "richard-carapaz",
+    "simon-yates",
+    "mads-pedersen",
+    "wout-van-aert"
+   ],
+   "actual_winner": [
+    "juan-ayuso-pesquera"
+   ],
+   "actual_top5": [
+    "juan-ayuso-pesquera",
+    "isaac-del-toro",
+    "egan-bernal",
+    "primoz-roglic",
+    "giulio-ciccone"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 8,
+   "stype": "sprint",
+   "predicted_top5": [
+    "mads-pedersen",
+    "wout-van-aert",
+    "primoz-roglic",
+    "kaden-groves",
+    "richard-carapaz"
+   ],
+   "actual_winner": [
+    "luke-plapp"
+   ],
+   "actual_top5": [
+    "luke-plapp",
+    "wilco-kelderman",
+    "diego-ulissi",
+    "igor-arrieta-lizarraga",
+    "nicolas-prodhomme"
+   ],
+   "top5_overlap": 0,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 9,
+   "stype": "hilly",
+   "predicted_top5": [
+    "primoz-roglic",
+    "richard-carapaz",
+    "simon-yates",
+    "mads-pedersen",
+    "kaden-groves"
+   ],
+   "actual_winner": [
+    "wout-van-aert"
+   ],
+   "actual_top5": [
+    "wout-van-aert",
+    "isaac-del-toro",
+    "giulio-ciccone",
+    "richard-carapaz",
+    "simon-yates"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 10,
+   "stype": "tt",
+   "predicted_top5": [
+    "primoz-roglic",
+    "richard-carapaz",
+    "simon-yates",
+    "mads-pedersen",
+    "wout-van-aert"
+   ],
+   "actual_winner": [
+    "daan-hoole"
+   ],
+   "actual_top5": [
+    "daan-hoole",
+    "joshua-tarling",
+    "ethan-hayter",
+    "mattia-cattaneo",
+    "edoardo-affini"
+   ],
+   "top5_overlap": 0,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 11,
+   "stype": "hilly",
+   "predicted_top5": [
+    "primoz-roglic",
+    "richard-carapaz",
+    "simon-yates",
+    "wout-van-aert",
+    "mads-pedersen"
+   ],
+   "actual_winner": [
+    "richard-carapaz"
+   ],
+   "actual_top5": [
+    "richard-carapaz",
+    "isaac-del-toro",
+    "giulio-ciccone",
+    "tom-pidcock",
+    "egan-bernal"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 12,
+   "stype": "sprint",
+   "predicted_top5": [
+    "mads-pedersen",
+    "wout-van-aert",
+    "kaden-groves",
+    "primoz-roglic",
+    "nico-denz"
+   ],
+   "actual_winner": [
+    "olav-kooij"
+   ],
+   "actual_top5": [
+    "olav-kooij",
+    "casper-van-uden",
+    "ben-turner",
+    "mads-pedersen",
+    "kaden-groves"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 13,
+   "stype": "hilly",
+   "predicted_top5": [
+    "primoz-roglic",
+    "mads-pedersen",
+    "richard-carapaz",
+    "kaden-groves",
+    "wout-van-aert"
+   ],
+   "actual_winner": [
+    "mads-pedersen"
+   ],
+   "actual_top5": [
+    "mads-pedersen",
+    "wout-van-aert",
+    "isaac-del-toro",
+    "remy-rochas",
+    "dorian-godon"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 14,
+   "stype": "sprint",
+   "predicted_top5": [
+    "kaden-groves",
+    "wout-van-aert",
+    "mads-pedersen",
+    "luke-plapp",
+    "primoz-roglic"
+   ],
+   "actual_winner": [
+    "kasper-asgreen"
+   ],
+   "actual_top5": [
+    "kasper-asgreen",
+    "kaden-groves",
+    "olav-kooij",
+    "orluis-aular",
+    "stefano-oldani"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 15,
+   "stype": "sprint",
+   "predicted_top5": [
+    "wout-van-aert",
+    "kaden-groves",
+    "mads-pedersen",
+    "primoz-roglic",
+    "richard-carapaz"
+   ],
+   "actual_winner": [
+    "carlos-verona"
+   ],
+   "actual_top5": [
+    "carlos-verona",
+    "florian-stork",
+    "christian-scaroni",
+    "romain-bardet",
+    "nicolas-prodhomme"
+   ],
+   "top5_overlap": 0,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 16,
+   "stype": "mountain",
+   "predicted_top5": [
+    "primoz-roglic",
+    "richard-carapaz",
+    "simon-yates",
+    "derek-gee",
+    "embret-svestad-bardseng"
+   ],
+   "actual_winner": [
+    "christian-scaroni"
+   ],
+   "actual_top5": [
+    "christian-scaroni",
+    "lorenzo-fortunato",
+    "giulio-pellizzari",
+    "richard-carapaz",
+    "derek-gee"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 17,
+   "stype": "hilly",
+   "predicted_top5": [
+    "richard-carapaz",
+    "simon-yates",
+    "derek-gee",
+    "isaac-del-toro",
+    "antonio-tiberi"
+   ],
+   "actual_winner": [
+    "isaac-del-toro"
+   ],
+   "actual_top5": [
+    "isaac-del-toro",
+    "romain-bardet",
+    "richard-carapaz",
+    "simon-yates",
+    "giulio-pellizzari"
+   ],
+   "top5_overlap": 3,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 18,
+   "stype": "sprint",
+   "predicted_top5": [
+    "wout-van-aert",
+    "mads-pedersen",
+    "kaden-groves",
+    "sam-bennett",
+    "kasper-asgreen"
+   ],
+   "actual_winner": [
+    "nico-denz"
+   ],
+   "actual_top5": [
+    "nico-denz",
+    "mirco-maestri",
+    "edward-planckaert",
+    "filippo-magli2",
+    "alexander-edmondson"
+   ],
+   "top5_overlap": 0,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 19,
+   "stype": "hilly",
+   "predicted_top5": [
+    "richard-carapaz",
+    "simon-yates",
+    "derek-gee",
+    "wout-van-aert",
+    "isaac-del-toro"
+   ],
+   "actual_winner": [
+    "nicolas-prodhomme"
+   ],
+   "actual_top5": [
+    "nicolas-prodhomme",
+    "isaac-del-toro",
+    "richard-carapaz",
+    "damiano-caruso",
+    "brandon-mcnulty"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 20,
+   "stype": "mountain",
+   "predicted_top5": [
+    "richard-carapaz",
+    "simon-yates",
+    "derek-gee",
+    "damiano-caruso",
+    "isaac-del-toro"
+   ],
+   "actual_winner": [
+    "chris-harper"
+   ],
+   "actual_top5": [
+    "chris-harper",
+    "alessandro-verre",
+    "simon-yates",
+    "gianmarco-garofoli",
+    "remy-rochas"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "giro",
+   "year": 2025,
+   "stage": 21,
+   "stype": "sprint",
+   "predicted_top5": [
+    "mads-pedersen",
+    "wout-van-aert",
+    "kaden-groves",
+    "nico-denz",
+    "wout-poels"
+   ],
+   "actual_winner": [
+    "olav-kooij"
+   ],
+   "actual_top5": [
+    "olav-kooij",
+    "kaden-groves",
+    "matteo-moschetti",
+    "mads-pedersen",
+    "luke-lamperti"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 1,
+   "stype": "sprint",
+   "predicted_top5": [
+    "kaden-groves",
+    "jasper-philipsen",
+    "jonathan-milan",
+    "magnus-cort-nielsen",
+    "biniam-girmay"
+   ],
+   "actual_winner": [
+    "jasper-philipsen"
+   ],
+   "actual_top5": [
+    "jasper-philipsen",
+    "biniam-girmay",
+    "soren-waerenskjold",
+    "anthony-turgis",
+    "matteo-trentin"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 2,
+   "stype": "hilly",
+   "predicted_top5": [
+    "tadej-pogacar",
+    "remco-evenepoel",
+    "jonas-vingegaard",
+    "primoz-roglic",
+    "kaden-groves"
+   ],
+   "actual_winner": [
+    "mathieu-van-der-poel"
+   ],
+   "actual_top5": [
+    "mathieu-van-der-poel",
+    "tadej-pogacar",
+    "jonas-vingegaard",
+    "romain-gregoire",
+    "julian-alaphilippe"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 3,
+   "stype": "sprint",
+   "predicted_top5": [
+    "wout-van-aert",
+    "jasper-philipsen",
+    "kaden-groves",
+    "magnus-cort-nielsen",
+    "jonathan-milan"
+   ],
+   "actual_winner": [
+    "tim-merlier"
+   ],
+   "actual_top5": [
+    "tim-merlier",
+    "jonathan-milan",
+    "phil-bauhaus",
+    "soren-waerenskjold",
+    "pavel-bittner"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 4,
+   "stype": "sprint",
+   "predicted_top5": [
+    "wout-van-aert",
+    "primoz-roglic",
+    "tim-merlier",
+    "kaden-groves",
+    "jonathan-milan"
+   ],
+   "actual_winner": [
+    "tadej-pogacar"
+   ],
+   "actual_top5": [
+    "tadej-pogacar",
+    "mathieu-van-der-poel",
+    "jonas-vingegaard",
+    "oscar-onley",
+    "romain-gregoire"
+   ],
+   "top5_overlap": 0,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 5,
+   "stype": "tt",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "tadej-pogacar",
+    "kaden-groves",
+    "remco-evenepoel",
+    "wout-van-aert"
+   ],
+   "actual_winner": [
+    "remco-evenepoel"
+   ],
+   "actual_top5": [
+    "remco-evenepoel",
+    "tadej-pogacar",
+    "edoardo-affini",
+    "bruno-armirail",
+    "kevin-vauquelin"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 6,
+   "stype": "hilly",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "tadej-pogacar",
+    "remco-evenepoel",
+    "primoz-roglic",
+    "kaden-groves"
+   ],
+   "actual_winner": [
+    "ben-healy"
+   ],
+   "actual_top5": [
+    "ben-healy",
+    "quinn-simmons",
+    "michael-storer",
+    "edward-irl-dunbar",
+    "simon-yates"
+   ],
+   "top5_overlap": 0,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 7,
+   "stype": "hilly",
+   "predicted_top5": [
+    "tadej-pogacar",
+    "jonas-vingegaard",
+    "remco-evenepoel",
+    "wout-van-aert",
+    "kaden-groves"
+   ],
+   "actual_winner": [
+    "tadej-pogacar"
+   ],
+   "actual_top5": [
+    "tadej-pogacar",
+    "jonas-vingegaard",
+    "oscar-onley",
+    "felix-gall",
+    "matteo-jorgenson"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 8,
+   "stype": "sprint",
+   "predicted_top5": [
+    "kaden-groves",
+    "wout-van-aert",
+    "tim-merlier",
+    "magnus-cort-nielsen",
+    "jonathan-milan"
+   ],
+   "actual_winner": [
+    "jonathan-milan"
+   ],
+   "actual_top5": [
+    "jonathan-milan",
+    "wout-van-aert",
+    "kaden-groves",
+    "pascal-ackermann",
+    "arnaud-de-lie"
+   ],
+   "top5_overlap": 3,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 9,
+   "stype": "sprint",
+   "predicted_top5": [
+    "kaden-groves",
+    "wout-van-aert",
+    "tim-merlier",
+    "biniam-girmay",
+    "primoz-roglic"
+   ],
+   "actual_winner": [
+    "tim-merlier"
+   ],
+   "actual_top5": [
+    "tim-merlier",
+    "jonathan-milan",
+    "arnaud-de-lie",
+    "pavel-bittner",
+    "paul-penhoet"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 10,
+   "stype": "hilly",
+   "predicted_top5": [
+    "tadej-pogacar",
+    "jonas-vingegaard",
+    "remco-evenepoel",
+    "mathieu-van-der-poel",
+    "primoz-roglic"
+   ],
+   "actual_winner": [
+    "simon-yates"
+   ],
+   "actual_top5": [
+    "simon-yates",
+    "thymen-arensman",
+    "ben-healy",
+    "ben-o-connor",
+    "michael-storer"
+   ],
+   "top5_overlap": 0,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 11,
+   "stype": "sprint",
+   "predicted_top5": [
+    "wout-van-aert",
+    "kaden-groves",
+    "tim-merlier",
+    "simon-yates",
+    "jonathan-milan"
+   ],
+   "actual_winner": [
+    "jonas-abrahamsen"
+   ],
+   "actual_top5": [
+    "jonas-abrahamsen",
+    "mauro-schmid",
+    "mathieu-van-der-poel",
+    "arnaud-de-lie",
+    "wout-van-aert"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 12,
+   "stype": "mountain",
+   "predicted_top5": [
+    "tadej-pogacar",
+    "jonas-vingegaard",
+    "remco-evenepoel",
+    "primoz-roglic",
+    "mathieu-van-der-poel"
+   ],
+   "actual_winner": [
+    "tadej-pogacar"
+   ],
+   "actual_top5": [
+    "tadej-pogacar",
+    "jonas-vingegaard",
+    "florian-lipowitz",
+    "tobias-halland-johannessen",
+    "oscar-onley"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 13,
+   "stype": "tt",
+   "predicted_top5": [
+    "tadej-pogacar",
+    "jonas-vingegaard",
+    "remco-evenepoel",
+    "primoz-roglic",
+    "wout-van-aert"
+   ],
+   "actual_winner": [
+    "tadej-pogacar"
+   ],
+   "actual_top5": [
+    "tadej-pogacar",
+    "jonas-vingegaard",
+    "primoz-roglic",
+    "florian-lipowitz",
+    "luke-plapp"
+   ],
+   "top5_overlap": 3,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 14,
+   "stype": "mountain",
+   "predicted_top5": [
+    "tadej-pogacar",
+    "jonas-vingegaard",
+    "remco-evenepoel",
+    "primoz-roglic",
+    "kevin-vauquelin"
+   ],
+   "actual_winner": [
+    "thymen-arensman"
+   ],
+   "actual_top5": [
+    "thymen-arensman",
+    "tadej-pogacar",
+    "jonas-vingegaard",
+    "felix-gall",
+    "florian-lipowitz"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 15,
+   "stype": "sprint",
+   "predicted_top5": [
+    "wout-van-aert",
+    "kaden-groves",
+    "tim-merlier",
+    "biniam-girmay",
+    "jonathan-milan"
+   ],
+   "actual_winner": [
+    "tim-wellens"
+   ],
+   "actual_top5": [
+    "tim-wellens",
+    "victor-campenaerts",
+    "julian-alaphilippe",
+    "wout-van-aert",
+    "axel-laurance"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 16,
+   "stype": "mountain",
+   "predicted_top5": [
+    "tadej-pogacar",
+    "jonas-vingegaard",
+    "primoz-roglic",
+    "jordan-jegat",
+    "florian-lipowitz"
+   ],
+   "actual_winner": [
+    "valentin-paret-peintre"
+   ],
+   "actual_top5": [
+    "valentin-paret-peintre",
+    "ben-healy",
+    "santiago-buitrago-sanchez",
+    "ilan-van-wilder",
+    "tadej-pogacar"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 17,
+   "stype": "sprint",
+   "predicted_top5": [
+    "kaden-groves",
+    "wout-van-aert",
+    "tim-merlier",
+    "biniam-girmay",
+    "simon-yates"
+   ],
+   "actual_winner": [
+    "jonathan-milan"
+   ],
+   "actual_top5": [
+    "jonathan-milan",
+    "jordi-meeus",
+    "tobias-lund-andresen",
+    "arnaud-de-lie",
+    "davide-ballerini"
+   ],
+   "top5_overlap": 0,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 18,
+   "stype": "mountain",
+   "predicted_top5": [
+    "tadej-pogacar",
+    "jonas-vingegaard",
+    "primoz-roglic",
+    "florian-lipowitz",
+    "jordan-jegat"
+   ],
+   "actual_winner": [
+    "ben-o-connor"
+   ],
+   "actual_top5": [
+    "ben-o-connor",
+    "tadej-pogacar",
+    "jonas-vingegaard",
+    "oscar-onley",
+    "einer-rubio"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 19,
+   "stype": "mountain",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "tadej-pogacar",
+    "primoz-roglic",
+    "ben-o-connor",
+    "tobias-halland-johannessen"
+   ],
+   "actual_winner": [
+    "thymen-arensman"
+   ],
+   "actual_top5": [
+    "thymen-arensman",
+    "jonas-vingegaard",
+    "tadej-pogacar",
+    "florian-lipowitz",
+    "oscar-onley"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 20,
+   "stype": "sprint",
+   "predicted_top5": [
+    "kaden-groves",
+    "wout-van-aert",
+    "jonathan-milan",
+    "primoz-roglic",
+    "tim-merlier"
+   ],
+   "actual_winner": [
+    "kaden-groves"
+   ],
+   "actual_top5": [
+    "kaden-groves",
+    "frank-van-den-broek",
+    "pascal-eenkhoorn",
+    "simone-velasco",
+    "romain-gregoire"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "tdf",
+   "year": 2025,
+   "stage": 21,
+   "stype": "sprint",
+   "predicted_top5": [
+    "wout-van-aert",
+    "kaden-groves",
+    "tim-merlier",
+    "jonathan-milan",
+    "alberto-dainese"
+   ],
+   "actual_winner": [
+    "wout-van-aert"
+   ],
+   "actual_top5": [
+    "wout-van-aert",
+    "davide-ballerini",
+    "matej-mohoric",
+    "tadej-pogacar",
+    "matteo-jorgenson"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 1,
+   "stype": "sprint",
+   "predicted_top5": [
+    "mads-pedersen",
+    "jasper-philipsen",
+    "filippo-ganna",
+    "nico-denz",
+    "casper-van-uden"
+   ],
+   "actual_winner": [
+    "jasper-philipsen"
+   ],
+   "actual_top5": [
+    "jasper-philipsen",
+    "ethan-vernon",
+    "orluis-aular",
+    "elia-viviani",
+    "ivan-garcia-cortina"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 2,
+   "stype": "hilly",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "jasper-philipsen",
+    "mads-pedersen",
+    "ben-o-connor",
+    "daniel-cavia-sanz"
+   ],
+   "actual_winner": [
+    "jonas-vingegaard"
+   ],
+   "actual_top5": [
+    "jonas-vingegaard",
+    "giulio-ciccone",
+    "david-gaudu",
+    "egan-bernal",
+    "joao-almeida"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 3,
+   "stype": "hilly",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "mads-pedersen",
+    "jasper-philipsen",
+    "ben-o-connor",
+    "filippo-ganna"
+   ],
+   "actual_winner": [
+    "david-gaudu"
+   ],
+   "actual_top5": [
+    "david-gaudu",
+    "mads-pedersen",
+    "jonas-vingegaard",
+    "giulio-ciccone",
+    "jordan-labrosse"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 4,
+   "stype": "hilly",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "mads-pedersen",
+    "jasper-philipsen",
+    "ben-o-connor",
+    "filippo-ganna"
+   ],
+   "actual_winner": [
+    "ben-turner"
+   ],
+   "actual_top5": [
+    "ben-turner",
+    "jasper-philipsen",
+    "edward-planckaert",
+    "ethan-vernon",
+    "jenthe-biermans"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 5,
+   "stype": "ttt",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "mads-pedersen",
+    "jasper-philipsen",
+    "ben-o-connor",
+    "filippo-ganna"
+   ],
+   "actual_winner": [
+    "jonas-vingegaard"
+   ],
+   "actual_top5": [
+    "jonas-vingegaard",
+    "juan-ayuso-pesquera",
+    "joao-almeida",
+    "marc-soler",
+    "giulio-ciccone"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 6,
+   "stype": "mountain",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "ben-o-connor",
+    "mads-pedersen",
+    "jai-hindley",
+    "jasper-philipsen"
+   ],
+   "actual_winner": [
+    "jay-vine"
+   ],
+   "actual_top5": [
+    "jay-vine",
+    "torstein-traeen",
+    "lorenzo-fortunato",
+    "bruno-armirail",
+    "pablo-castrillo-zapater"
+   ],
+   "top5_overlap": 0,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 7,
+   "stype": "mountain",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "ben-o-connor",
+    "matteo-jorgenson",
+    "jai-hindley",
+    "mads-pedersen"
+   ],
+   "actual_winner": [
+    "juan-ayuso-pesquera"
+   ],
+   "actual_top5": [
+    "juan-ayuso-pesquera",
+    "marco-frigo",
+    "raul-garcia-pierna",
+    "harold-tejada",
+    "sean-quinn"
+   ],
+   "top5_overlap": 0,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 8,
+   "stype": "sprint",
+   "predicted_top5": [
+    "mads-pedersen",
+    "jasper-philipsen",
+    "jay-vine",
+    "filippo-ganna",
+    "nico-denz"
+   ],
+   "actual_winner": [
+    "jasper-philipsen"
+   ],
+   "actual_top5": [
+    "jasper-philipsen",
+    "ethan-vernon",
+    "arne-marit",
+    "anders-foldager",
+    "madis-mihkels"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 9,
+   "stype": "hilly",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "mads-pedersen",
+    "ben-o-connor",
+    "jasper-philipsen",
+    "matteo-jorgenson"
+   ],
+   "actual_winner": [
+    "jonas-vingegaard"
+   ],
+   "actual_top5": [
+    "jonas-vingegaard",
+    "tom-pidcock",
+    "joao-almeida",
+    "felix-gall",
+    "raul-garcia-pierna"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 10,
+   "stype": "hilly",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "mads-pedersen",
+    "ben-o-connor",
+    "bruno-armirail",
+    "marco-frigo"
+   ],
+   "actual_winner": [
+    "jay-vine"
+   ],
+   "actual_top5": [
+    "jay-vine",
+    "pablo-castrillo-zapater",
+    "javier-romo",
+    "archie-ryan",
+    "tom-pidcock"
+   ],
+   "top5_overlap": 0,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 11,
+   "stype": "sprint",
+   "predicted_top5": [
+    "chris-harper",
+    "paul-ourselin",
+    "ramses-debruyne"
+   ],
+   "actual_winner": [],
+   "actual_top5": [],
+   "top5_overlap": 0,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 12,
+   "stype": "sprint",
+   "predicted_top5": [
+    "mads-pedersen",
+    "jonas-vingegaard",
+    "jasper-philipsen",
+    "ben-o-connor",
+    "stefan-kung"
+   ],
+   "actual_winner": [
+    "juan-ayuso-pesquera"
+   ],
+   "actual_top5": [
+    "juan-ayuso-pesquera",
+    "javier-romo",
+    "brieuc-rolland",
+    "victor-campenaerts",
+    "mads-pedersen"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 13,
+   "stype": "mountain",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "ben-o-connor",
+    "matteo-jorgenson",
+    "joao-almeida",
+    "giulio-ciccone"
+   ],
+   "actual_winner": [
+    "joao-almeida"
+   ],
+   "actual_top5": [
+    "joao-almeida",
+    "jonas-vingegaard",
+    "jai-hindley",
+    "sepp-kuss",
+    "felix-gall"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 14,
+   "stype": "mountain",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "joao-almeida",
+    "matteo-jorgenson",
+    "giulio-ciccone",
+    "torstein-traeen"
+   ],
+   "actual_winner": [
+    "marc-soler"
+   ],
+   "actual_top5": [
+    "marc-soler",
+    "jonas-vingegaard",
+    "joao-almeida",
+    "jai-hindley",
+    "felix-gall"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 15,
+   "stype": "sprint",
+   "predicted_top5": [
+    "jasper-philipsen",
+    "mads-pedersen",
+    "jay-vine",
+    "juan-ayuso-pesquera",
+    "nico-denz"
+   ],
+   "actual_winner": [
+    "mads-pedersen"
+   ],
+   "actual_top5": [
+    "mads-pedersen",
+    "orluis-aular",
+    "marco-frigo",
+    "santiago-buitrago-sanchez",
+    "edward-irl-dunbar"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 16,
+   "stype": "hilly",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "marc-soler",
+    "joao-almeida",
+    "jay-vine",
+    "tom-pidcock"
+   ],
+   "actual_winner": [
+    "egan-bernal"
+   ],
+   "actual_top5": [
+    "egan-bernal",
+    "mikel-landa",
+    "brieuc-rolland",
+    "nico-denz",
+    "clement-braz-afonso"
+   ],
+   "top5_overlap": 0,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 17,
+   "stype": "mountain",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "egan-bernal",
+    "marc-soler",
+    "joao-almeida",
+    "nico-denz"
+   ],
+   "actual_winner": [
+    "giulio-pellizzari"
+   ],
+   "actual_top5": [
+    "giulio-pellizzari",
+    "tom-pidcock",
+    "jai-hindley",
+    "jonas-vingegaard",
+    "joao-almeida"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 18,
+   "stype": "tt",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "egan-bernal",
+    "marc-soler",
+    "mads-pedersen",
+    "jay-vine"
+   ],
+   "actual_winner": [
+    "filippo-ganna"
+   ],
+   "actual_top5": [
+    "filippo-ganna",
+    "jay-vine",
+    "joao-almeida",
+    "bruno-armirail",
+    "ivo-emanuel-alves"
+   ],
+   "top5_overlap": 1,
+   "winner_in_pred": 0
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 19,
+   "stype": "sprint",
+   "predicted_top5": [
+    "mads-pedersen",
+    "jasper-philipsen",
+    "juan-ayuso-pesquera",
+    "filippo-ganna",
+    "jay-vine"
+   ],
+   "actual_winner": [
+    "jasper-philipsen"
+   ],
+   "actual_top5": [
+    "jasper-philipsen",
+    "mads-pedersen",
+    "orluis-aular",
+    "jenthe-biermans",
+    "ben-turner"
+   ],
+   "top5_overlap": 2,
+   "winner_in_pred": 1
+  },
+  {
+   "race": "vuelta",
+   "year": 2025,
+   "stage": 20,
+   "stype": "mountain",
+   "predicted_top5": [
+    "jonas-vingegaard",
+    "joao-almeida",
+    "santiago-buitrago-sanchez",
+    "tom-pidcock",
+    "jay-vine"
+   ],
+   "actual_winner": [
+    "jonas-vingegaard"
+   ],
+   "actual_top5": [
+    "jonas-vingegaard",
+    "sepp-kuss",
+    "jai-hindley",
+    "tom-pidcock",
+    "joao-almeida"
+   ],
+   "top5_overlap": 3,
+   "winner_in_pred": 1
+  }
+ ],
+ "generated": "2026-06-21T19:38:02.966390+00:00"
+}

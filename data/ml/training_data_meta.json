@@ -1,0 +1,44 @@
+{
+  "n_rows": 51214,
+  "n_stages": 314,
+  "n_riders": 832,
+  "feature_cols": [
+    "profile_score",
+    "is_sprint",
+    "is_mountain",
+    "is_hilly",
+    "is_tt",
+    "co_MTN",
+    "co_SPR",
+    "co_HLL",
+    "co_ITT",
+    "co_COB",
+    "co_GC",
+    "spec_climber",
+    "spec_sprint",
+    "spec_tt",
+    "spec_hills",
+    "gt_form_5",
+    "gt_form_10",
+    "gt_wins_so_far"
+  ],
+  "target_cols": [
+    "position",
+    "dnf",
+    "top5",
+    "top10",
+    "top20"
+  ],
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "races": [
+    "giro",
+    "tdf",
+    "vuelta"
+  ]
+}
