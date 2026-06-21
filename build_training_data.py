@@ -189,7 +189,7 @@ def main() -> None:
 
     # Write meta
     feature_cols = [c for c in fieldnames if c not in (
-        "race", "year", "stage", "rider_slug",
+        "race", "year", "stage", "stage_type", "rider_slug",
         "position", "dnf", "top5", "top10", "top20",
     )]
     meta = {
