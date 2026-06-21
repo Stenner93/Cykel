@@ -35,7 +35,7 @@ async function mlInit() {
 
   let data;
   try {
-    const res = await fetch(ML_URL + '?t=' + Date.now());
+    const res = await fetch(ML_URL, { cache: 'no-cache' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
   } catch (e) {
