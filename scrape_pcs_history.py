@@ -252,6 +252,7 @@ def scrape_race_year(
 
 
 def main() -> None:
+    global DELAY
     parser = argparse.ArgumentParser()
     parser.add_argument("--years",  nargs="+", type=int, default=YEARS)
     parser.add_argument("--races",  nargs="+", default=list(RACES.keys()),
@@ -261,7 +262,6 @@ def main() -> None:
     parser.add_argument("--delay",  type=float, default=DELAY)
     args = parser.parse_args()
 
-    global DELAY
     DELAY = args.delay
 
     # Load existing records
