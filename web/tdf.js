@@ -53,8 +53,12 @@ function tdfCtxBadge(status, note, mult) {
   return `<span class="ctx-badge ctx-${tdfEsc(status)}" title="${tdfEsc(note || status)}">${label}${multStr}</span>`;
 }
 
-function tdfMiniBar(signals) {
-  const labels = ['VeloScore','Odds','Disciplin','Form','ML','PCS Rang'];
+function tdfMiniBar(signals, discRaw, discCo, discKey) {
+  const dk = (discKey || 'DISC').toUpperCase();
+  const discTitle = discRaw != null
+    ? `${dk}: ${discRaw.toFixed(0)}/100 i felt` + (discCo ? ` (CO: ${discCo.toFixed(0)})` : '')
+    : 'Disciplin';
+  const labels = ['VeloScore','Odds', discTitle,'Form','ML','PCS Rang'];
   return `<div class="mini-signals">${(signals||[0,0,0,0,0,0]).map((v,i)=>
     `<div class="mini-seg ${v>0.3?'on':''}" title="${labels[i]}: ${(v*100).toFixed(0)}%"></div>`
   ).join('')}</div>`;
@@ -427,7 +431,7 @@ function tdfRenderPredStage(num) {
       <td style="font-size:0.78rem">${r.price?.toFixed?.(1) ?? '?'}M</td>
       <td class="pts-exp">${tdfFmt(r.exp)}</td>
       ${actHtml}
-      <td>${tdfMiniBar(r.signals)}</td>
+      <td>${tdfMiniBar(r.signals, r.disc, r.disc_co, r.disc_key)}</td>
       <td style="font-size:0.75rem;color:var(--muted);max-width:200px;overflow:hidden;
           text-overflow:ellipsis;white-space:nowrap" title="${tdfEsc(r.reason)}">${tdfEsc(r.reason)}</td>
     </tr>`;

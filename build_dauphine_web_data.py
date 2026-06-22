@@ -584,6 +584,7 @@ def main() -> None:
                 "var":      p.get("variance", 0),
                 "form":     round(p.get("form_score", 0), 1),
                 "disc":     round(p.get("disc_raw", 0) or 0, 1),
+                "disc_co":  round(p.get("disc_co_raw", 0) or 0, 1),
                 "disc_key": p.get("disc_key", "AVG"),
                 "signals":  [
                     round(sigs.get("veloscore", 0), 3),

@@ -54,7 +54,7 @@ function priceClass(p) {
  * disc_raw:   raw 0-100 CyclingOracle value — shown in tooltip.
  * form_score: 0-100 blended form score (70% type-specific + 30% overall) — shown in form tooltip.
  */
-function signalBar(signals, discKey, discRaw, formScore, mlSource) {
+function signalBar(signals, discKey, discRaw, formScore, mlSource, discCoRaw) {
   const dk    = (discKey || 'AVG').toUpperCase();
   const label = DISC_LABELS[dk] || dk;
   const formLbl = formScore != null
@@ -64,10 +64,14 @@ function signalBar(signals, discKey, discRaw, formScore, mlSource) {
   const mlLbl = mlVal != null
     ? `ML ${mlSource ? '(' + mlSource + ')' : ''}: ${(mlVal * 100).toFixed(0)}/100`
     : null;
+  // disc tooltip: feltrelativ rang + absolut CO-score hvis tilgængelig
+  const discLbl = discRaw != null
+    ? `${label}: ${discRaw.toFixed(0)}/100 i felt` + (discCoRaw != null ? ` (CO: ${discCoRaw.toFixed(0)})` : '')
+    : label;
   const segs  = [
     { k: 'veloscore',  lbl: 'VeloScore' },
     { k: 'odds',       lbl: 'Odds' },
-    { k: 'discipline', lbl: discRaw != null ? `${label}: ${discRaw.toFixed(0)}/100` : label },
+    { k: 'discipline', lbl: discLbl },
     { k: 'form',       lbl: formLbl },
     ...(mlLbl != null ? [{ k: 'ml', lbl: mlLbl }] : []),
   ].map(({ k, lbl }) => {
@@ -315,7 +319,7 @@ function renderTopPicks(picks) {
       <td>${p.team}</td>
       <td class="${priceClass(p.price)}">${p.price.toFixed(1)}M</td>
       <td style="font-weight:600;color:var(--green)">${fmtK(p.expected_pts)}</td>
-      <td>${signalBar(p.signal_scores, p.disc_key, p.disc_raw, p.form_score, window._mlSource)}</td>
+      <td>${signalBar(p.signal_scores, p.disc_key, p.disc_raw, p.form_score, window._mlSource, p.disc_co_raw)}</td>
       <td class="co-cell">${coVal}</td>
       <td style="font-size:0.78rem;color:var(--muted)">${p.reasoning || '–'}</td>
     </tr>`;

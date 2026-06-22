@@ -85,6 +85,11 @@ STAGE_DISCIPLINE_BLEND: dict[str, dict[str, float]] = {
 
 def _dominant_disc_key(stage_type: str) -> str:
     """Heaviest-weighted CO key in this stage type's blend — used for display."""
+    # For hilly, the computation blend has COB > HLL (empirically correct), but
+    # showing "COB" as label on a hilly stage is confusing — override to "HLL".
+    _display_overrides = {"hilly": "HLL", "sprint": "SPR"}
+    if stage_type in _display_overrides:
+        return _display_overrides[stage_type]
     blend = STAGE_DISCIPLINE_BLEND.get(stage_type, {"AVG": 1.0})
     return max(blend, key=blend.get)
 
@@ -410,10 +415,11 @@ def predict_rider(
         "win_prob":      round(composite, 4),
         "variance":      round(variance),
         "reasoning":     ", ".join(reasons),
-        # disc_key / disc_raw expose the exact CyclingOracle rating used
-        # so the UI can show e.g. "SPR: 87" instead of generic "discipline"
-        "disc_key":      disc_key,           # e.g. "SPR", "MTN", "ITT"
-        "disc_raw":      round(disc_raw, 1), # 0-100 raw CyclingOracle value
+        # disc_key / disc_raw: felt-normaliseret disciplinrating (bedste i feltet → 100).
+        # disc_co_raw: den absolutte CO-blend-værdi FØR felt-normalisering (tilføjes
+        # af predict_all() efter dette kald — vises i tooltip som "CO: xx/100").
+        "disc_key":      disc_key,           # e.g. "SPR", "MTN", "ITT", "HLL"
+        "disc_raw":      round(disc_raw, 1), # 0-100 felt-relativt (bedste → 100)
         # form_score: the stage-type-blended form value actually used (0-100)
         # For form_by_type dicts: 70% type-specific + 30% overall
         "form_score":    round(form_val, 1),
@@ -478,13 +484,17 @@ def predict_all(
         "onedayraces":"COB",
         "gc":         "GC",
     }
-    # Compute per-specialty 95th-percentile maxima across this race field
-    # for normalisation → this gives a field-relative 0-100 score.
+    # Compute per-specialty 95th-percentile maxima — KUN baseret på ryttere
+    # i det aktuelle felt (riders), ikke hele pcs_form-cachen. Derved er
+    # Pogacar/Vingegaard referencepunktet (100), ikke det brede historiske dataset.
     pcs_field_maxima: dict[str, float] = {}
     if pcs_specialty_data:
         from collections import defaultdict
+        field_rider_ids = {r["id"] for r in riders}
         vals: dict[str, list[float]] = defaultdict(list)
-        for spec_dict in pcs_specialty_data.values():
+        for rid, spec_dict in pcs_specialty_data.items():
+            if rid not in field_rider_ids:
+                continue          # kun ryttere i dette løbs felt
             for k, v in spec_dict.items():
                 vals[k].append(float(v))
         for k, lst in vals.items():
@@ -647,6 +657,9 @@ def predict_all(
             pcs_n_results=(pcs_n_results_data or {}).get(rider["id"], 0),
             pcs_rank_pts=pcs_rank_normalized.get(rider["id"]),
         )
+        # disc_co_raw = rå CO-blend-værdi FØR felt-normalisering (bruges til display,
+        # så brugeren ser det absolutte CO-tal, ikke det felt-relative 0-100 tal).
+        pred["disc_co_raw"] = round(field_vals.get(rider["id"], 0), 1)
         # Apply rider context multiplier (status from previous stage)
         ctx = (rider_context or {}).get(rider["id"])
         if ctx:

@@ -59,8 +59,12 @@ function ctxBadge(status, note, mult) {
   return `<span class="ctx-badge ctx-${esc(status)}" title="${esc(note || status)}">${label}${multStr}</span>`;
 }
 
-function miniBar(signals) {
-  const labels = ['VeloScore','Odds','Disciplin','Form','ML','PCS Rang'];
+function miniBar(signals, discRaw, discCo, discKey) {
+  const dk = (discKey || 'DISC').toUpperCase();
+  const discTitle = discRaw != null
+    ? `${dk}: ${discRaw.toFixed(0)}/100 i felt` + (discCo ? ` (CO: ${discCo.toFixed(0)})` : '')
+    : 'Disciplin';
+  const labels = ['VeloScore','Odds', discTitle,'Form','ML','PCS Rang'];
   return `<div class="mini-signals">${signals.map((v,i)=>
     `<div class="mini-seg ${v>0.3?'on':''}" title="${labels[i]}: ${(v*100).toFixed(0)}%"></div>`
   ).join('')}</div>`;
@@ -457,8 +461,8 @@ function renderHoldTab(stage) {
             <td style="color:var(--muted);font-size:0.75rem">${esc(r.team)}</td>
             <td style="font-size:0.78rem">${r.price?.toFixed?.(1) ?? '?'}M</td>
             <td class="pts-exp">${fmt(r.exp)}</td>
-            <td>${miniBar(r.signals || [0,0,0,0])}</td>
-            <td style="font-size:0.75rem;color:var(--muted)">${dLabel}: ${r.disc?.toFixed?.(0) ?? '?'}/100</td>
+            <td>${miniBar(r.signals || [0,0,0,0,0,0], r.disc, r.disc_co, r.disc_key)}</td>
+            <td style="font-size:0.75rem;color:var(--muted)" title="${dLabel}: ${r.disc?.toFixed?.(0) ?? '?'}/100 i felt${r.disc_co != null ? ` (CO: ${r.disc_co.toFixed(0)})` : ''}">${dLabel}: ${r.disc?.toFixed?.(0) ?? '?'}</td>
             <td style="font-size:0.75rem;color:var(--muted);max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"
                 title="${esc(r.reason)}">${esc(r.reason)}</td>
           </tr>`;
@@ -564,7 +568,7 @@ function renderPredStage(num) {
       <td style="font-size:0.78rem">${r.price?.toFixed?.(1) ?? '?'}M</td>
       <td class="pts-exp">${fmt(r.exp)}</td>
       ${actHtml}
-      <td>${miniBar(r.signals || [0,0,0,0])}</td>
+      <td>${miniBar(r.signals || [0,0,0,0,0,0], r.disc, r.disc_co, r.disc_key)}</td>
       <td style="font-size:0.75rem;color:var(--muted);max-width:200px;overflow:hidden;
           text-overflow:ellipsis;white-space:nowrap" title="${esc(r.reason)}">${esc(r.reason)}</td>
     </tr>`;
