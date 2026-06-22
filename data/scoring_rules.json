@@ -26,5 +26,15 @@
   "team_size": 8,
   "max_per_team": 2,
   "transfer_fee_pct": 0.01,
-  "bank_interest_pct": 0.005
+  "bank_interest_pct": 0.005,
+  "tdf_2026_sprint_stages": {
+    "note": "ASO har markant ændret pointsystemet på 7 flade etaper i TdF 2026.",
+    "flat_stages_count": 7,
+    "finish_sprint_points": {"1": 70, "2": 50, "3": 40},
+    "intermediate_sprints_per_stage": 2,
+    "intermediate_points_each": 20,
+    "max_sprint_points_sweep": 110,
+    "max_value_sweep_kr": 530000,
+    "typical_winner_value_kr": 470000
+  }
 }

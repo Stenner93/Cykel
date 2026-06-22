@@ -99,10 +99,13 @@ def _disc_blend_value(cyclingoracle: dict[str, float] | None, stage_type: str) -
     raw = sum(weight * co.get(key, 50.0) for key, weight in blend.items())
     return raw, _dominant_disc_key(stage_type)
 
-# Expected fantasy points IF a rider wins (by stage type)
-# Derived from Giro 2026 FantasyTool data
+# Expected fantasy points IF a rider wins (by stage type).
+# Sprint recalibrated for TdF 2026: ASO øgede sprintpoint markant på 7 flade
+# etaper — 70 pts til vinderen (mod ~45 før) og 2 bonusspurter á 20 pts (mod 1).
+# Maksimalt: 200K (etape) + 210K (70×3K) + 120K (2×20×3K) = 530K. Typisk 470K.
+# Mountain/tt/hilly beholder Giro 2026-kalibreringen.
 WINNER_POINTS = {
-    "sprint":   560_000,
+    "sprint":   680_000,
     "mountain": 630_000,
     "tt":       380_000,
     "ttt":      380_000,
@@ -150,9 +153,10 @@ def _profile_scale(profile_score: int | None, stage_type: str) -> float:
 
 # Expected sprint/KOM classification bonus per stage, by classification rank (1-5)
 # Reflects the expected fantasy pts from ongoing sprint/KOM point accumulation.
-# Higher on the stage type where specialists score most.
+# TdF 2026 sprint: skaleret op ~65 % pga. højere sprintpoint (70/50/40 i mål,
+# 2 bonusspurter á 20 pt) — grøntrøjeledere scorer markant mere per sprintetape.
 _SPRINT_CLASS_BONUS: dict[str, list[int]] = {
-    "sprint":   [30_000, 18_000, 10_000,  6_000, 3_000],
+    "sprint":   [50_000, 30_000, 16_000,  9_000, 5_000],
     "hilly":    [12_000,  7_000,  4_000,  2_000, 1_000],
     "cobbled":  [ 6_000,  4_000,  2_000,  1_000,   500],
     "mountain": [ 3_000,  2_000,  1_000,    500,   200],

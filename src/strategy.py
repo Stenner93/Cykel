@@ -15,8 +15,10 @@ STAGE_STRATEGY: dict[str, dict] = {
         "budget_rider_boost": 1.10,
         "attack_out_n":       2,
         "rationale": (
-            "Sprint: de 3 topsprintere er næsten altid med på pallen. "
-            "Lås dem ind i SIKKER + VÆRDI. ANGREB udelader #2+#3 → mørke heste."
+            "Sprint (TdF 2026): 7 flade etaper med 70 pt til vinderen + 2 bonusspurter á 20 pt "
+            "— maks. 530K på én etape mod 380K på en bjergetape. "
+            "Kaptajnvalget er rekordvigtigt: lås de 3 topsprintere ind i SIKKER+VÆRDI. "
+            "ANGREB udelader #2+#3 → mørke heste med udbryderpotentiale."
         ),
     },
     "mountain": {
