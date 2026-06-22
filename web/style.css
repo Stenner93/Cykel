@@ -251,6 +251,8 @@ h2 {
   background: var(--border);
 }
 .signal-segment.filled { background: var(--green); }
+.ml-segment { background: rgba(30,136,229,0.18); }
+.ml-segment.filled { background: var(--blue); }
 
 /* CyclingOracle raw score column */
 .co-cell { text-align: right; }

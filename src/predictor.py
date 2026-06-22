@@ -35,10 +35,11 @@ from typing import Any
 # (if noisily-measured) correlation. Odds kept a meaningful prior weight
 # despite no validation data, since it's theoretically sound when present.
 DEFAULT_WEIGHTS = {
-    "veloscore":     0.30,   # VeloScore normalised 0-10
-    "odds_prob":     0.20,   # Bookmaker implied win probability
-    "discipline":    0.25,   # CyclingOracle discipline match 0-100
-    "form":          0.25,   # PCS recent form 0-100 (short + long-term blend)
+    "veloscore":     0.27,   # VeloScore normalised 0-10
+    "odds_prob":     0.18,   # Bookmaker implied win probability
+    "discipline":    0.22,   # CyclingOracle discipline match 0-100
+    "form":          0.23,   # PCS recent form 0-100 (short + long-term blend)
+    "ml":            0.10,   # LightGBM top-5 sandsynlighed (felt-normaliseret 0-100)
 }
 
 # Mapping stage_type → CyclingOracle discipline key
@@ -213,6 +214,7 @@ def predict_rider(
     expected_team_bonus: int = 0,           # Expected holdbonus kr from recent stages
     winner_pts_override: dict[str, int] | None = None,  # Race-specific winner points
     disc_raw_override: float | None = None,  # pre-rescaled field-relative disc value
+    ml_prob: float | None = None,            # ML felt-normaliseret score 0-100
 ) -> dict[str, Any]:
     """
     Predict expected fantasy points for a rider on a specific stage.
@@ -292,49 +294,29 @@ def predict_rider(
     form_signal = form_val / 100.0
 
     # --- Composite win-probability estimate ---
-    # If external signals (VeloScore, odds) are absent, normalize the remaining
-    # weights so discipline + form carry the full weight.  This prevents the
-    # ~70% dead-weight that would otherwise make every rider look identical when
-    # running on discipline/form data alone (e.g. Dauphiné without VeloScore).
-    # When VeloScore IS available the original weights apply unchanged.
+    # Dynamisk normalisering: kun tilstedeværende signaler bidrager, og
+    # deres relative vægte bevares. Dette forhindrer at fraværende signaler
+    # (VeloScore, odds, ML) spiser kapacitet og gør ryttere ens.
     has_vs   = veloscore_rank is not None or veloscore_score is not None
     has_odds = odds_prob is not None
+    has_ml   = ml_prob is not None
 
-    if not has_vs and not has_odds:
-        # Only discipline + form available → normalize to full capacity
-        total_avail = w["discipline"] + w["form"]
-        nw_disc = w["discipline"] / total_avail if total_avail else 0.5
-        nw_form = w["form"]       / total_avail if total_avail else 0.5
-        composite = nw_disc * disc_signal + nw_form * form_signal
-    elif not has_vs:
-        # Odds + discipline + form — normalize (no VeloScore)
-        total_avail = w["odds_prob"] + w["discipline"] + w["form"]
-        composite = (
-            w["odds_prob"]  / total_avail * odds_signal +
-            w["discipline"] / total_avail * disc_signal +
-            w["form"]       / total_avail * form_signal
-        )
-    elif not has_odds:
-        # VeloScore present but no odds (common case — odds coverage is
-        # usually sparse/absent). Without this branch, odds_prob's 25%
-        # weight was silently multiplied by a zero signal and lost,
-        # suppressing VeloScore's effective weight from 45% to 45% of 75%
-        # — exactly the riders we have VeloScore for were being under-
-        # differentiated. Renormalize veloscore+discipline+form instead.
-        total_avail = w["veloscore"] + w["discipline"] + w["form"]
-        composite = (
-            w["veloscore"]  / total_avail * vs_signal +
-            w["discipline"] / total_avail * disc_signal +
-            w["form"]       / total_avail * form_signal
-        )
+    available_signals: dict[str, float] = {}
+    if has_vs:
+        available_signals["veloscore"]  = vs_signal
+    if has_odds:
+        available_signals["odds_prob"]  = odds_signal
+    available_signals["discipline"] = disc_signal
+    available_signals["form"]       = form_signal
+    if has_ml:
+        available_signals["ml"]       = ml_prob / 100.0  # 0-100 → 0-1
+
+    total_w = sum(w.get(k, 0.0) for k in available_signals)
+    if total_w > 0:
+        composite = sum(w.get(k, 0.0) / total_w * v
+                        for k, v in available_signals.items())
     else:
-        # Full signal set available — use configured weights as-is
-        composite = (
-            w["veloscore"]  * vs_signal  +
-            w["odds_prob"]  * odds_signal +
-            w["discipline"] * disc_signal +
-            w["form"]       * form_signal
-        )
+        composite = 0.0
 
     # Scale winner_pts by stage difficulty (ProfileScore)
     # Use race-specific override if provided (e.g. Dauphiné has different point scale)
@@ -424,6 +406,7 @@ def predict_rider(
             "odds":         round(odds_signal, 3),
             "discipline":   round(disc_signal, 3),
             "form":         round(form_signal, 3),
+            "ml":           round(ml_prob / 100.0, 3) if ml_prob is not None else None,
         },
         "profile_scale":     round(_profile_scale(profile_score, stage_type), 3),
         "sprint_class_rank": sprint_class_rank,
@@ -460,6 +443,7 @@ def predict_all(
     winner_pts_override: dict[str, int] | None = None,  # Race-specific winner points
     rider_context: dict[str, dict] | None = None,       # {rider_id: {status, note}}
     pcs_specialty_data: dict[str, dict] | None = None,  # {rider_id: {climber, sprint, tt, ...}}
+    ml_prob_data: dict[str, float] | None = None,       # {rider_id: felt-normaliseret 0-100}
 ) -> list[dict]:
     """
     Predict expected points for ALL riders and return sorted list.
@@ -627,6 +611,7 @@ def predict_all(
             expected_team_bonus=(team_bonus_data or {}).get(rider["id"], 0),
             winner_pts_override=winner_pts_override,
             disc_raw_override=disc_rescaled.get(rider["id"]),
+            ml_prob=(ml_prob_data or {}).get(rider["id"]),
         )
         # Apply rider context multiplier (status from previous stage)
         ctx = (rider_context or {}).get(rider["id"])

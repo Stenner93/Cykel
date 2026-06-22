@@ -60,18 +60,21 @@ function signalBar(signals, discKey, discRaw, formScore) {
   const formLbl = formScore != null
     ? `Form: ${formScore.toFixed(0)}/100`
     : `Form: ${((signals?.form ?? 0) * 100).toFixed(0)}%`;
+  const mlVal = signals?.ml;
   const segs  = [
     { k: 'veloscore',  lbl: 'VeloScore' },
     { k: 'odds',       lbl: 'Odds' },
     { k: 'discipline', lbl: discRaw != null ? `${label}: ${discRaw.toFixed(0)}/100` : label },
     { k: 'form',       lbl: formLbl },
+    ...(mlVal != null ? [{ k: 'ml', lbl: `ML: ${(mlVal * 100).toFixed(0)}/100` }] : []),
   ].map(({ k, lbl }) => {
     const v      = signals?.[k] ?? 0;
     const filled = v > 0.3 ? 'filled' : '';
-    const title  = (k === 'discipline' || k === 'form')
+    const title  = (k === 'discipline' || k === 'form' || k === 'ml')
       ? lbl   // already has the numeric value
       : `${lbl}: ${(v * 100).toFixed(0)}%`;
-    return `<div class="signal-segment ${filled}" title="${title}"></div>`;
+    const cls    = k === 'ml' ? `signal-segment ml-segment ${filled}` : `signal-segment ${filled}`;
+    return `<div class="${cls}" title="${title}"></div>`;
   }).join('');
 
   // Compact label beneath the bar showing the discipline type
