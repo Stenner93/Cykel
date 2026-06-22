@@ -202,14 +202,17 @@ def _pos_score(pos: int) -> float:
 
 
 # ---------------------------------------------------------------------------
-# Recency weight: half-life ~42 days (short-term "current form" signal)
+# Recency weight: half-life ~60 days (short-term "current form" signal)
 # Tuned for pre-GT preparation races (Romandie, Dauphiné) which happen
 # 4-6 weeks before a Grand Tour and are the most relevant form signal.
-# Previous 29-day half-life penalised these races too heavily (only ~21%
-# weight at 45 days vs. ~36% with 42-day half-life).
+# Previous 42-day half-life cut Pogacar's weight by ~50% if he skipped a
+# GT (last results from Romandie, ~50 days ago), unfairly ranking him below
+# riders with many fresh results from a race he didn't enter. 60-day half-
+# life retains ~57% weight at 50 days (vs. ~30% with 42-day) and still
+# decays fast enough to reflect genuine form differences over a season.
 # ---------------------------------------------------------------------------
 def _recency_weight(days_ago: int) -> float:
-    return math.exp(-days_ago / 42.0)
+    return math.exp(-days_ago / 60.0)
 
 
 # ---------------------------------------------------------------------------
@@ -750,8 +753,8 @@ def scrape_all(
             cache[rider["id"]] = {
                 "name":         rider["full_name"],
                 "pcs_url":      "",
-                "form_score":   25.0,
-                "form_by_type": {t: 25.0 for t in ["overall"] + ALL_STAGE_TYPES},
+                "form_score":   10.0,
+                "form_by_type": {"overall": 10.0, **{t: 0.0 for t in ALL_STAGE_TYPES}},
                 "form_long_by_type": {},
                 "n_results":    0,
                 "last_result_date": "",
