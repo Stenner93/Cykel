@@ -11,3 +11,5 @@ data/cache/pcs_raw/
 *.egg-info/
 dist/
 build/
+# Claude Code intern mappe (worktrees, session-data)
+.claude/
