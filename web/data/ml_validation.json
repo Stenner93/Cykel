@@ -10,97 +10,97 @@
  "n_val": 10427,
  "n_features": 18,
  "train_metrics": {
-  "auc_top5": 0.8207,
-  "ap_top5": 0.2483,
-  "auc_sprint": 0.7738,
-  "auc_mountain": 0.8652,
-  "auc_hilly": 0.847,
-  "auc_tt": 0.8529
+  "auc_top5": 0.879,
+  "ap_top5": 0.3933,
+  "auc_sprint": 0.8661,
+  "auc_mountain": 0.8955,
+  "auc_hilly": 0.8708,
+  "auc_tt": 0.924
  },
  "val_metrics": {
-  "auc_top5": 0.785,
-  "ap_top5": 0.2009,
-  "auc_sprint": 0.7188,
-  "auc_mountain": 0.8812,
-  "auc_hilly": 0.8027,
-  "auc_tt": 0.6531
+  "auc_top5": 0.8545,
+  "ap_top5": 0.2373,
+  "auc_sprint": 0.83,
+  "auc_mountain": 0.89,
+  "auc_hilly": 0.8411,
+  "auc_tt": 0.906
  },
  "feature_importances": [
   {
    "feature": "profile_score",
-   "importance": 444
-  },
-  {
-   "feature": "gt_form_10",
-   "importance": 435
+   "importance": 467
   },
   {
    "feature": "gt_form_5",
-   "importance": 378
+   "importance": 344
+  },
+  {
+   "feature": "gt_form_10",
+   "importance": 312
+  },
+  {
+   "feature": "co_spr",
+   "importance": 158
   },
   {
    "feature": "gt_wins_so_far",
+   "importance": 126
+  },
+  {
+   "feature": "co_mtn",
+   "importance": 126
+  },
+  {
+   "feature": "co_gc",
    "importance": 113
   },
   {
-   "feature": "is_tt",
-   "importance": 43
+   "feature": "co_itt",
+   "importance": 110
   },
   {
    "feature": "is_sprint",
-   "importance": 25
+   "importance": 100
+  },
+  {
+   "feature": "co_hll",
+   "importance": 98
+  },
+  {
+   "feature": "spec_sprint",
+   "importance": 82
+  },
+  {
+   "feature": "spec_climber",
+   "importance": 74
+  },
+  {
+   "feature": "co_cob",
+   "importance": 74
+  },
+  {
+   "feature": "is_tt",
+   "importance": 58
+  },
+  {
+   "feature": "spec_tt",
+   "importance": 51
+  },
+  {
+   "feature": "spec_hills",
+   "importance": 48
   },
   {
    "feature": "is_hilly",
-   "importance": 22
+   "importance": 19
   },
   {
    "feature": "is_mountain",
    "importance": 10
-  },
-  {
-   "feature": "co_SPR",
-   "importance": 0
-  },
-  {
-   "feature": "co_MTN",
-   "importance": 0
-  },
-  {
-   "feature": "co_COB",
-   "importance": 0
-  },
-  {
-   "feature": "co_ITT",
-   "importance": 0
-  },
-  {
-   "feature": "co_HLL",
-   "importance": 0
-  },
-  {
-   "feature": "co_GC",
-   "importance": 0
-  },
-  {
-   "feature": "spec_tt",
-   "importance": 0
-  },
-  {
-   "feature": "spec_sprint",
-   "importance": 0
-  },
-  {
-   "feature": "spec_climber",
-   "importance": 0
-  },
-  {
-   "feature": "spec_hills",
-   "importance": 0
   }
  ],
- "winner_hit_rate": 0.4032,
- "avg_top5_overlap": 1.2581,
+ "winner_hit_rate": 0.4516,
+ "avg_top5_overlap": 1.4355,
  "stage_predictions": [
   {
    "race": "giro",
@@ -110,9 +110,9 @@
    "predicted_top5": [
     "wout-van-aert",
     "kaden-groves",
+    "olav-kooij",
     "mads-pedersen",
-    "primoz-roglic",
-    "brandon-mcnulty"
+    "paul-magnier"
    ],
    "actual_winner": [
     "mads-pedersen"
@@ -133,11 +133,11 @@
    "stage": 2,
    "stype": "tt",
    "predicted_top5": [
-    "primoz-roglic",
-    "richard-carapaz",
     "wout-van-aert",
-    "mads-pedersen",
-    "simon-yates"
+    "primoz-roglic",
+    "kaden-groves",
+    "simon-yates",
+    "mathias-vacek"
    ],
    "actual_winner": [
     "joshua-tarling"
@@ -149,7 +149,7 @@
     "edoardo-affini",
     "mathias-vacek"
    ],
-   "top5_overlap": 1,
+   "top5_overlap": 2,
    "winner_in_pred": 0
   },
   {
@@ -158,8 +158,8 @@
    "stage": 3,
    "stype": "sprint",
    "predicted_top5": [
-    "mads-pedersen",
     "wout-van-aert",
+    "mads-pedersen",
     "kaden-groves",
     "primoz-roglic",
     "richard-carapaz"
@@ -185,9 +185,9 @@
    "predicted_top5": [
     "wout-van-aert",
     "kaden-groves",
-    "mads-pedersen",
-    "dries-de-bondt",
-    "kasper-asgreen"
+    "paul-magnier",
+    "olav-kooij",
+    "mads-pedersen"
    ],
    "actual_winner": [
     "casper-van-uden"
@@ -199,7 +199,7 @@
     "mads-pedersen",
     "kaden-groves"
    ],
-   "top5_overlap": 2,
+   "top5_overlap": 3,
    "winner_in_pred": 0
   },
   {
@@ -208,11 +208,11 @@
    "stage": 5,
    "stype": "hilly",
    "predicted_top5": [
-    "primoz-roglic",
-    "richard-carapaz",
     "wout-van-aert",
+    "kaden-groves",
+    "primoz-roglic",
     "mads-pedersen",
-    "kaden-groves"
+    "richard-carapaz"
    ],
    "actual_winner": [
     "mads-pedersen"
@@ -233,11 +233,11 @@
    "stage": 6,
    "stype": "sprint",
    "predicted_top5": [
-    "kaden-groves",
+    "paul-magnier",
     "wout-van-aert",
-    "mads-pedersen",
-    "primoz-roglic",
-    "nico-denz"
+    "kaden-groves",
+    "olav-kooij",
+    "milan-fretin"
    ],
    "actual_winner": [
     "kaden-groves"
@@ -249,7 +249,7 @@
     "max-kanter",
     "giovanni-lonardi"
    ],
-   "top5_overlap": 1,
+   "top5_overlap": 3,
    "winner_in_pred": 1
   },
   {
@@ -260,9 +260,9 @@
    "predicted_top5": [
     "primoz-roglic",
     "richard-carapaz",
+    "wout-van-aert",
     "simon-yates",
-    "mads-pedersen",
-    "wout-van-aert"
+    "derek-gee"
    ],
    "actual_winner": [
     "juan-ayuso-pesquera"
@@ -283,11 +283,11 @@
    "stage": 8,
    "stype": "sprint",
    "predicted_top5": [
-    "mads-pedersen",
     "wout-van-aert",
+    "mads-pedersen",
     "primoz-roglic",
-    "kaden-groves",
-    "richard-carapaz"
+    "richard-carapaz",
+    "derek-gee"
    ],
    "actual_winner": [
     "luke-plapp"
@@ -309,10 +309,10 @@
    "stype": "hilly",
    "predicted_top5": [
     "primoz-roglic",
+    "wout-van-aert",
     "richard-carapaz",
     "simon-yates",
-    "mads-pedersen",
-    "kaden-groves"
+    "mads-pedersen"
    ],
    "actual_winner": [
     "wout-van-aert"
@@ -324,8 +324,8 @@
     "richard-carapaz",
     "simon-yates"
    ],
-   "top5_overlap": 2,
-   "winner_in_pred": 0
+   "top5_overlap": 3,
+   "winner_in_pred": 1
   },
   {
    "race": "giro",
@@ -333,11 +333,11 @@
    "stage": 10,
    "stype": "tt",
    "predicted_top5": [
+    "wout-van-aert",
     "primoz-roglic",
-    "richard-carapaz",
-    "simon-yates",
-    "mads-pedersen",
-    "wout-van-aert"
+    "mathias-vacek",
+    "kaden-groves",
+    "derek-gee"
    ],
    "actual_winner": [
     "daan-hoole"
@@ -360,9 +360,9 @@
    "predicted_top5": [
     "primoz-roglic",
     "richard-carapaz",
-    "simon-yates",
     "wout-van-aert",
-    "mads-pedersen"
+    "simon-yates",
+    "antonio-tiberi"
    ],
    "actual_winner": [
     "richard-carapaz"
@@ -383,11 +383,11 @@
    "stage": 12,
    "stype": "sprint",
    "predicted_top5": [
-    "mads-pedersen",
-    "wout-van-aert",
     "kaden-groves",
-    "primoz-roglic",
-    "nico-denz"
+    "wout-van-aert",
+    "paul-magnier",
+    "olav-kooij",
+    "mads-pedersen"
    ],
    "actual_winner": [
     "olav-kooij"
@@ -399,8 +399,8 @@
     "mads-pedersen",
     "kaden-groves"
    ],
-   "top5_overlap": 2,
-   "winner_in_pred": 0
+   "top5_overlap": 3,
+   "winner_in_pred": 1
   },
   {
    "race": "giro",
@@ -408,11 +408,11 @@
    "stage": 13,
    "stype": "hilly",
    "predicted_top5": [
+    "wout-van-aert",
     "primoz-roglic",
-    "mads-pedersen",
-    "richard-carapaz",
     "kaden-groves",
-    "wout-van-aert"
+    "richard-carapaz",
+    "simon-yates"
    ],
    "actual_winner": [
     "mads-pedersen"
@@ -424,8 +424,8 @@
     "remy-rochas",
     "dorian-godon"
    ],
-   "top5_overlap": 2,
-   "winner_in_pred": 1
+   "top5_overlap": 1,
+   "winner_in_pred": 0
   },
   {
    "race": "giro",
@@ -433,11 +433,11 @@
    "stage": 14,
    "stype": "sprint",
    "predicted_top5": [
-    "kaden-groves",
     "wout-van-aert",
-    "mads-pedersen",
-    "luke-plapp",
-    "primoz-roglic"
+    "kaden-groves",
+    "olav-kooij",
+    "paul-magnier",
+    "mads-pedersen"
    ],
    "actual_winner": [
     "kasper-asgreen"
@@ -449,7 +449,7 @@
     "orluis-aular",
     "stefano-oldani"
    ],
-   "top5_overlap": 1,
+   "top5_overlap": 2,
    "winner_in_pred": 0
   },
   {
@@ -459,9 +459,9 @@
    "stype": "sprint",
    "predicted_top5": [
     "wout-van-aert",
+    "primoz-roglic",
     "kaden-groves",
     "mads-pedersen",
-    "primoz-roglic",
     "richard-carapaz"
    ],
    "actual_winner": [
@@ -483,11 +483,11 @@
    "stage": 16,
    "stype": "mountain",
    "predicted_top5": [
+    "derek-gee",
     "primoz-roglic",
     "richard-carapaz",
     "simon-yates",
-    "derek-gee",
-    "embret-svestad-bardseng"
+    "wout-van-aert"
    ],
    "actual_winner": [
     "christian-scaroni"
@@ -508,10 +508,10 @@
    "stage": 17,
    "stype": "hilly",
    "predicted_top5": [
+    "isaac-del-toro",
+    "derek-gee",
     "richard-carapaz",
     "simon-yates",
-    "derek-gee",
-    "isaac-del-toro",
     "antonio-tiberi"
    ],
    "actual_winner": [
@@ -534,10 +534,10 @@
    "stype": "sprint",
    "predicted_top5": [
     "wout-van-aert",
-    "mads-pedersen",
+    "olav-kooij",
     "kaden-groves",
-    "sam-bennett",
-    "kasper-asgreen"
+    "mads-pedersen",
+    "matteo-moschetti"
    ],
    "actual_winner": [
     "nico-denz"
@@ -558,11 +558,11 @@
    "stage": 19,
    "stype": "hilly",
    "predicted_top5": [
+    "isaac-del-toro",
+    "derek-gee",
     "richard-carapaz",
     "simon-yates",
-    "derek-gee",
-    "wout-van-aert",
-    "isaac-del-toro"
+    "wout-van-aert"
    ],
    "actual_winner": [
     "nicolas-prodhomme"
@@ -583,11 +583,11 @@
    "stage": 20,
    "stype": "mountain",
    "predicted_top5": [
+    "derek-gee",
+    "isaac-del-toro",
     "richard-carapaz",
     "simon-yates",
-    "derek-gee",
-    "damiano-caruso",
-    "isaac-del-toro"
+    "giulio-pellizzari"
    ],
    "actual_winner": [
     "chris-harper"
@@ -608,11 +608,11 @@
    "stage": 21,
    "stype": "sprint",
    "predicted_top5": [
-    "mads-pedersen",
     "wout-van-aert",
+    "olav-kooij",
     "kaden-groves",
-    "nico-denz",
-    "wout-poels"
+    "mads-pedersen",
+    "casper-van-uden"
    ],
    "actual_winner": [
     "olav-kooij"
@@ -624,8 +624,8 @@
     "mads-pedersen",
     "luke-lamperti"
    ],
-   "top5_overlap": 2,
-   "winner_in_pred": 0
+   "top5_overlap": 3,
+   "winner_in_pred": 1
   },
   {
    "race": "tdf",
@@ -633,11 +633,11 @@
    "stage": 1,
    "stype": "sprint",
    "predicted_top5": [
-    "kaden-groves",
     "jasper-philipsen",
     "jonathan-milan",
-    "magnus-cort-nielsen",
-    "biniam-girmay"
+    "kaden-groves",
+    "tim-merlier",
+    "arnaud-de-lie"
    ],
    "actual_winner": [
     "jasper-philipsen"
@@ -649,7 +649,7 @@
     "anthony-turgis",
     "matteo-trentin"
    ],
-   "top5_overlap": 2,
+   "top5_overlap": 1,
    "winner_in_pred": 1
   },
   {
@@ -658,11 +658,11 @@
    "stage": 2,
    "stype": "hilly",
    "predicted_top5": [
+    "wout-van-aert",
+    "jasper-philipsen",
+    "kaden-groves",
     "tadej-pogacar",
-    "remco-evenepoel",
-    "jonas-vingegaard",
-    "primoz-roglic",
-    "kaden-groves"
+    "jonathan-milan"
    ],
    "actual_winner": [
     "mathieu-van-der-poel"
@@ -674,7 +674,7 @@
     "romain-gregoire",
     "julian-alaphilippe"
    ],
-   "top5_overlap": 2,
+   "top5_overlap": 1,
    "winner_in_pred": 0
   },
   {
@@ -683,11 +683,11 @@
    "stage": 3,
    "stype": "sprint",
    "predicted_top5": [
-    "wout-van-aert",
     "jasper-philipsen",
-    "kaden-groves",
-    "magnus-cort-nielsen",
-    "jonathan-milan"
+    "jonathan-milan",
+    "wout-van-aert",
+    "tim-merlier",
+    "kaden-groves"
    ],
    "actual_winner": [
     "tim-merlier"
@@ -699,8 +699,8 @@
     "soren-waerenskjold",
     "pavel-bittner"
    ],
-   "top5_overlap": 1,
-   "winner_in_pred": 0
+   "top5_overlap": 2,
+   "winner_in_pred": 1
   },
   {
    "race": "tdf",
@@ -709,10 +709,10 @@
    "stype": "sprint",
    "predicted_top5": [
     "wout-van-aert",
-    "primoz-roglic",
-    "tim-merlier",
-    "kaden-groves",
-    "jonathan-milan"
+    "jonathan-milan",
+    "arnaud-de-lie",
+    "mathieu-van-der-poel",
+    "kaden-groves"
    ],
    "actual_winner": [
     "tadej-pogacar"
@@ -724,7 +724,7 @@
     "oscar-onley",
     "romain-gregoire"
    ],
-   "top5_overlap": 0,
+   "top5_overlap": 1,
    "winner_in_pred": 0
   },
   {
@@ -733,11 +733,11 @@
    "stage": 5,
    "stype": "tt",
    "predicted_top5": [
-    "jonas-vingegaard",
     "tadej-pogacar",
-    "kaden-groves",
     "remco-evenepoel",
-    "wout-van-aert"
+    "wout-van-aert",
+    "jonas-vingegaard",
+    "mathieu-van-der-poel"
    ],
    "actual_winner": [
     "remco-evenepoel"
@@ -758,11 +758,11 @@
    "stage": 6,
    "stype": "hilly",
    "predicted_top5": [
-    "jonas-vingegaard",
     "tadej-pogacar",
     "remco-evenepoel",
-    "primoz-roglic",
-    "kaden-groves"
+    "jonas-vingegaard",
+    "wout-van-aert",
+    "matteo-jorgenson"
    ],
    "actual_winner": [
     "ben-healy"
@@ -783,11 +783,11 @@
    "stage": 7,
    "stype": "hilly",
    "predicted_top5": [
-    "tadej-pogacar",
-    "jonas-vingegaard",
-    "remco-evenepoel",
     "wout-van-aert",
-    "kaden-groves"
+    "mathieu-van-der-poel",
+    "tadej-pogacar",
+    "kaden-groves",
+    "jonathan-milan"
    ],
    "actual_winner": [
     "tadej-pogacar"
@@ -799,7 +799,7 @@
     "felix-gall",
     "matteo-jorgenson"
    ],
-   "top5_overlap": 2,
+   "top5_overlap": 1,
    "winner_in_pred": 1
   },
   {
@@ -810,9 +810,9 @@
    "predicted_top5": [
     "kaden-groves",
     "wout-van-aert",
+    "jonathan-milan",
     "tim-merlier",
-    "magnus-cort-nielsen",
-    "jonathan-milan"
+    "arnaud-de-lie"
    ],
    "actual_winner": [
     "jonathan-milan"
@@ -824,7 +824,7 @@
     "pascal-ackermann",
     "arnaud-de-lie"
    ],
-   "top5_overlap": 3,
+   "top5_overlap": 4,
    "winner_in_pred": 1
   },
   {
@@ -833,11 +833,11 @@
    "stage": 9,
    "stype": "sprint",
    "predicted_top5": [
-    "kaden-groves",
     "wout-van-aert",
+    "kaden-groves",
     "tim-merlier",
-    "biniam-girmay",
-    "primoz-roglic"
+    "jonathan-milan",
+    "phil-bauhaus"
    ],
    "actual_winner": [
     "tim-merlier"
@@ -849,7 +849,7 @@
     "pavel-bittner",
     "paul-penhoet"
    ],
-   "top5_overlap": 1,
+   "top5_overlap": 2,
    "winner_in_pred": 1
   },
   {
@@ -859,10 +859,10 @@
    "stype": "hilly",
    "predicted_top5": [
     "tadej-pogacar",
-    "jonas-vingegaard",
     "remco-evenepoel",
-    "mathieu-van-der-poel",
-    "primoz-roglic"
+    "jonas-vingegaard",
+    "matteo-jorgenson",
+    "mathieu-van-der-poel"
    ],
    "actual_winner": [
     "simon-yates"
@@ -884,10 +884,10 @@
    "stype": "sprint",
    "predicted_top5": [
     "wout-van-aert",
+    "arnaud-de-lie",
     "kaden-groves",
-    "tim-merlier",
-    "simon-yates",
-    "jonathan-milan"
+    "jonathan-milan",
+    "mathieu-van-der-poel"
    ],
    "actual_winner": [
     "jonas-abrahamsen"
@@ -899,7 +899,7 @@
     "arnaud-de-lie",
     "wout-van-aert"
    ],
-   "top5_overlap": 1,
+   "top5_overlap": 3,
    "winner_in_pred": 0
   },
   {
@@ -909,8 +909,8 @@
    "stype": "mountain",
    "predicted_top5": [
     "tadej-pogacar",
-    "jonas-vingegaard",
     "remco-evenepoel",
+    "jonas-vingegaard",
     "primoz-roglic",
     "mathieu-van-der-poel"
    ],
@@ -934,10 +934,10 @@
    "stype": "tt",
    "predicted_top5": [
     "tadej-pogacar",
-    "jonas-vingegaard",
     "remco-evenepoel",
-    "primoz-roglic",
-    "wout-van-aert"
+    "jonas-vingegaard",
+    "wout-van-aert",
+    "mathieu-van-der-poel"
    ],
    "actual_winner": [
     "tadej-pogacar"
@@ -949,7 +949,7 @@
     "florian-lipowitz",
     "luke-plapp"
    ],
-   "top5_overlap": 3,
+   "top5_overlap": 2,
    "winner_in_pred": 1
   },
   {
@@ -959,10 +959,10 @@
    "stype": "mountain",
    "predicted_top5": [
     "tadej-pogacar",
-    "jonas-vingegaard",
     "remco-evenepoel",
+    "jonas-vingegaard",
     "primoz-roglic",
-    "kevin-vauquelin"
+    "florian-lipowitz"
    ],
    "actual_winner": [
     "thymen-arensman"
@@ -974,7 +974,7 @@
     "felix-gall",
     "florian-lipowitz"
    ],
-   "top5_overlap": 2,
+   "top5_overlap": 3,
    "winner_in_pred": 0
   },
   {
@@ -983,11 +983,11 @@
    "stage": 15,
    "stype": "sprint",
    "predicted_top5": [
-    "wout-van-aert",
-    "kaden-groves",
     "tim-merlier",
-    "biniam-girmay",
-    "jonathan-milan"
+    "jonathan-milan",
+    "arnaud-de-lie",
+    "wout-van-aert",
+    "pavel-bittner"
    ],
    "actual_winner": [
     "tim-wellens"
@@ -1011,7 +1011,7 @@
     "tadej-pogacar",
     "jonas-vingegaard",
     "primoz-roglic",
-    "jordan-jegat",
+    "matteo-jorgenson",
     "florian-lipowitz"
    ],
    "actual_winner": [
@@ -1033,11 +1033,11 @@
    "stage": 17,
    "stype": "sprint",
    "predicted_top5": [
+    "tim-merlier",
+    "jonathan-milan",
     "kaden-groves",
     "wout-van-aert",
-    "tim-merlier",
-    "biniam-girmay",
-    "simon-yates"
+    "biniam-girmay"
    ],
    "actual_winner": [
     "jonathan-milan"
@@ -1049,8 +1049,8 @@
     "arnaud-de-lie",
     "davide-ballerini"
    ],
-   "top5_overlap": 0,
-   "winner_in_pred": 0
+   "top5_overlap": 1,
+   "winner_in_pred": 1
   },
   {
    "race": "tdf",
@@ -1062,7 +1062,7 @@
     "jonas-vingegaard",
     "primoz-roglic",
     "florian-lipowitz",
-    "jordan-jegat"
+    "oscar-onley"
    ],
    "actual_winner": [
     "ben-o-connor"
@@ -1074,7 +1074,7 @@
     "oscar-onley",
     "einer-rubio"
    ],
-   "top5_overlap": 2,
+   "top5_overlap": 3,
    "winner_in_pred": 0
   },
   {
@@ -1083,11 +1083,11 @@
    "stage": 19,
    "stype": "mountain",
    "predicted_top5": [
-    "jonas-vingegaard",
     "tadej-pogacar",
+    "jonas-vingegaard",
     "primoz-roglic",
     "ben-o-connor",
-    "tobias-halland-johannessen"
+    "oscar-onley"
    ],
    "actual_winner": [
     "thymen-arensman"
@@ -1099,7 +1099,7 @@
     "florian-lipowitz",
     "oscar-onley"
    ],
-   "top5_overlap": 2,
+   "top5_overlap": 3,
    "winner_in_pred": 0
   },
   {
@@ -1108,11 +1108,11 @@
    "stage": 20,
    "stype": "sprint",
    "predicted_top5": [
-    "kaden-groves",
     "wout-van-aert",
     "jonathan-milan",
-    "primoz-roglic",
-    "tim-merlier"
+    "tim-merlier",
+    "arnaud-de-lie",
+    "matteo-trentin"
    ],
    "actual_winner": [
     "kaden-groves"
@@ -1124,8 +1124,8 @@
     "simone-velasco",
     "romain-gregoire"
    ],
-   "top5_overlap": 1,
-   "winner_in_pred": 1
+   "top5_overlap": 0,
+   "winner_in_pred": 0
   },
   {
    "race": "tdf",
@@ -1134,10 +1134,10 @@
    "stype": "sprint",
    "predicted_top5": [
     "wout-van-aert",
-    "kaden-groves",
     "tim-merlier",
-    "jonathan-milan",
-    "alberto-dainese"
+    "kaden-groves",
+    "pavel-bittner",
+    "jonathan-milan"
    ],
    "actual_winner": [
     "wout-van-aert"
@@ -1158,11 +1158,11 @@
    "stage": 1,
    "stype": "sprint",
    "predicted_top5": [
-    "mads-pedersen",
     "jasper-philipsen",
-    "filippo-ganna",
-    "nico-denz",
-    "casper-van-uden"
+    "mads-pedersen",
+    "bryan-coquard",
+    "casper-van-uden",
+    "filippo-ganna"
    ],
    "actual_winner": [
     "jasper-philipsen"
@@ -1183,11 +1183,11 @@
    "stage": 2,
    "stype": "hilly",
    "predicted_top5": [
-    "jonas-vingegaard",
     "jasper-philipsen",
-    "mads-pedersen",
+    "jonas-vingegaard",
+    "matteo-jorgenson",
     "ben-o-connor",
-    "daniel-cavia-sanz"
+    "mads-pedersen"
    ],
    "actual_winner": [
     "jonas-vingegaard"
@@ -1208,9 +1208,9 @@
    "stage": 3,
    "stype": "hilly",
    "predicted_top5": [
-    "jonas-vingegaard",
-    "mads-pedersen",
     "jasper-philipsen",
+    "jonas-vingegaard",
+    "matteo-jorgenson",
     "ben-o-connor",
     "filippo-ganna"
    ],
@@ -1224,7 +1224,7 @@
     "giulio-ciccone",
     "jordan-labrosse"
    ],
-   "top5_overlap": 2,
+   "top5_overlap": 1,
    "winner_in_pred": 0
   },
   {
@@ -1233,11 +1233,11 @@
    "stage": 4,
    "stype": "hilly",
    "predicted_top5": [
+    "jasper-philipsen",
     "jonas-vingegaard",
     "mads-pedersen",
-    "jasper-philipsen",
     "ben-o-connor",
-    "filippo-ganna"
+    "matteo-jorgenson"
    ],
    "actual_winner": [
     "ben-turner"
@@ -1259,10 +1259,10 @@
    "stype": "ttt",
    "predicted_top5": [
     "jonas-vingegaard",
-    "mads-pedersen",
+    "filippo-ganna",
     "jasper-philipsen",
-    "ben-o-connor",
-    "filippo-ganna"
+    "matteo-jorgenson",
+    "mads-pedersen"
    ],
    "actual_winner": [
     "jonas-vingegaard"
@@ -1284,10 +1284,10 @@
    "stype": "mountain",
    "predicted_top5": [
     "jonas-vingegaard",
+    "matteo-jorgenson",
     "ben-o-connor",
-    "mads-pedersen",
     "jai-hindley",
-    "jasper-philipsen"
+    "mads-pedersen"
    ],
    "actual_winner": [
     "jay-vine"
@@ -1309,10 +1309,10 @@
    "stype": "mountain",
    "predicted_top5": [
     "jonas-vingegaard",
-    "ben-o-connor",
     "matteo-jorgenson",
+    "ben-o-connor",
     "jai-hindley",
-    "mads-pedersen"
+    "joao-almeida"
    ],
    "actual_winner": [
     "juan-ayuso-pesquera"
@@ -1333,11 +1333,11 @@
    "stage": 8,
    "stype": "sprint",
    "predicted_top5": [
-    "mads-pedersen",
     "jasper-philipsen",
-    "jay-vine",
+    "mads-pedersen",
+    "bryan-coquard",
     "filippo-ganna",
-    "nico-denz"
+    "ethan-vernon"
    ],
    "actual_winner": [
     "jasper-philipsen"
@@ -1349,7 +1349,7 @@
     "anders-foldager",
     "madis-mihkels"
    ],
-   "top5_overlap": 1,
+   "top5_overlap": 2,
    "winner_in_pred": 1
   },
   {
@@ -1359,10 +1359,10 @@
    "stype": "hilly",
    "predicted_top5": [
     "jonas-vingegaard",
+    "matteo-jorgenson",
     "mads-pedersen",
     "ben-o-connor",
-    "jasper-philipsen",
-    "matteo-jorgenson"
+    "mikel-landa"
    ],
    "actual_winner": [
     "jonas-vingegaard"
@@ -1384,10 +1384,10 @@
    "stype": "hilly",
    "predicted_top5": [
     "jonas-vingegaard",
-    "mads-pedersen",
+    "matteo-jorgenson",
     "ben-o-connor",
-    "bruno-armirail",
-    "marco-frigo"
+    "mads-pedersen",
+    "mikel-landa"
    ],
    "actual_winner": [
     "jay-vine"
@@ -1423,11 +1423,11 @@
    "stage": 12,
    "stype": "sprint",
    "predicted_top5": [
-    "mads-pedersen",
     "jonas-vingegaard",
+    "mads-pedersen",
+    "mauri-vansevenant",
     "jasper-philipsen",
-    "ben-o-connor",
-    "stefan-kung"
+    "ben-o-connor"
    ],
    "actual_winner": [
     "juan-ayuso-pesquera"
@@ -1449,10 +1449,10 @@
    "stype": "mountain",
    "predicted_top5": [
     "jonas-vingegaard",
-    "ben-o-connor",
     "matteo-jorgenson",
     "joao-almeida",
-    "giulio-ciccone"
+    "ben-o-connor",
+    "egan-bernal"
    ],
    "actual_winner": [
     "joao-almeida"
@@ -1474,10 +1474,10 @@
    "stype": "mountain",
    "predicted_top5": [
     "jonas-vingegaard",
-    "joao-almeida",
     "matteo-jorgenson",
-    "giulio-ciccone",
-    "torstein-traeen"
+    "joao-almeida",
+    "egan-bernal",
+    "giulio-pellizzari"
    ],
    "actual_winner": [
     "marc-soler"
@@ -1499,10 +1499,10 @@
    "stype": "sprint",
    "predicted_top5": [
     "jasper-philipsen",
-    "mads-pedersen",
-    "jay-vine",
-    "juan-ayuso-pesquera",
-    "nico-denz"
+    "ethan-vernon",
+    "filippo-ganna",
+    "bryan-coquard",
+    "juan-ayuso-pesquera"
    ],
    "actual_winner": [
     "mads-pedersen"
@@ -1514,8 +1514,8 @@
     "santiago-buitrago-sanchez",
     "edward-irl-dunbar"
    ],
-   "top5_overlap": 1,
-   "winner_in_pred": 1
+   "top5_overlap": 0,
+   "winner_in_pred": 0
   },
   {
    "race": "vuelta",
@@ -1524,10 +1524,10 @@
    "stype": "hilly",
    "predicted_top5": [
     "jonas-vingegaard",
+    "matteo-jorgenson",
     "marc-soler",
     "joao-almeida",
-    "jay-vine",
-    "tom-pidcock"
+    "giulio-pellizzari"
    ],
    "actual_winner": [
     "egan-bernal"
@@ -1549,10 +1549,10 @@
    "stype": "mountain",
    "predicted_top5": [
     "jonas-vingegaard",
+    "matteo-jorgenson",
     "egan-bernal",
-    "marc-soler",
     "joao-almeida",
-    "nico-denz"
+    "marc-soler"
    ],
    "actual_winner": [
     "giulio-pellizzari"
@@ -1574,10 +1574,10 @@
    "stype": "tt",
    "predicted_top5": [
     "jonas-vingegaard",
-    "egan-bernal",
-    "marc-soler",
-    "mads-pedersen",
-    "jay-vine"
+    "filippo-ganna",
+    "matteo-jorgenson",
+    "jay-vine",
+    "jasper-philipsen"
    ],
    "actual_winner": [
     "filippo-ganna"
@@ -1589,8 +1589,8 @@
     "bruno-armirail",
     "ivo-emanuel-alves"
    ],
-   "top5_overlap": 1,
-   "winner_in_pred": 0
+   "top5_overlap": 2,
+   "winner_in_pred": 1
   },
   {
    "race": "vuelta",
@@ -1598,11 +1598,11 @@
    "stage": 19,
    "stype": "sprint",
    "predicted_top5": [
-    "mads-pedersen",
     "jasper-philipsen",
+    "mads-pedersen",
     "juan-ayuso-pesquera",
-    "filippo-ganna",
-    "jay-vine"
+    "bryan-coquard",
+    "ethan-vernon"
    ],
    "actual_winner": [
     "jasper-philipsen"
@@ -1624,10 +1624,10 @@
    "stype": "mountain",
    "predicted_top5": [
     "jonas-vingegaard",
+    "matteo-jorgenson",
     "joao-almeida",
-    "santiago-buitrago-sanchez",
-    "tom-pidcock",
-    "jay-vine"
+    "jay-vine",
+    "giulio-pellizzari"
    ],
    "actual_winner": [
     "jonas-vingegaard"
@@ -1639,9 +1639,9 @@
     "tom-pidcock",
     "joao-almeida"
    ],
-   "top5_overlap": 3,
+   "top5_overlap": 2,
    "winner_in_pred": 1
   }
  ],
- "generated": "2026-06-22T07:51:22.718493+00:00"
+ "generated": "2026-06-22T20:25:53.978000+00:00"
 }
