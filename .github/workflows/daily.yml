@@ -76,6 +76,14 @@ jobs:
             ${{ inputs.update_riders == 'true' && '--update-riders' || '' }} \
             || echo "⚠️  Holdet-scrape slog fejl (TdF ikke live endnu?) — fortsætter med cached data"
 
+      # ── 3b. Hent GT-etaperesultater (til ML rolling-form) ─────────────────
+      - name: Hent GT-etaperesultater (ML)
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python scrape_gt_results.py \
+            || echo "⚠️  GT-resultater ikke tilgængelige endnu — fortsætter uden ML rolling-form"
+
       # ── 4. Kør forudsigelser ────────────────────────────────────────────────
       #    Altid — enten med bruger-angivne værdier eller auto-detekteret etape.
       #    Scriptet finder selv etape + type fra Holdets program hvis ikke angivet.
@@ -144,6 +152,7 @@ jobs:
             data/cache/tdf2026_players.json \
             data/cache/pcs_stage_types.json \
             data/cache/pcs_profile_scores.json \
+            data/cache/gt_stage_results.json \
             data/stage_context.json \
             || true
 

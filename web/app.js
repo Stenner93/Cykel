@@ -54,24 +54,30 @@ function priceClass(p) {
  * disc_raw:   raw 0-100 CyclingOracle value — shown in tooltip.
  * form_score: 0-100 blended form score (70% type-specific + 30% overall) — shown in form tooltip.
  */
-function signalBar(signals, discKey, discRaw, formScore) {
+function signalBar(signals, discKey, discRaw, formScore, mlSource) {
   const dk    = (discKey || 'AVG').toUpperCase();
   const label = DISC_LABELS[dk] || dk;
   const formLbl = formScore != null
     ? `Form: ${formScore.toFixed(0)}/100`
     : `Form: ${((signals?.form ?? 0) * 100).toFixed(0)}%`;
+  const mlVal = signals?.ml;
+  const mlLbl = mlVal != null
+    ? `ML ${mlSource ? '(' + mlSource + ')' : ''}: ${(mlVal * 100).toFixed(0)}/100`
+    : null;
   const segs  = [
     { k: 'veloscore',  lbl: 'VeloScore' },
     { k: 'odds',       lbl: 'Odds' },
     { k: 'discipline', lbl: discRaw != null ? `${label}: ${discRaw.toFixed(0)}/100` : label },
     { k: 'form',       lbl: formLbl },
+    ...(mlLbl != null ? [{ k: 'ml', lbl: mlLbl }] : []),
   ].map(({ k, lbl }) => {
     const v      = signals?.[k] ?? 0;
     const filled = v > 0.3 ? 'filled' : '';
-    const title  = (k === 'discipline' || k === 'form')
+    const title  = (k === 'discipline' || k === 'form' || k === 'ml')
       ? lbl   // already has the numeric value
       : `${lbl}: ${(v * 100).toFixed(0)}%`;
-    return `<div class="signal-segment ${filled}" title="${title}"></div>`;
+    const cls    = k === 'ml' ? `signal-segment ml-segment ${filled}` : `signal-segment ${filled}`;
+    return `<div class="${cls}" title="${title}"></div>`;
   }).join('');
 
   // Compact label beneath the bar showing the discipline type
@@ -309,7 +315,7 @@ function renderTopPicks(picks) {
       <td>${p.team}</td>
       <td class="${priceClass(p.price)}">${p.price.toFixed(1)}M</td>
       <td style="font-weight:600;color:var(--green)">${fmtK(p.expected_pts)}</td>
-      <td>${signalBar(p.signal_scores, p.disc_key, p.disc_raw, p.form_score)}</td>
+      <td>${signalBar(p.signal_scores, p.disc_key, p.disc_raw, p.form_score, window._mlSource)}</td>
       <td class="co-cell">${coVal}</td>
       <td style="font-size:0.78rem;color:var(--muted)">${p.reasoning || '–'}</td>
     </tr>`;
@@ -321,6 +327,7 @@ async function init() {
   try {
     const data = await loadData();
 
+    window._mlSource = data.ml_source || null;
     renderStageBadge(data.stage, data.stage_type);
     renderGeneratedAt(data.generated);
     renderCurrentTeam(data.current_team);

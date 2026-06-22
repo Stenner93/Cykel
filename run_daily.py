@@ -138,6 +138,22 @@ def load_team_bonus() -> dict[str, int]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_gt_stage_results() -> dict | None:
+    """Load accumulated GT stage results. Returns None if not available."""
+    path = DATA_DIR / "cache" / "gt_stage_results.json"
+    if not path.exists():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_pcs_form_raw() -> dict:
+    """Load raw pcs_form.json (for PCS slug extraction in ML signal)."""
+    path = DATA_DIR / "cache" / "pcs_form.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def load_profile_score(stage: int) -> int | None:
     """
     Load PCS ProfileScore for a specific stage of the current race.
@@ -250,6 +266,8 @@ def main():
                         help="Re-scrape PCS recent form data (adds ~3 min)")
     parser.add_argument("--scrape-holdet", action="store_true",
                         help="Re-scrape Holdet.dk: priser, GC-stilling og trøjer")
+    parser.add_argument("--scrape-gt", action="store_true",
+                        help="Hent GT-etaperesultater fra PCS til ML rolling-form")
     parser.add_argument("--update-riders", action="store_true",
                         help="Skriv Holdet-priser tilbage til riders.json (kræver --scrape-holdet)")
     args = parser.parse_args()
@@ -336,6 +354,14 @@ def main():
         if args.update_riders:
             riders = load_riders()
             print(f"  Ryttere genindlæst: {len(riders)} (priser opdateret)")
+
+    if args.scrape_gt:
+        print("  Henter GT-etaperesultater fra PCS (ML rolling-form)…")
+        import scrape_gt_results
+        import sys as _sys
+        _sys.argv = ["scrape_gt_results.py"]
+        scrape_gt_results.main()
+
     co_data      = load_cyclingoracle()
     pcs_form     = load_pcs_form()
     gc_standings = load_gc_standings()
@@ -373,6 +399,30 @@ def main():
         scale = _profile_scale(profile_sc, stage_type)
         print(f"  Profile score: {profile_sc}  →  WINNER_POINTS × {scale:.2f}")
 
+    # ── ML signal ────────────────────────────────────────────
+    from src.ml_signal import compute_ml_scores
+    gt_results   = load_gt_stage_results()
+    pcs_form_raw = load_pcs_form_raw()
+    n_gt_stages  = len((gt_results or {}).get("stages", {}))
+    ml_scores    = compute_ml_scores(
+        riders=riders,
+        stage_type=stage_type,
+        stage_num=stage,
+        profile_score=profile_sc,
+        gt_results=gt_results,
+        pcs_form_raw=pcs_form_raw,
+    )
+    if ml_scores:
+        top_ml = sorted(ml_scores.items(), key=lambda x: x[1], reverse=True)[:3]
+        id_to_name = {r["id"]: r["full_name"] for r in riders}
+        top_ml_str = ", ".join(f"{id_to_name.get(k, k)} ({v:.0f})" for k, v in top_ml)
+        ml_source = "ML rolling-form" if n_gt_stages >= 5 else f"historisk styrke ({n_gt_stages} etaper kørt)"
+        print(f"  ML-signal:     {len(ml_scores)} ryttere  "
+              f"(GT-etaper: {n_gt_stages} — {ml_source})  Top3: {top_ml_str}")
+    else:
+        ml_source = "ikke tilgængelig"
+        print(f"  ML-signal:     ikke tilgængelig (model ikke indlæst)")
+
     # ── Run predictions ───────────────────────────────────────
     print("\n  Beregner forventede point...")
     predictions = predict_all(
@@ -386,6 +436,7 @@ def main():
         profile_score=profile_sc,
         sprint_kom_data=sprint_kom or None,
         team_bonus_data=team_bonus or None,
+        ml_prob_data=ml_scores or None,
     )
 
     # ── Load current team ─────────────────────────────────────
@@ -445,6 +496,8 @@ def main():
         "stage":        stage,
         "stage_type":   stage_type,
         "generated":    _now_iso(),
+        "ml_source":    ml_source,
+        "ml_gt_stages": n_gt_stages,
         "current_team": current_team_data,
         "teams":        teams,
         "best_team":    best_team,
