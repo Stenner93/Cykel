@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics Dashboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg: #ffffff; --bg2: #f9fafb; --bg3: #f3f4f6;
+    --border: #e5e7eb; --border2: #d1d5db;
+    --text: #111827; --text2: #6b7280; --text3: #9ca3af;
+    --blue: #2563eb; --green: #059669; --orange: #d97706; --red: #dc2626; --purple: #7c3aed;
+    --accent: #2563eb;
+  }
+  body { background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; font-size:14px; min-height:100vh; }
+
+  /* Layout */
+  .app { display:grid; grid-template-rows:48px 1fr; height:100vh; }
+  .header { background:white; border-bottom:1px solid var(--border); display:flex; align-items:center; padding:0 20px; gap:16px; }
+  .header-logo { font-weight:800; font-size:16px; color:var(--text); letter-spacing:-0.5px; }
+  .header-sep { width:1px; height:20px; background:var(--border2); }
+  .header-title { font-size:13px; color:var(--text2); font-weight:500; }
+  .header-right { margin-left:auto; display:flex; align-items:center; gap:8px; }
+  .badge { background:var(--bg3); border:1px solid var(--border); border-radius:5px; padding:3px 8px; font-size:11px; font-weight:600; color:var(--text2); }
+  .badge.green { background:#ecfdf5; border-color:#6ee7b7; color:var(--green); }
+  .btn { background:var(--blue); color:white; border:none; border-radius:6px; padding:6px 12px; font-size:12px; font-weight:600; cursor:pointer; }
+
+  .body { display:grid; grid-template-columns:220px 1fr 280px; overflow:hidden; }
+
+  /* Left sidebar — filters */
+  .sidebar-left { background:var(--bg2); border-right:1px solid var(--border); overflow-y:auto; padding:16px 12px; }
+  .section-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--text3); margin-bottom:8px; margin-top:16px; }
+  .section-label:first-child { margin-top:0; }
+
+  /* Stage select */
+  .stage-btn { display:flex; align-items:center; gap:8px; width:100%; padding:6px 8px; border-radius:6px; border:none; background:transparent; cursor:pointer; text-align:left; font-size:13px; color:var(--text2); transition:all 0.1s; }
+  .stage-btn:hover { background:var(--bg3); }
+  .stage-btn.active { background:var(--blue); color:white; }
+  .stage-type-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+  .dot-mtn { background:#059669; }
+  .dot-spr { background:#2563eb; }
+  .dot-hll { background:#7c3aed; }
+  .dot-tt { background:#d97706; }
+
+  /* Weight sliders */
+  .weight-row { margin-bottom:12px; }
+  .weight-head { display:flex; justify-content:space-between; margin-bottom:4px; }
+  .weight-name { font-size:11px; font-weight:600; color:var(--text2); }
+  .weight-val { font-size:11px; font-weight:700; color:var(--text); }
+  input[type=range] { width:100%; accent-color:var(--blue); height:3px; }
+
+  .filter-check { display:flex; align-items:center; gap:6px; padding:4px 0; cursor:pointer; font-size:12px; color:var(--text2); }
+  .filter-check input { accent-color:var(--blue); }
+
+  /* Main table area */
+  .main-area { overflow:hidden; display:grid; grid-template-rows:auto 1fr auto; }
+  .table-toolbar { padding:12px 16px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px; }
+  .search { border:1px solid var(--border2); border-radius:6px; padding:6px 10px; font-size:12px; outline:none; width:200px; }
+  .search:focus { border-color:var(--blue); }
+  .sort-btn { border:1px solid var(--border2); border-radius:6px; padding:5px 10px; font-size:11px; font-weight:600; cursor:pointer; background:white; color:var(--text2); transition:all 0.1s; }
+  .sort-btn.active { border-color:var(--blue); color:var(--blue); background:#eff6ff; }
+  .ml-tag { margin-left:auto; font-size:11px; color:var(--text3); }
+
+  /* Table */
+  .table-wrap { overflow-y:auto; }
+  table { width:100%; border-collapse:collapse; }
+  thead th { position:sticky; top:0; background:var(--bg2); border-bottom:1px solid var(--border); padding:9px 10px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--text2); text-align:left; cursor:pointer; user-select:none; white-space:nowrap; }
+  thead th:hover { color:var(--blue); }
+  thead th.sorted { color:var(--blue); }
+  thead th.sorted::after { content:" ▼"; font-size:9px; }
+  tbody tr { border-bottom:1px solid var(--border); transition:background 0.1s; cursor:pointer; }
+  tbody tr:hover { background:var(--bg2); }
+  tbody tr.selected { background:#eff6ff; }
+  td { padding:9px 10px; }
+
+  /* Score pill */
+  .score-big { font-size:18px; font-weight:800; }
+  .price-tag { font-size:11px; font-weight:600; color:var(--green); }
+
+  /* Mini signal bar */
+  .mini-bars { display:flex; gap:2px; align-items:flex-end; height:20px; }
+  .mini-bar { width:7px; border-radius:1px; }
+
+  /* Type chip */
+  .type-chip { display:inline-block; border-radius:4px; padding:2px 6px; font-size:10px; font-weight:700; }
+  .chip-mtn { background:#ecfdf5; color:#059669; }
+  .chip-spr { background:#eff6ff; color:#2563eb; }
+  .chip-hll { background:#f5f3ff; color:#7c3aed; }
+  .chip-tt { background:#fffbeb; color:#d97706; }
+
+  /* Scatter plot */
+  .scatter-area { padding:0 16px 16px; }
+  .scatter-title { font-size:11px; font-weight:700; color:var(--text2); text-transform:uppercase; letter-spacing:0.5px; padding:10px 0 8px; }
+  .scatter-svg { border:1px solid var(--border); border-radius:8px; background:white; }
+
+  /* Right detail */
+  .sidebar-right { border-left:1px solid var(--border); overflow-y:auto; }
+  .detail-header-r { padding:16px; border-bottom:1px solid var(--border); }
+  .detail-name-r { font-size:16px; font-weight:800; }
+  .detail-team-r { font-size:11px; color:var(--text2); margin-top:2px; }
+  .detail-score-r { font-size:36px; font-weight:900; color:var(--blue); margin-top:8px; line-height:1; }
+  .detail-price-r { font-size:13px; color:var(--green); font-weight:600; }
+
+  .signal-section { padding:14px 16px; border-bottom:1px solid var(--border); }
+  .signal-section-title { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--text3); margin-bottom:10px; }
+  .sig-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .sig-label { font-size:11px; color:var(--text2); width:72px; }
+  .sig-track { flex:1; height:4px; background:var(--bg3); border-radius:2px; overflow:hidden; }
+  .sig-fill { height:100%; border-radius:2px; }
+  .sig-val { font-size:11px; font-weight:700; color:var(--text); width:24px; text-align:right; }
+
+  .stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); }
+  .stat-cell { background:white; padding:12px; text-align:center; }
+  .stat-val { font-size:20px; font-weight:800; color:var(--text); }
+  .stat-label { font-size:10px; color:var(--text3); margin-top:2px; }
+
+  /* Optimizer */
+  .optimizer { padding:14px 16px; }
+  .opt-title { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--text3); margin-bottom:10px; }
+  .budget-display { display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
+  .budget-num { font-size:20px; font-weight:800; }
+  .opt-team { }
+  .opt-row { display:flex; align-items:center; justify-content:space-between; padding:5px 0; border-bottom:1px solid var(--border); font-size:12px; }
+  .opt-row:last-child { border-bottom:none; }
+  .opt-name { font-weight:600; }
+  .opt-price { color:var(--green); font-weight:600; }
+  .opt-cap { color:var(--orange); font-size:10px; font-weight:700; }
+
+  /* Tabs */
+  .tabs { display:flex; border-bottom:1px solid var(--border); padding:0 16px; }
+  .tab { padding:9px 12px; font-size:12px; font-weight:600; cursor:pointer; border-bottom:2px solid transparent; color:var(--text2); margin-bottom:-1px; transition:all 0.1s; }
+  .tab.active { border-bottom-color:var(--blue); color:var(--blue); }
+
+  /* Validation chart */
+  .val-chart { padding:12px 16px; }
+  .val-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .val-label { font-size:11px; color:var(--text2); width:80px; }
+  .val-track { flex:1; height:6px; background:var(--bg3); border-radius:3px; overflow:hidden; }
+  .val-fill { height:100%; border-radius:3px; background:var(--blue); }
+  .val-num { font-size:11px; font-weight:700; width:36px; text-align:right; }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="header">
+    <div class="header-logo">Cykel</div>
+    <div class="header-sep"></div>
+    <div class="header-title">TdF 2026 · Etape 15 · Bjerg</div>
+    <div class="header-right">
+      <div class="badge green">ML aktiv</div>
+      <div class="badge">Model: 22. jun 20:33</div>
+      <button class="btn">Eksporter hold</button>
+    </div>
+  </div>
+
+  <div class="body">
+    <!-- Left sidebar -->
+    <div class="sidebar-left">
+      <div class="section-label">Etape</div>
+      <button class="stage-btn">1 · TTT <span class="stage-type-dot dot-tt" style="margin-left:auto"></span></button>
+      <button class="stage-btn">8 · MTN <span class="stage-type-dot dot-mtn" style="margin-left:auto"></span></button>
+      <button class="stage-btn">13 · SPR <span class="stage-type-dot dot-spr" style="margin-left:auto"></span></button>
+      <button class="stage-btn active">15 · MTN <span class="stage-type-dot dot-mtn" style="margin-left:auto"></span></button>
+      <button class="stage-btn">16 · MTN <span class="stage-type-dot dot-mtn" style="margin-left:auto"></span></button>
+      <button class="stage-btn">20 · TT <span class="stage-type-dot dot-tt" style="margin-left:auto"></span></button>
+      <button class="stage-btn">21 · SPR <span class="stage-type-dot dot-spr" style="margin-left:auto"></span></button>
+
+      <div class="section-label">Signalvægte</div>
+      <div class="weight-row">
+        <div class="weight-head"><span class="weight-name">VeloScore</span><span class="weight-val" id="w0">0.20</span></div>
+        <input type="range" min="0" max="40" value="20" oninput="document.getElementById('w0').textContent='0.'+this.value.padStart(2,'0');recalc()">
+      </div>
+      <div class="weight-row">
+        <div class="weight-head"><span class="weight-name">Odds</span><span class="weight-val" id="w1">0.18</span></div>
+        <input type="range" min="0" max="40" value="18" oninput="document.getElementById('w1').textContent='0.'+this.value.padStart(2,'0');recalc()">
+      </div>
+      <div class="weight-row">
+        <div class="weight-head"><span class="weight-name">Disciplin</span><span class="weight-val" id="w2">0.20</span></div>
+        <input type="range" min="0" max="40" value="20" oninput="document.getElementById('w2').textContent='0.'+this.value.padStart(2,'0');recalc()">
+      </div>
+      <div class="weight-row">
+        <div class="weight-head"><span class="weight-name">Form</span><span class="weight-val" id="w3">0.22</span></div>
+        <input type="range" min="0" max="40" value="22" oninput="document.getElementById('w3').textContent='0.'+this.value.padStart(2,'0');recalc()">
+      </div>
+      <div class="weight-row">
+        <div class="weight-head"><span class="weight-name">ML</span><span class="weight-val" id="w4">0.08</span></div>
+        <input type="range" min="0" max="40" value="8" oninput="document.getElementById('w4').textContent='0.'+this.value.padStart(2,'0');recalc()">
+      </div>
+      <div class="weight-row">
+        <div class="weight-head"><span class="weight-name">PCS Rang</span><span class="weight-val" id="w5">0.12</span></div>
+        <input type="range" min="0" max="40" value="12" oninput="document.getElementById('w5').textContent='0.'+this.value.padStart(2,'0');recalc()">
+      </div>
+
+      <div class="section-label">Filter · Hold</div>
+      <label class="filter-check"><input type="checkbox" checked> UAE Team Emirates</label>
+      <label class="filter-check"><input type="checkbox" checked> Visma–Lease a Bike</label>
+      <label class="filter-check"><input type="checkbox" checked> INEOS Grenadiers</label>
+      <label class="filter-check"><input type="checkbox" checked> Soudal Quick-Step</label>
+      <label class="filter-check"><input type="checkbox" checked> Bora–Hansgrohe</label>
+      <label class="filter-check"><input type="checkbox" checked> Andre hold</label>
+
+      <div class="section-label">Budget-grænse</div>
+      <div class="weight-row">
+        <div class="weight-head"><span class="weight-name">Max pris per rytter</span><span class="weight-val">10M</span></div>
+        <input type="range" min="3" max="10" value="10">
+      </div>
+    </div>
+
+    <!-- Main area -->
+    <div class="main-area">
+      <div class="table-toolbar">
+        <input class="search" type="text" placeholder="Søg rytter...">
+        <button class="sort-btn active" onclick="setSortActive(this)">Score ▼</button>
+        <button class="sort-btn" onclick="setSortActive(this)">Pris</button>
+        <button class="sort-btn" onclick="setSortActive(this)">Value</button>
+        <button class="sort-btn" onclick="setSortActive(this)">Form</button>
+        <button class="sort-btn" onclick="setSortActive(this)">PCS</button>
+        <div class="ml-tag">175 ryttere · 6 signaler · Etape 15</div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Rytter</th>
+              <th class="sorted">Score</th>
+              <th>Pris</th>
+              <th>Value</th>
+              <th>Signaler</th>
+              <th>VeloSc</th>
+              <th>Odds</th>
+              <th>Disc</th>
+              <th>Form</th>
+              <th>ML</th>
+              <th>PCS</th>
+            </tr>
+          </thead>
+          <tbody id="riderTable"></tbody>
+        </table>
+      </div>
+
+      <!-- Scatter -->
+      <div class="scatter-area">
+        <div class="scatter-title">Pris vs. Score — value-analyse</div>
+        <svg class="scatter-svg" width="100%" height="100" viewBox="0 0 600 100" id="scatterPlot"></svg>
+      </div>
+    </div>
+
+    <!-- Right detail -->
+    <div class="sidebar-right">
+      <div class="tabs">
+        <div class="tab active">Rytter</div>
+        <div class="tab">Hold</div>
+        <div class="tab">Model</div>
+      </div>
+
+      <div id="detailPanel">
+        <div class="detail-header-r">
+          <div class="detail-name-r" id="dName">Tadej Pogačar</div>
+          <div class="detail-team-r" id="dTeam">UAE Team Emirates · SLO</div>
+          <div class="detail-score-r" id="dScore">94</div>
+          <div class="detail-price-r" id="dPrice">9.5M kr · ~530K kr/etape</div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-cell"><div class="stat-val" id="dRank">1</div><div class="stat-label">Placering</div></div>
+          <div class="stat-cell"><div class="stat-val" id="dValue">9.9</div><div class="stat-label">Value score</div></div>
+          <div class="stat-cell"><div class="stat-val" id="dPcsRank">1</div><div class="stat-label">PCS rang</div></div>
+          <div class="stat-cell"><div class="stat-val" id="dDelta">+0</div><div class="stat-label">Delta</div></div>
+        </div>
+
+        <div class="signal-section">
+          <div class="signal-section-title">Signaler</div>
+          <div id="sigBars"></div>
+        </div>
+
+        <div class="optimizer">
+          <div class="opt-title">Optimeret hold · 50M kr</div>
+          <div class="budget-display">
+            <span class="budget-num">49.7M</span>
+            <span style="font-size:11px;color:var(--text3)">brugt</span>
+          </div>
+          <input type="range" min="40" max="60" value="50" style="width:100%;accent-color:var(--blue);margin-bottom:10px" oninput="">
+          <div class="opt-team">
+            <div class="opt-row"><span class="opt-name">Pogačar <span class="opt-cap">⭐ KAP</span></span><span class="opt-price">9.5M</span></div>
+            <div class="opt-row"><span class="opt-name">Vingegaard</span><span class="opt-price">8.9M</span></div>
+            <div class="opt-row"><span class="opt-name">Evenepoel</span><span class="opt-price">7.8M</span></div>
+            <div class="opt-row"><span class="opt-name">C. Rodríguez</span><span class="opt-price">6.2M</span></div>
+            <div class="opt-row"><span class="opt-name">Felix Gall</span><span class="opt-price">5.1M</span></div>
+            <div class="opt-row"><span class="opt-name">G. Martin</span><span class="opt-price">4.4M</span></div>
+            <div class="opt-row"><span class="opt-name">Powless</span><span class="opt-price">4.0M</span></div>
+            <div class="opt-row"><span class="opt-name">Arensman</span><span class="opt-price">3.8M</span></div>
+          </div>
+          <button class="btn" style="width:100%;margin-top:10px">Kopiér til Holdet →</button>
+        </div>
+
+        <div class="val-chart" style="border-top:1px solid var(--border)">
+          <div class="signal-section-title">Model-validering (2025)</div>
+          <div class="val-row"><span class="val-label">AUC top-5</span><div class="val-track"><div class="val-fill" style="width:85.5%"></div></div><span class="val-num">0.855</span></div>
+          <div class="val-row"><span class="val-label">AUC bjerg</span><div class="val-track"><div class="val-fill" style="width:89%"></div></div><span class="val-num">0.890</span></div>
+          <div class="val-row"><span class="val-label">AUC TT</span><div class="val-track"><div class="val-fill" style="width:90.6%"></div></div><span class="val-num">0.906</span></div>
+          <div class="val-row"><span class="val-label">AUC sprint</span><div class="val-track"><div class="val-fill" style="width:83%"></div></div><span class="val-num">0.830</span></div>
+          <div class="val-row"><span class="val-label">Vinder top-5</span><div class="val-track"><div class="val-fill" style="width:45.2%;background:var(--green)"></div></div><span class="val-num">45%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const riders = [
+  { name:"Tadej Pogačar", team:"UAE", score:94, price:9.5, pcs:1, signals:[91,88,100,85,76,95], delta:0 },
+  { name:"Jonas Vingegaard", team:"Visma", score:89, price:8.9, pcs:2, signals:[84,90,96,79,71,90], delta:1 },
+  { name:"Remco Evenepoel", team:"Soudal QS", score:81, price:7.8, pcs:4, signals:[78,82,88,74,68,78], delta:-1 },
+  { name:"Carlos Rodríguez", team:"INEOS", score:74, price:6.2, pcs:8, signals:[70,68,82,72,58,71], delta:2 },
+  { name:"Enric Mas", team:"Movistar", score:71, price:5.8, pcs:11, signals:[65,72,79,68,55,62], delta:0 },
+  { name:"Felix Gall", team:"AG2R", score:68, price:5.1, pcs:15, signals:[60,65,76,80,52,59], delta:3 },
+  { name:"Guillaume Martin", team:"Cofidis", score:62, price:4.4, pcs:22, signals:[58,60,70,75,48,54], delta:0 },
+  { name:"Neilson Powless", team:"EF Edu", score:58, price:4.0, pcs:28, signals:[55,58,64,70,44,50], delta:-2 },
+  { name:"Thymen Arensman", team:"INEOS", score:55, price:3.8, pcs:31, signals:[52,54,62,68,41,47], delta:1 },
+  { name:"Lenny Martinez", team:"FDJ", score:52, price:3.5, pcs:35, signals:[48,50,60,65,38,44], delta:0 },
+  { name:"David Gaudu", team:"FDJ", score:49, price:3.2, pcs:40, signals:[45,47,57,62,35,41], delta:-1 },
+  { name:"Aleksandr Vlasov", team:"Bora", score:46, price:3.0, pcs:44, signals:[42,44,54,60,32,38], delta:0 },
+  { name:"Dani Martínez", team:"Red Bull-Bora", score:44, price:2.9, pcs:48, signals:[40,42,52,58,30,35], delta:2 },
+  { name:"Warren Barguil", team:"Arkéa", score:41, price:2.7, pcs:55, signals:[38,40,50,55,28,32], delta:0 },
+  { name:"Aurélien Paret-Peintre", team:"AG2R", score:39, price:2.5, pcs:60, signals:[36,38,48,53,26,30], delta:1 },
+];
+
+const sigColors = ["#2563eb","#d97706","#059669","#7c3aed","#dc2626","#d97706"];
+const sigLabels = ["VeloScore","Odds","Disciplin","Form","ML","PCS Rang"];
+
+function miniBarsSvg(signals) {
+  return signals.map((v,i) => {
+    const h = Math.round(v/100*18);
+    return `<div class="mini-bar" style="height:${h}px;background:${sigColors[i]};opacity:0.8"></div>`;
+  }).join("");
+}
+
+function setSortActive(btn) {
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+let selectedIdx = 0;
+
+function renderTable() {
+  const tbody = document.getElementById('riderTable');
+  tbody.innerHTML = riders.map((r,i) => `
+    <tr class="${i===selectedIdx?'selected':''}" onclick="selectRider(${i})">
+      <td style="color:var(--text3);font-size:12px">${i+1}</td>
+      <td>
+        <div style="font-weight:600;font-size:13px">${r.name}</div>
+        <div style="font-size:11px;color:var(--text3)">${r.team}</div>
+      </td>
+      <td><span class="score-big" style="color:${r.score>80?'var(--blue)':r.score>60?'var(--orange)':'var(--text2)'}">${r.score}</span></td>
+      <td><span class="price-tag">${r.price}M</span></td>
+      <td style="font-size:12px;color:var(--text2);font-weight:600">${(r.score/r.price).toFixed(1)}</td>
+      <td><div class="mini-bars">${miniBarsSvg(r.signals)}</div></td>
+      <td style="font-size:12px">${r.signals[0]}</td>
+      <td style="font-size:12px">${r.signals[1]}</td>
+      <td style="font-size:12px">${r.signals[2]}</td>
+      <td style="font-size:12px">${r.signals[3]}</td>
+      <td style="font-size:12px">${r.signals[4]}</td>
+      <td style="font-size:12px">${r.signals[5]}</td>
+    </tr>`).join("");
+}
+
+function selectRider(idx) {
+  selectedIdx = idx;
+  renderTable();
+  const r = riders[idx];
+  document.getElementById('dName').textContent = r.name;
+  document.getElementById('dTeam').textContent = r.team;
+  document.getElementById('dScore').textContent = r.score;
+  document.getElementById('dPrice').textContent = `${r.price}M kr · ~${Math.round(r.price/9.5*530)}K kr/etape`;
+  document.getElementById('dRank').textContent = idx+1;
+  document.getElementById('dValue').textContent = (r.score/r.price).toFixed(1);
+  document.getElementById('dPcsRank').textContent = r.pcs;
+  document.getElementById('dDelta').textContent = r.delta>0?'+'+r.delta:r.delta===0?'—':r.delta;
+  document.getElementById('sigBars').innerHTML = sigLabels.map((l,i)=>`
+    <div class="sig-row">
+      <div class="sig-label">${l}</div>
+      <div class="sig-track"><div class="sig-fill" style="width:${r.signals[i]}%;background:${sigColors[i]}"></div></div>
+      <div class="sig-val">${r.signals[i]}</div>
+    </div>`).join("");
+}
+
+function recalc() {}
+
+// Scatter plot
+function renderScatter() {
+  const svg = document.getElementById('scatterPlot');
+  const W=600,H=100,pad=20;
+  const minP=2.5,maxP=10,minS=30,maxS=100;
+  const dots = riders.map(r=>{
+    const x = pad + (r.price-minP)/(maxP-minP)*(W-2*pad);
+    const y = H-pad - (r.score-minS)/(maxS-minS)*(H-2*pad);
+    return `<circle cx="${x}" cy="${y}" r="5" fill="${r.score>80?'#2563eb':r.score>60?'#d97706':'#9ca3af'}" opacity="0.8" title="${r.name}"/>
+      <text x="${x}" y="${y-8}" font-size="8" fill="#6b7280" text-anchor="middle">${r.name.split(' ').pop()}</text>`;
+  }).join("");
+  const axisX = `<line x1="${pad}" y1="${H-pad}" x2="${W-pad}" y2="${H-pad}" stroke="#e5e7eb"/>
+    <text x="${W/2}" y="${H}" font-size="9" fill="#9ca3af" text-anchor="middle">Pris (M kr)</text>`;
+  const axisY = `<line x1="${pad}" y1="${pad}" x2="${pad}" y2="${H-pad}" stroke="#e5e7eb"/>
+    <text x="10" y="${H/2}" font-size="9" fill="#9ca3af" text-anchor="middle" transform="rotate(-90,10,${H/2})">Score</text>`;
+  svg.innerHTML = axisX + axisY + dots;
+}
+
+renderTable();
+selectRider(0);
+renderScatter();
+</script>
+</body>
+</html>

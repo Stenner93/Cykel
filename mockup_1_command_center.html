@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Race Command Center</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d1117; color: #e6edf3; font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif; min-height: 100vh; }
+
+  /* Top bar */
+  .topbar { background: #161b22; border-bottom: 1px solid #21262d; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar-left { display: flex; align-items: center; gap: 16px; }
+  .logo { font-size: 18px; font-weight: 700; color: #f97316; letter-spacing: -0.5px; }
+  .stage-chip { background: #1c2128; border: 1px solid #30363d; border-radius: 20px; padding: 4px 12px; font-size: 12px; color: #8b949e; }
+  .stage-chip span { color: #f97316; font-weight: 600; }
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #3fb950; animation: pulse 1.5s infinite; display: inline-block; margin-right: 6px; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .topbar-right { display: flex; align-items: center; gap: 12px; }
+  .budget-label { font-size: 12px; color: #8b949e; }
+  .budget-val { color: #3fb950; font-weight: 700; font-size: 14px; }
+
+  /* Stage hero */
+  .stage-hero { background: linear-gradient(135deg, #161b22 0%, #1c2128 100%); border-bottom: 1px solid #21262d; padding: 20px 24px; }
+  .stage-title { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .stage-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 16px; }
+  .stage-meta-item { font-size: 12px; color: #8b949e; }
+  .stage-meta-item strong { color: #e6edf3; }
+  .type-badge { padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+  .type-mtn { background: #1a3a2a; color: #3fb950; border: 1px solid #2ea043; }
+  .type-spr { background: #1a2a3a; color: #58a6ff; border: 1px solid #1f6feb; }
+  .type-hll { background: #2a1a3a; color: #a371f7; border: 1px solid #8b5cf6; }
+  .type-tt  { background: #3a2a1a; color: #f97316; border: 1px solid #ea580c; }
+
+  /* Profile */
+  .profile-bar { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
+  .profile-label { font-size: 11px; color: #8b949e; width: 100px; }
+  .profile-track { flex: 1; height: 6px; background: #21262d; border-radius: 3px; overflow: hidden; }
+  .profile-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, #3fb950, #f97316); }
+  .profile-val { font-size: 11px; color: #8b949e; width: 30px; text-align: right; }
+
+  /* Main layout */
+  .main { display: grid; grid-template-columns: 1fr 360px; gap: 0; height: calc(100vh - 180px); }
+
+  /* Left: rider list */
+  .rider-panel { overflow-y: auto; border-right: 1px solid #21262d; }
+  .rider-panel::-webkit-scrollbar { width: 4px; }
+  .rider-panel::-webkit-scrollbar-track { background: #0d1117; }
+  .rider-panel::-webkit-scrollbar-thumb { background: #30363d; border-radius: 2px; }
+  .panel-header { padding: 12px 20px; border-bottom: 1px solid #21262d; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: #0d1117; z-index: 10; }
+  .panel-title { font-size: 12px; font-weight: 600; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; }
+  .filter-chips { display: flex; gap: 6px; }
+  .chip { padding: 3px 10px; border-radius: 12px; font-size: 11px; cursor: pointer; border: 1px solid #30363d; color: #8b949e; background: transparent; transition: all 0.15s; }
+  .chip.active { border-color: #f97316; color: #f97316; background: #1a0f00; }
+
+  .rider-row { padding: 14px 20px; border-bottom: 1px solid #161b22; display: grid; grid-template-columns: 28px 1fr 120px 80px; gap: 12px; align-items: center; cursor: pointer; transition: background 0.1s; }
+  .rider-row:hover { background: #161b22; }
+  .rider-row.selected { background: #1a1500; border-left: 2px solid #f97316; }
+  .rider-rank { font-size: 13px; font-weight: 700; color: #8b949e; text-align: center; }
+  .rider-rank.top1 { color: #f97316; }
+  .rider-rank.top3 { color: #e6c76a; }
+  .rider-name { font-size: 14px; font-weight: 600; }
+  .rider-team { font-size: 11px; color: #8b949e; margin-top: 1px; }
+  .delta-up { color: #3fb950; font-size: 11px; }
+  .delta-dn { color: #f85149; font-size: 11px; }
+  .delta-eq { color: #8b949e; font-size: 11px; }
+
+  /* Radar chart area */
+  .radar-wrap { display: flex; justify-content: center; margin: 4px 0; }
+  svg.radar { overflow: visible; }
+
+  /* Score */
+  .score-big { font-size: 22px; font-weight: 800; color: #f97316; }
+  .score-sub { font-size: 10px; color: #8b949e; }
+  .price-tag { font-size: 11px; color: #3fb950; font-weight: 600; }
+
+  /* Right: detail panel */
+  .detail-panel { overflow-y: auto; background: #161b22; }
+  .detail-panel::-webkit-scrollbar { width: 4px; }
+  .detail-panel::-webkit-scrollbar-thumb { background: #30363d; border-radius: 2px; }
+  .detail-header { padding: 20px; border-bottom: 1px solid #21262d; }
+  .detail-name { font-size: 20px; font-weight: 800; }
+  .detail-team { font-size: 12px; color: #8b949e; margin-top: 2px; }
+  .detail-score-row { display: flex; align-items: baseline; gap: 8px; margin-top: 12px; }
+  .detail-score { font-size: 48px; font-weight: 900; color: #f97316; line-height: 1; }
+  .detail-pts { font-size: 14px; color: #8b949e; }
+  .holdet-btn { display: block; margin: 12px 20px; padding: 10px; background: linear-gradient(135deg, #f97316, #ea580c); border: none; border-radius: 8px; color: white; font-weight: 700; font-size: 14px; text-align: center; cursor: pointer; text-decoration: none; }
+
+  .signals-section { padding: 16px 20px; }
+  .signals-title { font-size: 11px; font-weight: 600; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .signal-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .signal-label { font-size: 11px; color: #8b949e; width: 80px; }
+  .signal-bar-wrap { flex: 1; height: 5px; background: #21262d; border-radius: 3px; overflow: hidden; }
+  .signal-bar-fill { height: 100%; border-radius: 3px; }
+  .signal-val { font-size: 11px; color: #e6edf3; font-weight: 600; width: 28px; text-align: right; }
+
+  .recommend-badge { margin: 0 20px 12px; background: #1a3a2a; border: 1px solid #2ea043; border-radius: 8px; padding: 10px 14px; font-size: 12px; color: #3fb950; }
+  .recommend-badge strong { display: block; font-size: 13px; margin-bottom: 3px; }
+
+  .budget-section { padding: 16px 20px; border-top: 1px solid #21262d; }
+  .budget-slider { width: 100%; accent-color: #f97316; margin: 8px 0; }
+  .budget-display { font-size: 13px; color: #e6edf3; }
+  .budget-display span { color: #f97316; font-weight: 700; }
+
+  .best-team { padding: 0 20px 20px; }
+  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .team-card { background: #21262d; border-radius: 8px; padding: 10px; border: 1px solid #30363d; }
+  .team-card.captain { border-color: #f97316; background: #1a0f00; }
+  .team-card-name { font-size: 12px; font-weight: 600; }
+  .team-card-price { font-size: 10px; color: #3fb950; margin-top: 2px; }
+  .team-card-cap { font-size: 10px; color: #f97316; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="logo">CYKEL</div>
+    <div class="stage-chip">TdF 2026 · <span>Etape 15</span></div>
+    <div style="font-size:12px"><span class="live-dot"></span><span style="color:#3fb950;font-weight:600">LIVE</span></div>
+  </div>
+  <div class="topbar-right">
+    <span class="budget-label">Dit budget</span>
+    <span class="budget-val">50.0M kr</span>
+  </div>
+</div>
+
+<div class="stage-hero">
+  <div style="display:flex;align-items:flex-start;justify-content:space-between">
+    <div>
+      <div class="stage-title">Etape 15 · Peyragudes → Col du Tourmalet</div>
+      <div class="stage-meta">
+        <div class="stage-meta-item"><strong>187 km</strong> · Bjerg</div>
+        <div class="stage-meta-item"><span class="type-badge type-mtn">MTN</span></div>
+        <div class="stage-meta-item"><strong>4.800 m</strong> stigning</div>
+        <div class="stage-meta-item">Profil-score: <strong>92</strong>/100</div>
+      </div>
+    </div>
+    <div style="text-align:right">
+      <div style="font-size:11px;color:#8b949e;margin-bottom:4px">Start kl.</div>
+      <div style="font-size:24px;font-weight:800;color:#f97316">13:15</div>
+    </div>
+  </div>
+  <div class="profile-bar">
+    <div class="profile-label" style="font-size:10px;color:#8b949e">Profil</div>
+    <div class="profile-track"><div class="profile-fill" style="width:92%"></div></div>
+    <div class="profile-val">92</div>
+  </div>
+</div>
+
+<div class="main">
+  <!-- Rider panel -->
+  <div class="rider-panel">
+    <div class="panel-header">
+      <div class="panel-title">Ryttere · 175 i feltet</div>
+      <div class="filter-chips">
+        <div class="chip active">Alle</div>
+        <div class="chip">Top 20</div>
+        <div class="chip">Mit hold</div>
+      </div>
+    </div>
+
+    <!-- Rider rows -->
+    <div id="riderList"></div>
+  </div>
+
+  <!-- Detail panel -->
+  <div class="detail-panel">
+    <div class="detail-header">
+      <div class="detail-name" id="detailName">Tadej Pogačar</div>
+      <div class="detail-team" id="detailTeam">UAE Team Emirates · SLO</div>
+      <div class="detail-score-row">
+        <div class="detail-score" id="detailScore">94</div>
+        <div class="detail-pts" id="detailPts">~530K kr forventet</div>
+      </div>
+    </div>
+
+    <a class="holdet-btn" href="#">Åbn Holdet med dette hold →</a>
+
+    <div class="recommend-badge">
+      <strong>Anbefalet kaptajn</strong>
+      Højeste samlet score · Topfavorit i bjerg og GC
+    </div>
+
+    <div class="signals-section">
+      <div class="signals-title">Signaler</div>
+      <div id="signalBars"></div>
+    </div>
+
+    <div class="budget-section" style="border-top:1px solid #21262d">
+      <div class="signals-title">Budget</div>
+      <input type="range" class="budget-slider" min="40" max="60" value="50" step="0.5" oninput="document.getElementById('bval').textContent=this.value">
+      <div class="budget-display">Optimalt hold for <span id="bval">50</span>M kr</div>
+    </div>
+
+    <div class="best-team">
+      <div class="signals-title" style="margin-bottom:10px">Anbefalet hold</div>
+      <div class="team-grid" id="teamGrid"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const riders = [
+  { name: "Tadej Pogačar", team: "UAE Team Emirates", score: 94, price: 9.5, delta: 0, signals: [91,88,100,85,76,95] },
+  { name: "Jonas Vingegaard", team: "Visma–Lease a Bike", score: 89, price: 8.9, delta: 1, signals: [84,90,96,79,71,90] },
+  { name: "Remco Evenepoel", team: "Soudal Quick-Step", score: 81, price: 7.8, delta: -1, signals: [78,82,88,74,68,78] },
+  { name: "Carlos Rodríguez", team: "INEOS Grenadiers", score: 74, price: 6.2, delta: 2, signals: [70,68,82,72,58,71] },
+  { name: "Enric Mas", team: "Movistar Team", score: 71, price: 5.8, delta: 0, signals: [65,72,79,68,55,62] },
+  { name: "Felix Gall", team: "AG2R Citroën", score: 68, price: 5.1, delta: 3, signals: [60,65,76,80,52,59] },
+  { name: "Guillaume Martin", team: "Cofidis", score: 62, price: 4.4, delta: 0, signals: [58,60,70,75,48,54] },
+  { name: "Neilson Powless", team: "EF Education", score: 58, price: 4.0, delta: -2, signals: [55,58,64,70,44,50] },
+  { name: "Thymen Arensman", team: "INEOS Grenadiers", score: 55, price: 3.8, delta: 1, signals: [52,54,62,68,41,47] },
+  { name: "Lenny Martinez", team: "Groupama–FDJ", score: 52, price: 3.5, delta: 0, signals: [48,50,60,65,38,44] },
+  { name: "David Gaudu", team: "Groupama–FDJ", score: 49, price: 3.2, delta: -1, signals: [45,47,57,62,35,41] },
+  { name: "Aleksandr Vlasov", team: "Bora–Hansgrohe", score: 46, price: 3.0, delta: 0, signals: [42,44,54,60,32,38] },
+];
+
+const signalLabels = ["VeloScore","Odds","Disciplin","Form","ML","PCS Rang"];
+const signalColors = ["#58a6ff","#f97316","#3fb950","#a371f7","#f85149","#e6c76a"];
+
+function renderRadar(signals, size=44) {
+  const cx = size/2, cy = size/2, r = size/2 - 4;
+  const n = signals.length;
+  const pts = signals.map((v,i) => {
+    const angle = (Math.PI*2*i/n) - Math.PI/2;
+    const rv = r * v/100;
+    return [cx + rv*Math.cos(angle), cy + rv*Math.sin(angle)];
+  });
+  const poly = pts.map(p=>p.join(",")).join(" ");
+  const rings = [0.25,0.5,0.75,1].map(f => {
+    const rps = Array.from({length:n},(_,i)=>{
+      const a = (Math.PI*2*i/n)-Math.PI/2;
+      return [cx+r*f*Math.cos(a), cy+r*f*Math.sin(a)];
+    }).map(p=>p.join(",")).join(" ");
+    return `<polygon points="${rps}" fill="none" stroke="#30363d" stroke-width="0.5"/>`;
+  }).join("");
+  const axes = Array.from({length:n},(_,i)=>{
+    const a = (Math.PI*2*i/n)-Math.PI/2;
+    return `<line x1="${cx}" y1="${cy}" x2="${cx+r*Math.cos(a)}" y2="${cy+r*Math.sin(a)}" stroke="#30363d" stroke-width="0.5"/>`;
+  }).join("");
+  return `<svg class="radar" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+    ${rings}${axes}
+    <polygon points="${poly}" fill="rgba(249,115,22,0.2)" stroke="#f97316" stroke-width="1.5"/>
+  </svg>`;
+}
+
+function renderSignalBars(signals, target) {
+  target.innerHTML = signalLabels.map((label,i) => `
+    <div class="signal-row">
+      <div class="signal-label">${label}</div>
+      <div class="signal-bar-wrap"><div class="signal-bar-fill" style="width:${signals[i]}%;background:${signalColors[i]}"></div></div>
+      <div class="signal-val">${signals[i]}</div>
+    </div>`).join("");
+}
+
+function selectRider(idx) {
+  document.querySelectorAll('.rider-row').forEach((el,i) => el.classList.toggle('selected', i===idx));
+  const r = riders[idx];
+  document.getElementById('detailName').textContent = r.name;
+  document.getElementById('detailTeam').textContent = r.team;
+  document.getElementById('detailScore').textContent = r.score;
+  document.getElementById('detailPts').textContent = `~${Math.round(r.price*1000/9.5*530)}K kr forventet`;
+  renderSignalBars(r.signals, document.getElementById('signalBars'));
+}
+
+// Render rider list
+const list = document.getElementById('riderList');
+list.innerHTML = riders.map((r,i) => {
+  const dStr = r.delta > 0 ? `<span class="delta-up">▲${r.delta}</span>` : r.delta < 0 ? `<span class="delta-dn">▼${Math.abs(r.delta)}</span>` : `<span class="delta-eq">—</span>`;
+  const rankCls = i===0?'rider-rank top1':i<3?'rider-rank top3':'rider-rank';
+  return `<div class="rider-row${i===0?' selected':''}" onclick="selectRider(${i})">
+    <div class="${rankCls}">${i+1}</div>
+    <div>
+      <div class="rider-name">${r.name}</div>
+      <div class="rider-team">${r.team}</div>
+    </div>
+    <div class="radar-wrap">${renderRadar(r.signals)}</div>
+    <div style="text-align:right">
+      <div class="score-big">${r.score}</div>
+      <div class="price-tag">${r.price}M</div>
+      <div style="margin-top:2px">${dStr}</div>
+    </div>
+  </div>`;
+}).join("");
+
+// Render team
+const team = [
+  {name:"Pogačar",price:9.5,cap:true},{name:"Vingegaard",price:8.9},{name:"Evenepoel",price:7.8},
+  {name:"C. Rodríguez",price:6.2},{name:"Gall",price:5.1},{name:"Martin",price:4.4},
+  {name:"Powless",price:4.0},{name:"Arensman",price:3.8}
+];
+document.getElementById('teamGrid').innerHTML = team.map(t=>`
+  <div class="team-card${t.cap?' captain':''}">
+    <div class="team-card-name">${t.name}</div>
+    <div class="team-card-price">${t.price}M kr</div>
+    ${t.cap?'<div class="team-card-cap">⭐ KAPTAJN ×2</div>':''}
+  </div>`).join("");
+
+// Init signals for first rider
+renderSignalBars(riders[0].signals, document.getElementById('signalBars'));
+</script>
+</body>
+</html>
