@@ -590,6 +590,8 @@ def main() -> None:
                     round(sigs.get("odds", 0), 3),
                     round(sigs.get("discipline", 0), 3),
                     round(sigs.get("form", 0), 3),
+                    round(sigs.get("ml", 0), 3),
+                    round(sigs.get("pcs_rank", 0), 3),
                 ],
                 "reason":   p.get("reasoning", ""),
                 "actual":   actual,

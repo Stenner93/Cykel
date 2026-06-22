@@ -60,7 +60,7 @@ function ctxBadge(status, note, mult) {
 }
 
 function miniBar(signals) {
-  const labels = ['VeloScore','Odds','Disciplin','Form'];
+  const labels = ['VeloScore','Odds','Disciplin','Form','ML','PCS Rang'];
   return `<div class="mini-signals">${signals.map((v,i)=>
     `<div class="mini-seg ${v>0.3?'on':''}" title="${labels[i]}: ${(v*100).toFixed(0)}%"></div>`
   ).join('')}</div>`;

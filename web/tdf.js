@@ -54,8 +54,8 @@ function tdfCtxBadge(status, note, mult) {
 }
 
 function tdfMiniBar(signals) {
-  const labels = ['VeloScore','Odds','Disciplin','Form'];
-  return `<div class="mini-signals">${(signals||[0,0,0,0]).map((v,i)=>
+  const labels = ['VeloScore','Odds','Disciplin','Form','ML','PCS Rang'];
+  return `<div class="mini-signals">${(signals||[0,0,0,0,0,0]).map((v,i)=>
     `<div class="mini-seg ${v>0.3?'on':''}" title="${labels[i]}: ${(v*100).toFixed(0)}%"></div>`
   ).join('')}</div>`;
 }

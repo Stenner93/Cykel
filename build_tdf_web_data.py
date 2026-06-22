@@ -28,6 +28,7 @@ sys.path.insert(0, str(ROOT))
 import scrape_holdet as _h
 from src.predictor import predict_all
 from src.optimizer import make_best_team
+from src.ml_signal import compute_ml_scores
 from src.scoring import STAGE_PTS, GC_PTS, JERSEY, SPT_PER_PT, LATE_MAX, LATE_PER_MIN, DNF_PEN
 from src.scrape_predictions import get_stage_predictions
 from scrape_pcs import check_dns
@@ -491,10 +492,26 @@ def main() -> None:
     elif not finished:
         print("  DNS-check springes over (løbet ikke startet endnu)")
 
+    # ── Load PCS 12-month rankings + ML signal ───────────────────────────────
+    pcs_rankings_raw = _load_json(DATA / "cache" / "pcs_rankings.json")
+    pcs_rank_data: dict[str, float] = {}
+    pcs_n_results_data: dict[str, int] = {}
+    for rid, entry in pcs_raw.items():
+        pcs_url = entry.get("pcs_url", "")
+        if pcs_url and "/rider/" in pcs_url:
+            slug = pcs_url.split("/rider/")[-1].strip("/")
+            rank_entry = pcs_rankings_raw.get(slug, {})
+            if rank_entry.get("pts", 0) > 0:
+                pcs_rank_data[rid] = float(rank_entry["pts"])
+        pcs_n_results_data[rid] = entry.get("n_results", 0)
+
+    gt_results_raw = _load_json(DATA / "cache" / "gt_stage_results.json")
+
     print(f"  CyclingOracle: {len(co_data)}  PCS form: {len(pcs_form)}"
           f"  PCS specialties: {len(pcs_specialties)}")
     print(f"  PCS stage types: {len(stage_types)} etaper  "
           f"profile scores: {len(stage_scores)} etaper")
+    print(f"  PCS ranking: {len(pcs_rank_data)} ryttere  ML: {len(ml_scores)} ryttere")
 
     # ── Fetch actuals + actions for completed stages ─────────────────────────
     print(f"  Henter actual-point for {len(finished)} afsluttede etaper…")
@@ -628,6 +645,16 @@ def main() -> None:
             if dns_id not in stage_ctx:
                 stage_ctx[dns_id] = {"status": "dns", "note": "Ikke på PCS startliste"}
 
+        stage_ml = compute_ml_scores(
+            riders=riders,
+            stage_type=stype,
+            stage_num=stage_num,
+            profile_score=profile_score,
+            gt_results=gt_results_raw or None,
+            pcs_form_raw=pcs_raw or None,
+            pcs_rankings=pcs_rankings_raw or None,
+        )
+
         preds = predict_all(
             riders=riders,
             stage_type=stype,
@@ -642,6 +669,10 @@ def main() -> None:
             winner_pts_override=TDF_WINNER_POINTS,
             rider_context=stage_ctx or None,
             pcs_specialty_data=pcs_specialties or None,
+            ml_scores=stage_ml or None,
+            ml_prob_data=stage_ml or None,
+            pcs_rank_data=pcs_rank_data or None,
+            pcs_n_results_data=pcs_n_results_data or None,
         )
 
         stage_actuals = actuals.get(stage_num, {})
@@ -674,6 +705,8 @@ def main() -> None:
                     round(sigs.get("odds", 0), 3),
                     round(sigs.get("discipline", 0), 3),
                     round(sigs.get("form", 0), 3),
+                    round(sigs.get("ml", 0), 3),
+                    round(sigs.get("pcs_rank", 0), 3),
                 ],
                 "reason":   p.get("reasoning", ""),
                 "actual":   actual,
