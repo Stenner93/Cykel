@@ -144,7 +144,7 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
 
           # Gem historikdata og model-output
-          git add data/ml/ web/data/ml_validation.json || true
+          git add data/ml/ web/data/ml_validation.json data/cache/rider_historical_form.json || true
 
           if git diff --staged --quiet; then
             echo "Ingen ændringer"

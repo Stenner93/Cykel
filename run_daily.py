@@ -416,9 +416,11 @@ def main():
         top_ml = sorted(ml_scores.items(), key=lambda x: x[1], reverse=True)[:3]
         id_to_name = {r["id"]: r["full_name"] for r in riders}
         top_ml_str = ", ".join(f"{id_to_name.get(k, k)} ({v:.0f})" for k, v in top_ml)
+        ml_source = "ML rolling-form" if n_gt_stages >= 5 else f"historisk styrke ({n_gt_stages} etaper kørt)"
         print(f"  ML-signal:     {len(ml_scores)} ryttere  "
-              f"(GT-etaper: {n_gt_stages})  Top3: {top_ml_str}")
+              f"(GT-etaper: {n_gt_stages} — {ml_source})  Top3: {top_ml_str}")
     else:
+        ml_source = "ikke tilgængelig"
         print(f"  ML-signal:     ikke tilgængelig (model ikke indlæst)")
 
     # ── Run predictions ───────────────────────────────────────
@@ -494,6 +496,8 @@ def main():
         "stage":        stage,
         "stage_type":   stage_type,
         "generated":    _now_iso(),
+        "ml_source":    ml_source,
+        "ml_gt_stages": n_gt_stages,
         "current_team": current_team_data,
         "teams":        teams,
         "best_team":    best_team,

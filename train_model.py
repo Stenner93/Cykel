@@ -34,10 +34,12 @@ from sklearn.metrics import roc_auc_score, average_precision_score
 ROOT    = Path(__file__).parent
 ML_DIR  = ROOT / "data" / "ml"
 WEB_DIR = ROOT / "web" / "data"
+CACHE_DIR   = ROOT / "data" / "cache"
 CSV_IN  = ML_DIR / "training_data.csv"
 META_IN = ML_DIR / "training_data_meta.json"
 MODEL_OUT   = ML_DIR / "model.lgbm"
 VALID_OUT   = WEB_DIR / "ml_validation.json"
+HIST_FORM_OUT = CACHE_DIR / "rider_historical_form.json"
 
 LGB_PARAMS = {
     "objective":        "binary",
@@ -189,6 +191,23 @@ def main() -> None:
         ML_DIR.mkdir(parents=True, exist_ok=True)
         model.booster_.save_model(str(MODEL_OUT))
         print(f"\nModel gemt: {MODEL_OUT}")
+
+    # Save recency-weighted historical form per rider (for ML signal on stage 1)
+    # Weights: 2025=5, 2024=3, 2023=2, 2022=1, 2021=1
+    YEAR_W = {2025: 5, 2024: 3, 2023: 2, 2022: 1, 2021: 1}
+    hist_form: dict[str, dict] = {}
+    for slug, grp in df[~df["dnf"].astype(bool)].groupby("rider_slug"):
+        entry: dict[str, float] = {}
+        for stype in ["sprint", "mountain", "hilly", "tt", "cobbled"]:
+            sub = grp[grp["stage_type"].isin([stype] + (["ttt"] if stype == "tt" else []))]
+            if len(sub) >= 3:  # kræver mindst 3 resultater for pålidelighed
+                weights = sub["year"].map(lambda y: YEAR_W.get(y, 1))
+                entry[stype] = round(float((sub["position"] * weights).sum() / weights.sum()), 1)
+        if entry:
+            hist_form[slug] = entry
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    HIST_FORM_OUT.write_text(json.dumps(hist_form, ensure_ascii=False), encoding="utf-8")
+    print(f"Historisk form gemt: {HIST_FORM_OUT}  ({len(hist_form)} ryttere)")
 
     # Save validation JSON for web UI
     val_out = {
