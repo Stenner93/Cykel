@@ -1,7 +1,7 @@
 {
   "stage": 1,
   "stage_type": "ttt",
-  "generated": "2026-06-22T20:24:53.764484+00:00",
+  "generated": "2026-06-22T20:27:53.231158+00:00",
   "ml_source": "historisk styrke (0 etaper kørt)",
   "ml_gt_stages": 0,
   "current_team": null,
@@ -267,12 +267,12 @@
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "RB-B",
-          "TV|L",
-          "TPCT",
-          "INEOSG",
           "UAETEXRG",
-          "L-T"
+          "L-T",
+          "TPCT",
+          "RB-B",
+          "INEOSG",
+          "TV|L"
         ],
         "n_teams": 6,
         "n_transfers": 0,
@@ -541,11 +541,11 @@
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "RB-B",
-          "TV|L",
-          "INEOSG",
           "UAETEXRG",
           "L-T",
+          "RB-B",
+          "INEOSG",
+          "TV|L",
           "G-F"
         ],
         "n_teams": 6,
@@ -815,12 +815,12 @@
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "RB-B",
-          "TPP",
-          "TV|L",
-          "INEOSG",
           "UAETEXRG",
-          "L-T"
+          "L-T",
+          "RB-B",
+          "INEOSG",
+          "TV|L",
+          "TPP"
         ],
         "n_teams": 6,
         "n_transfers": 0,
@@ -1090,12 +1090,12 @@
       "n_budget_riders": 4,
       "risk_profile": "Lav",
       "teams_represented": [
-        "RB-B",
-        "TPP",
-        "TV|L",
-        "INEOSG",
         "UAETEXRG",
-        "L-T"
+        "L-T",
+        "RB-B",
+        "INEOSG",
+        "TV|L",
+        "TPP"
       ],
       "n_teams": 6,
       "n_transfers": 0,
