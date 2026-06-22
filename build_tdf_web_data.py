@@ -389,12 +389,21 @@ def main() -> None:
         print(f"  [cache] {len(riders)} ryttere fra tdf2026_players.json")
     else:
         print("  Henter spillerliste fra Holdet…")
-        player_by_id, person_by_id = _h.fetch_player_info(TDF_GAME_ID, TDF_CARTRIDGE)
-        riders = build_riders(player_by_id, person_by_id, riders_json)
-        PLAYERS_CACHE.write_text(
-            json.dumps(riders, ensure_ascii=False, indent=2), encoding="utf-8"
-        )
-        print(f"  {len(riders)} ryttere gemt til cache")
+        try:
+            player_by_id, person_by_id = _h.fetch_player_info(TDF_GAME_ID, TDF_CARTRIDGE)
+            riders = build_riders(player_by_id, person_by_id, riders_json)
+            PLAYERS_CACHE.write_text(
+                json.dumps(riders, ensure_ascii=False, indent=2), encoding="utf-8"
+            )
+            print(f"  {len(riders)} ryttere gemt til cache")
+        except Exception as e:
+            if PLAYERS_CACHE.exists():
+                print(f"  ⚠️  Holdet player-fetch fejl ({e}) — bruger cached spillerliste")
+                riders = json.loads(PLAYERS_CACHE.read_text(encoding="utf-8"))
+                print(f"  [cache] {len(riders)} ryttere fra tdf2026_players.json")
+            else:
+                print(f"  ❌  Holdet player-fetch fejl og ingen cache — afbryder ({e})")
+                return
 
     # Build lookup: holdet_person_id → rider (for actuals)
     pid_to_rider: dict[int, dict] = {
@@ -410,11 +419,22 @@ def main() -> None:
         events         = events_raw
         event_info     = {int(k): v for k, v in event_info_raw.items()}
     else:
-        events, event_info = _h.fetch_schedule(TDF_GAME_ID)
-        _save_raw("schedule.json", {
-            "events":     events,
-            "event_info": {str(k): v for k, v in event_info.items()},
-        })
+        try:
+            events, event_info = _h.fetch_schedule(TDF_GAME_ID)
+            _save_raw("schedule.json", {
+                "events":     events,
+                "event_info": {str(k): v for k, v in event_info.items()},
+            })
+        except Exception as e:
+            if sched_cache:
+                print(f"  ⚠️  Holdet schedule 403/fejl ({e}) — bruger cached etapeplan")
+                events_raw     = sched_cache.get("events", [])
+                event_info_raw = sched_cache.get("event_info", {})
+                events         = events_raw
+                event_info     = {int(k): v for k, v in event_info_raw.items()}
+            else:
+                print(f"  ❌  Holdet schedule fejl og ingen cache — afbryder ({e})")
+                return
 
     n_stages = len(events)
     finished = [eid for eid in events
@@ -653,6 +673,8 @@ def main() -> None:
             gt_results=gt_results_raw or None,
             pcs_form_raw=pcs_raw or None,
             pcs_rankings=pcs_rankings_raw or None,
+            co_data=co_data or None,
+            pcs_specialty_data=pcs_specialties or None,
         )
 
         preds = predict_all(

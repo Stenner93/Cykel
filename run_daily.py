@@ -445,6 +445,11 @@ def main():
     else:
         print(f"  PCS ranking:   (ingen data — kør scrape_pcs_rankings.py)")
     n_gt_stages  = len((gt_results or {}).get("stages", {}))
+    pcs_specialty_data = {
+        rid: entry["pcs_specialties"]
+        for rid, entry in (pcs_form_raw or {}).items()
+        if entry.get("pcs_specialties")
+    }
     ml_scores    = compute_ml_scores(
         riders=riders,
         stage_type=stage_type,
@@ -453,6 +458,8 @@ def main():
         gt_results=gt_results,
         pcs_form_raw=pcs_form_raw,
         pcs_rankings=pcs_rankings or None,
+        co_data=co_data or None,
+        pcs_specialty_data=pcs_specialty_data or None,
     )
     if ml_scores:
         top_ml = sorted(ml_scores.items(), key=lambda x: x[1], reverse=True)[:3]

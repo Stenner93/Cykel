@@ -578,13 +578,13 @@ def predict_all(
 
     disc_rescaled: dict[str, float] = dict(field_vals)
     if field_vals:
-        lo, hi = min(field_vals.values()), max(field_vals.values())
-        if hi > lo:
-            disc_rescaled = {
-                rid: round((v - lo) / (hi - lo) * 100, 1)
-                for rid, v in field_vals.items()
-            }
-        # if hi == lo, every rider is identical on this discipline — leave as-is
+        # Rank-based: best → 100, falling exponentially.
+        # rank 1→100, rank 5→76, rank 10→50, rank 20→25
+        sorted_rids = sorted(field_vals, key=field_vals.__getitem__, reverse=True)
+        disc_rescaled = {
+            rid: round(100.0 * math.exp(-0.07 * i), 1)
+            for i, rid in enumerate(sorted_rids)
+        }
 
     # ── Field-normaliser PCS 12-mdr. rankingpoint (0-100) ────────────────────
     pcs_rank_normalized: dict[str, float] = {}

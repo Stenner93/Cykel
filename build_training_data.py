@@ -37,7 +37,7 @@ HIST     = ML_DIR / "historical_results.json"
 OUT_CSV  = ML_DIR / "training_data.csv"
 OUT_META = ML_DIR / "training_data_meta.json"
 
-CO_KEYS   = ["MTN", "SPR", "HLL", "ITT", "COB", "GC"]
+CO_KEYS   = ["mtn", "spr", "hll", "itt", "cob", "gc"]
 SPEC_KEYS = ["climber", "sprint", "tt", "hills"]
 STAGE_TYPES = ["sprint", "hilly", "mountain", "tt", "ttt", "cobbled"]
 
@@ -61,10 +61,15 @@ def load_specialties() -> dict[str, dict]:
     raw = json.loads(path.read_text(encoding="utf-8"))
     out = {}
     for rider_id, data in raw.items():
-        specs = data.get("specialties", {})
+        specs = data.get("pcs_specialties", {})
         if specs:
             out[rider_id] = {k.lower(): v for k, v in specs.items()}
     return out
+
+
+def _slug_to_id(slug: str) -> str:
+    """PCS slug 'jonas-vingegaard' → holdet ID 'jonas_vingegaard'."""
+    return slug.replace("-", "_")
 
 
 def build_co_lookup(co_raw: dict) -> dict[str, dict]:
@@ -147,9 +152,9 @@ def main() -> None:
                 "is_hilly":    int(stype == "hilly"),
                 "is_tt":       int(stype in ("tt", "ttt")),
                 # CO ratings (None → -1 for tree model)
-                **{f"co_{k}": co_data.get(slug, {}).get(k, -1) for k in CO_KEYS},
+                **{f"co_{k}": co_data.get(_slug_to_id(slug), {}).get(k, -1) for k in CO_KEYS},
                 # PCS specialties (None → -1)
-                **{f"spec_{k}": spec_data.get(slug, {}).get(k, -1) for k in SPEC_KEYS},
+                **{f"spec_{k}": spec_data.get(_slug_to_id(slug), {}).get(k, -1) for k in SPEC_KEYS},
                 # Rolling form within this GT
                 "gt_form_5":   gt_rolling_form(hist_before, 5) or -1,
                 "gt_form_10":  gt_rolling_form(hist_before, 10) or -1,
@@ -172,6 +177,8 @@ def main() -> None:
 
     print(f"Bygget {len(rows):,} trænings-rækker  "
           f"({len(stage_keys)} etaper, {len(rider_history)} ryttere)")
+    co_hits = sum(1 for r in records if co_data.get(_slug_to_id(r["rider_slug"])))
+    print(f"  CO hits: {co_hits}/{len(records)} rows")
 
     ML_DIR.mkdir(parents=True, exist_ok=True)
 

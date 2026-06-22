@@ -206,9 +206,14 @@ def _lgbm_scores(
     profile_score: int | None,
     stages: dict[str, list[dict]],
     pcs_form_raw: dict | None,
+    co_data: dict | None = None,
+    pcs_specialty_data: dict | None = None,
 ) -> dict[str, float] | None:
     """
     Kør LightGBM-modellen med aktuel in-race rolling-form.
+    CO og specialty features er aktive efter retraining med de fixede training data.
+    co_data er keyed by holdet rider_id (underscore), samme som `rid`.
+    pcs_specialty_data er keyed by holdet rider_id (underscore), samme som `rid`.
     Returnerer None hvis model ikke er tilgængelig.
     """
     model = _get_model()
@@ -235,12 +240,15 @@ def _lgbm_scores(
 
         gt_form_5, gt_form_10, gt_wins = _rolling_form(slug, stages, stage_num)
 
-        # co_* og spec_* var -1 i træningsdataen pga. key-mismatch — ignorer.
+        co   = (co_data or {}).get(rid, {})
+        spec = (pcs_specialty_data or {}).get(rid, {})
         row = [
             ps,
             is_sprint, is_mountain, is_hilly, is_tt,
-            -1.0, -1.0, -1.0, -1.0, -1.0, -1.0,
-            -1.0, -1.0, -1.0, -1.0,
+            co.get("mtn", -1), co.get("spr", -1), co.get("hll", -1),
+            co.get("itt", -1), co.get("cob", -1), co.get("gc",  -1),
+            spec.get("climber", -1), spec.get("sprint", -1),
+            spec.get("tt", -1), spec.get("hills", -1),
             gt_form_5, gt_form_10, float(gt_wins),
         ]
         rows.append(row)
@@ -269,6 +277,8 @@ def compute_ml_scores(
     gt_results: dict | None,
     pcs_form_raw: dict | None = None,
     pcs_rankings: dict | None = None,   # {pcs_slug: {rank, pts}}
+    co_data: dict | None = None,
+    pcs_specialty_data: dict | None = None,
 ) -> dict[str, float]:
     """
     Beregn ML/historisk styrke-scorer for alle ryttere.
@@ -280,6 +290,7 @@ def compute_ml_scores(
     - Etape 5+ (>= 5 afviklede etaper): LightGBM med in-race rolling-form.
       Modellen bruger gennemsnitlig placering i de seneste 5/10 etaper og
       differentierer baseret på aktuel form i dette specifikke løb.
+      CO og specialty features er aktive efter retraining med fixede training data.
 
     Returnerer {rider_id: score 0-100} — felt-normaliseret.
     """
@@ -287,7 +298,10 @@ def compute_ml_scores(
     n_done     = sum(1 for s in stages if int(s) < stage_num)
 
     if n_done >= MIN_GT_STAGES_FOR_MODEL:
-        lgbm = _lgbm_scores(riders, stage_type, stage_num, profile_score, stages, pcs_form_raw)
+        lgbm = _lgbm_scores(
+            riders, stage_type, stage_num, profile_score, stages, pcs_form_raw,
+            co_data=co_data, pcs_specialty_data=pcs_specialty_data,
+        )
         if lgbm is not None:
             return lgbm
 
