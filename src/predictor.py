@@ -35,11 +35,12 @@ from typing import Any
 # (if noisily-measured) correlation. Odds kept a meaningful prior weight
 # despite no validation data, since it's theoretically sound when present.
 DEFAULT_WEIGHTS = {
-    "veloscore":     0.27,   # VeloScore normalised 0-10
-    "odds_prob":     0.18,   # Bookmaker implied win probability
-    "discipline":    0.22,   # CyclingOracle discipline match 0-100
-    "form":          0.23,   # PCS recent form 0-100 (short + long-term blend)
-    "ml":            0.10,   # LightGBM top-5 sandsynlighed (felt-normaliseret 0-100)
+    "veloscore":  0.20,   # was 0.27 — reduceret; r²=0.015 i kalibrering
+    "odds_prob":  0.18,
+    "discipline": 0.20,   # was 0.22
+    "form":       0.22,   # was 0.23
+    "ml":         0.08,   # was 0.10
+    "pcs_rank":   0.12,   # NY — PCS 12-måneders rangerings-kvalitetssignal
 }
 
 # Mapping stage_type → CyclingOracle discipline key
@@ -215,6 +216,8 @@ def predict_rider(
     winner_pts_override: dict[str, int] | None = None,  # Race-specific winner points
     disc_raw_override: float | None = None,  # pre-rescaled field-relative disc value
     ml_prob: float | None = None,            # ML felt-normaliseret score 0-100
+    pcs_n_results: int = 0,            # Antal nylige resultater i form-cache
+    pcs_rank_pts: float | None = None, # Felt-normaliseret PCS 12-mdr. pts (0-100)
 ) -> dict[str, Any]:
     """
     Predict expected fantasy points for a rider on a specific stage.
@@ -293,13 +296,20 @@ def predict_rider(
 
     form_signal = form_val / 100.0
 
+    # Sparse data protection: ryttere med få resultater har usikre form-estimater.
+    # Blend form_signal mod neutral (0.5) proportionalt med antal resultater.
+    # 0 resultater → form_signal=0.5 (neutral); 8+ resultater → fuldt signal.
+    _sparsity = min(1.0, pcs_n_results / 8.0)
+    form_signal = _sparsity * form_signal + (1.0 - _sparsity) * 0.5
+
     # --- Composite win-probability estimate ---
     # Dynamisk normalisering: kun tilstedeværende signaler bidrager, og
     # deres relative vægte bevares. Dette forhindrer at fraværende signaler
     # (VeloScore, odds, ML) spiser kapacitet og gør ryttere ens.
-    has_vs   = veloscore_rank is not None or veloscore_score is not None
-    has_odds = odds_prob is not None
-    has_ml   = ml_prob is not None
+    has_vs       = veloscore_rank is not None or veloscore_score is not None
+    has_odds     = odds_prob is not None
+    has_ml       = ml_prob is not None
+    has_pcs_rank = pcs_rank_pts is not None
 
     available_signals: dict[str, float] = {}
     if has_vs:
@@ -310,6 +320,8 @@ def predict_rider(
     available_signals["form"]       = form_signal
     if has_ml:
         available_signals["ml"]       = ml_prob / 100.0  # 0-100 → 0-1
+    if has_pcs_rank:
+        available_signals["pcs_rank"] = pcs_rank_pts / 100.0
 
     total_w = sum(w.get(k, 0.0) for k in available_signals)
     if total_w > 0:
@@ -407,6 +419,7 @@ def predict_rider(
             "discipline":   round(disc_signal, 3),
             "form":         round(form_signal, 3),
             "ml":           round(ml_prob / 100.0, 3) if ml_prob is not None else None,
+            "pcs_rank":     round(pcs_rank_pts / 100.0, 3) if pcs_rank_pts is not None else None,
         },
         "profile_scale":     round(_profile_scale(profile_score, stage_type), 3),
         "sprint_class_rank": sprint_class_rank,
@@ -444,6 +457,8 @@ def predict_all(
     rider_context: dict[str, dict] | None = None,       # {rider_id: {status, note}}
     pcs_specialty_data: dict[str, dict] | None = None,  # {rider_id: {climber, sprint, tt, ...}}
     ml_prob_data: dict[str, float] | None = None,       # {rider_id: felt-normaliseret 0-100}
+    pcs_rank_data: dict[str, float] | None = None,      # {rider_id: pts_raw}
+    pcs_n_results_data: dict[str, int] | None = None,   # {rider_id: n_results}
 ) -> list[dict]:
     """
     Predict expected points for ALL riders and return sorted list.
@@ -557,6 +572,19 @@ def predict_all(
             }
         # if hi == lo, every rider is identical on this discipline — leave as-is
 
+    # ── Field-normaliser PCS 12-mdr. rankingpoint (0-100) ────────────────────
+    pcs_rank_normalized: dict[str, float] = {}
+    if pcs_rank_data:
+        raw_pts = {rid: pts for rid, pts in pcs_rank_data.items() if pts > 0}
+        if raw_pts:
+            sorted_pts = sorted(raw_pts.values())
+            idx90 = max(0, int(len(sorted_pts) * 0.90) - 1)
+            max_pts = sorted_pts[idx90] or 1.0
+            pcs_rank_normalized = {
+                rid: round(min(100.0, pts / max_pts * 100.0), 1)
+                for rid, pts in raw_pts.items()
+            }
+
     results = []
     for rider in riders:
         name_lower = rider["full_name"].lower()
@@ -612,6 +640,8 @@ def predict_all(
             winner_pts_override=winner_pts_override,
             disc_raw_override=disc_rescaled.get(rider["id"]),
             ml_prob=(ml_prob_data or {}).get(rider["id"]),
+            pcs_n_results=(pcs_n_results_data or {}).get(rider["id"], 0),
+            pcs_rank_pts=pcs_rank_normalized.get(rider["id"]),
         )
         # Apply rider context multiplier (status from previous stage)
         ctx = (rider_context or {}).get(rider["id"])

@@ -130,6 +130,7 @@ def _historical_strength_scores(
     riders: list[dict[str, Any]],
     stage_type: str,
     pcs_form_raw: dict | None,
+    pcs_rankings: dict | None = None,   # {pcs_slug: {rank, pts, name}}
 ) -> dict[str, float]:
     """
     Felt-normaliseret historisk GT-styrke (0-100) baseret på type-specifik
@@ -171,6 +172,30 @@ def _historical_strength_scores(
             result[rid] = round(100.0 - (v - lo) / (hi - lo) * 100.0, 1)
         else:
             result[rid] = 50.0
+
+    # Blend med PCS 12-mdr. rangering (20% vægt) for at korrigere for ryttere
+    # der ikke har nylige GT-resultater men er topklassede (f.eks. Pogacar).
+    if pcs_rankings:
+        field_pts = [
+            pcs_rankings.get(_holdet_to_pcs_slug(r["id"], pcs_form_raw), {}).get("pts", 0)
+            for r in riders
+        ]
+        nonzero = [p for p in field_pts if p > 0]
+        if nonzero:
+            sorted_f = sorted(nonzero)
+            max_f = sorted_f[max(0, int(len(sorted_f) * 0.90) - 1)] or 1.0
+            for rider in riders:
+                rid  = rider["id"]
+                slug = _holdet_to_pcs_slug(rid, pcs_form_raw)
+                pts  = pcs_rankings.get(slug, {}).get("pts", 0)
+                pcs_q = min(100.0, pts / max_f * 100.0) if pts > 0 else 25.0
+                result[rid] = round(0.80 * result.get(rid, 50.0) + 0.20 * pcs_q, 1)
+            # Re-normalise after blending
+            vals = list(result.values())
+            lo2, hi2 = min(vals), max(vals)
+            if hi2 > lo2:
+                result = {rid: round((v - lo2) / (hi2 - lo2) * 100.0, 1) for rid, v in result.items()}
+
     return result
 
 
@@ -243,6 +268,7 @@ def compute_ml_scores(
     profile_score: int | None,
     gt_results: dict | None,
     pcs_form_raw: dict | None = None,
+    pcs_rankings: dict | None = None,   # {pcs_slug: {rank, pts}}
 ) -> dict[str, float]:
     """
     Beregn ML/historisk styrke-scorer for alle ryttere.
@@ -266,7 +292,7 @@ def compute_ml_scores(
             return lgbm
 
     # Fallback: historisk styrke (etape 1-4, eller model ikke tilgængelig)
-    hist = _historical_strength_scores(riders, stage_type, pcs_form_raw)
+    hist = _historical_strength_scores(riders, stage_type, pcs_form_raw, pcs_rankings)
     if hist:
         return hist
 

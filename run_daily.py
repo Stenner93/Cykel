@@ -154,6 +154,38 @@ def load_pcs_form_raw() -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_pcs_rankings() -> dict:
+    """
+    Load PCS 12-month individual ranking.
+    Returns {pcs_slug: {rank, pts, name}} or {}.
+    Maps back to rider_id using pcs_form.json pcs_url.
+    """
+    path = DATA_DIR / "cache" / "pcs_rankings.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def build_pcs_rank_by_rider(rankings: dict, pcs_form_raw: dict) -> tuple[dict, dict]:
+    """
+    Convert {pcs_slug: {rank, pts}} to:
+      {rider_id: pts}       — for predict_all() field-normalization
+      {rider_id: n_results} — for sparse data protection
+    using pcs_form.json to map rider_id → pcs_slug.
+    """
+    pts_by_rider: dict[str, float] = {}
+    n_results_by_rider: dict[str, int] = {}
+    for rider_id, entry in pcs_form_raw.items():
+        pcs_url = entry.get("pcs_url", "")
+        if pcs_url and "/rider/" in pcs_url:
+            slug = pcs_url.split("/rider/")[-1].strip("/")
+            rank_entry = rankings.get(slug, {})
+            if rank_entry.get("pts", 0) > 0:
+                pts_by_rider[rider_id] = float(rank_entry["pts"])
+        n_results_by_rider[rider_id] = entry.get("n_results", 0)
+    return pts_by_rider, n_results_by_rider
+
+
 def load_profile_score(stage: int) -> int | None:
     """
     Load PCS ProfileScore for a specific stage of the current race.
@@ -403,6 +435,15 @@ def main():
     from src.ml_signal import compute_ml_scores
     gt_results   = load_gt_stage_results()
     pcs_form_raw = load_pcs_form_raw()
+    pcs_rankings  = load_pcs_rankings()
+    pcs_rank_data, pcs_n_results_data = build_pcs_rank_by_rider(pcs_rankings, pcs_form_raw)
+    if pcs_rank_data:
+        top3_rank = sorted(pcs_rank_data.items(), key=lambda x: -x[1])[:3]
+        id_to_name = {r["id"]: r["full_name"] for r in riders}
+        print(f"  PCS ranking:   {len(pcs_rank_data)} ryttere  Top3: "
+              f"{', '.join(id_to_name.get(k,k) for k,_ in top3_rank)}")
+    else:
+        print(f"  PCS ranking:   (ingen data — kør scrape_pcs_rankings.py)")
     n_gt_stages  = len((gt_results or {}).get("stages", {}))
     ml_scores    = compute_ml_scores(
         riders=riders,
@@ -411,6 +452,7 @@ def main():
         profile_score=profile_sc,
         gt_results=gt_results,
         pcs_form_raw=pcs_form_raw,
+        pcs_rankings=pcs_rankings or None,
     )
     if ml_scores:
         top_ml = sorted(ml_scores.items(), key=lambda x: x[1], reverse=True)[:3]
@@ -437,6 +479,8 @@ def main():
         sprint_kom_data=sprint_kom or None,
         team_bonus_data=team_bonus or None,
         ml_prob_data=ml_scores or None,
+        pcs_rank_data=pcs_rank_data or None,
+        pcs_n_results_data=pcs_n_results_data or None,
     )
 
     # ── Load current team ─────────────────────────────────────
