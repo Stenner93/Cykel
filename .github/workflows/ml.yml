@@ -150,6 +150,6 @@ jobs:
             echo "Ingen ændringer"
           else
             git commit -m "🤖 ML-model trænet — $(date -u '+%Y-%m-%d %H:%M UTC')"
-            git push || (git pull --rebase origin main && git push)
+            git push || (git pull --rebase -X theirs origin main && git push)
             echo "✅ Resultater pushet"
           fi
