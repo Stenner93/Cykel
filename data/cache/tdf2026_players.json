@@ -99,6 +99,15 @@
     "holdet_person_id": 4633
   },
   {
+    "id": "benjamin_thomas",
+    "full_name": "Benjamin Thomas",
+    "short_name": "Thomas",
+    "team": "COF",
+    "team_full": "Cofidis",
+    "price": 3.0,
+    "holdet_person_id": 4012
+  },
+  {
     "id": "bert_van_lerberghe",
     "full_name": "Bert van Lerberghe",
     "short_name": "Lerberghe",
@@ -556,15 +565,6 @@
     "team_full": "Uno-X Mobility",
     "price": 4.5,
     "holdet_person_id": 2978
-  },
-  {
-    "id": "marc_soler",
-    "full_name": "Marc Soler",
-    "short_name": "M. Soler",
-    "team": "UAE",
-    "team_full": "UAE Team Emirates - XRG",
-    "price": 4.5,
-    "holdet_person_id": 2977
   },
   {
     "id": "matej_mohoric",
