@@ -140,6 +140,7 @@
       <a href="giro.html"     style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">Giro 2026</a>
       <a href="dauphine.html" style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">Dauphiné 2026</a>
       <a href="riders.html"   style="color:#000;background:var(--yellow);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:700">Rytterdatabase</a>
+      <a href="analytics.html" style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">Analytik</a>
     </nav>
   </div>
 </header>
@@ -236,66 +237,190 @@ async function resultsInit() {
   const container = document.getElementById('sec-results');
   if (!container) return;
 
-  let data;
+  let allData;
   try {
-    const res = await fetch('./data/giro2026_scores.json', {cache:'no-cache'});
-    data = await res.json();
+    const res = await fetch('./data/pcs_race_results.json', {cache:'no-cache'});
+    allData = await res.json();
   } catch(e) {
     container.innerHTML = `<div style="padding:40px;text-align:center;color:var(--muted)">Fejl: ${e.message}</div>`;
     return;
   }
 
-  const stages = (data.stages || []).filter(s => s.status === 'finished');
-  const riders = data.riders || [];
+  const RACE_LABELS = {
+    'giro-d-italia/2026':     "Giro d'Italia 2026",
+    'tour-de-romandie/2026':  'Tour de Romandie 2026',
+    'paris-nice/2026':        'Paris-Nice 2026',
+    'tirreno-adriatico/2026': 'Tirreno-Adriatico 2026',
+    'volta-a-catalunya/2026': 'Volta a Catalunya 2026',
+  };
+  const PRIORITY = Object.keys(RACE_LABELS);
 
-  // Sort by total pts descending
-  const sorted = [...riders].sort((a, b) => {
-    const sumA = Object.values(a.pts || {}).reduce((s,v) => s+v, 0);
-    const sumB = Object.values(b.pts || {}).reduce((s,v) => s+v, 0);
-    return sumB - sumA;
-  });
+  // Build sorted race list: priority races first, then remainder alphabetically
+  const allRaces = Object.keys(allData);
+  const priorityRaces = PRIORITY.filter(r => allRaces.includes(r));
+  const otherRaces    = allRaces.filter(r => !PRIORITY.includes(r)).sort();
+  const raceList      = [...priorityRaces, ...otherRaces];
 
-  function fmtPts(v) {
-    if (v == null) return '<span style="color:var(--muted);opacity:0.3">·</span>';
-    const k = Math.round(v / 1000);
-    const color = v > 0 ? 'var(--green)' : v < -50000 ? '#ff8a80' : 'var(--muted)';
-    return `<span style="color:${color};font-size:0.72rem;font-weight:${v > 50000 ? 700 : 400}">${k > 0 ? '+' : ''}${k}K</span>`;
+  function raceLabel(key) {
+    if (RACE_LABELS[key]) return RACE_LABELS[key];
+    // Format "race-name/year" → "Race Name Year"
+    const [slug, yr] = key.split('/');
+    return slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') + (yr ? ' ' + yr : '');
   }
 
-  const header = `<tr>
-    <th style="text-align:left;position:sticky;left:0;background:var(--surface);z-index:6;min-width:160px">Rytter</th>
-    <th style="text-align:left;min-width:60px;color:var(--muted)">Hold</th>
-    <th style="text-align:right;min-width:50px">Pris</th>
-    <th style="text-align:right;min-width:60px;color:var(--green)">Total</th>
-    ${stages.map(s => `<th title="${s.name}" style="min-width:40px;text-align:center">E${s.num}</th>`).join('')}
-  </tr>`;
+  // Stage type badge colors
+  function stypeBadge(stype) {
+    const map = { sprint:'#FFD700', mountain:'#1E88E5', hilly:'#00C853', tt:'#E53935', ttt:'#E53935' };
+    const bg = map[stype] || '#7B82A0';
+    return `<span style="font-size:0.62rem;font-weight:700;padding:1px 6px;border-radius:4px;background:${bg}18;color:${bg};border:1px solid ${bg}44;margin-left:6px">${stype||'?'}</span>`;
+  }
 
-  const rows = sorted.map(r => {
-    const total = Object.values(r.pts || {}).reduce((s,v) => s+v, 0);
-    const totalK = Math.round(total/1000);
-    const totalColor = total > 0 ? 'var(--green)' : '#ff8a80';
-    return `<tr>
-      <td style="position:sticky;left:0;background:var(--card);font-weight:500;font-size:0.78rem">${r.name}</td>
-      <td style="font-size:0.68rem;color:var(--muted)">${r.team}</td>
-      <td style="text-align:right;font-size:0.75rem;color:var(--muted)">${r.price != null ? r.price.toFixed(2) + 'M' : '–'}</td>
-      <td style="text-align:right;font-weight:700;color:${totalColor}">${totalK > 0 ? '+' : ''}${totalK}K</td>
-      ${stages.map(s => `<td style="text-align:center">${fmtPts((r.pts||{})[String(s.num)])}</td>`).join('')}
-    </tr>`;
+  // Medal colors for top 3
+  function posBadge(pos) {
+    if (pos === 1) return `<span style="color:#FFD700;font-weight:800">${pos}</span>`;
+    if (pos === 2) return `<span style="color:#C0C0C0;font-weight:700">${pos}</span>`;
+    if (pos === 3) return `<span style="color:#CD7F32;font-weight:700">${pos}</span>`;
+    return `<span style="color:var(--muted)">${pos}</span>`;
+  }
+
+  let currentRace  = raceList[0] || '';
+  let currentStage = null;
+
+  function renderRaceStage() {
+    const stageData = allData[currentRace] || {};
+    const stageNums = Object.keys(stageData).sort((a,b) => Number(a)-Number(b));
+    if (!currentStage || !stageData[currentStage]) currentStage = stageNums[0] || null;
+
+    const stageBtns = stageNums.map(sn => {
+      const entries = stageData[sn] || [];
+      const stype   = entries[0]?.stage_type || '';
+      const sname   = entries[0]?.stage_name || `Etape ${sn}`;
+      const isActive = sn === currentStage;
+      return `<button onclick="window._setStage('${sn}')"
+        style="border:1px solid ${isActive ? 'var(--yellow)' : 'var(--border)'};
+               background:${isActive ? 'rgba(255,215,0,0.08)' : 'var(--card)'};
+               color:${isActive ? 'var(--yellow)' : 'var(--muted)'};
+               border-radius:6px;padding:4px 10px;font-size:0.76rem;font-weight:600;
+               cursor:pointer;white-space:nowrap" title="${sname}">
+        E${sn}
+      </button>`;
+    }).join('');
+
+    const entries = currentStage ? (stageData[currentStage] || []) : [];
+    const stageInfo = entries[0] ? entries[0].stage_name : '';
+    const stageType = entries[0] ? entries[0].stage_type : '';
+    const stageDate = entries[0] ? entries[0].date : '';
+
+    const rows = entries.length === 0
+      ? `<tr><td colspan="3" style="text-align:center;padding:24px;color:var(--muted);font-style:italic">Ingen TdF-ryttere fundet for denne etape</td></tr>`
+      : entries.map(e => `<tr>
+          <td style="width:48px;text-align:center;font-weight:700;font-size:0.85rem">${posBadge(e.pos)}</td>
+          <td style="font-weight:500;font-size:0.82rem">${e.name}</td>
+          <td style="text-align:right;color:var(--muted);font-size:0.76rem">${e.pcs_pts > 0 ? `<span style="color:var(--green);font-weight:600">${e.pcs_pts} pts</span>` : e.pcs_pts + ' pts'}</td>
+        </tr>`).join('');
+
+    document.getElementById('res-stage-content').innerHTML = `
+      <div style="margin-bottom:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <span style="font-size:0.82rem;color:var(--text);font-weight:600">${stageInfo}</span>
+        ${stypeBadge(stageType)}
+        ${stageDate ? `<span style="font-size:0.74rem;color:var(--muted)">${stageDate}</span>` : ''}
+      </div>
+      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px">
+        <table style="border-collapse:collapse;width:100%;font-size:0.8rem;min-width:300px">
+          <thead>
+            <tr style="background:var(--surface)">
+              <th style="padding:7px 12px;text-align:center;font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--border)">Pos</th>
+              <th style="padding:7px 12px;text-align:left;font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--border)">Rytter</th>
+              <th style="padding:7px 12px;text-align:right;font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--border)">PCS-point</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <div style="font-size:0.72rem;color:var(--muted);margin-top:10px">
+        Kun TdF 2026-ryttere der deltog i dette løb vises · ${entries.length} resultater
+      </div>
+    `;
+  }
+
+  window._setStage = function(sn) {
+    currentStage = sn;
+    renderRaceStage();
+    // Re-render stage buttons
+    const stageData = allData[currentRace] || {};
+    const stageNums = Object.keys(stageData).sort((a,b) => Number(a)-Number(b));
+    document.getElementById('res-stage-btns').innerHTML = stageNums.map(s => {
+      const entries = stageData[s] || [];
+      const sname   = entries[0]?.stage_name || `Etape ${s}`;
+      const isActive = s === currentStage;
+      return `<button onclick="window._setStage('${s}')"
+        style="border:1px solid ${isActive ? 'var(--yellow)' : 'var(--border)'};
+               background:${isActive ? 'rgba(255,215,0,0.08)' : 'var(--card)'};
+               color:${isActive ? 'var(--yellow)' : 'var(--muted)'};
+               border-radius:6px;padding:4px 10px;font-size:0.76rem;font-weight:600;
+               cursor:pointer;white-space:nowrap" title="${sname}">
+        E${s}
+      </button>`;
+    }).join('');
+  };
+
+  window._setRace = function(key) {
+    currentRace  = key;
+    currentStage = null;
+    document.getElementById('res-race-select').value = key;
+    // Reset and re-render stages
+    const stageData = allData[currentRace] || {};
+    const stageNums = Object.keys(stageData).sort((a,b) => Number(a)-Number(b));
+    currentStage = stageNums[0] || null;
+    document.getElementById('res-stage-btns').innerHTML = stageNums.map(s => {
+      const entries = stageData[s] || [];
+      const isActive = s === currentStage;
+      return `<button onclick="window._setStage('${s}')"
+        style="border:1px solid ${isActive ? 'var(--yellow)' : 'var(--border)'};
+               background:${isActive ? 'rgba(255,215,0,0.08)' : 'var(--card)'};
+               color:${isActive ? 'var(--yellow)' : 'var(--muted)'};
+               border-radius:6px;padding:4px 10px;font-size:0.76rem;font-weight:600;
+               cursor:pointer;white-space:nowrap">
+        E${s}
+      </button>`;
+    }).join('');
+    renderRaceStage();
+  };
+
+  // Initial stage buttons
+  const initStageData = allData[currentRace] || {};
+  const initStageNums = Object.keys(initStageData).sort((a,b) => Number(a)-Number(b));
+  currentStage = initStageNums[0] || null;
+  const initStageBtns = initStageNums.map(sn => {
+    const entries = initStageData[sn] || [];
+    const sname   = entries[0]?.stage_name || `Etape ${sn}`;
+    const isActive = sn === currentStage;
+    return `<button onclick="window._setStage('${sn}')"
+      style="border:1px solid ${isActive ? 'var(--yellow)' : 'var(--border)'};
+             background:${isActive ? 'rgba(255,215,0,0.08)' : 'var(--card)'};
+             color:${isActive ? 'var(--yellow)' : 'var(--muted)'};
+             border-radius:6px;padding:4px 10px;font-size:0.76rem;font-weight:600;
+             cursor:pointer;white-space:nowrap" title="${sname}">
+      E${sn}
+    </button>`;
   }).join('');
 
   container.innerHTML = `
-    <h2 style="font-size:0.9rem;margin-bottom:16px">Giro 2026 — Etapepoint (Holdet.dk)</h2>
-    <div style="font-size:0.78rem;color:var(--muted);margin-bottom:14px">
-      Per-etape prisændring for alle ${riders.length} ryttere der deltog i Giro 2026.
-      Sorteret efter samlet pointindtjening.
+    <div style="margin-bottom:18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <label style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap">Løb</label>
+      <select id="res-race-select" onchange="window._setRace(this.value)"
+        style="background:var(--card);border:1px solid var(--border);border-radius:6px;
+               padding:6px 10px;color:var(--text);font-size:0.82rem;cursor:pointer;min-width:220px">
+        ${raceList.map(r => `<option value="${r}" ${r===currentRace?'selected':''}>${raceLabel(r)}</option>`).join('')}
+      </select>
     </div>
-    <div style="overflow-x:auto;overflow-y:auto;max-height:calc(100vh - 280px);border:1px solid var(--border);border-radius:8px">
-      <table style="border-collapse:collapse;font-size:0.76rem;min-width:800px">
-        <thead style="position:sticky;top:0;background:var(--surface);z-index:5">${header}</thead>
-        <tbody>${rows}</tbody>
-      </table>
+    <div id="res-stage-btns" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px">
+      ${initStageBtns}
     </div>
+    <div id="res-stage-content"></div>
   `;
+
+  renderRaceStage();
 }
 </script>
 <script src="riders.js"></script>
