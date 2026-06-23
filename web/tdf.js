@@ -386,7 +386,11 @@ function tdfRenderPredStage(num) {
 
   const icon   = TDF_STAGE_ICONS[stage.type] || '🚴';
   const tname  = TDF_STAGE_TYPE_NAMES[stage.type] || stage.type;
-  const sorted = [...stage.riders].sort((a,b) => b.exp - a.exp);
+  // Sort by holdet_est (actual Holdet scale 100-400) if available, else exp
+  const sorted = [...stage.riders].sort((a,b) =>
+    (b.holdet_est ?? b.exp / 1000) - (a.holdet_est ?? a.exp / 1000)
+  );
+  // actual is stored in large scale (100k-400k); convert to Holdet scale (/1000) for display
   const hasAny = sorted.some(r => r.actual != null);
   const bestIds = new Set(stage.best_team || []);
 
@@ -402,7 +406,8 @@ function tdfRenderPredStage(num) {
     <div class="table-wrapper">
     <table class="pred-table">
       <thead><tr>
-        <th>#</th><th>Rytter</th><th>Hold</th><th>Pris</th><th>Forv. point</th>
+        <th>#</th><th>Rytter</th><th>Hold</th><th>Pris</th>
+        <th title="Estimeret Holdet-point (kalibreret mod Giro 2026)">Holdet est.</th>
         ${hasAny ? '<th>Faktisk</th><th>Diff</th>' : ''}
         <th>Signal</th><th>Begrundelse</th>
       </tr></thead>
@@ -412,14 +417,23 @@ function tdfRenderPredStage(num) {
     const rowCls  = [r.in_opt ? 'in-opt' : '', r.is_cap ? 'is-cap' : ''].filter(Boolean).join(' ');
     const rankCls = i < 3 ? 'rank-top' : 'rank-num';
 
+    // Display holdet_est (100-400 scale) or fall back to exp/1000
+    const estPts  = r.holdet_est ?? (r.exp ? Math.round(r.exp / 1000) : null);
+    const estDisp = estPts != null ? Math.round(estPts) : '–';
+    const bwaBadge = r.breakaway_specialist
+      ? `<span title="Udbryderspecialist" style="font-size:0.7rem;margin-left:4px;color:#f39c12">BWA</span>`
+      : '';
+
     let actHtml = '';
     if (hasAny) {
       if (r.actual != null) {
-        const cls  = tdfActClass(r.actual, r.exp);
-        const diff = r.actual - r.exp;
-        const sign = diff >= 0 ? '+' : '';
-        actHtml = `<td class="pts-act ${cls}">${tdfFmt(r.actual)}</td>
-                   <td class="${cls}" style="font-size:0.75rem">${sign}${tdfFmtK(diff)}</td>`;
+        // actual is in large Holdet scale; convert to same scale as holdet_est
+        const actPts = Math.round(r.actual / 1000);
+        const cls    = tdfActClass(actPts, estPts);
+        const diff   = actPts - (estPts ?? 0);
+        const sign   = diff >= 0 ? '+' : '';
+        actHtml = `<td class="pts-act ${cls}">${actPts}</td>
+                   <td class="${cls}" style="font-size:0.75rem">${sign}${diff}</td>`;
       } else {
         actHtml = `<td style="color:var(--muted)">–</td><td>–</td>`;
       }
@@ -427,10 +441,10 @@ function tdfRenderPredStage(num) {
 
     html += `<tr class="${rowCls}">
       <td class="${rankCls}">${i+1}</td>
-      <td class="col-name-p">${tdfEsc(r.name)}${tdfCtxBadge(r.ctx_status, r.ctx_note, r.ctx_mult)}</td>
+      <td class="col-name-p">${tdfEsc(r.name)}${tdfCtxBadge(r.ctx_status, r.ctx_note, r.ctx_mult)}${bwaBadge}</td>
       <td style="color:var(--muted);font-size:0.75rem">${tdfEsc(r.team)}</td>
       <td style="font-size:0.78rem">${r.price?.toFixed?.(1) ?? '?'}M</td>
-      <td class="pts-exp">${tdfFmt(r.exp)}</td>
+      <td class="pts-exp">${estDisp}</td>
       ${actHtml}
       <td>${tdfMiniBar(r.signals, r.disc, r.disc_co, r.disc_key, stage.type)}</td>
       <td style="font-size:0.75rem;color:var(--muted);max-width:200px;overflow:hidden;
@@ -441,9 +455,14 @@ function tdfRenderPredStage(num) {
   html += `</tbody></table></div>`;
 
   if (hasAny) {
-    const withBoth = sorted.filter(r => r.actual != null && r.exp > 0);
+    const withBoth = sorted.filter(r => r.actual != null && (r.holdet_est ?? r.exp) > 0);
     if (withBoth.length >= 5) {
-      const mae = withBoth.reduce((s, r) => s + Math.abs(r.actual - r.exp), 0) / withBoth.length;
+      // Compare in same scale (actual/1000 vs holdet_est)
+      const mae = withBoth.reduce((s, r) => {
+        const act = Math.round(r.actual / 1000);
+        const est = r.holdet_est ?? Math.round(r.exp / 1000);
+        return s + Math.abs(act - est);
+      }, 0) / withBoth.length;
       const top10pred = sorted.slice(0, 10).map(r => r.id);
       const top10act  = [...sorted].sort((a,b) => (b.actual ?? -Infinity) - (a.actual ?? -Infinity)).slice(0,10).map(r => r.id);
       const overlap   = top10pred.filter(id => top10act.includes(id)).length;
@@ -451,7 +470,7 @@ function tdfRenderPredStage(num) {
         <div style="margin-top:16px;padding:12px 16px;background:var(--card);border:1px solid var(--border);
             border-radius:8px;font-size:0.8rem;display:flex;gap:24px;flex-wrap:wrap">
           <div><span style="color:var(--muted)">Model MAE (${withBoth.length} ryttere):</span>
-               <strong style="margin-left:6px">${tdfFmtK(Math.round(mae))}</strong></div>
+               <strong style="margin-left:6px">${Math.round(mae)} pt</strong></div>
           <div><span style="color:var(--muted)">Top-10 overlap:</span>
                <strong style="margin-left:6px">${overlap}/10</strong></div>
         </div>`;
