@@ -56,6 +56,14 @@ RACES = {
     "vuelta":"vuelta-a-espana",
 }
 
+# Fallback startlist quality scores (PCS scale, 0-1000+) used when scraping
+# fails. TdF attracts the deepest WorldTour field, followed by Giro and Vuelta.
+DEFAULT_RACE_QUALITY: dict[str, float] = {
+    "tour-de-france": 1000.0,
+    "giro-d-italia":   950.0,
+    "vuelta-a-espana": 900.0,
+}
+
 YEARS = [2021, 2022, 2023, 2024, 2025]
 
 # PCS profile class → stage_type (reuse from scrape_pcs.py)
@@ -207,6 +215,48 @@ def fetch_profile_score(session, race_slug: str, year: int, stage_num: int) -> i
     return None
 
 
+def scrape_race_quality(session, race_slug: str, year: int) -> float | None:
+    """
+    Fetch the PCS startlist quality score for a race-year from the overview page.
+
+    PCS shows "Startlist quality: XXX" in the race sidebar at:
+        https://www.procyclingstats.com/race/{race_slug}/{year}
+
+    Returns the numeric quality score (0-1000+ scale) or None if not found.
+    Falls back to DEFAULT_RACE_QUALITY if the race_slug is known.
+    """
+    url  = f"https://www.procyclingstats.com/race/{race_slug}/{year}"
+    html = _get(session, url)
+    if not html:
+        return None
+
+    # Search for "startlist quality" (case-insensitive) in page text.
+    # PCS renders it as plain text like "Startlist quality\n935" or
+    # as adjacent elements; we search the raw HTML for the numeric value
+    # that follows the label.
+    m = re.search(
+        r"startlist\s+quality[^0-9]*?(\d+(?:\.\d+)?)",
+        html,
+        re.IGNORECASE,
+    )
+    if m:
+        return float(m.group(1))
+
+    # Also try the BeautifulSoup text extraction (handles split elements)
+    soup  = BeautifulSoup(html, "html.parser")
+    text  = soup.get_text("\n", strip=True)
+    lines = text.split("\n")
+    for i, line in enumerate(lines):
+        if "startlist quality" in line.lower():
+            # The number may be on the same line or the next one
+            combined = " ".join(lines[i : i + 3])
+            m2 = re.search(r"(\d+(?:\.\d+)?)", combined)
+            if m2:
+                return float(m2.group(1))
+
+    return None
+
+
 def scrape_race_year(
     session, race_key: str, race_slug: str, year: int,
     existing: set[tuple],
@@ -217,6 +267,16 @@ def scrape_race_year(
     if not stages:
         print(f"    Ingen etaper fundet (løb ikke afholdt / URL fejl)")
         return []
+
+    # Fetch startlist quality for this race-year (one request per race-year).
+    # Falls back to DEFAULT_RACE_QUALITY if scraping fails; defaults to 1000.0
+    # as a conservative estimate (treat unknown fields as max quality).
+    quality = scrape_race_quality(session, race_slug, year)
+    if quality is None:
+        quality = DEFAULT_RACE_QUALITY.get(race_slug, 1000.0)
+        print(f"    Startlist quality: {quality:.0f} (fallback)", flush=True)
+    else:
+        print(f"    Startlist quality: {quality:.0f}", flush=True)
 
     records = []
     for st in stages:
@@ -236,15 +296,16 @@ def scrape_race_year(
 
         for r in results:
             records.append({
-                "race":          race_key,
-                "year":          year,
-                "stage":         sn,
-                "stage_type":    st["stage_type"],
-                "profile_score": ps,
-                "rider_slug":    r["rider_slug"],
-                "position":      r["position"],
-                "pcs_pts":       r["pcs_pts"],
-                "dnf":           r["dnf"],
+                "race":              race_key,
+                "year":              year,
+                "stage":             sn,
+                "stage_type":        st["stage_type"],
+                "profile_score":     ps,
+                "startlist_quality": quality,   # PCS field-strength score (0-1000+)
+                "rider_slug":        r["rider_slug"],
+                "position":          r["position"],
+                "pcs_pts":           r["pcs_pts"],
+                "dnf":               r["dnf"],
             })
         print(f"{len(results)} ryttere")
 

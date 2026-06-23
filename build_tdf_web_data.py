@@ -675,6 +675,7 @@ def main() -> None:
             pcs_rankings=pcs_rankings_raw or None,
             co_data=co_data or None,
             pcs_specialty_data=pcs_specialties or None,
+            startlist_quality=1.0,   # TdF: top-tier field (~1000 PCS score → 1.0 normalised)
         )
 
         preds = predict_all(

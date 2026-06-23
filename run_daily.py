@@ -460,6 +460,7 @@ def main():
         pcs_rankings=pcs_rankings or None,
         co_data=co_data or None,
         pcs_specialty_data=pcs_specialty_data or None,
+        startlist_quality=1.0,   # TdF/GT: top-tier field (~1000 PCS score → 1.0 normalised)
     )
     if ml_scores:
         top_ml = sorted(ml_scores.items(), key=lambda x: x[1], reverse=True)[:3]

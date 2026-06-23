@@ -30,12 +30,14 @@ HIST_FORM_PATH = ROOT / "data" / "cache" / "rider_historical_form.json"
 MIN_GT_STAGES_FOR_MODEL = 5
 
 # Skal matche rækkefølgen brugt i build_training_data.py / train_model.py
+# Feature 19: startlist_quality (PCS field-strength score / 1000, range 0-1+)
 _FEATURE_COLS = [
     "profile_score",
     "is_sprint", "is_mountain", "is_hilly", "is_tt",
     "co_mtn", "co_spr", "co_hll", "co_itt", "co_cob", "co_gc",
     "spec_climber", "spec_sprint", "spec_tt", "spec_hills",
     "gt_form_5", "gt_form_10", "gt_wins_so_far",
+    "startlist_quality",   # feature 19: PCS startlist quality / 1000 (0-1+ scale)
 ]
 
 _model = None
@@ -208,12 +210,15 @@ def _lgbm_scores(
     pcs_form_raw: dict | None,
     co_data: dict | None = None,
     pcs_specialty_data: dict | None = None,
+    startlist_quality: float = 1.0,
 ) -> dict[str, float] | None:
     """
     Kør LightGBM-modellen med aktuel in-race rolling-form.
     CO og specialty features er aktive efter retraining med de fixede training data.
     co_data er keyed by holdet rider_id (underscore), samme som `rid`.
     pcs_specialty_data er keyed by holdet rider_id (underscore), samme som `rid`.
+    startlist_quality: PCS startlist quality score / 1000 (0-1+ scale).
+      Default 1.0 = top-quality field (e.g. TdF).
     Returnerer None hvis model ikke er tilgængelig.
     """
     model = _get_model()
@@ -250,6 +255,7 @@ def _lgbm_scores(
             spec.get("climber", -1), spec.get("sprint", -1),
             spec.get("tt", -1), spec.get("hills", -1),
             gt_form_5, gt_form_10, float(gt_wins),
+            float(startlist_quality),   # feature 19: PCS field quality / 1000
         ]
         rows.append(row)
         rider_ids.append(rid)
@@ -279,6 +285,7 @@ def compute_ml_scores(
     pcs_rankings: dict | None = None,   # {pcs_slug: {rank, pts}}
     co_data: dict | None = None,
     pcs_specialty_data: dict | None = None,
+    startlist_quality: float = 1.0,
 ) -> dict[str, float]:
     """
     Beregn ML/historisk styrke-scorer for alle ryttere.
@@ -292,6 +299,9 @@ def compute_ml_scores(
       differentierer baseret på aktuel form i dette specifikke løb.
       CO og specialty features er aktive efter retraining med fixede training data.
 
+    startlist_quality: PCS startlist quality score / 1000 (feature 19).
+      Default 1.0 corresponds to a top-tier GT field (e.g. TdF ~1000 on PCS).
+
     Returnerer {rider_id: score 0-100} — felt-normaliseret.
     """
     stages     = (gt_results or {}).get("stages", {})
@@ -301,6 +311,7 @@ def compute_ml_scores(
         lgbm = _lgbm_scores(
             riders, stage_type, stage_num, profile_score, stages, pcs_form_raw,
             co_data=co_data, pcs_specialty_data=pcs_specialty_data,
+            startlist_quality=startlist_quality,
         )
         if lgbm is not None:
             return lgbm

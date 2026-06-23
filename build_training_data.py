@@ -132,6 +132,12 @@ def main() -> None:
         stype = meta.get("stage_type") or "hilly"
         pscore = meta.get("profile_score") or 0
 
+        # Startlist quality: PCS field-strength score normalized to 0-1.
+        # Raw PCS scale is 0-1000+; GT races typically score 800-1000+.
+        # Missing → 1.0 (conservative: assume max quality for unknown GTs).
+        raw_quality = meta.get("startlist_quality")
+        quality_norm = round(float(raw_quality) / 1000.0, 4) if raw_quality is not None else 1.0
+
         for r in stage_records:
             slug = r["rider_slug"]
             pos  = r["position"]
@@ -159,6 +165,8 @@ def main() -> None:
                 "gt_form_5":   gt_rolling_form(hist_before, 5) or -1,
                 "gt_form_10":  gt_rolling_form(hist_before, 10) or -1,
                 "gt_wins_so_far": prev_wins(hist_before),
+                # Startlist quality (PCS score / 1000; 1.0 = top GT like TdF)
+                "startlist_quality": quality_norm,
                 # Target
                 "position":    pos,
                 "dnf":         int(dnf),
