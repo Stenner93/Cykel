@@ -77,10 +77,10 @@ def main():
         # Sort descending by composite
         riders.sort(key=lambda r: r["_comp"], reverse=True)
 
-        # Apply rank-based calibration
+        # Apply rank-based calibration (decay k=2.44 fitted from 63 stages of 2025 Holdet data)
         for i, r in enumerate(riders):
             frac = i / max(1, N - 1)
-            r["exp"] = round(0.35 * math.exp(-4.0 * frac) * wp)
+            r["exp"] = round(0.35 * math.exp(-2.44 * frac) * wp)
 
         # For stage 1: override with recommendations.json expected_pts and fill disc_co
         if stage["num"] == 1:
