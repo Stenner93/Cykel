@@ -92,7 +92,7 @@ CARTRIDGE_TO_PCS_RACE: dict[str, str] = {
     # 2025 historical races (used as training data for 2026 calibration)
     "giro-d-italia-2025":           "giro-d-italia/2025",
     "tour-de-france-2025":          "tour-de-france/2025",
-    "vuelta-a-espana-2025":         "vuelta-a-espana/2025",
+    "vuelta-2025":                  "vuelta-a-espana/2025",
 }
 
 # Per-game raw action cache directories (created on demand)
@@ -104,7 +104,7 @@ CARTRIDGE_RAW_CACHE: dict[str, Path] = {
     # 2025 historical
     "giro-d-italia-2025":           CACHE_DIR / "giro2025_raw",
     "tour-de-france-2025":          CACHE_DIR / "tdf2025_raw",
-    "vuelta-a-espana-2025":         CACHE_DIR / "vuelta2025_raw",
+    "vuelta-2025":                  CACHE_DIR / "vuelta2025_raw",
 }
 
 # Game IDs for known races (populated once discovered via --discover)
@@ -113,10 +113,10 @@ KNOWN_GAME_IDS: dict[str, int] = {
     "giro-d-italia-2026":           612,
     "criterium-du-dauphine-2026":   622,
     "tour-de-france-2026":          618,
-    # 2025 — fill in after running --discover:
-    # "giro-d-italia-2025":         ???,
-    # "tour-de-france-2025":        ???,
-    # "vuelta-a-espana-2025":       ???,
+    # 2025 historical
+    "giro-d-italia-2025":           550,
+    "tour-de-france-2025":          563,
+    "vuelta-2025":                  572,
 }
 
 # Holdet ruleId → sprint/KOM/team-bonus category

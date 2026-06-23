@@ -40,21 +40,21 @@ CACHE_DIR = DATA / "cache"
 RACE_CONFIGS: list[dict] = [
     {
         "cartridge": "giro-d-italia-2025",
-        "game_id":   None,        # <-- udfyld efter --discover
+        "game_id":   550,
         "pcs_race":  "giro-d-italia/2025",
         "label":     "Giro d'Italia 2025",
         "n_stages":  21,
     },
     {
         "cartridge": "tour-de-france-2025",
-        "game_id":   None,        # <-- udfyld efter --discover
+        "game_id":   563,
         "pcs_race":  "tour-de-france/2025",
         "label":     "Tour de France 2025",
         "n_stages":  21,
     },
     {
-        "cartridge": "vuelta-a-espana-2025",
-        "game_id":   None,        # <-- udfyld efter --discover
+        "cartridge": "vuelta-2025",
+        "game_id":   572,
         "pcs_race":  "vuelta-a-espana/2025",
         "label":     "Vuelta a España 2025",
         "n_stages":  21,
