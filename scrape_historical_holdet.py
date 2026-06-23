@@ -38,6 +38,22 @@ CACHE_DIR = DATA / "cache"
 # Opdater game_id'erne efter `python scrape_holdet.py --discover`
 # PCS-race bruges til stage-type lookup (skeleton ← pcs_stage_types.json)
 RACE_CONFIGS: list[dict] = [
+    # ── 2024 ────────────────────────────────────────────────────────────────────
+    {
+        "cartridge": "tour-de-france-2024",
+        "game_id":   442,
+        "pcs_race":  "tour-de-france/2024",
+        "label":     "Tour de France 2024",
+        "n_stages":  21,
+    },
+    {
+        "cartridge": "vuelta-2024",
+        "game_id":   441,
+        "pcs_race":  "vuelta-a-espana/2024",
+        "label":     "Vuelta a España 2024",
+        "n_stages":  21,
+    },
+    # ── 2025 ────────────────────────────────────────────────────────────────────
     {
         "cartridge": "giro-d-italia-2025",
         "game_id":   550,
