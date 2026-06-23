@@ -212,6 +212,70 @@
       <div>Indlæser resultater…</div>
     </div>
   </div>
+
+<style>
+/* ── Results matrix ── */
+.res-matrix-wrap {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: calc(100vh - 230px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.res-matrix {
+  border-collapse: collapse;
+  font-size: 0.74rem;
+  min-width: 400px;
+}
+.res-matrix th {
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  z-index: 5;
+  padding: 5px 6px;
+  text-align: center;
+  font-size: 0.63rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+.res-matrix th.col-rname,
+.res-matrix td.col-rname {
+  position: sticky;
+  left: 0;
+  background: var(--surface);
+  z-index: 6;
+  text-align: left;
+  min-width: 150px;
+  max-width: 175px;
+  padding: 5px 10px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.res-matrix thead th.col-rname { z-index: 12; }
+.res-matrix td {
+  padding: 4px 5px;
+  text-align: center;
+  border-bottom: 1px solid rgba(46,52,80,0.45);
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.res-matrix td.pos-1  { background: rgba(255,215,0,0.22); color: #FFD700; }
+.res-matrix td.pos-2  { background: rgba(192,192,192,0.15); color: #C0C0C0; }
+.res-matrix td.pos-3  { background: rgba(205,127,50,0.15); color: #CD7F32; }
+.res-matrix td.pos-top10 { background: rgba(0,200,83,0.08); color: var(--green); }
+.res-matrix td.pos-other { color: var(--muted); font-weight: 400; }
+.res-matrix td.pos-none  { color: transparent; }
+.res-matrix tr:hover td { filter: brightness(1.2); }
+.res-matrix tr:hover td.col-rname { background: var(--card) !important; filter: none; }
+.res-stage-icon { font-size: 0.7em; }
+</style>
 </main>
 
 <footer>
@@ -254,8 +318,8 @@ async function resultsInit() {
     'volta-a-catalunya/2026': 'Volta a Catalunya 2026',
   };
   const PRIORITY = Object.keys(RACE_LABELS);
+  const STAGE_ICONS = { sprint:'⚡', mountain:'⛰️', tt:'⏱️', ttt:'👥', hilly:'〰️', cobbled:'🧱' };
 
-  // Build sorted race list: priority races first, then remainder alphabetically
   const allRaces = Object.keys(allData);
   const priorityRaces = PRIORITY.filter(r => allRaces.includes(r));
   const otherRaces    = allRaces.filter(r => !PRIORITY.includes(r)).sort();
@@ -263,150 +327,111 @@ async function resultsInit() {
 
   function raceLabel(key) {
     if (RACE_LABELS[key]) return RACE_LABELS[key];
-    // Format "race-name/year" → "Race Name Year"
     const [slug, yr] = key.split('/');
     return slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') + (yr ? ' ' + yr : '');
   }
 
-  // Stage type badge colors
-  function stypeBadge(stype) {
-    const map = { sprint:'#FFD700', mountain:'#1E88E5', hilly:'#00C853', tt:'#E53935', ttt:'#E53935' };
-    const bg = map[stype] || '#7B82A0';
-    return `<span style="font-size:0.62rem;font-weight:700;padding:1px 6px;border-radius:4px;background:${bg}18;color:${bg};border:1px solid ${bg}44;margin-left:6px">${stype||'?'}</span>`;
+  let currentRace = raceList[0] || '';
+
+  function posCls(pos) {
+    if (pos === 1)          return 'pos-1';
+    if (pos === 2)          return 'pos-2';
+    if (pos === 3)          return 'pos-3';
+    if (pos <= 10)          return 'pos-top10';
+    return 'pos-other';
   }
 
-  // Medal colors for top 3
-  function posBadge(pos) {
-    if (pos === 1) return `<span style="color:#FFD700;font-weight:800">${pos}</span>`;
-    if (pos === 2) return `<span style="color:#C0C0C0;font-weight:700">${pos}</span>`;
-    if (pos === 3) return `<span style="color:#CD7F32;font-weight:700">${pos}</span>`;
-    return `<span style="color:var(--muted)">${pos}</span>`;
-  }
-
-  let currentRace  = raceList[0] || '';
-  let currentStage = null;
-
-  function renderRaceStage() {
+  function renderMatrix() {
     const stageData = allData[currentRace] || {};
     const stageNums = Object.keys(stageData).sort((a,b) => Number(a)-Number(b));
-    if (!currentStage || !stageData[currentStage]) currentStage = stageNums[0] || null;
 
-    const stageBtns = stageNums.map(sn => {
+    if (stageNums.length === 0) {
+      document.getElementById('res-matrix-container').innerHTML =
+        '<div style="padding:40px;text-align:center;color:var(--muted)">Ingen etapedata fundet for dette løb</div>';
+      return;
+    }
+
+    // Collect all riders and their results per stage
+    const riderMap = {};  // rider_id (or name) → { name, stages: {sn: pos} }
+    const stageMeta = {}; // sn → {type, name, date}
+
+    for (const sn of stageNums) {
       const entries = stageData[sn] || [];
-      const stype   = entries[0]?.stage_type || '';
-      const sname   = entries[0]?.stage_name || `Etape ${sn}`;
-      const isActive = sn === currentStage;
-      return `<button onclick="window._setStage('${sn}')"
-        style="border:1px solid ${isActive ? 'var(--yellow)' : 'var(--border)'};
-               background:${isActive ? 'rgba(255,215,0,0.08)' : 'var(--card)'};
-               color:${isActive ? 'var(--yellow)' : 'var(--muted)'};
-               border-radius:6px;padding:4px 10px;font-size:0.76rem;font-weight:600;
-               cursor:pointer;white-space:nowrap" title="${sname}">
-        E${sn}
-      </button>`;
-    }).join('');
+      if (entries.length > 0) {
+        stageMeta[sn] = {
+          type: entries[0].stage_type || '',
+          name: entries[0].stage_name || `Etape ${sn}`,
+          date: entries[0].date || '',
+        };
+      }
+      for (const e of entries) {
+        const key = e.rider_id || e.name;
+        if (!riderMap[key]) riderMap[key] = { name: e.name, stages: {} };
+        riderMap[key].stages[sn] = e.pos;
+      }
+    }
 
-    const entries = currentStage ? (stageData[currentStage] || []) : [];
-    const stageInfo = entries[0] ? entries[0].stage_name : '';
-    const stageType = entries[0] ? entries[0].stage_type : '';
-    const stageDate = entries[0] ? entries[0].date : '';
+    // Sort riders: by top-3 finishes desc, then top-10 finishes desc, then best single finish asc
+    const riders = Object.values(riderMap);
+    riders.sort((a, b) => {
+      const aStages = Object.values(a.stages);
+      const bStages = Object.values(b.stages);
+      const aTop3  = aStages.filter(p => p <= 3).length;
+      const bTop3  = bStages.filter(p => p <= 3).length;
+      if (aTop3 !== bTop3) return bTop3 - aTop3;
+      const aTop10 = aStages.filter(p => p <= 10).length;
+      const bTop10 = bStages.filter(p => p <= 10).length;
+      if (aTop10 !== bTop10) return bTop10 - aTop10;
+      const aBest  = Math.min(...aStages);
+      const bBest  = Math.min(...bStages);
+      return aBest - bBest;
+    });
 
-    const rows = entries.length === 0
-      ? `<tr><td colspan="3" style="text-align:center;padding:24px;color:var(--muted);font-style:italic">Ingen TdF-ryttere fundet for denne etape</td></tr>`
-      : entries.map(e => `<tr>
-          <td style="width:48px;text-align:center;font-weight:700;font-size:0.85rem">${posBadge(e.pos)}</td>
-          <td style="font-weight:500;font-size:0.82rem">${e.name}</td>
-          <td style="text-align:right;color:var(--muted);font-size:0.76rem">${e.pcs_pts > 0 ? `<span style="color:var(--green);font-weight:600">${e.pcs_pts} pts</span>` : e.pcs_pts + ' pts'}</td>
-        </tr>`).join('');
+    // Build header
+    let header = `<thead><tr>
+      <th class="col-rname">Rytter</th>`;
+    for (const sn of stageNums) {
+      const meta  = stageMeta[sn] || {};
+      const icon  = STAGE_ICONS[meta.type] || '🚴';
+      const title = `E${sn} ${meta.name}${meta.date ? ' · ' + meta.date : ''}`;
+      header += `<th title="${title}"><span class="res-stage-icon">${icon}</span>${sn}</th>`;
+    }
+    header += `</tr></thead>`;
 
-    document.getElementById('res-stage-content').innerHTML = `
-      <div style="margin-bottom:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-        <span style="font-size:0.82rem;color:var(--text);font-weight:600">${stageInfo}</span>
-        ${stypeBadge(stageType)}
-        ${stageDate ? `<span style="font-size:0.74rem;color:var(--muted)">${stageDate}</span>` : ''}
+    // Build body
+    let body = '<tbody>';
+    for (const r of riders) {
+      body += `<tr><td class="col-rname" title="${r.name}">${r.name}</td>`;
+      for (const sn of stageNums) {
+        const pos = r.stages[sn];
+        if (pos == null) {
+          body += `<td class="pos-none">–</td>`;
+        } else {
+          body += `<td class="${posCls(pos)}" title="Etape ${sn}: pos. ${pos}">${pos}</td>`;
+        }
+      }
+      body += `</tr>`;
+    }
+    body += '</tbody>';
+
+    document.getElementById('res-matrix-container').innerHTML = `
+      <div class="res-matrix-wrap">
+        <table class="res-matrix">${header}${body}</table>
       </div>
-      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px">
-        <table style="border-collapse:collapse;width:100%;font-size:0.8rem;min-width:300px">
-          <thead>
-            <tr style="background:var(--surface)">
-              <th style="padding:7px 12px;text-align:center;font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--border)">Pos</th>
-              <th style="padding:7px 12px;text-align:left;font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--border)">Rytter</th>
-              <th style="padding:7px 12px;text-align:right;font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--border)">PCS-point</th>
-            </tr>
-          </thead>
-          <tbody>${rows}</tbody>
-        </table>
-      </div>
-      <div style="font-size:0.72rem;color:var(--muted);margin-top:10px">
-        Kun TdF 2026-ryttere der deltog i dette løb vises · ${entries.length} resultater
+      <div style="font-size:0.7rem;color:var(--muted);margin-top:8px">
+        ${riders.length} TdF-ryttere der deltog i mindst én etape · kun ryttere på Holdet TdF-ruten vises
       </div>
     `;
   }
 
-  window._setStage = function(sn) {
-    currentStage = sn;
-    renderRaceStage();
-    // Re-render stage buttons
-    const stageData = allData[currentRace] || {};
-    const stageNums = Object.keys(stageData).sort((a,b) => Number(a)-Number(b));
-    document.getElementById('res-stage-btns').innerHTML = stageNums.map(s => {
-      const entries = stageData[s] || [];
-      const sname   = entries[0]?.stage_name || `Etape ${s}`;
-      const isActive = s === currentStage;
-      return `<button onclick="window._setStage('${s}')"
-        style="border:1px solid ${isActive ? 'var(--yellow)' : 'var(--border)'};
-               background:${isActive ? 'rgba(255,215,0,0.08)' : 'var(--card)'};
-               color:${isActive ? 'var(--yellow)' : 'var(--muted)'};
-               border-radius:6px;padding:4px 10px;font-size:0.76rem;font-weight:600;
-               cursor:pointer;white-space:nowrap" title="${sname}">
-        E${s}
-      </button>`;
-    }).join('');
-  };
-
   window._setRace = function(key) {
-    currentRace  = key;
-    currentStage = null;
+    currentRace = key;
     document.getElementById('res-race-select').value = key;
-    // Reset and re-render stages
-    const stageData = allData[currentRace] || {};
-    const stageNums = Object.keys(stageData).sort((a,b) => Number(a)-Number(b));
-    currentStage = stageNums[0] || null;
-    document.getElementById('res-stage-btns').innerHTML = stageNums.map(s => {
-      const entries = stageData[s] || [];
-      const isActive = s === currentStage;
-      return `<button onclick="window._setStage('${s}')"
-        style="border:1px solid ${isActive ? 'var(--yellow)' : 'var(--border)'};
-               background:${isActive ? 'rgba(255,215,0,0.08)' : 'var(--card)'};
-               color:${isActive ? 'var(--yellow)' : 'var(--muted)'};
-               border-radius:6px;padding:4px 10px;font-size:0.76rem;font-weight:600;
-               cursor:pointer;white-space:nowrap">
-        E${s}
-      </button>`;
-    }).join('');
-    renderRaceStage();
+    renderMatrix();
   };
-
-  // Initial stage buttons
-  const initStageData = allData[currentRace] || {};
-  const initStageNums = Object.keys(initStageData).sort((a,b) => Number(a)-Number(b));
-  currentStage = initStageNums[0] || null;
-  const initStageBtns = initStageNums.map(sn => {
-    const entries = initStageData[sn] || [];
-    const sname   = entries[0]?.stage_name || `Etape ${sn}`;
-    const isActive = sn === currentStage;
-    return `<button onclick="window._setStage('${sn}')"
-      style="border:1px solid ${isActive ? 'var(--yellow)' : 'var(--border)'};
-             background:${isActive ? 'rgba(255,215,0,0.08)' : 'var(--card)'};
-             color:${isActive ? 'var(--yellow)' : 'var(--muted)'};
-             border-radius:6px;padding:4px 10px;font-size:0.76rem;font-weight:600;
-             cursor:pointer;white-space:nowrap" title="${sname}">
-      E${sn}
-    </button>`;
-  }).join('');
 
   container.innerHTML = `
-    <div style="margin-bottom:18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <div style="margin-bottom:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
       <label style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap">Løb</label>
       <select id="res-race-select" onchange="window._setRace(this.value)"
         style="background:var(--card);border:1px solid var(--border);border-radius:6px;
@@ -414,13 +439,10 @@ async function resultsInit() {
         ${raceList.map(r => `<option value="${r}" ${r===currentRace?'selected':''}>${raceLabel(r)}</option>`).join('')}
       </select>
     </div>
-    <div id="res-stage-btns" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px">
-      ${initStageBtns}
-    </div>
-    <div id="res-stage-content"></div>
+    <div id="res-matrix-container"></div>
   `;
 
-  renderRaceStage();
+  renderMatrix();
 }
 </script>
 <script src="riders.js"></script>
