@@ -2,19 +2,19 @@
    TdF Manager 2026 — Cycling-themed dark UI
    ============================================================ */
 :root {
-  --yellow:  #FFD700;
-  --green:   #00C853;
-  --red:     #E53935;
-  --blue:    #1E88E5;
-  --bg:      #0F1117;
-  --surface: #1A1D27;
-  --card:    #21263A;
-  --border:  #2E3450;
-  --text:    #E8EAF0;
-  --muted:   #7B82A0;
-  --safe:    #00C853;
-  --value:   #1E88E5;
-  --attack:  #E53935;
+  --yellow:  #f97316;   /* orange accent (TdF Manager theme) */
+  --green:   #3fb950;
+  --red:     #f85149;
+  --blue:    #58a6ff;
+  --bg:      #0d1117;
+  --surface: #161b22;
+  --card:    #21262d;
+  --border:  #30363d;
+  --text:    #e6edf3;
+  --muted:   #8b949e;
+  --safe:    #3fb950;
+  --value:   #58a6ff;
+  --attack:  #f85149;
   --font:    'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
@@ -30,7 +30,7 @@ body {
 
 /* ── Header ── */
 header {
-  background: linear-gradient(135deg, #1A1D27 0%, #0F1117 100%);
+  background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
   border-bottom: 2px solid var(--yellow);
   padding: 0 24px;
   position: sticky;
@@ -110,9 +110,9 @@ h2 {
   justify-content: space-between;
   align-items: flex-start;
 }
-.team-header.safe   { background: linear-gradient(135deg, #00432e 0%, #1a1d27 100%); border-left: 4px solid var(--safe); }
-.team-header.value  { background: linear-gradient(135deg, #0d3060 0%, #1a1d27 100%); border-left: 4px solid var(--value); }
-.team-header.attack { background: linear-gradient(135deg, #5c0d0d 0%, #1a1d27 100%); border-left: 4px solid var(--attack); }
+.team-header.safe   { background: linear-gradient(135deg, #00432e 0%, var(--surface) 100%); border-left: 4px solid var(--safe); }
+.team-header.value  { background: linear-gradient(135deg, #0d3060 0%, var(--surface) 100%); border-left: 4px solid var(--value); }
+.team-header.attack { background: linear-gradient(135deg, #5c0d0d 0%, var(--surface) 100%); border-left: 4px solid var(--attack); }
 
 .team-label {
   font-size: 0.7rem;
@@ -150,8 +150,8 @@ h2 {
 .captain-strip {
   margin: 0 20px 12px;
   padding: 10px 14px;
-  background: rgba(255, 215, 0, 0.07);
-  border: 1px solid rgba(255, 215, 0, 0.2);
+  background: rgba(249, 115, 22, 0.07);
+  border: 1px solid rgba(249, 115, 22, 0.2);
   border-radius: 8px;
 }
 .captain-strip .cap-label { font-size: 0.7rem; color: var(--yellow); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
@@ -277,11 +277,11 @@ h2 {
 
 /* ── Best team card ── */
 .team-header.best {
-  background: linear-gradient(135deg, #3d2c00 0%, #1a1d27 100%);
+  background: linear-gradient(135deg, #3d2c00 0%, var(--surface) 100%);
   border-left: 4px solid var(--yellow);
 }
 .best .team-label { color: var(--yellow); }
-.team-card-best { border-color: rgba(255, 215, 0, 0.3); }
+.team-card-best { border-color: rgba(249, 115, 22, 0.3); }
 
 /* ── Section description ── */
 .section-desc {

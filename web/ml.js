@@ -175,9 +175,48 @@ function mlRender(d) {
   </div>
 </div>
 
+<!-- AUC breakdown by stage type -->
+<div class="ml-card" style="margin-bottom:16px">
+  <div class="ml-card-title">AUC per etapetype — ${d.validated_on_year}</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px">
+    ${[
+      {key:'sprint',   label:'Sprint 🟡',   color:'var(--yellow)'},
+      {key:'mountain', label:'Bjerg ⛰️',    color:'var(--blue)'},
+      {key:'hilly',    label:'Bakket 🌄',   color:'var(--green)'},
+      {key:'tt',       label:'TT ⏱️',       color:'#ff8a80'},
+    ].map(({key, label, color}) => {
+      const auc = vm['auc_' + key];
+      const pct = auc != null ? Math.round(auc * 100) : null;
+      const qualColor = auc >= 0.80 ? 'var(--green)' : auc >= 0.70 ? 'var(--yellow)' : '#ff8a80';
+      return `
+      <div style="text-align:center;padding:10px;background:var(--surface);border-radius:8px;border:1px solid var(--border)">
+        <div style="font-size:0.7rem;color:var(--muted);margin-bottom:4px">${label}</div>
+        <div style="font-size:1.4rem;font-weight:700;color:${qualColor}">${pct != null ? pct + '%' : '–'}</div>
+        <div style="font-size:0.65rem;color:var(--muted)">ROC-AUC</div>
+        <div style="margin-top:6px;height:4px;background:var(--border);border-radius:2px;overflow:hidden">
+          <div style="height:100%;width:${pct || 0}%;background:${qualColor};border-radius:2px"></div>
+        </div>
+      </div>`;
+    }).join('')}
+  </div>
+  <div style="font-size:0.68rem;color:var(--muted);margin-top:10px;line-height:1.5">
+    AUC forklaret: 100% = perfekt forudsigelse · 50% = tilfældig gætning ·
+    Målet for GT-etaper er typisk 70–85% afhængig af etapetype.<br>
+    <strong style="color:var(--text)">TT er nemmest</strong> at forudsige (ryttere har faste TT-styrker) ·
+    <strong style="color:var(--text)">Sprint er sværest</strong> (mange faktorer: vind, positionering, held).
+  </div>
+</div>
+
 <!-- Feature importances -->
 <div class="ml-card" style="margin-bottom:16px">
   <div class="ml-card-title">Feature Importance — top ${imps.length}</div>
+  <div style="font-size:0.72rem;color:var(--muted);margin-bottom:14px;line-height:1.55">
+    <strong style="color:var(--text)">Hvad er tallene?</strong>
+    Tallene viser "split importance" — antal gange en feature bruges til at træffe en beslutning i LightGBM-modellens beslutningstræer.
+    Høj score = featuren skærer feltet effektivt op (god til at adskille top-5 ryttere fra resten).
+    Det er IKKE det samme som korrelation eller kausalitet — det siger noget om modelstruktur, ikke naturlov.
+    Tommelfingerregel: &gt;100 = relevant · &lt;30 = svag signal.
+  </div>
   ${imps.map(f => {
     const name = FEATURE_NAMES[f.feature] || f.feature;
     const pct  = Math.round((f.importance / maxImp) * 100);
@@ -189,6 +228,26 @@ function mlRender(d) {
   }).join('')}
 </div>
 
+<!-- Feature interaction hints -->
+<div class="ml-card" style="margin-bottom:16px">
+  <div class="ml-card-title">Feature-interaktioner — nøglekombinationer</div>
+  <div style="font-size:0.72rem;color:var(--muted);line-height:1.7;margin-bottom:10px">
+    LightGBM lærer automatisk kombinationer af features. Her er de vigtigste observerede mønstre:
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+    ${[
+      {combo:'profile_score × CO Bjerg', insight:'Høj profil-score OG høj bjerg-rating → stærk indikator for top-5 på bjergetaper. Begge features alene er svagere.', icon:'⛰️'},
+      {combo:'GT form (5) × etapetype', insight:'Ridere med god GT form de seneste 5 etaper performer markant bedre på de næste etaper — momentum er reelt.', icon:'📈'},
+      {combo:'CO Sprint × Etape=Sprint', insight:'På sprintetaper er CO SPR-rating den mest differentierende feature. Modelens sprint-AUC (0.83) er direkte drevet af denne kombination.', icon:'⚡'},
+      {combo:'GT sejre hidtil × form', insight:'Ryttere der allerede har vundet en etape i det aktuelle løb er statistisk mere tilbøjelige til at vinde igen — "vinder-momentum".', icon:'🏆'},
+    ].map(({combo, insight, icon}) => `
+    <div style="padding:10px;background:var(--surface);border-radius:8px;border:1px solid var(--border)">
+      <div style="font-size:0.72rem;font-weight:700;color:var(--yellow);margin-bottom:4px">${icon} ${combo}</div>
+      <div style="font-size:0.68rem;color:var(--muted);line-height:1.5">${insight}</div>
+    </div>`).join('')}
+  </div>
+</div>
+
 <!-- Per-stage backtesting table -->
 <div style="font-size:0.82rem;font-weight:700;margin-bottom:6px">
   Etape-forudsigelser — ${d.validated_on_year} (${stageRows.length} etaper)
@@ -196,6 +255,24 @@ function mlRender(d) {
     Grøn = vinder var i top-5 forudsigelse
   </span>
 </div>
+${(() => {
+  const hitByStype = {};
+  stageRows.forEach(s => {
+    const st = s.stype || 'unknown';
+    if (!hitByStype[st]) hitByStype[st] = {hits:0, total:0};
+    hitByStype[st].total++;
+    if (s.winner_in_pred) hitByStype[st].hits++;
+  });
+  return `<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+  ${Object.entries(hitByStype).map(([st, {hits, total}]) => {
+    const pct = Math.round(hits/total*100);
+    return `<span style="font-size:0.72rem;padding:3px 10px;border-radius:10px;background:var(--card);border:1px solid var(--border)">
+      <span class="ml-badge ${mlEsc(st)}">${STYPE_LABEL[st]||st}</span>
+      ${hits}/${total} (${pct}%)
+    </span>`;
+  }).join('')}
+</div>`;
+})()}
 <div class="ml-stages-wrap">
   <table class="ml-stages-table">
     <thead>

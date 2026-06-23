@@ -151,6 +151,7 @@
   <div class="sec-tabs">
     <button class="sec-tab active" data-sec="riders">Rytteroversigt</button>
     <button class="sec-tab" data-sec="ml">ML Validering</button>
+    <button class="sec-tab" data-sec="results">Seneste Resultater</button>
   </div>
 
   <!-- ── PANEL 1: Rytteroversigt ── -->
@@ -202,6 +203,14 @@
       </div>
     </div>
   </div>
+
+  <!-- ── PANEL 3: Seneste Resultater ── -->
+  <div class="sec-panel" id="sec-results">
+    <div style="padding:40px;text-align:center;color:var(--muted)">
+      <div style="font-size:2rem;margin-bottom:12px">⟳</div>
+      <div>Indlæser resultater…</div>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -216,8 +225,78 @@ document.querySelectorAll('.sec-tab').forEach(btn => {
     document.querySelectorAll('.sec-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('sec-' + btn.dataset.sec).classList.add('active');
+    if (btn.dataset.sec === 'results' && !window._resultsLoaded) {
+      window._resultsLoaded = true;
+      resultsInit();
+    }
   });
 });
+
+async function resultsInit() {
+  const container = document.getElementById('sec-results');
+  if (!container) return;
+
+  let data;
+  try {
+    const res = await fetch('./data/giro2026_scores.json', {cache:'no-cache'});
+    data = await res.json();
+  } catch(e) {
+    container.innerHTML = `<div style="padding:40px;text-align:center;color:var(--muted)">Fejl: ${e.message}</div>`;
+    return;
+  }
+
+  const stages = (data.stages || []).filter(s => s.status === 'finished');
+  const riders = data.riders || [];
+
+  // Sort by total pts descending
+  const sorted = [...riders].sort((a, b) => {
+    const sumA = Object.values(a.pts || {}).reduce((s,v) => s+v, 0);
+    const sumB = Object.values(b.pts || {}).reduce((s,v) => s+v, 0);
+    return sumB - sumA;
+  });
+
+  function fmtPts(v) {
+    if (v == null) return '<span style="color:var(--muted);opacity:0.3">·</span>';
+    const k = Math.round(v / 1000);
+    const color = v > 0 ? 'var(--green)' : v < -50000 ? '#ff8a80' : 'var(--muted)';
+    return `<span style="color:${color};font-size:0.72rem;font-weight:${v > 50000 ? 700 : 400}">${k > 0 ? '+' : ''}${k}K</span>`;
+  }
+
+  const header = `<tr>
+    <th style="text-align:left;position:sticky;left:0;background:var(--surface);z-index:6;min-width:160px">Rytter</th>
+    <th style="text-align:left;min-width:60px;color:var(--muted)">Hold</th>
+    <th style="text-align:right;min-width:50px">Pris</th>
+    <th style="text-align:right;min-width:60px;color:var(--green)">Total</th>
+    ${stages.map(s => `<th title="${s.name}" style="min-width:40px;text-align:center">E${s.num}</th>`).join('')}
+  </tr>`;
+
+  const rows = sorted.map(r => {
+    const total = Object.values(r.pts || {}).reduce((s,v) => s+v, 0);
+    const totalK = Math.round(total/1000);
+    const totalColor = total > 0 ? 'var(--green)' : '#ff8a80';
+    return `<tr>
+      <td style="position:sticky;left:0;background:var(--card);font-weight:500;font-size:0.78rem">${r.name}</td>
+      <td style="font-size:0.68rem;color:var(--muted)">${r.team}</td>
+      <td style="text-align:right;font-size:0.75rem;color:var(--muted)">${r.price != null ? r.price.toFixed(2) + 'M' : '–'}</td>
+      <td style="text-align:right;font-weight:700;color:${totalColor}">${totalK > 0 ? '+' : ''}${totalK}K</td>
+      ${stages.map(s => `<td style="text-align:center">${fmtPts((r.pts||{})[String(s.num)])}</td>`).join('')}
+    </tr>`;
+  }).join('');
+
+  container.innerHTML = `
+    <h2 style="font-size:0.9rem;margin-bottom:16px">Giro 2026 — Etapepoint (Holdet.dk)</h2>
+    <div style="font-size:0.78rem;color:var(--muted);margin-bottom:14px">
+      Per-etape prisændring for alle ${riders.length} ryttere der deltog i Giro 2026.
+      Sorteret efter samlet pointindtjening.
+    </div>
+    <div style="overflow-x:auto;overflow-y:auto;max-height:calc(100vh - 280px);border:1px solid var(--border);border-radius:8px">
+      <table style="border-collapse:collapse;font-size:0.76rem;min-width:800px">
+        <thead style="position:sticky;top:0;background:var(--surface);z-index:5">${header}</thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  `;
+}
 </script>
 <script src="riders.js"></script>
 <script src="ml.js"></script>
