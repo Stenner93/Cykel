@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cykel Analytics — Mørkt tema</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg:    #0f1117;
+    --bg2:   #161b22;
+    --bg3:   #1c2128;
+    --bg4:   #21262d;
+    --border: #30363d;
+    --border2: #21262d;
+    --text:  #e6edf3;
+    --text2: #8b949e;
+    --text3: #484f58;
+    --blue:  #58a6ff;
+    --green: #3fb950;
+    --orange:#f97316;
+    --red:   #f85149;
+    --purple:#a371f7;
+    --yellow:#e3b341;
+  }
+  body { background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; font-size:13px; height:100vh; overflow:hidden; }
+
+  /* App shell */
+  .app { display:grid; grid-template-rows:44px 1fr; height:100vh; }
+
+  /* Header */
+  .header { background:var(--bg2); border-bottom:1px solid var(--border); display:flex; align-items:center; padding:0 16px; gap:12px; }
+  .logo { font-weight:800; font-size:15px; color:var(--orange); letter-spacing:-0.5px; }
+  .sep { width:1px; height:18px; background:var(--border); }
+  .stage-info { font-size:12px; color:var(--text2); }
+  .stage-info strong { color:var(--text); }
+  .header-right { margin-left:auto; display:flex; gap:8px; align-items:center; }
+  .badge { border-radius:4px; padding:2px 7px; font-size:11px; font-weight:600; border:1px solid; }
+  .badge-green { background:#0d2818; border-color:#2ea043; color:var(--green); }
+  .badge-gray { background:var(--bg3); border-color:var(--border); color:var(--text2); }
+  .btn { border:none; border-radius:5px; padding:5px 10px; font-size:11px; font-weight:600; cursor:pointer; background:var(--orange); color:#000; }
+
+  /* Body */
+  .body { display:grid; grid-template-columns:200px 1fr 300px; overflow:hidden; }
+
+  /* Sidebar left */
+  .sl { background:var(--bg2); border-right:1px solid var(--border); overflow-y:auto; padding:12px; }
+  .sl::-webkit-scrollbar { width:3px; }
+  .sl::-webkit-scrollbar-thumb { background:var(--border); }
+  .slabel { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--text3); margin:12px 0 6px; }
+  .slabel:first-child { margin-top:0; }
+
+  .stage-btn { display:flex; align-items:center; gap:6px; width:100%; padding:5px 7px; border-radius:5px; border:none; background:transparent; cursor:pointer; font-size:12px; color:var(--text2); transition:all 0.1s; font-family:'Inter',sans-serif; }
+  .stage-btn:hover { background:var(--bg3); color:var(--text); }
+  .stage-btn.active { background:#1a2a1a; color:var(--green); border:1px solid #2a4a2a; }
+  .stage-btn.active .dot-mtn { background:var(--green); }
+
+  .tdot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+  .dot-mtn { background:#2ea043; }
+  .dot-spr { background:var(--blue); }
+  .dot-hll { background:var(--purple); }
+  .dot-tt { background:var(--orange); }
+
+  .w-row { margin-bottom:10px; }
+  .w-head { display:flex; justify-content:space-between; margin-bottom:3px; }
+  .w-name { font-size:11px; color:var(--text2); }
+  .w-val { font-size:11px; font-weight:700; color:var(--text); }
+  input[type=range] { width:100%; accent-color:var(--orange); }
+
+  .f-check { display:flex; align-items:center; gap:5px; padding:3px 0; font-size:11px; color:var(--text2); cursor:pointer; }
+  .f-check input { accent-color:var(--orange); }
+
+  /* Main table */
+  .main { overflow:hidden; display:grid; grid-template-rows:44px 1fr 110px; }
+
+  .toolbar { padding:0 14px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px; background:var(--bg2); }
+  .search { background:var(--bg3); border:1px solid var(--border); border-radius:5px; padding:5px 9px; font-size:12px; outline:none; width:180px; color:var(--text); }
+  .search:focus { border-color:var(--orange); }
+  .search::placeholder { color:var(--text3); }
+  .sort-btn { border:1px solid var(--border); border-radius:5px; padding:4px 9px; font-size:11px; font-weight:600; cursor:pointer; background:var(--bg3); color:var(--text2); transition:all 0.1s; }
+  .sort-btn.active { border-color:var(--orange); color:var(--orange); background:#1a0f00; }
+  .meta-txt { margin-left:auto; font-size:11px; color:var(--text3); }
+
+  .table-wrap { overflow-y:auto; }
+  .table-wrap::-webkit-scrollbar { width:4px; }
+  .table-wrap::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+  table { width:100%; border-collapse:collapse; }
+  thead th { position:sticky; top:0; background:var(--bg2); border-bottom:1px solid var(--border); padding:8px 10px; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--text2); text-align:left; white-space:nowrap; cursor:pointer; user-select:none; }
+  thead th:hover { color:var(--orange); }
+  thead th.sorted { color:var(--orange); }
+  tbody tr { border-bottom:1px solid var(--border2); cursor:pointer; transition:background 0.08s; }
+  tbody tr:hover { background:var(--bg2); }
+  tbody tr.sel { background:#1a1000; border-left:2px solid var(--orange); }
+  td { padding:7px 10px; }
+
+  /* Score */
+  .score-n { font-size:16px; font-weight:800; }
+  .score-hi { color:var(--blue); }
+  .score-md { color:var(--orange); }
+  .score-lo { color:var(--text2); }
+
+  /* Price */
+  .price-g { font-size:11px; font-weight:700; color:var(--green); }
+
+  /* Growth pill */
+  .growth-pill { display:inline-flex; align-items:center; gap:4px; border-radius:4px; padding:2px 7px; font-size:11px; font-weight:700; }
+  .gp-high { background:#0d2818; color:var(--green); }
+  .gp-med  { background:#1a1000; color:var(--orange); }
+  .gp-low  { background:#1a0d0d; color:#f85149; }
+
+  /* Mini signal bars */
+  .mbars { display:flex; gap:2px; align-items:flex-end; height:18px; }
+  .mbar { width:6px; border-radius:1px; }
+
+  /* Type chip */
+  .tchip { border-radius:3px; padding:1px 5px; font-size:9px; font-weight:700; }
+  .tc-mtn { background:#0d2818; color:var(--green); }
+  .tc-spr { background:#0d1a2e; color:var(--blue); }
+
+  /* Bottom scatter */
+  .scatter-area { border-top:1px solid var(--border); background:var(--bg2); padding:8px 14px; }
+  .scatter-label { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
+
+  /* Right detail */
+  .sr { border-left:1px solid var(--border); overflow-y:auto; background:var(--bg2); }
+  .sr::-webkit-scrollbar { width:3px; }
+  .sr::-webkit-scrollbar-thumb { background:var(--border); }
+
+  .tabs { display:flex; border-bottom:1px solid var(--border); }
+  .tab { padding:8px 12px; font-size:11px; font-weight:600; cursor:pointer; border-bottom:2px solid transparent; color:var(--text2); margin-bottom:-1px; }
+  .tab.active { border-color:var(--orange); color:var(--orange); }
+
+  .dheader { padding:14px; border-bottom:1px solid var(--border); }
+  .dname { font-size:15px; font-weight:800; }
+  .dteam { font-size:11px; color:var(--text2); margin-top:1px; }
+
+  .score-row { display:flex; align-items:baseline; gap:10px; margin-top:10px; }
+  .dscore { font-size:40px; font-weight:900; color:var(--orange); line-height:1; }
+  .dprice { font-size:12px; color:var(--green); font-weight:700; }
+
+  /* Growth breakdown */
+  .growth-box { margin:12px 14px; background:var(--bg3); border:1px solid var(--border); border-radius:6px; padding:12px; }
+  .gb-title { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--text3); margin-bottom:10px; }
+  .gb-row { display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid var(--border2); font-size:12px; }
+  .gb-row:last-child { border-bottom:none; font-weight:700; color:var(--text); }
+  .gb-label { color:var(--text2); }
+  .gb-val { font-weight:600; }
+  .gb-val.pos { color:var(--green); }
+  .gb-val.neu { color:var(--text2); }
+
+  .statsGrid { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--border); }
+  .stat { padding:10px; text-align:center; border-right:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .stat:nth-child(even) { border-right:none; }
+  .stat-v { font-size:18px; font-weight:800; }
+  .stat-l { font-size:9px; color:var(--text3); margin-top:1px; text-transform:uppercase; letter-spacing:0.5px; }
+
+  .sigsec { padding:12px 14px; border-top:1px solid var(--border); }
+  .sigsec-title { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--text3); margin-bottom:8px; }
+  .sig-r { display:flex; align-items:center; gap:8px; margin-bottom:7px; }
+  .sig-l { font-size:11px; color:var(--text2); width:70px; }
+  .sig-t { flex:1; height:4px; background:var(--bg4); border-radius:2px; overflow:hidden; }
+  .sig-f { height:100%; border-radius:2px; }
+  .sig-v { font-size:11px; font-weight:700; width:22px; text-align:right; }
+
+  /* Optimizer */
+  .optsec { padding:12px 14px; border-top:1px solid var(--border); }
+  .opt-row { display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid var(--border2); font-size:12px; }
+  .opt-row:last-child { border-bottom:none; }
+  .opt-n { font-weight:600; }
+  .opt-p { color:var(--green); font-weight:600; font-size:11px; }
+  .opt-cap { font-size:9px; color:var(--orange); font-weight:700; }
+  .opt-exp { font-size:10px; color:var(--text3); }
+
+  .valsec { padding:12px 14px; border-top:1px solid var(--border); }
+  .val-r { display:flex; align-items:center; gap:8px; margin-bottom:7px; }
+  .val-l { font-size:11px; color:var(--text2); width:82px; }
+  .val-t { flex:1; height:4px; background:var(--bg4); border-radius:2px; overflow:hidden; }
+  .val-f { height:100%; border-radius:2px; background:var(--blue); }
+  .val-v { font-size:11px; font-weight:700; width:36px; text-align:right; }
+
+  /* Distribution bar chart */
+  .dist-chart { display:flex; align-items:flex-end; gap:2px; height:52px; padding:4px 0; }
+  .dist-bar { flex:1; border-radius:2px 2px 0 0; min-width:4px; }
+  .dist-bar.highlight { background:var(--orange); }
+  .dist-bar.normal { background:var(--bg4); }
+  .dist-labels { display:flex; justify-content:space-between; font-size:9px; color:var(--text3); margin-top:2px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">CYKEL</div>
+    <div class="sep"></div>
+    <div class="stage-info">TdF 2026 · <strong>Etape 15</strong> · Bjerg · 187km · Profil 92</div>
+    <div class="header-right">
+      <span class="badge badge-green">ML aktiv · 22. jun</span>
+      <span class="badge badge-gray">AUC 0.855</span>
+      <button class="btn">Eksportér hold →</button>
+    </div>
+  </div>
+
+  <div class="body">
+    <!-- Sidebar left -->
+    <div class="sl">
+      <div class="slabel">Etape</div>
+      <button class="stage-btn"><span class="tdot dot-tt"></span>1 · Barcelona TTT</button>
+      <button class="stage-btn"><span class="tdot dot-mtn"></span>9 · Pyrenæer MTN</button>
+      <button class="stage-btn active"><span class="tdot dot-mtn"></span>15 · Tourmalet MTN</button>
+      <button class="stage-btn"><span class="tdot dot-mtn"></span>17 · Alpe d'Huez MTN</button>
+      <button class="stage-btn"><span class="tdot dot-tt"></span>20 · Enkel TT</button>
+
+      <div class="slabel">Signalvægte</div>
+      <div class="w-row"><div class="w-head"><span class="w-name">VeloScore</span><span class="w-val" id="w0">0.20</span></div><input type="range" min="0" max="40" value="20" oninput="document.getElementById('w0').textContent='0.'+String(this.value).padStart(2,'0')"></div>
+      <div class="w-row"><div class="w-head"><span class="w-name">Odds</span><span class="w-val" id="w1">0.18</span></div><input type="range" min="0" max="40" value="18" oninput="document.getElementById('w1').textContent='0.'+String(this.value).padStart(2,'0')"></div>
+      <div class="w-row"><div class="w-head"><span class="w-name">Disciplin</span><span class="w-val" id="w2">0.20</span></div><input type="range" min="0" max="40" value="20" oninput="document.getElementById('w2').textContent='0.'+String(this.value).padStart(2,'0')"></div>
+      <div class="w-row"><div class="w-head"><span class="w-name">Form</span><span class="w-val" id="w3">0.22</span></div><input type="range" min="0" max="40" value="22" oninput="document.getElementById('w3').textContent='0.'+String(this.value).padStart(2,'0')"></div>
+      <div class="w-row"><div class="w-head"><span class="w-name">ML</span><span class="w-val" id="w4">0.08</span></div><input type="range" min="0" max="40" value="8" oninput="document.getElementById('w4').textContent='0.'+String(this.value).padStart(2,'0')"></div>
+      <div class="w-row"><div class="w-head"><span class="w-name">PCS Rang</span><span class="w-val" id="w5">0.12</span></div><input type="range" min="0" max="40" value="12" oninput="document.getElementById('w5').textContent='0.'+String(this.value).padStart(2,'0')"></div>
+
+      <div class="slabel">Hold-filter</div>
+      <label class="f-check"><input type="checkbox" checked> UAE Team Emirates</label>
+      <label class="f-check"><input type="checkbox" checked> Visma–Lease a Bike</label>
+      <label class="f-check"><input type="checkbox" checked> INEOS Grenadiers</label>
+      <label class="f-check"><input type="checkbox" checked> Soudal Quick-Step</label>
+      <label class="f-check"><input type="checkbox"> Øvrige hold</label>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+      <div class="toolbar">
+        <input class="search" type="text" placeholder="Søg rytter…">
+        <button class="sort-btn active" onclick="setSort(this,'exp')">Vækst ↓</button>
+        <button class="sort-btn" onclick="setSort(this,'score')">Score</button>
+        <button class="sort-btn" onclick="setSort(this,'price')">Pris</button>
+        <button class="sort-btn" onclick="setSort(this,'value')">Value</button>
+        <button class="sort-btn" onclick="setSort(this,'form')">Form</button>
+        <div class="meta-txt" id="metaTxt">175 ryttere · etape 15 · bjerg</div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Rytter</th>
+              <th class="sorted">Forv. vækst</th>
+              <th>Score</th>
+              <th>Pris</th>
+              <th>Value</th>
+              <th>Signaler</th>
+              <th>Disc</th>
+              <th>Form</th>
+              <th>ML</th>
+              <th>PCS</th>
+            </tr>
+          </thead>
+          <tbody id="tBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Bottom scatter -->
+      <div class="scatter-area">
+        <div class="scatter-label">Vækst-fordeling · etape 15 · 175 ryttere</div>
+        <div class="dist-chart" id="distChart"></div>
+        <div class="dist-labels"><span>0</span><span>50K</span><span>100K</span><span>150K</span><span>200K</span><span>250K</span><span>300K+</span></div>
+      </div>
+    </div>
+
+    <!-- Right detail -->
+    <div class="sr">
+      <div class="tabs">
+        <div class="tab active">Rytter</div>
+        <div class="tab">Hold</div>
+        <div class="tab">Model</div>
+      </div>
+
+      <div class="dheader">
+        <div class="dname" id="dName">Tadej Pogačar</div>
+        <div class="dteam" id="dTeam">UAE Team Emirates · SLO</div>
+        <div class="score-row">
+          <div class="dscore" id="dScore">94</div>
+          <div>
+            <div class="dprice" id="dPrice">9.5M kr</div>
+            <div style="font-size:10px;color:var(--text3)" id="dRank">#1 i feltet</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Growth breakdown -->
+      <div class="growth-box">
+        <div class="gb-title">Forventet vækst-breakdown</div>
+        <div class="gb-row">
+          <span class="gb-label">Etapepoint (base)</span>
+          <span class="gb-val pos" id="gbBase">+210K</span>
+        </div>
+        <div class="gb-row">
+          <span class="gb-label">GC-bonus (etape)</span>
+          <span class="gb-val pos" id="gbGC">+100K</span>
+        </div>
+        <div class="gb-row">
+          <span class="gb-label">Trøje-bonus</span>
+          <span class="gb-val pos" id="gbJersey">+45K</span>
+        </div>
+        <div class="gb-row">
+          <span class="gb-label">Klassifikationer</span>
+          <span class="gb-val neu" id="gbClass">+0K</span>
+        </div>
+        <div class="gb-row" style="border-top:1px solid var(--border);margin-top:4px;padding-top:8px">
+          <span>Total forventet</span>
+          <span class="gb-val pos" style="font-size:14px" id="gbTotal">~355K</span>
+        </div>
+      </div>
+
+      <div class="statsGrid">
+        <div class="stat"><div class="stat-v" style="color:var(--orange)" id="stRank">1</div><div class="stat-l">Felt-rang</div></div>
+        <div class="stat"><div class="stat-v" style="color:var(--green)" id="stValue">9.9</div><div class="stat-l">Value</div></div>
+        <div class="stat"><div class="stat-v" style="color:var(--blue)" id="stPCS">1</div><div class="stat-l">PCS rang</div></div>
+        <div class="stat"><div class="stat-v" id="stDelta" style="color:var(--text2)">—</div><div class="stat-l">Delta</div></div>
+      </div>
+
+      <div class="sigsec">
+        <div class="sigsec-title">Signaler</div>
+        <div id="sigBars"></div>
+      </div>
+
+      <div class="optsec">
+        <div class="sigsec-title">Anbefalet hold · 50M</div>
+        <div style="font-size:11px;color:var(--text3);margin-bottom:8px">Total forv. vækst: <span style="color:var(--green);font-weight:700">~1.640K kr</span></div>
+        <div id="optTeam"></div>
+        <button class="btn" style="width:100%;margin-top:8px;font-size:12px">Kopiér til Holdet →</button>
+      </div>
+
+      <div class="valsec">
+        <div class="sigsec-title">Model-validering (2025)</div>
+        <div class="val-r"><span class="val-l">AUC bjerg</span><div class="val-t"><div class="val-f" style="width:89%"></div></div><span class="val-v">0.890</span></div>
+        <div class="val-r"><span class="val-l">AUC TT</span><div class="val-t"><div class="val-f" style="width:90.6%"></div></div><span class="val-v">0.906</span></div>
+        <div class="val-r"><span class="val-l">AUC sprint</span><div class="val-t"><div class="val-f" style="width:83%"></div></div><span class="val-v">0.830</span></div>
+        <div class="val-r"><span class="val-l">Vinder top-5</span><div class="val-t"><div class="val-f" style="width:45.2%;background:var(--green)"></div></div><span class="val-v">45%</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Calibrated growth values — using rank-based model (option C)
+// rank 1 → 35% of winner_pts base, rank 5 → 18%, rank 15 → 7%, rank 40 → 2%
+const winnerPts = 630000; // mountain stage
+function calibratedBase(rank0, n) {
+  const rf = 1.0 - rank0 / Math.max(n-1, 1);
+  return Math.round(0.35 * Math.exp(-2.5 * (1 - rf)) * winnerPts);
+}
+
+const rawRiders = [
+  { name:"Tadej Pogačar",    team:"UAE Team Emirates",   score:94, price:9.5,  pcs:1,  signals:[91,88,100,85,76,95], delta:0,  gcRank:1 },
+  { name:"Jonas Vingegaard", team:"Visma–Lease a Bike",  score:89, price:8.9,  pcs:2,  signals:[84,90,96,79,71,90],  delta:1,  gcRank:2 },
+  { name:"Remco Evenepoel",  team:"Soudal Quick-Step",   score:81, price:7.8,  pcs:4,  signals:[78,82,88,74,68,78],  delta:-1, gcRank:4 },
+  { name:"Carlos Rodríguez", team:"INEOS Grenadiers",    score:74, price:6.2,  pcs:8,  signals:[70,68,82,72,58,71],  delta:2,  gcRank:5 },
+  { name:"Enric Mas",        team:"Movistar Team",       score:71, price:5.8,  pcs:11, signals:[65,72,79,68,55,62],  delta:0,  gcRank:6 },
+  { name:"Felix Gall",       team:"AG2R Citroën",        score:68, price:5.1,  pcs:15, signals:[60,65,76,80,52,59],  delta:3,  gcRank:8 },
+  { name:"Guillaume Martin", team:"Cofidis",             score:62, price:4.4,  pcs:22, signals:[58,60,70,75,48,54],  delta:0,  gcRank:12 },
+  { name:"Neilson Powless",  team:"EF Education",        score:58, price:4.0,  pcs:28, signals:[55,58,64,70,44,50],  delta:-2, gcRank:null },
+  { name:"Thymen Arensman",  team:"INEOS Grenadiers",    score:55, price:3.8,  pcs:31, signals:[52,54,62,68,41,47],  delta:1,  gcRank:null },
+  { name:"Lenny Martinez",   team:"Groupama–FDJ",        score:52, price:3.5,  pcs:35, signals:[48,50,60,65,38,44],  delta:0,  gcRank:null },
+  { name:"David Gaudu",      team:"Groupama–FDJ",        score:49, price:3.2,  pcs:40, signals:[45,47,57,62,35,41],  delta:-1, gcRank:null },
+  { name:"Aleksand Vlasov",  team:"Bora–Hansgrohe",      score:46, price:3.0,  pcs:44, signals:[42,44,54,60,32,38],  delta:0,  gcRank:null },
+  { name:"Dani Martínez",    team:"Red Bull-Bora",       score:44, price:2.9,  pcs:48, signals:[40,42,52,58,30,35],  delta:2,  gcRank:null },
+  { name:"Warren Barguil",   team:"Arkéa",               score:41, price:2.7,  pcs:55, signals:[38,40,50,55,28,32],  delta:0,  gcRank:null },
+  { name:"A. Paret-Peintre", team:"AG2R Citroën",        score:39, price:2.5,  pcs:60, signals:[36,38,48,53,26,30],  delta:1,  gcRank:null },
+];
+
+const gcBonus = [100,90,80,70,60,50,40,30,20,10];
+
+// Simulate 175 riders by padding
+const allN = 175;
+const riders = rawRiders.map((r, i) => {
+  const base = calibratedBase(i, allN);
+  const gc = r.gcRank ? (gcBonus[r.gcRank-1] || 0) * 1000 : 0;
+  const jersey = r.gcRank === 1 ? 45000 : r.gcRank === 2 ? 25000 : 0;
+  const totalExp = base + gc + jersey;
+  return { ...r, base, gc, jersey, totalExp };
+});
+
+// Simulate distribution for all 175 riders
+const distribution = [];
+for(let k=0; k<allN; k++) {
+  const b = calibratedBase(k, allN);
+  const gcB = k < 10 ? gcBonus[k]*1000 : 0;
+  distribution.push(b + gcB);
+}
+
+const sigLabels  = ["VeloScore","Odds","Disciplin","Form","ML","PCS Rang"];
+const sigColors  = ["#58a6ff","#f97316","#3fb950","#a371f7","#f85149","#e3b341"];
+let selIdx = 0;
+let sortKey = 'exp';
+
+function growthClass(v) {
+  if(v >= 200000) return 'gp-high';
+  if(v >= 80000)  return 'gp-med';
+  return 'gp-low';
+}
+function fmt(v) {
+  if(v >= 1000000) return (v/1000000).toFixed(1)+'M';
+  if(v >= 1000) return Math.round(v/1000)+'K';
+  return v;
+}
+
+function renderTable() {
+  const sorted = [...riders].sort((a,b) => b.totalExp - a.totalExp);
+  const body = document.getElementById('tBody');
+  body.innerHTML = sorted.map((r, i) => {
+    const idx = riders.indexOf(r);
+    const isSel = idx === selIdx;
+    const scoreClass = r.score > 80 ? 'score-hi' : r.score > 60 ? 'score-md' : 'score-lo';
+    const dStr = r.delta > 0 ? `<span style="color:var(--green);font-size:10px">▲${r.delta}</span>` :
+                 r.delta < 0 ? `<span style="color:var(--red);font-size:10px">▼${Math.abs(r.delta)}</span>` :
+                 `<span style="color:var(--text3);font-size:10px">—</span>`;
+    const bars = r.signals.map((v,si) =>
+      `<div class="mbar" style="height:${Math.round(v/100*16)}px;background:${sigColors[si]};opacity:0.85"></div>`).join('');
+
+    return `<tr class="${isSel?'sel':''}" onclick="selectRider(${idx})">
+      <td style="color:var(--text3);font-size:11px">${i+1}</td>
+      <td>
+        <div style="font-weight:600;font-size:12px">${r.name}</div>
+        <div style="font-size:10px;color:var(--text3)">${r.team} ${dStr}</div>
+      </td>
+      <td>
+        <span class="growth-pill ${growthClass(r.totalExp)}">+${fmt(r.totalExp)}</span>
+        <div style="font-size:9px;color:var(--text3);margin-top:2px">base ${fmt(r.base)} + GC ${fmt(r.gc)}</div>
+      </td>
+      <td><span class="score-n ${scoreClass}">${r.score}</span></td>
+      <td><span class="price-g">${r.price}M</span></td>
+      <td style="color:var(--text2);font-size:11px;font-weight:600">${(r.score/r.price).toFixed(1)}</td>
+      <td><div class="mbars">${bars}</div></td>
+      <td style="font-size:11px">${r.signals[2]}</td>
+      <td style="font-size:11px">${r.signals[3]}</td>
+      <td style="font-size:11px">${r.signals[4]}</td>
+      <td style="font-size:11px">${r.signals[5]}</td>
+    </tr>`;
+  }).join('');
+}
+
+function selectRider(idx) {
+  selIdx = idx;
+  renderTable();
+  const r = riders[idx];
+  document.getElementById('dName').textContent = r.name;
+  document.getElementById('dTeam').textContent = r.team;
+  document.getElementById('dScore').textContent = r.score;
+  document.getElementById('dPrice').textContent = r.price + 'M kr';
+  document.getElementById('dRank').textContent = '#' + (idx+1) + ' i feltet';
+  document.getElementById('stRank').textContent = idx+1;
+  document.getElementById('stValue').textContent = (r.score/r.price).toFixed(1);
+  document.getElementById('stPCS').textContent = r.pcs;
+  document.getElementById('stDelta').textContent = r.delta > 0 ? '+'+r.delta : r.delta === 0 ? '—' : r.delta;
+  document.getElementById('gbBase').textContent = '+' + fmt(r.base);
+  document.getElementById('gbGC').textContent = r.gc > 0 ? '+'+fmt(r.gc) : '+0K';
+  document.getElementById('gbJersey').textContent = r.jersey > 0 ? '+'+fmt(r.jersey) : '+0K';
+  document.getElementById('gbClass').textContent = '+0K';
+  document.getElementById('gbTotal').textContent = '~' + fmt(r.totalExp);
+  document.getElementById('sigBars').innerHTML = sigLabels.map((l,i) => `
+    <div class="sig-r">
+      <div class="sig-l">${l}</div>
+      <div class="sig-t"><div class="sig-f" style="width:${r.signals[i]}%;background:${sigColors[i]}"></div></div>
+      <div class="sig-v">${r.signals[i]}</div>
+    </div>`).join('');
+}
+
+function setSort(btn, key) {
+  document.querySelectorAll('.sort-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// Render team optimizer
+const team = [
+  {n:"Pogačar",p:9.5,cap:true,exp:"~355K"},{n:"Vingegaard",p:8.9,exp:"~231K"},
+  {n:"Evenepoel",p:7.8,exp:"~134K"},{n:"C. Rodríguez",p:6.2,exp:"~93K"},
+  {n:"Felix Gall",p:5.1,exp:"~65K"},{n:"G. Martin",p:4.4,exp:"~29K"},
+  {n:"Powless",p:4.0,exp:"~16K"},{n:"Arensman",p:3.8,exp:"~10K"}
+];
+document.getElementById('optTeam').innerHTML = team.map(t=>`
+  <div class="opt-row">
+    <span class="opt-n">${t.n} ${t.cap?'<span class="opt-cap">⭐ KAP</span>':''}</span>
+    <span style="display:flex;gap:8px;align-items:center">
+      <span class="opt-exp">${t.exp}</span>
+      <span class="opt-p">${t.p}M</span>
+    </span>
+  </div>`).join('');
+
+// Distribution chart
+function renderDist() {
+  const buckets = Array(14).fill(0);
+  distribution.forEach(v => {
+    const bucket = Math.min(13, Math.floor(v / 25000));
+    buckets[bucket]++;
+  });
+  const maxB = Math.max(...buckets);
+  const chart = document.getElementById('distChart');
+  chart.innerHTML = buckets.map((count, i) => {
+    const h = Math.max(3, Math.round(count / maxB * 48));
+    const isHigh = i >= 8; // >200K
+    return `<div class="dist-bar ${isHigh?'highlight':'normal'}" style="height:${h}px" title="${i*25}K-${(i+1)*25}K: ${count} ryttere"></div>`;
+  }).join('');
+}
+
+renderTable();
+selectRider(0);
+renderDist();
+</script>
+</body>
+</html>

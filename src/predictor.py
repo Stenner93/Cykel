@@ -413,6 +413,8 @@ def predict_rider(
         "price":         rider.get("price"),
         "expected_pts":  round(expected_pts),
         "win_prob":      round(composite, 4),
+        "winner_pts":    round(winner_pts),
+        "composite_base_pts": round(composite * winner_pts),
         "variance":      round(variance),
         "reasoning":     ", ".join(reasons),
         # disc_key / disc_raw: felt-normaliseret disciplinrating (bedste i feltet → 100).
@@ -660,25 +662,45 @@ def predict_all(
         # disc_co_raw = rå CO-blend-værdi FØR felt-normalisering (bruges til display,
         # så brugeren ser det absolutte CO-tal, ikke det felt-relative 0-100 tal).
         pred["disc_co_raw"] = round(field_vals.get(rider["id"], 0), 1)
-        # Apply rider context multiplier (status from previous stage)
-        ctx = (rider_context or {}).get(rider["id"])
+        results.append(pred)
+
+    # ── Rank-based calibration ───────────────────────────────────────────────
+    # The composite signal ranks riders well but its absolute value clusters
+    # at 0.60–0.75 when signals are sparse (e.g. TTT stage 1 with no
+    # VeloScore/odds). Multiplying by winner_pts then gives a flat band
+    # where 40+ riders all score ~260K, which is unrealistic.
+    #
+    # Fix: use composite ORDER to rank riders, then apply an exponential decay
+    # based on field rank so the MAGNITUDE matches empirical Giro/Dauphiné
+    # distributions (rank 1 → 35% of winner_pts, rank 5 → 29%, rank 20 → 17%,
+    # rank 50 → 8%, rank 100 → 2%). GC/jersey/sprint/KOM bonuses are untouched.
+    results.sort(key=lambda x: x["expected_pts"], reverse=True)
+    _n = len(results)
+    for _i, pred in enumerate(results):
+        _frac = _i / max(_n - 1, 1)
+        _wp   = pred.get("winner_pts", 500_000)
+        _addon = pred["expected_pts"] - pred["composite_base_pts"]
+        _calibrated_base = round(0.35 * math.exp(-4.0 * _frac) * _wp)
+        pred["expected_pts"] = _calibrated_base + _addon
+
+    # ── Context multipliers ──────────────────────────────────────────────────
+    for pred in results:
+        ctx = (rider_context or {}).get(pred["rider_id"])
         if ctx:
             status = ctx.get("status", "normal")
             if status not in STATUS_MULTIPLIERS:
-                print(f"  [WARN] Ukendt status {status!r} for {rider['id']}"
+                print(f"  [WARN] Ukendt status {status!r} for {pred['rider_id']}"
                       f" — brug: {list(STATUS_MULTIPLIERS)}")
                 status = "normal"
             mult   = STATUS_MULTIPLIERS.get(status, 1.0)
-            pred["expected_pts"]     = round(pred["expected_pts"] * mult)
-            pred["context_status"]   = status
-            pred["context_note"]     = ctx.get("note", "")
-            pred["context_mult"]     = mult
+            pred["expected_pts"]   = round(pred["expected_pts"] * mult)
+            pred["context_status"] = status
+            pred["context_note"]   = ctx.get("note", "")
+            pred["context_mult"]   = mult
         else:
-            pred["context_status"]   = "normal"
-            pred["context_note"]     = ""
-            pred["context_mult"]     = 1.0
-
-        results.append(pred)
+            pred["context_status"] = "normal"
+            pred["context_note"]   = ""
+            pred["context_mult"]   = 1.0
 
     results.sort(key=lambda x: x["expected_pts"], reverse=True)
     return results
