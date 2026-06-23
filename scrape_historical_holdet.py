@@ -151,8 +151,17 @@ def scrape_race(cfg: dict, sh, pcs_types: dict, out_dir: Path) -> dict:
         print(f"  [ERROR] Kunne ikke hente etapeplan: {exc}")
         return {}
 
+    DONE_STATUSES = {"finished", "closed", "past", "complete", "ended"}
     finished = [eid for eid in events
-                if event_info.get(eid, {}).get("status") == "finished"]
+                if event_info.get(eid, {}).get("status") in DONE_STATUSES]
+
+    # For archived races: if none marked "finished", treat all events as done
+    if not finished and events:
+        statuses = {event_info.get(eid, {}).get("status", "?") for eid in events[:5]}
+        print(f"  [INFO] Ingen etaper med status 'finished' — fundne statuser: {statuses}")
+        print(f"  [INFO] Behandler alle {len(events)} etaper som afsluttede (arkiveret løb)")
+        finished = list(events)
+
     print(f"  {len(events)} etaper i alt, {len(finished)} afsluttede")
 
     # Fetch players (name + id mapping)
