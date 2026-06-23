@@ -45,6 +45,15 @@
     "holdet_person_id": 4517
   },
   {
+    "id": "anders_skaarseth",
+    "full_name": "Anders Skaarseth",
+    "short_name": "A. Skaarseth",
+    "team": "UXM",
+    "team_full": "Uno-X Mobility",
+    "price": 2.5,
+    "holdet_person_id": 47338
+  },
+  {
     "id": "andreas_kron",
     "full_name": "Andreas Kron",
     "short_name": "Kron",
@@ -52,6 +61,15 @@
     "team_full": "Uno-X Mobility",
     "price": 3.5,
     "holdet_person_id": 4572
+  },
+  {
+    "id": "anthon_charmig",
+    "full_name": "Anthon Charmig",
+    "short_name": "Charmig",
+    "team": "UXM",
+    "team_full": "Uno-X Mobility",
+    "price": 3.5,
+    "holdet_person_id": 4887
   },
   {
     "id": "antonio_tiberi",
@@ -88,15 +106,6 @@
     "team_full": "Team Jayco AlUla",
     "price": 6.0,
     "holdet_person_id": 3546
-  },
-  {
-    "id": "ben_tulett",
-    "full_name": "Ben Tulett",
-    "short_name": "Tulett",
-    "team": "VLB",
-    "team_full": "Team Visma | Lease a Bike",
-    "price": 5.0,
-    "holdet_person_id": 4633
   },
   {
     "id": "benjamin_thomas",
@@ -187,6 +196,15 @@
     "team_full": "Groupama - FDJ United",
     "price": 5.0,
     "holdet_person_id": 3534
+  },
+  {
+    "id": "davide_piganzoli",
+    "full_name": "Davide Piganzoli",
+    "short_name": "D. Piganzoli",
+    "team": "VLB",
+    "team_full": "Team Visma | Lease a Bike",
+    "price": 6.0,
+    "holdet_person_id": 4936
   },
   {
     "id": "dorian_godon",
@@ -432,6 +450,15 @@
     "holdet_person_id": 3547
   },
   {
+    "id": "jonas_abrahamsen",
+    "full_name": "Jonas Abrahamsen",
+    "short_name": "Abrahamsen",
+    "team": "UXM",
+    "team_full": "Uno-X Mobility",
+    "price": 4.5,
+    "holdet_person_id": 4893
+  },
+  {
     "id": "jonas_rickaert",
     "full_name": "Jonas Rickaert",
     "short_name": "Rickaert",
@@ -639,6 +666,15 @@
     "holdet_person_id": 4547
   },
   {
+    "id": "max_kanter",
+    "full_name": "Max Kanter",
+    "short_name": "Kanter",
+    "team": "XDA",
+    "team_full": "XDS Astana Team",
+    "price": 5.5,
+    "holdet_person_id": 4201
+  },
+  {
     "id": "maxim_van_gils",
     "full_name": "Maxim Van Gils",
     "short_name": "Gils",
@@ -783,6 +819,15 @@
     "holdet_person_id": 2191
   },
   {
+    "id": "per_strand_hagenes",
+    "full_name": "Per Strand Hagenes",
+    "short_name": "Hagenes",
+    "team": "VLB",
+    "team_full": "Team Visma | Lease a Bike",
+    "price": 3.5,
+    "holdet_person_id": 47199
+  },
+  {
     "id": "piet_allegaert",
     "full_name": "Piet Allegaert",
     "short_name": "Allegaert",
@@ -900,6 +945,15 @@
     "holdet_person_id": 3243
   },
   {
+    "id": "søren_wærenskjold",
+    "full_name": "Søren Wærenskjold",
+    "short_name": "Wærenskjold",
+    "team": "UXM",
+    "team_full": "Uno-X Mobility",
+    "price": 5.5,
+    "holdet_person_id": 4886
+  },
+  {
     "id": "tadej_pogacar",
     "full_name": "Tadej Pogacar",
     "short_name": "Pogacar",
@@ -961,6 +1015,15 @@
     "team_full": "Uno-X Mobility",
     "price": 8.5,
     "holdet_person_id": 4891
+  },
+  {
+    "id": "torstein_træen",
+    "full_name": "Torstein Træen",
+    "short_name": "Træen",
+    "team": "UXM",
+    "team_full": "Uno-X Mobility",
+    "price": 5.0,
+    "holdet_person_id": 4885
   },
   {
     "id": "valentin_paret-peintre",
