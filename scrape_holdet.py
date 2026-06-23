@@ -234,13 +234,20 @@ def list_cycling_cartridges() -> list[dict]:
         "vuelta-a-espana-2026",
         "criterium-du-dauphine-2026",
         "tour-de-suisse-2026",
-        # 2025 historical (training data)
+        # 2025 historical — full names
         "tour-de-france-2025",
         "giro-d-italia-2025",
         "vuelta-a-espana-2025",
         "criterium-du-dauphine-2025",
-        # alt slugs
-        "tdf-2026", "tdf-2025",
+        # 2025 historical — short names (som de fremgår i URL'erne)
+        "vuelta-2025",
+        "giro-2025",
+        "tdf-2025",
+        # 2025 historical — andre varianter
+        "tourspillet-2025",
+        "girospillet-2025",
+        "vueltaspillet-2025",
+        "le-tour-2025",
     ]
     found = []
     for slug in candidates:
