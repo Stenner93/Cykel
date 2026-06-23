@@ -8,7 +8,7 @@
  "validated_on_year": 2025,
  "n_train": 40787,
  "n_val": 10427,
- "n_features": 18,
+ "n_features": 19,
  "train_metrics": {
   "auc_top5": 0.879,
   "ap_top5": 0.3933,
@@ -43,11 +43,11 @@
    "importance": 158
   },
   {
-   "feature": "gt_wins_so_far",
+   "feature": "co_mtn",
    "importance": 126
   },
   {
-   "feature": "co_mtn",
+   "feature": "gt_wins_so_far",
    "importance": 126
   },
   {
@@ -71,11 +71,11 @@
    "importance": 82
   },
   {
-   "feature": "spec_climber",
+   "feature": "co_cob",
    "importance": 74
   },
   {
-   "feature": "co_cob",
+   "feature": "spec_climber",
    "importance": 74
   },
   {
@@ -97,6 +97,10 @@
   {
    "feature": "is_mountain",
    "importance": 10
+  },
+  {
+   "feature": "startlist_quality",
+   "importance": 0
   }
  ],
  "winner_hit_rate": 0.4516,
@@ -1643,5 +1647,5 @@
    "winner_in_pred": 1
   }
  ],
- "generated": "2026-06-22T20:39:39.789531+00:00"
+ "generated": "2026-06-23T07:29:45.707221+00:00"
 }
