@@ -417,9 +417,10 @@ function tdfRenderPredStage(num) {
     const rowCls  = [r.in_opt ? 'in-opt' : '', r.is_cap ? 'is-cap' : ''].filter(Boolean).join(' ');
     const rankCls = i < 3 ? 'rank-top' : 'rank-num';
 
-    // Display holdet_est (100-400 scale) or fall back to exp/1000
-    const estPts  = r.holdet_est ?? (r.exp ? Math.round(r.exp / 1000) : null);
-    const estDisp = estPts != null ? Math.round(estPts) : '–';
+    // holdet_est is in Holdet API units (×1000 = displayed value on Holdet.dk)
+    // e.g. holdet_est=202 → displayed as "202k" (= 202.000 on Holdet)
+    const estPts  = r.holdet_est ?? (r.exp ? r.exp / 1000 : null);
+    const estDisp = estPts != null ? tdfFmtK(Math.round(estPts * 1000)) : '–';
     const bwaBadge = r.breakaway_specialist
       ? `<span title="Udbryderspecialist" style="font-size:0.7rem;margin-left:4px;color:#f39c12">BWA</span>`
       : '';
@@ -428,12 +429,12 @@ function tdfRenderPredStage(num) {
     if (hasAny) {
       if (r.actual != null) {
         // actual is in large Holdet scale; convert to same scale as holdet_est
-        const actPts = Math.round(r.actual / 1000);
+        const actPts = r.actual / 1000;
         const cls    = tdfActClass(actPts, estPts);
         const diff   = actPts - (estPts ?? 0);
         const sign   = diff >= 0 ? '+' : '';
-        actHtml = `<td class="pts-act ${cls}">${actPts}</td>
-                   <td class="${cls}" style="font-size:0.75rem">${sign}${diff}</td>`;
+        actHtml = `<td class="pts-act ${cls}">${tdfFmtK(Math.round(actPts * 1000))}</td>
+                   <td class="${cls}" style="font-size:0.75rem">${sign}${tdfFmtK(Math.round(diff * 1000))}</td>`;
       } else {
         actHtml = `<td style="color:var(--muted)">–</td><td>–</td>`;
       }
