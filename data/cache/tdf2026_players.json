@@ -585,6 +585,15 @@
     "holdet_person_id": 4694
   },
   {
+    "id": "mads_pedersen",
+    "full_name": "Mads Pedersen",
+    "short_name": "M. Pedersen",
+    "team": "L-T",
+    "team_full": "Lidl - Trek",
+    "price": 9.5,
+    "holdet_person_id": 3564
+  },
+  {
     "id": "magnus_cort",
     "full_name": "Magnus Cort",
     "short_name": "Cort",
@@ -853,15 +862,6 @@
     "team_full": "Pinarello Q36.5 Pro Cycling Team",
     "price": 3.5,
     "holdet_person_id": 4525
-  },
-  {
-    "id": "mads_pedersen",
-    "full_name": "Mads Pedersen",
-    "short_name": "M. Pedersen",
-    "team": "L-T",
-    "team_full": "Lidl - Trek",
-    "price": 9.5,
-    "holdet_person_id": 3564
   },
   {
     "id": "remco_evenepoel",
