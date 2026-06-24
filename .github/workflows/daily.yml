@@ -100,6 +100,14 @@ jobs:
           python build_tdf_web_data.py --delay 0.5 \
             || echo "⚠️  TdF build slog fejl — fortsætter"
 
+      # ── 4b. Byg Analytik JSON (alle etaper, Holdet-ryttere, CO + PCS) ───────
+      - name: Byg Analytik-data
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python build_analytics.py \
+            || echo "⚠️  Analytik-build slog fejl — fortsætter"
+
       # ── 5. Kør forudsigelser ────────────────────────────────────────────────
       #    Altid — enten med bruger-angivne værdier eller auto-detekteret etape.
       #    Scriptet finder selv etape + type fra Holdets program hvis ikke angivet.

@@ -199,8 +199,34 @@
   .val-f  { height:100%; border-radius:2px; background:var(--blue); }
   .val-v  { font-size:11px; font-weight:700; width:36px; text-align:right; }
 
-  /* Empty/loading state */
-  .empty-state { padding:40px 14px; text-align:center; color:var(--text3); font-size:12px; }
+  /* Stage type dot colors */
+  .dot-ttt      { background:#f97316; }
+  .dot-tt       { background:#f97316; }
+  .dot-sprint   { background:#58a6ff; }
+  .dot-mountain { background:#3fb950; }
+  .dot-hilly    { background:#a371f7; }
+  .dot-cobbled  { background:#e3b341; }
+
+  /* CO / PCS ability bars in detail panel */
+  .ability-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:12px 14px; border-top:1px solid var(--border); }
+  .ab-box { background:var(--bg3); border:1px solid var(--border); border-radius:5px; padding:8px; }
+  .ab-title { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:var(--text3); margin-bottom:6px; }
+  .ab-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:3px; font-size:11px; }
+  .ab-key { color:var(--text2); }
+  .ab-val { font-weight:700; }
+  .ab-bar { height:3px; border-radius:1px; margin-top:1px; }
+  .ab-val-hi { color:var(--green); }
+  .ab-val-md { color:var(--orange); }
+  .ab-val-lo { color:var(--text3); }
+
+  /* Ability column cells in table */
+  .ability-cell { font-size:11px; font-weight:600; }
+  .abil-hi { color:var(--green); }
+  .abil-md { color:var(--orange); }
+  .abil-lo { color:var(--text3); }
+
+  /* Holdet est pill */
+  .hest-pill { font-size:12px; font-weight:700; color:var(--green); }
 
   /* Spinner */
   .spinner { display:none; position:fixed; inset:0; background:rgba(15,17,23,0.8); z-index:100; align-items:center; justify-content:center; flex-direction:column; gap:12px; }
@@ -221,7 +247,7 @@
   <div class="header">
     <a href="index.html" class="logo">🚴 CYKEL</a>
     <div class="sep"></div>
-    <div class="stage-info">TdF 2026 · <strong>Etape 1</strong> · TTT · Etape 1 · Spanien</div>
+    <div class="stage-info" id="headerStageInfo">TdF 2026 · <strong id="headerStageName">Indlæser…</strong></div>
     <div class="header-right">
       <a href="index.html"    class="nav-link">TdF 2026</a>
       <a href="giro.html"     class="nav-link">Giro 2026</a>
@@ -238,7 +264,7 @@
     <!-- ── Sidebar left ── -->
     <div class="sl">
       <div class="slabel">Etape</div>
-      <button class="stage-btn active"><span class="tdot dot-tt"></span>Etape 1 · TTT</button>
+      <div id="stageBtns"></div>
 
       <div class="slabel">Signalvægte</div>
       <div class="w-row">
@@ -286,18 +312,16 @@
       <div class="table-wrap" id="tableWrap">
         <table>
           <thead>
-            <tr>
+            <tr id="tHead">
               <th>#</th>
               <th>Rytter</th>
-              <th class="sorted">Forv. vækst</th>
-              <th>Score</th>
+              <th class="sorted">Holdet Est</th>
               <th>Pris</th>
               <th>Value</th>
+              <th id="thCO">CO</th>
+              <th id="thPCS">PCS Spec.</th>
+              <th>PCS Rang</th>
               <th>Signaler</th>
-              <th>Disc</th>
-              <th>Form</th>
-              <th>ML</th>
-              <th>PCS</th>
             </tr>
           </thead>
           <tbody id="tBody"></tbody>
@@ -385,339 +409,136 @@
 </div>
 
 <script>
-// ── Constants ──────────────────────────────────────────────────────────────
-const SIG_KEYS   = ['veloscore', 'odds', 'discipline', 'form', 'ml', 'pcs_rank'];
+// ── Team names (Holdet.dk codes) ───────────────────────────────────────────
+const TEAM_NAMES = {
+  'UAE':'UAE Team Emirates - XRG','VLB':'Team Visma | Lease a Bike',
+  'RBH':'Red Bull - BORA - hansgrohe','IGD':'Netcompany INEOS Cycling Team',
+  'SQ':'Soudal Quick-Step','L-T':'Lidl - Trek','MOV':'Movistar Team',
+  'GFD':'Groupama - FDJ United','DAL':'Decathlon CMA CGM Team',
+  'INT':'Lotto Intermarché','EF':'EF Education - EasyPost',
+  'UXM':'Uno-X Mobility','JAL':'Team Jayco AlUla','COF':'Cofidis',
+  'ALP':'Alpecin-Premier Tech','TVM':'Bahrain - Victorious',
+  'TPP':'Team Picnic PostNL','Q36':'Pinarello Q36.5 Pro Cycling',
+  'CRSR':'Caja Rural - Seguros RGA','NCT':'NSN Cycling Team',
+  'XDA':'XDS Astana Team','TDR':'Tudor Pro Cycling Team','T':'TotalEnergies',
+};
+
+// Stage type → column labels
+const TYPE_CO  = { sprint:'SPR', mountain:'MTN', tt:'ITT', ttt:'ITT', hilly:'HLL', cobbled:'COB' };
+const TYPE_PCS = { sprint:'sprint', mountain:'climber', tt:'tt', ttt:'tt', hilly:'hills', cobbled:'onedayraces' };
+const TYPE_CO_LABEL  = { SPR:'Sprint', MTN:'Klatring', ITT:'Enkeltstart', HLL:'Kuperet', COB:'Brosten' };
+const TYPE_PCS_LABEL = { sprint:'PCS Sprint', climber:'PCS Klatrer', tt:'PCS TT', hills:'PCS Kuperet', onedayraces:'PCS Klassiker' };
+const TYPE_DOT = { sprint:'dot-sprint', mountain:'dot-mountain', tt:'dot-tt', ttt:'dot-ttt', hilly:'dot-hilly', cobbled:'dot-cobbled' };
+const TYPE_DK  = { sprint:'Sprint', mountain:'Bjerg', tt:'Enkeltstart', ttt:'Holdstart', hilly:'Kuperet', cobbled:'Brosten' };
+const SIG_KEYS   = ['veloscore', 'odds', 'disc', 'form', 'ml', 'pcs_rank'];
 const SIG_LABELS = ['VeloScore', 'Odds', 'Disciplin', 'Form', 'ML', 'PCS Rang'];
 const SIG_COLORS = ['#58a6ff', '#f97316', '#3fb950', '#a371f7', '#f85149', '#e3b341'];
 
-const TEAM_NAMES = {
-  'UAETEXRG': 'UAE Team Emirates',
-  'TV|L':     'Visma–Lease a Bike',
-  'INEOSG':   'INEOS Grenadiers',
-  'SQ':       'Soudal Quick-Step',
-  'RB-B':     'Red Bull–Bora',
-  'L-T':      'Lidl–Trek',
-  'MT':       'Movistar Team',
-  'G-F':      'Groupama–FDJ',
-  'DALM':     'Decathlon AG2R',
-  'LOTTO':    'Lotto Dstny',
-  'I-PT':     'Israel–Premier Tech',
-  'EFEEP':    'EF Education–EasyPost',
-  'UM':       'Uno-X Mobility',
-  'TJA':      'Team Jayco AlUla',
-  'UTR':      'Tudor Pro Cycling',
-  'A-D':      'Alpecin–Deceuninck',
-  'B-V':      'Bahrain–Victorious',
-  'TPCT':     'Tudor Pro Cycling',
-  'TPP':      'Team Picnic PostNL',
-  'QPCT':     'Q36.5 Pro Cycling',
-  'GP-B':     'Groupama–FDJ (B)',
-  'TPV':      'DSM–Firmenich PostNL',
-  'XDSAT':    'Astana Qazaqstan',
-};
-
 // ── State ──────────────────────────────────────────────────────────────────
-let allRiders  = [];
-let weights    = [0.20, 0.18, 0.20, 0.22, 0.08, 0.12];
-let sortKey    = 'exp';
-let selRiderId = null;
+let ALL_STAGES  = [];
+let curStageIdx = 0;
+let allRiders   = [];
+let sortKey     = 'est';
+let selRiderId  = null;
 let enabledTeams = new Set();
 
-// ── Formatters ─────────────────────────────────────────────────────────────
-function fmt(v) {
+// ── Helpers ────────────────────────────────────────────────────────────────
+function fmtK(v) {
   if (v == null || isNaN(v)) return '–';
-  if (Math.abs(v) >= 1000000) return (v / 1000000).toFixed(1) + 'M';
-  if (Math.abs(v) >= 1000)    return Math.round(v / 1000) + 'K';
-  return String(v);
+  const k = Math.round(v / 1000);
+  return k >= 1000 ? (k/1000).toFixed(1)+'M' : k+'k';
+}
+function fmtRaw(v, dec=0) {
+  if (v == null || v === 0) return '–';
+  return Number(v).toFixed(dec);
+}
+function abilClass(v) {
+  if (v == null) return 'abil-lo';
+  if (v >= 70) return 'abil-hi';
+  if (v >= 40) return 'abil-md';
+  return 'abil-lo';
+}
+function abilDetailClass(v) {
+  if (v == null) return 'ab-val-lo';
+  if (v >= 70) return 'ab-val-hi';
+  if (v >= 40) return 'ab-val-md';
+  return 'ab-val-lo';
+}
+function curStage() { return ALL_STAGES[curStageIdx] || {}; }
+function curType()  { return curStage().type || 'hilly'; }
+function curCoKey() { return TYPE_CO[curType()] || 'HLL'; }
+function curPcsKey(){ return TYPE_PCS[curType()] || 'hills'; }
+
+// ── Stage selector ─────────────────────────────────────────────────────────
+function buildStageBtns() {
+  const container = document.getElementById('stageBtns');
+  container.innerHTML = ALL_STAGES.map((s, i) => {
+    const dot  = TYPE_DOT[s.type] || 'dot-hilly';
+    const type = TYPE_DK[s.type] || s.type;
+    const active = i === curStageIdx ? ' active' : '';
+    return `<button class="stage-btn${active}" onclick="selectStage(${i})">
+      <span class="tdot ${dot}"></span>E${s.num} · ${type}
+    </button>`;
+  }).join('');
 }
 
-function fmtSig(v) {
-  if (v == null) return '–';
-  return v.toFixed(2);
-}
-
-function growthClass(v) {
-  if (v >= 150000) return 'gp-high';
-  if (v >= 60000)  return 'gp-med';
-  return 'gp-low';
-}
-
-function scoreClass(s) {
-  if (s >= 70) return 'score-hi';
-  if (s >= 40) return 'score-md';
-  return 'score-lo';
-}
-
-// ── Bonus computation (on load, from original expected_pts ranks) ──────────
-function computeBonuses(riders) {
-  const sorted = [...riders].sort((a, b) => b.expected_pts - a.expected_pts);
-  const N = sorted.length;
-  sorted.forEach((r, i) => {
-    const frac = i / Math.max(N - 1, 1);
-    const calibratedBase = Math.round(0.35 * Math.exp(-4.0 * frac) * r.winner_pts);
-    r.bonus = r.expected_pts - calibratedBase;
-  });
-}
-
-// ── Recompute composites + re-rank ─────────────────────────────────────────
-function recompute() {
-  for (const r of allRiders) {
-    let wSum = 0, vSum = 0;
-    SIG_KEYS.forEach((k, i) => {
-      const v = r.signals[k];
-      if (v !== null && v !== undefined) {
-        wSum += weights[i];
-        vSum += weights[i] * v;
-      }
-    });
-    r._composite      = wSum > 0 ? vSum / wSum : 0;
-    r._compositeScore = Math.round(r._composite * 100);
-  }
-
-  const rankSorted = [...allRiders].sort((a, b) => b._composite - a._composite);
-  const N = rankSorted.length;
-  rankSorted.forEach((r, i) => {
-    const frac = i / Math.max(N - 1, 1);
-    r._rank           = i + 1;
-    r._calibratedBase = Math.round(0.35 * Math.exp(-4.0 * frac) * r.winner_pts);
-    r._expectedPts    = r._calibratedBase + r.bonus;
-  });
-
+function selectStage(idx) {
+  curStageIdx = idx;
+  const s = curStage();
+  allRiders = s.riders || [];
+  enabledTeams = new Set(allRiders.map(r => r.team));
+  buildStageBtns();
+  buildTeamFilters();
+  updateHeader();
+  updateColumnHeaders();
   renderTable();
   renderDist();
   if (selRiderId) renderDetail();
+  else if (allRiders.length) { selRiderId = allRiders[0].id; renderDetail(); }
   renderOptimizer();
 }
 
-// ── Filtered + sorted riders ───────────────────────────────────────────────
-function getFiltered() {
-  const q = document.getElementById('searchInput').value.trim().toLowerCase();
-  return allRiders.filter(r => {
-    if (!enabledTeams.has(r.team)) return false;
-    if (q) {
-      const name = r.full_name.toLowerCase();
-      const team = (TEAM_NAMES[r.team] || r.team).toLowerCase();
-      if (!name.includes(q) && !team.includes(q)) return false;
-    }
-    return true;
-  });
+function updateHeader() {
+  const s = curStage();
+  const type = TYPE_DK[s.type] || s.type;
+  const stageName = document.getElementById('headerStageName');
+  if (stageName) stageName.textContent = `Etape ${s.num} · ${type} · ${(s.name||'').split(' - ').pop()}`;
 }
 
-function getSorted(riders) {
-  return [...riders].sort((a, b) => {
-    switch (sortKey) {
-      case 'score': return b._compositeScore - a._compositeScore;
-      case 'price': return b.price - a.price;
-      case 'value': {
-        const va = a.price > 0 ? a._compositeScore / a.price : 0;
-        const vb = b.price > 0 ? b._compositeScore / b.price : 0;
-        return vb - va;
-      }
-      case 'form':  return (b.signals.form ?? -1) - (a.signals.form ?? -1);
-      default:      return b._expectedPts - a._expectedPts;
-    }
-  });
-}
-
-// ── Render table ───────────────────────────────────────────────────────────
-function renderTable() {
-  const filtered = getFiltered();
-  const sorted   = getSorted(filtered);
-  const body     = document.getElementById('tBody');
-
-  document.getElementById('metaTxt').textContent =
-    `${sorted.length} ryttere · etape 1 · ttt`;
-
-  body.innerHTML = sorted.map((r, rowIdx) => {
-    const isSel  = r.rider_id === selRiderId;
-    const teamDisplay = TEAM_NAMES[r.team] || r.team;
-    const value = r.price > 0 ? (r._compositeScore / r.price).toFixed(1) : '–';
-
-    const bars = SIG_KEYS.map((k, si) => {
-      const v = r.signals[k];
-      const h = v != null ? Math.max(1, Math.round(v * 18)) : 0;
-      const col = v != null ? SIG_COLORS[si] : '#30363d';
-      return `<div class="mbar" style="height:${h}px;background:${col};opacity:0.85"></div>`;
-    }).join('');
-
-    const disc   = r.signals.discipline != null ? r.signals.discipline.toFixed(2) : '–';
-    const form   = r.signals.form       != null ? r.signals.form.toFixed(2)       : '–';
-    const ml     = r.signals.ml         != null ? r.signals.ml.toFixed(2)         : '–';
-    const pcs    = r.signals.pcs_rank   != null ? r.signals.pcs_rank.toFixed(2)   : '–';
-
-    const sc = r._compositeScore;
-    const scCls = scoreClass(sc);
-
-    return `<tr class="${isSel ? 'sel' : ''}" onclick="selectRider('${r.rider_id}')">
-      <td style="color:var(--text3);font-size:11px">${rowIdx + 1}</td>
-      <td>
-        <div style="font-weight:600;font-size:12px">${r.full_name}</div>
-        <div style="font-size:10px;color:var(--text3)">${teamDisplay}</div>
-      </td>
-      <td>
-        <span class="growth-pill ${growthClass(r._expectedPts)}">+${fmt(r._expectedPts)}</span>
-        <div style="font-size:9px;color:var(--text3);margin-top:2px">base ${fmt(r._calibratedBase)} + bonus ${fmt(r.bonus)}</div>
-      </td>
-      <td><span class="score-n ${scCls}">${sc}</span></td>
-      <td><span class="price-g">${r.price.toFixed(1)}M</span></td>
-      <td style="color:var(--text2);font-size:11px;font-weight:600">${value}</td>
-      <td><div class="mbars">${bars}</div></td>
-      <td style="font-size:11px">${disc}</td>
-      <td style="font-size:11px">${form}</td>
-      <td style="font-size:11px">${ml}</td>
-      <td style="font-size:11px">${pcs}</td>
-    </tr>`;
-  }).join('');
-}
-
-// ── Render distribution histogram ──────────────────────────────────────────
-function renderDist() {
-  const filtered = getFiltered();
-  const buckets  = Array(14).fill(0);
-  filtered.forEach(r => {
-    const b = Math.min(13, Math.floor(r._expectedPts / 25000));
-    if (b >= 0) buckets[b]++;
-  });
-  const maxB  = Math.max(1, ...buckets);
-  const chart = document.getElementById('distChart');
-  chart.innerHTML = buckets.map((count, i) => {
-    const h       = Math.max(3, Math.round(count / maxB * 48));
-    const isHigh  = i * 25000 >= 150000;
-    const label   = `${i * 25}K–${(i + 1) * 25}K: ${count} ryttere`;
-    return `<div class="dist-bar ${isHigh ? 'highlight' : 'normal'}" style="height:${h}px" title="${label}"></div>`;
-  }).join('');
-
-  document.getElementById('distLabel').textContent =
-    `Vækst-fordeling · etape 1 · ttt · ${filtered.length} ryttere`;
-}
-
-// ── Select & render detail panel ───────────────────────────────────────────
-function selectRider(id) {
-  selRiderId = id;
-  renderTable();
-  renderDetail();
-}
-
-function renderDetail() {
-  const r = allRiders.find(x => x.rider_id === selRiderId);
-  if (!r) return;
-
-  const teamDisplay = TEAM_NAMES[r.team] || r.team;
-  const value = r.price > 0 ? (r._compositeScore / r.price).toFixed(1) : '–';
-
-  document.getElementById('dName').textContent  = r.full_name;
-  document.getElementById('dTeam').textContent  = teamDisplay;
-  document.getElementById('dScore').textContent = r._compositeScore;
-  document.getElementById('dPrice').textContent = r.price.toFixed(1) + 'M kr';
-  document.getElementById('dRank').textContent  = '#' + r._rank + ' i feltet';
-  document.getElementById('stRank').textContent = r._rank;
-  document.getElementById('stValue').textContent = value;
-  document.getElementById('stDisc').textContent =
-    r.signals.discipline != null ? r.signals.discipline.toFixed(2) : '–';
-  document.getElementById('stForm').textContent =
-    r.signals.form       != null ? r.signals.form.toFixed(2)       : '–';
-
-  const bonusVal = r.bonus;
-  document.getElementById('gbBase').textContent  = '+' + fmt(r._calibratedBase);
-  document.getElementById('gbBonus').textContent = (bonusVal >= 0 ? '+' : '') + fmt(bonusVal);
-  document.getElementById('gbBonus').className   = 'gb-val ' + (bonusVal >= 0 ? 'pos' : 'neu');
-  document.getElementById('gbTotal').textContent = '~' + fmt(r._expectedPts);
-
-  document.getElementById('sigBars').innerHTML = SIG_KEYS.map((k, i) => {
-    const v   = r.signals[k];
-    const pct = v != null ? Math.round(v * 100) : 0;
-    const col = SIG_COLORS[i];
-    const lbl = v != null ? v.toFixed(2) : '–';
-    return `<div class="sig-r">
-      <div class="sig-l">${SIG_LABELS[i]}</div>
-      <div class="sig-t"><div class="sig-f" style="width:${pct}%;background:${col}"></div></div>
-      <div class="sig-v" style="color:${col}">${lbl}</div>
-    </div>`;
-  }).join('');
-}
-
-// ── Optimizer (Hold tab) ───────────────────────────────────────────────────
-function renderOptimizer() {
-  const BUDGET   = 50;
-  const MAX_TEAM = 2;
-  // Greedy: pick top riders by expected pts within budget, max 2 per team
-  const candidates = [...allRiders].sort((a, b) => b._expectedPts - a._expectedPts);
-  const picked     = [];
-  const teamCount  = {};
-  let budgetUsed   = 0;
-
-  for (const r of candidates) {
-    if (picked.length >= 8) break;
-    const tc  = teamCount[r.team] || 0;
-    const newB = budgetUsed + r.price;
-    if (tc >= MAX_TEAM) continue;
-    if (newB > BUDGET)   continue;
-    picked.push(r);
-    teamCount[r.team] = tc + 1;
-    budgetUsed += r.price;
-  }
-
-  const totalExp = picked.reduce((s, r) => s + r._expectedPts, 0);
-  document.getElementById('optSummary').innerHTML =
-    `Budget: ${budgetUsed.toFixed(1)}M / 50M · Forv. vækst: <span>${fmt(totalExp)}</span>`;
-
-  document.getElementById('optTeam').innerHTML = picked.map((r, i) => {
-    const teamDisplay = TEAM_NAMES[r.team] || r.team;
-    const isCap = i === 0;
-    return `<div class="opt-row">
-      <span class="opt-n">${r.full_name} ${isCap ? '<span class="opt-cap">⭐ KAP</span>' : ''}</span>
-      <span style="display:flex;gap:8px;align-items:center">
-        <span class="opt-exp">${fmt(r._expectedPts)}</span>
-        <span class="opt-p">${r.price.toFixed(1)}M</span>
-      </span>
-    </div>`;
-  }).join('');
+function updateColumnHeaders() {
+  const coKey  = curCoKey();
+  const pcsKey = curPcsKey();
+  const thCO  = document.getElementById('thCO');
+  const thPCS = document.getElementById('thPCS');
+  if (thCO)  thCO.textContent  = 'CO ' + (TYPE_CO_LABEL[coKey]  || coKey);
+  if (thPCS) thPCS.textContent = TYPE_PCS_LABEL[pcsKey] || pcsKey;
 }
 
 // ── Team filter ────────────────────────────────────────────────────────────
 function buildTeamFilters() {
-  const teams = [...new Set(allRiders.map(r => r.team))].sort((a, b) => {
-    const na = TEAM_NAMES[a] || a;
-    const nb = TEAM_NAMES[b] || b;
-    return na.localeCompare(nb);
-  });
-  teams.forEach(t => enabledTeams.add(t));
-
-  const container = document.getElementById('teamChecks');
-  container.innerHTML = teams.map(t => {
-    const label = TEAM_NAMES[t] || t;
+  const teams = [...new Set(allRiders.map(r => r.team))].sort();
+  enabledTeams = new Set(teams);
+  document.getElementById('teamChecks').innerHTML = teams.map(t => {
+    const name = TEAM_NAMES[t] || t;
     return `<label class="f-check">
-      <input type="checkbox" checked data-team="${t}" onchange="onTeamToggle()">
-      ${label}
+      <input type="checkbox" checked value="${t}" onchange="toggleTeam('${t}',this.checked)">
+      ${name}
     </label>`;
   }).join('');
 }
 
-function onTeamToggle() {
-  enabledTeams.clear();
-  document.querySelectorAll('#teamChecks input[type=checkbox]').forEach(cb => {
-    if (cb.checked) enabledTeams.add(cb.dataset.team);
-  });
-  recompute();
+function toggleTeam(team, on) {
+  if (on) enabledTeams.add(team); else enabledTeams.delete(team);
+  renderTable(); renderDist();
 }
 
 function checkAllTeams() {
-  document.querySelectorAll('#teamChecks input[type=checkbox]').forEach(cb => {
-    cb.checked = true;
-  });
-  onTeamToggle();
+  enabledTeams = new Set(allRiders.map(r => r.team));
+  document.querySelectorAll('#teamChecks input').forEach(c => c.checked = true);
+  renderTable(); renderDist();
 }
 
-// ── Sliders ────────────────────────────────────────────────────────────────
-function onSlider(idx, rawVal) {
-  const v = parseInt(rawVal, 10);
-  weights[idx] = v / 100;
-  const label = '0.' + String(v).padStart(2, '0');
-  document.getElementById('wv' + idx).textContent = label;
-  recompute();
-}
-
-// ── Sort ───────────────────────────────────────────────────────────────────
+// ── Sorting ────────────────────────────────────────────────────────────────
 function setSort(key, btn) {
   sortKey = key;
   document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
@@ -725,61 +546,245 @@ function setSort(key, btn) {
   renderTable();
 }
 
-// ── Tab switching ──────────────────────────────────────────────────────────
-function switchTab(tabEl) {
-  document.querySelectorAll('.tabs .tab').forEach(t => t.classList.remove('active'));
+function getFiltered() {
+  const q = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+  return allRiders.filter(r => {
+    if (!enabledTeams.has(r.team)) return false;
+    if (q && !r.name.toLowerCase().includes(q) && !(TEAM_NAMES[r.team]||'').toLowerCase().includes(q)) return false;
+    return true;
+  });
+}
+
+function getSorted(riders) {
+  const coKey  = curCoKey();
+  const pcsKey = curPcsKey();
+  return [...riders].sort((a, b) => {
+    if (sortKey === 'est')   return (b.holdet_est || 0) - (a.holdet_est || 0);
+    if (sortKey === 'price') return b.price - a.price;
+    if (sortKey === 'value') return ((b.holdet_est||0)/Math.max(b.price,1)) - ((a.holdet_est||0)/Math.max(a.price,1));
+    if (sortKey === 'co')    return (b.co?.[coKey] || 0) - (a.co?.[coKey] || 0);
+    if (sortKey === 'pcs')   return (b.pcs_spec_norm?.[pcsKey] || 0) - (a.pcs_spec_norm?.[pcsKey] || 0);
+    if (sortKey === 'pcsrank') return (b.pcs_rank_norm || 0) - (a.pcs_rank_norm || 0);
+    return 0;
+  });
+}
+
+// ── Table render ───────────────────────────────────────────────────────────
+function renderTable() {
+  const coKey  = curCoKey();
+  const pcsKey = curPcsKey();
+  const filtered = getFiltered();
+  const sorted   = getSorted(filtered);
+  const body = document.getElementById('tBody');
+
+  const s = curStage();
+  document.getElementById('metaTxt').textContent =
+    `${sorted.length} ryttere · etape ${s.num} · ${TYPE_DK[s.type]||s.type}`;
+
+  body.innerHTML = sorted.map((r, i) => {
+    const est    = r.holdet_est ? Math.round(r.holdet_est) + 'k' : '–';
+    const estCls = (r.holdet_est||0) >= 200 ? 'gp-high' : (r.holdet_est||0) >= 120 ? 'gp-med' : 'gp-low';
+    const value  = r.price > 0 && r.holdet_est ? (r.holdet_est / r.price).toFixed(1) : '–';
+    const coVal  = r.co?.[coKey];
+    const pcsNorm = r.pcs_spec_norm?.[pcsKey];
+    const rankNorm = r.pcs_rank_norm;
+    const isSel  = r.id === selRiderId;
+
+    const sigs = r.signals || {};
+    const bars = SIG_KEYS.map((k, si) => {
+      const v = sigs[k] ?? 0;
+      const h = Math.max(1, Math.round(v * 18));
+      return `<div class="mbar" style="height:${h}px;background:${SIG_COLORS[si]};opacity:0.85"></div>`;
+    }).join('');
+
+    return `<tr class="${isSel?'sel':''}" onclick="selectRider('${r.id}')">
+      <td style="color:var(--text3);font-size:11px">${i+1}</td>
+      <td>
+        <div style="font-weight:600;font-size:12px">${r.name}</div>
+        <div style="font-size:10px;color:var(--text3)">${TEAM_NAMES[r.team]||r.team}</div>
+      </td>
+      <td><span class="growth-pill ${estCls}">${est}</span></td>
+      <td><span class="price-g">${r.price.toFixed(1)}M</span></td>
+      <td style="font-size:11px;color:var(--text2);font-weight:600">${value}</td>
+      <td class="ability-cell ${abilClass(coVal)}">${fmtRaw(coVal)}</td>
+      <td class="ability-cell ${abilClass(pcsNorm)}">${fmtRaw(pcsNorm)}</td>
+      <td class="ability-cell ${abilClass(rankNorm)}">${fmtRaw(rankNorm)}</td>
+      <td><div class="mbars">${bars}</div></td>
+    </tr>`;
+  }).join('');
+}
+
+// ── Distribution histogram ─────────────────────────────────────────────────
+function renderDist() {
+  const filtered = getFiltered();
+  const buckets  = Array(14).fill(0);
+  filtered.forEach(r => {
+    const b = Math.min(13, Math.floor((r.holdet_est||0) * 1000 / 25000));
+    if (b >= 0) buckets[b]++;
+  });
+  const maxB = Math.max(1, ...buckets);
+  document.getElementById('distChart').innerHTML = buckets.map((count, i) => {
+    const h = Math.max(3, Math.round(count / maxB * 48));
+    const isHigh = i * 25 >= 150;
+    return `<div class="dist-bar ${isHigh?'highlight':'normal'}" style="height:${h}px" title="${i*25}k–${(i+1)*25}k: ${count} ryttere"></div>`;
+  }).join('');
+  const s = curStage();
+  document.getElementById('distLabel').textContent =
+    `Holdet Est-fordeling · etape ${s.num} · ${TYPE_DK[s.type]||s.type} · ${filtered.length} ryttere`;
+}
+
+// ── Detail panel ───────────────────────────────────────────────────────────
+function selectRider(id) {
+  selRiderId = id;
+  renderTable();
+  renderDetail();
+}
+
+function renderDetail() {
+  const r = allRiders.find(x => x.id === selRiderId);
+  if (!r) return;
+  const coKey  = curCoKey();
+  const pcsKey = curPcsKey();
+  const teamName = TEAM_NAMES[r.team] || r.team;
+
+  document.getElementById('dName').textContent  = r.name;
+  document.getElementById('dTeam').textContent  = teamName;
+  document.getElementById('dScore').textContent = r.holdet_est ? Math.round(r.holdet_est) + 'k' : '–';
+  document.getElementById('dPrice').textContent = r.price.toFixed(1) + 'M';
+
+  const rank = getSorted(getFiltered()).findIndex(x => x.id === selRiderId) + 1;
+  document.getElementById('dRank').textContent = `Felt-rang: #${rank}`;
+
+  // Growth breakdown
+  document.getElementById('gbBase').textContent  = r.holdet_est ? Math.round(r.holdet_est) + 'k' : '–';
+  document.getElementById('gbBonus').textContent = '(Holdet kalibreret)';
+  document.getElementById('gbTotal').textContent = r.holdet_est ? '~' + Math.round(r.holdet_est) + 'k' : '–';
+
+  // Stats grid: stage-type CO, PCS specialty, PCS rank, form
+  const coVal   = r.co?.[coKey];
+  const pcsSpec = r.pcs_spec_norm?.[pcsKey];
+  const pcsRank = r.pcs_rank_norm;
+  document.getElementById('stRank').textContent  = rank;
+  document.getElementById('stValue').textContent = r.price > 0 && r.holdet_est ? (r.holdet_est/r.price).toFixed(1) : '–';
+  document.getElementById('stDisc').textContent  = coVal != null ? Math.round(coVal) : '–';
+  document.getElementById('stForm').textContent  = r.form_score != null ? Math.round(r.form_score) : '–';
+
+  // Signal bars
+  const sigs = r.signals || {};
+  document.getElementById('sigBars').innerHTML = SIG_KEYS.map((k, i) => {
+    const v = sigs[k] ?? null;
+    const pct = v != null ? Math.round(v * 100) : null;
+    return `<div class="sig-r">
+      <span class="sig-l">${SIG_LABELS[i]}</span>
+      <div class="sig-t"><div class="sig-f" style="width:${pct??0}%;background:${SIG_COLORS[i]}"></div></div>
+      <span class="sig-v" style="color:${SIG_COLORS[i]}">${pct != null ? pct+'%' : '–'}</span>
+    </div>`;
+  }).join('');
+
+  // Ability grids (appended after sigBars parent; use a fixed container)
+  renderAbilities(r, coKey, pcsKey);
+}
+
+function renderAbilities(r, coKey, pcsKey) {
+  const existing = document.getElementById('abilitySection');
+  if (existing) existing.remove();
+
+  const co   = r.co   || {};
+  const spec = r.pcs_spec || {};
+  const specNorm = r.pcs_spec_norm || {};
+
+  const CO_KEYS  = ['ITT','SPR','MTN','HLL','COB','GC'];
+  const PCS_KEYS = ['tt','sprint','climber','hills','onedayraces','gc'];
+  const PCS_LBL  = {tt:'TT',sprint:'Sprint',climber:'Klatrer',hills:'Kuperet',onedayraces:'Klassiker',gc:'GC'};
+
+  function coBar(k) {
+    const v = co[k]; if (v == null) return '';
+    return `<div class="ab-row">
+      <span class="ab-key">${k}${k===coKey?' ★':''}</span>
+      <span class="ab-val ${abilDetailClass(v)}">${Math.round(v)}</span>
+    </div><div class="ab-bar" style="width:${v}%;background:${v>=70?'var(--green)':v>=40?'var(--orange)':'var(--border)'}"></div>`;
+  }
+  function pcsBar(k) {
+    const norm = specNorm[k] || 0;
+    const raw  = spec[k];
+    if (raw == null && norm === 0) return '';
+    return `<div class="ab-row">
+      <span class="ab-key">${PCS_LBL[k]||k}${k===pcsKey?' ★':''}</span>
+      <span class="ab-val ${abilDetailClass(norm)}">${raw != null ? Math.round(raw) : '–'}</span>
+    </div><div class="ab-bar" style="width:${norm}%;background:${norm>=70?'var(--green)':norm>=40?'var(--orange)':'var(--border)'}"></div>`;
+  }
+
+  const pcsRankPts = r.pcs_rank_pts || 0;
+  const pcsRankNorm = r.pcs_rank_norm || 0;
+
+  const html = `<div id="abilitySection" class="ability-grid">
+    <div class="ab-box">
+      <div class="ab-title">CyclingOracle CO</div>
+      ${CO_KEYS.map(coBar).join('')}
+    </div>
+    <div class="ab-box">
+      <div class="ab-title">PCS Specialiteter</div>
+      ${PCS_KEYS.map(pcsBar).join('')}
+      <div class="ab-row" style="margin-top:6px;border-top:1px solid var(--border2);padding-top:4px">
+        <span class="ab-key">12m Rang</span>
+        <span class="ab-val ${abilDetailClass(pcsRankNorm)}">${pcsRankPts ? Math.round(pcsRankPts)+'p' : '–'}</span>
+      </div>
+    </div>
+  </div>`;
+
+  document.getElementById('pane-rytter').insertAdjacentHTML('beforeend', html);
+}
+
+// ── Optimizer (Hold tab) ───────────────────────────────────────────────────
+function renderOptimizer() {
+  if (!allRiders.length) return;
+  const MAX_BUDGET = 50.0;
+  const MAX_PER_TEAM = 2;
+  const sorted = [...allRiders].sort((a, b) => (b.holdet_est||0) - (a.holdet_est||0));
+  const team = [];
+  const teamCount = {};
+  let budget = MAX_BUDGET;
+
+  for (const r of sorted) {
+    if (team.length >= 8) break;
+    if ((teamCount[r.team] || 0) >= MAX_PER_TEAM) continue;
+    if (r.price > budget) continue;
+    team.push(r);
+    teamCount[r.team] = (teamCount[r.team] || 0) + 1;
+    budget -= r.price;
+  }
+
+  const totalEst = team.reduce((s, r) => s + (r.holdet_est||0), 0);
+  const totalCost = MAX_BUDGET - budget;
+  document.getElementById('optSummary').innerHTML =
+    `Budget: ${totalCost.toFixed(1)}M / 50M · Holdet est.: <span>${Math.round(totalEst)}k</span>`;
+
+  const capId = team.length ? team[0].id : null;
+  document.getElementById('optTeam').innerHTML = team.map(r => {
+    const isCap = r.id === capId;
+    return `<div class="opt-row">
+      <span class="opt-n">${r.name} ${isCap ? '<span class="opt-cap">★ KAP</span>' : ''}</span>
+      <span><span class="opt-exp">${r.holdet_est ? Math.round(r.holdet_est)+'k' : '–'}</span>
+      &nbsp;<span class="opt-p">${r.price.toFixed(1)}M</span></span>
+    </div>`;
+  }).join('') || '<div class="empty-state">Ingen ryttere</div>';
+}
+
+// ── Tabs ───────────────────────────────────────────────────────────────────
+function switchTab(el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-  tabEl.classList.add('active');
-  document.getElementById('pane-' + tabEl.dataset.pane).classList.add('active');
+  el.classList.add('active');
+  document.getElementById('pane-' + el.dataset.pane).classList.add('active');
+  if (el.dataset.pane === 'hold') renderOptimizer();
 }
 
-// ── Load ML validation ─────────────────────────────────────────────────────
-async function loadMLValidation() {
-  try {
-    const res  = await fetch('./data/ml_validation.json', { cache: 'no-cache' });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const data = await res.json();
-    renderMLModel(data);
-  } catch (e) {
-    document.getElementById('modelContent').innerHTML =
-      `<div class="empty-state" style="color:var(--text2)">
-        <div style="font-size:13px;font-weight:700;margin-bottom:8px">ML-model: historisk styrke</div>
-        <div style="color:var(--text3)">Validering ikke tilgængelig: ${e.message}</div>
-      </div>`;
-  }
+// ── Signal weight sliders ──────────────────────────────────────────────────
+function onSlider(i, val) {
+  document.getElementById('wv' + i).textContent = (val / 100).toFixed(2);
 }
 
-function renderMLModel(data) {
-  const el = document.getElementById('modelContent');
-  if (!data) {
-    el.innerHTML = '<div class="empty-state">Ingen model-data</div>';
-    return;
-  }
-
-  // Try to render AUC by stage type if available
-  const rows = [];
-  const metrics = data.auc_by_type || data.metrics || {};
-  for (const [label, val] of Object.entries(metrics)) {
-    if (typeof val === 'number') {
-      const pct = Math.round(val * 100);
-      rows.push(`<div class="val-r">
-        <div class="val-l">${label}</div>
-        <div class="val-t"><div class="val-f" style="width:${pct}%"></div></div>
-        <div class="val-v">${val.toFixed(3)}</div>
-      </div>`);
-    }
-  }
-
-  if (rows.length === 0) {
-    el.innerHTML = `<div style="font-size:11px;color:var(--text2);margin-bottom:8px">ML-model: historisk styrke</div>
-      <div style="font-size:11px;color:var(--text3)">Modellen er kalibreret på historiske etaperesultater.</div>`;
-    return;
-  }
-
-  el.innerHTML = rows.join('');
-}
-
-// ── Main: fetch data & init ────────────────────────────────────────────────
+// ── Main init ──────────────────────────────────────────────────────────────
 async function init() {
   document.getElementById('spinner').classList.add('show');
   try {
@@ -787,40 +792,14 @@ async function init() {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const raw = await res.json();
 
-    const predictions = raw.predictions || raw;
-    allRiders = predictions.map(r => ({
-      rider_id:     r.rider_id,
-      full_name:    r.full_name,
-      team:         r.team,
-      price:        r.price || 0,
-      expected_pts: r.expected_pts || 0,
-      winner_pts:   r.winner_pts   || 0,
-      signals:      r.signal_scores || {},
-      // computed:
-      bonus:            0,
-      _composite:       0,
-      _compositeScore:  0,
-      _rank:            0,
-      _calibratedBase:  0,
-      _expectedPts:     0,
-    }));
+    ALL_STAGES = raw.stages || [];
+    if (!ALL_STAGES.length) throw new Error('Ingen etaper i analytics.json');
 
-    computeBonuses(allRiders);
-    buildTeamFilters();
-    recompute();
-
-    // Select first rider by default
-    if (allRiders.length > 0) {
-      const first = [...allRiders].sort((a, b) => b._expectedPts - a._expectedPts)[0];
-      selRiderId = first.rider_id;
-      renderDetail();
-    }
-
-    loadMLValidation();
+    selectStage(0);
   } catch (e) {
     document.getElementById('tBody').innerHTML =
-      `<tr><td colspan="11" style="padding:40px;text-align:center;color:var(--text2)">
-        Fejl ved indlæsning: ${e.message}
+      `<tr><td colspan="9" style="padding:40px;text-align:center;color:var(--text2)">
+        Fejl: ${e.message}
       </td></tr>`;
   } finally {
     document.getElementById('spinner').classList.remove('show');
