@@ -601,7 +601,9 @@ HOLDET_NAME_OVERRIDES: dict[str, str] = {
     "david de la cruz":                 "david_de_la_cruz_melgarejo",
     # Holdet: "Christopher Juul Jensen"         → riders.json: christopher_juul_jensen
     "christopher juul jensen":          "christopher_juul_jensen",
-    # Add TdF-specific overrides here as needed
+    # Holdet: "Rasmus Søjberg Pedersen" → riders.json: mads_pedersen
+    # Holdet stores the civil name; the rider is known professionally as Mads Pedersen (Lidl-Trek)
+    "rasmus sojberg pedersen":          "mads_pedersen",
 }
 
 

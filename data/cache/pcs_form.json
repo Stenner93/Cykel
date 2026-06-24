@@ -28905,24 +28905,6 @@
     ],
     "form_long_by_type": {}
   },
-  "rasmus_søjberg_pedersen": {
-    "name": "Søjberg Pedersen Rasmus",
-    "pcs_url": "",
-    "form_score": 25.0,
-    "form_by_type": {
-      "overall": 25.0,
-      "sprint": 25.0,
-      "mountain": 25.0,
-      "hilly": 25.0,
-      "tt": 25.0,
-      "ttt": 25.0,
-      "cobbled": 25.0
-    },
-    "n_results": 0,
-    "last_result_date": "",
-    "results": [],
-    "not_found": true
-  },
   "alan_jousseaume": {
     "name": "Alan Jousseaume",
     "pcs_url": "https://www.procyclingstats.com/rider/alan-jousseaume",
@@ -57602,5 +57584,23 @@
       }
     ],
     "form_long_by_type": {}
+  },
+  "mads_pedersen": {
+    "name": "Søjberg Pedersen Rasmus",
+    "pcs_url": "https://www.procyclingstats.com/rider/mads-pedersen",
+    "form_score": 25.0,
+    "form_by_type": {
+      "overall": 25.0,
+      "sprint": 25.0,
+      "mountain": 25.0,
+      "hilly": 25.0,
+      "tt": 25.0,
+      "ttt": 25.0,
+      "cobbled": 25.0
+    },
+    "n_results": 0,
+    "last_result_date": "",
+    "results": [],
+    "not_found": false
   }
 }
