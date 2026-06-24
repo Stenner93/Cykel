@@ -233,7 +233,10 @@ def estimate_holdet(rider_id: str, disc: float, stage_type: str) -> float:
         return calibrate(disc, tt_slope, tt_intercept, lo, hi)
 
     elif stage_type in ('hilly', 'cobbled'):
-        return calibrate(disc, hll_slope, hll_intercept, lo, hi)
+        base = calibrate(disc, hll_slope, hll_intercept, lo, hi)
+        if rider_id in GC_CONTENDERS:
+            base = min(hi, base + GC_MTN_BOOST)
+        return base
 
     else:
         # Fallback: simple average
