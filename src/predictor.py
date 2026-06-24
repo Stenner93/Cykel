@@ -404,7 +404,11 @@ def predict_rider(
         elif scale <= 0.90:
             reasons.append(f"let etape (score {profile_score})")
     if not reasons:
-        reasons.append("budget-pick")
+        price = rider.get("price") or 99
+        if price <= 5.0:
+            reasons.append("budget-pick")
+        else:
+            reasons.append("model-anbefaling")
 
     return {
         "rider_id":      rider.get("id"),
@@ -586,6 +590,26 @@ def predict_all(
         disc_rescaled = {
             rid: round(100.0 * math.exp(-0.07 * i), 1)
             for i, rid in enumerate(sorted_rids)
+        }
+
+    # ── TTT: re-average disc_rescaled within each team ───────────────────────
+    # The team-avg step (above) gives all teammates equal field_vals, but the
+    # rank-based rescaling breaks ties by sequential index — the first rider
+    # alphabetically gets rank 1 (disc=100), the next gets rank 2 (disc=93),
+    # etc. For TTT all teammates finished together and share the same rating,
+    # so they should all receive the same disc_rescaled value.
+    if stage_type == "ttt" and disc_rescaled:
+        from collections import defaultdict as _dd
+        _team_vals: dict[str, list[float]] = _dd(list)
+        _rider_team = {r["id"]: r.get("team", "") for r in riders}
+        for rid, val in disc_rescaled.items():
+            _team = _rider_team.get(rid, "")
+            if _team:
+                _team_vals[_team].append(val)
+        _team_avg = {t: sum(v) / len(v) for t, v in _team_vals.items()}
+        disc_rescaled = {
+            rid: round(_team_avg.get(_rider_team.get(rid, ""), val), 1)
+            for rid, val in disc_rescaled.items()
         }
 
     # ── Field-normaliser PCS 12-mdr. rankingpoint (0-100) ────────────────────
