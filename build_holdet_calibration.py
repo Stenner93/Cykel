@@ -220,7 +220,16 @@ def estimate_holdet(rider_id: str, disc: float, stage_type: str) -> float:
         return calibrate(disc, tt_slope, tt_intercept, lo, hi)
 
     elif stage_type in ('ttt',):
-        # Team time trial — use TT regression (disc here is ITT ability)
+        # Team time trial — disc = team ability (all teammates share same disc).
+        # GC contenders also score GC standing points; domestiques don't.
+        # Apply same GC_MTN_BOOST as mountain stages to account for this.
+        base = calibrate(disc, tt_slope, tt_intercept, lo, hi)
+        if rider_id in GC_CONTENDERS:
+            base = min(hi, base + GC_MTN_BOOST)
+        else:
+            # Domestiques: reduce by ~40 (no GC pts, lower expected stage placement pts)
+            base = max(lo, base - 40)
+        return base
         return calibrate(disc, tt_slope, tt_intercept, lo, hi)
 
     elif stage_type in ('hilly', 'cobbled'):
