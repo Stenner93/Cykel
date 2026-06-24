@@ -160,6 +160,15 @@ non_gc_mtn_slope, non_gc_mtn_int, _ = linear_regression(non_gc_mtn_pairs)
 # we apply the overall mountain regression + GC_BOOST for GC riders.
 GC_MTN_BOOST = 60.0
 
+# TdF 2026 sprint boost: regressionen er kalibreret på Giro 2026-data (50 pt til
+# vinderen i pointklassementet). ASO hævede TdF-sprintpoint til 70 pt + 2 mellempurter
+# á 20 pt (mod 1). Boost-faktor afspejler merindtjeningen:
+#   Giro-sprint vinder (ca.): 200K (etape) + 50×3K (klasse) + 1×20×3K (mellemsp.) ≈ 410K
+#   TdF 2026 vinder (ca.):   200K + 70×3K + 2×20×3K = 530K max, typisk ~470K
+#   Holdet's egne tabeller (etapeplaceringer osv.) ændres ikke — kun ASO-punktene.
+TDF_SPRINT_BOOST    = 1.20   # konservativ: ikke alle vil vinde intermediates
+TDF_SPRINT_HI       = 560    # øvre loft for sprint: ~530K+ muligt for vinderen
+
 print(f"\nMountain GC (disc>=88):    slope={gc_mtn_slope:.4f}, intercept={gc_mtn_int:.2f}  (n={len(gc_mtn_pairs)})")
 print(f"Mountain non-GC (disc<88): slope={non_gc_mtn_slope:.4f}, intercept={non_gc_mtn_int:.2f}  (n={len(non_gc_mtn_pairs)})")
 print(f"GC mountain boost: +{GC_MTN_BOOST:.0f} pts over overall mtn regression")
@@ -206,7 +215,8 @@ def estimate_holdet(rider_id: str, disc: float, stage_type: str) -> float:
     lo, hi = 100, 450
 
     if stage_type == 'sprint':
-        return calibrate(disc, spr_slope, spr_intercept, lo, hi)
+        base = calibrate(disc, spr_slope, spr_intercept, lo, TDF_SPRINT_HI)
+        return min(TDF_SPRINT_HI, base * TDF_SPRINT_BOOST)
 
     elif stage_type == 'mountain':
         # Use overall mountain regression for all riders; GC contenders

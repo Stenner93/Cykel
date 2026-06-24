@@ -106,12 +106,12 @@ def _disc_blend_value(cyclingoracle: dict[str, float] | None, stage_type: str) -
     return raw, _dominant_disc_key(stage_type)
 
 # Expected fantasy points IF a rider wins (by stage type).
-# Sprint recalibrated for TdF 2026: ASO øgede sprintpoint markant på 7 flade
-# etaper — 70 pts til vinderen (mod ~45 før) og 2 bonusspurter á 20 pts (mod 1).
-# Maksimalt: 200K (etape) + 210K (70×3K) + 120K (2×20×3K) = 530K. Typisk 470K.
+# Sprint TdF 2026: ASO øgede sprintpoint til 70 pt til vinderen (mod 50 sidst år)
+# + 2 mellempurter á 20 pt (mod 1). Holdet's egne tabeller ændres ikke.
+# 200K (etape) + 70×3K (klasse) + ~1×20×3K (mellempurt) = 470K typisk, max 530K.
 # Mountain/tt/hilly beholder Giro 2026-kalibreringen.
 WINNER_POINTS = {
-    "sprint":   680_000,
+    "sprint":   500_000,
     "mountain": 630_000,
     "tt":       380_000,
     "ttt":      380_000,
