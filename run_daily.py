@@ -491,6 +491,31 @@ def main():
         pcs_n_results_data=pcs_n_results_data or None,
     )
 
+    # ── Override expected_pts with holdet_est calibration ────────────────────
+    # holdet_est (calibrated from Giro 2026 actual Holdet points) is more
+    # reliable than the rank-decay formula. Override BEFORE team optimization
+    # so the picked team also uses the better numbers.
+    _preds_path = WEB_DATA / "tdf2026_predictions.json"
+    if _preds_path.exists():
+        _tdf_pred = json.loads(_preds_path.read_text(encoding="utf-8"))
+        _stage_data = next(
+            (s for s in _tdf_pred.get("stages", []) if s["num"] == stage), None
+        )
+        if _stage_data:
+            _holdet_est = {
+                r["id"]: r["holdet_est"]
+                for r in _stage_data["riders"]
+                if r.get("holdet_est")
+            }
+            updated = 0
+            for p in predictions:
+                est = _holdet_est.get(p["rider_id"])
+                if est:
+                    p["expected_pts"] = round(est * 1000)
+                    updated += 1
+            if updated:
+                print(f"  Holdet kalibrering: {updated} ryttere opdateret med holdet_est")
+
     # ── Load current team ─────────────────────────────────────
     current_team_data = load_current_team(predictions)
 

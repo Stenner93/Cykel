@@ -680,7 +680,7 @@ def predict_all(
         _frac = _i / max(_n - 1, 1)
         _wp   = pred.get("winner_pts", 500_000)
         _addon = pred["expected_pts"] - pred["composite_base_pts"]
-        _calibrated_base = round(0.35 * math.exp(-4.0 * _frac) * _wp)
+        _calibrated_base = round(0.35 * math.exp(-2.44 * _frac) * _wp)
         pred["expected_pts"] = _calibrated_base + _addon
 
     # ── Context multipliers ──────────────────────────────────────────────────
