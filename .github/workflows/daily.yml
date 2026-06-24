@@ -92,7 +92,15 @@ jobs:
           python scrape_pcs_rankings.py \
             || echo "⚠️  PCS rangering ikke tilgængelig — fortsætter uden"
 
-      # ── 4. Kør forudsigelser ────────────────────────────────────────────────
+      # ── 4. Byg TdF spillerliste (skal ske FØR run_daily.py så vi har aktuelle priser) ──
+      - name: Byg TdF 2026 dashboard-data
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python build_tdf_web_data.py --delay 0.5 \
+            || echo "⚠️  TdF build slog fejl — fortsætter"
+
+      # ── 5. Kør forudsigelser ────────────────────────────────────────────────
       #    Altid — enten med bruger-angivne værdier eller auto-detekteret etape.
       #    Scriptet finder selv etape + type fra Holdets program hvis ikke angivet.
       - name: Kør holdanbefalinger
@@ -114,7 +122,7 @@ jobs:
           python run_daily.py $ARGS \
             || echo "⚠️  Forudsigelser slog fejl (ingen aktiv etape?) — fortsætter"
 
-      # ── 5. Byg Dauphiné web-data ───────────────────────────────────────────
+      # ── 6. Byg Dauphiné web-data ───────────────────────────────────────────
       - name: Byg Dauphiné 2026 dashboard-data
         env:
           PYTHONIOENCODING: utf-8
@@ -122,15 +130,7 @@ jobs:
           python build_dauphine_web_data.py --delay 0.5 \
             || echo "⚠️  Dauphiné build slog fejl — fortsætter"
 
-      # ── 5b. Byg TdF web-data (priser, pointmatrix, forudsigelser, odds) ────
-      - name: Byg TdF 2026 dashboard-data
-        env:
-          PYTHONIOENCODING: utf-8
-        run: |
-          python build_tdf_web_data.py --delay 0.5 \
-            || echo "⚠️  TdF build slog fejl — fortsætter"
-
-      # ── 5c. Byg rytterdatabase (diagnostik-side, tvaers af alle loeb) ──────
+      # ── 7. Byg rytterdatabase (diagnostik-side, tvaers af alle loeb) ──────
       - name: Byg rytterdatabase
         env:
           PYTHONIOENCODING: utf-8

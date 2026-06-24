@@ -37,6 +37,11 @@ STAGE_TYPES = ["sprint", "mountain", "tt", "ttt", "hilly", "cobbled"]
 
 
 def load_riders() -> list[dict]:
+    # Prefer the auto-scraped Holdet.dk player list (exact fantasy roster + live prices).
+    # Falls back to the static riders.json if cache is missing.
+    holdet_cache = DATA_DIR / "cache" / "tdf2026_players.json"
+    if holdet_cache.exists():
+        return json.loads(holdet_cache.read_text(encoding="utf-8"))
     return json.loads((DATA_DIR / "riders.json").read_text(encoding="utf-8"))
 
 
