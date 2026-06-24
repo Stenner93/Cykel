@@ -186,8 +186,10 @@ for race, stages in pcs_results.items():
             if result.get('pos', 999) <= 10:
                 rider_top10_count[result['rider_id']] += 1
 
-# Breakaway specialist = appears > 3 times in top-10 AND is NOT a GC contender
-BREAKAWAY_THRESHOLD = 3
+# Breakaway specialist = appears > 7 times in top-10 AND is NOT a GC contender.
+# Grænsen er sat til 7 for at undgå at fange sprintere (Meeus, Merlier) og
+# GC-hjælpere (Del Toro) som naturligt har mange top-10-resultater.
+BREAKAWAY_THRESHOLD = 7
 breakaway_specialists = {
     rid for rid, cnt in rider_top10_count.items()
     if cnt > BREAKAWAY_THRESHOLD and rid not in GC_CONTENDERS

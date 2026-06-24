@@ -68,7 +68,7 @@
           "ctx_mult": 1.0,
           "disc_co": 72.5,
           "holdet_est": 103.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "filippo_ganna",
@@ -387,7 +387,7 @@
           "ctx_mult": 1.0,
           "disc_co": 68.5,
           "holdet_est": 142.6,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "marc_soler",
@@ -532,7 +532,7 @@
           "ctx_mult": 1.0,
           "disc_co": 48.2,
           "holdet_est": 130.4,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "florian_lipowitz",
@@ -619,7 +619,7 @@
           "ctx_mult": 1.0,
           "disc_co": 48.2,
           "holdet_est": 130.4,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jan_tratnik",
@@ -677,7 +677,7 @@
           "ctx_mult": 1.0,
           "disc_co": 48.2,
           "holdet_est": 130.4,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mattia_cattaneo",
@@ -909,7 +909,7 @@
           "ctx_mult": 1.0,
           "disc_co": 64.7,
           "holdet_est": 123.3,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mattias_skjelmose",
@@ -1170,7 +1170,7 @@
           "ctx_mult": 1.0,
           "disc_co": 38.2,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ben_healy",
@@ -1344,7 +1344,7 @@
           "ctx_mult": 1.0,
           "disc_co": 40.2,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "stefan_bissegger",
@@ -1458,7 +1458,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "matej_mohoric",
@@ -1572,7 +1572,7 @@
           "ctx_mult": 1.0,
           "disc_co": 38.2,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mauro_schmid",
@@ -1601,7 +1601,7 @@
           "ctx_mult": 1.0,
           "disc_co": 38.2,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "michael_matthews",
@@ -2063,7 +2063,7 @@
           "ctx_mult": 1.0,
           "disc_co": 42.8,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "valentin_paret-peintre",
@@ -2092,7 +2092,7 @@
           "ctx_mult": 1.0,
           "disc_co": 42.8,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "cian_uijtdebroeks",
@@ -2179,7 +2179,7 @@
           "ctx_mult": 1.0,
           "disc_co": 55.3,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -2265,7 +2265,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_kirsch",
@@ -2377,7 +2377,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jenthe_biermans",
@@ -2433,7 +2433,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "piet_allegaert",
@@ -2747,7 +2747,7 @@
           "ctx_mult": 1.0,
           "disc_co": 46.2,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "lorenzo_fortunato",
@@ -2776,7 +2776,7 @@
           "ctx_mult": 1.0,
           "disc_co": 46.2,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mike_teunissen",
@@ -3035,7 +3035,7 @@
           "ctx_mult": 1.0,
           "disc_co": 40.2,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jake_stewart",
@@ -3607,7 +3607,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 83.0
         },
         {
@@ -3723,7 +3723,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 112.6,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 96.0
         },
         {
@@ -3839,7 +3839,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 92.0
         },
         {
@@ -4100,7 +4100,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 77.0
         },
         {
@@ -4477,7 +4477,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 85.0
         },
         {
@@ -4506,7 +4506,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 84.0
         },
         {
@@ -4680,7 +4680,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 65.0
         },
         {
@@ -4767,7 +4767,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 91.0
         },
         {
@@ -4854,7 +4854,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 92.0
         },
         {
@@ -5028,7 +5028,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 77.0
         },
         {
@@ -5202,7 +5202,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 94.0
         },
         {
@@ -5260,7 +5260,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 0.0
         },
         {
@@ -5347,7 +5347,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 86.0
         },
         {
@@ -5405,7 +5405,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 82.0
         },
         {
@@ -5637,7 +5637,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 90.0
         },
         {
@@ -5666,7 +5666,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 0.0
         },
         {
@@ -5869,7 +5869,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 79.0
         },
         {
@@ -6072,7 +6072,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 79.0
         },
         {
@@ -6159,7 +6159,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 55.0
         },
         {
@@ -6391,7 +6391,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 0.0
         }
       ],
@@ -6820,7 +6820,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 83.0
         },
         {
@@ -6936,7 +6936,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 112.6,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 96.0
         },
         {
@@ -7052,7 +7052,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 92.0
         },
         {
@@ -7313,7 +7313,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 77.0
         },
         {
@@ -7690,7 +7690,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 85.0
         },
         {
@@ -7719,7 +7719,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 84.0
         },
         {
@@ -7893,7 +7893,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 65.0
         },
         {
@@ -7980,7 +7980,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 91.0
         },
         {
@@ -8067,7 +8067,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 92.0
         },
         {
@@ -8241,7 +8241,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 77.0
         },
         {
@@ -8415,7 +8415,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 94.0
         },
         {
@@ -8473,7 +8473,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 0.0
         },
         {
@@ -8560,7 +8560,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 86.0
         },
         {
@@ -8618,7 +8618,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 82.0
         },
         {
@@ -8850,7 +8850,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 90.0
         },
         {
@@ -8879,7 +8879,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 0.0
         },
         {
@@ -9082,7 +9082,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 79.0
         },
         {
@@ -9285,7 +9285,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 79.0
         },
         {
@@ -9372,7 +9372,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 55.0
         },
         {
@@ -9604,7 +9604,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 0.0
         }
       ],
@@ -10033,7 +10033,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 83.0
         },
         {
@@ -10149,7 +10149,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 112.6,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 96.0
         },
         {
@@ -10265,7 +10265,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 92.0
         },
         {
@@ -10526,7 +10526,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 77.0
         },
         {
@@ -10903,7 +10903,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 85.0
         },
         {
@@ -10932,7 +10932,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 84.0
         },
         {
@@ -11106,7 +11106,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 65.0
         },
         {
@@ -11193,7 +11193,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 91.0
         },
         {
@@ -11280,7 +11280,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 92.0
         },
         {
@@ -11454,7 +11454,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 77.0
         },
         {
@@ -11628,7 +11628,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 94.0
         },
         {
@@ -11686,7 +11686,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 0.0
         },
         {
@@ -11773,7 +11773,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 86.0
         },
         {
@@ -11831,7 +11831,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 82.0
         },
         {
@@ -12063,7 +12063,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 90.0
         },
         {
@@ -12092,7 +12092,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 0.0
         },
         {
@@ -12295,7 +12295,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 79.0
         },
         {
@@ -12498,7 +12498,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 79.0
         },
         {
@@ -12585,7 +12585,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 55.0
         },
         {
@@ -12817,7 +12817,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 0.0
         }
       ],
@@ -12897,7 +12897,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.5,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordi_meeus",
@@ -12925,7 +12925,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "biniam_girmay",
@@ -12953,7 +12953,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 182.8,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -13317,7 +13317,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 135.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "michael_matthews",
@@ -13849,7 +13849,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "lennert_van_eetvelt",
@@ -13933,7 +13933,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dorian_godon",
@@ -14017,7 +14017,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -14129,7 +14129,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jonas_vingegaard",
@@ -14689,7 +14689,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "marc_soler",
@@ -15025,7 +15025,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -15277,7 +15277,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -15389,7 +15389,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordan_jegat",
@@ -15445,7 +15445,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "quinn_simmons",
@@ -15585,7 +15585,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "andreas_kron",
@@ -15641,7 +15641,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "emiel_verstrynge",
@@ -15697,7 +15697,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "louis_vervaeke",
@@ -15781,7 +15781,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "cian_uijtdebroeks",
@@ -15837,7 +15837,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "simon_carr",
@@ -15893,7 +15893,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "valentin_paret-peintre",
@@ -15921,7 +15921,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -15972,7 +15972,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 227.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tadej_pogacar",
@@ -16140,7 +16140,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "thymen_arensman",
@@ -16168,7 +16168,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "giulio_ciccone",
@@ -16504,7 +16504,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 149.9,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -16616,7 +16616,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 139.6,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tobias_halland_johannessen",
@@ -16672,7 +16672,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 136.7,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "florian_lipowitz",
@@ -16896,7 +16896,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -17064,7 +17064,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_aranburu",
@@ -17092,7 +17092,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tiesj_benoot",
@@ -17176,7 +17176,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "carlos_rodriguez",
@@ -17260,7 +17260,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "bruno_armirail",
@@ -17372,7 +17372,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -17652,7 +17652,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -17876,7 +17876,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "fred_wright",
@@ -18156,7 +18156,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "kaden_groves",
@@ -18268,7 +18268,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dylan_van_baarle",
@@ -18548,7 +18548,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jenthe_biermans",
@@ -18856,7 +18856,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_kirsch",
@@ -18912,7 +18912,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "søren_kragh_andersen",
@@ -19024,7 +19024,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -19103,7 +19103,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.5,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordi_meeus",
@@ -19131,7 +19131,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "biniam_girmay",
@@ -19159,7 +19159,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 182.8,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -19523,7 +19523,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 135.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "michael_matthews",
@@ -20055,7 +20055,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "lennert_van_eetvelt",
@@ -20139,7 +20139,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dorian_godon",
@@ -20223,7 +20223,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -20335,7 +20335,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jonas_vingegaard",
@@ -20895,7 +20895,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "marc_soler",
@@ -21231,7 +21231,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -21483,7 +21483,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -21595,7 +21595,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordan_jegat",
@@ -21651,7 +21651,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "quinn_simmons",
@@ -21791,7 +21791,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "andreas_kron",
@@ -21847,7 +21847,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "emiel_verstrynge",
@@ -21903,7 +21903,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "louis_vervaeke",
@@ -21987,7 +21987,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "cian_uijtdebroeks",
@@ -22043,7 +22043,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "simon_carr",
@@ -22099,7 +22099,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "valentin_paret-peintre",
@@ -22127,7 +22127,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -22206,7 +22206,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.5,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordi_meeus",
@@ -22234,7 +22234,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "biniam_girmay",
@@ -22262,7 +22262,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 182.8,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -22626,7 +22626,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 135.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "michael_matthews",
@@ -23158,7 +23158,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "lennert_van_eetvelt",
@@ -23242,7 +23242,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dorian_godon",
@@ -23326,7 +23326,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -23438,7 +23438,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jonas_vingegaard",
@@ -23998,7 +23998,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "marc_soler",
@@ -24334,7 +24334,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -24586,7 +24586,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -24698,7 +24698,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordan_jegat",
@@ -24754,7 +24754,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "quinn_simmons",
@@ -24894,7 +24894,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "andreas_kron",
@@ -24950,7 +24950,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "emiel_verstrynge",
@@ -25006,7 +25006,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "louis_vervaeke",
@@ -25090,7 +25090,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "cian_uijtdebroeks",
@@ -25146,7 +25146,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "simon_carr",
@@ -25202,7 +25202,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "valentin_paret-peintre",
@@ -25230,7 +25230,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -25658,7 +25658,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 83.0
         },
         {
@@ -25774,7 +25774,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 112.6,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 96.0
         },
         {
@@ -25890,7 +25890,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 92.0
         },
         {
@@ -26151,7 +26151,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 77.0
         },
         {
@@ -26528,7 +26528,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 85.0
         },
         {
@@ -26557,7 +26557,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 84.0
         },
         {
@@ -26731,7 +26731,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 65.0
         },
         {
@@ -26818,7 +26818,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 91.0
         },
         {
@@ -26905,7 +26905,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 92.0
         },
         {
@@ -27079,7 +27079,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 77.0
         },
         {
@@ -27253,7 +27253,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 94.0
         },
         {
@@ -27311,7 +27311,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 0.0
         },
         {
@@ -27398,7 +27398,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 86.0
         },
         {
@@ -27456,7 +27456,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 82.0
         },
         {
@@ -27688,7 +27688,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 90.0
         },
         {
@@ -27717,7 +27717,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 0.0
         },
         {
@@ -27920,7 +27920,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 79.0
         },
         {
@@ -28123,7 +28123,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 79.0
         },
         {
@@ -28210,7 +28210,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 55.0
         },
         {
@@ -28442,7 +28442,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true,
+          "breakaway_specialist": false,
           "disc_co": 0.0
         }
       ],
@@ -28494,7 +28494,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 227.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tadej_pogacar",
@@ -28662,7 +28662,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "thymen_arensman",
@@ -28690,7 +28690,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "giulio_ciccone",
@@ -29026,7 +29026,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 149.9,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -29138,7 +29138,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 139.6,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tobias_halland_johannessen",
@@ -29194,7 +29194,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 136.7,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "florian_lipowitz",
@@ -29418,7 +29418,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -29586,7 +29586,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_aranburu",
@@ -29614,7 +29614,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tiesj_benoot",
@@ -29698,7 +29698,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "carlos_rodriguez",
@@ -29782,7 +29782,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "bruno_armirail",
@@ -29894,7 +29894,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -30174,7 +30174,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -30398,7 +30398,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "fred_wright",
@@ -30678,7 +30678,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "kaden_groves",
@@ -30790,7 +30790,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dylan_van_baarle",
@@ -31070,7 +31070,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jenthe_biermans",
@@ -31378,7 +31378,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_kirsch",
@@ -31434,7 +31434,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "søren_kragh_andersen",
@@ -31546,7 +31546,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -31625,7 +31625,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.5,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordi_meeus",
@@ -31653,7 +31653,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "biniam_girmay",
@@ -31681,7 +31681,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 182.8,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -32045,7 +32045,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 135.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "michael_matthews",
@@ -32577,7 +32577,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "lennert_van_eetvelt",
@@ -32661,7 +32661,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dorian_godon",
@@ -32745,7 +32745,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -32857,7 +32857,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jonas_vingegaard",
@@ -33417,7 +33417,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "marc_soler",
@@ -33753,7 +33753,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -34005,7 +34005,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -34117,7 +34117,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordan_jegat",
@@ -34173,7 +34173,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "quinn_simmons",
@@ -34313,7 +34313,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "andreas_kron",
@@ -34369,7 +34369,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "emiel_verstrynge",
@@ -34425,7 +34425,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "louis_vervaeke",
@@ -34509,7 +34509,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "cian_uijtdebroeks",
@@ -34565,7 +34565,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "simon_carr",
@@ -34621,7 +34621,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "valentin_paret-peintre",
@@ -34649,7 +34649,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -34728,7 +34728,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.5,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordi_meeus",
@@ -34756,7 +34756,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "biniam_girmay",
@@ -34784,7 +34784,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 182.8,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -35148,7 +35148,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 135.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "michael_matthews",
@@ -35680,7 +35680,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "lennert_van_eetvelt",
@@ -35764,7 +35764,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dorian_godon",
@@ -35848,7 +35848,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -35960,7 +35960,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jonas_vingegaard",
@@ -36520,7 +36520,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "marc_soler",
@@ -36856,7 +36856,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -37108,7 +37108,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -37220,7 +37220,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordan_jegat",
@@ -37276,7 +37276,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "quinn_simmons",
@@ -37416,7 +37416,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "andreas_kron",
@@ -37472,7 +37472,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "emiel_verstrynge",
@@ -37528,7 +37528,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "louis_vervaeke",
@@ -37612,7 +37612,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "cian_uijtdebroeks",
@@ -37668,7 +37668,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "simon_carr",
@@ -37724,7 +37724,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "valentin_paret-peintre",
@@ -37752,7 +37752,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -37831,7 +37831,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.5,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordi_meeus",
@@ -37859,7 +37859,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "biniam_girmay",
@@ -37887,7 +37887,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 182.8,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -38251,7 +38251,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 135.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "michael_matthews",
@@ -38783,7 +38783,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "lennert_van_eetvelt",
@@ -38867,7 +38867,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dorian_godon",
@@ -38951,7 +38951,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -39063,7 +39063,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jonas_vingegaard",
@@ -39623,7 +39623,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "marc_soler",
@@ -39959,7 +39959,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -40211,7 +40211,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -40323,7 +40323,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordan_jegat",
@@ -40379,7 +40379,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "quinn_simmons",
@@ -40519,7 +40519,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "andreas_kron",
@@ -40575,7 +40575,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "emiel_verstrynge",
@@ -40631,7 +40631,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "louis_vervaeke",
@@ -40715,7 +40715,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "cian_uijtdebroeks",
@@ -40771,7 +40771,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "simon_carr",
@@ -40827,7 +40827,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "valentin_paret-peintre",
@@ -40855,7 +40855,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -40906,7 +40906,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 227.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tadej_pogacar",
@@ -41074,7 +41074,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "thymen_arensman",
@@ -41102,7 +41102,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "giulio_ciccone",
@@ -41438,7 +41438,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 149.9,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -41550,7 +41550,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 139.6,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tobias_halland_johannessen",
@@ -41606,7 +41606,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 136.7,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "florian_lipowitz",
@@ -41830,7 +41830,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -41998,7 +41998,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_aranburu",
@@ -42026,7 +42026,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tiesj_benoot",
@@ -42110,7 +42110,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "carlos_rodriguez",
@@ -42194,7 +42194,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "bruno_armirail",
@@ -42306,7 +42306,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -42586,7 +42586,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -42810,7 +42810,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "fred_wright",
@@ -43090,7 +43090,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "kaden_groves",
@@ -43202,7 +43202,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dylan_van_baarle",
@@ -43482,7 +43482,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jenthe_biermans",
@@ -43790,7 +43790,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_kirsch",
@@ -43846,7 +43846,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "søren_kragh_andersen",
@@ -43958,7 +43958,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -44009,7 +44009,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 227.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tadej_pogacar",
@@ -44177,7 +44177,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "thymen_arensman",
@@ -44205,7 +44205,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "giulio_ciccone",
@@ -44541,7 +44541,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 149.9,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -44653,7 +44653,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 139.6,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tobias_halland_johannessen",
@@ -44709,7 +44709,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 136.7,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "florian_lipowitz",
@@ -44933,7 +44933,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -45101,7 +45101,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_aranburu",
@@ -45129,7 +45129,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tiesj_benoot",
@@ -45213,7 +45213,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "carlos_rodriguez",
@@ -45297,7 +45297,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "bruno_armirail",
@@ -45409,7 +45409,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -45689,7 +45689,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -45913,7 +45913,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "fred_wright",
@@ -46193,7 +46193,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "kaden_groves",
@@ -46305,7 +46305,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dylan_van_baarle",
@@ -46585,7 +46585,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jenthe_biermans",
@@ -46893,7 +46893,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_kirsch",
@@ -46949,7 +46949,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "søren_kragh_andersen",
@@ -47061,7 +47061,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -47392,7 +47392,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 175.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "kasper_asgreen",
@@ -47644,7 +47644,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 135.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathias_vacek",
@@ -47672,7 +47672,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 129.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "matteo_jorgenson",
@@ -47784,7 +47784,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 118.8,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "isaac_del_toro",
@@ -47812,7 +47812,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 115.9,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jan_tratnik",
@@ -47980,7 +47980,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 101.2,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "florian_vermeersch",
@@ -48036,7 +48036,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pello_bilbao",
@@ -48092,7 +48092,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mikel_landa",
@@ -48148,7 +48148,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -48260,7 +48260,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "michal_kwiatkowski",
@@ -48372,7 +48372,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "marc_soler",
@@ -48652,7 +48652,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "sepp_kuss",
@@ -48988,7 +48988,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "david_gaudu",
@@ -49184,7 +49184,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "biniam_girmay",
@@ -49212,7 +49212,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "kaden_groves",
@@ -49940,7 +49940,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tim_merlier",
@@ -49968,7 +49968,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tiesj_benoot",
@@ -50080,7 +50080,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jenthe_biermans",
@@ -50136,7 +50136,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "valentin_paret-peintre",
@@ -50164,7 +50164,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -50243,7 +50243,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.5,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordi_meeus",
@@ -50271,7 +50271,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "biniam_girmay",
@@ -50299,7 +50299,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 182.8,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -50663,7 +50663,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 135.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "michael_matthews",
@@ -51195,7 +51195,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "lennert_van_eetvelt",
@@ -51279,7 +51279,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dorian_godon",
@@ -51363,7 +51363,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -51475,7 +51475,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jonas_vingegaard",
@@ -52035,7 +52035,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "marc_soler",
@@ -52371,7 +52371,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -52623,7 +52623,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -52735,7 +52735,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordan_jegat",
@@ -52791,7 +52791,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "quinn_simmons",
@@ -52931,7 +52931,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "andreas_kron",
@@ -52987,7 +52987,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "emiel_verstrynge",
@@ -53043,7 +53043,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "louis_vervaeke",
@@ -53127,7 +53127,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "cian_uijtdebroeks",
@@ -53183,7 +53183,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "simon_carr",
@@ -53239,7 +53239,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "valentin_paret-peintre",
@@ -53267,7 +53267,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -53318,7 +53318,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 227.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tadej_pogacar",
@@ -53486,7 +53486,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "thymen_arensman",
@@ -53514,7 +53514,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "giulio_ciccone",
@@ -53850,7 +53850,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 149.9,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -53962,7 +53962,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 139.6,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tobias_halland_johannessen",
@@ -54018,7 +54018,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 136.7,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "florian_lipowitz",
@@ -54242,7 +54242,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -54410,7 +54410,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_aranburu",
@@ -54438,7 +54438,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tiesj_benoot",
@@ -54522,7 +54522,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "carlos_rodriguez",
@@ -54606,7 +54606,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "bruno_armirail",
@@ -54718,7 +54718,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -54998,7 +54998,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -55222,7 +55222,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "fred_wright",
@@ -55502,7 +55502,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "kaden_groves",
@@ -55614,7 +55614,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dylan_van_baarle",
@@ -55894,7 +55894,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jenthe_biermans",
@@ -56202,7 +56202,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_kirsch",
@@ -56258,7 +56258,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "søren_kragh_andersen",
@@ -56370,7 +56370,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -56421,7 +56421,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 227.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tadej_pogacar",
@@ -56589,7 +56589,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "thymen_arensman",
@@ -56617,7 +56617,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "giulio_ciccone",
@@ -56953,7 +56953,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 149.9,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -57065,7 +57065,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 139.6,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tobias_halland_johannessen",
@@ -57121,7 +57121,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 136.7,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "florian_lipowitz",
@@ -57345,7 +57345,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -57513,7 +57513,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_aranburu",
@@ -57541,7 +57541,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tiesj_benoot",
@@ -57625,7 +57625,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "carlos_rodriguez",
@@ -57709,7 +57709,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "bruno_armirail",
@@ -57821,7 +57821,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -58101,7 +58101,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -58325,7 +58325,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "fred_wright",
@@ -58605,7 +58605,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "kaden_groves",
@@ -58717,7 +58717,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dylan_van_baarle",
@@ -58997,7 +58997,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jenthe_biermans",
@@ -59305,7 +59305,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_kirsch",
@@ -59361,7 +59361,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "søren_kragh_andersen",
@@ -59473,7 +59473,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -59524,7 +59524,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 227.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tadej_pogacar",
@@ -59692,7 +59692,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "thymen_arensman",
@@ -59720,7 +59720,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "giulio_ciccone",
@@ -60056,7 +60056,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 149.9,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -60168,7 +60168,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 139.6,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tobias_halland_johannessen",
@@ -60224,7 +60224,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 136.7,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "florian_lipowitz",
@@ -60448,7 +60448,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -60616,7 +60616,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_aranburu",
@@ -60644,7 +60644,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "tiesj_benoot",
@@ -60728,7 +60728,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "carlos_rodriguez",
@@ -60812,7 +60812,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "bruno_armirail",
@@ -60924,7 +60924,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -61204,7 +61204,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -61428,7 +61428,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "fred_wright",
@@ -61708,7 +61708,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "kaden_groves",
@@ -61820,7 +61820,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dylan_van_baarle",
@@ -62100,7 +62100,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jenthe_biermans",
@@ -62408,7 +62408,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "alex_kirsch",
@@ -62464,7 +62464,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "søren_kragh_andersen",
@@ -62576,7 +62576,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 100,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [
@@ -62655,7 +62655,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.5,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordi_meeus",
@@ -62683,7 +62683,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 184.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "biniam_girmay",
@@ -62711,7 +62711,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 182.8,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mathieu_van_der_poel",
@@ -63075,7 +63075,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 135.1,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "michael_matthews",
@@ -63607,7 +63607,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "lennert_van_eetvelt",
@@ -63691,7 +63691,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "dorian_godon",
@@ -63775,7 +63775,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "mads_pedersen",
@@ -63887,7 +63887,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jonas_vingegaard",
@@ -64447,7 +64447,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "marc_soler",
@@ -64783,7 +64783,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "ilan_van_wilder",
@@ -65035,7 +65035,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "pablo_castrillo",
@@ -65147,7 +65147,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "jordan_jegat",
@@ -65203,7 +65203,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "quinn_simmons",
@@ -65343,7 +65343,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "andreas_kron",
@@ -65399,7 +65399,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "emiel_verstrynge",
@@ -65455,7 +65455,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "louis_vervaeke",
@@ -65539,7 +65539,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "cian_uijtdebroeks",
@@ -65595,7 +65595,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "simon_carr",
@@ -65651,7 +65651,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         },
         {
           "id": "valentin_paret-peintre",
@@ -65679,7 +65679,7 @@
           "ctx_note": "",
           "ctx_mult": 1.0,
           "holdet_est": 120.0,
-          "breakaway_specialist": true
+          "breakaway_specialist": false
         }
       ],
       "best_team": [

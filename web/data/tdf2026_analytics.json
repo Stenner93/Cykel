@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-24T13:13:52.523340+00:00",
+  "generated": "2026-06-24T19:19:45.556959+00:00",
   "stages": [
     {
       "num": 1,
@@ -686,7 +686,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -1003,7 +1003,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 13.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -1057,7 +1057,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -1157,7 +1157,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 0.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -1641,7 +1641,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 0.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -1843,7 +1843,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -1991,7 +1991,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 12.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -2045,7 +2045,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -2402,7 +2402,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -2456,7 +2456,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -2712,7 +2712,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -3007,7 +3007,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 0.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -3061,7 +3061,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -3115,7 +3115,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -3263,7 +3263,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -3526,7 +3526,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -3573,7 +3573,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -3613,7 +3613,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -3829,7 +3829,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -4334,7 +4334,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -5921,7 +5921,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -5975,7 +5975,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 12.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -6083,7 +6083,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 13.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -6480,7 +6480,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -6581,7 +6581,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 15.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -6682,7 +6682,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -6891,7 +6891,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -6938,7 +6938,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -7194,7 +7194,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -7737,7 +7737,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -7791,7 +7791,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -7845,7 +7845,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -7899,7 +7899,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 20.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -8263,7 +8263,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -8303,7 +8303,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -8411,7 +8411,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -8768,7 +8768,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -8869,7 +8869,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -9071,7 +9071,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -9320,7 +9320,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 0.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -11412,7 +11412,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -11466,7 +11466,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 12.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -11574,7 +11574,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 13.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -11971,7 +11971,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -12072,7 +12072,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 15.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -12173,7 +12173,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -12382,7 +12382,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -12429,7 +12429,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -12685,7 +12685,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -13228,7 +13228,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -13282,7 +13282,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -13336,7 +13336,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -13390,7 +13390,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 20.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -13754,7 +13754,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -13794,7 +13794,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -13902,7 +13902,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -14259,7 +14259,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -14360,7 +14360,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -14562,7 +14562,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -14811,7 +14811,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 0.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -16903,7 +16903,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -16957,7 +16957,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 12.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -17065,7 +17065,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 13.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -17462,7 +17462,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -17563,7 +17563,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 15.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -17664,7 +17664,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -17873,7 +17873,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -17920,7 +17920,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -18176,7 +18176,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -18719,7 +18719,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -18773,7 +18773,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -18827,7 +18827,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -18881,7 +18881,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 20.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -19245,7 +19245,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -19285,7 +19285,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -19393,7 +19393,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -19750,7 +19750,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -19851,7 +19851,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -20053,7 +20053,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -20302,7 +20302,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 0.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -22044,7 +22044,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 49.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -22098,7 +22098,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 44.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -22152,7 +22152,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -22805,7 +22805,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -23377,7 +23377,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -23471,7 +23471,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -23868,7 +23868,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -23976,7 +23976,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -24077,7 +24077,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -24816,7 +24816,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -24870,7 +24870,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -24924,7 +24924,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -24978,7 +24978,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -25032,7 +25032,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -25227,7 +25227,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -25389,7 +25389,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -25699,7 +25699,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -25753,7 +25753,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -25854,7 +25854,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -25908,7 +25908,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -27777,7 +27777,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -27925,7 +27925,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 29.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -27972,7 +27972,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 20.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -28470,7 +28470,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -28625,7 +28625,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -28733,7 +28733,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -28949,7 +28949,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 12.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -29003,7 +29003,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 15.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -29400,7 +29400,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -29454,7 +29454,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 13.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -29764,7 +29764,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -30065,7 +30065,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -30119,7 +30119,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -30173,7 +30173,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -30328,7 +30328,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -30483,7 +30483,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -30523,7 +30523,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -30826,7 +30826,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -31089,7 +31089,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -31291,7 +31291,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -33026,7 +33026,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 49.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -33080,7 +33080,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 44.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -33134,7 +33134,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -33787,7 +33787,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -34359,7 +34359,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -34453,7 +34453,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -34850,7 +34850,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -34958,7 +34958,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -35059,7 +35059,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -35798,7 +35798,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -35852,7 +35852,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -35906,7 +35906,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -35960,7 +35960,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -36014,7 +36014,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -36209,7 +36209,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -36371,7 +36371,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -36681,7 +36681,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -36735,7 +36735,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -36836,7 +36836,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -36890,7 +36890,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -38517,7 +38517,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 49.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -38571,7 +38571,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 44.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -38625,7 +38625,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -39278,7 +39278,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -39850,7 +39850,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -39944,7 +39944,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -40341,7 +40341,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -40449,7 +40449,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -40550,7 +40550,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -41289,7 +41289,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -41343,7 +41343,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -41397,7 +41397,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -41451,7 +41451,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -41505,7 +41505,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -41700,7 +41700,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -41862,7 +41862,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -42172,7 +42172,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -42226,7 +42226,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -42327,7 +42327,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -42381,7 +42381,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -44358,7 +44358,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -44412,7 +44412,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 12.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -44520,7 +44520,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 13.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -44917,7 +44917,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -45018,7 +45018,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 15.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -45119,7 +45119,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -45328,7 +45328,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -45375,7 +45375,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -45631,7 +45631,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -46174,7 +46174,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -46228,7 +46228,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -46282,7 +46282,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -46336,7 +46336,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 20.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -46700,7 +46700,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -46740,7 +46740,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -46848,7 +46848,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -47205,7 +47205,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -47306,7 +47306,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -47508,7 +47508,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -47757,7 +47757,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 0.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -49741,7 +49741,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -49889,7 +49889,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 29.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -49936,7 +49936,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 20.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -50434,7 +50434,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -50589,7 +50589,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -50697,7 +50697,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -50913,7 +50913,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 12.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -50967,7 +50967,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 15.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -51364,7 +51364,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -51418,7 +51418,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 13.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -51728,7 +51728,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -52029,7 +52029,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -52083,7 +52083,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -52137,7 +52137,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -52292,7 +52292,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -52447,7 +52447,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -52487,7 +52487,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -52790,7 +52790,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -53053,7 +53053,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -53255,7 +53255,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -54990,7 +54990,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 49.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -55044,7 +55044,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 44.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -55098,7 +55098,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -55751,7 +55751,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -56323,7 +56323,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -56417,7 +56417,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -56814,7 +56814,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -56922,7 +56922,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -57023,7 +57023,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -57762,7 +57762,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -57816,7 +57816,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -57870,7 +57870,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -57924,7 +57924,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -57978,7 +57978,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -58173,7 +58173,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -58335,7 +58335,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -58645,7 +58645,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -58699,7 +58699,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -58800,7 +58800,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -58854,7 +58854,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -60481,7 +60481,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 49.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -60535,7 +60535,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 44.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -60589,7 +60589,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -61242,7 +61242,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -61814,7 +61814,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -61908,7 +61908,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -62305,7 +62305,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -62413,7 +62413,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -62514,7 +62514,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -63253,7 +63253,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -63307,7 +63307,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -63361,7 +63361,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -63415,7 +63415,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -63469,7 +63469,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -63664,7 +63664,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -63826,7 +63826,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -64136,7 +64136,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -64190,7 +64190,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -64291,7 +64291,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -64345,7 +64345,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -65972,7 +65972,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 49.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -66026,7 +66026,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 44.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -66080,7 +66080,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -66733,7 +66733,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -67305,7 +67305,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -67399,7 +67399,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -67796,7 +67796,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -67904,7 +67904,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -68005,7 +68005,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -68744,7 +68744,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -68798,7 +68798,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -68852,7 +68852,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -68906,7 +68906,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -68960,7 +68960,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -69155,7 +69155,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -69317,7 +69317,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -69627,7 +69627,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -69681,7 +69681,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -69782,7 +69782,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -69836,7 +69836,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -71705,7 +71705,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -71853,7 +71853,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 29.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -71900,7 +71900,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 20.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -72398,7 +72398,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -72553,7 +72553,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -72661,7 +72661,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -72877,7 +72877,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 12.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -72931,7 +72931,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 15.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -73328,7 +73328,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -73382,7 +73382,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 13.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -73692,7 +73692,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -73993,7 +73993,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -74047,7 +74047,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -74101,7 +74101,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -74256,7 +74256,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -74411,7 +74411,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -74451,7 +74451,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -74754,7 +74754,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -75017,7 +75017,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -75219,7 +75219,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -77196,7 +77196,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -77344,7 +77344,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 29.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -77391,7 +77391,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 20.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -77889,7 +77889,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -78044,7 +78044,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -78152,7 +78152,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -78368,7 +78368,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 12.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -78422,7 +78422,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 15.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -78819,7 +78819,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -78873,7 +78873,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 13.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -79183,7 +79183,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -79484,7 +79484,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -79538,7 +79538,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -79592,7 +79592,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -79747,7 +79747,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -79902,7 +79902,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -79942,7 +79942,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -80245,7 +80245,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -80508,7 +80508,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -80710,7 +80710,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -82903,7 +82903,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 34.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -83354,7 +83354,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -83408,7 +83408,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 0.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -83617,7 +83617,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -83671,7 +83671,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -83981,7 +83981,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 0.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -84028,7 +84028,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 12.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -84082,7 +84082,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -84479,7 +84479,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -84587,7 +84587,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -84641,7 +84641,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 13.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -84695,7 +84695,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -84890,7 +84890,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -85433,7 +85433,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -85487,7 +85487,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 0.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -85689,7 +85689,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -85797,7 +85797,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -85851,7 +85851,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -86100,7 +86100,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -86504,7 +86504,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -87936,7 +87936,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 49.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -87990,7 +87990,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 44.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -88044,7 +88044,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -88697,7 +88697,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -89269,7 +89269,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -89363,7 +89363,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -89760,7 +89760,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -89868,7 +89868,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -89969,7 +89969,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -90708,7 +90708,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -90762,7 +90762,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -90816,7 +90816,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -90870,7 +90870,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -90924,7 +90924,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -91119,7 +91119,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -91281,7 +91281,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -91591,7 +91591,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -91645,7 +91645,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -91746,7 +91746,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -91800,7 +91800,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -93669,7 +93669,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -93817,7 +93817,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 29.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -93864,7 +93864,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 20.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -94362,7 +94362,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -94517,7 +94517,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -94625,7 +94625,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -94841,7 +94841,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 12.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -94895,7 +94895,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 15.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -95292,7 +95292,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -95346,7 +95346,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 13.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -95656,7 +95656,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -95957,7 +95957,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -96011,7 +96011,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -96065,7 +96065,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -96220,7 +96220,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -96375,7 +96375,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -96415,7 +96415,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -96718,7 +96718,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -96981,7 +96981,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -97183,7 +97183,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -99160,7 +99160,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -99308,7 +99308,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 29.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -99355,7 +99355,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 20.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -99853,7 +99853,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -100008,7 +100008,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -100116,7 +100116,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -100332,7 +100332,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 12.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -100386,7 +100386,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 15.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -100783,7 +100783,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -100837,7 +100837,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 13.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -101147,7 +101147,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -101448,7 +101448,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -101502,7 +101502,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -101556,7 +101556,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -101711,7 +101711,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -101866,7 +101866,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -101906,7 +101906,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -102209,7 +102209,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -102472,7 +102472,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -102674,7 +102674,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -104651,7 +104651,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -104799,7 +104799,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 29.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -104846,7 +104846,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 20.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -105344,7 +105344,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -105499,7 +105499,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -105607,7 +105607,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -105823,7 +105823,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 12.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -105877,7 +105877,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 15.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -106274,7 +106274,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -106328,7 +106328,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 13.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -106638,7 +106638,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -106939,7 +106939,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -106993,7 +106993,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -107047,7 +107047,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -107202,7 +107202,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -107357,7 +107357,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -107397,7 +107397,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -107700,7 +107700,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 6.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -107963,7 +107963,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -108165,7 +108165,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
@@ -109900,7 +109900,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 49.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 79.0,
             "HLL": 65.0,
@@ -109954,7 +109954,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 44.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 90.0,
             "HLL": 77.0,
@@ -110008,7 +110008,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.5,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 87.0,
             "HLL": 83.0,
@@ -110661,7 +110661,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 46.0,
             "HLL": 55.0,
@@ -111233,7 +111233,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 94.0,
@@ -111327,7 +111327,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 55.0,
             "HLL": 96.0,
@@ -111724,7 +111724,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 7.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 91.0,
@@ -111832,7 +111832,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 10.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 85.0,
@@ -111933,7 +111933,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.2,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 84.0,
@@ -112672,7 +112672,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 9.9,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 92.0,
@@ -112726,7 +112726,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 90.0,
@@ -112780,7 +112780,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -112834,7 +112834,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.4,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 82.0,
@@ -112888,7 +112888,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.0,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {},
           "pcs_form": {
@@ -113083,7 +113083,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 5.1,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 86.0,
@@ -113245,7 +113245,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 4.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 122,
@@ -113555,7 +113555,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 8.7,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 20.0,
             "HLL": 79.0,
@@ -113609,7 +113609,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 1.6,
-          "breakaway": true,
+          "breakaway": false,
           "co": {},
           "pcs_spec": {
             "onedayraces": 875,
@@ -113710,7 +113710,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 3.8,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 28.0,
             "HLL": 92.0,
@@ -113764,7 +113764,7 @@
             "pcs_rank": 0.0
           },
           "form_score": 2.3,
-          "breakaway": true,
+          "breakaway": false,
           "co": {
             "COB": 77.0,
             "HLL": 77.0,
