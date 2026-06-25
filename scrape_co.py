@@ -87,7 +87,8 @@ def match_riders(
 
     Matching strategy (in order):
       1. All words in rider full_name (lowercase) are all in the slug words
-      2. Last-name exact match (for short slugs)
+      2. Drop middle names: try first + last only (handles "Daniel Felipe Martinez")
+      3. Last-name exact match (for short slugs)
     """
     # Build slug-word lookup
     slug_map: dict[str, str] = {}   # slug_words_key → url
@@ -119,6 +120,30 @@ def match_riders(
         if best:
             matched[rid] = best
             continue
+
+        # Middle-name drop: try first + last word only (e.g. "Daniel Felipe Martinez" → "daniel martinez")
+        if len(words) > 2:
+            short_words = [words[0], words[-1]]
+            short_key   = " ".join(sorted(short_words))
+            if short_key in slug_map:
+                matched[rid] = slug_map[short_key]
+                continue
+            # Also try all words except each middle word individually
+            for drop_i in range(1, len(words) - 1):
+                reduced = [w for i, w in enumerate(words) if i != drop_i]
+                rkey = " ".join(sorted(reduced))
+                if rkey in slug_map:
+                    matched[rid] = slug_map[rkey]
+                    break
+            else:
+                # Last-name only match (single result only)
+                last = words[-1]
+                candidates = [u for u in co_urls if last in _slug(u)]
+                if len(candidates) == 1:
+                    matched[rid] = candidates[0]
+                    continue
+                unmatched.append(rider["full_name"])
+                continue
 
         # Last-name only match (single result only)
         last = words[-1]
