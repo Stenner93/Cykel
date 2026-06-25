@@ -306,7 +306,8 @@ def _lgbm_scores(
 
         gt_form_5, gt_form_10, gt_wins = _rolling_form(slug, stages, stage_num)
 
-        co   = (co_data or {}).get(rid, {})
+        co_raw = (co_data or {}).get(rid, {})
+        co   = {k.lower(): v for k, v in co_raw.items()}
         spec = (pcs_specialty_data or {}).get(rid, {})
         row = [
             ps,
@@ -376,7 +377,8 @@ def _holdet_lgbm_scores(
         gt_form_5, gt_form_10, gt_wins = _rolling_form(slug, stages, stage_num)
         xrace_form_10 = xrace_cache.get(slug, -1.0)
 
-        co   = (co_data or {}).get(rid, {})
+        co_raw = (co_data or {}).get(rid, {})
+        co   = {k.lower(): v for k, v in co_raw.items()}
         spec = (pcs_specialty_data or {}).get(rid, {})
 
         pcs_entry = (pcs_form_raw or {}).get(rid, {})
@@ -458,7 +460,8 @@ def _holdet_lgbm_raw_preds(
         gt_form_5, gt_form_10, gt_wins = _rolling_form(slug, stages, stage_num)
         xrace_form_10 = xrace_cache.get(slug, -1.0)
 
-        co   = (co_data or {}).get(rid, {})
+        co_raw = (co_data or {}).get(rid, {})
+        co   = {k.lower(): v for k, v in co_raw.items()}
         spec = (pcs_specialty_data or {}).get(rid, {})
 
         pcs_entry = (pcs_form_raw or {}).get(rid, {})

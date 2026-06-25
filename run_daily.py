@@ -523,12 +523,14 @@ def main():
             }
             updated = 0
             for p in predictions:
+                if p.get("holdet_raw_pred") is not None:
+                    continue  # ML model already computed expected_pts from holdet_raw_pred
                 est = _holdet_est.get(p["rider_id"])
                 if est:
                     p["expected_pts"] = round(est * 1000)
                     updated += 1
             if updated:
-                print(f"  Holdet kalibrering: {updated} ryttere opdateret med holdet_est")
+                print(f"  Holdet kalibrering fallback: {updated} ryttere uden ML-prediction opdateret med holdet_est")
 
     # ── Load current team ─────────────────────────────────────
     current_team_data = load_current_team(predictions)
