@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-25T08:09:11.397022+00:00",
+  "generated": "2026-06-25T21:13:13.553389+00:00",
   "stages": [
     {
       "num": 1,
@@ -1916,8 +1916,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -2071,7 +2071,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -3141,8 +3141,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -3809,60 +3809,6 @@
             "tt": 17.5,
             "hills": 10.5,
             "onedayraces": 5.4
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 100,
-          "disc": 34.0,
-          "disc_key": "ITT",
-          "disc_co": 55.3,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.34,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 3.4,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -6109,7 +6055,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -7011,8 +6957,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -7763,8 +7709,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -8849,60 +8795,6 @@
             "tt": 0.6,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 100,
-          "disc": 1.8,
-          "disc_key": "HLL",
-          "disc_co": 79.0,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.018,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 5.0,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -11600,7 +11492,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -12502,8 +12394,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -13254,8 +13146,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -14340,60 +14232,6 @@
             "tt": 0.6,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 100,
-          "disc": 1.8,
-          "disc_key": "HLL",
-          "disc_co": 79.0,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.018,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 5.0,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -17091,7 +16929,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -17993,8 +17831,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -18745,8 +18583,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -19831,60 +19669,6 @@
             "tt": 0.6,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 100,
-          "disc": 1.8,
-          "disc_key": "HLL",
-          "disc_co": 79.0,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.018,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 5.0,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -23403,7 +23187,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -24049,8 +23833,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -24842,8 +24626,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -25679,60 +25463,6 @@
             "tt": 0.6,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 120.0,
-          "disc": 24.2,
-          "disc_key": "SPR",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.242,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 8.7,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -29029,7 +28759,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -29588,8 +29318,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -30091,8 +29821,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -30806,60 +30536,6 @@
             "tt": 0,
             "hills": 0,
             "onedayraces": 0
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 100,
-          "disc": 34.1,
-          "disc_key": "MTN",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.341,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 6.6,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -34385,7 +34061,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -35031,8 +34707,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -35824,8 +35500,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -36661,60 +36337,6 @@
             "tt": 0.6,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 120.0,
-          "disc": 24.2,
-          "disc_key": "SPR",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.242,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 8.7,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -39876,7 +39498,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -40522,8 +40144,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -41315,8 +40937,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -42152,60 +41774,6 @@
             "tt": 0.6,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 120.0,
-          "disc": 24.2,
-          "disc_key": "SPR",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.242,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 8.7,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -44546,7 +44114,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -45448,8 +45016,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -46200,8 +45768,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -47286,60 +46854,6 @@
             "tt": 0.6,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 100,
-          "disc": 1.8,
-          "disc_key": "HLL",
-          "disc_co": 79.0,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.018,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 5.0,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -50993,7 +50507,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -51552,8 +51066,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -52055,8 +51569,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -52770,60 +52284,6 @@
             "tt": 0,
             "hills": 0,
             "onedayraces": 0
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 100,
-          "disc": 34.1,
-          "disc_key": "MTN",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.341,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 6.6,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -56349,7 +55809,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -56995,8 +56455,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -57788,8 +57248,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -58625,60 +58085,6 @@
             "tt": 0.6,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 120.0,
-          "disc": 24.2,
-          "disc_key": "SPR",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.242,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 8.7,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -61840,7 +61246,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -62486,8 +61892,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -63279,8 +62685,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -64116,60 +63522,6 @@
             "tt": 0.6,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 120.0,
-          "disc": 24.2,
-          "disc_key": "SPR",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.242,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 8.7,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -67331,7 +66683,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -67977,8 +67329,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -68770,8 +68122,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -69607,60 +68959,6 @@
             "tt": 0.6,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 120.0,
-          "disc": 24.2,
-          "disc_key": "SPR",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.242,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 8.7,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -72957,7 +72255,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -73516,8 +72814,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -74019,8 +73317,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -74734,60 +74032,6 @@
             "tt": 0,
             "hills": 0,
             "onedayraces": 0
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 100,
-          "disc": 34.1,
-          "disc_key": "MTN",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.341,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 6.6,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -78448,7 +77692,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -79007,8 +78251,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -79510,8 +78754,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -80225,60 +79469,6 @@
             "tt": 0,
             "hills": 0,
             "onedayraces": 0
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 100,
-          "disc": 34.1,
-          "disc_key": "MTN",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.341,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 6.6,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -83272,8 +82462,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -83597,60 +82787,6 @@
             "tt": 15.6,
             "hills": 12.2,
             "onedayraces": 2.7
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 118.8,
-          "disc": 69.3,
-          "disc_key": "ITT",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.693,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 4.0,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -84108,7 +83244,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -85459,8 +84595,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -89295,7 +88431,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -89941,8 +89077,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -90734,8 +89870,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -91571,60 +90707,6 @@
             "tt": 0.6,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 120.0,
-          "disc": 24.2,
-          "disc_key": "SPR",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.242,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 8.7,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -94921,7 +94003,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -95480,8 +94562,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -95983,8 +95065,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -96698,60 +95780,6 @@
             "tt": 0,
             "hills": 0,
             "onedayraces": 0
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 100,
-          "disc": 34.1,
-          "disc_key": "MTN",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.341,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 6.6,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -100412,7 +99440,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -100971,8 +99999,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -101474,8 +100502,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -102189,60 +101217,6 @@
             "tt": 0,
             "hills": 0,
             "onedayraces": 0
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 100,
-          "disc": 34.1,
-          "disc_key": "MTN",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.341,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 6.6,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -105903,7 +104877,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -106462,8 +105436,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -106965,8 +105939,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -107680,60 +106654,6 @@
             "tt": 0,
             "hills": 0,
             "onedayraces": 0
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 100,
-          "disc": 34.1,
-          "disc_key": "MTN",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.341,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 6.6,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {
@@ -111259,7 +110179,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -111905,8 +110825,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -112698,8 +111618,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -113535,60 +112455,6 @@
             "tt": 0.6,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ivan_romeo",
-          "name": "Ivan Romeo",
-          "team": "MOV",
-          "price": 4.5,
-          "holdet_est": 120.0,
-          "disc": 24.2,
-          "disc_key": "SPR",
-          "disc_co": null,
-          "signals": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "disc": 0.242,
-            "form": 0.5,
-            "ml": 0.0,
-            "pcs_rank": 0.0
-          },
-          "form_score": 8.7,
-          "breakaway": false,
-          "co": {
-            "COB": 20.0,
-            "HLL": 79.0,
-            "MTN": 59.0,
-            "GC": 64.0,
-            "ITT": 87.0,
-            "SPR": 41.0
-          },
-          "pcs_spec": {
-            "onedayraces": 253,
-            "gc": 587,
-            "tt": 584,
-            "sprint": 55,
-            "climber": 298,
-            "hills": 324
-          },
-          "pcs_form": {
-            "overall": 11.4,
-            "sprint": 7.6,
-            "mountain": 4.6,
-            "hilly": 2.2,
-            "tt": 0.9,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 533.0,
-          "pcs_rank_norm": 11.2,
-          "pcs_spec_norm": {
-            "sprint": 0.8,
-            "climber": 3.0,
-            "tt": 9.4,
-            "hills": 4.2,
-            "onedayraces": 2.5
           }
         },
         {

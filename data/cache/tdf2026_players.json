@@ -387,15 +387,6 @@
     "holdet_person_id": 4928
   },
   {
-    "id": "ivan_romeo",
-    "full_name": "Ivan Romeo",
-    "short_name": "Romeo",
-    "team": "MOV",
-    "team_full": "Movistar Team",
-    "price": 4.5,
-    "holdet_person_id": 4938
-  },
-  {
     "id": "jai_hindley",
     "full_name": "Jai Hindley",
     "short_name": "J. Hindley",
@@ -556,6 +547,15 @@
     "team_full": "Bahrain - Victorious",
     "price": 8.0,
     "holdet_person_id": 4900
+  },
+  {
+    "id": "lewis_askey",
+    "full_name": "Lewis Askey",
+    "short_name": "Askey",
+    "team": "NCT",
+    "team_full": "NSN Cycling Team",
+    "price": 3.5,
+    "holdet_person_id": 4690
   },
   {
     "id": "lorenzo_fortunato",
