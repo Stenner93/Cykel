@@ -291,11 +291,22 @@ def _rider_to_pcs_slug(rider: dict) -> str:
 _SPEC_LABELS = {"climber", "sprint", "tt", "hills", "onedayraces", "gc"}
 
 
+def _parse_int(s: str) -> int | None:
+    """Parse integer allowing European thousands separators (6.142 or 6,142 → 6142)."""
+    clean = s.replace(",", "").replace(".", "")
+    return int(clean) if clean.isdigit() else None
+
+
 def _parse_specialties(html: str) -> dict[str, int]:
     """
     Extract PCS specialty points from a rider page.
-    Returns e.g. {"climber": 882, "sprint": 273, "tt": 525, "hills": 2240,
+    Returns e.g. {"climber": 6142, "sprint": 273, "tt": 525, "hills": 2240,
                   "onedayraces": 1836, "gc": 584}
+
+    Handles both orderings found on PCS:
+      "6142 climber"   (number-first)
+      "climber 6142"   (label-first)
+    and European thousands separators: "6.142" or "6,142".
     """
     soup = BeautifulSoup(html, "html.parser")
     for ul in soup.find_all("ul"):
@@ -303,9 +314,19 @@ def _parse_specialties(html: str) -> dict[str, int]:
         found: dict[str, int] = {}
         i = 0
         while i < len(tokens) - 1:
-            if tokens[i].isdigit() and tokens[i + 1].lower() in _SPEC_LABELS:
-                found[tokens[i + 1].lower()] = int(tokens[i])
+            # number-first: "6142 climber" or "6.142 climber"
+            n = _parse_int(tokens[i])
+            if n is not None and tokens[i + 1].lower() in _SPEC_LABELS:
+                found[tokens[i + 1].lower()] = n
                 i += 2
+            # label-first: "climber 6142" or "Climber 6.142"
+            elif tokens[i].lower() in _SPEC_LABELS and i + 1 < len(tokens):
+                n2 = _parse_int(tokens[i + 1])
+                if n2 is not None:
+                    found[tokens[i].lower()] = n2
+                    i += 2
+                else:
+                    i += 1
             else:
                 i += 1
         if len(found) >= 3:   # require at least 3 labels to avoid false matches

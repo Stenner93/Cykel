@@ -1,0 +1,131 @@
+{
+  "model": "holdet_model.lgbm",
+  "target": "holdet_pts_norm",
+  "n_train_total": 11315,
+  "n_features": 23,
+  "loro_results": [
+    {
+      "val_race": "giro",
+      "n_val": 3603,
+      "mean_spearman": 0.6093,
+      "top5_accuracy": 0.2857,
+      "rmse": 17.39,
+      "n_stages": 21
+    },
+    {
+      "val_race": "tdf",
+      "n_val": 3864,
+      "mean_spearman": 0.4718,
+      "top5_accuracy": 0.619,
+      "rmse": 22.06,
+      "n_stages": 21
+    },
+    {
+      "val_race": "vuelta",
+      "n_val": 3848,
+      "mean_spearman": 0.4475,
+      "top5_accuracy": 0.381,
+      "rmse": 23.72,
+      "n_stages": 21
+    }
+  ],
+  "avg_spearman": 0.5095,
+  "avg_top5_accuracy": 0.4286,
+  "avg_rmse": 21.06,
+  "feature_importances": [
+    {
+      "feature": "gt_form_5",
+      "importance": 2636
+    },
+    {
+      "feature": "xrace_form_10",
+      "importance": 2593
+    },
+    {
+      "feature": "gt_form_10",
+      "importance": 2388
+    },
+    {
+      "feature": "co_spr",
+      "importance": 670
+    },
+    {
+      "feature": "co_mtn",
+      "importance": 663
+    },
+    {
+      "feature": "co_hll",
+      "importance": 629
+    },
+    {
+      "feature": "form_overall",
+      "importance": 610
+    },
+    {
+      "feature": "co_itt",
+      "importance": 546
+    },
+    {
+      "feature": "co_gc",
+      "importance": 527
+    },
+    {
+      "feature": "form_sprint",
+      "importance": 461
+    },
+    {
+      "feature": "co_cob",
+      "importance": 447
+    },
+    {
+      "feature": "form_hilly",
+      "importance": 437
+    },
+    {
+      "feature": "spec_sprint",
+      "importance": 327
+    },
+    {
+      "feature": "spec_climber",
+      "importance": 303
+    },
+    {
+      "feature": "form_mountain",
+      "importance": 300
+    },
+    {
+      "feature": "is_sprint",
+      "importance": 283
+    },
+    {
+      "feature": "spec_hills",
+      "importance": 271
+    },
+    {
+      "feature": "spec_tt",
+      "importance": 246
+    },
+    {
+      "feature": "is_hilly",
+      "importance": 176
+    },
+    {
+      "feature": "is_mountain",
+      "importance": 173
+    },
+    {
+      "feature": "form_tt",
+      "importance": 129
+    },
+    {
+      "feature": "is_tt",
+      "importance": 93
+    },
+    {
+      "feature": "gt_wins_so_far",
+      "importance": 92
+    }
+  ],
+  "notes": "Spearman: rang-korrelation pr. etape (1.0 = perfekt rang-order). Top5_accuracy: andel etaper hvor ≥1 af top-5 predicted er i faktisk top-5. LORO = Leave-One-Race-Out: trænet på 2 løb, testet på det 3.",
+  "generated": "2026-06-25T07:46:20.638084+00:00"
+}
