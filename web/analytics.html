@@ -301,11 +301,14 @@
     <div class="main">
       <div class="toolbar">
         <input class="search" type="text" id="searchInput" placeholder="Søg rytter…" oninput="renderTable()">
-        <button class="sort-btn active" id="sb-est"   onclick="setSort('est',this)">Holdet Est ↓</button>
-        <button class="sort-btn"        id="sb-score" onclick="setSort('score',this)">Score</button>
-        <button class="sort-btn"        id="sb-form"  onclick="setSort('form',this)">Form</button>
-        <button class="sort-btn"        id="sb-price" onclick="setSort('price',this)">Pris</button>
-        <button class="sort-btn"        id="sb-value" onclick="setSort('value',this)">Est/M</button>
+        <button class="sort-btn active" id="sb-est"      onclick="setSort('est',this)">Holdet Est ↓</button>
+        <button class="sort-btn"        id="sb-score"   onclick="setSort('score',this)">Score</button>
+        <button class="sort-btn"        id="sb-form"    onclick="setSort('form',this)">Form</button>
+        <button class="sort-btn"        id="sb-co"      onclick="setSort('co',this)">CO Evne</button>
+        <button class="sort-btn"        id="sb-pcs-evne" onclick="setSort('pcs_evne',this)">PCS Evne</button>
+        <button class="sort-btn"        id="sb-pcs-rang" onclick="setSort('pcs_rang',this)">PCS Rang</button>
+        <button class="sort-btn"        id="sb-price"   onclick="setSort('price',this)">Pris</button>
+        <button class="sort-btn"        id="sb-value"   onclick="setSort('value',this)">Est/M</button>
         <div class="meta-txt" id="metaTxt">– ryttere · etape 1 · ttt</div>
       </div>
 
@@ -319,6 +322,7 @@
               <th>Pris</th>
               <th title="Forventet vækst ÷ pris (est pr. M investeret)">Est/M</th>
               <th id="sb-score-col">Score</th>
+              <th id="thForm">Form</th>
               <th id="thCO">CO Evne</th>
               <th id="thPCS">PCS Evne</th>
               <th>PCS Rang</th>
@@ -473,10 +477,14 @@ function abilDetailClass(v) {
   if (v >= 40) return 'ab-val-md';
   return 'ab-val-lo';
 }
-function curStage() { return ALL_STAGES[curStageIdx] || {}; }
-function curType()  { return curStage().type || 'hilly'; }
-function curCoKey() { return TYPE_CO[curType()] || 'HLL'; }
-function curPcsKey(){ return TYPE_PCS[curType()] || 'hills'; }
+function curStage()   { return ALL_STAGES[curStageIdx] || {}; }
+function curType()    { return curStage().type || 'hilly'; }
+function curCoKey()   { return TYPE_CO[curType()] || 'HLL'; }
+function curPcsKey()  { return TYPE_PCS[curType()] || 'hills'; }
+function curFormKey() {
+  const m = {sprint:'sprint', mountain:'mountain', tt:'tt', ttt:'tt', hilly:'hilly', cobbled:'cobbled'};
+  return m[curType()] || 'overall';
+}
 
 // ── Stage selector ─────────────────────────────────────────────────────────
 function buildStageBtns() {
@@ -515,12 +523,15 @@ function updateHeader() {
 }
 
 function updateColumnHeaders() {
-  const coKey  = curCoKey();
-  const pcsKey = curPcsKey();
-  const thCO  = document.getElementById('thCO');
-  const thPCS = document.getElementById('thPCS');
-  if (thCO)  thCO.textContent  = 'CO ' + (TYPE_CO_LABEL[coKey]  || coKey);
-  if (thPCS) thPCS.textContent = TYPE_PCS_LABEL[pcsKey] || pcsKey;
+  const coKey   = curCoKey();
+  const pcsKey  = curPcsKey();
+  const formKey = curFormKey();
+  const thCO   = document.getElementById('thCO');
+  const thPCS  = document.getElementById('thPCS');
+  const thForm = document.getElementById('thForm');
+  if (thCO)   thCO.textContent   = 'CO ' + (TYPE_CO_LABEL[coKey]  || coKey);
+  if (thPCS)  thPCS.textContent  = TYPE_PCS_LABEL[pcsKey] || pcsKey;
+  if (thForm) thForm.textContent = 'Form (' + formKey + ')';
 }
 
 // ── Team filter ────────────────────────────────────────────────────────────
@@ -574,12 +585,18 @@ function getFiltered() {
 }
 
 function getSorted(riders) {
+  const coKey   = curCoKey();
+  const pcsKey  = curPcsKey();
+  const formKey = curFormKey();
   return [...riders].sort((a, b) => {
-    if (sortKey === 'est')   return (b.holdet_est || 0) - (a.holdet_est || 0);
-    if (sortKey === 'score') return computeScore(b) - computeScore(a);
-    if (sortKey === 'form')  return (b.signals?.form ?? 0) - (a.signals?.form ?? 0);
-    if (sortKey === 'price') return b.price - a.price;
-    if (sortKey === 'value') return ((b.holdet_est||0)/Math.max(b.price,1)) - ((a.holdet_est||0)/Math.max(a.price,1));
+    if (sortKey === 'est')      return (b.holdet_est || 0) - (a.holdet_est || 0);
+    if (sortKey === 'score')    return computeScore(b) - computeScore(a);
+    if (sortKey === 'form')     return (b.pcs_form?.[formKey] ?? 0) - (a.pcs_form?.[formKey] ?? 0);
+    if (sortKey === 'co')       return (b.co?.[coKey] ?? 0) - (a.co?.[coKey] ?? 0);
+    if (sortKey === 'pcs_evne') return (b.pcs_spec_norm?.[pcsKey] ?? 0) - (a.pcs_spec_norm?.[pcsKey] ?? 0);
+    if (sortKey === 'pcs_rang') return (b.pcs_rank_norm ?? 0) - (a.pcs_rank_norm ?? 0);
+    if (sortKey === 'price')    return b.price - a.price;
+    if (sortKey === 'value')    return ((b.holdet_est||0)/Math.max(b.price,1)) - ((a.holdet_est||0)/Math.max(a.price,1));
     return 0;
   });
 }
@@ -602,7 +619,9 @@ function renderTable() {
     const estM   = r.price > 0 && r.holdet_est ? (r.holdet_est / r.price).toFixed(1) : '–';
     const score  = computeScore(r);
     const scoreCls = score >= 65 ? 'abil-hi' : score >= 35 ? 'abil-md' : 'abil-lo';
-    const coVal  = r.co?.[coKey];
+    const formKey = curFormKey();
+    const formVal = r.pcs_form?.[formKey];
+    const coVal   = r.co?.[coKey];
     const pcsNorm = r.pcs_spec_norm?.[pcsKey];
     const rankNorm = r.pcs_rank_norm;
     const isSel  = r.id === selRiderId;
@@ -624,6 +643,7 @@ function renderTable() {
       <td><span class="price-g">${r.price.toFixed(1)}M</span></td>
       <td style="font-size:11px;color:var(--text2);font-weight:600">${estM}</td>
       <td class="ability-cell ${scoreCls}">${score}</td>
+      <td class="ability-cell ${abilClass(formVal)}">${formVal != null && formVal > 0 ? Math.round(formVal) : '–'}</td>
       <td class="ability-cell ${abilClass(coVal)}">${fmtRaw(coVal)}</td>
       <td class="ability-cell ${abilClass(pcsNorm)}">${pcsNorm != null && pcsNorm > 0 ? fmtRaw(pcsNorm) : '–'}</td>
       <td class="ability-cell ${abilClass(rankNorm)}">${rankNorm ? fmtRaw(rankNorm) : '–'}</td>
