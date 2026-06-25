@@ -437,7 +437,7 @@ def main():
         print(f"  Profile score: {profile_sc}  →  WINNER_POINTS × {scale:.2f}")
 
     # ── ML signal ────────────────────────────────────────────
-    from src.ml_signal import compute_ml_scores
+    from src.ml_signal import compute_ml_scores, compute_holdet_raw_scores
     gt_results   = load_gt_stage_results()
     pcs_form_raw = load_pcs_form_raw()
     pcs_rankings  = load_pcs_rankings()
@@ -467,15 +467,23 @@ def main():
         pcs_specialty_data=pcs_specialty_data or None,
         startlist_quality=1.0,   # TdF/GT: top-tier field (~1000 PCS score → 1.0 normalised)
     )
+    holdet_raw_scores = compute_holdet_raw_scores(
+        riders=riders,
+        stage_type=stage_type,
+        stage_num=stage,
+        gt_results=gt_results,
+        pcs_form_raw=pcs_form_raw,
+        co_data=co_data or None,
+        pcs_specialty_data=pcs_specialty_data or None,
+    )
     if ml_scores:
         top_ml = sorted(ml_scores.items(), key=lambda x: x[1], reverse=True)[:3]
         id_to_name = {r["id"]: r["full_name"] for r in riders}
         top_ml_str = ", ".join(f"{id_to_name.get(k, k)} ({v:.0f})" for k, v in top_ml)
-        ml_source = "ML rolling-form" if n_gt_stages >= 5 else f"historisk styrke ({n_gt_stages} etaper kørt)"
+        n_raw = len(holdet_raw_scores) if holdet_raw_scores else 0
         print(f"  ML-signal:     {len(ml_scores)} ryttere  "
-              f"(GT-etaper: {n_gt_stages} — {ml_source})  Top3: {top_ml_str}")
+              f"(GT-etaper: {n_gt_stages})  Top3: {top_ml_str}  raw holdet: {n_raw}")
     else:
-        ml_source = "ikke tilgængelig"
         print(f"  ML-signal:     ikke tilgængelig (model ikke indlæst)")
 
     # ── Run predictions ───────────────────────────────────────
@@ -494,6 +502,7 @@ def main():
         ml_prob_data=ml_scores or None,
         pcs_rank_data=pcs_rank_data or None,
         pcs_n_results_data=pcs_n_results_data or None,
+        holdet_raw_data=holdet_raw_scores or None,
     )
 
     # ── Override expected_pts with holdet_est calibration ────────────────────

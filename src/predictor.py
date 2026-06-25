@@ -105,6 +105,19 @@ def _disc_blend_value(cyclingoracle: dict[str, float] | None, stage_type: str) -
     raw = sum(weight * co.get(key, 50.0) for key, weight in blend.items())
     return raw, _dominant_disc_key(stage_type)
 
+# Gennemsnitlige max Holdet-point pr. etapetype (fra historisk træningsdata
+# giro/tdf/vuelta 2025). Bruges til at denormalisere holdet-model output:
+#   predicted_K = holdet_pts_norm / 100 × AVG_MAX_K[stage_type]
+AVG_MAX_K: dict[str, int] = {
+    "sprint":   400_000,
+    "mountain": 427_000,
+    "hilly":    430_000,
+    "tt":       399_000,
+    "ttt":      399_000,
+    "cobbled":  500_000,
+    "gc":       630_000,
+}
+
 # Expected fantasy points IF a rider wins (by stage type).
 # Sprint TdF 2026: ASO øgede sprintpoint til 70 pt til vinderen (mod 50 sidst år)
 # + 2 mellempurter á 20 pt (mod 1). Holdet's egne tabeller ændres ikke.
@@ -475,6 +488,7 @@ def predict_all(
     ml_prob_data: dict[str, float] | None = None,       # {rider_id: felt-normaliseret 0-100}
     pcs_rank_data: dict[str, float] | None = None,      # {rider_id: pts_raw}
     pcs_n_results_data: dict[str, int] | None = None,   # {rider_id: n_results}
+    holdet_raw_data: dict[str, float] | None = None,    # {rider_id: raw holdet_pts_norm 0-100}
 ) -> list[dict]:
     """
     Predict expected points for ALL riders and return sorted list.
@@ -688,23 +702,34 @@ def predict_all(
         pred["disc_co_raw"] = round(field_vals.get(rider["id"], 0), 1)
         results.append(pred)
 
-    # ── Rank-based calibration ───────────────────────────────────────────────
-    # The composite signal ranks riders well but its absolute value clusters
-    # at 0.60–0.75 when signals are sparse (e.g. TTT stage 1 with no
-    # VeloScore/odds). Multiplying by winner_pts then gives a flat band
-    # where 40+ riders all score ~260K, which is unrealistic.
+    # ── Rank-based calibration OR holdet ML direct estimate ──────────────────
+    # When holdet_raw_data is available (holdet_pts_norm 0-100 from the ML
+    # regression), we denormalize it with AVG_MAX_K[stage_type] to get a
+    # concrete K-point estimate. This replaces the rank-decay formula for
+    # riders where the holdet model has a prediction.
     #
-    # Fix: use composite ORDER to rank riders, then apply an exponential decay
-    # based on field rank so the MAGNITUDE matches empirical Giro/Dauphiné
-    # distributions (rank 1 → 35% of winner_pts, rank 5 → 29%, rank 20 → 17%,
-    # rank 50 → 8%, rank 100 → 2%). GC/jersey/sprint/KOM bonuses are untouched.
+    # Without holdet_raw: use composite ORDER + exponential decay so the
+    # MAGNITUDE matches empirical Giro/Dauphiné distributions
+    # (rank 1 → 35% of winner_pts, rank 5 → 29%, rank 20 → 17%, rank 50 → 8%).
+    # GC/jersey/sprint/KOM bonuses are added on top in both cases.
     results.sort(key=lambda x: x["expected_pts"], reverse=True)
-    _n = len(results)
+    _n     = len(results)
+    _avg_k = AVG_MAX_K.get(stage_type, 430_000)
     for _i, pred in enumerate(results):
-        _frac = _i / max(_n - 1, 1)
-        _wp   = pred.get("winner_pts", 500_000)
+        _frac  = _i / max(_n - 1, 1)
+        _wp    = pred.get("winner_pts", 500_000)
         _addon = pred["expected_pts"] - pred["composite_base_pts"]
-        _calibrated_base = round(0.35 * math.exp(-2.44 * _frac) * _wp)
+
+        holdet_raw = (holdet_raw_data or {}).get(pred.get("rider_id"))
+        if holdet_raw is not None and holdet_raw > 0:
+            # Direct holdet ML estimate: denormalize raw prediction to K-points
+            _calibrated_base = round(holdet_raw / 100.0 * _avg_k)
+            pred["holdet_raw_pred"] = round(holdet_raw, 2)
+        else:
+            # Fallback: rank-based exponential decay
+            _calibrated_base = round(0.35 * math.exp(-2.44 * _frac) * _wp)
+            pred["holdet_raw_pred"] = None
+
         pred["expected_pts"] = _calibrated_base + _addon
 
     # ── Context multipliers ──────────────────────────────────────────────────

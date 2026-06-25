@@ -28,7 +28,7 @@ sys.path.insert(0, str(ROOT))
 import scrape_holdet as _h
 from src.predictor import predict_all
 from src.optimizer import make_best_team
-from src.ml_signal import compute_ml_scores
+from src.ml_signal import compute_ml_scores, compute_holdet_raw_scores
 from src.scoring import STAGE_PTS, GC_PTS, JERSEY, SPT_PER_PT, LATE_MAX, LATE_PER_MIN, DNF_PEN
 from src.scrape_predictions import get_stage_predictions
 from scrape_pcs import check_dns
@@ -677,6 +677,15 @@ def main() -> None:
             pcs_specialty_data=pcs_specialties or None,
             startlist_quality=1.0,   # TdF: top-tier field (~1000 PCS score → 1.0 normalised)
         )
+        stage_holdet_raw = compute_holdet_raw_scores(
+            riders=riders,
+            stage_type=stype,
+            stage_num=stage_num,
+            gt_results=gt_results_raw or None,
+            pcs_form_raw=pcs_raw or None,
+            co_data=co_data or None,
+            pcs_specialty_data=pcs_specialties or None,
+        )
 
         preds = predict_all(
             riders=riders,
@@ -692,10 +701,10 @@ def main() -> None:
             winner_pts_override=TDF_WINNER_POINTS,
             rider_context=stage_ctx or None,
             pcs_specialty_data=pcs_specialties or None,
-            ml_scores=stage_ml or None,
             ml_prob_data=stage_ml or None,
             pcs_rank_data=pcs_rank_data or None,
             pcs_n_results_data=pcs_n_results_data or None,
+            holdet_raw_data=stage_holdet_raw or None,
         )
 
         stage_actuals = actuals.get(stage_num, {})
@@ -739,6 +748,9 @@ def main() -> None:
                 "ctx_status": p.get("context_status", "normal"),
                 "ctx_note":   p.get("context_note", ""),
                 "ctx_mult":   p.get("context_mult", 1.0),
+                # holdet_est i tusinder (displayformat: 202 → 202k)
+                # Beregnet fra holdet ML-model når tilgængeligt, ellers fra exp
+                "holdet_est": round(p.get("expected_pts", 0) / 1000, 1) if p.get("holdet_raw_pred") else None,
             })
 
         # Top odds for display in dashboard sources tab

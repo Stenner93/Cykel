@@ -31,9 +31,14 @@ HOLDET_MODEL_PATH  = ROOT / "data" / "ml" / "holdet_model.lgbm"
 HIST_FORM_PATH     = ROOT / "data" / "cache" / "rider_historical_form.json"
 HIST_RESULTS_PATH  = ROOT / "data" / "ml" / "historical_results.json"
 
-# Antal afviklede etaper krævet for at skifte til LightGBM rolling-form.
-# Under denne grænse bruges historisk styrke i stedet.
-MIN_GT_STAGES_FOR_MODEL = 5
+# Holdet-model kan bruges fra etape 1 — CO/PCS form og xrace_form er
+# tilgængelige fra dag 1. gt_form_5=-1 bruges som sentinel for manglende
+# in-race data, og modellen er trænet til at håndtere dette.
+MIN_HOLDET_STAGES = 0
+
+# Legacy model (top-10 klassifikator) kræver minimalt 0 etaper — CO og
+# PCS specialty fungerer fra starten. Legacy brugt som blending-partner.
+MIN_LEGACY_STAGES = 0
 
 # Holdet-model feature order — skal matche build_holdet_training_data.py
 _HOLDET_FEATURE_COLS = [
@@ -412,6 +417,81 @@ def _holdet_lgbm_scores(
     return {rid: round(s, 1) for rid, s in zip(rider_ids, scores)}
 
 
+def _holdet_lgbm_raw_preds(
+    riders: list[dict[Any, Any]],
+    stage_type: str,
+    stage_num: int,
+    stages: dict[str, list[dict]],
+    pcs_form_raw: dict | None,
+    co_data: dict | None = None,
+    pcs_specialty_data: dict | None = None,
+) -> dict[str, float] | None:
+    """
+    Kør holdet_model.lgbm og returner RAW predictions (0-100 skala, IKKE
+    felt-normaliseret). 0=ingen point, 100=vinder af etapen.
+    Bruges til at beregne konkrete K-point-estimater via AVG_MAX_K.
+    Returnerer None hvis model ikke er tilgængelig.
+    """
+    model = _get_holdet_model()
+    if model is None:
+        return None
+
+    try:
+        import numpy as np
+    except ImportError:
+        return None
+
+    is_sprint   = int(stage_type == "sprint")
+    is_mountain = int(stage_type == "mountain")
+    is_hilly    = int(stage_type == "hilly")
+    is_tt       = int(stage_type in ("tt", "ttt"))
+
+    xrace_cache = _get_xrace_form()
+
+    rows: list[list[float]] = []
+    rider_ids: list[str]    = []
+
+    for rider in riders:
+        rid  = rider["id"]
+        slug = _holdet_to_pcs_slug(rid, pcs_form_raw)
+
+        gt_form_5, gt_form_10, gt_wins = _rolling_form(slug, stages, stage_num)
+        xrace_form_10 = xrace_cache.get(slug, -1.0)
+
+        co   = (co_data or {}).get(rid, {})
+        spec = (pcs_specialty_data or {}).get(rid, {})
+
+        pcs_entry = (pcs_form_raw or {}).get(rid, {})
+        fbt = pcs_entry.get("form_by_type") or {}
+        form_overall  = fbt.get("overall",  -1)
+        form_sprint   = fbt.get("sprint",   -1)
+        form_mountain = fbt.get("mountain", -1)
+        form_hilly    = fbt.get("hilly",    -1)
+        form_tt       = fbt.get("tt",       -1)
+
+        row = [
+            is_sprint, is_mountain, is_hilly, is_tt,
+            co.get("mtn", -1), co.get("spr", -1), co.get("hll", -1),
+            co.get("itt", -1), co.get("cob", -1), co.get("gc",  -1),
+            spec.get("climber", -1), spec.get("sprint", -1),
+            spec.get("tt", -1), spec.get("hills", -1),
+            float(form_overall), float(form_sprint), float(form_mountain),
+            float(form_hilly), float(form_tt),
+            gt_form_5, gt_form_10, float(gt_wins),
+            xrace_form_10,
+        ]
+        rows.append(row)
+        rider_ids.append(rid)
+
+    if not rows:
+        return None
+
+    X    = np.array(rows, dtype=np.float32)
+    raw  = model.predict(X)   # raw 0-100 (ikke felt-normaliseret)
+
+    return {rid: round(max(0.0, float(p)), 2) for rid, p in zip(rider_ids, raw)}
+
+
 def compute_ml_scores(
     riders: list[dict[str, Any]],
     stage_type: str,
@@ -425,46 +505,78 @@ def compute_ml_scores(
     startlist_quality: float = 1.0,
 ) -> dict[str, float]:
     """
-    Beregn ML/historisk styrke-scorer for alle ryttere.
+    Beregn ML/historisk styrke-scorer for alle ryttere (felt-normaliseret 0-100).
 
-    Strategi:
-    - Etape 1-4 (< 5 afviklede etaper): historisk GT-styrke 2021-2025.
-      Direkte felt-normaliseret scorering baseret på type-specifik gennemsnitlig
-      placering — virker fra etape 1 og giver en klar "styrke-rangering".
-    - Etape 5+ (>= 5 afviklede etaper): LightGBM med in-race rolling-form.
-      Modellen bruger gennemsnitlig placering i de seneste 5/10 etaper og
-      differentierer baseret på aktuel form i dette specifikke løb.
-      CO og specialty features er aktive efter retraining med fixede training data.
-
-    startlist_quality: PCS startlist quality score / 1000 (feature 19).
-      Default 1.0 corresponds to a top-tier GT field (e.g. TdF ~1000 on PCS).
+    Strategi — fase-baseret blending:
+    - Etape 1-4  (n_done < 5):  20% holdet + 80% legacy  (begge mangler in-race form,
+      men CO/PCS specialty/xrace_form bruges fra dag 1).
+    - Etape 5-10 (n_done < 11): 55% holdet + 45% legacy  (holdet begynder at lære
+      rytterens in-race form).
+    - Etape 11+  (n_done >= 11): 70% holdet + 30% legacy  (holdet model har fuld form-
+      historik og vægter tungere).
 
     Returnerer {rider_id: score 0-100} — felt-normaliseret.
     """
-    stages     = (gt_results or {}).get("stages", {})
-    n_done     = sum(1 for s in stages if int(s) < stage_num)
+    stages = (gt_results or {}).get("stages", {})
+    n_done = sum(1 for s in stages if int(s) < stage_num)
 
-    if n_done >= MIN_GT_STAGES_FOR_MODEL:
-        # Prefer holdet model (trained on actual Holdet pts)
-        holdet = _holdet_lgbm_scores(
-            riders, stage_type, stage_num, stages, pcs_form_raw,
-            co_data=co_data, pcs_specialty_data=pcs_specialty_data,
-        )
-        if holdet is not None:
-            return holdet
+    # Phase-based blend weights (holdet_w + legacy_w = 1.0)
+    if n_done < 5:
+        holdet_w, legacy_w = 0.20, 0.80
+    elif n_done < 11:
+        holdet_w, legacy_w = 0.55, 0.45
+    else:
+        holdet_w, legacy_w = 0.70, 0.30
 
-        # Fallback: legacy top-10 classifier
-        lgbm = _lgbm_scores(
-            riders, stage_type, stage_num, profile_score, stages, pcs_form_raw,
-            co_data=co_data, pcs_specialty_data=pcs_specialty_data,
-            startlist_quality=startlist_quality,
-        )
-        if lgbm is not None:
-            return lgbm
+    holdet = _holdet_lgbm_scores(
+        riders, stage_type, stage_num, stages, pcs_form_raw,
+        co_data=co_data, pcs_specialty_data=pcs_specialty_data,
+    )
+    lgbm = _lgbm_scores(
+        riders, stage_type, stage_num, profile_score, stages, pcs_form_raw,
+        co_data=co_data, pcs_specialty_data=pcs_specialty_data,
+        startlist_quality=startlist_quality,
+    )
 
-    # Fallback: historisk styrke (etape 1-4, eller model ikke tilgængelig)
+    if holdet is not None and lgbm is not None:
+        return {
+            rid: round(holdet_w * holdet.get(rid, 50.0) + legacy_w * lgbm.get(rid, 50.0), 1)
+            for rid in holdet
+        }
+    if holdet is not None:
+        return holdet
+    if lgbm is not None:
+        return lgbm
+
+    # Fallback: historisk styrke (modeller ikke tilgængelige)
     hist = _historical_strength_scores(riders, stage_type, pcs_form_raw, pcs_rankings)
     if hist:
         return hist
 
     return {}
+
+
+def compute_holdet_raw_scores(
+    riders: list[dict[str, Any]],
+    stage_type: str,
+    stage_num: int,
+    gt_results: dict | None,
+    pcs_form_raw: dict | None = None,
+    co_data: dict | None = None,
+    pcs_specialty_data: dict | None = None,
+) -> dict[str, float] | None:
+    """
+    Returner RAW holdet-model predictions (0-100 skala, IKKE felt-normaliseret).
+    0 = ingen point, 100 = vinder af etapen.
+
+    Denormalisering: predicted_K = score / 100 × AVG_MAX_K[stage_type]
+    AVG_MAX_K (gennemsnitlige maksimumpoint pr. etapetype, fra historik):
+      sprint=400K, mountain=427K, hilly=430K, tt=399K
+
+    Returnerer None hvis holdet-model ikke er indlæst.
+    """
+    stages = (gt_results or {}).get("stages", {})
+    return _holdet_lgbm_raw_preds(
+        riders, stage_type, stage_num, stages, pcs_form_raw,
+        co_data=co_data, pcs_specialty_data=pcs_specialty_data,
+    )
