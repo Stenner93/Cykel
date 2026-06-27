@@ -576,10 +576,10 @@ def predict_all(
     # In a team time trial, the whole team finishes together and every rider
     # receives the SAME stage-position points in Holdet's scoring — an
     # individual's own ITT rating is the wrong signal. What matters is the
-    # team's collective TTT strength. We use the average of each team's
-    # 6 strongest riders (a TTT squad typically drops its weakest 1-2
-    # riders, but the recorded time still reflects the front group's pace),
-    # then give every rider on that team this same team-level value.
+    # team's collective TTT strength. We average the TOP 5 riders' ratings
+    # per team (the 5th rider's time typically sets the team's recorded time
+    # in Grand Tours), so having 1-2 mountain climbers in the squad doesn't
+    # tank a team's predicted score — they're simply excluded from the average.
     if stage_type == "ttt":
         from collections import defaultdict
         team_to_rids: dict[str, list[str]] = defaultdict(list)
@@ -590,8 +590,8 @@ def predict_all(
             vals = sorted((field_vals[rid] for rid in rids if rid in field_vals), reverse=True)
             if not vals:
                 continue
-            top6 = vals[:6] if len(vals) >= 6 else vals
-            team_avg = sum(top6) / len(top6)
+            top5 = vals[:5] if len(vals) >= 5 else vals
+            team_avg = sum(top5) / len(top5)
             for rid in rids:
                 if rid in field_vals:
                     field_vals[rid] = team_avg
@@ -701,6 +701,29 @@ def predict_all(
         # så brugeren ser det absolutte CO-tal, ikke det felt-relative 0-100 tal).
         pred["disc_co_raw"] = round(field_vals.get(rider["id"], 0), 1)
         results.append(pred)
+
+    # ── TTT: team-average ML raw scores ──────────────────────────────────────
+    # The holdet ML model has no team-composition features — it predicts each
+    # rider individually based on their own ITT rating. For TTT stages this is
+    # wrong: all riders on a team receive the same position points, so their
+    # expected holdet score must also be the same. Apply the same top-5 team
+    # averaging to ML scores as we do to the discipline signal above.
+    if stage_type == "ttt" and holdet_raw_data:
+        from collections import defaultdict as _hdd
+        _ttt_rider_team = {r["id"]: r.get("team", "") for r in riders}
+        _ttt_team_scores: dict[str, list[float]] = _hdd(list)
+        for rid, score in holdet_raw_data.items():
+            t = _ttt_rider_team.get(rid, "")
+            if t:
+                _ttt_team_scores[t].append(score)
+        _ttt_team_avg: dict[str, float] = {
+            t: round(sum(sorted(scores, reverse=True)[:5]) / min(len(scores), 5), 2)
+            for t, scores in _ttt_team_scores.items()
+        }
+        holdet_raw_data = {
+            rid: _ttt_team_avg.get(_ttt_rider_team.get(rid, ""), score)
+            for rid, score in holdet_raw_data.items()
+        }
 
     # ── Rank-based calibration OR holdet ML direct estimate ──────────────────
     # When holdet_raw_data is available (holdet_pts_norm 0-100 from the ML
