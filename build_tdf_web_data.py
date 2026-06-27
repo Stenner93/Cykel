@@ -531,7 +531,7 @@ def main() -> None:
           f"  PCS specialties: {len(pcs_specialties)}")
     print(f"  PCS stage types: {len(stage_types)} etaper  "
           f"profile scores: {len(stage_scores)} etaper")
-    print(f"  PCS ranking: {len(pcs_rank_data)} ryttere  ML: {len(ml_scores)} ryttere")
+    print(f"  PCS ranking: {len(pcs_rank_data)} ryttere")
 
     # ── Fetch actuals + actions for completed stages ─────────────────────────
     print(f"  Henter actual-point for {len(finished)} afsluttede etaper…")
