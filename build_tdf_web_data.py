@@ -28,7 +28,7 @@ sys.path.insert(0, str(ROOT))
 import scrape_holdet as _h
 from src.predictor import predict_all
 from src.optimizer import make_best_team
-from src.ml_signal import compute_ml_scores
+from src.ml_signal import compute_ml_scores, compute_holdet_raw_scores
 from src.scoring import STAGE_PTS, GC_PTS, JERSEY, SPT_PER_PT, LATE_MAX, LATE_PER_MIN, DNF_PEN
 from src.scrape_predictions import get_stage_predictions
 from scrape_pcs import check_dns
@@ -531,7 +531,7 @@ def main() -> None:
           f"  PCS specialties: {len(pcs_specialties)}")
     print(f"  PCS stage types: {len(stage_types)} etaper  "
           f"profile scores: {len(stage_scores)} etaper")
-    print(f"  PCS ranking: {len(pcs_rank_data)} ryttere  ML: {len(ml_scores)} ryttere")
+    print(f"  PCS ranking: {len(pcs_rank_data)} ryttere")
 
     # ── Fetch actuals + actions for completed stages ─────────────────────────
     print(f"  Henter actual-point for {len(finished)} afsluttede etaper…")
@@ -677,6 +677,15 @@ def main() -> None:
             pcs_specialty_data=pcs_specialties or None,
             startlist_quality=1.0,   # TdF: top-tier field (~1000 PCS score → 1.0 normalised)
         )
+        stage_holdet_raw = compute_holdet_raw_scores(
+            riders=riders,
+            stage_type=stype,
+            stage_num=stage_num,
+            gt_results=gt_results_raw or None,
+            pcs_form_raw=pcs_raw or None,
+            co_data=co_data or None,
+            pcs_specialty_data=pcs_specialties or None,
+        )
 
         preds = predict_all(
             riders=riders,
@@ -692,10 +701,10 @@ def main() -> None:
             winner_pts_override=TDF_WINNER_POINTS,
             rider_context=stage_ctx or None,
             pcs_specialty_data=pcs_specialties or None,
-            ml_scores=stage_ml or None,
             ml_prob_data=stage_ml or None,
             pcs_rank_data=pcs_rank_data or None,
             pcs_n_results_data=pcs_n_results_data or None,
+            holdet_raw_data=stage_holdet_raw or None,
         )
 
         stage_actuals = actuals.get(stage_num, {})
@@ -725,12 +734,12 @@ def main() -> None:
                 "disc_co":  round(p.get("disc_co_raw", 0) or 0, 1),
                 "disc_key": p.get("disc_key", "AVG"),
                 "signals":  [
-                    round(sigs.get("veloscore", 0), 3),
-                    round(sigs.get("odds", 0), 3),
-                    round(sigs.get("discipline", 0), 3),
-                    round(sigs.get("form", 0), 3),
-                    round(sigs.get("ml", 0), 3),
-                    round(sigs.get("pcs_rank", 0), 3),
+                    round(sigs.get("veloscore") or 0, 3),
+                    round(sigs.get("odds") or 0, 3),
+                    round(sigs.get("discipline") or 0, 3),
+                    round(sigs.get("form") or 0, 3),
+                    round(sigs.get("ml") or 0, 3),
+                    round(sigs.get("pcs_rank") or 0, 3),
                 ],
                 "reason":   p.get("reasoning", ""),
                 "actual":   actual,
@@ -739,6 +748,11 @@ def main() -> None:
                 "ctx_status": p.get("context_status", "normal"),
                 "ctx_note":   p.get("context_note", ""),
                 "ctx_mult":   p.get("context_mult", 1.0),
+                # holdet_est i tusinder (displayformat: 202 → 202k)
+                # Beregnet fra holdet ML-model når tilgængeligt, ellers fra exp
+                "holdet_est": round(p.get("expected_pts", 0) / 1000, 1) if p.get("holdet_raw_pred") else None,
+                "holdet_raw_pred": round(p["holdet_raw_pred"], 2) if p.get("holdet_raw_pred") is not None else None,
+                "expected_pts":    p.get("expected_pts"),
             })
 
         # Top odds for display in dashboard sources tab

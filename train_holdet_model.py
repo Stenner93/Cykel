@@ -130,6 +130,19 @@ def main() -> None:
             "rmse":            round(float(rmse), 2),
             "n_stages":        val_df["stage"].nunique(),
         }
+
+        # Per-stage-type breakdown
+        for stype in ["sprint", "mountain", "hilly", "tt"]:
+            sdf = val_df[val_df["stage_type"] == stype]
+            if len(sdf) >= 10:
+                rhos_s = stage_spearman(sdf)
+                acc_s  = top_scorer_accuracy(sdf)
+                result[f"spearman_{stype}"] = round(float(np.mean(rhos_s)), 4) if rhos_s else None
+                result[f"top5acc_{stype}"]  = round(acc_s, 4)
+            else:
+                result[f"spearman_{stype}"] = None
+                result[f"top5acc_{stype}"]  = None
+
         loro_results.append(result)
         print(f"LORO val={val_race:8s}:  "
               f"spearman={result['mean_spearman']:.3f}  "

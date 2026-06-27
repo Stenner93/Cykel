@@ -106,7 +106,8 @@ function mlRender(d) {
     <br><br>
     Modellen er trænet direkte på faktiske Holdet.dk-point — det inkluderer
     <em>etapefinish, GC-stilling, bjergtrøje, sprintpoint og teambonus</em>.
-    Dette er anderledes end den tidligere model der predikterede sandsynlighed for top-10 PCS-placering.
+    Outputtet denormaliseres med gennemsnitlige maksimumpoint pr. etapetype
+    (sprint=400K, bjerg=427K, kuperet=430K, TT=399K) for at give et konkret K-point-estimat.
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:0.73rem;color:var(--muted)">
     <div style="padding:8px;background:var(--surface);border-radius:6px;border:1px solid var(--border)">
@@ -224,6 +225,122 @@ function mlRender(d) {
   </div>
 </div>`;
 
+  // ── Per stage-type breakdown ──────────────────────────────────────────────
+  const STYPE_LABEL = { sprint: 'Sprint', mountain: 'Bjerg', hilly: 'Kuperet', tt: 'Enkeltstart' };
+  const STYPE_COLOR = { sprint: '#58a6ff', mountain: '#3fb950', hilly: '#f0a500', tt: '#c792ea' };
+  const STYPES = ['sprint','mountain','hilly','tt'];
+
+  function avgStype(key) {
+    const vals = loro.map(r => r[key]).filter(v => v != null);
+    return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
+  }
+
+  // Heatmap: rows = stage types, cols = folds
+  function heatCell(v) {
+    if (v == null) return { bg: 'var(--border)', fg: 'var(--muted)', text: '–' };
+    if (v >= 0.60) return { bg: '#1a4d2e', fg: '#3fb950', text: v.toFixed(3) };
+    if (v >= 0.50) return { bg: '#1f3d1a', fg: '#6fcf5a', text: v.toFixed(3) };
+    if (v >= 0.40) return { bg: '#3d3210', fg: '#f0a500', text: v.toFixed(3) };
+    if (v >= 0.30) return { bg: '#3d1f10', fg: '#e07040', text: v.toFixed(3) };
+    return { bg: '#3d1010', fg: '#ff6b6b', text: v.toFixed(3) };
+  }
+
+  const heatmapHtml = `
+<div class="ml-card" style="margin-bottom:16px">
+  <div class="ml-card-title">Heatmap: Spearman pr. etapetype × LORO-fold</div>
+  <div style="font-size:0.72rem;color:var(--muted);margin-bottom:14px;line-height:1.5">
+    Viser nøjagtigt hvornår modellen virker — og hvornår den fejler. Hver celle = Spearman-korrelation
+    for den specifikke etapetype i det specifikke test-løb. Grønne celler ≥ 0.55, gule ≈ 0.40–0.55, røde &lt; 0.40.
+  </div>
+  <div style="overflow-x:auto">
+    <table style="width:100%;border-collapse:collapse;font-size:0.78rem">
+      <thead>
+        <tr>
+          <th style="padding:8px 12px;text-align:left;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.4px">Etapetype</th>
+          ${loro.map(r => {
+            const col = RACE_COLOR[r.val_race] || 'var(--text)';
+            const lbl = RACE_LABEL[r.val_race] || r.val_race;
+            return `<th style="padding:8px 12px;text-align:center;color:${col};font-weight:700;border-bottom:1px solid var(--border);font-size:0.72rem">${mlEsc(lbl)}</th>`;
+          }).join('')}
+          <th style="padding:8px 12px;text-align:center;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.4px">Gns.</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${STYPES.map(st => {
+          const col  = STYPE_COLOR[st];
+          const lbl  = STYPE_LABEL[st];
+          const avg  = avgStype(`spearman_${st}`);
+          const avgCell = heatCell(avg);
+          return `
+        <tr>
+          <td style="padding:10px 12px;font-weight:700;color:${col};border-bottom:1px solid var(--border);white-space:nowrap">
+            <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${col};margin-right:6px;vertical-align:middle"></span>
+            ${mlEsc(lbl)}
+          </td>
+          ${loro.map(r => {
+            const v = r[`spearman_${st}`];
+            const c = heatCell(v);
+            return `<td style="padding:10px 12px;text-align:center;border-bottom:1px solid var(--border)">
+              <span style="display:inline-block;padding:5px 10px;border-radius:5px;background:${c.bg};color:${c.fg};font-weight:700;font-size:0.82rem;min-width:54px">${c.text}</span>
+            </td>`;
+          }).join('')}
+          <td style="padding:10px 12px;text-align:center;border-bottom:1px solid var(--border)">
+            <span style="display:inline-block;padding:5px 10px;border-radius:5px;background:${avgCell.bg};color:${avgCell.fg};font-weight:700;font-size:0.82rem;min-width:54px;border:1px solid ${col}40">${avgCell.text}</span>
+          </td>
+        </tr>`;
+        }).join('')}
+      </tbody>
+    </table>
+  </div>
+  <div style="font-size:0.68rem;color:var(--muted);margin-top:12px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+    <span style="font-weight:600">Farveskala:</span>
+    <span><span style="color:#3fb950">■</span> ≥ 0.60</span>
+    <span><span style="color:#6fcf5a">■</span> 0.50–0.60</span>
+    <span><span style="color:#f0a500">■</span> 0.40–0.50</span>
+    <span><span style="color:#e07040">■</span> 0.30–0.40</span>
+    <span><span style="color:#ff6b6b">■</span> &lt; 0.30</span>
+    <span style="margin-left:8px;color:var(--muted)">– = for få etaper i fold til statistik (&lt; 10 rækker)</span>
+  </div>
+</div>`;
+
+  const stageBreakdownHtml = `
+<div class="ml-card" style="margin-bottom:16px">
+  <div class="ml-card-title">Præcision pr. etapetype — gennemsnit over alle fold</div>
+  <div style="font-size:0.72rem;color:var(--muted);margin-bottom:14px;line-height:1.5">
+    Gennemsnit over alle 3 LORO-fold. Viser hvornår modellen er stærkest og svagst —
+    Spearman ≥ 0.55 (grøn) er solidt; under 0.40 (rød) er tæt på tilfældig gætning.
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px">
+    ${STYPES.map(st => {
+      const col  = STYPE_COLOR[st];
+      const lbl  = STYPE_LABEL[st];
+      const sp   = avgStype(`spearman_${st}`);
+      const acc  = avgStype(`top5acc_${st}`);
+      const spColor = spearmanColor(sp);
+      return `
+    <div style="padding:12px;background:var(--surface);border-radius:8px;border:1px solid var(--border);border-top:3px solid ${col}">
+      <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:${col};margin-bottom:10px">${mlEsc(lbl)}</div>
+      <div class="ml-metric-row">
+        <span class="ml-metric-label" style="font-size:0.72rem">Spearman</span>
+        <span class="ml-metric-val" style="color:${spColor}">${sp != null ? sp.toFixed(3) : '–'}</span>
+      </div>
+      <div class="ml-metric-row">
+        <span class="ml-metric-label" style="font-size:0.72rem">Top-5 acc.</span>
+        <span class="ml-metric-val">${acc != null ? Math.round(acc * 100) + '%' : '–'}</span>
+      </div>
+      <div style="margin-top:10px;height:4px;background:var(--border);border-radius:2px;overflow:hidden">
+        <div style="height:100%;width:${Math.round((sp||0)*100)}%;background:${spColor};border-radius:2px"></div>
+      </div>
+    </div>`;
+    }).join('')}
+  </div>
+  <div style="font-size:0.7rem;color:var(--muted);line-height:1.6;padding-top:10px;border-top:1px solid var(--border)">
+    <strong style="color:var(--text)">Bjerg og kuperede etaper</strong> fanger modellen bedst — GC-hierarkiet er stabilt og CO-ratings er præcise.
+    <strong style="color:var(--text)">Sprint og enkeltstart</strong> er sværere: spurterne afgøres af held/taktik, enkeltstart-feltet er lille (få rækker i LORO).
+    Modellen bruges til at <em>rankordenere</em>, ikke til at predicte absolutte point med høj præcision.
+  </div>
+</div>`;
+
   // ── Feature importances ────────────────────────────────────────────────────
   const impHtml = `
 <div class="ml-card" style="margin-bottom:16px">
@@ -287,11 +404,12 @@ function mlRender(d) {
         Holdet-point er uforudsigelige — etapevindere afgøres af brudshold, vind og held.
         En model kan aldrig nå 1.0.
         <br><br>
-        ML-signalet bruges primært til at <strong style="color:var(--text)">nedprioritere ryttere</strong>
-        der ikke kører godt i dette specifikke løb — selv om de på papiret er stærke.
-        Det komplementerer CO-evne og odds; erstatter dem ikke.
+        Modellen bruges fra <strong style="color:var(--text)">etape 1</strong> (CO-ratings, PCS-form fra
+        optaktsløb og cross-race form er tilgængelige fra dag 1). In-race rolling form vægter
+        gradvist tungere efterhånden som løbet skrider frem.
         <br><br>
-        Se Analytik → Signalvægte for at justere ML's vægt i Score-kolonnen.
+        ML-outputtet denormaliseres direkte til K-point-estimater og bruges som primær signal
+        for forventede Holdet-point — ikke kun som et lille tillægssignal.
       </div>
     </div>
   </div>
@@ -308,6 +426,8 @@ function mlRender(d) {
 ${explainHtml}
 ${summaryHtml}
 ${loroHtml}
+${heatmapHtml}
+${stageBreakdownHtml}
 ${impHtml}
 ${contextHtml}`;
 }
