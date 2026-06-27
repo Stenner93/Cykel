@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-27T17:09:55.361900+00:00",
+  "generated": "2026-06-27T20:41:35.392142+00:00",
   "stages": [
     {
       "num": 1,
@@ -449,8 +449,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -830,7 +830,7 @@
             "disc": 0.819,
             "form": 0.5,
             "ml": 0.33,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 25.0,
           "breakaway": false,
@@ -852,8 +852,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -1429,7 +1429,7 @@
             "disc": 0.286,
             "form": 0.003,
             "ml": 0.291,
-            "pcs_rank": 0.343
+            "pcs_rank": 0
           },
           "form_score": 0.3,
           "breakaway": false,
@@ -1458,8 +1458,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
           "pcs_spec_norm": {
             "sprint": 8.6,
             "climber": 0.9,
@@ -1591,7 +1591,7 @@
             "disc": 0,
             "form": 0.057,
             "ml": 0.23,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 5.7,
           "breakaway": false,
@@ -1620,7 +1620,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -2298,7 +2298,7 @@
             "disc": 0.048,
             "form": 0.026,
             "ml": 0.248,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 2.6,
           "breakaway": false,
@@ -2327,8 +2327,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -2856,7 +2856,7 @@
             "disc": 0.097,
             "form": 0.04,
             "ml": 0.329,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 4.0,
           "breakaway": false,
@@ -2885,8 +2885,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -3324,7 +3324,7 @@
             "disc": 0.001,
             "form": 0.004,
             "ml": 0.229,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 0.4,
           "breakaway": false,
@@ -3353,7 +3353,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -3746,6 +3746,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 0.2,
+          "disc_key": "ITT",
+          "disc_co": 21.0,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.002,
+            "form": 0.01,
+            "ml": 0.262,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.0,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "jordan_jegat",
           "name": "Jordan Jegat",
           "team": "T",
@@ -3797,60 +3851,6 @@
             "tt": 0.3,
             "hills": 7.6,
             "onedayraces": 5.6
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 0.2,
-          "disc_key": "ITT",
-          "disc_co": 21.0,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.002,
-            "form": 0.01,
-            "ml": 0.262,
-            "pcs_rank": 0
-          },
-          "form_score": 1.0,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -6284,7 +6284,7 @@
             "disc": 0.571,
             "form": 0.006,
             "ml": 0.253,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 0.6,
           "breakaway": false,
@@ -6313,7 +6313,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -6937,7 +6937,7 @@
             "disc": 0.705,
             "form": 0.5,
             "ml": 0.404,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 25.0,
           "breakaway": false,
@@ -6959,8 +6959,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -7309,8 +7309,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -7745,7 +7745,7 @@
             "disc": 0.004,
             "form": 0.13,
             "ml": 0.465,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 13.0,
           "breakaway": false,
@@ -7774,7 +7774,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -8196,7 +8196,7 @@
             "disc": 0.043,
             "form": 0.055,
             "ml": 0.267,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 5.5,
           "breakaway": false,
@@ -8225,8 +8225,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -8685,7 +8685,7 @@
             "disc": 0.017,
             "form": 0.065,
             "ml": 0.472,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 6.5,
           "breakaway": false,
@@ -8714,8 +8714,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -9550,6 +9550,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 1.6,
+          "disc_key": "HLL",
+          "disc_co": 50.1,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.016,
+            "form": 0.035,
+            "ml": 0.235,
+            "pcs_rank": 0.341
+          },
+          "form_score": 3.5,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "jordan_jegat",
           "name": "Jordan Jegat",
           "team": "T",
@@ -9655,60 +9709,6 @@
             "tt": 0.8,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 1.6,
-          "disc_key": "HLL",
-          "disc_co": 50.1,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.016,
-            "form": 0.035,
-            "ml": 0.235,
-            "pcs_rank": 0
-          },
-          "form_score": 3.5,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -10248,60 +10248,6 @@
           }
         },
         {
-          "id": "florian_vermeersch",
-          "name": "Florian Vermeersch",
-          "team": "UAE",
-          "price": 3.5,
-          "holdet_est": null,
-          "disc": 6.1,
-          "disc_key": "HLL",
-          "disc_co": 59.6,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.061,
-            "form": 0.003,
-            "ml": 0.255,
-            "pcs_rank": 0.343
-          },
-          "form_score": 0.3,
-          "breakaway": false,
-          "co": {
-            "COB": 93.0,
-            "HLL": 85.0,
-            "MTN": 38.0,
-            "GC": 53.0,
-            "ITT": 77.0,
-            "SPR": 70.0
-          },
-          "pcs_spec": {
-            "onedayraces": 1865,
-            "gc": 614,
-            "tt": 579,
-            "sprint": 571,
-            "climber": 93,
-            "hills": 632
-          },
-          "pcs_form": {
-            "overall": 1.1,
-            "sprint": 0.4,
-            "mountain": 0.8,
-            "hilly": 0.0,
-            "tt": 1.0,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
-          "pcs_spec_norm": {
-            "sprint": 8.6,
-            "climber": 0.9,
-            "tt": 11.8,
-            "hills": 8.1,
-            "onedayraces": 18.7
-          }
-        },
-        {
           "id": "per_strand_hagenes",
           "name": "Per Strand Hagenes",
           "team": "VLB",
@@ -10501,6 +10447,60 @@
             "tt": 37.7,
             "hills": 10.7,
             "onedayraces": 12.8
+          }
+        },
+        {
+          "id": "florian_vermeersch",
+          "name": "Florian Vermeersch",
+          "team": "UAE",
+          "price": 3.5,
+          "holdet_est": null,
+          "disc": 6.1,
+          "disc_key": "HLL",
+          "disc_co": 59.6,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.061,
+            "form": 0.003,
+            "ml": 0.255,
+            "pcs_rank": 0
+          },
+          "form_score": 0.3,
+          "breakaway": false,
+          "co": {
+            "COB": 93.0,
+            "HLL": 85.0,
+            "MTN": 38.0,
+            "GC": 53.0,
+            "ITT": 77.0,
+            "SPR": 70.0
+          },
+          "pcs_spec": {
+            "onedayraces": 1865,
+            "gc": 614,
+            "tt": 579,
+            "sprint": 571,
+            "climber": 93,
+            "hills": 632
+          },
+          "pcs_form": {
+            "overall": 1.1,
+            "sprint": 0.4,
+            "mountain": 0.8,
+            "hilly": 0.0,
+            "tt": 1.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
+          "pcs_spec_norm": {
+            "sprint": 8.6,
+            "climber": 0.9,
+            "tt": 11.8,
+            "hills": 8.1,
+            "onedayraces": 18.7
           }
         },
         {
@@ -12297,7 +12297,7 @@
             "disc": 0.571,
             "form": 0.006,
             "ml": 0.227,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 0.6,
           "breakaway": false,
@@ -12326,7 +12326,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -12950,7 +12950,7 @@
             "disc": 0.705,
             "form": 0.5,
             "ml": 0.344,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 25.0,
           "breakaway": false,
@@ -12972,8 +12972,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -13322,8 +13322,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -13758,7 +13758,7 @@
             "disc": 0.004,
             "form": 0.13,
             "ml": 0.424,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 13.0,
           "breakaway": false,
@@ -13787,7 +13787,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -14209,7 +14209,7 @@
             "disc": 0.043,
             "form": 0.055,
             "ml": 0.239,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 5.5,
           "breakaway": false,
@@ -14238,8 +14238,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -14698,7 +14698,7 @@
             "disc": 0.017,
             "form": 0.065,
             "ml": 0.437,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 6.5,
           "breakaway": false,
@@ -14727,8 +14727,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -15563,6 +15563,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 1.6,
+          "disc_key": "HLL",
+          "disc_co": 50.1,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.016,
+            "form": 0.035,
+            "ml": 0.219,
+            "pcs_rank": 0.341
+          },
+          "form_score": 3.5,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "jordan_jegat",
           "name": "Jordan Jegat",
           "team": "T",
@@ -15668,60 +15722,6 @@
             "tt": 0.8,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 1.6,
-          "disc_key": "HLL",
-          "disc_co": 50.1,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.016,
-            "form": 0.035,
-            "ml": 0.219,
-            "pcs_rank": 0
-          },
-          "form_score": 3.5,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -16261,60 +16261,6 @@
           }
         },
         {
-          "id": "florian_vermeersch",
-          "name": "Florian Vermeersch",
-          "team": "UAE",
-          "price": 3.5,
-          "holdet_est": null,
-          "disc": 6.1,
-          "disc_key": "HLL",
-          "disc_co": 59.6,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.061,
-            "form": 0.003,
-            "ml": 0.221,
-            "pcs_rank": 0.343
-          },
-          "form_score": 0.3,
-          "breakaway": false,
-          "co": {
-            "COB": 93.0,
-            "HLL": 85.0,
-            "MTN": 38.0,
-            "GC": 53.0,
-            "ITT": 77.0,
-            "SPR": 70.0
-          },
-          "pcs_spec": {
-            "onedayraces": 1865,
-            "gc": 614,
-            "tt": 579,
-            "sprint": 571,
-            "climber": 93,
-            "hills": 632
-          },
-          "pcs_form": {
-            "overall": 1.1,
-            "sprint": 0.4,
-            "mountain": 0.8,
-            "hilly": 0.0,
-            "tt": 1.0,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
-          "pcs_spec_norm": {
-            "sprint": 8.6,
-            "climber": 0.9,
-            "tt": 11.8,
-            "hills": 8.1,
-            "onedayraces": 18.7
-          }
-        },
-        {
           "id": "per_strand_hagenes",
           "name": "Per Strand Hagenes",
           "team": "VLB",
@@ -16514,6 +16460,60 @@
             "tt": 37.7,
             "hills": 10.7,
             "onedayraces": 12.8
+          }
+        },
+        {
+          "id": "florian_vermeersch",
+          "name": "Florian Vermeersch",
+          "team": "UAE",
+          "price": 3.5,
+          "holdet_est": null,
+          "disc": 6.1,
+          "disc_key": "HLL",
+          "disc_co": 59.6,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.061,
+            "form": 0.003,
+            "ml": 0.221,
+            "pcs_rank": 0
+          },
+          "form_score": 0.3,
+          "breakaway": false,
+          "co": {
+            "COB": 93.0,
+            "HLL": 85.0,
+            "MTN": 38.0,
+            "GC": 53.0,
+            "ITT": 77.0,
+            "SPR": 70.0
+          },
+          "pcs_spec": {
+            "onedayraces": 1865,
+            "gc": 614,
+            "tt": 579,
+            "sprint": 571,
+            "climber": 93,
+            "hills": 632
+          },
+          "pcs_form": {
+            "overall": 1.1,
+            "sprint": 0.4,
+            "mountain": 0.8,
+            "hilly": 0.0,
+            "tt": 1.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
+          "pcs_spec_norm": {
+            "sprint": 8.6,
+            "climber": 0.9,
+            "tt": 11.8,
+            "hills": 8.1,
+            "onedayraces": 18.7
           }
         },
         {
@@ -18310,7 +18310,7 @@
             "disc": 0.571,
             "form": 0.006,
             "ml": 0.194,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 0.6,
           "breakaway": false,
@@ -18339,7 +18339,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -18963,7 +18963,7 @@
             "disc": 0.705,
             "form": 0.5,
             "ml": 0.296,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 25.0,
           "breakaway": false,
@@ -18985,8 +18985,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -19335,8 +19335,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -19771,7 +19771,7 @@
             "disc": 0.004,
             "form": 0.13,
             "ml": 0.336,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 13.0,
           "breakaway": false,
@@ -19800,7 +19800,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -20222,7 +20222,7 @@
             "disc": 0.043,
             "form": 0.055,
             "ml": 0.212,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 5.5,
           "breakaway": false,
@@ -20251,8 +20251,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -20743,7 +20743,7 @@
             "disc": 0.017,
             "form": 0.065,
             "ml": 0.361,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 6.5,
           "breakaway": false,
@@ -20772,8 +20772,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -21576,6 +21576,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 1.6,
+          "disc_key": "HLL",
+          "disc_co": 50.1,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.016,
+            "form": 0.035,
+            "ml": 0.195,
+            "pcs_rank": 0.341
+          },
+          "form_score": 3.5,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "jordan_jegat",
           "name": "Jordan Jegat",
           "team": "T",
@@ -21681,60 +21735,6 @@
             "tt": 0.8,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 1.6,
-          "disc_key": "HLL",
-          "disc_co": 50.1,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.016,
-            "form": 0.035,
-            "ml": 0.195,
-            "pcs_rank": 0
-          },
-          "form_score": 3.5,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -22274,60 +22274,6 @@
           }
         },
         {
-          "id": "florian_vermeersch",
-          "name": "Florian Vermeersch",
-          "team": "UAE",
-          "price": 3.5,
-          "holdet_est": null,
-          "disc": 6.1,
-          "disc_key": "HLL",
-          "disc_co": 59.6,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.061,
-            "form": 0.003,
-            "ml": 0.178,
-            "pcs_rank": 0.343
-          },
-          "form_score": 0.3,
-          "breakaway": false,
-          "co": {
-            "COB": 93.0,
-            "HLL": 85.0,
-            "MTN": 38.0,
-            "GC": 53.0,
-            "ITT": 77.0,
-            "SPR": 70.0
-          },
-          "pcs_spec": {
-            "onedayraces": 1865,
-            "gc": 614,
-            "tt": 579,
-            "sprint": 571,
-            "climber": 93,
-            "hills": 632
-          },
-          "pcs_form": {
-            "overall": 1.1,
-            "sprint": 0.4,
-            "mountain": 0.8,
-            "hilly": 0.0,
-            "tt": 1.0,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
-          "pcs_spec_norm": {
-            "sprint": 8.6,
-            "climber": 0.9,
-            "tt": 11.8,
-            "hills": 8.1,
-            "onedayraces": 18.7
-          }
-        },
-        {
           "id": "per_strand_hagenes",
           "name": "Per Strand Hagenes",
           "team": "VLB",
@@ -22581,6 +22527,60 @@
             "tt": 37.7,
             "hills": 10.7,
             "onedayraces": 12.8
+          }
+        },
+        {
+          "id": "florian_vermeersch",
+          "name": "Florian Vermeersch",
+          "team": "UAE",
+          "price": 3.5,
+          "holdet_est": null,
+          "disc": 6.1,
+          "disc_key": "HLL",
+          "disc_co": 59.6,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.061,
+            "form": 0.003,
+            "ml": 0.178,
+            "pcs_rank": 0
+          },
+          "form_score": 0.3,
+          "breakaway": false,
+          "co": {
+            "COB": 93.0,
+            "HLL": 85.0,
+            "MTN": 38.0,
+            "GC": 53.0,
+            "ITT": 77.0,
+            "SPR": 70.0
+          },
+          "pcs_spec": {
+            "onedayraces": 1865,
+            "gc": 614,
+            "tt": 579,
+            "sprint": 571,
+            "climber": 93,
+            "hills": 632
+          },
+          "pcs_form": {
+            "overall": 1.1,
+            "sprint": 0.4,
+            "mountain": 0.8,
+            "hilly": 0.0,
+            "tt": 1.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
+          "pcs_spec_norm": {
+            "sprint": 8.6,
+            "climber": 0.9,
+            "tt": 11.8,
+            "hills": 8.1,
+            "onedayraces": 18.7
           }
         },
         {
@@ -24943,7 +24943,7 @@
             "disc": 0.811,
             "form": 0.012,
             "ml": 0.165,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.2,
           "breakaway": false,
@@ -24972,7 +24972,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -25300,7 +25300,7 @@
             "disc": 0.932,
             "form": 0.5,
             "ml": 0.149,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 21.1,
           "breakaway": false,
@@ -25322,8 +25322,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -25477,8 +25477,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -25502,7 +25502,7 @@
             "disc": 0.2,
             "form": 0.006,
             "ml": 0.143,
-            "pcs_rank": 0.343
+            "pcs_rank": 0
           },
           "form_score": 0.6,
           "breakaway": false,
@@ -25531,8 +25531,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
           "pcs_spec_norm": {
             "sprint": 8.6,
             "climber": 0.9,
@@ -25819,7 +25819,7 @@
             "disc": 0.001,
             "form": 0.057,
             "ml": 0.149,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 5.7,
           "breakaway": false,
@@ -25848,7 +25848,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -26418,7 +26418,7 @@
             "disc": 0.006,
             "form": 0.055,
             "ml": 0.06,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 5.5,
           "breakaway": false,
@@ -26447,8 +26447,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -27127,7 +27127,7 @@
             "disc": 0.001,
             "form": 0.099,
             "ml": 0.209,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 9.9,
           "breakaway": false,
@@ -27156,8 +27156,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -27913,6 +27913,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 0.3,
+          "disc_key": "SPR",
+          "disc_co": 32.9,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.003,
+            "form": 0.01,
+            "ml": 0.157,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.0,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "quinn_simmons",
           "name": "Quinn Simmons",
           "team": "L-T",
@@ -27964,60 +28018,6 @@
             "tt": 0.8,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 0.3,
-          "disc_key": "SPR",
-          "disc_co": 32.9,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.003,
-            "form": 0.01,
-            "ml": 0.157,
-            "pcs_rank": 0
-          },
-          "form_score": 1.0,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -31390,8 +31390,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -31812,7 +31812,7 @@
             "disc": 0.07,
             "form": 0.153,
             "ml": 0.54,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 15.3,
           "breakaway": false,
@@ -31841,7 +31841,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -32028,7 +32028,7 @@
             "disc": 0.006,
             "form": 0.5,
             "ml": 0.276,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 25.0,
           "breakaway": false,
@@ -32050,8 +32050,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -32317,7 +32317,7 @@
             "disc": 0.099,
             "form": 0.042,
             "ml": 0.472,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 4.2,
           "breakaway": false,
@@ -32346,8 +32346,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -32790,7 +32790,7 @@
             "disc": 0.04,
             "form": 0.041,
             "ml": 0.475,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 4.1,
           "breakaway": false,
@@ -32819,8 +32819,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -33140,7 +33140,7 @@
             "disc": 0.002,
             "form": 0.015,
             "ml": 0.222,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.5,
           "breakaway": false,
@@ -33169,7 +33169,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -33461,6 +33461,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 8.6,
+          "disc_key": "MTN",
+          "disc_co": 68.4,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.086,
+            "form": 0.013,
+            "ml": 0.331,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.3,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "tim_wellens",
           "name": "Tim Wellens",
           "team": "UAE",
@@ -33505,60 +33559,6 @@
             "tt": 0,
             "hills": 0,
             "onedayraces": 0
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 8.6,
-          "disc_key": "MTN",
-          "disc_co": 68.4,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.086,
-            "form": 0.013,
-            "ml": 0.331,
-            "pcs_rank": 0
-          },
-          "form_score": 1.3,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -34408,60 +34408,6 @@
           }
         },
         {
-          "id": "florian_vermeersch",
-          "name": "Florian Vermeersch",
-          "team": "UAE",
-          "price": 3.5,
-          "holdet_est": null,
-          "disc": 0.1,
-          "disc_key": "MTN",
-          "disc_co": 27.3,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.001,
-            "form": 0.009,
-            "ml": 0.192,
-            "pcs_rank": 0.343
-          },
-          "form_score": 0.9,
-          "breakaway": false,
-          "co": {
-            "COB": 93.0,
-            "HLL": 85.0,
-            "MTN": 38.0,
-            "GC": 53.0,
-            "ITT": 77.0,
-            "SPR": 70.0
-          },
-          "pcs_spec": {
-            "onedayraces": 1865,
-            "gc": 614,
-            "tt": 579,
-            "sprint": 571,
-            "climber": 93,
-            "hills": 632
-          },
-          "pcs_form": {
-            "overall": 1.1,
-            "sprint": 0.4,
-            "mountain": 0.8,
-            "hilly": 0.0,
-            "tt": 1.0,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
-          "pcs_spec_norm": {
-            "sprint": 8.6,
-            "climber": 0.9,
-            "tt": 11.8,
-            "hills": 8.1,
-            "onedayraces": 18.7
-          }
-        },
-        {
           "id": "michal_kwiatkowski",
           "name": "Michal Kwiatkowski",
           "team": "IGD",
@@ -35079,6 +35025,60 @@
             "tt": 1.4,
             "hills": 7.2,
             "onedayraces": 2.6
+          }
+        },
+        {
+          "id": "florian_vermeersch",
+          "name": "Florian Vermeersch",
+          "team": "UAE",
+          "price": 3.5,
+          "holdet_est": null,
+          "disc": 0.1,
+          "disc_key": "MTN",
+          "disc_co": 27.3,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.001,
+            "form": 0.009,
+            "ml": 0.192,
+            "pcs_rank": 0
+          },
+          "form_score": 0.9,
+          "breakaway": false,
+          "co": {
+            "COB": 93.0,
+            "HLL": 85.0,
+            "MTN": 38.0,
+            "GC": 53.0,
+            "ITT": 77.0,
+            "SPR": 70.0
+          },
+          "pcs_spec": {
+            "onedayraces": 1865,
+            "gc": 614,
+            "tt": 579,
+            "sprint": 571,
+            "climber": 93,
+            "hills": 632
+          },
+          "pcs_form": {
+            "overall": 1.1,
+            "sprint": 0.4,
+            "mountain": 0.8,
+            "hilly": 0.0,
+            "tt": 1.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
+          "pcs_spec_norm": {
+            "sprint": 8.6,
+            "climber": 0.9,
+            "tt": 11.8,
+            "hills": 8.1,
+            "onedayraces": 18.7
           }
         },
         {
@@ -36969,7 +36969,7 @@
             "disc": 0.811,
             "form": 0.012,
             "ml": 0.172,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.2,
           "breakaway": false,
@@ -36998,7 +36998,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -37326,7 +37326,7 @@
             "disc": 0.932,
             "form": 0.5,
             "ml": 0.14,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 21.1,
           "breakaway": false,
@@ -37348,8 +37348,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -37503,8 +37503,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -37528,7 +37528,7 @@
             "disc": 0.2,
             "form": 0.006,
             "ml": 0.144,
-            "pcs_rank": 0.343
+            "pcs_rank": 0
           },
           "form_score": 0.6,
           "breakaway": false,
@@ -37557,8 +37557,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
           "pcs_spec_norm": {
             "sprint": 8.6,
             "climber": 0.9,
@@ -37845,7 +37845,7 @@
             "disc": 0.001,
             "form": 0.057,
             "ml": 0.144,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 5.7,
           "breakaway": false,
@@ -37874,7 +37874,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -38444,7 +38444,7 @@
             "disc": 0.006,
             "form": 0.055,
             "ml": 0.059,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 5.5,
           "breakaway": false,
@@ -38473,8 +38473,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -39153,7 +39153,7 @@
             "disc": 0.001,
             "form": 0.099,
             "ml": 0.203,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 9.9,
           "breakaway": false,
@@ -39182,8 +39182,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -39939,6 +39939,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 0.3,
+          "disc_key": "SPR",
+          "disc_co": 32.9,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.003,
+            "form": 0.01,
+            "ml": 0.157,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.0,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "quinn_simmons",
           "name": "Quinn Simmons",
           "team": "L-T",
@@ -39990,60 +40044,6 @@
             "tt": 0.8,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 0.3,
-          "disc_key": "SPR",
-          "disc_co": 32.9,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.003,
-            "form": 0.01,
-            "ml": 0.157,
-            "pcs_rank": 0
-          },
-          "form_score": 1.0,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -42982,7 +42982,7 @@
             "disc": 0.811,
             "form": 0.012,
             "ml": 0.185,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.2,
           "breakaway": false,
@@ -43011,7 +43011,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -43339,7 +43339,7 @@
             "disc": 0.932,
             "form": 0.5,
             "ml": 0.2,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 21.1,
           "breakaway": false,
@@ -43361,8 +43361,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -43516,8 +43516,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -43541,7 +43541,7 @@
             "disc": 0.2,
             "form": 0.006,
             "ml": 0.154,
-            "pcs_rank": 0.343
+            "pcs_rank": 0
           },
           "form_score": 0.6,
           "breakaway": false,
@@ -43570,8 +43570,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
           "pcs_spec_norm": {
             "sprint": 8.6,
             "climber": 0.9,
@@ -43858,7 +43858,7 @@
             "disc": 0.001,
             "form": 0.057,
             "ml": 0.15,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 5.7,
           "breakaway": false,
@@ -43887,7 +43887,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -44457,7 +44457,7 @@
             "disc": 0.006,
             "form": 0.055,
             "ml": 0.061,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 5.5,
           "breakaway": false,
@@ -44486,8 +44486,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -45166,7 +45166,7 @@
             "disc": 0.001,
             "form": 0.099,
             "ml": 0.217,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 9.9,
           "breakaway": false,
@@ -45195,8 +45195,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -45952,6 +45952,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 0.3,
+          "disc_key": "SPR",
+          "disc_co": 32.9,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.003,
+            "form": 0.01,
+            "ml": 0.162,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.0,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "quinn_simmons",
           "name": "Quinn Simmons",
           "team": "L-T",
@@ -46003,60 +46057,6 @@
             "tt": 0.8,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 0.3,
-          "disc_key": "SPR",
-          "disc_co": 32.9,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.003,
-            "form": 0.01,
-            "ml": 0.162,
-            "pcs_rank": 0
-          },
-          "form_score": 1.0,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -48375,7 +48375,7 @@
             "disc": 0.571,
             "form": 0.006,
             "ml": 0.29,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 0.6,
           "breakaway": false,
@@ -48404,7 +48404,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -49028,7 +49028,7 @@
             "disc": 0.705,
             "form": 0.5,
             "ml": 0.426,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 25.0,
           "breakaway": false,
@@ -49050,8 +49050,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -49400,8 +49400,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -49836,7 +49836,7 @@
             "disc": 0.004,
             "form": 0.13,
             "ml": 0.448,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 13.0,
           "breakaway": false,
@@ -49865,7 +49865,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -50287,7 +50287,7 @@
             "disc": 0.043,
             "form": 0.055,
             "ml": 0.209,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 5.5,
           "breakaway": false,
@@ -50316,8 +50316,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -50776,7 +50776,7 @@
             "disc": 0.017,
             "form": 0.065,
             "ml": 0.458,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 6.5,
           "breakaway": false,
@@ -50805,8 +50805,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -51641,6 +51641,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 1.6,
+          "disc_key": "HLL",
+          "disc_co": 50.1,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.016,
+            "form": 0.035,
+            "ml": 0.233,
+            "pcs_rank": 0.341
+          },
+          "form_score": 3.5,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "jordan_jegat",
           "name": "Jordan Jegat",
           "team": "T",
@@ -51746,60 +51800,6 @@
             "tt": 0.8,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 1.6,
-          "disc_key": "HLL",
-          "disc_co": 50.1,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.016,
-            "form": 0.035,
-            "ml": 0.233,
-            "pcs_rank": 0
-          },
-          "form_score": 3.5,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -52339,60 +52339,6 @@
           }
         },
         {
-          "id": "florian_vermeersch",
-          "name": "Florian Vermeersch",
-          "team": "UAE",
-          "price": 3.5,
-          "holdet_est": null,
-          "disc": 6.1,
-          "disc_key": "HLL",
-          "disc_co": 59.6,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.061,
-            "form": 0.003,
-            "ml": 0.294,
-            "pcs_rank": 0.343
-          },
-          "form_score": 0.3,
-          "breakaway": false,
-          "co": {
-            "COB": 93.0,
-            "HLL": 85.0,
-            "MTN": 38.0,
-            "GC": 53.0,
-            "ITT": 77.0,
-            "SPR": 70.0
-          },
-          "pcs_spec": {
-            "onedayraces": 1865,
-            "gc": 614,
-            "tt": 579,
-            "sprint": 571,
-            "climber": 93,
-            "hills": 632
-          },
-          "pcs_form": {
-            "overall": 1.1,
-            "sprint": 0.4,
-            "mountain": 0.8,
-            "hilly": 0.0,
-            "tt": 1.0,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
-          "pcs_spec_norm": {
-            "sprint": 8.6,
-            "climber": 0.9,
-            "tt": 11.8,
-            "hills": 8.1,
-            "onedayraces": 18.7
-          }
-        },
-        {
           "id": "per_strand_hagenes",
           "name": "Per Strand Hagenes",
           "team": "VLB",
@@ -52592,6 +52538,60 @@
             "tt": 37.7,
             "hills": 10.7,
             "onedayraces": 12.8
+          }
+        },
+        {
+          "id": "florian_vermeersch",
+          "name": "Florian Vermeersch",
+          "team": "UAE",
+          "price": 3.5,
+          "holdet_est": null,
+          "disc": 6.1,
+          "disc_key": "HLL",
+          "disc_co": 59.6,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.061,
+            "form": 0.003,
+            "ml": 0.294,
+            "pcs_rank": 0
+          },
+          "form_score": 0.3,
+          "breakaway": false,
+          "co": {
+            "COB": 93.0,
+            "HLL": 85.0,
+            "MTN": 38.0,
+            "GC": 53.0,
+            "ITT": 77.0,
+            "SPR": 70.0
+          },
+          "pcs_spec": {
+            "onedayraces": 1865,
+            "gc": 614,
+            "tt": 579,
+            "sprint": 571,
+            "climber": 93,
+            "hills": 632
+          },
+          "pcs_form": {
+            "overall": 1.1,
+            "sprint": 0.4,
+            "mountain": 0.8,
+            "hilly": 0.0,
+            "tt": 1.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
+          "pcs_spec_norm": {
+            "sprint": 8.6,
+            "climber": 0.9,
+            "tt": 11.8,
+            "hills": 8.1,
+            "onedayraces": 18.7
           }
         },
         {
@@ -55442,8 +55442,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -55864,7 +55864,7 @@
             "disc": 0.07,
             "form": 0.153,
             "ml": 0.483,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 15.3,
           "breakaway": false,
@@ -55893,7 +55893,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -56080,7 +56080,7 @@
             "disc": 0.006,
             "form": 0.5,
             "ml": 0.248,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 25.0,
           "breakaway": false,
@@ -56102,8 +56102,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -56369,7 +56369,7 @@
             "disc": 0.099,
             "form": 0.042,
             "ml": 0.396,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 4.2,
           "breakaway": false,
@@ -56398,8 +56398,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -56842,7 +56842,7 @@
             "disc": 0.04,
             "form": 0.041,
             "ml": 0.436,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 4.1,
           "breakaway": false,
@@ -56871,8 +56871,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -57192,7 +57192,7 @@
             "disc": 0.002,
             "form": 0.015,
             "ml": 0.172,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.5,
           "breakaway": false,
@@ -57221,7 +57221,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -57574,7 +57574,7 @@
             "disc": 0.086,
             "form": 0.013,
             "ml": 0.249,
-            "pcs_rank": 0
+            "pcs_rank": 0.341
           },
           "form_score": 1.3,
           "breakaway": false,
@@ -57603,8 +57603,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
           "pcs_spec_norm": {
             "sprint": 0.4,
             "climber": 14.7,
@@ -58406,60 +58406,6 @@
           }
         },
         {
-          "id": "florian_vermeersch",
-          "name": "Florian Vermeersch",
-          "team": "UAE",
-          "price": 3.5,
-          "holdet_est": null,
-          "disc": 0.1,
-          "disc_key": "MTN",
-          "disc_co": 27.3,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.001,
-            "form": 0.009,
-            "ml": 0.157,
-            "pcs_rank": 0.343
-          },
-          "form_score": 0.9,
-          "breakaway": false,
-          "co": {
-            "COB": 93.0,
-            "HLL": 85.0,
-            "MTN": 38.0,
-            "GC": 53.0,
-            "ITT": 77.0,
-            "SPR": 70.0
-          },
-          "pcs_spec": {
-            "onedayraces": 1865,
-            "gc": 614,
-            "tt": 579,
-            "sprint": 571,
-            "climber": 93,
-            "hills": 632
-          },
-          "pcs_form": {
-            "overall": 1.1,
-            "sprint": 0.4,
-            "mountain": 0.8,
-            "hilly": 0.0,
-            "tt": 1.0,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
-          "pcs_spec_norm": {
-            "sprint": 8.6,
-            "climber": 0.9,
-            "tt": 11.8,
-            "hills": 8.1,
-            "onedayraces": 18.7
-          }
-        },
-        {
           "id": "edoardo_affini",
           "name": "Edoardo Affini",
           "team": "VLB",
@@ -59077,6 +59023,60 @@
             "tt": 0,
             "hills": 10.8,
             "onedayraces": 12.8
+          }
+        },
+        {
+          "id": "florian_vermeersch",
+          "name": "Florian Vermeersch",
+          "team": "UAE",
+          "price": 3.5,
+          "holdet_est": null,
+          "disc": 0.1,
+          "disc_key": "MTN",
+          "disc_co": 27.3,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.001,
+            "form": 0.009,
+            "ml": 0.157,
+            "pcs_rank": 0
+          },
+          "form_score": 0.9,
+          "breakaway": false,
+          "co": {
+            "COB": 93.0,
+            "HLL": 85.0,
+            "MTN": 38.0,
+            "GC": 53.0,
+            "ITT": 77.0,
+            "SPR": 70.0
+          },
+          "pcs_spec": {
+            "onedayraces": 1865,
+            "gc": 614,
+            "tt": 579,
+            "sprint": 571,
+            "climber": 93,
+            "hills": 632
+          },
+          "pcs_form": {
+            "overall": 1.1,
+            "sprint": 0.4,
+            "mountain": 0.8,
+            "hilly": 0.0,
+            "tt": 1.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
+          "pcs_spec_norm": {
+            "sprint": 8.6,
+            "climber": 0.9,
+            "tt": 11.8,
+            "hills": 8.1,
+            "onedayraces": 18.7
           }
         },
         {
@@ -61021,7 +61021,7 @@
             "disc": 0.811,
             "form": 0.012,
             "ml": 0.173,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.2,
           "breakaway": false,
@@ -61050,7 +61050,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -61378,7 +61378,7 @@
             "disc": 0.932,
             "form": 0.5,
             "ml": 0.146,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 21.1,
           "breakaway": false,
@@ -61400,8 +61400,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -61555,8 +61555,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -61580,7 +61580,7 @@
             "disc": 0.2,
             "form": 0.006,
             "ml": 0.142,
-            "pcs_rank": 0.343
+            "pcs_rank": 0
           },
           "form_score": 0.6,
           "breakaway": false,
@@ -61609,8 +61609,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
           "pcs_spec_norm": {
             "sprint": 8.6,
             "climber": 0.9,
@@ -61897,7 +61897,7 @@
             "disc": 0.001,
             "form": 0.057,
             "ml": 0.144,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 5.7,
           "breakaway": false,
@@ -61926,7 +61926,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -62496,7 +62496,7 @@
             "disc": 0.006,
             "form": 0.055,
             "ml": 0.059,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 5.5,
           "breakaway": false,
@@ -62525,8 +62525,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -63205,7 +63205,7 @@
             "disc": 0.001,
             "form": 0.099,
             "ml": 0.203,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 9.9,
           "breakaway": false,
@@ -63234,8 +63234,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -63991,6 +63991,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 0.3,
+          "disc_key": "SPR",
+          "disc_co": 32.9,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.003,
+            "form": 0.01,
+            "ml": 0.157,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.0,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "quinn_simmons",
           "name": "Quinn Simmons",
           "team": "L-T",
@@ -64042,60 +64096,6 @@
             "tt": 0.8,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 0.3,
-          "disc_key": "SPR",
-          "disc_co": 32.9,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.003,
-            "form": 0.01,
-            "ml": 0.157,
-            "pcs_rank": 0
-          },
-          "form_score": 1.0,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -67034,7 +67034,7 @@
             "disc": 0.811,
             "form": 0.012,
             "ml": 0.165,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.2,
           "breakaway": false,
@@ -67063,7 +67063,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -67391,7 +67391,7 @@
             "disc": 0.932,
             "form": 0.5,
             "ml": 0.149,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 21.1,
           "breakaway": false,
@@ -67413,8 +67413,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -67568,8 +67568,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -67593,7 +67593,7 @@
             "disc": 0.2,
             "form": 0.006,
             "ml": 0.143,
-            "pcs_rank": 0.343
+            "pcs_rank": 0
           },
           "form_score": 0.6,
           "breakaway": false,
@@ -67622,8 +67622,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
           "pcs_spec_norm": {
             "sprint": 8.6,
             "climber": 0.9,
@@ -67910,7 +67910,7 @@
             "disc": 0.001,
             "form": 0.057,
             "ml": 0.149,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 5.7,
           "breakaway": false,
@@ -67939,7 +67939,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -68509,7 +68509,7 @@
             "disc": 0.006,
             "form": 0.055,
             "ml": 0.06,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 5.5,
           "breakaway": false,
@@ -68538,8 +68538,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -69218,7 +69218,7 @@
             "disc": 0.001,
             "form": 0.099,
             "ml": 0.209,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 9.9,
           "breakaway": false,
@@ -69247,8 +69247,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -70004,6 +70004,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 0.3,
+          "disc_key": "SPR",
+          "disc_co": 32.9,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.003,
+            "form": 0.01,
+            "ml": 0.157,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.0,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "quinn_simmons",
           "name": "Quinn Simmons",
           "team": "L-T",
@@ -70055,60 +70109,6 @@
             "tt": 0.8,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 0.3,
-          "disc_key": "SPR",
-          "disc_co": 32.9,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.003,
-            "form": 0.01,
-            "ml": 0.157,
-            "pcs_rank": 0
-          },
-          "form_score": 1.0,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -73047,7 +73047,7 @@
             "disc": 0.811,
             "form": 0.012,
             "ml": 0.165,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.2,
           "breakaway": false,
@@ -73076,7 +73076,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -73404,7 +73404,7 @@
             "disc": 0.932,
             "form": 0.5,
             "ml": 0.154,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 21.1,
           "breakaway": false,
@@ -73426,8 +73426,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -73581,8 +73581,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -73606,7 +73606,7 @@
             "disc": 0.2,
             "form": 0.006,
             "ml": 0.144,
-            "pcs_rank": 0.343
+            "pcs_rank": 0
           },
           "form_score": 0.6,
           "breakaway": false,
@@ -73635,8 +73635,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
           "pcs_spec_norm": {
             "sprint": 8.6,
             "climber": 0.9,
@@ -73923,7 +73923,7 @@
             "disc": 0.001,
             "form": 0.057,
             "ml": 0.149,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 5.7,
           "breakaway": false,
@@ -73952,7 +73952,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -74522,7 +74522,7 @@
             "disc": 0.006,
             "form": 0.055,
             "ml": 0.06,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 5.5,
           "breakaway": false,
@@ -74551,8 +74551,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -75231,7 +75231,7 @@
             "disc": 0.001,
             "form": 0.099,
             "ml": 0.213,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 9.9,
           "breakaway": false,
@@ -75260,8 +75260,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -76017,6 +76017,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 0.3,
+          "disc_key": "SPR",
+          "disc_co": 32.9,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.003,
+            "form": 0.01,
+            "ml": 0.157,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.0,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "quinn_simmons",
           "name": "Quinn Simmons",
           "team": "L-T",
@@ -76068,60 +76122,6 @@
             "tt": 0.8,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 0.3,
-          "disc_key": "SPR",
-          "disc_co": 32.9,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.003,
-            "form": 0.01,
-            "ml": 0.157,
-            "pcs_rank": 0
-          },
-          "form_score": 1.0,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -79494,8 +79494,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -79916,7 +79916,7 @@
             "disc": 0.07,
             "form": 0.153,
             "ml": 0.511,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 15.3,
           "breakaway": false,
@@ -79945,7 +79945,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -80132,7 +80132,7 @@
             "disc": 0.006,
             "form": 0.5,
             "ml": 0.248,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 25.0,
           "breakaway": false,
@@ -80154,8 +80154,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -80421,7 +80421,7 @@
             "disc": 0.099,
             "form": 0.042,
             "ml": 0.4,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 4.2,
           "breakaway": false,
@@ -80450,8 +80450,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -80894,7 +80894,7 @@
             "disc": 0.04,
             "form": 0.041,
             "ml": 0.457,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 4.1,
           "breakaway": false,
@@ -80923,8 +80923,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -81244,7 +81244,7 @@
             "disc": 0.002,
             "form": 0.015,
             "ml": 0.216,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.5,
           "breakaway": false,
@@ -81273,7 +81273,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -81565,6 +81565,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 8.6,
+          "disc_key": "MTN",
+          "disc_co": 68.4,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.086,
+            "form": 0.013,
+            "ml": 0.295,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.3,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "tim_wellens",
           "name": "Tim Wellens",
           "team": "UAE",
@@ -81609,60 +81663,6 @@
             "tt": 0,
             "hills": 0,
             "onedayraces": 0
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 8.6,
-          "disc_key": "MTN",
-          "disc_co": 68.4,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.086,
-            "form": 0.013,
-            "ml": 0.295,
-            "pcs_rank": 0
-          },
-          "form_score": 1.3,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -82458,60 +82458,6 @@
           }
         },
         {
-          "id": "florian_vermeersch",
-          "name": "Florian Vermeersch",
-          "team": "UAE",
-          "price": 3.5,
-          "holdet_est": null,
-          "disc": 0.1,
-          "disc_key": "MTN",
-          "disc_co": 27.3,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.001,
-            "form": 0.009,
-            "ml": 0.174,
-            "pcs_rank": 0.343
-          },
-          "form_score": 0.9,
-          "breakaway": false,
-          "co": {
-            "COB": 93.0,
-            "HLL": 85.0,
-            "MTN": 38.0,
-            "GC": 53.0,
-            "ITT": 77.0,
-            "SPR": 70.0
-          },
-          "pcs_spec": {
-            "onedayraces": 1865,
-            "gc": 614,
-            "tt": 579,
-            "sprint": 571,
-            "climber": 93,
-            "hills": 632
-          },
-          "pcs_form": {
-            "overall": 1.1,
-            "sprint": 0.4,
-            "mountain": 0.8,
-            "hilly": 0.0,
-            "tt": 1.0,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
-          "pcs_spec_norm": {
-            "sprint": 8.6,
-            "climber": 0.9,
-            "tt": 11.8,
-            "hills": 8.1,
-            "onedayraces": 18.7
-          }
-        },
-        {
           "id": "edoardo_affini",
           "name": "Edoardo Affini",
           "team": "VLB",
@@ -83183,6 +83129,60 @@
             "tt": 1.4,
             "hills": 7.2,
             "onedayraces": 2.6
+          }
+        },
+        {
+          "id": "florian_vermeersch",
+          "name": "Florian Vermeersch",
+          "team": "UAE",
+          "price": 3.5,
+          "holdet_est": null,
+          "disc": 0.1,
+          "disc_key": "MTN",
+          "disc_co": 27.3,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.001,
+            "form": 0.009,
+            "ml": 0.174,
+            "pcs_rank": 0
+          },
+          "form_score": 0.9,
+          "breakaway": false,
+          "co": {
+            "COB": 93.0,
+            "HLL": 85.0,
+            "MTN": 38.0,
+            "GC": 53.0,
+            "ITT": 77.0,
+            "SPR": 70.0
+          },
+          "pcs_spec": {
+            "onedayraces": 1865,
+            "gc": 614,
+            "tt": 579,
+            "sprint": 571,
+            "climber": 93,
+            "hills": 632
+          },
+          "pcs_form": {
+            "overall": 1.1,
+            "sprint": 0.4,
+            "mountain": 0.8,
+            "hilly": 0.0,
+            "tt": 1.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
+          "pcs_spec_norm": {
+            "sprint": 8.6,
+            "climber": 0.9,
+            "tt": 11.8,
+            "hills": 8.1,
+            "onedayraces": 18.7
           }
         },
         {
@@ -85507,8 +85507,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -85929,7 +85929,7 @@
             "disc": 0.07,
             "form": 0.153,
             "ml": 0.575,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 15.3,
           "breakaway": false,
@@ -85958,7 +85958,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -86145,7 +86145,7 @@
             "disc": 0.006,
             "form": 0.5,
             "ml": 0.273,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 25.0,
           "breakaway": false,
@@ -86167,8 +86167,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -86434,7 +86434,7 @@
             "disc": 0.099,
             "form": 0.042,
             "ml": 0.479,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 4.2,
           "breakaway": false,
@@ -86463,8 +86463,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -86907,7 +86907,7 @@
             "disc": 0.04,
             "form": 0.041,
             "ml": 0.471,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 4.1,
           "breakaway": false,
@@ -86936,8 +86936,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -87257,7 +87257,7 @@
             "disc": 0.002,
             "form": 0.015,
             "ml": 0.22,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.5,
           "breakaway": false,
@@ -87286,7 +87286,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -87578,6 +87578,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 8.6,
+          "disc_key": "MTN",
+          "disc_co": 68.4,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.086,
+            "form": 0.013,
+            "ml": 0.327,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.3,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "tim_wellens",
           "name": "Tim Wellens",
           "team": "UAE",
@@ -87622,60 +87676,6 @@
             "tt": 0,
             "hills": 0,
             "onedayraces": 0
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 8.6,
-          "disc_key": "MTN",
-          "disc_co": 68.4,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.086,
-            "form": 0.013,
-            "ml": 0.327,
-            "pcs_rank": 0
-          },
-          "form_score": 1.3,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -88525,60 +88525,6 @@
           }
         },
         {
-          "id": "florian_vermeersch",
-          "name": "Florian Vermeersch",
-          "team": "UAE",
-          "price": 3.5,
-          "holdet_est": null,
-          "disc": 0.1,
-          "disc_key": "MTN",
-          "disc_co": 27.3,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.001,
-            "form": 0.009,
-            "ml": 0.189,
-            "pcs_rank": 0.343
-          },
-          "form_score": 0.9,
-          "breakaway": false,
-          "co": {
-            "COB": 93.0,
-            "HLL": 85.0,
-            "MTN": 38.0,
-            "GC": 53.0,
-            "ITT": 77.0,
-            "SPR": 70.0
-          },
-          "pcs_spec": {
-            "onedayraces": 1865,
-            "gc": 614,
-            "tt": 579,
-            "sprint": 571,
-            "climber": 93,
-            "hills": 632
-          },
-          "pcs_form": {
-            "overall": 1.1,
-            "sprint": 0.4,
-            "mountain": 0.8,
-            "hilly": 0.0,
-            "tt": 1.0,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
-          "pcs_spec_norm": {
-            "sprint": 8.6,
-            "climber": 0.9,
-            "tt": 11.8,
-            "hills": 8.1,
-            "onedayraces": 18.7
-          }
-        },
-        {
           "id": "michal_kwiatkowski",
           "name": "Michal Kwiatkowski",
           "team": "IGD",
@@ -89196,6 +89142,60 @@
             "tt": 0,
             "hills": 10.8,
             "onedayraces": 12.8
+          }
+        },
+        {
+          "id": "florian_vermeersch",
+          "name": "Florian Vermeersch",
+          "team": "UAE",
+          "price": 3.5,
+          "holdet_est": null,
+          "disc": 0.1,
+          "disc_key": "MTN",
+          "disc_co": 27.3,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.001,
+            "form": 0.009,
+            "ml": 0.189,
+            "pcs_rank": 0
+          },
+          "form_score": 0.9,
+          "breakaway": false,
+          "co": {
+            "COB": 93.0,
+            "HLL": 85.0,
+            "MTN": 38.0,
+            "GC": 53.0,
+            "ITT": 77.0,
+            "SPR": 70.0
+          },
+          "pcs_spec": {
+            "onedayraces": 1865,
+            "gc": 614,
+            "tt": 579,
+            "sprint": 571,
+            "climber": 93,
+            "hills": 632
+          },
+          "pcs_form": {
+            "overall": 1.1,
+            "sprint": 0.4,
+            "mountain": 0.8,
+            "hilly": 0.0,
+            "tt": 1.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
+          "pcs_spec_norm": {
+            "sprint": 8.6,
+            "climber": 0.9,
+            "tt": 11.8,
+            "hills": 8.1,
+            "onedayraces": 18.7
           }
         },
         {
@@ -90467,7 +90467,7 @@
             "disc": 0.284,
             "form": 0.014,
             "ml": 0.264,
-            "pcs_rank": 0
+            "pcs_rank": 0.341
           },
           "form_score": 1.4,
           "breakaway": false,
@@ -90496,8 +90496,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
           "pcs_spec_norm": {
             "sprint": 0.4,
             "climber": 14.7,
@@ -90629,7 +90629,7 @@
             "disc": 0.122,
             "form": 0.075,
             "ml": 0.232,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 7.5,
           "breakaway": false,
@@ -90658,7 +90658,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -91188,7 +91188,7 @@
             "disc": 0.264,
             "form": 0.5,
             "ml": 0.332,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 25.0,
           "breakaway": false,
@@ -91210,8 +91210,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -91282,7 +91282,7 @@
             "disc": 0.106,
             "form": 0.01,
             "ml": 0.279,
-            "pcs_rank": 0.343
+            "pcs_rank": 0
           },
           "form_score": 1.0,
           "breakaway": false,
@@ -91311,8 +91311,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
           "pcs_spec_norm": {
             "sprint": 8.6,
             "climber": 0.9,
@@ -91628,8 +91628,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -91653,7 +91653,7 @@
             "disc": 0.304,
             "form": 0.026,
             "ml": 0.251,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 2.6,
           "breakaway": false,
@@ -91682,8 +91682,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -93191,7 +93191,7 @@
             "disc": 0.099,
             "form": 0.04,
             "ml": 0.331,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 4.0,
           "breakaway": false,
@@ -93220,8 +93220,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -93627,7 +93627,7 @@
             "disc": 0.005,
             "form": 0.004,
             "ml": 0.216,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 0.4,
           "breakaway": false,
@@ -93656,7 +93656,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -97099,7 +97099,7 @@
             "disc": 0.811,
             "form": 0.012,
             "ml": 0.207,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.2,
           "breakaway": false,
@@ -97128,7 +97128,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -97456,7 +97456,7 @@
             "disc": 0.932,
             "form": 0.5,
             "ml": 0.247,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 21.1,
           "breakaway": false,
@@ -97478,8 +97478,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -97633,8 +97633,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -97658,7 +97658,7 @@
             "disc": 0.2,
             "form": 0.006,
             "ml": 0.183,
-            "pcs_rank": 0.343
+            "pcs_rank": 0
           },
           "form_score": 0.6,
           "breakaway": false,
@@ -97687,8 +97687,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
           "pcs_spec_norm": {
             "sprint": 8.6,
             "climber": 0.9,
@@ -97975,7 +97975,7 @@
             "disc": 0.001,
             "form": 0.057,
             "ml": 0.156,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 5.7,
           "breakaway": false,
@@ -98004,7 +98004,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -98574,7 +98574,7 @@
             "disc": 0.006,
             "form": 0.055,
             "ml": 0.065,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 5.5,
           "breakaway": false,
@@ -98603,8 +98603,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -99283,7 +99283,7 @@
             "disc": 0.001,
             "form": 0.099,
             "ml": 0.228,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 9.9,
           "breakaway": false,
@@ -99312,8 +99312,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -100069,6 +100069,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 0.3,
+          "disc_key": "SPR",
+          "disc_co": 32.9,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.003,
+            "form": 0.01,
+            "ml": 0.165,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.0,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "quinn_simmons",
           "name": "Quinn Simmons",
           "team": "L-T",
@@ -100120,60 +100174,6 @@
             "tt": 0.8,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 0.3,
-          "disc_key": "SPR",
-          "disc_co": 32.9,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.003,
-            "form": 0.01,
-            "ml": 0.165,
-            "pcs_rank": 0
-          },
-          "form_score": 1.0,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -103546,8 +103546,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -103968,7 +103968,7 @@
             "disc": 0.07,
             "form": 0.153,
             "ml": 0.483,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 15.3,
           "breakaway": false,
@@ -103997,7 +103997,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -104184,7 +104184,7 @@
             "disc": 0.006,
             "form": 0.5,
             "ml": 0.248,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 25.0,
           "breakaway": false,
@@ -104206,8 +104206,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -104473,7 +104473,7 @@
             "disc": 0.099,
             "form": 0.042,
             "ml": 0.396,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 4.2,
           "breakaway": false,
@@ -104502,8 +104502,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -104946,7 +104946,7 @@
             "disc": 0.04,
             "form": 0.041,
             "ml": 0.436,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 4.1,
           "breakaway": false,
@@ -104975,8 +104975,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -105296,7 +105296,7 @@
             "disc": 0.002,
             "form": 0.015,
             "ml": 0.172,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.5,
           "breakaway": false,
@@ -105325,7 +105325,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -105678,7 +105678,7 @@
             "disc": 0.086,
             "form": 0.013,
             "ml": 0.249,
-            "pcs_rank": 0
+            "pcs_rank": 0.341
           },
           "form_score": 1.3,
           "breakaway": false,
@@ -105707,8 +105707,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
           "pcs_spec_norm": {
             "sprint": 0.4,
             "climber": 14.7,
@@ -106510,60 +106510,6 @@
           }
         },
         {
-          "id": "florian_vermeersch",
-          "name": "Florian Vermeersch",
-          "team": "UAE",
-          "price": 3.5,
-          "holdet_est": null,
-          "disc": 0.1,
-          "disc_key": "MTN",
-          "disc_co": 27.3,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.001,
-            "form": 0.009,
-            "ml": 0.157,
-            "pcs_rank": 0.343
-          },
-          "form_score": 0.9,
-          "breakaway": false,
-          "co": {
-            "COB": 93.0,
-            "HLL": 85.0,
-            "MTN": 38.0,
-            "GC": 53.0,
-            "ITT": 77.0,
-            "SPR": 70.0
-          },
-          "pcs_spec": {
-            "onedayraces": 1865,
-            "gc": 614,
-            "tt": 579,
-            "sprint": 571,
-            "climber": 93,
-            "hills": 632
-          },
-          "pcs_form": {
-            "overall": 1.1,
-            "sprint": 0.4,
-            "mountain": 0.8,
-            "hilly": 0.0,
-            "tt": 1.0,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
-          "pcs_spec_norm": {
-            "sprint": 8.6,
-            "climber": 0.9,
-            "tt": 11.8,
-            "hills": 8.1,
-            "onedayraces": 18.7
-          }
-        },
-        {
           "id": "edoardo_affini",
           "name": "Edoardo Affini",
           "team": "VLB",
@@ -107181,6 +107127,60 @@
             "tt": 0,
             "hills": 10.8,
             "onedayraces": 12.8
+          }
+        },
+        {
+          "id": "florian_vermeersch",
+          "name": "Florian Vermeersch",
+          "team": "UAE",
+          "price": 3.5,
+          "holdet_est": null,
+          "disc": 0.1,
+          "disc_key": "MTN",
+          "disc_co": 27.3,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.001,
+            "form": 0.009,
+            "ml": 0.157,
+            "pcs_rank": 0
+          },
+          "form_score": 0.9,
+          "breakaway": false,
+          "co": {
+            "COB": 93.0,
+            "HLL": 85.0,
+            "MTN": 38.0,
+            "GC": 53.0,
+            "ITT": 77.0,
+            "SPR": 70.0
+          },
+          "pcs_spec": {
+            "onedayraces": 1865,
+            "gc": 614,
+            "tt": 579,
+            "sprint": 571,
+            "climber": 93,
+            "hills": 632
+          },
+          "pcs_form": {
+            "overall": 1.1,
+            "sprint": 0.4,
+            "mountain": 0.8,
+            "hilly": 0.0,
+            "tt": 1.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
+          "pcs_spec_norm": {
+            "sprint": 8.6,
+            "climber": 0.9,
+            "tt": 11.8,
+            "hills": 8.1,
+            "onedayraces": 18.7
           }
         },
         {
@@ -109559,8 +109559,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -109981,7 +109981,7 @@
             "disc": 0.07,
             "form": 0.153,
             "ml": 0.527,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 15.3,
           "breakaway": false,
@@ -110010,7 +110010,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -110197,7 +110197,7 @@
             "disc": 0.006,
             "form": 0.5,
             "ml": 0.262,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 25.0,
           "breakaway": false,
@@ -110219,8 +110219,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -110486,7 +110486,7 @@
             "disc": 0.099,
             "form": 0.042,
             "ml": 0.43,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 4.2,
           "breakaway": false,
@@ -110515,8 +110515,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -110959,7 +110959,7 @@
             "disc": 0.04,
             "form": 0.041,
             "ml": 0.467,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 4.1,
           "breakaway": false,
@@ -110988,8 +110988,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -111309,7 +111309,7 @@
             "disc": 0.002,
             "form": 0.015,
             "ml": 0.223,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.5,
           "breakaway": false,
@@ -111338,7 +111338,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -111630,6 +111630,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 8.6,
+          "disc_key": "MTN",
+          "disc_co": 68.4,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.086,
+            "form": 0.013,
+            "ml": 0.308,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.3,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "tim_wellens",
           "name": "Tim Wellens",
           "team": "UAE",
@@ -111674,60 +111728,6 @@
             "tt": 0,
             "hills": 0,
             "onedayraces": 0
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 8.6,
-          "disc_key": "MTN",
-          "disc_co": 68.4,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.086,
-            "form": 0.013,
-            "ml": 0.308,
-            "pcs_rank": 0
-          },
-          "form_score": 1.3,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -112523,60 +112523,6 @@
           }
         },
         {
-          "id": "florian_vermeersch",
-          "name": "Florian Vermeersch",
-          "team": "UAE",
-          "price": 3.5,
-          "holdet_est": null,
-          "disc": 0.1,
-          "disc_key": "MTN",
-          "disc_co": 27.3,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.001,
-            "form": 0.009,
-            "ml": 0.183,
-            "pcs_rank": 0.343
-          },
-          "form_score": 0.9,
-          "breakaway": false,
-          "co": {
-            "COB": 93.0,
-            "HLL": 85.0,
-            "MTN": 38.0,
-            "GC": 53.0,
-            "ITT": 77.0,
-            "SPR": 70.0
-          },
-          "pcs_spec": {
-            "onedayraces": 1865,
-            "gc": 614,
-            "tt": 579,
-            "sprint": 571,
-            "climber": 93,
-            "hills": 632
-          },
-          "pcs_form": {
-            "overall": 1.1,
-            "sprint": 0.4,
-            "mountain": 0.8,
-            "hilly": 0.0,
-            "tt": 1.0,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
-          "pcs_spec_norm": {
-            "sprint": 8.6,
-            "climber": 0.9,
-            "tt": 11.8,
-            "hills": 8.1,
-            "onedayraces": 18.7
-          }
-        },
-        {
           "id": "edoardo_affini",
           "name": "Edoardo Affini",
           "team": "VLB",
@@ -113248,6 +113194,60 @@
             "tt": 1.4,
             "hills": 7.2,
             "onedayraces": 2.6
+          }
+        },
+        {
+          "id": "florian_vermeersch",
+          "name": "Florian Vermeersch",
+          "team": "UAE",
+          "price": 3.5,
+          "holdet_est": null,
+          "disc": 0.1,
+          "disc_key": "MTN",
+          "disc_co": 27.3,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.001,
+            "form": 0.009,
+            "ml": 0.183,
+            "pcs_rank": 0
+          },
+          "form_score": 0.9,
+          "breakaway": false,
+          "co": {
+            "COB": 93.0,
+            "HLL": 85.0,
+            "MTN": 38.0,
+            "GC": 53.0,
+            "ITT": 77.0,
+            "SPR": 70.0
+          },
+          "pcs_spec": {
+            "onedayraces": 1865,
+            "gc": 614,
+            "tt": 579,
+            "sprint": 571,
+            "climber": 93,
+            "hills": 632
+          },
+          "pcs_form": {
+            "overall": 1.1,
+            "sprint": 0.4,
+            "mountain": 0.8,
+            "hilly": 0.0,
+            "tt": 1.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
+          "pcs_spec_norm": {
+            "sprint": 8.6,
+            "climber": 0.9,
+            "tt": 11.8,
+            "hills": 8.1,
+            "onedayraces": 18.7
           }
         },
         {
@@ -115572,8 +115572,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -115994,7 +115994,7 @@
             "disc": 0.07,
             "form": 0.153,
             "ml": 0.575,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 15.3,
           "breakaway": false,
@@ -116023,7 +116023,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -116210,7 +116210,7 @@
             "disc": 0.006,
             "form": 0.5,
             "ml": 0.273,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 25.0,
           "breakaway": false,
@@ -116232,8 +116232,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -116499,7 +116499,7 @@
             "disc": 0.099,
             "form": 0.042,
             "ml": 0.479,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 4.2,
           "breakaway": false,
@@ -116528,8 +116528,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -116972,7 +116972,7 @@
             "disc": 0.04,
             "form": 0.041,
             "ml": 0.471,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 4.1,
           "breakaway": false,
@@ -117001,8 +117001,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -117322,7 +117322,7 @@
             "disc": 0.002,
             "form": 0.015,
             "ml": 0.22,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.5,
           "breakaway": false,
@@ -117351,7 +117351,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -117643,6 +117643,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 8.6,
+          "disc_key": "MTN",
+          "disc_co": 68.4,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.086,
+            "form": 0.013,
+            "ml": 0.327,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.3,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "tim_wellens",
           "name": "Tim Wellens",
           "team": "UAE",
@@ -117687,60 +117741,6 @@
             "tt": 0,
             "hills": 0,
             "onedayraces": 0
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 8.6,
-          "disc_key": "MTN",
-          "disc_co": 68.4,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.086,
-            "form": 0.013,
-            "ml": 0.327,
-            "pcs_rank": 0
-          },
-          "form_score": 1.3,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
@@ -118590,60 +118590,6 @@
           }
         },
         {
-          "id": "florian_vermeersch",
-          "name": "Florian Vermeersch",
-          "team": "UAE",
-          "price": 3.5,
-          "holdet_est": null,
-          "disc": 0.1,
-          "disc_key": "MTN",
-          "disc_co": 27.3,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.001,
-            "form": 0.009,
-            "ml": 0.189,
-            "pcs_rank": 0.343
-          },
-          "form_score": 0.9,
-          "breakaway": false,
-          "co": {
-            "COB": 93.0,
-            "HLL": 85.0,
-            "MTN": 38.0,
-            "GC": 53.0,
-            "ITT": 77.0,
-            "SPR": 70.0
-          },
-          "pcs_spec": {
-            "onedayraces": 1865,
-            "gc": 614,
-            "tt": 579,
-            "sprint": 571,
-            "climber": 93,
-            "hills": 632
-          },
-          "pcs_form": {
-            "overall": 1.1,
-            "sprint": 0.4,
-            "mountain": 0.8,
-            "hilly": 0.0,
-            "tt": 1.0,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
-          "pcs_spec_norm": {
-            "sprint": 8.6,
-            "climber": 0.9,
-            "tt": 11.8,
-            "hills": 8.1,
-            "onedayraces": 18.7
-          }
-        },
-        {
           "id": "michal_kwiatkowski",
           "name": "Michal Kwiatkowski",
           "team": "IGD",
@@ -119261,6 +119207,60 @@
             "tt": 0,
             "hills": 10.8,
             "onedayraces": 12.8
+          }
+        },
+        {
+          "id": "florian_vermeersch",
+          "name": "Florian Vermeersch",
+          "team": "UAE",
+          "price": 3.5,
+          "holdet_est": null,
+          "disc": 0.1,
+          "disc_key": "MTN",
+          "disc_co": 27.3,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.001,
+            "form": 0.009,
+            "ml": 0.189,
+            "pcs_rank": 0
+          },
+          "form_score": 0.9,
+          "breakaway": false,
+          "co": {
+            "COB": 93.0,
+            "HLL": 85.0,
+            "MTN": 38.0,
+            "GC": 53.0,
+            "ITT": 77.0,
+            "SPR": 70.0
+          },
+          "pcs_spec": {
+            "onedayraces": 1865,
+            "gc": 614,
+            "tt": 579,
+            "sprint": 571,
+            "climber": 93,
+            "hills": 632
+          },
+          "pcs_form": {
+            "overall": 1.1,
+            "sprint": 0.4,
+            "mountain": 0.8,
+            "hilly": 0.0,
+            "tt": 1.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
+          "pcs_spec_norm": {
+            "sprint": 8.6,
+            "climber": 0.9,
+            "tt": 11.8,
+            "hills": 8.1,
+            "onedayraces": 18.7
           }
         },
         {
@@ -121151,7 +121151,7 @@
             "disc": 0.811,
             "form": 0.012,
             "ml": 0.207,
-            "pcs_rank": 0.411
+            "pcs_rank": 0.412
           },
           "form_score": 1.2,
           "breakaway": false,
@@ -121180,7 +121180,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 641.0,
+          "pcs_rank_pts": 642.0,
           "pcs_rank_norm": 13.5,
           "pcs_spec_norm": {
             "sprint": 48.2,
@@ -121508,7 +121508,7 @@
             "disc": 0.932,
             "form": 0.5,
             "ml": 0.258,
-            "pcs_rank": 0.715
+            "pcs_rank": 0.705
           },
           "form_score": 21.1,
           "breakaway": false,
@@ -121530,8 +121530,8 @@
             "ttt": 25.0,
             "cobbled": 25.0
           },
-          "pcs_rank_pts": 1114.0,
-          "pcs_rank_norm": 23.5,
+          "pcs_rank_pts": 1099.0,
+          "pcs_rank_norm": 23.2,
           "pcs_spec_norm": {
             "sprint": 0,
             "climber": 0,
@@ -121685,8 +121685,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 2451.0,
-          "pcs_rank_norm": 51.7,
+          "pcs_rank_pts": 2436.0,
+          "pcs_rank_norm": 51.3,
           "pcs_spec_norm": {
             "sprint": 1.8,
             "climber": 48.9,
@@ -121710,7 +121710,7 @@
             "disc": 0.2,
             "form": 0.006,
             "ml": 0.183,
-            "pcs_rank": 0.343
+            "pcs_rank": 0
           },
           "form_score": 0.6,
           "breakaway": false,
@@ -121739,8 +121739,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 535.0,
-          "pcs_rank_norm": 11.3,
+          "pcs_rank_pts": 0.0,
+          "pcs_rank_norm": 0,
           "pcs_spec_norm": {
             "sprint": 8.6,
             "climber": 0.9,
@@ -122027,7 +122027,7 @@
             "disc": 0.001,
             "form": 0.057,
             "ml": 0.159,
-            "pcs_rank": 0.992
+            "pcs_rank": 0.991
           },
           "form_score": 5.7,
           "breakaway": false,
@@ -122056,7 +122056,7 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1547.0,
+          "pcs_rank_pts": 1545.0,
           "pcs_rank_norm": 32.6,
           "pcs_spec_norm": {
             "sprint": 0.0,
@@ -122626,7 +122626,7 @@
             "disc": 0.006,
             "form": 0.055,
             "ml": 0.067,
-            "pcs_rank": 0.564
+            "pcs_rank": 0.559
           },
           "form_score": 5.5,
           "breakaway": false,
@@ -122655,8 +122655,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 879.0,
-          "pcs_rank_norm": 18.5,
+          "pcs_rank_pts": 872.0,
+          "pcs_rank_norm": 18.4,
           "pcs_spec_norm": {
             "sprint": 1.4,
             "climber": 12.6,
@@ -123335,7 +123335,7 @@
             "disc": 0.001,
             "form": 0.099,
             "ml": 0.23,
-            "pcs_rank": 0.858
+            "pcs_rank": 0.848
           },
           "form_score": 9.9,
           "breakaway": false,
@@ -123364,8 +123364,8 @@
             "ttt": 0.0,
             "cobbled": 0.0
           },
-          "pcs_rank_pts": 1337.0,
-          "pcs_rank_norm": 28.2,
+          "pcs_rank_pts": 1322.0,
+          "pcs_rank_norm": 27.9,
           "pcs_spec_norm": {
             "sprint": 0.1,
             "climber": 12.7,
@@ -124121,6 +124121,60 @@
           }
         },
         {
+          "id": "ilan_van_wilder",
+          "name": "Ilan van Wilder",
+          "team": "SQ",
+          "price": 4.5,
+          "holdet_est": null,
+          "disc": 0.3,
+          "disc_key": "SPR",
+          "disc_co": 32.9,
+          "signals": {
+            "veloscore": 0,
+            "odds": 0,
+            "disc": 0.003,
+            "form": 0.01,
+            "ml": 0.165,
+            "pcs_rank": 0.341
+          },
+          "form_score": 1.0,
+          "breakaway": false,
+          "co": {
+            "COB": 35.0,
+            "HLL": 79.0,
+            "MTN": 82.0,
+            "GC": 77.0,
+            "ITT": 90.0,
+            "SPR": 51.0
+          },
+          "pcs_spec": {
+            "onedayraces": 540,
+            "gc": 1803,
+            "tt": 1090,
+            "sprint": 26,
+            "climber": 1471,
+            "hills": 818
+          },
+          "pcs_form": {
+            "overall": 3.3,
+            "sprint": 0.0,
+            "mountain": 0.5,
+            "hilly": 3.6,
+            "tt": 0.6,
+            "ttt": 0.0,
+            "cobbled": 0.0
+          },
+          "pcs_rank_pts": 531.0,
+          "pcs_rank_norm": 11.2,
+          "pcs_spec_norm": {
+            "sprint": 0.4,
+            "climber": 14.7,
+            "tt": 22.1,
+            "hills": 10.5,
+            "onedayraces": 5.4
+          }
+        },
+        {
           "id": "quinn_simmons",
           "name": "Quinn Simmons",
           "team": "L-T",
@@ -124172,60 +124226,6 @@
             "tt": 0.8,
             "hills": 10.0,
             "onedayraces": 8.4
-          }
-        },
-        {
-          "id": "ilan_van_wilder",
-          "name": "Ilan van Wilder",
-          "team": "SQ",
-          "price": 4.5,
-          "holdet_est": null,
-          "disc": 0.3,
-          "disc_key": "SPR",
-          "disc_co": 32.9,
-          "signals": {
-            "veloscore": 0,
-            "odds": 0,
-            "disc": 0.003,
-            "form": 0.01,
-            "ml": 0.165,
-            "pcs_rank": 0
-          },
-          "form_score": 1.0,
-          "breakaway": false,
-          "co": {
-            "COB": 35.0,
-            "HLL": 79.0,
-            "MTN": 82.0,
-            "GC": 77.0,
-            "ITT": 90.0,
-            "SPR": 51.0
-          },
-          "pcs_spec": {
-            "onedayraces": 540,
-            "gc": 1803,
-            "tt": 1090,
-            "sprint": 26,
-            "climber": 1471,
-            "hills": 818
-          },
-          "pcs_form": {
-            "overall": 3.3,
-            "sprint": 0.0,
-            "mountain": 0.5,
-            "hilly": 3.6,
-            "tt": 0.6,
-            "ttt": 0.0,
-            "cobbled": 0.0
-          },
-          "pcs_rank_pts": 0.0,
-          "pcs_rank_norm": 0,
-          "pcs_spec_norm": {
-            "sprint": 0.4,
-            "climber": 14.7,
-            "tt": 22.1,
-            "hills": 10.5,
-            "onedayraces": 5.4
           }
         },
         {
