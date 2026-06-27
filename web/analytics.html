@@ -51,9 +51,25 @@
 
   /* Body */
   .body { display:grid; grid-template-columns:200px 1fr 300px; overflow:hidden; }
+  .body.sl-collapsed { grid-template-columns:28px 1fr 300px; }
+  .body.sr-collapsed { grid-template-columns:200px 1fr 28px; }
+  .body.sl-collapsed.sr-collapsed { grid-template-columns:28px 1fr 28px; }
+
+  /* Panel toggle buttons */
+  .panel-toggle {
+    display:flex; align-items:center; justify-content:center;
+    width:20px; height:20px; border-radius:4px; border:1px solid var(--border);
+    background:var(--bg3); cursor:pointer; color:var(--text3); font-size:11px;
+    flex-shrink:0; transition:color 0.1s, border-color 0.1s;
+  }
+  .panel-toggle:hover { color:var(--text); border-color:var(--orange); }
 
   /* Sidebar left */
-  .sl { background:var(--bg2); border-right:1px solid var(--border); overflow-y:auto; padding:12px; }
+  .sl { background:var(--bg2); border-right:1px solid var(--border); overflow-y:auto; padding:12px; overflow-x:hidden; }
+  .sl-collapsed .sl { overflow-y:hidden; padding:8px 4px; }
+  .sl-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
+  .sl-content { }
+  .sl-collapsed .sl-content { display:none; }
   .sl::-webkit-scrollbar { width:3px; }
   .sl::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
   .slabel { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--text3); margin:12px 0 6px; }
@@ -138,9 +154,15 @@
   .dist-labels { display:flex; justify-content:space-between; font-size:9px; color:var(--text3); margin-top:2px; }
 
   /* Right panel */
-  .sr { border-left:1px solid var(--border); overflow-y:auto; background:var(--bg2); }
+  .sr { border-left:1px solid var(--border); overflow-y:auto; background:var(--bg2); display:flex; flex-direction:column; }
   .sr::-webkit-scrollbar { width:3px; }
   .sr::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+  .sr-toggle-bar { display:flex; align-items:center; padding:6px 8px; border-bottom:1px solid var(--border); background:var(--bg2); flex-shrink:0; gap:6px; }
+  .sr-body { flex:1; overflow-y:auto; }
+  .sr-body::-webkit-scrollbar { width:3px; }
+  .sr-body::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+  .sr-collapsed .sr-body { display:none; }
+  .sr-collapsed .sr-toggle-bar .sr-label { display:none; }
 
   .tabs { display:flex; border-bottom:1px solid var(--border); }
   .tab  { padding:8px 12px; font-size:11px; font-weight:600; cursor:pointer; border-bottom:2px solid transparent; color:var(--text2); margin-bottom:-1px; }
@@ -234,6 +256,16 @@
   .spin-ring { width:32px; height:32px; border:3px solid var(--border); border-top-color:var(--orange); border-radius:50%; animation:spin 0.8s linear infinite; }
   @keyframes spin { to { transform:rotate(360deg); } }
   .spin-txt { font-size:13px; color:var(--text2); }
+
+  /* Mobile: hide non-essential table columns */
+  @media (max-width:768px) {
+    .col-hide-mobile { display:none; }
+    .toolbar { gap:4px; flex-wrap:wrap; }
+    .search { width:120px; }
+  }
+  @media (max-width:480px) {
+    .sort-btn:not(.active) { display:none; }
+  }
 </style>
 </head>
 <body>
@@ -263,6 +295,11 @@
   <div class="body">
     <!-- ── Sidebar left ── -->
     <div class="sl">
+      <div class="sl-header">
+        <span class="slabel" style="margin:0">Filter</span>
+        <button class="panel-toggle" onclick="toggleLeft()" title="Skjul/vis panel">◀</button>
+      </div>
+      <div class="sl-content">
       <div class="slabel">Etape</div>
       <div id="stageBtns"></div>
 
@@ -295,6 +332,7 @@
       <div class="slabel">Hold-filter</div>
       <div id="teamChecks"></div>
       <button class="vis-alle-btn" onclick="checkAllTeams()">Vis alle</button>
+      </div><!-- /sl-content -->
     </div>
 
     <!-- ── Main center ── -->
@@ -316,17 +354,17 @@
         <table>
           <thead>
             <tr id="tHead">
-              <th>#</th>
+              <th class="col-hide-mobile">#</th>
               <th>Rytter</th>
               <th class="sorted">Holdet Est</th>
               <th>Pris</th>
               <th title="Forventet vækst ÷ pris (est pr. M investeret)">Est/M</th>
-              <th id="sb-score-col">Score</th>
-              <th id="thForm">Form</th>
-              <th id="thCO">CO Evne</th>
-              <th id="thPCS">PCS Evne</th>
-              <th>PCS Rang</th>
-              <th>Signaler</th>
+              <th id="sb-score-col" class="col-hide-mobile">Score</th>
+              <th id="thForm" class="col-hide-mobile">Form</th>
+              <th id="thCO" class="col-hide-mobile">CO Evne</th>
+              <th id="thPCS" class="col-hide-mobile">PCS Evne</th>
+              <th class="col-hide-mobile">PCS Rang</th>
+              <th class="col-hide-mobile">Signaler</th>
             </tr>
           </thead>
           <tbody id="tBody"></tbody>
@@ -341,7 +379,12 @@
     </div>
 
     <!-- ── Right panel ── -->
-    <div class="sr">
+    <div class="sr" id="srPanel">
+      <div class="sr-toggle-bar">
+        <button class="panel-toggle" onclick="toggleRight()" title="Skjul/vis panel" id="srToggleBtn">▶</button>
+        <span class="sr-label" style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px">Detaljer</span>
+      </div>
+      <div class="sr-body">
       <div class="tabs">
         <div class="tab active" data-pane="rytter" onclick="switchTab(this)">Rytter</div>
         <div class="tab"        data-pane="hold"   onclick="switchTab(this)">Hold</div>
@@ -407,7 +450,8 @@
           <div id="modelContent"></div>
         </div>
       </div>
-    </div>
+      </div><!-- /sr-body -->
+    </div><!-- /sr -->
   </div>
 </div>
 
@@ -634,7 +678,7 @@ function renderTable() {
     }).join('');
 
     return `<tr class="${isSel?'sel':''}" onclick="selectRider('${r.id}')">
-      <td style="color:var(--text3);font-size:11px">${i+1}</td>
+      <td class="col-hide-mobile" style="color:var(--text3);font-size:11px">${i+1}</td>
       <td>
         <div style="font-weight:600;font-size:12px">${r.name}${r.breakaway?' <span style="font-size:9px;color:var(--purple);font-weight:700">BWA</span>':''}</div>
         <div style="font-size:10px;color:var(--text3)">${TEAM_NAMES[r.team]||r.team}</div>
@@ -642,12 +686,12 @@ function renderTable() {
       <td><span class="growth-pill ${estCls}">${est}</span></td>
       <td><span class="price-g">${r.price.toFixed(1)}M</span></td>
       <td style="font-size:11px;color:var(--text2);font-weight:600">${estM}</td>
-      <td class="ability-cell ${scoreCls}">${score}</td>
-      <td class="ability-cell ${abilClass(formVal)}">${formVal != null && formVal > 0 ? Math.round(formVal) : '–'}</td>
-      <td class="ability-cell ${abilClass(coVal)}">${fmtRaw(coVal)}</td>
-      <td class="ability-cell ${abilClass(pcsNorm)}">${pcsNorm != null && pcsNorm > 0 ? fmtRaw(pcsNorm) : '–'}</td>
-      <td class="ability-cell ${abilClass(rankNorm)}">${rankNorm ? fmtRaw(rankNorm) : '–'}</td>
-      <td><div class="mbars">${bars}</div></td>
+      <td class="ability-cell col-hide-mobile ${scoreCls}">${score}</td>
+      <td class="ability-cell col-hide-mobile ${abilClass(formVal)}">${formVal != null && formVal > 0 ? Math.round(formVal) : '–'}</td>
+      <td class="ability-cell col-hide-mobile ${abilClass(coVal)}">${fmtRaw(coVal)}</td>
+      <td class="ability-cell col-hide-mobile ${abilClass(pcsNorm)}">${pcsNorm != null && pcsNorm > 0 ? fmtRaw(pcsNorm) : '–'}</td>
+      <td class="ability-cell col-hide-mobile ${abilClass(rankNorm)}">${rankNorm ? fmtRaw(rankNorm) : '–'}</td>
+      <td class="col-hide-mobile"><div class="mbars">${bars}</div></td>
     </tr>`;
   }).join('');
 }
@@ -865,6 +909,21 @@ function switchTab(el) {
   if (el.dataset.pane === 'model') renderModel();
 }
 
+// ── Panel collapse toggles ────────────────────────────────────────────────
+function toggleLeft() {
+  const body = document.querySelector('.body');
+  body.classList.toggle('sl-collapsed');
+  const btn = document.querySelector('.sl-header .panel-toggle');
+  if (btn) btn.textContent = body.classList.contains('sl-collapsed') ? '▶' : '◀';
+}
+
+function toggleRight() {
+  const body = document.querySelector('.body');
+  body.classList.toggle('sr-collapsed');
+  const btn = document.getElementById('srToggleBtn');
+  if (btn) btn.textContent = body.classList.contains('sr-collapsed') ? '◀' : '▶';
+}
+
 // ── Signal weight sliders ──────────────────────────────────────────────────
 function onSlider(i, val) {
   sigWeights[i] = parseInt(val, 10);
@@ -874,6 +933,14 @@ function onSlider(i, val) {
 
 // ── Main init ──────────────────────────────────────────────────────────────
 async function init() {
+  // Auto-collapse panels on narrow screens
+  if (window.innerWidth <= 768) {
+    const body = document.querySelector('.body');
+    body.classList.add('sl-collapsed', 'sr-collapsed');
+    const lBtn = document.querySelector('.sl-header .panel-toggle');
+    if (lBtn) lBtn.textContent = '▶';
+  }
+
   document.getElementById('spinner').classList.add('show');
   try {
     const res = await fetch('./data/tdf2026_analytics.json', { cache: 'no-cache' });
