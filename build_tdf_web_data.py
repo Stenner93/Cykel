@@ -734,12 +734,12 @@ def main() -> None:
                 "disc_co":  round(p.get("disc_co_raw", 0) or 0, 1),
                 "disc_key": p.get("disc_key", "AVG"),
                 "signals":  [
-                    round(sigs.get("veloscore", 0), 3),
-                    round(sigs.get("odds", 0), 3),
-                    round(sigs.get("discipline", 0), 3),
-                    round(sigs.get("form", 0), 3),
-                    round(sigs.get("ml", 0), 3),
-                    round(sigs.get("pcs_rank", 0), 3),
+                    round(sigs.get("veloscore") or 0, 3),
+                    round(sigs.get("odds") or 0, 3),
+                    round(sigs.get("discipline") or 0, 3),
+                    round(sigs.get("form") or 0, 3),
+                    round(sigs.get("ml") or 0, 3),
+                    round(sigs.get("pcs_rank") or 0, 3),
                 ],
                 "reason":   p.get("reasoning", ""),
                 "actual":   actual,
@@ -751,6 +751,8 @@ def main() -> None:
                 # holdet_est i tusinder (displayformat: 202 → 202k)
                 # Beregnet fra holdet ML-model når tilgængeligt, ellers fra exp
                 "holdet_est": round(p.get("expected_pts", 0) / 1000, 1) if p.get("holdet_raw_pred") else None,
+                "holdet_raw_pred": round(p["holdet_raw_pred"], 2) if p.get("holdet_raw_pred") is not None else None,
+                "expected_pts":    p.get("expected_pts"),
             })
 
         # Top odds for display in dashboard sources tab

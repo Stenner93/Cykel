@@ -427,7 +427,7 @@ def _holdet_lgbm_raw_preds(
     pcs_form_raw: dict | None,
     co_data: dict | None = None,
     pcs_specialty_data: dict | None = None,
-) -> dict[str, float] | None:
+) -> dict[str, float | None] | None:
     """
     Kør holdet_model.lgbm og returner RAW predictions (0-100 skala, IKKE
     felt-normaliseret). 0=ingen point, 100=vinder af etapen.
@@ -452,6 +452,7 @@ def _holdet_lgbm_raw_preds(
 
     rows: list[list[float]] = []
     rider_ids: list[str]    = []
+    no_signal_set: set[str] = set()  # riders with no CO/PCS data
 
     for rider in riders:
         rid  = rider["id"]
@@ -471,6 +472,12 @@ def _holdet_lgbm_raw_preds(
         form_mountain = fbt.get("mountain", -1)
         form_hilly    = fbt.get("hilly",    -1)
         form_tt       = fbt.get("tt",       -1)
+
+        has_co   = bool(co)
+        has_spec = bool(spec)
+        has_form = any(v != -1 for v in [form_overall, form_sprint, form_mountain, form_hilly, form_tt])
+        if not has_co and not has_spec and not has_form:
+            no_signal_set.add(rid)
 
         row = [
             is_sprint, is_mountain, is_hilly, is_tt,
@@ -492,7 +499,14 @@ def _holdet_lgbm_raw_preds(
     X    = np.array(rows, dtype=np.float32)
     raw  = model.predict(X)   # raw 0-100 (ikke felt-normaliseret)
 
-    return {rid: round(max(0.0, float(p)), 2) for rid, p in zip(rider_ids, raw)}
+    result: dict[str, float] = {}
+    for rid, p in zip(rider_ids, raw):
+        if rid in no_signal_set:
+            # No CO, no PCS specialty, no PCS form → rank-based fallback in predictor
+            result[rid] = None  # type: ignore[assignment]
+        else:
+            result[rid] = round(max(0.0, float(p)), 2)
+    return result
 
 
 def compute_ml_scores(

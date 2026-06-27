@@ -715,11 +715,11 @@ def predict_all(
         _ttt_team_scores: dict[str, list[float]] = _hdd(list)
         for rid, score in holdet_raw_data.items():
             t = _ttt_rider_team.get(rid, "")
-            if t:
+            if t and score is not None:
                 _ttt_team_scores[t].append(score)
         _ttt_team_avg: dict[str, float] = {
             t: round((sorted(scores, reverse=True)[4] if len(scores) >= 5 else sorted(scores, reverse=True)[-1]), 2)
-            for t, scores in _ttt_team_scores.items()
+            for t, scores in _ttt_team_scores.items() if scores
         }
         holdet_raw_data = {
             rid: _ttt_team_avg.get(_ttt_rider_team.get(rid, ""), score)
@@ -745,7 +745,12 @@ def predict_all(
         _addon = pred["expected_pts"] - pred["composite_base_pts"]
 
         holdet_raw = (holdet_raw_data or {}).get(pred.get("rider_id"))
-        if holdet_raw is not None and holdet_raw > 0:
+        # Discipline gate: if the rider's field-normalized discipline score is very
+        # low for this stage type (<10), the ML model is likely wrong due to the
+        # xrace_form_10 inversion (e.g. sprinters given high mountain scores).
+        # Fall back to rank-based prediction for these riders.
+        _disc_ok = (pred.get("disc_raw") or 0.0) >= 10.0
+        if holdet_raw is not None and holdet_raw > 0 and _disc_ok:
             # Direct holdet ML estimate: denormalize raw prediction to K-points
             _calibrated_base = round(holdet_raw / 100.0 * _avg_k)
             pred["holdet_raw_pred"] = round(holdet_raw, 2)
