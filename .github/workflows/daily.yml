@@ -66,13 +66,14 @@ jobs:
       - name: Installér afhængigheder
         run: pip install -r requirements.txt
 
-      # ── 3. Scrape Holdet (priser + GC + trøjer) ────────────────────────────
+      # ── 3. Scrape Holdet (priser + GC + trøjer + mit hold) ────────────────
       - name: Scrape Holdet.dk
         env:
           PYTHONIOENCODING: utf-8
         run: |
           python scrape_holdet.py \
             --cartridge tour-de-france-2026 \
+            --my-team-id 7145433 \
             ${{ inputs.update_riders == 'true' && '--update-riders' || '' }} \
             || echo "⚠️  Holdet-scrape slog fejl (TdF ikke live endnu?) — fortsætter med cached data"
 
@@ -171,7 +172,7 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
 
           # Tilføj web-output (predictions + scores — formålet med CI-kørslen)
-          git add web/data/ data/riders.json || true
+          git add web/data/ data/riders.json data/current_team.json || true
 
           # Tilføj alle caches der opdateres dagligt
           git add \
