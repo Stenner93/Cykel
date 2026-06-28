@@ -126,8 +126,17 @@ _RACE_ORDER: dict[str, int] = {
 }
 
 
-def _get_xrace_form() -> dict[str, float]:
-    """Lazy-load cross-race form: {pcs_slug: avg_position over last 10 stages across all races}."""
+def _get_xrace_form() -> dict[str, dict[str, float]]:
+    """
+    Lazy-load type-specifik cross-race form.
+    Returnerer {pcs_slug: {stage_type: avg_position_last10}}.
+
+    Kun etaper af SAMME type bruges — sprint-form til spurtetaper osv.
+    Forhindrer at en sprinters nr. 150 på bjergetaper forurener hans sprintform.
+
+    Bygger også prefix-aliaser: 'magnus-cort' → 'magnus-cort-nielsen'-data,
+    så holdet-IDs der mangler efternavn stadig finder historik.
+    """
     global _xrace_form, _xrace_form_loaded
     if not _xrace_form_loaded:
         _xrace_form = {}
@@ -137,14 +146,35 @@ def _get_xrace_form() -> dict[str, float]:
                 records,
                 key=lambda r: (r["year"], _RACE_ORDER.get(r["race"], 9), r["stage"])
             )
-            # Build per-slug chronological list of positions
-            by_slug: dict[str, list[int]] = defaultdict(list)
+            # {slug: {stage_type: [positions]}}
+            by_slug: dict[str, dict[str, list[int]]] = defaultdict(lambda: defaultdict(list))
             for r in records_sorted:
-                if not r.get("dnf") and r.get("position"):
-                    by_slug[r["rider_slug"]].append(r["position"])
-            for slug, positions in by_slug.items():
-                last10 = positions[-10:]
-                _xrace_form[slug] = round(sum(last10) / len(last10), 1)
+                if not r.get("dnf") and r.get("position") and r.get("stage_type") != "ttt":
+                    stype = r.get("stage_type", "hilly")
+                    by_slug[r["rider_slug"]][stype].append(r["position"])
+
+            # Build result: {slug: {type: avg_last10}}
+            for slug, type_positions in by_slug.items():
+                _xrace_form[slug] = {
+                    stype: round(sum(pos[-10:]) / len(pos[-10:]), 1)
+                    for stype, pos in type_positions.items()
+                }
+
+            # Slug-aliaser: 'magnus-cort' finder 'magnus-cort-nielsen'-data.
+            # For slugs med 3+ dele registreres kortere prefix-aliaser (hvis
+            # prefixet ikke allerede er et selvstændigt slug i databasen).
+            all_slugs = set(_xrace_form.keys())
+            aliases: dict[str, str] = {}
+            for slug in sorted(all_slugs):
+                parts = slug.split("-")
+                for n in range(len(parts) - 1, 1, -1):
+                    prefix = "-".join(parts[:n])
+                    if prefix not in all_slugs and prefix not in aliases:
+                        aliases[prefix] = slug
+            for alias, real in aliases.items():
+                if alias not in _xrace_form:
+                    _xrace_form[alias] = _xrace_form[real]
+
         _xrace_form_loaded = True
     return _xrace_form or {}
 
@@ -404,7 +434,7 @@ def _holdet_lgbm_scores(
         slug = _holdet_to_pcs_slug(rid, pcs_form_raw)
 
         gt_form_5, gt_form_10, gt_wins = _rolling_form(slug, stages, stage_num)
-        xrace_form_10 = xrace_cache.get(slug, -1.0)
+        xrace_form_10 = xrace_cache.get(slug, {}).get(stage_type, float("nan"))
 
         co_raw = (co_data or {}).get(rid, {})
         co   = {k.lower(): v for k, v in co_raw.items()}
@@ -488,7 +518,7 @@ def _holdet_lgbm_raw_preds(
         slug = _holdet_to_pcs_slug(rid, pcs_form_raw)
 
         gt_form_5, gt_form_10, gt_wins = _rolling_form(slug, stages, stage_num)
-        xrace_form_10 = xrace_cache.get(slug, -1.0)
+        xrace_form_10 = xrace_cache.get(slug, {}).get(stage_type, float("nan"))
 
         co_raw = (co_data or {}).get(rid, {})
         co   = {k.lower(): v for k, v in co_raw.items()}
@@ -647,7 +677,7 @@ def _placement_lgbm_raw_preds(
         slug = _holdet_to_pcs_slug(rid, pcs_form_raw)
 
         gt_form_5, gt_form_10, gt_wins = _rolling_form(slug, stages, stage_num)
-        xrace_form_10 = xrace_cache.get(slug, -1.0)
+        xrace_form_10 = xrace_cache.get(slug, {}).get(stage_type, float("nan"))
 
         co_raw = (co_data or {}).get(rid, {})
         co     = {k.lower(): v for k, v in co_raw.items()}
