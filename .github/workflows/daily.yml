@@ -92,6 +92,22 @@ jobs:
           python scrape_pcs_rankings.py \
             || echo "⚠️  PCS rangering ikke tilgængelig — fortsætter uden"
 
+      # ── 3d. Hent PCS form-scores (90-dages resultater, ~5 min) ───────────
+      - name: Hent PCS form-scores
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python scrape_pcs.py \
+            || echo "⚠️  PCS form-scores ikke tilgængelige — fortsætter med cached data"
+
+      # ── 3e. Hent CyclingOracle ratings (~4 min) ───────────────────────────
+      - name: Hent CyclingOracle ratings
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python scrape_co.py \
+            || echo "⚠️  CyclingOracle ikke tilgængeligt — fortsætter med cached data"
+
       # ── 4. Byg TdF spillerliste (skal ske FØR run_daily.py så vi har aktuelle priser) ──
       - name: Byg TdF 2026 dashboard-data
         env:
@@ -157,9 +173,10 @@ jobs:
           # Tilføj web-output (predictions + scores — formålet med CI-kørslen)
           git add web/data/ data/riders.json || true
 
-          # Tilføj kun de Holdet-caches der ændres løbende (GC, trøjer, hold, priser)
-          # pcs_form.json og cyclingoracle.json committes KUN ved manuelle scrape-kørsler
+          # Tilføj alle caches der opdateres dagligt
           git add \
+            data/cache/pcs_form.json \
+            data/cache/cyclingoracle.json \
             data/cache/gc_standings.json \
             data/cache/jerseys.json \
             data/cache/holdet_sprint_kom.json \

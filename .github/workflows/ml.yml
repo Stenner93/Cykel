@@ -2,7 +2,8 @@ name: 🤖 ML — Scrape historik + træn model
 
 # ── Hvornår kører dette workflow? ────────────────────────────────────────────
 # KUN manuelt — klik "Run workflow" i GitHub.
-# Trin 1 (scrape) tager ~45-60 min og henter 5 år med GT-resultater.
+# Trin 1 (scrape) tager ~60-90 min og henter 5 år med etaperesultater.
+# Understøttede løb: tdf, giro, vuelta, pn, tirreno, catalunya, basque, romandie, dauphine, suisse
 # Du behøver kun køre det igen når du vil opdatere historikken (f.eks. efter TdF 2025).
 on:
   workflow_dispatch:
@@ -18,23 +19,18 @@ on:
         default: ''
         type: string
       races:
-        description: 'Løb at scrape (blank = alle tre)'
+        description: 'Løb at scrape, mellemrumssepareret (blank = alle). Eks: tdf giro pn dauphine'
         required: false
         default: ''
-        type: choice
-        options:
-          - ''
-          - tdf
-          - giro
-          - vuelta
+        type: string
 
 permissions:
   contents: write
 
 jobs:
-  # ── JOB 1: Scrape historiske GT-resultater fra PCS ────────────────────────
+  # ── JOB 1: Scrape historiske etaperesultater fra PCS (GT + et-ugersløb) ──
   scrape:
-    name: "Trin 1 — Scrape PCS historik (2021-2025)"
+    name: "Trin 1 — Scrape PCS historik (2021-2025, alle løb)"
     runs-on: ubuntu-latest
     if: ${{ inputs.skip_scrape != 'true' }}
 
@@ -75,9 +71,9 @@ jobs:
           path: data/ml/historical_results.json
           retention-days: 7
 
-  # ── JOB 2: Byg features + træn model ─────────────────────────────────────
+  # ── JOB 2: Byg features + træn begge modeller ────────────────────────────
   train:
-    name: "Trin 2 — Byg features og træn LightGBM"
+    name: "Trin 2 — Byg features og træn LightGBM (holdet + placement)"
     runs-on: ubuntu-latest
     needs: [scrape]
     if: always()
@@ -120,21 +116,37 @@ jobs:
           print(f'  Løb: {races}')
           "
 
-      - name: Byg feature-datasæt
+      - name: Byg feature-datasæt (holdet-model)
         env:
           PYTHONIOENCODING: utf-8
         run: |
           python build_training_data.py
-          echo "Feature-datasæt:"
+          echo "Feature-datasæt (holdet):"
           ls -lh data/ml/training_data.csv
 
-      - name: Træn LightGBM-model
+      - name: Træn holdet LightGBM-model
         env:
           PYTHONIOENCODING: utf-8
         run: |
           python train_model.py
-          echo "Validerings-JSON:"
+          echo "Validerings-JSON (holdet):"
           ls -lh web/data/ml_validation.json || echo "⚠️  Ingen validerings-JSON"
+
+      - name: Byg feature-datasæt (placement-model)
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python build_placement_training_data.py
+          echo "Feature-datasæt (placement):"
+          ls -lh data/ml/placement_training_data.csv
+
+      - name: Træn placement LightGBM-model
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python train_placement_model.py
+          echo "Validerings-JSON (placement):"
+          ls -lh web/data/placement_ml_validation.json || echo "⚠️  Ingen validerings-JSON"
 
       - name: Commit og push resultater
         env:
@@ -143,8 +155,8 @@ jobs:
           git config user.name  "TdF Manager Bot"
           git config user.email "bot@users.noreply.github.com"
 
-          # Gem historikdata og model-output
-          git add data/ml/ web/data/ml_validation.json data/cache/rider_historical_form.json || true
+          # Gem historikdata og begge model-outputs
+          git add data/ml/ web/data/ml_validation.json web/data/placement_ml_validation.json data/cache/rider_historical_form.json || true
 
           if git diff --staged --quiet; then
             echo "Ingen ændringer"
