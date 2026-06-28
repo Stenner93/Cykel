@@ -1,7 +1,7 @@
 """
 Scraper til historiske etaperesultater fra ProCyclingStats.
 
-Henter alle placeringer for TdF, Giro og Vuelta 2021-2025 (og evt. 2026).
+Henter alle placeringer for TdF, Giro, Vuelta + 7 et-ugersløb 2021-2025.
 Output: data/ml/historical_results.json
 
 Format:
@@ -51,17 +51,33 @@ HEADERS = {
 DELAY = 0.6
 
 RACES = {
-    "tdf":   "tour-de-france",
-    "giro":  "giro-d-italia",
-    "vuelta":"vuelta-a-espana",
+    # Grand Tours
+    "tdf":       "tour-de-france",
+    "giro":      "giro-d-italia",
+    "vuelta":    "vuelta-a-espana",
+    # Et-ugersløb (GT-opvarmning — bruges som placement model træningsdata)
+    "pn":        "paris-nice",
+    "tirreno":   "tirreno-adriatico",
+    "catalunya": "volta-a-catalunya",
+    "basque":    "itzulia-basque-country",
+    "romandie":  "tour-de-romandie",
+    "dauphine":  "criterium-du-dauphine",
+    "suisse":    "tour-de-suisse",
 }
 
 # Fallback startlist quality scores (PCS scale, 0-1000+) used when scraping
 # fails. TdF attracts the deepest WorldTour field, followed by Giro and Vuelta.
 DEFAULT_RACE_QUALITY: dict[str, float] = {
-    "tour-de-france": 1000.0,
-    "giro-d-italia":   950.0,
-    "vuelta-a-espana": 900.0,
+    "tour-de-france":           1000.0,
+    "giro-d-italia":             950.0,
+    "vuelta-a-espana":           900.0,
+    "criterium-du-dauphine":     870.0,
+    "itzulia-basque-country":    830.0,
+    "tour-de-suisse":            810.0,
+    "tirreno-adriatico":         800.0,
+    "volta-a-catalunya":         770.0,
+    "tour-de-romandie":          750.0,
+    "paris-nice":                730.0,
 }
 
 YEARS = [2021, 2022, 2023, 2024, 2025]
@@ -317,7 +333,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--years",  nargs="+", type=int, default=YEARS)
     parser.add_argument("--races",  nargs="+", default=list(RACES.keys()),
-                        choices=list(RACES.keys()))
+                        choices=list(RACES.keys()),
+                        help="Løb at hente (default: alle). Eks: --races tdf giro pn dauphine")
     parser.add_argument("--reset",  action="store_true",
                         help="Ryd cache og hent alt forfra")
     parser.add_argument("--delay",  type=float, default=DELAY)

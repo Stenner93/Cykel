@@ -1,0 +1,44 @@
+{
+  "n_rows": 50142,
+  "n_stages": 310,
+  "feature_cols": [
+    "is_sprint",
+    "is_mountain",
+    "is_hilly",
+    "is_tt",
+    "co_mtn",
+    "co_spr",
+    "co_hll",
+    "co_itt",
+    "co_cob",
+    "co_gc",
+    "spec_climber",
+    "spec_sprint",
+    "spec_tt",
+    "spec_hills",
+    "form_overall",
+    "form_sprint",
+    "form_mountain",
+    "form_hilly",
+    "form_tt",
+    "gt_form_5",
+    "gt_form_10",
+    "gt_wins_so_far",
+    "xrace_form_10",
+    "startlist_quality"
+  ],
+  "target_col": "norm_pos",
+  "races": [
+    "giro",
+    "tdf",
+    "vuelta"
+  ],
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "notes": "norm_pos: 1.0=vinder, 0.0=sidst (DNF udelades). CO/PCS snapshot er nuv\u00e6rende v\u00e6rdier \u2014 specialiteter antages stabile 2021-2025. xrace_form_10: gennemsnitsplacering i seneste 10 etaper p\u00e5 tv\u00e6rs af l\u00f8b. startlist_quality: PCS feltsstyrke / 1000 (0-1 skala). TTT-etaper er udeladt (team-scoring kr\u00e6ver s\u00e6rlig behandling)."
+}

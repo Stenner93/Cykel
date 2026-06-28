@@ -437,7 +437,7 @@ def main():
         print(f"  Profile score: {profile_sc}  →  WINNER_POINTS × {scale:.2f}")
 
     # ── ML signal ────────────────────────────────────────────
-    from src.ml_signal import compute_ml_scores, compute_holdet_raw_scores
+    from src.ml_signal import compute_ml_scores, compute_holdet_raw_scores, compute_placement_scores
     gt_results   = load_gt_stage_results()
     pcs_form_raw = load_pcs_form_raw()
     pcs_rankings  = load_pcs_rankings()
@@ -476,13 +476,33 @@ def main():
         co_data=co_data or None,
         pcs_specialty_data=pcs_specialty_data or None,
     )
+    placement_scores = compute_placement_scores(
+        riders=riders,
+        stage_type=stage_type,
+        stage_num=stage,
+        gt_results=gt_results,
+        pcs_form_raw=pcs_form_raw,
+        co_data=co_data or None,
+        pcs_specialty_data=pcs_specialty_data or None,
+        startlist_quality=1000.0,   # TdF: top-tier field
+    )
     if ml_scores:
         top_ml = sorted(ml_scores.items(), key=lambda x: x[1], reverse=True)[:3]
         id_to_name = {r["id"]: r["full_name"] for r in riders}
         top_ml_str = ", ".join(f"{id_to_name.get(k, k)} ({v:.0f})" for k, v in top_ml)
         n_raw = len(holdet_raw_scores) if holdet_raw_scores else 0
+        n_placement = sum(1 for v in (placement_scores or {}).values() if v is not None)
         print(f"  ML-signal:     {len(ml_scores)} ryttere  "
               f"(GT-etaper: {n_gt_stages})  Top3: {top_ml_str}  raw holdet: {n_raw}")
+        if placement_scores:
+            top_pl = sorted(
+                ((k,v) for k,v in placement_scores.items() if v is not None),
+                key=lambda x: -x[1]
+            )[:3]
+            top_pl_str = ", ".join(f"{id_to_name.get(k,k)} ({v:.3f})" for k,v in top_pl)
+            print(f"  Placement ML:  {n_placement} ryttere  Top3: {top_pl_str}")
+        else:
+            print(f"  Placement ML:  ikke tilgængelig (kør build+train placement scripts)")
     else:
         print(f"  ML-signal:     ikke tilgængelig (model ikke indlæst)")
 
@@ -503,6 +523,7 @@ def main():
         pcs_rank_data=pcs_rank_data or None,
         pcs_n_results_data=pcs_n_results_data or None,
         holdet_raw_data=holdet_raw_scores or None,
+        placement_data=placement_scores or None,
     )
 
     # ── Override expected_pts with holdet_est calibration ────────────────────
@@ -524,7 +545,9 @@ def main():
             updated = 0
             for p in predictions:
                 if p.get("holdet_raw_pred") is not None:
-                    continue  # ML model already computed expected_pts from holdet_raw_pred
+                    continue  # holdet ML model already computed expected_pts
+                if p.get("ml_source_used") == "placement":
+                    continue  # placement model already computed expected_pts (physically better)
                 est = _holdet_est.get(p["rider_id"])
                 if est:
                     p["expected_pts"] = round(est * 1000)
