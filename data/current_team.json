@@ -1,14 +1,5 @@
 {
   "_note": "Opdater denne fil med dit nuværende holdet.dk hold inden du kører run_daily.py. Navne skal matche riders.json (efternavn er nok). bank_M = din nuværende bank-saldo i millioner.",
-  "bank_M": 5.0,
-  "riders": [
-    "Jonas Vingegaard",
-    "Jonathan Milan",
-    "Tim Merlier",
-    "Cian Uijtdebroeks",
-    "Søren Kragh Andersen",
-    "Phil Bauhaus",
-    "Ben Healy",
-    "Fabio Jakobsen"
-  ]
+  "bank_M": 50.0,
+  "riders": []
 }
