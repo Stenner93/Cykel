@@ -1,6 +1,6 @@
 {
-  "n_rows": 50142,
-  "n_stages": 310,
+  "n_rows": 84662,
+  "n_stages": 550,
   "feature_cols": [
     "is_sprint",
     "is_mountain",
@@ -29,8 +29,15 @@
   ],
   "target_col": "norm_pos",
   "races": [
+    "basque",
+    "catalunya",
+    "dauphine",
     "giro",
+    "pn",
+    "romandie",
+    "suisse",
     "tdf",
+    "tirreno",
     "vuelta"
   ],
   "years": [
