@@ -589,7 +589,7 @@ def main():
         "stage":        stage,
         "stage_type":   stage_type,
         "generated":    _now_iso(),
-        "ml_source":    ml_source,
+        "ml_source":    f"historisk styrke ({n_gt_stages} etaper kørt)",
         "ml_gt_stages": n_gt_stages,
         "current_team": current_team_data,
         "teams":        teams,
