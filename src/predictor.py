@@ -118,6 +118,25 @@ AVG_MAX_K: dict[str, int] = {
     "gc":       630_000,
 }
 
+
+def _norm_pos_to_stage_pts(norm_pos: float, field_size: int) -> int:
+    """
+    Konverter placement model's norm_pos (0-1) til forventede etapeplaceringpoint.
+
+    norm_pos=1.0 → position 1 (vinderen)  → 200.000 kr
+    norm_pos≈0.92 → position ~15          → 15.000 kr
+    norm_pos<0.92 → position >15          → 0 kr
+
+    field_size: antal startryttere i etapen (typisk 175 for TdF)
+    """
+    from .scoring import STAGE_PTS
+    if norm_pos <= 0 or field_size < 2:
+        return 0
+    expected_pos = (1.0 - norm_pos) * (field_size - 1) + 1
+    pos = int(round(expected_pos))
+    pos = max(1, pos)
+    return STAGE_PTS.get(pos, 0)
+
 # Expected fantasy points IF a rider wins (by stage type).
 # Sprint TdF 2026: ASO øgede sprintpoint til 70 pt til vinderen (mod 50 sidst år)
 # + 2 mellempurter á 20 pt (mod 1). Holdet's egne tabeller ændres ikke.
@@ -489,6 +508,7 @@ def predict_all(
     pcs_rank_data: dict[str, float] | None = None,      # {rider_id: pts_raw}
     pcs_n_results_data: dict[str, int] | None = None,   # {rider_id: n_results}
     holdet_raw_data: dict[str, float] | None = None,    # {rider_id: raw holdet_pts_norm 0-100}
+    placement_data: dict[str, float] | None = None,     # {rider_id: norm_pos 0-1} fra placement model
 ) -> list[dict]:
     """
     Predict expected points for ALL riders and return sorted list.
@@ -726,38 +746,61 @@ def predict_all(
             for rid, score in holdet_raw_data.items()
         }
 
-    # ── Rank-based calibration OR holdet ML direct estimate ──────────────────
-    # When holdet_raw_data is available (holdet_pts_norm 0-100 from the ML
-    # regression), we denormalize it with AVG_MAX_K[stage_type] to get a
-    # concrete K-point estimate. This replaces the rank-decay formula for
-    # riders where the holdet model has a prediction.
+    # ── Calibrated base score: placement model > holdet model > rank decay ───
     #
-    # Without holdet_raw: use composite ORDER + exponential decay so the
-    # MAGNITUDE matches empirical Giro/Dauphiné distributions
-    # (rank 1 → 35% of winner_pts, rank 5 → 29%, rank 20 → 17%, rank 50 → 8%).
-    # GC/jersey/sprint/KOM bonuses are added on top in both cases.
+    # Priority 1 — Placement model (Option C):
+    #   norm_pos (0-1) fra placement_model.lgbm → stage position → STAGE_PTS lookup
+    #   Trænet direkte på PCS placeringer (80k+ rækker), ikke holdet-point.
+    #   Giver korrekt rang-orden: Pogacar > Vingegaard > Martinez på bjergetaper.
+    #   field_size = antal ryttere i feltet (len(riders) som approks.)
+    #
+    # Priority 2 — Holdet model (legacy):
+    #   holdet_pts_norm 0-100 → denormaliseret via AVG_MAX_K[stage_type].
+    #   Bruges som fallback hvis placement_model.lgbm ikke er indlæst.
+    #
+    # Priority 3 — Rank-based exponential decay:
+    #   Bruges når ingen ML-model er tilgængelig ELLER disciplin-gate fejler.
+    #
+    # Disciplin-gate (begge ML-modeller): disc_raw < 10 → falback til rank.
+    # Det fanger sprinters på bjergetaper og klatrere på sprinteretaper der
+    # ikke har relevant CO/PCS data til at udfordre disciplin-filteret.
+    #
+    # GC/jersey/sprint/KOM-bonusser adderes OVEN PÅ den kalibrerede base (alle cases).
     results.sort(key=lambda x: x["expected_pts"], reverse=True)
-    _n     = len(results)
-    _avg_k = AVG_MAX_K.get(stage_type, 430_000)
+    _n        = len(results)
+    _avg_k    = AVG_MAX_K.get(stage_type, 430_000)
+    _field_sz = max(_n, 100)   # approksimeret feltstørrelse
+
     for _i, pred in enumerate(results):
         _frac  = _i / max(_n - 1, 1)
         _wp    = pred.get("winner_pts", 500_000)
         _addon = pred["expected_pts"] - pred["composite_base_pts"]
+        rid    = pred.get("rider_id")
 
-        holdet_raw = (holdet_raw_data or {}).get(pred.get("rider_id"))
-        # Discipline gate: if the rider's field-normalized discipline score is very
-        # low for this stage type (<10), the ML model is likely wrong due to the
-        # xrace_form_10 inversion (e.g. sprinters given high mountain scores).
-        # Fall back to rank-based prediction for these riders.
+        # Disciplin-gate gælder for alle ML-modeller
         _disc_ok = (pred.get("disc_raw") or 0.0) >= 10.0
-        if holdet_raw is not None and holdet_raw > 0 and _disc_ok:
-            # Direct holdet ML estimate: denormalize raw prediction to K-points
-            _calibrated_base = round(holdet_raw / 100.0 * _avg_k)
-            pred["holdet_raw_pred"] = round(holdet_raw, 2)
-        else:
-            # Fallback: rank-based exponential decay
-            _calibrated_base = round(0.35 * math.exp(-2.44 * _frac) * _wp)
+
+        placement_norm = (placement_data or {}).get(rid) if rid else None
+        holdet_raw     = (holdet_raw_data or {}).get(rid) if rid else None
+
+        if placement_norm is not None and placement_norm > 0 and _disc_ok:
+            # Priority 1: Placement model → stage pts lookup
+            _calibrated_base = _norm_pos_to_stage_pts(placement_norm, _field_sz)
+            pred["placement_pred"]  = round(placement_norm, 4)
             pred["holdet_raw_pred"] = None
+            pred["ml_source_used"]  = "placement"
+        elif holdet_raw is not None and holdet_raw > 0 and _disc_ok:
+            # Priority 2: Holdet model (legacy)
+            _calibrated_base = round(holdet_raw / 100.0 * _avg_k)
+            pred["placement_pred"]  = None
+            pred["holdet_raw_pred"] = round(holdet_raw, 2)
+            pred["ml_source_used"]  = "holdet"
+        else:
+            # Priority 3: Rank-based exponential decay
+            _calibrated_base = round(0.35 * math.exp(-2.44 * _frac) * _wp)
+            pred["placement_pred"]  = None
+            pred["holdet_raw_pred"] = None
+            pred["ml_source_used"]  = "rank"
 
         pred["expected_pts"] = _calibrated_base + _addon
 

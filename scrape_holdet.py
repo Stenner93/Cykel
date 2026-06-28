@@ -433,6 +433,84 @@ def detect_next_stage(
 
 # ── Stage fantasy-actions parser ──────────────────────────────────────────────
 
+def fetch_my_team(
+    game_id: int,
+    team_id: int,
+    player_by_id: dict[int, dict],
+    person_by_id: dict[int, dict],
+    person_to_rid: dict[int, str],
+) -> dict | None:
+    """
+    Fetch the user's current team from Holdet.dk and return a dict ready to
+    write to current_team.json:
+      {"bank_M": float, "riders": [full_name, ...]}
+
+    team_id is the participantId (hold-ID) from holdet.dk.
+    Returns None if the team cannot be fetched.
+    """
+    # Try /api/games/{gameId}/participants/{teamId}
+    url = f"{BASE}/api/games/{game_id}/participants/{team_id}"
+    try:
+        resp = HTTP.session.get(url, timeout=15)
+        if resp.status_code == 404:
+            print(f"  [WARN] Hold-ID {team_id} ikke fundet (404) — prøver /participants endpoint")
+            # Try without game scope
+            url2 = f"{BASE}/api/participants/{team_id}"
+            resp = HTTP.session.get(url2, timeout=15)
+            if resp.status_code == 404:
+                print(f"  [WARN] Participant endpoint giver 404 — hold-ID korrekt?")
+                return None
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception as exc:
+        print(f"  [WARN] Kunne ikke hente mit hold: {exc}")
+        return None
+
+    # Extract picks — API may use "picks", "players", "squad", or "lineup"
+    picks = (
+        data.get("picks")
+        or data.get("players")
+        or data.get("squad")
+        or data.get("lineup")
+        or []
+    )
+    if not picks and isinstance(data, list):
+        picks = data  # some endpoints return array directly
+
+    if not picks:
+        print(f"  [WARN] Hold-data fundet men ingen ryttere i svaret. Nøgler: {list(data.keys())}")
+        return None
+
+    # Extract bank (Holdet stores in kroner — convert to millions)
+    bank_raw = (
+        data.get("bank")
+        or data.get("bankBalance")
+        or data.get("balance")
+        or 0
+    )
+    bank_M = round(bank_raw / 1_000_000, 2) if bank_raw > 1000 else float(bank_raw)
+
+    # Resolve picks → rider names
+    rider_names = []
+    for pick in picks:
+        pid = pick.get("playerId") or pick.get("id") or pick.get("personId")
+        if pid is None:
+            continue
+        # Try via player → person chain
+        player = player_by_id.get(pid, {})
+        person_id = player.get("personId")
+        person = person_by_id.get(person_id, {})
+        name = person.get("fullName") or player.get("name") or pick.get("name", "")
+        if name:
+            rider_names.append(name)
+
+    if not rider_names:
+        print(f"  [WARN] Fandt {len(picks)} picks men ingen navne kunne mappes")
+        return None
+
+    return {"bank_M": bank_M, "riders": rider_names}
+
+
 def fetch_fantasy_actions(game_id: int, event_id: int) -> list[dict]:
     """Fetch /api/games/{gameId}/events/{eventId}/fantasy-actions."""
     items = HTTP.get(
@@ -700,6 +778,9 @@ def main() -> None:
                         help="League ID (bruges ikke til pris/GC, kun til leaderboard)")
     parser.add_argument("--update-riders", action="store_true",
                         help="Opdater priser + popularitet i data/riders.json")
+    parser.add_argument("--my-team-id",   type=int, default=None,
+                        help="Dit hold-ID fra holdet.dk (f.eks. 7145433) — henter dit "
+                             "aktuelle hold og skriver til data/current_team.json")
     parser.add_argument("--delay",         type=float, default=1.0,
                         help="Sekunder mellem requests (default: 1.0)")
     args = parser.parse_args()
@@ -933,6 +1014,33 @@ def main() -> None:
                 print(f"  ... og {len(changes) - 15} til")
     else:
         print("\n  (Kør med --update-riders for at skrive priser tilbage til riders.json)")
+
+    # ── Fetch my team and write current_team.json ─────────────────────────────
+    if args.my_team_id:
+        print(f"\n  Henter dit hold (ID={args.my_team_id})…")
+        my_team = fetch_my_team(
+            game_id, args.my_team_id, player_by_id, person_by_id, person_to_rid
+        )
+        if my_team:
+            team_path = DATA / "current_team.json"
+            existing = {}
+            if team_path.exists():
+                try:
+                    existing = json.loads(team_path.read_text(encoding="utf-8"))
+                except Exception:
+                    pass
+            note = existing.get("_note", "Opdateres automatisk via scrape_holdet.py --my-team-id.")
+            out = {
+                "_note": note,
+                "bank_M":  my_team["bank_M"],
+                "riders":  my_team["riders"],
+            }
+            team_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"  Gemt: {team_path}")
+            print(f"  Ryttere ({len(my_team['riders'])}): {', '.join(my_team['riders'])}")
+            print(f"  Bank: {my_team['bank_M']:.2f}M")
+        else:
+            print("  [WARN] Kunne ikke hente hold — current_team.json uændret")
 
     # ── Summary ───────────────────────────────────────────────────────────────
     print("\n  === Klar ===")

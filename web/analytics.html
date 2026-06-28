@@ -110,8 +110,8 @@
   .sort-btn.active { border-color:var(--orange); color:var(--orange); background:rgba(255,215,0,0.07); }
   .meta-txt { margin-left:auto; font-size:11px; color:var(--text3); white-space:nowrap; }
 
-  .table-wrap { overflow-y:auto; }
-  .table-wrap::-webkit-scrollbar { width:4px; }
+  .table-wrap { overflow-y:auto; overflow-x:auto; }
+  .table-wrap::-webkit-scrollbar { width:4px; height:4px; }
   .table-wrap::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
   table { width:100%; border-collapse:collapse; }
   thead th {
@@ -257,9 +257,8 @@
   @keyframes spin { to { transform:rotate(360deg); } }
   .spin-txt { font-size:13px; color:var(--text2); }
 
-  /* Mobile: hide non-essential table columns */
+  /* Mobile: wrap toolbar */
   @media (max-width:768px) {
-    .col-hide-mobile { display:none; }
     .toolbar { gap:4px; flex-wrap:wrap; }
     .search { width:120px; }
   }
@@ -354,17 +353,17 @@
         <table>
           <thead>
             <tr id="tHead">
-              <th class="col-hide-mobile">#</th>
+              <th>#</th>
               <th>Rytter</th>
               <th class="sorted">Holdet Est</th>
               <th>Pris</th>
               <th title="Forventet vækst ÷ pris (est pr. M investeret)">Est/M</th>
-              <th id="sb-score-col" class="col-hide-mobile">Score</th>
-              <th id="thForm" class="col-hide-mobile">Form</th>
-              <th id="thCO" class="col-hide-mobile">CO Evne</th>
-              <th id="thPCS" class="col-hide-mobile">PCS Evne</th>
-              <th class="col-hide-mobile">PCS Rang</th>
-              <th class="col-hide-mobile">Signaler</th>
+              <th id="sb-score-col">Score</th>
+              <th id="thForm">Form</th>
+              <th id="thCO">CO Evne</th>
+              <th id="thPCS">PCS Evne</th>
+              <th>PCS Rang</th>
+              <th>Signaler</th>
             </tr>
           </thead>
           <tbody id="tBody"></tbody>
@@ -678,7 +677,7 @@ function renderTable() {
     }).join('');
 
     return `<tr class="${isSel?'sel':''}" onclick="selectRider('${r.id}')">
-      <td class="col-hide-mobile" style="color:var(--text3);font-size:11px">${i+1}</td>
+      <td style="color:var(--text3);font-size:11px">${i+1}</td>
       <td>
         <div style="font-weight:600;font-size:12px">${r.name}${r.breakaway?' <span style="font-size:9px;color:var(--purple);font-weight:700">BWA</span>':''}</div>
         <div style="font-size:10px;color:var(--text3)">${TEAM_NAMES[r.team]||r.team}</div>
@@ -686,12 +685,12 @@ function renderTable() {
       <td><span class="growth-pill ${estCls}">${est}</span></td>
       <td><span class="price-g">${r.price.toFixed(1)}M</span></td>
       <td style="font-size:11px;color:var(--text2);font-weight:600">${estM}</td>
-      <td class="ability-cell col-hide-mobile ${scoreCls}">${score}</td>
-      <td class="ability-cell col-hide-mobile ${abilClass(formVal)}">${formVal != null && formVal > 0 ? Math.round(formVal) : '–'}</td>
-      <td class="ability-cell col-hide-mobile ${abilClass(coVal)}">${fmtRaw(coVal)}</td>
-      <td class="ability-cell col-hide-mobile ${abilClass(pcsNorm)}">${pcsNorm != null && pcsNorm > 0 ? fmtRaw(pcsNorm) : '–'}</td>
-      <td class="ability-cell col-hide-mobile ${abilClass(rankNorm)}">${rankNorm ? fmtRaw(rankNorm) : '–'}</td>
-      <td class="col-hide-mobile"><div class="mbars">${bars}</div></td>
+      <td class="ability-cell ${scoreCls}">${score}</td>
+      <td class="ability-cell ${abilClass(formVal)}">${formVal != null && formVal > 0 ? Math.round(formVal) : '–'}</td>
+      <td class="ability-cell ${abilClass(coVal)}">${fmtRaw(coVal)}</td>
+      <td class="ability-cell ${abilClass(pcsNorm)}">${pcsNorm != null && pcsNorm > 0 ? fmtRaw(pcsNorm) : '–'}</td>
+      <td class="ability-cell ${abilClass(rankNorm)}">${rankNorm ? fmtRaw(rankNorm) : '–'}</td>
+      <td><div class="mbars">${bars}</div></td>
     </tr>`;
   }).join('');
 }
