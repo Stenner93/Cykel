@@ -110,9 +110,9 @@ def load_slug_to_rid(pcs_form_path: Path) -> dict[str, str]:
     return mapping
 
 
-def rolling_avg(positions: list[int], n: int) -> float:
+def rolling_avg(positions: list[int], n: int) -> float | None:
     last = positions[-n:]
-    return round(sum(last) / len(last), 1) if last else -1.0
+    return round(sum(last) / len(last), 1) if last else None  # None → NaN i CSV → LightGBM missing
 
 
 def main() -> None:
@@ -145,8 +145,10 @@ def main() -> None:
     for r in pcs_records_sorted:
         stage_index[(r["race"], r["year"], r["stage"])].append(r)
 
-    # Byg per-rytter kronologisk historik til xrace_form (løbende, opdateres etape-for-etape)
-    rider_xrace_history: dict[str, list[int]] = defaultdict(list)
+    # Byg per-rytter kronologisk historik til xrace_form — separat pr. etapetype
+    # {slug: {stage_type: [positions]}} — forhindrer at bjergestage-placeringer
+    # forurener sprintform og omvendt (Magnus Cort nr. 153 på en bjergetape)
+    rider_xrace_history: dict[str, dict[str, list[int]]] = defaultdict(lambda: defaultdict(list))
 
     rows: list[dict] = []
     n_stages        = 0
@@ -210,8 +212,10 @@ def main() -> None:
             if spec:
                 n_spec_hits += 1
 
-            # Cross-race form (ALLE løb FØR denne stage, kronologisk)
-            xrace_hist = rider_xrace_history.get(slug, [])
+            # Cross-race form: KUN samme etapetype — sprint-form til spurtetaper,
+            # bjerg-form til bjergetaper osv. Undgår at nr. 153 på en bjergetape
+            # ødelægger Merliers sprintform-signal.
+            xrace_hist = rider_xrace_history.get(slug, {}).get(stype, [])
             xrace_form_10 = rolling_avg(xrace_hist, 10)
 
             # In-race rolling form
@@ -268,10 +272,10 @@ def main() -> None:
                 "norm_pos": norm_pos,
             })
 
-        # Opdater xrace_form EFTER at etapen er behandlet (kronologisk korrekt)
+        # Opdater xrace_form EFTER etapen er behandlet (kronologisk korrekt)
         for res in finishers:
             if isinstance(res.get("position"), int) and res["position"] < 900:
-                rider_xrace_history[res["rider_slug"]].append(res["position"])
+                rider_xrace_history[res["rider_slug"]][stype].append(res["position"])
 
     print(f"\nBygget {len(rows):,} trænings-rækker")
     print(f"  Etaper:          {n_stages}")
