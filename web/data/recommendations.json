@@ -1,7 +1,7 @@
 {
   "stage": 1,
   "stage_type": "ttt",
-  "generated": "2026-06-28T10:00:35.322746+00:00",
+  "generated": "2026-06-28T20:44:55.564489+00:00",
   "ml_source": "historisk styrke (0 etaper kørt)",
   "ml_gt_stages": 0,
   "current_team": null,
@@ -307,11 +307,11 @@
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
+          "RBH",
+          "VLB",
           "JAL",
           "L-T",
-          "RBH",
-          "UAE",
-          "VLB"
+          "UAE"
         ],
         "n_teams": 5,
         "n_transfers": 0,
@@ -620,10 +620,10 @@
         "n_budget_riders": 6,
         "risk_profile": "Lav",
         "teams_represented": [
-          "L-T",
           "RBH",
+          "VLB",
           "UAE",
-          "VLB"
+          "L-T"
         ],
         "n_teams": 4,
         "n_transfers": 0,
@@ -932,11 +932,11 @@
         "n_budget_riders": 3,
         "risk_profile": "Lav",
         "teams_represented": [
+          "RBH",
+          "VLB",
           "JAL",
           "L-T",
-          "RBH",
-          "UAE",
-          "VLB"
+          "UAE"
         ],
         "n_teams": 5,
         "n_transfers": 0,
@@ -1246,11 +1246,11 @@
       "n_budget_riders": 2,
       "risk_profile": "Lav",
       "teams_represented": [
+        "RBH",
+        "VLB",
         "JAL",
         "L-T",
-        "RBH",
-        "UAE",
-        "VLB"
+        "UAE"
       ],
       "n_teams": 5,
       "n_transfers": 0,
@@ -1810,9 +1810,9 @@
       "team": "L-T",
       "price": 9.5,
       "expected_pts": 103600,
-      "win_prob": 0.3699,
+      "win_prob": 0.369,
       "winner_pts": 380000,
-      "composite_base_pts": 140575,
+      "composite_base_pts": 140208,
       "variance": 0,
       "reasoning": "model-anbefaling",
       "disc_key": "ITT",
@@ -1824,7 +1824,7 @@
         "discipline": 0.057,
         "form": 0.5,
         "ml": 0.292,
-        "pcs_rank": 0.705
+        "pcs_rank": 0.7
       },
       "profile_scale": 1.0,
       "sprint_class_rank": null,
