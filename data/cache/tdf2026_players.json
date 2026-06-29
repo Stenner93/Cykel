@@ -1,5 +1,14 @@
 [
   {
+    "id": "aaron_gate",
+    "full_name": "Aaron Gate",
+    "short_name": "Gate",
+    "team": "XDA",
+    "team_full": "XDS Astana Team",
+    "price": 4.0,
+    "holdet_person_id": 3800
+  },
+  {
     "id": "adam_yates",
     "full_name": "Adam Yates",
     "short_name": "A. Yates",
@@ -180,13 +189,22 @@
     "holdet_person_id": 4770
   },
   {
-    "id": "david_gaudu",
-    "full_name": "David Gaudu",
-    "short_name": "Gaudu",
-    "team": "GFD",
-    "team_full": "Groupama - FDJ United",
-    "price": 5.0,
-    "holdet_person_id": 3534
+    "id": "damiano_caruso",
+    "full_name": "Damiano Caruso",
+    "short_name": "D. Caruso",
+    "team": "TVM",
+    "team_full": "Bahrain - Victorious",
+    "price": 6.0,
+    "holdet_person_id": 2129
+  },
+  {
+    "id": "davide_ballerini",
+    "full_name": "Davide Ballerini",
+    "short_name": "D. Ballerini",
+    "team": "XDA",
+    "team_full": "XDS Astana Team",
+    "price": 4.0,
+    "holdet_person_id": 3824
   },
   {
     "id": "davide_piganzoli",
@@ -259,6 +277,15 @@
     "team_full": "Team Jayco AlUla",
     "price": 3.0,
     "holdet_person_id": 4906
+  },
+  {
+    "id": "felix_grossschartner",
+    "full_name": "Felix Grossschartner",
+    "short_name": "Grossschartner",
+    "team": "UAE",
+    "team_full": "UAE Team Emirates - XRG",
+    "price": 3.5,
+    "holdet_person_id": 3750
   },
   {
     "id": "filippo_ganna",
@@ -358,6 +385,15 @@
     "team_full": "Cofidis",
     "price": 3.5,
     "holdet_person_id": 4702
+  },
+  {
+    "id": "huub_artz",
+    "full_name": "Huub Artz",
+    "short_name": "Artz",
+    "team": "INT",
+    "team_full": "Lotto Intermarché",
+    "price": 3.0,
+    "holdet_person_id": 46825
   },
   {
     "id": "ilan_van_wilder",
@@ -513,6 +549,15 @@
     "holdet_person_id": 4714
   },
   {
+    "id": "kamil_gradek",
+    "full_name": "Kamil Gradek",
+    "short_name": "Gradek",
+    "team": "TVM",
+    "team_full": "Bahrain - Victorious",
+    "price": 2.5,
+    "holdet_person_id": 4179
+  },
+  {
     "id": "kasper_asgreen",
     "full_name": "Kasper Asgreen",
     "short_name": "Asgreen",
@@ -574,15 +619,6 @@
     "team_full": "NSN Cycling Team",
     "price": 3.5,
     "holdet_person_id": 4690
-  },
-  {
-    "id": "lorenzo_fortunato",
-    "full_name": "Lorenzo Fortunato",
-    "short_name": "L. Fortunato",
-    "team": "XDA",
-    "team_full": "XDS Astana Team",
-    "price": 5.5,
-    "holdet_person_id": 4510
   },
   {
     "id": "louis_vervaeke",
@@ -810,6 +846,15 @@
     "holdet_person_id": 2950
   },
   {
+    "id": "nicolas_vinokurov",
+    "full_name": "Nicolas Vinokurov",
+    "short_name": "Vinokurov",
+    "team": "XDA",
+    "team_full": "XDS Astana Team",
+    "price": 3.5,
+    "holdet_person_id": 5026
+  },
+  {
     "id": "nils_politt",
     "full_name": "Nils Politt",
     "short_name": "Politt",
@@ -873,6 +918,15 @@
     "holdet_person_id": 47199
   },
   {
+    "id": "phil_bauhaus",
+    "full_name": "Phil Bauhaus",
+    "short_name": "Bauhaus",
+    "team": "TVM",
+    "team_full": "Bahrain - Victorious",
+    "price": 6.0,
+    "holdet_person_id": 3558
+  },
+  {
     "id": "piet_allegaert",
     "full_name": "Piet Allegaert",
     "short_name": "Allegaert",
@@ -927,6 +981,15 @@
     "holdet_person_id": 47263
   },
   {
+    "id": "robert_stannard",
+    "full_name": "Robert Stannard",
+    "short_name": "Stannard",
+    "team": "TVM",
+    "team_full": "Bahrain - Victorious",
+    "price": 2.5,
+    "holdet_person_id": 4522
+  },
+  {
     "id": "roger_adria",
     "full_name": "Roger Adria",
     "short_name": "Adria",
@@ -934,6 +997,15 @@
     "team_full": "Movistar Team",
     "price": 3.5,
     "holdet_person_id": 4778
+  },
+  {
+    "id": "romain_gregoire",
+    "full_name": "Romain Gregoire",
+    "short_name": "Gregoire",
+    "team": "GFD",
+    "team_full": "Groupama - FDJ United",
+    "price": 6.5,
+    "holdet_person_id": 4901
   },
   {
     "id": "sepp_kuss",
@@ -952,6 +1024,15 @@
     "team_full": "XDS Astana Team",
     "price": 5.0,
     "holdet_person_id": 4234
+  },
+  {
+    "id": "simone_velasco",
+    "full_name": "Simone Velasco",
+    "short_name": "Velasco",
+    "team": "XDA",
+    "team_full": "XDS Astana Team",
+    "price": 4.5,
+    "holdet_person_id": 4624
   },
   {
     "id": "stefan_bissegger",
@@ -1078,6 +1159,15 @@
     "team_full": "Team Visma | Lease a Bike",
     "price": 4.0,
     "holdet_person_id": 3251
+  },
+  {
+    "id": "vlad_van_mechelen",
+    "full_name": "Vlad Van Mechelen",
+    "short_name": "Mechelen",
+    "team": "TVM",
+    "team_full": "Bahrain - Victorious",
+    "price": 3.0,
+    "holdet_person_id": 46810
   },
   {
     "id": "warren_barguil",

@@ -24,20 +24,20 @@
     "pts": 1803.0,
     "name": "DE LIE Arnaud"
   },
-  "paul-magnier": {
-    "rank": 6,
-    "pts": 1796.0,
-    "name": "MAGNIER Paul"
-  },
   "jasper-philipsen": {
-    "rank": 7,
-    "pts": 1778.0,
+    "rank": 6,
+    "pts": 1752.0,
     "name": "PHILIPSEN Jasper"
   },
   "tom-pidcock": {
-    "rank": 8,
+    "rank": 7,
     "pts": 1709.0,
     "name": "PIDCOCK Tom"
+  },
+  "paul-magnier": {
+    "rank": 8,
+    "pts": 1671.0,
+    "name": "MAGNIER Paul"
   },
   "felix-gall": {
     "rank": 9,
@@ -389,45 +389,45 @@
     "pts": 618.0,
     "name": "VENTURINI Clément"
   },
-  "jonas-abrahamsen": {
-    "rank": 79,
-    "pts": 617.0,
-    "name": "ABRAHAMSEN Jonas"
-  },
   "ben-tulett": {
-    "rank": 80,
+    "rank": 79,
     "pts": 614.0,
     "name": "TULETT Ben"
   },
   "henok-mulubrhan": {
-    "rank": 81,
+    "rank": 80,
     "pts": 612.0,
     "name": "MULUBRHAN Henok"
   },
   "alexandre-delettre": {
-    "rank": 82,
+    "rank": 81,
     "pts": 606.0,
     "name": "DELETTRE Alexandre"
   },
   "julian-alaphilippe": {
-    "rank": 83,
+    "rank": 82,
     "pts": 602.0,
     "name": "ALAPHILIPPE Julian"
   },
   "stanislaw-aniolkowski": {
-    "rank": 84,
+    "rank": 83,
     "pts": 602.0,
     "name": "ANIOŁKOWSKI Stanisław"
   },
   "afonso-eulalio": {
-    "rank": 85,
+    "rank": 84,
     "pts": 591.0,
     "name": "EULÁLIO Afonso"
   },
   "natnael-tesfatsion": {
-    "rank": 86,
+    "rank": 85,
     "pts": 587.0,
     "name": "TESFATSION Natnael"
+  },
+  "jonas-abrahamsen": {
+    "rank": 86,
+    "pts": 582.0,
+    "name": "ABRAHAMSEN Jonas"
   },
   "andreas-leknessund": {
     "rank": 87,
@@ -489,14 +489,14 @@
     "pts": 539.0,
     "name": "DE SCHUYTENEER Steffen"
   },
-  "quinten-hermans": {
-    "rank": 99,
-    "pts": 532.0,
-    "name": "HERMANS Quinten"
-  },
   "ilan-van-wilder": {
-    "rank": 100,
+    "rank": 99,
     "pts": 531.0,
     "name": "VAN WILDER Ilan"
+  },
+  "florian-vermeersch": {
+    "rank": 100,
+    "pts": 526.0,
+    "name": "VERMEERSCH Florian"
   }
 }
