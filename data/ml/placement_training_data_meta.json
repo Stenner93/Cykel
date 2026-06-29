@@ -27,7 +27,11 @@
     "xrace_form_10",
     "xrace_top3_rate_10",
     "xrace_top10_rate_10",
-    "startlist_quality"
+    "startlist_quality",
+    "sprint_co_spr",
+    "sprint_spec",
+    "sprint_xrace_top3",
+    "mtn_co_mtn"
   ],
   "target_col": "norm_pos",
   "races": [

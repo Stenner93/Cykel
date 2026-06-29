@@ -2,167 +2,183 @@
   "model": "placement_model.lgbm",
   "target": "norm_pos",
   "n_train_total": 84662,
-  "n_features": 26,
+  "n_features": 30,
   "loro_results": [
     {
       "val_race": "giro",
       "n_train": 67740,
       "n_val": 16922,
-      "mean_spearman": 0.5745,
-      "top5_accuracy": 0.5238,
-      "rmse": 0.2344,
+      "mean_spearman": 0.575,
+      "top5_accuracy": 0.5524,
+      "rmse": 0.2342,
       "n_stages": 105,
-      "spearman_sprint": 0.4086,
-      "top5acc_sprint": 0.3462,
-      "spearman_mountain": 0.7827,
+      "spearman_sprint": 0.4066,
+      "top5acc_sprint": 0.4038,
+      "spearman_mountain": 0.7857,
       "top5acc_mountain": 0.7083,
-      "spearman_hilly": 0.6992,
+      "spearman_hilly": 0.7032,
       "top5acc_hilly": 0.5556,
-      "spearman_tt": 0.7003,
+      "spearman_tt": 0.7014,
       "top5acc_tt": 0.9091
     },
     {
       "val_race": "tdf",
       "n_train": 67504,
       "n_val": 17158,
-      "mean_spearman": 0.5777,
-      "top5_accuracy": 0.5429,
-      "rmse": 0.234,
+      "mean_spearman": 0.5799,
+      "top5_accuracy": 0.5905,
+      "rmse": 0.2336,
       "n_stages": 105,
-      "spearman_sprint": 0.4117,
-      "top5acc_sprint": 0.2245,
-      "spearman_mountain": 0.7874,
+      "spearman_sprint": 0.4145,
+      "top5acc_sprint": 0.3265,
+      "spearman_mountain": 0.7882,
       "top5acc_mountain": 0.8696,
-      "spearman_hilly": 0.6886,
+      "spearman_hilly": 0.6919,
       "top5acc_hilly": 0.7083,
-      "spearman_tt": 0.6499,
+      "spearman_tt": 0.6496,
       "top5acc_tt": 1.0
     },
     {
       "val_race": "vuelta",
       "n_train": 68600,
       "n_val": 16062,
-      "mean_spearman": 0.5757,
-      "top5_accuracy": 0.56,
-      "rmse": 0.2348,
+      "mean_spearman": 0.5767,
+      "top5_accuracy": 0.58,
+      "rmse": 0.2346,
       "n_stages": 100,
-      "spearman_sprint": 0.4318,
+      "spearman_sprint": 0.4334,
       "top5acc_sprint": 0.4474,
-      "spearman_mountain": 0.7187,
-      "top5acc_mountain": 0.5294,
-      "spearman_hilly": 0.5737,
-      "top5acc_hilly": 0.6667,
-      "spearman_tt": 0.6688,
+      "spearman_mountain": 0.7198,
+      "top5acc_mountain": 0.5588,
+      "spearman_hilly": 0.5762,
+      "top5acc_hilly": 0.7143,
+      "spearman_tt": 0.6614,
       "top5acc_tt": 1.0
     }
   ],
-  "avg_spearman": 0.576,
-  "avg_top5_accuracy": 0.5422,
-  "avg_rmse": 0.2344,
+  "avg_spearman": 0.5772,
+  "avg_top5_accuracy": 0.5743,
+  "avg_rmse": 0.2341,
   "feature_importances": [
     {
       "feature": "xrace_form_10",
-      "importance": 5688
+      "importance": 5635
     },
     {
       "feature": "gt_form_5",
-      "importance": 5369
+      "importance": 5056
     },
     {
       "feature": "gt_form_10",
-      "importance": 4780
-    },
-    {
-      "feature": "co_spr",
-      "importance": 2162
+      "importance": 4645
     },
     {
       "feature": "co_mtn",
-      "importance": 1847
+      "importance": 1762
     },
     {
-      "feature": "xrace_top10_rate_10",
-      "importance": 1742
+      "feature": "co_spr",
+      "importance": 1761
     },
     {
       "feature": "co_hll",
-      "importance": 1662
+      "importance": 1668
     },
     {
       "feature": "co_itt",
-      "importance": 1578
+      "importance": 1612
     },
     {
-      "feature": "co_gc",
-      "importance": 1526
+      "feature": "xrace_top10_rate_10",
+      "importance": 1605
     },
     {
       "feature": "startlist_quality",
-      "importance": 1475
+      "importance": 1479
+    },
+    {
+      "feature": "co_gc",
+      "importance": 1433
+    },
+    {
+      "feature": "sprint_co_spr",
+      "importance": 1284
     },
     {
       "feature": "co_cob",
-      "importance": 1271
-    },
-    {
-      "feature": "is_sprint",
-      "importance": 985
-    },
-    {
-      "feature": "xrace_top3_rate_10",
-      "importance": 797
+      "importance": 1172
     },
     {
       "feature": "form_overall",
-      "importance": 746
+      "importance": 767
+    },
+    {
+      "feature": "mtn_co_mtn",
+      "importance": 689
     },
     {
       "feature": "form_sprint",
-      "importance": 688
+      "importance": 676
+    },
+    {
+      "feature": "xrace_top3_rate_10",
+      "importance": 626
     },
     {
       "feature": "spec_climber",
-      "importance": 558
+      "importance": 514
     },
     {
       "feature": "form_hilly",
-      "importance": 522
+      "importance": 501
     },
     {
-      "feature": "form_mountain",
-      "importance": 512
+      "feature": "sprint_spec",
+      "importance": 478
     },
     {
       "feature": "spec_tt",
-      "importance": 460
+      "importance": 455
+    },
+    {
+      "feature": "form_mountain",
+      "importance": 450
     },
     {
       "feature": "spec_sprint",
-      "importance": 427
+      "importance": 398
+    },
+    {
+      "feature": "sprint_xrace_top3",
+      "importance": 358
     },
     {
       "feature": "spec_hills",
-      "importance": 427
+      "importance": 333
     },
     {
-      "feature": "is_hilly",
-      "importance": 373
-    },
-    {
-      "feature": "is_mountain",
-      "importance": 363
+      "feature": "is_sprint",
+      "importance": 317
     },
     {
       "feature": "is_tt",
-      "importance": 351
+      "importance": 294
+    },
+    {
+      "feature": "is_hilly",
+      "importance": 274
     },
     {
       "feature": "form_tt",
-      "importance": 250
+      "importance": 219
     },
     {
       "feature": "gt_wins_so_far",
-      "importance": 241
+      "importance": 211
+    },
+    {
+      "feature": "is_mountain",
+      "importance": 128
     }
   ],
   "races_in_training": [
@@ -178,5 +194,5 @@
     "vuelta"
   ],
   "notes": "norm_pos=1.0=vinder, 0.0=sidst. LORO CV på GT-løb (tdf/giro/vuelta). Et-ugersløb bruges som ekstra træning men ikke til CV. Spearman: rang-korrelation pr. etape. Top5acc: andel etaper med ≥1 hit i top-5.",
-  "generated": "2026-06-29T17:40:45.042453+00:00"
+  "generated": "2026-06-29T18:10:55.007996+00:00"
 }
