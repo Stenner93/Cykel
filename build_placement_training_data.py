@@ -319,8 +319,8 @@ def main() -> None:
                 "sprint_xrace_top3": xrace_top3_rate_10 if stype == "sprint" else 0.0,
                 "mtn_co_mtn":       co.get("mtn", -1) * int(stype == "mountain"),
                 # Etapeprofil: lav score = flad, høj score = bakket/bjerg
-                "profile_score":        res.get("profile_score", 100),
-                "sprint_profile_score": res.get("profile_score", 100) * int(stype == "sprint"),
+                "profile_score":        res.get("profile_score") or 100,
+                "sprint_profile_score": (res.get("profile_score") or 100) * int(stype == "sprint"),
                 # Target
                 "norm_pos": norm_pos,
             })
