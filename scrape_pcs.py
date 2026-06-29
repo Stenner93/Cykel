@@ -929,6 +929,11 @@ def main():
             stage_types = fetch_race_stage_types(args.race, session, st_disk)
             _save_stage_types_cache(st_disk)
 
+        # Always re-fetch live — clear old cache entries so fetch_race_profile_scores
+        # doesn't short-circuit and return stale data
+        ps_cache.pop(args.race + "_scores",  None)
+        ps_cache.pop(args.race + "_vmeters", None)
+
         stage_nums   = sorted(int(k) for k in stage_types.keys())
         scores       = fetch_race_profile_scores(args.race, stage_nums, session, ps_cache)
         _save_profile_scores_cache(ps_cache)
