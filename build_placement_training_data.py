@@ -115,12 +115,16 @@ def load_specs() -> dict[str, dict]:
     out: dict[str, dict] = {}
 
     # Historical specialties by slug (lower priority)
+    # PCS slugs use hyphens ("alberto-dainese") but _lookup uses underscores
+    # ("alberto_dainese") via _slug_to_id(). Index both formats so hits work.
     hist_path = CACHE / "pcs_historical_specialties.json"
     if hist_path.exists():
         hist_raw = json.loads(hist_path.read_text(encoding="utf-8"))
         for slug, specs in hist_raw.items():
             if specs:
-                out[slug] = {k.lower(): v for k, v in specs.items()}
+                normalized = {k.lower(): v for k, v in specs.items()}
+                out[slug] = normalized                     # "alberto-dainese"
+                out[slug.replace("-", "_")] = normalized   # "alberto_dainese"
 
     # Current roster (higher priority — overwrites historical where overlap)
     form_path = CACHE / "pcs_form.json"
