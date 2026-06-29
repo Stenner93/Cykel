@@ -31,7 +31,9 @@
     "sprint_co_spr",
     "sprint_spec",
     "sprint_xrace_top3",
-    "mtn_co_mtn"
+    "mtn_co_mtn",
+    "profile_score",
+    "sprint_profile_score"
   ],
   "target_col": "norm_pos",
   "races": [
