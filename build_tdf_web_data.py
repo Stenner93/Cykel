@@ -764,6 +764,8 @@ def main() -> None:
                 # Beregnet fra holdet ML-model når tilgængeligt, ellers fra exp
                 "holdet_est": round(p.get("expected_pts", 0) / 1000, 1) if p.get("holdet_raw_pred") else None,
                 "holdet_raw_pred": round(p["holdet_raw_pred"], 2) if p.get("holdet_raw_pred") is not None else None,
+                "placement_pred":  round(p["placement_pred"], 4) if p.get("placement_pred") is not None else None,
+                "ml_source":       p.get("ml_source_used"),
                 "expected_pts":    p.get("expected_pts"),
             })
 

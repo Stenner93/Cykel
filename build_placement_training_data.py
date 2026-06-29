@@ -105,15 +105,37 @@ def load_co() -> dict[str, dict]:
 
 
 def load_specs() -> dict[str, dict]:
-    path = CACHE / "pcs_form.json"
-    if not path.exists():
-        return {}
-    raw = json.loads(path.read_text(encoding="utf-8"))
-    out = {}
-    for rid, d in raw.items():
-        specs = d.get("pcs_specialties") or {}
-        if specs:
-            out[rid] = {k.lower(): v for k, v in specs.items()}
+    """
+    Load PCS specialty scores keyed by both holdet rider_id AND rider slug.
+
+    Sources (merged, current roster takes precedence):
+      1. pcs_form.json        — current race roster (keyed by holdet rider_id)
+      2. pcs_historical_specialties.json — historical riders (keyed by PCS slug)
+    """
+    out: dict[str, dict] = {}
+
+    # Historical specialties by slug (lower priority)
+    hist_path = CACHE / "pcs_historical_specialties.json"
+    if hist_path.exists():
+        hist_raw = json.loads(hist_path.read_text(encoding="utf-8"))
+        for slug, specs in hist_raw.items():
+            if specs:
+                out[slug] = {k.lower(): v for k, v in specs.items()}
+
+    # Current roster (higher priority — overwrites historical where overlap)
+    form_path = CACHE / "pcs_form.json"
+    if form_path.exists():
+        raw = json.loads(form_path.read_text(encoding="utf-8"))
+        for rid, d in raw.items():
+            specs = d.get("pcs_specialties") or {}
+            if specs:
+                out[rid] = {k.lower(): v for k, v in specs.items()}
+            # Also index by PCS slug so slug-based lookups work
+            url = d.get("pcs_url", "")
+            if specs and "/rider/" in url:
+                slug = url.split("/rider/")[-1].strip("/")
+                out[slug] = {k.lower(): v for k, v in specs.items()}
+
     return out
 
 
