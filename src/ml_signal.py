@@ -692,6 +692,8 @@ def _placement_lgbm_raw_preds(
     pcs_specialty_data: dict | None = None,
     startlist_quality: float = 1.0,
     profile_score: float = 100.0,
+    p_class: int = -1,
+    finish_alt: float = -1.0,
 ) -> dict[str, float | None] | None:
     """
     Kør placement_model.lgbm og returner RAW norm_pos predictions (0-1 skala).
@@ -776,6 +778,9 @@ def _placement_lgbm_raw_preds(
             # Etapeprofil
             profile_score,
             profile_score * is_sprint,
+            # PCS etapeklassifikation (1-5) og ankomst-højde (m)
+            float(p_class),
+            float(finish_alt),
         ]
         rows.append(row)
         rider_ids.append(rid)
@@ -805,6 +810,8 @@ def compute_placement_scores(
     pcs_specialty_data: dict | None = None,
     startlist_quality: float = 1000.0,
     profile_score: float = 100.0,
+    p_class: int = -1,
+    finish_alt: float = -1.0,
 ) -> dict[str, float] | None:
     """
     Returner raw placement model predictions {rider_id: norm_pos (0-1)}.
@@ -817,6 +824,8 @@ def compute_placement_scores(
         co_data=co_data, pcs_specialty_data=pcs_specialty_data,
         startlist_quality=startlist_quality,
         profile_score=profile_score,
+        p_class=p_class,
+        finish_alt=finish_alt,
     )
 
 

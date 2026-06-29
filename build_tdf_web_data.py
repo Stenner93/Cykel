@@ -471,11 +471,13 @@ def main() -> None:
         if "pcs_specialties" in entry and entry["pcs_specialties"]:
             pcs_specialties[rid] = entry["pcs_specialties"]
 
-    pcs_scores   = _load_json(DATA / "cache" / "pcs_profile_scores.json")
-    stage_scores = pcs_scores.get(TDF_PCS_RACE + "_scores", {})
+    pcs_scores    = _load_json(DATA / "cache" / "pcs_profile_scores.json")
+    stage_scores  = pcs_scores.get(TDF_PCS_RACE + "_scores", {})
+    stage_finish_alts = pcs_scores.get(TDF_PCS_RACE + "_finish_alt", {})
 
     pcs_types_cache = _load_json(DATA / "cache" / "pcs_stage_types.json")
     stage_types     = pcs_types_cache.get(TDF_PCS_RACE, {})
+    stage_types_meta = pcs_types_cache.get(TDF_PCS_RACE + "_meta", {})
 
     # ── Load rider context (status from previous stage) ──────────────────────
     context_path = DATA / "stage_context.json"
@@ -645,7 +647,12 @@ def main() -> None:
 
         profile_score = stage_scores.get(stage_num) or stage_scores.get(str(stage_num))
 
-        print(f"    Etape {stage_num:2d} ({stype}, status={status})…")
+        _smeta     = stage_types_meta.get(str(stage_num), {})
+        p_class    = int(_smeta.get("p_class") or 0) or -1
+        finish_alt = int(stage_finish_alts.get(stage_num)
+                         or stage_finish_alts.get(str(stage_num)) or 0) or -1
+
+        print(f"    Etape {stage_num:2d} ({stype}, p{p_class}, status={status})…")
 
         # For upcoming stages: fetch web predictions as odds signal
         odds_data:   dict | None = None
@@ -696,6 +703,8 @@ def main() -> None:
             pcs_specialty_data=pcs_specialties or None,
             startlist_quality=1.0,
             profile_score=float(profile_score or 100),
+            p_class=p_class,
+            finish_alt=float(finish_alt),
         )
 
         preds = predict_all(
