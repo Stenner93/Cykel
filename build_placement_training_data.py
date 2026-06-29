@@ -28,6 +28,7 @@ Kørsel:
 from __future__ import annotations
 import csv
 import json
+import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
@@ -61,6 +62,38 @@ SKIP_TYPES = {"ttt"}
 
 def _slug_to_id(slug: str) -> str:
     return slug.replace("-", "_")
+
+
+def _strip_accents(s: str) -> str:
+    return "".join(
+        c for c in unicodedata.normalize("NFD", s)
+        if unicodedata.category(c) != "Mn"
+    )
+
+
+def _lookup(rid: str, data: dict) -> dict:
+    """Opslag med prefix-fallback og accent-normalisering.
+
+    Håndterer fx 'carlos_rodriguez_cano' → 'carlos_rodriguez' og
+    'juan_pedro_lopez_perez' → 'juan_pedro_lopez' når CO/PCS bruger
+    kortere holdet-ID end det fulde PCS-slugnavn.
+    """
+    if rid in data:
+        return data[rid]
+    # Accent-normalisering (juan_pedro_lópez → juan_pedro_lopez)
+    norm = _strip_accents(rid)
+    if norm != rid and norm in data:
+        return data[norm]
+    # Prefix-truncation: fjern efternavn(e) bagfra
+    parts = rid.split("_")
+    for n in range(len(parts) - 1, 1, -1):
+        prefix = "_".join(parts[:n])
+        if prefix in data:
+            return data[prefix]
+        norm_prefix = _strip_accents(prefix)
+        if norm_prefix != prefix and norm_prefix in data:
+            return data[norm_prefix]
+    return {}
 
 
 def load_co() -> dict[str, dict]:
@@ -205,12 +238,14 @@ def main() -> None:
             pos     = res["position"]
             norm_pos = round(1.0 - (pos - 1) / (field_size - 1), 6) if field_size > 1 else 1.0
 
-            # Opslag i CO/PCS via holdet rider_id (if known) eller slug-fallback
+            # Opslag i CO/PCS via holdet rider_id (if known) eller slug-fallback.
+            # _lookup() håndterer prefix-fallback (carlos_rodriguez_cano →
+            # carlos_rodriguez) og accent-normalisering (lópez → lopez).
             rid = slug_to_rid.get(slug) or _slug_to_id(slug)
 
-            co   = co_data.get(rid, {})
-            spec = spec_data.get(rid, {})
-            form = pcs_form.get(rid, {})
+            co   = _lookup(rid, co_data)
+            spec = _lookup(rid, spec_data)
+            form = _lookup(rid, pcs_form)
 
             if co:
                 n_co_hits += 1
