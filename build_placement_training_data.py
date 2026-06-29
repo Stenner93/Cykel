@@ -175,6 +175,20 @@ def rolling_top_n_rate(positions: list[int], n: int, top_n: int) -> float | None
     return round(sum(1 for p in last if p <= top_n) / len(last), 4) if last else None
 
 
+def load_historical_stage_data() -> dict[str, dict[str, dict]]:
+    """
+    Load p_class + finish_alt per stage for historical races.
+
+    Returns {race_key/year: {stage_num_str: {"p_class": int, "finish_alt": int|None}}}.
+    Populated by scrape_pcs_historical_stage_data.py.
+    Falls back to empty dict (features will be -1/unknown) if not yet scraped.
+    """
+    path = CACHE / "pcs_historical_stage_data.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def main() -> None:
     print("Indlæser data…")
     pcs_path    = ML_DIR / "historical_results.json"
@@ -183,16 +197,20 @@ def main() -> None:
         print("Kør først: python scrape_pcs_history.py")
         return
 
-    pcs_records = json.loads(pcs_path.read_text(encoding="utf-8"))
-    co_data     = load_co()
-    spec_data   = load_specs()
-    pcs_form    = load_pcs_form()
-    slug_to_rid = load_slug_to_rid(CACHE / "pcs_form.json")
+    pcs_records  = json.loads(pcs_path.read_text(encoding="utf-8"))
+    co_data      = load_co()
+    spec_data    = load_specs()
+    pcs_form     = load_pcs_form()
+    slug_to_rid  = load_slug_to_rid(CACHE / "pcs_form.json")
+    stage_data   = load_historical_stage_data()
 
+    n_stage_data = sum(len(v) for v in stage_data.values())
     print(f"  PCS resultater:   {len(pcs_records):,}")
     print(f"  CO ratings:       {len(co_data)} ryttere")
     print(f"  PCS specialties:  {len(spec_data)} ryttere")
     print(f"  Slug→ID mapping:  {len(slug_to_rid)} ryttere")
+    print(f"  Etape-data cache: {len(stage_data)} løb, {n_stage_data} etaper"
+          + ("" if stage_data else " (kør scrape_pcs_historical_stage_data.py)"))
 
     # Sorter kronologisk: (år, løb-rækkefølge, etape)
     pcs_records_sorted = sorted(
@@ -245,6 +263,12 @@ def main() -> None:
             continue  # for få ryttere til meningsfuld normalisering
 
         n_stages += 1
+
+        # p_class + finish_alt fra pcs_historical_stage_data.json
+        stage_cache_key = f"{race}/{year}"
+        stage_entry     = (stage_data.get(stage_cache_key) or {}).get(str(snum)) or {}
+        p_class         = stage_entry.get("p_class")     # int 1-5 or None
+        finish_alt      = stage_entry.get("finish_alt")  # metres or None
 
         # Beregn in-race historik for alle ryttere (etaper 1..snum-1 i DETTE løb)
         in_race_hist: dict[str, list[int]] = defaultdict(list)
@@ -343,6 +367,13 @@ def main() -> None:
                 # Etapeprofil: lav score = flad, høj score = bakket/bjerg
                 "profile_score":        res.get("profile_score") or 100,
                 "sprint_profile_score": (res.get("profile_score") or 100) * int(stype == "sprint"),
+                # PCS etapeklassifikation (1=flad sprint, 2=rullet sprint, 3=kuperet,
+                # 4=bjerg uden topmål, 5=HC topmål). -1 = ukendt.
+                # Adskiller p4 (dalbund-finish) fra p5 (topstignings-finish) og
+                # p1 (flad) fra p2 (rullet) inden for sprint-kategorien.
+                "p_class":    p_class if p_class is not None else -1,
+                # Ankomst-højde i meter (0-3500). -1 = ukendt.
+                "finish_alt": finish_alt if finish_alt is not None else -1,
                 # Target
                 "norm_pos": norm_pos,
             })

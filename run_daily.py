@@ -192,17 +192,43 @@ def build_pcs_rank_by_rider(rankings: dict, pcs_form_raw: dict) -> tuple[dict, d
 
 
 def load_profile_score(stage: int) -> int | None:
-    """
-    Load PCS ProfileScore for a specific stage of the current race.
-    Returns None if not available.
-    """
+    """Load PCS ProfileScore for a specific stage of the current race."""
     path = DATA_DIR / "cache" / "pcs_profile_scores.json"
     if not path.exists():
         return None
-    cache     = json.loads(path.read_text(encoding="utf-8"))
-    pcs_race  = CARTRIDGE_TO_PCS_RACE.get(DEFAULT_CARTRIDGE, "")
-    scores    = cache.get(pcs_race + "_scores", {})
+    cache    = json.loads(path.read_text(encoding="utf-8"))
+    pcs_race = CARTRIDGE_TO_PCS_RACE.get(DEFAULT_CARTRIDGE, "")
+    scores   = cache.get(pcs_race + "_scores", {})
     return scores.get(stage) or scores.get(str(stage))
+
+
+def load_stage_meta(stage: int) -> tuple[int, int]:
+    """
+    Load p_class (1-5) and finish_alt (metres) for the given stage.
+    Returns (-1, -1) if not available.
+    """
+    ps_path = DATA_DIR / "cache" / "pcs_profile_scores.json"
+    st_path = DATA_DIR / "cache" / "pcs_stage_types.json"
+    pcs_race = CARTRIDGE_TO_PCS_RACE.get(DEFAULT_CARTRIDGE, "")
+
+    finish_alt = -1
+    if ps_path.exists():
+        ps_cache  = json.loads(ps_path.read_text(encoding="utf-8"))
+        fa_map    = ps_cache.get(pcs_race + "_finish_alt", {})
+        fa_raw    = fa_map.get(stage) or fa_map.get(str(stage))
+        if fa_raw is not None:
+            finish_alt = int(fa_raw)
+
+    p_class = -1
+    if st_path.exists():
+        st_cache = json.loads(st_path.read_text(encoding="utf-8"))
+        meta_map = st_cache.get(pcs_race + "_meta", {})
+        meta     = meta_map.get(str(stage), {})
+        pc_raw   = meta.get("p_class")
+        if pc_raw:
+            p_class = int(pc_raw)
+
+    return p_class, finish_alt
 
 
 def load_current_team(predictions: list[dict]) -> dict | None:
@@ -405,7 +431,8 @@ def main():
     jerseys      = load_jerseys()
     sprint_kom   = load_sprint_kom()
     team_bonus   = load_team_bonus()
-    profile_sc   = load_profile_score(stage)
+    profile_sc              = load_profile_score(stage)
+    p_class_val, finish_alt_val = load_stage_meta(stage)
 
     print(f"  CyclingOracle: {len(co_data)} ryttere i cache")
     print(f"  PCS form:      {len(pcs_form)} ryttere i cache")
@@ -486,6 +513,8 @@ def main():
         pcs_specialty_data=pcs_specialty_data or None,
         startlist_quality=1000.0,   # TdF: top-tier field
         profile_score=float(profile_sc or 100),
+        p_class=p_class_val,
+        finish_alt=float(finish_alt_val),
     )
     if ml_scores:
         top_ml = sorted(ml_scores.items(), key=lambda x: x[1], reverse=True)[:3]
