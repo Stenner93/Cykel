@@ -751,11 +751,14 @@ def _placement_lgbm_raw_preds(
         if not has_co and not has_spec and not has_form:
             no_signal_set.add(rid)
 
+        co_spr_val   = co.get("spr", -1)
+        co_mtn_val   = co.get("mtn", -1)
+        spec_spr_val = spec.get("sprint", -1)
         row = [
             is_sprint, is_mountain, is_hilly, is_tt,
-            co.get("mtn", -1), co.get("spr", -1), co.get("hll", -1),
+            co_mtn_val, co_spr_val, co.get("hll", -1),
             co.get("itt", -1), co.get("cob", -1), co.get("gc",  -1),
-            spec.get("climber", -1), spec.get("sprint", -1),
+            spec.get("climber", -1), spec_spr_val,
             spec.get("tt", -1), spec.get("hills", -1),
             float(form_overall), float(form_sprint), float(form_mountain),
             float(form_hilly), float(form_tt),
@@ -764,6 +767,11 @@ def _placement_lgbm_raw_preds(
             xrace_top3_rate_10,
             xrace_top10_rate_10,
             qual_norm,
+            # Interaktions-features
+            co_spr_val * is_sprint,
+            spec_spr_val * is_sprint,
+            xrace_top3_rate_10 if is_sprint else 0.0,
+            co_mtn_val * is_mountain,
         ]
         rows.append(row)
         rider_ids.append(rid)
