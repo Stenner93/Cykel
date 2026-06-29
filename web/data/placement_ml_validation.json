@@ -170,5 +170,5 @@
     "vuelta"
   ],
   "notes": "norm_pos=1.0=vinder, 0.0=sidst. LORO CV på GT-løb (tdf/giro/vuelta). Et-ugersløb bruges som ekstra træning men ikke til CV. Spearman: rang-korrelation pr. etape. Top5acc: andel etaper med ≥1 hit i top-5.",
-  "generated": "2026-06-28T10:31:59.645790+00:00"
+  "generated": "2026-06-29T16:50:02.993607+00:00"
 }
