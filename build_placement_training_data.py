@@ -314,10 +314,10 @@ def main() -> None:
                 "startlist_quality": quality_norm,
                 # Interaktions-features: etapetype × signal (hjælper modellen skelne
                 # sprintspecialister fra GC-ryttere på sprintetaper, og omvendt)
-                "sprint_co_spr":    co.get("spr", -1) * is_sprint,
-                "sprint_spec":      spec.get("sprint", -1) * is_sprint,
+                "sprint_co_spr":    co.get("spr", -1) * int(stype == "sprint"),
+                "sprint_spec":      spec.get("sprint", -1) * int(stype == "sprint"),
                 "sprint_xrace_top3": xrace_top3_rate_10 if stype == "sprint" else 0.0,
-                "mtn_co_mtn":       co.get("mtn", -1) * is_mountain,
+                "mtn_co_mtn":       co.get("mtn", -1) * int(stype == "mountain"),
                 # Target
                 "norm_pos": norm_pos,
             })
