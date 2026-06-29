@@ -691,6 +691,7 @@ def _placement_lgbm_raw_preds(
     co_data: dict | None = None,
     pcs_specialty_data: dict | None = None,
     startlist_quality: float = 1.0,
+    profile_score: float = 100.0,
 ) -> dict[str, float | None] | None:
     """
     Kør placement_model.lgbm og returner RAW norm_pos predictions (0-1 skala).
@@ -772,6 +773,9 @@ def _placement_lgbm_raw_preds(
             spec_spr_val * is_sprint,
             xrace_top3_rate_10 if is_sprint else 0.0,
             co_mtn_val * is_mountain,
+            # Etapeprofil
+            profile_score,
+            profile_score * is_sprint,
         ]
         rows.append(row)
         rider_ids.append(rid)
@@ -800,6 +804,7 @@ def compute_placement_scores(
     co_data: dict | None = None,
     pcs_specialty_data: dict | None = None,
     startlist_quality: float = 1000.0,
+    profile_score: float = 100.0,
 ) -> dict[str, float] | None:
     """
     Returner raw placement model predictions {rider_id: norm_pos (0-1)}.
@@ -811,6 +816,7 @@ def compute_placement_scores(
         riders, stage_type, stage_num, stages, pcs_form_raw,
         co_data=co_data, pcs_specialty_data=pcs_specialty_data,
         startlist_quality=startlist_quality,
+        profile_score=profile_score,
     )
 
 
