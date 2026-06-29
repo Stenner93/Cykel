@@ -1,5 +1,6325 @@
 {
   "aaron-gate": {},
   "abel-balderstone-roumens": {},
-  "abner-gonzalez-rivera": {}
+  "abner-gonzalez-rivera": {},
+  "adria-moreno": {
+    "onedayraces": 39,
+    "gc": 33,
+    "tt": 5,
+    "sprint": 8,
+    "climber": 64,
+    "hills": 56
+  },
+  "adrien-petit": {
+    "onedayraces": 1858,
+    "gc": 385,
+    "tt": 365,
+    "sprint": 1262,
+    "climber": 8,
+    "hills": 141
+  },
+  "aime-de-gendt": {
+    "onedayraces": 1396,
+    "gc": 593,
+    "tt": 149,
+    "sprint": 420,
+    "climber": 83,
+    "hills": 572
+  },
+  "alan-riou": {
+    "onedayraces": 220,
+    "gc": 65,
+    "tt": 65,
+    "sprint": 90,
+    "climber": 0,
+    "hills": 95
+  },
+  "albert-torres": {
+    "onedayraces": 184,
+    "gc": 190,
+    "tt": 75,
+    "sprint": 176,
+    "climber": 27,
+    "hills": 81
+  },
+  "alberto-dainese": {
+    "onedayraces": 909,
+    "gc": 264,
+    "tt": 7,
+    "sprint": 1963,
+    "climber": 10,
+    "hills": 784
+  },
+  "alejandro-osorio-carvajal": {
+    "onedayraces": 68,
+    "gc": 88,
+    "tt": 9,
+    "sprint": 95,
+    "climber": 162,
+    "hills": 150
+  },
+  "alejandro-ropero": {
+    "onedayraces": 35,
+    "gc": 17,
+    "tt": 0,
+    "sprint": 3,
+    "climber": 10,
+    "hills": 28
+  },
+  "alejandro-valverde": {
+    "onedayraces": 13381,
+    "gc": 13732,
+    "tt": 4946,
+    "sprint": 592,
+    "climber": 17476,
+    "hills": 7378
+  },
+  "aleksey-lutsenko": {
+    "onedayraces": 2425,
+    "gc": 3241,
+    "tt": 1121,
+    "sprint": 350,
+    "climber": 2750,
+    "hills": 1668
+  },
+  "alessandro-bisolti": {
+    "onedayraces": 180,
+    "gc": 437,
+    "tt": 58,
+    "sprint": 8,
+    "climber": 268,
+    "hills": 98
+  },
+  "alessandro-de-marchi": {
+    "onedayraces": 1064,
+    "gc": 651,
+    "tt": 519,
+    "sprint": 2,
+    "climber": 1516,
+    "hills": 836
+  },
+  "alessandro-fancellu": {
+    "onedayraces": 105,
+    "gc": 554,
+    "tt": 12,
+    "sprint": 10,
+    "climber": 324,
+    "hills": 340
+  },
+  "alessandro-iacchi": {
+    "onedayraces": 0,
+    "gc": 70,
+    "tt": 0,
+    "sprint": 19,
+    "climber": 4,
+    "hills": 26
+  },
+  "alessandro-santaromita": {
+    "onedayraces": 1,
+    "gc": 8,
+    "tt": 1,
+    "sprint": 0,
+    "climber": 14,
+    "hills": 8
+  },
+  "alessandro-tonelli": {
+    "onedayraces": 205,
+    "gc": 342,
+    "tt": 27,
+    "sprint": 95,
+    "climber": 288,
+    "hills": 267
+  },
+  "alessandro-verre": {
+    "onedayraces": 179,
+    "gc": 248,
+    "tt": 39,
+    "sprint": 1,
+    "climber": 236,
+    "hills": 160
+  },
+  "alex-dowsett": {
+    "onedayraces": 98,
+    "gc": 686,
+    "tt": 3545,
+    "sprint": 48,
+    "climber": 67,
+    "hills": 207
+  },
+  "alex-howes": {
+    "onedayraces": 409,
+    "gc": 482,
+    "tt": 12,
+    "sprint": 120,
+    "climber": 143,
+    "hills": 200
+  },
+  "alex-jaime-fernandez": {
+    "onedayraces": 58,
+    "gc": 66,
+    "tt": 19,
+    "sprint": 90,
+    "climber": 8,
+    "hills": 88
+  },
+  "alex-tolio": {
+    "onedayraces": 64,
+    "gc": 330,
+    "tt": 5,
+    "sprint": 1,
+    "climber": 220,
+    "hills": 127
+  },
+  "alexander-cataford": {
+    "onedayraces": 71,
+    "gc": 228,
+    "tt": 264,
+    "sprint": 5,
+    "climber": 26,
+    "hills": 44
+  },
+  "alexander-edmondson": {
+    "onedayraces": 197,
+    "gc": 326,
+    "tt": 577,
+    "sprint": 119,
+    "climber": 0,
+    "hills": 337
+  },
+  "alexander-evans": {
+    "onedayraces": 3,
+    "gc": 29,
+    "tt": 2,
+    "sprint": 0,
+    "climber": 66,
+    "hills": 6
+  },
+  "alexander-hajek": {
+    "onedayraces": 94,
+    "gc": 280,
+    "tt": 15,
+    "sprint": 6,
+    "climber": 143,
+    "hills": 137
+  },
+  "alexander-kamp": {
+    "onedayraces": 796,
+    "gc": 847,
+    "tt": 87,
+    "sprint": 372,
+    "climber": 300,
+    "hills": 984
+  },
+  "alexander-konychev": {
+    "onedayraces": 179,
+    "gc": 174,
+    "tt": 53,
+    "sprint": 338,
+    "climber": 25,
+    "hills": 192
+  },
+  "alexander-krieger": {
+    "onedayraces": 738,
+    "gc": 319,
+    "tt": 151,
+    "sprint": 610,
+    "climber": 66,
+    "hills": 334
+  },
+  "alexander-kristoff": {
+    "onedayraces": 11324,
+    "gc": 2254,
+    "tt": 301,
+    "sprint": 8090,
+    "climber": 482,
+    "hills": 5374
+  },
+  "alexandr-riabushenko": {
+    "onedayraces": 571,
+    "gc": 147,
+    "tt": 6,
+    "sprint": 72,
+    "climber": 86,
+    "hills": 386
+  },
+  "alexandre-balmer": {
+    "onedayraces": 234,
+    "gc": 112,
+    "tt": 12,
+    "sprint": 60,
+    "climber": 72,
+    "hills": 84
+  },
+  "alexandre-delettre": {
+    "onedayraces": 821,
+    "gc": 651,
+    "tt": 14,
+    "sprint": 64,
+    "climber": 236,
+    "hills": 694
+  },
+  "alexis-gougeard": {
+    "onedayraces": 585,
+    "gc": 659,
+    "tt": 556,
+    "sprint": 163,
+    "climber": 176,
+    "hills": 284
+  },
+  "alexis-renard": {
+    "onedayraces": 1040,
+    "gc": 267,
+    "tt": 40,
+    "sprint": 608,
+    "climber": 32,
+    "hills": 260
+  },
+  "alexis-vuillermoz": {
+    "onedayraces": 1544,
+    "gc": 1578,
+    "tt": 98,
+    "sprint": 42,
+    "climber": 1648,
+    "hills": 884
+  },
+  "alexys-brunel": {
+    "onedayraces": 155,
+    "gc": 88,
+    "tt": 284,
+    "sprint": 150,
+    "climber": 20,
+    "hills": 35
+  },
+  "alfred-wright": {
+    "onedayraces": 1066,
+    "gc": 545,
+    "tt": 500,
+    "sprint": 252,
+    "climber": 375,
+    "hills": 1592
+  },
+  "alvaro-cuadros": {
+    "onedayraces": 25,
+    "gc": 45,
+    "tt": 6,
+    "sprint": 23,
+    "climber": 62,
+    "hills": 6
+  },
+  "alvaro-jose-hodeg": {
+    "onedayraces": 892,
+    "gc": 75,
+    "tt": 49,
+    "sprint": 1702,
+    "climber": 0,
+    "hills": 303
+  },
+  "amaury-capiot": {
+    "onedayraces": 2145,
+    "gc": 306,
+    "tt": 58,
+    "sprint": 1424,
+    "climber": 128,
+    "hills": 869
+  },
+  "amund-grondahl-jansen": {
+    "onedayraces": 836,
+    "gc": 548,
+    "tt": 44,
+    "sprint": 330,
+    "climber": 116,
+    "hills": 432
+  },
+  "ander-ganzabal-bilbao": {
+    "onedayraces": 1,
+    "gc": 5,
+    "tt": 0,
+    "sprint": 1,
+    "climber": 0,
+    "hills": 0
+  },
+  "ander-okamika": {
+    "onedayraces": 118,
+    "gc": 261,
+    "tt": 16,
+    "sprint": 18,
+    "climber": 113,
+    "hills": 126
+  },
+  "anders-foldager": {
+    "onedayraces": 588,
+    "gc": 398,
+    "tt": 8,
+    "sprint": 114,
+    "climber": 120,
+    "hills": 656
+  },
+  "andre-carvalho": {
+    "onedayraces": 111,
+    "gc": 28,
+    "tt": 1,
+    "sprint": 58,
+    "climber": 10,
+    "hills": 49
+  },
+  "andre-greipel": {
+    "onedayraces": 4643,
+    "gc": 1935,
+    "tt": 529,
+    "sprint": 13478,
+    "climber": 294,
+    "hills": 2225
+  },
+  "andrea-bagioli": {
+    "onedayraces": 1681,
+    "gc": 424,
+    "tt": 113,
+    "sprint": 8,
+    "climber": 1327,
+    "hills": 1256
+  },
+  "andrea-pasqualon": {
+    "onedayraces": 2809,
+    "gc": 702,
+    "tt": 73,
+    "sprint": 1394,
+    "climber": 377,
+    "hills": 1638
+  },
+  "andrea-piccolo": {
+    "onedayraces": 458,
+    "gc": 50,
+    "tt": 44,
+    "sprint": 41,
+    "climber": 184,
+    "hills": 268
+  },
+  "andreas-stokbro": {
+    "onedayraces": 321,
+    "gc": 182,
+    "tt": 46,
+    "sprint": 508,
+    "climber": 38,
+    "hills": 232
+  },
+  "andres-camilo-ardila": {
+    "onedayraces": 4,
+    "gc": 116,
+    "tt": 29,
+    "sprint": 3,
+    "climber": 97,
+    "hills": 36
+  },
+  "andrew-august": {
+    "onedayraces": 20,
+    "gc": 172,
+    "tt": 98,
+    "sprint": 0,
+    "climber": 208,
+    "hills": 131
+  },
+  "andrey-amador": {
+    "onedayraces": 671,
+    "gc": 1518,
+    "tt": 1229,
+    "sprint": 56,
+    "climber": 1090,
+    "hills": 566
+  },
+  "andrey-zeits": {
+    "onedayraces": 364,
+    "gc": 1602,
+    "tt": 125,
+    "sprint": 30,
+    "climber": 594,
+    "hills": 166
+  },
+  "andrii-ponomar": {
+    "onedayraces": 182,
+    "gc": 79,
+    "tt": 9,
+    "sprint": 14,
+    "climber": 75,
+    "hills": 75
+  },
+  "angel-madrazo": {
+    "onedayraces": 901,
+    "gc": 571,
+    "tt": 93,
+    "sprint": 206,
+    "climber": 557,
+    "hills": 148
+  },
+  "anthony-delaplace": {
+    "onedayraces": 1262,
+    "gc": 962,
+    "tt": 607,
+    "sprint": 71,
+    "climber": 240,
+    "hills": 400
+  },
+  "anthony-perez": {
+    "onedayraces": 600,
+    "gc": 555,
+    "tt": 317,
+    "sprint": 47,
+    "climber": 292,
+    "hills": 363
+  },
+  "anthony-roux": {
+    "onedayraces": 1403,
+    "gc": 1120,
+    "tt": 1082,
+    "sprint": 347,
+    "climber": 606,
+    "hills": 956
+  },
+  "anthony-turgis": {
+    "onedayraces": 2774,
+    "gc": 844,
+    "tt": 191,
+    "sprint": 1102,
+    "climber": 222,
+    "hills": 1242
+  },
+  "antoine-aebi": {
+    "onedayraces": 7,
+    "gc": 10,
+    "tt": 80,
+    "sprint": 20,
+    "climber": 0,
+    "hills": 12
+  },
+  "antoine-debons": {
+    "onedayraces": 10,
+    "gc": 23,
+    "tt": 0,
+    "sprint": 4,
+    "climber": 18,
+    "hills": 26
+  },
+  "antoine-duchesne": {
+    "onedayraces": 321,
+    "gc": 276,
+    "tt": 20,
+    "sprint": 4,
+    "climber": 7,
+    "hills": 52
+  },
+  "antoine-huby": {
+    "onedayraces": 87,
+    "gc": 186,
+    "tt": 26,
+    "sprint": 28,
+    "climber": 88,
+    "hills": 91
+  },
+  "antoine-raugel": {
+    "onedayraces": 53,
+    "gc": 30,
+    "tt": 19,
+    "sprint": 40,
+    "climber": 6,
+    "hills": 73
+  },
+  "anton-palzer": {
+    "onedayraces": 13,
+    "gc": 123,
+    "tt": 1,
+    "sprint": 0,
+    "climber": 18,
+    "hills": 10
+  },
+  "antonio-angulo": {
+    "onedayraces": 76,
+    "gc": 91,
+    "tt": 4,
+    "sprint": 150,
+    "climber": 72,
+    "hills": 330
+  },
+  "antonio-nibali": {
+    "onedayraces": 43,
+    "gc": 290,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 129,
+    "hills": 41
+  },
+  "antonio-pedrero": {
+    "onedayraces": 207,
+    "gc": 847,
+    "tt": 14,
+    "sprint": 2,
+    "climber": 840,
+    "hills": 232
+  },
+  "antonio-soto": {
+    "onedayraces": 243,
+    "gc": 127,
+    "tt": 40,
+    "sprint": 134,
+    "climber": 72,
+    "hills": 386
+  },
+  "antwan-tolhoek": {
+    "onedayraces": 391,
+    "gc": 744,
+    "tt": 6,
+    "sprint": 10,
+    "climber": 629,
+    "hills": 266
+  },
+  "archie-ryan": {
+    "onedayraces": 275,
+    "gc": 346,
+    "tt": 6,
+    "sprint": 0,
+    "climber": 472,
+    "hills": 287
+  },
+  "ariel-maximiliano-richeze": {
+    "onedayraces": 1291,
+    "gc": 543,
+    "tt": 151,
+    "sprint": 1717,
+    "climber": 283,
+    "hills": 1362
+  },
+  "aritz-bagues": {
+    "onedayraces": 54,
+    "gc": 205,
+    "tt": 22,
+    "sprint": 19,
+    "climber": 68,
+    "hills": 45
+  },
+  "arnaud-demare": {
+    "onedayraces": 6877,
+    "gc": 1561,
+    "tt": 483,
+    "sprint": 6482,
+    "climber": 206,
+    "hills": 2650
+  },
+  "arne-marit": {
+    "onedayraces": 999,
+    "gc": 110,
+    "tt": 4,
+    "sprint": 818,
+    "climber": 12,
+    "hills": 687
+  },
+  "artem-nych": {
+    "onedayraces": 162,
+    "gc": 743,
+    "tt": 450,
+    "sprint": 2,
+    "climber": 402,
+    "hills": 104
+  },
+  "artem-shmidt": {
+    "onedayraces": 223,
+    "gc": 60,
+    "tt": 154,
+    "sprint": 87,
+    "climber": 31,
+    "hills": 100
+  },
+  "arthur-kluckers": {
+    "onedayraces": 85,
+    "gc": 154,
+    "tt": 406,
+    "sprint": 47,
+    "climber": 20,
+    "hills": 34
+  },
+  "arvid-de-kleijn": {
+    "onedayraces": 1344,
+    "gc": 106,
+    "tt": 4,
+    "sprint": 3133,
+    "climber": 0,
+    "hills": 277
+  },
+  "asbjorn-hellemose": {
+    "onedayraces": 62,
+    "gc": 148,
+    "tt": 0,
+    "sprint": 2,
+    "climber": 102,
+    "hills": 50
+  },
+  "asier-etxeberria": {
+    "onedayraces": 0,
+    "gc": 33,
+    "tt": 78,
+    "sprint": 7,
+    "climber": 14,
+    "hills": 32
+  },
+  "attila-valter": {
+    "onedayraces": 795,
+    "gc": 1229,
+    "tt": 332,
+    "sprint": 72,
+    "climber": 1233,
+    "hills": 584
+  },
+  "attilio-viviani": {
+    "onedayraces": 135,
+    "gc": 80,
+    "tt": 0,
+    "sprint": 742,
+    "climber": 6,
+    "hills": 82
+  },
+  "axel-laurance": {
+    "onedayraces": 581,
+    "gc": 424,
+    "tt": 42,
+    "sprint": 173,
+    "climber": 436,
+    "hills": 1262
+  },
+  "axel-mariault": {
+    "onedayraces": 343,
+    "gc": 214,
+    "tt": 0,
+    "sprint": 6,
+    "climber": 185,
+    "hills": 346
+  },
+  "axel-zingle": {
+    "onedayraces": 1840,
+    "gc": 610,
+    "tt": 262,
+    "sprint": 556,
+    "climber": 281,
+    "hills": 1108
+  },
+  "baptiste-planckaert": {
+    "onedayraces": 3184,
+    "gc": 460,
+    "tt": 9,
+    "sprint": 1410,
+    "climber": 99,
+    "hills": 482
+  },
+  "barnabas-peak": {
+    "onedayraces": 253,
+    "gc": 73,
+    "tt": 285,
+    "sprint": 208,
+    "climber": 31,
+    "hills": 85
+  },
+  "bastien-tronchon": {
+    "onedayraces": 461,
+    "gc": 296,
+    "tt": 14,
+    "sprint": 119,
+    "climber": 173,
+    "hills": 435
+  },
+  "bauke-mollema": {
+    "onedayraces": 5336,
+    "gc": 6068,
+    "tt": 2081,
+    "sprint": 592,
+    "climber": 7742,
+    "hills": 4159
+  },
+  "ben-gastauer": {
+    "onedayraces": 282,
+    "gc": 763,
+    "tt": 142,
+    "sprint": 5,
+    "climber": 223,
+    "hills": 54
+  },
+  "ben-hermans": {
+    "onedayraces": 1635,
+    "gc": 3508,
+    "tt": 617,
+    "sprint": 111,
+    "climber": 1966,
+    "hills": 932
+  },
+  "ben-swift": {
+    "onedayraces": 2031,
+    "gc": 1007,
+    "tt": 87,
+    "sprint": 1613,
+    "climber": 600,
+    "hills": 1725
+  },
+  "benjamin-king-1": {
+    "onedayraces": 245,
+    "gc": 437,
+    "tt": 376,
+    "sprint": 10,
+    "climber": 516,
+    "hills": 264
+  },
+  "benjamin-perry": {
+    "onedayraces": 189,
+    "gc": 252,
+    "tt": 7,
+    "sprint": 48,
+    "climber": 32,
+    "hills": 128
+  },
+  "benjamin-thomas-2": {
+    "onedayraces": 570,
+    "gc": 970,
+    "tt": 1173,
+    "sprint": 258,
+    "climber": 264,
+    "hills": 1080
+  },
+  "bert-jan-lindeman": {
+    "onedayraces": 604,
+    "gc": 530,
+    "tt": 21,
+    "sprint": 100,
+    "climber": 204,
+    "hills": 111
+  },
+  "bjoern-koerdt": {
+    "onedayraces": 130,
+    "gc": 126,
+    "tt": 0,
+    "sprint": 22,
+    "climber": 44,
+    "hills": 160
+  },
+  "blake-quick": {
+    "onedayraces": 51,
+    "gc": 65,
+    "tt": 41,
+    "sprint": 338,
+    "climber": 14,
+    "hills": 158
+  },
+  "bob-jungels": {
+    "onedayraces": 1256,
+    "gc": 2653,
+    "tt": 2734,
+    "sprint": 395,
+    "climber": 1856,
+    "hills": 1286
+  },
+  "boy-van-poppel": {
+    "onedayraces": 882,
+    "gc": 387,
+    "tt": 80,
+    "sprint": 871,
+    "climber": 8,
+    "hills": 270
+  },
+  "bram-welten": {
+    "onedayraces": 1057,
+    "gc": 45,
+    "tt": 0,
+    "sprint": 832,
+    "climber": 0,
+    "hills": 118
+  },
+  "brandon-smith-rivera-vargas": {
+    "onedayraces": 74,
+    "gc": 513,
+    "tt": 327,
+    "sprint": 26,
+    "climber": 243,
+    "hills": 287
+  },
+  "brent-bookwalter": {
+    "onedayraces": 470,
+    "gc": 1673,
+    "tt": 1237,
+    "sprint": 244,
+    "climber": 743,
+    "hills": 678
+  },
+  "brent-van-moer": {
+    "onedayraces": 697,
+    "gc": 521,
+    "tt": 281,
+    "sprint": 156,
+    "climber": 64,
+    "hills": 459
+  },
+  "caleb-ewan": {
+    "onedayraces": 2567,
+    "gc": 333,
+    "tt": 148,
+    "sprint": 5048,
+    "climber": 186,
+    "hills": 2164
+  },
+  "calum-johnston": {
+    "onedayraces": 7,
+    "gc": 58,
+    "tt": 0,
+    "sprint": 15,
+    "climber": 46,
+    "hills": 66
+  },
+  "cameron-meyer": {
+    "onedayraces": 450,
+    "gc": 1266,
+    "tt": 1251,
+    "sprint": 98,
+    "climber": 432,
+    "hills": 588
+  },
+  "cameron-scott": {
+    "onedayraces": 104,
+    "gc": 63,
+    "tt": 162,
+    "sprint": 560,
+    "climber": 9,
+    "hills": 93
+  },
+  "cameron-wurf": {
+    "onedayraces": 89,
+    "gc": 579,
+    "tt": 320,
+    "sprint": 21,
+    "climber": 42,
+    "hills": 5
+  },
+  "campbell-stewart": {
+    "onedayraces": 71,
+    "gc": 73,
+    "tt": 31,
+    "sprint": 202,
+    "climber": 0,
+    "hills": 85
+  },
+  "carl-fredrik-hagen": {
+    "onedayraces": 156,
+    "gc": 1080,
+    "tt": 9,
+    "sprint": 8,
+    "climber": 572,
+    "hills": 386
+  },
+  "carlos-barbero": {
+    "onedayraces": 1195,
+    "gc": 487,
+    "tt": 0,
+    "sprint": 860,
+    "climber": 150,
+    "hills": 740
+  },
+  "carlos-canal": {
+    "onedayraces": 615,
+    "gc": 561,
+    "tt": 115,
+    "sprint": 162,
+    "climber": 256,
+    "hills": 753
+  },
+  "carlos-garcia-pierna": {
+    "onedayraces": 19,
+    "gc": 81,
+    "tt": 12,
+    "sprint": 0,
+    "climber": 46,
+    "hills": 40
+  },
+  "carlos-rodriguez-cano": {
+    "onedayraces": 503,
+    "gc": 2651,
+    "tt": 497,
+    "sprint": 14,
+    "climber": 2602,
+    "hills": 598
+  },
+  "casper-pedersen": {
+    "onedayraces": 665,
+    "gc": 487,
+    "tt": 305,
+    "sprint": 210,
+    "climber": 82,
+    "hills": 320
+  },
+  "cedric-beullens": {
+    "onedayraces": 608,
+    "gc": 120,
+    "tt": 20,
+    "sprint": 291,
+    "climber": 9,
+    "hills": 160
+  },
+  "cees-bol": {
+    "onedayraces": 1015,
+    "gc": 592,
+    "tt": 316,
+    "sprint": 1500,
+    "climber": 39,
+    "hills": 930
+  },
+  "cesare-benedetti": {
+    "onedayraces": 406,
+    "gc": 498,
+    "tt": 3,
+    "sprint": 58,
+    "climber": 254,
+    "hills": 172
+  },
+  "chad-haga": {
+    "onedayraces": 84,
+    "gc": 493,
+    "tt": 1365,
+    "sprint": 14,
+    "climber": 158,
+    "hills": 193
+  },
+  "charlie-quarterman": {
+    "onedayraces": 5,
+    "gc": 44,
+    "tt": 68,
+    "sprint": 26,
+    "climber": 0,
+    "hills": 7
+  },
+  "christoph-janssen": {
+    "onedayraces": 10,
+    "gc": 5,
+    "tt": 16,
+    "sprint": 21,
+    "climber": 0,
+    "hills": 7
+  },
+  "christoph-pfingsten": {
+    "onedayraces": 314,
+    "gc": 351,
+    "tt": 233,
+    "sprint": 44,
+    "climber": 92,
+    "hills": 90
+  },
+  "christophe-laporte": {
+    "onedayraces": 4815,
+    "gc": 1055,
+    "tt": 989,
+    "sprint": 2439,
+    "climber": 389,
+    "hills": 2016
+  },
+  "christopher-froome": {
+    "onedayraces": 385,
+    "gc": 8306,
+    "tt": 4402,
+    "sprint": 242,
+    "climber": 6610,
+    "hills": 2328
+  },
+  "christopher-lawless": {
+    "onedayraces": 459,
+    "gc": 263,
+    "tt": 30,
+    "sprint": 464,
+    "climber": 23,
+    "hills": 208
+  },
+  "claudio-imhof": {
+    "onedayraces": 0,
+    "gc": 38,
+    "tt": 118,
+    "sprint": 24,
+    "climber": 0,
+    "hills": 10
+  },
+  "clement-champoussin": {
+    "onedayraces": 1350,
+    "gc": 1092,
+    "tt": 87,
+    "sprint": 30,
+    "climber": 1805,
+    "hills": 1277
+  },
+  "clement-davy": {
+    "onedayraces": 45,
+    "gc": 120,
+    "tt": 172,
+    "sprint": 12,
+    "climber": 0,
+    "hills": 17
+  },
+  "clement-izquierdo": {
+    "onedayraces": 102,
+    "gc": 186,
+    "tt": 50,
+    "sprint": 31,
+    "climber": 70,
+    "hills": 132
+  },
+  "clement-russo": {
+    "onedayraces": 585,
+    "gc": 281,
+    "tt": 68,
+    "sprint": 353,
+    "climber": 5,
+    "hills": 328
+  },
+  "clement-venturini": {
+    "onedayraces": 2219,
+    "gc": 721,
+    "tt": 94,
+    "sprint": 1059,
+    "climber": 446,
+    "hills": 1896
+  },
+  "colin-joyce": {
+    "onedayraces": 161,
+    "gc": 271,
+    "tt": 76,
+    "sprint": 306,
+    "climber": 51,
+    "hills": 278
+  },
+  "connor-brown2": {
+    "onedayraces": 39,
+    "gc": 50,
+    "tt": 0,
+    "sprint": 12,
+    "climber": 15,
+    "hills": 24
+  },
+  "cristian-munoz": {
+    "onedayraces": 18,
+    "gc": 62,
+    "tt": 9,
+    "sprint": 10,
+    "climber": 82,
+    "hills": 46
+  },
+  "cyril-gautier": {
+    "onedayraces": 1492,
+    "gc": 1018,
+    "tt": 95,
+    "sprint": 100,
+    "climber": 796,
+    "hills": 726
+  },
+  "cyril-lemoine": {
+    "onedayraces": 739,
+    "gc": 853,
+    "tt": 962,
+    "sprint": 304,
+    "climber": 49,
+    "hills": 170
+  },
+  "cyrille-thiery": {
+    "onedayraces": 23,
+    "gc": 53,
+    "tt": 87,
+    "sprint": 32,
+    "climber": 10,
+    "hills": 26
+  },
+  "damien-howson": {
+    "onedayraces": 269,
+    "gc": 1743,
+    "tt": 653,
+    "sprint": 27,
+    "climber": 762,
+    "hills": 498
+  },
+  "damien-touze": {
+    "onedayraces": 731,
+    "gc": 382,
+    "tt": 89,
+    "sprint": 304,
+    "climber": 40,
+    "hills": 405
+  },
+  "dan-martin": {
+    "onedayraces": 3462,
+    "gc": 6005,
+    "tt": 454,
+    "sprint": 58,
+    "climber": 6967,
+    "hills": 2406
+  },
+  "daniel-alejandro-mendez-norena": {
+    "onedayraces": 0,
+    "gc": 39,
+    "tt": 7,
+    "sprint": 0,
+    "climber": 58,
+    "hills": 24
+  },
+  "daniel-arroyave-canas": {
+    "onedayraces": 0,
+    "gc": 5,
+    "tt": 7,
+    "sprint": 5,
+    "climber": 10,
+    "hills": 17
+  },
+  "daniel-babor": {
+    "onedayraces": 56,
+    "gc": 12,
+    "tt": 26,
+    "sprint": 530,
+    "climber": 0,
+    "hills": 60
+  },
+  "daniel-cavia-sanz": {
+    "onedayraces": 53,
+    "gc": 136,
+    "tt": 2,
+    "sprint": 128,
+    "climber": 18,
+    "hills": 150
+  },
+  "daniel-mclay": {
+    "onedayraces": 1262,
+    "gc": 255,
+    "tt": 100,
+    "sprint": 1589,
+    "climber": 23,
+    "hills": 279
+  },
+  "daniel-munoz": {
+    "onedayraces": 14,
+    "gc": 264,
+    "tt": 26,
+    "sprint": 42,
+    "climber": 156,
+    "hills": 82
+  },
+  "daniel-navarro": {
+    "onedayraces": 291,
+    "gc": 2602,
+    "tt": 254,
+    "sprint": 0,
+    "climber": 2228,
+    "hills": 379
+  },
+  "daniel-oss": {
+    "onedayraces": 1298,
+    "gc": 735,
+    "tt": 423,
+    "sprint": 706,
+    "climber": 258,
+    "hills": 938
+  },
+  "daniil-marukhin": {
+    "onedayraces": 111,
+    "gc": 80,
+    "tt": 124,
+    "sprint": 179,
+    "climber": 38,
+    "hills": 55
+  },
+  "danny-van-der-tuuk": {
+    "onedayraces": 10,
+    "gc": 5,
+    "tt": 47,
+    "sprint": 22,
+    "climber": 4,
+    "hills": 3
+  },
+  "dario-cataldo": {
+    "onedayraces": 665,
+    "gc": 1660,
+    "tt": 1171,
+    "sprint": 178,
+    "climber": 1902,
+    "hills": 602
+  },
+  "dario-lillo": {
+    "onedayraces": 0,
+    "gc": 10,
+    "tt": 16,
+    "sprint": 0,
+    "climber": 0,
+    "hills": 0
+  },
+  "darren-van-bekkum": {
+    "onedayraces": 19,
+    "gc": 104,
+    "tt": 27,
+    "sprint": 26,
+    "climber": 102,
+    "hills": 51
+  },
+  "daryl-impey": {
+    "onedayraces": 1785,
+    "gc": 1893,
+    "tt": 1045,
+    "sprint": 448,
+    "climber": 1160,
+    "hills": 2818
+  },
+  "david-dekker": {
+    "onedayraces": 362,
+    "gc": 97,
+    "tt": 93,
+    "sprint": 684,
+    "climber": 17,
+    "hills": 208
+  },
+  "david-gonzalez-lopez": {
+    "onedayraces": 129,
+    "gc": 111,
+    "tt": 5,
+    "sprint": 229,
+    "climber": 126,
+    "hills": 573
+  },
+  "davide-bais": {
+    "onedayraces": 139,
+    "gc": 204,
+    "tt": 22,
+    "sprint": 16,
+    "climber": 132,
+    "hills": 168
+  },
+  "davide-baldaccini": {
+    "onedayraces": 11,
+    "gc": 177,
+    "tt": 2,
+    "sprint": 18,
+    "climber": 23,
+    "hills": 128
+  },
+  "davide-cimolai": {
+    "onedayraces": 1187,
+    "gc": 620,
+    "tt": 6,
+    "sprint": 1256,
+    "climber": 141,
+    "hills": 1473
+  },
+  "davide-de-pretto": {
+    "onedayraces": 468,
+    "gc": 109,
+    "tt": 0,
+    "sprint": 38,
+    "climber": 244,
+    "hills": 544
+  },
+  "davide-formolo": {
+    "onedayraces": 1751,
+    "gc": 2434,
+    "tt": 166,
+    "sprint": 26,
+    "climber": 2744,
+    "hills": 1346
+  },
+  "davide-gabburo": {
+    "onedayraces": 404,
+    "gc": 210,
+    "tt": 10,
+    "sprint": 218,
+    "climber": 290,
+    "hills": 447
+  },
+  "davide-martinelli": {
+    "onedayraces": 280,
+    "gc": 212,
+    "tt": 138,
+    "sprint": 276,
+    "climber": 0,
+    "hills": 140
+  },
+  "davide-toneatti": {
+    "onedayraces": 150,
+    "gc": 138,
+    "tt": 18,
+    "sprint": 24,
+    "climber": 84,
+    "hills": 154
+  },
+  "davide-villella": {
+    "onedayraces": 1110,
+    "gc": 959,
+    "tt": 97,
+    "sprint": 28,
+    "climber": 732,
+    "hills": 482
+  },
+  "denis-nekrasov": {
+    "onedayraces": 23,
+    "gc": 70,
+    "tt": 0,
+    "sprint": 5,
+    "climber": 38,
+    "hills": 74
+  },
+  "diego-andres-camargo": {
+    "onedayraces": 36,
+    "gc": 293,
+    "tt": 188,
+    "sprint": 14,
+    "climber": 230,
+    "hills": 92
+  },
+  "diego-lopez-fuentes": {
+    "onedayraces": 0,
+    "gc": 41,
+    "tt": 129,
+    "sprint": 0,
+    "climber": 11,
+    "hills": 35
+  },
+  "diego-pablo-sevilla": {
+    "onedayraces": 136,
+    "gc": 110,
+    "tt": 12,
+    "sprint": 25,
+    "climber": 72,
+    "hills": 218
+  },
+  "diego-rosa": {
+    "onedayraces": 1042,
+    "gc": 940,
+    "tt": 344,
+    "sprint": 26,
+    "climber": 1108,
+    "hills": 416
+  },
+  "diego-rubio": {
+    "onedayraces": 149,
+    "gc": 363,
+    "tt": 27,
+    "sprint": 59,
+    "climber": 57,
+    "hills": 122
+  },
+  "diego-uriarte-belzunegi": {
+    "onedayraces": 0,
+    "gc": 63,
+    "tt": 34,
+    "sprint": 60,
+    "climber": 15,
+    "hills": 35
+  },
+  "dimitri-claeys": {
+    "onedayraces": 1317,
+    "gc": 489,
+    "tt": 121,
+    "sprint": 186,
+    "climber": 83,
+    "hills": 459
+  },
+  "dmitriy-gruzdev": {
+    "onedayraces": 598,
+    "gc": 774,
+    "tt": 1033,
+    "sprint": 22,
+    "climber": 39,
+    "hills": 47
+  },
+  "dmitry-strakhov": {
+    "onedayraces": 193,
+    "gc": 361,
+    "tt": 44,
+    "sprint": 102,
+    "climber": 116,
+    "hills": 220
+  },
+  "domen-novak": {
+    "onedayraces": 87,
+    "gc": 515,
+    "tt": 28,
+    "sprint": 41,
+    "climber": 288,
+    "hills": 75
+  },
+  "domenico-pozzovivo": {
+    "onedayraces": 2805,
+    "gc": 6695,
+    "tt": 819,
+    "sprint": 702,
+    "climber": 6540,
+    "hills": 1858
+  },
+  "donavan-grondin": {
+    "onedayraces": 131,
+    "gc": 61,
+    "tt": 18,
+    "sprint": 87,
+    "climber": 6,
+    "hills": 62
+  },
+  "dries-de-bondt": {
+    "onedayraces": 1842,
+    "gc": 401,
+    "tt": 2,
+    "sprint": 1279,
+    "climber": 131,
+    "hills": 430
+  },
+  "dries-de-pooter": {
+    "onedayraces": 104,
+    "gc": 85,
+    "tt": 0,
+    "sprint": 86,
+    "climber": 30,
+    "hills": 151
+  },
+  "dries-devenyns": {
+    "onedayraces": 1594,
+    "gc": 1907,
+    "tt": 796,
+    "sprint": 142,
+    "climber": 967,
+    "hills": 1106
+  },
+  "dusan-rajovic": {
+    "onedayraces": 332,
+    "gc": 142,
+    "tt": 411,
+    "sprint": 1532,
+    "climber": 14,
+    "hills": 314
+  },
+  "dylan-sunderland": {
+    "onedayraces": 118,
+    "gc": 185,
+    "tt": 65,
+    "sprint": 34,
+    "climber": 190,
+    "hills": 136
+  },
+  "dylan-teuns": {
+    "onedayraces": 2215,
+    "gc": 2860,
+    "tt": 601,
+    "sprint": 140,
+    "climber": 2848,
+    "hills": 2340
+  },
+  "eddy-fine": {
+    "onedayraces": 199,
+    "gc": 70,
+    "tt": 0,
+    "sprint": 34,
+    "climber": 31,
+    "hills": 127
+  },
+  "eddy-le-huitouze": {
+    "onedayraces": 28,
+    "gc": 46,
+    "tt": 95,
+    "sprint": 36,
+    "climber": 0,
+    "hills": 0
+  },
+  "edoardo-zardini": {
+    "onedayraces": 319,
+    "gc": 568,
+    "tt": 48,
+    "sprint": 1,
+    "climber": 402,
+    "hills": 104
+  },
+  "eduard-prades": {
+    "onedayraces": 1442,
+    "gc": 1233,
+    "tt": 30,
+    "sprint": 823,
+    "climber": 756,
+    "hills": 1446
+  },
+  "eduardo-sepulveda": {
+    "onedayraces": 579,
+    "gc": 1728,
+    "tt": 420,
+    "sprint": 37,
+    "climber": 798,
+    "hills": 284
+  },
+  "edvald-boasson-hagen": {
+    "onedayraces": 4411,
+    "gc": 3655,
+    "tt": 2975,
+    "sprint": 3435,
+    "climber": 1108,
+    "hills": 4388
+  },
+  "edward-irl-dunbar": {
+    "onedayraces": 347,
+    "gc": 1553,
+    "tt": 301,
+    "sprint": 24,
+    "climber": 1186,
+    "hills": 616
+  },
+  "edward-ravasi": {
+    "onedayraces": 86,
+    "gc": 377,
+    "tt": 20,
+    "sprint": 2,
+    "climber": 308,
+    "hills": 42
+  },
+  "edward-theuns": {
+    "onedayraces": 2805,
+    "gc": 716,
+    "tt": 131,
+    "sprint": 2206,
+    "climber": 26,
+    "hills": 1007
+  },
+  "elia-blum": {
+    "onedayraces": 1,
+    "gc": 19,
+    "tt": 0,
+    "sprint": 4,
+    "climber": 3,
+    "hills": 3
+  },
+  "elia-viviani": {
+    "onedayraces": 5124,
+    "gc": 1018,
+    "tt": 160,
+    "sprint": 6843,
+    "climber": 276,
+    "hills": 2721
+  },
+  "elie-gesbert": {
+    "onedayraces": 400,
+    "gc": 771,
+    "tt": 12,
+    "sprint": 24,
+    "climber": 618,
+    "hills": 424
+  },
+  "eliot-lietaer": {
+    "onedayraces": 350,
+    "gc": 657,
+    "tt": 70,
+    "sprint": 78,
+    "climber": 194,
+    "hills": 261
+  },
+  "emil-vinjebo": {
+    "onedayraces": 160,
+    "gc": 134,
+    "tt": 67,
+    "sprint": 111,
+    "climber": 10,
+    "hills": 42
+  },
+  "emilien-jeanniere": {
+    "onedayraces": 1412,
+    "gc": 366,
+    "tt": 51,
+    "sprint": 832,
+    "climber": 142,
+    "hills": 826
+  },
+  "emils-liepins": {
+    "onedayraces": 872,
+    "gc": 286,
+    "tt": 268,
+    "sprint": 1581,
+    "climber": 12,
+    "hills": 211
+  },
+  "emmanuel-morin": {
+    "onedayraces": 405,
+    "gc": 70,
+    "tt": 0,
+    "sprint": 404,
+    "climber": 8,
+    "hills": 162
+  },
+  "enekoitz-azparren-irurzun": {
+    "onedayraces": 12,
+    "gc": 8,
+    "tt": 14,
+    "sprint": 0,
+    "climber": 10,
+    "hills": 7
+  },
+  "enrico-battaglin": {
+    "onedayraces": 1053,
+    "gc": 441,
+    "tt": 29,
+    "sprint": 209,
+    "climber": 984,
+    "hills": 1546
+  },
+  "enzo-leijnse": {
+    "onedayraces": 44,
+    "gc": 55,
+    "tt": 91,
+    "sprint": 20,
+    "climber": 5,
+    "hills": 10
+  },
+  "enzo-paleni": {
+    "onedayraces": 47,
+    "gc": 173,
+    "tt": 163,
+    "sprint": 36,
+    "climber": 46,
+    "hills": 104
+  },
+  "eric-antonio-fagundez": {
+    "onedayraces": 532,
+    "gc": 393,
+    "tt": 319,
+    "sprint": 106,
+    "climber": 158,
+    "hills": 348
+  },
+  "erik-baska": {
+    "onedayraces": 409,
+    "gc": 88,
+    "tt": 46,
+    "sprint": 308,
+    "climber": 4,
+    "hills": 16
+  },
+  "erik-fetter": {
+    "onedayraces": 114,
+    "gc": 89,
+    "tt": 148,
+    "sprint": 50,
+    "climber": 33,
+    "hills": 131
+  },
+  "erik-nordsaeter-resell": {
+    "onedayraces": 324,
+    "gc": 23,
+    "tt": 66,
+    "sprint": 164,
+    "climber": 15,
+    "hills": 48
+  },
+  "eros-capecchi": {
+    "onedayraces": 366,
+    "gc": 1535,
+    "tt": 65,
+    "sprint": 24,
+    "climber": 1116,
+    "hills": 462
+  },
+  "fabian-lienhard": {
+    "onedayraces": 807,
+    "gc": 228,
+    "tt": 27,
+    "sprint": 325,
+    "climber": 20,
+    "hills": 368
+  },
+  "fabian-weiss": {
+    "onedayraces": 74,
+    "gc": 16,
+    "tt": 92,
+    "sprint": 22,
+    "climber": 10,
+    "hills": 42
+  },
+  "fabien-doubey": {
+    "onedayraces": 173,
+    "gc": 498,
+    "tt": 124,
+    "sprint": 15,
+    "climber": 208,
+    "hills": 294
+  },
+  "fabio-aru": {
+    "onedayraces": 932,
+    "gc": 3573,
+    "tt": 580,
+    "sprint": 20,
+    "climber": 4057,
+    "hills": 1121
+  },
+  "fabio-felline": {
+    "onedayraces": 1774,
+    "gc": 1457,
+    "tt": 1244,
+    "sprint": 270,
+    "climber": 1348,
+    "hills": 1285
+  },
+  "fabio-jakobsen": {
+    "onedayraces": 1888,
+    "gc": 153,
+    "tt": 38,
+    "sprint": 3765,
+    "climber": 6,
+    "hills": 654
+  },
+  "fabio-puntener": {
+    "onedayraces": 0,
+    "gc": 5,
+    "tt": 1,
+    "sprint": 0,
+    "climber": 0,
+    "hills": 0
+  },
+  "fabio-sabatini": {
+    "onedayraces": 506,
+    "gc": 578,
+    "tt": 87,
+    "sprint": 552,
+    "climber": 61,
+    "hills": 285
+  },
+  "fabio-van-den-bossche": {
+    "onedayraces": 197,
+    "gc": 219,
+    "tt": 17,
+    "sprint": 48,
+    "climber": 44,
+    "hills": 183
+  },
+  "fausto-masnada": {
+    "onedayraces": 729,
+    "gc": 1660,
+    "tt": 178,
+    "sprint": 50,
+    "climber": 1252,
+    "hills": 562
+  },
+  "felix-grossschartner": {
+    "onedayraces": 630,
+    "gc": 2936,
+    "tt": 1571,
+    "sprint": 229,
+    "climber": 1803,
+    "hills": 1592
+  },
+  "felix-stehli": {
+    "onedayraces": 2,
+    "gc": 52,
+    "tt": 16,
+    "sprint": 40,
+    "climber": 8,
+    "hills": 76
+  },
+  "fernando-barcelo": {
+    "onedayraces": 671,
+    "gc": 458,
+    "tt": 11,
+    "sprint": 104,
+    "climber": 578,
+    "hills": 749
+  },
+  "fernando-gaviria": {
+    "onedayraces": 2021,
+    "gc": 226,
+    "tt": 110,
+    "sprint": 4494,
+    "climber": 120,
+    "hills": 1994
+  },
+  "filip-maciejuk": {
+    "onedayraces": 155,
+    "gc": 256,
+    "tt": 420,
+    "sprint": 37,
+    "climber": 4,
+    "hills": 26
+  },
+  "filippo-baroncini": {
+    "onedayraces": 501,
+    "gc": 391,
+    "tt": 421,
+    "sprint": 124,
+    "climber": 184,
+    "hills": 371
+  },
+  "filippo-colombo": {
+    "onedayraces": 55,
+    "gc": 5,
+    "tt": 0,
+    "sprint": 10,
+    "climber": 4,
+    "hills": 20
+  },
+  "filippo-fiorelli": {
+    "onedayraces": 756,
+    "gc": 308,
+    "tt": 19,
+    "sprint": 483,
+    "climber": 382,
+    "hills": 992
+  },
+  "filippo-magli2": {
+    "onedayraces": 316,
+    "gc": 198,
+    "tt": 0,
+    "sprint": 100,
+    "climber": 71,
+    "hills": 382
+  },
+  "filippo-tagliani": {
+    "onedayraces": 57,
+    "gc": 89,
+    "tt": 73,
+    "sprint": 240,
+    "climber": 18,
+    "hills": 128
+  },
+  "finlay-pickering": {
+    "onedayraces": 7,
+    "gc": 184,
+    "tt": 58,
+    "sprint": 0,
+    "climber": 256,
+    "hills": 62
+  },
+  "florian-senechal": {
+    "onedayraces": 3131,
+    "gc": 741,
+    "tt": 203,
+    "sprint": 1191,
+    "climber": 100,
+    "hills": 1285
+  },
+  "floris-de-tier": {
+    "onedayraces": 414,
+    "gc": 519,
+    "tt": 0,
+    "sprint": 8,
+    "climber": 454,
+    "hills": 418
+  },
+  "francesco-gavazzi": {
+    "onedayraces": 2993,
+    "gc": 1395,
+    "tt": 43,
+    "sprint": 552,
+    "climber": 1236,
+    "hills": 2030
+  },
+  "francisco-galvan": {
+    "onedayraces": 441,
+    "gc": 110,
+    "tt": 37,
+    "sprint": 188,
+    "climber": 82,
+    "hills": 356
+  },
+  "francisco-munoz-llana": {
+    "onedayraces": 23,
+    "gc": 94,
+    "tt": 9,
+    "sprint": 11,
+    "climber": 22,
+    "hills": 72
+  },
+  "franck-bonnamour": {
+    "onedayraces": 495,
+    "gc": 344,
+    "tt": 25,
+    "sprint": 93,
+    "climber": 508,
+    "hills": 556
+  },
+  "francois-bidard": {
+    "onedayraces": 95,
+    "gc": 330,
+    "tt": 6,
+    "sprint": 6,
+    "climber": 312,
+    "hills": 82
+  },
+  "frederik-frison": {
+    "onedayraces": 517,
+    "gc": 136,
+    "tt": 323,
+    "sprint": 176,
+    "climber": 1,
+    "hills": 9
+  },
+  "gavin-mannion": {
+    "onedayraces": 61,
+    "gc": 705,
+    "tt": 477,
+    "sprint": 74,
+    "climber": 302,
+    "hills": 350
+  },
+  "geoffrey-soupe": {
+    "onedayraces": 227,
+    "gc": 402,
+    "tt": 154,
+    "sprint": 464,
+    "climber": 74,
+    "hills": 262
+  },
+  "geraint-thomas": {
+    "onedayraces": 1277,
+    "gc": 6436,
+    "tt": 5463,
+    "sprint": 422,
+    "climber": 4434,
+    "hills": 2692
+  },
+  "gerben-kuypers": {
+    "onedayraces": 22,
+    "gc": 49,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 6,
+    "hills": 12
+  },
+  "gerben-thijssen": {
+    "onedayraces": 2116,
+    "gc": 71,
+    "tt": 21,
+    "sprint": 2343,
+    "climber": 2,
+    "hills": 131
+  },
+  "german-nicolas-tivani-perez": {
+    "onedayraces": 373,
+    "gc": 271,
+    "tt": 75,
+    "sprint": 422,
+    "climber": 98,
+    "hills": 190
+  },
+  "giacomo-nizzolo": {
+    "onedayraces": 4864,
+    "gc": 564,
+    "tt": 234,
+    "sprint": 5020,
+    "climber": 184,
+    "hills": 2272
+  },
+  "gianluca-brambilla": {
+    "onedayraces": 1726,
+    "gc": 1767,
+    "tt": 148,
+    "sprint": 87,
+    "climber": 2316,
+    "hills": 1660
+  },
+  "gijs-van-hoecke": {
+    "onedayraces": 483,
+    "gc": 426,
+    "tt": 177,
+    "sprint": 142,
+    "climber": 40,
+    "hills": 154
+  },
+  "gil-gelders": {
+    "onedayraces": 112,
+    "gc": 121,
+    "tt": 24,
+    "sprint": 40,
+    "climber": 32,
+    "hills": 96
+  },
+  "gino-mader": {
+    "onedayraces": 113,
+    "gc": 1004,
+    "tt": 278,
+    "sprint": 19,
+    "climber": 1056,
+    "hills": 252
+  },
+  "giosue-epis": {
+    "onedayraces": 75,
+    "gc": 35,
+    "tt": 0,
+    "sprint": 93,
+    "climber": 4,
+    "hills": 53
+  },
+  "giovanni-carboni": {
+    "onedayraces": 250,
+    "gc": 516,
+    "tt": 21,
+    "sprint": 69,
+    "climber": 526,
+    "hills": 446
+  },
+  "giovanni-visconti": {
+    "onedayraces": 5578,
+    "gc": 1979,
+    "tt": 802,
+    "sprint": 318,
+    "climber": 3309,
+    "hills": 1632
+  },
+  "gleb-brussenskiy": {
+    "onedayraces": 262,
+    "gc": 31,
+    "tt": 36,
+    "sprint": 208,
+    "climber": 14,
+    "hills": 73
+  },
+  "gleb-syritsa": {
+    "onedayraces": 199,
+    "gc": 55,
+    "tt": 112,
+    "sprint": 973,
+    "climber": 24,
+    "hills": 133
+  },
+  "gonzalo-serrano": {
+    "onedayraces": 768,
+    "gc": 489,
+    "tt": 58,
+    "sprint": 160,
+    "climber": 406,
+    "hills": 932
+  },
+  "gorka-izagirre": {
+    "onedayraces": 1422,
+    "gc": 2362,
+    "tt": 764,
+    "sprint": 103,
+    "climber": 1993,
+    "hills": 1458
+  },
+  "gotzon-martin": {
+    "onedayraces": 511,
+    "gc": 274,
+    "tt": 0,
+    "sprint": 110,
+    "climber": 238,
+    "hills": 538
+  },
+  "greg-van-avermaet": {
+    "onedayraces": 11652,
+    "gc": 3805,
+    "tt": 577,
+    "sprint": 2298,
+    "climber": 3574,
+    "hills": 6106
+  },
+  "guillaume-boivin": {
+    "onedayraces": 1490,
+    "gc": 487,
+    "tt": 153,
+    "sprint": 1390,
+    "climber": 66,
+    "hills": 380
+  },
+  "guillaume-van-keirsbulck": {
+    "onedayraces": 795,
+    "gc": 594,
+    "tt": 459,
+    "sprint": 345,
+    "climber": 2,
+    "hills": 100
+  },
+  "guillermo-thomas-silva-coussan": {
+    "onedayraces": 536,
+    "gc": 469,
+    "tt": 115,
+    "sprint": 144,
+    "climber": 324,
+    "hills": 888
+  },
+  "guy-niv": {
+    "onedayraces": 27,
+    "gc": 169,
+    "tt": 55,
+    "sprint": 0,
+    "climber": 33,
+    "hills": 14
+  },
+  "guy-sagiv": {
+    "onedayraces": 131,
+    "gc": 65,
+    "tt": 88,
+    "sprint": 1,
+    "climber": 0,
+    "hills": 0
+  },
+  "haoyu-su": {
+    "onedayraces": 133,
+    "gc": 27,
+    "tt": 89,
+    "sprint": 89,
+    "climber": 3,
+    "hills": 22
+  },
+  "harm-vanhoucke": {
+    "onedayraces": 233,
+    "gc": 912,
+    "tt": 77,
+    "sprint": 72,
+    "climber": 890,
+    "hills": 252
+  },
+  "harrison-wood": {
+    "onedayraces": 62,
+    "gc": 69,
+    "tt": 10,
+    "sprint": 1,
+    "climber": 14,
+    "hills": 27
+  },
+  "harry-sweeny": {
+    "onedayraces": 202,
+    "gc": 418,
+    "tt": 285,
+    "sprint": 71,
+    "climber": 214,
+    "hills": 325
+  },
+  "harry-tanfield": {
+    "onedayraces": 76,
+    "gc": 10,
+    "tt": 251,
+    "sprint": 134,
+    "climber": 5,
+    "hills": 10
+  },
+  "hector-carretero": {
+    "onedayraces": 142,
+    "gc": 167,
+    "tt": 32,
+    "sprint": 2,
+    "climber": 92,
+    "hills": 45
+  },
+  "heinrich-haussler": {
+    "onedayraces": 3054,
+    "gc": 840,
+    "tt": 276,
+    "sprint": 2242,
+    "climber": 212,
+    "hills": 1084
+  },
+  "henok-mulubrhan": {
+    "onedayraces": 788,
+    "gc": 1154,
+    "tt": 275,
+    "sprint": 620,
+    "climber": 454,
+    "hills": 926
+  },
+  "henri-vandenabeele": {
+    "onedayraces": 40,
+    "gc": 211,
+    "tt": 1,
+    "sprint": 4,
+    "climber": 154,
+    "hills": 145
+  },
+  "hermann-pernsteiner": {
+    "onedayraces": 288,
+    "gc": 1172,
+    "tt": 50,
+    "sprint": 6,
+    "climber": 934,
+    "hills": 258
+  },
+  "hideto-nakane": {
+    "onedayraces": 179,
+    "gc": 233,
+    "tt": 106,
+    "sprint": 64,
+    "climber": 134,
+    "hills": 124
+  },
+  "hugh-carthy": {
+    "onedayraces": 270,
+    "gc": 2674,
+    "tt": 421,
+    "sprint": 2,
+    "climber": 2351,
+    "hills": 478
+  },
+  "hugo-de-la-calle-arango": {
+    "onedayraces": 86,
+    "gc": 105,
+    "tt": 0,
+    "sprint": 12,
+    "climber": 126,
+    "hills": 93
+  },
+  "hugo-toumire": {
+    "onedayraces": 17,
+    "gc": 79,
+    "tt": 0,
+    "sprint": 4,
+    "climber": 24,
+    "hills": 8
+  },
+  "huub-artz": {
+    "onedayraces": 171,
+    "gc": 133,
+    "tt": 280,
+    "sprint": 214,
+    "climber": 100,
+    "hills": 159
+  },
+  "ian-garrison": {
+    "onedayraces": 15,
+    "gc": 82,
+    "tt": 147,
+    "sprint": 56,
+    "climber": 1,
+    "hills": 46
+  },
+  "ibai-azurmendi-sagastibel": {
+    "onedayraces": 14,
+    "gc": 50,
+    "tt": 0,
+    "sprint": 8,
+    "climber": 21,
+    "hills": 42
+  },
+  "ibon-ruiz": {
+    "onedayraces": 204,
+    "gc": 331,
+    "tt": 18,
+    "sprint": 6,
+    "climber": 206,
+    "hills": 90
+  },
+  "idar-andersen": {
+    "onedayraces": 150,
+    "gc": 127,
+    "tt": 56,
+    "sprint": 22,
+    "climber": 76,
+    "hills": 134
+  },
+  "ide-schelling": {
+    "onedayraces": 455,
+    "gc": 290,
+    "tt": 129,
+    "sprint": 81,
+    "climber": 243,
+    "hills": 631
+  },
+  "ignatas-konovalovas": {
+    "onedayraces": 693,
+    "gc": 760,
+    "tt": 1344,
+    "sprint": 2,
+    "climber": 122,
+    "hills": 135
+  },
+  "igor-chzhan": {
+    "onedayraces": 179,
+    "gc": 118,
+    "tt": 194,
+    "sprint": 146,
+    "climber": 69,
+    "hills": 80
+  },
+  "iker-mintegi-claver": {
+    "onedayraces": 46,
+    "gc": 73,
+    "tt": 0,
+    "sprint": 15,
+    "climber": 38,
+    "hills": 24
+  },
+  "iljo-keisse": {
+    "onedayraces": 704,
+    "gc": 335,
+    "tt": 101,
+    "sprint": 617,
+    "climber": 18,
+    "hills": 7
+  },
+  "ilnur-zakarin": {
+    "onedayraces": 416,
+    "gc": 3286,
+    "tt": 1200,
+    "sprint": 41,
+    "climber": 2902,
+    "hills": 760
+  },
+  "imanol-erviti": {
+    "onedayraces": 749,
+    "gc": 951,
+    "tt": 437,
+    "sprint": 69,
+    "climber": 271,
+    "hills": 328
+  },
+  "inigo-elosegui": {
+    "onedayraces": 40,
+    "gc": 61,
+    "tt": 58,
+    "sprint": 13,
+    "climber": 34,
+    "hills": 36
+  },
+  "itamar-einhorn": {
+    "onedayraces": 592,
+    "gc": 34,
+    "tt": 67,
+    "sprint": 918,
+    "climber": 20,
+    "hills": 211
+  },
+  "iuri-leitao": {
+    "onedayraces": 223,
+    "gc": 111,
+    "tt": 143,
+    "sprint": 498,
+    "climber": 13,
+    "hills": 265
+  },
+  "ivan-cobo-cayon": {
+    "onedayraces": 268,
+    "gc": 239,
+    "tt": 40,
+    "sprint": 20,
+    "climber": 224,
+    "hills": 363
+  },
+  "ivan-ramiro-sosa": {
+    "onedayraces": 389,
+    "gc": 1717,
+    "tt": 0,
+    "sprint": 4,
+    "climber": 1267,
+    "hills": 177
+  },
+  "ivan-rovny": {
+    "onedayraces": 580,
+    "gc": 516,
+    "tt": 119,
+    "sprint": 6,
+    "climber": 370,
+    "hills": 204
+  },
+  "ivo-emanuel-alves": {
+    "onedayraces": 149,
+    "gc": 259,
+    "tt": 920,
+    "sprint": 98,
+    "climber": 74,
+    "hills": 490
+  },
+  "jaakko-hanninen": {
+    "onedayraces": 195,
+    "gc": 178,
+    "tt": 0,
+    "sprint": 21,
+    "climber": 82,
+    "hills": 40
+  },
+  "jack-bauer": {
+    "onedayraces": 702,
+    "gc": 775,
+    "tt": 779,
+    "sprint": 98,
+    "climber": 170,
+    "hills": 206
+  },
+  "jacob-hindsgaul-madsen": {
+    "onedayraces": 25,
+    "gc": 209,
+    "tt": 64,
+    "sprint": 28,
+    "climber": 42,
+    "hills": 64
+  },
+  "jacopo-guarnieri": {
+    "onedayraces": 722,
+    "gc": 371,
+    "tt": 1,
+    "sprint": 670,
+    "climber": 20,
+    "hills": 281
+  },
+  "jacopo-mosca": {
+    "onedayraces": 345,
+    "gc": 604,
+    "tt": 75,
+    "sprint": 220,
+    "climber": 247,
+    "hills": 650
+  },
+  "jaime-castrillo": {
+    "onedayraces": 77,
+    "gc": 65,
+    "tt": 44,
+    "sprint": 16,
+    "climber": 16,
+    "hills": 14
+  },
+  "jakob-fuglsang": {
+    "onedayraces": 3654,
+    "gc": 6658,
+    "tt": 1693,
+    "sprint": 244,
+    "climber": 6126,
+    "hills": 2402
+  },
+  "jakub-mareczko": {
+    "onedayraces": 502,
+    "gc": 385,
+    "tt": 20,
+    "sprint": 4066,
+    "climber": 4,
+    "hills": 245
+  },
+  "jakub-otruba": {
+    "onedayraces": 65,
+    "gc": 512,
+    "tt": 432,
+    "sprint": 56,
+    "climber": 184,
+    "hills": 160
+  },
+  "jambaljamts-sainbayar": {
+    "onedayraces": 565,
+    "gc": 490,
+    "tt": 494,
+    "sprint": 288,
+    "climber": 160,
+    "hills": 259
+  },
+  "james-fouche": {
+    "onedayraces": 304,
+    "gc": 47,
+    "tt": 117,
+    "sprint": 55,
+    "climber": 11,
+    "hills": 170
+  },
+  "james-piccoli": {
+    "onedayraces": 88,
+    "gc": 745,
+    "tt": 297,
+    "sprint": 16,
+    "climber": 366,
+    "hills": 298
+  },
+  "james-whelan": {
+    "onedayraces": 146,
+    "gc": 88,
+    "tt": 11,
+    "sprint": 3,
+    "climber": 53,
+    "hills": 14
+  },
+  "jan-bakelants": {
+    "onedayraces": 1991,
+    "gc": 2656,
+    "tt": 314,
+    "sprint": 296,
+    "climber": 1848,
+    "hills": 1818
+  },
+  "jan-maas": {
+    "onedayraces": 186,
+    "gc": 205,
+    "tt": 12,
+    "sprint": 15,
+    "climber": 86,
+    "hills": 98
+  },
+  "jan-polanc": {
+    "onedayraces": 782,
+    "gc": 1536,
+    "tt": 404,
+    "sprint": 75,
+    "climber": 1302,
+    "hills": 702
+  },
+  "jan-sommer": {
+    "onedayraces": 12,
+    "gc": 15,
+    "tt": 103,
+    "sprint": 16,
+    "climber": 7,
+    "hills": 28
+  },
+  "jan-stockli": {
+    "onedayraces": 0,
+    "gc": 21,
+    "tt": 8,
+    "sprint": 24,
+    "climber": 0,
+    "hills": 1
+  },
+  "jannik-steimle": {
+    "onedayraces": 474,
+    "gc": 337,
+    "tt": 760,
+    "sprint": 458,
+    "climber": 76,
+    "hills": 400
+  },
+  "jarrad-drizners": {
+    "onedayraces": 62,
+    "gc": 147,
+    "tt": 7,
+    "sprint": 48,
+    "climber": 0,
+    "hills": 65
+  },
+  "jason-osborne": {
+    "onedayraces": 40,
+    "gc": 148,
+    "tt": 80,
+    "sprint": 0,
+    "climber": 108,
+    "hills": 82
+  },
+  "jasper-de-plus": {
+    "onedayraces": 0,
+    "gc": 0,
+    "tt": 44,
+    "sprint": 1,
+    "climber": 0,
+    "hills": 0
+  },
+  "jaume-guardeno": {
+    "onedayraces": 0,
+    "gc": 187,
+    "tt": 19,
+    "sprint": 0,
+    "climber": 126,
+    "hills": 53
+  },
+  "jean-pierre-drucker": {
+    "onedayraces": 2346,
+    "gc": 634,
+    "tt": 623,
+    "sprint": 1782,
+    "climber": 114,
+    "hills": 600
+  },
+  "jefferson-cepeda-hernandez": {
+    "onedayraces": 477,
+    "gc": 783,
+    "tt": 243,
+    "sprint": 0,
+    "climber": 652,
+    "hills": 388
+  },
+  "jelle-wallays": {
+    "onedayraces": 1152,
+    "gc": 590,
+    "tt": 157,
+    "sprint": 363,
+    "climber": 126,
+    "hills": 42
+  },
+  "jenno-berckmoes": {
+    "onedayraces": 783,
+    "gc": 618,
+    "tt": 58,
+    "sprint": 208,
+    "climber": 156,
+    "hills": 632
+  },
+  "jens-keukeleire": {
+    "onedayraces": 2027,
+    "gc": 1149,
+    "tt": 163,
+    "sprint": 588,
+    "climber": 208,
+    "hills": 1055
+  },
+  "jeremy-bellicaud": {
+    "onedayraces": 27,
+    "gc": 31,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 46,
+    "hills": 36
+  },
+  "jeremy-cabot": {
+    "onedayraces": 93,
+    "gc": 129,
+    "tt": 243,
+    "sprint": 54,
+    "climber": 14,
+    "hills": 72
+  },
+  "jeremy-lecroq": {
+    "onedayraces": 418,
+    "gc": 32,
+    "tt": 18,
+    "sprint": 522,
+    "climber": 0,
+    "hills": 46
+  },
+  "jesus-david-pena-jimenez": {
+    "onedayraces": 35,
+    "gc": 533,
+    "tt": 0,
+    "sprint": 4,
+    "climber": 350,
+    "hills": 161
+  },
+  "jesus-ezquerra-muela": {
+    "onedayraces": 193,
+    "gc": 158,
+    "tt": 160,
+    "sprint": 102,
+    "climber": 140,
+    "hills": 328
+  },
+  "jesus-herrada-lopez": {
+    "onedayraces": 2192,
+    "gc": 2472,
+    "tt": 946,
+    "sprint": 414,
+    "climber": 2218,
+    "hills": 1460
+  },
+  "jetse-bol": {
+    "onedayraces": 434,
+    "gc": 524,
+    "tt": 145,
+    "sprint": 167,
+    "climber": 231,
+    "hills": 281
+  },
+  "jhojan-garcia": {
+    "onedayraces": 7,
+    "gc": 202,
+    "tt": 14,
+    "sprint": 12,
+    "climber": 96,
+    "hills": 70
+  },
+  "jhonatan-restrepo": {
+    "onedayraces": 479,
+    "gc": 484,
+    "tt": 253,
+    "sprint": 202,
+    "climber": 360,
+    "hills": 732
+  },
+  "jimmy-janssens": {
+    "onedayraces": 419,
+    "gc": 391,
+    "tt": 143,
+    "sprint": 126,
+    "climber": 184,
+    "hills": 220
+  },
+  "joab-schneiter": {
+    "onedayraces": 5,
+    "gc": 5,
+    "tt": 0,
+    "sprint": 19,
+    "climber": 12,
+    "hills": 16
+  },
+  "joe-dombrowski": {
+    "onedayraces": 65,
+    "gc": 1335,
+    "tt": 232,
+    "sprint": 10,
+    "climber": 1091,
+    "hills": 118
+  },
+  "joel-nicolau": {
+    "onedayraces": 270,
+    "gc": 279,
+    "tt": 8,
+    "sprint": 50,
+    "climber": 212,
+    "hills": 309
+  },
+  "joel-suter": {
+    "onedayraces": 110,
+    "gc": 87,
+    "tt": 339,
+    "sprint": 22,
+    "climber": 44,
+    "hills": 160
+  },
+  "joey-rosskopf": {
+    "onedayraces": 285,
+    "gc": 706,
+    "tt": 1212,
+    "sprint": 20,
+    "climber": 301,
+    "hills": 362
+  },
+  "johan-esteban-chaves": {
+    "onedayraces": 1281,
+    "gc": 3400,
+    "tt": 225,
+    "sprint": 44,
+    "climber": 3960,
+    "hills": 1420
+  },
+  "johannes-adamietz": {
+    "onedayraces": 49,
+    "gc": 167,
+    "tt": 38,
+    "sprint": 4,
+    "climber": 98,
+    "hills": 97
+  },
+  "john-archibald": {
+    "onedayraces": 7,
+    "gc": 5,
+    "tt": 182,
+    "sprint": 0,
+    "climber": 0,
+    "hills": 0
+  },
+  "john-degenkolb": {
+    "onedayraces": 6519,
+    "gc": 1236,
+    "tt": 297,
+    "sprint": 4672,
+    "climber": 316,
+    "hills": 3345
+  },
+  "johnatan-canaveral": {
+    "onedayraces": 18,
+    "gc": 90,
+    "tt": 5,
+    "sprint": 22,
+    "climber": 62,
+    "hills": 98
+  },
+  "jokin-murguialday-elorza": {
+    "onedayraces": 35,
+    "gc": 237,
+    "tt": 7,
+    "sprint": 6,
+    "climber": 96,
+    "hills": 52
+  },
+  "jon-aberasturi": {
+    "onedayraces": 811,
+    "gc": 221,
+    "tt": 157,
+    "sprint": 2073,
+    "climber": 79,
+    "hills": 992
+  },
+  "jon-agirre": {
+    "onedayraces": 110,
+    "gc": 300,
+    "tt": 4,
+    "sprint": 0,
+    "climber": 252,
+    "hills": 116
+  },
+  "jon-barrenetxea-golzarri": {
+    "onedayraces": 783,
+    "gc": 197,
+    "tt": 5,
+    "sprint": 44,
+    "climber": 218,
+    "hills": 676
+  },
+  "jon-irisarri": {
+    "onedayraces": 31,
+    "gc": 39,
+    "tt": 0,
+    "sprint": 12,
+    "climber": 13,
+    "hills": 14
+  },
+  "jonas-abrahamsen": {
+    "onedayraces": 1275,
+    "gc": 224,
+    "tt": 11,
+    "sprint": 361,
+    "climber": 142,
+    "hills": 633
+  },
+  "jonas-gregaard": {
+    "onedayraces": 156,
+    "gc": 526,
+    "tt": 39,
+    "sprint": 8,
+    "climber": 224,
+    "hills": 226
+  },
+  "jonas-hem-hvideberg": {
+    "onedayraces": 146,
+    "gc": 58,
+    "tt": 7,
+    "sprint": 38,
+    "climber": 17,
+    "hills": 54
+  },
+  "jonas-koch": {
+    "onedayraces": 625,
+    "gc": 377,
+    "tt": 36,
+    "sprint": 260,
+    "climber": 116,
+    "hills": 674
+  },
+  "jonathan-bogli": {
+    "onedayraces": 0,
+    "gc": 24,
+    "tt": 0,
+    "sprint": 6,
+    "climber": 10,
+    "hills": 0
+  },
+  "jonathan-castroviejo": {
+    "onedayraces": 273,
+    "gc": 2091,
+    "tt": 4614,
+    "sprint": 76,
+    "climber": 1208,
+    "hills": 337
+  },
+  "jonathan-hivert": {
+    "onedayraces": 1771,
+    "gc": 1499,
+    "tt": 551,
+    "sprint": 144,
+    "climber": 648,
+    "hills": 776
+  },
+  "jonathan-klever-caicedo": {
+    "onedayraces": 368,
+    "gc": 537,
+    "tt": 312,
+    "sprint": 36,
+    "climber": 460,
+    "hills": 282
+  },
+  "jonathan-lastra": {
+    "onedayraces": 480,
+    "gc": 844,
+    "tt": 11,
+    "sprint": 124,
+    "climber": 670,
+    "hills": 654
+  },
+  "jordan-labrosse": {
+    "onedayraces": 238,
+    "gc": 56,
+    "tt": 71,
+    "sprint": 48,
+    "climber": 96,
+    "hills": 226
+  },
+  "jordi-lopez-caravaca": {
+    "onedayraces": 101,
+    "gc": 310,
+    "tt": 5,
+    "sprint": 38,
+    "climber": 89,
+    "hills": 228
+  },
+  "jordi-warlop": {
+    "onedayraces": 586,
+    "gc": 28,
+    "tt": 0,
+    "sprint": 359,
+    "climber": 38,
+    "hills": 240
+  },
+  "jorge-arcas": {
+    "onedayraces": 158,
+    "gc": 285,
+    "tt": 49,
+    "sprint": 30,
+    "climber": 86,
+    "hills": 104
+  },
+  "jorge-gutierrez-gonzalez": {
+    "onedayraces": 40,
+    "gc": 174,
+    "tt": 2,
+    "sprint": 0,
+    "climber": 130,
+    "hills": 38
+  },
+  "joris-delbove": {
+    "onedayraces": 212,
+    "gc": 363,
+    "tt": 44,
+    "sprint": 36,
+    "climber": 159,
+    "hills": 180
+  },
+  "joris-nieuwenhuis": {
+    "onedayraces": 250,
+    "gc": 161,
+    "tt": 18,
+    "sprint": 103,
+    "climber": 28,
+    "hills": 156
+  },
+  "jos-van-emden": {
+    "onedayraces": 892,
+    "gc": 1206,
+    "tt": 4047,
+    "sprint": 333,
+    "climber": 53,
+    "hills": 162
+  },
+  "jose-herrada": {
+    "onedayraces": 580,
+    "gc": 1114,
+    "tt": 326,
+    "sprint": 38,
+    "climber": 833,
+    "hills": 314
+  },
+  "jose-joaquin-rojas": {
+    "onedayraces": 3020,
+    "gc": 1993,
+    "tt": 129,
+    "sprint": 2172,
+    "climber": 1527,
+    "hills": 3162
+  },
+  "jose-luis-faura-asensio": {
+    "onedayraces": 12,
+    "gc": 88,
+    "tt": 5,
+    "sprint": 0,
+    "climber": 44,
+    "hills": 12
+  },
+  "jose-manuel-diaz-gallego": {
+    "onedayraces": 424,
+    "gc": 789,
+    "tt": 0,
+    "sprint": 16,
+    "climber": 690,
+    "hills": 298
+  },
+  "joseba-lopez-cuesta": {
+    "onedayraces": 32,
+    "gc": 10,
+    "tt": 1,
+    "sprint": 2,
+    "climber": 21,
+    "hills": 46
+  },
+  "josef-cerny": {
+    "onedayraces": 215,
+    "gc": 732,
+    "tt": 1770,
+    "sprint": 400,
+    "climber": 66,
+    "hills": 450
+  },
+  "joseph-blackmore": {
+    "onedayraces": 262,
+    "gc": 515,
+    "tt": 91,
+    "sprint": 20,
+    "climber": 378,
+    "hills": 412
+  },
+  "josh-burnett": {
+    "onedayraces": 61,
+    "gc": 267,
+    "tt": 49,
+    "sprint": 22,
+    "climber": 77,
+    "hills": 124
+  },
+  "juan-ayuso-pesquera": {
+    "onedayraces": 1277,
+    "gc": 2385,
+    "tt": 1303,
+    "sprint": 12,
+    "climber": 2576,
+    "hills": 928
+  },
+  "juan-diego-alba": {
+    "onedayraces": 15,
+    "gc": 116,
+    "tt": 8,
+    "sprint": 6,
+    "climber": 148,
+    "hills": 92
+  },
+  "juan-felipe-osorio": {
+    "onedayraces": 24,
+    "gc": 58,
+    "tt": 25,
+    "sprint": 28,
+    "climber": 41,
+    "hills": 32
+  },
+  "juan-jose-lobato": {
+    "onedayraces": 1342,
+    "gc": 623,
+    "tt": 79,
+    "sprint": 1204,
+    "climber": 221,
+    "hills": 972
+  },
+  "juan-sebastian-molano": {
+    "onedayraces": 1166,
+    "gc": 294,
+    "tt": 0,
+    "sprint": 2473,
+    "climber": 86,
+    "hills": 1081
+  },
+  "julen-amezqueta": {
+    "onedayraces": 89,
+    "gc": 301,
+    "tt": 1,
+    "sprint": 0,
+    "climber": 210,
+    "hills": 128
+  },
+  "julen-arriola-bengoa-beitia": {
+    "onedayraces": 3,
+    "gc": 31,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 48,
+    "hills": 30
+  },
+  "julien-el-fares": {
+    "onedayraces": 642,
+    "gc": 1436,
+    "tt": 83,
+    "sprint": 40,
+    "climber": 577,
+    "hills": 440
+  },
+  "julien-simon": {
+    "onedayraces": 3411,
+    "gc": 1255,
+    "tt": 209,
+    "sprint": 530,
+    "climber": 992,
+    "hills": 2078
+  },
+  "julien-vermote": {
+    "onedayraces": 572,
+    "gc": 684,
+    "tt": 428,
+    "sprint": 120,
+    "climber": 52,
+    "hills": 186
+  },
+  "julius-johansen": {
+    "onedayraces": 87,
+    "gc": 238,
+    "tt": 497,
+    "sprint": 94,
+    "climber": 22,
+    "hills": 84
+  },
+  "julius-van-den-berg": {
+    "onedayraces": 251,
+    "gc": 221,
+    "tt": 79,
+    "sprint": 292,
+    "climber": 8,
+    "hills": 50
+  },
+  "junior-lecerf": {
+    "onedayraces": 94,
+    "gc": 899,
+    "tt": 62,
+    "sprint": 10,
+    "climber": 714,
+    "hills": 388
+  },
+  "juraj-sagan": {
+    "onedayraces": 361,
+    "gc": 94,
+    "tt": 0,
+    "sprint": 31,
+    "climber": 1,
+    "hills": 36
+  },
+  "juri-hollmann": {
+    "onedayraces": 116,
+    "gc": 120,
+    "tt": 165,
+    "sprint": 1,
+    "climber": 68,
+    "hills": 40
+  },
+  "kamiel-bonneu": {
+    "onedayraces": 125,
+    "gc": 563,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 308,
+    "hills": 231
+  },
+  "kamil-gradek": {
+    "onedayraces": 251,
+    "gc": 618,
+    "tt": 719,
+    "sprint": 437,
+    "climber": 8,
+    "hills": 37
+  },
+  "kamil-malecki": {
+    "onedayraces": 237,
+    "gc": 324,
+    "tt": 215,
+    "sprint": 272,
+    "climber": 116,
+    "hills": 158
+  },
+  "karel-vacek": {
+    "onedayraces": 5,
+    "gc": 28,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 124,
+    "hills": 36
+  },
+  "keegan-swirbul": {
+    "onedayraces": 10,
+    "gc": 287,
+    "tt": 88,
+    "sprint": 9,
+    "climber": 214,
+    "hills": 108
+  },
+  "kelland-brien": {
+    "onedayraces": 290,
+    "gc": 121,
+    "tt": 288,
+    "sprint": 26,
+    "climber": 7,
+    "hills": 128
+  },
+  "kenneth-van-bilsen": {
+    "onedayraces": 819,
+    "gc": 175,
+    "tt": 3,
+    "sprint": 516,
+    "climber": 2,
+    "hills": 102
+  },
+  "kenny-elissonde": {
+    "onedayraces": 287,
+    "gc": 1246,
+    "tt": 27,
+    "sprint": 4,
+    "climber": 1372,
+    "hills": 324
+  },
+  "kevin-colleoni": {
+    "onedayraces": 130,
+    "gc": 292,
+    "tt": 12,
+    "sprint": 0,
+    "climber": 184,
+    "hills": 164
+  },
+  "kevin-kuhn": {
+    "onedayraces": 0,
+    "gc": 5,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 0,
+    "hills": 1
+  },
+  "kevin-ledanois": {
+    "onedayraces": 445,
+    "gc": 256,
+    "tt": 75,
+    "sprint": 77,
+    "climber": 48,
+    "hills": 173
+  },
+  "kevin-van-melsen": {
+    "onedayraces": 94,
+    "gc": 70,
+    "tt": 3,
+    "sprint": 26,
+    "climber": 0,
+    "hills": 11
+  },
+  "kiel-reijnen": {
+    "onedayraces": 279,
+    "gc": 508,
+    "tt": 150,
+    "sprint": 350,
+    "climber": 102,
+    "hills": 254
+  },
+  "kilian-frankiny": {
+    "onedayraces": 82,
+    "gc": 439,
+    "tt": 18,
+    "sprint": 0,
+    "climber": 368,
+    "hills": 52
+  },
+  "kim-heiduk": {
+    "onedayraces": 202,
+    "gc": 322,
+    "tt": 75,
+    "sprint": 191,
+    "climber": 40,
+    "hills": 327
+  },
+  "kobe-goossens": {
+    "onedayraces": 416,
+    "gc": 349,
+    "tt": 21,
+    "sprint": 22,
+    "climber": 242,
+    "hills": 326
+  },
+  "koen-de-kort": {
+    "onedayraces": 708,
+    "gc": 1002,
+    "tt": 403,
+    "sprint": 352,
+    "climber": 210,
+    "hills": 308
+  },
+  "kristian-aasvold": {
+    "onedayraces": 92,
+    "gc": 177,
+    "tt": 30,
+    "sprint": 106,
+    "climber": 76,
+    "hills": 176
+  },
+  "kristian-sbaragli": {
+    "onedayraces": 1948,
+    "gc": 535,
+    "tt": 0,
+    "sprint": 734,
+    "climber": 455,
+    "hills": 1537
+  },
+  "krists-neilands": {
+    "onedayraces": 862,
+    "gc": 826,
+    "tt": 275,
+    "sprint": 262,
+    "climber": 453,
+    "hills": 696
+  },
+  "kyle-murphy": {
+    "onedayraces": 97,
+    "gc": 227,
+    "tt": 222,
+    "sprint": 7,
+    "climber": 220,
+    "hills": 188
+  },
+  "kyrylo-tsarenko": {
+    "onedayraces": 108,
+    "gc": 295,
+    "tt": 0,
+    "sprint": 22,
+    "climber": 100,
+    "hills": 154
+  },
+  "lachlan-morton": {
+    "onedayraces": 50,
+    "gc": 798,
+    "tt": 132,
+    "sprint": 29,
+    "climber": 386,
+    "hills": 191
+  },
+  "lars-boven": {
+    "onedayraces": 124,
+    "gc": 55,
+    "tt": 106,
+    "sprint": 192,
+    "climber": 52,
+    "hills": 124
+  },
+  "lars-sommer": {
+    "onedayraces": 0,
+    "gc": 5,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 0,
+    "hills": 0
+  },
+  "lars-van-den-berg": {
+    "onedayraces": 99,
+    "gc": 80,
+    "tt": 30,
+    "sprint": 21,
+    "climber": 77,
+    "hills": 126
+  },
+  "laurence-pithie": {
+    "onedayraces": 1447,
+    "gc": 382,
+    "tt": 205,
+    "sprint": 680,
+    "climber": 124,
+    "hills": 1142
+  },
+  "laurens-huys": {
+    "onedayraces": 117,
+    "gc": 284,
+    "tt": 4,
+    "sprint": 12,
+    "climber": 190,
+    "hills": 131
+  },
+  "laurent-pichon": {
+    "onedayraces": 1733,
+    "gc": 684,
+    "tt": 84,
+    "sprint": 284,
+    "climber": 92,
+    "hills": 314
+  },
+  "laurenz-rex": {
+    "onedayraces": 966,
+    "gc": 100,
+    "tt": 2,
+    "sprint": 504,
+    "climber": 16,
+    "hills": 269
+  },
+  "lawrence-naesen": {
+    "onedayraces": 580,
+    "gc": 98,
+    "tt": 0,
+    "sprint": 356,
+    "climber": 44,
+    "hills": 254
+  },
+  "lawrence-warbasse": {
+    "onedayraces": 372,
+    "gc": 909,
+    "tt": 397,
+    "sprint": 52,
+    "climber": 580,
+    "hills": 313
+  },
+  "lawson-craddock": {
+    "onedayraces": 211,
+    "gc": 862,
+    "tt": 1541,
+    "sprint": 59,
+    "climber": 584,
+    "hills": 500
+  },
+  "leandre-lozouet": {
+    "onedayraces": 75,
+    "gc": 44,
+    "tt": 7,
+    "sprint": 82,
+    "climber": 2,
+    "hills": 75
+  },
+  "lennard-hofstede": {
+    "onedayraces": 85,
+    "gc": 300,
+    "tt": 71,
+    "sprint": 24,
+    "climber": 34,
+    "hills": 54
+  },
+  "leon-heinschke": {
+    "onedayraces": 36,
+    "gc": 47,
+    "tt": 53,
+    "sprint": 14,
+    "climber": 8,
+    "hills": 27
+  },
+  "leonardo-basso": {
+    "onedayraces": 252,
+    "gc": 109,
+    "tt": 0,
+    "sprint": 67,
+    "climber": 12,
+    "hills": 100
+  },
+  "lewis-askey": {
+    "onedayraces": 974,
+    "gc": 369,
+    "tt": 11,
+    "sprint": 299,
+    "climber": 94,
+    "hills": 700
+  },
+  "lilian-calmejane": {
+    "onedayraces": 1061,
+    "gc": 1317,
+    "tt": 188,
+    "sprint": 202,
+    "climber": 1063,
+    "hills": 1059
+  },
+  "lionel-taminiaux": {
+    "onedayraces": 1091,
+    "gc": 70,
+    "tt": 26,
+    "sprint": 1001,
+    "climber": 58,
+    "hills": 442
+  },
+  "lluis-guillermo-mas": {
+    "onedayraces": 208,
+    "gc": 389,
+    "tt": 293,
+    "sprint": 174,
+    "climber": 118,
+    "hills": 142
+  },
+  "loe-van-belle": {
+    "onedayraces": 104,
+    "gc": 22,
+    "tt": 95,
+    "sprint": 99,
+    "climber": 28,
+    "hills": 60
+  },
+  "logan-currie": {
+    "onedayraces": 68,
+    "gc": 263,
+    "tt": 274,
+    "sprint": 18,
+    "climber": 40,
+    "hills": 110
+  },
+  "logan-owen": {
+    "onedayraces": 30,
+    "gc": 142,
+    "tt": 0,
+    "sprint": 150,
+    "climber": 31,
+    "hills": 75
+  },
+  "loic-vliegen": {
+    "onedayraces": 951,
+    "gc": 786,
+    "tt": 27,
+    "sprint": 188,
+    "climber": 192,
+    "hills": 550
+  },
+  "lorenzo-conforti": {
+    "onedayraces": 70,
+    "gc": 60,
+    "tt": 0,
+    "sprint": 254,
+    "climber": 40,
+    "hills": 176
+  },
+  "lorenzo-quartucci": {
+    "onedayraces": 189,
+    "gc": 359,
+    "tt": 0,
+    "sprint": 154,
+    "climber": 124,
+    "hills": 340
+  },
+  "lorrenzo-manzin": {
+    "onedayraces": 855,
+    "gc": 302,
+    "tt": 25,
+    "sprint": 1216,
+    "climber": 26,
+    "hills": 511
+  },
+  "louis-barre": {
+    "onedayraces": 652,
+    "gc": 363,
+    "tt": 1,
+    "sprint": 4,
+    "climber": 318,
+    "hills": 484
+  },
+  "louis-meintjes": {
+    "onedayraces": 669,
+    "gc": 3367,
+    "tt": 375,
+    "sprint": 4,
+    "climber": 3344,
+    "hills": 486
+  },
+  "luc-wirtgen": {
+    "onedayraces": 161,
+    "gc": 165,
+    "tt": 12,
+    "sprint": 15,
+    "climber": 65,
+    "hills": 167
+  },
+  "luca-colnaghi": {
+    "onedayraces": 259,
+    "gc": 33,
+    "tt": 0,
+    "sprint": 478,
+    "climber": 64,
+    "hills": 380
+  },
+  "luca-covili": {
+    "onedayraces": 81,
+    "gc": 589,
+    "tt": 6,
+    "sprint": 6,
+    "climber": 430,
+    "hills": 152
+  },
+  "luca-jenni": {
+    "onedayraces": 11,
+    "gc": 17,
+    "tt": 2,
+    "sprint": 2,
+    "climber": 4,
+    "hills": 14
+  },
+  "luca-rastelli": {
+    "onedayraces": 12,
+    "gc": 37,
+    "tt": 1,
+    "sprint": 4,
+    "climber": 10,
+    "hills": 22
+  },
+  "luca-van-boven": {
+    "onedayraces": 355,
+    "gc": 184,
+    "tt": 2,
+    "sprint": 64,
+    "climber": 64,
+    "hills": 326
+  },
+  "lucas-eriksson": {
+    "onedayraces": 376,
+    "gc": 285,
+    "tt": 3,
+    "sprint": 58,
+    "climber": 90,
+    "hills": 256
+  },
+  "lucas-hamilton": {
+    "onedayraces": 426,
+    "gc": 1180,
+    "tt": 84,
+    "sprint": 40,
+    "climber": 969,
+    "hills": 472
+  },
+  "ludovic-robeet": {
+    "onedayraces": 337,
+    "gc": 67,
+    "tt": 11,
+    "sprint": 162,
+    "climber": 1,
+    "hills": 21
+  },
+  "luis-angel-mate": {
+    "onedayraces": 526,
+    "gc": 1154,
+    "tt": 60,
+    "sprint": 34,
+    "climber": 725,
+    "hills": 434
+  },
+  "luis-joe-luhrs": {
+    "onedayraces": 26,
+    "gc": 15,
+    "tt": 20,
+    "sprint": 4,
+    "climber": 2,
+    "hills": 10
+  },
+  "luis-leon-sanchez": {
+    "onedayraces": 2016,
+    "gc": 5921,
+    "tt": 2998,
+    "sprint": 202,
+    "climber": 3976,
+    "hills": 2565
+  },
+  "lukas-nerurkar": {
+    "onedayraces": 361,
+    "gc": 253,
+    "tt": 12,
+    "sprint": 0,
+    "climber": 224,
+    "hills": 451
+  },
+  "lukas-postlberger": {
+    "onedayraces": 656,
+    "gc": 264,
+    "tt": 331,
+    "sprint": 131,
+    "climber": 103,
+    "hills": 445
+  },
+  "lukas-ruegg": {
+    "onedayraces": 99,
+    "gc": 77,
+    "tt": 52,
+    "sprint": 72,
+    "climber": 45,
+    "hills": 165
+  },
+  "lukasz-owsian": {
+    "onedayraces": 371,
+    "gc": 609,
+    "tt": 98,
+    "sprint": 63,
+    "climber": 88,
+    "hills": 78
+  },
+  "lukasz-wisniowski": {
+    "onedayraces": 576,
+    "gc": 305,
+    "tt": 307,
+    "sprint": 132,
+    "climber": 30,
+    "hills": 203
+  },
+  "luke-lamperti": {
+    "onedayraces": 667,
+    "gc": 182,
+    "tt": 112,
+    "sprint": 710,
+    "climber": 30,
+    "hills": 631
+  },
+  "luke-rowe": {
+    "onedayraces": 1185,
+    "gc": 466,
+    "tt": 143,
+    "sprint": 288,
+    "climber": 72,
+    "hills": 413
+  },
+  "maciej-bodnar": {
+    "onedayraces": 303,
+    "gc": 883,
+    "tt": 3601,
+    "sprint": 113,
+    "climber": 22,
+    "hills": 138
+  },
+  "madis-mihkels": {
+    "onedayraces": 722,
+    "gc": 132,
+    "tt": 72,
+    "sprint": 579,
+    "climber": 44,
+    "hills": 570
+  },
+  "mads-wurtz-schmidt": {
+    "onedayraces": 446,
+    "gc": 514,
+    "tt": 603,
+    "sprint": 182,
+    "climber": 66,
+    "hills": 486
+  },
+  "magnus-cort-nielsen": {
+    "onedayraces": 1701,
+    "gc": 1493,
+    "tt": 825,
+    "sprint": 1932,
+    "climber": 1228,
+    "hills": 2864
+  },
+  "magnus-kulset": {
+    "onedayraces": 0,
+    "gc": 8,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 22,
+    "hills": 1
+  },
+  "maikel-zijlaard": {
+    "onedayraces": 223,
+    "gc": 66,
+    "tt": 671,
+    "sprint": 577,
+    "climber": 0,
+    "hills": 49
+  },
+  "manlio-moro": {
+    "onedayraces": 55,
+    "gc": 40,
+    "tt": 33,
+    "sprint": 14,
+    "climber": 2,
+    "hills": 7
+  },
+  "manuel-belletti": {
+    "onedayraces": 2041,
+    "gc": 185,
+    "tt": 64,
+    "sprint": 2238,
+    "climber": 137,
+    "hills": 1106
+  },
+  "manuel-penalver": {
+    "onedayraces": 314,
+    "gc": 4,
+    "tt": 0,
+    "sprint": 1380,
+    "climber": 28,
+    "hills": 376
+  },
+  "manuele-boaro": {
+    "onedayraces": 282,
+    "gc": 832,
+    "tt": 1295,
+    "sprint": 17,
+    "climber": 318,
+    "hills": 219
+  },
+  "marc-brustenga-masague": {
+    "onedayraces": 158,
+    "gc": 35,
+    "tt": 14,
+    "sprint": 338,
+    "climber": 12,
+    "hills": 165
+  },
+  "marc-sarreau": {
+    "onedayraces": 1672,
+    "gc": 191,
+    "tt": 130,
+    "sprint": 1806,
+    "climber": 16,
+    "hills": 336
+  },
+  "marcel-camprubi": {
+    "onedayraces": 137,
+    "gc": 111,
+    "tt": 1,
+    "sprint": 0,
+    "climber": 116,
+    "hills": 168
+  },
+  "marco-brenner": {
+    "onedayraces": 274,
+    "gc": 563,
+    "tt": 182,
+    "sprint": 10,
+    "climber": 448,
+    "hills": 428
+  },
+  "marco-canola": {
+    "onedayraces": 1293,
+    "gc": 421,
+    "tt": 159,
+    "sprint": 522,
+    "climber": 403,
+    "hills": 1076
+  },
+  "marco-haller": {
+    "onedayraces": 1385,
+    "gc": 746,
+    "tt": 139,
+    "sprint": 499,
+    "climber": 88,
+    "hills": 614
+  },
+  "marco-murgano": {
+    "onedayraces": 26,
+    "gc": 90,
+    "tt": 18,
+    "sprint": 15,
+    "climber": 14,
+    "hills": 54
+  },
+  "marcus-burghardt": {
+    "onedayraces": 1633,
+    "gc": 722,
+    "tt": 180,
+    "sprint": 372,
+    "climber": 130,
+    "hills": 578
+  },
+  "marijn-van-den-berg": {
+    "onedayraces": 930,
+    "gc": 492,
+    "tt": 121,
+    "sprint": 1014,
+    "climber": 192,
+    "hills": 1282
+  },
+  "mario-aparicio-munoz": {
+    "onedayraces": 18,
+    "gc": 373,
+    "tt": 29,
+    "sprint": 9,
+    "climber": 140,
+    "hills": 111
+  },
+  "marius-mayrhofer": {
+    "onedayraces": 629,
+    "gc": 140,
+    "tt": 99,
+    "sprint": 199,
+    "climber": 45,
+    "hills": 637
+  },
+  "mark-cavendish": {
+    "onedayraces": 3067,
+    "gc": 1502,
+    "tt": 712,
+    "sprint": 12880,
+    "climber": 93,
+    "hills": 2065
+  },
+  "mark-christian": {
+    "onedayraces": 78,
+    "gc": 222,
+    "tt": 110,
+    "sprint": 8,
+    "climber": 84,
+    "hills": 78
+  },
+  "mark-padun": {
+    "onedayraces": 147,
+    "gc": 563,
+    "tt": 153,
+    "sprint": 2,
+    "climber": 678,
+    "hills": 216
+  },
+  "mark-stewart": {
+    "onedayraces": 147,
+    "gc": 257,
+    "tt": 20,
+    "sprint": 34,
+    "climber": 109,
+    "hills": 224
+  },
+  "markel-beloki": {
+    "onedayraces": 47,
+    "gc": 160,
+    "tt": 58,
+    "sprint": 0,
+    "climber": 187,
+    "hills": 90
+  },
+  "marti-marquez": {
+    "onedayraces": 1,
+    "gc": 108,
+    "tt": 2,
+    "sprint": 19,
+    "climber": 10,
+    "hills": 34
+  },
+  "martijn-tusveld": {
+    "onedayraces": 187,
+    "gc": 560,
+    "tt": 313,
+    "sprint": 30,
+    "climber": 204,
+    "hills": 254
+  },
+  "martin-laas": {
+    "onedayraces": 247,
+    "gc": 396,
+    "tt": 141,
+    "sprint": 1890,
+    "climber": 22,
+    "hills": 225
+  },
+  "martin-salmon": {
+    "onedayraces": 5,
+    "gc": 5,
+    "tt": 0,
+    "sprint": 18,
+    "climber": 0,
+    "hills": 0
+  },
+  "marton-dina": {
+    "onedayraces": 119,
+    "gc": 402,
+    "tt": 176,
+    "sprint": 30,
+    "climber": 203,
+    "hills": 202
+  },
+  "mason-hollyman": {
+    "onedayraces": 14,
+    "gc": 88,
+    "tt": 0,
+    "sprint": 3,
+    "climber": 72,
+    "hills": 86
+  },
+  "matheo-vercher": {
+    "onedayraces": 313,
+    "gc": 186,
+    "tt": 1,
+    "sprint": 2,
+    "climber": 231,
+    "hills": 364
+  },
+  "mathias-fluckiger": {
+    "onedayraces": 0,
+    "gc": 15,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 2,
+    "hills": 5
+  },
+  "mathias-frank": {
+    "onedayraces": 705,
+    "gc": 2877,
+    "tt": 600,
+    "sprint": 76,
+    "climber": 2122,
+    "hills": 634
+  },
+  "mathias-norsgaard": {
+    "onedayraces": 282,
+    "gc": 111,
+    "tt": 515,
+    "sprint": 121,
+    "climber": 2,
+    "hills": 13
+  },
+  "mathys-rondel": {
+    "onedayraces": 211,
+    "gc": 778,
+    "tt": 31,
+    "sprint": 0,
+    "climber": 632,
+    "hills": 242
+  },
+  "matis-louvel": {
+    "onedayraces": 1166,
+    "gc": 169,
+    "tt": 67,
+    "sprint": 118,
+    "climber": 70,
+    "hills": 635
+  },
+  "mats-wenzel": {
+    "onedayraces": 111,
+    "gc": 219,
+    "tt": 27,
+    "sprint": 28,
+    "climber": 149,
+    "hills": 196
+  },
+  "matteo-amella": {
+    "onedayraces": 0,
+    "gc": 5,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 0,
+    "hills": 0
+  },
+  "matteo-badilatti": {
+    "onedayraces": 67,
+    "gc": 723,
+    "tt": 62,
+    "sprint": 0,
+    "climber": 564,
+    "hills": 160
+  },
+  "matteo-constant": {
+    "onedayraces": 0,
+    "gc": 0,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 0,
+    "hills": 0
+  },
+  "matteo-dal-cin": {
+    "onedayraces": 31,
+    "gc": 109,
+    "tt": 167,
+    "sprint": 4,
+    "climber": 31,
+    "hills": 67
+  },
+  "matteo-fabbro": {
+    "onedayraces": 200,
+    "gc": 833,
+    "tt": 74,
+    "sprint": 4,
+    "climber": 666,
+    "hills": 266
+  },
+  "matteo-pelucchi": {
+    "onedayraces": 698,
+    "gc": 51,
+    "tt": 97,
+    "sprint": 1769,
+    "climber": 16,
+    "hills": 112
+  },
+  "matteo-scalco": {
+    "onedayraces": 78,
+    "gc": 141,
+    "tt": 26,
+    "sprint": 14,
+    "climber": 127,
+    "hills": 83
+  },
+  "matthew-brennan": {
+    "onedayraces": 788,
+    "gc": 286,
+    "tt": 112,
+    "sprint": 643,
+    "climber": 158,
+    "hills": 754
+  },
+  "matthew-dinham": {
+    "onedayraces": 275,
+    "gc": 175,
+    "tt": 8,
+    "sprint": 6,
+    "climber": 117,
+    "hills": 230
+  },
+  "matthew-holmes": {
+    "onedayraces": 34,
+    "gc": 184,
+    "tt": 0,
+    "sprint": 3,
+    "climber": 156,
+    "hills": 186
+  },
+  "matthew-walls": {
+    "onedayraces": 287,
+    "gc": 28,
+    "tt": 43,
+    "sprint": 545,
+    "climber": 10,
+    "hills": 154
+  },
+  "matthias-brandle": {
+    "onedayraces": 474,
+    "gc": 998,
+    "tt": 3054,
+    "sprint": 660,
+    "climber": 116,
+    "hills": 214
+  },
+  "matthias-reutimann": {
+    "onedayraces": 2,
+    "gc": 12,
+    "tt": 14,
+    "sprint": 14,
+    "climber": 35,
+    "hills": 11
+  },
+  "matthieu-ladagnous": {
+    "onedayraces": 1441,
+    "gc": 1455,
+    "tt": 232,
+    "sprint": 238,
+    "climber": 172,
+    "hills": 343
+  },
+  "mattias-skjelmose-jensen": {
+    "onedayraces": 2060,
+    "gc": 2640,
+    "tt": 1210,
+    "sprint": 132,
+    "climber": 2702,
+    "hills": 1716
+  },
+  "maurice-ballerstedt": {
+    "onedayraces": 168,
+    "gc": 93,
+    "tt": 28,
+    "sprint": 98,
+    "climber": 22,
+    "hills": 98
+  },
+  "maurits-lammertink": {
+    "onedayraces": 813,
+    "gc": 718,
+    "tt": 93,
+    "sprint": 75,
+    "climber": 258,
+    "hills": 434
+  },
+  "max-kanter": {
+    "onedayraces": 1307,
+    "gc": 248,
+    "tt": 32,
+    "sprint": 1722,
+    "climber": 124,
+    "hills": 1217
+  },
+  "max-van-der-meulen": {
+    "onedayraces": 18,
+    "gc": 32,
+    "tt": 0,
+    "sprint": 14,
+    "climber": 26,
+    "hills": 45
+  },
+  "max-walscheid": {
+    "onedayraces": 1849,
+    "gc": 373,
+    "tt": 1225,
+    "sprint": 2608,
+    "climber": 17,
+    "hills": 456
+  },
+  "maxime-bouet": {
+    "onedayraces": 727,
+    "gc": 1581,
+    "tt": 411,
+    "sprint": 107,
+    "climber": 602,
+    "hills": 860
+  },
+  "maxime-chevalier": {
+    "onedayraces": 87,
+    "gc": 92,
+    "tt": 41,
+    "sprint": 12,
+    "climber": 52,
+    "hills": 70
+  },
+  "maximilian-schachmann": {
+    "onedayraces": 1475,
+    "gc": 2228,
+    "tt": 1999,
+    "sprint": 170,
+    "climber": 1976,
+    "hills": 1810
+  },
+  "menno-huising": {
+    "onedayraces": 71,
+    "gc": 60,
+    "tt": 1,
+    "sprint": 8,
+    "climber": 42,
+    "hills": 22
+  },
+  "merhawi-kudus": {
+    "onedayraces": 785,
+    "gc": 1636,
+    "tt": 351,
+    "sprint": 326,
+    "climber": 984,
+    "hills": 654
+  },
+  "michael-hepburn": {
+    "onedayraces": 200,
+    "gc": 439,
+    "tt": 1827,
+    "sprint": 38,
+    "climber": 34,
+    "hills": 119
+  },
+  "michael-leonard1": {
+    "onedayraces": 62,
+    "gc": 99,
+    "tt": 262,
+    "sprint": 0,
+    "climber": 38,
+    "hills": 34
+  },
+  "michael-morkov": {
+    "onedayraces": 1239,
+    "gc": 978,
+    "tt": 366,
+    "sprint": 908,
+    "climber": 165,
+    "hills": 518
+  },
+  "michael-schar": {
+    "onedayraces": 802,
+    "gc": 971,
+    "tt": 154,
+    "sprint": 97,
+    "climber": 128,
+    "hills": 180
+  },
+  "michael-schwarzmann": {
+    "onedayraces": 247,
+    "gc": 278,
+    "tt": 15,
+    "sprint": 219,
+    "climber": 48,
+    "hills": 312
+  },
+  "michael-vink": {
+    "onedayraces": 69,
+    "gc": 188,
+    "tt": 307,
+    "sprint": 39,
+    "climber": 41,
+    "hills": 22
+  },
+  "michael-woods": {
+    "onedayraces": 3257,
+    "gc": 2320,
+    "tt": 40,
+    "sprint": 174,
+    "climber": 4530,
+    "hills": 1795
+  },
+  "michal-golas": {
+    "onedayraces": 888,
+    "gc": 625,
+    "tt": 68,
+    "sprint": 56,
+    "climber": 233,
+    "hills": 226
+  },
+  "michal-schlegel": {
+    "onedayraces": 71,
+    "gc": 380,
+    "tt": 66,
+    "sprint": 31,
+    "climber": 191,
+    "hills": 82
+  },
+  "michel-ries": {
+    "onedayraces": 141,
+    "gc": 236,
+    "tt": 103,
+    "sprint": 0,
+    "climber": 177,
+    "hills": 14
+  },
+  "michele-gazzoli": {
+    "onedayraces": 104,
+    "gc": 48,
+    "tt": 42,
+    "sprint": 130,
+    "climber": 48,
+    "hills": 164
+  },
+  "miguel-angel-lopez-moreno": {
+    "onedayraces": 326,
+    "gc": 3497,
+    "tt": 802,
+    "sprint": 126,
+    "climber": 4112,
+    "hills": 856
+  },
+  "miguel-eduardo-florez": {
+    "onedayraces": 62,
+    "gc": 195,
+    "tt": 0,
+    "sprint": 14,
+    "climber": 142,
+    "hills": 106
+  },
+  "miguel-heidemann": {
+    "onedayraces": 24,
+    "gc": 55,
+    "tt": 365,
+    "sprint": 31,
+    "climber": 50,
+    "hills": 20
+  },
+  "mikael-cherel": {
+    "onedayraces": 654,
+    "gc": 1318,
+    "tt": 0,
+    "sprint": 70,
+    "climber": 725,
+    "hills": 486
+  },
+  "mikel-aristi": {
+    "onedayraces": 169,
+    "gc": 53,
+    "tt": 93,
+    "sprint": 280,
+    "climber": 35,
+    "hills": 212
+  },
+  "mikel-bizkarra": {
+    "onedayraces": 201,
+    "gc": 1160,
+    "tt": 30,
+    "sprint": 13,
+    "climber": 974,
+    "hills": 176
+  },
+  "mikel-iturria": {
+    "onedayraces": 128,
+    "gc": 273,
+    "tt": 24,
+    "sprint": 5,
+    "climber": 210,
+    "hills": 136
+  },
+  "mikel-nieve": {
+    "onedayraces": 811,
+    "gc": 3608,
+    "tt": 31,
+    "sprint": 2,
+    "climber": 4094,
+    "hills": 486
+  },
+  "mikel-retegi": {
+    "onedayraces": 15,
+    "gc": 15,
+    "tt": 0,
+    "sprint": 4,
+    "climber": 31,
+    "hills": 96
+  },
+  "mikkel-bjerg": {
+    "onedayraces": 535,
+    "gc": 477,
+    "tt": 2459,
+    "sprint": 145,
+    "climber": 152,
+    "hills": 350
+  },
+  "mikkel-honore": {
+    "onedayraces": 1252,
+    "gc": 710,
+    "tt": 133,
+    "sprint": 82,
+    "climber": 676,
+    "hills": 1002
+  },
+  "milan-vader": {
+    "onedayraces": 88,
+    "gc": 380,
+    "tt": 1,
+    "sprint": 30,
+    "climber": 107,
+    "hills": 204
+  },
+  "miles-scotson": {
+    "onedayraces": 221,
+    "gc": 282,
+    "tt": 708,
+    "sprint": 24,
+    "climber": 14,
+    "hills": 127
+  },
+  "mulu-kinfe-hailemichael": {
+    "onedayraces": 28,
+    "gc": 88,
+    "tt": 36,
+    "sprint": 14,
+    "climber": 64,
+    "hills": 82
+  },
+  "nacer-bouhanni": {
+    "onedayraces": 4555,
+    "gc": 464,
+    "tt": 51,
+    "sprint": 6019,
+    "climber": 227,
+    "hills": 1942
+  },
+  "nairo-quintana": {
+    "onedayraces": 849,
+    "gc": 9695,
+    "tt": 1274,
+    "sprint": 71,
+    "climber": 8106,
+    "hills": 2015
+  },
+  "nans-peters": {
+    "onedayraces": 615,
+    "gc": 521,
+    "tt": 90,
+    "sprint": 24,
+    "climber": 542,
+    "hills": 266
+  },
+  "nathan-brown": {
+    "onedayraces": 116,
+    "gc": 318,
+    "tt": 219,
+    "sprint": 1,
+    "climber": 178,
+    "hills": 74
+  },
+  "nathan-haas": {
+    "onedayraces": 1176,
+    "gc": 1094,
+    "tt": 253,
+    "sprint": 335,
+    "climber": 726,
+    "hills": 1062
+  },
+  "nathan-van-hooydonck": {
+    "onedayraces": 534,
+    "gc": 328,
+    "tt": 297,
+    "sprint": 58,
+    "climber": 14,
+    "hills": 156
+  },
+  "natnael-berhane": {
+    "onedayraces": 723,
+    "gc": 920,
+    "tt": 227,
+    "sprint": 158,
+    "climber": 278,
+    "hills": 234
+  },
+  "natnael-tesfatsion": {
+    "onedayraces": 956,
+    "gc": 827,
+    "tt": 15,
+    "sprint": 246,
+    "climber": 674,
+    "hills": 1151
+  },
+  "negasi-abreha": {
+    "onedayraces": 124,
+    "gc": 16,
+    "tt": 123,
+    "sprint": 18,
+    "climber": 7,
+    "hills": 10
+  },
+  "neilson-powless": {
+    "onedayraces": 2820,
+    "gc": 1599,
+    "tt": 891,
+    "sprint": 241,
+    "climber": 1852,
+    "hills": 1168
+  },
+  "niccolo-bonifazio": {
+    "onedayraces": 1624,
+    "gc": 420,
+    "tt": 48,
+    "sprint": 1706,
+    "climber": 104,
+    "hills": 1202
+  },
+  "nickolas-dlamini": {
+    "onedayraces": 45,
+    "gc": 58,
+    "tt": 27,
+    "sprint": 10,
+    "climber": 4,
+    "hills": 30
+  },
+  "nicola-venchiarutti": {
+    "onedayraces": 68,
+    "gc": 24,
+    "tt": 1,
+    "sprint": 78,
+    "climber": 18,
+    "hills": 88
+  },
+  "nicolas-alustiza": {
+    "onedayraces": 10,
+    "gc": 26,
+    "tt": 0,
+    "sprint": 10,
+    "climber": 6,
+    "hills": 27
+  },
+  "nicolas-dalla-valle": {
+    "onedayraces": 39,
+    "gc": 40,
+    "tt": 172,
+    "sprint": 302,
+    "climber": 10,
+    "hills": 224
+  },
+  "nicolas-debeaumarche": {
+    "onedayraces": 55,
+    "gc": 52,
+    "tt": 0,
+    "sprint": 32,
+    "climber": 6,
+    "hills": 34
+  },
+  "nicolas-edet": {
+    "onedayraces": 475,
+    "gc": 1575,
+    "tt": 78,
+    "sprint": 455,
+    "climber": 1020,
+    "hills": 448
+  },
+  "nicolas-roche": {
+    "onedayraces": 1352,
+    "gc": 3473,
+    "tt": 680,
+    "sprint": 378,
+    "climber": 3859,
+    "hills": 2294
+  },
+  "nicolas-vinokurov": {
+    "onedayraces": 154,
+    "gc": 358,
+    "tt": 133,
+    "sprint": 76,
+    "climber": 152,
+    "hills": 222
+  },
+  "nicolo-buratti": {
+    "onedayraces": 185,
+    "gc": 69,
+    "tt": 36,
+    "sprint": 86,
+    "climber": 44,
+    "hills": 306
+  },
+  "nicolo-parisini": {
+    "onedayraces": 174,
+    "gc": 88,
+    "tt": 8,
+    "sprint": 184,
+    "climber": 14,
+    "hills": 234
+  },
+  "niki-terpstra": {
+    "onedayraces": 4666,
+    "gc": 2405,
+    "tt": 1739,
+    "sprint": 1010,
+    "climber": 195,
+    "hills": 1152
+  },
+  "niklas-eg": {
+    "onedayraces": 73,
+    "gc": 593,
+    "tt": 47,
+    "sprint": 10,
+    "climber": 334,
+    "hills": 96
+  },
+  "niklas-markl": {
+    "onedayraces": 216,
+    "gc": 146,
+    "tt": 45,
+    "sprint": 246,
+    "climber": 26,
+    "hills": 170
+  },
+  "nils-brun": {
+    "onedayraces": 36,
+    "gc": 27,
+    "tt": 11,
+    "sprint": 3,
+    "climber": 20,
+    "hills": 34
+  },
+  "nils-eekhoff": {
+    "onedayraces": 839,
+    "gc": 284,
+    "tt": 296,
+    "sprint": 809,
+    "climber": 0,
+    "hills": 262
+  },
+  "nolann-mahoudo": {
+    "onedayraces": 61,
+    "gc": 36,
+    "tt": 0,
+    "sprint": 48,
+    "climber": 4,
+    "hills": 36
+  },
+  "odd-christian-eiking": {
+    "onedayraces": 877,
+    "gc": 1283,
+    "tt": 55,
+    "sprint": 187,
+    "climber": 974,
+    "hills": 958
+  },
+  "oier-lazkano": {
+    "onedayraces": 454,
+    "gc": 436,
+    "tt": 206,
+    "sprint": 66,
+    "climber": 244,
+    "hills": 370
+  },
+  "oliver-knight": {
+    "onedayraces": 19,
+    "gc": 103,
+    "tt": 142,
+    "sprint": 43,
+    "climber": 10,
+    "hills": 54
+  },
+  "olivier-le-gac": {
+    "onedayraces": 708,
+    "gc": 415,
+    "tt": 4,
+    "sprint": 120,
+    "climber": 88,
+    "hills": 171
+  },
+  "oliviero-troia": {
+    "onedayraces": 145,
+    "gc": 105,
+    "tt": 10,
+    "sprint": 51,
+    "climber": 0,
+    "hills": 47
+  },
+  "omar-fraile": {
+    "onedayraces": 378,
+    "gc": 675,
+    "tt": 169,
+    "sprint": 44,
+    "climber": 1006,
+    "hills": 648
+  },
+  "omer-goldstein": {
+    "onedayraces": 128,
+    "gc": 246,
+    "tt": 212,
+    "sprint": 68,
+    "climber": 78,
+    "hills": 178
+  },
+  "oscar-cabedo": {
+    "onedayraces": 0,
+    "gc": 290,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 150,
+    "hills": 8
+  },
+  "oscar-riesebeek": {
+    "onedayraces": 615,
+    "gc": 491,
+    "tt": 108,
+    "sprint": 245,
+    "climber": 150,
+    "hills": 288
+  },
+  "oscar-rodriguez": {
+    "onedayraces": 177,
+    "gc": 861,
+    "tt": 161,
+    "sprint": 8,
+    "climber": 820,
+    "hills": 198
+  },
+  "otto-vergaerde": {
+    "onedayraces": 234,
+    "gc": 167,
+    "tt": 12,
+    "sprint": 66,
+    "climber": 18,
+    "hills": 71
+  },
+  "owain-doull": {
+    "onedayraces": 764,
+    "gc": 558,
+    "tt": 273,
+    "sprint": 176,
+    "climber": 117,
+    "hills": 432
+  },
+  "pablo-castrillo-zapater": {
+    "onedayraces": 72,
+    "gc": 685,
+    "tt": 329,
+    "sprint": 0,
+    "climber": 792,
+    "hills": 286
+  },
+  "pablo-torres-arias": {
+    "onedayraces": 0,
+    "gc": 159,
+    "tt": 71,
+    "sprint": 0,
+    "climber": 158,
+    "hills": 50
+  },
+  "patrick-bevin": {
+    "onedayraces": 83,
+    "gc": 785,
+    "tt": 1567,
+    "sprint": 298,
+    "climber": 518,
+    "hills": 1014
+  },
+  "patrick-eddy": {
+    "onedayraces": 157,
+    "gc": 85,
+    "tt": 69,
+    "sprint": 149,
+    "climber": 20,
+    "hills": 132
+  },
+  "patrick-gamper": {
+    "onedayraces": 223,
+    "gc": 148,
+    "tt": 194,
+    "sprint": 75,
+    "climber": 28,
+    "hills": 81
+  },
+  "patrick-konrad": {
+    "onedayraces": 1536,
+    "gc": 2682,
+    "tt": 458,
+    "sprint": 100,
+    "climber": 2708,
+    "hills": 1666
+  },
+  "pau-miquel-delgado": {
+    "onedayraces": 681,
+    "gc": 65,
+    "tt": 2,
+    "sprint": 112,
+    "climber": 158,
+    "hills": 732
+  },
+  "paul-double": {
+    "onedayraces": 95,
+    "gc": 992,
+    "tt": 4,
+    "sprint": 18,
+    "climber": 464,
+    "hills": 294
+  },
+  "paul-lapeira": {
+    "onedayraces": 1182,
+    "gc": 297,
+    "tt": 116,
+    "sprint": 172,
+    "climber": 284,
+    "hills": 760
+  },
+  "paul-martens": {
+    "onedayraces": 1711,
+    "gc": 1162,
+    "tt": 482,
+    "sprint": 354,
+    "climber": 406,
+    "hills": 972
+  },
+  "paul-ourselin": {
+    "onedayraces": 224,
+    "gc": 231,
+    "tt": 34,
+    "sprint": 32,
+    "climber": 112,
+    "hills": 106
+  },
+  "pavel-kochetkov": {
+    "onedayraces": 293,
+    "gc": 459,
+    "tt": 41,
+    "sprint": 35,
+    "climber": 123,
+    "hills": 135
+  },
+  "pelayo-sanchez-mayo": {
+    "onedayraces": 207,
+    "gc": 225,
+    "tt": 68,
+    "sprint": 0,
+    "climber": 432,
+    "hills": 242
+  },
+  "peter-sagan": {
+    "onedayraces": 9426,
+    "gc": 1797,
+    "tt": 1335,
+    "sprint": 8048,
+    "climber": 2924,
+    "hills": 8646
+  },
+  "petr-kelemen": {
+    "onedayraces": 114,
+    "gc": 60,
+    "tt": 106,
+    "sprint": 62,
+    "climber": 14,
+    "hills": 47
+  },
+  "petr-vakoc": {
+    "onedayraces": 1293,
+    "gc": 646,
+    "tt": 185,
+    "sprint": 125,
+    "climber": 322,
+    "hills": 708
+  },
+  "philippe-gilbert": {
+    "onedayraces": 12530,
+    "gc": 4215,
+    "tt": 1430,
+    "sprint": 2325,
+    "climber": 3549,
+    "hills": 5364
+  },
+  "pier-andre-cote": {
+    "onedayraces": 535,
+    "gc": 254,
+    "tt": 243,
+    "sprint": 254,
+    "climber": 66,
+    "hills": 275
+  },
+  "pierre-latour": {
+    "onedayraces": 783,
+    "gc": 2350,
+    "tt": 1429,
+    "sprint": 88,
+    "climber": 2325,
+    "hills": 1248
+  },
+  "pierre-luc-perichon": {
+    "onedayraces": 735,
+    "gc": 708,
+    "tt": 220,
+    "sprint": 88,
+    "climber": 264,
+    "hills": 318
+  },
+  "pierre-rolland": {
+    "onedayraces": 502,
+    "gc": 3339,
+    "tt": 250,
+    "sprint": 20,
+    "climber": 3422,
+    "hills": 642
+  },
+  "pierre-thierry": {
+    "onedayraces": 125,
+    "gc": 60,
+    "tt": 87,
+    "sprint": 40,
+    "climber": 28,
+    "hills": 74
+  },
+  "pieter-serry": {
+    "onedayraces": 1119,
+    "gc": 864,
+    "tt": 230,
+    "sprint": 125,
+    "climber": 630,
+    "hills": 688
+  },
+  "pieter-vanspeybrouck": {
+    "onedayraces": 813,
+    "gc": 268,
+    "tt": 135,
+    "sprint": 394,
+    "climber": 30,
+    "hills": 229
+  },
+  "primoz-roglic": {
+    "onedayraces": 2103,
+    "gc": 8598,
+    "tt": 6156,
+    "sprint": 168,
+    "climber": 8758,
+    "hills": 3174
+  },
+  "quinten-hermans": {
+    "onedayraces": 1292,
+    "gc": 784,
+    "tt": 92,
+    "sprint": 229,
+    "climber": 713,
+    "hills": 1455
+  },
+  "rafael-valls": {
+    "onedayraces": 295,
+    "gc": 1209,
+    "tt": 78,
+    "sprint": 6,
+    "climber": 708,
+    "hills": 324
+  },
+  "rafal-majka": {
+    "onedayraces": 1204,
+    "gc": 5843,
+    "tt": 937,
+    "sprint": 47,
+    "climber": 6482,
+    "hills": 1972
+  },
+  "rainer-kepplinger": {
+    "onedayraces": 10,
+    "gc": 327,
+    "tt": 210,
+    "sprint": 1,
+    "climber": 147,
+    "hills": 90
+  },
+  "ramon-sinkeldam": {
+    "onedayraces": 898,
+    "gc": 578,
+    "tt": 72,
+    "sprint": 714,
+    "climber": 1,
+    "hills": 90
+  },
+  "rasmus-tiller": {
+    "onedayraces": 2027,
+    "gc": 376,
+    "tt": 118,
+    "sprint": 758,
+    "climber": 116,
+    "hills": 724
+  },
+  "rein-taaramae": {
+    "onedayraces": 752,
+    "gc": 3144,
+    "tt": 1688,
+    "sprint": 384,
+    "climber": 2207,
+    "hills": 731
+  },
+  "reinardt-janse-van-rensburg": {
+    "onedayraces": 1586,
+    "gc": 937,
+    "tt": 726,
+    "sprint": 1034,
+    "climber": 220,
+    "hills": 876
+  },
+  "reto-hollenstein": {
+    "onedayraces": 381,
+    "gc": 756,
+    "tt": 653,
+    "sprint": 49,
+    "climber": 102,
+    "hills": 166
+  },
+  "reuben-thompson": {
+    "onedayraces": 85,
+    "gc": 244,
+    "tt": 25,
+    "sprint": 2,
+    "climber": 154,
+    "hills": 91
+  },
+  "riccardo-lucca": {
+    "onedayraces": 48,
+    "gc": 95,
+    "tt": 19,
+    "sprint": 28,
+    "climber": 74,
+    "hills": 86
+  },
+  "riccardo-minali": {
+    "onedayraces": 323,
+    "gc": 130,
+    "tt": 0,
+    "sprint": 1024,
+    "climber": 5,
+    "hills": 237
+  },
+  "richie-porte": {
+    "onedayraces": 334,
+    "gc": 7697,
+    "tt": 4287,
+    "sprint": 52,
+    "climber": 4590,
+    "hills": 2044
+  },
+  "rick-zabel": {
+    "onedayraces": 647,
+    "gc": 337,
+    "tt": 51,
+    "sprint": 604,
+    "climber": 119,
+    "hills": 440
+  },
+  "rigoberto-uran": {
+    "onedayraces": 3086,
+    "gc": 5913,
+    "tt": 1804,
+    "sprint": 190,
+    "climber": 6980,
+    "hills": 2170
+  },
+  "riley-pickrell": {
+    "onedayraces": 143,
+    "gc": 15,
+    "tt": 42,
+    "sprint": 178,
+    "climber": 30,
+    "hills": 246
+  },
+  "riley-sheehan": {
+    "onedayraces": 731,
+    "gc": 393,
+    "tt": 58,
+    "sprint": 96,
+    "climber": 132,
+    "hills": 447
+  },
+  "rob-britton": {
+    "onedayraces": 62,
+    "gc": 851,
+    "tt": 670,
+    "sprint": 26,
+    "climber": 398,
+    "hills": 244
+  },
+  "robbe-ghys": {
+    "onedayraces": 244,
+    "gc": 145,
+    "tt": 2,
+    "sprint": 193,
+    "climber": 10,
+    "hills": 122
+  },
+  "robert-gesink": {
+    "onedayraces": 2888,
+    "gc": 5189,
+    "tt": 1196,
+    "sprint": 185,
+    "climber": 4685,
+    "hills": 1400
+  },
+  "robert-power": {
+    "onedayraces": 608,
+    "gc": 264,
+    "tt": 64,
+    "sprint": 4,
+    "climber": 371,
+    "hills": 153
+  },
+  "robert-stannard": {
+    "onedayraces": 228,
+    "gc": 227,
+    "tt": 68,
+    "sprint": 178,
+    "climber": 343,
+    "hills": 660
+  },
+  "roberto-gonzalez": {
+    "onedayraces": 93,
+    "gc": 47,
+    "tt": 169,
+    "sprint": 24,
+    "climber": 12,
+    "hills": 69
+  },
+  "rodrigo-contreras": {
+    "onedayraces": 60,
+    "gc": 350,
+    "tt": 809,
+    "sprint": 6,
+    "climber": 216,
+    "hills": 182
+  },
+  "roger-kluge": {
+    "onedayraces": 472,
+    "gc": 515,
+    "tt": 490,
+    "sprint": 561,
+    "climber": 70,
+    "hills": 174
+  },
+  "rohan-dennis": {
+    "onedayraces": 50,
+    "gc": 2793,
+    "tt": 6407,
+    "sprint": 39,
+    "climber": 1028,
+    "hills": 1256
+  },
+  "romain-bardet": {
+    "onedayraces": 3401,
+    "gc": 6495,
+    "tt": 401,
+    "sprint": 75,
+    "climber": 8634,
+    "hills": 2079
+  },
+  "romain-combaud": {
+    "onedayraces": 476,
+    "gc": 457,
+    "tt": 0,
+    "sprint": 23,
+    "climber": 144,
+    "hills": 182
+  },
+  "romain-gregoire": {
+    "onedayraces": 1865,
+    "gc": 1021,
+    "tt": 304,
+    "sprint": 71,
+    "climber": 1426,
+    "hills": 1804
+  },
+  "romain-seigle": {
+    "onedayraces": 127,
+    "gc": 188,
+    "tt": 144,
+    "sprint": 30,
+    "climber": 44,
+    "hills": 36
+  },
+  "roman-ermakov": {
+    "onedayraces": 72,
+    "gc": 40,
+    "tt": 30,
+    "sprint": 22,
+    "climber": 8,
+    "hills": 13
+  },
+  "roman-kreuziger": {
+    "onedayraces": 2417,
+    "gc": 5077,
+    "tt": 2171,
+    "sprint": 58,
+    "climber": 4831,
+    "hills": 1572
+  },
+  "ruben-fernandez-andujar": {
+    "onedayraces": 274,
+    "gc": 1515,
+    "tt": 158,
+    "sprint": 62,
+    "climber": 662,
+    "hills": 534
+  },
+  "ruben-guerreiro": {
+    "onedayraces": 844,
+    "gc": 1548,
+    "tt": 36,
+    "sprint": 137,
+    "climber": 1708,
+    "hills": 1294
+  },
+  "rudiger-selig": {
+    "onedayraces": 873,
+    "gc": 283,
+    "tt": 68,
+    "sprint": 1070,
+    "climber": 0,
+    "hills": 216
+  },
+  "rudy-barbier": {
+    "onedayraces": 1254,
+    "gc": 209,
+    "tt": 61,
+    "sprint": 1706,
+    "climber": 31,
+    "hills": 152
+  },
+  "rudy-porter": {
+    "onedayraces": 56,
+    "gc": 147,
+    "tt": 1,
+    "sprint": 20,
+    "climber": 89,
+    "hills": 82
+  },
+  "rui-costa": {
+    "onedayraces": 4488,
+    "gc": 6239,
+    "tt": 1625,
+    "sprint": 224,
+    "climber": 5656,
+    "hills": 2810
+  },
+  "rui-oliveira": {
+    "onedayraces": 624,
+    "gc": 166,
+    "tt": 38,
+    "sprint": 586,
+    "climber": 54,
+    "hills": 704
+  },
+  "rune-herregodts": {
+    "onedayraces": 498,
+    "gc": 296,
+    "tt": 577,
+    "sprint": 198,
+    "climber": 159,
+    "hills": 266
+  },
+  "ryan-gibbons": {
+    "onedayraces": 941,
+    "gc": 518,
+    "tt": 445,
+    "sprint": 540,
+    "climber": 320,
+    "hills": 1014
+  },
+  "sacha-modolo": {
+    "onedayraces": 1809,
+    "gc": 535,
+    "tt": 19,
+    "sprint": 2814,
+    "climber": 226,
+    "hills": 1454
+  },
+  "salvatore-puccio": {
+    "onedayraces": 407,
+    "gc": 552,
+    "tt": 83,
+    "sprint": 27,
+    "climber": 268,
+    "hills": 366
+  },
+  "sam-bennett": {
+    "onedayraces": 2662,
+    "gc": 556,
+    "tt": 135,
+    "sprint": 5514,
+    "climber": 130,
+    "hills": 1904
+  },
+  "sam-bewley": {
+    "onedayraces": 30,
+    "gc": 261,
+    "tt": 320,
+    "sprint": 10,
+    "climber": 0,
+    "hills": 3
+  },
+  "sam-oomen": {
+    "onedayraces": 509,
+    "gc": 1950,
+    "tt": 197,
+    "sprint": 148,
+    "climber": 1338,
+    "hills": 698
+  },
+  "sam-welsford": {
+    "onedayraces": 760,
+    "gc": 215,
+    "tt": 99,
+    "sprint": 1430,
+    "climber": 0,
+    "hills": 270
+  },
+  "samuel-fernandez-garcia": {
+    "onedayraces": 24,
+    "gc": 129,
+    "tt": 7,
+    "sprint": 1,
+    "climber": 104,
+    "hills": 49
+  },
+  "samuel-gaze": {
+    "onedayraces": 18,
+    "gc": 17,
+    "tt": 95,
+    "sprint": 12,
+    "climber": 3,
+    "hills": 28
+  },
+  "samuel-leroux": {
+    "onedayraces": 197,
+    "gc": 224,
+    "tt": 211,
+    "sprint": 231,
+    "climber": 6,
+    "hills": 88
+  },
+  "samuele-rivi": {
+    "onedayraces": 49,
+    "gc": 51,
+    "tt": 24,
+    "sprint": 38,
+    "climber": 8,
+    "hills": 50
+  },
+  "samuele-zoccarato": {
+    "onedayraces": 200,
+    "gc": 71,
+    "tt": 3,
+    "sprint": 18,
+    "climber": 134,
+    "hills": 100
+  },
+  "sander-armee": {
+    "onedayraces": 307,
+    "gc": 1000,
+    "tt": 24,
+    "sprint": 54,
+    "climber": 438,
+    "hills": 250
+  },
+  "sander-de-pestel": {
+    "onedayraces": 246,
+    "gc": 86,
+    "tt": 236,
+    "sprint": 102,
+    "climber": 4,
+    "hills": 82
+  },
+  "sandy-dujardin": {
+    "onedayraces": 1297,
+    "gc": 106,
+    "tt": 68,
+    "sprint": 354,
+    "climber": 120,
+    "hills": 589
+  },
+  "santiago-umba": {
+    "onedayraces": 83,
+    "gc": 274,
+    "tt": 5,
+    "sprint": 34,
+    "climber": 187,
+    "hills": 192
+  },
+  "savva-novikov": {
+    "onedayraces": 15,
+    "gc": 237,
+    "tt": 21,
+    "sprint": 68,
+    "climber": 46,
+    "hills": 76
+  },
+  "scott-thwaites": {
+    "onedayraces": 823,
+    "gc": 199,
+    "tt": 1,
+    "sprint": 218,
+    "climber": 106,
+    "hills": 192
+  },
+  "sean-bennett": {
+    "onedayraces": 97,
+    "gc": 159,
+    "tt": 32,
+    "sprint": 79,
+    "climber": 120,
+    "hills": 166
+  },
+  "sebastian-berwick": {
+    "onedayraces": 111,
+    "gc": 718,
+    "tt": 9,
+    "sprint": 25,
+    "climber": 370,
+    "hills": 236
+  },
+  "sebastian-henao": {
+    "onedayraces": 146,
+    "gc": 694,
+    "tt": 151,
+    "sprint": 21,
+    "climber": 456,
+    "hills": 65
+  },
+  "sebastian-kolze-changizi": {
+    "onedayraces": 87,
+    "gc": 50,
+    "tt": 0,
+    "sprint": 122,
+    "climber": 0,
+    "hills": 72
+  },
+  "sebastian-langeveld": {
+    "onedayraces": 2265,
+    "gc": 1255,
+    "tt": 1120,
+    "sprint": 223,
+    "climber": 162,
+    "hills": 504
+  },
+  "sebastian-mora-vedri": {
+    "onedayraces": 29,
+    "gc": 10,
+    "tt": 56,
+    "sprint": 77,
+    "climber": 0,
+    "hills": 51
+  },
+  "sebastian-schonberger": {
+    "onedayraces": 241,
+    "gc": 244,
+    "tt": 11,
+    "sprint": 25,
+    "climber": 94,
+    "hills": 174
+  },
+  "sebastien-grignard": {
+    "onedayraces": 180,
+    "gc": 100,
+    "tt": 9,
+    "sprint": 0,
+    "climber": 2,
+    "hills": 19
+  },
+  "sebastien-reichenbach": {
+    "onedayraces": 768,
+    "gc": 2042,
+    "tt": 123,
+    "sprint": 12,
+    "climber": 1844,
+    "hills": 378
+  },
+  "senne-leysen": {
+    "onedayraces": 91,
+    "gc": 185,
+    "tt": 141,
+    "sprint": 31,
+    "climber": 6,
+    "hills": 46
+  },
+  "sep-vanmarcke": {
+    "onedayraces": 4870,
+    "gc": 782,
+    "tt": 267,
+    "sprint": 1138,
+    "climber": 380,
+    "hills": 1748
+  },
+  "sergey-chernetskiy": {
+    "onedayraces": 798,
+    "gc": 1430,
+    "tt": 385,
+    "sprint": 61,
+    "climber": 759,
+    "hills": 570
+  },
+  "sergio-geovani-chumil-gonzalez": {
+    "onedayraces": 176,
+    "gc": 173,
+    "tt": 145,
+    "sprint": 105,
+    "climber": 276,
+    "hills": 172
+  },
+  "sergio-luis-henao": {
+    "onedayraces": 1629,
+    "gc": 3649,
+    "tt": 561,
+    "sprint": 37,
+    "climber": 3278,
+    "hills": 1579
+  },
+  "sergio-martin2": {
+    "onedayraces": 5,
+    "gc": 53,
+    "tt": 8,
+    "sprint": 20,
+    "climber": 42,
+    "hills": 74
+  },
+  "shane-archbold": {
+    "onedayraces": 299,
+    "gc": 151,
+    "tt": 63,
+    "sprint": 178,
+    "climber": 60,
+    "hills": 148
+  },
+  "silvan-dillier": {
+    "onedayraces": 1261,
+    "gc": 997,
+    "tt": 526,
+    "sprint": 432,
+    "climber": 296,
+    "hills": 530
+  },
+  "simon-clarke": {
+    "onedayraces": 2458,
+    "gc": 1585,
+    "tt": 139,
+    "sprint": 341,
+    "climber": 1410,
+    "hills": 1703
+  },
+  "simon-geschke": {
+    "onedayraces": 1572,
+    "gc": 1563,
+    "tt": 668,
+    "sprint": 167,
+    "climber": 1721,
+    "hills": 1041
+  },
+  "simon-guglielmi": {
+    "onedayraces": 219,
+    "gc": 208,
+    "tt": 3,
+    "sprint": 58,
+    "climber": 388,
+    "hills": 254
+  },
+  "simon-pellaud": {
+    "onedayraces": 289,
+    "gc": 435,
+    "tt": 44,
+    "sprint": 304,
+    "climber": 196,
+    "hills": 222
+  },
+  "simon-vitzthum": {
+    "onedayraces": 0,
+    "gc": 19,
+    "tt": 42,
+    "sprint": 0,
+    "climber": 0,
+    "hills": 0
+  },
+  "simon-yates": {
+    "onedayraces": 1183,
+    "gc": 5955,
+    "tt": 1215,
+    "sprint": 40,
+    "climber": 6489,
+    "hills": 1874
+  },
+  "simone-petilli": {
+    "onedayraces": 467,
+    "gc": 525,
+    "tt": 39,
+    "sprint": 8,
+    "climber": 479,
+    "hills": 122
+  },
+  "simone-ravanelli": {
+    "onedayraces": 166,
+    "gc": 160,
+    "tt": 35,
+    "sprint": 28,
+    "climber": 206,
+    "hills": 162
+  },
+  "sinuhe-fernandez-rodriguez": {
+    "onedayraces": 0,
+    "gc": 32,
+    "tt": 0,
+    "sprint": 3,
+    "climber": 23,
+    "hills": 1
+  },
+  "sonny-colbrelli": {
+    "onedayraces": 5472,
+    "gc": 1172,
+    "tt": 142,
+    "sprint": 1476,
+    "climber": 1107,
+    "hills": 3158
+  },
+  "soren-waerenskjold": {
+    "onedayraces": 1170,
+    "gc": 780,
+    "tt": 998,
+    "sprint": 1001,
+    "climber": 42,
+    "hills": 413
+  },
+  "stan-dewulf": {
+    "onedayraces": 908,
+    "gc": 730,
+    "tt": 78,
+    "sprint": 288,
+    "climber": 246,
+    "hills": 584
+  },
+  "stan-van-tricht": {
+    "onedayraces": 618,
+    "gc": 39,
+    "tt": 26,
+    "sprint": 172,
+    "climber": 24,
+    "hills": 215
+  },
+  "stanislaw-aniolkowski": {
+    "onedayraces": 1171,
+    "gc": 407,
+    "tt": 123,
+    "sprint": 1744,
+    "climber": 52,
+    "hills": 758
+  },
+  "stefan-de-bod": {
+    "onedayraces": 195,
+    "gc": 655,
+    "tt": 812,
+    "sprint": 68,
+    "climber": 309,
+    "hills": 116
+  },
+  "stefano-gandin": {
+    "onedayraces": 30,
+    "gc": 14,
+    "tt": 2,
+    "sprint": 101,
+    "climber": 12,
+    "hills": 85
+  },
+  "stefano-oldani": {
+    "onedayraces": 797,
+    "gc": 324,
+    "tt": 36,
+    "sprint": 270,
+    "climber": 454,
+    "hills": 1398
+  },
+  "stephen-williams": {
+    "onedayraces": 437,
+    "gc": 811,
+    "tt": 8,
+    "sprint": 41,
+    "climber": 426,
+    "hills": 784
+  },
+  "steven-kruijswijk": {
+    "onedayraces": 349,
+    "gc": 4499,
+    "tt": 1440,
+    "sprint": 38,
+    "climber": 4081,
+    "hills": 1318
+  },
+  "stian-fredheim": {
+    "onedayraces": 451,
+    "gc": 50,
+    "tt": 1,
+    "sprint": 458,
+    "climber": 4,
+    "hills": 138
+  },
+  "stijn-steels": {
+    "onedayraces": 326,
+    "gc": 42,
+    "tt": 37,
+    "sprint": 50,
+    "climber": 5,
+    "hills": 40
+  },
+  "sven-erik-bystrom": {
+    "onedayraces": 838,
+    "gc": 829,
+    "tt": 135,
+    "sprint": 471,
+    "climber": 352,
+    "hills": 735
+  },
+  "sylvain-moniquet": {
+    "onedayraces": 336,
+    "gc": 711,
+    "tt": 68,
+    "sprint": 9,
+    "climber": 601,
+    "hills": 358
+  },
+  "szymon-sajnok": {
+    "onedayraces": 305,
+    "gc": 106,
+    "tt": 298,
+    "sprint": 470,
+    "climber": 33,
+    "hills": 231
+  },
+  "taco-van-der-hoorn": {
+    "onedayraces": 1323,
+    "gc": 243,
+    "tt": 2,
+    "sprint": 924,
+    "climber": 74,
+    "hills": 187
+  },
+  "taj-jones": {
+    "onedayraces": 46,
+    "gc": 20,
+    "tt": 22,
+    "sprint": 210,
+    "climber": 0,
+    "hills": 45
+  },
+  "tanel-kangert": {
+    "onedayraces": 792,
+    "gc": 2357,
+    "tt": 1496,
+    "sprint": 18,
+    "climber": 1714,
+    "hills": 609
+  },
+  "tao-geoghegan-hart": {
+    "onedayraces": 265,
+    "gc": 2803,
+    "tt": 917,
+    "sprint": 51,
+    "climber": 2172,
+    "hills": 692
+  },
+  "tejay-van-garderen": {
+    "onedayraces": 147,
+    "gc": 5164,
+    "tt": 3409,
+    "sprint": 72,
+    "climber": 3556,
+    "hills": 1127
+  },
+  "theo-delacroix": {
+    "onedayraces": 83,
+    "gc": 77,
+    "tt": 68,
+    "sprint": 77,
+    "climber": 16,
+    "hills": 48
+  },
+  "thibau-nys": {
+    "onedayraces": 704,
+    "gc": 344,
+    "tt": 76,
+    "sprint": 196,
+    "climber": 618,
+    "hills": 743
+  },
+  "thibaud-gruel": {
+    "onedayraces": 375,
+    "gc": 385,
+    "tt": 198,
+    "sprint": 134,
+    "climber": 132,
+    "hills": 546
+  },
+  "thibaut-pinot": {
+    "onedayraces": 1919,
+    "gc": 6908,
+    "tt": 1547,
+    "sprint": 46,
+    "climber": 7804,
+    "hills": 1538
+  },
+  "thomas-bonnet": {
+    "onedayraces": 129,
+    "gc": 92,
+    "tt": 10,
+    "sprint": 68,
+    "climber": 56,
+    "hills": 108
+  },
+  "thomas-boudat": {
+    "onedayraces": 1250,
+    "gc": 148,
+    "tt": 59,
+    "sprint": 864,
+    "climber": 58,
+    "hills": 251
+  },
+  "thomas-champion": {
+    "onedayraces": 75,
+    "gc": 183,
+    "tt": 31,
+    "sprint": 0,
+    "climber": 86,
+    "hills": 20
+  },
+  "thomas-de-gendt": {
+    "onedayraces": 248,
+    "gc": 1307,
+    "tt": 2235,
+    "sprint": 145,
+    "climber": 1671,
+    "hills": 1388
+  },
+  "thomas-gachignard": {
+    "onedayraces": 220,
+    "gc": 244,
+    "tt": 111,
+    "sprint": 96,
+    "climber": 46,
+    "hills": 132
+  },
+  "thomas-gloag": {
+    "onedayraces": 80,
+    "gc": 411,
+    "tt": 1,
+    "sprint": 14,
+    "climber": 332,
+    "hills": 194
+  },
+  "thomas-scully": {
+    "onedayraces": 208,
+    "gc": 170,
+    "tt": 764,
+    "sprint": 54,
+    "climber": 5,
+    "hills": 31
+  },
+  "tibor-del-grosso": {
+    "onedayraces": 523,
+    "gc": 301,
+    "tt": 52,
+    "sprint": 290,
+    "climber": 128,
+    "hills": 566
+  },
+  "tijmen-graat": {
+    "onedayraces": 74,
+    "gc": 242,
+    "tt": 10,
+    "sprint": 0,
+    "climber": 202,
+    "hills": 94
+  },
+  "tim-declercq": {
+    "onedayraces": 765,
+    "gc": 475,
+    "tt": 26,
+    "sprint": 160,
+    "climber": 66,
+    "hills": 90
+  },
+  "tim-van-dijke": {
+    "onedayraces": 575,
+    "gc": 149,
+    "tt": 357,
+    "sprint": 315,
+    "climber": 92,
+    "hills": 406
+  },
+  "timo-roosen": {
+    "onedayraces": 1030,
+    "gc": 447,
+    "tt": 200,
+    "sprint": 390,
+    "climber": 146,
+    "hills": 551
+  },
+  "tobias-foss": {
+    "onedayraces": 145,
+    "gc": 944,
+    "tt": 2003,
+    "sprint": 29,
+    "climber": 544,
+    "hills": 359
+  },
+  "tobias-ludvigsson": {
+    "onedayraces": 222,
+    "gc": 903,
+    "tt": 2024,
+    "sprint": 46,
+    "climber": 204,
+    "hills": 328
+  },
+  "tom-bohli": {
+    "onedayraces": 228,
+    "gc": 271,
+    "tt": 995,
+    "sprint": 86,
+    "climber": 30,
+    "hills": 109
+  },
+  "tom-devriendt": {
+    "onedayraces": 782,
+    "gc": 33,
+    "tt": 44,
+    "sprint": 394,
+    "climber": 10,
+    "hills": 132
+  },
+  "tom-donnenwirth": {
+    "onedayraces": 126,
+    "gc": 182,
+    "tt": 33,
+    "sprint": 38,
+    "climber": 104,
+    "hills": 235
+  },
+  "tom-dumoulin": {
+    "onedayraces": 1147,
+    "gc": 4404,
+    "tt": 6256,
+    "sprint": 166,
+    "climber": 3285,
+    "hills": 2211
+  },
+  "tom-paquot": {
+    "onedayraces": 139,
+    "gc": 47,
+    "tt": 3,
+    "sprint": 19,
+    "climber": 16,
+    "hills": 84
+  },
+  "tom-pidcock": {
+    "onedayraces": 3664,
+    "gc": 1671,
+    "tt": 149,
+    "sprint": 394,
+    "climber": 2836,
+    "hills": 2394
+  },
+  "tom-van-asbroeck": {
+    "onedayraces": 3300,
+    "gc": 537,
+    "tt": 21,
+    "sprint": 2152,
+    "climber": 155,
+    "hills": 874
+  },
+  "tomasz-marczynski": {
+    "onedayraces": 454,
+    "gc": 1102,
+    "tt": 149,
+    "sprint": 12,
+    "climber": 447,
+    "hills": 254
+  },
+  "tony-gallopin": {
+    "onedayraces": 3129,
+    "gc": 2384,
+    "tt": 1086,
+    "sprint": 412,
+    "climber": 2364,
+    "hills": 2432
+  },
+  "tony-martin": {
+    "onedayraces": 408,
+    "gc": 3738,
+    "tt": 10664,
+    "sprint": 198,
+    "climber": 1131,
+    "hills": 1670
+  },
+  "torjus-sleen": {
+    "onedayraces": 23,
+    "gc": 54,
+    "tt": 59,
+    "sprint": 6,
+    "climber": 24,
+    "hills": 19
+  },
+  "tosh-van-der-sande": {
+    "onedayraces": 924,
+    "gc": 783,
+    "tt": 0,
+    "sprint": 601,
+    "climber": 241,
+    "hills": 1514
+  },
+  "tsgabu-gebremaryam-grmay": {
+    "onedayraces": 281,
+    "gc": 851,
+    "tt": 531,
+    "sprint": 2,
+    "climber": 294,
+    "hills": 188
+  },
+  "txomin-juaristi": {
+    "onedayraces": 76,
+    "gc": 424,
+    "tt": 304,
+    "sprint": 0,
+    "climber": 258,
+    "hills": 140
+  },
+  "tyler-stites": {
+    "onedayraces": 58,
+    "gc": 163,
+    "tt": 394,
+    "sprint": 160,
+    "climber": 59,
+    "hills": 272
+  },
+  "umberto-marengo": {
+    "onedayraces": 109,
+    "gc": 67,
+    "tt": 16,
+    "sprint": 91,
+    "climber": 16,
+    "hills": 149
+  },
+  "unai-cuadrado": {
+    "onedayraces": 57,
+    "gc": 42,
+    "tt": 0,
+    "sprint": 2,
+    "climber": 36,
+    "hills": 32
+  },
+  "unai-iribar-jauregi": {
+    "onedayraces": 181,
+    "gc": 209,
+    "tt": 1,
+    "sprint": 3,
+    "climber": 186,
+    "hills": 98
+  },
+  "urko-berrade-fernandez": {
+    "onedayraces": 196,
+    "gc": 569,
+    "tt": 218,
+    "sprint": 16,
+    "climber": 378,
+    "hills": 315
+  },
+  "vadim-pronskiy": {
+    "onedayraces": 50,
+    "gc": 725,
+    "tt": 56,
+    "sprint": 74,
+    "climber": 396,
+    "hills": 159
+  },
+  "valentin-darbellay": {
+    "onedayraces": 58,
+    "gc": 41,
+    "tt": 3,
+    "sprint": 30,
+    "climber": 17,
+    "hills": 82
+  },
+  "valentin-madouas": {
+    "onedayraces": 3406,
+    "gc": 1376,
+    "tt": 93,
+    "sprint": 159,
+    "climber": 1676,
+    "hills": 1884
+  },
+  "valentin-retailleau": {
+    "onedayraces": 96,
+    "gc": 33,
+    "tt": 5,
+    "sprint": 79,
+    "climber": 36,
+    "hills": 174
+  },
+  "valere-thiebaud": {
+    "onedayraces": 0,
+    "gc": 6,
+    "tt": 2,
+    "sprint": 6,
+    "climber": 2,
+    "hills": 0
+  },
+  "valerio-conti": {
+    "onedayraces": 615,
+    "gc": 980,
+    "tt": 258,
+    "sprint": 68,
+    "climber": 720,
+    "hills": 909
+  },
+  "vegard-stake-laengen": {
+    "onedayraces": 579,
+    "gc": 763,
+    "tt": 388,
+    "sprint": 18,
+    "climber": 271,
+    "hills": 175
+  },
+  "veljko-stojnic": {
+    "onedayraces": 60,
+    "gc": 94,
+    "tt": 224,
+    "sprint": 85,
+    "climber": 24,
+    "hills": 62
+  },
+  "victor-de-la-parte": {
+    "onedayraces": 115,
+    "gc": 1390,
+    "tt": 599,
+    "sprint": 0,
+    "climber": 692,
+    "hills": 166
+  },
+  "victor-guernalec": {
+    "onedayraces": 34,
+    "gc": 53,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 42,
+    "hills": 50
+  },
+  "victor-koretzky": {
+    "onedayraces": 25,
+    "gc": 33,
+    "tt": 0,
+    "sprint": 12,
+    "climber": 17,
+    "hills": 56
+  },
+  "victor-lafay": {
+    "onedayraces": 537,
+    "gc": 726,
+    "tt": 13,
+    "sprint": 13,
+    "climber": 686,
+    "hills": 548
+  },
+  "victor-langellotti": {
+    "onedayraces": 157,
+    "gc": 463,
+    "tt": 58,
+    "sprint": 1,
+    "climber": 390,
+    "hills": 386
+  },
+  "viktor-verschaeve": {
+    "onedayraces": 41,
+    "gc": 13,
+    "tt": 0,
+    "sprint": 8,
+    "climber": 42,
+    "hills": 18
+  },
+  "vincenzo-albanese": {
+    "onedayraces": 1446,
+    "gc": 506,
+    "tt": 28,
+    "sprint": 336,
+    "climber": 609,
+    "hills": 1598
+  },
+  "vincenzo-nibali": {
+    "onedayraces": 4805,
+    "gc": 9872,
+    "tt": 3781,
+    "sprint": 342,
+    "climber": 9614,
+    "hills": 2889
+  },
+  "vojtech-repa": {
+    "onedayraces": 8,
+    "gc": 131,
+    "tt": 16,
+    "sprint": 3,
+    "climber": 64,
+    "hills": 28
+  },
+  "walter-calzoni": {
+    "onedayraces": 172,
+    "gc": 187,
+    "tt": 2,
+    "sprint": 4,
+    "climber": 186,
+    "hills": 172
+  },
+  "welay-hagos-berhe": {
+    "onedayraces": 14,
+    "gc": 196,
+    "tt": 0,
+    "sprint": 14,
+    "climber": 120,
+    "hills": 44
+  },
+  "wesley-kreder": {
+    "onedayraces": 768,
+    "gc": 124,
+    "tt": 0,
+    "sprint": 242,
+    "climber": 2,
+    "hills": 16
+  },
+  "william-blume-levy": {
+    "onedayraces": 192,
+    "gc": 14,
+    "tt": 14,
+    "sprint": 70,
+    "climber": 12,
+    "hills": 48
+  },
+  "william-bonnet": {
+    "onedayraces": 1018,
+    "gc": 469,
+    "tt": 448,
+    "sprint": 624,
+    "climber": 60,
+    "hills": 350
+  },
+  "winner-anacona": {
+    "onedayraces": 320,
+    "gc": 895,
+    "tt": 222,
+    "sprint": 20,
+    "climber": 772,
+    "hills": 160
+  },
+  "xabier-berasategi-garmendia": {
+    "onedayraces": 289,
+    "gc": 246,
+    "tt": 0,
+    "sprint": 122,
+    "climber": 142,
+    "hills": 452
+  },
+  "xabier-isasa-larranaga": {
+    "onedayraces": 10,
+    "gc": 60,
+    "tt": 22,
+    "sprint": 2,
+    "climber": 18,
+    "hills": 91
+  },
+  "xabier-mikel-azparren-irurzun": {
+    "onedayraces": 44,
+    "gc": 170,
+    "tt": 440,
+    "sprint": 26,
+    "climber": 16,
+    "hills": 86
+  },
+  "xandres-vervloesem": {
+    "onedayraces": 0,
+    "gc": 35,
+    "tt": 0,
+    "sprint": 0,
+    "climber": 10,
+    "hills": 2
+  },
+  "xandro-meurisse": {
+    "onedayraces": 1331,
+    "gc": 1480,
+    "tt": 148,
+    "sprint": 448,
+    "climber": 875,
+    "hills": 1141
+  },
+  "yevgeniy-fedorov": {
+    "onedayraces": 961,
+    "gc": 213,
+    "tt": 565,
+    "sprint": 365,
+    "climber": 38,
+    "hills": 209
+  },
+  "yevgeniy-gidich": {
+    "onedayraces": 513,
+    "gc": 525,
+    "tt": 20,
+    "sprint": 730,
+    "climber": 193,
+    "hills": 323
+  },
+  "yukiya-arashiro": {
+    "onedayraces": 1820,
+    "gc": 1231,
+    "tt": 309,
+    "sprint": 1418,
+    "climber": 248,
+    "hills": 423
+  },
+  "yuriy-natarov": {
+    "onedayraces": 68,
+    "gc": 170,
+    "tt": 138,
+    "sprint": 8,
+    "climber": 50,
+    "hills": 30
+  },
+  "yves-lampaert": {
+    "onedayraces": 3527,
+    "gc": 1515,
+    "tt": 2558,
+    "sprint": 1698,
+    "climber": 195,
+    "hills": 1202
+  },
+  "zdenek-stybar": {
+    "onedayraces": 3789,
+    "gc": 1449,
+    "tt": 235,
+    "sprint": 1036,
+    "climber": 653,
+    "hills": 1997
+  }
 }
