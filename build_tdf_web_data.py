@@ -28,7 +28,7 @@ sys.path.insert(0, str(ROOT))
 import scrape_holdet as _h
 from src.predictor import predict_all
 from src.optimizer import make_best_team
-from src.ml_signal import compute_ml_scores, compute_holdet_raw_scores
+from src.ml_signal import compute_ml_scores, compute_holdet_raw_scores, compute_placement_scores
 from src.scoring import STAGE_PTS, GC_PTS, JERSEY, SPT_PER_PT, LATE_MAX, LATE_PER_MIN, DNF_PEN
 from src.scrape_predictions import get_stage_predictions
 from scrape_pcs import check_dns
@@ -686,6 +686,17 @@ def main() -> None:
             co_data=co_data or None,
             pcs_specialty_data=pcs_specialties or None,
         )
+        stage_placement = compute_placement_scores(
+            riders=riders,
+            stage_type=stype,
+            stage_num=stage_num,
+            gt_results=gt_results_raw or None,
+            pcs_form_raw=pcs_raw or None,
+            co_data=co_data or None,
+            pcs_specialty_data=pcs_specialties or None,
+            startlist_quality=1.0,
+            profile_score=float(profile_score or 100),
+        )
 
         preds = predict_all(
             riders=riders,
@@ -705,6 +716,7 @@ def main() -> None:
             pcs_rank_data=pcs_rank_data or None,
             pcs_n_results_data=pcs_n_results_data or None,
             holdet_raw_data=stage_holdet_raw or None,
+            placement_data=stage_placement or None,
         )
 
         stage_actuals = actuals.get(stage_num, {})
