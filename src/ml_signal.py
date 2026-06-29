@@ -69,8 +69,10 @@ _placement_model = None
 _placement_model_loaded = False
 _hist_form: dict[str, dict] | None = None
 _hist_form_loaded = False
-_xrace_form: dict[str, float] | None = None   # {pcs_slug: avg_pos last 10 cross-race stages}
+_xrace_form: dict[str, float] | None = None   # {pcs_slug: {stage_type: avg_pos}}
 _xrace_form_loaded = False
+_xrace_rates: dict | None = None              # {pcs_slug: {stage_type: {top3_rate, top10_rate}}}
+_xrace_rates_loaded = False
 
 
 def _get_model():
@@ -177,6 +179,54 @@ def _get_xrace_form() -> dict[str, dict[str, float]]:
 
         _xrace_form_loaded = True
     return _xrace_form or {}
+
+
+def _get_xrace_rates() -> dict[str, dict[str, dict[str, float]]]:
+    """
+    Lazy-load type-specifik top-N hitrate for cross-race form.
+    Returnerer {pcs_slug: {stage_type: {top3_rate: float, top10_rate: float}}}.
+    Seneste 10 etaper af SAMME type bruges.
+    """
+    global _xrace_rates, _xrace_rates_loaded
+    if not _xrace_rates_loaded:
+        _xrace_rates = {}
+        if HIST_RESULTS_PATH.exists():
+            records = json.loads(HIST_RESULTS_PATH.read_text(encoding="utf-8"))
+            records_sorted = sorted(
+                records,
+                key=lambda r: (r["year"], _RACE_ORDER.get(r["race"], 9), r["stage"])
+            )
+            by_slug: dict[str, dict[str, list[int]]] = defaultdict(lambda: defaultdict(list))
+            for r in records_sorted:
+                if not r.get("dnf") and r.get("position") and r.get("stage_type") != "ttt":
+                    stype = r.get("stage_type", "hilly")
+                    by_slug[r["rider_slug"]][stype].append(r["position"])
+
+            for slug, type_positions in by_slug.items():
+                _xrace_rates[slug] = {}
+                for stype, pos in type_positions.items():
+                    last10 = pos[-10:]
+                    n = len(last10)
+                    _xrace_rates[slug][stype] = {
+                        "top3_rate":  round(sum(1 for p in last10 if p <= 3) / n, 4),
+                        "top10_rate": round(sum(1 for p in last10 if p <= 10) / n, 4),
+                    }
+
+            # Prefix-aliaser (samme logik som _get_xrace_form)
+            all_slugs = set(_xrace_rates.keys())
+            aliases: dict[str, str] = {}
+            for slug in sorted(all_slugs):
+                parts = slug.split("-")
+                for n in range(len(parts) - 1, 1, -1):
+                    prefix = "-".join(parts[:n])
+                    if prefix not in all_slugs and prefix not in aliases:
+                        aliases[prefix] = slug
+            for alias, real in aliases.items():
+                if alias not in _xrace_rates:
+                    _xrace_rates[alias] = _xrace_rates[real]
+
+        _xrace_rates_loaded = True
+    return _xrace_rates or {}
 
 
 def _get_hist_form() -> dict[str, dict]:
@@ -666,6 +716,7 @@ def _placement_lgbm_raw_preds(
     is_tt       = int(stage_type == "tt")
 
     xrace_cache = _get_xrace_form()
+    rates_cache = _get_xrace_rates()
     qual_norm   = min(2.0, startlist_quality / 1000.0)  # PCS 0-1000 → 0-1
 
     rows: list[list[float]] = []
@@ -678,6 +729,9 @@ def _placement_lgbm_raw_preds(
 
         gt_form_5, gt_form_10, gt_wins = _rolling_form(slug, stages, stage_num)
         xrace_form_10 = xrace_cache.get(slug, {}).get(stage_type, float("nan"))
+        rates_data = rates_cache.get(slug, {}).get(stage_type, {})
+        xrace_top3_rate_10  = rates_data.get("top3_rate",  float("nan"))
+        xrace_top10_rate_10 = rates_data.get("top10_rate", float("nan"))
 
         co_raw = (co_data or {}).get(rid, {})
         co     = {k.lower(): v for k, v in co_raw.items()}
@@ -707,6 +761,8 @@ def _placement_lgbm_raw_preds(
             float(form_hilly), float(form_tt),
             gt_form_5, gt_form_10, float(gt_wins),
             xrace_form_10,
+            xrace_top3_rate_10,
+            xrace_top10_rate_10,
             qual_norm,
         ]
         rows.append(row)

@@ -115,6 +115,11 @@ def rolling_avg(positions: list[int], n: int) -> float | None:
     return round(sum(last) / len(last), 1) if last else None  # None → NaN i CSV → LightGBM missing
 
 
+def rolling_top_n_rate(positions: list[int], n: int, top_n: int) -> float | None:
+    last = positions[-n:]
+    return round(sum(1 for p in last if p <= top_n) / len(last), 4) if last else None
+
+
 def main() -> None:
     print("Indlæser data…")
     pcs_path    = ML_DIR / "historical_results.json"
@@ -216,7 +221,9 @@ def main() -> None:
             # bjerg-form til bjergetaper osv. Undgår at nr. 153 på en bjergetape
             # ødelægger Merliers sprintform-signal.
             xrace_hist = rider_xrace_history.get(slug, {}).get(stype, [])
-            xrace_form_10 = rolling_avg(xrace_hist, 10)
+            xrace_form_10       = rolling_avg(xrace_hist, 10)
+            xrace_top3_rate_10  = rolling_top_n_rate(xrace_hist, 10, 3)
+            xrace_top10_rate_10 = rolling_top_n_rate(xrace_hist, 10, 10)
 
             # In-race rolling form
             in_race = in_race_hist.get(slug, [])
@@ -264,8 +271,10 @@ def main() -> None:
                 "gt_form_5":        gt_form_5,
                 "gt_form_10":       gt_form_10,
                 "gt_wins_so_far":   gt_wins,
-                # Cross-race form (seneste 10 etaper på tværs af løb)
-                "xrace_form_10":    xrace_form_10,
+                # Cross-race form (seneste 10 etaper på tværs af løb, samme etapetype)
+                "xrace_form_10":       xrace_form_10,
+                "xrace_top3_rate_10":  xrace_top3_rate_10,
+                "xrace_top10_rate_10": xrace_top10_rate_10,
                 # Feltets styrke (PCS startlist quality / 1000)
                 "startlist_quality": quality_norm,
                 # Target
