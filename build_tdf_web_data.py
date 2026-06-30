@@ -628,6 +628,24 @@ def main() -> None:
         top3       = sorted(gc_standings.items(), key=lambda x: x[1])[:3]
         id_to_name = {r["id"]: r["full_name"] for r in riders}
         print(f"  GC top-3: {', '.join(f'{rnk}. {id_to_name.get(rid, rid)}' for rid, rnk in top3)}")
+    elif co_data:
+        # Race not started: estimate pre-race GC from CO_GC ratings.
+        # This ensures _expected_gc_bonus fires for all upcoming stages,
+        # adding the daily GC classification bonus (100k for leader, etc.)
+        field_ids = {r["id"] for r in riders}
+        gc_rated = [
+            (rid, 0.5*co_data[rid].get("MTN",0) + 0.3*co_data[rid].get("GC",0) + 0.2*co_data[rid].get("HLL",0))
+            for rid in field_ids
+            if rid in co_data and co_data[rid].get("GC", 0) > 72
+        ]
+        gc_rated.sort(key=lambda x: -x[1])
+        gc_standings = {rid: rank + 1 for rank, (rid, _) in enumerate(gc_rated[:20])}
+        id_to_name   = {r["id"]: r["full_name"] for r in riders}
+        top3_str = ', '.join(
+            f"{rank+1}. {id_to_name.get(rid, rid)} ({score:.1f})"
+            for rank, (rid, score) in enumerate(gc_rated[:3])
+        )
+        print(f"  Pre-race GC estimate (MTN-blend): {top3_str}")
 
     # ── Run predictions per stage ────────────────────────────────────────────
     print(f"  Kører forudsigelser for {n_stages} etaper…")

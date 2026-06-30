@@ -867,7 +867,7 @@ def _co_stage_score(co: dict, stage_type: str) -> float | None:
     if stage_type == "mountain":
         return 0.50 * mtn + 0.30 * gc + 0.20 * hll
     elif stage_type == "sprint":
-        return 0.60 * spr + 0.25 * hll + 0.15 * cob
+        return 0.85 * spr + 0.15 * hll
     elif stage_type in ("tt", "ttt"):
         return 0.70 * itt + 0.20 * gc + 0.10 * hll
     else:  # hilly / default

@@ -73,7 +73,7 @@ STAGE_DISCIPLINE = {
 # directional, not precision-calibrated — but the gap is large enough
 # (11% vs 44%) to be worth correcting rather than ignoring.
 STAGE_DISCIPLINE_BLEND: dict[str, dict[str, float]] = {
-    "sprint":    {"SPR": 0.65, "COB": 0.35},
+    "sprint":    {"SPR": 0.85, "HLL": 0.15},
     "mountain":  {"MTN": 1.0},
     "tt":        {"ITT": 1.0},
     "ttt":       {"ITT": 1.0},
@@ -801,6 +801,16 @@ def predict_all(
             _pr   = _placement_rank.get(rid, _n_placement)
             _norm = 1.0 - (_pr - 1) / max(_n_placement - 1, 1)
             _calibrated_base = _norm_pos_to_stage_pts(_norm, _field_sz)
+            # TdF 2026 sprint stages: add expected sprint classification pts for
+            # sprint specialists (70/50/40 pts × 3k at finish + 2×20 pts × 3k
+            # intermediate). Pure sprinters with high CO_SPR earn these in addition
+            # to stage position pts. Boost is proportional to sprint ability.
+            if stage_type == "sprint" and _calibrated_base > 0:
+                _co_spr = (cyclingoracle_data or {}).get(rid, {}).get("SPR", 0)
+                if _co_spr >= 75:
+                    # Scale: SPR=75 → 1.0×, SPR=100 → 1.5×
+                    _sprint_boost = 1.0 + (_co_spr - 75) / 25.0 * 0.5
+                    _calibrated_base = round(_calibrated_base * _sprint_boost)
             pred["placement_pred"]  = round(placement_norm, 4)
             pred["holdet_raw_pred"] = None
             pred["ml_source_used"]  = "placement"
