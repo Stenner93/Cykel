@@ -29,6 +29,11 @@ ROOT                  = Path(__file__).parent.parent
 MODEL_PATH            = ROOT / "data" / "ml" / "model.lgbm"
 HOLDET_MODEL_PATH     = ROOT / "data" / "ml" / "holdet_model.lgbm"
 PLACEMENT_MODEL_PATH  = ROOT / "data" / "ml" / "placement_model.lgbm"
+PLACEMENT_SPRINT_MODEL_PATH   = ROOT / "data" / "ml" / "placement_sprint_model.lgbm"
+PLACEMENT_MOUNTAIN_MODEL_PATH = ROOT / "data" / "ml" / "placement_mountain_model.lgbm"
+PLACEMENT_HILLY_MODEL_PATH    = ROOT / "data" / "ml" / "placement_hilly_model.lgbm"
+PLACEMENT_TT_MODEL_PATH       = ROOT / "data" / "ml" / "placement_tt_model.lgbm"
+PLACEMENT_META_PATH           = ROOT / "data" / "ml" / "placement_training_data_meta.json"
 HIST_FORM_PATH        = ROOT / "data" / "cache" / "rider_historical_form.json"
 HIST_RESULTS_PATH     = ROOT / "data" / "ml" / "historical_results.json"
 
@@ -67,6 +72,10 @@ _holdet_model = None
 _holdet_model_loaded = False
 _placement_model = None
 _placement_model_loaded = False
+_placement_type_models: dict[str, Any] = {}
+_placement_type_models_loaded = False
+_slug_to_id: dict[str, int] | None = None
+_slug_to_id_loaded = False
 _hist_form: dict[str, dict] | None = None
 _hist_form_loaded = False
 _xrace_form: dict[str, float] | None = None   # {pcs_slug: {stage_type: avg_pos}}
@@ -112,6 +121,41 @@ def _get_placement_model():
             pass
         _placement_model_loaded = True
     return _placement_model
+
+
+def _get_placement_type_model(stage_type: str):
+    """Load stage-type-specific placement model. Falls back to combined model."""
+    global _placement_type_models, _placement_type_models_loaded
+    if not _placement_type_models_loaded:
+        try:
+            import lightgbm as lgb
+            for stype, path in [
+                ("sprint",   PLACEMENT_SPRINT_MODEL_PATH),
+                ("mountain", PLACEMENT_MOUNTAIN_MODEL_PATH),
+                ("hilly",    PLACEMENT_HILLY_MODEL_PATH),
+                ("tt",       PLACEMENT_TT_MODEL_PATH),
+            ]:
+                if path.exists():
+                    _placement_type_models[stype] = lgb.Booster(model_file=str(path))
+        except Exception:
+            pass
+        _placement_type_models_loaded = True
+    key = "tt" if stage_type in ("tt", "ttt") else stage_type
+    return _placement_type_models.get(key) or _get_placement_model()
+
+
+def _get_slug_to_id() -> dict[str, int]:
+    global _slug_to_id, _slug_to_id_loaded
+    if not _slug_to_id_loaded:
+        _slug_to_id = {}
+        if PLACEMENT_META_PATH.exists():
+            try:
+                meta = json.loads(PLACEMENT_META_PATH.read_text(encoding="utf-8"))
+                _slug_to_id = meta.get("slug_to_id") or {}
+            except Exception:
+                pass
+        _slug_to_id_loaded = True
+    return _slug_to_id or {}
 
 
 _RACE_ORDER: dict[str, int] = {
@@ -704,7 +748,7 @@ def _placement_lgbm_raw_preds(
     if stage_type == "ttt":
         return None
 
-    model = _get_placement_model()
+    model = _get_placement_type_model(stage_type)
     if model is None:
         return None
 
@@ -757,6 +801,8 @@ def _placement_lgbm_raw_preds(
         co_spr_val   = co.get("spr", -1)
         co_mtn_val   = co.get("mtn", -1)
         spec_spr_val = spec.get("sprint", -1)
+        slug_to_id_map = _get_slug_to_id()
+        sid = float(slug_to_id_map.get(slug, slug_to_id_map.get(slug.replace("-", "_"), -1)))
         row = [
             is_sprint, is_mountain, is_hilly, is_tt,
             co_mtn_val, co_spr_val, co.get("hll", -1),
@@ -781,6 +827,8 @@ def _placement_lgbm_raw_preds(
             # PCS etapeklassifikation (1-5) og ankomst-højde (m)
             float(p_class),
             float(finish_alt),
+            # Rytter-identitet (slug_id) — kun hvis model er trænet med det
+            sid,
         ]
         rows.append(row)
         rider_ids.append(rid)
@@ -789,7 +837,12 @@ def _placement_lgbm_raw_preds(
         return None
 
     X   = np.array(rows, dtype=np.float32)
-    raw = model.predict(X)   # raw norm_pos 0-1
+    try:
+        raw = model.predict(X)   # raw norm_pos 0-1
+    except Exception:
+        # Model was trained without slug_id (old model) — strip last column
+        X = X[:, :-1]
+        raw = model.predict(X)
 
     result: dict[str, float] = {}
     for rid, p in zip(rider_ids, raw):
@@ -798,6 +851,27 @@ def _placement_lgbm_raw_preds(
         else:
             result[rid] = round(max(0.0, min(1.0, float(p))), 4)
     return result
+
+
+def _co_stage_score(co: dict, stage_type: str) -> float | None:
+    """Direct CO-ability score (0-100) for a rider on a stage type. Returns None if no CO data."""
+    if not co:
+        return None
+    def v(x): return float(x) if x != -1 else 0.0
+    mtn = v(co.get("mtn", -1))
+    spr = v(co.get("spr", -1))
+    hll = v(co.get("hll", -1))
+    cob = v(co.get("cob", -1))
+    itt = v(co.get("itt", -1))
+    gc  = v(co.get("gc",  -1))
+    if stage_type == "mountain":
+        return 0.50 * mtn + 0.30 * gc + 0.20 * hll
+    elif stage_type == "sprint":
+        return 0.60 * spr + 0.25 * hll + 0.15 * cob
+    elif stage_type in ("tt", "ttt"):
+        return 0.70 * itt + 0.20 * gc + 0.10 * hll
+    else:  # hilly / default
+        return 0.35 * hll + 0.25 * cob + 0.25 * mtn + 0.15 * spr
 
 
 def compute_placement_scores(
@@ -814,12 +888,12 @@ def compute_placement_scores(
     finish_alt: float = -1.0,
 ) -> dict[str, float] | None:
     """
-    Returner raw placement model predictions {rider_id: norm_pos (0-1)}.
-    1.0=vinder, 0.0=sidst. None for ryttere uden CO/PCS-signal.
-    Returnerer None hvis placement_model.lgbm ikke er indlæst.
+    Returner placement predictions blended med direkte CO-ratings.
+    CO vægtes tungt (0.55-0.70) for at kompensere for lav CO-dækning i træningsdata.
+    Returnerer None hvis hverken ML-model eller CO-data er tilgængelig.
     """
     stages = (gt_results or {}).get("stages", {})
-    return _placement_lgbm_raw_preds(
+    ml_preds = _placement_lgbm_raw_preds(
         riders, stage_type, stage_num, stages, pcs_form_raw,
         co_data=co_data, pcs_specialty_data=pcs_specialty_data,
         startlist_quality=startlist_quality,
@@ -827,6 +901,57 @@ def compute_placement_scores(
         p_class=p_class,
         finish_alt=finish_alt,
     )
+
+    # Compute raw CO scores for all riders in the field
+    co_raw: dict[str, float] = {}
+    for rider in riders:
+        rid   = rider["id"]
+        co_r  = {k.lower(): v for k, v in (co_data or {}).get(rid, {}).items()}
+        score = _co_stage_score(co_r, stage_type)
+        if score is not None:
+            co_raw[rid] = score
+
+    # If no CO data at all, fall back to pure ML
+    if not co_raw:
+        return ml_preds
+
+    # Field-normalize CO scores to 0-1 so they match norm_pos scale
+    co_lo = min(co_raw.values())
+    co_hi = max(co_raw.values())
+    co_span = co_hi - co_lo
+    co_norm = {
+        rid: (s - co_lo) / co_span if co_span > 0 else 0.5
+        for rid, s in co_raw.items()
+    }
+
+    # Stage-type blend weights (CO_w + ML_w = 1.0)
+    # CO gets more weight on pure-climbing and TT stages where ability dominates form
+    _CO_W: dict[str, float] = {
+        "mountain": 0.65,
+        "sprint":   0.60,
+        "tt":       0.70,
+        "ttt":      0.70,
+        "hilly":    0.50,
+    }
+    co_w = _CO_W.get(stage_type, 0.50)
+    ml_w = 1.0 - co_w
+
+    result: dict[str, float | None] = {}
+    for rider in riders:
+        rid    = rider["id"]
+        ml_p   = ml_preds.get(rid) if ml_preds else None
+        co_p   = co_norm.get(rid)
+
+        if ml_p is not None and co_p is not None:
+            result[rid] = round(co_w * co_p + ml_w * ml_p, 4)
+        elif co_p is not None:
+            result[rid] = round(co_p, 4)
+        elif ml_p is not None:
+            result[rid] = ml_p
+        else:
+            result[rid] = None  # type: ignore[assignment]
+
+    return result  # type: ignore[return-value]
 
 
 def compute_holdet_raw_scores(

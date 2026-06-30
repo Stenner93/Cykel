@@ -99,19 +99,21 @@ def main() -> None:
     df   = pd.read_csv(CSV_IN, dtype={"year": int, "stage": int})
     feat = meta["feature_cols"]
 
+    # slug_id as categorical so LightGBM can learn rider-specific patterns
+    if "slug_id" in feat:
+        df["slug_id"] = df["slug_id"].astype("category")
+
     races_all = sorted(df["race"].unique())
     print(f"Data: {len(df):,} rækker  |  {len(feat)} features")
     print(f"Løb: {races_all}")
+    print(f"År: {sorted(df['year'].unique())}")
     print(f"Target '{TARGET}': mean={df[TARGET].mean():.3f}  std={df[TARGET].std():.3f}\n")
 
-    # Breakdownn pr. løbstype
     for race, cnt in df.groupby("race").size().items():
         print(f"  {race:<12}: {cnt:>6,} rækker")
     print()
 
     # ── Leave-one-GT-race-out cross-validation ────────────────────────────────
-    # Bruger kun GT-løb (tdf/giro/vuelta) til CV, da vi validerer GT-performance.
-    # Et-ugersløb bruges kun som ekstra træningsdata.
     gt_df    = df[df["race"].isin(GT_RACES)].copy()
     extra_df = df[~df["race"].isin(GT_RACES)].copy()
     gt_races = sorted(gt_df["race"].unique())
@@ -119,17 +121,22 @@ def main() -> None:
     loro_results: list[dict] = []
 
     for val_race in gt_races:
-        # Træn på: alle ikke-val GT-etaper + alle et-ugersløb
         train_df = pd.concat([
             gt_df[gt_df["race"] != val_race],
             extra_df,
         ], ignore_index=True)
         val_df = gt_df[gt_df["race"] == val_race].copy()
 
+        if "slug_id" in feat:
+            train_df["slug_id"] = train_df["slug_id"].astype("category")
+            val_df["slug_id"]   = val_df["slug_id"].astype("category")
+
+        cat_feat = ["slug_id"] if "slug_id" in feat else "auto"
         model_cv = lgb.LGBMRegressor(**LGB_PARAMS)
         model_cv.fit(
             train_df[feat], train_df[TARGET],
             eval_set=[(val_df[feat], val_df[TARGET])],
+            categorical_feature=cat_feat,
             callbacks=[lgb.early_stopping(50, verbose=False), lgb.log_evaluation(0)],
         )
 
@@ -171,17 +178,20 @@ def main() -> None:
     print(f"  Top-5 acc: {np.mean([r['top5_accuracy'] for r in loro_results]):.2%}")
     print(f"  RMSE:      {np.mean([r['rmse'] for r in loro_results]):.4f}")
 
-    # ── Træn final model på ALLE data ─────────────────────────────────────────
-    print(f"\nTræner final model på alle {len(df):,} rækker…")
+    # ── Træn combined final model på ALLE data ─────────────────────────────────
+    print(f"\nTræner combined model på alle {len(df):,} rækker…")
+    cat_feat = ["slug_id"] if "slug_id" in feat else "auto"
     final_model = lgb.LGBMRegressor(**LGB_PARAMS)
-    final_model.fit(df[feat], df[TARGET], callbacks=[lgb.log_evaluation(0)])
+    final_model.fit(df[feat], df[TARGET],
+                    categorical_feature=cat_feat,
+                    callbacks=[lgb.log_evaluation(0)])
 
     importances = (
         pd.Series(final_model.feature_importances_, index=feat)
         .sort_values(ascending=False)
     )
     imp_list = [{"feature": k, "importance": int(v)} for k, v in importances.items()]
-    print("\nTop-10 features:")
+    print("\nTop-10 features (combined model):")
     max_imp = max(r["importance"] for r in imp_list) if imp_list else 1
     for row in imp_list[:10]:
         bar = "█" * (row["importance"] * 30 // max_imp)
@@ -190,29 +200,65 @@ def main() -> None:
     if not args.no_save:
         ML_DIR.mkdir(parents=True, exist_ok=True)
         final_model.booster_.save_model(str(MODEL_OUT))
-        print(f"\nModel gemt: {MODEL_OUT}")
+        print(f"\nCombined model gemt: {MODEL_OUT}")
+
+    # ── Træn separate modeller per etapetype ──────────────────────────────────
+    STAGE_TYPES = ["sprint", "mountain", "hilly", "tt"]
+    type_imp_lists: dict[str, list] = {}
+
+    for stype in STAGE_TYPES:
+        sdf = df[df["stage_type"] == stype].copy()
+        if len(sdf) < 200:
+            print(f"\n[!] For få rækker til {stype}-model ({len(sdf)}) — springer over")
+            continue
+
+        print(f"\nTræner {stype}-model på {len(sdf):,} rækker…")
+        if "slug_id" in feat:
+            sdf["slug_id"] = sdf["slug_id"].astype("category")
+
+        m = lgb.LGBMRegressor(**LGB_PARAMS)
+        m.fit(sdf[feat], sdf[TARGET],
+              categorical_feature=cat_feat,
+              callbacks=[lgb.log_evaluation(0)])
+
+        type_imps = (
+            pd.Series(m.feature_importances_, index=feat)
+            .sort_values(ascending=False)
+        )
+        type_imp_list = [{"feature": k, "importance": int(v)} for k, v in type_imps.items()]
+        type_imp_lists[stype] = type_imp_list
+
+        top3 = ", ".join(f"{r['feature']}({r['importance']})" for r in type_imp_list[:3])
+        print(f"  Top-3: {top3}")
+
+        if not args.no_save:
+            out_path = ML_DIR / f"placement_{stype}_model.lgbm"
+            m.booster_.save_model(str(out_path))
+            print(f"  Gemt: {out_path}")
 
     val_out = {
         "model":             "placement_model.lgbm",
         "target":            TARGET,
         "n_train_total":     len(df),
         "n_features":        len(feat),
+        "min_year":          meta.get("min_year", "alle"),
         "loro_results":      loro_results,
         "avg_spearman":      round(float(np.mean([r["mean_spearman"] for r in loro_results])), 4),
         "avg_top5_accuracy": round(float(np.mean([r["top5_accuracy"] for r in loro_results])), 4),
         "avg_rmse":          round(float(np.mean([r["rmse"] for r in loro_results])), 4),
         "feature_importances": imp_list,
+        "type_feature_importances": type_imp_lists,
         "races_in_training": races_all,
         "notes": (
             "norm_pos=1.0=vinder, 0.0=sidst. LORO CV på GT-løb (tdf/giro/vuelta). "
-            "Et-ugersløb bruges som ekstra træning men ikke til CV. "
-            "Spearman: rang-korrelation pr. etape. Top5acc: andel etaper med ≥1 hit i top-5."
+            "Separate modeller pr. etapetype: placement_{type}_model.lgbm. "
+            "CO-blending i prediction (ml_signal.py) kompenserer for lav CO-dækning i træning."
         ),
         "generated": pd.Timestamp.now(tz="UTC").isoformat(),
     }
     WEB_DIR.mkdir(parents=True, exist_ok=True)
     VALID_OUT.write_text(json.dumps(val_out, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Validerings-JSON gemt: {VALID_OUT}")
+    print(f"\nValiderings-JSON gemt: {VALID_OUT}")
 
 
 if __name__ == "__main__":

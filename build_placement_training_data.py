@@ -26,6 +26,7 @@ Kørsel:
     python build_placement_training_data.py
 """
 from __future__ import annotations
+import argparse
 import csv
 import json
 import unicodedata
@@ -194,6 +195,11 @@ def load_historical_stage_data() -> dict[str, dict[str, dict]]:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--min-year", type=int, default=2023, metavar="YEAR",
+                        help="Kun brug etapedata fra dette år og frem (default: 2023)")
+    args = parser.parse_args()
+
     print("Indlæser data…")
     pcs_path    = ML_DIR / "historical_results.json"
     if not pcs_path.exists():
@@ -202,6 +208,8 @@ def main() -> None:
         return
 
     pcs_records  = json.loads(pcs_path.read_text(encoding="utf-8"))
+    pcs_records = [r for r in pcs_records if r["year"] >= args.min_year]
+    print(f"  → Filtreret til {args.min_year}+: {len(pcs_records):,} resultater")
     co_data      = load_co()
     spec_data    = load_specs()
     pcs_form     = load_pcs_form()
@@ -397,6 +405,12 @@ def main() -> None:
         print("Ingen rækker — afbryder")
         return
 
+    # Byg slug→int mapping (stabil alfabetisk sortering)
+    all_slugs = sorted({r["rider_slug"] for r in rows})
+    slug_to_id_map = {slug: idx for idx, slug in enumerate(all_slugs)}
+    for r in rows:
+        r["slug_id"] = slug_to_id_map[r["rider_slug"]]
+
     ML_DIR.mkdir(parents=True, exist_ok=True)
 
     # Skriv CSV
@@ -419,12 +433,15 @@ def main() -> None:
         "target_col":   "norm_pos",
         "races":        sorted({r["race"] for r in rows}),
         "years":        sorted({r["year"] for r in rows}),
+        "min_year":     args.min_year,
+        "slug_to_id":   slug_to_id_map,
         "notes": (
             "norm_pos: 1.0=vinder, 0.0=sidst (DNF udelades). "
             "CO/PCS snapshot er nuværende værdier — specialiteter antages stabile 2021-2025. "
             "xrace_form_10: gennemsnitsplacering i seneste 10 etaper på tværs af løb. "
             "startlist_quality: PCS feltsstyrke / 1000 (0-1 skala). "
-            "TTT-etaper er udeladt (team-scoring kræver særlig behandling)."
+            "TTT-etaper er udeladt (team-scoring kræver særlig behandling). "
+            "slug_id: stabil numerisk rytter-identitet (alfabetisk sorteret slug-indeks)."
         ),
     }
     OUT_META.write_text(json.dumps(meta, indent=2), encoding="utf-8")
