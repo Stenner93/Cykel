@@ -386,15 +386,11 @@ function tdfRenderPredStage(num) {
 
   const icon   = TDF_STAGE_ICONS[stage.type] || '🚴';
   const tname  = TDF_STAGE_TYPE_NAMES[stage.type] || stage.type;
-  // Sort by placement_pred (CO-blended 0-1 model) when available,
-  // then holdet_est, then raw exp score as last fallback.
-  const sorted = [...stage.riders].sort((a, b) => {
-    const pa = a.placement_pred, pb = b.placement_pred;
-    if (pb != null && pa != null) return pb - pa;
-    if (pb != null) return 1;
-    if (pa != null) return -1;
-    return (b.holdet_est ?? b.exp / 1000) - (a.holdet_est ?? a.exp / 1000);
-  });
+  // Sort descending by holdet_est (forventet Holdet-point) — singlekilde.
+  const sorted = [...stage.riders].sort((a, b) =>
+    ((b.holdet_est ?? (b.exp != null ? b.exp / 1000 : 0)) || 0) -
+    ((a.holdet_est ?? (a.exp != null ? a.exp / 1000 : 0)) || 0)
+  );
   // actual is stored in large scale (100k-400k); convert to Holdet scale (/1000) for display
   const hasAny = sorted.some(r => r.actual != null);
   const bestIds = new Set(stage.best_team || []);
