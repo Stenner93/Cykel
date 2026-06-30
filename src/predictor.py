@@ -783,8 +783,10 @@ def predict_all(
         placement_norm = (placement_data or {}).get(rid) if rid else None
         holdet_raw     = (holdet_raw_data or {}).get(rid) if rid else None
 
-        if placement_norm is not None and placement_norm > 0 and _disc_ok:
+        if placement_norm is not None and placement_norm > 0:
             # Priority 1: Placement model → stage pts lookup
+            # CO blending already penalises riders who are out of their element,
+            # so no additional discipline gate is needed here.
             _calibrated_base = _norm_pos_to_stage_pts(placement_norm, _field_sz)
             pred["placement_pred"]  = round(placement_norm, 4)
             pred["holdet_raw_pred"] = None
