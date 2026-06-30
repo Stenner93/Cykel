@@ -771,6 +771,17 @@ def predict_all(
     _avg_k    = AVG_MAX_K.get(stage_type, 430_000)
     _field_sz = max(_n, 100)   # approksimeret feltstørrelse
 
+    # Pre-rank placement predictions so rank 1 → 200k, rank 2 → 150k etc.
+    # The CO-blended placement_pred is field-relative (best ≈ 0.96, not 1.0),
+    # so we rank-order to get correct stage pts mapping.
+    _placement_ranked: list[tuple[str, float]] = sorted(
+        [(rid, score) for rid, score in (placement_data or {}).items()
+         if score is not None and score > 0],
+        key=lambda x: -x[1],
+    )
+    _placement_rank: dict[str, int] = {rid: i + 1 for i, (rid, _) in enumerate(_placement_ranked)}
+    _n_placement = max(len(_placement_ranked), 1)
+
     for _i, pred in enumerate(results):
         _frac  = _i / max(_n - 1, 1)
         _wp    = pred.get("winner_pts", 500_000)
@@ -787,7 +798,9 @@ def predict_all(
             # Priority 1: Placement model → stage pts lookup
             # CO blending already penalises riders who are out of their element,
             # so no additional discipline gate is needed here.
-            _calibrated_base = _norm_pos_to_stage_pts(placement_norm, _field_sz)
+            _pr   = _placement_rank.get(rid, _n_placement)
+            _norm = 1.0 - (_pr - 1) / max(_n_placement - 1, 1)
+            _calibrated_base = _norm_pos_to_stage_pts(_norm, _field_sz)
             pred["placement_pred"]  = round(placement_norm, 4)
             pred["holdet_raw_pred"] = None
             pred["ml_source_used"]  = "placement"

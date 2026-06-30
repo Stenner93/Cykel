@@ -771,7 +771,7 @@ def main() -> None:
                 "ctx_mult":   p.get("context_mult", 1.0),
                 # holdet_est i tusinder (displayformat: 202 → 202k)
                 # Beregnet fra holdet ML-model når tilgængeligt, ellers fra exp
-                "holdet_est": round(p.get("expected_pts", 0) / 1000, 1) if p.get("holdet_raw_pred") else None,
+                "holdet_est": round(p.get("expected_pts", 0) / 1000, 1) if p.get("expected_pts") else None,
                 "holdet_raw_pred": round(p["holdet_raw_pred"], 2) if p.get("holdet_raw_pred") is not None else None,
                 "placement_pred":  round(p["placement_pred"], 4) if p.get("placement_pred") is not None else None,
                 "ml_source":       p.get("ml_source_used"),
