@@ -556,10 +556,11 @@ def main():
         placement_data=placement_scores or None,
     )
 
-    # ── Override expected_pts with holdet_est calibration ────────────────────
-    # holdet_est (calibrated from Giro 2026 actual Holdet points) is more
-    # reliable than the rank-decay formula. Override BEFORE team optimization
-    # so the picked team also uses the better numbers.
+    # ── Sync expected_pts med tdf2026_predictions.json (enkelt sandhedskilde) ──
+    # Forudsigelser-fanen viser holdet_est fra tdf2026_predictions.json.
+    # For at Holdanbefalinger bruger SAMME forventede point, overskrives
+    # expected_pts her for ALLE ryttere — uanset om placement/holdet-model
+    # allerede har beregnet dem. Dette sikrer én samlet forudsigelse pr. rytter.
     _preds_path = WEB_DATA / "tdf2026_predictions.json"
     if _preds_path.exists():
         _tdf_pred = json.loads(_preds_path.read_text(encoding="utf-8"))
@@ -574,16 +575,12 @@ def main():
             }
             updated = 0
             for p in predictions:
-                if p.get("holdet_raw_pred") is not None:
-                    continue  # holdet ML model already computed expected_pts
-                if p.get("ml_source_used") == "placement":
-                    continue  # placement model already computed expected_pts (physically better)
                 est = _holdet_est.get(p["rider_id"])
                 if est:
                     p["expected_pts"] = round(est * 1000)
                     updated += 1
             if updated:
-                print(f"  Holdet kalibrering fallback: {updated} ryttere uden ML-prediction opdateret med holdet_est")
+                print(f"  Forudsigelser synkroniseret: {updated} ryttere bruger holdet_est fra tdf2026_predictions.json")
 
     # ── Load current team ─────────────────────────────────────
     current_team_data = load_current_team(predictions)
@@ -638,6 +635,9 @@ def main():
         print(f"  Kaptajn: {ass['captain_name']}")
 
     # ── Save for web ──────────────────────────────────────────
+    # Re-sorter efter expected_pts (kan have ændret sig pga. holdet_est-sync)
+    predictions.sort(key=lambda x: x.get("expected_pts", 0), reverse=True)
+
     output = {
         "stage":        stage,
         "stage_type":   stage_type,
