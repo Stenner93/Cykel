@@ -524,8 +524,13 @@ discipline = (combined - field_min) / (field_max - field_min)   <span class="com
       Vægtet komposit
     </div>
 
-    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:16px">
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:10px">
       De 6 signaler kombineres til én komposit-score 0–1. Standardvægtene gælder kun for signaler der er til stede — mangler et signal, omfordeles dets vægt dynamisk til de øvrige.
+    </p>
+    <p style="font-size:0.76rem;margin-bottom:16px">
+      <span style="background:rgba(255,215,0,0.12);border:1px solid rgba(255,215,0,0.3);border-radius:5px;padding:3px 10px;color:var(--yellow)">
+        ⚡ Aktuel situation: VeloScore og Odds er ikke udfyldt — de 38% omfordeles til de 4 øvrige signaler
+      </span>
     </p>
 
     <table class="signal-table">
@@ -533,7 +538,9 @@ discipline = (combined - field_min) / (field_max - field_min)   <span class="com
         <tr>
           <th>Signal</th>
           <th>Standardvægt</th>
-          <th style="width:200px">Visualisering</th>
+          <th style="width:160px">Standard</th>
+          <th>Aktuel vægt<br><span style="font-weight:400;text-transform:none;letter-spacing:0">(uden VeloScore + Odds)</span></th>
+          <th style="width:160px">Aktuel</th>
           <th>Kilde</th>
         </tr>
       </thead>
@@ -542,36 +549,48 @@ discipline = (combined - field_min) / (field_max - field_min)   <span class="com
           <td><strong>Form</strong></td>
           <td><span class="signal-pct">22%</span></td>
           <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:22%;background:var(--yellow)"></div></div></td>
+          <td><span class="signal-pct" style="color:var(--yellow)">35,5%</span></td>
+          <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:35.5%;background:var(--yellow)"></div></div></td>
           <td class="signal-note">PCS 90-dages form (type-specifik)</td>
         </tr>
         <tr>
           <td><strong>Disciplin</strong></td>
           <td><span class="signal-pct">20%</span></td>
           <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:20%;background:var(--green)"></div></div></td>
+          <td><span class="signal-pct" style="color:var(--yellow)">32,3%</span></td>
+          <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:32.3%;background:var(--green)"></div></div></td>
           <td class="signal-note">CO-ratings blandet med PCS specialiteter</td>
         </tr>
-        <tr>
+        <tr style="opacity:0.45">
           <td><strong>VeloScore</strong></td>
           <td><span class="signal-pct">20%</span></td>
           <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:20%;background:var(--blue)"></div></div></td>
+          <td><span class="signal-pct" style="color:var(--muted)">0%</span> <span style="font-size:0.65rem;color:var(--muted)">(mangler)</span></td>
+          <td class="signal-bar-cell"><div class="signal-bar-bg"></div></td>
           <td class="signal-note">Odds-baseret ekstern score</td>
         </tr>
-        <tr>
+        <tr style="opacity:0.45">
           <td><strong>Odds</strong></td>
           <td><span class="signal-pct">18%</span></td>
           <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:18%;background:#f97316"></div></div></td>
+          <td><span class="signal-pct" style="color:var(--muted)">0%</span> <span style="font-size:0.65rem;color:var(--muted)">(mangler)</span></td>
+          <td class="signal-bar-cell"><div class="signal-bar-bg"></div></td>
           <td class="signal-note">Implicitte sandsynligheder fra bookmakers</td>
         </tr>
         <tr>
           <td><strong>PCS-rangering</strong></td>
           <td><span class="signal-pct">12%</span></td>
           <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:12%;background:#c792ea"></div></div></td>
+          <td><span class="signal-pct" style="color:var(--yellow)">19,4%</span></td>
+          <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:19.4%;background:#c792ea"></div></div></td>
           <td class="signal-note">12-mdr. UCI-point ranking</td>
         </tr>
         <tr>
           <td><strong>ML-model</strong></td>
           <td><span class="signal-pct">8%</span></td>
           <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:8%;background:#64748b"></div></div></td>
+          <td><span class="signal-pct" style="color:var(--yellow)">12,9%</span></td>
+          <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:12.9%;background:#64748b"></div></div></td>
           <td class="signal-note">LightGBM placement-model</td>
         </tr>
       </tbody>

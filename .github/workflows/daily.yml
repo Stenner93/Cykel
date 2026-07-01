@@ -74,7 +74,7 @@ jobs:
           python scripts/scrape/scrape_holdet.py \
             --cartridge tour-de-france-2026 \
             --my-team-id 7145433 \
-            ${{ inputs.update_riders == 'true' && '--update-riders' || '' }} \
+            --update-riders \
             || echo "⚠️  Holdet-scrape slog fejl (TdF ikke live endnu?) — fortsætter med cached data"
 
       # ── 3b. Hent GT-etaperesultater (til ML rolling-form) ─────────────────
