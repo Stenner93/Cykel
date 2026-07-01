@@ -103,6 +103,9 @@ def match_riders(
     for rider in riders:
         rid   = rider["id"]
         fname = rider["full_name"].lower()
+        # Normalise apostrophes + hyphens so "O'Brien" splits the same way
+        # as the CO URL slug "o-brien" does (slug words always split on "-")
+        fname = re.sub(r"[''`\-]", " ", fname)
         words = fname.split()
         key   = " ".join(sorted(words))
 
@@ -136,6 +139,11 @@ def match_riders(
                     matched[rid] = slug_map[rkey]
                     break
             else:
+                # Try dropping last compound surname (e.g. "Ion Izagirre Insausti" → "ion izagirre")
+                abl_key = " ".join(sorted(words[:-1]))
+                if abl_key in slug_map:
+                    matched[rid] = slug_map[abl_key]
+                    continue
                 # Last-name only match (single result only)
                 last = words[-1]
                 candidates = [u for u in co_urls if last in _slug(u)]

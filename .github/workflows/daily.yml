@@ -99,6 +99,7 @@ jobs:
           PYTHONIOENCODING: utf-8
         run: |
           python scripts/scrape/scrape_pcs.py \
+            --riders-file data/cache/tdf2026_players.json \
             || echo "⚠️  PCS form-scores ikke tilgængelige — fortsætter med cached data"
 
       # ── 3e. Hent CyclingOracle ratings (~4 min) ───────────────────────────
@@ -107,6 +108,7 @@ jobs:
           PYTHONIOENCODING: utf-8
         run: |
           python scripts/scrape/scrape_co.py \
+            --riders-file data/cache/tdf2026_players.json \
             || echo "⚠️  CyclingOracle ikke tilgængeligt — fortsætter med cached data"
 
       # ── 4. Byg TdF spillerliste (skal ske FØR run_daily.py så vi har aktuelle priser) ──
