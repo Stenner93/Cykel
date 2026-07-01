@@ -309,6 +309,8 @@ PCS_SLUG_OVERRIDES: dict[str, str] = {
     "fernando_gaviria_rendon": "fernando-gaviria",
     "magnus_cort":             "magnus-cort-nielsen",
     "xabier_mikel_azparren":   "xabier-mikel-azparren-irurzun",
+    # Known name differences between holdet and PCS
+    "thomas_pidcock":          "tom-pidcock",
 }
 
 
