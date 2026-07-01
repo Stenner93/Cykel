@@ -15,6 +15,7 @@ import json
 import re
 import sys
 import time
+import unicodedata
 from pathlib import Path
 
 import requests
@@ -33,6 +34,37 @@ HEADERS = {
     )
 }
 DELAY = 0.8   # seconds between requests
+
+# Chars not handled by NFKD decomposition — two variants for æ
+# Primary:  æ → "ae"  (e.g. Wærenskjold → waerenskjold)
+# Alt:      æ → "a"   (e.g. Træen → traen, because CO treats "æe" as "ae" not "aee")
+_SPECIAL = {
+    ord('ø'): 'o',  ord('Ø'): 'o',
+    ord('æ'): 'ae', ord('Æ'): 'ae',
+    ord('ß'): 'ss',
+    ord('ð'): 'd',  ord('Ð'): 'd',
+    ord('þ'): 'th', ord('Þ'): 'th',
+}
+_SPECIAL_ALT = {**_SPECIAL, ord('æ'): 'a', ord('Æ'): 'a'}
+
+# Common short-name aliases: "official" → "CO name"
+FIRST_NAME_ALIASES: dict[str, str] = {
+    "thomas": "tom",
+    "tom":    "thomas",
+    "mathieu": "mat",
+    "alexander": "alex",
+    "alex": "alexander",
+}
+
+OVERRIDES_PATH = CACHE_DIR / "co_url_overrides.json"
+
+
+def _normalize(s: str, alt: bool = False) -> str:
+    """Lowercase, transliterate special chars, strip accents."""
+    table = _SPECIAL_ALT if alt else _SPECIAL
+    s = s.translate(table)
+    return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
+
 
 RATING_KEYS = ["AVG", "SPR", "FLT", "COB", "HLL", "MTN", "GC", "ITT", "PR"]
 RATING_PAT  = re.compile(
@@ -75,23 +107,59 @@ def _slug(url: str) -> str:
 
 
 def _slug_to_words(slug: str) -> list[str]:
-    return slug.lower().replace("-", " ").split()
+    return [_normalize(w) for w in slug.split("-")]
+
+
+def _name_variants(full_name: str) -> list[list[str]]:
+    """
+    Return sorted word-lists to try for CO slug matching.
+    Multiple variants handle accents, apostrophes and first-name aliases.
+    """
+    norm = _normalize(full_name)
+    variants: list[list[str]] = []
+
+    # Variant A: replace apostrophes and hyphens with spaces
+    va = re.sub(r"[''`\-]", " ", norm).split()
+    variants.append(sorted(va))
+
+    # Variant B: remove apostrophes entirely ("O'Connor" → "oconnor" as one word)
+    vb = re.sub(r"[''`]", "", norm)
+    vb = re.sub(r"-", " ", vb).split()
+    if sorted(vb) != sorted(va):
+        variants.append(sorted(vb))
+
+    # Variant C: swap first name via alias (Thomas→Tom, etc.)
+    if va and va[0] in FIRST_NAME_ALIASES:
+        alias_words = [FIRST_NAME_ALIASES[va[0]]] + va[1:]
+        variants.append(sorted(alias_words))
+
+    # Variant D: æ→a instead of æ→ae (for e.g. Træen→traen where CO writes "ae" not "aee")
+    norm_alt = _normalize(full_name, alt=True)
+    vd = re.sub(r"[''`\-]", " ", norm_alt).split()
+    if sorted(vd) not in variants:
+        variants.append(sorted(vd))
+
+    return variants
 
 
 def match_riders(
     co_urls: list[str],
     riders: list[dict],
-) -> dict[str, str]:
+) -> tuple[dict[str, str], list[str]]:
     """
-    Return {rider_id: co_url} for the best URL match per rider.
+    Return ({rider_id: co_url}, unmatched_names).
 
-    Matching strategy (in order):
-      1. All words in rider full_name (lowercase) are all in the slug words
-      2. Drop middle names: try first + last only (handles "Daniel Felipe Martinez")
-      3. Last-name exact match (for short slugs)
+    Matching strategy (tried in order per rider):
+      1. Full name → sorted words, possibly in multiple normalized variants
+         (handles accents, apostrophes like O'Connor→oconnor, Thomas→Tom)
+      2. All-words-in-slug containment check
+      3. Drop middle names: try first+last only
+      4. Drop each middle word individually
+      5. Drop last compound surname (Ion Izagirre Insausti → ion izagirre)
+      6. Last-name unique match
     """
-    # Build slug-word lookup
-    slug_map: dict[str, str] = {}   # slug_words_key → url
+    # Build slug-word lookup (normalized)
+    slug_map: dict[str, str] = {}   # " ".join(sorted normalized words) → url
     for url in co_urls:
         slug = _slug(url)
         key  = " ".join(sorted(_slug_to_words(slug)))
@@ -101,19 +169,25 @@ def match_riders(
     unmatched: list[str]    = []
 
     for rider in riders:
-        rid   = rider["id"]
-        fname = rider["full_name"].lower()
-        # Normalise apostrophes + hyphens so "O'Brien" splits the same way
-        # as the CO URL slug "o-brien" does (slug words always split on "-")
-        fname = re.sub(r"[''`\-]", " ", fname)
-        words = fname.split()
-        key   = " ".join(sorted(words))
+        rid  = rider["id"]
+        name = rider["full_name"]
 
-        if key in slug_map:
-            matched[rid] = slug_map[key]
+        # --- Strategy 1: full-name variants ---
+        found = False
+        all_variants = _name_variants(name)
+        for wlist in all_variants:
+            key = " ".join(wlist)
+            if key in slug_map:
+                matched[rid] = slug_map[key]
+                found = True
+                break
+        if found:
             continue
 
-        # Fallback: find URLs where ALL name words appear in the slug words
+        # Use the base (variant A) words for further strategies
+        words = re.sub(r"[''`\-]", " ", _normalize(name)).split()
+
+        # --- Strategy 2: slug containment ---
         best = None
         for url in co_urls:
             sw = _slug_to_words(_slug(url))
@@ -124,43 +198,39 @@ def match_riders(
             matched[rid] = best
             continue
 
-        # Middle-name drop: try first + last word only (e.g. "Daniel Felipe Martinez" → "daniel martinez")
+        # --- Strategies 3-6: name reduction (only for 3+ word names) ---
         if len(words) > 2:
-            short_words = [words[0], words[-1]]
-            short_key   = " ".join(sorted(short_words))
+            # 3. First + last only
+            short_key = " ".join(sorted([words[0], words[-1]]))
             if short_key in slug_map:
                 matched[rid] = slug_map[short_key]
                 continue
-            # Also try all words except each middle word individually
+
+            # 4. Drop each middle word
+            dropped = False
             for drop_i in range(1, len(words) - 1):
-                reduced = [w for i, w in enumerate(words) if i != drop_i]
-                rkey = " ".join(sorted(reduced))
-                if rkey in slug_map:
-                    matched[rid] = slug_map[rkey]
+                reduced = sorted(w for i, w in enumerate(words) if i != drop_i)
+                if " ".join(reduced) in slug_map:
+                    matched[rid] = slug_map[" ".join(reduced)]
+                    dropped = True
                     break
-            else:
-                # Try dropping last compound surname (e.g. "Ion Izagirre Insausti" → "ion izagirre")
-                abl_key = " ".join(sorted(words[:-1]))
-                if abl_key in slug_map:
-                    matched[rid] = slug_map[abl_key]
-                    continue
-                # Last-name only match (single result only)
-                last = words[-1]
-                candidates = [u for u in co_urls if last in _slug(u)]
-                if len(candidates) == 1:
-                    matched[rid] = candidates[0]
-                    continue
-                unmatched.append(rider["full_name"])
+            if dropped:
                 continue
 
-        # Last-name only match (single result only)
-        last = words[-1]
+            # 5. Drop last compound surname
+            abl_key = " ".join(sorted(words[:-1]))
+            if abl_key in slug_map:
+                matched[rid] = slug_map[abl_key]
+                continue
+
+        # 6. Last-name unique match
+        last = _normalize(name.split()[-1])
         candidates = [u for u in co_urls if last in _slug(u)]
         if len(candidates) == 1:
             matched[rid] = candidates[0]
             continue
 
-        unmatched.append(rider["full_name"])
+        unmatched.append(name)
 
     return matched, unmatched
 
@@ -245,6 +315,20 @@ def main():
         print("  Ikke matchede ryttere:")
         for name in sorted(unmatched):
             print(f"    - {name}")
+
+    # Apply manual URL overrides for edge cases the algorithm can't match
+    url_overrides: dict = {}
+    if OVERRIDES_PATH.exists():
+        url_overrides = json.loads(OVERRIDES_PATH.read_text(encoding="utf-8"))
+    rider_ids_in_run = {r["id"] for r in riders}
+    applied = 0
+    for rid, url in url_overrides.items():
+        if rid in rider_ids_in_run and rid not in matched_map and rid not in cache:
+            matched_map[rid] = url
+            applied += 1
+            print(f"  Override anvendt: {rid} → {url.split('/')[-1]}")
+    if applied:
+        print(f"  Overrides i alt: {applied}")
 
     # Determine which still need scraping
     to_scrape = [
