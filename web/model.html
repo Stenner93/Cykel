@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modelforklaring — TdF Manager</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── Pipeline page styles ── */
+.pipe-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.pipe-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--muted);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pipe-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* Flow diagram */
+.flow-diagram {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.flow-node {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.76rem;
+  text-align: center;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+.flow-node .flow-label { color: var(--muted); font-size: 0.63rem; margin-top: 3px; }
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  color: var(--border);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  align-self: center;
+}
+.flow-highlight {
+  border-color: var(--yellow);
+  background: rgba(255,215,0,0.06);
+  color: var(--yellow);
+}
+.flow-result {
+  border-color: var(--green);
+  background: rgba(0,200,83,0.06);
+  color: var(--green);
+}
+
+/* Signal weight bars */
+.signal-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
+.signal-table th {
+  font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.5px;
+  color: var(--muted); padding: 5px 10px; text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.signal-table td { padding: 6px 10px; font-size: 0.8rem; border-bottom: 1px solid rgba(46,52,80,0.4); }
+.signal-table tr:last-child td { border-bottom: none; }
+.signal-bar-cell { width: 180px; }
+.signal-bar-bg { background: var(--border); border-radius: 3px; height: 8px; overflow: hidden; }
+.signal-bar-fill { height: 100%; border-radius: 3px; }
+.signal-pct { font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; min-width: 35px; display: inline-block; }
+.signal-note { font-size: 0.71rem; color: var(--muted); }
+
+/* Feature table */
+.feat-table { width: 100%; border-collapse: collapse; font-size: 0.76rem; }
+.feat-table th {
+  font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.4px;
+  color: var(--muted); padding: 5px 10px; text-align: left;
+  border-bottom: 2px solid var(--border); background: var(--surface);
+  position: sticky; top: 0; z-index: 2;
+}
+.feat-table td { padding: 5px 10px; border-bottom: 1px solid rgba(46,52,80,0.4); }
+.feat-table tr:hover td { filter: brightness(1.15); }
+.feat-group-header td {
+  background: var(--surface); color: var(--muted); font-size: 0.63rem;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+  padding: 8px 10px 5px; border-bottom: 1px solid var(--border);
+}
+.feat-scroll { overflow-x: auto; overflow-y: auto; max-height: 480px; border: 1px solid var(--border); border-radius: 8px; }
+.feat-imp-bar { display: inline-block; height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--blue), var(--yellow)); vertical-align: middle; }
+.feat-badge {
+  font-size: 0.6rem; font-weight: 700; padding: 1px 5px; border-radius: 4px;
+  display: inline-block; margin-right: 3px;
+}
+.feat-badge.cat-co  { background: rgba(30,136,229,0.15); color: var(--blue); }
+.feat-badge.cat-pcs { background: rgba(255,215,0,0.15); color: var(--yellow); }
+.feat-badge.cat-race { background: rgba(0,200,83,0.15); color: var(--green); }
+.feat-badge.cat-ctx  { background: rgba(229,57,53,0.15); color: #ff8a80; }
+.feat-badge.cat-enc  { background: rgba(199,146,234,0.15); color: #c792ea; }
+
+/* Blend table */
+.blend-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+.blend-table th {
+  font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.4px;
+  color: var(--muted); padding: 5px 12px; text-align: left;
+  border-bottom: 2px solid var(--border);
+}
+.blend-table td { padding: 6px 12px; border-bottom: 1px solid rgba(46,52,80,0.4); }
+.blend-table tr:last-child td { border-bottom: none; }
+.blend-mini-bar { display: flex; border-radius: 4px; overflow: hidden; height: 12px; width: 140px; }
+.blend-seg { height: 100%; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; font-weight: 700; color: #000; }
+
+/* Point conversion */
+.pts-formula {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: var(--text);
+  margin-bottom: 14px;
+  line-height: 1.9;
+}
+.pts-formula .comment { color: var(--muted); }
+.pts-formula .val     { color: var(--yellow); font-weight: 700; }
+.pts-formula .op      { color: var(--blue); }
+.pts-formula .result  { color: var(--green); font-weight: 700; }
+
+/* Example box */
+.example-box {
+  background: var(--surface);
+  border: 1px solid rgba(255,215,0,0.25);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 16px;
+}
+.example-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--yellow);
+  margin-bottom: 14px;
+}
+.example-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(46,52,80,0.4);
+  font-size: 0.8rem;
+}
+.example-row:last-child { border-bottom: none; }
+.example-label { color: var(--muted); }
+.example-val   { font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+.example-val.highlight { color: var(--yellow); }
+.example-val.green     { color: var(--green); }
+
+/* info blocks */
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+@media (max-width: 700px) { .info-grid { grid-template-columns: 1fr; } .flow-diagram { flex-direction: column; align-items: flex-start; } .flow-arrow { transform: rotate(90deg); } }
+.info-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+.info-card-title { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 10px; }
+.info-item { display: flex; justify-content: space-between; font-size: 0.78rem; padding: 3px 0; border-bottom: 1px solid rgba(46,52,80,0.3); }
+.info-item:last-child { border-bottom: none; }
+.info-key { color: var(--muted); }
+.info-val { font-weight: 600; color: var(--text); }
+.info-val.yellow { color: var(--yellow); }
+
+/* Source pills */
+.source-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+.source-pill {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 10px 14px; font-size: 0.76rem; min-width: 150px; flex: 1;
+}
+.source-pill-title { font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.source-pill-sub { font-size: 0.68rem; color: var(--muted); line-height: 1.5; }
+
+.inline-note {
+  font-size: 0.72rem; color: var(--muted); margin-top: 10px; line-height: 1.6;
+}
+.formula-inline {
+  background: rgba(255,215,0,0.08); border: 1px solid rgba(255,215,0,0.2);
+  border-radius: 5px; padding: 2px 7px; font-family: monospace; font-size: 0.78rem;
+  color: var(--yellow);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">🚴 TdF Manager 2026</div>
+    <nav class="page-nav" style="display:flex;gap:4px;flex-wrap:wrap">
+      <a href="index.html"    style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">TdF 2026</a>
+      <a href="giro.html"     style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">Giro 2026</a>
+      <a href="dauphine.html" style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">Dauphiné 2026</a>
+      <a href="riders.html"   style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">Rytterdatabase</a>
+      <a href="analytics.html" style="color:var(--muted);border:1px solid var(--border);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:600">Analytik</a>
+      <a href="model.html"    style="color:#000;background:var(--yellow);border-radius:16px;padding:4px 12px;text-decoration:none;font-size:0.82rem;font-weight:700">Modelforklaring</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1 style="font-size:1.1rem;margin-bottom:6px">⚙️ Fra rådata til forventede point</h1>
+  <p style="color:var(--muted);font-size:0.82rem;margin-bottom:28px">
+    En trin-for-trin gennemgang af hvordan modellen beregner <code style="color:var(--yellow)">holdet_est</code> — de forventede Holdet.dk-point for en rytter på en given etape.
+  </p>
+
+  <!-- ── FLOW OVERVIEW ── -->
+  <div class="pipe-section">
+    <div class="pipe-section-title">
+      <span class="pipe-step-num">0</span>
+      Overblik — den samlede pipeline
+    </div>
+
+    <div class="flow-diagram">
+      <div class="flow-node">
+        <div>Datakilder</div>
+        <div class="flow-label">CO · PCS · odds · Holdet</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div>6 signaler</div>
+        <div class="flow-label">0–1 normaliseret</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node flow-highlight">
+        <div>Vægtet komposit</div>
+        <div class="flow-label">Σ(signal × vægt)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div>Basispoint</div>
+        <div class="flow-label">komposit × vinderpoint</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div>+ Bonusser</div>
+        <div class="flow-label">GC · trøjer · klasser</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node flow-result">
+        <div>holdet_est</div>
+        <div class="flow-label">K-point / 1000</div>
+      </div>
+    </div>
+
+    <p class="inline-note">
+      Alle beregninger sker i <code>src/predictor.py</code> (funktionen <code>predict_rider()</code>).
+      Outputtet <code>holdet_est</code> er <code>round(expected_pts / 1000, 1)</code> — altså de beregnede point divideret med 1000 for at matche Holdet.dk's K-format.
+    </p>
+  </div>
+
+  <!-- ── STEP 1: DATA SOURCES ── -->
+  <div class="pipe-section">
+    <div class="pipe-section-title">
+      <span class="pipe-step-num">1</span>
+      Datakilder
+    </div>
+
+    <div class="source-grid">
+      <div class="source-pill">
+        <div class="source-pill-title" style="color:var(--blue)">CyclingOracle (CO)</div>
+        <div class="source-pill-sub">
+          6 ratings 0–100: SPR · MTN · HLL · ITT · COB · GC<br>
+          Opdateres manuelt. Scrapes fra cyclingoracle.com.<br>
+          <em>Kilde: <code>scripts/scrape/scrape_co.py</code></em>
+        </div>
+      </div>
+      <div class="source-pill">
+        <div class="source-pill-title" style="color:var(--yellow)">ProCyclingStats (PCS)</div>
+        <div class="source-pill-sub">
+          90-dages form (type-specifik + overall) · 18-mdr. form (langsigtet) ·
+          karriere-specialiteter (sprint, climber, hills, tt) · 12-mdr. UCI-rangering<br>
+          <em>Kilde: <code>scripts/scrape/scrape_pcs.py</code></em>
+        </div>
+      </div>
+      <div class="source-pill">
+        <div class="source-pill-title" style="color:var(--green)">VeloScore / odds</div>
+        <div class="source-pill-sub">
+          Odds-baseret VeloScore (0–1). Alternativt råodds → implicitte sandsynligheder.<br>
+          <em>Kilde: <code>data/cache/</code> (valgfri signal)</em>
+        </div>
+      </div>
+      <div class="source-pill">
+        <div class="source-pill-title" style="color:#c792ea">Holdet API</div>
+        <div class="source-pill-sub">
+          Live GC-stilling · trøjestatus (gul, grøn, prikket, hvid) ·
+          sprint/KOM-klassifikation · holdbonus<br>
+          <em>Kilde: <code>scripts/scrape/scrape_holdet.py</code></em>
+        </div>
+      </div>
+      <div class="source-pill">
+        <div class="source-pill-title" style="color:#f97316">GT Live-resultater</div>
+        <div class="source-pill-sub">
+          Placeringer fra igangværende Grand Tour bruges til GC-bonus-beregning og form-korrektioner.<br>
+          <em>Kilde: <code>scripts/scrape/scrape_gc.py</code></em>
+        </div>
+      </div>
+      <div class="source-pill">
+        <div class="source-pill-title" style="color:var(--muted)">PCS etapetype-cache</div>
+        <div class="source-pill-sub">
+          Klassifikation af hver etape: sprint · mountain · hilly · tt · ttt · cobbled.<br>
+          Bruges til type-specifik form og disciplin-blend.<br>
+          <em>Kilde: <code>data/cache/pcs_stage_types.json</code></em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STEP 2: FORM SIGNAL ── -->
+  <div class="pipe-section">
+    <div class="pipe-section-title">
+      <span class="pipe-step-num">2</span>
+      Signal 1 — Form (22% standardvægt)
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-title">Kortsigtet form (180 dage)</div>
+        <div class="info-item"><span class="info-key">Half-life</span><span class="info-val">42 dage (eksponentiel decay)</span></div>
+        <div class="info-item"><span class="info-key">Vinderbonus</span><span class="info-val">+140 pt</span></div>
+        <div class="info-item"><span class="info-key">Type-specifik form</span><span class="info-val">sprint / mountain / hilly / tt / cobbled</span></div>
+        <div class="info-item"><span class="info-key">Default (ikke fundet)</span><span class="info-val">25.0</span></div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">Formblending</div>
+        <div class="info-item"><span class="info-key">Kort vs. langsigtet</span><span class="info-val">70% kort + 30% lang</span></div>
+        <div class="info-item"><span class="info-key">Type vs. overall</span><span class="info-val">70% type-specifik + 30% overall</span></div>
+        <div class="info-item"><span class="info-key">Spareness-korrektion</span><span class="info-val">Blend mod 0.5 ved &lt; 8 resultater</span></div>
+        <div class="info-item"><span class="info-key">Sprint-korrektion</span><span class="info-val">Blend mod overall hvis MTN ≥ 25 OG SPR ≥ 25</span></div>
+      </div>
+    </div>
+
+    <div class="pts-formula">
+<span class="comment"># Formel for form-signal (normaliseret 0–1)</span>
+type_form  = 0.70 × form_by_type[stage_type] + 0.30 × form_by_type["overall"]
+short_form = 0.70 × type_form                 + 0.30 × form_by_type["overall"]
+final_form = 0.70 × short_form                + 0.30 × long_form
+<span class="comment"># Normaliseret til 0–1: form_signal = final_form / 100.0</span>
+    </div>
+
+    <p class="inline-note">
+      PCS form-scores stammer fra rytternes PCS-resultater de seneste 180 dage. Pointene konverteres til 0–100 skala med 42-dages half-life decay, så nyere resultater vægter langt mere. Ét etapevinderbonus giver 140 ekstra point.
+    </p>
+  </div>
+
+  <!-- ── STEP 3: DISCIPLINE SIGNAL ── -->
+  <div class="pipe-section">
+    <div class="pipe-section-title">
+      <span class="pipe-step-num">3</span>
+      Signal 2 — Disciplin (20% standardvægt)
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:14px">
+      Disciplin-signalet kombinerer CyclingOracle-ratings (CO) og PCS karriere-specialiteter i to trin:
+      først blandes CO-dimensioner efter etapetypen, derefter normaliseres feltet så den bedste rytter scorer 100.
+    </p>
+
+    <div class="info-grid" style="margin-bottom:16px">
+      <div>
+        <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted);margin-bottom:10px">CO-blend pr. etapetype</div>
+        <table class="blend-table">
+          <thead><tr><th>Etapetype</th><th>CO-dimensioner</th><th>Visualisering</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Sprint</td>
+              <td>SPR 85% · HLL 15%</td>
+              <td><div class="blend-mini-bar"><div class="blend-seg" style="width:85%;background:var(--yellow)">85</div><div class="blend-seg" style="width:15%;background:var(--green)">15</div></div></td>
+            </tr>
+            <tr>
+              <td>Bjerg</td>
+              <td>MTN 100%</td>
+              <td><div class="blend-mini-bar"><div class="blend-seg" style="width:100%;background:var(--blue)">100%</div></div></td>
+            </tr>
+            <tr>
+              <td>Bakket</td>
+              <td>COB 40% · HLL 35% · MTN 25%</td>
+              <td><div class="blend-mini-bar"><div class="blend-seg" style="width:40%;background:#f97316">40</div><div class="blend-seg" style="width:35%;background:var(--green)">35</div><div class="blend-seg" style="width:25%;background:var(--blue)">25</div></div></td>
+            </tr>
+            <tr>
+              <td>Enkeltstart (ITT)</td>
+              <td>ITT 100%</td>
+              <td><div class="blend-mini-bar"><div class="blend-seg" style="width:100%;background:#ff8a80">100%</div></div></td>
+            </tr>
+            <tr>
+              <td>Brosten</td>
+              <td>COB 100%</td>
+              <td><div class="blend-mini-bar"><div class="blend-seg" style="width:100%;background:#f97316">100%</div></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted);margin-bottom:10px">CO vs. PCS specialitets-blend</div>
+        <div class="info-card" style="margin-bottom:0">
+          <div class="info-item"><span class="info-key">Andel CO-rating</span><span class="info-val">70%</span></div>
+          <div class="info-item"><span class="info-key">Andel PCS specialiteter</span><span class="info-val">30%</span></div>
+          <div class="info-item" style="padding-top:8px"><span class="info-key" style="font-size:0.7rem">Feltnormalisering</span></div>
+          <div style="font-size:0.72rem;color:var(--muted);margin-top:6px;line-height:1.6">
+            Blandet score normaliseres så den <strong style="color:var(--text)">bedste rytter i feltet → 100</strong> og <strong style="color:var(--text)">dårligste → 0</strong>. Dermed er det en relativ score, ikke en absolut.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pts-formula">
+<span class="comment"># Eksempel: sprint-etape (CO-blend)</span>
+co_blend   = 0.85 × co_spr + 0.15 × co_hll
+combined   = 0.70 × co_blend + 0.30 × pcs_spec_sprint
+<span class="comment"># Feltnormalisering (min/max skalering over alle ryttere i løbet)</span>
+discipline = (combined - field_min) / (field_max - field_min)   <span class="comment"># → 0–1</span>
+    </div>
+  </div>
+
+  <!-- ── STEP 4: ML SIGNAL ── -->
+  <div class="pipe-section">
+    <div class="pipe-section-title">
+      <span class="pipe-step-num">4</span>
+      Signal 3 — ML-model (8% standardvægt)
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:14px">
+      LightGBM placement-modellen forudsiger <code>norm_pos</code> (0 = sidst, 1 = vinder) ud fra 34 features.
+      Outputtet blandes med CO-disciplin-signalet — CO vægter mere fordi det er mere konsistent.
+    </p>
+
+    <div class="info-grid" style="margin-bottom:16px">
+      <div class="info-card">
+        <div class="info-card-title">Placement-model</div>
+        <div class="info-item"><span class="info-key">Algoritme</span><span class="info-val">LightGBM (regression)</span></div>
+        <div class="info-item"><span class="info-key">Target</span><span class="info-val">norm_pos (0–1)</span></div>
+        <div class="info-item"><span class="info-key">Træningsrækker</span><span class="info-val">84.662</span></div>
+        <div class="info-item"><span class="info-key">Features</span><span class="info-val">34</span></div>
+        <div class="info-item"><span class="info-key">LORO Spearman</span><span class="info-val yellow">0.64 (giro 0.65 / tdf 0.64 / vuelta 0.63)</span></div>
+        <div class="info-item"><span class="info-key">Top-5 præcision</span><span class="info-val yellow">67.4%</span></div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">CO vs. ML blend pr. etapetype</div>
+        <div class="info-item"><span class="info-key">Bjerg</span><span class="info-val">65% CO · 35% ML</span></div>
+        <div class="info-item"><span class="info-key">Sprint</span><span class="info-val">60% CO · 40% ML</span></div>
+        <div class="info-item"><span class="info-key">ITT / TTT</span><span class="info-val">70% CO · 30% ML</span></div>
+        <div class="info-item"><span class="info-key">Bakket</span><span class="info-val">50% CO · 50% ML</span></div>
+        <div class="info-item"><span class="info-key">Cobbled</span><span class="info-val yellow">kun CO (ingen ML)</span></div>
+      </div>
+    </div>
+
+    <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted);margin-bottom:10px">Placement-model: top 20 features (LightGBM importance)</div>
+    <div class="feat-scroll" style="max-height:320px">
+      <table class="feat-table" id="placement-feat-table">
+        <thead><tr><th>#</th><th>Feature</th><th>Kategori</th><th>Beskrivelse</th><th>Importance</th></tr></thead>
+        <tbody id="placement-feat-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── STEP 5: OTHER SIGNALS ── -->
+  <div class="pipe-section">
+    <div class="pipe-section-title">
+      <span class="pipe-step-num">5</span>
+      Signaler 4–6 — VeloScore, Odds, PCS-rangering
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-title">VeloScore (20% standardvægt)</div>
+        <div style="font-size:0.76rem;color:var(--muted);line-height:1.7">
+          Odds-baseret score 0–1. Beregnes fra bookmaker-odds ved at normalisere implicitte sandsynligheder over feltet.
+          Hvis VeloScore ikke er tilgængeligt, bruges råodds direkte.
+          Manglar signalet helt, omfordeles vægten til de øvrige signaler.
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">Betting-odds (18% standardvægt)</div>
+        <div style="font-size:0.76rem;color:var(--muted);line-height:1.7">
+          Implicitte sandsynligheder fra etapeodds (overrun-korrigeret).
+          Normaliseres over feltet → 0–1. Supplerer VeloScore.
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:12px">
+      <div class="info-card">
+        <div class="info-card-title">PCS 12-månedersrangering (12% standardvægt)</div>
+        <div style="font-size:0.76rem;color:var(--muted);line-height:1.7">
+          UCI-point over de seneste 12 måneder. Konverteret til 0–1 ved
+          <code class="formula-inline">1 / (1 + rank)</code> og normaliseret over feltet.
+          Giver en stabil basescore der ikke svinger med dagsform.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STEP 6: COMPOSITE ── -->
+  <div class="pipe-section">
+    <div class="pipe-section-title">
+      <span class="pipe-step-num">6</span>
+      Vægtet komposit
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:16px">
+      De 6 signaler kombineres til én komposit-score 0–1. Standardvægtene gælder kun for signaler der er til stede — mangler et signal, omfordeles dets vægt dynamisk til de øvrige.
+    </p>
+
+    <table class="signal-table">
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>Standardvægt</th>
+          <th style="width:200px">Visualisering</th>
+          <th>Kilde</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Form</strong></td>
+          <td><span class="signal-pct">22%</span></td>
+          <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:22%;background:var(--yellow)"></div></div></td>
+          <td class="signal-note">PCS 90-dages form (type-specifik)</td>
+        </tr>
+        <tr>
+          <td><strong>Disciplin</strong></td>
+          <td><span class="signal-pct">20%</span></td>
+          <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:20%;background:var(--green)"></div></div></td>
+          <td class="signal-note">CO-ratings blandet med PCS specialiteter</td>
+        </tr>
+        <tr>
+          <td><strong>VeloScore</strong></td>
+          <td><span class="signal-pct">20%</span></td>
+          <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:20%;background:var(--blue)"></div></div></td>
+          <td class="signal-note">Odds-baseret ekstern score</td>
+        </tr>
+        <tr>
+          <td><strong>Odds</strong></td>
+          <td><span class="signal-pct">18%</span></td>
+          <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:18%;background:#f97316"></div></div></td>
+          <td class="signal-note">Implicitte sandsynligheder fra bookmakers</td>
+        </tr>
+        <tr>
+          <td><strong>PCS-rangering</strong></td>
+          <td><span class="signal-pct">12%</span></td>
+          <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:12%;background:#c792ea"></div></div></td>
+          <td class="signal-note">12-mdr. UCI-point ranking</td>
+        </tr>
+        <tr>
+          <td><strong>ML-model</strong></td>
+          <td><span class="signal-pct">8%</span></td>
+          <td class="signal-bar-cell"><div class="signal-bar-bg"><div class="signal-bar-fill" style="width:8%;background:#64748b"></div></div></td>
+          <td class="signal-note">LightGBM placement-model</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pts-formula">
+<span class="comment"># Dynamisk normalisering — kun tilstedeværende signaler bidrager</span>
+total_weight = Σ(vægt_i for signaler der er til stede)
+composite    = Σ(signal_i × vægt_i) / total_weight   <span class="comment"># → 0–1</span>
+    </div>
+  </div>
+
+  <!-- ── STEP 7: POINTS ── -->
+  <div class="pipe-section">
+    <div class="pipe-section-title">
+      <span class="pipe-step-num">7</span>
+      Fra komposit til forventede point
+    </div>
+
+    <div class="info-grid" style="margin-bottom:16px">
+      <div class="info-card">
+        <div class="info-card-title">Vinderpoint pr. etapetype (winner_pts)</div>
+        <div class="info-item"><span class="info-key">Sprint</span><span class="info-val yellow">500.000 pt</span></div>
+        <div class="info-item"><span class="info-key">Bjerg</span><span class="info-val yellow">630.000 pt</span></div>
+        <div class="info-item"><span class="info-key">Bakket</span><span class="info-val yellow">500.000 pt</span></div>
+        <div class="info-item"><span class="info-key">ITT</span><span class="info-val yellow">380.000 pt</span></div>
+        <div class="info-item"><span class="info-key">TTT</span><span class="info-val yellow">380.000 pt</span></div>
+        <div class="info-item"><span class="info-key">Brosten</span><span class="info-val yellow">500.000 pt</span></div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">Profil-skalering (PCS ProfileScore)</div>
+        <div style="font-size:0.76rem;color:var(--muted);line-height:1.7">
+          PCS ProfileScore (0–5) justerer vinderpoint op/ned for bjerg- og bakke-etaper:
+          <br><strong style="color:var(--text)">Bjerg:</strong> 0.80 – 1.40× (stejlere = mere)
+          <br><strong style="color:var(--text)">Bakket:</strong> 0.80 – 1.20× (stejlere = mere)
+          <br>Sprint/ITT: ingen skalering.
+        </div>
+      </div>
+    </div>
+
+    <div class="pts-formula">
+<span class="comment"># Trin 1 — Basispoint</span>
+profile_scale = <span class="val">_profile_scale(stage_type, profile_score)</span>   <span class="comment"># 0.80 – 1.40</span>
+base_pts      = composite × winner_pts[stage_type] × profile_scale
+
+<span class="comment"># Trin 2 — Sprint-boost (kun sprint-etaper)</span>
+<span class="comment"># Hvis CO_SPR ≥ 75: boost 1.0 → 1.5× (lineært til SPR=100)</span>
+sprint_boost  = 1.0 + max(0, co_spr - 75) / 25 × 0.5
+stage_pts     = base_pts × sprint_boost
+
+<span class="comment"># Trin 3 — Bonusser</span>
+gc_bonus      = <span class="val">_expected_gc_bonus(gc_rank, stage_type)</span>   <span class="comment"># GC-stilling → point</span>
+jersey_bonus  = 90_000 × (gul + grøn + prikket + hvid)      <span class="comment"># trøjer × 90K</span>
+sprint_class  = sprint_points × sprint_class_factor
+kom_class     = kom_points × kom_class_factor
+team_bonus    = 50_000 × (i_top3_hold)
+
+<span class="comment"># Trin 4 — Total</span>
+total_pts     = stage_pts + gc_bonus + jersey_bonus + sprint_class + kom_class + team_bonus
+<span class="result">holdet_est    = round(total_pts / 1000, 1)  # → K-format</span>
+    </div>
+
+    <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted);margin:16px 0 8px">GC-bonus model</div>
+    <div class="info-card" style="font-size:0.76rem;color:var(--muted);line-height:1.7">
+      GC-bonussen beregnes ud fra rytteres nuværende GC-stilling og etapetypen.
+      <strong style="color:var(--text)">Rank 1–3:</strong> deterministisk bonus baseret på GC-pointskala.
+      <strong style="color:var(--text)">Rank 4–10:</strong> probabilistisk bonus vægtet af sandsynligheder for at rykke op.
+      <strong style="color:var(--text)">Rank 11–20:</strong> lille sandsynlighed for GC-gevinst, afspejlet i lille bonus.
+      Bonussen er <em>forventet</em> — ikke hvad rytteren faktisk scorer.
+    </div>
+  </div>
+
+  <!-- ── STEP 8: HOLDET MODEL ── -->
+  <div class="pipe-section">
+    <div class="pipe-section-title">
+      <span class="pipe-step-num">8</span>
+      Holdet-model (direkte point-forudsigelse)
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:14px">
+      En separat LightGBM-model forudsiger Holdet-point direkte fra 23 features. Bruges primært til validering og kalibrering — <code>holdet_est</code> stammer primært fra trin 7 ovenfor.
+    </p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-title">Holdet-model</div>
+        <div class="info-item"><span class="info-key">Target</span><span class="info-val">Holdet-point (norm. 0–100)</span></div>
+        <div class="info-item"><span class="info-key">Træningsrækker</span><span class="info-val">11.315</span></div>
+        <div class="info-item"><span class="info-key">Features</span><span class="info-val">23</span></div>
+        <div class="info-item"><span class="info-key">LORO Spearman</span><span class="info-val yellow">0.51</span></div>
+        <div class="info-item"><span class="info-key">Top-5 præcision</span><span class="info-val yellow">42.9%</span></div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">Holdet-model: vigtigste features</div>
+        <div class="info-item"><span class="info-key">gt_form_5</span><span class="info-val" style="font-size:0.7rem">GT-form seneste 5 etaper</span></div>
+        <div class="info-item"><span class="info-key">xrace_form_10</span><span class="info-val" style="font-size:0.7rem">Løbs-kryds form seneste 10</span></div>
+        <div class="info-item"><span class="info-key">gt_form_10</span><span class="info-val" style="font-size:0.7rem">GT-form seneste 10 etaper</span></div>
+        <div class="info-item"><span class="info-key">co_spr / co_mtn / co_hll</span><span class="info-val" style="font-size:0.7rem">CyclingOracle ratings</span></div>
+        <div class="info-item"><span class="info-key">form_overall</span><span class="info-val" style="font-size:0.7rem">PCS overall form</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EXAMPLE ── -->
+  <div class="pipe-section">
+    <div class="pipe-section-title">
+      Konkret eksempel
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:14px">
+      Hypotetisk beregning for en sprint-rytter (fx Jasper Philipsen) på en flad sprint-etape.
+    </p>
+
+    <div class="example-box">
+      <div class="example-title">Jasper Philipsen — Sprint-etape (hypotetisk)</div>
+
+      <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:var(--muted);margin-bottom:8px">Signaler</div>
+      <div class="example-row"><span class="example-label">Form (90 dage, sprint-type)</span><span class="example-val">68.0 → normaliseret <strong>0.68</strong></span></div>
+      <div class="example-row"><span class="example-label">Disciplin (CO SPR=91, HLL=72 → blend 85/15)</span><span class="example-val">CO blend 88.3 → feltnorm. <strong>0.92</strong></span></div>
+      <div class="example-row"><span class="example-label">VeloScore (odds-baseret)</span><span class="example-val"><strong>0.74</strong></span></div>
+      <div class="example-row"><span class="example-label">Odds (implicit sandsynlighed)</span><span class="example-val"><strong>0.65</strong></span></div>
+      <div class="example-row"><span class="example-label">PCS-rangering (rank 8)</span><span class="example-val">1/(1+8) = 0.111 → feltnorm. <strong>0.82</strong></span></div>
+      <div class="example-row"><span class="example-label">ML (placement model norm_pos)</span><span class="example-val">CO 60% + ML 40% → <strong>0.81</strong></span></div>
+
+      <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:var(--muted);margin:12px 0 8px">Beregning</div>
+      <div class="example-row"><span class="example-label">Vægtet komposit (alle 6 signaler)</span><span class="example-val highlight">0.78</span></div>
+      <div class="example-row"><span class="example-label">Winner pts (sprint) × profil-skala</span><span class="example-val">500.000 × 1.0 = 500.000 pt</span></div>
+      <div class="example-row"><span class="example-label">Basispoint (0.78 × 500.000)</span><span class="example-val">390.000 pt</span></div>
+      <div class="example-row"><span class="example-label">Sprint-boost (CO_SPR=91 → 1.32×)</span><span class="example-val">390.000 × 1.32 = 514.800 pt</span></div>
+      <div class="example-row"><span class="example-label">GC-bonus (rank 35, sprint → lille)</span><span class="example-val">+ 5.000 pt</span></div>
+      <div class="example-row"><span class="example-label">Jersey-bonus (ingen trøje)</span><span class="example-val">+ 0 pt</span></div>
+      <div class="example-row" style="border-top:1px solid var(--yellow);margin-top:8px;padding-top:10px">
+        <span class="example-label" style="color:var(--text);font-weight:600">Total forventede point</span>
+        <span class="example-val green">519.800 pt ≈ <strong>519.8 K</strong></span>
+      </div>
+      <div class="example-row">
+        <span class="example-label" style="color:var(--yellow);font-weight:600">holdet_est</span>
+        <span class="example-val highlight" style="font-size:1rem">≈ 519.8</span>
+      </div>
+    </div>
+
+    <p class="inline-note" style="margin-top:14px">
+      Eksemplet er illustrativt. De faktiske tal afhænger af det konkrete felt, dagens odds og livescores.
+      Alle verdier i denne tabel beregnes dynamisk i <code>src/predictor.py</code> for hvert etape-start.
+    </p>
+  </div>
+
+  <!-- ── VALIDATION LINK ── -->
+  <div class="pipe-section" style="background:rgba(255,215,0,0.04);border-color:rgba(255,215,0,0.2)">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <div>
+        <div style="font-weight:700;margin-bottom:4px">ML-validering</div>
+        <div style="font-size:0.78rem;color:var(--muted)">
+          Se detaljeret LORO-validering, feature importance og etapetype-præcision for begge modeller.
+        </div>
+      </div>
+      <a href="riders.html#ml" style="background:var(--yellow);color:#000;padding:8px 18px;border-radius:8px;text-decoration:none;font-weight:700;font-size:0.82rem;white-space:nowrap">
+        Gå til ML Validering →
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<script>
+// Placement model feature importance data (from placement_ml_validation.json)
+const PLACEMENT_FEATURES = [
+  { feature: 'profile_score',        cat: 'ctx',  importance: 4140, desc: 'PCS ProfilScore — etapens hårdhed (0–5)' },
+  { feature: 'xrace_form_10',        cat: 'race', importance: 3656, desc: 'Kryds-løbs form seneste 10 etaper' },
+  { feature: 'gt_form_5',            cat: 'race', importance: 3204, desc: 'GT-specifik form seneste 5 etaper' },
+  { feature: 'gt_form_10',           cat: 'race', importance: 2930, desc: 'GT-specifik form seneste 10 etaper' },
+  { feature: 'spec_climber',         cat: 'pcs',  importance: 2155, desc: 'PCS karriere UCI-point som klatrer' },
+  { feature: 'spec_sprint',          cat: 'pcs',  importance: 1795, desc: 'PCS karriere UCI-point som sprinter' },
+  { feature: 'sprint_profile_score', cat: 'enc',  importance: 1681, desc: 'ProfileScore × sprint-flag (interaktion)' },
+  { feature: 'spec_tt',              cat: 'pcs',  importance: 1634, desc: 'PCS karriere UCI-point i enkeltstart' },
+  { feature: 'spec_hills',           cat: 'pcs',  importance: 1471, desc: 'PCS karriere UCI-point i bakkeløb' },
+  { feature: 'co_spr',               cat: 'co',   importance: 1238, desc: 'CyclingOracle sprint-rating (0–100)' },
+  { feature: 'co_mtn',               cat: 'co',   importance: 1222, desc: 'CyclingOracle bjerg-rating (0–100)' },
+  { feature: 'co_hll',               cat: 'co',   importance: 1120, desc: 'CyclingOracle hill-rating (0–100)' },
+  { feature: 'co_itt',               cat: 'co',   importance: 1094, desc: 'CyclingOracle ITT-rating (0–100)' },
+  { feature: 'startlist_quality',    cat: 'ctx',  importance:  983, desc: 'Feltets samlede styrke (sum CO)' },
+  { feature: 'co_gc',                cat: 'co',   importance:  940, desc: 'CyclingOracle GC-rating (0–100)' },
+  { feature: 'sprint_spec',          cat: 'enc',  importance:  936, desc: 'spec_sprint × sprint-flag (interaktion)' },
+  { feature: 'xrace_top10_rate_10',  cat: 'race', importance:  912, desc: 'Top-10 rate i kryds-løb seneste 10' },
+  { feature: 'sprint_co_spr',        cat: 'enc',  importance:  878, desc: 'co_spr × sprint-flag (interaktion)' },
+  { feature: 'co_cob',               cat: 'co',   importance:  783, desc: 'CyclingOracle cobbled-rating (0–100)' },
+  { feature: 'p_class',              cat: 'ctx',  importance:  660, desc: 'Løbsklasse (WT, ProSeries, GT osv.)' },
+];
+
+const MAX_IMP = PLACEMENT_FEATURES[0].importance;
+const CAT_LABELS = { co: 'CO', pcs: 'PCS', race: 'Race', ctx: 'Kontekst', enc: 'Interaktion' };
+
+function renderPlacementFeatures() {
+  const tbody = document.getElementById('placement-feat-body');
+  tbody.innerHTML = PLACEMENT_FEATURES.map((f, i) => {
+    const barW = Math.round(f.importance / MAX_IMP * 120);
+    const catClass = `feat-badge cat-${f.cat}`;
+    return `<tr>
+      <td style="color:var(--muted);text-align:right">${i + 1}</td>
+      <td><code style="color:var(--text)">${f.feature}</code></td>
+      <td><span class="${catClass}">${CAT_LABELS[f.cat]}</span></td>
+      <td style="color:var(--muted)">${f.desc}</td>
+      <td style="white-space:nowrap">
+        <span class="feat-imp-bar" style="width:${barW}px"></span>
+        <span style="margin-left:6px;font-size:0.7rem;color:var(--muted)">${f.importance.toLocaleString('da-DK')}</span>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+// Support anchor #ml for the ML validation link
+if (window.location.hash === '#ml') {
+  window.location.href = 'riders.html#ml';
+}
+
+renderPlacementFeatures();
+</script>
+
+</body>
+</html>
