@@ -303,12 +303,12 @@ PCS_SLUG_OVERRIDES: dict[str, str] = {
     "michael_valgren":         "michael-valgren-andersen",
     # Scandinavian names: ø → 'oe' on PCS (not 'o' as _CHAR_MAP does)
     "rasmus_søjberg_pedersen": "rasmus-soejberg-pedersen",
-    "søren_wærenskjold":       "soeren-waerenskjold",
     # Apostrophe: PCS joins without separator (o-brien → obrien)
     "kelland_o'brien":         "kelland-obrien",
-    # Full name with second surname on PCS
+    # Riders where PCS slug differs from auto-generated name
     "fernando_gaviria_rendon": "fernando-gaviria",
-    "xabier_mikel_azparren":   "xabier-mikel-azparren",
+    "magnus_cort":             "magnus-cort-nielsen",
+    "xabier_mikel_azparren":   "xabier-mikel-azparren-irurzun",
 }
 
 
