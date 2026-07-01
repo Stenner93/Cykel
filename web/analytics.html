@@ -343,6 +343,7 @@
         <button class="sort-btn"        id="sb-price"    onclick="setSort('price',this)">Pris</button>
         <button class="sort-btn"        id="sb-value"    onclick="setSort('value',this)">Est/M</button>
         <button class="sort-btn"        id="sb-score"    onclick="setSort('score',this)">Score</button>
+        <button class="sort-btn"        id="sb-ml"       onclick="setSort('ml',this)">ML</button>
         <button class="sort-btn"        id="sb-form"     onclick="setSort('form',this)">Form</button>
         <button class="sort-btn"        id="sb-co"       onclick="setSort('co',this)">CO Evne</button>
         <button class="sort-btn"        id="sb-pcs-evne" onclick="setSort('pcs_evne',this)">PCS Evne</button>
@@ -360,6 +361,7 @@
               <th>Pris</th>
               <th title="Forventet vækst ÷ pris (est pr. M investeret)">Est/M</th>
               <th id="sb-score-col">Score</th>
+              <th title="ML-model: normaliseret 0-100 score fra LightGBM placement-model">ML</th>
               <th id="thForm">Form</th>
               <th id="thCO">CO Evne</th>
               <th id="thPCS">PCS Evne</th>
@@ -635,6 +637,7 @@ function getSorted(riders) {
   return [...riders].sort((a, b) => {
     if (sortKey === 'est')      return (b.holdet_est || 0) - (a.holdet_est || 0);
     if (sortKey === 'score')    return computeScore(b) - computeScore(a);
+    if (sortKey === 'ml')       return (b.signals?.ml ?? 0) - (a.signals?.ml ?? 0);
     if (sortKey === 'form')     return (b.pcs_form?.[formKey] ?? 0) - (a.pcs_form?.[formKey] ?? 0);
     if (sortKey === 'co')       return (b.co?.[coKey] ?? 0) - (a.co?.[coKey] ?? 0);
     if (sortKey === 'pcs_evne') return (b.pcs_spec_norm?.[pcsKey] ?? 0) - (a.pcs_spec_norm?.[pcsKey] ?? 0);
@@ -671,6 +674,8 @@ function renderTable() {
     const isSel  = r.id === selRiderId;
 
     const sigs = r.signals || {};
+    const mlVal = Math.round((sigs.ml ?? 0) * 100);
+    const mlCls = mlVal >= 65 ? 'abil-hi' : mlVal >= 35 ? 'abil-md' : 'abil-lo';
     const bars = SIG_KEYS.map((k, si) => {
       const v = sigs[k] ?? 0;
       const h = Math.max(1, Math.round(v * 18));
@@ -687,6 +692,7 @@ function renderTable() {
       <td><span class="price-g">${r.price.toFixed(1)}M</span></td>
       <td style="font-size:11px;color:var(--text2);font-weight:600">${estM}</td>
       <td class="ability-cell ${scoreCls}">${score}</td>
+      <td class="ability-cell ${mlCls}" title="ML-model score (0-100)">${mlVal > 0 ? mlVal : '–'}</td>
       <td class="ability-cell ${abilClass(formVal)}">${formVal != null && formVal > 0 ? Math.round(formVal) : '–'}</td>
       <td class="ability-cell ${abilClass(coVal)}">${fmtRaw(coVal)}</td>
       <td class="ability-cell ${abilClass(pcsNorm)}">${pcsNorm != null && pcsNorm > 0 ? fmtRaw(pcsNorm) : '–'}</td>
