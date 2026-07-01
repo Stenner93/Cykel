@@ -26,7 +26,7 @@ const SIGNAL_WEIGHTS = [
 const CO_BLEND = {
   sprint:   { SPR: 0.85, HLL: 0.15 },
   mountain: { MTN: 1.00 },
-  hilly:    { COB: 0.40, HLL: 0.35, MTN: 0.25 },
+  hilly:    { HLL: 0.90, SPR: 0.10 },
   tt:       { ITT: 1.00 },
   ttt:      { ITT: 1.00 },
   cobbled:  { COB: 1.00 },
@@ -544,7 +544,7 @@ function renderStageBreakdown(d) {
   const stypeNotes = {
     sprint:   'Svageste type — feltdynamik, vind og taktik dominerer. CO_SPR-boost kompenserer delvist.',
     mountain: 'Stærkeste type — GC-hierarkiet er stabilt og CO MTN-ratings er meget præcise.',
-    hilly:    'Solid præstation — puncheur/klassikere dominerer (COB 40% + HLL 35% blend).',
+    hilly:    'Solid præstation — bakke-specialister dominerer (HLL 90% blend).',
     tt:       'God præstation — ITT-ratings er præcise, lille og stabilt felt pr. etape.',
   };
 

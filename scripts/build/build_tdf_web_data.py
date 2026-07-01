@@ -456,6 +456,16 @@ def main() -> None:
     co_raw  = _load_json(DATA / "cache" / "cyclingoracle.json")
     co_data = {name: d.get("ratings", {}) for name, d in co_raw.items()} if co_raw else {}
 
+    # Rider-ID alias map: Holdet full-name → CO cache key (diverge due to naming differences)
+    _CO_ALIASES: dict[str, str] = {
+        "fernando_gaviria_rendon": "fernando_gaviria",   # Holdet adds surname "Rendon"
+        "thomas_pidcock":          "tom_pidcock",          # CO uses "Tom", Holdet "Thomas"
+        "søren_wærenskjold":       "soren_waerenskjold",  # ø/æ vs. oe/ae in CO
+    }
+    for player_id, co_key in _CO_ALIASES.items():
+        if player_id not in co_data and co_key in co_data:
+            co_data[player_id] = co_data[co_key]
+
     pcs_raw  = _load_json(DATA / "cache" / "pcs_form.json")
     pcs_form: dict[str, dict] = {}
     pcs_form_long: dict[str, dict] = {}     # multi-season form (slow decay)

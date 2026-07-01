@@ -58,26 +58,17 @@ STAGE_DISCIPLINE = {
     "gc":        "GC",
 }
 
-# Empirically-informed discipline BLEND per stage_type — a single CO key
-# (above) doesn't capture stage outcomes well in isolation. Sampled 42
-# historical stages (2025 Giro + 2025 TdF) and looked at each winner's
-# dominant PCS specialty vs. the stage's ProfileScore:
-#   profile_score 100-200 ("hilly"):  44% onedayraces, 22% climber,
-#                                      22% tt,  only 11% hills-dominant
-#   profile_score  40-100 ("sprint"): 67% onedayraces,  8% sprint
-#   profile_score   0-40  ("sprint"): 64% sprint — genuinely flat stages
-#                                      behave as expected
-# "Hilly" and the rolling end of "sprint" are won by classics/puncheur
-# riders (COB) far more often than a pure HLL/SPR rating would suggest.
-# Sample size is modest (9-12 stages per bucket) so treat these as
-# directional, not precision-calibrated — but the gap is large enough
-# (11% vs 44%) to be worth correcting rather than ignoring.
+# Discipline BLEND per stage_type — weights which CO dimensions predict
+# each stage type best.
+# Hilly: HLL 90% + SPR 10% — TdF hilly stages have no cobbles; a small
+# sprint component captures riders who can contest punchy summit finishes
+# or reduced-group sprints at the end of rolling stages.
 STAGE_DISCIPLINE_BLEND: dict[str, dict[str, float]] = {
     "sprint":    {"SPR": 0.85, "HLL": 0.15},
     "mountain":  {"MTN": 1.0},
     "tt":        {"ITT": 1.0},
     "ttt":       {"ITT": 1.0},
-    "hilly":     {"COB": 0.40, "HLL": 0.35, "MTN": 0.25},
+    "hilly":     {"HLL": 0.90, "SPR": 0.10},
     "cobbled":   {"COB": 1.0},
     "gc":        {"GC": 1.0},
 }
@@ -102,6 +93,9 @@ def _disc_blend_value(cyclingoracle: dict[str, float] | None, stage_type: str) -
     """
     blend = STAGE_DISCIPLINE_BLEND.get(stage_type, {"AVG": 1.0})
     co = cyclingoracle or {}
+    if not co:
+        # No data at all → score 0 so rider lands at bottom of field ranking
+        return 0.0, _dominant_disc_key(stage_type)
     raw = sum(weight * co.get(key, 50.0) for key, weight in blend.items())
     return raw, _dominant_disc_key(stage_type)
 
