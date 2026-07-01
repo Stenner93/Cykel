@@ -298,12 +298,17 @@ def _to_pcs_slug(full_name: str) -> str:
 # ---------------------------------------------------------------------------
 PCS_SLUG_OVERRIDES: dict[str, str] = {
     # Riders needing extra surname particle for PCS URL
-    # (auto-slug from full_name would drop the second surname)
     "igor_arrieta":            "igor-arrieta-lizarraga",
     "santiago_buitrago":       "santiago-buitrago-sanchez",
     "michael_valgren":         "michael-valgren-andersen",
-    # Scandinavian names: ø is mapped to 'o' by _to_pcs_slug but PCS uses 'oe'
+    # Scandinavian names: ø → 'oe' on PCS (not 'o' as _CHAR_MAP does)
     "rasmus_søjberg_pedersen": "rasmus-soejberg-pedersen",
+    # Apostrophe: PCS joins without separator (o-brien → obrien)
+    "kelland_o'brien":         "kelland-obrien",
+    # Riders where PCS slug differs from auto-generated name
+    "fernando_gaviria_rendon": "fernando-gaviria",
+    "magnus_cort":             "magnus-cort-nielsen",
+    "xabier_mikel_azparren":   "xabier-mikel-azparren-irurzun",
 }
 
 
@@ -741,11 +746,13 @@ def scrape_all(
 
     stage_types_disk = _load_stage_types_cache()
 
-    todo = [r for r in riders if r["id"] not in cache]
+    # Include riders not in cache OR previously marked not_found (retry them)
+    todo = [r for r in riders
+            if r["id"] not in cache or cache[r["id"]].get("not_found")]
     if test:
         todo = todo[:5]
 
-    n_cached  = len(riders) - len([r for r in riders if r["id"] not in cache])
+    n_cached  = len(riders) - len(todo)
     n_total   = len(todo)
     n_ok      = 0
     n_missing = 0
