@@ -207,6 +207,15 @@
     "holdet_person_id": 4401
   },
   {
+    "id": "brent_van_moer",
+    "full_name": "Brent Van Moer",
+    "short_name": "Moer",
+    "team": "Q36",
+    "team_full": "Pinarello Q36.5 Pro Cycling Team",
+    "price": 4.0,
+    "holdet_person_id": 4521
+  },
+  {
     "id": "bruno_armirail",
     "full_name": "Bruno Armirail",
     "short_name": "Armirail",
@@ -232,6 +241,15 @@
     "team_full": "Decathlon CMA CGM Team",
     "price": 5.0,
     "holdet_person_id": 4199
+  },
+  {
+    "id": "chris_harper",
+    "full_name": "Chris Harper",
+    "short_name": "C. Harper",
+    "team": "Q36",
+    "team_full": "Pinarello Q36.5 Pro Cycling Team",
+    "price": 5.0,
+    "holdet_person_id": 4330
   },
   {
     "id": "cian_uijtdebroeks",
@@ -286,6 +304,15 @@
     "team_full": "Bahrain - Victorious",
     "price": 6.0,
     "holdet_person_id": 2129
+  },
+  {
+    "id": "damien_howson",
+    "full_name": "Damien Howson",
+    "short_name": "Howson",
+    "team": "Q36",
+    "team_full": "Pinarello Q36.5 Pro Cycling Team",
+    "price": 3.0,
+    "holdet_person_id": 2640
   },
   {
     "id": "davide_ballerini",
@@ -349,6 +376,15 @@
     "team_full": "Alpecin-Premier Tech",
     "price": 3.5,
     "holdet_person_id": 4590
+  },
+  {
+    "id": "egan_bernal",
+    "full_name": "Egan Bernal",
+    "short_name": "E. Bernal",
+    "team": "IGD",
+    "team_full": "Netcompany INEOS Cycling Team",
+    "price": 7.0,
+    "holdet_person_id": 3894
   },
   {
     "id": "einer_rubio",
@@ -709,6 +745,15 @@
     "team_full": "Caja Rural - Seguros RGA",
     "price": 4.0,
     "holdet_person_id": 4794
+  },
+  {
+    "id": "joshua_tarling",
+    "full_name": "Joshua Tarling",
+    "short_name": "Tarling",
+    "team": "IGD",
+    "team_full": "Netcompany INEOS Cycling Team",
+    "price": 7.0,
+    "holdet_person_id": 4843
   },
   {
     "id": "juan_ayuso",
@@ -1503,6 +1548,15 @@
     "holdet_person_id": 2357
   },
   {
+    "id": "tobias_foss",
+    "full_name": "Tobias Foss",
+    "short_name": "Foss",
+    "team": "IGD",
+    "team_full": "Netcompany INEOS Cycling Team",
+    "price": 4.0,
+    "holdet_person_id": 4416
+  },
+  {
     "id": "tobias_halland_johannessen",
     "full_name": "Tobias Halland Johannessen",
     "short_name": "Johannessen",
@@ -1573,6 +1627,24 @@
     "team_full": "Team Picnic PostNL",
     "price": 3.0,
     "holdet_person_id": 1912
+  },
+  {
+    "id": "xabier_mikel_azparren",
+    "full_name": "Xabier Mikel Azparren",
+    "short_name": "Azparren",
+    "team": "Q36",
+    "team_full": "Pinarello Q36.5 Pro Cycling Team",
+    "price": 3.5,
+    "holdet_person_id": 4578
+  },
+  {
+    "id": "xandro_meurisse",
+    "full_name": "Xandro Meurisse",
+    "short_name": "Meurisse",
+    "team": "Q36",
+    "team_full": "Pinarello Q36.5 Pro Cycling Team",
+    "price": 3.5,
+    "holdet_person_id": 4021
   },
   {
     "id": "yannis_voisard",
