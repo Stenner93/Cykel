@@ -31,11 +31,6 @@ on:
           - ttt
           - hilly
           - cobbled
-      update_riders:
-        description: 'Opdater rytterpris i riders.json fra Holdet?'
-        required: false
-        default: false
-        type: boolean
       veloscore_path:
         description: 'Sti til VeloScore JSON (lades tom for standard)'
         required: false
@@ -204,6 +199,6 @@ jobs:
             fi
             git commit -m "$MSG"
             # Push med rebase-fallback i tilfælde af samtidige kørsler
-            git push || (git pull --rebase origin main && git push)
+            git push || (git pull --rebase --autostash origin main && git push)
             echo "✅ Push lykkedes: $MSG"
           fi
