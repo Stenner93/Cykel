@@ -60,7 +60,7 @@ jobs:
           fi
 
           echo "Starter scrape med args: $ARGS"
-          python scrape_pcs_history.py $ARGS
+          python scripts/scrape/scrape_pcs_history.py $ARGS
           echo "Scrape færdig."
           ls -lh data/ml/historical_results.json || echo "⚠️  Ingen historikfil genereret"
 
@@ -120,7 +120,7 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
         run: |
-          python build_training_data.py
+          python scripts/train/build_training_data.py
           echo "Feature-datasæt (holdet):"
           ls -lh data/ml/training_data.csv
 
@@ -128,7 +128,7 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
         run: |
-          python train_model.py
+          python scripts/train/train_model.py
           echo "Validerings-JSON (holdet):"
           ls -lh web/data/ml_validation.json || echo "⚠️  Ingen validerings-JSON"
 
@@ -136,7 +136,7 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
         run: |
-          python build_placement_training_data.py
+          python scripts/train/build_placement_training_data.py
           echo "Feature-datasæt (placement):"
           ls -lh data/ml/placement_training_data.csv
 
@@ -144,7 +144,7 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
         run: |
-          python train_placement_model.py
+          python scripts/train/train_placement_model.py
           echo "Validerings-JSON (placement):"
           ls -lh web/data/placement_ml_validation.json || echo "⚠️  Ingen validerings-JSON"
 
