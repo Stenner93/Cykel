@@ -21,7 +21,8 @@
 
 /* ── ML Validation styles ── */
 .ml-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
-@media (max-width: 700px) { .ml-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .ml-grid { grid-template-columns: 1fr 1fr !important; } }
+@media (max-width: 600px) { .ml-grid { grid-template-columns: 1fr !important; } }
 .ml-card {
   background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px;
 }
