@@ -31,11 +31,6 @@ on:
           - ttt
           - hilly
           - cobbled
-      update_riders:
-        description: 'Opdater rytterpris i riders.json fra Holdet?'
-        required: false
-        default: false
-        type: boolean
       veloscore_path:
         description: 'Sti til VeloScore JSON (lades tom for standard)'
         required: false
