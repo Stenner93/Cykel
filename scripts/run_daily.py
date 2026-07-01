@@ -20,8 +20,9 @@ import json
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(Path(__file__).parent / "scrape"))
 
 from src.predictor import predict_all
 from src.optimizer import make_three_teams, make_best_team

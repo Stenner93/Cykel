@@ -18,7 +18,7 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-ROOT      = Path(__file__).parent
+ROOT = Path(__file__).parent.parent.parent
 CACHE_DIR = ROOT / "data" / "cache"
 OUT_PATH  = CACHE_DIR / "pcs_rankings.json"
 

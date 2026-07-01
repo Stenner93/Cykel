@@ -24,10 +24,10 @@ import json
 from pathlib import Path
 
 import sys
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent / "scrape"))
 import scrape_pcs as sp
 
-ROOT      = Path(__file__).parent
+ROOT      = Path(__file__).parent.parent
 DATA      = ROOT / "data"
 CACHE_DIR = DATA / "cache"
 FORM_PATH = CACHE_DIR / "pcs_form.json"

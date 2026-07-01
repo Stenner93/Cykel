@@ -33,7 +33,7 @@ import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
-ROOT    = Path(__file__).parent
+ROOT = Path(__file__).parent.parent.parent
 ML_DIR  = ROOT / "data" / "ml"
 CACHE   = ROOT / "data" / "cache"
 

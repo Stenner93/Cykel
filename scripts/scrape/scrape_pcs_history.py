@@ -35,7 +35,7 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-ROOT      = Path(__file__).parent
+ROOT = Path(__file__).parent.parent.parent
 ML_DIR    = ROOT / "data" / "ml"
 ML_DIR.mkdir(parents=True, exist_ok=True)
 CACHE_DIR = ROOT / "data" / "cache"

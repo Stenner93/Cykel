@@ -28,7 +28,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-ROOT     = Path(__file__).parent
+ROOT = Path(__file__).parent.parent
 DATA     = ROOT / "data"
 TRAIN    = DATA / "training"
 PRED_FILE = ROOT / "web" / "data" / "tdf2026_predictions.json"

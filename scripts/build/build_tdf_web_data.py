@@ -22,8 +22,9 @@ import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(Path(__file__).parent.parent / "scrape"))
 
 import scrape_holdet as _h
 from src.predictor import predict_all

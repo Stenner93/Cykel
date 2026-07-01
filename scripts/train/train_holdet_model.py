@@ -28,7 +28,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
 
-ROOT    = Path(__file__).parent
+ROOT = Path(__file__).parent.parent.parent
 ML_DIR  = ROOT / "data" / "ml"
 WEB_DIR = ROOT / "web" / "data"
 

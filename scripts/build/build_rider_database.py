@@ -19,7 +19,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT    = Path(__file__).parent
+ROOT = Path(__file__).parent.parent.parent
 DATA    = ROOT / "data"
 WEB_DIR = ROOT / "web" / "data"
 WEB_DIR.mkdir(parents=True, exist_ok=True)

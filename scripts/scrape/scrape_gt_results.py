@@ -20,7 +20,7 @@ from pathlib import Path
 
 import requests
 
-ROOT      = Path(__file__).parent
+ROOT = Path(__file__).parent.parent.parent
 CACHE_DIR = ROOT / "data" / "cache"
 OUT_PATH  = CACHE_DIR / "gt_stage_results.json"
 

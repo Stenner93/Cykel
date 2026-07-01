@@ -31,7 +31,7 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import roc_auc_score, average_precision_score
 
-ROOT    = Path(__file__).parent
+ROOT = Path(__file__).parent.parent.parent
 ML_DIR  = ROOT / "data" / "ml"
 WEB_DIR = ROOT / "web" / "data"
 CACHE_DIR   = ROOT / "data" / "cache"

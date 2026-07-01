@@ -17,7 +17,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT     = Path(__file__).parent
+ROOT = Path(__file__).parent.parent.parent
 WEB_DATA = ROOT / "web" / "data"
 DATA     = ROOT / "data"
 CACHE    = DATA / "cache"

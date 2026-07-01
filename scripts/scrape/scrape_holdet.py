@@ -44,7 +44,7 @@ import requests
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-ROOT      = Path(__file__).parent
+ROOT = Path(__file__).parent.parent.parent
 DATA      = ROOT / "data"
 CACHE_DIR = DATA / "cache"
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
