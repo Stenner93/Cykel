@@ -944,7 +944,9 @@ def main():
         existing_cache = {}
         if CACHE_PATH.exists():
             existing_cache = json.loads(CACHE_PATH.read_text(encoding="utf-8"))
-        riders = [r for r in riders if r["id"] not in existing_cache]
+        riders = [r for r in riders
+                  if r["id"] not in existing_cache
+                  or existing_cache.get(r["id"], {}).get("not_found")]
         print(f"  Mangler i cache: {len(riders)} ryttere")
     else:
         riders = json.loads((DATA / "riders.json").read_text(encoding="utf-8"))
