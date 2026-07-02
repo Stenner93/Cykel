@@ -301,16 +301,22 @@ PCS_SLUG_OVERRIDES: dict[str, str] = {
     "igor_arrieta":            "igor-arrieta-lizarraga",
     "santiago_buitrago":       "santiago-buitrago-sanchez",
     "michael_valgren":         "michael-valgren-andersen",
+    "juan_ayuso":              "juan-ayuso-pesquera",
+    "mattias_skjelmose":       "mattias-skjelmose-jensen",
+    "pablo_castrillo":         "pablo-castrillo-zapater",
+    "abel_balderstone":        "abel-balderstone-roumens",
     # Scandinavian names: ø → 'oe' on PCS (not 'o' as _CHAR_MAP does)
     "rasmus_søjberg_pedersen": "rasmus-soejberg-pedersen",
-    # Apostrophe: PCS joins without separator (o-brien → obrien)
-    "kelland_o'brien":         "kelland-obrien",
+    # Apostrophe: PCS drops the "O" entirely (kelland-brien, not kelland-obrien)
+    "kelland_o'brien":         "kelland-brien",
     # Riders where PCS slug differs from auto-generated name
     "fernando_gaviria_rendon": "fernando-gaviria",
     "magnus_cort":             "magnus-cort-nielsen",
     "xabier_mikel_azparren":   "xabier-mikel-azparren-irurzun",
     # Known name differences between holdet and PCS
     "thomas_pidcock":          "tom-pidcock",
+    "fred_wright":             "alfred-wright",
+    "matteo_vercher":          "matheo-vercher",
 }
 
 
