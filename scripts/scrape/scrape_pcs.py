@@ -745,6 +745,7 @@ def scrape_all(
     reset: bool = False,
     test: bool = False,
     with_history: bool = True,
+    refresh_specialties: bool = False,
 ) -> dict:
     # Load existing caches
     if CACHE_PATH.exists() and not reset:
@@ -754,9 +755,22 @@ def scrape_all(
 
     stage_types_disk = _load_stage_types_cache()
 
-    # Include riders not in cache OR previously marked not_found (retry them)
-    todo = [r for r in riders
-            if r["id"] not in cache or cache[r["id"]].get("not_found")]
+    # Include riders not in cache OR previously marked not_found (retry them).
+    # With refresh_specialties, ALSO re-scrape riders cached before the
+    # pcs_specialties field existed (key absent) so they get evne-data.
+    # Discriminator is "key absent" (not "empty") so re-scraped riders whose
+    # PCS page genuinely lists no specialties don't loop forever.
+    def _needs(rid: str) -> bool:
+        if rid not in cache:
+            return True
+        entry = cache[rid]
+        if entry.get("not_found"):
+            return True
+        if refresh_specialties and "pcs_specialties" not in entry:
+            return True
+        return False
+
+    todo = [r for r in riders if _needs(r["id"])]
     if test:
         todo = todo[:5]
 
@@ -816,18 +830,27 @@ def scrape_all(
             }
             n_ok += 1
         else:
-            cache[rider["id"]] = {
-                "name":         rider["full_name"],
-                "pcs_url":      "",
-                "form_score":   10.0,
-                "form_by_type": {"overall": 10.0, **{t: 0.0 for t in ALL_STAGE_TYPES}},
-                "form_long_by_type": {},
-                "n_results":    0,
-                "last_result_date": "",
-                "results":      [],
-                "not_found":    True,
-            }
-            n_missing += 1
+            prev = cache.get(rider["id"])
+            if prev and not prev.get("not_found"):
+                # Re-fetch failed (e.g. transient error or IP-block) but we
+                # already have good data cached — keep it rather than clobber
+                # it with a not_found stub. Protects the specialties-refresh
+                # path and any re-run against a partially-blocked network.
+                print(f"    [behold] {rider['full_name']}: gen-hentning "
+                      f"fejlede, beholder eksisterende data")
+            else:
+                cache[rider["id"]] = {
+                    "name":         rider["full_name"],
+                    "pcs_url":      "",
+                    "form_score":   10.0,
+                    "form_by_type": {"overall": 10.0, **{t: 0.0 for t in ALL_STAGE_TYPES}},
+                    "form_long_by_type": {},
+                    "n_results":    0,
+                    "last_result_date": "",
+                    "results":      [],
+                    "not_found":    True,
+                }
+                n_missing += 1
 
         if i % 20 == 0 or i == n_total:
             print(f"  {i:>4}/{n_total}  ok={n_ok}  niet_gevonden={n_missing}"
@@ -930,6 +953,11 @@ def main():
                         help="Spring multi-saeson langtids-form over (kun "
                              "denne saesons data, hurtigere men mister "
                              "langsigtet form-signal)")
+    parser.add_argument("--refresh-specialties", action="store_true",
+                        help="Gen-hent ryttere der blev cachet FØR "
+                             "pcs_specialties-feltet fandtes (mangler evne-"
+                             "data som klatrer/sprint/tt-point). Kør lokalt "
+                             "— PCS blokerer GitHub Actions' IP.")
     args = parser.parse_args()
 
     print("-" * 60)
@@ -954,14 +982,17 @@ def main():
             existing_cache = json.loads(CACHE_PATH.read_text(encoding="utf-8"))
         riders = [r for r in riders
                   if r["id"] not in existing_cache
-                  or existing_cache.get(r["id"], {}).get("not_found")]
+                  or existing_cache.get(r["id"], {}).get("not_found")
+                  or (args.refresh_specialties
+                      and "pcs_specialties" not in existing_cache.get(r["id"], {}))]
         print(f"  Mangler i cache: {len(riders)} ryttere")
     else:
         riders = json.loads((DATA / "riders.json").read_text(encoding="utf-8"))
         print(f"  Ryttere i riders.json: {len(riders)}")
 
     cache = scrape_all(riders, reset=args.reset, test=args.test,
-                       with_history=not args.no_history)
+                       with_history=not args.no_history,
+                       refresh_specialties=args.refresh_specialties)
 
     # ── Profile scores (optional) ──────────────────────────────────────────────
     if args.profile_scores:
