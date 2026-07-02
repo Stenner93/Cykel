@@ -57,6 +57,9 @@ FIRST_NAME_ALIASES: dict[str, str] = {
 }
 
 OVERRIDES_PATH = CACHE_DIR / "co_url_overrides.json"
+# Manual RATINGS for riders whose CO profile page is empty/404 (data only
+# exists on head-to-head pages, not scrapeable). Keyed by rider_id.
+RATINGS_OVERRIDES_PATH = CACHE_DIR / "co_ratings_overrides.json"
 
 
 def _normalize(s: str, alt: bool = False) -> str:
@@ -365,6 +368,31 @@ def main():
                 print(f"  Override anvendt: {rid} → {nl_url.split('/')[-1]}")
     if applied:
         print(f"  Overrides i alt: {applied}")
+
+    # Apply manual RATINGS overrides for riders whose CO profile page is
+    # empty/404 (data only lives on head-to-head pages, not scrapeable).
+    ratings_overrides: dict = {}
+    if RATINGS_OVERRIDES_PATH.exists():
+        ratings_overrides = json.loads(
+            RATINGS_OVERRIDES_PATH.read_text(encoding="utf-8")
+        )
+    name_by_id = {r["id"]: r["full_name"] for r in riders}
+    manual = 0
+    for rid, ratings in ratings_overrides.items():
+        if rid in rider_ids_in_run and rid not in cache:
+            cache[rid] = {
+                "name":    name_by_id.get(rid, rid),
+                "url":     "manual (head-to-head)",
+                "ratings": {k: float(v) for k, v in ratings.items()},
+            }
+            manual += 1
+            print(f"  Manuel rating anvendt: {rid}")
+    if manual:
+        print(f"  Manuelle ratings i alt: {manual}")
+        # Persist immediately so the data survives even if no URL-scrape follows
+        CACHE_PATH.write_text(
+            json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
 
     # Determine which still need scraping
     to_scrape = [
