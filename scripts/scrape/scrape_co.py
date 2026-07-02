@@ -327,12 +327,13 @@ def main():
     rider_ids_in_run = {r["id"] for r in riders}
     applied = 0
     for rid, url in url_overrides.items():
-        if rid in rider_ids_in_run and rid not in matched_map and rid not in cache:
-            # Convert /en/riders/ to /nl/renners/ so scrape_rider() works consistently
+        if rid in rider_ids_in_run and rid not in cache:
+            # Overrides always win over algorithm matches (algorithm may find wrong URL)
             nl_url = url.replace("/en/riders/", "/nl/renners/")
-            matched_map[rid] = nl_url
-            applied += 1
-            print(f"  Override anvendt: {rid} → {nl_url.split('/')[-1]}")
+            if matched_map.get(rid) != nl_url:
+                matched_map[rid] = nl_url
+                applied += 1
+                print(f"  Override anvendt: {rid} → {nl_url.split('/')[-1]}")
     if applied:
         print(f"  Overrides i alt: {applied}")
 
