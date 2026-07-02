@@ -240,10 +240,23 @@ def match_riders(
 # ---------------------------------------------------------------------------
 
 def scrape_rider(url: str) -> dict | None:
+    # Some riders only exist on the EN site; try NL first, fall back to EN on 404
+    urls_to_try = [url]
+    if "/nl/renners/" in url:
+        urls_to_try.append(url.replace("/nl/renners/", "/en/riders/"))
     try:
-        r = requests.get(url, headers=HEADERS, timeout=15)
-        if r.status_code != 200:
-            print(f"    [fejl] {url}: HTTP {r.status_code}")
+        r = None
+        for attempt_url in urls_to_try:
+            r = requests.get(attempt_url, headers=HEADERS, timeout=15)
+            if r.status_code == 200:
+                url = attempt_url
+                break
+            if r.status_code != 404:
+                print(f"    [fejl] {attempt_url}: HTTP {r.status_code}")
+                return None
+            time.sleep(0.4)
+        if r is None or r.status_code != 200:
+            print(f"    [fejl] {url}: HTTP {r.status_code if r else '?'}")
             return None
         soup = BeautifulSoup(r.text, "html.parser")
         text = soup.get_text(" ", strip=True)
