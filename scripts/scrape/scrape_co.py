@@ -239,51 +239,67 @@ def match_riders(
 # Step 3: Scrape each matched rider
 # ---------------------------------------------------------------------------
 
+def _parse_ratings(html: str) -> dict[str, float]:
+    """Extract rating values from a CO rider page's HTML."""
+    soup = BeautifulSoup(html, "html.parser")
+    text = soup.get_text(" ", strip=True)
+
+    ratings: dict[str, float] = {}
+    for m in RATING_PAT.finditer(text):
+        key = m.group(1).upper()
+        if key in RATING_KEYS:
+            # Keep the LAST occurrence in case duplicates
+            ratings[key] = float(m.group(2))
+
+    # Fallback: data-value attributes
+    if not ratings:
+        for tag in soup.find_all(True, {"data-value": True}):
+            label = tag.get("data-label", "").upper()
+            if label in RATING_KEYS:
+                try:
+                    ratings[label] = float(tag["data-value"])
+                except (ValueError, KeyError):
+                    pass
+    return ratings
+
+
 def scrape_rider(url: str) -> dict | None:
-    # Some riders only exist on the EN site; try NL first, fall back to EN on 404
-    urls_to_try = [url]
+    """
+    Fetch a rider's CO ratings, trying both language variants of the URL.
+
+    Some riders have data on only one of the NL/EN sites (the other may 404
+    or render an empty stub with no ratings), so we try every candidate and
+    return the first that actually yields ratings.
+    """
+    # Build candidate URLs: given URL first, then the opposite-language variant
+    candidates = [url]
     if "/nl/renners/" in url:
-        urls_to_try.append(url.replace("/nl/renners/", "/en/riders/"))
-    try:
-        r = None
-        for attempt_url in urls_to_try:
+        candidates.append(url.replace("/nl/renners/", "/en/riders/"))
+    elif "/en/riders/" in url:
+        candidates.append(url.replace("/en/riders/", "/nl/renners/"))
+
+    last_note = ""
+    for attempt_url in candidates:
+        try:
             r = requests.get(attempt_url, headers=HEADERS, timeout=15)
-            if r.status_code == 200:
-                url = attempt_url
-                break
-            if r.status_code != 404:
-                print(f"    [fejl] {attempt_url}: HTTP {r.status_code}")
-                return None
+        except Exception as e:
+            last_note = f"{attempt_url}: {type(e).__name__}: {e}"
             time.sleep(0.4)
-        if r is None or r.status_code != 200:
-            print(f"    [fejl] {url}: HTTP {r.status_code if r else '?'}")
-            return None
-        soup = BeautifulSoup(r.text, "html.parser")
-        text = soup.get_text(" ", strip=True)
+            continue
 
-        ratings: dict[str, float] = {}
-        for m in RATING_PAT.finditer(text):
-            key = m.group(1).upper()
-            if key in RATING_KEYS:
-                # Keep the LAST occurrence in case duplicates
-                ratings[key] = float(m.group(2))
+        if r.status_code != 200:
+            last_note = f"{attempt_url}: HTTP {r.status_code}"
+            time.sleep(0.4)
+            continue
 
-        # Fallback: data-value attributes
-        if not ratings:
-            for tag in soup.find_all(True, {"data-value": True}):
-                label = tag.get("data-label", "").upper()
-                if label in RATING_KEYS:
-                    try:
-                        ratings[label] = float(tag["data-value"])
-                    except (ValueError, KeyError):
-                        pass
+        ratings = _parse_ratings(r.text)
+        if ratings:
+            return ratings
+        last_note = f"{attempt_url}: side OK men ingen ratings fundet"
+        time.sleep(0.4)
 
-        if not ratings:
-            print(f"    [ingen data] {url}: side OK men ingen ratings fundet")
-        return ratings or None
-    except Exception as e:
-        print(f"    [fejl] {url}: {type(e).__name__}: {e}")
-        return None
+    print(f"    [fejl] {last_note}")
+    return None
 
 
 # ---------------------------------------------------------------------------
