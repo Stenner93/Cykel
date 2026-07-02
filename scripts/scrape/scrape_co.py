@@ -243,6 +243,7 @@ def scrape_rider(url: str) -> dict | None:
     try:
         r = requests.get(url, headers=HEADERS, timeout=15)
         if r.status_code != 200:
+            print(f"    [fejl] {url}: HTTP {r.status_code}")
             return None
         soup = BeautifulSoup(r.text, "html.parser")
         text = soup.get_text(" ", strip=True)
@@ -264,8 +265,11 @@ def scrape_rider(url: str) -> dict | None:
                     except (ValueError, KeyError):
                         pass
 
+        if not ratings:
+            print(f"    [ingen data] {url}: side OK men ingen ratings fundet")
         return ratings or None
     except Exception as e:
+        print(f"    [fejl] {url}: {type(e).__name__}: {e}")
         return None
 
 
