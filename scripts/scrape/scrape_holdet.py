@@ -478,42 +478,31 @@ def fetch_my_team(
         print(f"  [info] fantasyteam {team_id}: navn={meta.get('name')!r}, game={real_gid}, status={meta.get('status')!r}")
     gid = real_gid or game_id
 
-    # Step 2: try roster/lineup endpoints (both discovered + configured game id)
-    gids = [g for g in dict.fromkeys([real_gid, game_id]) if g]
-    roster_urls = [f"{API}/fantasyteams/{team_id}/lineups",
-                   f"{API}/fantasyteams/{team_id}/lineup",
-                   f"{API}/fantasyteams/{team_id}/roster",
-                   f"{API}/fantasyteams/{team_id}/players"]
-    for g in gids:
-        roster_urls += [f"{API}/games/{g}/fantasyteams/{team_id}",
-                        f"{API}/games/{g}/fantasyteams/{team_id}/lineups",
-                        f"{API}/games/{g}/lineups/{team_id}",
-                        f"{API}/games/{g}/fantasyteams/{team_id}/rounds"]
-    # Also try expand params on the metadata endpoint
-    expand_attempts = [
-        (f"{API}/fantasyteams/{team_id}", {"expand": "lineup"}),
-        (f"{API}/fantasyteams/{team_id}", {"expand": "players"}),
-        (f"{API}/fantasyteams/{team_id}", {"include": "lineup"}),
+    # ── DIAGNOSTIC round #4 ──────────────────────────────────────────────
+    # Global id 7145433 resolved to the WRONG, empty team ("Grumme Tyre",
+    # game 646). The user's real Tour team ("Stennerforsamlingen") lives in
+    # the Tour game (config game_id). Dump game names, the user's team list,
+    # and game-scoped lookups so we can pin the correct (game, id).
+    user_id = (meta.get("user") or {}).get("id") if isinstance(meta, dict) else None
+    print(f"  [DIAG] konfig-game_id={game_id}, meta-game={real_gid}, user={user_id}")
+    diag = [
+        f"{API}/games/{game_id}",
+        f"{API}/games/646",
+        f"{API}/games/{game_id}/fantasyteams/{team_id}",
+        f"{API}/games/646/fantasyteams/{team_id}",
+        f"{API}/games/{game_id}/fantasyteams/{team_id}/lineup",
     ]
-
-    data = None
-    for url in roster_urls:
-        d, _ = _get(url)
-        if d is not None:
-            data = d
-            print(f"  [info] ↑ gyldig JSON (roster-kandidat)")
-            break
-    if data is None:
-        for url, extra in expand_attempts:
-            d, _ = _get(url, extra)
-            # only accept if it grew beyond the bare metadata
-            if isinstance(d, dict) and any(k in d for k in ("lineup", "players", "roster", "picks")):
-                data = d
-                print(f"  [info] ↑ gyldig JSON (expand)")
-                break
-    if data is None:
-        print(f"  [WARN] Fandt team-metadata men ikke roster-endpoint — se body-uddrag ovenfor")
-        return None
+    if user_id:
+        diag += [
+            f"{API}/users/{user_id}/fantasyteams",
+            f"{API}/users/{user_id}/games/{game_id}/fantasyteams",
+            f"{API}/games/{game_id}/users/{user_id}/fantasyteam",
+        ]
+    for url in diag:
+        _get(url)
+    print("  [DIAG] Diagnose-runde færdig — se body-uddrag ovenfor")
+    return None
+    data = None  # (uncreachable — behold nedenstående parsing til finalisering)
 
     # ── Recursively locate the picks list, wherever it sits in the JSON ──
     # A "pick" is a dict carrying a player/person reference. Holdet nests the
