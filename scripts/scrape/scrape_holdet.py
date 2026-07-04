@@ -448,133 +448,86 @@ def fetch_my_team(
     team_id is the participantId (hold-ID) from holdet.dk.
     Returns None if the team cannot be fetched.
     """
-    # api.holdet.dk turned out to be the LEGACY platform (game 618 there is
-    # an old F1 game, and id 7145433 = an unrelated handball team). The TdF
-    # 2026 game lives on the NEXUS host (game_id=618 there → players/prices
-    # already work). So the team lineup must be a nexus /api endpoint too.
-    NEXUS = BASE  # nexus-app-fantasy-fargate.holdet.dk
+    # PUBLIC round-lineup endpoint (no login needed):
+    #   GET /api/fantasyteams/{id}/rounds/{round_num}/lineup
+    # Holdet only exposes a round's lineup once that round is LOCKED, so we
+    # use the most recently completed round: find the last round whose start
+    # is in the past, then step back one (the in-progress round isn't served).
+    from datetime import datetime, timezone
 
-    def _get(url: str, params: dict | None = None):
-        """GET → (json_or_None, body_text). Logs status + a body snippet
-        (HTML SPA pages are noted, not dumped)."""
+    def _parse_dt(s):
         try:
-            resp = HTTP.session.get(url, params=params, timeout=15)
-        except Exception as exc:
-            print(f"  [WARN] {url} → {type(exc).__name__}: {exc}")
-            return None, ""
-        body = resp.text or ""
-        low = body.lstrip()[:15].lower()
-        if low.startswith("<!doctype") or low.startswith("<html"):
-            print(f"  [info] {url} → HTTP {resp.status_code}, HTML-SPA ({len(body)}b)")
-            return None, body
-        print(f"  [info] {url} → HTTP {resp.status_code}, len={len(body)}, body[:220]={body[:220]!r}")
-        if resp.status_code == 200 and body.strip():
-            try:
-                return resp.json(), body
-            except Exception as exc:
-                print(f"  [WARN] Svar var ikke JSON: {exc}")
-        return None, body
+            return datetime.fromisoformat((s or "").replace("Z", "+00:00"))
+        except Exception:
+            return None
 
-    # ── DIAGNOSTIC round #5: nexus team/lineup endpoint shapes ────────────
-    print(f"  [DIAG] nexus-host, game_id={game_id}, team_id={team_id}")
-    for url in [
-        f"{NEXUS}/api/games/{game_id}/teams/{team_id}",
-        f"{NEXUS}/api/games/{game_id}/teams/{team_id}/lineup",
-        f"{NEXUS}/api/games/{game_id}/lineups/{team_id}",
-        f"{NEXUS}/api/games/{game_id}/fantasyteams/{team_id}/lineup",
-        f"{NEXUS}/api/games/{game_id}/participants/{team_id}/lineup",
-        f"{NEXUS}/api/games/{game_id}/participants/{team_id}/players",
-        f"{NEXUS}/api/lineups/{team_id}",
-        f"{NEXUS}/api/teams/{team_id}",
-        f"{NEXUS}/api/fantasyteams/{team_id}",
-        f"{NEXUS}/api/games/{game_id}/rounds",
-    ]:
-        _get(url)
-    print("  [DIAG] Diagnose-runde #5 færdig — se body-uddrag ovenfor")
-    return None
-    data = None  # (unreachable — parsing nedenfor bevares til finalisering)
-
-    # ── Recursively locate the picks list, wherever it sits in the JSON ──
-    # A "pick" is a dict carrying a player/person reference. Holdet nests the
-    # lineup under keys like formation/lineup/roster, so we search the tree.
-    def _looks_like_pick(d: dict) -> bool:
-        return isinstance(d, dict) and any(
-            k in d for k in ("playerId", "personId", "player", "person")
-        )
-
-    def _find_picks(obj) -> list | None:
-        if isinstance(obj, list):
-            if obj and all(_looks_like_pick(x) for x in obj if isinstance(x, dict)) \
-               and any(isinstance(x, dict) for x in obj):
-                return obj
-            for item in obj:
-                found = _find_picks(item)
-                if found:
-                    return found
-        elif isinstance(obj, dict):
-            # Prefer explicitly-named lineup keys first
-            for key in ("picks", "players", "squad", "lineup", "roster", "formation"):
-                if key in obj:
-                    found = _find_picks(obj[key])
-                    if found:
-                        return found
-            for v in obj.values():
-                found = _find_picks(v)
-                if found:
-                    return found
+    try:
+        rounds = HTTP.get(f"{BASE}/api/games/{game_id}/rounds").json().get("items", [])
+    except Exception as exc:
+        print(f"  [WARN] Kunne ikke hente runder for game {game_id}: {exc}")
+        return None
+    if not rounds:
+        print("  [WARN] Ingen runder fundet — kan ikke bestemme lineup-runde")
         return None
 
-    picks = _find_picks(data)
-    if not picks:
-        # Dump the structure so we can see exactly what Holdet returned
-        keys = list(data.keys()) if isinstance(data, dict) else f"(list, len={len(data)})"
-        snippet = json.dumps(data, ensure_ascii=False)[:1200]
-        print(f"  [WARN] Kunne ikke finde rytter-liste. Top-nøgler: {keys}")
-        print(f"  [WARN] JSON-uddrag: {snippet}")
+    now = datetime.now(timezone.utc)
+    started = 1
+    for r in rounds:
+        start = _parse_dt(r.get("start") or r.get("startDate") or r.get("from"))
+        num = r.get("number")
+        if start is not None and start <= now and isinstance(num, int):
+            started = num
+    round_num = max(1, started - 1)
+    print(f"  [info] seneste startede runde={started} → henter sidst afsluttede runde {round_num}")
+
+    lineup_url = f"{BASE}/api/fantasyteams/{team_id}/rounds/{round_num}/lineup"
+    try:
+        payload = HTTP.get(lineup_url).json()
+    except Exception as exc:
+        print(f"  [WARN] Kunne ikke hente lineup ({lineup_url}): {exc}")
+        return None
+    items = payload.get("items", payload) if isinstance(payload, dict) else payload
+    if not isinstance(items, list) or not items:
+        print(f"  [WARN] Tom lineup for runde {round_num} (team {team_id})")
         return None
 
-    # Extract bank — search recursively too (kroner → millioner)
-    def _find_bank(obj):
-        if isinstance(obj, dict):
-            for k in ("bank", "bankBalance", "balance", "value"):
-                if isinstance(obj.get(k), (int, float)):
-                    return obj[k]
-            for v in obj.values():
-                b = _find_bank(v)
-                if b is not None:
-                    return b
-        return None
-    bank_raw = _find_bank(data) or 0
-    bank_M = round(bank_raw / 1_000_000, 2) if bank_raw > 1000 else float(bank_raw)
-
-    # Resolve picks → rider names
-    rider_names = []
-    for pick in picks:
-        # A pick may reference the player directly or via a nested object
-        pid = (pick.get("playerId") or pick.get("id") or pick.get("personId"))
-        nested = pick.get("player") or pick.get("person") or {}
-        if pid is None and isinstance(nested, dict):
-            pid = nested.get("id") or nested.get("playerId") or nested.get("personId")
-        name = ""
-        if pid is not None:
-            player = player_by_id.get(pid, {})
-            person_id = player.get("personId")
-            person = person_by_id.get(person_id, {})
-            name = person.get("fullName") or player.get("name", "")
-        if not name and isinstance(nested, dict):
-            name = nested.get("fullName") or nested.get("name", "")
+    # Active riders have to==null (not transferred out); captain has role==captain.
+    rider_names: list[str] = []
+    captain = None
+    for it in items:
+        if not isinstance(it, dict) or it.get("to") is not None:
+            continue
+        pid = it.get("playerId")
+        if pid is None and isinstance(it.get("player"), dict):
+            pid = it["player"].get("id")
+        if pid is None:
+            continue
+        player = player_by_id.get(pid, {})
+        person = person_by_id.get(player.get("personId"), {})
+        name = person.get("fullName") or player.get("name", "")
         if not name:
-            name = pick.get("name", "")
-        if name:
-            rider_names.append(name)
+            print(f"  [WARN] playerId {pid} ikke i spillerlisten — springes over")
+            continue
+        rider_names.append(name)
+        if it.get("role") == "captain":
+            captain = name
 
     if not rider_names:
-        print(f"  [WARN] Fandt {len(picks)} picks men ingen navne kunne mappes")
-        snippet = json.dumps(picks[:2], ensure_ascii=False)[:800]
-        print(f"  [WARN] Eksempel-picks: {snippet}")
+        print(f"  [WARN] Ingen aktive ryttere kunne mappes for team {team_id}")
         return None
 
-    print(f"  [info] {len(rider_names)} ryttere hentet fra Holdet")
+    # The lineup endpoint doesn't include bank — preserve the existing value
+    # from current_team.json so a manually-set bank isn't wiped.
+    bank_M = 0.0
+    existing_path = DATA / "current_team.json"
+    if existing_path.exists():
+        try:
+            bank_M = float(json.loads(existing_path.read_text(encoding="utf-8")).get("bank_M", 0.0))
+        except Exception:
+            pass
+
+    cap = f", kaptajn: {captain}" if captain else ""
+    print(f"  [info] {len(rider_names)} ryttere hentet fra Holdet (runde {round_num}{cap})")
     return {"bank_M": bank_M, "riders": rider_names}
 
 
