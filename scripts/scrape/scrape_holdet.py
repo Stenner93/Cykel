@@ -448,41 +448,71 @@ def fetch_my_team(
     team_id is the participantId (hold-ID) from holdet.dk.
     Returns None if the team cannot be fetched.
     """
-    # Holdet's fantasy-team lineup may live under several endpoint shapes and
-    # on either API host. Try each; use the first that returns parseable JSON.
-    # api.holdet.dk requires an ?appid=holdet query param (per the public
-    # reverse-engineered client); the nexus host does not.
-    NEXUS = BASE  # nexus-app-fantasy-fargate.holdet.dk
+    # Holdet's team data lives on api.holdet.dk (requires ?appid=holdet).
+    # /fantasyteams/{id} returns team metadata incl. the real game id; the
+    # roster/lineup sits on a sub-path we discover below.
     API   = "https://api.holdet.dk"
     appid = {"appid": "holdet"}
-    candidates = [
-        (f"{NEXUS}/api/games/{game_id}/participants/{team_id}", None),
-        (f"{NEXUS}/api/games/{game_id}/lineups/{team_id}",      None),
-        (f"{API}/games/{game_id}/participants/{team_id}",       appid),
-        (f"{API}/games/{game_id}/lineups/{team_id}",            appid),
-        (f"{API}/games/{game_id}/teams/{team_id}",              appid),
-        (f"{API}/participants/{team_id}",                       appid),
-        (f"{API}/fantasyteams/{team_id}",                       appid),
-    ]
-    data = None
-    for url, params in candidates:
+
+    def _get(url: str, params: dict | None = None):
+        """GET → (json_or_None, body_text). Logs status + body snippet."""
         try:
-            resp = HTTP.session.get(url, params=params, timeout=15)
+            resp = HTTP.session.get(url, params={**appid, **(params or {})}, timeout=15)
         except Exception as exc:
             print(f"  [WARN] {url} → {type(exc).__name__}: {exc}")
-            continue
+            return None, ""
         body = resp.text or ""
-        print(f"  [info] {url} → HTTP {resp.status_code}, len={len(body)}, "
-              f"body[:180]={body[:180]!r}")
+        print(f"  [info] {url} → HTTP {resp.status_code}, len={len(body)}, body[:200]={body[:200]!r}")
         if resp.status_code == 200 and body.strip():
             try:
-                data = resp.json()
-                print(f"  [info] ↑ gyldig JSON fra denne endpoint")
-                break
+                return resp.json(), body
             except Exception as exc:
                 print(f"  [WARN] Svar var ikke JSON: {exc}")
+        return None, body
+
+    # Step 1: team metadata → real game id
+    meta, _ = _get(f"{API}/fantasyteams/{team_id}")
+    real_gid = None
+    if isinstance(meta, dict):
+        real_gid = (meta.get("game") or {}).get("id")
+        print(f"  [info] fantasyteam {team_id}: navn={meta.get('name')!r}, game={real_gid}, status={meta.get('status')!r}")
+    gid = real_gid or game_id
+
+    # Step 2: try roster/lineup endpoints (both discovered + configured game id)
+    gids = [g for g in dict.fromkeys([real_gid, game_id]) if g]
+    roster_urls = [f"{API}/fantasyteams/{team_id}/lineups",
+                   f"{API}/fantasyteams/{team_id}/lineup",
+                   f"{API}/fantasyteams/{team_id}/roster",
+                   f"{API}/fantasyteams/{team_id}/players"]
+    for g in gids:
+        roster_urls += [f"{API}/games/{g}/fantasyteams/{team_id}",
+                        f"{API}/games/{g}/fantasyteams/{team_id}/lineups",
+                        f"{API}/games/{g}/lineups/{team_id}",
+                        f"{API}/games/{g}/fantasyteams/{team_id}/rounds"]
+    # Also try expand params on the metadata endpoint
+    expand_attempts = [
+        (f"{API}/fantasyteams/{team_id}", {"expand": "lineup"}),
+        (f"{API}/fantasyteams/{team_id}", {"expand": "players"}),
+        (f"{API}/fantasyteams/{team_id}", {"include": "lineup"}),
+    ]
+
+    data = None
+    for url in roster_urls:
+        d, _ = _get(url)
+        if d is not None:
+            data = d
+            print(f"  [info] ↑ gyldig JSON (roster-kandidat)")
+            break
     if data is None:
-        print(f"  [WARN] Ingen af {len(candidates)} endpoints gav brugbar JSON — se body-uddrag ovenfor")
+        for url, extra in expand_attempts:
+            d, _ = _get(url, extra)
+            # only accept if it grew beyond the bare metadata
+            if isinstance(d, dict) and any(k in d for k in ("lineup", "players", "roster", "picks")):
+                data = d
+                print(f"  [info] ↑ gyldig JSON (expand)")
+                break
+    if data is None:
+        print(f"  [WARN] Fandt team-metadata men ikke roster-endpoint — se body-uddrag ovenfor")
         return None
 
     # ── Recursively locate the picks list, wherever it sits in the JSON ──
