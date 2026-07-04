@@ -494,6 +494,7 @@ def fetch_my_team(
     # Active riders have to==null (not transferred out); captain has role==captain.
     rider_names: list[str] = []
     captain = None
+    spent_kr = 0.0
     for it in items:
         if not isinstance(it, dict) or it.get("to") is not None:
             continue
@@ -509,6 +510,7 @@ def fetch_my_team(
             print(f"  [WARN] playerId {pid} ikke i spillerlisten — springes over")
             continue
         rider_names.append(name)
+        spent_kr += player.get("startPrice") or player.get("price") or 0
         if it.get("role") == "captain":
             captain = name
 
@@ -516,18 +518,17 @@ def fetch_my_team(
         print(f"  [WARN] Ingen aktive ryttere kunne mappes for team {team_id}")
         return None
 
-    # The lineup endpoint doesn't include bank — preserve the existing value
-    # from current_team.json so a manually-set bank isn't wiped.
-    bank_M = 0.0
-    existing_path = DATA / "current_team.json"
-    if existing_path.exists():
-        try:
-            bank_M = float(json.loads(existing_path.read_text(encoding="utf-8")).get("bank_M", 0.0))
-        except Exception:
-            pass
+    # Bank = starting budget (50M) minus what the team cost. The lineup
+    # endpoint carries no bank field, so approximate from Holdet start prices:
+    # stable over the race (unlike current prices, which rise and would make
+    # the bank shrink artificially). Exact if the team was bought at the
+    # start; a rough estimate after transfers. Clamp to >= 0.
+    START_BUDGET_M = 50.0
+    bank_M = round(max(0.0, START_BUDGET_M - spent_kr / 1_000_000), 2)
 
     cap = f", kaptajn: {captain}" if captain else ""
-    print(f"  [info] {len(rider_names)} ryttere hentet fra Holdet (runde {round_num}{cap})")
+    print(f"  [info] {len(rider_names)} ryttere hentet (runde {round_num}, "
+          f"kostede ~{spent_kr/1_000_000:.1f}M → bank ~{bank_M:.1f}M{cap})")
     return {"bank_M": bank_M, "riders": rider_names}
 
 
