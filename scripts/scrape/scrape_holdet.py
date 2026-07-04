@@ -448,66 +448,114 @@ def fetch_my_team(
     team_id is the participantId (hold-ID) from holdet.dk.
     Returns None if the team cannot be fetched.
     """
-    # Try /api/games/{gameId}/participants/{teamId}
-    url = f"{BASE}/api/games/{game_id}/participants/{team_id}"
-    try:
-        resp = HTTP.session.get(url, timeout=15)
-        if resp.status_code == 404:
-            print(f"  [WARN] Hold-ID {team_id} ikke fundet (404) — prøver /participants endpoint")
-            # Try without game scope
-            url2 = f"{BASE}/api/participants/{team_id}"
-            resp = HTTP.session.get(url2, timeout=15)
-            if resp.status_code == 404:
-                print(f"  [WARN] Participant endpoint giver 404 — hold-ID korrekt?")
-                return None
-        resp.raise_for_status()
-        data = resp.json()
-    except Exception as exc:
-        print(f"  [WARN] Kunne ikke hente mit hold: {exc}")
+    # Holdet's fantasy-team lineup may live under several endpoint shapes.
+    # Try them in order; use the first that returns a parseable body.
+    candidate_urls = [
+        f"{BASE}/api/games/{game_id}/participants/{team_id}",
+        f"{BASE}/api/games/{game_id}/fantasyteams/{team_id}",
+        f"{BASE}/api/games/{game_id}/teams/{team_id}",
+        f"{BASE}/api/participants/{team_id}",
+        f"{BASE}/api/fantasyteams/{team_id}",
+    ]
+    data = None
+    for url in candidate_urls:
+        try:
+            resp = HTTP.session.get(url, timeout=15)
+        except Exception as exc:
+            print(f"  [WARN] {url} → {type(exc).__name__}: {exc}")
+            continue
+        print(f"  [info] {url} → HTTP {resp.status_code}")
+        if resp.status_code == 200:
+            try:
+                data = resp.json()
+                break
+            except Exception as exc:
+                print(f"  [WARN] Svar var ikke JSON: {exc}")
+    if data is None:
+        print(f"  [WARN] Ingen af {len(candidate_urls)} endpoints gav et brugbart svar — hold offentligt? ID korrekt?")
         return None
 
-    # Extract picks — API may use "picks", "players", "squad", or "lineup"
-    picks = (
-        data.get("picks")
-        or data.get("players")
-        or data.get("squad")
-        or data.get("lineup")
-        or []
-    )
-    if not picks and isinstance(data, list):
-        picks = data  # some endpoints return array directly
+    # ── Recursively locate the picks list, wherever it sits in the JSON ──
+    # A "pick" is a dict carrying a player/person reference. Holdet nests the
+    # lineup under keys like formation/lineup/roster, so we search the tree.
+    def _looks_like_pick(d: dict) -> bool:
+        return isinstance(d, dict) and any(
+            k in d for k in ("playerId", "personId", "player", "person")
+        )
 
+    def _find_picks(obj) -> list | None:
+        if isinstance(obj, list):
+            if obj and all(_looks_like_pick(x) for x in obj if isinstance(x, dict)) \
+               and any(isinstance(x, dict) for x in obj):
+                return obj
+            for item in obj:
+                found = _find_picks(item)
+                if found:
+                    return found
+        elif isinstance(obj, dict):
+            # Prefer explicitly-named lineup keys first
+            for key in ("picks", "players", "squad", "lineup", "roster", "formation"):
+                if key in obj:
+                    found = _find_picks(obj[key])
+                    if found:
+                        return found
+            for v in obj.values():
+                found = _find_picks(v)
+                if found:
+                    return found
+        return None
+
+    picks = _find_picks(data)
     if not picks:
-        print(f"  [WARN] Hold-data fundet men ingen ryttere i svaret. Nøgler: {list(data.keys())}")
+        # Dump the structure so we can see exactly what Holdet returned
+        keys = list(data.keys()) if isinstance(data, dict) else f"(list, len={len(data)})"
+        snippet = json.dumps(data, ensure_ascii=False)[:1200]
+        print(f"  [WARN] Kunne ikke finde rytter-liste. Top-nøgler: {keys}")
+        print(f"  [WARN] JSON-uddrag: {snippet}")
         return None
 
-    # Extract bank (Holdet stores in kroner — convert to millions)
-    bank_raw = (
-        data.get("bank")
-        or data.get("bankBalance")
-        or data.get("balance")
-        or 0
-    )
+    # Extract bank — search recursively too (kroner → millioner)
+    def _find_bank(obj):
+        if isinstance(obj, dict):
+            for k in ("bank", "bankBalance", "balance", "value"):
+                if isinstance(obj.get(k), (int, float)):
+                    return obj[k]
+            for v in obj.values():
+                b = _find_bank(v)
+                if b is not None:
+                    return b
+        return None
+    bank_raw = _find_bank(data) or 0
     bank_M = round(bank_raw / 1_000_000, 2) if bank_raw > 1000 else float(bank_raw)
 
     # Resolve picks → rider names
     rider_names = []
     for pick in picks:
-        pid = pick.get("playerId") or pick.get("id") or pick.get("personId")
-        if pid is None:
-            continue
-        # Try via player → person chain
-        player = player_by_id.get(pid, {})
-        person_id = player.get("personId")
-        person = person_by_id.get(person_id, {})
-        name = person.get("fullName") or player.get("name") or pick.get("name", "")
+        # A pick may reference the player directly or via a nested object
+        pid = (pick.get("playerId") or pick.get("id") or pick.get("personId"))
+        nested = pick.get("player") or pick.get("person") or {}
+        if pid is None and isinstance(nested, dict):
+            pid = nested.get("id") or nested.get("playerId") or nested.get("personId")
+        name = ""
+        if pid is not None:
+            player = player_by_id.get(pid, {})
+            person_id = player.get("personId")
+            person = person_by_id.get(person_id, {})
+            name = person.get("fullName") or player.get("name", "")
+        if not name and isinstance(nested, dict):
+            name = nested.get("fullName") or nested.get("name", "")
+        if not name:
+            name = pick.get("name", "")
         if name:
             rider_names.append(name)
 
     if not rider_names:
         print(f"  [WARN] Fandt {len(picks)} picks men ingen navne kunne mappes")
+        snippet = json.dumps(picks[:2], ensure_ascii=False)[:800]
+        print(f"  [WARN] Eksempel-picks: {snippet}")
         return None
 
+    print(f"  [info] {len(rider_names)} ryttere hentet fra Holdet")
     return {"bank_M": bank_M, "riders": rider_names}
 
 
