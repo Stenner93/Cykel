@@ -448,31 +448,41 @@ def fetch_my_team(
     team_id is the participantId (hold-ID) from holdet.dk.
     Returns None if the team cannot be fetched.
     """
-    # Holdet's fantasy-team lineup may live under several endpoint shapes.
-    # Try them in order; use the first that returns a parseable body.
-    candidate_urls = [
-        f"{BASE}/api/games/{game_id}/participants/{team_id}",
-        f"{BASE}/api/games/{game_id}/fantasyteams/{team_id}",
-        f"{BASE}/api/games/{game_id}/teams/{team_id}",
-        f"{BASE}/api/participants/{team_id}",
-        f"{BASE}/api/fantasyteams/{team_id}",
+    # Holdet's fantasy-team lineup may live under several endpoint shapes and
+    # on either API host. Try each; use the first that returns parseable JSON.
+    # api.holdet.dk requires an ?appid=holdet query param (per the public
+    # reverse-engineered client); the nexus host does not.
+    NEXUS = BASE  # nexus-app-fantasy-fargate.holdet.dk
+    API   = "https://api.holdet.dk"
+    appid = {"appid": "holdet"}
+    candidates = [
+        (f"{NEXUS}/api/games/{game_id}/participants/{team_id}", None),
+        (f"{NEXUS}/api/games/{game_id}/lineups/{team_id}",      None),
+        (f"{API}/games/{game_id}/participants/{team_id}",       appid),
+        (f"{API}/games/{game_id}/lineups/{team_id}",            appid),
+        (f"{API}/games/{game_id}/teams/{team_id}",              appid),
+        (f"{API}/participants/{team_id}",                       appid),
+        (f"{API}/fantasyteams/{team_id}",                       appid),
     ]
     data = None
-    for url in candidate_urls:
+    for url, params in candidates:
         try:
-            resp = HTTP.session.get(url, timeout=15)
+            resp = HTTP.session.get(url, params=params, timeout=15)
         except Exception as exc:
             print(f"  [WARN] {url} → {type(exc).__name__}: {exc}")
             continue
-        print(f"  [info] {url} → HTTP {resp.status_code}")
-        if resp.status_code == 200:
+        body = resp.text or ""
+        print(f"  [info] {url} → HTTP {resp.status_code}, len={len(body)}, "
+              f"body[:180]={body[:180]!r}")
+        if resp.status_code == 200 and body.strip():
             try:
                 data = resp.json()
+                print(f"  [info] ↑ gyldig JSON fra denne endpoint")
                 break
             except Exception as exc:
                 print(f"  [WARN] Svar var ikke JSON: {exc}")
     if data is None:
-        print(f"  [WARN] Ingen af {len(candidate_urls)} endpoints gav et brugbart svar — hold offentligt? ID korrekt?")
+        print(f"  [WARN] Ingen af {len(candidates)} endpoints gav brugbar JSON — se body-uddrag ovenfor")
         return None
 
     # ── Recursively locate the picks list, wherever it sits in the JSON ──
