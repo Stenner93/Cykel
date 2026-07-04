@@ -448,21 +448,26 @@ def fetch_my_team(
     team_id is the participantId (hold-ID) from holdet.dk.
     Returns None if the team cannot be fetched.
     """
-    # Holdet's team data lives on api.holdet.dk (requires ?appid=holdet).
-    # /fantasyteams/{id} returns team metadata incl. the real game id; the
-    # roster/lineup sits on a sub-path we discover below.
-    API   = "https://api.holdet.dk"
-    appid = {"appid": "holdet"}
+    # api.holdet.dk turned out to be the LEGACY platform (game 618 there is
+    # an old F1 game, and id 7145433 = an unrelated handball team). The TdF
+    # 2026 game lives on the NEXUS host (game_id=618 there → players/prices
+    # already work). So the team lineup must be a nexus /api endpoint too.
+    NEXUS = BASE  # nexus-app-fantasy-fargate.holdet.dk
 
     def _get(url: str, params: dict | None = None):
-        """GET → (json_or_None, body_text). Logs status + body snippet."""
+        """GET → (json_or_None, body_text). Logs status + a body snippet
+        (HTML SPA pages are noted, not dumped)."""
         try:
-            resp = HTTP.session.get(url, params={**appid, **(params or {})}, timeout=15)
+            resp = HTTP.session.get(url, params=params, timeout=15)
         except Exception as exc:
             print(f"  [WARN] {url} → {type(exc).__name__}: {exc}")
             return None, ""
         body = resp.text or ""
-        print(f"  [info] {url} → HTTP {resp.status_code}, len={len(body)}, body[:200]={body[:200]!r}")
+        low = body.lstrip()[:15].lower()
+        if low.startswith("<!doctype") or low.startswith("<html"):
+            print(f"  [info] {url} → HTTP {resp.status_code}, HTML-SPA ({len(body)}b)")
+            return None, body
+        print(f"  [info] {url} → HTTP {resp.status_code}, len={len(body)}, body[:220]={body[:220]!r}")
         if resp.status_code == 200 and body.strip():
             try:
                 return resp.json(), body
@@ -470,39 +475,24 @@ def fetch_my_team(
                 print(f"  [WARN] Svar var ikke JSON: {exc}")
         return None, body
 
-    # Step 1: team metadata → real game id
-    meta, _ = _get(f"{API}/fantasyteams/{team_id}")
-    real_gid = None
-    if isinstance(meta, dict):
-        real_gid = (meta.get("game") or {}).get("id")
-        print(f"  [info] fantasyteam {team_id}: navn={meta.get('name')!r}, game={real_gid}, status={meta.get('status')!r}")
-    gid = real_gid or game_id
-
-    # ── DIAGNOSTIC round #4 ──────────────────────────────────────────────
-    # Global id 7145433 resolved to the WRONG, empty team ("Grumme Tyre",
-    # game 646). The user's real Tour team ("Stennerforsamlingen") lives in
-    # the Tour game (config game_id). Dump game names, the user's team list,
-    # and game-scoped lookups so we can pin the correct (game, id).
-    user_id = (meta.get("user") or {}).get("id") if isinstance(meta, dict) else None
-    print(f"  [DIAG] konfig-game_id={game_id}, meta-game={real_gid}, user={user_id}")
-    diag = [
-        f"{API}/games/{game_id}",
-        f"{API}/games/646",
-        f"{API}/games/{game_id}/fantasyteams/{team_id}",
-        f"{API}/games/646/fantasyteams/{team_id}",
-        f"{API}/games/{game_id}/fantasyteams/{team_id}/lineup",
-    ]
-    if user_id:
-        diag += [
-            f"{API}/users/{user_id}/fantasyteams",
-            f"{API}/users/{user_id}/games/{game_id}/fantasyteams",
-            f"{API}/games/{game_id}/users/{user_id}/fantasyteam",
-        ]
-    for url in diag:
+    # ── DIAGNOSTIC round #5: nexus team/lineup endpoint shapes ────────────
+    print(f"  [DIAG] nexus-host, game_id={game_id}, team_id={team_id}")
+    for url in [
+        f"{NEXUS}/api/games/{game_id}/teams/{team_id}",
+        f"{NEXUS}/api/games/{game_id}/teams/{team_id}/lineup",
+        f"{NEXUS}/api/games/{game_id}/lineups/{team_id}",
+        f"{NEXUS}/api/games/{game_id}/fantasyteams/{team_id}/lineup",
+        f"{NEXUS}/api/games/{game_id}/participants/{team_id}/lineup",
+        f"{NEXUS}/api/games/{game_id}/participants/{team_id}/players",
+        f"{NEXUS}/api/lineups/{team_id}",
+        f"{NEXUS}/api/teams/{team_id}",
+        f"{NEXUS}/api/fantasyteams/{team_id}",
+        f"{NEXUS}/api/games/{game_id}/rounds",
+    ]:
         _get(url)
-    print("  [DIAG] Diagnose-runde færdig — se body-uddrag ovenfor")
+    print("  [DIAG] Diagnose-runde #5 færdig — se body-uddrag ovenfor")
     return None
-    data = None  # (uncreachable — behold nedenstående parsing til finalisering)
+    data = None  # (unreachable — parsing nedenfor bevares til finalisering)
 
     # ── Recursively locate the picks list, wherever it sits in the JSON ──
     # A "pick" is a dict carrying a player/person reference. Holdet nests the
