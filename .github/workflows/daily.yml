@@ -3,10 +3,17 @@ name: 🚴 TdF Manager — Daglig opdatering
 # ── Hvornår kører workflowet? ────────────────────────────────────────────────
 on:
 
-  # 1. Automatisk kl. 21:30 dansk tid (19:30 UTC) hver dag under løbet.
-  #    Scraper Holdet + kører forudsigelser for næste etape automatisk.
+  # 1. Automatiske kørsler (tider i UTC — dansk sommertid CEST = UTC+2).
+  #    Scraper Holdet (priser, GC, trøjer, startliste/DNS) + gen-beregner
+  #    forudsigelser og holdanbefaling. CO/PCS blokerer CI's IP, men de er
+  #    cachede/stabile — de ekstra kørsler henter frisk Holdet-data.
   schedule:
-    - cron: '30 19 * * *'
+    - cron: '0 5 * * *'        # 07:00 dansk — morgenopdatering
+    # 11:00–14:30 dansk hver halve time: dækker den variable Holdet-deadline.
+    # For enhver deadline i vinduet får man automatisk en kørsel ~1 time før
+    # OG ~0,5 time før (frisk pris/startliste + gen-beregnede point til deadline).
+    - cron: '0,30 9-12 * * *'
+    - cron: '30 19 * * *'      # 21:30 dansk — aftenopdatering (efter etapen: GT-resultater m.m.)
 
   # 2. Manuel kørsel fra GitHub-app eller browser (også på telefon).
   #    Alle felter er valgfrie — lades de tomme, auto-detekteres etape + type
@@ -40,6 +47,12 @@ on:
 # ── Rettigheder: skal kunne skrive og push til repo ─────────────────────────
 permissions:
   contents: write
+
+# ── Kun én kørsel ad gangen: forhindrer git push-race mellem de hyppige
+#    dag-kørsler. En ny kørsel venter i kø frem for at overlappe.
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
 
 jobs:
   update:
