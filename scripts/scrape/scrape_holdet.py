@@ -294,9 +294,6 @@ def parse_stats_html(html: str) -> dict[int, dict]:
             rows_list, _ = decoder.raw_decode(inner, arr_start)
         except (ValueError, json.JSONDecodeError):
             continue
-        if rows_list and isinstance(rows_list[0], dict):
-            print(f"  [DIAG] stats-row keys: {list(rows_list[0].keys())}")
-            print(f"  [DIAG] stats-row[0]: {json.dumps(rows_list[0], ensure_ascii=False)[:700]}")
         for row in rows_list:
             try:
                 person = row.get("person", {})
@@ -311,6 +308,10 @@ def parse_stats_html(html: str) -> dict[int, dict]:
                         "isInjured":     row.get("isInjured", False),
                         "hasSuspension": row.get("hasSuspension", False),
                         "isActive":      row.get("isActive", True),
+                        # Ownership: popularity is a 0-1 fraction; popularityChange
+                        # is Holdet's own recent delta (also a fraction).
+                        "popularity":       row.get("popularity") or 0,
+                        "popularityChange": row.get("popularityChange") or 0,
                     }
             except (AttributeError, TypeError):
                 continue
@@ -894,7 +895,10 @@ def main() -> None:
                 "holdet_person_id": person_id,
                 "price_M":    round(p.get("price", 0) / 1_000_000, 2),
                 "start_price_M": round(p.get("startPrice", 0) / 1_000_000, 2),
-                "own_pct":    round((p.get("popularity") or 0) * 100, 2),  # as %
+                # Ownership % comes from the statistics rows (person), NOT the
+                # players API (which has no popularity → was always 0).
+                "own_pct":        round((person.get("popularity") or 0) * 100, 2),
+                "own_pct_change": round((person.get("popularityChange") or 0) * 100, 2),
                 "is_out":     p.get("isOut", False),
                 "is_injured": person.get("isInjured", False),
             }

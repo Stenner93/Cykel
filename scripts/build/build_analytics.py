@@ -55,6 +55,7 @@ def build():
     co_raw  = load(CACHE / "cyclingoracle.json")
     pcs_raw = load(CACHE / "pcs_form.json")
     rank_raw = load(CACHE / "pcs_rankings.json")
+    holdet_raw = load(CACHE / "holdet_players.json")
 
     if not preds or not players:
         print("ERROR: tdf2026_predictions.json or tdf2026_players.json missing")
@@ -65,6 +66,14 @@ def build():
     holdet_price = {p["id"]: p["price"] for p in players}
     holdet_team  = {p["id"]: p["team"] for p in players}
     holdet_name  = {p["id"]: p["full_name"] for p in players}
+
+    # Ownership % (popularitet) + Holdet's own recent change, keyed by rider_id
+    own_pct:        dict[str, float] = {}
+    own_pct_change: dict[str, float] = {}
+    if holdet_raw:
+        for rid, h in holdet_raw.items():
+            own_pct[rid]        = h.get("own_pct", 0)
+            own_pct_change[rid] = h.get("own_pct_change", 0)
 
     # CO ratings: {rider_id: {ITT, SPR, MTN, HLL, COB, GC}}
     co_ratings: dict[str, dict] = {}
@@ -143,6 +152,8 @@ def build():
                 "pcs_spec":      spec,         # {tt, sprint, climber, hills, onedayraces, gc}
                 "pcs_form":      form,         # {overall, sprint, mountain, hilly, tt}
                 "pcs_rank_pts":  rank_p,
+                "own_pct":       own_pct.get(rid, 0),          # ejerskabs-% på Holdet
+                "own_pct_change": own_pct_change.get(rid, 0),  # Holdets egen ændring
             })
 
         # Sort by holdet_est desc, then price desc
