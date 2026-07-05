@@ -912,7 +912,8 @@ def main() -> None:
     print(f"    [DIAG] own_pct>0: {pop_pos}/{matched_n}")
     for probe in ("tadej_pogacar", "remco_evenepoel", "jonas_vingegaard"):
         v = holdet_map.get(probe)
-        print(f"    [DIAG] {probe}: {'ikke i map' if v is None else f'own_pct={v.get(\"own_pct\")}'}")
+        status = "ikke i map" if v is None else f"own_pct={v.get('own_pct')}"
+        print(f"    [DIAG] {probe}: {status}")
     # How many persons in the stats page carry popularity at all?
     pop_persons = sum(1 for p in person_by_id.values() if (p.get("popularity") or 0) > 0)
     print(f"    [DIAG] personer i statistik m. popularity>0: {pop_persons}/{len(person_by_id)}")
