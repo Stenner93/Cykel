@@ -1,8 +1,9 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [main]
+  # Deploy sker nu i daily.yml (én ren deploy pr. kørsel, selvhelbredende).
+  # Denne workflow er kun til MANUEL kørsel — fx efter en frontend-ændring
+  # der ikke afventer næste daglige kørsel. Klik "Run workflow" i Actions.
   workflow_dispatch:
 
 permissions:
