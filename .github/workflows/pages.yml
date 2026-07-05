@@ -10,9 +10,13 @@ permissions:
   pages: write
   id-token: write
 
+# Med de hyppige daglige commits (hver halve time om middagen + aften) stod
+# Pages-deploys i kø og fejlede med "Deployment failed, try again later".
+# cancel-in-progress: true aflyser overhalede deploys i stedet for at hobe dem
+# op — kun den nyeste kører, hvilket stopper de tilbagevendende fejl.
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
