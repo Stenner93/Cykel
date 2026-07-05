@@ -44,9 +44,11 @@ on:
         default: ''
         type: string
 
-# ── Rettigheder: skal kunne skrive og push til repo ─────────────────────────
+# ── Rettigheder: skrive/push til repo + deploye til GitHub Pages ────────────
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 # ── Kun én kørsel ad gangen: forhindrer git push-race mellem de hyppige
 #    dag-kørsler. En ny kørsel venter i kø frem for at overlappe.
@@ -216,3 +218,26 @@ jobs:
             git push || (git pull --rebase --autostash origin main && git push)
             echo "✅ Push lykkedes: $MSG"
           fi
+
+      # ── 7. Upload web/ som Pages-artefakt (deployes i 'deploy'-jobbet) ──────
+      #    Kører altid — også uden data-ændringer — så en tidligere fejlet
+      #    publicering selvhelbreder ved næste kørsel.
+      - name: Upload Pages-artefakt
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './web'
+
+  # ── JOB 2: Publicér til GitHub Pages ──────────────────────────────────────
+  #    Én ren deploy pr. kørsel (præcis én artefakt), sekventeret af 'update'.
+  #    Fejler den pga. Pages-flakiness, retter næste daglige kørsel det selv.
+  deploy:
+    name: Publicér til GitHub Pages
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy til GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
