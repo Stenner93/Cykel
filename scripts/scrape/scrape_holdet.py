@@ -849,6 +849,25 @@ def main() -> None:
     print(f"  Ryttere (riders.json): {len(riders)}")
     lut = build_rider_lookup(riders)
 
+    # riders.json can be stale/partial — it's missing current startlist riders
+    # like Pogačar, so name-matching only hit ~36/206 Holdet players. Overlay
+    # the current cartridge's player list so ALL current riders match, keyed by
+    # the same rider_ids the rest of the pipeline (build_analytics) uses.
+    CARTRIDGE_PLAYERS = {
+        "tour-de-france-2026":        "tdf2026_players.json",
+        "criterium-du-dauphine-2026": "dauphine2026_players.json",
+    }
+    pf_name = CARTRIDGE_PLAYERS.get(cartridge)
+    if pf_name and (CACHE_DIR / pf_name).exists():
+        try:
+            plist = json.loads((CACHE_DIR / pf_name).read_text(encoding="utf-8"))
+            overlay = [{"id": r["id"], "full_name": r["full_name"]}
+                       for r in plist if r.get("id") and r.get("full_name")]
+            lut.update(build_rider_lookup(overlay))  # current startlist wins
+            print(f"  Overlejret {len(overlay)} ryttere fra {pf_name} i match-tabellen")
+        except Exception as exc:
+            print(f"  [WARN] kunne ikke overlejre {pf_name}: {exc}")
+
     # ── Fetch player data ──────────────────────────────────────────────────────
     player_by_id, person_by_id = fetch_player_info(game_id, cartridge)
 
@@ -907,16 +926,8 @@ def main() -> None:
 
     matched_n = len(holdet_map)
     print(f"    Matchet: {matched_n}/{len(player_by_id)}  |  Ikke matchet: {len(unmatched)}")
-    # [DIAG] popularity coverage — why do so few riders get own_pct?
     pop_pos = sum(1 for v in holdet_map.values() if (v.get("own_pct") or 0) > 0)
-    print(f"    [DIAG] own_pct>0: {pop_pos}/{matched_n}")
-    for probe in ("tadej_pogacar", "remco_evenepoel", "jonas_vingegaard"):
-        v = holdet_map.get(probe)
-        status = "ikke i map" if v is None else f"own_pct={v.get('own_pct')}"
-        print(f"    [DIAG] {probe}: {status}")
-    # How many persons in the stats page carry popularity at all?
-    pop_persons = sum(1 for p in person_by_id.values() if (p.get("popularity") or 0) > 0)
-    print(f"    [DIAG] personer i statistik m. popularity>0: {pop_persons}/{len(person_by_id)}")
+    print(f"    Ryttere m. popularitet: {pop_pos}/{matched_n}")
     if unmatched:
         # Show unmatched (sorted for readability)
         for nm in sorted(unmatched)[:20]:
