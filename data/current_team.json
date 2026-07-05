@@ -1,14 +1,7 @@
 {
   "_note": "Opdateres automatisk via scrape_holdet.py --my-team-id 7145433. Kan også redigeres manuelt: bank_M = din bank-saldo i millioner, riders = liste af navne.",
-  "bank_M": 0.0,
+  "bank_M": 40.5,
   "riders": [
-    "Tadej Pogacar",
-    "Isaac Del Toro",
-    "Nico Denz",
-    "Kevin Vauquelin",
-    "Joel Nicolau",
-    "Michal Kwiatkowski",
-    "Edoardo Affini",
-    "Per Strand Hagenes"
+    "Isaac Del Toro"
   ]
 }
