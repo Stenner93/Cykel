@@ -188,6 +188,7 @@ jobs:
           git add \
             data/cache/pcs_form.json \
             data/cache/cyclingoracle.json \
+            data/cache/holdet_players.json \
             data/cache/gc_standings.json \
             data/cache/jerseys.json \
             data/cache/holdet_sprint_kom.json \
