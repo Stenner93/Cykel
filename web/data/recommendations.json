@@ -1,7 +1,7 @@
 {
   "stage": 2,
   "stage_type": "hilly",
-  "generated": "2026-07-05T06:57:24.341447+00:00",
+  "generated": "2026-07-05T07:08:15.200377+00:00",
   "ml_source": "historisk styrke (0 etaper kørt)",
   "ml_gt_stages": 0,
   "current_team": {
@@ -379,13 +379,13 @@
             "price_M": 7.65
           },
           {
-            "rider_id": "edoardo_affini",
-            "full_name": "Edoardo Affini",
+            "rider_id": "per_strand_hagenes",
+            "full_name": "Per Strand Hagenes",
             "price_M": 3.7
           },
           {
-            "rider_id": "per_strand_hagenes",
-            "full_name": "Per Strand Hagenes",
+            "rider_id": "edoardo_affini",
+            "full_name": "Edoardo Affini",
             "price_M": 3.7
           },
           {
@@ -454,12 +454,12 @@
         "risk_profile": "Lav",
         "teams_represented": [
           "UAE",
-          "IGD",
-          "MOV",
+          "VLB",
           "UXM",
           "SQ",
-          "CRSR",
-          "VLB"
+          "MOV",
+          "IGD",
+          "CRSR"
         ],
         "n_teams": 7,
         "n_transfers": 6,
@@ -768,13 +768,13 @@
             "price_M": 7.65
           },
           {
-            "rider_id": "edoardo_affini",
-            "full_name": "Edoardo Affini",
+            "rider_id": "per_strand_hagenes",
+            "full_name": "Per Strand Hagenes",
             "price_M": 3.7
           },
           {
-            "rider_id": "per_strand_hagenes",
-            "full_name": "Per Strand Hagenes",
+            "rider_id": "edoardo_affini",
+            "full_name": "Edoardo Affini",
             "price_M": 3.7
           },
           {
@@ -843,12 +843,12 @@
         "risk_profile": "Lav",
         "teams_represented": [
           "UAE",
-          "IGD",
-          "RBH",
-          "CRSR",
-          "Q36",
+          "TPP",
           "VLB",
-          "TPP"
+          "Q36",
+          "RBH",
+          "IGD",
+          "CRSR"
         ],
         "n_teams": 7,
         "n_transfers": 6,
@@ -1157,13 +1157,13 @@
             "price_M": 7.65
           },
           {
-            "rider_id": "edoardo_affini",
-            "full_name": "Edoardo Affini",
+            "rider_id": "per_strand_hagenes",
+            "full_name": "Per Strand Hagenes",
             "price_M": 3.7
           },
           {
-            "rider_id": "per_strand_hagenes",
-            "full_name": "Per Strand Hagenes",
+            "rider_id": "edoardo_affini",
+            "full_name": "Edoardo Affini",
             "price_M": 3.7
           },
           {
@@ -1232,11 +1232,11 @@
         "risk_profile": "Lav",
         "teams_represented": [
           "UAE",
-          "EF",
           "ALP",
+          "VLB",
           "UXM",
-          "CRSR",
-          "VLB"
+          "EF",
+          "CRSR"
         ],
         "n_teams": 6,
         "n_transfers": 6,
@@ -1547,11 +1547,11 @@
       "risk_profile": "Lav",
       "teams_represented": [
         "UAE",
-        "EF",
         "JAL",
+        "TPP",
+        "EF",
         "RBH",
-        "CRSR",
-        "TPP"
+        "CRSR"
       ],
       "n_teams": 6,
       "n_transfers": 0,
