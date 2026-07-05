@@ -294,6 +294,9 @@ def parse_stats_html(html: str) -> dict[int, dict]:
             rows_list, _ = decoder.raw_decode(inner, arr_start)
         except (ValueError, json.JSONDecodeError):
             continue
+        if rows_list and isinstance(rows_list[0], dict):
+            print(f"  [DIAG] stats-row keys: {list(rows_list[0].keys())}")
+            print(f"  [DIAG] stats-row[0]: {json.dumps(rows_list[0], ensure_ascii=False)[:700]}")
         for row in rows_list:
             try:
                 person = row.get("person", {})
