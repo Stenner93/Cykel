@@ -965,7 +965,12 @@ async function init() {
     ALL_STAGES = raw.stages || [];
     if (!ALL_STAGES.length) throw new Error('Ingen etaper i analytics.json');
 
-    selectStage(0);
+    // Default til den AKTUELLE etape (ikke altid etape 1). Falder tilbage til
+    // første ikke-afsluttede etape, ellers etape 1.
+    let startIdx = ALL_STAGES.findIndex(s => s.num === raw.current_num);
+    if (startIdx < 0) startIdx = ALL_STAGES.findIndex(s => s.status !== 'finished');
+    if (startIdx < 0) startIdx = 0;
+    selectStage(startIdx);
   } catch (e) {
     document.getElementById('tBody').innerHTML =
       `<tr><td colspan="12" style="padding:40px;text-align:center;color:var(--text2)">
