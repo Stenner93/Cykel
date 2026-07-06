@@ -103,6 +103,34 @@ def build():
     # Normalize PCS specialties and ranking within field for display (0-100)
     # We normalize at the end when we know the full field.
 
+    # ── Per-stage freeze of popularity + price ──────────────────────────────
+    # Finished stages should show ownership % and price as they were at that
+    # stage's START — not today's live values. We snapshot the live values the
+    # first time a stage becomes current, then reuse that snapshot once the
+    # stage is finished. Current/future stages always use live values.
+    SNAP_PATH = CACHE / "stage_snapshots.json"
+    snapshots = load(SNAP_PATH) or {}
+
+    # Current stage = first stage not yet finished
+    current_num = None
+    for s in preds["stages"]:
+        if s.get("status", "") != "finished":
+            current_num = s["num"]
+            break
+
+    # Capture a snapshot for the current stage at its start (once), so the
+    # values are frozen and available when the stage later finishes.
+    if current_num is not None and str(current_num) not in snapshots:
+        snapshots[str(current_num)] = {
+            rid: {
+                "own_pct":        own_pct.get(rid, 0),
+                "own_pct_change": own_pct_change.get(rid, 0),
+                "price":          holdet_price.get(rid, 0),
+            }
+            for rid in holdet_ids
+        }
+        print(f"  Snapshot gemt for etape {current_num} (frys ved etapestart)")
+
     stages_out = []
     for stage in preds["stages"]:
         snum  = stage["num"]
@@ -110,12 +138,26 @@ def build():
         co_key  = STAGE_CO_KEY.get(stype, "HLL")
         pcs_key = STAGE_PCS_KEY.get(stype, "hills")
 
+        # Frozen snapshot for finished stages; live values otherwise
+        stage_snap = snapshots.get(str(snum)) if stage.get("status", "") == "finished" else None
+
         # Filter to Holdet riders and augment
         riders_out = []
         for r in stage["riders"]:
             rid = r["id"]
             if rid not in holdet_ids:
                 continue
+
+            # Ownership % + price: frozen (finished stage w/ snapshot) or live
+            rsnap = (stage_snap or {}).get(rid)
+            if rsnap:
+                r_own     = rsnap.get("own_pct", 0)
+                r_own_chg = rsnap.get("own_pct_change", 0)
+                r_price   = rsnap.get("price", holdet_price.get(rid, r.get("price", 0)))
+            else:
+                r_own     = own_pct.get(rid, 0)
+                r_own_chg = own_pct_change.get(rid, 0)
+                r_price   = holdet_price.get(rid, r.get("price", 0))
 
             # CO ratings for this rider (all keys, raw 0-100)
             co = co_ratings.get(rid, {})
@@ -140,7 +182,7 @@ def build():
                 "id":            rid,
                 "name":          holdet_name.get(rid, r.get("name", rid)),
                 "team":          holdet_team.get(rid, r.get("team", "")),
-                "price":         holdet_price.get(rid, r.get("price", 0)),
+                "price":         r_price,
                 "holdet_est":    r.get("holdet_est"),
                 "disc":          r.get("disc"),
                 "disc_key":      r.get("disc_key", co_key),
@@ -152,8 +194,8 @@ def build():
                 "pcs_spec":      spec,         # {tt, sprint, climber, hills, onedayraces, gc}
                 "pcs_form":      form,         # {overall, sprint, mountain, hilly, tt}
                 "pcs_rank_pts":  rank_p,
-                "own_pct":       own_pct.get(rid, 0),          # ejerskabs-% på Holdet
-                "own_pct_change": own_pct_change.get(rid, 0),  # Holdets egen ændring
+                "own_pct":       r_own,       # ejerskabs-% (frosset for overståede etaper)
+                "own_pct_change": r_own_chg,  # Holdets egen ændring
             })
 
         # Sort by holdet_est desc, then price desc
@@ -182,14 +224,20 @@ def build():
             "num":     snum,
             "type":    stype,
             "name":    stage.get("name", f"Etape {snum}"),
+            "status":  stage.get("status", ""),   # finished / none — til aktuel-etape-valg
+            "frozen":  bool(stage_snap),          # om popularitet/pris er frosset
             "co_key":  co_key,
             "pcs_key": pcs_key,
             "riders":  riders_out,
         })
 
+    # Persist snapshots (new current-stage snapshot may have been added)
+    SNAP_PATH.write_text(json.dumps(snapshots, ensure_ascii=False, indent=2), encoding="utf-8")
+
     out = {
-        "generated": datetime.now(timezone.utc).isoformat(),
-        "stages":    stages_out,
+        "generated":   datetime.now(timezone.utc).isoformat(),
+        "current_num": current_num,   # aktuel etape (frontend defaulter hertil)
+        "stages":      stages_out,
     }
     out_path = WEB_DATA / "tdf2026_analytics.json"
     out_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
