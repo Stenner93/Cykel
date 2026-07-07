@@ -1,10 +1,50 @@
 {
   "stage": 5,
   "stage_type": "sprint",
-  "generated": "2026-07-07T17:30:11.163369+00:00",
+  "generated": "2026-07-07T21:09:54.074553+00:00",
   "ml_source": "historisk styrke (0 etaper kørt)",
   "ml_gt_stages": 0,
-  "current_team": null,
+  "current_team": {
+    "bank_M": 37.5,
+    "rider_ids": [
+      "vlad_van_mechelen",
+      "mathias_vacek",
+      "sean_quinn",
+      "jonas_rickaert"
+    ],
+    "rider_names": [
+      "Vlad Van Mechelen",
+      "Mathias Vacek",
+      "Sean Quinn",
+      "Jonas Rickaert"
+    ],
+    "matched_riders": [
+      {
+        "rider_id": "vlad_van_mechelen",
+        "full_name": "Vlad Van Mechelen",
+        "team": "TVM",
+        "price_M": 2.99
+      },
+      {
+        "rider_id": "mathias_vacek",
+        "full_name": "Mathias Vacek",
+        "team": "L-T",
+        "price_M": 4.35
+      },
+      {
+        "rider_id": "sean_quinn",
+        "full_name": "Sean Quinn",
+        "team": "EF",
+        "price_M": 3.23
+      },
+      {
+        "rider_id": "jonas_rickaert",
+        "full_name": "Jonas Rickaert",
+        "team": "ALP",
+        "price_M": 2.36
+      }
+    ]
+  },
   "teams": [
     {
       "label": "safe",
@@ -15,16 +55,16 @@
           "team": "ALP",
           "price": 11.41,
           "expected_pts": 296000,
-          "win_prob": 0.6118,
+          "win_prob": 0.6919,
           "winner_pts": 500000,
-          "composite_base_pts": 305903,
+          "composite_base_pts": 345927,
           "variance": 0,
-          "reasoning": "høj disciplinrating (SPR: 100)",
+          "reasoning": "VeloScore top-1, høj disciplinrating (SPR: 100)",
           "disc_key": "SPR",
           "disc_raw": 100.0,
           "form_score": 1.8,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.94,
             "odds": 0.0,
             "discipline": 1.0,
             "form": 0.018,
@@ -50,16 +90,16 @@
           "team": "L-T",
           "price": 10.06,
           "expected_pts": 178500,
-          "win_prob": 0.5231,
+          "win_prob": 0.5516,
           "winner_pts": 500000,
-          "composite_base_pts": 261547,
-          "variance": 0,
-          "reasoning": "trøje: sprint, sprint-klass. #1, holdbonus ~22k",
+          "composite_base_pts": 275804,
+          "variance": 47200,
+          "reasoning": "VeloScore top-5, trøje: sprint, sprint-klass. #1, holdbonus ~22k",
           "disc_key": "SPR",
           "disc_raw": 70.5,
           "form_score": 19.8,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.64,
             "odds": 0.0,
             "discipline": 0.705,
             "form": 0.349,
@@ -85,16 +125,16 @@
           "team": "NCT",
           "price": 7.94,
           "expected_pts": 210000,
-          "win_prob": 0.5028,
+          "win_prob": 0.5607,
           "winner_pts": 500000,
-          "composite_base_pts": 251410,
-          "variance": 0,
-          "reasoning": "høj disciplinrating (SPR: 87)",
+          "composite_base_pts": 280334,
+          "variance": 24235,
+          "reasoning": "VeloScore top-4, høj disciplinrating (SPR: 87)",
           "disc_key": "SPR",
           "disc_raw": 86.9,
           "form_score": 2.5,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.74,
             "odds": 0.0,
             "discipline": 0.869,
             "form": 0.025,
@@ -260,16 +300,16 @@
           "team": "T",
           "price": 4.38,
           "expected_pts": 71500,
-          "win_prob": 0.3394,
+          "win_prob": 0.2767,
           "winner_pts": 500000,
-          "composite_base_pts": 169680,
-          "variance": 0,
+          "composite_base_pts": 138343,
+          "variance": 11610,
           "reasoning": "budget-pick",
           "disc_key": "SPR",
           "disc_raw": 61.3,
           "form_score": 10.6,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.12,
             "odds": 0.0,
             "discipline": 0.613,
             "form": 0.106,
@@ -293,32 +333,86 @@
       "captain_id": "jasper_philipsen",
       "expected_pts": 1421800,
       "total_cost_M": 49.64,
-      "budget_left_M": 0.36,
+      "budget_left_M": 0.37,
+      "transfer_analysis": {
+        "to_sell": [
+          {
+            "rider_id": "vlad_van_mechelen",
+            "full_name": "Vlad Van Mechelen",
+            "price_M": 2.99
+          },
+          {
+            "rider_id": "jonas_rickaert",
+            "full_name": "Jonas Rickaert",
+            "price_M": 2.36
+          }
+        ],
+        "to_buy": [
+          {
+            "rider_id": "jasper_philipsen",
+            "full_name": "Jasper Philipsen",
+            "price_M": 11.41
+          },
+          {
+            "rider_id": "mads_pedersen",
+            "full_name": "Mads Pedersen",
+            "price_M": 10.06
+          },
+          {
+            "rider_id": "biniam_girmay",
+            "full_name": "Biniam Girmay",
+            "price_M": 7.94
+          },
+          {
+            "rider_id": "anthony_turgis",
+            "full_name": "Anthony Turgis",
+            "price_M": 4.38
+          },
+          {
+            "rider_id": "mike_teunissen",
+            "full_name": "Mike Teunissen",
+            "price_M": 4.33
+          },
+          {
+            "rider_id": "jasper_stuyven",
+            "full_name": "Jasper Stuyven",
+            "price_M": 3.94
+          }
+        ],
+        "n_transfers": 6,
+        "proceeds_M": 5.35,
+        "face_buy_M": 42.06,
+        "fee_M": 0.42,
+        "buy_cost_M": 42.48,
+        "net_cost_M": 37.13,
+        "balance_after_M": 0.37,
+        "affordable": true
+      },
       "assessment": {
         "captain_name": "Jasper Philipsen",
-        "captain_reasoning": "høj disciplinrating (SPR: 100)",
+        "captain_reasoning": "VeloScore top-1, høj disciplinrating (SPR: 100)",
         "expected_pts_total": 1421800,
         "est_etapebonus": 400000,
         "est_top15_count": 8,
         "total_cost_M": 49.64,
-        "budget_left_M": 0.36,
+        "budget_left_M": 0.37,
         "avg_price_M": 6.2,
         "n_premium_riders": 2,
         "n_budget_riders": 2,
         "risk_profile": "Lav",
         "teams_represented": [
           "XDA",
+          "EF",
+          "T",
+          "ALP",
           "NCT",
           "SQ",
-          "T",
-          "L-T",
-          "EF",
-          "ALP"
+          "L-T"
         ],
         "n_teams": 7,
-        "n_transfers": 0,
+        "n_transfers": 6,
         "affordable": true,
-        "balance_after_M": 0.36
+        "balance_after_M": 0.37
       }
     },
     {
@@ -330,16 +424,16 @@
           "team": "L-T",
           "price": 10.06,
           "expected_pts": 178500,
-          "win_prob": 0.5231,
+          "win_prob": 0.5516,
           "winner_pts": 500000,
-          "composite_base_pts": 261547,
-          "variance": 0,
-          "reasoning": "trøje: sprint, sprint-klass. #1, holdbonus ~22k",
+          "composite_base_pts": 275804,
+          "variance": 47200,
+          "reasoning": "VeloScore top-5, trøje: sprint, sprint-klass. #1, holdbonus ~22k",
           "disc_key": "SPR",
           "disc_raw": 70.5,
           "form_score": 19.8,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.64,
             "odds": 0.0,
             "discipline": 0.705,
             "form": 0.349,
@@ -365,16 +459,16 @@
           "team": "NCT",
           "price": 7.94,
           "expected_pts": 210000,
-          "win_prob": 0.5028,
+          "win_prob": 0.5607,
           "winner_pts": 500000,
-          "composite_base_pts": 251410,
-          "variance": 0,
-          "reasoning": "høj disciplinrating (SPR: 87)",
+          "composite_base_pts": 280334,
+          "variance": 24235,
+          "reasoning": "VeloScore top-4, høj disciplinrating (SPR: 87)",
           "disc_key": "SPR",
           "disc_raw": 86.9,
           "form_score": 2.5,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.74,
             "odds": 0.0,
             "discipline": 0.869,
             "form": 0.025,
@@ -435,16 +529,16 @@
           "team": "TPP",
           "price": 5.3,
           "expected_pts": 124200,
-          "win_prob": 0.3861,
+          "win_prob": 0.3919,
           "winner_pts": 500000,
-          "composite_base_pts": 193048,
-          "variance": 0,
-          "reasoning": "model-anbefaling",
+          "composite_base_pts": 195963,
+          "variance": 35157,
+          "reasoning": "VeloScore rank 7",
           "disc_key": "SPR",
           "disc_raw": 65.7,
           "form_score": 1.7,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.41,
             "odds": 0.0,
             "discipline": 0.657,
             "form": 0.017,
@@ -575,16 +669,16 @@
           "team": "XDA",
           "price": 5.34,
           "expected_pts": 95200,
-          "win_prob": 0.4435,
+          "win_prob": 0.4573,
           "winner_pts": 500000,
-          "composite_base_pts": 221758,
-          "variance": 0,
-          "reasoning": "model-anbefaling",
+          "composite_base_pts": 228646,
+          "variance": 53625,
+          "reasoning": "VeloScore rank 6",
           "disc_key": "SPR",
           "disc_raw": 57.1,
           "form_score": 34.3,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.5,
             "odds": 0.0,
             "discipline": 0.571,
             "form": 0.343,
@@ -608,32 +702,106 @@
       "captain_id": "biniam_girmay",
       "expected_pts": 1316100,
       "total_cost_M": 49.45,
-      "budget_left_M": 0.55,
+      "budget_left_M": 0.49,
+      "transfer_analysis": {
+        "to_sell": [
+          {
+            "rider_id": "mathias_vacek",
+            "full_name": "Mathias Vacek",
+            "price_M": 4.35
+          },
+          {
+            "rider_id": "sean_quinn",
+            "full_name": "Sean Quinn",
+            "price_M": 3.23
+          },
+          {
+            "rider_id": "vlad_van_mechelen",
+            "full_name": "Vlad Van Mechelen",
+            "price_M": 2.99
+          },
+          {
+            "rider_id": "jonas_rickaert",
+            "full_name": "Jonas Rickaert",
+            "price_M": 2.36
+          }
+        ],
+        "to_buy": [
+          {
+            "rider_id": "mads_pedersen",
+            "full_name": "Mads Pedersen",
+            "price_M": 10.06
+          },
+          {
+            "rider_id": "biniam_girmay",
+            "full_name": "Biniam Girmay",
+            "price_M": 7.94
+          },
+          {
+            "rider_id": "arnaud_de_lie",
+            "full_name": "Arnaud De Lie",
+            "price_M": 7.3
+          },
+          {
+            "rider_id": "max_kanter",
+            "full_name": "Max Kanter",
+            "price_M": 5.34
+          },
+          {
+            "rider_id": "pavel_bittner",
+            "full_name": "Pavel Bittner",
+            "price_M": 5.3
+          },
+          {
+            "rider_id": "torstein_træen",
+            "full_name": "Torstein Træen",
+            "price_M": 5.24
+          },
+          {
+            "rider_id": "mike_teunissen",
+            "full_name": "Mike Teunissen",
+            "price_M": 4.33
+          },
+          {
+            "rider_id": "jasper_stuyven",
+            "full_name": "Jasper Stuyven",
+            "price_M": 3.94
+          }
+        ],
+        "n_transfers": 8,
+        "proceeds_M": 12.93,
+        "face_buy_M": 49.45,
+        "fee_M": 0.49,
+        "buy_cost_M": 49.94,
+        "net_cost_M": 37.01,
+        "balance_after_M": 0.49,
+        "affordable": true
+      },
       "assessment": {
         "captain_name": "Biniam Girmay",
-        "captain_reasoning": "høj disciplinrating (SPR: 87)",
+        "captain_reasoning": "VeloScore top-4, høj disciplinrating (SPR: 87)",
         "expected_pts_total": 1316100,
         "est_etapebonus": 400000,
         "est_top15_count": 8,
         "total_cost_M": 49.45,
-        "budget_left_M": 0.55,
+        "budget_left_M": 0.49,
         "avg_price_M": 6.2,
         "n_premium_riders": 1,
         "n_budget_riders": 1,
         "risk_profile": "Lav",
         "teams_represented": [
+          "INT",
           "XDA",
-          "NCT",
-          "UXM",
-          "SQ",
           "TPP",
-          "L-T",
-          "INT"
+          "UXM",
+          "NCT",
+          "SQ",
+          "L-T"
         ],
         "n_teams": 7,
-        "n_transfers": 0,
+        "n_transfers": 8,
         "affordable": true,
-        "balance_after_M": 0.55
+        "balance_after_M": 0.49
       }
     },
     {
@@ -645,16 +813,16 @@
           "team": "ALP",
           "price": 11.41,
           "expected_pts": 296000,
-          "win_prob": 0.6118,
+          "win_prob": 0.6919,
           "winner_pts": 500000,
-          "composite_base_pts": 305903,
+          "composite_base_pts": 345927,
           "variance": 0,
-          "reasoning": "høj disciplinrating (SPR: 100)",
+          "reasoning": "VeloScore top-1, høj disciplinrating (SPR: 100)",
           "disc_key": "SPR",
           "disc_raw": 100.0,
           "form_score": 1.8,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.94,
             "odds": 0.0,
             "discipline": 1.0,
             "form": 0.018,
@@ -715,16 +883,16 @@
           "team": "TPP",
           "price": 5.3,
           "expected_pts": 124200,
-          "win_prob": 0.3861,
+          "win_prob": 0.3919,
           "winner_pts": 500000,
-          "composite_base_pts": 193048,
-          "variance": 0,
-          "reasoning": "model-anbefaling",
+          "composite_base_pts": 195963,
+          "variance": 35157,
+          "reasoning": "VeloScore rank 7",
           "disc_key": "SPR",
           "disc_raw": 65.7,
           "form_score": 1.7,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.41,
             "odds": 0.0,
             "discipline": 0.657,
             "form": 0.017,
@@ -855,16 +1023,16 @@
           "team": "XDA",
           "price": 5.34,
           "expected_pts": 95200,
-          "win_prob": 0.4435,
+          "win_prob": 0.4573,
           "winner_pts": 500000,
-          "composite_base_pts": 221758,
-          "variance": 0,
-          "reasoning": "model-anbefaling",
+          "composite_base_pts": 228646,
+          "variance": 53625,
+          "reasoning": "VeloScore rank 6",
           "disc_key": "SPR",
           "disc_raw": 57.1,
           "form_score": 34.3,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.5,
             "odds": 0.0,
             "discipline": 0.571,
             "form": 0.343,
@@ -924,9 +1092,73 @@
       "expected_pts": 1393100,
       "total_cost_M": 47.21,
       "budget_left_M": 2.79,
+      "transfer_analysis": {
+        "to_sell": [
+          {
+            "rider_id": "sean_quinn",
+            "full_name": "Sean Quinn",
+            "price_M": 3.23
+          },
+          {
+            "rider_id": "vlad_van_mechelen",
+            "full_name": "Vlad Van Mechelen",
+            "price_M": 2.99
+          },
+          {
+            "rider_id": "jonas_rickaert",
+            "full_name": "Jonas Rickaert",
+            "price_M": 2.36
+          }
+        ],
+        "to_buy": [
+          {
+            "rider_id": "jasper_philipsen",
+            "full_name": "Jasper Philipsen",
+            "price_M": 11.41
+          },
+          {
+            "rider_id": "arnaud_de_lie",
+            "full_name": "Arnaud De Lie",
+            "price_M": 7.3
+          },
+          {
+            "rider_id": "max_kanter",
+            "full_name": "Max Kanter",
+            "price_M": 5.34
+          },
+          {
+            "rider_id": "pavel_bittner",
+            "full_name": "Pavel Bittner",
+            "price_M": 5.3
+          },
+          {
+            "rider_id": "torstein_træen",
+            "full_name": "Torstein Træen",
+            "price_M": 5.24
+          },
+          {
+            "rider_id": "mike_teunissen",
+            "full_name": "Mike Teunissen",
+            "price_M": 4.33
+          },
+          {
+            "rider_id": "jasper_stuyven",
+            "full_name": "Jasper Stuyven",
+            "price_M": 3.94
+          }
+        ],
+        "n_transfers": 7,
+        "proceeds_M": 8.58,
+        "face_buy_M": 42.86,
+        "fee_M": 0.43,
+        "buy_cost_M": 43.29,
+        "net_cost_M": 34.71,
+        "balance_after_M": 2.79,
+        "affordable": true
+      },
       "assessment": {
         "captain_name": "Jasper Philipsen",
-        "captain_reasoning": "høj disciplinrating (SPR: 100)",
+        "captain_reasoning": "VeloScore top-1, høj disciplinrating (SPR: 100)",
         "expected_pts_total": 1393100,
         "est_etapebonus": 400000,
         "est_top15_count": 8,
@@ -937,16 +1169,16 @@
         "n_budget_riders": 1,
         "risk_profile": "Lav",
         "teams_represented": [
+          "INT",
           "XDA",
+          "TPP",
+          "ALP",
           "UXM",
           "SQ",
-          "TPP",
-          "L-T",
-          "INT",
-          "ALP"
+          "L-T"
         ],
         "n_teams": 7,
-        "n_transfers": 0,
+        "n_transfers": 7,
         "affordable": true,
         "balance_after_M": 2.79
       }
@@ -961,16 +1193,16 @@
         "team": "ALP",
         "price": 11.41,
         "expected_pts": 296000,
-        "win_prob": 0.6118,
+        "win_prob": 0.6919,
         "winner_pts": 500000,
-        "composite_base_pts": 305903,
+        "composite_base_pts": 345927,
         "variance": 0,
-        "reasoning": "høj disciplinrating (SPR: 100)",
+        "reasoning": "VeloScore top-1, høj disciplinrating (SPR: 100)",
         "disc_key": "SPR",
         "disc_raw": 100.0,
         "form_score": 1.8,
         "signal_scores": {
-          "veloscore": 0.0,
+          "veloscore": 0.94,
           "odds": 0.0,
           "discipline": 1.0,
           "form": 0.018,
@@ -996,16 +1228,16 @@
         "team": "NCT",
         "price": 7.94,
         "expected_pts": 210000,
-        "win_prob": 0.5028,
+        "win_prob": 0.5607,
         "winner_pts": 500000,
-        "composite_base_pts": 251410,
-        "variance": 0,
-        "reasoning": "høj disciplinrating (SPR: 87)",
+        "composite_base_pts": 280334,
+        "variance": 24235,
+        "reasoning": "VeloScore top-4, høj disciplinrating (SPR: 87)",
         "disc_key": "SPR",
         "disc_raw": 86.9,
         "form_score": 2.5,
         "signal_scores": {
-          "veloscore": 0.0,
+          "veloscore": 0.74,
           "odds": 0.0,
           "discipline": 0.869,
           "form": 0.025,
@@ -1066,16 +1298,16 @@
         "team": "TPP",
         "price": 5.3,
         "expected_pts": 124200,
-        "win_prob": 0.3861,
+        "win_prob": 0.3919,
         "winner_pts": 500000,
-        "composite_base_pts": 193048,
-        "variance": 0,
-        "reasoning": "model-anbefaling",
+        "composite_base_pts": 195963,
+        "variance": 35157,
+        "reasoning": "VeloScore rank 7",
         "disc_key": "SPR",
         "disc_raw": 65.7,
         "form_score": 1.7,
         "signal_scores": {
-          "veloscore": 0.0,
+          "veloscore": 0.41,
           "odds": 0.0,
           "discipline": 0.657,
           "form": 0.017,
@@ -1242,7 +1474,7 @@
     "budget_left_M": 0.19,
     "assessment": {
       "captain_name": "Jasper Philipsen",
-      "captain_reasoning": "høj disciplinrating (SPR: 100)",
+      "captain_reasoning": "VeloScore top-1, høj disciplinrating (SPR: 100)",
       "expected_pts_total": 1507900,
       "est_etapebonus": 400000,
       "est_top15_count": 8,
@@ -1253,14 +1485,14 @@
       "n_budget_riders": 1,
       "risk_profile": "Lav",
       "teams_represented": [
-        "XDA",
-        "NCT",
-        "UXM",
-        "SQ",
-        "TPP",
-        "L-T",
         "INT",
-        "ALP"
+        "XDA",
+        "TPP",
+        "ALP",
+        "UXM",
+        "NCT",
+        "SQ",
+        "L-T"
       ],
       "n_teams": 8,
       "n_transfers": 0,
@@ -1268,7 +1500,148 @@
       "balance_after_M": 0.19
     }
   },
-  "veloscore": [],
+  "veloscore": [
+    {
+      "rank": 1,
+      "rider": "Jasper Philipsen",
+      "total": 1598,
+      "veloscore": 9.4,
+      "stars": 4
+    },
+    {
+      "rank": 2,
+      "rider": "Tim Merlier",
+      "total": 1472,
+      "veloscore": 8.7,
+      "stars": 4
+    },
+    {
+      "rank": 3,
+      "rider": "Olav Kooij",
+      "total": 1287,
+      "veloscore": 7.6,
+      "stars": 3
+    },
+    {
+      "rank": 4,
+      "rider": "Biniam Girmay",
+      "total": 1253,
+      "veloscore": 7.4,
+      "stars": 3
+    },
+    {
+      "rank": 5,
+      "rider": "Mads Pedersen",
+      "total": 1080,
+      "veloscore": 6.4,
+      "stars": 3
+    },
+    {
+      "rank": 6,
+      "rider": "Max Kanter",
+      "total": 846,
+      "veloscore": 5.0,
+      "stars": 2
+    },
+    {
+      "rank": 7,
+      "rider": "Pavel Bittner",
+      "total": 698,
+      "veloscore": 4.1,
+      "stars": 2
+    },
+    {
+      "rank": 8,
+      "rider": "Søren Wærenskjold",
+      "total": 617,
+      "veloscore": 3.6,
+      "stars": 2
+    },
+    {
+      "rank": 9,
+      "rider": "Milan Fretin",
+      "total": 578,
+      "veloscore": 3.4,
+      "stars": 2
+    },
+    {
+      "rank": 10,
+      "rider": "Phil Bauhaus",
+      "total": 416,
+      "veloscore": 2.4,
+      "stars": 1
+    },
+    {
+      "rank": 11,
+      "rider": "Arvid de Kleijn",
+      "total": 395,
+      "veloscore": 2.3,
+      "stars": 1
+    },
+    {
+      "rank": 12,
+      "rider": "Fernando Gaviria",
+      "total": 276,
+      "veloscore": 1.6,
+      "stars": 1
+    },
+    {
+      "rank": 13,
+      "rider": "Pascal Ackermann",
+      "total": 261,
+      "veloscore": 1.5,
+      "stars": 1
+    },
+    {
+      "rank": 14,
+      "rider": "Dorian Godon",
+      "total": 226,
+      "veloscore": 1.3,
+      "stars": 1
+    },
+    {
+      "rank": 15,
+      "rider": "Anthony Turgis",
+      "total": 204,
+      "veloscore": 1.2,
+      "stars": 0
+    },
+    {
+      "rank": 16,
+      "rider": "Jenno Berckmoes",
+      "total": 155,
+      "veloscore": 0.9,
+      "stars": 0
+    },
+    {
+      "rank": 17,
+      "rider": "Mathieu van der Poel",
+      "total": 131,
+      "veloscore": 0.8,
+      "stars": 0
+    },
+    {
+      "rank": 18,
+      "rider": "Jonas Abrahamsen",
+      "total": 94,
+      "veloscore": 0.6,
+      "stars": 0
+    },
+    {
+      "rank": 19,
+      "rider": "Michael Matthews",
+      "total": 73,
+      "veloscore": 0.4,
+      "stars": 0
+    },
+    {
+      "rank": 20,
+      "rider": "Filippo Ganna",
+      "total": 71,
+      "veloscore": 0.4,
+      "stars": 0
+    }
+  ],
   "top_picks": [
     {
       "rider_id": "jasper_philipsen",
@@ -1276,16 +1649,16 @@
       "team": "ALP",
       "price": 11.41,
       "expected_pts": 296000,
-      "win_prob": 0.6118,
+      "win_prob": 0.6919,
       "winner_pts": 500000,
-      "composite_base_pts": 305903,
+      "composite_base_pts": 345927,
       "variance": 0,
-      "reasoning": "høj disciplinrating (SPR: 100)",
+      "reasoning": "VeloScore top-1, høj disciplinrating (SPR: 100)",
       "disc_key": "SPR",
       "disc_raw": 100.0,
       "form_score": 1.8,
       "signal_scores": {
-        "veloscore": 0.0,
+        "veloscore": 0.94,
         "odds": 0.0,
         "discipline": 1.0,
         "form": 0.018,
@@ -1310,16 +1683,16 @@
       "team": "NCT",
       "price": 7.94,
       "expected_pts": 210000,
-      "win_prob": 0.5028,
+      "win_prob": 0.5607,
       "winner_pts": 500000,
-      "composite_base_pts": 251410,
-      "variance": 0,
-      "reasoning": "høj disciplinrating (SPR: 87)",
+      "composite_base_pts": 280334,
+      "variance": 24235,
+      "reasoning": "VeloScore top-4, høj disciplinrating (SPR: 87)",
       "disc_key": "SPR",
       "disc_raw": 86.9,
       "form_score": 2.5,
       "signal_scores": {
-        "veloscore": 0.0,
+        "veloscore": 0.74,
         "odds": 0.0,
         "discipline": 0.869,
         "form": 0.025,
@@ -1378,16 +1751,16 @@
       "team": "L-T",
       "price": 10.06,
       "expected_pts": 178500,
-      "win_prob": 0.5231,
+      "win_prob": 0.5516,
       "winner_pts": 500000,
-      "composite_base_pts": 261547,
-      "variance": 0,
-      "reasoning": "trøje: sprint, sprint-klass. #1, holdbonus ~22k",
+      "composite_base_pts": 275804,
+      "variance": 47200,
+      "reasoning": "VeloScore top-5, trøje: sprint, sprint-klass. #1, holdbonus ~22k",
       "disc_key": "SPR",
       "disc_raw": 70.5,
       "form_score": 19.8,
       "signal_scores": {
-        "veloscore": 0.0,
+        "veloscore": 0.64,
         "odds": 0.0,
         "discipline": 0.705,
         "form": 0.349,
@@ -1412,16 +1785,16 @@
       "team": "DAL",
       "price": 10.29,
       "expected_pts": 151800,
-      "win_prob": 0.5905,
+      "win_prob": 0.6318,
       "winner_pts": 500000,
-      "composite_base_pts": 295233,
-      "variance": 0,
-      "reasoning": "model-anbefaling",
+      "composite_base_pts": 315908,
+      "variance": 46360,
+      "reasoning": "VeloScore top-3",
       "disc_key": "SPR",
       "disc_raw": 75.6,
       "form_score": 58.2,
       "signal_scores": {
-        "veloscore": 0.0,
+        "veloscore": 0.76,
         "odds": 0.0,
         "discipline": 0.756,
         "form": 0.541,
@@ -1446,16 +1819,16 @@
       "team": "SQ",
       "price": 12.33,
       "expected_pts": 146000,
-      "win_prob": 0.607,
+      "win_prob": 0.6711,
       "winner_pts": 500000,
-      "composite_base_pts": 303477,
-      "variance": 0,
-      "reasoning": "høj disciplinrating (SPR: 81)",
+      "composite_base_pts": 335556,
+      "variance": 41108,
+      "reasoning": "VeloScore top-2, høj disciplinrating (SPR: 81)",
       "disc_key": "SPR",
       "disc_raw": 81.1,
       "form_score": 49.1,
       "signal_scores": {
-        "veloscore": 0.0,
+        "veloscore": 0.87,
         "odds": 0.0,
         "discipline": 0.811,
         "form": 0.495,
@@ -1480,16 +1853,16 @@
       "team": "TPP",
       "price": 5.3,
       "expected_pts": 124200,
-      "win_prob": 0.3861,
+      "win_prob": 0.3919,
       "winner_pts": 500000,
-      "composite_base_pts": 193048,
-      "variance": 0,
-      "reasoning": "model-anbefaling",
+      "composite_base_pts": 195963,
+      "variance": 35157,
+      "reasoning": "VeloScore rank 7",
       "disc_key": "SPR",
       "disc_raw": 65.7,
       "form_score": 1.7,
       "signal_scores": {
-        "veloscore": 0.0,
+        "veloscore": 0.41,
         "odds": 0.0,
         "discipline": 0.657,
         "form": 0.017,
@@ -1548,16 +1921,16 @@
       "team": "ALP",
       "price": 10.89,
       "expected_pts": 112100,
-      "win_prob": 0.3599,
+      "win_prob": 0.2916,
       "winner_pts": 500000,
-      "composite_base_pts": 179958,
-      "variance": 0,
+      "composite_base_pts": 145822,
+      "variance": 13000,
       "reasoning": "model-anbefaling",
       "disc_key": "SPR",
       "disc_raw": 35.0,
       "form_score": 4.3,
       "signal_scores": {
-        "veloscore": 0.0,
+        "veloscore": 0.08,
         "odds": 0.0,
         "discipline": 0.35,
         "form": 0.1,
@@ -1650,16 +2023,16 @@
       "team": "XDA",
       "price": 5.34,
       "expected_pts": 95200,
-      "win_prob": 0.4435,
+      "win_prob": 0.4573,
       "winner_pts": 500000,
-      "composite_base_pts": 221758,
-      "variance": 0,
-      "reasoning": "model-anbefaling",
+      "composite_base_pts": 228646,
+      "variance": 53625,
+      "reasoning": "VeloScore rank 6",
       "disc_key": "SPR",
       "disc_raw": 57.1,
       "form_score": 34.3,
       "signal_scores": {
-        "veloscore": 0.0,
+        "veloscore": 0.5,
         "odds": 0.0,
         "discipline": 0.571,
         "form": 0.343,
@@ -1752,16 +2125,16 @@
       "team": "T",
       "price": 4.38,
       "expected_pts": 71500,
-      "win_prob": 0.3394,
+      "win_prob": 0.2767,
       "winner_pts": 500000,
-      "composite_base_pts": 169680,
-      "variance": 0,
+      "composite_base_pts": 138343,
+      "variance": 11610,
       "reasoning": "budget-pick",
       "disc_key": "SPR",
       "disc_raw": 61.3,
       "form_score": 10.6,
       "signal_scores": {
-        "veloscore": 0.0,
+        "veloscore": 0.12,
         "odds": 0.0,
         "discipline": 0.613,
         "form": 0.106,
