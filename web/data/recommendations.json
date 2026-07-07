@@ -1,82 +1,10 @@
 {
   "stage": 4,
   "stage_type": "hilly",
-  "generated": "2026-07-06T21:14:45.053450+00:00",
+  "generated": "2026-07-07T08:17:32.023508+00:00",
   "ml_source": "historisk styrke (0 etaper kørt)",
   "ml_gt_stages": 0,
-  "current_team": {
-    "bank_M": 0.0,
-    "rider_ids": [
-      "tadej_pogacar",
-      "isaac_del_toro",
-      "joel_nicolau",
-      "romain_gregoire",
-      "ilan_van_wilder",
-      "mathias_vacek",
-      "jonas_rickaert",
-      "alex_aranburu"
-    ],
-    "rider_names": [
-      "Tadej Pogacar",
-      "Isaac Del Toro",
-      "Joel Nicolau",
-      "Romain Gregoire",
-      "Ilan van Wilder",
-      "Mathias Vacek",
-      "Jonas Rickaert",
-      "Alex Aranburu"
-    ],
-    "matched_riders": [
-      {
-        "rider_id": "tadej_pogacar",
-        "full_name": "Tadej Pogacar",
-        "team": "UAE",
-        "price_M": 18.12
-      },
-      {
-        "rider_id": "isaac_del_toro",
-        "full_name": "Isaac Del Toro",
-        "team": "UAE",
-        "price_M": 10.4
-      },
-      {
-        "rider_id": "joel_nicolau",
-        "full_name": "Joel Nicolau",
-        "team": "CRSR",
-        "price_M": 2.4
-      },
-      {
-        "rider_id": "romain_gregoire",
-        "full_name": "Romain Gregoire",
-        "team": "GFD",
-        "price_M": 6.61
-      },
-      {
-        "rider_id": "ilan_van_wilder",
-        "full_name": "Ilan van Wilder",
-        "team": "SQ",
-        "price_M": 4.63
-      },
-      {
-        "rider_id": "mathias_vacek",
-        "full_name": "Mathias Vacek",
-        "team": "L-T",
-        "price_M": 4.03
-      },
-      {
-        "rider_id": "jonas_rickaert",
-        "full_name": "Jonas Rickaert",
-        "team": "ALP",
-        "price_M": 2.4
-      },
-      {
-        "rider_id": "alex_aranburu",
-        "full_name": "Alex Aranburu",
-        "team": "COF",
-        "price_M": 3.93
-      }
-    ]
-  },
+  "current_team": null,
   "teams": [
     {
       "label": "safe",
@@ -152,33 +80,33 @@
           "is_captain": false
         },
         {
-          "rider_id": "matteo_jorgenson",
-          "full_name": "Matteo Jorgenson",
-          "team": "VLB",
-          "price": 7.71,
-          "expected_pts": 130000,
-          "win_prob": 0.3847,
+          "rider_id": "ben_healy",
+          "full_name": "Ben Healy",
+          "team": "EF",
+          "price": 5.92,
+          "expected_pts": 90000,
+          "win_prob": 0.2787,
           "winner_pts": 479000,
-          "composite_base_pts": 184287,
-          "variance": 0,
-          "reasoning": "model-anbefaling",
+          "composite_base_pts": 133481,
+          "variance": 56498,
+          "reasoning": "VeloScore rank 9",
           "disc_key": "HLL",
-          "disc_raw": 49.7,
-          "form_score": 3.1,
+          "disc_raw": 32.6,
+          "form_score": 1.0,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.35,
             "odds": 0.0,
-            "discipline": 0.497,
-            "form": 0.09,
-            "ml": 0.449,
-            "pcs_rank": 0.695
+            "discipline": 0.326,
+            "form": 0.01,
+            "ml": 0.265,
+            "pcs_rank": 0.582
           },
           "profile_scale": 0.958,
           "sprint_class_rank": null,
-          "kom_class_rank": 14,
+          "kom_class_rank": null,
           "team_bonus_exp": 0,
-          "disc_co_raw": 89.5,
-          "placement_pred": 0.8809,
+          "disc_co_raw": 88.0,
+          "placement_pred": 0.7824,
           "holdet_raw_pred": null,
           "ml_source_used": "placement",
           "context_status": "normal",
@@ -363,117 +291,32 @@
         }
       ],
       "captain_id": "tadej_pogacar",
-      "expected_pts": 1136667,
-      "total_cost_M": 51.68,
-      "budget_left_M": 0.5,
-      "transfer_analysis": {
-        "to_sell": [
-          {
-            "rider_id": "isaac_del_toro",
-            "full_name": "Isaac Del Toro",
-            "price_M": 10.4
-          },
-          {
-            "rider_id": "romain_gregoire",
-            "full_name": "Romain Gregoire",
-            "price_M": 6.61
-          },
-          {
-            "rider_id": "ilan_van_wilder",
-            "full_name": "Ilan van Wilder",
-            "price_M": 4.63
-          },
-          {
-            "rider_id": "mathias_vacek",
-            "full_name": "Mathias Vacek",
-            "price_M": 4.03
-          },
-          {
-            "rider_id": "alex_aranburu",
-            "full_name": "Alex Aranburu",
-            "price_M": 3.93
-          },
-          {
-            "rider_id": "joel_nicolau",
-            "full_name": "Joel Nicolau",
-            "price_M": 2.4
-          },
-          {
-            "rider_id": "jonas_rickaert",
-            "full_name": "Jonas Rickaert",
-            "price_M": 2.4
-          }
-        ],
-        "to_buy": [
-          {
-            "rider_id": "remco_evenepoel",
-            "full_name": "Remco Evenepoel",
-            "price_M": 11.08
-          },
-          {
-            "rider_id": "matteo_jorgenson",
-            "full_name": "Matteo Jorgenson",
-            "price_M": 7.71
-          },
-          {
-            "rider_id": "tim_wellens",
-            "full_name": "Tim Wellens",
-            "price_M": 4.66
-          },
-          {
-            "rider_id": "sean_quinn",
-            "full_name": "Sean Quinn",
-            "price_M": 3.01
-          },
-          {
-            "rider_id": "niklas_markl",
-            "full_name": "Niklas Märkl",
-            "price_M": 2.37
-          },
-          {
-            "rider_id": "julius_van_den_berg",
-            "full_name": "Julius van den Berg",
-            "price_M": 2.37
-          },
-          {
-            "rider_id": "kelland_o'brien",
-            "full_name": "Kelland O'Brien",
-            "price_M": 2.36
-          }
-        ],
-        "n_transfers": 7,
-        "proceeds_M": 34.4,
-        "face_buy_M": 33.56,
-        "fee_M": 0.34,
-        "buy_cost_M": 33.9,
-        "net_cost_M": -0.5,
-        "balance_after_M": 0.5,
-        "affordable": true
-      },
+      "expected_pts": 1096667,
+      "total_cost_M": 49.89,
+      "budget_left_M": 0.11,
       "assessment": {
         "captain_name": "Tadej Pogacar",
         "captain_reasoning": "høj disciplinrating (HLL: 100), GC-stilling #1, trøje: leader, sprint, sprint-klass. #1",
-        "expected_pts_total": 1136667,
+        "expected_pts_total": 1096667,
         "est_etapebonus": 35000,
         "est_top15_count": 4,
-        "total_cost_M": 51.68,
-        "budget_left_M": 0.5,
-        "avg_price_M": 6.5,
+        "total_cost_M": 49.89,
+        "budget_left_M": 0.11,
+        "avg_price_M": 6.2,
         "n_premium_riders": 2,
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "UAE",
-          "VLB",
-          "RBH",
-          "JAL",
           "TPP",
-          "EF"
+          "EF",
+          "UAE",
+          "RBH",
+          "JAL"
         ],
-        "n_teams": 6,
-        "n_transfers": 7,
+        "n_teams": 5,
+        "n_transfers": 0,
         "affordable": true,
-        "balance_after_M": 0.5
+        "balance_after_M": 0.11
       }
     },
     {
@@ -585,33 +428,33 @@
           "is_captain": false
         },
         {
-          "rider_id": "ben_healy",
-          "full_name": "Ben Healy",
-          "team": "EF",
-          "price": 5.92,
-          "expected_pts": 90000,
-          "win_prob": 0.2557,
+          "rider_id": "thomas_pidcock",
+          "full_name": "Thomas Pidcock",
+          "team": "Q36",
+          "price": 8.61,
+          "expected_pts": 120800,
+          "win_prob": 0.4337,
           "winner_pts": 479000,
-          "composite_base_pts": 122459,
-          "variance": 0,
-          "reasoning": "model-anbefaling",
+          "composite_base_pts": 207746,
+          "variance": 4979,
+          "reasoning": "høj disciplinrating (HLL: 81)",
           "disc_key": "HLL",
-          "disc_raw": 32.6,
-          "form_score": 1.0,
+          "disc_raw": 81.1,
+          "form_score": 8.8,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.11,
             "odds": 0.0,
-            "discipline": 0.326,
-            "form": 0.01,
-            "ml": 0.265,
-            "pcs_rank": 0.582
+            "discipline": 0.811,
+            "form": 0.088,
+            "ml": 0.401,
+            "pcs_rank": 1.0
           },
           "profile_scale": 0.958,
-          "sprint_class_rank": null,
+          "sprint_class_rank": 31,
           "kom_class_rank": null,
           "team_bonus_exp": 0,
-          "disc_co_raw": 88.0,
-          "placement_pred": 0.7824,
+          "disc_co_raw": 91.8,
+          "placement_pred": 0.8634,
           "holdet_raw_pred": null,
           "ml_source_used": "placement",
           "context_status": "normal",
@@ -655,103 +498,103 @@
           "is_captain": false
         },
         {
-          "rider_id": "kevin_vauquelin",
-          "full_name": "Kevin Vauquelin",
-          "team": "IGD",
-          "price": 7.59,
-          "expected_pts": 70000,
-          "win_prob": 0.2341,
-          "winner_pts": 479000,
-          "composite_base_pts": 112135,
-          "variance": 0,
-          "reasoning": "model-anbefaling",
-          "disc_key": "HLL",
-          "disc_raw": 28.4,
-          "form_score": 5.5,
-          "signal_scores": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "discipline": 0.284,
-            "form": 0.055,
-            "ml": 0.12,
-            "pcs_rank": 0.555
-          },
-          "profile_scale": 0.958,
-          "sprint_class_rank": null,
-          "kom_class_rank": null,
-          "team_bonus_exp": 0,
-          "disc_co_raw": 87.8,
-          "placement_pred": 0.7332,
-          "holdet_raw_pred": null,
-          "ml_source_used": "placement",
-          "context_status": "normal",
-          "context_note": "",
-          "context_mult": 1.0,
-          "is_captain": false
-        },
-        {
-          "rider_id": "kelland_o'brien",
-          "full_name": "Kelland O'Brien",
-          "team": "JAL",
-          "price": 2.36,
-          "expected_pts": 0,
-          "win_prob": 0.0358,
-          "winner_pts": 479000,
-          "composite_base_pts": 17154,
-          "variance": 0,
-          "reasoning": "budget-pick",
-          "disc_key": "HLL",
-          "disc_raw": 0.0,
-          "form_score": 0.0,
-          "signal_scores": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "discipline": 0.0,
-            "form": 0.0,
-            "ml": 0.223,
-            "pcs_rank": null
-          },
-          "profile_scale": 0.958,
-          "sprint_class_rank": null,
-          "kom_class_rank": null,
-          "team_bonus_exp": 0,
-          "disc_co_raw": 48.9,
-          "placement_pred": 0.2979,
-          "holdet_raw_pred": null,
-          "ml_source_used": "placement",
-          "context_status": "normal",
-          "context_note": "",
-          "context_mult": 1.0,
-          "is_captain": false
-        },
-        {
-          "rider_id": "piet_allegaert",
-          "full_name": "Piet Allegaert",
+          "rider_id": "alex_kirsch",
+          "full_name": "Alex Kirsch",
           "team": "COF",
           "price": 2.37,
           "expected_pts": 0,
-          "win_prob": 0.03,
+          "win_prob": 0.0395,
           "winner_pts": 479000,
-          "composite_base_pts": 14362,
+          "composite_base_pts": 18903,
           "variance": 0,
           "reasoning": "budget-pick",
           "disc_key": "HLL",
           "disc_raw": 0.0,
-          "form_score": 0.2,
+          "form_score": 0.1,
           "signal_scores": {
             "veloscore": 0.0,
             "odds": 0.0,
             "discipline": 0.0,
-            "form": 0.002,
-            "ml": 0.183,
+            "form": 0.001,
+            "ml": 0.245,
             "pcs_rank": null
           },
           "profile_scale": 0.958,
           "sprint_class_rank": null,
           "kom_class_rank": null,
           "team_bonus_exp": 0,
-          "disc_co_raw": 42.7,
-          "placement_pred": 0.2288,
+          "disc_co_raw": 48.6,
+          "placement_pred": 0.3389,
+          "holdet_raw_pred": null,
+          "ml_source_used": "placement",
+          "context_status": "normal",
+          "context_note": "",
+          "context_mult": 1.0,
+          "is_captain": false
+        },
+        {
+          "rider_id": "tim_marsman",
+          "full_name": "Tim Marsman",
+          "team": "ALP",
+          "price": 2.37,
+          "expected_pts": 0,
+          "win_prob": 0.0309,
+          "winner_pts": 479000,
+          "composite_base_pts": 14792,
+          "variance": 0,
+          "reasoning": "budget-pick",
+          "disc_key": "HLL",
+          "disc_raw": 0.0,
+          "form_score": 0.8,
+          "signal_scores": {
+            "veloscore": 0.0,
+            "odds": 0.0,
+            "discipline": 0.0,
+            "form": 0.008,
+            "ml": 0.171,
+            "pcs_rank": null
+          },
+          "profile_scale": 0.958,
+          "sprint_class_rank": null,
+          "kom_class_rank": null,
+          "team_bonus_exp": 0,
+          "disc_co_raw": 35.8,
+          "placement_pred": 0.1956,
+          "holdet_raw_pred": null,
+          "ml_source_used": "placement",
+          "context_status": "normal",
+          "context_note": "",
+          "context_mult": 1.0,
+          "is_captain": false
+        },
+        {
+          "rider_id": "niklas_markl",
+          "full_name": "Niklas Märkl",
+          "team": "TPP",
+          "price": 2.37,
+          "expected_pts": 0,
+          "win_prob": 0.0301,
+          "winner_pts": 479000,
+          "composite_base_pts": 14427,
+          "variance": 0,
+          "reasoning": "budget-pick",
+          "disc_key": "HLL",
+          "disc_raw": 0.0,
+          "form_score": 1.5,
+          "signal_scores": {
+            "veloscore": 0.0,
+            "odds": 0.0,
+            "discipline": 0.0,
+            "form": 0.015,
+            "ml": 0.147,
+            "pcs_rank": null
+          },
+          "profile_scale": 0.958,
+          "sprint_class_rank": null,
+          "kom_class_rank": null,
+          "team_bonus_exp": 0,
+          "disc_co_raw": 46.0,
+          "placement_pred": 0.2377,
           "holdet_raw_pred": null,
           "ml_source_used": "placement",
           "context_status": "normal",
@@ -761,118 +604,34 @@
         }
       ],
       "captain_id": "remco_evenepoel",
-      "expected_pts": 1023500,
-      "total_cost_M": 52.09,
-      "budget_left_M": 0.01,
-      "transfer_analysis": {
-        "to_sell": [
-          {
-            "rider_id": "tadej_pogacar",
-            "full_name": "Tadej Pogacar",
-            "price_M": 18.12
-          },
-          {
-            "rider_id": "romain_gregoire",
-            "full_name": "Romain Gregoire",
-            "price_M": 6.61
-          },
-          {
-            "rider_id": "ilan_van_wilder",
-            "full_name": "Ilan van Wilder",
-            "price_M": 4.63
-          },
-          {
-            "rider_id": "mathias_vacek",
-            "full_name": "Mathias Vacek",
-            "price_M": 4.03
-          },
-          {
-            "rider_id": "alex_aranburu",
-            "full_name": "Alex Aranburu",
-            "price_M": 3.93
-          },
-          {
-            "rider_id": "joel_nicolau",
-            "full_name": "Joel Nicolau",
-            "price_M": 2.4
-          },
-          {
-            "rider_id": "jonas_rickaert",
-            "full_name": "Jonas Rickaert",
-            "price_M": 2.4
-          }
-        ],
-        "to_buy": [
-          {
-            "rider_id": "remco_evenepoel",
-            "full_name": "Remco Evenepoel",
-            "price_M": 11.08
-          },
-          {
-            "rider_id": "matteo_jorgenson",
-            "full_name": "Matteo Jorgenson",
-            "price_M": 7.71
-          },
-          {
-            "rider_id": "kevin_vauquelin",
-            "full_name": "Kevin Vauquelin",
-            "price_M": 7.59
-          },
-          {
-            "rider_id": "ben_healy",
-            "full_name": "Ben Healy",
-            "price_M": 5.92
-          },
-          {
-            "rider_id": "tim_wellens",
-            "full_name": "Tim Wellens",
-            "price_M": 4.66
-          },
-          {
-            "rider_id": "piet_allegaert",
-            "full_name": "Piet Allegaert",
-            "price_M": 2.37
-          },
-          {
-            "rider_id": "kelland_o'brien",
-            "full_name": "Kelland O'Brien",
-            "price_M": 2.36
-          }
-        ],
-        "n_transfers": 7,
-        "proceeds_M": 42.12,
-        "face_buy_M": 41.69,
-        "fee_M": 0.42,
-        "buy_cost_M": 42.11,
-        "net_cost_M": -0.01,
-        "balance_after_M": 0.01,
-        "affordable": true
-      },
+      "expected_pts": 984300,
+      "total_cost_M": 49.57,
+      "budget_left_M": 0.43,
       "assessment": {
         "captain_name": "Remco Evenepoel",
         "captain_reasoning": "høj disciplinrating (HLL: 93), GC-stilling #3",
-        "expected_pts_total": 1023500,
-        "est_etapebonus": 120000,
-        "est_top15_count": 6,
-        "total_cost_M": 52.09,
-        "budget_left_M": 0.01,
-        "avg_price_M": 6.5,
-        "n_premium_riders": 2,
-        "n_budget_riders": 2,
+        "expected_pts_total": 984300,
+        "est_etapebonus": 65000,
+        "est_top15_count": 5,
+        "total_cost_M": 49.57,
+        "budget_left_M": 0.43,
+        "avg_price_M": 6.2,
+        "n_premium_riders": 3,
+        "n_budget_riders": 3,
         "risk_profile": "Lav",
         "teams_represented": [
-          "COF",
+          "TPP",
           "UAE",
-          "IGD",
-          "VLB",
           "RBH",
-          "JAL",
-          "EF"
+          "ALP",
+          "COF",
+          "Q36",
+          "VLB"
         ],
         "n_teams": 7,
-        "n_transfers": 7,
+        "n_transfers": 0,
         "affordable": true,
-        "balance_after_M": 0.01
+        "balance_after_M": 0.43
       }
     },
     {
@@ -954,16 +713,16 @@
           "team": "Q36",
           "price": 8.61,
           "expected_pts": 120800,
-          "win_prob": 0.5381,
+          "win_prob": 0.4337,
           "winner_pts": 479000,
-          "composite_base_pts": 257764,
-          "variance": 0,
+          "composite_base_pts": 207746,
+          "variance": 4979,
           "reasoning": "høj disciplinrating (HLL: 81)",
           "disc_key": "HLL",
           "disc_raw": 81.1,
           "form_score": 8.8,
           "signal_scores": {
-            "veloscore": 0.0,
+            "veloscore": 0.11,
             "odds": 0.0,
             "discipline": 0.811,
             "form": 0.088,
@@ -976,41 +735,6 @@
           "team_bonus_exp": 0,
           "disc_co_raw": 91.8,
           "placement_pred": 0.8634,
-          "holdet_raw_pred": null,
-          "ml_source_used": "placement",
-          "context_status": "normal",
-          "context_note": "",
-          "context_mult": 1.0,
-          "is_captain": false
-        },
-        {
-          "rider_id": "ben_healy",
-          "full_name": "Ben Healy",
-          "team": "EF",
-          "price": 5.92,
-          "expected_pts": 90000,
-          "win_prob": 0.2557,
-          "winner_pts": 479000,
-          "composite_base_pts": 122459,
-          "variance": 0,
-          "reasoning": "model-anbefaling",
-          "disc_key": "HLL",
-          "disc_raw": 32.6,
-          "form_score": 1.0,
-          "signal_scores": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "discipline": 0.326,
-            "form": 0.01,
-            "ml": 0.265,
-            "pcs_rank": 0.582
-          },
-          "profile_scale": 0.958,
-          "sprint_class_rank": null,
-          "kom_class_rank": null,
-          "team_bonus_exp": 0,
-          "disc_co_raw": 88.0,
-          "placement_pred": 0.7824,
           "holdet_raw_pred": null,
           "ml_source_used": "placement",
           "context_status": "normal",
@@ -1054,33 +778,68 @@
           "is_captain": false
         },
         {
-          "rider_id": "robbe_dhondt",
-          "full_name": "Robbe Dhondt",
-          "team": "TPP",
-          "price": 2.38,
-          "expected_pts": 0,
-          "win_prob": 0.0483,
+          "rider_id": "sean_quinn",
+          "full_name": "Sean Quinn",
+          "team": "EF",
+          "price": 3.01,
+          "expected_pts": 6667,
+          "win_prob": 0.0552,
           "winner_pts": 479000,
-          "composite_base_pts": 23130,
+          "composite_base_pts": 26435,
           "variance": 0,
           "reasoning": "budget-pick",
           "disc_key": "HLL",
           "disc_raw": 0.0,
-          "form_score": 4.7,
+          "form_score": 0.8,
           "signal_scores": {
             "veloscore": 0.0,
             "odds": 0.0,
             "discipline": 0.0,
-            "form": 0.047,
-            "ml": 0.172,
+            "form": 0.069,
+            "ml": 0.155,
             "pcs_rank": null
           },
           "profile_scale": 0.958,
           "sprint_class_rank": null,
           "kom_class_rank": null,
+          "team_bonus_exp": 6667,
+          "disc_co_raw": 46.8,
+          "placement_pred": 0.4261,
+          "holdet_raw_pred": null,
+          "ml_source_used": "placement",
+          "context_status": "normal",
+          "context_note": "",
+          "context_mult": 1.0,
+          "is_captain": false
+        },
+        {
+          "rider_id": "nicolas_prodhomme",
+          "full_name": "Nicolas Prodhomme",
+          "team": "DAL",
+          "price": 3.0,
+          "expected_pts": 6000,
+          "win_prob": 0.0234,
+          "winner_pts": 479000,
+          "composite_base_pts": 11212,
+          "variance": 0,
+          "reasoning": "bjerg-klass. #2",
+          "disc_key": "HLL",
+          "disc_raw": 0.7,
+          "form_score": 0.7,
+          "signal_scores": {
+            "veloscore": 0.0,
+            "odds": 0.0,
+            "discipline": 0.007,
+            "form": 0.007,
+            "ml": 0.109,
+            "pcs_rank": null
+          },
+          "profile_scale": 0.958,
+          "sprint_class_rank": 44,
+          "kom_class_rank": 2,
           "team_bonus_exp": 0,
-          "disc_co_raw": 38.0,
-          "placement_pred": 0.247,
+          "disc_co_raw": 77.9,
+          "placement_pred": 0.6416,
           "holdet_raw_pred": null,
           "ml_source_used": "placement",
           "context_status": "normal",
@@ -1160,117 +919,34 @@
         }
       ],
       "captain_id": "tadej_pogacar",
-      "expected_pts": 1110800,
-      "total_cost_M": 52.13,
-      "budget_left_M": 0.05,
-      "transfer_analysis": {
-        "to_sell": [
-          {
-            "rider_id": "isaac_del_toro",
-            "full_name": "Isaac Del Toro",
-            "price_M": 10.4
-          },
-          {
-            "rider_id": "romain_gregoire",
-            "full_name": "Romain Gregoire",
-            "price_M": 6.61
-          },
-          {
-            "rider_id": "ilan_van_wilder",
-            "full_name": "Ilan van Wilder",
-            "price_M": 4.63
-          },
-          {
-            "rider_id": "mathias_vacek",
-            "full_name": "Mathias Vacek",
-            "price_M": 4.03
-          },
-          {
-            "rider_id": "alex_aranburu",
-            "full_name": "Alex Aranburu",
-            "price_M": 3.93
-          },
-          {
-            "rider_id": "joel_nicolau",
-            "full_name": "Joel Nicolau",
-            "price_M": 2.4
-          },
-          {
-            "rider_id": "jonas_rickaert",
-            "full_name": "Jonas Rickaert",
-            "price_M": 2.4
-          }
-        ],
-        "to_buy": [
-          {
-            "rider_id": "thomas_pidcock",
-            "full_name": "Thomas Pidcock",
-            "price_M": 8.61
-          },
-          {
-            "rider_id": "matteo_jorgenson",
-            "full_name": "Matteo Jorgenson",
-            "price_M": 7.71
-          },
-          {
-            "rider_id": "ben_healy",
-            "full_name": "Ben Healy",
-            "price_M": 5.92
-          },
-          {
-            "rider_id": "tim_wellens",
-            "full_name": "Tim Wellens",
-            "price_M": 4.66
-          },
-          {
-            "rider_id": "robbe_dhondt",
-            "full_name": "Robbe Dhondt",
-            "price_M": 2.38
-          },
-          {
-            "rider_id": "julius_van_den_berg",
-            "full_name": "Julius van den Berg",
-            "price_M": 2.37
-          },
-          {
-            "rider_id": "kelland_o'brien",
-            "full_name": "Kelland O'Brien",
-            "price_M": 2.36
-          }
-        ],
-        "n_transfers": 7,
-        "proceeds_M": 34.4,
-        "face_buy_M": 34.01,
-        "fee_M": 0.34,
-        "buy_cost_M": 34.35,
-        "net_cost_M": -0.05,
-        "balance_after_M": 0.05,
-        "affordable": true
-      },
+      "expected_pts": 1033467,
+      "total_cost_M": 49.84,
+      "budget_left_M": 0.16,
       "assessment": {
         "captain_name": "Tadej Pogacar",
         "captain_reasoning": "høj disciplinrating (HLL: 100), GC-stilling #1, trøje: leader, sprint, sprint-klass. #1",
-        "expected_pts_total": 1110800,
-        "est_etapebonus": 65000,
-        "est_top15_count": 5,
-        "total_cost_M": 52.13,
-        "budget_left_M": 0.05,
-        "avg_price_M": 6.5,
+        "expected_pts_total": 1033467,
+        "est_etapebonus": 35000,
+        "est_top15_count": 4,
+        "total_cost_M": 49.84,
+        "budget_left_M": 0.16,
+        "avg_price_M": 6.2,
         "n_premium_riders": 2,
-        "n_budget_riders": 3,
+        "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "UAE",
-          "VLB",
-          "JAL",
           "TPP",
+          "EF",
+          "UAE",
+          "DAL",
           "Q36",
-          "EF"
+          "VLB",
+          "JAL"
         ],
-        "n_teams": 6,
-        "n_transfers": 7,
+        "n_teams": 7,
+        "n_transfers": 0,
         "affordable": true,
-        "balance_after_M": 0.05
+        "balance_after_M": 0.16
       }
     }
   ],
@@ -1353,16 +1029,16 @@
         "team": "EF",
         "price": 5.92,
         "expected_pts": 90000,
-        "win_prob": 0.2557,
+        "win_prob": 0.2787,
         "winner_pts": 479000,
-        "composite_base_pts": 122459,
-        "variance": 0,
-        "reasoning": "model-anbefaling",
+        "composite_base_pts": 133481,
+        "variance": 56498,
+        "reasoning": "VeloScore rank 9",
         "disc_key": "HLL",
         "disc_raw": 32.6,
         "form_score": 1.0,
         "signal_scores": {
-          "veloscore": 0.0,
+          "veloscore": 0.35,
           "odds": 0.0,
           "discipline": 0.326,
           "form": 0.01,
@@ -1575,12 +1251,12 @@
       "n_budget_riders": 4,
       "risk_profile": "Lav",
       "teams_represented": [
-        "COF",
-        "UAE",
-        "RBH",
-        "JAL",
         "TPP",
-        "EF"
+        "EF",
+        "UAE",
+        "COF",
+        "RBH",
+        "JAL"
       ],
       "n_teams": 6,
       "n_transfers": 0,
@@ -1588,7 +1264,148 @@
       "balance_after_M": 0.11
     }
   },
-  "veloscore": [],
+  "veloscore": [
+    {
+      "rank": 1,
+      "rider": "Mads Pedersen",
+      "total": 1168,
+      "veloscore": 6.9,
+      "stars": 4
+    },
+    {
+      "rank": 2,
+      "rider": "Mathieu van der Poel",
+      "total": 965,
+      "veloscore": 5.7,
+      "stars": 3
+    },
+    {
+      "rank": 3,
+      "rider": "Quinn Simmons",
+      "total": 940,
+      "veloscore": 5.5,
+      "stars": 3
+    },
+    {
+      "rank": 4,
+      "rider": "Mathias Vacek",
+      "total": 869,
+      "veloscore": 5.1,
+      "stars": 3
+    },
+    {
+      "rank": 5,
+      "rider": "Magnus Cort",
+      "total": 859,
+      "veloscore": 5.1,
+      "stars": 3
+    },
+    {
+      "rank": 6,
+      "rider": "Romain Grégoire",
+      "total": 757,
+      "veloscore": 4.5,
+      "stars": 2
+    },
+    {
+      "rank": 7,
+      "rider": "Michael Matthews",
+      "total": 669,
+      "veloscore": 3.9,
+      "stars": 2
+    },
+    {
+      "rank": 8,
+      "rider": "Alex Aranburu",
+      "total": 611,
+      "veloscore": 3.6,
+      "stars": 2
+    },
+    {
+      "rank": 9,
+      "rider": "Ben Healy",
+      "total": 596,
+      "veloscore": 3.5,
+      "stars": 2
+    },
+    {
+      "rank": 10,
+      "rider": "Dorian Godon",
+      "total": 565,
+      "veloscore": 3.3,
+      "stars": 2
+    },
+    {
+      "rank": 11,
+      "rider": "Maxim van Gils",
+      "total": 561,
+      "veloscore": 3.3,
+      "stars": 1
+    },
+    {
+      "rank": 12,
+      "rider": "Luke Plapp",
+      "total": 370,
+      "veloscore": 2.2,
+      "stars": 1
+    },
+    {
+      "rank": 13,
+      "rider": "Jonas Abrahamsen",
+      "total": 369,
+      "veloscore": 2.2,
+      "stars": 1
+    },
+    {
+      "rank": 14,
+      "rider": "Filippo Ganna",
+      "total": 348,
+      "veloscore": 2.0,
+      "stars": 1
+    },
+    {
+      "rank": 15,
+      "rider": "Mauro Schmid",
+      "total": 326,
+      "veloscore": 1.9,
+      "stars": 1
+    },
+    {
+      "rank": 16,
+      "rider": "Jasper Stuyven",
+      "total": 307,
+      "veloscore": 1.8,
+      "stars": 0
+    },
+    {
+      "rank": 17,
+      "rider": "Pablo Castrillo",
+      "total": 229,
+      "veloscore": 1.3,
+      "stars": 0
+    },
+    {
+      "rank": 18,
+      "rider": "Tadej Pogačar",
+      "total": 208,
+      "veloscore": 1.2,
+      "stars": 0
+    },
+    {
+      "rank": 19,
+      "rider": "Javier Romo",
+      "total": 196,
+      "veloscore": 1.2,
+      "stars": 0
+    },
+    {
+      "rank": 20,
+      "rider": "Tom Pidcock",
+      "total": 190,
+      "veloscore": 1.1,
+      "stars": 0
+    }
+  ],
   "top_picks": [
     {
       "rider_id": "tadej_pogacar",
@@ -1766,16 +1583,16 @@
       "team": "Q36",
       "price": 8.61,
       "expected_pts": 120800,
-      "win_prob": 0.5381,
+      "win_prob": 0.4337,
       "winner_pts": 479000,
-      "composite_base_pts": 257764,
-      "variance": 0,
+      "composite_base_pts": 207746,
+      "variance": 4979,
       "reasoning": "høj disciplinrating (HLL: 81)",
       "disc_key": "HLL",
       "disc_raw": 81.1,
       "form_score": 8.8,
       "signal_scores": {
-        "veloscore": 0.0,
+        "veloscore": 0.11,
         "odds": 0.0,
         "discipline": 0.811,
         "form": 0.088,
@@ -1834,16 +1651,16 @@
       "team": "ALP",
       "price": 10.93,
       "expected_pts": 100000,
-      "win_prob": 0.578,
+      "win_prob": 0.576,
       "winner_pts": 479000,
-      "composite_base_pts": 276846,
-      "variance": 0,
-      "reasoning": "model-anbefaling",
+      "composite_base_pts": 275915,
+      "variance": 33310,
+      "reasoning": "VeloScore top-2",
       "disc_key": "HLL",
       "disc_raw": 75.6,
       "form_score": 6.5,
       "signal_scores": {
-        "veloscore": 0.0,
+        "veloscore": 0.57,
         "odds": 0.0,
         "discipline": 0.756,
         "form": 0.12,
@@ -1868,16 +1685,16 @@
       "team": "EF",
       "price": 5.92,
       "expected_pts": 90000,
-      "win_prob": 0.2557,
+      "win_prob": 0.2787,
       "winner_pts": 479000,
-      "composite_base_pts": 122459,
-      "variance": 0,
-      "reasoning": "model-anbefaling",
+      "composite_base_pts": 133481,
+      "variance": 56498,
+      "reasoning": "VeloScore rank 9",
       "disc_key": "HLL",
       "disc_raw": 32.6,
       "form_score": 1.0,
       "signal_scores": {
-        "veloscore": 0.0,
+        "veloscore": 0.35,
         "odds": 0.0,
         "discipline": 0.326,
         "form": 0.01,
