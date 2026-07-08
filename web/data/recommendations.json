@@ -1,50 +1,10 @@
 {
   "stage": 5,
   "stage_type": "sprint",
-  "generated": "2026-07-07T21:09:54.074553+00:00",
+  "generated": "2026-07-08T07:25:41.973399+00:00",
   "ml_source": "historisk styrke (0 etaper kørt)",
   "ml_gt_stages": 0,
-  "current_team": {
-    "bank_M": 37.5,
-    "rider_ids": [
-      "vlad_van_mechelen",
-      "mathias_vacek",
-      "sean_quinn",
-      "jonas_rickaert"
-    ],
-    "rider_names": [
-      "Vlad Van Mechelen",
-      "Mathias Vacek",
-      "Sean Quinn",
-      "Jonas Rickaert"
-    ],
-    "matched_riders": [
-      {
-        "rider_id": "vlad_van_mechelen",
-        "full_name": "Vlad Van Mechelen",
-        "team": "TVM",
-        "price_M": 2.99
-      },
-      {
-        "rider_id": "mathias_vacek",
-        "full_name": "Mathias Vacek",
-        "team": "L-T",
-        "price_M": 4.35
-      },
-      {
-        "rider_id": "sean_quinn",
-        "full_name": "Sean Quinn",
-        "team": "EF",
-        "price_M": 3.23
-      },
-      {
-        "rider_id": "jonas_rickaert",
-        "full_name": "Jonas Rickaert",
-        "team": "ALP",
-        "price_M": 2.36
-      }
-    ]
-  },
+  "current_team": null,
   "teams": [
     {
       "label": "safe",
@@ -333,61 +293,7 @@
       "captain_id": "jasper_philipsen",
       "expected_pts": 1421800,
       "total_cost_M": 49.64,
-      "budget_left_M": 0.37,
-      "transfer_analysis": {
-        "to_sell": [
-          {
-            "rider_id": "vlad_van_mechelen",
-            "full_name": "Vlad Van Mechelen",
-            "price_M": 2.99
-          },
-          {
-            "rider_id": "jonas_rickaert",
-            "full_name": "Jonas Rickaert",
-            "price_M": 2.36
-          }
-        ],
-        "to_buy": [
-          {
-            "rider_id": "jasper_philipsen",
-            "full_name": "Jasper Philipsen",
-            "price_M": 11.41
-          },
-          {
-            "rider_id": "mads_pedersen",
-            "full_name": "Mads Pedersen",
-            "price_M": 10.06
-          },
-          {
-            "rider_id": "biniam_girmay",
-            "full_name": "Biniam Girmay",
-            "price_M": 7.94
-          },
-          {
-            "rider_id": "anthony_turgis",
-            "full_name": "Anthony Turgis",
-            "price_M": 4.38
-          },
-          {
-            "rider_id": "mike_teunissen",
-            "full_name": "Mike Teunissen",
-            "price_M": 4.33
-          },
-          {
-            "rider_id": "jasper_stuyven",
-            "full_name": "Jasper Stuyven",
-            "price_M": 3.94
-          }
-        ],
-        "n_transfers": 6,
-        "proceeds_M": 5.35,
-        "face_buy_M": 42.06,
-        "fee_M": 0.42,
-        "buy_cost_M": 42.48,
-        "net_cost_M": 37.13,
-        "balance_after_M": 0.37,
-        "affordable": true
-      },
+      "budget_left_M": 0.36,
       "assessment": {
         "captain_name": "Jasper Philipsen",
         "captain_reasoning": "VeloScore top-1, høj disciplinrating (SPR: 100)",
@@ -395,24 +301,24 @@
         "est_etapebonus": 400000,
         "est_top15_count": 8,
         "total_cost_M": 49.64,
-        "budget_left_M": 0.37,
+        "budget_left_M": 0.36,
         "avg_price_M": 6.2,
         "n_premium_riders": 2,
         "n_budget_riders": 2,
         "risk_profile": "Lav",
         "teams_represented": [
-          "XDA",
           "EF",
-          "T",
           "ALP",
+          "L-T",
           "NCT",
           "SQ",
-          "L-T"
+          "XDA",
+          "T"
         ],
         "n_teams": 7,
-        "n_transfers": 6,
+        "n_transfers": 0,
         "affordable": true,
-        "balance_after_M": 0.37
+        "balance_after_M": 0.36
       }
     },
     {
@@ -702,81 +608,7 @@
       "captain_id": "biniam_girmay",
       "expected_pts": 1316100,
       "total_cost_M": 49.45,
-      "budget_left_M": 0.49,
-      "transfer_analysis": {
-        "to_sell": [
-          {
-            "rider_id": "mathias_vacek",
-            "full_name": "Mathias Vacek",
-            "price_M": 4.35
-          },
-          {
-            "rider_id": "sean_quinn",
-            "full_name": "Sean Quinn",
-            "price_M": 3.23
-          },
-          {
-            "rider_id": "vlad_van_mechelen",
-            "full_name": "Vlad Van Mechelen",
-            "price_M": 2.99
-          },
-          {
-            "rider_id": "jonas_rickaert",
-            "full_name": "Jonas Rickaert",
-            "price_M": 2.36
-          }
-        ],
-        "to_buy": [
-          {
-            "rider_id": "mads_pedersen",
-            "full_name": "Mads Pedersen",
-            "price_M": 10.06
-          },
-          {
-            "rider_id": "biniam_girmay",
-            "full_name": "Biniam Girmay",
-            "price_M": 7.94
-          },
-          {
-            "rider_id": "arnaud_de_lie",
-            "full_name": "Arnaud De Lie",
-            "price_M": 7.3
-          },
-          {
-            "rider_id": "max_kanter",
-            "full_name": "Max Kanter",
-            "price_M": 5.34
-          },
-          {
-            "rider_id": "pavel_bittner",
-            "full_name": "Pavel Bittner",
-            "price_M": 5.3
-          },
-          {
-            "rider_id": "torstein_træen",
-            "full_name": "Torstein Træen",
-            "price_M": 5.24
-          },
-          {
-            "rider_id": "mike_teunissen",
-            "full_name": "Mike Teunissen",
-            "price_M": 4.33
-          },
-          {
-            "rider_id": "jasper_stuyven",
-            "full_name": "Jasper Stuyven",
-            "price_M": 3.94
-          }
-        ],
-        "n_transfers": 8,
-        "proceeds_M": 12.93,
-        "face_buy_M": 49.45,
-        "fee_M": 0.49,
-        "buy_cost_M": 49.94,
-        "net_cost_M": 37.01,
-        "balance_after_M": 0.49,
-        "affordable": true
-      },
+      "budget_left_M": 0.55,
       "assessment": {
         "captain_name": "Biniam Girmay",
         "captain_reasoning": "VeloScore top-4, høj disciplinrating (SPR: 87)",
@@ -784,24 +616,24 @@
         "est_etapebonus": 400000,
         "est_top15_count": 8,
         "total_cost_M": 49.45,
-        "budget_left_M": 0.49,
+        "budget_left_M": 0.55,
         "avg_price_M": 6.2,
         "n_premium_riders": 1,
         "n_budget_riders": 1,
         "risk_profile": "Lav",
         "teams_represented": [
+          "L-T",
           "INT",
-          "XDA",
-          "TPP",
-          "UXM",
           "NCT",
           "SQ",
-          "L-T"
+          "TPP",
+          "UXM",
+          "XDA"
         ],
         "n_teams": 7,
-        "n_transfers": 8,
+        "n_transfers": 0,
         "affordable": true,
-        "balance_after_M": 0.49
+        "balance_after_M": 0.55
       }
     },
     {
@@ -1092,70 +924,6 @@
       "expected_pts": 1393100,
       "total_cost_M": 47.21,
       "budget_left_M": 2.79,
-      "transfer_analysis": {
-        "to_sell": [
-          {
-            "rider_id": "sean_quinn",
-            "full_name": "Sean Quinn",
-            "price_M": 3.23
-          },
-          {
-            "rider_id": "vlad_van_mechelen",
-            "full_name": "Vlad Van Mechelen",
-            "price_M": 2.99
-          },
-          {
-            "rider_id": "jonas_rickaert",
-            "full_name": "Jonas Rickaert",
-            "price_M": 2.36
-          }
-        ],
-        "to_buy": [
-          {
-            "rider_id": "jasper_philipsen",
-            "full_name": "Jasper Philipsen",
-            "price_M": 11.41
-          },
-          {
-            "rider_id": "arnaud_de_lie",
-            "full_name": "Arnaud De Lie",
-            "price_M": 7.3
-          },
-          {
-            "rider_id": "max_kanter",
-            "full_name": "Max Kanter",
-            "price_M": 5.34
-          },
-          {
-            "rider_id": "pavel_bittner",
-            "full_name": "Pavel Bittner",
-            "price_M": 5.3
-          },
-          {
-            "rider_id": "torstein_træen",
-            "full_name": "Torstein Træen",
-            "price_M": 5.24
-          },
-          {
-            "rider_id": "mike_teunissen",
-            "full_name": "Mike Teunissen",
-            "price_M": 4.33
-          },
-          {
-            "rider_id": "jasper_stuyven",
-            "full_name": "Jasper Stuyven",
-            "price_M": 3.94
-          }
-        ],
-        "n_transfers": 7,
-        "proceeds_M": 8.58,
-        "face_buy_M": 42.86,
-        "fee_M": 0.43,
-        "buy_cost_M": 43.29,
-        "net_cost_M": 34.71,
-        "balance_after_M": 2.79,
-        "affordable": true
-      },
       "assessment": {
         "captain_name": "Jasper Philipsen",
         "captain_reasoning": "VeloScore top-1, høj disciplinrating (SPR: 100)",
@@ -1169,16 +937,16 @@
         "n_budget_riders": 1,
         "risk_profile": "Lav",
         "teams_represented": [
-          "INT",
-          "XDA",
-          "TPP",
           "ALP",
-          "UXM",
+          "L-T",
+          "INT",
           "SQ",
-          "L-T"
+          "TPP",
+          "UXM",
+          "XDA"
         ],
         "n_teams": 7,
-        "n_transfers": 7,
+        "n_transfers": 0,
         "affordable": true,
         "balance_after_M": 2.79
       }
@@ -1485,14 +1253,14 @@
       "n_budget_riders": 1,
       "risk_profile": "Lav",
       "teams_represented": [
-        "INT",
-        "XDA",
-        "TPP",
         "ALP",
-        "UXM",
+        "L-T",
+        "INT",
         "NCT",
         "SQ",
-        "L-T"
+        "TPP",
+        "UXM",
+        "XDA"
       ],
       "n_teams": 8,
       "n_transfers": 0,

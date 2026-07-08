@@ -1,8 +1,7 @@
 {
   "_note": "Opdateres automatisk via scrape_holdet.py --my-team-id 7145433. Kan også redigeres manuelt: bank_M = din bank-saldo i millioner, riders = liste af navne.",
-  "bank_M": 37.5,
+  "bank_M": 40.5,
   "riders": [
-    "Vlad Van Mechelen",
     "Mathias Vacek",
     "Sean Quinn",
     "Jonas Rickaert"
