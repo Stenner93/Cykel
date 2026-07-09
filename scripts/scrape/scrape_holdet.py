@@ -481,35 +481,52 @@ def fetch_my_team(
         num = r.get("number")
         if start is not None and start <= now and isinstance(num, int):
             started = num
-    round_num = max(1, started - 1)
-    print(f"  [info] seneste startede runde={started} → henter sidst afsluttede runde {round_num}")
 
-    lineup_url = f"{BASE}/api/fantasyteams/{team_id}/rounds/{round_num}/lineup"
-    try:
-        payload = HTTP.get(lineup_url).json()
-    except Exception as exc:
-        print(f"  [WARN] Kunne ikke hente lineup ({lineup_url}): {exc}")
-        return None
-    items = payload.get("items", payload) if isinstance(payload, dict) else payload
-    if not isinstance(items, list) or not items:
-        print(f"  [WARN] Tom lineup for runde {round_num} (team {team_id})")
-        return None
-
-    # A rider is on the team for `round_num` if joined by then and not yet
-    # transferred out. `to` = the round the rider LEAVES; a scheduled FUTURE
-    # transfer (to > round_num) still counts as active this round. Filtering
-    # strictly on to==null wrongly dropped riders with a pending transfer.
-    print(f"  [DIAG] lineup runde {round_num}: {len(items)} items, "
-          f"to-værdier={[it.get('to') for it in items if isinstance(it, dict)]}")
-
+    # A rider still on the team has no departure timestamp. `to` is an ISO
+    # timestamp marking when the rider was transferred OUT (not a round
+    # number). A round's lineup lists every rider that was part of the team
+    # during that round, so riders sold at the round boundary linger with a
+    # `to` set — filter them out and keep only `to is None`.
     def _active(it):
-        to = it.get("to")
-        if to is None:
-            return True
+        return isinstance(it, dict) and it.get("to") is None
+
+    # The lineup endpoint serves each round (including the in-progress one).
+    # After a transfer, the just-started round reflects the NEW roster while
+    # the previous round still shows the pre-transfer team (sold riders carry
+    # a `to`). Probe the latest few rounds and pick the one whose active
+    # (to==null) roster is largest — that is the current team. Prefer the
+    # highest round number on ties so a fresh transfer is picked up promptly.
+    candidates = []
+    for n in (started, started - 1, started - 2):
+        if n >= 1 and n not in candidates:
+            candidates.append(n)
+
+    best_items = None
+    round_num = None
+    best_active = -1
+    for n in candidates:
+        url = f"{BASE}/api/fantasyteams/{team_id}/rounds/{n}/lineup"
         try:
-            return float(to) > round_num
-        except (TypeError, ValueError):
-            return False
+            payload = HTTP.get(url).json()
+        except Exception as exc:
+            print(f"  [WARN] Kunne ikke hente lineup runde {n} ({url}): {exc}")
+            continue
+        its = payload.get("items", payload) if isinstance(payload, dict) else payload
+        if not isinstance(its, list) or not its:
+            continue
+        active = sum(1 for it in its if _active(it))
+        print(f"  [DIAG] lineup runde {n}: {len(its)} items, {active} aktive (to==null)")
+        # Higher round wins ties (candidates iterate high→low, so first is best).
+        if active > best_active:
+            best_active = active
+            best_items = its
+            round_num = n
+
+    if best_items is None:
+        print(f"  [WARN] Ingen brugbar lineup fundet for team {team_id}")
+        return None
+    items = best_items
+    print(f"  [info] valgte runde {round_num} ({best_active} aktive ryttere)")
 
     rider_names: list[str] = []
     captain = None
