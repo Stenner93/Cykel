@@ -1,0 +1,28 @@
+{
+  "stage": 6,
+  "stage_type": "mountain",
+  "level": "rider",
+  "note": "Etape 6 — bjerg/GC-dag (Pogačar 10.0, Vingegaard, del Toro, Seixas, Evenepoel). Headline-felter fra screenshot.",
+  "predictions": [
+    {"rank": 1,  "rider": "Tadej Pogačar",              "total": 2199, "veloscore": 10.0, "stars": 4},
+    {"rank": 2,  "rider": "Jonas Vingegaard",           "total": 1694, "veloscore": 7.7,  "stars": 3},
+    {"rank": 3,  "rider": "Isaac del Toro",              "total": 1469, "veloscore": 6.7,  "stars": 3},
+    {"rank": 4,  "rider": "Paul Seixas",                 "total": 1333, "veloscore": 6.1,  "stars": 3},
+    {"rank": 5,  "rider": "Remco Evenepoel",             "total": 1199, "veloscore": 5.5,  "stars": 2},
+    {"rank": 6,  "rider": "Richard Carapaz",             "total": 880,  "veloscore": 4.0,  "stars": 2},
+    {"rank": 7,  "rider": "Florian Lipowitz",            "total": 842,  "veloscore": 3.8,  "stars": 2},
+    {"rank": 8,  "rider": "Juan Ayuso",                  "total": 761,  "veloscore": 3.5,  "stars": 2},
+    {"rank": 9,  "rider": "Lenny Martinez",              "total": 747,  "veloscore": 3.4,  "stars": 2},
+    {"rank": 10, "rider": "Valentin Paret-Peintre",      "total": 695,  "veloscore": 3.2,  "stars": 1},
+    {"rank": 11, "rider": "Tobias Halland Johannessen",  "total": 658,  "veloscore": 3.0,  "stars": 1},
+    {"rank": 12, "rider": "Tom Pidcock",                 "total": 585,  "veloscore": 2.7,  "stars": 1},
+    {"rank": 13, "rider": "Alex Baudin",                 "total": 367,  "veloscore": 1.7,  "stars": 1},
+    {"rank": 14, "rider": "Mattias Skjelmose",           "total": 356,  "veloscore": 1.6,  "stars": 1},
+    {"rank": 15, "rider": "Thymen Arensman",             "total": 297,  "veloscore": 1.4,  "stars": 0},
+    {"rank": 16, "rider": "Lennert Van Eetvelt",         "total": 289,  "veloscore": 1.3,  "stars": 0},
+    {"rank": 17, "rider": "Ben Healy",                   "total": 252,  "veloscore": 1.1,  "stars": 0},
+    {"rank": 18, "rider": "Sergio Higuita",              "total": 201,  "veloscore": 0.9,  "stars": 0},
+    {"rank": 19, "rider": "Egan Bernal",                 "total": 185,  "veloscore": 0.8,  "stars": 0},
+    {"rank": 20, "rider": "Michael Storer",              "total": 147,  "veloscore": 0.7,  "stars": 0}
+  ]
+}
