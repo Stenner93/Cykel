@@ -495,12 +495,27 @@ def fetch_my_team(
         print(f"  [WARN] Tom lineup for runde {round_num} (team {team_id})")
         return None
 
-    # Active riders have to==null (not transferred out); captain has role==captain.
+    # A rider is on the team for `round_num` if joined by then and not yet
+    # transferred out. `to` = the round the rider LEAVES; a scheduled FUTURE
+    # transfer (to > round_num) still counts as active this round. Filtering
+    # strictly on to==null wrongly dropped riders with a pending transfer.
+    print(f"  [DIAG] lineup runde {round_num}: {len(items)} items, "
+          f"to-værdier={[it.get('to') for it in items if isinstance(it, dict)]}")
+
+    def _active(it):
+        to = it.get("to")
+        if to is None:
+            return True
+        try:
+            return float(to) > round_num
+        except (TypeError, ValueError):
+            return False
+
     rider_names: list[str] = []
     captain = None
     spent_kr = 0.0
     for it in items:
-        if not isinstance(it, dict) or it.get("to") is not None:
+        if not isinstance(it, dict) or not _active(it):
             continue
         pid = it.get("playerId")
         if pid is None and isinstance(it.get("player"), dict):
