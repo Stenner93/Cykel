@@ -476,9 +476,12 @@ def fetch_my_team(
 
     now = datetime.now(timezone.utc)
     started = 1
+    end_by_num: dict[int, "datetime"] = {}
     for r in rounds:
         start = _parse_dt(r.get("start") or r.get("startDate") or r.get("from"))
         num = r.get("number")
+        if isinstance(num, int):
+            end_by_num[num] = _parse_dt(r.get("end") or r.get("endDate") or r.get("to"))
         if start is not None and start <= now and isinstance(num, int):
             started = num
 
@@ -526,6 +529,23 @@ def fetch_my_team(
         print(f"  [WARN] Ingen brugbar lineup fundet for team {team_id}")
         return None
     items = best_items
+
+    # Holdet only serves a round's lineup once it LOCKS (the in-progress round
+    # 400s with "Invalid round number"). During an open transfer window the
+    # newest available round is therefore the PREVIOUS one, and any rider sold
+    # since it ended carries a `to` timestamp AFTER that round's end. When that
+    # happens the snapshot predates the user's transfers (bought riders are
+    # invisible until the round locks), so it is incomplete — return None to
+    # keep the last known team rather than overwrite it with a partial roster.
+    chosen_end = end_by_num.get(round_num)
+    if chosen_end is not None:
+        for it in items:
+            to = _parse_dt(it.get("to")) if isinstance(it, dict) else None
+            if to is not None and to > chosen_end:
+                print(f"  [info] runde {round_num} er forældet (transfer efter "
+                      f"rundeafslutning) — beholder sidst kendte hold indtil "
+                      f"aktuel runde låser")
+                return None
     print(f"  [info] valgte runde {round_num} ({best_active} aktive ryttere)")
 
     rider_names: list[str] = []
