@@ -1,0 +1,28 @@
+{
+  "stage": 7,
+  "stage_type": "sprint",
+  "level": "rider",
+  "note": "Etape 7 (10. juli 2026) — ren sprint-etape (Merlier, Kooij, Philipsen, Girmay, Kanter). 15 kilder, 25 ryttere. Headline-felter fra screenshot.",
+  "predictions": [
+    {"rank": 1,  "rider": "Tim Merlier",          "total": 1397, "veloscore": 9.3, "stars": 4},
+    {"rank": 2,  "rider": "Olav Kooij",           "total": 1350, "veloscore": 9.0, "stars": 4},
+    {"rank": 3,  "rider": "Jasper Philipsen",     "total": 1189, "veloscore": 7.9, "stars": 3},
+    {"rank": 4,  "rider": "Biniam Girmay",        "total": 1031, "veloscore": 6.9, "stars": 3},
+    {"rank": 5,  "rider": "Max Kanter",           "total": 1005, "veloscore": 6.7, "stars": 3},
+    {"rank": 6,  "rider": "Søren Wærenskjold",    "total": 673,  "veloscore": 4.5, "stars": 2},
+    {"rank": 7,  "rider": "Mads Pedersen",        "total": 666,  "veloscore": 4.4, "stars": 2},
+    {"rank": 8,  "rider": "Milan Fretin",         "total": 617,  "veloscore": 4.1, "stars": 2},
+    {"rank": 9,  "rider": "Pavel Bittner",        "total": 578,  "veloscore": 3.9, "stars": 2},
+    {"rank": 10, "rider": "Pascal Ackermann",     "total": 423,  "veloscore": 2.8, "stars": 1},
+    {"rank": 11, "rider": "Phil Bauhaus",         "total": 354,  "veloscore": 2.4, "stars": 1},
+    {"rank": 12, "rider": "Anthony Turgis",       "total": 231,  "veloscore": 1.5, "stars": 1},
+    {"rank": 13, "rider": "Huub Artz",            "total": 222,  "veloscore": 1.5, "stars": 1},
+    {"rank": 14, "rider": "Fernando Gaviria",     "total": 221,  "veloscore": 1.5, "stars": 1},
+    {"rank": 15, "rider": "Dorian Godon",         "total": 181,  "veloscore": 1.2, "stars": 0},
+    {"rank": 16, "rider": "Rick Pluimers",        "total": 144,  "veloscore": 1.0, "stars": 0},
+    {"rank": 17, "rider": "Jenno Berckmoes",      "total": 82,   "veloscore": 0.5, "stars": 0},
+    {"rank": 18, "rider": "Clément Russo",        "total": 59,   "veloscore": 0.4, "stars": 0},
+    {"rank": 19, "rider": "Matteo Trentin",       "total": 53,   "veloscore": 0.4, "stars": 0},
+    {"rank": 20, "rider": "Fred Wright",          "total": 39,   "veloscore": 0.3, "stars": 0}
+  ]
+}
