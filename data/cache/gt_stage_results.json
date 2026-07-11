@@ -2,5 +2,7262 @@
  "race": "tdf",
  "race_slug": "tour-de-france",
  "year": 2026,
- "stages": {}
+ "stages": {
+  "1": [
+   {
+    "rider_slug": "jonas-vingegaard",
+    "position": 1,
+    "dnf": false
+   },
+   {
+    "rider_slug": "filippo-ganna",
+    "position": 2,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tadej-pogacar",
+    "position": 3,
+    "dnf": false
+   },
+   {
+    "rider_slug": "juan-ayuso-pesquera",
+    "position": 4,
+    "dnf": false
+   },
+   {
+    "rider_slug": "remco-evenepoel",
+    "position": 5,
+    "dnf": false
+   },
+   {
+    "rider_slug": "isaac-del-toro",
+    "position": 6,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-piganzoli",
+    "position": 7,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-lipowitz",
+    "position": 8,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-foss",
+    "position": 9,
+    "dnf": false
+   },
+   {
+    "rider_slug": "paul-seixas",
+    "position": 10,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathieu-van-der-poel",
+    "position": 11,
+    "dnf": false
+   },
+   {
+    "rider_slug": "romain-gregoire",
+    "position": 12,
+    "dnf": false
+   },
+   {
+    "rider_slug": "antonio-tiberi",
+    "position": 13,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matthew-riccitello",
+    "position": 14,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lenny-martinez",
+    "position": 15,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-matthews",
+    "position": 16,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-baudin",
+    "position": 17,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-pidcock",
+    "position": 18,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ilan-van-wilder",
+    "position": 19,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-halland-johannessen",
+    "position": 20,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thymen-arensman",
+    "position": 21,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jordan-jegat",
+    "position": 22,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathias-vacek",
+    "position": 23,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-molenaar",
+    "position": 24,
+    "dnf": false
+   },
+   {
+    "rider_slug": "yannis-voisard",
+    "position": 25,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kevin-vauquelin",
+    "position": 26,
+    "dnf": false
+   },
+   {
+    "rider_slug": "george-bennett",
+    "position": 27,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ion-izagirre",
+    "position": 28,
+    "dnf": false
+   },
+   {
+    "rider_slug": "raul-garcia-pierna",
+    "position": 29,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julian-alaphilippe",
+    "position": 30,
+    "dnf": false
+   },
+   {
+    "rider_slug": "torstein-traeen",
+    "position": 31,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-steinhauser",
+    "position": 32,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattias-skjelmose-jensen",
+    "position": 33,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lennert-van-eetvelt",
+    "position": 34,
+    "dnf": false
+   },
+   {
+    "rider_slug": "richard-carapaz",
+    "position": 35,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jose-felix-parra",
+    "position": 36,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pablo-castrillo-zapater",
+    "position": 37,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jefferson-cepeda-hernandez",
+    "position": 38,
+    "dnf": false
+   },
+   {
+    "rider_slug": "abel-balderstone-roumens",
+    "position": 39,
+    "dnf": false
+   },
+   {
+    "rider_slug": "cian-uijtdebroeks",
+    "position": 40,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robbe-dhondt",
+    "position": 41,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-plapp",
+    "position": 42,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sepp-kuss",
+    "position": 43,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aurelien-paret-peintre",
+    "position": 44,
+    "dnf": false
+   },
+   {
+    "rider_slug": "derek-gee",
+    "position": 45,
+    "dnf": false
+   },
+   {
+    "rider_slug": "maxim-van-gils",
+    "position": 46,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dylan-van-baarle",
+    "position": 47,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathis-le-berre",
+    "position": 48,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sean-quinn",
+    "position": 49,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dorian-godon",
+    "position": 50,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenno-berckmoes",
+    "position": 51,
+    "dnf": false
+   },
+   {
+    "rider_slug": "emiel-verstrynge",
+    "position": 52,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joshua-tarling",
+    "position": 53,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sergio-higuita",
+    "position": 54,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jai-hindley",
+    "position": 55,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marc-hirschi",
+    "position": 56,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brandon-mcnulty",
+    "position": 57,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-braz-afonso",
+    "position": 58,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-jorgenson",
+    "position": 59,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frank-van-den-broek",
+    "position": 60,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michel-hessmann",
+    "position": 61,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nelson-oliveira",
+    "position": 62,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matheo-vercher",
+    "position": 63,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-breuillard",
+    "position": 64,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-kirsch",
+    "position": 65,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ramses-debruyne",
+    "position": 66,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinten-hermans",
+    "position": 67,
+    "dnf": false
+   },
+   {
+    "rider_slug": "harold-tejada",
+    "position": 68,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-stuyven",
+    "position": 69,
+    "dnf": false
+   },
+   {
+    "rider_slug": "valentin-paret-peintre",
+    "position": 70,
+    "dnf": false
+   },
+   {
+    "rider_slug": "javier-romo",
+    "position": 71,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-grossschartner",
+    "position": 72,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michal-kwiatkowski",
+    "position": 73,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-wellens",
+    "position": 74,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frits-biesterbos",
+    "position": 75,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pavel-bittner",
+    "position": 76,
+    "dnf": false
+   },
+   {
+    "rider_slug": "warren-barguil",
+    "position": 77,
+    "dnf": false
+   },
+   {
+    "rider_slug": "john-degenkolb",
+    "position": 78,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julius-van-den-berg",
+    "position": 79,
+    "dnf": false
+   },
+   {
+    "rider_slug": "egan-bernal",
+    "position": 80,
+    "dnf": false
+   },
+   {
+    "rider_slug": "biniam-girmay",
+    "position": 81,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-marsman",
+    "position": 82,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-kanter",
+    "position": 83,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-healy",
+    "position": 84,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kasper-asgreen",
+    "position": 85,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damiano-caruso",
+    "position": 86,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthon-charmig",
+    "position": 87,
+    "dnf": false
+   },
+   {
+    "rider_slug": "vlad-van-mechelen",
+    "position": 88,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-frigo",
+    "position": 89,
+    "dnf": false
+   },
+   {
+    "rider_slug": "krists-neilands",
+    "position": 90,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-van-asbroeck",
+    "position": 91,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lewis-askey",
+    "position": 92,
+    "dnf": false
+   },
+   {
+    "rider_slug": "benjamin-thomas-2",
+    "position": 93,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-russo",
+    "position": 94,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lorenzo-germani",
+    "position": 95,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ewen-costiou",
+    "position": 96,
+    "dnf": false
+   },
+   {
+    "rider_slug": "niklas-markl",
+    "position": 97,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quentin-pacher",
+    "position": 98,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tiesj-benoot",
+    "position": 99,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damien-howson",
+    "position": 100,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alfred-wright",
+    "position": 101,
+    "dnf": false
+   },
+   {
+    "rider_slug": "einer-rubio",
+    "position": 102,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-storer",
+    "position": 103,
+    "dnf": false
+   },
+   {
+    "rider_slug": "louis-vervaeke",
+    "position": 104,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-vermeersch",
+    "position": 105,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bruno-armirail",
+    "position": 106,
+    "dnf": false
+   },
+   {
+    "rider_slug": "victor-campenaerts",
+    "position": 107,
+    "dnf": false
+   },
+   {
+    "rider_slug": "huub-artz",
+    "position": 108,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xandro-meurisse",
+    "position": 109,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xabier-mikel-azparren-irurzun",
+    "position": 110,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-berthet",
+    "position": 111,
+    "dnf": false
+   },
+   {
+    "rider_slug": "guillaume-martin",
+    "position": 112,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jake-stewart",
+    "position": 113,
+    "dnf": false
+   },
+   {
+    "rider_slug": "stefano-oldani",
+    "position": 114,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sebastian-berwick",
+    "position": 115,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alexandre-delettre",
+    "position": 116,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-walker",
+    "position": 117,
+    "dnf": false
+   },
+   {
+    "rider_slug": "rick-pluimers",
+    "position": 118,
+    "dnf": false
+   },
+   {
+    "rider_slug": "arvid-de-kleijn",
+    "position": 119,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-halland-johannessen",
+    "position": 120,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-aranburu",
+    "position": 121,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-abrahamsen",
+    "position": 122,
+    "dnf": false
+   },
+   {
+    "rider_slug": "magnus-cort-nielsen",
+    "position": 123,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matis-louvel",
+    "position": 124,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matej-mohoric",
+    "position": 125,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edward-planckaert",
+    "position": 126,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-skaarseth",
+    "position": 127,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-prodhomme",
+    "position": 128,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthony-turgis",
+    "position": 129,
+    "dnf": false
+   },
+   {
+    "rider_slug": "fernando-gaviria",
+    "position": 130,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattia-cattaneo",
+    "position": 131,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jan-tratnik",
+    "position": 132,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-zimmermann",
+    "position": 133,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lars-craps",
+    "position": 134,
+    "dnf": false
+   },
+   {
+    "rider_slug": "liam-slock",
+    "position": 135,
+    "dnf": false
+   },
+   {
+    "rider_slug": "baptiste-veistroffer",
+    "position": 136,
+    "dnf": false
+   },
+   {
+    "rider_slug": "arnaud-de-lie",
+    "position": 137,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenthe-biermans",
+    "position": 138,
+    "dnf": false
+   },
+   {
+    "rider_slug": "hugo-page",
+    "position": 139,
+    "dnf": false
+   },
+   {
+    "rider_slug": "olav-kooij",
+    "position": 140,
+    "dnf": false
+   },
+   {
+    "rider_slug": "daan-hoole",
+    "position": 141,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jakub-otruba",
+    "position": 142,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robert-stannard",
+    "position": 143,
+    "dnf": false
+   },
+   {
+    "rider_slug": "soren-waerenskjold",
+    "position": 144,
+    "dnf": false
+   },
+   {
+    "rider_slug": "toms-skujins",
+    "position": 145,
+    "dnf": false
+   },
+   {
+    "rider_slug": "chris-harper",
+    "position": 146,
+    "dnf": false
+   },
+   {
+    "rider_slug": "carlos-verona",
+    "position": 147,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mads-pedersen",
+    "position": 148,
+    "dnf": false
+   },
+   {
+    "rider_slug": "per-strand-hagenes",
+    "position": 149,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edoardo-affini",
+    "position": 150,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinn-simmons",
+    "position": 151,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-eenkhoorn",
+    "position": 152,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nils-politt",
+    "position": 153,
+    "dnf": false
+   },
+   {
+    "rider_slug": "adam-yates",
+    "position": 154,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brent-van-moer",
+    "position": 155,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joel-nicolau",
+    "position": 156,
+    "dnf": false
+   },
+   {
+    "rider_slug": "cees-bol",
+    "position": 157,
+    "dnf": false
+   },
+   {
+    "rider_slug": "milan-fretin",
+    "position": 158,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-o-connor",
+    "position": 159,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kelland-brien",
+    "position": 160,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-engelhardt",
+    "position": 161,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joris-delbove",
+    "position": 162,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mauro-schmid",
+    "position": 163,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kamil-gradek",
+    "position": 164,
+    "dnf": false
+   },
+   {
+    "rider_slug": "phil-bauhaus",
+    "position": 165,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aaron-gate",
+    "position": 166,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mike-teunissen",
+    "position": 167,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-ballerini",
+    "position": 168,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bert-van-lerberghe",
+    "position": 169,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-merlier",
+    "position": 170,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-ackermann",
+    "position": 171,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-durbridge",
+    "position": 172,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thibault-guernalec",
+    "position": 173,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-vinokurov",
+    "position": 174,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-trentin",
+    "position": 175,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-haller",
+    "position": 176,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-philipsen",
+    "position": 177,
+    "dnf": false
+   },
+   {
+    "rider_slug": "silvan-dillier",
+    "position": 178,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-rickaert",
+    "position": 179,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-valgren-andersen",
+    "position": 180,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nico-denz",
+    "position": 181,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-van-dijke",
+    "position": 182,
+    "dnf": false
+   },
+   {
+    "rider_slug": "piet-allegaert",
+    "position": 183,
+    "dnf": false
+   },
+   {
+    "rider_slug": "simone-velasco",
+    "position": 184,
+    "dnf": false
+   }
+  ],
+  "2": [
+   {
+    "rider_slug": "isaac-del-toro",
+    "position": 1,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tadej-pogacar",
+    "position": 2,
+    "dnf": false
+   },
+   {
+    "rider_slug": "remco-evenepoel",
+    "position": 3,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-vingegaard",
+    "position": 4,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattias-skjelmose-jensen",
+    "position": 5,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-halland-johannessen",
+    "position": 6,
+    "dnf": false
+   },
+   {
+    "rider_slug": "romain-gregoire",
+    "position": 7,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lenny-martinez",
+    "position": 8,
+    "dnf": false
+   },
+   {
+    "rider_slug": "paul-seixas",
+    "position": 9,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-pidcock",
+    "position": 10,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lennert-van-eetvelt",
+    "position": 11,
+    "dnf": false
+   },
+   {
+    "rider_slug": "juan-ayuso-pesquera",
+    "position": 12,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ilan-van-wilder",
+    "position": 13,
+    "dnf": false
+   },
+   {
+    "rider_slug": "richard-carapaz",
+    "position": 14,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-baudin",
+    "position": 15,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-lipowitz",
+    "position": 16,
+    "dnf": false
+   },
+   {
+    "rider_slug": "cian-uijtdebroeks",
+    "position": 17,
+    "dnf": false
+   },
+   {
+    "rider_slug": "adam-yates",
+    "position": 18,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sergio-higuita",
+    "position": 19,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-foss",
+    "position": 20,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thymen-arensman",
+    "position": 21,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathieu-van-der-poel",
+    "position": 22,
+    "dnf": false
+   },
+   {
+    "rider_slug": "egan-bernal",
+    "position": 23,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-aranburu",
+    "position": 24,
+    "dnf": false
+   },
+   {
+    "rider_slug": "harold-tejada",
+    "position": 25,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jose-felix-parra",
+    "position": 26,
+    "dnf": false
+   },
+   {
+    "rider_slug": "yannis-voisard",
+    "position": 27,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-piganzoli",
+    "position": 28,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jordan-jegat",
+    "position": 29,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ion-izagirre",
+    "position": 30,
+    "dnf": false
+   },
+   {
+    "rider_slug": "javier-romo",
+    "position": 31,
+    "dnf": false
+   },
+   {
+    "rider_slug": "abel-balderstone-roumens",
+    "position": 32,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joris-delbove",
+    "position": 33,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sean-quinn",
+    "position": 34,
+    "dnf": false
+   },
+   {
+    "rider_slug": "torstein-traeen",
+    "position": 35,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jai-hindley",
+    "position": 36,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tiesj-benoot",
+    "position": 37,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathias-vacek",
+    "position": 38,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brandon-mcnulty",
+    "position": 39,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-o-connor",
+    "position": 40,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matthew-riccitello",
+    "position": 41,
+    "dnf": false
+   },
+   {
+    "rider_slug": "guillaume-martin",
+    "position": 42,
+    "dnf": false
+   },
+   {
+    "rider_slug": "george-bennett",
+    "position": 43,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-plapp",
+    "position": 44,
+    "dnf": false
+   },
+   {
+    "rider_slug": "derek-gee",
+    "position": 45,
+    "dnf": false
+   },
+   {
+    "rider_slug": "antonio-tiberi",
+    "position": 46,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinten-hermans",
+    "position": 47,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-jorgenson",
+    "position": 48,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mauro-schmid",
+    "position": 49,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bruno-armirail",
+    "position": 50,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kevin-vauquelin",
+    "position": 51,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sepp-kuss",
+    "position": 52,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-halland-johannessen",
+    "position": 53,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-braz-afonso",
+    "position": 54,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-skaarseth",
+    "position": 55,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-eenkhoorn",
+    "position": 56,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-steinhauser",
+    "position": 57,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-zimmermann",
+    "position": 58,
+    "dnf": false
+   },
+   {
+    "rider_slug": "rick-pluimers",
+    "position": 59,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robbe-dhondt",
+    "position": 60,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sebastian-berwick",
+    "position": 61,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-prodhomme",
+    "position": 62,
+    "dnf": false
+   },
+   {
+    "rider_slug": "louis-vervaeke",
+    "position": 63,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marc-hirschi",
+    "position": 64,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lars-craps",
+    "position": 65,
+    "dnf": false
+   },
+   {
+    "rider_slug": "emiel-verstrynge",
+    "position": 66,
+    "dnf": false
+   },
+   {
+    "rider_slug": "chris-harper",
+    "position": 67,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ramses-debruyne",
+    "position": 68,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quentin-pacher",
+    "position": 69,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joel-nicolau",
+    "position": 70,
+    "dnf": false
+   },
+   {
+    "rider_slug": "maxim-van-gils",
+    "position": 71,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xandro-meurisse",
+    "position": 72,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damiano-caruso",
+    "position": 73,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thibault-guernalec",
+    "position": 74,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-frigo",
+    "position": 75,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robert-stannard",
+    "position": 76,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nelson-oliveira",
+    "position": 77,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lorenzo-germani",
+    "position": 78,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ewen-costiou",
+    "position": 79,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alexandre-delettre",
+    "position": 80,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matheo-vercher",
+    "position": 81,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-breuillard",
+    "position": 82,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattia-cattaneo",
+    "position": 83,
+    "dnf": false
+   },
+   {
+    "rider_slug": "benjamin-thomas-2",
+    "position": 84,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joshua-tarling",
+    "position": 85,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michal-kwiatkowski",
+    "position": 86,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mike-teunissen",
+    "position": 87,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-durbridge",
+    "position": 88,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dylan-van-baarle",
+    "position": 89,
+    "dnf": false
+   },
+   {
+    "rider_slug": "raul-garcia-pierna",
+    "position": 90,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julian-alaphilippe",
+    "position": 91,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-matthews",
+    "position": 92,
+    "dnf": false
+   },
+   {
+    "rider_slug": "valentin-paret-peintre",
+    "position": 93,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-russo",
+    "position": 94,
+    "dnf": false
+   },
+   {
+    "rider_slug": "niklas-markl",
+    "position": 95,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aurelien-paret-peintre",
+    "position": 96,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aaron-gate",
+    "position": 97,
+    "dnf": false
+   },
+   {
+    "rider_slug": "victor-campenaerts",
+    "position": 98,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-wellens",
+    "position": 99,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-grossschartner",
+    "position": 100,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathis-le-berre",
+    "position": 101,
+    "dnf": false
+   },
+   {
+    "rider_slug": "carlos-verona",
+    "position": 102,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-rickaert",
+    "position": 103,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kasper-asgreen",
+    "position": 104,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-walker",
+    "position": 105,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-valgren-andersen",
+    "position": 106,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-healy",
+    "position": 107,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michel-hessmann",
+    "position": 108,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenno-berckmoes",
+    "position": 109,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lewis-askey",
+    "position": 110,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edward-planckaert",
+    "position": 111,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-engelhardt",
+    "position": 112,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nils-politt",
+    "position": 113,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-abrahamsen",
+    "position": 114,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-van-asbroeck",
+    "position": 115,
+    "dnf": false
+   },
+   {
+    "rider_slug": "silvan-dillier",
+    "position": 116,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-vinokurov",
+    "position": 117,
+    "dnf": false
+   },
+   {
+    "rider_slug": "hugo-page",
+    "position": 118,
+    "dnf": false
+   },
+   {
+    "rider_slug": "einer-rubio",
+    "position": 119,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nico-denz",
+    "position": 120,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dorian-godon",
+    "position": 121,
+    "dnf": false
+   },
+   {
+    "rider_slug": "warren-barguil",
+    "position": 122,
+    "dnf": false
+   },
+   {
+    "rider_slug": "john-degenkolb",
+    "position": 123,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xabier-mikel-azparren-irurzun",
+    "position": 124,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damien-howson",
+    "position": 125,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jefferson-cepeda-hernandez",
+    "position": 126,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pablo-castrillo-zapater",
+    "position": 127,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-marsman",
+    "position": 128,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthon-charmig",
+    "position": 129,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthony-turgis",
+    "position": 130,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matis-louvel",
+    "position": 131,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-philipsen",
+    "position": 132,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-stuyven",
+    "position": 133,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brent-van-moer",
+    "position": 134,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-vermeersch",
+    "position": 135,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-van-dijke",
+    "position": 136,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frits-biesterbos",
+    "position": 137,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-storer",
+    "position": 138,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pavel-bittner",
+    "position": 139,
+    "dnf": false
+   },
+   {
+    "rider_slug": "stefano-oldani",
+    "position": 140,
+    "dnf": false
+   },
+   {
+    "rider_slug": "fernando-gaviria",
+    "position": 141,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-kanter",
+    "position": 142,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenthe-biermans",
+    "position": 143,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jakub-otruba",
+    "position": 144,
+    "dnf": false
+   },
+   {
+    "rider_slug": "toms-skujins",
+    "position": 145,
+    "dnf": false
+   },
+   {
+    "rider_slug": "krists-neilands",
+    "position": 146,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-merlier",
+    "position": 147,
+    "dnf": false
+   },
+   {
+    "rider_slug": "daan-hoole",
+    "position": 148,
+    "dnf": false
+   },
+   {
+    "rider_slug": "milan-fretin",
+    "position": 149,
+    "dnf": false
+   },
+   {
+    "rider_slug": "magnus-cort-nielsen",
+    "position": 150,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matej-mohoric",
+    "position": 151,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jan-tratnik",
+    "position": 152,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinn-simmons",
+    "position": 153,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-kirsch",
+    "position": 154,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jake-stewart",
+    "position": 155,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mads-pedersen",
+    "position": 156,
+    "dnf": false
+   },
+   {
+    "rider_slug": "biniam-girmay",
+    "position": 157,
+    "dnf": false
+   },
+   {
+    "rider_slug": "arvid-de-kleijn",
+    "position": 158,
+    "dnf": false
+   },
+   {
+    "rider_slug": "phil-bauhaus",
+    "position": 159,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julius-van-den-berg",
+    "position": 160,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frank-van-den-broek",
+    "position": 161,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-ackermann",
+    "position": 162,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kamil-gradek",
+    "position": 163,
+    "dnf": false
+   },
+   {
+    "rider_slug": "simone-velasco",
+    "position": 164,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-molenaar",
+    "position": 165,
+    "dnf": false
+   },
+   {
+    "rider_slug": "piet-allegaert",
+    "position": 166,
+    "dnf": false
+   },
+   {
+    "rider_slug": "vlad-van-mechelen",
+    "position": 167,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alfred-wright",
+    "position": 168,
+    "dnf": false
+   },
+   {
+    "rider_slug": "filippo-ganna",
+    "position": 169,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bert-van-lerberghe",
+    "position": 170,
+    "dnf": false
+   },
+   {
+    "rider_slug": "per-strand-hagenes",
+    "position": 171,
+    "dnf": false
+   },
+   {
+    "rider_slug": "soren-waerenskjold",
+    "position": 172,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-trentin",
+    "position": 173,
+    "dnf": false
+   },
+   {
+    "rider_slug": "huub-artz",
+    "position": 174,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-ballerini",
+    "position": 175,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-haller",
+    "position": 176,
+    "dnf": false
+   },
+   {
+    "rider_slug": "liam-slock",
+    "position": 177,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edoardo-affini",
+    "position": 178,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kelland-brien",
+    "position": 179,
+    "dnf": false
+   },
+   {
+    "rider_slug": "olav-kooij",
+    "position": 180,
+    "dnf": false
+   },
+   {
+    "rider_slug": "cees-bol",
+    "position": 181,
+    "dnf": false
+   },
+   {
+    "rider_slug": "baptiste-veistroffer",
+    "position": 182,
+    "dnf": false
+   },
+   {
+    "rider_slug": "arnaud-de-lie",
+    "position": 183,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-berthet",
+    "position": 999,
+    "dnf": true
+   }
+  ],
+  "3": [
+   {
+    "rider_slug": "tadej-pogacar",
+    "position": 1,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-vingegaard",
+    "position": 2,
+    "dnf": false
+   },
+   {
+    "rider_slug": "richard-carapaz",
+    "position": 3,
+    "dnf": false
+   },
+   {
+    "rider_slug": "paul-seixas",
+    "position": 4,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-halland-johannessen",
+    "position": 5,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lennert-van-eetvelt",
+    "position": 6,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-lipowitz",
+    "position": 7,
+    "dnf": false
+   },
+   {
+    "rider_slug": "remco-evenepoel",
+    "position": 8,
+    "dnf": false
+   },
+   {
+    "rider_slug": "isaac-del-toro",
+    "position": 9,
+    "dnf": false
+   },
+   {
+    "rider_slug": "juan-ayuso-pesquera",
+    "position": 10,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattias-skjelmose-jensen",
+    "position": 11,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ilan-van-wilder",
+    "position": 12,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lenny-martinez",
+    "position": 13,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jordan-jegat",
+    "position": 14,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sergio-higuita",
+    "position": 15,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-pidcock",
+    "position": 16,
+    "dnf": false
+   },
+   {
+    "rider_slug": "egan-bernal",
+    "position": 17,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tiesj-benoot",
+    "position": 18,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thymen-arensman",
+    "position": 19,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-piganzoli",
+    "position": 20,
+    "dnf": false
+   },
+   {
+    "rider_slug": "antonio-tiberi",
+    "position": 21,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ramses-debruyne",
+    "position": 22,
+    "dnf": false
+   },
+   {
+    "rider_slug": "adam-yates",
+    "position": 23,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sepp-kuss",
+    "position": 24,
+    "dnf": false
+   },
+   {
+    "rider_slug": "harold-tejada",
+    "position": 25,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pablo-castrillo-zapater",
+    "position": 26,
+    "dnf": false
+   },
+   {
+    "rider_slug": "cian-uijtdebroeks",
+    "position": 27,
+    "dnf": false
+   },
+   {
+    "rider_slug": "guillaume-martin",
+    "position": 28,
+    "dnf": false
+   },
+   {
+    "rider_slug": "yannis-voisard",
+    "position": 29,
+    "dnf": false
+   },
+   {
+    "rider_slug": "torstein-traeen",
+    "position": 30,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jai-hindley",
+    "position": 31,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sean-quinn",
+    "position": 32,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jose-felix-parra",
+    "position": 33,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aurelien-paret-peintre",
+    "position": 34,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brandon-mcnulty",
+    "position": 35,
+    "dnf": false
+   },
+   {
+    "rider_slug": "maxim-van-gils",
+    "position": 36,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-prodhomme",
+    "position": 37,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathias-vacek",
+    "position": 38,
+    "dnf": false
+   },
+   {
+    "rider_slug": "chris-harper",
+    "position": 39,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-jorgenson",
+    "position": 40,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinn-simmons",
+    "position": 41,
+    "dnf": false
+   },
+   {
+    "rider_slug": "valentin-paret-peintre",
+    "position": 42,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-breuillard",
+    "position": 43,
+    "dnf": false
+   },
+   {
+    "rider_slug": "carlos-verona",
+    "position": 44,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-skaarseth",
+    "position": 45,
+    "dnf": false
+   },
+   {
+    "rider_slug": "george-bennett",
+    "position": 46,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-baudin",
+    "position": 47,
+    "dnf": false
+   },
+   {
+    "rider_slug": "raul-garcia-pierna",
+    "position": 48,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-grossschartner",
+    "position": 49,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matheo-vercher",
+    "position": 50,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kasper-asgreen",
+    "position": 51,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nelson-oliveira",
+    "position": 52,
+    "dnf": false
+   },
+   {
+    "rider_slug": "abel-balderstone-roumens",
+    "position": 53,
+    "dnf": false
+   },
+   {
+    "rider_slug": "einer-rubio",
+    "position": 54,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ion-izagirre",
+    "position": 55,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marc-hirschi",
+    "position": 56,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kevin-vauquelin",
+    "position": 57,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-storer",
+    "position": 58,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lorenzo-germani",
+    "position": 59,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattia-cattaneo",
+    "position": 60,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damiano-caruso",
+    "position": 61,
+    "dnf": false
+   },
+   {
+    "rider_slug": "victor-campenaerts",
+    "position": 62,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinten-hermans",
+    "position": 63,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xandro-meurisse",
+    "position": 64,
+    "dnf": false
+   },
+   {
+    "rider_slug": "toms-skujins",
+    "position": 65,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-braz-afonso",
+    "position": 66,
+    "dnf": false
+   },
+   {
+    "rider_slug": "derek-gee",
+    "position": 67,
+    "dnf": false
+   },
+   {
+    "rider_slug": "vlad-van-mechelen",
+    "position": 68,
+    "dnf": false
+   },
+   {
+    "rider_slug": "simone-velasco",
+    "position": 69,
+    "dnf": false
+   },
+   {
+    "rider_slug": "magnus-cort-nielsen",
+    "position": 70,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nils-politt",
+    "position": 71,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-matthews",
+    "position": 72,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-abrahamsen",
+    "position": 73,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-wellens",
+    "position": 74,
+    "dnf": false
+   },
+   {
+    "rider_slug": "romain-gregoire",
+    "position": 75,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-eenkhoorn",
+    "position": 76,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jefferson-cepeda-hernandez",
+    "position": 77,
+    "dnf": false
+   },
+   {
+    "rider_slug": "javier-romo",
+    "position": 78,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathis-le-berre",
+    "position": 79,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-zimmermann",
+    "position": 80,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-o-connor",
+    "position": 81,
+    "dnf": false
+   },
+   {
+    "rider_slug": "stefano-oldani",
+    "position": 82,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sebastian-berwick",
+    "position": 83,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jakub-otruba",
+    "position": 84,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alexandre-delettre",
+    "position": 85,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joris-delbove",
+    "position": 86,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dylan-van-baarle",
+    "position": 87,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-stuyven",
+    "position": 88,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-healy",
+    "position": 89,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mauro-schmid",
+    "position": 90,
+    "dnf": false
+   },
+   {
+    "rider_slug": "silvan-dillier",
+    "position": 91,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-engelhardt",
+    "position": 92,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mike-teunissen",
+    "position": 93,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-russo",
+    "position": 94,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quentin-pacher",
+    "position": 95,
+    "dnf": false
+   },
+   {
+    "rider_slug": "rick-pluimers",
+    "position": 96,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenno-berckmoes",
+    "position": 97,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthon-charmig",
+    "position": 98,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damien-howson",
+    "position": 99,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robert-stannard",
+    "position": 100,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aaron-gate",
+    "position": 101,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-durbridge",
+    "position": 102,
+    "dnf": false
+   },
+   {
+    "rider_slug": "louis-vervaeke",
+    "position": 103,
+    "dnf": false
+   },
+   {
+    "rider_slug": "emiel-verstrynge",
+    "position": 104,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nico-denz",
+    "position": 105,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matej-mohoric",
+    "position": 106,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ewen-costiou",
+    "position": 107,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-steinhauser",
+    "position": 108,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thibault-guernalec",
+    "position": 109,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-rickaert",
+    "position": 110,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-aranburu",
+    "position": 111,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-valgren-andersen",
+    "position": 112,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-frigo",
+    "position": 113,
+    "dnf": false
+   },
+   {
+    "rider_slug": "warren-barguil",
+    "position": 114,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthony-turgis",
+    "position": 115,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frank-van-den-broek",
+    "position": 116,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brent-van-moer",
+    "position": 117,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lars-craps",
+    "position": 118,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-walker",
+    "position": 119,
+    "dnf": false
+   },
+   {
+    "rider_slug": "krists-neilands",
+    "position": 120,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-plapp",
+    "position": 121,
+    "dnf": false
+   },
+   {
+    "rider_slug": "benjamin-thomas-2",
+    "position": 122,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jan-tratnik",
+    "position": 123,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edward-planckaert",
+    "position": 124,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathieu-van-der-poel",
+    "position": 125,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-philipsen",
+    "position": 126,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xabier-mikel-azparren-irurzun",
+    "position": 127,
+    "dnf": false
+   },
+   {
+    "rider_slug": "daan-hoole",
+    "position": 128,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mads-pedersen",
+    "position": 129,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michel-hessmann",
+    "position": 130,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joel-nicolau",
+    "position": 131,
+    "dnf": false
+   },
+   {
+    "rider_slug": "biniam-girmay",
+    "position": 132,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-kanter",
+    "position": 133,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-trentin",
+    "position": 134,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-vermeersch",
+    "position": 135,
+    "dnf": false
+   },
+   {
+    "rider_slug": "soren-waerenskjold",
+    "position": 136,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-vinokurov",
+    "position": 137,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-kirsch",
+    "position": 138,
+    "dnf": false
+   },
+   {
+    "rider_slug": "baptiste-veistroffer",
+    "position": 139,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matis-louvel",
+    "position": 140,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julian-alaphilippe",
+    "position": 141,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-van-asbroeck",
+    "position": 142,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-molenaar",
+    "position": 143,
+    "dnf": false
+   },
+   {
+    "rider_slug": "john-degenkolb",
+    "position": 144,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matthew-riccitello",
+    "position": 145,
+    "dnf": false
+   },
+   {
+    "rider_slug": "milan-fretin",
+    "position": 146,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenthe-biermans",
+    "position": 147,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pavel-bittner",
+    "position": 148,
+    "dnf": false
+   },
+   {
+    "rider_slug": "niklas-markl",
+    "position": 149,
+    "dnf": false
+   },
+   {
+    "rider_slug": "phil-bauhaus",
+    "position": 150,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-ackermann",
+    "position": 151,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-van-dijke",
+    "position": 152,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kamil-gradek",
+    "position": 153,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-marsman",
+    "position": 154,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bert-van-lerberghe",
+    "position": 155,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-merlier",
+    "position": 156,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julius-van-den-berg",
+    "position": 157,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jake-stewart",
+    "position": 158,
+    "dnf": false
+   },
+   {
+    "rider_slug": "olav-kooij",
+    "position": 159,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frits-biesterbos",
+    "position": 160,
+    "dnf": false
+   },
+   {
+    "rider_slug": "fernando-gaviria",
+    "position": 161,
+    "dnf": false
+   },
+   {
+    "rider_slug": "cees-bol",
+    "position": 162,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edoardo-affini",
+    "position": 163,
+    "dnf": false
+   },
+   {
+    "rider_slug": "piet-allegaert",
+    "position": 164,
+    "dnf": false
+   },
+   {
+    "rider_slug": "per-strand-hagenes",
+    "position": 165,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michal-kwiatkowski",
+    "position": 166,
+    "dnf": false
+   },
+   {
+    "rider_slug": "huub-artz",
+    "position": 167,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-halland-johannessen",
+    "position": 168,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bruno-armirail",
+    "position": 169,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lewis-askey",
+    "position": 170,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-foss",
+    "position": 171,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dorian-godon",
+    "position": 172,
+    "dnf": false
+   },
+   {
+    "rider_slug": "hugo-page",
+    "position": 173,
+    "dnf": false
+   },
+   {
+    "rider_slug": "liam-slock",
+    "position": 174,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-ballerini",
+    "position": 175,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alfred-wright",
+    "position": 176,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robbe-dhondt",
+    "position": 177,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joshua-tarling",
+    "position": 178,
+    "dnf": false
+   },
+   {
+    "rider_slug": "filippo-ganna",
+    "position": 179,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-haller",
+    "position": 180,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kelland-brien",
+    "position": 181,
+    "dnf": false
+   },
+   {
+    "rider_slug": "arvid-de-kleijn",
+    "position": 182,
+    "dnf": false
+   },
+   {
+    "rider_slug": "arnaud-de-lie",
+    "position": 999,
+    "dnf": true
+   }
+  ],
+  "4": [
+   {
+    "rider_slug": "mads-pedersen",
+    "position": 1,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinn-simmons",
+    "position": 2,
+    "dnf": false
+   },
+   {
+    "rider_slug": "raul-garcia-pierna",
+    "position": 3,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-frigo",
+    "position": 4,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ramses-debruyne",
+    "position": 5,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sean-quinn",
+    "position": 6,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kevin-vauquelin",
+    "position": 7,
+    "dnf": false
+   },
+   {
+    "rider_slug": "torstein-traeen",
+    "position": 8,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pablo-castrillo-zapater",
+    "position": 9,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathias-vacek",
+    "position": 10,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-matthews",
+    "position": 11,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alexandre-delettre",
+    "position": 12,
+    "dnf": false
+   },
+   {
+    "rider_slug": "vlad-van-mechelen",
+    "position": 13,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-stuyven",
+    "position": 14,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frank-van-den-broek",
+    "position": 15,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-molenaar",
+    "position": 16,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-zimmermann",
+    "position": 17,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinten-hermans",
+    "position": 18,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joel-nicolau",
+    "position": 19,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ion-izagirre",
+    "position": 20,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nico-denz",
+    "position": 21,
+    "dnf": false
+   },
+   {
+    "rider_slug": "romain-gregoire",
+    "position": 22,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-eenkhoorn",
+    "position": 23,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-kirsch",
+    "position": 24,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brent-van-moer",
+    "position": 25,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jan-tratnik",
+    "position": 26,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-valgren-andersen",
+    "position": 27,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edward-planckaert",
+    "position": 28,
+    "dnf": false
+   },
+   {
+    "rider_slug": "adam-yates",
+    "position": 29,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ewen-costiou",
+    "position": 30,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-grossschartner",
+    "position": 31,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brandon-mcnulty",
+    "position": 32,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tadej-pogacar",
+    "position": 33,
+    "dnf": false
+   },
+   {
+    "rider_slug": "isaac-del-toro",
+    "position": 34,
+    "dnf": false
+   },
+   {
+    "rider_slug": "toms-skujins",
+    "position": 35,
+    "dnf": false
+   },
+   {
+    "rider_slug": "derek-gee",
+    "position": 36,
+    "dnf": false
+   },
+   {
+    "rider_slug": "carlos-verona",
+    "position": 37,
+    "dnf": false
+   },
+   {
+    "rider_slug": "juan-ayuso-pesquera",
+    "position": 38,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattias-skjelmose-jensen",
+    "position": 39,
+    "dnf": false
+   },
+   {
+    "rider_slug": "per-strand-hagenes",
+    "position": 40,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edoardo-affini",
+    "position": 41,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-jorgenson",
+    "position": 42,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-vingegaard",
+    "position": 43,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-piganzoli",
+    "position": 44,
+    "dnf": false
+   },
+   {
+    "rider_slug": "victor-campenaerts",
+    "position": 45,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sepp-kuss",
+    "position": 46,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bruno-armirail",
+    "position": 47,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-wellens",
+    "position": 48,
+    "dnf": false
+   },
+   {
+    "rider_slug": "daan-hoole",
+    "position": 49,
+    "dnf": false
+   },
+   {
+    "rider_slug": "paul-seixas",
+    "position": 50,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aurelien-paret-peintre",
+    "position": 51,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tiesj-benoot",
+    "position": 52,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matthew-riccitello",
+    "position": 53,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-prodhomme",
+    "position": 54,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jai-hindley",
+    "position": 55,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-van-dijke",
+    "position": 56,
+    "dnf": false
+   },
+   {
+    "rider_slug": "remco-evenepoel",
+    "position": 57,
+    "dnf": false
+   },
+   {
+    "rider_slug": "maxim-van-gils",
+    "position": 58,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattia-cattaneo",
+    "position": 59,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-lipowitz",
+    "position": 60,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-healy",
+    "position": 61,
+    "dnf": false
+   },
+   {
+    "rider_slug": "richard-carapaz",
+    "position": 62,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-baudin",
+    "position": 63,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-walker",
+    "position": 64,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kasper-asgreen",
+    "position": 65,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matej-mohoric",
+    "position": 66,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damiano-caruso",
+    "position": 67,
+    "dnf": false
+   },
+   {
+    "rider_slug": "antonio-tiberi",
+    "position": 68,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lenny-martinez",
+    "position": 69,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-halland-johannessen",
+    "position": 70,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-skaarseth",
+    "position": 71,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-abrahamsen",
+    "position": 72,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthon-charmig",
+    "position": 73,
+    "dnf": false
+   },
+   {
+    "rider_slug": "magnus-cort-nielsen",
+    "position": 74,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-halland-johannessen",
+    "position": 75,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xabier-mikel-azparren-irurzun",
+    "position": 76,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xandro-meurisse",
+    "position": 77,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alfred-wright",
+    "position": 78,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-pidcock",
+    "position": 79,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathis-le-berre",
+    "position": 80,
+    "dnf": false
+   },
+   {
+    "rider_slug": "chris-harper",
+    "position": 81,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julian-alaphilippe",
+    "position": 82,
+    "dnf": false
+   },
+   {
+    "rider_slug": "yannis-voisard",
+    "position": 83,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nelson-oliveira",
+    "position": 84,
+    "dnf": false
+   },
+   {
+    "rider_slug": "rick-pluimers",
+    "position": 85,
+    "dnf": false
+   },
+   {
+    "rider_slug": "cian-uijtdebroeks",
+    "position": 86,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jefferson-cepeda-hernandez",
+    "position": 87,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thymen-arensman",
+    "position": 88,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michal-kwiatkowski",
+    "position": 89,
+    "dnf": false
+   },
+   {
+    "rider_slug": "egan-bernal",
+    "position": 90,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jordan-jegat",
+    "position": 91,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ilan-van-wilder",
+    "position": 92,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-foss",
+    "position": 93,
+    "dnf": false
+   },
+   {
+    "rider_slug": "louis-vervaeke",
+    "position": 94,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-o-connor",
+    "position": 95,
+    "dnf": false
+   },
+   {
+    "rider_slug": "valentin-paret-peintre",
+    "position": 96,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-russo",
+    "position": 97,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aaron-gate",
+    "position": 98,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lorenzo-germani",
+    "position": 99,
+    "dnf": false
+   },
+   {
+    "rider_slug": "guillaume-martin",
+    "position": 100,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sergio-higuita",
+    "position": 101,
+    "dnf": false
+   },
+   {
+    "rider_slug": "harold-tejada",
+    "position": 102,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jakub-otruba",
+    "position": 103,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenthe-biermans",
+    "position": 104,
+    "dnf": false
+   },
+   {
+    "rider_slug": "hugo-page",
+    "position": 105,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sebastian-berwick",
+    "position": 106,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-van-asbroeck",
+    "position": 107,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jose-felix-parra",
+    "position": 108,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenno-berckmoes",
+    "position": 109,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lars-craps",
+    "position": 110,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lennert-van-eetvelt",
+    "position": 111,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thibault-guernalec",
+    "position": 112,
+    "dnf": false
+   },
+   {
+    "rider_slug": "niklas-markl",
+    "position": 113,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frits-biesterbos",
+    "position": 114,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robert-stannard",
+    "position": 115,
+    "dnf": false
+   },
+   {
+    "rider_slug": "javier-romo",
+    "position": 116,
+    "dnf": false
+   },
+   {
+    "rider_slug": "einer-rubio",
+    "position": 117,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michel-hessmann",
+    "position": 118,
+    "dnf": false
+   },
+   {
+    "rider_slug": "warren-barguil",
+    "position": 119,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quentin-pacher",
+    "position": 120,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-braz-afonso",
+    "position": 121,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-rickaert",
+    "position": 122,
+    "dnf": false
+   },
+   {
+    "rider_slug": "silvan-dillier",
+    "position": 123,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-marsman",
+    "position": 124,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robbe-dhondt",
+    "position": 125,
+    "dnf": false
+   },
+   {
+    "rider_slug": "abel-balderstone-roumens",
+    "position": 126,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-engelhardt",
+    "position": 127,
+    "dnf": false
+   },
+   {
+    "rider_slug": "emiel-verstrynge",
+    "position": 128,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nils-politt",
+    "position": 129,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marc-hirschi",
+    "position": 130,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mauro-schmid",
+    "position": 131,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-breuillard",
+    "position": 132,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joris-delbove",
+    "position": 133,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathieu-van-der-poel",
+    "position": 134,
+    "dnf": false
+   },
+   {
+    "rider_slug": "krists-neilands",
+    "position": 135,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthony-turgis",
+    "position": 136,
+    "dnf": false
+   },
+   {
+    "rider_slug": "baptiste-veistroffer",
+    "position": 137,
+    "dnf": false
+   },
+   {
+    "rider_slug": "george-bennett",
+    "position": 138,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-durbridge",
+    "position": 139,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matheo-vercher",
+    "position": 140,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-plapp",
+    "position": 141,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damien-howson",
+    "position": 142,
+    "dnf": false
+   },
+   {
+    "rider_slug": "simone-velasco",
+    "position": 143,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-storer",
+    "position": 144,
+    "dnf": false
+   },
+   {
+    "rider_slug": "benjamin-thomas-2",
+    "position": 145,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-steinhauser",
+    "position": 146,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-aranburu",
+    "position": 147,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-vinokurov",
+    "position": 148,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pavel-bittner",
+    "position": 149,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julius-van-den-berg",
+    "position": 150,
+    "dnf": false
+   },
+   {
+    "rider_slug": "john-degenkolb",
+    "position": 151,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dorian-godon",
+    "position": 152,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-kanter",
+    "position": 153,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mike-teunissen",
+    "position": 154,
+    "dnf": false
+   },
+   {
+    "rider_slug": "stefano-oldani",
+    "position": 155,
+    "dnf": false
+   },
+   {
+    "rider_slug": "milan-fretin",
+    "position": 156,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-vermeersch",
+    "position": 157,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lewis-askey",
+    "position": 158,
+    "dnf": false
+   },
+   {
+    "rider_slug": "phil-bauhaus",
+    "position": 159,
+    "dnf": false
+   },
+   {
+    "rider_slug": "piet-allegaert",
+    "position": 160,
+    "dnf": false
+   },
+   {
+    "rider_slug": "cees-bol",
+    "position": 161,
+    "dnf": false
+   },
+   {
+    "rider_slug": "soren-waerenskjold",
+    "position": 162,
+    "dnf": false
+   },
+   {
+    "rider_slug": "olav-kooij",
+    "position": 163,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kamil-gradek",
+    "position": 164,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-ballerini",
+    "position": 165,
+    "dnf": false
+   },
+   {
+    "rider_slug": "fernando-gaviria",
+    "position": 166,
+    "dnf": false
+   },
+   {
+    "rider_slug": "biniam-girmay",
+    "position": 167,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matis-louvel",
+    "position": 168,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jake-stewart",
+    "position": 169,
+    "dnf": false
+   },
+   {
+    "rider_slug": "filippo-ganna",
+    "position": 170,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-merlier",
+    "position": 171,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dylan-van-baarle",
+    "position": 172,
+    "dnf": false
+   },
+   {
+    "rider_slug": "huub-artz",
+    "position": 173,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bert-van-lerberghe",
+    "position": 174,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-philipsen",
+    "position": 175,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-ackermann",
+    "position": 176,
+    "dnf": false
+   },
+   {
+    "rider_slug": "liam-slock",
+    "position": 177,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joshua-tarling",
+    "position": 178,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-haller",
+    "position": 179,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-trentin",
+    "position": 180,
+    "dnf": false
+   },
+   {
+    "rider_slug": "arvid-de-kleijn",
+    "position": 181,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kelland-brien",
+    "position": 999,
+    "dnf": true
+   }
+  ],
+  "5": [
+   {
+    "rider_slug": "olav-kooij",
+    "position": 1,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-kanter",
+    "position": 2,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-merlier",
+    "position": 3,
+    "dnf": false
+   },
+   {
+    "rider_slug": "huub-artz",
+    "position": 4,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-philipsen",
+    "position": 5,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mads-pedersen",
+    "position": 6,
+    "dnf": false
+   },
+   {
+    "rider_slug": "biniam-girmay",
+    "position": 7,
+    "dnf": false
+   },
+   {
+    "rider_slug": "milan-fretin",
+    "position": 8,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthony-turgis",
+    "position": 9,
+    "dnf": false
+   },
+   {
+    "rider_slug": "soren-waerenskjold",
+    "position": 10,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenno-berckmoes",
+    "position": 11,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-ackermann",
+    "position": 12,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-russo",
+    "position": 13,
+    "dnf": false
+   },
+   {
+    "rider_slug": "rick-pluimers",
+    "position": 14,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dorian-godon",
+    "position": 15,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pavel-bittner",
+    "position": 16,
+    "dnf": false
+   },
+   {
+    "rider_slug": "fernando-gaviria",
+    "position": 17,
+    "dnf": false
+   },
+   {
+    "rider_slug": "phil-bauhaus",
+    "position": 18,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mike-teunissen",
+    "position": 19,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aaron-gate",
+    "position": 20,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tadej-pogacar",
+    "position": 21,
+    "dnf": false
+   },
+   {
+    "rider_slug": "remco-evenepoel",
+    "position": 22,
+    "dnf": false
+   },
+   {
+    "rider_slug": "paul-seixas",
+    "position": 23,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-pidcock",
+    "position": 24,
+    "dnf": false
+   },
+   {
+    "rider_slug": "richard-carapaz",
+    "position": 25,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ilan-van-wilder",
+    "position": 26,
+    "dnf": false
+   },
+   {
+    "rider_slug": "maxim-van-gils",
+    "position": 27,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thymen-arensman",
+    "position": 28,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sean-quinn",
+    "position": 29,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-van-asbroeck",
+    "position": 30,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathias-vacek",
+    "position": 31,
+    "dnf": false
+   },
+   {
+    "rider_slug": "isaac-del-toro",
+    "position": 32,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-jorgenson",
+    "position": 33,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattias-skjelmose-jensen",
+    "position": 34,
+    "dnf": false
+   },
+   {
+    "rider_slug": "juan-ayuso-pesquera",
+    "position": 35,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ramses-debruyne",
+    "position": 36,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jordan-jegat",
+    "position": 37,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brandon-mcnulty",
+    "position": 38,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-halland-johannessen",
+    "position": 39,
+    "dnf": false
+   },
+   {
+    "rider_slug": "yannis-voisard",
+    "position": 40,
+    "dnf": false
+   },
+   {
+    "rider_slug": "antonio-tiberi",
+    "position": 41,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sergio-higuita",
+    "position": 42,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kevin-vauquelin",
+    "position": 43,
+    "dnf": false
+   },
+   {
+    "rider_slug": "egan-bernal",
+    "position": 44,
+    "dnf": false
+   },
+   {
+    "rider_slug": "harold-tejada",
+    "position": 45,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-rickaert",
+    "position": 46,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-lipowitz",
+    "position": 47,
+    "dnf": false
+   },
+   {
+    "rider_slug": "guillaume-martin",
+    "position": 48,
+    "dnf": false
+   },
+   {
+    "rider_slug": "toms-skujins",
+    "position": 49,
+    "dnf": false
+   },
+   {
+    "rider_slug": "cees-bol",
+    "position": 50,
+    "dnf": false
+   },
+   {
+    "rider_slug": "hugo-page",
+    "position": 51,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-piganzoli",
+    "position": 52,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-vingegaard",
+    "position": 53,
+    "dnf": false
+   },
+   {
+    "rider_slug": "torstein-traeen",
+    "position": 54,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joris-delbove",
+    "position": 55,
+    "dnf": false
+   },
+   {
+    "rider_slug": "raul-garcia-pierna",
+    "position": 56,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-ballerini",
+    "position": 57,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julius-van-den-berg",
+    "position": 58,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jefferson-cepeda-hernandez",
+    "position": 59,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frits-biesterbos",
+    "position": 60,
+    "dnf": false
+   },
+   {
+    "rider_slug": "piet-allegaert",
+    "position": 61,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-grossschartner",
+    "position": 62,
+    "dnf": false
+   },
+   {
+    "rider_slug": "adam-yates",
+    "position": 63,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lenny-martinez",
+    "position": 64,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-zimmermann",
+    "position": 65,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lewis-askey",
+    "position": 66,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lorenzo-germani",
+    "position": 67,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ion-izagirre",
+    "position": 68,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bruno-armirail",
+    "position": 69,
+    "dnf": false
+   },
+   {
+    "rider_slug": "einer-rubio",
+    "position": 70,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jose-felix-parra",
+    "position": 71,
+    "dnf": false
+   },
+   {
+    "rider_slug": "cian-uijtdebroeks",
+    "position": 72,
+    "dnf": false
+   },
+   {
+    "rider_slug": "daan-hoole",
+    "position": 73,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-foss",
+    "position": 74,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathis-le-berre",
+    "position": 75,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nils-politt",
+    "position": 76,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattia-cattaneo",
+    "position": 77,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-o-connor",
+    "position": 78,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-marsman",
+    "position": 79,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edward-planckaert",
+    "position": 80,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jake-stewart",
+    "position": 81,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-abrahamsen",
+    "position": 82,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xabier-mikel-azparren-irurzun",
+    "position": 83,
+    "dnf": false
+   },
+   {
+    "rider_slug": "krists-neilands",
+    "position": 84,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinn-simmons",
+    "position": 85,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xandro-meurisse",
+    "position": 86,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nico-denz",
+    "position": 87,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sepp-kuss",
+    "position": 88,
+    "dnf": false
+   },
+   {
+    "rider_slug": "derek-gee",
+    "position": 89,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-vinokurov",
+    "position": 90,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-wellens",
+    "position": 91,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-van-dijke",
+    "position": 92,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lars-craps",
+    "position": 93,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brent-van-moer",
+    "position": 94,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lennert-van-eetvelt",
+    "position": 95,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinten-hermans",
+    "position": 96,
+    "dnf": false
+   },
+   {
+    "rider_slug": "carlos-verona",
+    "position": 97,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-prodhomme",
+    "position": 98,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nelson-oliveira",
+    "position": 99,
+    "dnf": false
+   },
+   {
+    "rider_slug": "magnus-cort-nielsen",
+    "position": 100,
+    "dnf": false
+   },
+   {
+    "rider_slug": "john-degenkolb",
+    "position": 101,
+    "dnf": false
+   },
+   {
+    "rider_slug": "george-bennett",
+    "position": 102,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-skaarseth",
+    "position": 103,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julian-alaphilippe",
+    "position": 104,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robert-stannard",
+    "position": 105,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michal-kwiatkowski",
+    "position": 106,
+    "dnf": false
+   },
+   {
+    "rider_slug": "javier-romo",
+    "position": 107,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matej-mohoric",
+    "position": 108,
+    "dnf": false
+   },
+   {
+    "rider_slug": "filippo-ganna",
+    "position": 109,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-vermeersch",
+    "position": 110,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edoardo-affini",
+    "position": 111,
+    "dnf": false
+   },
+   {
+    "rider_slug": "baptiste-veistroffer",
+    "position": 112,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pablo-castrillo-zapater",
+    "position": 113,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-engelhardt",
+    "position": 114,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alexandre-delettre",
+    "position": 115,
+    "dnf": false
+   },
+   {
+    "rider_slug": "niklas-markl",
+    "position": 116,
+    "dnf": false
+   },
+   {
+    "rider_slug": "romain-gregoire",
+    "position": 117,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-braz-afonso",
+    "position": 118,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mauro-schmid",
+    "position": 119,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jai-hindley",
+    "position": 120,
+    "dnf": false
+   },
+   {
+    "rider_slug": "per-strand-hagenes",
+    "position": 121,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-haller",
+    "position": 122,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-trentin",
+    "position": 123,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thibault-guernalec",
+    "position": 124,
+    "dnf": false
+   },
+   {
+    "rider_slug": "liam-slock",
+    "position": 125,
+    "dnf": false
+   },
+   {
+    "rider_slug": "warren-barguil",
+    "position": 126,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quentin-pacher",
+    "position": 127,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathieu-van-der-poel",
+    "position": 128,
+    "dnf": false
+   },
+   {
+    "rider_slug": "abel-balderstone-roumens",
+    "position": 129,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kasper-asgreen",
+    "position": 130,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frank-van-den-broek",
+    "position": 131,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robbe-dhondt",
+    "position": 132,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-kirsch",
+    "position": 133,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-healy",
+    "position": 134,
+    "dnf": false
+   },
+   {
+    "rider_slug": "vlad-van-mechelen",
+    "position": 135,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matthew-riccitello",
+    "position": 136,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tiesj-benoot",
+    "position": 137,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matheo-vercher",
+    "position": 138,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-halland-johannessen",
+    "position": 139,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthon-charmig",
+    "position": 140,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-baudin",
+    "position": 141,
+    "dnf": false
+   },
+   {
+    "rider_slug": "valentin-paret-peintre",
+    "position": 142,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenthe-biermans",
+    "position": 143,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-aranburu",
+    "position": 144,
+    "dnf": false
+   },
+   {
+    "rider_slug": "benjamin-thomas-2",
+    "position": 145,
+    "dnf": false
+   },
+   {
+    "rider_slug": "silvan-dillier",
+    "position": 146,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alfred-wright",
+    "position": 147,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kamil-gradek",
+    "position": 148,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ewen-costiou",
+    "position": 149,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-eenkhoorn",
+    "position": 150,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-valgren-andersen",
+    "position": 151,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-durbridge",
+    "position": 152,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-walker",
+    "position": 153,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damien-howson",
+    "position": 154,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damiano-caruso",
+    "position": 155,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-frigo",
+    "position": 156,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marc-hirschi",
+    "position": 157,
+    "dnf": false
+   },
+   {
+    "rider_slug": "simone-velasco",
+    "position": 158,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jan-tratnik",
+    "position": 159,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-plapp",
+    "position": 160,
+    "dnf": false
+   },
+   {
+    "rider_slug": "chris-harper",
+    "position": 161,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michel-hessmann",
+    "position": 162,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-storer",
+    "position": 163,
+    "dnf": false
+   },
+   {
+    "rider_slug": "emiel-verstrynge",
+    "position": 164,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-breuillard",
+    "position": 165,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-steinhauser",
+    "position": 166,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joshua-tarling",
+    "position": 167,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sebastian-berwick",
+    "position": 168,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joel-nicolau",
+    "position": 169,
+    "dnf": false
+   },
+   {
+    "rider_slug": "victor-campenaerts",
+    "position": 170,
+    "dnf": false
+   },
+   {
+    "rider_slug": "stefano-oldani",
+    "position": 171,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jakub-otruba",
+    "position": 172,
+    "dnf": false
+   },
+   {
+    "rider_slug": "louis-vervaeke",
+    "position": 173,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-stuyven",
+    "position": 174,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dylan-van-baarle",
+    "position": 175,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bert-van-lerberghe",
+    "position": 176,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aurelien-paret-peintre",
+    "position": 177,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matis-louvel",
+    "position": 178,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-matthews",
+    "position": 179,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-molenaar",
+    "position": 180,
+    "dnf": false
+   },
+   {
+    "rider_slug": "arvid-de-kleijn",
+    "position": 181,
+    "dnf": false
+   }
+  ],
+  "6": [
+   {
+    "rider_slug": "tadej-pogacar",
+    "position": 1,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-vingegaard",
+    "position": 2,
+    "dnf": false
+   },
+   {
+    "rider_slug": "isaac-del-toro",
+    "position": 3,
+    "dnf": false
+   },
+   {
+    "rider_slug": "remco-evenepoel",
+    "position": 4,
+    "dnf": false
+   },
+   {
+    "rider_slug": "paul-seixas",
+    "position": 5,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-lipowitz",
+    "position": 6,
+    "dnf": false
+   },
+   {
+    "rider_slug": "juan-ayuso-pesquera",
+    "position": 7,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lenny-martinez",
+    "position": 8,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattias-skjelmose-jensen",
+    "position": 9,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sepp-kuss",
+    "position": 10,
+    "dnf": false
+   },
+   {
+    "rider_slug": "egan-bernal",
+    "position": 11,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jordan-jegat",
+    "position": 12,
+    "dnf": false
+   },
+   {
+    "rider_slug": "harold-tejada",
+    "position": 13,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ilan-van-wilder",
+    "position": 14,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-pidcock",
+    "position": 15,
+    "dnf": false
+   },
+   {
+    "rider_slug": "yannis-voisard",
+    "position": 16,
+    "dnf": false
+   },
+   {
+    "rider_slug": "adam-yates",
+    "position": 17,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-halland-johannessen",
+    "position": 18,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brandon-mcnulty",
+    "position": 19,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lennert-van-eetvelt",
+    "position": 20,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-piganzoli",
+    "position": 21,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pablo-castrillo-zapater",
+    "position": 22,
+    "dnf": false
+   },
+   {
+    "rider_slug": "richard-carapaz",
+    "position": 23,
+    "dnf": false
+   },
+   {
+    "rider_slug": "chris-harper",
+    "position": 24,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathias-vacek",
+    "position": 25,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ramses-debruyne",
+    "position": 26,
+    "dnf": false
+   },
+   {
+    "rider_slug": "carlos-verona",
+    "position": 27,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tiesj-benoot",
+    "position": 28,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thymen-arensman",
+    "position": 29,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-prodhomme",
+    "position": 30,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sean-quinn",
+    "position": 31,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jai-hindley",
+    "position": 32,
+    "dnf": false
+   },
+   {
+    "rider_slug": "antonio-tiberi",
+    "position": 33,
+    "dnf": false
+   },
+   {
+    "rider_slug": "guillaume-martin",
+    "position": 34,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sergio-higuita",
+    "position": 35,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-jorgenson",
+    "position": 36,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-o-connor",
+    "position": 37,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-grossschartner",
+    "position": 38,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinten-hermans",
+    "position": 39,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-foss",
+    "position": 40,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marc-hirschi",
+    "position": 41,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matthew-riccitello",
+    "position": 42,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jose-felix-parra",
+    "position": 43,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-valgren-andersen",
+    "position": 44,
+    "dnf": false
+   },
+   {
+    "rider_slug": "maxim-van-gils",
+    "position": 45,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damiano-caruso",
+    "position": 46,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattia-cattaneo",
+    "position": 47,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ion-izagirre",
+    "position": 48,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-wellens",
+    "position": 49,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-halland-johannessen",
+    "position": 50,
+    "dnf": false
+   },
+   {
+    "rider_slug": "torstein-traeen",
+    "position": 51,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joris-delbove",
+    "position": 52,
+    "dnf": false
+   },
+   {
+    "rider_slug": "valentin-paret-peintre",
+    "position": 53,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jefferson-cepeda-hernandez",
+    "position": 54,
+    "dnf": false
+   },
+   {
+    "rider_slug": "abel-balderstone-roumens",
+    "position": 55,
+    "dnf": false
+   },
+   {
+    "rider_slug": "einer-rubio",
+    "position": 56,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nils-politt",
+    "position": 57,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sebastian-berwick",
+    "position": 58,
+    "dnf": false
+   },
+   {
+    "rider_slug": "derek-gee",
+    "position": 59,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-storer",
+    "position": 60,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinn-simmons",
+    "position": 61,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xandro-meurisse",
+    "position": 62,
+    "dnf": false
+   },
+   {
+    "rider_slug": "javier-romo",
+    "position": 63,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kevin-vauquelin",
+    "position": 64,
+    "dnf": false
+   },
+   {
+    "rider_slug": "raul-garcia-pierna",
+    "position": 65,
+    "dnf": false
+   },
+   {
+    "rider_slug": "toms-skujins",
+    "position": 66,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-skaarseth",
+    "position": 67,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-baudin",
+    "position": 68,
+    "dnf": false
+   },
+   {
+    "rider_slug": "victor-campenaerts",
+    "position": 69,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lars-craps",
+    "position": 70,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-russo",
+    "position": 71,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alexandre-delettre",
+    "position": 72,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathis-le-berre",
+    "position": 73,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-engelhardt",
+    "position": 74,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damien-howson",
+    "position": 75,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kasper-asgreen",
+    "position": 76,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aurelien-paret-peintre",
+    "position": 77,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julian-alaphilippe",
+    "position": 78,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-kirsch",
+    "position": 79,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-vinokurov",
+    "position": 80,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bruno-armirail",
+    "position": 81,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nelson-oliveira",
+    "position": 82,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matheo-vercher",
+    "position": 83,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dylan-van-baarle",
+    "position": 84,
+    "dnf": false
+   },
+   {
+    "rider_slug": "louis-vervaeke",
+    "position": 85,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brent-van-moer",
+    "position": 86,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-stuyven",
+    "position": 87,
+    "dnf": false
+   },
+   {
+    "rider_slug": "liam-slock",
+    "position": 88,
+    "dnf": false
+   },
+   {
+    "rider_slug": "huub-artz",
+    "position": 89,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thibault-guernalec",
+    "position": 90,
+    "dnf": false
+   },
+   {
+    "rider_slug": "warren-barguil",
+    "position": 91,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenno-berckmoes",
+    "position": 92,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alfred-wright",
+    "position": 93,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quentin-pacher",
+    "position": 94,
+    "dnf": false
+   },
+   {
+    "rider_slug": "baptiste-veistroffer",
+    "position": 95,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-abrahamsen",
+    "position": 96,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dorian-godon",
+    "position": 97,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthon-charmig",
+    "position": 98,
+    "dnf": false
+   },
+   {
+    "rider_slug": "vlad-van-mechelen",
+    "position": 99,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robert-stannard",
+    "position": 100,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-trentin",
+    "position": 101,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matej-mohoric",
+    "position": 102,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nico-denz",
+    "position": 103,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lorenzo-germani",
+    "position": 104,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathieu-van-der-poel",
+    "position": 105,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jan-tratnik",
+    "position": 106,
+    "dnf": false
+   },
+   {
+    "rider_slug": "rick-pluimers",
+    "position": 107,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-van-dijke",
+    "position": 108,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-rickaert",
+    "position": 109,
+    "dnf": false
+   },
+   {
+    "rider_slug": "soren-waerenskjold",
+    "position": 110,
+    "dnf": false
+   },
+   {
+    "rider_slug": "per-strand-hagenes",
+    "position": 111,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pavel-bittner",
+    "position": 112,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-vermeersch",
+    "position": 113,
+    "dnf": false
+   },
+   {
+    "rider_slug": "milan-fretin",
+    "position": 114,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-frigo",
+    "position": 115,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-aranburu",
+    "position": 116,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frank-van-den-broek",
+    "position": 117,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mike-teunissen",
+    "position": 118,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenthe-biermans",
+    "position": 119,
+    "dnf": false
+   },
+   {
+    "rider_slug": "simone-velasco",
+    "position": 120,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-van-asbroeck",
+    "position": 121,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joel-nicolau",
+    "position": 122,
+    "dnf": false
+   },
+   {
+    "rider_slug": "stefano-oldani",
+    "position": 123,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xabier-mikel-azparren-irurzun",
+    "position": 124,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-matthews",
+    "position": 125,
+    "dnf": false
+   },
+   {
+    "rider_slug": "george-bennett",
+    "position": 126,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-durbridge",
+    "position": 127,
+    "dnf": false
+   },
+   {
+    "rider_slug": "filippo-ganna",
+    "position": 128,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-ackermann",
+    "position": 129,
+    "dnf": false
+   },
+   {
+    "rider_slug": "krists-neilands",
+    "position": 130,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-haller",
+    "position": 131,
+    "dnf": false
+   },
+   {
+    "rider_slug": "john-degenkolb",
+    "position": 132,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frits-biesterbos",
+    "position": 133,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joshua-tarling",
+    "position": 134,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthony-turgis",
+    "position": 135,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jake-stewart",
+    "position": 136,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-breuillard",
+    "position": 137,
+    "dnf": false
+   },
+   {
+    "rider_slug": "magnus-cort-nielsen",
+    "position": 138,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julius-van-den-berg",
+    "position": 139,
+    "dnf": false
+   },
+   {
+    "rider_slug": "emiel-verstrynge",
+    "position": 140,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edoardo-affini",
+    "position": 141,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-steinhauser",
+    "position": 142,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-walker",
+    "position": 143,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-healy",
+    "position": 144,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aaron-gate",
+    "position": 145,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-kanter",
+    "position": 146,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michal-kwiatkowski",
+    "position": 147,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mauro-schmid",
+    "position": 148,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-plapp",
+    "position": 149,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-zimmermann",
+    "position": 150,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kamil-gradek",
+    "position": 151,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robbe-dhondt",
+    "position": 152,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-braz-afonso",
+    "position": 153,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michel-hessmann",
+    "position": 154,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matis-louvel",
+    "position": 155,
+    "dnf": false
+   },
+   {
+    "rider_slug": "hugo-page",
+    "position": 156,
+    "dnf": false
+   },
+   {
+    "rider_slug": "romain-gregoire",
+    "position": 157,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ewen-costiou",
+    "position": 158,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-ballerini",
+    "position": 159,
+    "dnf": false
+   },
+   {
+    "rider_slug": "biniam-girmay",
+    "position": 160,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edward-planckaert",
+    "position": 161,
+    "dnf": false
+   },
+   {
+    "rider_slug": "benjamin-thomas-2",
+    "position": 162,
+    "dnf": false
+   },
+   {
+    "rider_slug": "olav-kooij",
+    "position": 163,
+    "dnf": false
+   },
+   {
+    "rider_slug": "cees-bol",
+    "position": 164,
+    "dnf": false
+   },
+   {
+    "rider_slug": "daan-hoole",
+    "position": 165,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-eenkhoorn",
+    "position": 166,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mads-pedersen",
+    "position": 167,
+    "dnf": false
+   },
+   {
+    "rider_slug": "phil-bauhaus",
+    "position": 168,
+    "dnf": false
+   },
+   {
+    "rider_slug": "niklas-markl",
+    "position": 169,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jakub-otruba",
+    "position": 170,
+    "dnf": false
+   },
+   {
+    "rider_slug": "fernando-gaviria",
+    "position": 171,
+    "dnf": false
+   },
+   {
+    "rider_slug": "silvan-dillier",
+    "position": 172,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-marsman",
+    "position": 173,
+    "dnf": false
+   },
+   {
+    "rider_slug": "piet-allegaert",
+    "position": 174,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-philipsen",
+    "position": 175,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-merlier",
+    "position": 176,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lewis-askey",
+    "position": 177,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bert-van-lerberghe",
+    "position": 999,
+    "dnf": true
+   },
+   {
+    "rider_slug": "cian-uijtdebroeks",
+    "position": 999,
+    "dnf": true
+   },
+   {
+    "rider_slug": "arvid-de-kleijn",
+    "position": 999,
+    "dnf": true
+   },
+   {
+    "rider_slug": "alex-molenaar",
+    "position": 999,
+    "dnf": true
+   }
+  ],
+  "7": [
+   {
+    "rider_slug": "tim-merlier",
+    "position": 1,
+    "dnf": false
+   },
+   {
+    "rider_slug": "soren-waerenskjold",
+    "position": 2,
+    "dnf": false
+   },
+   {
+    "rider_slug": "biniam-girmay",
+    "position": 3,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-kanter",
+    "position": 4,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-philipsen",
+    "position": 5,
+    "dnf": false
+   },
+   {
+    "rider_slug": "phil-bauhaus",
+    "position": 6,
+    "dnf": false
+   },
+   {
+    "rider_slug": "huub-artz",
+    "position": 7,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mads-pedersen",
+    "position": 8,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dorian-godon",
+    "position": 9,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-van-asbroeck",
+    "position": 10,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pavel-bittner",
+    "position": 11,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-ackermann",
+    "position": 12,
+    "dnf": false
+   },
+   {
+    "rider_slug": "milan-fretin",
+    "position": 13,
+    "dnf": false
+   },
+   {
+    "rider_slug": "fernando-gaviria",
+    "position": 14,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthony-turgis",
+    "position": 15,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-russo",
+    "position": 16,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenno-berckmoes",
+    "position": 17,
+    "dnf": false
+   },
+   {
+    "rider_slug": "rick-pluimers",
+    "position": 18,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aaron-gate",
+    "position": 19,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alfred-wright",
+    "position": 20,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-abrahamsen",
+    "position": 21,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mike-teunissen",
+    "position": 22,
+    "dnf": false
+   },
+   {
+    "rider_slug": "olav-kooij",
+    "position": 23,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robert-stannard",
+    "position": 24,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathieu-van-der-poel",
+    "position": 25,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-pidcock",
+    "position": 26,
+    "dnf": false
+   },
+   {
+    "rider_slug": "harold-tejada",
+    "position": 27,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-vinokurov",
+    "position": 28,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brent-van-moer",
+    "position": 29,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthon-charmig",
+    "position": 30,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenthe-biermans",
+    "position": 31,
+    "dnf": false
+   },
+   {
+    "rider_slug": "toms-skujins",
+    "position": 32,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julius-van-den-berg",
+    "position": 33,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tiesj-benoot",
+    "position": 34,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathias-vacek",
+    "position": 35,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kasper-asgreen",
+    "position": 36,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-prodhomme",
+    "position": 37,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nelson-oliveira",
+    "position": 38,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matej-mohoric",
+    "position": 39,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-stuyven",
+    "position": 40,
+    "dnf": false
+   },
+   {
+    "rider_slug": "paul-seixas",
+    "position": 41,
+    "dnf": false
+   },
+   {
+    "rider_slug": "maxim-van-gils",
+    "position": 42,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-skaarseth",
+    "position": 43,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-van-dijke",
+    "position": 44,
+    "dnf": false
+   },
+   {
+    "rider_slug": "yannis-voisard",
+    "position": 45,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-ballerini",
+    "position": 46,
+    "dnf": false
+   },
+   {
+    "rider_slug": "antonio-tiberi",
+    "position": 47,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-lipowitz",
+    "position": 48,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nils-politt",
+    "position": 49,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brandon-mcnulty",
+    "position": 50,
+    "dnf": false
+   },
+   {
+    "rider_slug": "adam-yates",
+    "position": 51,
+    "dnf": false
+   },
+   {
+    "rider_slug": "remco-evenepoel",
+    "position": 52,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-zimmermann",
+    "position": 53,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lars-craps",
+    "position": 54,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joris-delbove",
+    "position": 55,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tadej-pogacar",
+    "position": 56,
+    "dnf": false
+   },
+   {
+    "rider_slug": "isaac-del-toro",
+    "position": 57,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edoardo-affini",
+    "position": 58,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-vingegaard",
+    "position": 59,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jordan-jegat",
+    "position": 60,
+    "dnf": false
+   },
+   {
+    "rider_slug": "per-strand-hagenes",
+    "position": 61,
+    "dnf": false
+   },
+   {
+    "rider_slug": "juan-ayuso-pesquera",
+    "position": 62,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattias-skjelmose-jensen",
+    "position": 63,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-vermeersch",
+    "position": 64,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xandro-meurisse",
+    "position": 65,
+    "dnf": false
+   },
+   {
+    "rider_slug": "egan-bernal",
+    "position": 66,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ilan-van-wilder",
+    "position": 67,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kevin-vauquelin",
+    "position": 68,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pablo-castrillo-zapater",
+    "position": 69,
+    "dnf": false
+   },
+   {
+    "rider_slug": "guillaume-martin",
+    "position": 70,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jai-hindley",
+    "position": 71,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-grossschartner",
+    "position": 72,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-wellens",
+    "position": 73,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jake-stewart",
+    "position": 74,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-jorgenson",
+    "position": 75,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-piganzoli",
+    "position": 76,
+    "dnf": false
+   },
+   {
+    "rider_slug": "victor-campenaerts",
+    "position": 77,
+    "dnf": false
+   },
+   {
+    "rider_slug": "niklas-markl",
+    "position": 78,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lorenzo-germani",
+    "position": 79,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quentin-pacher",
+    "position": 80,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinten-hermans",
+    "position": 81,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sepp-kuss",
+    "position": 82,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lennert-van-eetvelt",
+    "position": 83,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-halland-johannessen",
+    "position": 84,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ramses-debruyne",
+    "position": 85,
+    "dnf": false
+   },
+   {
+    "rider_slug": "magnus-cort-nielsen",
+    "position": 86,
+    "dnf": false
+   },
+   {
+    "rider_slug": "derek-gee",
+    "position": 87,
+    "dnf": false
+   },
+   {
+    "rider_slug": "javier-romo",
+    "position": 88,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattia-cattaneo",
+    "position": 89,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lenny-martinez",
+    "position": 90,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sean-quinn",
+    "position": 91,
+    "dnf": false
+   },
+   {
+    "rider_slug": "raul-garcia-pierna",
+    "position": 92,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matheo-vercher",
+    "position": 93,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jose-felix-parra",
+    "position": 94,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nico-denz",
+    "position": 95,
+    "dnf": false
+   },
+   {
+    "rider_slug": "cees-bol",
+    "position": 96,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathis-le-berre",
+    "position": 97,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edward-planckaert",
+    "position": 98,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michal-kwiatkowski",
+    "position": 99,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-rickaert",
+    "position": 100,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-trentin",
+    "position": 101,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damien-howson",
+    "position": 102,
+    "dnf": false
+   },
+   {
+    "rider_slug": "stefano-oldani",
+    "position": 103,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frits-biesterbos",
+    "position": 104,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-braz-afonso",
+    "position": 105,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alexandre-delettre",
+    "position": 106,
+    "dnf": false
+   },
+   {
+    "rider_slug": "louis-vervaeke",
+    "position": 107,
+    "dnf": false
+   },
+   {
+    "rider_slug": "carlos-verona",
+    "position": 108,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frank-van-den-broek",
+    "position": 109,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ewen-costiou",
+    "position": 110,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-kirsch",
+    "position": 111,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-marsman",
+    "position": 112,
+    "dnf": false
+   },
+   {
+    "rider_slug": "piet-allegaert",
+    "position": 113,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julian-alaphilippe",
+    "position": 114,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-engelhardt",
+    "position": 115,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-o-connor",
+    "position": 116,
+    "dnf": false
+   },
+   {
+    "rider_slug": "warren-barguil",
+    "position": 117,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thibault-guernalec",
+    "position": 118,
+    "dnf": false
+   },
+   {
+    "rider_slug": "john-degenkolb",
+    "position": 119,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damiano-caruso",
+    "position": 120,
+    "dnf": false
+   },
+   {
+    "rider_slug": "liam-slock",
+    "position": 121,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-foss",
+    "position": 122,
+    "dnf": false
+   },
+   {
+    "rider_slug": "hugo-page",
+    "position": 123,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bruno-armirail",
+    "position": 124,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thymen-arensman",
+    "position": 125,
+    "dnf": false
+   },
+   {
+    "rider_slug": "baptiste-veistroffer",
+    "position": 126,
+    "dnf": false
+   },
+   {
+    "rider_slug": "abel-balderstone-roumens",
+    "position": 127,
+    "dnf": false
+   },
+   {
+    "rider_slug": "romain-gregoire",
+    "position": 128,
+    "dnf": false
+   },
+   {
+    "rider_slug": "simone-velasco",
+    "position": 129,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-halland-johannessen",
+    "position": 130,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-steinhauser",
+    "position": 131,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mauro-schmid",
+    "position": 132,
+    "dnf": false
+   },
+   {
+    "rider_slug": "einer-rubio",
+    "position": 133,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matthew-riccitello",
+    "position": 134,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sergio-higuita",
+    "position": 135,
+    "dnf": false
+   },
+   {
+    "rider_slug": "george-bennett",
+    "position": 136,
+    "dnf": false
+   },
+   {
+    "rider_slug": "daan-hoole",
+    "position": 137,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-matthews",
+    "position": 138,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joshua-tarling",
+    "position": 139,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinn-simmons",
+    "position": 140,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-baudin",
+    "position": 141,
+    "dnf": false
+   },
+   {
+    "rider_slug": "krists-neilands",
+    "position": 142,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-valgren-andersen",
+    "position": 143,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-haller",
+    "position": 144,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dylan-van-baarle",
+    "position": 145,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-eenkhoorn",
+    "position": 146,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marc-hirschi",
+    "position": 147,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-walker",
+    "position": 148,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aurelien-paret-peintre",
+    "position": 149,
+    "dnf": false
+   },
+   {
+    "rider_slug": "silvan-dillier",
+    "position": 150,
+    "dnf": false
+   },
+   {
+    "rider_slug": "vlad-van-mechelen",
+    "position": 151,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-plapp",
+    "position": 152,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-durbridge",
+    "position": 153,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jan-tratnik",
+    "position": 154,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sebastian-berwick",
+    "position": 155,
+    "dnf": false
+   },
+   {
+    "rider_slug": "richard-carapaz",
+    "position": 156,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jefferson-cepeda-hernandez",
+    "position": 157,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-breuillard",
+    "position": 158,
+    "dnf": false
+   },
+   {
+    "rider_slug": "valentin-paret-peintre",
+    "position": 159,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robbe-dhondt",
+    "position": 160,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-healy",
+    "position": 161,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-storer",
+    "position": 162,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ion-izagirre",
+    "position": 163,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xabier-mikel-azparren-irurzun",
+    "position": 164,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kamil-gradek",
+    "position": 165,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michel-hessmann",
+    "position": 166,
+    "dnf": false
+   },
+   {
+    "rider_slug": "emiel-verstrynge",
+    "position": 167,
+    "dnf": false
+   },
+   {
+    "rider_slug": "chris-harper",
+    "position": 168,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lewis-askey",
+    "position": 169,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matis-louvel",
+    "position": 170,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joel-nicolau",
+    "position": 171,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-aranburu",
+    "position": 172,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jakub-otruba",
+    "position": 173,
+    "dnf": false
+   },
+   {
+    "rider_slug": "filippo-ganna",
+    "position": 174,
+    "dnf": false
+   },
+   {
+    "rider_slug": "benjamin-thomas-2",
+    "position": 175,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-frigo",
+    "position": 176,
+    "dnf": false
+   },
+   {
+    "rider_slug": "torstein-traeen",
+    "position": 999,
+    "dnf": true
+   }
+  ],
+  "8": [
+   {
+    "rider_slug": "tim-merlier",
+    "position": 1,
+    "dnf": false
+   },
+   {
+    "rider_slug": "biniam-girmay",
+    "position": 2,
+    "dnf": false
+   },
+   {
+    "rider_slug": "olav-kooij",
+    "position": 3,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-philipsen",
+    "position": 4,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pavel-bittner",
+    "position": 5,
+    "dnf": false
+   },
+   {
+    "rider_slug": "rick-pluimers",
+    "position": 6,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-ackermann",
+    "position": 7,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-kanter",
+    "position": 8,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-russo",
+    "position": 9,
+    "dnf": false
+   },
+   {
+    "rider_slug": "milan-fretin",
+    "position": 10,
+    "dnf": false
+   },
+   {
+    "rider_slug": "soren-waerenskjold",
+    "position": 11,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mads-pedersen",
+    "position": 12,
+    "dnf": false
+   },
+   {
+    "rider_slug": "fernando-gaviria",
+    "position": 13,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dorian-godon",
+    "position": 14,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthony-turgis",
+    "position": 15,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathieu-van-der-poel",
+    "position": 16,
+    "dnf": false
+   },
+   {
+    "rider_slug": "phil-bauhaus",
+    "position": 17,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenno-berckmoes",
+    "position": 18,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quentin-pacher",
+    "position": 19,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alfred-wright",
+    "position": 20,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anthon-charmig",
+    "position": 21,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mauro-schmid",
+    "position": 22,
+    "dnf": false
+   },
+   {
+    "rider_slug": "niklas-markl",
+    "position": 23,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aurelien-paret-peintre",
+    "position": 24,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-pidcock",
+    "position": 25,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frank-van-den-broek",
+    "position": 26,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mike-teunissen",
+    "position": 27,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-skaarseth",
+    "position": 28,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-halland-johannessen",
+    "position": 29,
+    "dnf": false
+   },
+   {
+    "rider_slug": "remco-evenepoel",
+    "position": 30,
+    "dnf": false
+   },
+   {
+    "rider_slug": "magnus-cort-nielsen",
+    "position": 31,
+    "dnf": false
+   },
+   {
+    "rider_slug": "maxim-van-gils",
+    "position": 32,
+    "dnf": false
+   },
+   {
+    "rider_slug": "paul-seixas",
+    "position": 33,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nelson-oliveira",
+    "position": 34,
+    "dnf": false
+   },
+   {
+    "rider_slug": "harold-tejada",
+    "position": 35,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tom-van-asbroeck",
+    "position": 36,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-van-dijke",
+    "position": 37,
+    "dnf": false
+   },
+   {
+    "rider_slug": "guillaume-martin",
+    "position": 38,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robert-stannard",
+    "position": 39,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-abrahamsen",
+    "position": 40,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jose-felix-parra",
+    "position": 41,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damiano-caruso",
+    "position": 42,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-vermeersch",
+    "position": 43,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nils-politt",
+    "position": 44,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattia-cattaneo",
+    "position": 45,
+    "dnf": false
+   },
+   {
+    "rider_slug": "isaac-del-toro",
+    "position": 46,
+    "dnf": false
+   },
+   {
+    "rider_slug": "juan-ayuso-pesquera",
+    "position": 47,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brandon-mcnulty",
+    "position": 48,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tadej-pogacar",
+    "position": 49,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edoardo-affini",
+    "position": 50,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-vingegaard",
+    "position": 51,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ilan-van-wilder",
+    "position": 52,
+    "dnf": false
+   },
+   {
+    "rider_slug": "florian-lipowitz",
+    "position": 53,
+    "dnf": false
+   },
+   {
+    "rider_slug": "toms-skujins",
+    "position": 54,
+    "dnf": false
+   },
+   {
+    "rider_slug": "per-strand-hagenes",
+    "position": 55,
+    "dnf": false
+   },
+   {
+    "rider_slug": "filippo-ganna",
+    "position": 56,
+    "dnf": false
+   },
+   {
+    "rider_slug": "egan-bernal",
+    "position": 57,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mattias-skjelmose-jensen",
+    "position": 58,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sean-quinn",
+    "position": 59,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jordan-jegat",
+    "position": 60,
+    "dnf": false
+   },
+   {
+    "rider_slug": "huub-artz",
+    "position": 61,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lenny-martinez",
+    "position": 62,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathias-vacek",
+    "position": 63,
+    "dnf": false
+   },
+   {
+    "rider_slug": "yannis-voisard",
+    "position": 64,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sepp-kuss",
+    "position": 65,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pablo-castrillo-zapater",
+    "position": 66,
+    "dnf": false
+   },
+   {
+    "rider_slug": "adam-yates",
+    "position": 67,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-piganzoli",
+    "position": 68,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joris-delbove",
+    "position": 69,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lennert-van-eetvelt",
+    "position": 70,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kevin-vauquelin",
+    "position": 71,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alexandre-delettre",
+    "position": 72,
+    "dnf": false
+   },
+   {
+    "rider_slug": "cees-bol",
+    "position": 73,
+    "dnf": false
+   },
+   {
+    "rider_slug": "chris-harper",
+    "position": 74,
+    "dnf": false
+   },
+   {
+    "rider_slug": "antonio-tiberi",
+    "position": 75,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jasper-stuyven",
+    "position": 76,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lorenzo-germani",
+    "position": 77,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lewis-askey",
+    "position": 78,
+    "dnf": false
+   },
+   {
+    "rider_slug": "derek-gee",
+    "position": 79,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-kirsch",
+    "position": 80,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michel-hessmann",
+    "position": 81,
+    "dnf": false
+   },
+   {
+    "rider_slug": "vlad-van-mechelen",
+    "position": 82,
+    "dnf": false
+   },
+   {
+    "rider_slug": "louis-vervaeke",
+    "position": 83,
+    "dnf": false
+   },
+   {
+    "rider_slug": "krists-neilands",
+    "position": 84,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-jorgenson",
+    "position": 85,
+    "dnf": false
+   },
+   {
+    "rider_slug": "victor-campenaerts",
+    "position": 86,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matej-mohoric",
+    "position": 87,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michal-kwiatkowski",
+    "position": 88,
+    "dnf": false
+   },
+   {
+    "rider_slug": "mathis-le-berre",
+    "position": 89,
+    "dnf": false
+   },
+   {
+    "rider_slug": "romain-gregoire",
+    "position": 90,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jonas-rickaert",
+    "position": 91,
+    "dnf": false
+   },
+   {
+    "rider_slug": "edward-planckaert",
+    "position": 92,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matteo-trentin",
+    "position": 93,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jai-hindley",
+    "position": 94,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thymen-arensman",
+    "position": 95,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-zimmermann",
+    "position": 96,
+    "dnf": false
+   },
+   {
+    "rider_slug": "clement-braz-afonso",
+    "position": 97,
+    "dnf": false
+   },
+   {
+    "rider_slug": "javier-romo",
+    "position": 98,
+    "dnf": false
+   },
+   {
+    "rider_slug": "frits-biesterbos",
+    "position": 99,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinten-hermans",
+    "position": 100,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nico-denz",
+    "position": 101,
+    "dnf": false
+   },
+   {
+    "rider_slug": "carlos-verona",
+    "position": 102,
+    "dnf": false
+   },
+   {
+    "rider_slug": "piet-allegaert",
+    "position": 103,
+    "dnf": false
+   },
+   {
+    "rider_slug": "hugo-page",
+    "position": 104,
+    "dnf": false
+   },
+   {
+    "rider_slug": "lars-craps",
+    "position": 105,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xandro-meurisse",
+    "position": 106,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kasper-asgreen",
+    "position": 107,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jake-stewart",
+    "position": 108,
+    "dnf": false
+   },
+   {
+    "rider_slug": "brent-van-moer",
+    "position": 109,
+    "dnf": false
+   },
+   {
+    "rider_slug": "einer-rubio",
+    "position": 110,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-prodhomme",
+    "position": 111,
+    "dnf": false
+   },
+   {
+    "rider_slug": "quinn-simmons",
+    "position": 112,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tiesj-benoot",
+    "position": 113,
+    "dnf": false
+   },
+   {
+    "rider_slug": "liam-slock",
+    "position": 114,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jenthe-biermans",
+    "position": 115,
+    "dnf": false
+   },
+   {
+    "rider_slug": "davide-ballerini",
+    "position": 116,
+    "dnf": false
+   },
+   {
+    "rider_slug": "john-degenkolb",
+    "position": 117,
+    "dnf": false
+   },
+   {
+    "rider_slug": "abel-balderstone-roumens",
+    "position": 118,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-engelhardt",
+    "position": 119,
+    "dnf": false
+   },
+   {
+    "rider_slug": "kamil-gradek",
+    "position": 120,
+    "dnf": false
+   },
+   {
+    "rider_slug": "richard-carapaz",
+    "position": 121,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-matthews",
+    "position": 122,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-durbridge",
+    "position": 123,
+    "dnf": false
+   },
+   {
+    "rider_slug": "xabier-mikel-azparren-irurzun",
+    "position": 124,
+    "dnf": false
+   },
+   {
+    "rider_slug": "warren-barguil",
+    "position": 125,
+    "dnf": false
+   },
+   {
+    "rider_slug": "bruno-armirail",
+    "position": 126,
+    "dnf": false
+   },
+   {
+    "rider_slug": "baptiste-veistroffer",
+    "position": 127,
+    "dnf": false
+   },
+   {
+    "rider_slug": "aaron-gate",
+    "position": 128,
+    "dnf": false
+   },
+   {
+    "rider_slug": "felix-grossschartner",
+    "position": 129,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-wellens",
+    "position": 130,
+    "dnf": false
+   },
+   {
+    "rider_slug": "damien-howson",
+    "position": 131,
+    "dnf": false
+   },
+   {
+    "rider_slug": "raul-garcia-pierna",
+    "position": 132,
+    "dnf": false
+   },
+   {
+    "rider_slug": "anders-halland-johannessen",
+    "position": 133,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jefferson-cepeda-hernandez",
+    "position": 134,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matthew-riccitello",
+    "position": 135,
+    "dnf": false
+   },
+   {
+    "rider_slug": "daan-hoole",
+    "position": 136,
+    "dnf": false
+   },
+   {
+    "rider_slug": "robbe-dhondt",
+    "position": 137,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julius-van-den-berg",
+    "position": 138,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tobias-foss",
+    "position": 139,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joshua-tarling",
+    "position": 140,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-baudin",
+    "position": 141,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matheo-vercher",
+    "position": 142,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-valgren-andersen",
+    "position": 143,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-healy",
+    "position": 144,
+    "dnf": false
+   },
+   {
+    "rider_slug": "max-walker",
+    "position": 145,
+    "dnf": false
+   },
+   {
+    "rider_slug": "georg-steinhauser",
+    "position": 146,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jan-tratnik",
+    "position": 147,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ben-o-connor",
+    "position": 148,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ewen-costiou",
+    "position": 149,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ion-izagirre",
+    "position": 150,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sergio-higuita",
+    "position": 151,
+    "dnf": false
+   },
+   {
+    "rider_slug": "alex-aranburu",
+    "position": 152,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marc-hirschi",
+    "position": 153,
+    "dnf": false
+   },
+   {
+    "rider_slug": "benjamin-thomas-2",
+    "position": 154,
+    "dnf": false
+   },
+   {
+    "rider_slug": "sebastian-berwick",
+    "position": 155,
+    "dnf": false
+   },
+   {
+    "rider_slug": "george-bennett",
+    "position": 156,
+    "dnf": false
+   },
+   {
+    "rider_slug": "ramses-debruyne",
+    "position": 157,
+    "dnf": false
+   },
+   {
+    "rider_slug": "tim-marsman",
+    "position": 158,
+    "dnf": false
+   },
+   {
+    "rider_slug": "simone-velasco",
+    "position": 159,
+    "dnf": false
+   },
+   {
+    "rider_slug": "jakub-otruba",
+    "position": 160,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-breuillard",
+    "position": 161,
+    "dnf": false
+   },
+   {
+    "rider_slug": "valentin-paret-peintre",
+    "position": 162,
+    "dnf": false
+   },
+   {
+    "rider_slug": "dylan-van-baarle",
+    "position": 163,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-haller",
+    "position": 164,
+    "dnf": false
+   },
+   {
+    "rider_slug": "stefano-oldani",
+    "position": 165,
+    "dnf": false
+   },
+   {
+    "rider_slug": "nicolas-vinokurov",
+    "position": 166,
+    "dnf": false
+   },
+   {
+    "rider_slug": "silvan-dillier",
+    "position": 167,
+    "dnf": false
+   },
+   {
+    "rider_slug": "luke-plapp",
+    "position": 168,
+    "dnf": false
+   },
+   {
+    "rider_slug": "thibault-guernalec",
+    "position": 169,
+    "dnf": false
+   },
+   {
+    "rider_slug": "matis-louvel",
+    "position": 170,
+    "dnf": false
+   },
+   {
+    "rider_slug": "michael-storer",
+    "position": 171,
+    "dnf": false
+   },
+   {
+    "rider_slug": "julian-alaphilippe",
+    "position": 172,
+    "dnf": false
+   },
+   {
+    "rider_slug": "marco-frigo",
+    "position": 173,
+    "dnf": false
+   },
+   {
+    "rider_slug": "joel-nicolau",
+    "position": 174,
+    "dnf": false
+   },
+   {
+    "rider_slug": "pascal-eenkhoorn",
+    "position": 175,
+    "dnf": false
+   },
+   {
+    "rider_slug": "emiel-verstrynge",
+    "position": 176,
+    "dnf": false
+   }
+  ]
+ }
 }
