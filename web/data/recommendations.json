@@ -1,7 +1,7 @@
 {
   "stage": 9,
   "stage_type": "hilly",
-  "generated": "2026-07-12T07:26:52.996150+00:00",
+  "generated": "2026-07-12T10:38:22.286829+00:00",
   "ml_source": "historisk styrke (8 etaper kørt)",
   "ml_gt_stages": 8,
   "current_team": {
@@ -473,13 +473,13 @@
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "TVM",
-          "Q36",
           "NCT",
           "RBH",
           "UXM",
-          "SQ",
-          "UAE"
+          "TVM",
+          "UAE",
+          "Q36",
+          "SQ"
         ],
         "n_teams": 7,
         "n_transfers": 8,
@@ -882,13 +882,13 @@
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "Q36",
-          "RBH",
           "JAL",
+          "RBH",
           "UXM",
-          "SQ",
           "TPP",
-          "UAE"
+          "UAE",
+          "Q36",
+          "SQ"
         ],
         "n_teams": 7,
         "n_transfers": 8,
@@ -1292,12 +1292,12 @@
         "risk_profile": "Lav",
         "teams_represented": [
           "DAL",
-          "Q36",
           "JAL",
           "UXM",
-          "SQ",
           "VLB",
-          "UAE"
+          "UAE",
+          "Q36",
+          "SQ"
         ],
         "n_teams": 7,
         "n_transfers": 8,
@@ -1607,14 +1607,14 @@
       "n_budget_riders": 5,
       "risk_profile": "Lav",
       "teams_represented": [
-        "TVM",
-        "Q36",
-        "RBH",
         "JAL",
+        "RBH",
         "UXM",
-        "SQ",
         "TPP",
-        "UAE"
+        "TVM",
+        "UAE",
+        "Q36",
+        "SQ"
       ],
       "n_teams": 8,
       "n_transfers": 0,
