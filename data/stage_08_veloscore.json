@@ -1,0 +1,28 @@
+{
+  "stage": 8,
+  "stage_type": "sprint",
+  "level": "rider",
+  "note": "Etape 8 (11. juli 2026) — ren sprint-etape (Merlier, Kooij, Philipsen, Kanter, Girmay). 19 kilder, 29 ryttere. Headline-felter fra screenshot. (Rank 19 'Waresnskjold' = kilde-stavefejl/dublet af Søren Wærenskjold.)",
+  "predictions": [
+    {"rank": 1,  "rider": "Tim Merlier",          "total": 1837, "veloscore": 9.7, "stars": 4},
+    {"rank": 2,  "rider": "Olav Kooij",           "total": 1550, "veloscore": 8.2, "stars": 3},
+    {"rank": 3,  "rider": "Jasper Philipsen",     "total": 1448, "veloscore": 7.6, "stars": 3},
+    {"rank": 4,  "rider": "Max Kanter",           "total": 1254, "veloscore": 6.6, "stars": 3},
+    {"rank": 5,  "rider": "Biniam Girmay",        "total": 1226, "veloscore": 6.5, "stars": 3},
+    {"rank": 6,  "rider": "Søren Wærenskjold",    "total": 951,  "veloscore": 5.0, "stars": 2},
+    {"rank": 7,  "rider": "Milan Fretin",         "total": 734,  "veloscore": 3.9, "stars": 2},
+    {"rank": 8,  "rider": "Mads Pedersen",        "total": 661,  "veloscore": 3.5, "stars": 2},
+    {"rank": 9,  "rider": "Phil Bauhaus",         "total": 633,  "veloscore": 3.3, "stars": 2},
+    {"rank": 10, "rider": "Pavel Bittner",        "total": 560,  "veloscore": 2.9, "stars": 1},
+    {"rank": 11, "rider": "Fernando Gaviria",     "total": 487,  "veloscore": 2.6, "stars": 1},
+    {"rank": 12, "rider": "Huub Artz",            "total": 438,  "veloscore": 2.3, "stars": 1},
+    {"rank": 13, "rider": "Pascal Ackermann",     "total": 317,  "veloscore": 1.7, "stars": 1},
+    {"rank": 14, "rider": "Dorian Godon",         "total": 278,  "veloscore": 1.5, "stars": 1},
+    {"rank": 15, "rider": "Anthony Turgis",       "total": 214,  "veloscore": 1.1, "stars": 0},
+    {"rank": 16, "rider": "Rick Pluimers",        "total": 156,  "veloscore": 0.8, "stars": 0},
+    {"rank": 17, "rider": "Clément Russo",        "total": 113,  "veloscore": 0.6, "stars": 0},
+    {"rank": 18, "rider": "Jenno Berckmoes",      "total": 83,   "veloscore": 0.4, "stars": 0},
+    {"rank": 19, "rider": "Waresnskjold",         "total": 79,   "veloscore": 0.4, "stars": 0},
+    {"rank": 20, "rider": "Jonas Abrahamsen",     "total": 76,   "veloscore": 0.4, "stars": 0}
+  ]
+}
