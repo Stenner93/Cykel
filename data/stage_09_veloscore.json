@@ -1,0 +1,28 @@
+{
+  "stage": 9,
+  "stage_type": "hilly",
+  "level": "rider",
+  "note": "Etape 9 (12. juli 2026) — kuperet/puncheur- og udbryder-dag (Mads Pedersen, Quinn Simmons, Vacek, van der Poel, Grégoire). 15 kilder, 53 ryttere. Headline-felter fra screenshot.",
+  "predictions": [
+    {"rank": 1,  "rider": "Mads Pedersen",        "total": 1089, "veloscore": 7.3, "stars": 4},
+    {"rank": 2,  "rider": "Quinn Simmons",        "total": 1049, "veloscore": 7.0, "stars": 4},
+    {"rank": 3,  "rider": "Mathias Vacek",        "total": 891,  "veloscore": 5.9, "stars": 3},
+    {"rank": 4,  "rider": "Mathieu van der Poel", "total": 763,  "veloscore": 5.1, "stars": 3},
+    {"rank": 5,  "rider": "Romain Grégoire",      "total": 541,  "veloscore": 3.6, "stars": 3},
+    {"rank": 6,  "rider": "Jonas Abrahamsen",     "total": 464,  "veloscore": 3.1, "stars": 2},
+    {"rank": 7,  "rider": "Maxim van Gils",       "total": 462,  "veloscore": 3.1, "stars": 2},
+    {"rank": 8,  "rider": "Tom Pidcock",          "total": 423,  "veloscore": 2.8, "stars": 2},
+    {"rank": 9,  "rider": "Dorian Godon",         "total": 369,  "veloscore": 2.5, "stars": 2},
+    {"rank": 10, "rider": "Alex Aranburu",        "total": 361,  "veloscore": 2.4, "stars": 2},
+    {"rank": 11, "rider": "Marco Frigo",          "total": 360,  "veloscore": 2.4, "stars": 1},
+    {"rank": 12, "rider": "Raúl García Pierna",   "total": 354,  "veloscore": 2.4, "stars": 1},
+    {"rank": 13, "rider": "Ben Healy",            "total": 353,  "veloscore": 2.4, "stars": 1},
+    {"rank": 14, "rider": "Pablo Castrillo",      "total": 349,  "veloscore": 2.3, "stars": 1},
+    {"rank": 15, "rider": "Lennert Van Eetvelt",  "total": 298,  "veloscore": 2.0, "stars": 1},
+    {"rank": 16, "rider": "Richard Carapaz",      "total": 253,  "veloscore": 1.7, "stars": 0},
+    {"rank": 17, "rider": "Michael Matthews",     "total": 251,  "veloscore": 1.7, "stars": 0},
+    {"rank": 18, "rider": "Luke Plapp",           "total": 215,  "veloscore": 1.4, "stars": 0},
+    {"rank": 19, "rider": "Tim Wellens",          "total": 215,  "veloscore": 1.4, "stars": 0},
+    {"rank": 20, "rider": "Mauro Schmid",         "total": 209,  "veloscore": 1.4, "stars": 0}
+  ]
+}
