@@ -1,366 +1,384 @@
 {
   "jasper_philipsen": {
-    "sprint_pts": 185,
+    "sprint_pts": 161,
     "sprint_rank": 1
   },
-  "tim_merlier": {
-    "sprint_pts": 173,
+  "mads_pedersen": {
+    "sprint_pts": 149,
     "sprint_rank": 2
   },
   "biniam_girmay": {
-    "sprint_pts": 172,
+    "sprint_pts": 130,
     "sprint_rank": 3
   },
-  "mads_pedersen": {
-    "sprint_pts": 153,
+  "olav_kooij": {
+    "sprint_pts": 100,
     "sprint_rank": 4
   },
-  "olav_kooij": {
-    "sprint_pts": 140,
+  "tim_merlier": {
+    "sprint_pts": 94,
     "sprint_rank": 5
   },
-  "max_kanter": {
-    "sprint_pts": 99,
+  "søren_wærenskjold": {
+    "sprint_pts": 70,
     "sprint_rank": 6
   },
-  "søren_wærenskjold": {
-    "sprint_pts": 86,
-    "sprint_rank": 7
-  },
-  "milan_fretin": {
-    "sprint_pts": 83,
-    "sprint_rank": 8
-  },
-  "mathieu_van_der_poel": {
-    "sprint_pts": 69,
-    "sprint_rank": 9,
-    "kom_pts": 1,
-    "kom_rank": 20
-  },
-  "clement_russo": {
-    "sprint_pts": 66,
-    "sprint_rank": 10
-  },
-  "anthony_turgis": {
-    "sprint_pts": 65,
-    "sprint_rank": 11
-  },
-  "rick_pluimers": {
-    "sprint_pts": 56,
-    "sprint_rank": 12
-  },
-  "pascal_ackermann": {
-    "sprint_pts": 50,
-    "sprint_rank": 13
-  },
-  "huub_artz": {
-    "sprint_pts": 48,
-    "sprint_rank": 14
-  },
-  "liam_slock": {
-    "sprint_pts": 46,
-    "sprint_rank": 15,
-    "kom_pts": 2,
-    "kom_rank": 13
-  },
-  "fernando_gaviria_rendon": {
-    "sprint_pts": 42,
-    "sprint_rank": 16
-  },
   "thomas_pidcock": {
-    "sprint_pts": 39,
-    "sprint_rank": 17,
-    "kom_pts": 7,
-    "kom_rank": 7
-  },
-  "tadej_pogacar": {
-    "sprint_pts": 32,
-    "sprint_rank": 18,
-    "kom_pts": 14,
-    "kom_rank": 2
-  },
-  "pavel_bittner": {
-    "sprint_pts": 30,
-    "sprint_rank": 19
-  },
-  "isaac_del_toro": {
-    "sprint_pts": 26,
-    "sprint_rank": 20,
-    "kom_pts": 4,
-    "kom_rank": 10
-  },
-  "jakub_otruba": {
-    "sprint_pts": 25,
-    "sprint_rank": 21
-  },
-  "michael_matthews": {
-    "sprint_pts": 25,
-    "sprint_rank": 22
-  },
-  "tobias_halland_johannessen": {
-    "sprint_pts": 25,
-    "sprint_rank": 23,
-    "kom_pts": 2,
-    "kom_rank": 14
-  },
-  "mathis_le_berre": {
-    "sprint_pts": 25,
-    "sprint_rank": 24
-  },
-  "baptiste_veistroffer": {
-    "sprint_pts": 25,
-    "sprint_rank": 25,
-    "kom_pts": 2,
-    "kom_rank": 18
-  },
-  "remco_evenepoel": {
-    "sprint_pts": 24,
-    "sprint_rank": 26,
-    "kom_pts": 4,
-    "kom_rank": 9
-  },
-  "jenno_berckmoes": {
-    "sprint_pts": 20,
-    "sprint_rank": 27
-  },
-  "nelson_oliveira": {
-    "sprint_pts": 20,
-    "sprint_rank": 28
-  },
-  "alex_baudin": {
-    "sprint_pts": 19,
-    "sprint_rank": 29,
-    "kom_pts": 3,
-    "kom_rank": 12
-  },
-  "jenthe_biermans": {
-    "sprint_pts": 18,
-    "sprint_rank": 30
-  },
-  "fred_wright": {
-    "sprint_pts": 18,
-    "sprint_rank": 31
-  },
-  "filippo_ganna": {
-    "sprint_pts": 17,
-    "sprint_rank": 32
-  },
-  "paul_seixas": {
-    "sprint_pts": 17,
-    "sprint_rank": 33,
-    "kom_pts": 6,
-    "kom_rank": 8
-  },
-  "thibault_guernalec": {
-    "sprint_pts": 16,
-    "sprint_rank": 34
-  },
-  "julian_alaphilippe": {
-    "sprint_pts": 16,
-    "sprint_rank": 35
-  },
-  "mathias_vacek": {
-    "sprint_pts": 14,
-    "sprint_rank": 36,
-    "kom_pts": 1,
-    "kom_rank": 24
-  },
-  "anthon_charmig": {
-    "sprint_pts": 14,
-    "sprint_rank": 37,
-    "kom_pts": 2,
-    "kom_rank": 17
-  },
-  "davide_ballerini": {
-    "sprint_pts": 13,
-    "sprint_rank": 38
-  },
-  "florian_lipowitz": {
-    "sprint_pts": 13,
-    "sprint_rank": 39,
-    "kom_pts": 2,
-    "kom_rank": 16
-  },
-  "quinn_simmons": {
-    "sprint_pts": 12,
-    "sprint_rank": 40,
-    "kom_pts": 3,
-    "kom_rank": 11
-  },
-  "nicolas_breuillard": {
-    "sprint_pts": 11,
-    "sprint_rank": 41
-  },
-  "juan_ayuso": {
-    "sprint_pts": 11,
-    "sprint_rank": 42,
-    "kom_pts": 1,
-    "kom_rank": 22
-  },
-  "tom_van_asbroeck": {
-    "sprint_pts": 10,
-    "sprint_rank": 43
-  },
-  "dorian_godon": {
-    "sprint_pts": 10,
-    "sprint_rank": 44
-  },
-  "harold_tejada": {
-    "sprint_pts": 10,
-    "sprint_rank": 45
-  },
-  "mattias_skjelmose": {
-    "sprint_pts": 10,
-    "sprint_rank": 46
-  },
-  "stefano_oldani": {
-    "sprint_pts": 10,
-    "sprint_rank": 47
-  },
-  "tim_wellens": {
-    "sprint_pts": 9,
-    "sprint_rank": 48
-  },
-  "jordan_jegat": {
-    "sprint_pts": 9,
-    "sprint_rank": 49
-  },
-  "jonas_vingegaard": {
-    "sprint_pts": 9,
-    "sprint_rank": 50,
-    "kom_pts": 8,
-    "kom_rank": 5
-  },
-  "ben_healy": {
-    "sprint_pts": 8,
-    "sprint_rank": 51
-  },
-  "antonio_tiberi": {
-    "sprint_pts": 8,
-    "sprint_rank": 52
-  },
-  "maxim_van_gils": {
-    "sprint_pts": 7,
-    "sprint_rank": 53
-  },
-  "sean_quinn": {
-    "sprint_pts": 7,
-    "sprint_rank": 54
-  },
-  "ramses_debruyne": {
-    "sprint_pts": 7,
-    "sprint_rank": 55,
-    "kom_pts": 1,
-    "kom_rank": 23
-  },
-  "quinten_hermans": {
-    "sprint_pts": 7,
-    "sprint_rank": 56
-  },
-  "dylan_van_baarle": {
-    "sprint_pts": 7,
-    "sprint_rank": 57
-  },
-  "lenny_martinez": {
-    "sprint_pts": 6,
-    "sprint_rank": 58
-  },
-  "jasper_stuyven": {
-    "sprint_pts": 6,
-    "sprint_rank": 59
-  },
-  "richard_carapaz": {
-    "sprint_pts": 5,
-    "sprint_rank": 60,
+    "sprint_pts": 67,
+    "sprint_rank": 7,
     "kom_pts": 18,
     "kom_rank": 1
   },
-  "einer_rubio": {
-    "sprint_pts": 5,
-    "sprint_rank": 61
+  "max_kanter": {
+    "sprint_pts": 67,
+    "sprint_rank": 8
   },
-  "phil_bauhaus": {
-    "sprint_pts": 4,
-    "sprint_rank": 62
+  "milan_fretin": {
+    "sprint_pts": 65,
+    "sprint_rank": 9
   },
-  "brandon_mcnulty": {
-    "sprint_pts": 4,
-    "sprint_rank": 63
+  "mathieu_van_der_poel": {
+    "sprint_pts": 62,
+    "sprint_rank": 10,
+    "kom_pts": 1,
+    "kom_rank": 24
   },
-  "davide_piganzoli": {
-    "sprint_pts": 4,
-    "sprint_rank": 64
+  "anthony_turgis": {
+    "sprint_pts": 50,
+    "sprint_rank": 11
   },
-  "mike_teunissen": {
-    "sprint_pts": 4,
-    "sprint_rank": 65
+  "mauro_schmid": {
+    "sprint_pts": 50,
+    "sprint_rank": 12,
+    "kom_pts": 8,
+    "kom_rank": 8
   },
-  "florian_vermeersch": {
-    "sprint_pts": 4,
-    "sprint_rank": 66
+  "huub_artz": {
+    "sprint_pts": 48,
+    "sprint_rank": 13
   },
-  "aaron_gate": {
-    "sprint_pts": 3,
-    "sprint_rank": 67
+  "clement_russo": {
+    "sprint_pts": 47,
+    "sprint_rank": 14
   },
-  "alex_aranburu": {
-    "sprint_pts": 3,
-    "sprint_rank": 68
+  "harold_tejada": {
+    "sprint_pts": 40,
+    "sprint_rank": 15
   },
-  "ilan_van_wilder": {
-    "sprint_pts": 3,
-    "sprint_rank": 69
-  },
-  "kevin_vauquelin": {
-    "sprint_pts": 3,
-    "sprint_rank": 70
-  },
-  "krists_neilands": {
-    "sprint_pts": 3,
-    "sprint_rank": 71
-  },
-  "marc_hirschi": {
-    "sprint_pts": 2,
-    "sprint_rank": 72
-  },
-  "per_strand_hagenes": {
-    "sprint_pts": 2,
-    "sprint_rank": 73
-  },
-  "jake_stewart": {
-    "sprint_pts": 1,
-    "sprint_rank": 74
-  },
-  "egan_bernal": {
-    "sprint_pts": 1,
-    "sprint_rank": 75
-  },
-  "hugo_page": {
-    "sprint_pts": 1,
-    "sprint_rank": 76
-  },
-  "javier_romo": {
-    "kom_pts": 9,
+  "tadej_pogacar": {
+    "sprint_pts": 32,
+    "sprint_rank": 16,
+    "kom_pts": 14,
     "kom_rank": 3
   },
-  "valentin_paret-peintre": {
-    "kom_pts": 8,
-    "kom_rank": 4
+  "fred_wright": {
+    "sprint_pts": 30,
+    "sprint_rank": 17
   },
-  "nicolas_prodhomme": {
+  "rick_pluimers": {
+    "sprint_pts": 30,
+    "sprint_rank": 18
+  },
+  "michael_matthews": {
+    "sprint_pts": 29,
+    "sprint_rank": 19
+  },
+  "nelson_oliveira": {
+    "sprint_pts": 27,
+    "sprint_rank": 20
+  },
+  "isaac_del_toro": {
+    "sprint_pts": 26,
+    "sprint_rank": 21,
+    "kom_pts": 4,
+    "kom_rank": 12
+  },
+  "liam_slock": {
+    "sprint_pts": 26,
+    "sprint_rank": 22
+  },
+  "pascal_ackermann": {
+    "sprint_pts": 26,
+    "sprint_rank": 23
+  },
+  "maxim_van_gils": {
+    "sprint_pts": 25,
+    "sprint_rank": 24,
+    "kom_pts": 6,
+    "kom_rank": 10
+  },
+  "tobias_halland_johannessen": {
+    "sprint_pts": 25,
+    "sprint_rank": 25,
+    "kom_pts": 2,
+    "kom_rank": 16
+  },
+  "fernando_gaviria_rendon": {
+    "sprint_pts": 25,
+    "sprint_rank": 26
+  },
+  "mathis_le_berre": {
+    "sprint_pts": 25,
+    "sprint_rank": 27
+  },
+  "baptiste_veistroffer": {
+    "sprint_pts": 25,
+    "sprint_rank": 28,
+    "kom_pts": 2,
+    "kom_rank": 20
+  },
+  "remco_evenepoel": {
+    "sprint_pts": 24,
+    "sprint_rank": 29,
+    "kom_pts": 4,
+    "kom_rank": 11
+  },
+  "jordan_jegat": {
+    "sprint_pts": 21,
+    "sprint_rank": 30,
+    "kom_pts": 1,
+    "kom_rank": 29
+  },
+  "brandon_mcnulty": {
+    "sprint_pts": 20,
+    "sprint_rank": 31
+  },
+  "alex_baudin": {
+    "sprint_pts": 19,
+    "sprint_rank": 32,
+    "kom_pts": 3,
+    "kom_rank": 15
+  },
+  "jenthe_biermans": {
+    "sprint_pts": 18,
+    "sprint_rank": 33
+  },
+  "jenno_berckmoes": {
+    "sprint_pts": 18,
+    "sprint_rank": 34
+  },
+  "tim_wellens": {
+    "sprint_pts": 17,
+    "sprint_rank": 35
+  },
+  "filippo_ganna": {
+    "sprint_pts": 17,
+    "sprint_rank": 36
+  },
+  "paul_seixas": {
+    "sprint_pts": 17,
+    "sprint_rank": 37,
+    "kom_pts": 6,
+    "kom_rank": 9
+  },
+  "kevin_vauquelin": {
+    "sprint_pts": 17,
+    "sprint_rank": 38,
+    "kom_pts": 2,
+    "kom_rank": 22
+  },
+  "quinten_hermans": {
+    "sprint_pts": 16,
+    "sprint_rank": 39,
+    "kom_pts": 2,
+    "kom_rank": 21
+  },
+  "julian_alaphilippe": {
+    "sprint_pts": 16,
+    "sprint_rank": 40
+  },
+  "stefano_oldani": {
+    "sprint_pts": 15,
+    "sprint_rank": 41
+  },
+  "mathias_vacek": {
+    "sprint_pts": 14,
+    "sprint_rank": 42,
+    "kom_pts": 1,
+    "kom_rank": 28
+  },
+  "nicolas_breuillard": {
+    "sprint_pts": 14,
+    "sprint_rank": 43
+  },
+  "anthon_charmig": {
+    "sprint_pts": 14,
+    "sprint_rank": 44,
+    "kom_pts": 2,
+    "kom_rank": 19
+  },
+  "edward_planckaert": {
+    "sprint_pts": 14,
+    "sprint_rank": 45
+  },
+  "florian_lipowitz": {
+    "sprint_pts": 13,
+    "sprint_rank": 46,
+    "kom_pts": 2,
+    "kom_rank": 18
+  },
+  "luke_plapp": {
+    "sprint_pts": 13,
+    "sprint_rank": 47,
+    "kom_pts": 4,
+    "kom_rank": 13
+  },
+  "juan_ayuso": {
+    "sprint_pts": 11,
+    "sprint_rank": 48,
+    "kom_pts": 1,
+    "kom_rank": 26
+  },
+  "davide_ballerini": {
+    "sprint_pts": 11,
+    "sprint_rank": 49
+  },
+  "mattias_skjelmose": {
+    "sprint_pts": 10,
+    "sprint_rank": 50
+  },
+  "quinn_simmons": {
+    "sprint_pts": 10,
+    "sprint_rank": 51,
+    "kom_pts": 3,
+    "kom_rank": 14
+  },
+  "xandro_meurisse": {
+    "sprint_pts": 10,
+    "sprint_rank": 52
+  },
+  "clement_braz_afonso": {
+    "sprint_pts": 10,
+    "sprint_rank": 53
+  },
+  "ben_healy": {
+    "sprint_pts": 9,
+    "sprint_rank": 54
+  },
+  "jonas_vingegaard": {
+    "sprint_pts": 9,
+    "sprint_rank": 55,
     "kom_pts": 8,
     "kom_rank": 6
   },
+  "antonio_tiberi": {
+    "sprint_pts": 8,
+    "sprint_rank": 56
+  },
+  "sean_quinn": {
+    "sprint_pts": 7,
+    "sprint_rank": 57
+  },
+  "ramses_debruyne": {
+    "sprint_pts": 7,
+    "sprint_rank": 58,
+    "kom_pts": 1,
+    "kom_rank": 27
+  },
+  "dylan_van_baarle": {
+    "sprint_pts": 7,
+    "sprint_rank": 59
+  },
+  "lenny_martinez": {
+    "sprint_pts": 6,
+    "sprint_rank": 60
+  },
+  "jasper_stuyven": {
+    "sprint_pts": 6,
+    "sprint_rank": 61
+  },
+  "raul_garcia_pierna": {
+    "sprint_pts": 6,
+    "sprint_rank": 62
+  },
+  "richard_carapaz": {
+    "sprint_pts": 5,
+    "sprint_rank": 63,
+    "kom_pts": 18,
+    "kom_rank": 2
+  },
+  "einer_rubio": {
+    "sprint_pts": 5,
+    "sprint_rank": 64
+  },
+  "michael_valgren": {
+    "sprint_pts": 5,
+    "sprint_rank": 65
+  },
+  "marc_hirschi": {
+    "sprint_pts": 4,
+    "sprint_rank": 66
+  },
+  "davide_piganzoli": {
+    "sprint_pts": 4,
+    "sprint_rank": 67
+  },
+  "mike_teunissen": {
+    "sprint_pts": 4,
+    "sprint_rank": 68
+  },
+  "tom_van_asbroeck": {
+    "sprint_pts": 4,
+    "sprint_rank": 69
+  },
+  "florian_vermeersch": {
+    "sprint_pts": 4,
+    "sprint_rank": 70
+  },
+  "kasper_asgreen": {
+    "sprint_pts": 4,
+    "sprint_rank": 71
+  },
+  "alex_aranburu": {
+    "sprint_pts": 3,
+    "sprint_rank": 72
+  },
+  "ilan_van_wilder": {
+    "sprint_pts": 3,
+    "sprint_rank": 73
+  },
+  "krists_neilands": {
+    "sprint_pts": 3,
+    "sprint_rank": 74
+  },
+  "per_strand_hagenes": {
+    "sprint_pts": 2,
+    "sprint_rank": 75
+  },
+  "jake_stewart": {
+    "sprint_pts": 1,
+    "sprint_rank": 76
+  },
+  "egan_bernal": {
+    "sprint_pts": 1,
+    "sprint_rank": 77
+  },
+  "hugo_page": {
+    "sprint_pts": 1,
+    "sprint_rank": 78
+  },
+  "javier_romo": {
+    "kom_pts": 9,
+    "kom_rank": 4
+  },
+  "valentin_paret-peintre": {
+    "kom_pts": 8,
+    "kom_rank": 5
+  },
+  "nicolas_prodhomme": {
+    "kom_pts": 8,
+    "kom_rank": 7
+  },
   "lennert_van_eetvelt": {
     "kom_pts": 2,
-    "kom_rank": 15
+    "kom_rank": 17
   },
   "matteo_jorgenson": {
     "kom_pts": 1,
-    "kom_rank": 19
+    "kom_rank": 23
   },
   "louis_vervaeke": {
     "kom_pts": 1,
-    "kom_rank": 21
+    "kom_rank": 25
   }
 }
