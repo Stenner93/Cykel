@@ -1,14 +1,14 @@
 {
   "stage": 14,
   "stage_type": "mountain",
-  "generated": "2026-07-18T10:21:36.934054+00:00",
+  "generated": "2026-07-18T11:32:19.025316+00:00",
   "ml_source": "historisk styrke (14 etaper kørt)",
   "ml_gt_stages": 14,
   "current_team": {
     "bank_M": 0.0,
     "rider_ids": [
       "tadej_pogacar",
-      "ramses_debruyne",
+      "valentin_paret-peintre",
       "ilan_van_wilder",
       "nicolas_prodhomme",
       "yannis_voisard",
@@ -18,7 +18,7 @@
     ],
     "rider_names": [
       "Tadej Pogacar",
-      "Ramses Debruyne",
+      "Valentin Paret-Peintre",
       "Ilan van Wilder",
       "Nicolas Prodhomme",
       "Yannis Voisard",
@@ -34,10 +34,10 @@
         "price_M": 20.34
       },
       {
-        "rider_id": "ramses_debruyne",
-        "full_name": "Ramses Debruyne",
-        "team": "ALP",
-        "price_M": 4.83
+        "rider_id": "valentin_paret-peintre",
+        "full_name": "Valentin Paret-Peintre",
+        "team": "SQ",
+        "price_M": 4.96
       },
       {
         "rider_id": "ilan_van_wilder",
@@ -365,7 +365,7 @@
       "captain_id": "tadej_pogacar",
       "expected_pts": 1328000,
       "total_cost_M": 63.5,
-      "budget_left_M": 0.67,
+      "budget_left_M": 0.8,
       "transfer_analysis": {
         "to_sell": [
           {
@@ -379,9 +379,9 @@
             "price_M": 8.35
           },
           {
-            "rider_id": "ramses_debruyne",
-            "full_name": "Ramses Debruyne",
-            "price_M": 4.83
+            "rider_id": "valentin_paret-peintre",
+            "full_name": "Valentin Paret-Peintre",
+            "price_M": 4.96
           },
           {
             "rider_id": "ilan_van_wilder",
@@ -432,12 +432,12 @@
           }
         ],
         "n_transfers": 6,
-        "proceeds_M": 33.74,
+        "proceeds_M": 33.87,
         "face_buy_M": 32.74,
         "fee_M": 0.33,
         "buy_cost_M": 33.07,
-        "net_cost_M": -0.67,
-        "balance_after_M": 0.67,
+        "net_cost_M": -0.8,
+        "balance_after_M": 0.8,
         "affordable": true
       },
       "assessment": {
@@ -447,25 +447,25 @@
         "est_etapebonus": 35000,
         "est_top15_count": 4,
         "total_cost_M": 63.5,
-        "budget_left_M": 0.67,
+        "budget_left_M": 0.8,
         "avg_price_M": 7.9,
         "n_premium_riders": 4,
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "RBH",
+          "TVM",
           "SQ",
-          "UAE",
-          "VLB",
-          "Q36",
           "JAL",
+          "UAE",
           "UXM",
-          "TVM"
+          "Q36",
+          "VLB",
+          "RBH"
         ],
         "n_teams": 8,
         "n_transfers": 6,
         "affordable": true,
-        "balance_after_M": 0.67
+        "balance_after_M": 0.8
       }
     },
     {
@@ -755,7 +755,7 @@
       "captain_id": "jonas_vingegaard",
       "expected_pts": 1236500,
       "total_cost_M": 63.73,
-      "budget_left_M": 0.24,
+      "budget_left_M": 0.37,
       "transfer_analysis": {
         "to_sell": [
           {
@@ -774,9 +774,9 @@
             "price_M": 8.35
           },
           {
-            "rider_id": "ramses_debruyne",
-            "full_name": "Ramses Debruyne",
-            "price_M": 4.83
+            "rider_id": "valentin_paret-peintre",
+            "full_name": "Valentin Paret-Peintre",
+            "price_M": 4.96
           },
           {
             "rider_id": "ilan_van_wilder",
@@ -832,12 +832,12 @@
           }
         ],
         "n_transfers": 7,
-        "proceeds_M": 54.08,
+        "proceeds_M": 54.21,
         "face_buy_M": 53.31,
         "fee_M": 0.53,
         "buy_cost_M": 53.84,
-        "net_cost_M": -0.24,
-        "balance_after_M": 0.24,
+        "net_cost_M": -0.37,
+        "balance_after_M": 0.37,
         "affordable": true
       },
       "assessment": {
@@ -847,24 +847,24 @@
         "est_etapebonus": 65000,
         "est_top15_count": 5,
         "total_cost_M": 63.73,
-        "budget_left_M": 0.24,
+        "budget_left_M": 0.37,
         "avg_price_M": 8.0,
         "n_premium_riders": 5,
         "n_budget_riders": 3,
         "risk_profile": "Lav",
         "teams_represented": [
-          "RBH",
           "SQ",
-          "VLB",
           "L-T",
-          "Q36",
           "JAL",
-          "UXM"
+          "UXM",
+          "Q36",
+          "VLB",
+          "RBH"
         ],
         "n_teams": 7,
         "n_transfers": 7,
         "affordable": true,
-        "balance_after_M": 0.24
+        "balance_after_M": 0.37
       }
     },
     {
@@ -1154,7 +1154,7 @@
       "captain_id": "tadej_pogacar",
       "expected_pts": 1388000,
       "total_cost_M": 63.86,
-      "budget_left_M": 0.31,
+      "budget_left_M": 0.44,
       "transfer_analysis": {
         "to_sell": [
           {
@@ -1168,9 +1168,9 @@
             "price_M": 8.35
           },
           {
-            "rider_id": "ramses_debruyne",
-            "full_name": "Ramses Debruyne",
-            "price_M": 4.83
+            "rider_id": "valentin_paret-peintre",
+            "full_name": "Valentin Paret-Peintre",
+            "price_M": 4.96
           },
           {
             "rider_id": "ilan_van_wilder",
@@ -1221,12 +1221,12 @@
           }
         ],
         "n_transfers": 6,
-        "proceeds_M": 33.74,
+        "proceeds_M": 33.87,
         "face_buy_M": 33.1,
         "fee_M": 0.33,
         "buy_cost_M": 33.43,
-        "net_cost_M": -0.31,
-        "balance_after_M": 0.31,
+        "net_cost_M": -0.44,
+        "balance_after_M": 0.44,
         "affordable": true
       },
       "assessment": {
@@ -1236,23 +1236,23 @@
         "est_etapebonus": 65000,
         "est_top15_count": 5,
         "total_cost_M": 63.86,
-        "budget_left_M": 0.31,
+        "budget_left_M": 0.44,
         "avg_price_M": 8.0,
         "n_premium_riders": 4,
         "n_budget_riders": 3,
         "risk_profile": "Lav",
         "teams_represented": [
-          "RBH",
           "SQ",
-          "UAE",
-          "Q36",
           "JAL",
-          "UXM"
+          "UAE",
+          "UXM",
+          "Q36",
+          "RBH"
         ],
         "n_teams": 6,
         "n_transfers": 6,
         "affordable": true,
-        "balance_after_M": 0.31
+        "balance_after_M": 0.44
       }
     }
   ],
@@ -1557,14 +1557,14 @@
       "n_budget_riders": 5,
       "risk_profile": "Lav",
       "teams_represented": [
-        "RBH",
+        "TVM",
         "SQ",
-        "UAE",
-        "TPP",
-        "Q36",
         "JAL",
+        "UAE",
         "UXM",
-        "TVM"
+        "Q36",
+        "RBH",
+        "TPP"
       ],
       "n_teams": 8,
       "n_transfers": 0,
