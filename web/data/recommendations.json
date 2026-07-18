@@ -1,7 +1,7 @@
 {
   "stage": 14,
   "stage_type": "mountain",
-  "generated": "2026-07-17T20:29:49.654946+00:00",
+  "generated": "2026-07-18T06:54:48.497296+00:00",
   "ml_source": "historisk styrke (13 etaper kørt)",
   "ml_gt_stages": 13,
   "current_team": {
@@ -379,13 +379,13 @@
             "price_M": 8.35
           },
           {
-            "rider_id": "ilan_van_wilder",
-            "full_name": "Ilan van Wilder",
+            "rider_id": "ramses_debruyne",
+            "full_name": "Ramses Debruyne",
             "price_M": 4.83
           },
           {
-            "rider_id": "ramses_debruyne",
-            "full_name": "Ramses Debruyne",
+            "rider_id": "ilan_van_wilder",
+            "full_name": "Ilan van Wilder",
             "price_M": 4.83
           },
           {
@@ -453,14 +453,14 @@
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "RBH",
-          "VLB",
           "UAE",
-          "SQ",
-          "JAL",
-          "UXM",
+          "RBH",
           "Q36",
-          "TVM"
+          "UXM",
+          "VLB",
+          "JAL",
+          "TVM",
+          "SQ"
         ],
         "n_teams": 8,
         "n_transfers": 6,
@@ -774,13 +774,13 @@
             "price_M": 8.35
           },
           {
-            "rider_id": "ilan_van_wilder",
-            "full_name": "Ilan van Wilder",
+            "rider_id": "ramses_debruyne",
+            "full_name": "Ramses Debruyne",
             "price_M": 4.83
           },
           {
-            "rider_id": "ramses_debruyne",
-            "full_name": "Ramses Debruyne",
+            "rider_id": "ilan_van_wilder",
+            "full_name": "Ilan van Wilder",
             "price_M": 4.83
           },
           {
@@ -854,12 +854,12 @@
         "risk_profile": "Lav",
         "teams_represented": [
           "RBH",
-          "VLB",
-          "SQ",
-          "JAL",
-          "UXM",
+          "L-T",
           "Q36",
-          "L-T"
+          "UXM",
+          "VLB",
+          "JAL",
+          "SQ"
         ],
         "n_teams": 7,
         "n_transfers": 7,
@@ -1168,13 +1168,13 @@
             "price_M": 8.35
           },
           {
-            "rider_id": "ilan_van_wilder",
-            "full_name": "Ilan van Wilder",
+            "rider_id": "ramses_debruyne",
+            "full_name": "Ramses Debruyne",
             "price_M": 4.83
           },
           {
-            "rider_id": "ramses_debruyne",
-            "full_name": "Ramses Debruyne",
+            "rider_id": "ilan_van_wilder",
+            "full_name": "Ilan van Wilder",
             "price_M": 4.83
           },
           {
@@ -1242,12 +1242,12 @@
         "n_budget_riders": 3,
         "risk_profile": "Lav",
         "teams_represented": [
-          "RBH",
           "UAE",
-          "SQ",
-          "JAL",
+          "RBH",
+          "Q36",
           "UXM",
-          "Q36"
+          "JAL",
+          "SQ"
         ],
         "n_teams": 6,
         "n_transfers": 6,
@@ -1557,13 +1557,13 @@
       "n_budget_riders": 4,
       "risk_profile": "Lav",
       "teams_represented": [
-        "VLB",
         "UAE",
-        "SQ",
-        "JAL",
-        "UXM",
         "Q36",
-        "TVM"
+        "UXM",
+        "VLB",
+        "JAL",
+        "TVM",
+        "SQ"
       ],
       "n_teams": 7,
       "n_transfers": 0,
