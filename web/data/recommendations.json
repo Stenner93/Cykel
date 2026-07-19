@@ -1,7 +1,7 @@
 {
   "stage": 15,
   "stage_type": "mountain",
-  "generated": "2026-07-18T20:23:22.161104+00:00",
+  "generated": "2026-07-19T07:23:57.904732+00:00",
   "ml_source": "historisk styrke (14 etaper kørt)",
   "ml_gt_stages": 14,
   "current_team": {
@@ -453,11 +453,11 @@
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "SQ",
           "JAL",
           "UAE",
-          "VLB",
+          "SQ",
           "Q36",
+          "VLB",
           "RBH",
           "UXM"
         ],
@@ -852,11 +852,11 @@
         "n_budget_riders": 2,
         "risk_profile": "Lav",
         "teams_represented": [
-          "SQ",
           "JAL",
           "UAE",
-          "VLB",
+          "SQ",
           "Q36",
+          "VLB",
           "RBH"
         ],
         "n_teams": 6,
@@ -1240,9 +1240,9 @@
         "n_budget_riders": 3,
         "risk_profile": "Lav",
         "teams_represented": [
-          "SQ",
           "JAL",
           "UAE",
+          "SQ",
           "Q36",
           "RBH",
           "UXM"
@@ -1555,13 +1555,13 @@
       "n_budget_riders": 5,
       "risk_profile": "Lav",
       "teams_represented": [
-        "TPP",
-        "SQ",
         "JAL",
         "UAE",
-        "TVM",
+        "SQ",
+        "TPP",
         "Q36",
         "RBH",
+        "TVM",
         "UXM"
       ],
       "n_teams": 8,
