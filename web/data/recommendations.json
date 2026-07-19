@@ -1,7 +1,7 @@
 {
   "stage": 15,
   "stage_type": "mountain",
-  "generated": "2026-07-19T10:37:10.009523+00:00",
+  "generated": "2026-07-19T12:01:34.025503+00:00",
   "ml_source": "historisk styrke (14 etaper kørt)",
   "ml_gt_stages": 14,
   "current_team": {
@@ -13,8 +13,8 @@
       "nicolas_prodhomme",
       "yannis_voisard",
       "florian_lipowitz",
-      "mattias_skjelmose",
-      "richard_carapaz"
+      "felix_grossschartner",
+      "paul_seixas"
     ],
     "rider_names": [
       "Tadej Pogacar",
@@ -23,8 +23,8 @@
       "Nicolas Prodhomme",
       "Yannis Voisard",
       "Florian Lipowitz",
-      "Mattias Skjelmose",
-      "Richard Carapaz"
+      "Felix Grossschartner",
+      "Paul Seixas"
     ],
     "matched_riders": [
       {
@@ -64,16 +64,16 @@
         "price_M": 10.59
       },
       {
-        "rider_id": "mattias_skjelmose",
-        "full_name": "Mattias Skjelmose",
-        "team": "L-T",
-        "price_M": 8.89
+        "rider_id": "felix_grossschartner",
+        "full_name": "Felix Grossschartner",
+        "team": "UAE",
+        "price_M": 3.67
       },
       {
-        "rider_id": "richard_carapaz",
-        "full_name": "Richard Carapaz",
-        "team": "EF",
-        "price_M": 8.57
+        "rider_id": "paul_seixas",
+        "full_name": "Paul Seixas",
+        "team": "DAL",
+        "price_M": 13.14
       }
     ]
   },
@@ -257,41 +257,6 @@
           "is_captain": false
         },
         {
-          "rider_id": "felix_engelhardt",
-          "full_name": "Felix Engelhardt",
-          "team": "JAL",
-          "price": 2.66,
-          "expected_pts": 12000,
-          "win_prob": 0.0446,
-          "winner_pts": 718124,
-          "composite_base_pts": 31997,
-          "variance": 0,
-          "reasoning": "budget-pick",
-          "disc_key": "MTN",
-          "disc_raw": 0.2,
-          "form_score": 1.3,
-          "signal_scores": {
-            "veloscore": 0.0,
-            "odds": 0.0,
-            "discipline": 0.002,
-            "form": 0.013,
-            "ml": 0.238,
-            "pcs_rank": null
-          },
-          "profile_scale": 1.14,
-          "sprint_class_rank": null,
-          "kom_class_rank": null,
-          "team_bonus_exp": 12000,
-          "disc_co_raw": 50.0,
-          "placement_pred": 0.4275,
-          "holdet_raw_pred": null,
-          "ml_source_used": "placement",
-          "context_status": "normal",
-          "context_note": "",
-          "context_mult": 1.0,
-          "is_captain": false
-        },
-        {
           "rider_id": "bert_van_lerberghe",
           "full_name": "Bert van Lerberghe",
           "team": "SQ",
@@ -319,6 +284,41 @@
           "team_bonus_exp": 0,
           "disc_co_raw": 24.0,
           "placement_pred": 0.0402,
+          "holdet_raw_pred": null,
+          "ml_source_used": "placement",
+          "context_status": "normal",
+          "context_note": "",
+          "context_mult": 1.0,
+          "is_captain": false
+        },
+        {
+          "rider_id": "kamil_gradek",
+          "full_name": "Kamil Gradek",
+          "team": "TVM",
+          "price": 1.86,
+          "expected_pts": 0,
+          "win_prob": 0.0884,
+          "winner_pts": 718124,
+          "composite_base_pts": 63514,
+          "variance": 0,
+          "reasoning": "budget-pick",
+          "disc_key": "MTN",
+          "disc_raw": 0.0,
+          "form_score": 0.2,
+          "signal_scores": {
+            "veloscore": 0.0,
+            "odds": 0.0,
+            "discipline": 0.0,
+            "form": 0.002,
+            "ml": 0.547,
+            "pcs_rank": null
+          },
+          "profile_scale": 1.14,
+          "sprint_class_rank": null,
+          "kom_class_rank": null,
+          "team_bonus_exp": 0,
+          "disc_co_raw": 24.0,
+          "placement_pred": 0.0721,
           "holdet_raw_pred": null,
           "ml_source_used": "placement",
           "context_status": "normal",
@@ -363,20 +363,15 @@
         }
       ],
       "captain_id": "tadej_pogacar",
-      "expected_pts": 1294000,
-      "total_cost_M": 64.92,
-      "budget_left_M": 0.54,
+      "expected_pts": 1282000,
+      "total_cost_M": 64.12,
+      "budget_left_M": 0.69,
       "transfer_analysis": {
         "to_sell": [
           {
-            "rider_id": "mattias_skjelmose",
-            "full_name": "Mattias Skjelmose",
-            "price_M": 8.89
-          },
-          {
-            "rider_id": "richard_carapaz",
-            "full_name": "Richard Carapaz",
-            "price_M": 8.57
+            "rider_id": "paul_seixas",
+            "full_name": "Paul Seixas",
+            "price_M": 13.14
           },
           {
             "rider_id": "valentin_paret-peintre",
@@ -392,6 +387,11 @@
             "rider_id": "yannis_voisard",
             "full_name": "Yannis Voisard",
             "price_M": 3.94
+          },
+          {
+            "rider_id": "felix_grossschartner",
+            "full_name": "Felix Grossschartner",
+            "price_M": 3.67
           },
           {
             "rider_id": "nicolas_prodhomme",
@@ -411,14 +411,14 @@
             "price_M": 9.37
           },
           {
-            "rider_id": "felix_engelhardt",
-            "full_name": "Felix Engelhardt",
-            "price_M": 2.66
-          },
-          {
             "rider_id": "anders_skaarseth",
             "full_name": "Anders Skaarseth",
             "price_M": 2.21
+          },
+          {
+            "rider_id": "kamil_gradek",
+            "full_name": "Kamil Gradek",
+            "price_M": 1.86
           },
           {
             "rider_id": "bert_van_lerberghe",
@@ -432,39 +432,40 @@
           }
         ],
         "n_transfers": 6,
-        "proceeds_M": 34.34,
-        "face_buy_M": 33.47,
+        "proceeds_M": 33.69,
+        "face_buy_M": 32.67,
         "fee_M": 0.33,
-        "buy_cost_M": 33.8,
-        "net_cost_M": -0.54,
-        "balance_after_M": 0.54,
+        "buy_cost_M": 33.0,
+        "net_cost_M": -0.69,
+        "balance_after_M": 0.69,
         "affordable": true
       },
       "assessment": {
         "captain_name": "Tadej Pogacar",
         "captain_reasoning": "høj disciplinrating (MTN: 93), GC-stilling #1, trøje: mountain, leader, bjerg-klass. #3",
-        "expected_pts_total": 1294000,
+        "expected_pts_total": 1282000,
         "est_etapebonus": 35000,
         "est_top15_count": 4,
-        "total_cost_M": 64.92,
-        "budget_left_M": 0.54,
-        "avg_price_M": 8.1,
+        "total_cost_M": 64.12,
+        "budget_left_M": 0.69,
+        "avg_price_M": 8.0,
         "n_premium_riders": 4,
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "SQ",
-          "JAL",
-          "RBH",
-          "VLB",
           "UXM",
+          "RBH",
+          "Q36",
+          "VLB",
           "UAE",
-          "Q36"
+          "JAL",
+          "SQ",
+          "TVM"
         ],
-        "n_teams": 7,
+        "n_teams": 8,
         "n_transfers": 6,
         "affordable": true,
-        "balance_after_M": 0.54
+        "balance_after_M": 0.69
       }
     },
     {
@@ -576,33 +577,33 @@
           "is_captain": false
         },
         {
-          "rider_id": "thomas_pidcock",
-          "full_name": "Thomas Pidcock",
-          "team": "Q36",
-          "price": 9.37,
-          "expected_pts": 140000,
-          "win_prob": 0.4394,
+          "rider_id": "mattias_skjelmose",
+          "full_name": "Mattias Skjelmose",
+          "team": "L-T",
+          "price": 8.89,
+          "expected_pts": 125000,
+          "win_prob": 0.3063,
           "winner_pts": 718124,
-          "composite_base_pts": 315537,
+          "composite_base_pts": 219968,
           "variance": 0,
           "reasoning": "model-anbefaling",
           "disc_key": "MTN",
-          "disc_raw": 49.7,
-          "form_score": 14.6,
+          "disc_raw": 21.4,
+          "form_score": 17.4,
           "signal_scores": {
             "veloscore": 0.0,
             "odds": 0.0,
-            "discipline": 0.497,
-            "form": 0.146,
-            "ml": 0.261,
-            "pcs_rank": 1.0
+            "discipline": 0.214,
+            "form": 0.174,
+            "ml": 0.145,
+            "pcs_rank": 0.811
           },
           "profile_scale": 1.14,
-          "sprint_class_rank": 15,
-          "kom_class_rank": 7,
+          "sprint_class_rank": 39,
+          "kom_class_rank": null,
           "team_bonus_exp": 0,
-          "disc_co_raw": 91.0,
-          "placement_pred": 0.9022,
+          "disc_co_raw": 89.0,
+          "placement_pred": 0.8737,
           "holdet_raw_pred": null,
           "ml_source_used": "placement",
           "context_status": "normal",
@@ -752,9 +753,9 @@
         }
       ],
       "captain_id": "jonas_vingegaard",
-      "expected_pts": 1210000,
-      "total_cost_M": 64.73,
-      "budget_left_M": 0.52,
+      "expected_pts": 1195000,
+      "total_cost_M": 64.25,
+      "budget_left_M": 0.35,
       "transfer_analysis": {
         "to_sell": [
           {
@@ -763,14 +764,9 @@
             "price_M": 20.86
           },
           {
-            "rider_id": "mattias_skjelmose",
-            "full_name": "Mattias Skjelmose",
-            "price_M": 8.89
-          },
-          {
-            "rider_id": "richard_carapaz",
-            "full_name": "Richard Carapaz",
-            "price_M": 8.57
+            "rider_id": "paul_seixas",
+            "full_name": "Paul Seixas",
+            "price_M": 13.14
           },
           {
             "rider_id": "valentin_paret-peintre",
@@ -786,6 +782,11 @@
             "rider_id": "yannis_voisard",
             "full_name": "Yannis Voisard",
             "price_M": 3.94
+          },
+          {
+            "rider_id": "felix_grossschartner",
+            "full_name": "Felix Grossschartner",
+            "price_M": 3.67
           },
           {
             "rider_id": "nicolas_prodhomme",
@@ -805,9 +806,9 @@
             "price_M": 12.42
           },
           {
-            "rider_id": "thomas_pidcock",
-            "full_name": "Thomas Pidcock",
-            "price_M": 9.37
+            "rider_id": "mattias_skjelmose",
+            "full_name": "Mattias Skjelmose",
+            "price_M": 8.89
           },
           {
             "rider_id": "sepp_kuss",
@@ -831,38 +832,38 @@
           }
         ],
         "n_transfers": 7,
-        "proceeds_M": 55.2,
-        "face_buy_M": 54.14,
+        "proceeds_M": 54.55,
+        "face_buy_M": 53.66,
         "fee_M": 0.54,
-        "buy_cost_M": 54.68,
-        "net_cost_M": -0.52,
-        "balance_after_M": 0.52,
+        "buy_cost_M": 54.2,
+        "net_cost_M": -0.35,
+        "balance_after_M": 0.35,
         "affordable": true
       },
       "assessment": {
         "captain_name": "Jonas Vingegaard",
         "captain_reasoning": "høj disciplinrating (MTN: 100), GC-stilling #2",
-        "expected_pts_total": 1210000,
+        "expected_pts_total": 1195000,
         "est_etapebonus": 120000,
         "est_top15_count": 6,
-        "total_cost_M": 64.73,
-        "budget_left_M": 0.52,
-        "avg_price_M": 8.1,
+        "total_cost_M": 64.25,
+        "budget_left_M": 0.35,
+        "avg_price_M": 8.0,
         "n_premium_riders": 4,
         "n_budget_riders": 2,
         "risk_profile": "Lav",
         "teams_represented": [
-          "SQ",
-          "JAL",
           "RBH",
+          "L-T",
           "VLB",
           "UAE",
-          "Q36"
+          "JAL",
+          "SQ"
         ],
         "n_teams": 6,
         "n_transfers": 7,
         "affordable": true,
-        "balance_after_M": 0.52
+        "balance_after_M": 0.35
       }
     },
     {
@@ -1152,18 +1153,13 @@
       "captain_id": "tadej_pogacar",
       "expected_pts": 1332000,
       "total_cost_M": 64.6,
-      "budget_left_M": 0.86,
+      "budget_left_M": 0.21,
       "transfer_analysis": {
         "to_sell": [
           {
-            "rider_id": "mattias_skjelmose",
-            "full_name": "Mattias Skjelmose",
-            "price_M": 8.89
-          },
-          {
-            "rider_id": "richard_carapaz",
-            "full_name": "Richard Carapaz",
-            "price_M": 8.57
+            "rider_id": "paul_seixas",
+            "full_name": "Paul Seixas",
+            "price_M": 13.14
           },
           {
             "rider_id": "valentin_paret-peintre",
@@ -1179,6 +1175,11 @@
             "rider_id": "yannis_voisard",
             "full_name": "Yannis Voisard",
             "price_M": 3.94
+          },
+          {
+            "rider_id": "felix_grossschartner",
+            "full_name": "Felix Grossschartner",
+            "price_M": 3.67
           },
           {
             "rider_id": "nicolas_prodhomme",
@@ -1219,12 +1220,12 @@
           }
         ],
         "n_transfers": 6,
-        "proceeds_M": 34.34,
+        "proceeds_M": 33.69,
         "face_buy_M": 33.15,
         "fee_M": 0.33,
         "buy_cost_M": 33.48,
-        "net_cost_M": -0.86,
-        "balance_after_M": 0.86,
+        "net_cost_M": -0.21,
+        "balance_after_M": 0.21,
         "affordable": true
       },
       "assessment": {
@@ -1234,23 +1235,23 @@
         "est_etapebonus": 65000,
         "est_top15_count": 5,
         "total_cost_M": 64.6,
-        "budget_left_M": 0.86,
+        "budget_left_M": 0.21,
         "avg_price_M": 8.1,
         "n_premium_riders": 4,
         "n_budget_riders": 3,
         "risk_profile": "Lav",
         "teams_represented": [
-          "SQ",
-          "JAL",
-          "RBH",
           "UXM",
+          "Q36",
+          "RBH",
           "UAE",
-          "Q36"
+          "JAL",
+          "SQ"
         ],
         "n_teams": 6,
         "n_transfers": 6,
         "affordable": true,
-        "balance_after_M": 0.86
+        "balance_after_M": 0.21
       }
     }
   ],
@@ -1555,14 +1556,14 @@
       "n_budget_riders": 5,
       "risk_profile": "Lav",
       "teams_represented": [
-        "SQ",
+        "UXM",
+        "Q36",
+        "RBH",
+        "UAE",
         "TPP",
         "JAL",
-        "RBH",
-        "UXM",
-        "UAE",
-        "TVM",
-        "Q36"
+        "SQ",
+        "TVM"
       ],
       "n_teams": 8,
       "n_transfers": 0,
