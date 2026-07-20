@@ -1,7 +1,7 @@
 {
   "stage": 16,
   "stage_type": "tt",
-  "generated": "2026-07-20T07:52:58.819331+00:00",
+  "generated": "2026-07-20T11:48:13.584108+00:00",
   "ml_source": "historisk styrke (15 etaper kørt)",
   "ml_gt_stages": 15,
   "current_team": {
@@ -443,11 +443,11 @@
         "n_budget_riders": 3,
         "risk_profile": "Lav",
         "teams_represented": [
+          "JAL",
           "UXM",
-          "UAE",
           "RBH",
           "SQ",
-          "JAL",
+          "UAE",
           "L-T"
         ],
         "n_teams": 6,
@@ -842,11 +842,11 @@
         "risk_profile": "Lav",
         "teams_represented": [
           "UXM",
-          "UAE",
           "RBH",
           "SQ",
-          "IGD",
-          "L-T"
+          "UAE",
+          "L-T",
+          "IGD"
         ],
         "n_teams": 6,
         "n_transfers": 7,
@@ -1219,10 +1219,10 @@
         "n_budget_riders": 2,
         "risk_profile": "Lav",
         "teams_represented": [
-          "UAE",
+          "JAL",
           "RBH",
           "SQ",
-          "JAL",
+          "UAE",
           "L-T"
         ],
         "n_teams": 5,
@@ -1533,12 +1533,12 @@
       "n_budget_riders": 3,
       "risk_profile": "Lav",
       "teams_represented": [
-        "UAE",
-        "TVM",
+        "JAL",
         "RBH",
         "SQ",
-        "JAL",
-        "L-T"
+        "UAE",
+        "L-T",
+        "TVM"
       ],
       "n_teams": 6,
       "n_transfers": 0,
