@@ -1,0 +1,28 @@
+{
+  "stage": 4,
+  "stage_type": "sprint",
+  "level": "rider",
+  "note": "Etape 4 (Carcassonne-Foix) — rytter-niveau. Sprinter/klassiker-dag (Pogačar #18), bekræfter at E4 er sprinter-venlig trods kuperet terræn. Headline-felter fra screenshot.",
+  "predictions": [
+    {"rank": 1,  "rider": "Mads Pedersen",         "total": 1168, "veloscore": 6.9, "stars": 4},
+    {"rank": 2,  "rider": "Mathieu van der Poel",   "total": 965,  "veloscore": 5.7, "stars": 3},
+    {"rank": 3,  "rider": "Quinn Simmons",          "total": 940,  "veloscore": 5.5, "stars": 3},
+    {"rank": 4,  "rider": "Mathias Vacek",          "total": 869,  "veloscore": 5.1, "stars": 3},
+    {"rank": 5,  "rider": "Magnus Cort",            "total": 859,  "veloscore": 5.1, "stars": 3},
+    {"rank": 6,  "rider": "Romain Grégoire",        "total": 757,  "veloscore": 4.5, "stars": 2},
+    {"rank": 7,  "rider": "Michael Matthews",       "total": 669,  "veloscore": 3.9, "stars": 2},
+    {"rank": 8,  "rider": "Alex Aranburu",          "total": 611,  "veloscore": 3.6, "stars": 2},
+    {"rank": 9,  "rider": "Ben Healy",              "total": 596,  "veloscore": 3.5, "stars": 2},
+    {"rank": 10, "rider": "Dorian Godon",           "total": 565,  "veloscore": 3.3, "stars": 2},
+    {"rank": 11, "rider": "Maxim van Gils",         "total": 561,  "veloscore": 3.3, "stars": 1},
+    {"rank": 12, "rider": "Luke Plapp",             "total": 370,  "veloscore": 2.2, "stars": 1},
+    {"rank": 13, "rider": "Jonas Abrahamsen",       "total": 369,  "veloscore": 2.2, "stars": 1},
+    {"rank": 14, "rider": "Filippo Ganna",          "total": 348,  "veloscore": 2.0, "stars": 1},
+    {"rank": 15, "rider": "Mauro Schmid",           "total": 326,  "veloscore": 1.9, "stars": 1},
+    {"rank": 16, "rider": "Jasper Stuyven",         "total": 307,  "veloscore": 1.8, "stars": 0},
+    {"rank": 17, "rider": "Pablo Castrillo",        "total": 229,  "veloscore": 1.3, "stars": 0},
+    {"rank": 18, "rider": "Tadej Pogačar",          "total": 208,  "veloscore": 1.2, "stars": 0},
+    {"rank": 19, "rider": "Javier Romo",            "total": 196,  "veloscore": 1.2, "stars": 0},
+    {"rank": 20, "rider": "Tom Pidcock",            "total": 190,  "veloscore": 1.1, "stars": 0}
+  ]
+}

@@ -3,10 +3,10 @@ version=v4
 num_class=1
 num_tree_per_iteration=1
 label_index=0
-max_feature_idx=17
+max_feature_idx=18
 objective=binary sigmoid:1
-feature_names=profile_score is_sprint is_mountain is_hilly is_tt co_mtn co_spr co_hll co_itt co_cob co_gc spec_climber spec_sprint spec_tt spec_hills gt_form_5 gt_form_10 gt_wins_so_far
-feature_infos=[0:509] [0:1] [0:1] [0:1] [0:1] [-1:99] [-1:99] [-1:99] [-1:99] [-1:99] [-1:98] [-1:9989] [-1:6628] [-1:6230] [-1:7788] [-1:184] [-1:184] [0:19]
+feature_names=profile_score is_sprint is_mountain is_hilly is_tt co_mtn co_spr co_hll co_itt co_cob co_gc spec_climber spec_sprint spec_tt spec_hills gt_form_5 gt_form_10 gt_wins_so_far startlist_quality
+feature_infos=[0:509] [0:1] [0:1] [0:1] [0:1] [-1:99] [-1:99] [-1:99] [-1:99] [-1:99] [-1:98] [-1:9989] [-1:6628] [-1:6230] [-1:7788] [-1:184] [-1:184] [0:19] none
 tree_sizes=3321 3352 3411 3391 3396 3396 3421 3444 3394 3398 3420 3394 3424 3418 3386 3444 3406 3432 3425 3437 3444 3454 3395 3419 3422 3444 3440 3402 3440 3451 3420 3443 3452 3427 3419 3418 3423 3454 3464 3415 3393 3429 3453 3418 3453 3441 3424 3414 3442 3417 3419 3422 3410 3416 3423 3403 3426 3435 3435 3432 3481 3342 3427 3457 3391 3452 3436 3399 3378 3395 3449 3416 3403 3400 3383 3449 3425 3375 3391
 
 Tree=0

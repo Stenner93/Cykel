@@ -8,42 +8,80 @@ To lag:
      Beregnet af train_model.py → data/cache/rider_historical_form.json.
      Vægte: 2025=5 · 2024=3 · 2023=2 · 2022=1 · 2021=1
 
-  2. LightGBM rolling-form (fra etape 5+):
-     Indlæser data/ml/model.lgbm og beregner per-rytter sandsynligheder
-     baseret på gennemsnitlig placering i de seneste 5/10 etaper af
-     det AKTUELLE løb. Felt-normaliseret 0-100.
+  2. Holdet LightGBM (fra etape 5+):
+     Indlæser data/ml/holdet_model.lgbm og predikter normaliserede Holdet-point
+     (0-100 skala) baseret på CO-ratings, PCS specialties, PCS form og
+     in-race / cross-race rolling form. Trænet direkte på faktiske Holdet-point.
+
+  3. Legacy LightGBM (fallback hvis holdet_model.lgbm mangler):
+     Indlæser data/ml/model.lgbm (top-10 classifier). Felt-normaliseret 0-100.
 
 Returnerer {rider_id: score 0-100}.
 Returnerer tom dict hvis ingen model OG ingen historisk form er tilgængelig.
 """
 from __future__ import annotations
 import json
+from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-ROOT       = Path(__file__).parent.parent
-MODEL_PATH = ROOT / "data" / "ml" / "model.lgbm"
-HIST_FORM_PATH = ROOT / "data" / "cache" / "rider_historical_form.json"
+ROOT                  = Path(__file__).parent.parent
+MODEL_PATH            = ROOT / "data" / "ml" / "model.lgbm"
+HOLDET_MODEL_PATH     = ROOT / "data" / "ml" / "holdet_model.lgbm"
+PLACEMENT_MODEL_PATH  = ROOT / "data" / "ml" / "placement_model.lgbm"
+PLACEMENT_SPRINT_MODEL_PATH   = ROOT / "data" / "ml" / "placement_sprint_model.lgbm"
+PLACEMENT_MOUNTAIN_MODEL_PATH = ROOT / "data" / "ml" / "placement_mountain_model.lgbm"
+PLACEMENT_HILLY_MODEL_PATH    = ROOT / "data" / "ml" / "placement_hilly_model.lgbm"
+PLACEMENT_TT_MODEL_PATH       = ROOT / "data" / "ml" / "placement_tt_model.lgbm"
+PLACEMENT_META_PATH           = ROOT / "data" / "ml" / "placement_training_data_meta.json"
+HIST_FORM_PATH        = ROOT / "data" / "cache" / "rider_historical_form.json"
+HIST_RESULTS_PATH     = ROOT / "data" / "ml" / "historical_results.json"
 
-# Antal afviklede etaper krævet for at skifte til LightGBM rolling-form.
-# Under denne grænse bruges historisk styrke i stedet.
-MIN_GT_STAGES_FOR_MODEL = 5
+# Holdet-model kan bruges fra etape 1 — CO/PCS form og xrace_form er
+# tilgængelige fra dag 1. gt_form_5=-1 bruges som sentinel for manglende
+# in-race data, og modellen er trænet til at håndtere dette.
+MIN_HOLDET_STAGES = 0
 
-# Skal matche rækkefølgen brugt i build_training_data.py / train_model.py
-# Feature 19: startlist_quality (PCS field-strength score / 1000, range 0-1+)
+# Legacy model (top-10 klassifikator) kræver minimalt 0 etaper — CO og
+# PCS specialty fungerer fra starten. Legacy brugt som blending-partner.
+MIN_LEGACY_STAGES = 0
+
+# Holdet-model feature order — skal matche build_holdet_training_data.py
+_HOLDET_FEATURE_COLS = [
+    "is_sprint", "is_mountain", "is_hilly", "is_tt",
+    "co_mtn", "co_spr", "co_hll", "co_itt", "co_cob", "co_gc",
+    "spec_climber", "spec_sprint", "spec_tt", "spec_hills",
+    "form_overall", "form_sprint", "form_mountain", "form_hilly", "form_tt",
+    "gt_form_5", "gt_form_10", "gt_wins_so_far",
+    "xrace_form_10",
+]
+
+# Legacy-model feature order
 _FEATURE_COLS = [
     "profile_score",
     "is_sprint", "is_mountain", "is_hilly", "is_tt",
     "co_mtn", "co_spr", "co_hll", "co_itt", "co_cob", "co_gc",
     "spec_climber", "spec_sprint", "spec_tt", "spec_hills",
     "gt_form_5", "gt_form_10", "gt_wins_so_far",
-    "startlist_quality",   # feature 19: PCS startlist quality / 1000 (0-1+ scale)
+    "startlist_quality",
 ]
 
 _model = None
 _model_loaded = False
+_holdet_model = None
+_holdet_model_loaded = False
+_placement_model = None
+_placement_model_loaded = False
+_placement_type_models: dict[str, Any] = {}
+_placement_type_models_loaded = False
+_slug_to_id: dict[str, int] | None = None
+_slug_to_id_loaded = False
 _hist_form: dict[str, dict] | None = None
 _hist_form_loaded = False
+_xrace_form: dict[str, float] | None = None   # {pcs_slug: {stage_type: avg_pos}}
+_xrace_form_loaded = False
+_xrace_rates: dict | None = None              # {pcs_slug: {stage_type: {top3_rate, top10_rate}}}
+_xrace_rates_loaded = False
 
 
 def _get_model():
@@ -57,6 +95,182 @@ def _get_model():
             pass
         _model_loaded = True
     return _model
+
+
+def _get_holdet_model():
+    global _holdet_model, _holdet_model_loaded
+    if not _holdet_model_loaded:
+        try:
+            import lightgbm as lgb
+            if HOLDET_MODEL_PATH.exists():
+                _holdet_model = lgb.Booster(model_file=str(HOLDET_MODEL_PATH))
+        except ImportError:
+            pass
+        _holdet_model_loaded = True
+    return _holdet_model
+
+
+def _get_placement_model():
+    global _placement_model, _placement_model_loaded
+    if not _placement_model_loaded:
+        try:
+            import lightgbm as lgb
+            if PLACEMENT_MODEL_PATH.exists():
+                _placement_model = lgb.Booster(model_file=str(PLACEMENT_MODEL_PATH))
+        except ImportError:
+            pass
+        _placement_model_loaded = True
+    return _placement_model
+
+
+def _get_placement_type_model(stage_type: str):
+    """Load stage-type-specific placement model. Falls back to combined model."""
+    global _placement_type_models, _placement_type_models_loaded
+    if not _placement_type_models_loaded:
+        try:
+            import lightgbm as lgb
+            for stype, path in [
+                ("sprint",   PLACEMENT_SPRINT_MODEL_PATH),
+                ("mountain", PLACEMENT_MOUNTAIN_MODEL_PATH),
+                ("hilly",    PLACEMENT_HILLY_MODEL_PATH),
+                ("tt",       PLACEMENT_TT_MODEL_PATH),
+            ]:
+                if path.exists():
+                    _placement_type_models[stype] = lgb.Booster(model_file=str(path))
+        except Exception:
+            pass
+        _placement_type_models_loaded = True
+    key = "tt" if stage_type in ("tt", "ttt") else stage_type
+    return _placement_type_models.get(key) or _get_placement_model()
+
+
+def _get_slug_to_id() -> dict[str, int]:
+    global _slug_to_id, _slug_to_id_loaded
+    if not _slug_to_id_loaded:
+        _slug_to_id = {}
+        if PLACEMENT_META_PATH.exists():
+            try:
+                meta = json.loads(PLACEMENT_META_PATH.read_text(encoding="utf-8"))
+                _slug_to_id = meta.get("slug_to_id") or {}
+            except Exception:
+                pass
+        _slug_to_id_loaded = True
+    return _slug_to_id or {}
+
+
+_RACE_ORDER: dict[str, int] = {
+    "pn":        1,
+    "tirreno":   2,
+    "catalunya": 3,
+    "basque":    4,
+    "romandie":  5,
+    "giro":      6,
+    "dauphine":  7,
+    "suisse":    8,
+    "tdf":       9,
+    "vuelta":   10,
+}
+
+
+def _get_xrace_form() -> dict[str, dict[str, float]]:
+    """
+    Lazy-load type-specifik cross-race form.
+    Returnerer {pcs_slug: {stage_type: avg_position_last10}}.
+
+    Kun etaper af SAMME type bruges — sprint-form til spurtetaper osv.
+    Forhindrer at en sprinters nr. 150 på bjergetaper forurener hans sprintform.
+
+    Bygger også prefix-aliaser: 'magnus-cort' → 'magnus-cort-nielsen'-data,
+    så holdet-IDs der mangler efternavn stadig finder historik.
+    """
+    global _xrace_form, _xrace_form_loaded
+    if not _xrace_form_loaded:
+        _xrace_form = {}
+        if HIST_RESULTS_PATH.exists():
+            records = json.loads(HIST_RESULTS_PATH.read_text(encoding="utf-8"))
+            records_sorted = sorted(
+                records,
+                key=lambda r: (r["year"], _RACE_ORDER.get(r["race"], 9), r["stage"])
+            )
+            # {slug: {stage_type: [positions]}}
+            by_slug: dict[str, dict[str, list[int]]] = defaultdict(lambda: defaultdict(list))
+            for r in records_sorted:
+                if not r.get("dnf") and r.get("position") and r.get("stage_type") != "ttt":
+                    stype = r.get("stage_type", "hilly")
+                    by_slug[r["rider_slug"]][stype].append(r["position"])
+
+            # Build result: {slug: {type: avg_last10}}
+            for slug, type_positions in by_slug.items():
+                _xrace_form[slug] = {
+                    stype: round(sum(pos[-10:]) / len(pos[-10:]), 1)
+                    for stype, pos in type_positions.items()
+                }
+
+            # Slug-aliaser: 'magnus-cort' finder 'magnus-cort-nielsen'-data.
+            # For slugs med 3+ dele registreres kortere prefix-aliaser (hvis
+            # prefixet ikke allerede er et selvstændigt slug i databasen).
+            all_slugs = set(_xrace_form.keys())
+            aliases: dict[str, str] = {}
+            for slug in sorted(all_slugs):
+                parts = slug.split("-")
+                for n in range(len(parts) - 1, 1, -1):
+                    prefix = "-".join(parts[:n])
+                    if prefix not in all_slugs and prefix not in aliases:
+                        aliases[prefix] = slug
+            for alias, real in aliases.items():
+                if alias not in _xrace_form:
+                    _xrace_form[alias] = _xrace_form[real]
+
+        _xrace_form_loaded = True
+    return _xrace_form or {}
+
+
+def _get_xrace_rates() -> dict[str, dict[str, dict[str, float]]]:
+    """
+    Lazy-load type-specifik top-N hitrate for cross-race form.
+    Returnerer {pcs_slug: {stage_type: {top3_rate: float, top10_rate: float}}}.
+    Seneste 10 etaper af SAMME type bruges.
+    """
+    global _xrace_rates, _xrace_rates_loaded
+    if not _xrace_rates_loaded:
+        _xrace_rates = {}
+        if HIST_RESULTS_PATH.exists():
+            records = json.loads(HIST_RESULTS_PATH.read_text(encoding="utf-8"))
+            records_sorted = sorted(
+                records,
+                key=lambda r: (r["year"], _RACE_ORDER.get(r["race"], 9), r["stage"])
+            )
+            by_slug: dict[str, dict[str, list[int]]] = defaultdict(lambda: defaultdict(list))
+            for r in records_sorted:
+                if not r.get("dnf") and r.get("position") and r.get("stage_type") != "ttt":
+                    stype = r.get("stage_type", "hilly")
+                    by_slug[r["rider_slug"]][stype].append(r["position"])
+
+            for slug, type_positions in by_slug.items():
+                _xrace_rates[slug] = {}
+                for stype, pos in type_positions.items():
+                    last10 = pos[-10:]
+                    n = len(last10)
+                    _xrace_rates[slug][stype] = {
+                        "top3_rate":  round(sum(1 for p in last10 if p <= 3) / n, 4),
+                        "top10_rate": round(sum(1 for p in last10 if p <= 10) / n, 4),
+                    }
+
+            # Prefix-aliaser (samme logik som _get_xrace_form)
+            all_slugs = set(_xrace_rates.keys())
+            aliases: dict[str, str] = {}
+            for slug in sorted(all_slugs):
+                parts = slug.split("-")
+                for n in range(len(parts) - 1, 1, -1):
+                    prefix = "-".join(parts[:n])
+                    if prefix not in all_slugs and prefix not in aliases:
+                        aliases[prefix] = slug
+            for alias, real in aliases.items():
+                if alias not in _xrace_rates:
+                    _xrace_rates[alias] = _xrace_rates[real]
+
+        _xrace_rates_loaded = True
+    return _xrace_rates or {}
 
 
 def _get_hist_form() -> dict[str, dict]:
@@ -245,7 +459,8 @@ def _lgbm_scores(
 
         gt_form_5, gt_form_10, gt_wins = _rolling_form(slug, stages, stage_num)
 
-        co   = (co_data or {}).get(rid, {})
+        co_raw = (co_data or {}).get(rid, {})
+        co   = {k.lower(): v for k, v in co_raw.items()}
         spec = (pcs_specialty_data or {}).get(rid, {})
         row = [
             ps,
@@ -275,6 +490,178 @@ def _lgbm_scores(
     return {rid: round(s, 1) for rid, s in zip(rider_ids, scores)}
 
 
+def _holdet_lgbm_scores(
+    riders: list[dict[str, Any]],
+    stage_type: str,
+    stage_num: int,
+    stages: dict[str, list[dict]],
+    pcs_form_raw: dict | None,
+    co_data: dict | None = None,
+    pcs_specialty_data: dict | None = None,
+) -> dict[str, float] | None:
+    """
+    Kør holdet_model.lgbm — predikter normaliserede Holdet-point (0-100 skala).
+    Features: CO, PCS specialty, PCS form by type, in-race rolling form, xrace form.
+    Returnerer None hvis model ikke er tilgængelig.
+    """
+    model = _get_holdet_model()
+    if model is None:
+        return None
+
+    try:
+        import numpy as np
+    except ImportError:
+        return None
+
+    is_sprint   = int(stage_type == "sprint")
+    is_mountain = int(stage_type == "mountain")
+    is_hilly    = int(stage_type == "hilly")
+    is_tt       = int(stage_type in ("tt", "ttt"))
+
+    xrace_cache = _get_xrace_form()
+
+    rows: list[list[float]] = []
+    rider_ids: list[str]    = []
+
+    for rider in riders:
+        rid  = rider["id"]
+        slug = _holdet_to_pcs_slug(rid, pcs_form_raw)
+
+        gt_form_5, gt_form_10, gt_wins = _rolling_form(slug, stages, stage_num)
+        xrace_form_10 = xrace_cache.get(slug, {}).get(stage_type, float("nan"))
+
+        co_raw = (co_data or {}).get(rid, {})
+        co   = {k.lower(): v for k, v in co_raw.items()}
+        spec = (pcs_specialty_data or {}).get(rid, {})
+
+        pcs_entry = (pcs_form_raw or {}).get(rid, {})
+        fbt = pcs_entry.get("form_by_type") or {}
+        form_overall  = fbt.get("overall",  -1)
+        form_sprint   = fbt.get("sprint",   -1)
+        form_mountain = fbt.get("mountain", -1)
+        form_hilly    = fbt.get("hilly",    -1)
+        form_tt       = fbt.get("tt",       -1)
+
+        row = [
+            is_sprint, is_mountain, is_hilly, is_tt,
+            co.get("mtn", -1), co.get("spr", -1), co.get("hll", -1),
+            co.get("itt", -1), co.get("cob", -1), co.get("gc",  -1),
+            spec.get("climber", -1), spec.get("sprint", -1),
+            spec.get("tt", -1), spec.get("hills", -1),
+            float(form_overall), float(form_sprint), float(form_mountain),
+            float(form_hilly), float(form_tt),
+            gt_form_5, gt_form_10, float(gt_wins),
+            xrace_form_10,
+        ]
+        rows.append(row)
+        rider_ids.append(rid)
+
+    if not rows:
+        return None
+
+    X    = np.array(rows, dtype=np.float32)
+    preds = model.predict(X)   # predikteret holdet_pts_norm 0-100
+
+    # Normalize within field so the signal is always on 0-100 scale
+    lo, hi = float(preds.min()), float(preds.max())
+    if hi > lo:
+        scores = [(float(p) - lo) / (hi - lo) * 100.0 for p in preds]
+    else:
+        scores = [50.0] * len(preds)
+
+    return {rid: round(s, 1) for rid, s in zip(rider_ids, scores)}
+
+
+def _holdet_lgbm_raw_preds(
+    riders: list[dict[Any, Any]],
+    stage_type: str,
+    stage_num: int,
+    stages: dict[str, list[dict]],
+    pcs_form_raw: dict | None,
+    co_data: dict | None = None,
+    pcs_specialty_data: dict | None = None,
+) -> dict[str, float | None] | None:
+    """
+    Kør holdet_model.lgbm og returner RAW predictions (0-100 skala, IKKE
+    felt-normaliseret). 0=ingen point, 100=vinder af etapen.
+    Bruges til at beregne konkrete K-point-estimater via AVG_MAX_K.
+    Returnerer None hvis model ikke er tilgængelig.
+    """
+    model = _get_holdet_model()
+    if model is None:
+        return None
+
+    try:
+        import numpy as np
+    except ImportError:
+        return None
+
+    is_sprint   = int(stage_type == "sprint")
+    is_mountain = int(stage_type == "mountain")
+    is_hilly    = int(stage_type == "hilly")
+    is_tt       = int(stage_type in ("tt", "ttt"))
+
+    xrace_cache = _get_xrace_form()
+
+    rows: list[list[float]] = []
+    rider_ids: list[str]    = []
+    no_signal_set: set[str] = set()  # riders with no CO/PCS data
+
+    for rider in riders:
+        rid  = rider["id"]
+        slug = _holdet_to_pcs_slug(rid, pcs_form_raw)
+
+        gt_form_5, gt_form_10, gt_wins = _rolling_form(slug, stages, stage_num)
+        xrace_form_10 = xrace_cache.get(slug, {}).get(stage_type, float("nan"))
+
+        co_raw = (co_data or {}).get(rid, {})
+        co   = {k.lower(): v for k, v in co_raw.items()}
+        spec = (pcs_specialty_data or {}).get(rid, {})
+
+        pcs_entry = (pcs_form_raw or {}).get(rid, {})
+        fbt = pcs_entry.get("form_by_type") or {}
+        form_overall  = fbt.get("overall",  -1)
+        form_sprint   = fbt.get("sprint",   -1)
+        form_mountain = fbt.get("mountain", -1)
+        form_hilly    = fbt.get("hilly",    -1)
+        form_tt       = fbt.get("tt",       -1)
+
+        has_co   = bool(co)
+        has_spec = bool(spec)
+        has_form = any(v != -1 for v in [form_overall, form_sprint, form_mountain, form_hilly, form_tt])
+        if not has_co and not has_spec and not has_form:
+            no_signal_set.add(rid)
+
+        row = [
+            is_sprint, is_mountain, is_hilly, is_tt,
+            co.get("mtn", -1), co.get("spr", -1), co.get("hll", -1),
+            co.get("itt", -1), co.get("cob", -1), co.get("gc",  -1),
+            spec.get("climber", -1), spec.get("sprint", -1),
+            spec.get("tt", -1), spec.get("hills", -1),
+            float(form_overall), float(form_sprint), float(form_mountain),
+            float(form_hilly), float(form_tt),
+            gt_form_5, gt_form_10, float(gt_wins),
+            xrace_form_10,
+        ]
+        rows.append(row)
+        rider_ids.append(rid)
+
+    if not rows:
+        return None
+
+    X    = np.array(rows, dtype=np.float32)
+    raw  = model.predict(X)   # raw 0-100 (ikke felt-normaliseret)
+
+    result: dict[str, float] = {}
+    for rid, p in zip(rider_ids, raw):
+        if rid in no_signal_set:
+            # No CO, no PCS specialty, no PCS form → rank-based fallback in predictor
+            result[rid] = None  # type: ignore[assignment]
+        else:
+            result[rid] = round(max(0.0, float(p)), 2)
+    return result
+
+
 def compute_ml_scores(
     riders: list[dict[str, Any]],
     stage_type: str,
@@ -288,37 +675,306 @@ def compute_ml_scores(
     startlist_quality: float = 1.0,
 ) -> dict[str, float]:
     """
-    Beregn ML/historisk styrke-scorer for alle ryttere.
+    Beregn ML/historisk styrke-scorer for alle ryttere (felt-normaliseret 0-100).
 
-    Strategi:
-    - Etape 1-4 (< 5 afviklede etaper): historisk GT-styrke 2021-2025.
-      Direkte felt-normaliseret scorering baseret på type-specifik gennemsnitlig
-      placering — virker fra etape 1 og giver en klar "styrke-rangering".
-    - Etape 5+ (>= 5 afviklede etaper): LightGBM med in-race rolling-form.
-      Modellen bruger gennemsnitlig placering i de seneste 5/10 etaper og
-      differentierer baseret på aktuel form i dette specifikke løb.
-      CO og specialty features er aktive efter retraining med fixede training data.
-
-    startlist_quality: PCS startlist quality score / 1000 (feature 19).
-      Default 1.0 corresponds to a top-tier GT field (e.g. TdF ~1000 on PCS).
+    Strategi — fase-baseret blending:
+    - Etape 1-4  (n_done < 5):  20% holdet + 80% legacy  (begge mangler in-race form,
+      men CO/PCS specialty/xrace_form bruges fra dag 1).
+    - Etape 5-10 (n_done < 11): 55% holdet + 45% legacy  (holdet begynder at lære
+      rytterens in-race form).
+    - Etape 11+  (n_done >= 11): 70% holdet + 30% legacy  (holdet model har fuld form-
+      historik og vægter tungere).
 
     Returnerer {rider_id: score 0-100} — felt-normaliseret.
     """
-    stages     = (gt_results or {}).get("stages", {})
-    n_done     = sum(1 for s in stages if int(s) < stage_num)
+    stages = (gt_results or {}).get("stages", {})
+    n_done = sum(1 for s in stages if int(s) < stage_num)
 
-    if n_done >= MIN_GT_STAGES_FOR_MODEL:
-        lgbm = _lgbm_scores(
-            riders, stage_type, stage_num, profile_score, stages, pcs_form_raw,
-            co_data=co_data, pcs_specialty_data=pcs_specialty_data,
-            startlist_quality=startlist_quality,
-        )
-        if lgbm is not None:
-            return lgbm
+    # Phase-based blend weights (holdet_w + legacy_w = 1.0)
+    if n_done < 5:
+        holdet_w, legacy_w = 0.20, 0.80
+    elif n_done < 11:
+        holdet_w, legacy_w = 0.55, 0.45
+    else:
+        holdet_w, legacy_w = 0.70, 0.30
 
-    # Fallback: historisk styrke (etape 1-4, eller model ikke tilgængelig)
+    holdet = _holdet_lgbm_scores(
+        riders, stage_type, stage_num, stages, pcs_form_raw,
+        co_data=co_data, pcs_specialty_data=pcs_specialty_data,
+    )
+    lgbm = _lgbm_scores(
+        riders, stage_type, stage_num, profile_score, stages, pcs_form_raw,
+        co_data=co_data, pcs_specialty_data=pcs_specialty_data,
+        startlist_quality=startlist_quality,
+    )
+
+    if holdet is not None and lgbm is not None:
+        return {
+            rid: round(holdet_w * holdet.get(rid, 50.0) + legacy_w * lgbm.get(rid, 50.0), 1)
+            for rid in holdet
+        }
+    if holdet is not None:
+        return holdet
+    if lgbm is not None:
+        return lgbm
+
+    # Fallback: historisk styrke (modeller ikke tilgængelige)
     hist = _historical_strength_scores(riders, stage_type, pcs_form_raw, pcs_rankings)
     if hist:
         return hist
 
     return {}
+
+
+def _placement_lgbm_raw_preds(
+    riders: list[dict[Any, Any]],
+    stage_type: str,
+    stage_num: int,
+    stages: dict[str, list[dict]],
+    pcs_form_raw: dict | None,
+    co_data: dict | None = None,
+    pcs_specialty_data: dict | None = None,
+    startlist_quality: float = 1.0,
+    profile_score: float = 100.0,
+    p_class: int = -1,
+    finish_alt: float = -1.0,
+) -> dict[str, float | None] | None:
+    """
+    Kør placement_model.lgbm og returner RAW norm_pos predictions (0-1 skala).
+    1.0 = model forudsiger rytteren vinder, 0.0 = sidst.
+    TTT-etaper understøttes IKKE (returnerer None).
+    Returnerer None hvis model ikke er tilgængelig.
+    """
+    if stage_type == "ttt":
+        return None
+
+    model = _get_placement_type_model(stage_type)
+    if model is None:
+        return None
+
+    try:
+        import numpy as np
+    except ImportError:
+        return None
+
+    is_sprint   = int(stage_type == "sprint")
+    is_mountain = int(stage_type == "mountain")
+    is_hilly    = int(stage_type == "hilly")
+    is_tt       = int(stage_type == "tt")
+
+    xrace_cache = _get_xrace_form()
+    rates_cache = _get_xrace_rates()
+    qual_norm   = min(2.0, startlist_quality / 1000.0)  # PCS 0-1000 → 0-1
+
+    rows: list[list[float]] = []
+    rider_ids: list[str]    = []
+    no_signal_set: set[str] = set()
+
+    for rider in riders:
+        rid  = rider["id"]
+        slug = _holdet_to_pcs_slug(rid, pcs_form_raw)
+
+        gt_form_5, gt_form_10, gt_wins = _rolling_form(slug, stages, stage_num)
+        xrace_form_10 = xrace_cache.get(slug, {}).get(stage_type, float("nan"))
+        rates_data = rates_cache.get(slug, {}).get(stage_type, {})
+        xrace_top3_rate_10  = rates_data.get("top3_rate",  float("nan"))
+        xrace_top10_rate_10 = rates_data.get("top10_rate", float("nan"))
+
+        co_raw = (co_data or {}).get(rid, {})
+        co     = {k.lower(): v for k, v in co_raw.items()}
+        spec   = (pcs_specialty_data or {}).get(rid, {})
+
+        pcs_entry = (pcs_form_raw or {}).get(rid, {})
+        fbt = pcs_entry.get("form_by_type") or {}
+        form_overall  = fbt.get("overall",  -1)
+        form_sprint   = fbt.get("sprint",   -1)
+        form_mountain = fbt.get("mountain", -1)
+        form_hilly    = fbt.get("hilly",    -1)
+        form_tt       = fbt.get("tt",       -1)
+
+        has_co   = bool(co)
+        has_spec = bool(spec)
+        has_form = any(v != -1 for v in [form_overall, form_sprint, form_mountain, form_hilly, form_tt])
+        if not has_co and not has_spec and not has_form:
+            no_signal_set.add(rid)
+
+        co_spr_val   = co.get("spr", -1)
+        co_mtn_val   = co.get("mtn", -1)
+        spec_spr_val = spec.get("sprint", -1)
+        slug_to_id_map = _get_slug_to_id()
+        sid = float(slug_to_id_map.get(slug, slug_to_id_map.get(slug.replace("-", "_"), -1)))
+        row = [
+            is_sprint, is_mountain, is_hilly, is_tt,
+            co_mtn_val, co_spr_val, co.get("hll", -1),
+            co.get("itt", -1), co.get("cob", -1), co.get("gc",  -1),
+            spec.get("climber", -1), spec_spr_val,
+            spec.get("tt", -1), spec.get("hills", -1),
+            float(form_overall), float(form_sprint), float(form_mountain),
+            float(form_hilly), float(form_tt),
+            gt_form_5, gt_form_10, float(gt_wins),
+            xrace_form_10,
+            xrace_top3_rate_10,
+            xrace_top10_rate_10,
+            qual_norm,
+            # Interaktions-features
+            co_spr_val * is_sprint,
+            spec_spr_val * is_sprint,
+            xrace_top3_rate_10 if is_sprint else 0.0,
+            co_mtn_val * is_mountain,
+            # Etapeprofil
+            profile_score,
+            profile_score * is_sprint,
+            # PCS etapeklassifikation (1-5) og ankomst-højde (m)
+            float(p_class),
+            float(finish_alt),
+            # Rytter-identitet (slug_id) — kun hvis model er trænet med det
+            sid,
+        ]
+        rows.append(row)
+        rider_ids.append(rid)
+
+    if not rows:
+        return None
+
+    X   = np.array(rows, dtype=np.float32)
+    try:
+        raw = model.predict(X)   # raw norm_pos 0-1
+    except Exception:
+        # Model was trained without slug_id (old model) — strip last column
+        X = X[:, :-1]
+        raw = model.predict(X)
+
+    result: dict[str, float] = {}
+    for rid, p in zip(rider_ids, raw):
+        if rid in no_signal_set:
+            result[rid] = None  # type: ignore[assignment]
+        else:
+            result[rid] = round(max(0.0, min(1.0, float(p))), 4)
+    return result
+
+
+def _co_stage_score(co: dict, stage_type: str) -> float | None:
+    """Direct CO-ability score (0-100) for a rider on a stage type. Returns None if no CO data."""
+    if not co:
+        return None
+    def v(x): return float(x) if x != -1 else 0.0
+    mtn = v(co.get("mtn", -1))
+    spr = v(co.get("spr", -1))
+    hll = v(co.get("hll", -1))
+    cob = v(co.get("cob", -1))
+    itt = v(co.get("itt", -1))
+    gc  = v(co.get("gc",  -1))
+    if stage_type == "mountain":
+        return 0.50 * mtn + 0.30 * gc + 0.20 * hll
+    elif stage_type == "sprint":
+        return 0.85 * spr + 0.15 * hll
+    elif stage_type in ("tt", "ttt"):
+        return 0.70 * itt + 0.20 * gc + 0.10 * hll
+    else:  # hilly / default
+        return 0.35 * hll + 0.25 * cob + 0.25 * mtn + 0.15 * spr
+
+
+def compute_placement_scores(
+    riders: list[dict[Any, Any]],
+    stage_type: str,
+    stage_num: int,
+    gt_results: dict | None,
+    pcs_form_raw: dict | None = None,
+    co_data: dict | None = None,
+    pcs_specialty_data: dict | None = None,
+    startlist_quality: float = 1000.0,
+    profile_score: float = 100.0,
+    p_class: int = -1,
+    finish_alt: float = -1.0,
+) -> dict[str, float] | None:
+    """
+    Returner placement predictions blended med direkte CO-ratings.
+    CO vægtes tungt (0.55-0.70) for at kompensere for lav CO-dækning i træningsdata.
+    Returnerer None hvis hverken ML-model eller CO-data er tilgængelig.
+    """
+    stages = (gt_results or {}).get("stages", {})
+    ml_preds = _placement_lgbm_raw_preds(
+        riders, stage_type, stage_num, stages, pcs_form_raw,
+        co_data=co_data, pcs_specialty_data=pcs_specialty_data,
+        startlist_quality=startlist_quality,
+        profile_score=profile_score,
+        p_class=p_class,
+        finish_alt=finish_alt,
+    )
+
+    # Compute raw CO scores for all riders in the field
+    co_raw: dict[str, float] = {}
+    for rider in riders:
+        rid   = rider["id"]
+        co_r  = {k.lower(): v for k, v in (co_data or {}).get(rid, {}).items()}
+        score = _co_stage_score(co_r, stage_type)
+        if score is not None:
+            co_raw[rid] = score
+
+    # If no CO data at all, fall back to pure ML
+    if not co_raw:
+        return ml_preds
+
+    # Field-normalize CO scores to 0-1 so they match norm_pos scale
+    co_lo = min(co_raw.values())
+    co_hi = max(co_raw.values())
+    co_span = co_hi - co_lo
+    co_norm = {
+        rid: (s - co_lo) / co_span if co_span > 0 else 0.5
+        for rid, s in co_raw.items()
+    }
+
+    # Stage-type blend weights (CO_w + ML_w = 1.0)
+    # CO gets more weight on pure-climbing and TT stages where ability dominates form
+    _CO_W: dict[str, float] = {
+        "mountain": 0.65,
+        "sprint":   0.60,
+        "tt":       0.70,
+        "ttt":      0.70,
+        "hilly":    0.50,
+    }
+    co_w = _CO_W.get(stage_type, 0.50)
+    ml_w = 1.0 - co_w
+
+    result: dict[str, float | None] = {}
+    for rider in riders:
+        rid    = rider["id"]
+        ml_p   = ml_preds.get(rid) if ml_preds else None
+        co_p   = co_norm.get(rid)
+
+        if ml_p is not None and co_p is not None:
+            result[rid] = round(co_w * co_p + ml_w * ml_p, 4)
+        elif co_p is not None:
+            result[rid] = round(co_p, 4)
+        elif ml_p is not None:
+            result[rid] = ml_p
+        else:
+            result[rid] = None  # type: ignore[assignment]
+
+    return result  # type: ignore[return-value]
+
+
+def compute_holdet_raw_scores(
+    riders: list[dict[str, Any]],
+    stage_type: str,
+    stage_num: int,
+    gt_results: dict | None,
+    pcs_form_raw: dict | None = None,
+    co_data: dict | None = None,
+    pcs_specialty_data: dict | None = None,
+) -> dict[str, float] | None:
+    """
+    Returner RAW holdet-model predictions (0-100 skala, IKKE felt-normaliseret).
+    0 = ingen point, 100 = vinder af etapen.
+
+    Denormalisering: predicted_K = score / 100 × AVG_MAX_K[stage_type]
+    AVG_MAX_K (gennemsnitlige maksimumpoint pr. etapetype, fra historik):
+      sprint=400K, mountain=427K, hilly=430K, tt=399K
+
+    Returnerer None hvis holdet-model ikke er indlæst.
+    """
+    stages = (gt_results or {}).get("stages", {})
+    return _holdet_lgbm_raw_preds(
+        riders, stage_type, stage_num, stages, pcs_form_raw,
+        co_data=co_data, pcs_specialty_data=pcs_specialty_data,
+    )

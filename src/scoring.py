@@ -7,15 +7,16 @@ from pathlib import Path
 
 RULES = json.loads((Path(__file__).parent.parent / "data" / "scoring_rules.json").read_text())
 
-STAGE_PTS   = {int(k): v for k, v in RULES["stage_position"].items()}
-GC_PTS      = {int(k): v for k, v in RULES["gc_standing"].items()}
-TEAM_BONUS  = {int(k): v for k, v in RULES["team_bonus"].items()}
-JERSEY      = RULES["jersey_bonus"]
-SPT_PER_PT  = RULES["sprint_kom_per_point"]
-LATE_PER_MIN = RULES["late_arrival_per_minute"]
-LATE_MAX    = RULES["late_arrival_max"]
-DNF_PEN     = RULES["dnf"]
-DNS_PEN     = RULES["dns_per_remaining_stage"]
+STAGE_PTS      = {int(k): v for k, v in RULES["stage_position"].items()}
+GC_PTS         = {int(k): v for k, v in RULES["gc_standing"].items()}
+TEAM_BONUS     = {int(k): v for k, v in RULES["team_bonus"].items()}
+TTT_PLACEMENT  = {int(k): v for k, v in RULES["ttt_team_placement"].items()}
+JERSEY         = RULES["jersey_bonus"]
+SPT_PER_PT     = RULES["sprint_kom_per_point"]
+LATE_PER_MIN   = RULES["late_arrival_per_minute"]
+LATE_MAX       = RULES["late_arrival_max"]
+DNF_PEN        = RULES["dnf"]
+DNS_PEN        = RULES["dns_per_remaining_stage"]
 
 
 def stage_score(

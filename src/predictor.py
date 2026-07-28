@@ -58,26 +58,17 @@ STAGE_DISCIPLINE = {
     "gc":        "GC",
 }
 
-# Empirically-informed discipline BLEND per stage_type — a single CO key
-# (above) doesn't capture stage outcomes well in isolation. Sampled 42
-# historical stages (2025 Giro + 2025 TdF) and looked at each winner's
-# dominant PCS specialty vs. the stage's ProfileScore:
-#   profile_score 100-200 ("hilly"):  44% onedayraces, 22% climber,
-#                                      22% tt,  only 11% hills-dominant
-#   profile_score  40-100 ("sprint"): 67% onedayraces,  8% sprint
-#   profile_score   0-40  ("sprint"): 64% sprint — genuinely flat stages
-#                                      behave as expected
-# "Hilly" and the rolling end of "sprint" are won by classics/puncheur
-# riders (COB) far more often than a pure HLL/SPR rating would suggest.
-# Sample size is modest (9-12 stages per bucket) so treat these as
-# directional, not precision-calibrated — but the gap is large enough
-# (11% vs 44%) to be worth correcting rather than ignoring.
+# Discipline BLEND per stage_type — weights which CO dimensions predict
+# each stage type best.
+# Hilly: HLL 90% + SPR 10% — TdF hilly stages have no cobbles; a small
+# sprint component captures riders who can contest punchy summit finishes
+# or reduced-group sprints at the end of rolling stages.
 STAGE_DISCIPLINE_BLEND: dict[str, dict[str, float]] = {
-    "sprint":    {"SPR": 0.65, "COB": 0.35},
+    "sprint":    {"SPR": 0.85, "HLL": 0.15},
     "mountain":  {"MTN": 1.0},
     "tt":        {"ITT": 1.0},
     "ttt":       {"ITT": 1.0},
-    "hilly":     {"COB": 0.40, "HLL": 0.35, "MTN": 0.25},
+    "hilly":     {"HLL": 0.90, "SPR": 0.10},
     "cobbled":   {"COB": 1.0},
     "gc":        {"GC": 1.0},
 }
@@ -102,16 +93,51 @@ def _disc_blend_value(cyclingoracle: dict[str, float] | None, stage_type: str) -
     """
     blend = STAGE_DISCIPLINE_BLEND.get(stage_type, {"AVG": 1.0})
     co = cyclingoracle or {}
+    if not co:
+        # No data at all → score 0 so rider lands at bottom of field ranking
+        return 0.0, _dominant_disc_key(stage_type)
     raw = sum(weight * co.get(key, 50.0) for key, weight in blend.items())
     return raw, _dominant_disc_key(stage_type)
 
+# Gennemsnitlige max Holdet-point pr. etapetype (fra historisk træningsdata
+# giro/tdf/vuelta 2025). Bruges til at denormalisere holdet-model output:
+#   predicted_K = holdet_pts_norm / 100 × AVG_MAX_K[stage_type]
+AVG_MAX_K: dict[str, int] = {
+    "sprint":   400_000,
+    "mountain": 427_000,
+    "hilly":    430_000,
+    "tt":       399_000,
+    "ttt":      399_000,
+    "cobbled":  500_000,
+    "gc":       630_000,
+}
+
+
+def _norm_pos_to_stage_pts(norm_pos: float, field_size: int) -> int:
+    """
+    Konverter placement model's norm_pos (0-1) til forventede etapeplaceringpoint.
+
+    norm_pos=1.0 → position 1 (vinderen)  → 200.000 kr
+    norm_pos≈0.92 → position ~15          → 15.000 kr
+    norm_pos<0.92 → position >15          → 0 kr
+
+    field_size: antal startryttere i etapen (typisk 175 for TdF)
+    """
+    from .scoring import STAGE_PTS
+    if norm_pos <= 0 or field_size < 2:
+        return 0
+    expected_pos = (1.0 - norm_pos) * (field_size - 1) + 1
+    pos = int(round(expected_pos))
+    pos = max(1, pos)
+    return STAGE_PTS.get(pos, 0)
+
 # Expected fantasy points IF a rider wins (by stage type).
-# Sprint recalibrated for TdF 2026: ASO øgede sprintpoint markant på 7 flade
-# etaper — 70 pts til vinderen (mod ~45 før) og 2 bonusspurter á 20 pts (mod 1).
-# Maksimalt: 200K (etape) + 210K (70×3K) + 120K (2×20×3K) = 530K. Typisk 470K.
+# Sprint TdF 2026: ASO øgede sprintpoint til 70 pt til vinderen (mod 50 sidst år)
+# + 2 mellempurter á 20 pt (mod 1). Holdet's egne tabeller ændres ikke.
+# 200K (etape) + 70×3K (klasse) + ~1×20×3K (mellempurt) = 470K typisk, max 530K.
 # Mountain/tt/hilly beholder Giro 2026-kalibreringen.
 WINNER_POINTS = {
-    "sprint":   680_000,
+    "sprint":   500_000,
     "mountain": 630_000,
     "tt":       380_000,
     "ttt":      380_000,
@@ -404,7 +430,11 @@ def predict_rider(
         elif scale <= 0.90:
             reasons.append(f"let etape (score {profile_score})")
     if not reasons:
-        reasons.append("budget-pick")
+        price = rider.get("price") or 99
+        if price <= 5.0:
+            reasons.append("budget-pick")
+        else:
+            reasons.append("model-anbefaling")
 
     return {
         "rider_id":      rider.get("id"),
@@ -471,6 +501,8 @@ def predict_all(
     ml_prob_data: dict[str, float] | None = None,       # {rider_id: felt-normaliseret 0-100}
     pcs_rank_data: dict[str, float] | None = None,      # {rider_id: pts_raw}
     pcs_n_results_data: dict[str, int] | None = None,   # {rider_id: n_results}
+    holdet_raw_data: dict[str, float] | None = None,    # {rider_id: raw holdet_pts_norm 0-100}
+    placement_data: dict[str, float] | None = None,     # {rider_id: norm_pos 0-1} fra placement model
 ) -> list[dict]:
     """
     Predict expected points for ALL riders and return sorted list.
@@ -558,10 +590,10 @@ def predict_all(
     # In a team time trial, the whole team finishes together and every rider
     # receives the SAME stage-position points in Holdet's scoring — an
     # individual's own ITT rating is the wrong signal. What matters is the
-    # team's collective TTT strength. We use the average of each team's
-    # 6 strongest riders (a TTT squad typically drops its weakest 1-2
-    # riders, but the recorded time still reflects the front group's pace),
-    # then give every rider on that team this same team-level value.
+    # team's collective TTT strength. We use the 5th-best rider's rating as
+    # the team score — the 5th rider's time sets the team's recorded time in
+    # Grand Tours. Mountain climbers ranked 6th+ are simply irrelevant;
+    # ranked 5th, their weaker rating correctly drags the team down.
     if stage_type == "ttt":
         from collections import defaultdict
         team_to_rids: dict[str, list[str]] = defaultdict(list)
@@ -572,11 +604,12 @@ def predict_all(
             vals = sorted((field_vals[rid] for rid in rids if rid in field_vals), reverse=True)
             if not vals:
                 continue
-            top6 = vals[:6] if len(vals) >= 6 else vals
-            team_avg = sum(top6) / len(top6)
+            # The 5th rider sets the team's recorded time — use their rating directly.
+            # If fewer than 5 riders are available, use the worst available.
+            team_score = vals[4] if len(vals) >= 5 else vals[-1]
             for rid in rids:
                 if rid in field_vals:
-                    field_vals[rid] = team_avg
+                    field_vals[rid] = team_score
 
     disc_rescaled: dict[str, float] = dict(field_vals)
     if field_vals:
@@ -586,6 +619,26 @@ def predict_all(
         disc_rescaled = {
             rid: round(100.0 * math.exp(-0.07 * i), 1)
             for i, rid in enumerate(sorted_rids)
+        }
+
+    # ── TTT: re-average disc_rescaled within each team ───────────────────────
+    # The team-avg step (above) gives all teammates equal field_vals, but the
+    # rank-based rescaling breaks ties by sequential index — the first rider
+    # alphabetically gets rank 1 (disc=100), the next gets rank 2 (disc=93),
+    # etc. For TTT all teammates finished together and share the same rating,
+    # so they should all receive the same disc_rescaled value.
+    if stage_type == "ttt" and disc_rescaled:
+        from collections import defaultdict as _dd
+        _team_vals: dict[str, list[float]] = _dd(list)
+        _rider_team = {r["id"]: r.get("team", "") for r in riders}
+        for rid, val in disc_rescaled.items():
+            _team = _rider_team.get(rid, "")
+            if _team:
+                _team_vals[_team].append(val)
+        _team_avg = {t: sum(v) / len(v) for t, v in _team_vals.items()}
+        disc_rescaled = {
+            rid: round(_team_avg.get(_rider_team.get(rid, ""), val), 1)
+            for rid, val in disc_rescaled.items()
         }
 
     # ── Field-normaliser PCS 12-mdr. rankingpoint (0-100) ────────────────────
@@ -664,23 +717,110 @@ def predict_all(
         pred["disc_co_raw"] = round(field_vals.get(rider["id"], 0), 1)
         results.append(pred)
 
-    # ── Rank-based calibration ───────────────────────────────────────────────
-    # The composite signal ranks riders well but its absolute value clusters
-    # at 0.60–0.75 when signals are sparse (e.g. TTT stage 1 with no
-    # VeloScore/odds). Multiplying by winner_pts then gives a flat band
-    # where 40+ riders all score ~260K, which is unrealistic.
+    # ── TTT: team-average ML raw scores ──────────────────────────────────────
+    # The holdet ML model has no team-composition features — it predicts each
+    # rider individually based on their own ITT rating. For TTT stages this is
+    # wrong: all riders on a team receive the same position points, so their
+    # expected holdet score must also be the same. Apply the same 5th-rider
+    # logic to ML scores as we do to the discipline signal above.
+    if stage_type == "ttt" and holdet_raw_data:
+        from collections import defaultdict as _hdd
+        _ttt_rider_team = {r["id"]: r.get("team", "") for r in riders}
+        _ttt_team_scores: dict[str, list[float]] = _hdd(list)
+        for rid, score in holdet_raw_data.items():
+            t = _ttt_rider_team.get(rid, "")
+            if t and score is not None:
+                _ttt_team_scores[t].append(score)
+        _ttt_team_avg: dict[str, float] = {
+            t: round((sorted(scores, reverse=True)[4] if len(scores) >= 5 else sorted(scores, reverse=True)[-1]), 2)
+            for t, scores in _ttt_team_scores.items() if scores
+        }
+        holdet_raw_data = {
+            rid: _ttt_team_avg.get(_ttt_rider_team.get(rid, ""), score)
+            for rid, score in holdet_raw_data.items()
+        }
+
+    # ── Calibrated base score: placement model > holdet model > rank decay ───
     #
-    # Fix: use composite ORDER to rank riders, then apply an exponential decay
-    # based on field rank so the MAGNITUDE matches empirical Giro/Dauphiné
-    # distributions (rank 1 → 35% of winner_pts, rank 5 → 29%, rank 20 → 17%,
-    # rank 50 → 8%, rank 100 → 2%). GC/jersey/sprint/KOM bonuses are untouched.
+    # Priority 1 — Placement model (Option C):
+    #   norm_pos (0-1) fra placement_model.lgbm → stage position → STAGE_PTS lookup
+    #   Trænet direkte på PCS placeringer (80k+ rækker), ikke holdet-point.
+    #   Giver korrekt rang-orden: Pogacar > Vingegaard > Martinez på bjergetaper.
+    #   field_size = antal ryttere i feltet (len(riders) som approks.)
+    #
+    # Priority 2 — Holdet model (legacy):
+    #   holdet_pts_norm 0-100 → denormaliseret via AVG_MAX_K[stage_type].
+    #   Bruges som fallback hvis placement_model.lgbm ikke er indlæst.
+    #
+    # Priority 3 — Rank-based exponential decay:
+    #   Bruges når ingen ML-model er tilgængelig ELLER disciplin-gate fejler.
+    #
+    # Disciplin-gate (begge ML-modeller): disc_raw < 10 → falback til rank.
+    # Det fanger sprinters på bjergetaper og klatrere på sprinteretaper der
+    # ikke har relevant CO/PCS data til at udfordre disciplin-filteret.
+    #
+    # GC/jersey/sprint/KOM-bonusser adderes OVEN PÅ den kalibrerede base (alle cases).
     results.sort(key=lambda x: x["expected_pts"], reverse=True)
-    _n = len(results)
+    _n        = len(results)
+    _avg_k    = AVG_MAX_K.get(stage_type, 430_000)
+    _field_sz = max(_n, 100)   # approksimeret feltstørrelse
+
+    # Pre-rank placement predictions so rank 1 → 200k, rank 2 → 150k etc.
+    # The CO-blended placement_pred is field-relative (best ≈ 0.96, not 1.0),
+    # so we rank-order to get correct stage pts mapping.
+    _placement_ranked: list[tuple[str, float]] = sorted(
+        [(rid, score) for rid, score in (placement_data or {}).items()
+         if score is not None and score > 0],
+        key=lambda x: -x[1],
+    )
+    _placement_rank: dict[str, int] = {rid: i + 1 for i, (rid, _) in enumerate(_placement_ranked)}
+    _n_placement = max(len(_placement_ranked), 1)
+
     for _i, pred in enumerate(results):
-        _frac = _i / max(_n - 1, 1)
-        _wp   = pred.get("winner_pts", 500_000)
+        _frac  = _i / max(_n - 1, 1)
+        _wp    = pred.get("winner_pts", 500_000)
         _addon = pred["expected_pts"] - pred["composite_base_pts"]
-        _calibrated_base = round(0.35 * math.exp(-4.0 * _frac) * _wp)
+        rid    = pred.get("rider_id")
+
+        # Disciplin-gate gælder for alle ML-modeller
+        _disc_ok = (pred.get("disc_raw") or 0.0) >= 10.0
+
+        placement_norm = (placement_data or {}).get(rid) if rid else None
+        holdet_raw     = (holdet_raw_data or {}).get(rid) if rid else None
+
+        if placement_norm is not None and placement_norm > 0:
+            # Priority 1: Placement model → stage pts lookup
+            # CO blending already penalises riders who are out of their element,
+            # so no additional discipline gate is needed here.
+            _pr   = _placement_rank.get(rid, _n_placement)
+            _norm = 1.0 - (_pr - 1) / max(_n_placement - 1, 1)
+            _calibrated_base = _norm_pos_to_stage_pts(_norm, _field_sz)
+            # TdF 2026 sprint stages: add expected sprint classification pts for
+            # sprint specialists (70/50/40 pts × 3k at finish + 2×20 pts × 3k
+            # intermediate). Pure sprinters with high CO_SPR earn these in addition
+            # to stage position pts. Boost is proportional to sprint ability.
+            if stage_type == "sprint" and _calibrated_base > 0:
+                _co_spr = (cyclingoracle_data or {}).get(rid, {}).get("SPR", 0)
+                if _co_spr >= 75:
+                    # Scale: SPR=75 → 1.0×, SPR=100 → 1.5×
+                    _sprint_boost = 1.0 + (_co_spr - 75) / 25.0 * 0.5
+                    _calibrated_base = round(_calibrated_base * _sprint_boost)
+            pred["placement_pred"]  = round(placement_norm, 4)
+            pred["holdet_raw_pred"] = None
+            pred["ml_source_used"]  = "placement"
+        elif holdet_raw is not None and holdet_raw > 0 and _disc_ok:
+            # Priority 2: Holdet model (legacy)
+            _calibrated_base = round(holdet_raw / 100.0 * _avg_k)
+            pred["placement_pred"]  = None
+            pred["holdet_raw_pred"] = round(holdet_raw, 2)
+            pred["ml_source_used"]  = "holdet"
+        else:
+            # Priority 3: Rank-based exponential decay
+            _calibrated_base = round(0.35 * math.exp(-2.44 * _frac) * _wp)
+            pred["placement_pred"]  = None
+            pred["holdet_raw_pred"] = None
+            pred["ml_source_used"]  = "rank"
+
         pred["expected_pts"] = _calibrated_base + _addon
 
     # ── Context multipliers ──────────────────────────────────────────────────

@@ -1,0 +1,28 @@
+{
+  "stage": 5,
+  "stage_type": "sprint",
+  "level": "rider",
+  "note": "Etape 5 — ren sprint-etape (Philipsen, Merlier, Kooij, Girmay). Headline-felter fra screenshot.",
+  "predictions": [
+    {"rank": 1,  "rider": "Jasper Philipsen",      "total": 1598, "veloscore": 9.4, "stars": 4},
+    {"rank": 2,  "rider": "Tim Merlier",           "total": 1472, "veloscore": 8.7, "stars": 4},
+    {"rank": 3,  "rider": "Olav Kooij",            "total": 1287, "veloscore": 7.6, "stars": 3},
+    {"rank": 4,  "rider": "Biniam Girmay",         "total": 1253, "veloscore": 7.4, "stars": 3},
+    {"rank": 5,  "rider": "Mads Pedersen",         "total": 1080, "veloscore": 6.4, "stars": 3},
+    {"rank": 6,  "rider": "Max Kanter",            "total": 846,  "veloscore": 5.0, "stars": 2},
+    {"rank": 7,  "rider": "Pavel Bittner",         "total": 698,  "veloscore": 4.1, "stars": 2},
+    {"rank": 8,  "rider": "Søren Wærenskjold",     "total": 617,  "veloscore": 3.6, "stars": 2},
+    {"rank": 9,  "rider": "Milan Fretin",          "total": 578,  "veloscore": 3.4, "stars": 2},
+    {"rank": 10, "rider": "Phil Bauhaus",          "total": 416,  "veloscore": 2.4, "stars": 1},
+    {"rank": 11, "rider": "Arvid de Kleijn",       "total": 395,  "veloscore": 2.3, "stars": 1},
+    {"rank": 12, "rider": "Fernando Gaviria",      "total": 276,  "veloscore": 1.6, "stars": 1},
+    {"rank": 13, "rider": "Pascal Ackermann",      "total": 261,  "veloscore": 1.5, "stars": 1},
+    {"rank": 14, "rider": "Dorian Godon",          "total": 226,  "veloscore": 1.3, "stars": 1},
+    {"rank": 15, "rider": "Anthony Turgis",        "total": 204,  "veloscore": 1.2, "stars": 0},
+    {"rank": 16, "rider": "Jenno Berckmoes",       "total": 155,  "veloscore": 0.9, "stars": 0},
+    {"rank": 17, "rider": "Mathieu van der Poel",  "total": 131,  "veloscore": 0.8, "stars": 0},
+    {"rank": 18, "rider": "Jonas Abrahamsen",      "total": 94,   "veloscore": 0.6, "stars": 0},
+    {"rank": 19, "rider": "Michael Matthews",      "total": 73,   "veloscore": 0.4, "stars": 0},
+    {"rank": 20, "rider": "Filippo Ganna",         "total": 71,   "veloscore": 0.4, "stars": 0}
+  ]
+}

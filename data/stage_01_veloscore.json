@@ -1,0 +1,138 @@
+{
+  "stage": 1,
+  "stage_type": "ttt",
+  "level": "team",
+  "note": "Etape 1 er en holdtidskørsel (TTT) — VeloScore er på HOLDNIVEAU, ikke rytterniveau. 'rider'-feltet indeholder holdnavnet.",
+  "predictions": [
+    {
+      "rank": 1,
+      "rider": "Netcompany INEOS",
+      "team": "Netcompany INEOS",
+      "total": 1076,
+      "veloscore": 9.0,
+      "stars": 4,
+      "predictors": {
+        "cyclingpredpt": 4, "maschbasch": 4, "axelgaard_tv2": 4, "cyclingoracle": 4,
+        "cyclinguptodate": 4, "domestique": 2, "indeleiderstrui": 4, "scorito_daily": 4,
+        "touretappe_nl": 3, "velofute": 4, "wieler_revue": 3, "wielerflits": 2
+      }
+    },
+    {
+      "rank": 2,
+      "rider": "UAE Team Emirates - XRG",
+      "team": "UAE Team Emirates - XRG",
+      "total": 1035,
+      "veloscore": 8.6,
+      "stars": 4,
+      "predictors": {
+        "cyclingpredpt": 3, "maschbasch": 3, "axelgaard_tv2": 3, "cyclingoracle": 4,
+        "cyclinguptodate": 3, "domestique": 4, "indeleiderstrui": 4, "scorito_daily": 3,
+        "touretappe_nl": 4, "velofute": 3, "wieler_revue": 3, "wielerflits": 3
+      }
+    },
+    {
+      "rank": 3,
+      "rider": "Team Visma | Lease a Bike",
+      "team": "Team Visma | Lease a Bike",
+      "total": 975,
+      "veloscore": 8.1,
+      "stars": 3,
+      "predictors": {
+        "cyclingpredpt": 2, "maschbasch": 2, "axelgaard_tv2": 2, "cyclingoracle": 3,
+        "cyclinguptodate": 3, "domestique": 3, "indeleiderstrui": 3, "scorito_daily": 3,
+        "touretappe_nl": 2, "velofute": 2, "wieler_revue": 4, "wielerflits": 4
+      }
+    },
+    {
+      "rank": 4,
+      "rider": "Red Bull - BORA - hansgrohe",
+      "team": "Red Bull - BORA - hansgrohe",
+      "total": 834,
+      "veloscore": 6.9,
+      "stars": 2,
+      "predictors": {
+        "cyclingpredpt": 1, "maschbasch": 3, "axelgaard_tv2": 2, "cyclingoracle": 2,
+        "cyclinguptodate": 3, "domestique": 3, "indeleiderstrui": 3, "scorito_daily": 2,
+        "touretappe_nl": 3, "velofute": 2, "wieler_revue": 3, "wielerflits": 2
+      }
+    },
+    {
+      "rank": 5,
+      "rider": "Lidl - Trek",
+      "team": "Lidl - Trek",
+      "total": 673,
+      "veloscore": 5.6,
+      "stars": 2,
+      "predictors": {
+        "cyclingpredpt": 1, "maschbasch": 2, "axelgaard_tv2": 2, "cyclingoracle": 3,
+        "cyclinguptodate": 0, "domestique": 2, "indeleiderstrui": 3, "scorito_daily": 2,
+        "touretappe_nl": 2, "velofute": 3, "wieler_revue": 2, "wielerflits": 2
+      }
+    },
+    {
+      "rank": 6,
+      "rider": "EF Education - EasyPost",
+      "team": "EF Education - EasyPost",
+      "total": 464,
+      "veloscore": 3.9,
+      "stars": 1,
+      "predictors": {
+        "cyclingpredpt": 0, "maschbasch": 1, "axelgaard_tv2": 1, "cyclingoracle": 1,
+        "cyclinguptodate": 2, "domestique": 0, "indeleiderstrui": 2, "scorito_daily": 2,
+        "touretappe_nl": 2, "velofute": 1, "wieler_revue": 0, "wielerflits": 1
+      }
+    },
+    {
+      "rank": 7,
+      "rider": "Team Jayco AlUla",
+      "team": "Team Jayco AlUla",
+      "total": 445,
+      "veloscore": 3.7,
+      "stars": 1,
+      "predictors": {
+        "cyclingpredpt": 0, "maschbasch": 0, "axelgaard_tv2": 1, "cyclingoracle": 2,
+        "cyclinguptodate": 2, "domestique": 1, "indeleiderstrui": 2, "scorito_daily": 1,
+        "touretappe_nl": 0, "velofute": 1, "wieler_revue": 0, "wielerflits": 1
+      }
+    },
+    {
+      "rank": 8,
+      "rider": "Decathlon CMA CGM Team",
+      "team": "Decathlon CMA CGM Team",
+      "total": 434,
+      "veloscore": 3.6,
+      "stars": 1,
+      "predictors": {
+        "cyclingpredpt": 0, "maschbasch": 0, "axelgaard_tv2": 2, "cyclingoracle": 2,
+        "cyclinguptodate": 2, "domestique": 0, "indeleiderstrui": 2, "scorito_daily": 1,
+        "touretappe_nl": 2, "velofute": 1, "wieler_revue": 0, "wielerflits": 2
+      }
+    },
+    {
+      "rank": 9,
+      "rider": "Alpecin - Premier Tech",
+      "team": "Alpecin - Premier Tech",
+      "total": 309,
+      "veloscore": 2.6,
+      "stars": 1,
+      "predictors": {
+        "cyclingpredpt": 0, "maschbasch": 0, "axelgaard_tv2": 1, "cyclingoracle": 0,
+        "cyclinguptodate": 0, "domestique": 0, "indeleiderstrui": 2, "scorito_daily": 1,
+        "touretappe_nl": 2, "velofute": 1, "wieler_revue": 1, "wielerflits": 1
+      }
+    },
+    {
+      "rank": 10,
+      "rider": "Movistar Team",
+      "team": "Movistar Team",
+      "total": 248,
+      "veloscore": 2.1,
+      "stars": 1,
+      "predictors": {
+        "cyclingpredpt": 0, "maschbasch": 0, "axelgaard_tv2": 0, "cyclingoracle": 2,
+        "cyclinguptodate": 2, "domestique": 0, "indeleiderstrui": 2, "scorito_daily": 1,
+        "touretappe_nl": 1, "velofute": 1, "wieler_revue": 0, "wielerflits": 0
+      }
+    }
+  ]
+}

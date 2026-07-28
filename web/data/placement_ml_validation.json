@@ -1,0 +1,214 @@
+{
+  "model": "placement_model.lgbm",
+  "target": "norm_pos",
+  "n_train_total": 84662,
+  "n_features": 34,
+  "loro_results": [
+    {
+      "val_race": "giro",
+      "n_train": 67740,
+      "n_val": 16922,
+      "mean_spearman": 0.6509,
+      "top5_accuracy": 0.6286,
+      "rmse": 0.2186,
+      "n_stages": 105,
+      "spearman_sprint": 0.5346,
+      "top5acc_sprint": 0.5385,
+      "spearman_mountain": 0.7996,
+      "top5acc_mountain": 0.75,
+      "spearman_hilly": 0.7443,
+      "top5acc_hilly": 0.5556,
+      "spearman_tt": 0.7236,
+      "top5acc_tt": 0.9091
+    },
+    {
+      "val_race": "tdf",
+      "n_train": 67504,
+      "n_val": 17158,
+      "mean_spearman": 0.6403,
+      "top5_accuracy": 0.7619,
+      "rmse": 0.2224,
+      "n_stages": 105,
+      "spearman_sprint": 0.5283,
+      "top5acc_sprint": 0.6939,
+      "spearman_mountain": 0.7939,
+      "top5acc_mountain": 0.8696,
+      "spearman_hilly": 0.7138,
+      "top5acc_hilly": 0.7083,
+      "spearman_tt": 0.6621,
+      "top5acc_tt": 1.0
+    },
+    {
+      "val_race": "vuelta",
+      "n_train": 68600,
+      "n_val": 16062,
+      "mean_spearman": 0.6269,
+      "top5_accuracy": 0.63,
+      "rmse": 0.2264,
+      "n_stages": 100,
+      "spearman_sprint": 0.5297,
+      "top5acc_sprint": 0.6316,
+      "spearman_mountain": 0.7307,
+      "top5acc_mountain": 0.5588,
+      "spearman_hilly": 0.6117,
+      "top5acc_hilly": 0.619,
+      "spearman_tt": 0.6957,
+      "top5acc_tt": 1.0
+    }
+  ],
+  "avg_spearman": 0.6394,
+  "avg_top5_accuracy": 0.6735,
+  "avg_rmse": 0.2225,
+  "feature_importances": [
+    {
+      "feature": "profile_score",
+      "importance": 4140
+    },
+    {
+      "feature": "xrace_form_10",
+      "importance": 3656
+    },
+    {
+      "feature": "gt_form_5",
+      "importance": 3204
+    },
+    {
+      "feature": "gt_form_10",
+      "importance": 2930
+    },
+    {
+      "feature": "spec_climber",
+      "importance": 2155
+    },
+    {
+      "feature": "spec_sprint",
+      "importance": 1795
+    },
+    {
+      "feature": "sprint_profile_score",
+      "importance": 1681
+    },
+    {
+      "feature": "spec_tt",
+      "importance": 1634
+    },
+    {
+      "feature": "spec_hills",
+      "importance": 1471
+    },
+    {
+      "feature": "co_spr",
+      "importance": 1238
+    },
+    {
+      "feature": "co_mtn",
+      "importance": 1222
+    },
+    {
+      "feature": "co_hll",
+      "importance": 1120
+    },
+    {
+      "feature": "co_itt",
+      "importance": 1094
+    },
+    {
+      "feature": "startlist_quality",
+      "importance": 983
+    },
+    {
+      "feature": "co_gc",
+      "importance": 940
+    },
+    {
+      "feature": "sprint_spec",
+      "importance": 936
+    },
+    {
+      "feature": "xrace_top10_rate_10",
+      "importance": 912
+    },
+    {
+      "feature": "sprint_co_spr",
+      "importance": 878
+    },
+    {
+      "feature": "co_cob",
+      "importance": 783
+    },
+    {
+      "feature": "p_class",
+      "importance": 660
+    },
+    {
+      "feature": "form_overall",
+      "importance": 541
+    },
+    {
+      "feature": "form_sprint",
+      "importance": 419
+    },
+    {
+      "feature": "form_hilly",
+      "importance": 386
+    },
+    {
+      "feature": "form_mountain",
+      "importance": 382
+    },
+    {
+      "feature": "xrace_top3_rate_10",
+      "importance": 344
+    },
+    {
+      "feature": "mtn_co_mtn",
+      "importance": 329
+    },
+    {
+      "feature": "is_tt",
+      "importance": 281
+    },
+    {
+      "feature": "sprint_xrace_top3",
+      "importance": 189
+    },
+    {
+      "feature": "is_hilly",
+      "importance": 162
+    },
+    {
+      "feature": "form_tt",
+      "importance": 146
+    },
+    {
+      "feature": "gt_wins_so_far",
+      "importance": 90
+    },
+    {
+      "feature": "is_sprint",
+      "importance": 68
+    },
+    {
+      "feature": "is_mountain",
+      "importance": 31
+    },
+    {
+      "feature": "finish_alt",
+      "importance": 0
+    }
+  ],
+  "races_in_training": [
+    "basque",
+    "catalunya",
+    "dauphine",
+    "giro",
+    "pn",
+    "romandie",
+    "suisse",
+    "tdf",
+    "tirreno",
+    "vuelta"
+  ],
+  "notes": "norm_pos=1.0=vinder, 0.0=sidst. LORO CV på GT-løb (tdf/giro/vuelta). Et-ugersløb bruges som ekstra træning men ikke til CV. Spearman: rang-korrelation pr. etape. Top5acc: andel etaper med ≥1 hit i top-5.",
+  "generated": "2026-06-29T21:55:53.519748+00:00"
+}

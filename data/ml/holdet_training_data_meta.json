@@ -1,0 +1,43 @@
+{
+  "n_rows": 11315,
+  "n_stages": 63,
+  "feature_cols": [
+    "is_sprint",
+    "is_mountain",
+    "is_hilly",
+    "is_tt",
+    "co_mtn",
+    "co_spr",
+    "co_hll",
+    "co_itt",
+    "co_cob",
+    "co_gc",
+    "spec_climber",
+    "spec_sprint",
+    "spec_tt",
+    "spec_hills",
+    "form_overall",
+    "form_sprint",
+    "form_mountain",
+    "form_hilly",
+    "form_tt",
+    "gt_form_5",
+    "gt_form_10",
+    "gt_wins_so_far",
+    "xrace_form_10"
+  ],
+  "target_cols": [
+    "holdet_pts",
+    "holdet_pts_norm",
+    "holdet_rank"
+  ],
+  "years": [
+    2025
+  ],
+  "races": [
+    "giro",
+    "tdf",
+    "vuelta"
+  ],
+  "notes": "holdet_pts: r\u00e5v\u00e6rdi fra holdet_historical.json (K-format). holdet_pts_norm: 0-100 normaliseret inden for etapefeltet. holdet_rank: rang inden for feltet (1=bedst). form_*: nuv\u00e6rende PCS-form-snapshot \u2014 bedste approks. for 2025. pcs_pos: faktisk PCS-placering (ikke feature, kun til inspektion)."
+}

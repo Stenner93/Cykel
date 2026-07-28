@@ -1,8 +1,9 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [main]
+  # Deploy sker nu i daily.yml (én ren deploy pr. kørsel, selvhelbredende).
+  # Denne workflow er kun til MANUEL kørsel — fx efter en frontend-ændring
+  # der ikke afventer næste daglige kørsel. Klik "Run workflow" i Actions.
   workflow_dispatch:
 
 permissions:
@@ -10,9 +11,13 @@ permissions:
   pages: write
   id-token: write
 
+# Med de hyppige daglige commits (hver halve time om middagen + aften) stod
+# Pages-deploys i kø og fejlede med "Deployment failed, try again later".
+# cancel-in-progress: true aflyser overhalede deploys i stedet for at hobe dem
+# op — kun den nyeste kører, hvilket stopper de tilbagevendende fejl.
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -22,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v4
+      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: './web'

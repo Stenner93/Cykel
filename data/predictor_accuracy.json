@@ -1,0 +1,32 @@
+{
+  "_note": "VeloScore 'Predictors Ranking' — hvor præcise hver forudsigelses-kilde har været over TdF 2026. Fra screenshot (Top 23 predictors, 7 etaper). total_score = sum, avg_score = gennemsnit pr. etape, daily_wins = antal etaper vundet, stages = point pr. etape (stage-nummer → score). Blanke felter = ingen data for den etape.",
+  "race": "tour-de-france-2026",
+  "races_processed": 7,
+  "source": "VeloScore",
+  "captured": "2026-07-10",
+  "predictors": [
+    {"rank": 1,  "source": "Morrizz",          "total_score": 616.5, "races": 7, "daily_wins": 0, "avg_score": 88.1, "stages": {"1": 100,   "2": 99.5, "3": 81.5,  "4": 62.5, "5": 77.5, "6": 104.5, "7": 91}},
+    {"rank": 2,  "source": "Scorito Daily",    "total_score": 609.5, "races": 7, "daily_wins": 2, "avg_score": 87.1, "stages": {"1": 103,   "2": 88,   "3": 101.5, "4": 44,   "5": 86.5, "6": 105,   "7": 81.5}},
+    {"rank": 3,  "source": "CyclingOracle",    "total_score": 601.5, "races": 7, "daily_wins": 0, "avg_score": 85.9, "stages": {"1": 102,   "2": 98,   "3": 89.5,  "4": 52.5, "5": 82.5, "6": 93,    "7": 84}},
+    {"rank": 4,  "source": "VeloScore",        "total_score": 601,   "races": 7, "daily_wins": 2, "avg_score": 85.9, "stages": {"1": 103,   "2": 83,   "3": 64,    "4": 68,   "5": 86.5, "6": 106.5, "7": 90}},
+    {"rank": 5,  "source": "CyclingUptodate",  "total_score": 599.5, "races": 7, "daily_wins": 0, "avg_score": 85.6, "stages": {"1": 96.5,  "2": 73.5, "3": 91.5,  "4": 56.5, "5": 86.5, "6": 102,   "7": 93}},
+    {"rank": 6,  "source": "Wielerflits",      "total_score": 578,   "races": 7, "daily_wins": 0, "avg_score": 82.6, "stages": {"1": 101,   "2": 89.5, "3": 86.5,  "4": 36,   "5": 85,   "6": 103,   "7": 77}},
+    {"rank": 7,  "source": "@Watts2Win",       "total_score": 576,   "races": 7, "daily_wins": 1, "avg_score": 82.3, "stages": {"1": 98,    "2": 83.5, "3": 58,    "4": 50,   "5": 95,   "6": 107.5, "7": 84}},
+    {"rank": 8,  "source": "Axelgaard - TV2",  "total_score": 574.5, "races": 7, "daily_wins": 1, "avg_score": 82.1, "stages": {"1": 103,   "2": 80,   "3": 84,    "4": 28.5, "5": 88,   "6": 102,   "7": 89}},
+    {"rank": 9,  "source": "InDeLeidersTrui",  "total_score": 562.5, "races": 7, "daily_wins": 2, "avg_score": 80.4, "stages": {"1": 103,   "2": 89.5, "3": 28,    "4": 61.5, "5": 86.5, "6": 109.5, "7": 84.5}},
+    {"rank": 10, "source": "@MaschBasch",      "total_score": 536,   "races": 7, "daily_wins": 0, "avg_score": 76.6, "stages": {"1": 90.5,  "2": 95.5, "3": 18,    "4": 65,   "5": 77.5, "6": 99.5,  "7": 90}},
+    {"rank": 11, "source": "Domestique",       "total_score": 536,   "races": 7, "daily_wins": 1, "avg_score": 76.6, "stages": {"1": 94,    "2": 84.5, "3": 54,    "4": 24.5, "5": 74.5, "6": 106,   "7": 98.5}},
+    {"rank": 12, "source": "@Cyclingpredpt",   "total_score": 530,   "races": 7, "daily_wins": 0, "avg_score": 75.7, "stages": {"1": 91,    "2": 80.5, "3": 32,    "4": 44.5, "5": 85.5, "6": 106.5, "7": 90}},
+    {"rank": 13, "source": "@CyclingVision",   "total_score": 524,   "races": 7, "daily_wins": 1, "avg_score": 74.9, "stages": {"1": 95.5,  "2": 103,  "3": 33,    "4": 35,   "5": 75.5, "6": 98.5,  "7": 83.5}},
+    {"rank": 14, "source": "@Coffee_Machina",  "total_score": 521.5, "races": 7, "daily_wins": 0, "avg_score": 74.5, "stages": {"1": 96.5,  "2": 85.5, "3": 18,    "4": 51.5, "5": 82,   "6": 99.5,  "7": 88.5}},
+    {"rank": 15, "source": "@cycloben2",       "total_score": 516,   "races": 7, "daily_wins": 0, "avg_score": 73.7, "stages": {"1": 100.5, "2": 84,   "3": 15,    "4": 55,   "5": 77,   "6": 105,   "7": 79.5}},
+    {"rank": 16, "source": "VeloFute",         "total_score": 498.5, "races": 7, "daily_wins": 0, "avg_score": 71.2, "stages": {"1": 96,    "2": 69.5, "3": null,  "4": 52,   "5": 92.5, "6": 101.5, "7": 87}},
+    {"rank": 17, "source": "@Koersklap",       "total_score": 477.5, "races": 7, "daily_wins": 1, "avg_score": 68.2, "stages": {"1": 103,   "2": 68,   "3": null,  "4": 47,   "5": 84,   "6": 89.5,  "7": 86}},
+    {"rank": 18, "source": "Wieler Revue",     "total_score": 477,   "races": 7, "daily_wins": 0, "avg_score": 68.1, "stages": {"1": 99,    "2": 82.5, "3": null,  "4": 34.5, "5": 90,   "6": 92,    "7": 79}},
+    {"rank": 19, "source": "@Behind_Peloton",  "total_score": 475,   "races": 7, "daily_wins": 0, "avg_score": 67.9, "stages": {"1": 89,    "2": 85.5, "3": null,  "4": 53.5, "5": 69.5, "6": 100.5, "7": 77}},
+    {"rank": 20, "source": "@wielervrspllng",  "total_score": 468.5, "races": 7, "daily_wins": 0, "avg_score": 66.9, "stages": {"1": 94,    "2": 86.5, "3": null,  "4": 52,   "5": 63.5, "6": 97.5,  "7": 75}},
+    {"rank": 21, "source": "Touretappe.nl",    "total_score": 441.5, "races": 7, "daily_wins": 0, "avg_score": 63.1, "stages": {"1": 97,    "2": 45.5, "3": 9,     "4": 20,   "5": 84,   "6": 94,    "7": 92}},
+    {"rank": 22, "source": "@cyclingpills1",   "total_score": 428.5, "races": 6, "daily_wins": 0, "avg_score": 71.4, "stages": {"1": 93.5,  "2": null, "3": 52.5,  "4": 50,   "5": 71.5, "6": 84.5,  "7": 76.5}},
+    {"rank": 23, "source": "InnerRing",        "total_score": 425,   "races": 7, "daily_wins": 0, "avg_score": 60.7, "stages": {"1": 94,    "2": 44.5, "3": 18,    "4": 60,   "5": 60.5, "6": 74,    "7": 74}}
+  ]
+}
