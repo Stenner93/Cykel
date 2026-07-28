@@ -156,7 +156,9 @@
       "cap_regret_M": 0.055,
       "kasper_captain": "Kevin Vauquelin",
       "kasper_cap_M": 0.15,
-      "top_missed": []
+      "top_missed": [],
+      "top15_you": 2,
+      "top15_top10_med": 2
     },
     {
       "stage": 2,
@@ -177,7 +179,9 @@
           "gain_M": 0.076,
           "top10_owned": 5
         }
-      ]
+      ],
+      "top15_you": 5,
+      "top15_top10_med": 4
     },
     {
       "stage": 3,
@@ -192,7 +196,9 @@
       "cap_regret_M": 0.0,
       "kasper_captain": "Tadej Pogacar",
       "kasper_cap_M": 0.506,
-      "top_missed": []
+      "top_missed": [],
+      "top15_you": 3,
+      "top15_top10_med": 3
     },
     {
       "stage": 4,
@@ -207,7 +213,9 @@
       "cap_regret_M": 0.0,
       "kasper_captain": "Mads Pedersen",
       "kasper_cap_M": 0.513,
-      "top_missed": []
+      "top_missed": [],
+      "top15_you": 4,
+      "top15_top10_med": 4
     },
     {
       "stage": 5,
@@ -233,7 +241,9 @@
           "gain_M": 0.134,
           "top10_owned": 6
         }
-      ]
+      ],
+      "top15_you": 4,
+      "top15_top10_med": 5
     },
     {
       "stage": 6,
@@ -254,7 +264,9 @@
           "gain_M": 0.012,
           "top10_owned": 7
         }
-      ]
+      ],
+      "top15_you": 2,
+      "top15_top10_med": 3
     },
     {
       "stage": 7,
@@ -285,7 +297,9 @@
           "gain_M": 0.063,
           "top10_owned": 9
         }
-      ]
+      ],
+      "top15_you": 5,
+      "top15_top10_med": 8
     },
     {
       "stage": 8,
@@ -316,7 +330,9 @@
           "gain_M": 0.06,
           "top10_owned": 7
         }
-      ]
+      ],
+      "top15_you": 5,
+      "top15_top10_med": 7
     },
     {
       "stage": 9,
@@ -337,7 +353,9 @@
           "gain_M": 0.112,
           "top10_owned": 6
         }
-      ]
+      ],
+      "top15_you": 4,
+      "top15_top10_med": 4
     },
     {
       "stage": 10,
@@ -363,7 +381,9 @@
           "gain_M": 0.043,
           "top10_owned": 5
         }
-      ]
+      ],
+      "top15_you": null,
+      "top15_top10_med": null
     },
     {
       "stage": 11,
@@ -394,7 +414,9 @@
           "gain_M": 0.156,
           "top10_owned": 6
         }
-      ]
+      ],
+      "top15_you": null,
+      "top15_top10_med": null
     },
     {
       "stage": 12,
@@ -425,7 +447,9 @@
           "gain_M": 0.156,
           "top10_owned": 6
         }
-      ]
+      ],
+      "top15_you": 6,
+      "top15_top10_med": 8
     },
     {
       "stage": 13,
@@ -451,7 +475,9 @@
           "gain_M": 0.054,
           "top10_owned": 8
         }
-      ]
+      ],
+      "top15_you": null,
+      "top15_top10_med": null
     },
     {
       "stage": 14,
@@ -472,7 +498,9 @@
           "gain_M": 0.193,
           "top10_owned": 8
         }
-      ]
+      ],
+      "top15_you": null,
+      "top15_top10_med": null
     },
     {
       "stage": 15,
@@ -503,7 +531,9 @@
           "gain_M": 0.037,
           "top10_owned": 6
         }
-      ]
+      ],
+      "top15_you": 4,
+      "top15_top10_med": 6
     },
     {
       "stage": 16,
@@ -534,7 +564,9 @@
           "gain_M": 0.073,
           "top10_owned": 8
         }
-      ]
+      ],
+      "top15_you": null,
+      "top15_top10_med": null
     },
     {
       "stage": 17,
@@ -555,7 +587,9 @@
           "gain_M": 0.026,
           "top10_owned": 6
         }
-      ]
+      ],
+      "top15_you": null,
+      "top15_top10_med": null
     },
     {
       "stage": 18,
@@ -581,7 +615,9 @@
           "gain_M": 0.077,
           "top10_owned": 8
         }
-      ]
+      ],
+      "top15_you": null,
+      "top15_top10_med": null
     },
     {
       "stage": 19,
@@ -596,7 +632,9 @@
       "cap_regret_M": 0.0,
       "kasper_captain": "Tadej Pogacar",
       "kasper_cap_M": 0.505,
-      "top_missed": []
+      "top_missed": [],
+      "top15_you": null,
+      "top15_top10_med": null
     },
     {
       "stage": 20,
@@ -611,7 +649,9 @@
       "cap_regret_M": 0.0,
       "kasper_captain": "Sepp Kuss",
       "kasper_cap_M": 0.383,
-      "top_missed": []
+      "top_missed": [],
+      "top15_you": null,
+      "top15_top10_med": null
     },
     {
       "stage": 21,
@@ -632,7 +672,9 @@
           "gain_M": 0.131,
           "top10_owned": 8
         }
-      ]
+      ],
+      "top15_you": null,
+      "top15_top10_med": null
     }
   ],
   "nedslag_good": [
@@ -772,6 +814,127 @@
       "Silvan Dillier",
       "Tadej Pogacar",
       "Tim Marsman"
+    ]
+  },
+  "team_bonus": {
+    "note": "Antal af holdets 8 ryttere i etapens top-15 (holdbonus ved 6/7/8). Kun etaper med komplette resultater (mangler 10,11,13,14,16-21 i cachen). Præcise bonus-kroner ikke kendt her — vist som antal + tærskler.",
+    "assessed_stages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12,
+      15
+    ],
+    "per_stage": [
+      {
+        "stage": 1,
+        "you": 2,
+        "top10_med": 2,
+        "top10_min": 2,
+        "top10_max": 2
+      },
+      {
+        "stage": 2,
+        "you": 5,
+        "top10_med": 4,
+        "top10_min": 4,
+        "top10_max": 5
+      },
+      {
+        "stage": 3,
+        "you": 3,
+        "top10_med": 3,
+        "top10_min": 2,
+        "top10_max": 3
+      },
+      {
+        "stage": 4,
+        "you": 4,
+        "top10_med": 4,
+        "top10_min": 3,
+        "top10_max": 4
+      },
+      {
+        "stage": 5,
+        "you": 4,
+        "top10_med": 5,
+        "top10_min": 4,
+        "top10_max": 5
+      },
+      {
+        "stage": 6,
+        "you": 2,
+        "top10_med": 3,
+        "top10_min": 2,
+        "top10_max": 4
+      },
+      {
+        "stage": 7,
+        "you": 5,
+        "top10_med": 8,
+        "top10_min": 7,
+        "top10_max": 8
+      },
+      {
+        "stage": 8,
+        "you": 5,
+        "top10_med": 7,
+        "top10_min": 6,
+        "top10_max": 7
+      },
+      {
+        "stage": 9,
+        "you": 4,
+        "top10_med": 4,
+        "top10_min": 3,
+        "top10_max": 5
+      },
+      {
+        "stage": 12,
+        "you": 6,
+        "top10_med": 8,
+        "top10_min": 7,
+        "top10_max": 8
+      },
+      {
+        "stage": 15,
+        "you": 4,
+        "top10_med": 6,
+        "top10_min": 4,
+        "top10_max": 6
+      }
+    ],
+    "missed": [
+      {
+        "stage": 7,
+        "you": 5,
+        "top10_med": 8,
+        "text": "E7: du havde 5 ryttere i top-15, top-10 havde typisk 8 — misset/mindre holdbonus"
+      },
+      {
+        "stage": 8,
+        "you": 5,
+        "top10_med": 7,
+        "text": "E8: du havde 5 ryttere i top-15, top-10 havde typisk 7 — misset/mindre holdbonus"
+      },
+      {
+        "stage": 12,
+        "you": 6,
+        "top10_med": 8,
+        "text": "E12: du havde 6 ryttere i top-15, top-10 havde typisk 8 — misset/mindre holdbonus"
+      },
+      {
+        "stage": 15,
+        "you": 4,
+        "top10_med": 6,
+        "text": "E15: du havde 4 ryttere i top-15, top-10 havde typisk 6 — misset/mindre holdbonus"
+      }
     ]
   },
   "our_final_value_M": 77.03,
