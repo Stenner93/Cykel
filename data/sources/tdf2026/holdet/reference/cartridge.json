@@ -1,0 +1,43 @@
+{
+  "id": 72,
+  "gameId": 618,
+  "slug": "tour-de-france-2026",
+  "name": "Tourspillet",
+  "themeId": 5,
+  "defaultFantasyLeagueId": 10063548,
+  "properties": {
+    "HoardingBackgroundImage": "https://cdn.swush.com/img/sponsors/repeatable-sponsorlogo-merida-2.svg",
+    "HoardingLink": "https://www.merida.dk/"
+  },
+  "_embedded": {
+    "games": {
+      "618": {
+        "id": 618,
+        "scheduleId": 618,
+        "rulesetId": 117
+      }
+    },
+    "rulesets": {
+      "117": {
+        "id": 117,
+        "name": "Cycling Trading 8 Riders - 2025",
+        "transferFee": 0.01,
+        "interestRate": 0.005,
+        "salaryCap": 50000000,
+        "captainBonusAssets": 1,
+        "captainBonusPoints": 0,
+        "properties": {
+          "Format": "cycling"
+        },
+        "positions": [
+          {
+            "id": 264,
+            "name": "cycling_category_rider",
+            "title": "Rytter",
+            "order": 1
+          }
+        ]
+      }
+    }
+  }
+}
