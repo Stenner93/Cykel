@@ -1,0 +1,2489 @@
+{
+  "id": 618,
+  "name": "Tourspillet 2026",
+  "rounds": [
+    {
+      "start": "0001-01-01T00:00:00Z",
+      "close": "2026-07-04T15:05:00Z",
+      "end": "2026-07-04T19:30:00Z"
+    },
+    {
+      "start": "2026-07-04T19:30:00Z",
+      "close": "2026-07-05T11:45:00Z",
+      "end": "2026-07-05T18:30:00Z"
+    },
+    {
+      "start": "2026-07-05T18:30:00Z",
+      "close": "2026-07-06T10:10:00Z",
+      "end": "2026-07-06T18:30:00Z"
+    },
+    {
+      "start": "2026-07-06T18:30:00Z",
+      "close": "2026-07-07T11:10:00Z",
+      "end": "2026-07-07T18:30:00Z"
+    },
+    {
+      "start": "2026-07-07T18:30:00Z",
+      "close": "2026-07-08T12:05:00Z",
+      "end": "2026-07-08T18:30:00Z"
+    },
+    {
+      "start": "2026-07-08T18:30:00Z",
+      "close": "2026-07-09T10:25:00Z",
+      "end": "2026-07-09T18:30:00Z"
+    },
+    {
+      "start": "2026-07-09T18:30:00Z",
+      "close": "2026-07-10T11:15:00Z",
+      "end": "2026-07-10T18:30:00Z"
+    },
+    {
+      "start": "2026-07-10T18:30:00Z",
+      "close": "2026-07-11T11:15:00Z",
+      "end": "2026-07-11T18:30:00Z"
+    },
+    {
+      "start": "2026-07-11T18:30:00Z",
+      "close": "2026-07-12T11:45:00Z",
+      "end": "2026-07-12T18:30:00Z"
+    },
+    {
+      "start": "2026-07-12T18:30:00Z",
+      "close": "2026-07-14T11:10:00Z",
+      "end": "2026-07-14T18:30:00Z"
+    },
+    {
+      "start": "2026-07-14T18:30:00Z",
+      "close": "2026-07-15T11:50:00Z",
+      "end": "2026-07-15T18:30:00Z"
+    },
+    {
+      "start": "2026-07-15T18:30:00Z",
+      "close": "2026-07-16T11:30:00Z",
+      "end": "2026-07-16T18:30:00Z"
+    },
+    {
+      "start": "2026-07-16T18:30:00Z",
+      "close": "2026-07-17T11:26:00Z",
+      "end": "2026-07-17T18:30:00Z"
+    },
+    {
+      "start": "2026-07-17T18:30:00Z",
+      "close": "2026-07-18T11:10:00Z",
+      "end": "2026-07-18T18:30:00Z"
+    },
+    {
+      "start": "2026-07-18T18:30:00Z",
+      "close": "2026-07-19T11:10:00Z",
+      "end": "2026-07-19T18:30:00Z"
+    },
+    {
+      "start": "2026-07-19T18:30:00Z",
+      "close": "2026-07-21T11:00:00Z",
+      "end": "2026-07-21T18:30:00Z"
+    },
+    {
+      "start": "2026-07-21T18:30:00Z",
+      "close": "2026-07-22T11:20:00Z",
+      "end": "2026-07-22T18:30:00Z"
+    },
+    {
+      "start": "2026-07-22T18:30:00Z",
+      "close": "2026-07-23T10:35:00Z",
+      "end": "2026-07-23T18:30:00Z"
+    },
+    {
+      "start": "2026-07-23T18:30:00Z",
+      "close": "2026-07-24T12:00:00Z",
+      "end": "2026-07-24T18:30:00Z"
+    },
+    {
+      "start": "2026-07-24T18:30:00Z",
+      "close": "2026-07-25T09:20:00Z",
+      "end": "2026-07-25T18:30:00Z"
+    },
+    {
+      "start": "2026-07-25T18:30:00Z",
+      "close": "2026-07-26T15:50:00Z",
+      "end": "2026-07-27T10:00:00Z"
+    }
+  ],
+  "events": [
+    48571,
+    48572,
+    48573,
+    48574,
+    48575,
+    48576,
+    48577,
+    48578,
+    48579,
+    48580,
+    48581,
+    48582,
+    48583,
+    48584,
+    48585,
+    48586,
+    48587,
+    48588,
+    48589,
+    48590,
+    48591
+  ],
+  "_embedded": {
+    "events": {
+      "48571": {
+        "id": 48571,
+        "venueId": 89123,
+        "name": "Barcelona - Barcelona",
+        "start": "2026-07-04T15:05:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "19000",
+          "stageType": "Holdtidskørsel"
+        }
+      },
+      "48572": {
+        "id": 48572,
+        "venueId": 89123,
+        "name": "Tarragone - Barcelona",
+        "start": "2026-07-05T11:45:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "182000",
+          "stageType": "Medium bjerg"
+        }
+      },
+      "48573": {
+        "id": 48573,
+        "venueId": 89123,
+        "name": "Granollers - Les Angles",
+        "start": "2026-07-06T10:10:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "196000",
+          "stageType": "Bjerg"
+        }
+      },
+      "48574": {
+        "id": 48574,
+        "venueId": 89123,
+        "name": "Carcassonne - Foix",
+        "start": "2026-07-07T11:10:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "182000",
+          "stageType": "Medium bjerg"
+        }
+      },
+      "48575": {
+        "id": 48575,
+        "venueId": 89123,
+        "name": "Lannemezan - Pau",
+        "start": "2026-07-08T12:05:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "158000",
+          "stageType": "Flad"
+        }
+      },
+      "48576": {
+        "id": 48576,
+        "venueId": 89123,
+        "name": "Pau - Gavarnie-Gedre",
+        "start": "2026-07-09T10:25:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "186000",
+          "stageType": "Bjerg"
+        }
+      },
+      "48577": {
+        "id": 48577,
+        "venueId": 89123,
+        "name": "Hagetmau - Bordeaux",
+        "start": "2026-07-10T11:15:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "175000",
+          "stageType": "Flad"
+        }
+      },
+      "48578": {
+        "id": 48578,
+        "venueId": 89123,
+        "name": "Perigueux - Bergerac",
+        "start": "2026-07-11T11:15:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "182000",
+          "stageType": "Flad"
+        }
+      },
+      "48579": {
+        "id": 48579,
+        "venueId": 89123,
+        "name": "Malemort - Ussel",
+        "start": "2026-07-12T11:45:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "185000",
+          "stageType": "Medium bjerg"
+        }
+      },
+      "48580": {
+        "id": 48580,
+        "venueId": 89123,
+        "name": "Aurillac - Le Lioran",
+        "start": "2026-07-14T11:10:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "167000",
+          "stageType": "Bjerg"
+        }
+      },
+      "48581": {
+        "id": 48581,
+        "venueId": 89123,
+        "name": "Vichy - Nevers",
+        "start": "2026-07-15T11:50:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "161000",
+          "stageType": "Flad"
+        }
+      },
+      "48582": {
+        "id": 48582,
+        "venueId": 89123,
+        "name": "Circuit Nevers Magny-Cours - Chalon-sur-Saone",
+        "start": "2026-07-16T11:30:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "181000",
+          "stageType": "Flad"
+        }
+      },
+      "48583": {
+        "id": 48583,
+        "venueId": 89123,
+        "name": "Dole - Belfort",
+        "start": "2026-07-17T11:26:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "205000",
+          "stageType": "Medium bjerg"
+        }
+      },
+      "48584": {
+        "id": 48584,
+        "venueId": 89123,
+        "name": "Mulhouse - Le Markstein Fellering",
+        "start": "2026-07-18T11:10:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "155000",
+          "stageType": "Bjerg"
+        }
+      },
+      "48585": {
+        "id": 48585,
+        "venueId": 89123,
+        "name": "Champagnole - Plateau de Solaison",
+        "start": "2026-07-19T11:10:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "184000",
+          "stageType": "Bjerg"
+        }
+      },
+      "48586": {
+        "id": 48586,
+        "venueId": 89123,
+        "name": "Evian-les-Bains - Thonon-les-Bains",
+        "start": "2026-07-21T11:00:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "26000",
+          "stageType": "Enkeltstart"
+        }
+      },
+      "48587": {
+        "id": 48587,
+        "venueId": 89123,
+        "name": "Chambery - Voiron",
+        "start": "2026-07-22T11:20:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "175000",
+          "stageType": "Flad"
+        }
+      },
+      "48588": {
+        "id": 48588,
+        "venueId": 89123,
+        "name": "Voiron - Orcieres-Merlette",
+        "start": "2026-07-23T10:35:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "185000",
+          "stageType": "Bjerg"
+        }
+      },
+      "48589": {
+        "id": 48589,
+        "venueId": 89123,
+        "name": "Gap - Alpe d'Huez",
+        "start": "2026-07-24T12:00:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "128000",
+          "stageType": "Bjerg"
+        }
+      },
+      "48590": {
+        "id": 48590,
+        "venueId": 89123,
+        "name": "Le Bourg d'Oisans - Alpe d'Huez",
+        "start": "2026-07-25T09:20:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "171000",
+          "stageType": "Bjerg"
+        }
+      },
+      "48591": {
+        "id": 48591,
+        "venueId": 89123,
+        "name": "Thoiry - Paris Champs-Elysees",
+        "start": "2026-07-26T15:50:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 220,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 226,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "130000",
+          "stageType": "Flad"
+        }
+      }
+    },
+    "teams": {
+      "192": {
+        "id": 192,
+        "slug": "decathlon_cma_cgm_team",
+        "abbreviation": "DAT",
+        "name": "Decathlon CMA CGM Team"
+      },
+      "194": {
+        "id": 194,
+        "slug": "xds_astana_team",
+        "abbreviation": "XAT",
+        "name": "XDS Astana Team"
+      },
+      "198": {
+        "id": 198,
+        "slug": "cofidis",
+        "abbreviation": "COF",
+        "name": "Cofidis"
+      },
+      "200": {
+        "id": 200,
+        "slug": "groupama_fdj_united",
+        "abbreviation": "GFC",
+        "name": "Groupama - FDJ United"
+      },
+      "201": {
+        "id": 201,
+        "slug": "ef_education_easypost",
+        "abbreviation": "EFE",
+        "name": "EF Education - EasyPost"
+      },
+      "202": {
+        "id": 202,
+        "slug": "bahrain_victorious",
+        "abbreviation": "TBV",
+        "name": "Bahrain - Victorious"
+      },
+      "204": {
+        "id": 204,
+        "slug": "soudal_quick_step",
+        "abbreviation": "SOQ",
+        "name": "Soudal Quick-Step"
+      },
+      "205": {
+        "id": 205,
+        "slug": "team_visma_lease_a_bike",
+        "abbreviation": "TVL",
+        "name": "Team Visma | Lease a Bike"
+      },
+      "206": {
+        "id": 206,
+        "slug": "lotto_intermarche",
+        "abbreviation": "LOI",
+        "name": "Lotto Intermarché"
+      },
+      "207": {
+        "id": 207,
+        "slug": "team_picnic_postnl",
+        "abbreviation": "DFP",
+        "name": "Team Picnic PostNL"
+      },
+      "213": {
+        "id": 213,
+        "slug": "lidl_trek",
+        "abbreviation": "LIT",
+        "name": "Lidl - Trek"
+      },
+      "215": {
+        "id": 215,
+        "slug": "ineos_grenadiers",
+        "abbreviation": "IGD",
+        "name": "Netcompany INEOS Cycling Team"
+      },
+      "217": {
+        "id": 217,
+        "slug": "movistar_team",
+        "abbreviation": "MOV",
+        "name": "Movistar Team"
+      },
+      "220": {
+        "id": 220,
+        "slug": "total_energies",
+        "abbreviation": "TEN",
+        "name": "TotalEnergies"
+      },
+      "221": {
+        "id": 221,
+        "slug": "team_jayco_alula",
+        "abbreviation": "JAY",
+        "name": "Team Jayco AlUla"
+      },
+      "226": {
+        "id": 226,
+        "slug": "caja_rural",
+        "abbreviation": "CJR",
+        "name": "Caja Rural - Seguros RGA"
+      },
+      "233": {
+        "id": 233,
+        "slug": "red_bull_bora_hansgrohe",
+        "abbreviation": "RBH",
+        "name": "Red Bull - BORA - hansgrohe"
+      },
+      "443": {
+        "id": 443,
+        "slug": "uae_team_emirates_xrg",
+        "abbreviation": "UAD",
+        "name": "UAE Team Emirates - XRG"
+      },
+      "459": {
+        "id": 459,
+        "slug": "nsn_cycling_team",
+        "abbreviation": "NSN",
+        "name": "NSN Cycling Team"
+      },
+      "475": {
+        "id": 475,
+        "slug": "alpecin_premier_tech",
+        "abbreviation": "APT",
+        "name": "Alpecin-Premier Tech"
+      },
+      "489": {
+        "id": 489,
+        "slug": "uno_x_mobility",
+        "abbreviation": "UXM",
+        "name": "Uno-X Mobility"
+      },
+      "492": {
+        "id": 492,
+        "slug": "tudor_pro_cycling_team",
+        "abbreviation": "TUD",
+        "name": "Tudor Pro Cycling Team"
+      },
+      "1097": {
+        "id": 1097,
+        "slug": "pinarello_q36_5_pro_cycling_team",
+        "abbreviation": "Q36",
+        "name": "Pinarello Q36.5 Pro Cycling Team"
+      }
+    },
+    "venues": {
+      "89123": {
+        "id": 89123,
+        "name": "default"
+      }
+    }
+  }
+}
