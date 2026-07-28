@@ -1,0 +1,422 @@
+{
+  "note": "Optakter vs model on actual holdet growth. buys percentile: 1.0=best in field, 0.5=field average.",
+  "model_baseline": {
+    "captain_top1_pct": 33.3,
+    "captain_top3_pct": 57.1,
+    "buys_mean_growth_percentile": 0.815
+  },
+  "sources": {
+    "feltet": {
+      "captain_top1_pct": 47.6,
+      "captain_top3_pct": 61.9,
+      "captain_stages": 21,
+      "buys_mean_growth_percentile": 0.858,
+      "buys_stages": 21,
+      "captain_vs_model_winrate": 28.6,
+      "disagreed_with_model_stages": 11,
+      "disagree_win": 6,
+      "disagree_loss": 5,
+      "disagree_tie": 0,
+      "per_stage": [
+        {
+          "stage": 1,
+          "captain_raw": "Vauquelin",
+          "captain_rider": "Kevin Vauquelin",
+          "cap_pct": 0.93,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.86
+        },
+        {
+          "stage": 2,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.99,
+          "cap_top1": false,
+          "cap_top3": true,
+          "buys_mean_pct": 0.77
+        },
+        {
+          "stage": 3,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.72
+        },
+        {
+          "stage": 4,
+          "captain_raw": "Mads Pedersen",
+          "captain_rider": "Mads Pedersen",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.73
+        },
+        {
+          "stage": 5,
+          "captain_raw": "Jasper Philipsen",
+          "captain_rider": "Jasper Philipsen",
+          "cap_pct": 0.98,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.85
+        },
+        {
+          "stage": 6,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.86
+        },
+        {
+          "stage": 7,
+          "captain_raw": "Merlier",
+          "captain_rider": "Tim Merlier",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.94
+        },
+        {
+          "stage": 8,
+          "captain_raw": "Merlier",
+          "captain_rider": "Tim Merlier",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.89
+        },
+        {
+          "stage": 9,
+          "captain_raw": "Mads Pedersen",
+          "captain_rider": "Mads Pedersen",
+          "cap_pct": 0.98,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.7
+        },
+        {
+          "stage": 10,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.93
+        },
+        {
+          "stage": 11,
+          "captain_raw": "Merlier",
+          "captain_rider": "Tim Merlier",
+          "cap_pct": 0.85,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.91
+        },
+        {
+          "stage": 12,
+          "captain_raw": "Merlier",
+          "captain_rider": "Tim Merlier",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.93
+        },
+        {
+          "stage": 13,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.96,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.82
+        },
+        {
+          "stage": 14,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.93
+        },
+        {
+          "stage": 15,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.99,
+          "cap_top1": false,
+          "cap_top3": true,
+          "buys_mean_pct": 0.91
+        },
+        {
+          "stage": 16,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.99,
+          "cap_top1": false,
+          "cap_top3": true,
+          "buys_mean_pct": 0.76
+        },
+        {
+          "stage": 17,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.95,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.86
+        },
+        {
+          "stage": 18,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.97,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.83
+        },
+        {
+          "stage": 19,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.97
+        },
+        {
+          "stage": 20,
+          "captain_raw": "Carapaz",
+          "captain_rider": "Richard Carapaz",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.92
+        },
+        {
+          "stage": 21,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.96,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.93
+        }
+      ]
+    },
+    "simon": {
+      "captain_top1_pct": 52.4,
+      "captain_top3_pct": 71.4,
+      "captain_stages": 21,
+      "buys_mean_growth_percentile": 0.842,
+      "buys_stages": 21,
+      "captain_vs_model_winrate": 33.3,
+      "disagreed_with_model_stages": 12,
+      "disagree_win": 7,
+      "disagree_loss": 5,
+      "disagree_tie": 0,
+      "per_stage": [
+        {
+          "stage": 1,
+          "captain_raw": "Vauquelin",
+          "captain_rider": "Kevin Vauquelin",
+          "cap_pct": 0.93,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.86
+        },
+        {
+          "stage": 2,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.99,
+          "cap_top1": false,
+          "cap_top3": true,
+          "buys_mean_pct": 0.8
+        },
+        {
+          "stage": 3,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.68
+        },
+        {
+          "stage": 4,
+          "captain_raw": "Pedersen",
+          "captain_rider": "Mads Pedersen",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.64
+        },
+        {
+          "stage": 5,
+          "captain_raw": "Philipsen",
+          "captain_rider": "Jasper Philipsen",
+          "cap_pct": 0.98,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.96
+        },
+        {
+          "stage": 6,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.69
+        },
+        {
+          "stage": 7,
+          "captain_raw": "Merlier",
+          "captain_rider": "Tim Merlier",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.97
+        },
+        {
+          "stage": 8,
+          "captain_raw": "Merlier",
+          "captain_rider": "Tim Merlier",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.88
+        },
+        {
+          "stage": 9,
+          "captain_raw": "Pedersen",
+          "captain_rider": "Mads Pedersen",
+          "cap_pct": 0.98,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.78
+        },
+        {
+          "stage": 10,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.84
+        },
+        {
+          "stage": 11,
+          "captain_raw": "Merlier",
+          "captain_rider": "Tim Merlier",
+          "cap_pct": 0.85,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.91
+        },
+        {
+          "stage": 12,
+          "captain_raw": "Merlier",
+          "captain_rider": "Tim Merlier",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.91
+        },
+        {
+          "stage": 13,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.96,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.74
+        },
+        {
+          "stage": 14,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.94
+        },
+        {
+          "stage": 15,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.99,
+          "cap_top1": false,
+          "cap_top3": true,
+          "buys_mean_pct": 0.88
+        },
+        {
+          "stage": 16,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.99,
+          "cap_top1": false,
+          "cap_top3": true,
+          "buys_mean_pct": 0.72
+        },
+        {
+          "stage": 17,
+          "captain_raw": "Pedersen",
+          "captain_rider": "Mads Pedersen",
+          "cap_pct": 0.99,
+          "cap_top1": false,
+          "cap_top3": true,
+          "buys_mean_pct": 0.85
+        },
+        {
+          "stage": 18,
+          "captain_raw": "Carapaz",
+          "captain_rider": "Richard Carapaz",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.92
+        },
+        {
+          "stage": 19,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.91
+        },
+        {
+          "stage": 20,
+          "captain_raw": "Carapaz",
+          "captain_rider": "Richard Carapaz",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.88
+        },
+        {
+          "stage": 21,
+          "captain_raw": "Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.96,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.92
+        }
+      ]
+    }
+  },
+  "unmatched_names": {
+    "feltet": [
+      "Romain Gregorie"
+    ],
+    "simon": []
+  }
+}
