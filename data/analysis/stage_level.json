@@ -1,0 +1,779 @@
+{
+  "note": "Stage-level analysis. Curves = market value (sum of rider prices). Per-stage = realised actual gain (captain doubled). Best team = fee-aware beam search.",
+  "curves_M": {
+    "os": [
+      50.0,
+      51.17,
+      51.85,
+      52.85,
+      54.32,
+      55.97,
+      56.78,
+      58.25,
+      59.13,
+      60.54,
+      61.74,
+      63.24,
+      64.45,
+      64.63,
+      65.14,
+      67.65,
+      68.12,
+      69.81,
+      71.47,
+      73.0,
+      77.03
+    ],
+    "kasper": [
+      50.0,
+      51.17,
+      51.91,
+      52.93,
+      54.32,
+      55.51,
+      56.49,
+      58.49,
+      59.74,
+      60.75,
+      61.57,
+      62.66,
+      64.87,
+      64.99,
+      66.41,
+      67.72,
+      68.31,
+      69.55,
+      71.47,
+      73.0,
+      76.06
+    ],
+    "optakt": [
+      [
+        50.0,
+        51.17,
+        51.83,
+        53.3,
+        52.9,
+        55.54,
+        55.96,
+        58.49,
+        60.33,
+        61.06,
+        59.57,
+        61.37,
+        64.75,
+        63.98,
+        65.14,
+        68.11,
+        68.59,
+        69.19,
+        70.34,
+        72.33,
+        75.56
+      ],
+      [
+        50.0,
+        51.19,
+        51.46,
+        53.35,
+        54.79,
+        56.06,
+        56.57,
+        58.19,
+        59.29,
+        61.35,
+        59.57,
+        61.53,
+        64.87,
+        64.99,
+        66.41,
+        68.43,
+        69.79,
+        69.55,
+        71.47,
+        73.0,
+        77.18
+      ]
+    ],
+    "top10_median": [
+      50.0,
+      51.19,
+      51.9,
+      53.31,
+      53.85,
+      55.82,
+      55.96,
+      58.19,
+      59.46,
+      61.89,
+      62.27,
+      63.7,
+      66.37,
+      66.7,
+      67.86,
+      69.86,
+      71.06,
+      70.97,
+      72.93,
+      74.4,
+      77.67
+    ],
+    "top10_best": [
+      50.0,
+      51.19,
+      51.89,
+      53.2,
+      52.9,
+      56.0,
+      55.96,
+      57.94,
+      61.23,
+      61.16,
+      59.57,
+      60.73,
+      65.32,
+      66.75,
+      67.86,
+      69.86,
+      71.13,
+      71.91,
+      73.42,
+      75.55,
+      79.0
+    ]
+  },
+  "per_stage": [
+    {
+      "stage": 1,
+      "type": "ttt",
+      "our_score_M": 1.23,
+      "top10_median_M": 1.23,
+      "delta_M": 0.0,
+      "our_captain": "Kevin Vauquelin",
+      "our_cap_M": 0.15,
+      "best_own_cap": "Tadej Pogacar",
+      "best_own_cap_M": 0.205,
+      "cap_regret_M": 0.055,
+      "kasper_captain": "Kevin Vauquelin",
+      "kasper_cap_M": 0.15,
+      "top_missed": []
+    },
+    {
+      "stage": 2,
+      "type": "hilly",
+      "our_score_M": 1.448,
+      "top10_median_M": 1.472,
+      "delta_M": -0.024,
+      "our_captain": "Tadej Pogacar",
+      "our_cap_M": 0.408,
+      "best_own_cap": "Isaac Del Toro",
+      "best_own_cap_M": 0.49,
+      "cap_regret_M": 0.082,
+      "kasper_captain": "Tadej Pogacar",
+      "kasper_cap_M": 0.408,
+      "top_missed": [
+        {
+          "rider": "Alex Molenaar",
+          "gain_M": 0.076,
+          "top10_owned": 5
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "type": "hilly",
+      "our_score_M": 1.073,
+      "top10_median_M": 1.121,
+      "delta_M": -0.048,
+      "our_captain": "Tadej Pogacar",
+      "our_cap_M": 0.506,
+      "best_own_cap": "Tadej Pogacar",
+      "best_own_cap_M": 0.506,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Tadej Pogacar",
+      "kasper_cap_M": 0.506,
+      "top_missed": []
+    },
+    {
+      "stage": 4,
+      "type": "hilly",
+      "our_score_M": 1.613,
+      "top10_median_M": 1.574,
+      "delta_M": 0.039,
+      "our_captain": "Mads Pedersen",
+      "our_cap_M": 0.513,
+      "best_own_cap": "Mads Pedersen",
+      "best_own_cap_M": 0.513,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Mads Pedersen",
+      "kasper_cap_M": 0.513,
+      "top_missed": []
+    },
+    {
+      "stage": 5,
+      "type": "sprint",
+      "our_score_M": 1.703,
+      "top10_median_M": 1.766,
+      "delta_M": -0.063,
+      "our_captain": "Jasper Philipsen",
+      "our_cap_M": 0.236,
+      "best_own_cap": "Max Kanter",
+      "best_own_cap_M": 0.39,
+      "cap_regret_M": 0.154,
+      "kasper_captain": "Jasper Philipsen",
+      "kasper_cap_M": 0.236,
+      "top_missed": [
+        {
+          "rider": "Biniam Girmay",
+          "gain_M": 0.22,
+          "top10_owned": 7
+        },
+        {
+          "rider": "Søren Wærenskjold",
+          "gain_M": 0.134,
+          "top10_owned": 6
+        }
+      ]
+    },
+    {
+      "stage": 6,
+      "type": "mountain",
+      "our_score_M": 1.284,
+      "top10_median_M": 1.38,
+      "delta_M": -0.096,
+      "our_captain": "Tadej Pogacar",
+      "our_cap_M": 0.615,
+      "best_own_cap": "Tadej Pogacar",
+      "best_own_cap_M": 0.615,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Tadej Pogacar",
+      "kasper_cap_M": 0.615,
+      "top_missed": [
+        {
+          "rider": "Ilan van Wilder",
+          "gain_M": 0.012,
+          "top10_owned": 7
+        }
+      ]
+    },
+    {
+      "stage": 7,
+      "type": "sprint",
+      "our_score_M": 1.964,
+      "top10_median_M": 2.475,
+      "delta_M": -0.511,
+      "our_captain": "Tim Merlier",
+      "our_cap_M": 0.497,
+      "best_own_cap": "Tim Merlier",
+      "best_own_cap_M": 0.497,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Tim Merlier",
+      "kasper_cap_M": 0.497,
+      "top_missed": [
+        {
+          "rider": "Søren Wærenskjold",
+          "gain_M": 0.33,
+          "top10_owned": 8
+        },
+        {
+          "rider": "Pavel Bittner",
+          "gain_M": 0.118,
+          "top10_owned": 6
+        },
+        {
+          "rider": "Anthony Turgis",
+          "gain_M": 0.063,
+          "top10_owned": 9
+        }
+      ]
+    },
+    {
+      "stage": 8,
+      "type": "sprint",
+      "our_score_M": 2.083,
+      "top10_median_M": 2.174,
+      "delta_M": -0.091,
+      "our_captain": "Tim Merlier",
+      "our_cap_M": 0.497,
+      "best_own_cap": "Tim Merlier",
+      "best_own_cap_M": 0.497,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Tim Merlier",
+      "kasper_cap_M": 0.497,
+      "top_missed": [
+        {
+          "rider": "Pavel Bittner",
+          "gain_M": 0.2,
+          "top10_owned": 9
+        },
+        {
+          "rider": "Søren Wærenskjold",
+          "gain_M": 0.118,
+          "top10_owned": 8
+        },
+        {
+          "rider": "Anthony Turgis",
+          "gain_M": 0.06,
+          "top10_owned": 7
+        }
+      ]
+    },
+    {
+      "stage": 9,
+      "type": "hilly",
+      "our_score_M": 0.966,
+      "top10_median_M": 0.944,
+      "delta_M": 0.022,
+      "our_captain": "Mads Pedersen",
+      "our_cap_M": 0.245,
+      "best_own_cap": "Tadej Pogacar",
+      "best_own_cap_M": 0.256,
+      "cap_regret_M": 0.011,
+      "kasper_captain": "Mads Pedersen",
+      "kasper_cap_M": 0.245,
+      "top_missed": [
+        {
+          "rider": "Jordan Jegat",
+          "gain_M": 0.112,
+          "top10_owned": 6
+        }
+      ]
+    },
+    {
+      "stage": 10,
+      "type": "mountain",
+      "our_score_M": 1.321,
+      "top10_median_M": 1.467,
+      "delta_M": -0.146,
+      "our_captain": "Tadej Pogacar",
+      "our_cap_M": 0.512,
+      "best_own_cap": "Tadej Pogacar",
+      "best_own_cap_M": 0.512,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Tadej Pogacar",
+      "kasper_cap_M": 0.512,
+      "top_missed": [
+        {
+          "rider": "Mattias Skjelmose",
+          "gain_M": 0.16,
+          "top10_owned": 7
+        },
+        {
+          "rider": "Ilan van Wilder",
+          "gain_M": 0.043,
+          "top10_owned": 5
+        }
+      ]
+    },
+    {
+      "stage": 11,
+      "type": "sprint",
+      "our_score_M": 1.557,
+      "top10_median_M": 1.475,
+      "delta_M": 0.082,
+      "our_captain": "Tim Merlier",
+      "our_cap_M": 0.045,
+      "best_own_cap": "Søren Wærenskjold",
+      "best_own_cap_M": 0.47,
+      "cap_regret_M": 0.425,
+      "kasper_captain": "Tim Merlier",
+      "kasper_cap_M": 0.045,
+      "top_missed": [
+        {
+          "rider": "Biniam Girmay",
+          "gain_M": 0.199,
+          "top10_owned": 10
+        },
+        {
+          "rider": "Anthony Turgis",
+          "gain_M": 0.167,
+          "top10_owned": 8
+        },
+        {
+          "rider": "Clement Russo",
+          "gain_M": 0.156,
+          "top10_owned": 6
+        }
+      ]
+    },
+    {
+      "stage": 12,
+      "type": "sprint",
+      "our_score_M": 2.048,
+      "top10_median_M": 2.598,
+      "delta_M": -0.55,
+      "our_captain": "Tim Merlier",
+      "our_cap_M": 0.512,
+      "best_own_cap": "Tim Merlier",
+      "best_own_cap_M": 0.512,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Tim Merlier",
+      "kasper_cap_M": 0.512,
+      "top_missed": [
+        {
+          "rider": "Biniam Girmay",
+          "gain_M": 0.255,
+          "top10_owned": 10
+        },
+        {
+          "rider": "Anthony Turgis",
+          "gain_M": 0.178,
+          "top10_owned": 8
+        },
+        {
+          "rider": "Clement Russo",
+          "gain_M": 0.156,
+          "top10_owned": 6
+        }
+      ]
+    },
+    {
+      "stage": 13,
+      "type": "sprint",
+      "our_score_M": 0.171,
+      "top10_median_M": 0.401,
+      "delta_M": -0.23,
+      "our_captain": "Tadej Pogacar",
+      "our_cap_M": 0.129,
+      "best_own_cap": "Tadej Pogacar",
+      "best_own_cap_M": 0.129,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Tadej Pogacar",
+      "kasper_cap_M": 0.129,
+      "top_missed": [
+        {
+          "rider": "Jordan Jegat",
+          "gain_M": 0.134,
+          "top10_owned": 7
+        },
+        {
+          "rider": "Juan Ayuso",
+          "gain_M": 0.054,
+          "top10_owned": 8
+        }
+      ]
+    },
+    {
+      "stage": 14,
+      "type": "mountain",
+      "our_score_M": 1.705,
+      "top10_median_M": 1.626,
+      "delta_M": 0.079,
+      "our_captain": "Tadej Pogacar",
+      "our_cap_M": 0.53,
+      "best_own_cap": "Tadej Pogacar",
+      "best_own_cap_M": 0.53,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Tadej Pogacar",
+      "kasper_cap_M": 0.53,
+      "top_missed": [
+        {
+          "rider": "Juan Ayuso",
+          "gain_M": 0.193,
+          "top10_owned": 8
+        }
+      ]
+    },
+    {
+      "stage": 15,
+      "type": "mountain",
+      "our_score_M": 1.426,
+      "top10_median_M": 1.603,
+      "delta_M": -0.177,
+      "our_captain": "Tadej Pogacar",
+      "our_cap_M": 0.446,
+      "best_own_cap": "Tadej Pogacar",
+      "best_own_cap_M": 0.446,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Tadej Pogacar",
+      "kasper_cap_M": 0.446,
+      "top_missed": [
+        {
+          "rider": "Mattias Skjelmose",
+          "gain_M": 0.171,
+          "top10_owned": 7
+        },
+        {
+          "rider": "Juan Ayuso",
+          "gain_M": 0.164,
+          "top10_owned": 8
+        },
+        {
+          "rider": "Jordan Jegat",
+          "gain_M": 0.037,
+          "top10_owned": 6
+        }
+      ]
+    },
+    {
+      "stage": 16,
+      "type": "tt",
+      "our_score_M": 1.605,
+      "top10_median_M": 1.284,
+      "delta_M": 0.321,
+      "our_captain": "Remco Evenepoel",
+      "our_cap_M": 0.425,
+      "best_own_cap": "Remco Evenepoel",
+      "best_own_cap_M": 0.425,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Tadej Pogacar",
+      "kasper_cap_M": 0.39,
+      "top_missed": [
+        {
+          "rider": "Mattias Skjelmose",
+          "gain_M": 0.248,
+          "top10_owned": 5
+        },
+        {
+          "rider": "Juan Ayuso",
+          "gain_M": 0.092,
+          "top10_owned": 8
+        },
+        {
+          "rider": "Felix Grossschartner",
+          "gain_M": 0.073,
+          "top10_owned": 8
+        }
+      ]
+    },
+    {
+      "stage": 17,
+      "type": "sprint",
+      "our_score_M": 1.038,
+      "top10_median_M": 1.056,
+      "delta_M": -0.018,
+      "our_captain": "Mads Pedersen",
+      "our_cap_M": 0.27,
+      "best_own_cap": "Mads Pedersen",
+      "best_own_cap_M": 0.27,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Mads Pedersen",
+      "kasper_cap_M": 0.27,
+      "top_missed": [
+        {
+          "rider": "Mattias Skjelmose",
+          "gain_M": 0.026,
+          "top10_owned": 6
+        }
+      ]
+    },
+    {
+      "stage": 18,
+      "type": "mountain",
+      "our_score_M": 1.883,
+      "top10_median_M": 1.835,
+      "delta_M": 0.048,
+      "our_captain": "Richard Carapaz",
+      "our_cap_M": 0.521,
+      "best_own_cap": "Richard Carapaz",
+      "best_own_cap_M": 0.521,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Richard Carapaz",
+      "kasper_cap_M": 0.521,
+      "top_missed": [
+        {
+          "rider": "Jordan Jegat",
+          "gain_M": 0.096,
+          "top10_owned": 7
+        },
+        {
+          "rider": "Mattias Skjelmose",
+          "gain_M": 0.077,
+          "top10_owned": 8
+        }
+      ]
+    },
+    {
+      "stage": 19,
+      "type": "mountain",
+      "our_score_M": 2.025,
+      "top10_median_M": 1.996,
+      "delta_M": 0.029,
+      "our_captain": "Tadej Pogacar",
+      "our_cap_M": 0.505,
+      "best_own_cap": "Tadej Pogacar",
+      "best_own_cap_M": 0.505,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Tadej Pogacar",
+      "kasper_cap_M": 0.505,
+      "top_missed": []
+    },
+    {
+      "stage": 20,
+      "type": "mountain",
+      "our_score_M": 2.275,
+      "top10_median_M": 2.342,
+      "delta_M": -0.067,
+      "our_captain": "Richard Carapaz",
+      "our_cap_M": 0.585,
+      "best_own_cap": "Richard Carapaz",
+      "best_own_cap_M": 0.585,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Sepp Kuss",
+      "kasper_cap_M": 0.383,
+      "top_missed": []
+    },
+    {
+      "stage": 21,
+      "type": "sprint",
+      "our_score_M": 1.561,
+      "top10_median_M": 1.282,
+      "delta_M": 0.279,
+      "our_captain": "Mathieu van der Poel",
+      "our_cap_M": 0.446,
+      "best_own_cap": "Mathieu van der Poel",
+      "best_own_cap_M": 0.446,
+      "cap_regret_M": 0.0,
+      "kasper_captain": "Mads Pedersen",
+      "kasper_cap_M": 0.274,
+      "top_missed": [
+        {
+          "rider": "Rick Pluimers",
+          "gain_M": 0.131,
+          "top10_owned": 8
+        }
+      ]
+    }
+  ],
+  "nedslag_good": [
+    {
+      "stage": 6,
+      "kind": "kaptajn",
+      "M": 0.615,
+      "text": "E6: kaptajn Tadej Pogacar ramte etapens bedste egne (+0.61M) ✓"
+    },
+    {
+      "stage": 20,
+      "kind": "kaptajn",
+      "M": 0.585,
+      "text": "E20: kaptajn Richard Carapaz ramte etapens bedste egne (+0.58M) ✓"
+    },
+    {
+      "stage": 14,
+      "kind": "kaptajn",
+      "M": 0.53,
+      "text": "E14: kaptajn Tadej Pogacar ramte etapens bedste egne (+0.53M) ✓"
+    },
+    {
+      "stage": 18,
+      "kind": "kaptajn",
+      "M": 0.521,
+      "text": "E18: kaptajn Richard Carapaz ramte etapens bedste egne (+0.52M) ✓"
+    },
+    {
+      "stage": 4,
+      "kind": "kaptajn",
+      "M": 0.513,
+      "text": "E4: kaptajn Mads Pedersen ramte etapens bedste egne (+0.51M) ✓"
+    },
+    {
+      "stage": 10,
+      "kind": "kaptajn",
+      "M": 0.512,
+      "text": "E10: kaptajn Tadej Pogacar ramte etapens bedste egne (+0.51M) ✓"
+    },
+    {
+      "stage": 12,
+      "kind": "kaptajn",
+      "M": 0.512,
+      "text": "E12: kaptajn Tim Merlier ramte etapens bedste egne (+0.51M) ✓"
+    },
+    {
+      "stage": 3,
+      "kind": "kaptajn",
+      "M": 0.506,
+      "text": "E3: kaptajn Tadej Pogacar ramte etapens bedste egne (+0.51M) ✓"
+    },
+    {
+      "stage": 19,
+      "kind": "kaptajn",
+      "M": 0.505,
+      "text": "E19: kaptajn Tadej Pogacar ramte etapens bedste egne (+0.51M) ✓"
+    },
+    {
+      "stage": 7,
+      "kind": "kaptajn",
+      "M": 0.497,
+      "text": "E7: kaptajn Tim Merlier ramte etapens bedste egne (+0.50M) ✓"
+    }
+  ],
+  "nedslag_bad": [
+    {
+      "stage": 11,
+      "kind": "kaptajn",
+      "M": -0.425,
+      "text": "E11: kaptajn Tim Merlier (+0.04M) — bedre valg var egne Søren Wærenskjold (+0.47M)"
+    },
+    {
+      "stage": 7,
+      "kind": "rytter",
+      "M": -0.33,
+      "text": "E7: Søren Wærenskjold gav +0.33M (8/10 top-hold havde ham) — du havde ham ikke"
+    },
+    {
+      "stage": 12,
+      "kind": "rytter",
+      "M": -0.255,
+      "text": "E12: Biniam Girmay gav +0.26M (10/10 top-hold havde ham) — du havde ham ikke"
+    },
+    {
+      "stage": 16,
+      "kind": "rytter",
+      "M": -0.248,
+      "text": "E16: Mattias Skjelmose gav +0.25M (5/10 top-hold havde ham) — du havde ham ikke"
+    },
+    {
+      "stage": 5,
+      "kind": "rytter",
+      "M": -0.22,
+      "text": "E5: Biniam Girmay gav +0.22M (7/10 top-hold havde ham) — du havde ham ikke"
+    },
+    {
+      "stage": 8,
+      "kind": "rytter",
+      "M": -0.2,
+      "text": "E8: Pavel Bittner gav +0.20M (9/10 top-hold havde ham) — du havde ham ikke"
+    },
+    {
+      "stage": 11,
+      "kind": "rytter",
+      "M": -0.199,
+      "text": "E11: Biniam Girmay gav +0.20M (10/10 top-hold havde ham) — du havde ham ikke"
+    },
+    {
+      "stage": 14,
+      "kind": "rytter",
+      "M": -0.193,
+      "text": "E14: Juan Ayuso gav +0.19M (8/10 top-hold havde ham) — du havde ham ikke"
+    },
+    {
+      "stage": 15,
+      "kind": "rytter",
+      "M": -0.171,
+      "text": "E15: Mattias Skjelmose gav +0.17M (7/10 top-hold havde ham) — du havde ham ikke"
+    },
+    {
+      "stage": 10,
+      "kind": "rytter",
+      "M": -0.16,
+      "text": "E10: Mattias Skjelmose gav +0.16M (7/10 top-hold havde ham) — du havde ham ikke"
+    }
+  ],
+  "best_team": {
+    "note": "buy_and_hold = best 8-rider team held all race (0 transfers, 0 fees), optimal VALUE via knapsack. ceiling = fee-free perfect-rotation upper bound (ignores budget). The realistic fee-aware optimum sits between the actual best manager and the ceiling.",
+    "buy_and_hold_M": 62.4,
+    "ceiling_M": 92.74,
+    "illustrative_hold_roster": [
+      "Anders Skaarseth",
+      "Isaac Del Toro",
+      "Jonas Rickaert",
+      "Remco Evenepoel",
+      "Sean Quinn",
+      "Silvan Dillier",
+      "Tadej Pogacar",
+      "Tim Marsman"
+    ]
+  },
+  "our_final_value_M": 77.03,
+  "top10_best_final_M": 79.0
+}
