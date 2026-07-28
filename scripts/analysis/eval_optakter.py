@@ -97,6 +97,8 @@ def main():
         buys_pcts = []
         h2h_win = h2h_n = 0
         diff_win = diff_loss = diff_tie = 0   # only stages where cap != model cap
+        # "clean" split of disagreement stages: who actually landed the stage #1
+        src_best = mod_best = chaos = 0
         umatch = set()
         per_stage = []
         for pk in picks:
@@ -132,6 +134,13 @@ def main():
                         diff_loss += 1
                     else:
                         diff_tie += 1
+                    # "clean" split: did either captain land the stage's actual #1?
+                    if cap_rider == best1:
+                        src_best += 1
+                    elif model_cap == best1:
+                        mod_best += 1
+                    else:
+                        chaos += 1
 
             bpc = []
             for b in pk.get("buys", []):
@@ -154,6 +163,10 @@ def main():
             "captain_vs_model_winrate": round(100 * h2h_win / h2h_n, 1) if h2h_n else None,
             "disagreed_with_model_stages": diff_win + diff_loss + diff_tie,
             "disagree_win": diff_win, "disagree_loss": diff_loss, "disagree_tie": diff_tie,
+            # clean judgment-day record (chaos = neither captain landed the stage #1)
+            "disagree_source_landed_best": src_best,
+            "disagree_model_landed_best": mod_best,
+            "disagree_chaos_neither": chaos,
             "per_stage": per_stage,
         }
         unmatched[src] = sorted(umatch)
@@ -183,10 +196,13 @@ def main():
     for src, r in results.items():
         print(f"{src:10s} {r['captain_top1_pct'] or 0:>8.1f}% {r['captain_top3_pct'] or 0:>8.1f}% "
               f"{r['buys_mean_growth_percentile'] or 0:>9.3f} {str(r['captain_vs_model_winrate'])+'%':>16s}")
-    print("\nWhen the source's captain DIFFERED from the model's (win / loss / tie on growth):")
+    print("\nWhen the source's captain DIFFERED from the model's:")
+    print("  raw growth win/loss (inflated by chaos days), then the clean record")
+    print("  (who actually landed the stage's best rider; chaos = neither did):")
     for src, r in results.items():
-        print(f"  {src:10s} {r['disagree_win']}W / {r['disagree_loss']}L / {r['disagree_tie']}T "
-              f"(of {r['disagreed_with_model_stages']} disagreements)")
+        print(f"  {src:10s} raw {r['disagree_win']}W-{r['disagree_loss']}L  |  "
+              f"clean {r['disagree_source_landed_best']}-{r['disagree_model_landed_best']} "
+              f"(+{r['disagree_chaos_neither']} chaos where neither nailed #1)")
     for src, u in unmatched.items():
         if u:
             print(f"\n[{src}] unmatched names ({len(u)}): {', '.join(u[:15])}")

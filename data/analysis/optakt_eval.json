@@ -17,6 +17,9 @@
       "disagree_win": 6,
       "disagree_loss": 5,
       "disagree_tie": 0,
+      "disagree_source_landed_best": 5,
+      "disagree_model_landed_best": 2,
+      "disagree_chaos_neither": 4,
       "per_stage": [
         {
           "stage": 1,
@@ -220,6 +223,9 @@
       "disagree_win": 7,
       "disagree_loss": 5,
       "disagree_tie": 0,
+      "disagree_source_landed_best": 6,
+      "disagree_model_landed_best": 2,
+      "disagree_chaos_neither": 4,
       "per_stage": [
         {
           "stage": 1,
