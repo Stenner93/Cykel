@@ -26,19 +26,28 @@ af Girospillet 2025) ramte den præcist bedste kaptajn hver anden etape (52 %) o
 top-3 på 71 %, mod modellens 33 % / 57 %. Det er en reel, mærkbar forskel på det
 valg der betyder mest i holdet (kaptajnens dobbeltpoint).
 
-### Men nuancen: edgen ligger mest i de "oplagte" dage
-Da vi ser *kun* på de etaper hvor optakten valgte en **anden** kaptajn end
-modellen, er det tættere på lige:
+### Uenigheds-dagene: pas på det misvisende "6-5 / 7-5"
+Ser vi *kun* på de etaper hvor optakten valgte en **anden** kaptajn end modellen,
+er den rå vækst-optælling tæt (Simon 7-5, Feltet 6-5) — men det tal **pynter
+kraftigt på modellen**. Det tæller nemlig "min middelmådige kaptajn voksede en
+tøddel mere end din middelmådige kaptajn" som en sejr til modellen, selv når
+*ingen* af de to ramte etapens faktisk bedste rytter.
 
-| Kilde | Uenige med model | Vandt | Tabte |
-|---|---|---|---|
-| Feltet | 11 etaper | 6 | 5 |
-| Simon | 12 etaper | 7 | 5 |
+Renser man for de dage (kaos-/udbryderdage hvor ingen af tilgangene duede) og
+ser på **hvem der faktisk ramte etapens bedste kaptajn**, er billedet langt mere
+ensidigt:
 
-Dvs. optakternes forspring kommer dels af at ramme de oplagte kaptajner (Pogačar,
-Merlier) lige så sikkert som modellen, dels af en lille — men reel — edge på
-dømmekraft-dagene (7-5 / 6-5). De taber ikke terræn på jokerne; de vinder en
-smule.
+| Kilde | Uenige | Kilde ramte #1 | Model ramte #1 | Kaos (ingen ramte) | Rå vækst-optælling |
+|---|---|---|---|---|---|
+| Feltet | 11 | **5** | 2 | 4 | 6-5 |
+| Simon | 12 | **6** | 2 | 4 | 7-5 |
+
+**Den reelle dømmekrafts-score er 5-2 og 6-2 til optakterne**, ikke 6-5/7-5.
+Modellens "5 tabte sejre" er hule: kun 2 af dem ramte faktisk etapens bedste
+rytter — de øvrige 3 er bare mindre-dårlige gæt på dage hvor begge tog fejl.
+Det er også præcis derfor `cap top1` (ram plet) adskiller model og optakt så
+meget (33 % vs 52 %), mens den rå win/loss ikke gør: **top-1 belønner at ramme
+den rigtige; win/loss belønner også bare at tabe mindre grimt end den anden.**
 
 ## Konsekvenser frem mod Vueltaen
 1. **Brug optakterne som primær kaptajnskilde — især en betroet, dygtig
