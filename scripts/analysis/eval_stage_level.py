@@ -155,6 +155,14 @@ def main():
     nedslag_good.sort(key=lambda x: -x["M"])
     nedslag_bad.sort(key=lambda x: x["M"])
 
+    # ---- 2c. team-bonus (holdbonus): how many of the 8 finished stage top-15 ----
+    tb = team_bonus(teams, pid2slug)
+    tb_by_stage = {r["stage"]: r for r in tb["per_stage"]}
+    for row in per_stage:
+        b = tb_by_stage.get(row["stage"])
+        row["top15_you"] = b["you"] if b else None
+        row["top15_top10_med"] = b["top10_med"] if b else None
+
     # ---- 3. best-possible team (fee-aware beam search) ----
     best = best_team(price, start, final)
 
@@ -166,6 +174,7 @@ def main():
         "nedslag_good": nedslag_good[:10],
         "nedslag_bad": nedslag_bad[:10],
         "best_team": best,
+        "team_bonus": tb,
         "our_final_value_M": curves["os"][-1],
         "top10_best_final_M": curves["top10_best"][-1],
     }
@@ -185,6 +194,13 @@ def main():
     print("\nDÅRLIGSTE KALD:")
     for x in nedslag_bad[:6]:
         print("  -", x["text"])
+    print("\nHOLDBONUS (ryttere i etapens top-15):")
+    for row in tb["per_stage"]:
+        flag = "  <- MISSET" if row["top10_med"] >= 6 and row["you"] < row["top10_med"] else ""
+        print(f"  E{row['stage']:>2}: du {row['you']}  vs top-10 median {row['top10_med']} "
+              f"(spænd {row['top10_min']}-{row['top10_max']}){flag}")
+    print(f"  vurderede etaper: {tb['assessed_stages']} (mangler resultater for øvrige)")
+
     print(f"\nBEDST MULIGE HOLD:")
     print(f"  bedste buy-and-hold (0 transfers):    {best['buy_and_hold_M']}M")
     print(f"  vores (aktivt styret):                {curves['os'][-1]}M")
@@ -192,6 +208,64 @@ def main():
     print(f"  loft (perfekt rotation, ingen gebyr): {best['ceiling_M']}M  <- realistisk optimum ligger mellem 79 og dette")
     print(f"  illustrativ hold-roster: {', '.join(best['illustrative_hold_roster'])}")
     print("\nWrote data/analysis/stage_level.json")
+
+
+def team_bonus(teams, pid2slug):
+    """
+    Holdbonus: count how many of each team's 8 riders finished a stage's top-15
+    (holdet awards a bonus for 6/7/8 riders in the top 15). Uses actual finishing
+    positions from gt_stage_results.json. Only stages with complete results are
+    assessed (others lack finishing data in the cache).
+    """
+    import unicodedata
+    gt = json.loads((ROOT / "data/cache/gt_stage_results.json").read_text())["stages"]
+    hp = json.loads((ROOT / "data/cache/holdet_players.json").read_text())
+    slug2tok = {s: _fold(v["holdet_name"]) for s, v in hp.items()}
+
+    def top15(stage):
+        return [_fold(r["rider_slug"]) for r in gt.get(str(stage), []) if r["position"] <= 15 and not r["dnf"]]
+
+    def in_top(htok, top):
+        hs = set(htok)
+        for tk in top:
+            tks = set(tk)
+            if hs and (hs <= tks or tks <= hs or len(hs & tks) >= 2
+                       or (len(hs) >= 2 and list(hs)[-1] in tks and list(hs)[-1] not in ("van", "de", "der"))):
+                return True
+        return False
+
+    def count(tid, r, top):
+        return sum(1 for s, _ in teams[tid][r]["roster"]
+                   if in_top(slug2tok.get(s, []), top))
+
+    per_stage, missed = [], []
+    covered = [k for k in gt if len([1 for x in gt[k] if x["position"] <= 15 and not x["dnf"]]) >= 15]
+    for r in sorted(int(k) for k in covered):
+        top = top15(r)
+        you = count(OUR, r, top)
+        t10 = sorted(count(t, r, top) for t in TOP10)
+        med = t10[len(t10) // 2]
+        row = {"stage": r, "you": you, "top10_med": med, "top10_min": t10[0], "top10_max": t10[-1]}
+        per_stage.append(row)
+        # missed bonus: top-10 typically hit >=6, you were below the bonus band and below them
+        if med >= 6 and you < med:
+            missed.append({"stage": r, "you": you, "top10_med": med,
+                           "text": f"E{r}: du havde {you} ryttere i top-15, top-10 havde typisk {med} — misset/mindre holdbonus"})
+    return {
+        "note": "Antal af holdets 8 ryttere i etapens top-15 (holdbonus ved 6/7/8). "
+                "Kun etaper med komplette resultater (mangler 10,11,13,14,16-21 i cachen). "
+                "Præcise bonus-kroner ikke kendt her — vist som antal + tærskler.",
+        "assessed_stages": [r["stage"] for r in per_stage],
+        "per_stage": per_stage,
+        "missed": missed,
+    }
+
+
+def _fold(s):
+    import unicodedata
+    s = (s or "").lower().replace("æ", "ae").replace("ø", "o").replace("å", "a").replace("'", "").replace(".", "")
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
+    return tuple(t for t in s.replace("-", " ").replace("_", " ").split() if len(t) > 1)
 
 
 def best_team(price, start, final):
