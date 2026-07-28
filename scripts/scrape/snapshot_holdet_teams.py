@@ -42,9 +42,14 @@ BASE      = "https://nexus-app-fantasy-fargate.holdet.dk"
 CARTRIDGE = "tour-de-france-2026"
 GAME_ID   = 618
 
+# Always fetched (in addition to the auto-discovered top-N): our own teams plus
+# the two optakt authors' teams (Feltet.dk + Simon K. Kjær), so we can compare
+# directly against the sources we evaluated.
 OUR_TEAMS = {
     7145433: "os (Anders)",
     7132927: "Kasper",
+    7157567: "optakt-skribent",
+    7132842: "optakt-skribent",
 }
 
 ROOT = Path(__file__).resolve().parents[2]
