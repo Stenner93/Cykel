@@ -1,0 +1,114 @@
+{
+  "note": "Post-race indicator evaluation, TdF 2026. Spearman rank corr vs actual holdet value growth. Signal corr = mean of per-stage correlations (stages where the signal was present).",
+  "n_stages": 21,
+  "n_rider_stage_rows": 3864,
+  "signal_ranking": [
+    {
+      "signal": "discipline",
+      "mean_spearman": 0.375,
+      "stages": 21
+    },
+    {
+      "signal": "pcs_rank",
+      "mean_spearman": 0.281,
+      "stages": 21
+    },
+    {
+      "signal": "form",
+      "mean_spearman": 0.182,
+      "stages": 21
+    },
+    {
+      "signal": "ml",
+      "mean_spearman": -0.159,
+      "stages": 21
+    }
+  ],
+  "submodel_ranking": [
+    {
+      "model": "placement_pred",
+      "mean_spearman": 0.442,
+      "stages": 21
+    },
+    {
+      "model": "exp",
+      "mean_spearman": 0.393,
+      "stages": 21
+    },
+    {
+      "model": "holdet_est",
+      "mean_spearman": 0.393,
+      "stages": 21
+    },
+    {
+      "model": "expected_pts",
+      "mean_spearman": 0.393,
+      "stages": 21
+    }
+  ],
+  "captain_accuracy": {
+    "model (exp)": {
+      "top1_pct": 33.3,
+      "top3_pct": 57.1,
+      "top1": 7,
+      "n": 21
+    },
+    "form": {
+      "top1_pct": 4.8,
+      "top3_pct": 33.3,
+      "top1": 1,
+      "n": 21
+    },
+    "ml": {
+      "top1_pct": 4.8,
+      "top3_pct": 14.3,
+      "top1": 1,
+      "n": 21
+    },
+    "placement_pred": {
+      "top1_pct": 33.3,
+      "top3_pct": 57.1,
+      "top1": 7,
+      "n": 21
+    }
+  },
+  "veloscore_source_eval": {
+    "stages_covered": 9,
+    "mean_spearman_vs_actual": 0.558,
+    "captain_top1_pct": 33.3,
+    "captain_top3_pct": 33.3
+  },
+  "overall_exp_vs_actual_spearman_pooled": 0.351,
+  "signal_by_stage_type": {
+    "ttt": {
+      "discipline": 0.721,
+      "form": 0.237,
+      "ml": 0.281,
+      "pcs_rank": 0.342
+    },
+    "hilly": {
+      "discipline": 0.296,
+      "form": 0.198,
+      "ml": -0.037,
+      "pcs_rank": 0.326
+    },
+    "sprint": {
+      "discipline": 0.229,
+      "form": 0.109,
+      "ml": -0.017,
+      "pcs_rank": 0.215
+    },
+    "mountain": {
+      "discipline": 0.516,
+      "form": 0.25,
+      "ml": -0.416,
+      "pcs_rank": 0.334
+    },
+    "tt": {
+      "discipline": 0.517,
+      "form": 0.174,
+      "ml": -0.433,
+      "pcs_rank": 0.194
+    }
+  }
+}
