@@ -180,7 +180,7 @@
           "top10_owned": 5
         }
       ],
-      "top15_you": 5,
+      "top15_you": 4,
       "top15_top10_med": 4
     },
     {
@@ -841,10 +841,10 @@
       },
       {
         "stage": 2,
-        "you": 5,
+        "you": 4,
         "top10_med": 4,
-        "top10_min": 4,
-        "top10_max": 5
+        "top10_min": 3,
+        "top10_max": 4
       },
       {
         "stage": 3,

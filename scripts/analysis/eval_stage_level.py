@@ -255,11 +255,16 @@ def team_bonus(teams, pid2slug):
         return [_fold(r["rider_slug"]) for r in gt.get(str(stage), []) if r["position"] <= 15 and not r["dnf"]]
 
     def in_top(htok, top):
+        # htok is an ORDERED tuple (from _fold); use its last element as the
+        # surname. Do NOT use list(set(htok))[-1] — set order depends on string
+        # hash randomization and would make the result non-deterministic.
         hs = set(htok)
+        surname = htok[-1] if htok else None
         for tk in top:
             tks = set(tk)
             if hs and (hs <= tks or tks <= hs or len(hs & tks) >= 2
-                       or (len(hs) >= 2 and list(hs)[-1] in tks and list(hs)[-1] not in ("van", "de", "der"))):
+                       or (surname and len(htok) >= 2 and surname in tks
+                           and surname not in ("van", "de", "der"))):
                 return True
         return False
 
