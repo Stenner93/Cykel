@@ -91,6 +91,41 @@ def main():
     curves["top10_median"] = [round(sorted(top_curves[t][i] for t in TOP10)[len(TOP10) // 2], 2) for i in range(21)]
     curves["top10_best"] = value_curve(max(TOP10, key=lambda t: top_curves[t][-1]))
 
+    # ---- 5. rank over time (position among all 14 teams by value each round) ----
+    all14 = {t: value_curve(t) for t in [OUR, KASPER] + OPTAKT + TOP10}
+    def rank_of(tid, i):
+        vals = sorted((all14[t][i] for t in all14), reverse=True)
+        return vals.index(all14[tid][i]) + 1
+    rank_over_time = {"os": [rank_of(OUR, i) for i in range(21)],
+                      "kasper": [rank_of(KASPER, i) for i in range(21)],
+                      "n_teams": len(all14)}
+
+    # ---- 2 (transfers). value added by in-season transfers, + our timing ----
+    def held1_final(tid):   # value at round 21 if the round-1 roster were kept
+        return sum(price(s, 21) for s, _ in teams[tid][1]["roster"])
+    transfer_add = {t: value_curve(t)[-1] - held1_final(t) / 1e6 for t in all14}
+    transfer_rank = sorted(
+        ([t, round(transfer_add[t], 2), "os" if t == OUR else "kasper" if t == KASPER
+          else "optakt" if t in OPTAKT else "top-10"] for t in all14),
+        key=lambda x: -x[1])
+    # our buy log with timing
+    buys = []
+    for r in range(2, 22):
+        prev = {s for s, _ in teams[OUR][r - 1]["roster"]}
+        for s, nm in teams[OUR][r]["roster"]:
+            if s not in prev:
+                pre = price(s, r) - price(s, 1)                 # already risen before we bought
+                nxt = price(s, min(r + 3, 21)) - price(s, r)    # momentum after we bought
+                buys.append({"stage": r, "rider": nm, "pre_rise_M": round(pre / 1e6, 3),
+                             "next3_M": round(nxt / 1e6, 3)})
+    well = sum(1 for b in buys if b["next3_M"] > 0.02)
+    worst = sorted(buys, key=lambda b: b["next3_M"])[:5]
+    best = sorted(buys, key=lambda b: -b["next3_M"])[:5]
+    transfers = {"value_add_rank_M": [{"team_id": t, "add_M": a, "label": l} for t, a, l in transfer_rank],
+                 "our_add_M": round(transfer_add[OUR], 2),
+                 "n_buys": len(buys), "well_timed": well,
+                 "best_timed": best, "worst_timed": worst}
+
     # ---- 2. per-stage analysis (realised gain, captain doubled) ----
     def stage_score(tid, r):
         ros = [n for _, n in teams[tid][r]["roster"]]
@@ -175,6 +210,8 @@ def main():
         "nedslag_bad": nedslag_bad[:10],
         "best_team": best,
         "team_bonus": tb,
+        "rank_over_time": rank_over_time,
+        "transfers": transfers,
         "our_final_value_M": curves["os"][-1],
         "top10_best_final_M": curves["top10_best"][-1],
     }
@@ -207,6 +244,21 @@ def main():
     print(f"  top-10 bedste (aktivt styret):        {curves['top10_best'][-1]}M")
     print(f"  loft (perfekt rotation, ingen gebyr): {best['ceiling_M']}M  <- realistisk optimum ligger mellem 79 og dette")
     print(f"  illustrativ hold-roster: {', '.join(best['illustrative_hold_roster'])}")
+    print("\nPLACERING OVER TID (rang blandt 14 hold):")
+    print("  os:    ", rank_over_time["os"])
+    print("  kasper:", rank_over_time["kasper"])
+
+    print(f"\nTRANSFER-VÆRDI (slutværdi minus 'behold runde-1-hold'):")
+    for row in transfers["value_add_rank_M"][:6]:
+        print(f"  +{row['add_M']:>6.2f}M  {row['team_id']} ({row['label']})")
+    print(f"  ... vores: +{transfers['our_add_M']}M   ({transfers['well_timed']}/{transfers['n_buys']} køb godt timet)")
+    print("  værst timede køb (lidt vækst efter køb):")
+    for b in transfers["worst_timed"]:
+        print(f"    E{b['stage']:>2} {b['rider']:<24} steg {b['pre_rise_M']:+.2f}M FØR køb, {b['next3_M']:+.2f}M efter")
+    print("  bedst timede køb:")
+    for b in transfers["best_timed"]:
+        print(f"    E{b['stage']:>2} {b['rider']:<24} {b['next3_M']:+.2f}M i 3 runder efter køb")
+
     print("\nWrote data/analysis/stage_level.json")
 
 
