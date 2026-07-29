@@ -218,8 +218,37 @@ def team_bonus(teams, pid2slug):
     assessed (others lack finishing data in the cache).
     """
     import unicodedata
-    gt = json.loads((ROOT / "data/cache/gt_stage_results.json").read_text())["stages"]
     hp = json.loads((ROOT / "data/cache/holdet_players.json").read_text())
+
+    # Prefer the authoritative holdet source (fantasy-actions placements, all 21
+    # stages, exact personId match) when the snapshot captured it; else fall back
+    # to the PCS gt_stage_results cache (finishing positions, partial coverage).
+    hres_path = H / "stage_results.json"
+    if hres_path.exists():
+        hres = json.loads(hres_path.read_text())          # {stage: {personId: {pos,pts}}}
+        slug2pid = {s: v.get("holdet_person_id") for s, v in hp.items()}
+        per_stage, missed = [], []
+        assessed = sorted(int(k) for k, d in hres.items()
+                          if sum(1 for r in d.values() if r.get("pos")) >= 15)
+        def count_h(tid, r):
+            res = hres.get(str(r), {})
+            return sum(1 for s, _ in teams[tid][r]["roster"]
+                       if res.get(str(slug2pid.get(s)), {}).get("pos"))
+        for r in assessed:
+            you = count_h(OUR, r)
+            t10 = sorted(count_h(t, r) for t in TOP10)
+            med = t10[len(t10) // 2]
+            per_stage.append({"stage": r, "you": you, "top10_med": med,
+                              "top10_min": t10[0], "top10_max": t10[-1]})
+            if med >= 6 and you < med:
+                missed.append({"stage": r, "you": you, "top10_med": med,
+                               "text": f"E{r}: du havde {you} ryttere i top-15, top-10 havde typisk {med} — misset/mindre holdbonus"})
+        return {"note": "Holdbonus via holdets fantasy-actions (placeringsregler 849-863), "
+                        "alle etaper med komplette resultater. Antal ryttere i top-15.",
+                "source": "holdet_fantasy_actions", "assessed_stages": assessed,
+                "per_stage": per_stage, "missed": missed}
+
+    gt = json.loads((ROOT / "data/cache/gt_stage_results.json").read_text())["stages"]
     slug2tok = {s: _fold(v["holdet_name"]) for s, v in hp.items()}
 
     def top15(stage):
