@@ -248,50 +248,40 @@ def team_bonus(teams, pid2slug):
                 "source": "holdet_fantasy_actions", "assessed_stages": assessed,
                 "per_stage": per_stage, "missed": missed}
 
-    gt = json.loads((ROOT / "data/cache/gt_stage_results.json").read_text())["stages"]
-    slug2tok = {s: _fold(v["holdet_name"]) for s, v in hp.items()}
+    # Primary in-repo source: the holdet scoring matrix in tdf2026_scores.json,
+    # which carries each rider's placement rules 849..863 (1st..15th) per stage —
+    # holdet's OWN placement data, exact slug match, covering stages 2..21.
+    # (Stage 1 is a TTT with no individual top-15.)
+    scores = json.loads((ROOT / "web/data/tdf2026_scores.json").read_text())
+    placement = {}   # stage(int) -> {slug: pos}
+    for rr in scores["riders"]:
+        slug = rr["id"]
+        for st, rules in rr.get("rules", {}).items():
+            pos = next((rid - 848 for rid, _ in rules if 849 <= rid <= 863), None)
+            if pos is not None:
+                placement.setdefault(int(st), {})[slug] = pos
 
-    def top15(stage):
-        return [_fold(r["rider_slug"]) for r in gt.get(str(stage), []) if r["position"] <= 15 and not r["dnf"]]
-
-    def in_top(htok, top):
-        # htok is an ORDERED tuple (from _fold); use its last element as the
-        # surname. Do NOT use list(set(htok))[-1] — set order depends on string
-        # hash randomization and would make the result non-deterministic.
-        hs = set(htok)
-        surname = htok[-1] if htok else None
-        for tk in top:
-            tks = set(tk)
-            if hs and (hs <= tks or tks <= hs or len(hs & tks) >= 2
-                       or (surname and len(htok) >= 2 and surname in tks
-                           and surname not in ("van", "de", "der"))):
-                return True
-        return False
-
-    def count(tid, r, top):
-        return sum(1 for s, _ in teams[tid][r]["roster"]
-                   if in_top(slug2tok.get(s, []), top))
+    def count_s(tid, r):
+        pl = placement.get(r, {})
+        return sum(1 for s, _ in teams[tid][r]["roster"] if s in pl)
 
     per_stage, missed = [], []
-    covered = [k for k in gt if len([1 for x in gt[k] if x["position"] <= 15 and not x["dnf"]]) >= 15]
-    for r in sorted(int(k) for k in covered):
-        top = top15(r)
-        you = count(OUR, r, top)
-        t10 = sorted(count(t, r, top) for t in TOP10)
+    assessed = sorted(st for st, pl in placement.items() if len(pl) >= 15)
+    for r in assessed:
+        you = count_s(OUR, r)
+        t10 = sorted(count_s(t, r) for t in TOP10)
         med = t10[len(t10) // 2]
-        row = {"stage": r, "you": you, "top10_med": med, "top10_min": t10[0], "top10_max": t10[-1]}
-        per_stage.append(row)
-        # missed bonus: top-10 typically hit >=6, you were below the bonus band and below them
+        per_stage.append({"stage": r, "you": you, "top10_med": med,
+                          "top10_min": t10[0], "top10_max": t10[-1]})
         if med >= 6 and you < med:
             missed.append({"stage": r, "you": you, "top10_med": med,
                            "text": f"E{r}: du havde {you} ryttere i top-15, top-10 havde typisk {med} — misset/mindre holdbonus"})
     return {
-        "note": "Antal af holdets 8 ryttere i etapens top-15 (holdbonus ved 6/7/8). "
-                "Kun etaper med komplette resultater (mangler 10,11,13,14,16-21 i cachen). "
-                "Præcise bonus-kroner ikke kendt her — vist som antal + tærskler.",
-        "assessed_stages": [r["stage"] for r in per_stage],
-        "per_stage": per_stage,
-        "missed": missed,
+        "note": "Antal af holdets 8 ryttere i etapens top-15 via holdets egne "
+                "placeringsregler (849-863) i tdf2026_scores.json. Eksakt slug-match, "
+                "etape 2-21 (etape 1 = TTT, ingen individuel top-15).",
+        "source": "tdf2026_scores_placement_rules",
+        "assessed_stages": assessed, "per_stage": per_stage, "missed": missed,
     }
 
 
