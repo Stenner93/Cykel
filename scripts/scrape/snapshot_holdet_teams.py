@@ -175,22 +175,57 @@ def main():
     schedule = HTTP.get(f"{BASE}/api/schedules/{GAME_ID}", tolerate=True)
     if schedule:
         dump(ref / "schedule.json", schedule, args.force)
-    # event IDs for per-stage results
+    # The schedule's "events" is an ORDERED LIST OF EVENT-ID INTEGERS (index 0 =
+    # stage 1); event metadata lives under _embedded.events keyed by id. (This is
+    # the shape fetch_schedule() in scrape_holdet.py relies on — the earlier
+    # version wrongly looked for e["id"] on dicts and found nothing.)
     events = []
+    event_info = {}
     if isinstance(schedule, dict):
-        for e in schedule.get("events", schedule.get("items", [])):
-            eid = e.get("id") if isinstance(e, dict) else None
+        for eid in schedule.get("events", []):
             if isinstance(eid, int):
                 events.append(eid)
+            elif isinstance(eid, dict) and isinstance(eid.get("id"), int):
+                events.append(eid["id"])
+        for eid, ev in schedule.get("_embedded", {}).get("events", {}).items():
+            event_info[int(eid)] = ev
 
-    # 2. Per-stage fantasy-actions (actual per-rider points)
-    print("Henter fantasy-actions (faktiske etape-point) …")
+    # 2. Per-stage fantasy-actions → raw + parsed stage results (points + top-15).
+    # Holdet placement rules 849..863 map to finishing positions 1..15
+    # (rule_labels: 849="Etapesejr" … 863="15. plads"), so a rider carrying one
+    # of those rules finished in that position — this is the authoritative source
+    # for the team-bonus (6/7/8 riders in the top 15) AND per-rider stage points.
+    print(f"Henter fantasy-actions for {len(events)} etaper …")
+    stage_results = {}   # stage_num -> {personId: {"pos": int|None, "pts": int}}
     for i, eid in enumerate(events, 1):
         payload = HTTP.get(f"{BASE}/api/games/{GAME_ID}/events/{eid}/fantasy-actions",
                            tolerate=True)
-        if payload is not None:
-            wrote = dump(OUT / "fantasy_actions" / f"event_{eid}.json", payload, args.force)
-            print(f"  event {eid} ({i}/{len(events)}) {'gemt' if wrote else 'findes'}")
+        if payload is None:
+            continue
+        dump(OUT / "fantasy_actions" / f"stage_{i:02d}_event_{eid}.json", payload, args.force)
+        actions = payload.get("items", payload) if isinstance(payload, dict) else payload
+        per = {}
+        for a in (actions or []):
+            if not isinstance(a, dict):
+                continue
+            pid = a.get("personId")
+            rule = a.get("ruleId")
+            amt = a.get("amount", 1)
+            if pid is None:
+                continue
+            rec = per.setdefault(pid, {"pos": None, "pts": 0})
+            if isinstance(rule, int) and 849 <= rule <= 863:
+                rec["pos"] = rule - 848            # 849→1 … 863→15
+            if isinstance(amt, (int, float)):
+                rec["pts"] += amt
+        stage_results[i] = per
+        status = event_info.get(eid, {}).get("status", "?")
+        print(f"  etape {i:>2} (event {eid}, {status}): {len(per)} ryttere, "
+              f"{sum(1 for r in per.values() if r['pos'])} i top-15")
+    if stage_results:
+        dump(OUT / "stage_results.json",
+             {str(k): {str(pid): v for pid, v in d.items()} for k, d in stage_results.items()},
+             force=True)
 
     # 3. Team list
     if args.team_ids.strip():

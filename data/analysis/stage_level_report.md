@@ -82,3 +82,26 @@ et løst overtal; sandheden er tættere på 80'erne.
 > Forbehold: værdikurven bruger etape-priser (etape 4–21) + start/slut; etape 2–3
 > interpoleret. Buy-and-hold-optimum er korrekt (knapsack); den viste hold-roster
 > er *illustrativ*, ikke bevist optimal.
+
+## Validering af væksten (mod jeres scraping)
+Er væksten overhovedet regnet rigtigt? Krydstjek af de priser kurven bygger på
+(`stage_snapshots`) mod de **autoritative slutpriser fra holdet-snapshottet**
+(`players.json`): gennemsnitlig afvigelse **0,035M** (35.000 kr), 155/183 ryttere
+inden for 0,1M. De største afvigelser (~0,45M) er på de hurtigst stigende ryttere
+(van der Poel, Philipsen), hvor snapshottet er taget lige før den allersidste
+pris. Slutværdien i runde 21 bruger den eksakte snapshot-pris (77,03M). **Væksten
+er altså solid.**
+
+## Fiks af de manglende top-15-data (ikke en omgåelse)
+Top-15 var ufuldstændig fordi resultat-cachen (`gt_stage_results`, fra PCS) kun
+dækker 11 etaper. Den rigtige kilde er holdets egne **fantasy-actions**
+(placeringsregler 849–863 = 1.–15. plads), som også driver `actual`-væksten —
+den var komplet for alle 21 etaper under løbet, men blev ikke gemt rå.
+`snapshot_holdet_teams.py` er nu rettet (den brugte et forkert schedule-format og
+fik 0 events): den henter nu fantasy-actions pr. etape og skriver
+`stage_results.json` (placering + point pr. rytter, alle 21 etaper, eksakt
+personId-match — ingen navne-gætteri). Kør scriptet igen lokalt og push, så
+færdiggøres holdbonus-analysen for **alle 21 etaper** automatisk, og vi kan
+samtidig krydstjekke `actual`-væksten mod holdets egne point.
+> PCS og holdet er begge blokeret fra dette miljø, så genindhentningen skal ske
+> lokalt (som sidst).
