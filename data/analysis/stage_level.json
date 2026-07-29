@@ -1016,6 +1016,196 @@
       }
     ]
   },
+  "rank_over_time": {
+    "os": [
+      1,
+      8,
+      8,
+      12,
+      4,
+      5,
+      1,
+      7,
+      11,
+      14,
+      10,
+      10,
+      14,
+      13,
+      13,
+      14,
+      14,
+      9,
+      11,
+      11,
+      11
+    ],
+    "kasper": [
+      1,
+      8,
+      4,
+      11,
+      4,
+      10,
+      7,
+      5,
+      6,
+      13,
+      11,
+      11,
+      11,
+      11,
+      10,
+      13,
+      13,
+      11,
+      11,
+      11,
+      12
+    ],
+    "n_teams": 14
+  },
+  "transfers": {
+    "value_add_rank_M": [
+      {
+        "team_id": 7175364,
+        "add_M": 23.02,
+        "label": "top-10"
+      },
+      {
+        "team_id": 7161809,
+        "add_M": 22.75,
+        "label": "top-10"
+      },
+      {
+        "team_id": 7161445,
+        "add_M": 22.7,
+        "label": "top-10"
+      },
+      {
+        "team_id": 7189610,
+        "add_M": 22.62,
+        "label": "top-10"
+      },
+      {
+        "team_id": 7176905,
+        "add_M": 22.4,
+        "label": "top-10"
+      },
+      {
+        "team_id": 7205017,
+        "add_M": 21.69,
+        "label": "top-10"
+      },
+      {
+        "team_id": 7133224,
+        "add_M": 21.64,
+        "label": "top-10"
+      },
+      {
+        "team_id": 7133564,
+        "add_M": 21.48,
+        "label": "top-10"
+      },
+      {
+        "team_id": 7169872,
+        "add_M": 21.41,
+        "label": "top-10"
+      },
+      {
+        "team_id": 7132842,
+        "add_M": 21.2,
+        "label": "optakt"
+      },
+      {
+        "team_id": 7145433,
+        "add_M": 21.05,
+        "label": "os"
+      },
+      {
+        "team_id": 7132927,
+        "add_M": 20.08,
+        "label": "kasper"
+      },
+      {
+        "team_id": 7157567,
+        "add_M": 19.58,
+        "label": "optakt"
+      },
+      {
+        "team_id": 7184171,
+        "add_M": 18.76,
+        "label": "top-10"
+      }
+    ],
+    "our_add_M": 21.05,
+    "n_buys": 78,
+    "well_timed": 47,
+    "best_timed": [
+      {
+        "stage": 18,
+        "rider": "Richard Carapaz",
+        "pre_rise_M": 0.6,
+        "next3_M": 1.56
+      },
+      {
+        "stage": 13,
+        "rider": "Tadej Pogacar",
+        "pre_rise_M": 3.21,
+        "next3_M": 1.1
+      },
+      {
+        "stage": 6,
+        "rider": "Tadej Pogacar",
+        "pre_rise_M": 1.22,
+        "next3_M": 0.92
+      },
+      {
+        "stage": 7,
+        "rider": "Tim Merlier",
+        "pre_rise_M": 0.03,
+        "next3_M": 0.92
+      },
+      {
+        "stage": 9,
+        "rider": "Tadej Pogacar",
+        "pre_rise_M": 2.14,
+        "next3_M": 0.92
+      }
+    ],
+    "worst_timed": [
+      {
+        "stage": 13,
+        "rider": "Ramses Debruyne",
+        "pre_rise_M": 0.35,
+        "next3_M": -0.22
+      },
+      {
+        "stage": 17,
+        "rider": "Fred Wright",
+        "pre_rise_M": -0.47,
+        "next3_M": -0.2
+      },
+      {
+        "stage": 17,
+        "rider": "Jasper Stuyven",
+        "pre_rise_M": -0.3,
+        "next3_M": -0.11
+      },
+      {
+        "stage": 2,
+        "rider": "Jonas Rickaert",
+        "pre_rise_M": -0.033,
+        "next3_M": -0.107
+      },
+      {
+        "stage": 16,
+        "rider": "Tobias Foss",
+        "pre_rise_M": -0.22,
+        "next3_M": -0.09
+      }
+    ]
+  },
   "our_final_value_M": 77.03,
   "top10_best_final_M": 79.0
 }
