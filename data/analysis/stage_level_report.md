@@ -36,29 +36,32 @@ kaptajn (+0.58M) ✓; E16 Remco-kaptajn på enkeltstart (+0.32M bedre end top-me
 Det bekræfter din egen intuition: det var **ikke** de aggregerede "missede
 gevinster", men **konkrete sprint-etaper** hvor du ikke havde dagens rette spurter.
 
-## Holdbonus — ryttere i etapens top-15
-Holdet giver en bonus for at have 6/7/8 af dine 8 ryttere i etapens top-15. Din
-frygt var berettiget: på **bunch-sprint-etaperne under-satsede du**, mens
-top-holdene ramte bonus-tærsklerne.
+## Holdbonus — ryttere i etapens top-15 (alle 20 etaper)
+Holdet giver en bonus for at have 6/7/8 af dine 8 ryttere i etapens top-15. Kilde:
+holdets **egne placeringsregler (849–863 = 1.–15. plads)** i
+`tdf2026_scores.json` — eksakt slug-match, alle etaper 2–21 (E1 er TTT, ingen
+individuel top-15). Din frygt var **berettiget**, og med de fulde data ses den
+klart: du leakede på **sprint-etaperne**.
 
-| Etape | Type | Dine i top-15 | Top-10 median (spænd) | |
+| Etape | Type | Dine i top-15 | Top-10 median | |
 |---|---|---|---|---|
-| E7 | sprint | **5** | 8 (7–8) | **misset** |
-| E8 | sprint | **5** | 7 (6–7) | **misset** |
-| E12 | sprint | **6** | 8 (7–8) | delvist |
-| E15 | bjerg | **4** | 6 (4–6) | misset |
-| E2 | kuperet | 5 | 4 (4–5) | du *slog* dem ✓ |
+| E7 | sprint | **5** | 8 | **misset bonus** |
+| E8 | sprint | **5** | 7 | **misset bonus** |
+| E11 | sprint | **6** | 7 | **misset (mindre)** |
+| E12 | sprint | **6** | 8 | **misset (mindre)** |
+| E15 | bjerg | **4** | 6 | **misset bonus** |
+| E21 | sprint | **3** | 5 | under (ingen nåede 6) |
 
-**Samme rod som stjerne-fundet:** de spurtere du manglede (Wærenskjold E7,
-Girmay E8/12) er præcis dem der både gav etape-vækst *og* skubbede top-holdene
-over bonus-tærsklen. På E7 havde top-holdene 7–8 i top-15; du havde 5 — du var
-slet ikke i nærheden af 6-tærsklen.
+**Men i bjergene ramte du tærsklen:** E14, E18, E19, E20 havde du **6** ryttere i
+top-15 — på niveau med top-10. Problemet er **specifikt bunch-spurterne**, hvor du
+lå på 5 mens top-holdene havde 7–8. Samme rod som stjerne-fundet: de spurtere du
+manglede (Wærenskjold, Girmay) gav både etape-vækst *og* holdbonus.
 
-> Forbehold: kun 11 etaper (1–9, 12, 15) har komplette resultater i cachen;
-> 10, 11, 13, 14, 16–21 mangler, så holdbonus kan ikke vurderes der (bl.a.
-> sprint-etaperne 11, 13, 17, 21). De præcise bonus-kroner kender jeg ikke —
-> analysen viser antal ryttere + tærskler, ikke kr. Et fremtidigt snapshot af
-> holdets fantasy-actions ville give de eksakte bonusser.
+> Fikset: tidligere stod 10 etaper som "n/a" fordi PCS-resultatcachen kun dækkede
+> 11 etaper. Men holdets egen scoring-matrix (`tdf2026_scores.json`) havde
+> placeringsreglerne hele tiden — nu bruges de, så 20 af 21 etaper er dækket
+> eksakt. Kun de præcise bonus-*kroner* mangler stadig (kræver holdets
+> fantasy-actions); tallene her er antal ryttere + tærskler.
 
 ## Bedste mulige hold
 | Strategi | Slutværdi |
