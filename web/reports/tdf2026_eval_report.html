@@ -1,0 +1,300 @@
+<title>Tourspillet 2026 — vores hold mod de bedste</title>
+<style>
+  :root{
+    --bg:#fcfcfb;--panel:#ffffff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;
+    --line:#e7e6e1;--line-2:#efeee9;
+    --os:#c0661c;--kasper:#2f6db0;--optakt:#3b854f;--top:#8a9299;--top-fill:#8a929922;
+    --good:#3b854f;--bad:#b4472e;--accent:#c0661c;
+    --shadow:0 1px 2px rgba(20,22,26,.05),0 8px 24px rgba(20,22,26,.05);
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;
+    --line:#2d3034;--line-2:#26282c;
+    --os:#e08a3c;--kasper:#5b96d8;--optakt:#57b072;--top:#8b939b;--top-fill:#8b939b26;
+    --good:#57b072;--bad:#e07a5f;--accent:#e08a3c;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  }}
+  :root[data-theme="light"]{--bg:#fcfcfb;--panel:#ffffff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;--line:#e7e6e1;--line-2:#efeee9;--os:#c0661c;--kasper:#2f6db0;--optakt:#3b854f;--top:#8a9299;--top-fill:#8a929922;--good:#3b854f;--bad:#b4472e;--accent:#c0661c;--shadow:0 1px 2px rgba(20,22,26,.05),0 8px 24px rgba(20,22,26,.05)}
+  :root[data-theme="dark"]{--bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;--line:#2d3034;--line-2:#26282c;--os:#e08a3c;--kasper:#5b96d8;--optakt:#57b072;--top:#8b939b;--top-fill:#8b939b26;--good:#57b072;--bad:#e07a5f;--accent:#e08a3c;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35)}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:980px;margin:0 auto;padding:clamp(1.2rem,4vw,3rem) clamp(1rem,4vw,2rem) 4rem}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+  header{border-bottom:1px solid var(--line);padding-bottom:1.6rem;margin-bottom:2rem}
+  .eyebrow{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.04;letter-spacing:-.02em;margin:.5rem 0 .4rem;text-wrap:balance;font-weight:800}
+  .lede{color:var(--ink-2);font-size:1.06rem;max-width:62ch;margin:0}
+  h2{font-size:1.28rem;letter-spacing:-.01em;margin:2.6rem 0 .3rem;font-weight:700}
+  h2+.sub{color:var(--ink-3);font-size:.92rem;margin:0 0 1.1rem;max-width:70ch}
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin:1.8rem 0 0}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem;box-shadow:var(--shadow)}
+  .stat .n{font-size:2rem;font-weight:800;letter-spacing:-.02em;line-height:1}
+  .stat .n.os{color:var(--accent)}
+  .stat .k{font-size:.8rem;color:var(--ink-3);margin-top:.45rem}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.35rem;box-shadow:var(--shadow)}
+  .legend{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin:.1rem 0 .3rem;font-size:.85rem;color:var(--ink-2);align-items:center}
+  .legend span{display:inline-flex;align-items:center;gap:.42rem}
+  .sw{width:14px;height:3px;border-radius:2px;display:inline-block}
+  .sw.band{height:11px;width:14px;border-radius:3px;background:var(--top-fill);border:1px solid var(--top)}
+  .sw.gd{width:10px;height:10px;border-radius:50%;background:var(--good)}
+  .sw.bd{width:10px;height:10px;border-radius:50%;background:var(--bad)}
+  .zoom{margin-left:auto;display:flex;gap:.35rem}
+  .zoom button{font:inherit;font-size:.78rem;padding:.25rem .6rem;border:1px solid var(--line);background:var(--bg);color:var(--ink-2);border-radius:7px;cursor:pointer}
+  .zoom button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .zoom button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  svg{display:block;width:100%;height:auto;overflow:visible}
+  .grid line{stroke:var(--line-2)}
+  .axis text{fill:var(--ink-3);font-size:11px;font-family:ui-monospace,monospace}
+  .lbl{font-size:11.5px;font-weight:700}
+  table{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:.3rem}
+  th,td{text-align:left;padding:.42rem .5rem;border-bottom:1px solid var(--line-2);white-space:nowrap}
+  th{font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);font-weight:600;position:sticky;top:0;background:var(--panel)}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .pos{color:var(--good);font-weight:600}.neg{color:var(--bad);font-weight:600}
+  .chip{font-size:.66rem;text-transform:uppercase;letter-spacing:.04em;padding:.08rem .4rem;border-radius:5px;background:var(--line-2);color:var(--ink-3)}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+  @media(max-width:680px){.cols{grid-template-columns:1fr}.strip{grid-template-columns:1fr}}
+  .calls{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
+  .calls li{font-size:.9rem;padding:.6rem .7rem;border-radius:9px;border:1px solid var(--line);border-left:3px solid;background:var(--bg)}
+  .calls li.g{border-left-color:var(--good)}.calls li.b{border-left-color:var(--bad)}
+  .scale{position:relative;height:96px;margin:.6rem 0 .2rem}
+  .scale .axis-l{position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--line)}
+  .mk{position:absolute;bottom:2px;transform:translateX(-50%);text-align:center}
+  .mk .bar{width:2px;height:16px;background:var(--ink-3);margin:0 auto}
+  .mk .v{font-size:.82rem;font-weight:700;font-variant-numeric:tabular-nums}
+  .mk .t{font-size:.68rem;color:var(--ink-3)}
+  .mk.you .bar,.mk.you .v{background:transparent;color:var(--accent)}.mk.you .bar{background:var(--accent);height:26px}
+  .takeaways{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:.7rem}
+  .takeaways li{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:.85rem 1rem}
+  .takeaways b{color:var(--ink)}
+  .tip{position:fixed;pointer-events:none;opacity:0;transition:opacity .1s;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.55rem .7rem;box-shadow:var(--shadow);font-size:.82rem;z-index:9;max-width:230px}
+  .tip .tt{color:var(--ink-3);font-size:.72rem;margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.04em}
+  .tip .tr{display:flex;justify-content:space-between;gap:1rem;padding:1px 0}
+  .dot{width:8px;height:8px;border-radius:50%}
+  .foot{color:var(--ink-3);font-size:.8rem;margin-top:2.6rem;border-top:1px solid var(--line);padding-top:1.1rem;max-width:74ch}
+  .scroll{overflow-x:auto}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Tourspillet 2026 · efter-analyse</div>
+    <h1>Vores hold mod de ti bedste</h1>
+    <p class="lede">21 etaper, 14 hold. Faktisk holdværdi fra 50 mio. til slut, hvor løbet blev afgjort etape for etape, og hvad det bedst mulige hold kunne have nået.</p>
+    <div class="strip">
+      <div class="stat"><div class="n os">77,0M</div><div class="k">din slutværdi — nr. 11 af 14</div></div>
+      <div class="stat"><div class="n">+15M</div><div class="k">som aktiv styring slog passivt "køb &amp; hold"</div></div>
+      <div class="stat"><div class="n">sprint</div><div class="k">etaperne hvor du tabte til top-10</div></div>
+    </div>
+  </header>
+
+  <h2>Holdets værdi, runde for runde</h2>
+  <p class="sub">Faktisk markedsværdi (sum af dine 8 rytteres priser). Grønne/røde punkter markerer konkrete gode/dårlige kald — hold musen over. Zoom ind på en fase.</p>
+  <div class="card">
+    <div class="legend">
+      <span><i class="sw band"></i> Top-10 (median–bedste)</span>
+      <span><i class="sw" style="background:var(--os)"></i> Os</span>
+      <span><i class="sw" style="background:var(--kasper)"></i> Kasper</span>
+      <span><i class="sw" style="background:var(--optakt)"></i> Optakt</span>
+      <span><i class="sw gd"></i>/<i class="sw bd"></i> kald</span>
+      <span class="zoom" id="zoom"></span>
+    </div>
+    <figure style="margin:0"><div id="chart"></div></figure>
+  </div>
+
+  <h2>Placering over tid</h2>
+  <p class="sub">Din rang blandt de 14 hold, runde for runde (1 = bedst). Du førte tidligt (nr. 1 efter E7), men faldt til bunden gennem bjerge-ugerne (E10–17) og endte 11.</p>
+  <div class="card">
+    <div class="legend">
+      <span><i class="sw" style="background:var(--os)"></i> Os</span>
+      <span><i class="sw" style="background:var(--kasper)"></i> Kasper</span>
+    </div>
+    <figure style="margin:0"><div id="rankchart"></div></figure>
+  </div>
+
+  <h2>Etape for etape</h2>
+  <p class="sub">Din etape-score (realiseret vækst, kaptajn dobbelt) mod top-10-medianen. Δ&nbsp;grøn = du vandt etapen, rød = du tabte. <b>Top-15 du/10</b> = antal af dine vs. top-10's ryttere i etapens top-15 (<span style="font-style:italic;color:var(--ink-3)">n/a</span> = resultatdata mangler for den etape). <b>Regret</b> = hvad en bedre egen kaptajn havde givet ekstra; <span class="pos">✓</span> = du kaptajnede allerede din bedste rytter.</p>
+  <div class="card scroll">
+    <table><thead><tr>
+      <th>Etape</th><th>Type</th><th class="num">Din score</th><th class="num">Top-10 med.</th><th class="num">Δ (M)</th><th class="num">Top-15 du/10</th><th>Din kaptajn</th><th class="num">Regret</th>
+    </tr></thead><tbody id="tbl"></tbody></table>
+  </div>
+
+  <h2>De konkrete kald</h2>
+  <div class="cols">
+    <div class="card"><div style="color:var(--good);font-weight:600;font-size:.8rem;margin-bottom:.5rem">GODE KALD ✓</div><ul class="calls" id="good"></ul></div>
+    <div class="card"><div style="color:var(--bad);font-weight:600;font-size:.8rem;margin-bottom:.5rem">DÅRLIGE KALD</div><ul class="calls" id="bad"></ul></div>
+  </div>
+  <p class="sub" style="margin-top:1rem">Mønsteret er tydeligt: du tabte på <b>sprint-etaper</b> (E7, E12) hvor top-holdene havde dagens spurter (Wærenskjold, Girmay) — ikke på stjerner eller kaptajn. Kaptajnen var din styrke: du ramte dine bedste egne på E4/6/10/14/18/20.</p>
+
+  <h2>Holdbonussen — du under-satsede på sprint</h2>
+  <p class="sub">Holdet giver en bonus efter antal ryttere i etapens top-15 (8→400k, 7→220k, 6→120k, 5→65k…). Du tjente <b>1,13M</b>, top-10-medianen <b>2,19M</b> — du <b class="neg">missede 1,07M</b>, næsten alt på bunch-spurterne. Det er på størrelse med hele dit efterslæb.</p>
+  <div class="card">
+    <div id="tb" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(95px,1fr));gap:.8rem"></div>
+    <p style="font-size:.82rem;color:var(--ink-3);margin:.9rem 0 0">Eksakte bonus-beløb (<span class="mono">etapebonus</span>) og placeringer fra holdets egen scoring-matrix — alle 20 etaper (E1 = TTT). I bjergene ramte du tærsklen (E14/18/19/20: 6 ryttere); leaket var specifikt spurterne.</p>
+  </div>
+
+  <h2>Transfers — timing var ikke problemet</h2>
+  <p class="sub">Hvor meget værdi tilføjede holdenes transfers (slutværdi minus "behold runde-1-holdet hele løbet")? Din transfer-værdi var på niveau med top-10 — så gabet lå ikke her.</p>
+  <div class="card">
+    <div id="tradd" style="margin-bottom:1rem"></div>
+    <div class="cols" style="margin-top:.4rem">
+      <div>
+        <div style="color:var(--good);font-weight:600;font-size:.78rem;margin-bottom:.4rem">BEDST TIMEDE KØB — vækst i 3 runder efter</div>
+        <div id="trbest"></div>
+      </div>
+      <div>
+        <div style="color:var(--bad);font-weight:600;font-size:.78rem;margin-bottom:.4rem">VÆRST TIMEDE KØB — steg før, faldt efter</div>
+        <div id="trworst"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Til Vueltaen</h2>
+  <ul class="takeaways">
+    <li><b>Prioritér dagens rette spurter på sprint-etaper.</b> Det var her — ikke i bjergene — du tabte til top-10. Wærenskjold (E7) og Girmay (E12) havde 8–10 af 10 top-hold. Det koster dobbelt: både etape-vækst <em>og</em> holdbonussen.</li>
+    <li><b>Fyld op til holdbonussen på bunch-etaper.</b> Top-holdene sigtede efter 7–8 ryttere i top-15; du lå på 5. På flade dage er det ofte værd at tage en ekstra spurter/hjælper der lander i top-15, for tærskel-bonussen (6/7/8).</li>
+    <li><b>Behold din kaptajns-tilgang.</b> Du ramte dine bedste egne ryttere gang på gang. Undtagelsen (E11 Merlier-flop) var uheld, ikke system.</li>
+    <li><b>Transfers ER spillet.</b> Passiv holdning taber 15M. Vær aktiv, men vogt gebyrerne (1% pr. handel).</li>
+  </ul>
+
+  <p class="foot">Værdikurve = markedsværdi (sum af rytterpriser, etape-priser 4–21 + start/slut, 2–3 interpoleret). Etape-score = realiseret <span class="mono">actual</span>-vækst, kaptajn dobbelt. Buy-and-hold-optimum via knapsack (korrekt); loft = gebyr-fri perfekt rotation (løst overtal, ignorerer budget). Data: holdet.dk-snapshot, 14 hold × 21 runder.</p>
+</div>
+<div class="tip" id="tip"></div>
+
+<script>
+const D={"os": [50.0, 51.17, 51.85, 52.85, 54.32, 55.97, 56.78, 58.25, 59.13, 60.54, 61.74, 63.24, 64.45, 64.63, 65.14, 67.65, 68.12, 69.81, 71.47, 73.0, 77.03], "kasper": [50.0, 51.17, 51.91, 52.93, 54.32, 55.51, 56.49, 58.49, 59.74, 60.75, 61.57, 62.66, 64.87, 64.99, 66.41, 67.72, 68.31, 69.55, 71.47, 73.0, 76.06], "optakt": [50.0, 51.18, 51.64, 53.33, 53.84, 55.8, 56.27, 58.34, 59.81, 61.2, 59.57, 61.45, 64.81, 64.48, 65.78, 68.27, 69.19, 69.37, 70.91, 72.66, 76.37], "median": [50.0, 51.19, 51.9, 53.31, 53.85, 55.82, 55.96, 58.19, 59.46, 61.89, 62.27, 63.7, 66.37, 66.7, 67.86, 69.86, 71.06, 70.97, 72.93, 74.4, 77.67], "best": [50.0, 51.19, 51.89, 53.2, 52.9, 56.0, 55.96, 57.94, 61.23, 61.16, 59.57, 60.73, 65.32, 66.75, 67.86, 69.86, 71.13, 71.91, 73.42, 75.55, 79.0], "stages": [{"s": 1, "t": "ttt", "you": 1.23, "med": 1.23, "d": 0.0, "cap": "Kevin Vauquelin", "reg": 0.055, "t15": null, "t15m": null}, {"s": 2, "t": "hilly", "you": 1.448, "med": 1.472, "d": -0.024, "cap": "Tadej Pogacar", "reg": 0.082, "t15": 4, "t15m": 4}, {"s": 3, "t": "hilly", "you": 1.073, "med": 1.121, "d": -0.048, "cap": "Tadej Pogacar", "reg": 0.0, "t15": 3, "t15m": 3}, {"s": 4, "t": "hilly", "you": 1.613, "med": 1.574, "d": 0.039, "cap": "Mads Pedersen", "reg": 0.0, "t15": 4, "t15m": 4}, {"s": 5, "t": "sprint", "you": 1.703, "med": 1.766, "d": -0.063, "cap": "Jasper Philipsen", "reg": 0.154, "t15": 4, "t15m": 5}, {"s": 6, "t": "mountain", "you": 1.284, "med": 1.38, "d": -0.096, "cap": "Tadej Pogacar", "reg": 0.0, "t15": 2, "t15m": 3}, {"s": 7, "t": "sprint", "you": 1.964, "med": 2.475, "d": -0.511, "cap": "Tim Merlier", "reg": 0.0, "t15": 5, "t15m": 8}, {"s": 8, "t": "sprint", "you": 2.083, "med": 2.174, "d": -0.091, "cap": "Tim Merlier", "reg": 0.0, "t15": 5, "t15m": 7}, {"s": 9, "t": "hilly", "you": 0.966, "med": 0.944, "d": 0.022, "cap": "Mads Pedersen", "reg": 0.011, "t15": 4, "t15m": 4}, {"s": 10, "t": "mountain", "you": 1.321, "med": 1.467, "d": -0.146, "cap": "Tadej Pogacar", "reg": 0.0, "t15": 3, "t15m": 4}, {"s": 11, "t": "sprint", "you": 1.557, "med": 1.475, "d": 0.082, "cap": "Tim Merlier", "reg": 0.425, "t15": 6, "t15m": 7}, {"s": 12, "t": "sprint", "you": 2.048, "med": 2.598, "d": -0.55, "cap": "Tim Merlier", "reg": 0.0, "t15": 6, "t15m": 8}, {"s": 13, "t": "sprint", "you": 0.171, "med": 0.401, "d": -0.23, "cap": "Tadej Pogacar", "reg": 0.0, "t15": 0, "t15m": 1}, {"s": 14, "t": "mountain", "you": 1.705, "med": 1.626, "d": 0.079, "cap": "Tadej Pogacar", "reg": 0.0, "t15": 6, "t15m": 6}, {"s": 15, "t": "mountain", "you": 1.426, "med": 1.603, "d": -0.177, "cap": "Tadej Pogacar", "reg": 0.0, "t15": 4, "t15m": 6}, {"s": 16, "t": "tt", "you": 1.605, "med": 1.284, "d": 0.321, "cap": "Remco Evenepoel", "reg": 0.0, "t15": 4, "t15m": 4}, {"s": 17, "t": "sprint", "you": 1.038, "med": 1.056, "d": -0.018, "cap": "Mads Pedersen", "reg": 0.0, "t15": 3, "t15m": 3}, {"s": 18, "t": "mountain", "you": 1.883, "med": 1.835, "d": 0.048, "cap": "Richard Carapaz", "reg": 0.0, "t15": 6, "t15m": 6}, {"s": 19, "t": "mountain", "you": 2.025, "med": 1.996, "d": 0.029, "cap": "Tadej Pogacar", "reg": 0.0, "t15": 6, "t15m": 6}, {"s": 20, "t": "mountain", "you": 2.275, "med": 2.342, "d": -0.067, "cap": "Richard Carapaz", "reg": 0.0, "t15": 6, "t15m": 6}, {"s": 21, "t": "sprint", "you": 1.561, "med": 1.282, "d": 0.279, "cap": "Mathieu van der Poel", "reg": 0.0, "t15": 3, "t15m": 5}], "good": ["E6: kaptajn Tadej Pogacar ramte etapens bedste egne (+0.61M) ✓", "E20: kaptajn Richard Carapaz ramte etapens bedste egne (+0.58M) ✓", "E14: kaptajn Tadej Pogacar ramte etapens bedste egne (+0.53M) ✓", "E18: kaptajn Richard Carapaz ramte etapens bedste egne (+0.52M) ✓", "E4: kaptajn Mads Pedersen ramte etapens bedste egne (+0.51M) ✓", "E10: kaptajn Tadej Pogacar ramte etapens bedste egne (+0.51M) ✓"], "bad": ["E11: kaptajn Tim Merlier (+0.04M) — bedre valg var egne Søren Wærenskjold (+0.47M)", "E7: Søren Wærenskjold gav +0.33M (8/10 top-hold havde ham) — du havde ham ikke", "E12: Biniam Girmay gav +0.26M (10/10 top-hold havde ham) — du havde ham ikke", "E16: Mattias Skjelmose gav +0.25M (5/10 top-hold havde ham) — du havde ham ikke", "E5: Biniam Girmay gav +0.22M (7/10 top-hold havde ham) — du havde ham ikke", "E8: Pavel Bittner gav +0.20M (9/10 top-hold havde ham) — du havde ham ikke"], "good_st": [6, 20, 14, 18, 4, 10], "bad_st": [11, 7, 12, 16, 5, 8], "bh": 62.4, "ceil": 92.74, "tb": [{"s": 7, "you": 5, "med": 8, "kr": 335000}, {"s": 8, "you": 5, "med": 7, "kr": 155000}, {"s": 11, "you": 6, "med": 7, "kr": 100000}, {"s": 12, "you": 6, "med": 8, "kr": 280000}, {"s": 15, "you": 4, "med": 6, "kr": 85000}], "tb_stages": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], "rank": {"os": [1, 8, 8, 12, 4, 5, 1, 7, 11, 14, 10, 10, 14, 13, 13, 14, 14, 9, 11, 11, 11], "kasper": [1, 8, 4, 11, 4, 10, 7, 5, 6, 13, 11, 11, 11, 11, 10, 13, 13, 11, 11, 11, 12], "n": 14}, "tr": {"our": 21.05, "well": 47, "nbuys": 78, "rank": [{"a": 23.02, "l": "top-10"}, {"a": 22.75, "l": "top-10"}, {"a": 22.7, "l": "top-10"}, {"a": 22.62, "l": "top-10"}, {"a": 22.4, "l": "top-10"}, {"a": 21.69, "l": "top-10"}, {"a": 21.64, "l": "top-10"}, {"a": 21.48, "l": "top-10"}, {"a": 21.41, "l": "top-10"}, {"a": 21.2, "l": "optakt"}, {"a": 21.05, "l": "os"}, {"a": 20.08, "l": "kasper"}, {"a": 19.58, "l": "optakt"}, {"a": 18.76, "l": "top-10"}], "best": [{"s": 18, "r": "Richard Carapaz", "n": 1.56}, {"s": 13, "r": "Tadej Pogacar", "n": 1.1}, {"s": 6, "r": "Tadej Pogacar", "n": 0.92}, {"s": 7, "r": "Tim Merlier", "n": 0.92}], "worst": [{"s": 13, "r": "Ramses Debruyne", "pre": 0.35, "n": -0.22}, {"s": 17, "r": "Fred Wright", "pre": -0.47, "n": -0.2}, {"s": 17, "r": "Jasper Stuyven", "pre": -0.3, "n": -0.11}, {"s": 2, "r": "Jonas Rickaert", "pre": -0.033, "n": -0.107}]}, "tbmiss": 1.066, "tbyou": 1.128, "tbtop": 2.194};
+const col=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+// ---- chart ----
+const W=920,H=430,m={t:16,r:92,b:34,l:44},iw=W-m.l-m.r,ih=H-m.t-m.b;
+let dom=[1,21];
+const series=[['optakt',D.optakt],['kasper',D.kasper],['os',D.os]];
+function render(){
+  const [x0,x1]=dom;
+  const vis=i=>i+1>=x0&&i+1<=x1;
+  const allv=[...D.os,...D.kasper,...D.optakt,...D.best,...D.median].filter((_,i)=>true);
+  let ymin=1e9,ymax=-1e9;
+  for(const arr of [D.os,D.kasper,D.optakt,D.best,D.median])
+    arr.forEach((v,i)=>{if(vis(i)){ymin=Math.min(ymin,v);ymax=Math.max(ymax,v);}});
+  const pad=(ymax-ymin)*0.12+0.5;ymin-=pad;ymax+=pad;
+  const X=r=>m.l+(r-x0)/(x1-x0)*iw, Y=v=>m.t+ih-(v-ymin)/(ymax-ymin)*ih;
+  const pathOf=a=>{let p='';for(let i=0;i<a.length;i++){if(!vis(i))continue;p+=(p?'L':'M')+X(i+1).toFixed(1)+' '+Y(a[i]).toFixed(1)+' ';}return p;};
+  const bandOf=()=>{let up='',dn='';const pts=[];for(let i=0;i<21;i++){if(vis(i))pts.push(i);}
+    up=pts.map(i=>'L'+X(i+1).toFixed(1)+' '+Y(D.best[i]).toFixed(1)).join(' ').replace('L','M');
+    dn=pts.reverse().map(i=>'L'+X(i+1).toFixed(1)+' '+Y(D.median[i]).toFixed(1)).join(' ');
+    return up+' '+dn+' Z';};
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Holdværdi pr. runde">`;
+  s+='<g class="grid">';
+  const ystep=(ymax-ymin)>18?5:(ymax-ymin)>8?2:1;
+  for(let v=Math.ceil(ymin/ystep)*ystep;v<=ymax;v+=ystep){s+=`<line x1="${m.l}" y1="${Y(v)}" x2="${m.l+iw}" y2="${Y(v)}"/>`;}
+  s+='</g><g class="axis">';
+  for(let v=Math.ceil(ymin/ystep)*ystep;v<=ymax;v+=ystep){s+=`<text x="${m.l-8}" y="${Y(v)+4}" text-anchor="end">${v}</text>`;}
+  const xstep=(x1-x0)>12?4:(x1-x0)>6?2:1;
+  for(let r=x0;r<=x1;r+=xstep){s+=`<text x="${X(r)}" y="${m.t+ih+20}" text-anchor="middle">${r}</text>`;}
+  s+='</g>';
+  s+=`<path d="${bandOf()}" style="fill:var(--top-fill)"/>`;
+  s+=`<path d="${pathOf(D.median)}" fill="none" style="stroke:var(--top)" stroke-width="1.5" stroke-dasharray="5 4" opacity=".9"/>`;
+  for(const[k,a]of series)s+=`<path d="${pathOf(a)}" fill="none" style="stroke:var(--${k})" stroke-width="${k==='os'?3:2}" stroke-linejoin="round" stroke-linecap="round"/>`;
+  // annotation dots on os
+  const anno=[];
+  D.good_st.forEach((st,i)=>anno.push([st,'good',D.good[i]]));
+  D.bad_st.forEach((st,i)=>anno.push([st,'bad',D.bad[i]]));
+  for(const[st,kind]of anno){if(st<x0||st>x1)continue;const yv=D.os[st-1];
+    s+=`<circle class="anno" data-st="${st}" data-kind="${kind}" cx="${X(st)}" cy="${Y(yv)}" r="5.5" style="fill:var(--${kind})" stroke="${col('--panel')}" stroke-width="2" cursor="pointer"/>`;}
+  // end labels (only full view)
+  if(x1-x0>10){
+    const ends=[['Bedste',D.best[20],'--top'],['Median',D.median[20],'--top'],['Os',D.os[20],'--os'],['Kasper',D.kasper[20],'--kasper'],['Optakt',D.optakt[20],'--optakt']];
+    ends.sort((a,b)=>a[1]-b[1]);let ly=1e9;
+    for(let i=ends.length-1;i>=0;i--){let[l,v,c]=ends[i];let y=Y(v);if(y>ly-13)y=ly-13;ly=y;s+=`<text class="lbl" x="${m.l+iw+8}" y="${y+4}" style="fill:var(${c})">${l}</text>`;}
+  }
+  s+=`<g id="hv" style="opacity:0"><line id="cx" y1="${m.t}" y2="${m.t+ih}" style="stroke:var(--ink-3)" stroke-width="1" stroke-dasharray="3 3"/>`;
+  for(const[k]of series)s+=`<circle id="d-${k}" r="4.5" style="fill:var(--${k})" stroke="${col('--panel')}" stroke-width="2"/>`;
+  s+='</g>';
+  s+=`<rect id="cap" x="${m.l}" y="${m.t}" width="${iw}" height="${ih}" fill="transparent"/></svg>`;
+  document.getElementById('chart').innerHTML=s;
+  bindHover(X,Y,ymin,ymax);
+}
+function bindHover(X,Y){
+  const svg=document.querySelector('#chart svg'),tip=document.getElementById('tip'),hv=document.getElementById('hv'),cap=document.getElementById('cap');
+  const[x0,x1]=dom;const map={os:D.os,kasper:D.kasper,optakt:D.optakt};
+  cap.addEventListener('mousemove',e=>{const b=svg.getBoundingClientRect();const px=(e.clientX-b.left)/b.width*W;
+    let r=Math.round(x0+(px-m.l)/iw*(x1-x0));r=Math.max(x0,Math.min(x1,r));const xx=X(r);
+    hv.style.opacity=1;document.getElementById('cx').setAttribute('x1',xx);document.getElementById('cx').setAttribute('x2',xx);
+    for(const k in map){const c=document.getElementById('d-'+k);c.setAttribute('cx',xx);c.setAttribute('cy',Y(map[k][r-1]));}
+    tip.style.opacity=1;tip.innerHTML=`<div class="tt">Runde ${r}</div>`+
+      [['Os',D.os,'--os'],['Top-10 median',D.median,'--top'],['Kasper',D.kasper,'--kasper'],['Optakt',D.optakt,'--optakt']]
+      .map(([l,a,c])=>`<div class="tr"><span style="display:flex;align-items:center;gap:.4rem"><i class="dot" style="background:var(${c})"></i>${l}</span><b class="mono">${a[r-1].toFixed(1)}M</b></div>`).join('');
+    let tx=e.clientX+14;if(tx+200>innerWidth)tx=e.clientX-200;tip.style.left=tx+'px';tip.style.top=(e.clientY-10)+'px';});
+  cap.addEventListener('mouseleave',()=>{hv.style.opacity=0;tip.style.opacity=0;});
+  svg.querySelectorAll('.anno').forEach(el=>{
+    el.addEventListener('mouseenter',e=>{const st=el.dataset.st,kind=el.dataset.kind;
+      const idx=(kind==='good'?D.good_st:D.bad_st).indexOf(+st);const txt=(kind==='good'?D.good:D.bad)[idx];
+      tip.style.opacity=1;tip.innerHTML=`<div class="tt" style="color:var(--${kind})">${kind==='good'?'Godt kald':'Dårligt kald'}</div>${txt}`;
+      const b=el.getBoundingClientRect();tip.style.left=(b.left+14)+'px';tip.style.top=(b.top-10)+'px';});
+    el.addEventListener('mouseleave',()=>tip.style.opacity=0);});
+}
+// zoom buttons
+const phases=[['Hele løbet',[1,21]],['Sprintuge (5–12)',[5,12]],['Bjerge (13–21)',[13,21]]];
+const zc=document.getElementById('zoom');
+phases.forEach(([lab,rng],i)=>{const btn=document.createElement('button');btn.textContent=lab;if(i===0)btn.className='on';
+  btn.onclick=()=>{dom=rng.slice();[...zc.children].forEach(c=>c.className='');btn.className='on';render();};zc.appendChild(btn);});
+render();
+
+// ---- per-stage table ----
+document.getElementById('tbl').innerHTML=D.stages.map(r=>{
+  const dc=r.d>0.005?'pos':r.d<-0.005?'neg':'';const ds=(r.d>0?'+':'')+r.d.toFixed(2);
+  const reg=r.reg>=0.1?`<span class="neg">−${r.reg.toFixed(2)}</span>`:(r.reg>0?`−${r.reg.toFixed(2)}`:`<span class="pos" title="Du kaptajnede din bedst scorende rytter">✓</span>`);
+  let t15='<span style="color:var(--ink-3);font-style:italic" title="Mangler resultatdata for denne etape">n/a</span>';
+  if(r.t15!==null&&r.t15!==undefined){const miss=r.t15m>=6&&r.t15<r.t15m;t15=`<span class="${miss?'neg':''}">${r.t15}/${r.t15m}</span>`;}
+  return `<tr><td class="mono">E${r.s}</td><td><span class="chip">${r.t}</span></td><td class="num mono">${r.you.toFixed(2)}</td><td class="num mono">${r.med.toFixed(2)}</td><td class="num mono ${dc}">${ds}</td><td class="num mono">${t15}</td><td>${r.cap}</td><td class="num mono">${reg}</td></tr>`;
+}).join('');
+
+// ---- calls ----
+document.getElementById('good').innerHTML=D.good.map(t=>`<li class="g">${t}</li>`).join('');
+document.getElementById('bad').innerHTML=D.bad.map(t=>`<li class="b">${t}</li>`).join('');
+
+// ---- team bonus ----
+document.getElementById('tb').innerHTML=D.tb.map(m=>
+  `<div style="border:1px solid var(--line);border-left:3px solid var(--bad);border-radius:10px;padding:.7rem .8rem">
+     <div class="mono" style="font-size:.72rem;color:var(--ink-3)">E${m.s}</div>
+     <div style="font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums"><span style="color:var(--bad)">${m.you}</span><span style="color:var(--ink-3);font-size:1rem"> / ${m.med}</span></div>
+     <div style="font-size:.72rem;color:var(--ink-3)">i top-15 (dine / top-10)</div>
+     <div class="mono" style="font-size:.86rem;font-weight:700;color:var(--bad);margin-top:.25rem">−${Math.round(m.kr/1000)}k</div>
+   </div>`).join('');
+
+// ---- rank over time chart (1 = best, inverted y) ----
+(function(){
+  const N=D.rank.n, RW=920,RH=230,rm={t:14,r:20,b:28,l:26},riw=RW-rm.l-rm.r,rih=RH-rm.t-rm.b;
+  const X=r=>rm.l+(r-1)/20*riw, Y=rk=>rm.t+(rk-1)/(N-1)*rih;   // rank 1 at top
+  const line=a=>a.map((v,i)=>(i?'L':'M')+X(i+1).toFixed(1)+' '+Y(v).toFixed(1)).join(' ');
+  let s=`<svg viewBox="0 0 ${RW} ${RH}" role="img" aria-label="Placering over tid"><g class="grid">`;
+  [1,4,7,10,14].forEach(rk=>{s+=`<line x1="${rm.l}" y1="${Y(rk)}" x2="${rm.l+riw}" y2="${Y(rk)}"/>`;});
+  s+='</g><g class="axis">';
+  [1,4,7,10,14].forEach(rk=>{s+=`<text x="${rm.l-8}" y="${Y(rk)+4}" text-anchor="end">${rk}</text>`;});
+  for(let r=1;r<=21;r+=4)s+=`<text x="${X(r)}" y="${rm.t+rih+20}" text-anchor="middle">${r}</text>`;
+  s+=`<text x="${X(21)}" y="${rm.t+rih+20}" text-anchor="middle">21</text></g>`;
+  // shade the mountain-week slump E10-17
+  s+=`<rect x="${X(10)}" y="${rm.t}" width="${X(17)-X(10)}" height="${rih}" fill="var(--bad)" opacity="0.06"/>`;
+  s+=`<text x="${(X(10)+X(17))/2}" y="${rm.t+12}" text-anchor="middle" style="fill:var(--bad);font-size:10px;font-weight:600">bjerge-ugerne</text>`;
+  s+=`<path d="${line(D.rank.kasper)}" fill="none" style="stroke:var(--kasper)" stroke-width="2" stroke-linejoin="round"/>`;
+  s+=`<path d="${line(D.rank.os)}" fill="none" style="stroke:var(--os)" stroke-width="3" stroke-linejoin="round"/>`;
+  D.rank.os.forEach((v,i)=>{s+=`<circle cx="${X(i+1)}" cy="${Y(v)}" r="3" style="fill:var(--os)"/>`;});
+  s+='</svg>';
+  document.getElementById('rankchart').innerHTML=s;
+})();
+
+// ---- transfers ----
+(function(){
+  const meds=D.tr.rank.filter(x=>x.l==='top-10').map(x=>x.a).sort((a,b)=>a-b);
+  const topMed=meds[Math.floor(meds.length/2)], topBest=Math.max(...meds);
+  const lo=18,hi=24,pos=v=>((v-lo)/(hi-lo)*100);
+  const marks=[[D.tr.our,'Os','you'],[topMed,'Top-10 median',''],[topBest,'Top-10 bedste','']];
+  document.getElementById('tradd').innerHTML=
+    `<div style="font-size:.8rem;color:var(--ink-3);margin-bottom:.3rem">Transfer-værditilføjelse (mio.)</div>`+
+    `<div class="scale" style="height:70px">`+`<div class="axis-l"></div>`+marks.map(([v,t,cl])=>
+      `<div class="mk ${cl}" style="left:${pos(v)}%"><div class="v">+${v.toFixed(1)}</div><div class="bar"></div><div class="t">${t}</div></div>`).join('')+`</div>`+
+    `<div style="font-size:.84rem;color:var(--ink-2);margin-top:.3rem">${D.tr.well} af ${D.tr.nbuys} køb var godt timet (rytteren steg efter du købte).</div>`;
+  const li=(txt,cls)=>`<div class="row" style="grid-template-columns:1fr auto;border-bottom:1px solid var(--line-2);padding:.35rem 0;font-size:.86rem"><span>${txt.name}</span><span class="mono ${cls}">${txt.val}</span></div>`;
+  document.getElementById('trbest').innerHTML=D.tr.best.map(b=>li({name:`E${b.s} ${b.r}`,val:`+${b.n.toFixed(2)}M`},'pos')).join('');
+  document.getElementById('trworst').innerHTML=D.tr.worst.map(b=>li({name:`E${b.s} ${b.r}`,val:`${b.n.toFixed(2)}M`},'neg')).join('');
+})();
+</script>
