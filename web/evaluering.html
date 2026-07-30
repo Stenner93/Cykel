@@ -83,10 +83,18 @@
   .dash-topbar{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,#161b22 0%,#0d1117 100%);border-bottom:2px solid #FFD700;padding:0 clamp(1rem,4vw,24px)}
   .dash-topbar-inner{max-width:1200px;margin:0 auto;min-height:60px;display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap;justify-content:space-between;padding:8px 0}
   .dash-logo{font-size:1.3rem;font-weight:700;color:#FFD700;letter-spacing:.5px;text-decoration:none;white-space:nowrap}
+
+  /* Under-banner faner (ala forsidens tab-bar) */
+  .dash-subnav{background:var(--panel);border-bottom:1px solid var(--line);padding:0 clamp(1rem,4vw,24px);position:sticky;top:60px;z-index:90}
+  .dash-subnav-inner{max-width:1200px;margin:0 auto;display:flex;gap:4px;overflow-x:auto}
+  .subtab{display:inline-block;padding:12px 20px;border-bottom:3px solid transparent;margin-bottom:-1px;color:var(--ink-3);font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:color .15s,border-color .15s}
+  .subtab:hover{color:var(--ink)}
+  .subtab.active{color:#FFD700;border-bottom-color:#FFD700}
 </style>
 </head>
 <body>
 <div class="dash-topbar"><div class="dash-topbar-inner"><a href="index.html" class="dash-logo">🚴 TdF Manager 2026</a><nav class="page-nav" id="mainNav"></nav></div></div>
+<div class="dash-subnav"><div class="dash-subnav-inner"><a href="evaluering.html" class="subtab active">Evaluering</a><a href="laer-af-touren.html" class="subtab">Lær af Touren</a></div></div>
 
 
 <div class="wrap">

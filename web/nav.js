@@ -5,14 +5,7 @@
 (function () {
   var NAV = [
     { href: 'index.html', label: 'TdF 2026', match: ['index.html', ''] },
-    {
-      label: 'Analyse',
-      match: ['laer-af-touren.html', 'evaluering.html'],
-      menu: [
-        { href: 'laer-af-touren.html', label: 'Lær af Touren', sub: 'Interaktive værktøjer' },
-        { href: 'evaluering.html',     label: 'Evaluering',    sub: 'Vores hold mod de bedste' }
-      ]
-    },
+    { href: 'evaluering.html', label: 'Analyse', match: ['evaluering.html', 'laer-af-touren.html'] },
     { href: 'riders.html',    label: 'Rytterdatabase', match: ['riders.html'] },
     { href: 'analytics.html', label: 'ML-Analyse',     match: ['analytics.html'] },
     { href: 'model.html',     label: 'Modelforklaring', match: ['model.html'] },
