@@ -313,27 +313,38 @@ def team_bonus(teams, pid2slug):
             if pos is not None:
                 placement.setdefault(int(st), {})[slug] = pos
 
+    # exact holdbonus kroner: etapebonus scales with #riders in the stage top-15
+    eb = {int(k): v for k, v in json.loads((ROOT / "data/scoring_rules.json").read_text())["etapebonus"].items()}
+
     def count_s(tid, r):
         pl = placement.get(r, {})
         return sum(1 for s, _ in teams[tid][r]["roster"] if s in pl)
 
     per_stage, missed = [], []
+    you_bonus_tot = top_bonus_tot = missed_tot = 0
     assessed = sorted(st for st, pl in placement.items() if len(pl) >= 15)
     for r in assessed:
         you = count_s(OUR, r)
         t10 = sorted(count_s(t, r) for t in TOP10)
         med = t10[len(t10) // 2]
+        yb, tb = eb.get(you, 0), eb.get(med, 0)
+        miss_kr = max(0, tb - yb)
+        you_bonus_tot += yb; top_bonus_tot += tb; missed_tot += miss_kr
         per_stage.append({"stage": r, "you": you, "top10_med": med,
-                          "top10_min": t10[0], "top10_max": t10[-1]})
+                          "top10_min": t10[0], "top10_max": t10[-1],
+                          "you_bonus_kr": yb, "top10_bonus_kr": tb, "missed_kr": miss_kr})
         if med >= 6 and you < med:
-            missed.append({"stage": r, "you": you, "top10_med": med,
-                           "text": f"E{r}: du havde {you} ryttere i top-15, top-10 havde typisk {med} — misset/mindre holdbonus"})
+            missed.append({"stage": r, "you": you, "top10_med": med, "missed_kr": miss_kr,
+                           "text": f"E{r}: {you} ryttere i top-15 ({yb//1000}k) vs top-10's {med} ({tb//1000}k) — misset {miss_kr//1000}k holdbonus"})
     return {
         "note": "Antal af holdets 8 ryttere i etapens top-15 via holdets egne "
-                "placeringsregler (849-863) i tdf2026_scores.json. Eksakt slug-match, "
-                "etape 2-21 (etape 1 = TTT, ingen individuel top-15).",
+                "placeringsregler (849-863) i tdf2026_scores.json + eksakt holdbonus "
+                "(etapebonus fra scoring_rules.json). Etape 2-21 (E1 = TTT).",
         "source": "tdf2026_scores_placement_rules",
         "assessed_stages": assessed, "per_stage": per_stage, "missed": missed,
+        "you_bonus_total_M": round(you_bonus_tot / 1e6, 3),
+        "top10_bonus_total_M": round(top_bonus_tot / 1e6, 3),
+        "missed_bonus_total_M": round(missed_tot / 1e6, 3),
     }
 
 
