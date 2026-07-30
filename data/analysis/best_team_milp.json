@@ -1,0 +1,320 @@
+{
+  "note": "Realistisk bedst mulige hold — MILP (PuLP/CBC) med holdets regler: 8 ryttere, maks 2 pr. rigtige hold, 50M budget, 1% transfergebyr. Maksimerer slutmarkedsværdi. Erstatter det tidligere fejlagtige 'loft'.",
+  "status": "Optimal",
+  "final_value_M": 77.67,
+  "fees_M": 6.0,
+  "transfers": 87,
+  "universe_size": 183,
+  "time_limit_s": 240,
+  "final_roster": [
+    "Isaac Del Toro",
+    "Jai Hindley",
+    "Lenny Martinez",
+    "Matej Mohoric",
+    "Mathieu van der Poel",
+    "Remco Evenepoel",
+    "Richard Carapaz",
+    "Sepp Kuss"
+  ],
+  "timeline": [
+    {
+      "round": 1,
+      "value_M": 50.0,
+      "roster": [
+        "Anders Skaarseth",
+        "Felix Engelhardt",
+        "Felix Grossschartner",
+        "Isaac Del Toro",
+        "Jonas Vingegaard",
+        "Remco Evenepoel",
+        "Sean Quinn",
+        "Victor Campenaerts"
+      ]
+    },
+    {
+      "round": 2,
+      "value_M": 50.93,
+      "roster": [
+        "Anders Skaarseth",
+        "Felix Engelhardt",
+        "Felix Grossschartner",
+        "Isaac Del Toro",
+        "Jonas Vingegaard",
+        "Remco Evenepoel",
+        "Sean Quinn",
+        "Victor Campenaerts"
+      ]
+    },
+    {
+      "round": 3,
+      "value_M": 51.87,
+      "roster": [
+        "Anders Skaarseth",
+        "Felix Engelhardt",
+        "Felix Grossschartner",
+        "Isaac Del Toro",
+        "Jonas Vingegaard",
+        "Remco Evenepoel",
+        "Sean Quinn",
+        "Victor Campenaerts"
+      ]
+    },
+    {
+      "round": 4,
+      "value_M": 38.35,
+      "roster": [
+        "Mads Pedersen",
+        "Marco Frigo",
+        "Pablo Castrillo",
+        "Quinn Simmons",
+        "Ramses Debruyne",
+        "Raul Garcia Pierna",
+        "Sean Quinn",
+        "Torstein Træen"
+      ]
+    },
+    {
+      "round": 5,
+      "value_M": 53.67,
+      "roster": [
+        "Anthony Turgis",
+        "Huub Artz",
+        "Mads Pedersen",
+        "Max Kanter",
+        "Olav Kooij",
+        "Sean Quinn",
+        "Tim Merlier",
+        "Torstein Træen"
+      ]
+    },
+    {
+      "round": 6,
+      "value_M": 55.72,
+      "roster": [
+        "Bert van Lerberghe",
+        "Huub Artz",
+        "Isaac Del Toro",
+        "Jordan Jegat",
+        "Lenny Martinez",
+        "Max Kanter",
+        "Sean Quinn",
+        "Tadej Pogacar"
+      ]
+    },
+    {
+      "round": 7,
+      "value_M": 54.7,
+      "roster": [
+        "Biniam Girmay",
+        "Huub Artz",
+        "Jasper Philipsen",
+        "Max Kanter",
+        "Phil Bauhaus",
+        "Søren Wærenskjold",
+        "Tim Merlier",
+        "Tom Van Asbroeck"
+      ]
+    },
+    {
+      "round": 8,
+      "value_M": 58.21,
+      "roster": [
+        "Biniam Girmay",
+        "Clement Russo",
+        "Jasper Philipsen",
+        "Max Kanter",
+        "Pascal Ackermann",
+        "Pavel Bittner",
+        "Rick Pluimers",
+        "Tim Merlier"
+      ]
+    },
+    {
+      "round": 9,
+      "value_M": 58.73,
+      "roster": [
+        "Isaac Del Toro",
+        "Lars Craps",
+        "Mads Pedersen",
+        "Mathieu van der Poel",
+        "Nicolas Breuillard",
+        "Sean Quinn",
+        "Thomas Pidcock",
+        "Tobias Halland Johannessen"
+      ]
+    },
+    {
+      "round": 10,
+      "value_M": 60.9,
+      "roster": [
+        "Florian Lipowitz",
+        "Isaac Del Toro",
+        "Juan Ayuso",
+        "Nicolas Breuillard",
+        "Nicolas Prodhomme",
+        "Remco Evenepoel",
+        "Sean Quinn",
+        "Thomas Pidcock"
+      ]
+    },
+    {
+      "round": 11,
+      "value_M": 55.5,
+      "roster": [
+        "Anthony Turgis",
+        "Biniam Girmay",
+        "Clement Russo",
+        "Huub Artz",
+        "Jasper Philipsen",
+        "Milan Fretin",
+        "Olav Kooij",
+        "Søren Wærenskjold"
+      ]
+    },
+    {
+      "round": 12,
+      "value_M": 62.98,
+      "roster": [
+        "Anthony Turgis",
+        "Biniam Girmay",
+        "Huub Artz",
+        "Jasper Philipsen",
+        "Milan Fretin",
+        "Olav Kooij",
+        "Pascal Eenkhoorn",
+        "Tim Merlier"
+      ]
+    },
+    {
+      "round": 13,
+      "value_M": 44.77,
+      "roster": [
+        "Brandon McNulty",
+        "Clément Braz Afonso",
+        "Harold Tejada",
+        "Jordan Jegat",
+        "Luke Plapp",
+        "Mauro Schmid",
+        "Maxim Van Gils",
+        "Thomas Pidcock"
+      ]
+    },
+    {
+      "round": 14,
+      "value_M": 65.94,
+      "roster": [
+        "Felix Grossschartner",
+        "Isaac Del Toro",
+        "Jordan Jegat",
+        "Mattias Skjelmose",
+        "Paul Seixas",
+        "Remco Evenepoel",
+        "Richard Carapaz",
+        "Yannis Voisard"
+      ]
+    },
+    {
+      "round": 15,
+      "value_M": 66.11,
+      "roster": [
+        "Adam Yates",
+        "Isaac Del Toro",
+        "Jordan Jegat",
+        "Mattias Skjelmose",
+        "Paul Seixas",
+        "Quinn Simmons",
+        "Remco Evenepoel",
+        "Yannis Voisard"
+      ]
+    },
+    {
+      "round": 16,
+      "value_M": 66.71,
+      "roster": [
+        "Bruno Armirail",
+        "Isaac Del Toro",
+        "Mattia Cattaneo",
+        "Mattias Skjelmose",
+        "Pablo Castrillo",
+        "Paul Seixas",
+        "Remco Evenepoel",
+        "Thymen Arensman"
+      ]
+    },
+    {
+      "round": 17,
+      "value_M": 66.6,
+      "roster": [
+        "Clement Russo",
+        "Isaac Del Toro",
+        "Jasper Philipsen",
+        "Lewis Askey",
+        "Mads Pedersen",
+        "Mauro Schmid",
+        "Remco Evenepoel",
+        "Rick Pluimers"
+      ]
+    },
+    {
+      "round": 18,
+      "value_M": 70.65,
+      "roster": [
+        "Isaac Del Toro",
+        "Lenny Martinez",
+        "Matteo Jorgenson",
+        "Mauro Schmid",
+        "Remco Evenepoel",
+        "Richard Carapaz",
+        "Tobias Halland Johannessen",
+        "Valentin Paret-Peintre"
+      ]
+    },
+    {
+      "round": 19,
+      "value_M": 72.67,
+      "roster": [
+        "Harold Tejada",
+        "Isaac Del Toro",
+        "Lenny Martinez",
+        "Remco Evenepoel",
+        "Richard Carapaz",
+        "Sepp Kuss",
+        "Thymen Arensman",
+        "Tobias Halland Johannessen"
+      ]
+    },
+    {
+      "round": 20,
+      "value_M": 73.72,
+      "roster": [
+        "Isaac Del Toro",
+        "Jai Hindley",
+        "Lenny Martinez",
+        "Matej Mohoric",
+        "Mathieu van der Poel",
+        "Remco Evenepoel",
+        "Richard Carapaz",
+        "Sepp Kuss"
+      ]
+    },
+    {
+      "round": 21,
+      "value_M": 76.44,
+      "roster": [
+        "Isaac Del Toro",
+        "Jai Hindley",
+        "Lenny Martinez",
+        "Matej Mohoric",
+        "Mathieu van der Poel",
+        "Remco Evenepoel",
+        "Richard Carapaz",
+        "Sepp Kuss"
+      ]
+    }
+  ],
+  "data_limitation": "Under this price data the actual teams simulate to a bank of -10 to -11M (infeasible), because stage_snapshots records post-stage prices, not the pre-stage prices managers bought at. A trustworthy budget/fee-accurate optimum needs actual transaction prices. This MILP result is therefore NOT presented as the answer.",
+  "actual_teams_min_bank_M": {
+    "os": -10.5,
+    "top10_best": -11.32
+  }
+}

@@ -817,7 +817,7 @@
     ]
   },
   "team_bonus": {
-    "note": "Antal af holdets 8 ryttere i etapens top-15 via holdets egne placeringsregler (849-863) i tdf2026_scores.json. Eksakt slug-match, etape 2-21 (etape 1 = TTT, ingen individuel top-15).",
+    "note": "Antal af holdets 8 ryttere i etapens top-15 via holdets egne placeringsregler (849-863) i tdf2026_scores.json + eksakt holdbonus (etapebonus fra scoring_rules.json). Etape 2-21 (E1 = TTT).",
     "source": "tdf2026_scores_placement_rules",
     "assessed_stages": [
       2,
@@ -847,140 +847,200 @@
         "you": 4,
         "top10_med": 4,
         "top10_min": 3,
-        "top10_max": 4
+        "top10_max": 4,
+        "you_bonus_kr": 35000,
+        "top10_bonus_kr": 35000,
+        "missed_kr": 0
       },
       {
         "stage": 3,
         "you": 3,
         "top10_med": 3,
         "top10_min": 2,
-        "top10_max": 3
+        "top10_max": 3,
+        "you_bonus_kr": 15000,
+        "top10_bonus_kr": 15000,
+        "missed_kr": 0
       },
       {
         "stage": 4,
         "you": 4,
         "top10_med": 4,
         "top10_min": 3,
-        "top10_max": 4
+        "top10_max": 4,
+        "you_bonus_kr": 35000,
+        "top10_bonus_kr": 35000,
+        "missed_kr": 0
       },
       {
         "stage": 5,
         "you": 4,
         "top10_med": 5,
         "top10_min": 4,
-        "top10_max": 5
+        "top10_max": 5,
+        "you_bonus_kr": 35000,
+        "top10_bonus_kr": 65000,
+        "missed_kr": 30000
       },
       {
         "stage": 6,
         "you": 2,
         "top10_med": 3,
         "top10_min": 2,
-        "top10_max": 4
+        "top10_max": 4,
+        "you_bonus_kr": 8000,
+        "top10_bonus_kr": 15000,
+        "missed_kr": 7000
       },
       {
         "stage": 7,
         "you": 5,
         "top10_med": 8,
         "top10_min": 7,
-        "top10_max": 8
+        "top10_max": 8,
+        "you_bonus_kr": 65000,
+        "top10_bonus_kr": 400000,
+        "missed_kr": 335000
       },
       {
         "stage": 8,
         "you": 5,
         "top10_med": 7,
         "top10_min": 6,
-        "top10_max": 7
+        "top10_max": 7,
+        "you_bonus_kr": 65000,
+        "top10_bonus_kr": 220000,
+        "missed_kr": 155000
       },
       {
         "stage": 9,
         "you": 4,
         "top10_med": 4,
         "top10_min": 3,
-        "top10_max": 5
+        "top10_max": 5,
+        "you_bonus_kr": 35000,
+        "top10_bonus_kr": 35000,
+        "missed_kr": 0
       },
       {
         "stage": 10,
         "you": 3,
         "top10_med": 4,
         "top10_min": 4,
-        "top10_max": 5
+        "top10_max": 5,
+        "you_bonus_kr": 15000,
+        "top10_bonus_kr": 35000,
+        "missed_kr": 20000
       },
       {
         "stage": 11,
         "you": 6,
         "top10_med": 7,
         "top10_min": 6,
-        "top10_max": 7
+        "top10_max": 7,
+        "you_bonus_kr": 120000,
+        "top10_bonus_kr": 220000,
+        "missed_kr": 100000
       },
       {
         "stage": 12,
         "you": 6,
         "top10_med": 8,
         "top10_min": 7,
-        "top10_max": 8
+        "top10_max": 8,
+        "you_bonus_kr": 120000,
+        "top10_bonus_kr": 400000,
+        "missed_kr": 280000
       },
       {
         "stage": 13,
         "you": 0,
         "top10_med": 1,
         "top10_min": 1,
-        "top10_max": 2
+        "top10_max": 2,
+        "you_bonus_kr": 0,
+        "top10_bonus_kr": 4000,
+        "missed_kr": 4000
       },
       {
         "stage": 14,
         "you": 6,
         "top10_med": 6,
         "top10_min": 5,
-        "top10_max": 6
+        "top10_max": 6,
+        "you_bonus_kr": 120000,
+        "top10_bonus_kr": 120000,
+        "missed_kr": 0
       },
       {
         "stage": 15,
         "you": 4,
         "top10_med": 6,
         "top10_min": 4,
-        "top10_max": 6
+        "top10_max": 6,
+        "you_bonus_kr": 35000,
+        "top10_bonus_kr": 120000,
+        "missed_kr": 85000
       },
       {
         "stage": 16,
         "you": 4,
         "top10_med": 4,
         "top10_min": 3,
-        "top10_max": 6
+        "top10_max": 6,
+        "you_bonus_kr": 35000,
+        "top10_bonus_kr": 35000,
+        "missed_kr": 0
       },
       {
         "stage": 17,
         "you": 3,
         "top10_med": 3,
         "top10_min": 2,
-        "top10_max": 3
+        "top10_max": 3,
+        "you_bonus_kr": 15000,
+        "top10_bonus_kr": 15000,
+        "missed_kr": 0
       },
       {
         "stage": 18,
         "you": 6,
         "top10_med": 6,
         "top10_min": 5,
-        "top10_max": 7
+        "top10_max": 7,
+        "you_bonus_kr": 120000,
+        "top10_bonus_kr": 120000,
+        "missed_kr": 0
       },
       {
         "stage": 19,
         "you": 6,
         "top10_med": 6,
         "top10_min": 6,
-        "top10_max": 6
+        "top10_max": 6,
+        "you_bonus_kr": 120000,
+        "top10_bonus_kr": 120000,
+        "missed_kr": 0
       },
       {
         "stage": 20,
         "you": 6,
         "top10_med": 6,
         "top10_min": 5,
-        "top10_max": 7
+        "top10_max": 7,
+        "you_bonus_kr": 120000,
+        "top10_bonus_kr": 120000,
+        "missed_kr": 0
       },
       {
         "stage": 21,
         "you": 3,
         "top10_med": 5,
         "top10_min": 3,
-        "top10_max": 5
+        "top10_max": 5,
+        "you_bonus_kr": 15000,
+        "top10_bonus_kr": 65000,
+        "missed_kr": 50000
       }
     ],
     "missed": [
@@ -988,33 +1048,41 @@
         "stage": 7,
         "you": 5,
         "top10_med": 8,
-        "text": "E7: du havde 5 ryttere i top-15, top-10 havde typisk 8 — misset/mindre holdbonus"
+        "missed_kr": 335000,
+        "text": "E7: 5 ryttere i top-15 (65k) vs top-10's 8 (400k) — misset 335k holdbonus"
       },
       {
         "stage": 8,
         "you": 5,
         "top10_med": 7,
-        "text": "E8: du havde 5 ryttere i top-15, top-10 havde typisk 7 — misset/mindre holdbonus"
+        "missed_kr": 155000,
+        "text": "E8: 5 ryttere i top-15 (65k) vs top-10's 7 (220k) — misset 155k holdbonus"
       },
       {
         "stage": 11,
         "you": 6,
         "top10_med": 7,
-        "text": "E11: du havde 6 ryttere i top-15, top-10 havde typisk 7 — misset/mindre holdbonus"
+        "missed_kr": 100000,
+        "text": "E11: 6 ryttere i top-15 (120k) vs top-10's 7 (220k) — misset 100k holdbonus"
       },
       {
         "stage": 12,
         "you": 6,
         "top10_med": 8,
-        "text": "E12: du havde 6 ryttere i top-15, top-10 havde typisk 8 — misset/mindre holdbonus"
+        "missed_kr": 280000,
+        "text": "E12: 6 ryttere i top-15 (120k) vs top-10's 8 (400k) — misset 280k holdbonus"
       },
       {
         "stage": 15,
         "you": 4,
         "top10_med": 6,
-        "text": "E15: du havde 4 ryttere i top-15, top-10 havde typisk 6 — misset/mindre holdbonus"
+        "missed_kr": 85000,
+        "text": "E15: 4 ryttere i top-15 (35k) vs top-10's 6 (120k) — misset 85k holdbonus"
       }
-    ]
+    ],
+    "you_bonus_total_M": 1.128,
+    "top10_bonus_total_M": 2.194,
+    "missed_bonus_total_M": 1.066
   },
   "rank_over_time": {
     "os": [

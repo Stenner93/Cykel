@@ -63,24 +63,39 @@ manglede (Wærenskjold, Girmay) gav både etape-vækst *og* holdbonus.
 > eksakt. Kun de præcise bonus-*kroner* mangler stadig (kræver holdets
 > fantasy-actions); tallene her er antal ryttere + tærskler.
 
-## Bedste mulige hold
-| Strategi | Slutværdi |
+## Bedste mulige hold — hvorfor vi IKKE giver et præcist tal
+Det tidligere "loft" på 92,7M var forkert: det lagde bare de 8 største stigninger
+sammen hver etape og ignorerede alle regler (8 ryttere, maks 2 pr. rigtige hold,
+budget, transfergebyrer). Vi byggede derfor en rigtig MILP (PuLP/CBC) med alle
+reglerne — men stødte på en **data-begrænsning der gør et troværdigt tal umuligt**:
+
+Simulerer man de *faktiske* hold under en korrekt cash-flow-model med vores
+etape-priser, ender **alle** (også top-10) med en **bank på −10 til −11M** — altså
+umuligt (man kan ikke gå i gæld). Årsag: managere køber vækst-ryttere *før* etapen,
+men vores `stage_snapshots` registrerer prisen *efter* stigningen. Vores priser er
+altså for høje på købstidspunktet, så budget/gebyr-regnestykket ikke holder.
+
+| Kendt & korrekt | Slutværdi |
 |---|---|
-| Bedste **buy-and-hold** (0 transfers, 0 gebyr) | **62.4M** |
-| Dit hold (aktivt styret) | 77.0M |
-| Bedste top-10-manager (aktivt styret) | 79.0M |
-| **Loft** — perfekt rotation, ingen gebyr/budget | **92.7M** |
+| Bedste **buy-and-hold** (0 transfers, knapsack, korrekt) | **62.4M** |
+| Dit hold (aktivt styret, faktisk) | 77.0M |
+| Bedste top-10-manager (faktisk) | 79.0M |
 
-**Den vigtigste indsigt:** et passivt "køb 8 gode og hold hele løbet" topper ved
-**62M** — *lavere end du selv nåede*. Man **kan ikke** eje 8 vækst-ryttere på én
-gang (budgettet rækker ikke), så **transfers er hele spillet**. Dit aktive
-holdstyr (77M) slog buy-and-hold med 15M.
+**Konklusion:** et præcist "fejlfrit hold"-tal kræver de **faktiske
+transaktionspriser** (hvad ryttere kostede da man reelt købte dem), som vi ikke
+har. Det vi ved: passiv buy-and-hold topper ~62M, og de bedste managere nåede
+77–79M — og MILP'en antyder at det er tæt på det praktisk opnåelige loft. Der var
+altså **ikke** et skjult 90M-hold; top-holdene spillede nær-optimalt. Et rigtigt
+tal kan laves når vi henter pris-historik (via holdets endpoints) i et lokalt kør.
+> `scripts/analysis/best_team_milp.py` + `best_team_milp.json` dokumenterer
+> forsøget og data-begrænsningen.
 
-Det realistiske optimum ligger mellem den bedste manager (79M) og loftet (92.7M).
-Det præcise gebyr-bevidste optimum er et svært sekventielt optimeringsproblem
-(budget + 1% gebyr + rotation) — bevidst *ikke* estimeret med et enkelt tal her,
-da et forkert tal ville vildlede. Loftet (92.7M) ignorerer budget og er derfor
-et løst overtal; sandheden er tættere på 80'erne.
+## Holdbonus — den præcise missede værdi
+Med de eksakte bonus-beløb (`etapebonus`: 8→400k, 7→220k, 6→120k, 5→65k, 4→35k):
+du tjente **1,13M** i holdbonus, top-10-medianen **2,19M** — du **missede 1,07M**
+(0,95M alene på de 5 fremhævede sprint-/bjergetaper: E7 −335k, E12 −280k, E8 −155k,
+E11 −100k, E15 −85k). Det er på størrelse med hele dit efterslæb — sprint-
+under-satsningen var altså en *reelt dyr* fejl, ikke en detalje.
 
 > Forbehold: værdikurven bruger etape-priser (etape 4–21) + start/slut; etape 2–3
 > interpoleret. Buy-and-hold-optimum er korrekt (knapsack); den viste hold-roster
