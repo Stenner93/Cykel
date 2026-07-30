@@ -7,22 +7,7 @@
 <link rel="stylesheet" href="style.css">
 <style>
 /* ── Giro page specifics ── */
-.page-nav {
-  display: flex;
-  gap: 4px;
-}
-.page-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 16px;
-  border: 1px solid transparent;
-  transition: all 0.15s;
-}
-.page-nav a:hover   { color: var(--text); border-color: var(--border); }
-.page-nav a.active  { color: #000; background: var(--yellow); border-color: var(--yellow); }
+/* Top nav is rendered by nav.js and styled in style.css. */
 
 /* ── Tab bar ── */
 .tab-bar {
@@ -391,14 +376,7 @@
 <header>
   <div class="header-inner">
     <div class="logo">🚴 TdF Manager 2026</div>
-    <nav class="page-nav">
-      <a href="index.html">TdF 2026</a>
-      <a href="giro.html" class="active">Giro 2026</a>
-      <a href="dauphine.html">Dauphiné 2026</a>
-      <a href="riders.html">Rytterdatabase</a>
-      <a href="analytics.html">Analytik</a>
-      <a href="model.html">Modelforklaring</a>
-    </nav>
+    <nav class="page-nav" id="mainNav"></nav>
   </div>
 </header>
 
@@ -458,5 +436,6 @@
 </footer>
 
 <script src="giro.js"></script>
+<script src="nav.js"></script>
 </body>
 </html>
