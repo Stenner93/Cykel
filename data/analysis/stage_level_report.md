@@ -81,14 +81,17 @@ altså for høje på købstidspunktet, så budget/gebyr-regnestykket ikke holder
 | Dit hold (aktivt styret, faktisk) | 77.0M |
 | Bedste top-10-manager (faktisk) | 79.0M |
 
+Vi prøvede også at **lagge priserne med én etape** (køb til prisen efter forrige
+etape, som man reelt gør) — men det gjorde det værre (bank −19 til −20M), fordi
+salg *også* sker til den lavere laggede pris. Ingen af varianterne holder.
+
 **Konklusion:** et præcist "fejlfrit hold"-tal kræver de **faktiske
 transaktionspriser** (hvad ryttere kostede da man reelt købte dem), som vi ikke
-har. Det vi ved: passiv buy-and-hold topper ~62M, og de bedste managere nåede
-77–79M — og MILP'en antyder at det er tæt på det praktisk opnåelige loft. Der var
-altså **ikke** et skjult 90M-hold; top-holdene spillede nær-optimalt. Et rigtigt
-tal kan laves når vi henter pris-historik (via holdets endpoints) i et lokalt kør.
+har. Derfor er hele afsnittet **fjernet fra visualiseringen** (efter aftale). Det
+vi ved: passiv buy-and-hold topper ~62M, og de bedste managere nåede 77–79M nær
+det praktisk opnåelige. Der var **ikke** et skjult 90M-hold.
 > `scripts/analysis/best_team_milp.py` + `best_team_milp.json` dokumenterer
-> forsøget og data-begrænsningen.
+> forsøget og data-begrænsningen (inkl. lag-varianten).
 
 ## Holdbonus — den præcise missede værdi
 Med de eksakte bonus-beløb (`etapebonus`: 8→400k, 7→220k, 6→120k, 5→65k, 4→35k):
