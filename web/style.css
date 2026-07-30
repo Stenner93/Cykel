@@ -364,6 +364,33 @@ footer {
   margin-top: 64px;
 }
 
+/* ── Under-banner faner (Arkiv: Giro/Dauphiné) ─────────────────────────── */
+.dash-subnav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  position: sticky;
+  top: 60px;
+  z-index: 90;
+}
+.dash-subnav-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 4px; overflow-x: auto; }
+.dash-subnav .subtab {
+  display: inline-block;
+  padding: 12px 20px;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+.dash-subnav .subtab:hover { color: var(--text); }
+.dash-subnav .subtab.active { color: var(--yellow); border-bottom-color: var(--yellow); }
+
 /* Responsive */
 @media (max-width: 600px) {
   .teams-grid { grid-template-columns: 1fr; }
