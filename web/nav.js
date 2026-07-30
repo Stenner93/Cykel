@@ -14,7 +14,7 @@
       ]
     },
     { href: 'riders.html',    label: 'Rytterdatabase', match: ['riders.html'] },
-    { href: 'analytics.html', label: 'Analytik',       match: ['analytics.html'] },
+    { href: 'analytics.html', label: 'ML-Analyse',     match: ['analytics.html'] },
     { href: 'model.html',     label: 'Modelforklaring', match: ['model.html'] },
     {
       label: 'Arkiv',
