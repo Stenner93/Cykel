@@ -9,15 +9,7 @@
     { href: 'riders.html',    label: 'Rytterdatabase', match: ['riders.html'] },
     { href: 'analytics.html', label: 'ML-Analyse',     match: ['analytics.html'] },
     { href: 'model.html',     label: 'Modelforklaring', match: ['model.html'] },
-    {
-      label: 'Arkiv',
-      match: ['giro.html', 'dauphine.html'],
-      alignRight: true,
-      menu: [
-        { href: 'giro.html',     label: 'Giro 2026',     sub: 'Sæsonarkiv' },
-        { href: 'dauphine.html', label: 'Dauphiné 2026', sub: 'Sæsonarkiv' }
-      ]
-    }
+    { href: 'giro.html', label: 'Arkiv', match: ['giro.html', 'dauphine.html'] }
   ];
 
   // Self-contained nav styles — injected once so the nav renders identically
