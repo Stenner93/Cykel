@@ -7,10 +7,10 @@
     { href: 'index.html', label: 'TdF 2026', match: ['index.html', ''] },
     {
       label: 'Analyse',
-      match: ['tdf2026_interactive_tools.html', 'tdf2026_eval_report.html'],
+      match: ['laer-af-touren.html', 'evaluering.html'],
       menu: [
-        { href: 'reports/tdf2026_interactive_tools.html', label: 'Lær af Touren', sub: 'Interaktive værktøjer' },
-        { href: 'reports/tdf2026_eval_report.html',        label: 'Evaluering',    sub: 'Vores hold mod de bedste' }
+        { href: 'laer-af-touren.html', label: 'Lær af Touren', sub: 'Interaktive værktøjer' },
+        { href: 'evaluering.html',     label: 'Evaluering',    sub: 'Vores hold mod de bedste' }
       ]
     },
     { href: 'riders.html',    label: 'Rytterdatabase', match: ['riders.html'] },
