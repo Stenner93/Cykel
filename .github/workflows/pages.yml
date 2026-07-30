@@ -1,9 +1,16 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Deploy sker nu i daily.yml (én ren deploy pr. kørsel, selvhelbredende).
-  # Denne workflow er kun til MANUEL kørsel — fx efter en frontend-ændring
-  # der ikke afventer næste daglige kørsel. Klik "Run workflow" i Actions.
+  # Auto-deploy når frontend-filer ændres på main (fx efter en merged PR),
+  # så ændringer går live med det samme uden at vente på næste daglige kørsel.
+  # concurrency + cancel-in-progress nedenfor sikrer, at hyppige commits ikke
+  # hober deploys op — kun den nyeste kører.
+  push:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - '.github/workflows/pages.yml'
+  # Kan også køres manuelt: klik "Run workflow" i Actions.
   workflow_dispatch:
 
 permissions:

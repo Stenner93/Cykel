@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="da" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,10 +62,15 @@
   .play b{color:var(--ink)}
   .foot{color:var(--ink-3);font-size:.8rem;margin-top:2.4rem;border-top:1px solid var(--line);padding-top:1rem}
   .tip{position:fixed;pointer-events:none;opacity:0;transition:.1s;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:.5rem .65rem;box-shadow:var(--shadow);font-size:.82rem;z-index:9}
+
+  /* Dashboard-topbanner (matcher forsiden) */
+  .dash-topbar{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,#161b22 0%,#0d1117 100%);border-bottom:2px solid #FFD700;padding:0 clamp(1rem,4vw,24px)}
+  .dash-topbar-inner{max-width:1200px;margin:0 auto;min-height:60px;display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap;justify-content:space-between;padding:8px 0}
+  .dash-logo{font-size:1.3rem;font-weight:700;color:#FFD700;letter-spacing:.5px;text-decoration:none;white-space:nowrap}
 </style>
 </head>
 <body>
-<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:9px clamp(1rem,4vw,2rem);background:linear-gradient(135deg,#161b22,#0d1117);border-bottom:2px solid #FFD700;font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif"><a href="../index.html" style="color:#FFD700;font-weight:700;font-size:.95rem;text-decoration:none;letter-spacing:.3px">🚴 TdF Manager 2026</a><span style="color:#7B82A0;font-size:.82rem">&nbsp;›&nbsp;Analyse&nbsp;›&nbsp;<b style="color:#E8EAF0;font-weight:600">Lær af Touren</b></span><span style="margin-left:auto;display:flex;gap:8px"><a href="tdf2026_eval_report.html" style="color:#7B82A0;font-size:.8rem;text-decoration:none;border:1px solid #2E3450;border-radius:14px;padding:3px 12px;font-weight:600">Evaluering →</a><a href="../index.html" style="color:#7B82A0;font-size:.8rem;text-decoration:none;border:1px solid #2E3450;border-radius:14px;padding:3px 12px;font-weight:600">← Dashboard</a></span></div>
+<div class="dash-topbar"><div class="dash-topbar-inner"><a href="index.html" class="dash-logo">🚴 TdF Manager 2026</a><nav class="page-nav" id="mainNav"></nav></div></div>
 
 
 <div class="wrap">
@@ -227,5 +232,6 @@ document.getElementById('trainnext').onclick=()=>{ti=(ti+1)%trainable.length;ren
 document.getElementById('trainreset').onclick=()=>{ti=0;tScore=tMax=tHits=tDone=0;document.getElementById('trainscore').textContent='0%';document.getElementById('trainhits').textContent='0';renderTrain();};
 renderTrain();
 </script>
+<script src="nav.js"></script>
 </body>
 </html>
