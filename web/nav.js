@@ -5,6 +5,7 @@
 (function () {
   var NAV = [
     { href: 'index.html', label: 'TdF 2026', match: ['index.html', ''] },
+    { href: 'vuelta.html', label: 'Vuelta 2026', match: ['vuelta.html'] },
     { href: 'evaluering.html', label: 'Analyse', match: ['evaluering.html', 'laer-af-touren.html'] },
     { href: 'riders.html',    label: 'Rytterdatabase', match: ['riders.html'] },
     { href: 'analytics.html', label: 'ML-Analyse',     match: ['analytics.html'] },
