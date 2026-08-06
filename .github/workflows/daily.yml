@@ -235,6 +235,12 @@ jobs:
     name: Publicér til GitHub Pages
     needs: update
     runs-on: ubuntu-latest
+    # Del concurrency-gruppe med pages.yml, så to Pages-deploys aldrig kører
+    # samtidig på 'github-pages'-miljøet (ellers hænger den ene i "queued" og
+    # timer ud). Nyeste deploy vinder.
+    concurrency:
+      group: pages
+      cancel-in-progress: true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
