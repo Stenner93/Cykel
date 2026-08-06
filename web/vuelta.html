@@ -3,58 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vuelta 2026 · TdF Manager</title>
+<title>Vuelta 2026 · La Roja Manager</title>
 <style>
   :root{
     color-scheme: dark;
-    --bg:#0F1118; --surface:#1A1D27; --card:#21263A; --card-2:#262c44;
-    --border:#2E3450; --border-2:#3a4166;
-    --ink:#E8EAF0; --ink-2:#AEB4CC; --muted:#7B82A0;
-    --accent:#FFD700;                 /* dashboard-gul */
+    --bg:#120E10; --surface:#1D1418; --card:#241a1f; --card-2:#2c1f25;
+    --border:#3a2831; --border-2:#4d3540;
+    --ink:#F0E8EA; --ink-2:#CBB8BE; --muted:#9B8189;
+    --accent:#E4002B;                 /* Vuelta-rød (la roja) */
+    --accent-soft:rgba(228,0,43,.12);
     --model:#4C9BE8;                  /* kvantitativ model = blå */
-    --optakt:#FFC53D;                 /* kvalitativ optakt = guld  */
-    --good:#25C685; --warn:#FFB020; --bad:#F0564B; --info:#4C9BE8;
+    --optakt:#F0A93B;                 /* kvalitativ optakt = guld  */
+    --good:#25C685; --warn:#FFB020; --bad:#FF7A59; --info:#4C9BE8;
     --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
     --sans:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
-    --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.35);
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 12px 32px rgba(0,0,0,.4);
   }
   *,*::before,*::after{box-sizing:border-box}
   body{margin:0;background:
-      radial-gradient(1100px 480px at 82% -8%, rgba(76,155,232,.10), transparent 60%),
-      radial-gradient(900px 420px at 6% 4%, rgba(255,215,0,.06), transparent 55%),
+      radial-gradient(1100px 480px at 82% -8%, rgba(228,0,43,.12), transparent 60%),
+      radial-gradient(900px 420px at 6% 4%, rgba(228,0,43,.05), transparent 55%),
       var(--bg);
     color:var(--ink);font-family:var(--sans);line-height:1.5;
     -webkit-font-smoothing:antialiased;font-size:15px}
   .tnum{font-variant-numeric:tabular-nums}
   .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  a{color:inherit}
 
-  /* ── Topbanner (matcher dashboardet) ── */
-  .dash-topbar{position:sticky;top:0;z-index:50;background:linear-gradient(135deg,#161b22,#0d1117);
+  /* ── Topbanner ── */
+  .dash-topbar{position:sticky;top:0;z-index:50;background:linear-gradient(135deg,#25131a,#140a0e);
     border-bottom:2px solid var(--accent);padding:0 clamp(1rem,4vw,26px)}
   .dash-topbar-inner{max-width:1180px;margin:0 auto;min-height:58px;display:flex;align-items:center;
     gap:14px;flex-wrap:wrap;padding:9px 0}
   .dash-logo{font-weight:800;font-size:1.16rem;color:var(--accent);letter-spacing:.3px;white-space:nowrap;text-decoration:none}
-  .prep-flag{margin-left:auto;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--warn);border:1px solid rgba(255,176,32,.4);background:rgba(255,176,32,.08);padding:3px 10px;border-radius:20px}
+  .dash-logo .es{filter:saturate(1.1)}
+  .dash-logo small{color:var(--ink-2);font-weight:600;font-size:.8rem;margin-left:8px}
 
   /* ── Fane-bjælke ── */
-  .tabs{position:sticky;top:58px;z-index:40;background:rgba(15,17,24,.86);backdrop-filter:blur(8px);
+  .tabs{position:sticky;top:58px;z-index:40;background:rgba(18,14,16,.9);backdrop-filter:blur(8px);
     border-bottom:1px solid var(--border);padding:0 clamp(1rem,4vw,26px)}
-  .tabs-in{max-width:1180px;margin:0 auto;display:flex;gap:2px;overflow-x:auto}
+  .tabs-in{max-width:1180px;margin:0 auto;display:flex;gap:2px;align-items:center;overflow-x:auto}
   .tab{appearance:none;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;
-    padding:13px 18px;color:var(--muted);font-family:inherit;font-size:.82rem;font-weight:700;
+    padding:13px 15px;color:var(--muted);font-family:inherit;font-size:.8rem;font-weight:700;
     letter-spacing:.03em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:color .15s,border-color .15s}
   .tab:hover{color:var(--ink)}
   .tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
   .tab:focus-visible{outline:2px solid var(--accent);outline-offset:-4px;border-radius:4px}
+  .tab.soon{color:var(--muted);opacity:.72}
+  .tab.soon::after{content:"•";color:var(--accent);margin-left:5px}
+  .tabsep{flex:0 0 auto;width:1px;height:20px;background:var(--border-2);margin:0 8px}
 
   main{max-width:1180px;margin:0 auto;padding:clamp(1.1rem,3vw,2rem) clamp(1rem,4vw,26px) 3rem}
-  .intro{color:var(--ink-2);font-size:.92rem;max-width:74ch;margin:.2rem 0 1.5rem}
+  .intro{color:var(--ink-2);font-size:.92rem;max-width:76ch;margin:.2rem 0 1.5rem}
   .intro b{color:var(--ink)}
   .panel[hidden]{display:none}
   .eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
   h2.sec{font-size:1.16rem;font-weight:750;letter-spacing:-.01em;margin:.35rem 0 .1rem;text-wrap:balance}
-  .sec-sub{color:var(--muted);font-size:.83rem;margin:0 0 1rem;max-width:70ch}
+  .sec-sub{color:var(--muted);font-size:.83rem;margin:0 0 1rem;max-width:72ch}
 
   .card{background:linear-gradient(180deg,var(--card),var(--surface));border:1px solid var(--border);
     border-radius:14px;box-shadow:var(--shadow)}
@@ -63,18 +68,20 @@
     padding:2px 8px;border-radius:20px;border:1px solid var(--border-2);color:var(--ink-2);white-space:nowrap}
   .chip.good{color:var(--good);border-color:rgba(37,198,133,.4);background:rgba(37,198,133,.10)}
   .chip.warn{color:var(--warn);border-color:rgba(255,176,32,.4);background:rgba(255,176,32,.10)}
-  .chip.bad{color:var(--bad);border-color:rgba(240,86,75,.4);background:rgba(240,86,75,.10)}
-  .chip.opt{color:var(--optakt);border-color:rgba(255,197,61,.4);background:rgba(255,197,61,.10)}
+  .chip.bad{color:var(--bad);border-color:rgba(255,122,89,.4);background:rgba(255,122,89,.10)}
+  .chip.opt{color:var(--optakt);border-color:rgba(240,169,59,.4);background:rgba(240,169,59,.10)}
+  .chip.mdl{color:var(--model);border-color:rgba(76,155,232,.4);background:rgba(76,155,232,.08)}
   .up{color:var(--good)} .down{color:var(--bad)} .flat{color:var(--muted)}
+
+  .exlabel{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;font-weight:700;color:var(--optakt);
+    border:1px solid rgba(240,169,59,.4);background:rgba(240,169,59,.08);border-radius:20px;padding:3px 11px}
 
   /* ── COCKPIT ── */
   .stagebar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
   .stagebar .badge{font-weight:800;font-size:.82rem;color:var(--accent);
-    border:1px solid rgba(255,215,0,.35);border-radius:8px;padding:5px 10px;background:rgba(255,215,0,.06)}
+    border:1px solid rgba(228,0,43,.4);border-radius:8px;padding:5px 10px;background:var(--accent-soft)}
   .stagebar .arch{font-weight:700}
   .stagebar .meta{color:var(--muted);font-size:.8rem}
-  .deadline{margin-left:auto;font-size:.78rem;color:var(--warn);font-weight:700;
-    border:1px solid rgba(255,176,32,.35);border-radius:20px;padding:3px 11px}
   .cols{display:grid;grid-template-columns:1.5fr 1fr;gap:14px}
   .cols-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .cardhead{display:flex;align-items:center;justify-content:space-between;gap:8px;
@@ -89,24 +96,25 @@
   .pick .nm{font-weight:650}
   .pick .nm small{display:block;color:var(--muted);font-weight:500;font-size:.72rem;margin-top:2px}
   .pick.cap .nm{color:var(--accent)}
+  .pick.disagree{background:rgba(255,176,32,.05);margin:0 -8px;padding-left:8px;padding-right:8px;border-radius:6px}
   .fuse{display:flex;align-items:center;gap:7px;font-size:.82rem}
   .fuse .m{color:var(--model)} .fuse .arw{color:var(--muted)} .fuse .f{font-weight:800}
   .fuse .delta{font-size:.72rem;padding:1px 5px;border-radius:6px}
   .fuse .delta.pos{color:var(--good);background:rgba(37,198,133,.12)}
-  .fuse .delta.neg{color:var(--bad);background:rgba(240,86,75,.12)}
+  .fuse .delta.neg{color:var(--bad);background:rgba(255,122,89,.12)}
   .star{color:var(--accent);font-weight:800}
 
   .kv{display:flex;justify-content:space-between;gap:10px;padding:6px 0;font-size:.85rem;border-bottom:1px solid var(--border)}
   .kv:last-child{border-bottom:0}.kv .k{color:var(--muted)} .kv .v{font-weight:650;text-align:right}
-  .bigcap{display:flex;align-items:baseline;gap:10px;margin:2px 0 8px}
+  .bigcap{display:flex;align-items:baseline;gap:10px;margin:2px 0 8px;flex-wrap:wrap}
   .bigcap .name{font-size:1.35rem;font-weight:800;color:var(--accent);letter-spacing:-.01em}
-  .bigcap .conf{font-size:.78rem;color:var(--good);font-weight:700}
+  .bigcap .conf{font-size:.78rem;color:var(--warn);font-weight:700}
   .src{font-size:.74rem;color:var(--muted)}
   .src b{color:var(--optakt)}
   .transfer .io{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:.86rem}
-  .io .tag{font-size:.64rem;font-weight:800;letter-spacing:.08em;padding:2px 7px;border-radius:6px}
+  .io .tag{font-size:.64rem;font-weight:800;letter-spacing:.08em;padding:2px 7px;border-radius:6px;white-space:nowrap}
   .io .tag.in{color:var(--good);background:rgba(37,198,133,.14)}
-  .io .tag.out{color:var(--bad);background:rgba(240,86,75,.14)}
+  .io .tag.out{color:var(--bad);background:rgba(255,122,89,.14)}
 
   .flagbar{display:flex;align-items:center;gap:12px;margin:16px 0 0;padding:12px 14px;border-radius:12px;
     border:1px solid rgba(255,176,32,.4);background:linear-gradient(180deg,rgba(255,176,32,.10),rgba(255,176,32,.03))}
@@ -114,15 +122,24 @@
   .flagbar .tx{font-size:.86rem}
   .flagbar .tx b{color:var(--warn)}
   .flagbar .tx small{display:block;color:var(--ink-2);margin-top:2px;font-size:.8rem}
-  details.flag{margin-left:auto}
-  details.flag summary{cursor:pointer;font-size:.76rem;color:var(--warn);font-weight:700;list-style:none;
+  details.reveal{margin-left:auto}
+  details.reveal summary{cursor:pointer;font-size:.76rem;color:var(--warn);font-weight:700;list-style:none;
     border:1px solid rgba(255,176,32,.4);border-radius:20px;padding:4px 12px;user-select:none}
-  details.flag summary::-webkit-details-marker{display:none}
-  details.flag[open] .drop{margin-top:10px}
+  details.reveal summary::-webkit-details-marker{display:none}
+  details.reveal[open] .drop{margin-top:10px}
   .drop{font-size:.82rem;color:var(--ink-2);background:var(--surface);border:1px solid var(--border);
     border-radius:10px;padding:11px 13px;line-height:1.55}
+  .drop b{color:var(--ink)}
 
-  /* ── Meter / radar (holdbonus) ── */
+  /* facit-tabel */
+  .facit{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px}
+  .facit th,.facit td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--border);font-family:var(--mono)}
+  .facit th:first-child,.facit td:first-child{text-align:left;font-family:var(--sans)}
+  .facit th{color:var(--muted);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+  .facit tr.win td{color:var(--good);font-weight:700}
+  .facit tr.win td:first-child{color:var(--good)}
+
+  /* ── Meter / radar ── */
   .meter{display:grid;grid-template-columns:130px 1fr auto;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
   .meter:last-child{border-bottom:0}
   .meter .lbl{font-weight:650;font-size:.86rem}
@@ -132,27 +149,24 @@
   .meter .expo{font-size:.74rem;white-space:nowrap}
 
   /* ── Optakt-konsol ── */
-  .pillrow{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
-  .pill{font-size:.74rem;font-weight:700;border:1px solid var(--border);border-radius:20px;padding:4px 12px;
-    color:var(--muted);background:var(--card);cursor:pointer}
-  .pill[aria-current="true"]{background:var(--accent);color:#0F1118;border-color:var(--accent)}
   .console{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
-  .raw .cardbody{max-height:none}
   .dropzone{display:flex;align-items:center;gap:10px;font-size:.78rem;color:var(--ink-2);
     border:1.5px dashed var(--border-2);border-radius:10px;padding:10px 12px;margin-bottom:12px;background:var(--surface)}
   .dropzone .k{font-size:1rem}
   .article{font-size:.86rem;color:var(--ink-2);line-height:1.62}
   .article h4{margin:0 0 3px;color:var(--ink);font-size:.95rem}
   .article .byline{color:var(--muted);font-size:.74rem;margin-bottom:10px}
-  .article mark{background:rgba(255,197,61,.20);color:var(--optakt);padding:0 2px;border-radius:3px;font-weight:600}
+  .article p{margin:0 0 9px}
+  .article mark{background:rgba(240,169,59,.20);color:var(--optakt);padding:0 2px;border-radius:3px;font-weight:600}
   .article mark.team{background:rgba(76,155,232,.18);color:var(--model)}
+  .article mark.avoid{background:rgba(255,122,89,.18);color:var(--bad)}
   .sig{display:flex;flex-direction:column;gap:8px}
   .sig .row{display:flex;align-items:center;gap:9px;padding:8px 10px;border:1px solid var(--border);
     border-radius:10px;background:var(--surface);font-size:.85rem}
   .sig .row .nm{font-weight:650}
-  .sig .row .sp{margin-left:auto;display:flex;gap:6px;align-items:center}
+  .sig .row .sp{margin-left:auto;display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
   .sig .flagrow{border-color:rgba(76,155,232,.35);background:rgba(76,155,232,.06)}
-  .sig .flagrow.wx{border-color:rgba(255,176,32,.35);background:rgba(255,176,32,.06)}
+  .sig .flagrow.gc{border-color:rgba(228,0,43,.3);background:var(--accent-soft)}
 
   table.fusion{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:4px}
   table.fusion th{ text-align:left;color:var(--muted);font-size:.68rem;font-weight:700;letter-spacing:.08em;
@@ -165,35 +179,43 @@
 
   /* ── Sprint-tog ── */
   .train{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding:6px 2px}
-  .wagon{flex:0 0 auto;min-width:112px;padding:11px 12px;border:1px solid var(--border);background:var(--surface);
+  .wagon{flex:0 0 auto;min-width:120px;padding:11px 12px;border:1px solid var(--border);background:var(--surface);
     position:relative;margin-right:16px;border-radius:10px}
   .wagon:not(:last-child)::after{content:"›";position:absolute;right:-13px;top:50%;transform:translateY(-50%);
     color:var(--muted);font-size:1.1rem}
   .wagon .role{font-size:.64rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
   .wagon .who{font-weight:700;font-size:.9rem;margin-top:3px}
-  .wagon.leader{border-color:var(--accent);background:linear-gradient(180deg,rgba(255,215,0,.10),var(--surface))}
+  .wagon.leader{border-color:var(--accent);background:linear-gradient(180deg,var(--accent-soft),var(--surface))}
   .wagon.leader .who{color:var(--accent)}
   .fresh{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}
   .fresh.ok{background:var(--good)} .fresh.mid{background:var(--warn)} .fresh.low{background:var(--bad)}
 
-  /* ── Scoreboard (kalibrering / Forslag 4) ── */
+  /* ── Scoreboard ── */
   .board{width:100%;border-collapse:collapse;font-size:.86rem}
   .board th{text-align:left;color:var(--muted);font-size:.68rem;font-weight:700;letter-spacing:.08em;
     text-transform:uppercase;padding:9px 10px;border-bottom:2px solid var(--border)}
   .board td{padding:10px;border-bottom:1px solid var(--border);font-family:var(--mono)}
   .board td:first-child{font-family:var(--sans);font-weight:650}
-  .board tr.best td{background:rgba(255,215,0,.06)}
+  .board tr.best td{background:var(--accent-soft)}
   .board tr.best td:first-child{color:var(--accent)}
   .board .win{color:var(--good);font-weight:700}
   .note{font-size:.8rem;color:var(--muted);margin-top:10px;line-height:1.55}
   .note b{color:var(--ink-2)}
+
+  /* ── Empty state (kommende faner) ── */
+  .empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;
+    padding:60px 24px;color:var(--muted);border:1.5px dashed var(--border-2);border-radius:14px;background:var(--surface)}
+  .empty .big{font-size:1.7rem;opacity:.85}
+  .empty h3{margin:0;color:var(--ink);font-size:1.05rem}
+  .empty p{margin:0;max-width:56ch;font-size:.88rem;line-height:1.55}
+  .empty .lnk{color:var(--accent);font-weight:700;text-decoration:none}
+  .empty .lnk:hover{text-decoration:underline}
 
   .foot{border-top:1px solid var(--border);margin-top:26px;padding-top:16px;color:var(--muted);font-size:.8rem;line-height:1.6}
   .foot b{color:var(--ink-2)}
 
   @media (max-width:820px){
     .cols,.cols-3,.console{grid-template-columns:1fr}
-    .deadline{margin-left:0}
   }
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -202,96 +224,106 @@
 
 <div class="dash-topbar">
   <div class="dash-topbar-inner">
-    <a href="index.html" class="dash-logo">🚴 TdF Manager 2026</a>
+    <a href="index.html" class="dash-logo">🚴 <span class="es">La Roja</span> Manager<small>Vuelta 2026</small></a>
     <nav class="page-nav" id="mainNav"></nav>
   </div>
 </div>
 
 <div class="tabs">
-  <div class="tabs-in" role="tablist" aria-label="Mockups">
+  <div class="tabs-in" role="tablist" aria-label="Vuelta-værktøjer">
     <button class="tab" role="tab" aria-selected="true"  id="t-cockpit" aria-controls="p-cockpit">Dagligt cockpit</button>
     <button class="tab" role="tab" aria-selected="false" id="t-optakt"  aria-controls="p-optakt">Optakt-konsol</button>
-    <button class="tab" role="tab" aria-selected="false" id="t-sprint"  aria-controls="p-sprint">Sprint &amp; holdbonus</button>
-    <span class="prep-flag" title="Placeholder indtil rigtige Vuelta-data">Forberedelse · eksempeldata</span>
+    <button class="tab" role="tab" aria-selected="false" id="t-sprint"  aria-controls="p-sprint">Sprint &amp; bonus</button>
+    <span class="tabsep" aria-hidden="true"></span>
+    <button class="tab soon" role="tab" aria-selected="false" id="t-hold"   aria-controls="p-hold">Holdanbefalinger</button>
+    <button class="tab soon" role="tab" aria-selected="false" id="t-matrix" aria-controls="p-matrix">Pointmatrix</button>
+    <button class="tab soon" role="tab" aria-selected="false" id="t-preds"  aria-controls="p-preds">Forudsigelser</button>
+    <button class="tab soon" role="tab" aria-selected="false" id="t-odds"   aria-controls="p-odds">Odds &amp; kilder</button>
   </div>
 </div>
 
 <main>
-  <p class="intro">Vuelta-arbejdsrummet — bygget på det Touren lærte os: hele efterslæbet lå i <b>sprint</b> og <b>holdbonus</b>, mens kaptajn og TT var styrker, og <b>optakterne slog modellen</b> på det vigtigste valg (Simon K. Kjær ramte bedste kaptajn 52 % vs. modellens 33 %). Rigtige data — startliste, daglige optakter, VeloScore — kobles på når Vueltaen nærmer sig; indtil da er alt herunder eksempeldata.</p>
+  <p class="intro"><b>La Roja Manager</b> — Vuelta-arbejdsrummet, bygget på det Touren lærte os: hele efterslæbet lå i
+    <b>sprint</b> og <b>holdbonus</b>, mens kaptajn og TT var styrker, og <b>optakterne slog modellen</b> på det
+    vigtigste valg (Simon K. Kjær ramte bedste kaptajn 52 % vs. modellens 33 %). De tre værktøjer nedenfor er fyldt med et
+    <b>ægte gennemgået eksempel — Tour-etape 21, alt vi vidste ex ante</b> — så mekanikken er til at forstå. De klassiske
+    faner (Pointmatrix, Forudsigelser m.fl.) tændes når Vueltaen åbner på Holdet.dk.</p>
 
   <!-- ══════════ COCKPIT ══════════ -->
   <section class="panel" id="p-cockpit" role="tabpanel" aria-labelledby="t-cockpit">
     <div class="stagebar">
-      <span class="badge">VUELTA · E12</span>
-      <span class="arch">⛰ Bakkesprint</span>
-      <span class="meta">Ourense → Estación de Montaña · 143 km</span>
-      <span class="deadline">⏱ Transfer-deadline 12:55</span>
+      <span class="badge">TOUR · E21</span>
+      <span class="arch">🁢 Paris · Montmartre-finale</span>
+      <span class="meta">flad m. brostensstigning · sprint/puncher</span>
+      <span class="exlabel" style="margin-left:auto">Eksempel · ex ante før sidste Tour-etape</span>
     </div>
 
     <div class="cols-3" style="margin-bottom:14px">
       <div class="card">
         <div class="cardhead"><h3>Kaptajn</h3><span class="chip opt">optakt-drevet</span></div>
         <div class="cardbody">
-          <div class="bigcap"><span class="name">Kaden Groves</span><span class="conf">88 % sikker</span></div>
-          <p class="src">Kilde: <b>Simon K. Kjær</b> + Feltet.dk — begge kalder ham dagens sats.
-             Modellen bekræfter (rank #2). <span class="up">Enighed ✓</span></p>
+          <div class="bigcap"><span class="name">Tadej Pogačar</span><span class="conf">kaptajns-dilemma</span></div>
+          <p class="src">Begge kilder (<b>Feltet</b> + <b>Simon K. Kjær</b>) kaptajn = Pogačar — sikker, +125k klassementsbonus
+             og Montmartre-historik. Modellen ville have Philipsen. <span class="down">Men samme optakter kaldte VdP + Pedersen
+             dagens sejrsfavoritter.</span></p>
         </div>
       </div>
       <div class="card">
-        <div class="cardhead"><h3>Transfer-forslag</h3><span class="chip good">+0,3M værdi</span></div>
+        <div class="cardhead"><h3>Optakt-satsning</h3><span class="chip opt">stage-favoritter</span></div>
         <div class="cardbody transfer">
-          <div class="io"><span class="tag in">IND</span><span>Orluis Aular <span class="src mono">2,1M</span></span></div>
-          <div class="io"><span class="tag out">UD</span><span>Pavel Bittner <span class="chip bad" style="margin-left:4px">syg</span></span></div>
-          <p class="src" style="margin:8px 0 0">Aular dækker holdbonus mod Movistar + optakt-udbrydertip på hjemmebane.</p>
+          <div class="io"><span class="tag in">SATS</span><span>Mathieu van der Poel + Mads Pedersen</span></div>
+          <div class="io"><span class="tag out">FINANSIÉR</span><span>fra de dyre klassementsryttere</span></div>
+          <p class="src" style="margin:8px 0 0">Optakt: "svært at forestille sig at Pedersen og VdP <em>ikke</em> skal køre om sejren."
+             Prosaen pegede på dagens vinder — kaptajns-labelet gjorde ikke.</p>
         </div>
       </div>
       <div class="card">
-        <div class="cardhead"><h3>Holdbonus i dag</h3><span class="chip warn">1 hul</span></div>
+        <div class="cardhead"><h3>Holdbonus / billig storform</h3><span class="chip warn">1 hul</span></div>
         <div class="cardbody">
-          <div class="kv"><span class="k">Alpecin (favorit)</span><span class="v"><span class="up">✔ dækket</span> · Groves</span></div>
-          <div class="kv"><span class="k">Lidl-Trek</span><span class="v"><span class="down">✘ udækket</span></span></div>
-          <p class="src" style="margin:8px 0 0">Billig indgang: Quinn Simmons (2,0M) → se Sprint &amp; holdbonus.</p>
+          <div class="kv"><span class="k">Rick Pluimers (4,5M)</span><span class="v"><span class="down">✘ manglede</span></span></div>
+          <div class="kv"><span class="k">Ejet af top-10</span><span class="v">8 af 10 hold</span></div>
+          <p class="src" style="margin:8px 0 0">Optakt-storform-tip. Voksede +0,13M — en billig rytter 8/10 af de bedste havde, og vi ikke.</p>
         </div>
       </div>
     </div>
 
     <div class="cols">
       <div class="card">
-        <div class="cardhead"><h3>Top-picks — fusion (model × optakt)</h3><span class="src">forv. Holdet-point</span></div>
+        <div class="cardhead"><h3>Top-picks — fusion (model × optakt)</h3><span class="src">forv. vækst · mio. kr</span></div>
         <div class="cardbody">
           <div class="pick cap">
             <span class="rk tnum">1</span>
-            <span class="nm">Kaden Groves <span class="star">★ kaptajn</span><small>Alpecin · favorit #1 · leadout klar</small></span>
-            <span class="fuse"><span class="m mono">4,1</span><span class="arw">→</span><span class="f mono">4,9</span><span class="delta pos">+0,8 optakt</span></span>
+            <span class="nm">Tadej Pogačar <span class="star">★ kaptajn</span><small>UAE · optakt-kaptajn · +125k GC-bonus</small></span>
+            <span class="fuse"><span class="m mono">0,11</span><span class="arw">→</span><span class="f mono">0,24</span><span class="delta pos">+optakt</span></span>
           </div>
           <div class="pick">
             <span class="rk tnum">2</span>
-            <span class="nm">Mads Pedersen <small>Lidl-Trek · form ▲ · punchy finish</small></span>
-            <span class="fuse"><span class="m mono">3,8</span><span class="arw">→</span><span class="f mono">4,2</span><span class="delta pos">+0,4</span></span>
+            <span class="nm">Mads Pedersen <small>Lidl-Trek · optakt sejrsfavorit</small></span>
+            <span class="fuse"><span class="m mono">0,13</span><span class="arw">→</span><span class="f mono">0,34</span><span class="delta pos">+0,21</span></span>
           </div>
-          <div class="pick">
+          <div class="pick disagree">
             <span class="rk tnum">3</span>
-            <span class="nm">Wout van Aert <small>Visma · outsider, alt-terræn</small></span>
-            <span class="fuse"><span class="m mono">3,5</span><span class="arw">→</span><span class="f mono">3,6</span><span class="delta pos">+0,1</span></span>
+            <span class="nm">Mathieu van der Poel <small>Alpecin · optakt sejrsfavorit · <span class="down">model = 0</span></small></span>
+            <span class="fuse"><span class="m mono">0,00</span><span class="arw">→</span><span class="f mono">0,38</span><span class="delta pos">+0,38 ⚑</span></span>
           </div>
           <div class="pick">
             <span class="rk tnum">4</span>
-            <span class="nm">Orluis Aular <small>Movistar · udbryder · hjemmebane</small></span>
-            <span class="fuse"><span class="m mono">2,2</span><span class="arw">→</span><span class="f mono">3,0</span><span class="delta pos">+0,8 ⚑</span></span>
+            <span class="nm">Jasper Philipsen <small>Alpecin · <span class="mono">model-top</span> · optakt lunken</small></span>
+            <span class="fuse"><span class="m mono">0,30</span><span class="arw">→</span><span class="f mono">0,22</span><span class="delta neg">−0,08</span></span>
           </div>
           <div class="pick">
             <span class="rk tnum">5</span>
-            <span class="nm">Pavel Bittner <small>Picnic · <span class="down">syg-flag ▼▼</span></small></span>
-            <span class="fuse"><span class="m mono">2,9</span><span class="arw">→</span><span class="f mono">2,4</span><span class="delta neg">−0,5</span></span>
+            <span class="nm">Rick Pluimers <small>Picnic · optakt storform-tip · billig</small></span>
+            <span class="fuse"><span class="m mono">0,00</span><span class="arw">→</span><span class="f mono">0,14</span><span class="delta pos">+0,14</span></span>
           </div>
         </div>
       </div>
 
       <div class="card">
-        <div class="cardhead"><h3>Kalibrering · selv-lærende</h3><span class="chip">track record</span></div>
+        <div class="cardhead"><h3>Kalibrering · selv-lærende</h3><span class="chip">track record · Tour</span></div>
         <div class="cardbody">
-          <p class="src" style="margin:0 0 10px">Fusionsvægtene er ikke gættet — de er kildernes målte hit-rate,
-             opdateret efter hver etape. Seedet fra Touren, udvides med Giro.</p>
+          <p class="src" style="margin:0 0 10px">Fusionsvægtene er kildernes målte hit-rate over hele Touren, opdateret efter
+             hver etape. Seedes med Giro (VeloScore ligger klar) fra Vueltaens etape 1.</p>
           <div class="scrollx"><table class="board">
             <thead><tr><th>Kilde</th><th>Kaptajn #1</th><th>Top-3</th><th>Køb-pct*</th></tr></thead>
             <tbody>
@@ -300,23 +332,33 @@
               <tr class="best"><td>Simon K. Kjær</td><td class="win">52 %</td><td class="win">71 %</td><td>0.84</td></tr>
             </tbody>
           </table></div>
-          <p class="note">* Køb-percentil: gennemsnitlig placering af anbefalede ryttere i etapens vækstfelt
-             (1.0 = bedst). <b>Optakten er tungest vægtet på kaptajn; modellen bruges til at screene billige oversete ryttere.</b></p>
+          <p class="note">* Gennemsnitlig placering af anbefalede ryttere i etapens vækstfelt (1.0 = bedst).
+             <b>Optakten vægtes tungest på kaptajn; modellen bruges til at screene billige oversete ryttere.</b></p>
         </div>
       </div>
     </div>
 
     <div class="flagbar">
       <span class="ic">⚑</span>
-      <div class="tx"><b>1 beslutningspunkt</b> — model og optakt er uenige
-        <small>Orluis Aular: modellen har ham #14, optakterne kalder ham udbryder-favorit på hjemmebane.</small></div>
-      <details class="flag">
-        <summary>Se uenigheden</summary>
+      <div class="tx"><b>Dagens lærestreg</b> — model, kaptajns-call og facit trak i hver sin retning
+        <small>Model ville have Philipsen (0,30M forv.). Begge optakter kaptajnede Pogačar. Men dagens største vækst var Van der Poel — som modellen havde til 0 og optakt-<em>teksten</em> udpegede som medfavorit.</small></div>
+      <details class="reveal">
+        <summary>Se facit</summary>
         <div class="drop">
-          <b>Modellen (#14):</b> lav historisk sprint-score, ingen form-data i bjerge.<br>
-          <b>Optakterne (favorit):</b> lokal rytter, tidligere etapesejr her, nævnt af begge kilder som dagens joker.<br>
-          <b>Anbefaling:</b> lav-risiko punt — billig (2,1M), holdbonus-dækning mod Movistar, høj upside hvis udbrud går.
-          Historik: på uenigheds-dage ramte optakten etapens bedste 5 gange mod modellens 2.
+          <b>Sådan gik E21 (faktisk vækst):</b>
+          <table class="facit">
+            <thead><tr><th>Rytter</th><th>Model forv.</th><th>Faktisk</th></tr></thead>
+            <tbody>
+              <tr class="win"><td>Mathieu van der Poel</td><td>0,00</td><td>+0,45</td></tr>
+              <tr><td>Jasper Philipsen</td><td>0,30</td><td>+0,33</td></tr>
+              <tr><td>Mads Pedersen</td><td>0,13</td><td>+0,27</td></tr>
+              <tr><td>Rick Pluimers</td><td>0,00</td><td>+0,13</td></tr>
+              <tr><td>Tadej Pogačar</td><td>0,11</td><td>+0,13</td></tr>
+            </tbody>
+          </table>
+          <p style="margin:10px 0 0">Lektien til Vueltaen: <b>læs optaktens prosa, ikke kun kaptajns-labelet.</b> Optakten
+             havde dagens vinder (VdP) sort på hvidt som medfavorit, men spillede sikkert på Pogačar. Cockpittet løfter
+             derfor sejrsfavoritter op som selvstændige pick — ikke kun det ene kaptajns-navn.</p>
         </div>
       </details>
     </div>
@@ -324,32 +366,30 @@
 
   <!-- ══════════ OPTAKT-KONSOL ══════════ -->
   <section class="panel" id="p-optakt" role="tabpanel" aria-labelledby="t-optakt" hidden>
-    <div class="eyebrow">Forslag 1</div>
-    <h2 class="sec">Optakt-konsol — fra fritekst til signal</h2>
-    <p class="sec-sub">Dagligt indtag: den rå optakt (venstre) parses til strukturerede signaler (højre),
-      som fusioneres med modellen nederst. Uenigheder markeres automatisk.</p>
-
-    <div class="pillrow" role="tablist" aria-label="Etape">
-      <span class="pill">E9</span><span class="pill">E10</span><span class="pill">E11</span>
-      <span class="pill" aria-current="true">E12 · Bakkesprint</span><span class="pill">E13</span>
-    </div>
+    <div class="eyebrow">Værktøj 1 · optakt → signal</div>
+    <h2 class="sec">Optakt-konsol <span class="exlabel" style="vertical-align:middle">Tour E21 · ex ante</span></h2>
+    <p class="sec-sub">Rå optakt (venstre) parses til strukturerede signaler (højre) og fusioneres med modellen nederst.
+      Ægte tekst fra Feltet.dk + Simon K. Kjær før Tourens sidste etape.</p>
 
     <div class="console">
       <div class="card raw">
-        <div class="cardhead"><h3>Rå optakt</h3><span class="src">2026-08-23</span></div>
+        <div class="cardhead"><h3>Rå optakt</h3><span class="src">Feltet.dk + Simon K. Kjær</span></div>
         <div class="cardbody">
           <div class="dropzone"><span class="k">⬍</span>
             <span>Slip <b>HTML</b> eller screenshot her — eller indsæt artikel-teksten direkte.</span></div>
           <div class="article">
-            <h4>Dagens joker gemmer sig i udbruddet</h4>
-            <div class="byline">Feltet.dk · Frederik Ingemann &nbsp;·&nbsp; + Simon K. Kjær, Tourspillet</div>
-            <p>En kort, hård stigning til stregen gør det til en dag for de stærke punchere.
-              <mark class="team">Alpecin</mark> ventes at styre for <mark>Kaden Groves</mark>, der har den bedste
-              leadout og ser skarp ud efter hviledagen. Bag ham lurer <mark>Mads Pedersen</mark>, hvis
-              afslutning passer perfekt til rampen.</p>
-            <p>Pas på vejret: <mark>sidevind de sidste 20 km</mark> kan splitte feltet og gøre positionering
-              afgørende. På hjemmebane satser jeg en billig brik på <mark>Orluis Aular</mark> i udbruddet —
-              han vandt her for to år siden. <mark>Pavel Bittner</mark> meldes syg og bør undgås.</p>
+            <h4>Ekspertens sidste tips</h4>
+            <div class="byline">Tourspillet · etape 21 · Montmartre-finalen i Paris</div>
+            <p>Det er svært at forestille sig, at <mark>Mads Pedersen</mark> og <mark>Mathieu van der Poel</mark> ikke skal
+              køre om sejren i dag. Jeg prioriterer at få råd til de to største forhåndsfavoritter — pengene kan kun komme
+              fra klassementsrytterne.</p>
+            <p>Især <mark>Tadej Pogačar</mark> og <mark>Remco Evenepoel</mark> er garant for hhv. 125.000 og 90.000 i
+              klassementsbonus og har begge udmærket sig på Montmartre. Alternativt taler bonus for <mark>Isaac del Toro</mark>
+              (95.000). <mark class="team">Alpecin</mark> vil forsøge at iscenesætte van der Poel snarere end
+              <mark>Jasper Philipsen</mark>.</p>
+            <p>I mellemlejet har jeg størst tiltro til formstærke <mark>Jasper Stuyven</mark> og <mark>Rick Pluimers</mark>,
+              der har vist storform i sidste uge. <mark>Søren Wærenskjold</mark> er en smule satset — Montmartre kan blive
+              for hård. Jeg mistænker, at <mark class="avoid">Quinn Simmons</mark> blot skal hjælpe sin kaptajn.</p>
           </div>
         </div>
       </div>
@@ -358,129 +398,142 @@
         <div class="cardhead"><h3>Udtrukne signaler</h3><span class="chip opt">auto-parset</span></div>
         <div class="cardbody">
           <div class="sig">
-            <div class="row"><span class="chip">Arketype</span><span class="nm">Bakkesprint</span>
-              <span class="sp"><span class="src">konfidens</span><b class="mono">70 %</b></span></div>
-            <div class="row"><span class="nm">Kaden Groves</span>
-              <span class="sp"><span class="chip opt">favorit #1</span><span class="chip good">form ▲</span></span></div>
+            <div class="row"><span class="chip">Arketype</span><span class="nm">Flad + brostensfinale</span>
+              <span class="sp"><span class="chip opt">sejrsfavoritter i spil</span></span></div>
+            <div class="row"><span class="nm">Mathieu van der Poel</span>
+              <span class="sp"><span class="chip opt">sejrsfavorit</span><span class="chip mdl">model = 0</span></span></div>
             <div class="row"><span class="nm">Mads Pedersen</span>
-              <span class="sp"><span class="chip">outsider</span><span class="chip good">form ▲</span></span></div>
-            <div class="row"><span class="nm">Orluis Aular</span>
-              <span class="sp"><span class="chip opt">udbryder</span><span class="chip">hjemmebane</span></span></div>
-            <div class="row"><span class="nm">Pavel Bittner</span>
-              <span class="sp"><span class="chip bad">syg ▼▼</span><span class="chip bad">undgå</span></span></div>
+              <span class="sp"><span class="chip opt">sejrsfavorit</span></span></div>
+            <div class="row"><span class="nm">Rick Pluimers · Jasper Stuyven</span>
+              <span class="sp"><span class="chip good">storform ▲</span></span></div>
+            <div class="row"><span class="nm">Søren Wærenskjold</span>
+              <span class="sp"><span class="chip warn">sats · tvivl</span></span></div>
+            <div class="row"><span class="nm">Quinn Simmons</span>
+              <span class="sp"><span class="chip bad">undgå (hjælperrolle)</span></span></div>
+            <div class="row flagrow gc"><span class="nm">⚑ Kaptajn (begge kilder)</span>
+              <span class="sp"><span class="chip" style="color:var(--accent);border-color:rgba(228,0,43,.4)">Pogačar</span></span></div>
+            <div class="row flagrow gc"><span class="nm">⚑ Klassementsbonus</span>
+              <span class="sp"><span class="chip">Pogačar 125k</span><span class="chip">del Toro 95k</span><span class="chip">Evenepoel 90k</span></span></div>
             <div class="row flagrow"><span class="nm">⚑ Kontrollerende hold</span>
-              <span class="sp"><span class="chip" style="color:var(--model);border-color:rgba(76,155,232,.4)">Alpecin → holdbonus</span></span></div>
-            <div class="row flagrow wx"><span class="nm">⚑ Vejr</span>
-              <span class="sp"><span class="chip warn">sidevind · splitrisiko</span></span></div>
+              <span class="sp"><span class="chip mdl">Alpecin → van der Poel</span></span></div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="card" style="margin-top:14px">
-      <div class="cardhead"><h3>Fusion — model + optakt → anbefaling</h3><span class="src">forv. Holdet-point</span></div>
+      <div class="cardhead"><h3>Fusion — model + optakt → anbefaling</h3><span class="src">forv. vækst · mio. kr</span></div>
       <div class="cardbody scrollx">
         <table class="fusion">
           <thead><tr><th>Rytter</th><th class="num">Model</th><th>Optakt-justering</th><th class="num">Fusion</th><th>Note</th></tr></thead>
           <tbody>
-            <tr><td>Kaden Groves</td><td class="num">4,1</td><td><span class="chip opt">favorit + leadout</span></td><td class="num"><b>4,9</b></td><td><span class="star">★ kaptajn</span></td></tr>
-            <tr><td>Mads Pedersen</td><td class="num">3,8</td><td><span class="chip good">form ▲</span></td><td class="num"><b>4,2</b></td><td class="src">solid #2</td></tr>
-            <tr class="disagree"><td>Orluis Aular</td><td class="num">2,2</td><td><span class="chip opt">udbryder + hjemmebane</span></td><td class="num"><b>3,0</b></td><td><span class="chip warn">⚑ uenig — tjek</span></td></tr>
-            <tr><td>Pavel Bittner</td><td class="num">2,9</td><td><span class="chip bad">syg ▼▼</span></td><td class="num"><b>2,4</b></td><td class="src">nedgraderet</td></tr>
+            <tr class="disagree"><td>Mathieu van der Poel</td><td class="num">0,00</td><td><span class="chip opt">sejrsfavorit</span></td><td class="num"><b>0,38</b></td><td><span class="chip warn">⚑ model missede</span></td></tr>
+            <tr><td>Mads Pedersen</td><td class="num">0,13</td><td><span class="chip opt">sejrsfavorit</span></td><td class="num"><b>0,34</b></td><td class="src">medfavorit</td></tr>
+            <tr><td>Tadej Pogačar</td><td class="num">0,11</td><td><span class="chip opt">kaptajn + GC-bonus</span></td><td class="num"><b>0,24</b></td><td><span class="star">★ kaptajn</span></td></tr>
+            <tr><td>Jasper Philipsen</td><td class="num">0,30</td><td><span class="chip">lunken ("kun hvis…")</span></td><td class="num"><b>0,22</b></td><td class="src">model-top, dæmpet</td></tr>
+            <tr><td>Rick Pluimers</td><td class="num">0,00</td><td><span class="chip good">storform</span></td><td class="num"><b>0,14</b></td><td class="src">billig upside</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- ══════════ SPRINT & HOLDBONUS ══════════ -->
+  <!-- ══════════ SPRINT & BONUS ══════════ -->
   <section class="panel" id="p-sprint" role="tabpanel" aria-labelledby="t-sprint" hidden>
-    <div class="eyebrow">Forslag 2</div>
-    <h2 class="sec">Sprint- &amp; holdbonus-modul</h2>
-    <p class="sec-sub">De to dyreste huller fra Touren (−1,10M og −1,07M). Begge er dér optakten er stærkest —
-      previews nævner altid sprint-toget og det kontrollerende hold.</p>
+    <div class="eyebrow">Værktøj 2 · de to dyre huller</div>
+    <h2 class="sec">Sprint- &amp; holdbonus-modul <span class="exlabel" style="vertical-align:middle">Tour E21 · ex ante</span></h2>
+    <p class="sec-sub">Sprint (−1,10M) og holdbonus (−1,07M) var Tourens dyreste huller. Begge er dér optakten er stærkest —
+      den nævner altid toget og det kontrollerende hold.</p>
 
     <div class="card" style="margin-bottom:14px">
-      <div class="cardhead"><h3>Sprint-tog · sandsynlig afvikling</h3><span class="src">frisk <span class="fresh ok"></span> · træt <span class="fresh mid"></span> · syg <span class="fresh low"></span></span></div>
+      <div class="cardhead"><h3>Sprint-tog · sandsynlig afvikling</h3><span class="src">frisk <span class="fresh ok"></span> · træt <span class="fresh mid"></span></span></div>
       <div class="cardbody">
         <div class="train">
-          <div class="wagon"><div class="role">Tempo</div><div class="who"><span class="fresh ok"></span>Rex</div></div>
+          <div class="wagon"><div class="role">Tempo</div><div class="who"><span class="fresh ok"></span>Groenewegen-tog</div></div>
           <div class="wagon"><div class="role">Positionering</div><div class="who"><span class="fresh ok"></span>Rickaert</div></div>
-          <div class="wagon"><div class="role">Sidste mand</div><div class="who"><span class="fresh mid"></span>Krieger</div></div>
-          <div class="wagon leader"><div class="role">Afslutter ★</div><div class="who"><span class="fresh ok"></span>Groves</div></div>
+          <div class="wagon"><div class="role">Sidste mand</div><div class="who"><span class="fresh mid"></span>Philipsen</div></div>
+          <div class="wagon leader"><div class="role">Afslutter ★</div><div class="who"><span class="fresh ok"></span>van der Poel</div></div>
         </div>
         <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:14px">
-          <div class="kv"><span class="k">Hurtigst flad</span><span class="v">Groves</span></div>
-          <div class="kv"><span class="k">Bedst op ad rampe</span><span class="v">Pedersen</span></div>
-          <div class="kv"><span class="k">Split-joker</span><span class="v">van Aert</span></div>
+          <div class="kv"><span class="k">Bedst på brosten</span><span class="v">van der Poel</span></div>
+          <div class="kv"><span class="k">Punch op ad rampe</span><span class="v">Pedersen</span></div>
+          <div class="kv"><span class="k">Billig joker</span><span class="v">Pluimers</span></div>
         </div>
       </div>
     </div>
 
     <div class="cols">
       <div class="card">
-        <div class="cardhead"><h3>Holdbonus-radar</h3><span class="src">P(top-3-hold) · vores eksponering</span></div>
+        <div class="cardhead"><h3>Holdbonus-radar</h3><span class="src">sandsynligt top-3-hold · eksponering</span></div>
         <div class="cardbody">
-          <div class="meter">
-            <span class="lbl">Alpecin</span>
-            <span class="bar"><i style="width:80%"></i></span>
-            <span class="expo"><span class="up">✔</span> Groves</span>
-          </div>
-          <div class="meter">
-            <span class="lbl">Lidl-Trek</span>
-            <span class="bar"><i style="width:55%"></i></span>
-            <span class="expo"><span class="down">✘</span> udækket</span>
-          </div>
-          <div class="meter">
-            <span class="lbl">UAE</span>
-            <span class="bar"><i style="width:45%"></i></span>
-            <span class="expo"><span class="up">✔</span> domestik</span>
-          </div>
-          <div class="meter">
-            <span class="lbl">Movistar</span>
-            <span class="bar"><i style="width:26%"></i></span>
-            <span class="expo"><span class="down">✘</span> → Aular</span>
-          </div>
+          <div class="meter"><span class="lbl">Alpecin</span><span class="bar"><i style="width:82%"></i></span><span class="expo"><span class="up">✔</span> VdP/Philipsen</span></div>
+          <div class="meter"><span class="lbl">Lidl-Trek</span><span class="bar"><i style="width:64%"></i></span><span class="expo"><span class="up">✔</span> Pedersen</span></div>
+          <div class="meter"><span class="lbl">UAE</span><span class="bar"><i style="width:48%"></i></span><span class="expo"><span class="up">✔</span> Pogačar</span></div>
+          <div class="meter"><span class="lbl">Picnic PostNL</span><span class="bar"><i style="width:30%"></i></span><span class="expo"><span class="down">✘</span> → Pluimers</span></div>
         </div>
       </div>
 
       <div class="card">
-        <div class="cardhead"><h3>Foreslåede holdbonus-køb</h3><span class="chip good">billig dækning</span></div>
+        <div class="cardhead"><h3>Billig storform vi manglede</h3><span class="chip warn">facit</span></div>
         <div class="cardbody">
           <div class="pick">
             <span class="rk">→</span>
-            <span class="nm">Quinn Simmons <small>Lidl-Trek · domestik</small></span>
-            <span class="fuse"><span class="f mono">2,0M</span><span class="chip good" style="margin-left:6px">dækker #2-hold</span></span>
+            <span class="nm">Rick Pluimers <small>Picnic PostNL · 4,5M</small></span>
+            <span class="fuse"><span class="f mono">+0,13M</span><span class="chip warn" style="margin-left:6px">8/10 top-hold ejede ham</span></span>
           </div>
           <div class="pick">
             <span class="rk">→</span>
-            <span class="nm">Orluis Aular <small>Movistar · udbryder</small></span>
-            <span class="fuse"><span class="f mono">2,1M</span><span class="chip opt" style="margin-left:6px">+ optakt-tip</span></span>
+            <span class="nm">Jasper Stuyven <small>Lidl-Trek · 3,6M</small></span>
+            <span class="fuse"><span class="f mono">+0,07M</span><span class="chip opt" style="margin-left:6px">optakt-tip</span></span>
           </div>
-          <p class="src" style="margin:10px 0 0">Touren tabte 0,95M holdbonus på blot 5 sprint/bjerg-etaper ved
-             ikke at eje en billig rytter på vinderholdet. Radaren lukker det hul <b>før</b> deadline.</p>
+          <p class="src" style="margin:10px 0 0">Begge var billige optakt-storform-tips. Touren tabte 0,95M holdbonus på blot
+             5 sprint/bjerg-etaper ved at mangle netop den slags rytter på vinderholdet.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ══════════ KOMMENDE FANER ══════════ -->
+  <section class="panel" id="p-hold" role="tabpanel" aria-labelledby="t-hold" hidden>
+    <div class="empty"><div class="big">🏆</div>
+      <h3>Holdanbefalinger — klar til Vueltaen</h3>
+      <p>De tre holdforslag (sikkert / value / satsning) pr. etape tændes når Vuelta-startlisten og priserne er kendt.
+         Se den live udgave på <a class="lnk" href="index.html">TdF 2026</a> imens.</p></div>
+  </section>
+  <section class="panel" id="p-matrix" role="tabpanel" aria-labelledby="t-matrix" hidden>
+    <div class="empty"><div class="big">📊</div>
+      <h3>Pointmatrix — klar til Vueltaen</h3>
+      <p>Den fulde rytter × etape-matrix med faktiske Holdet-point, sortering og filtre. Kræver løbende resultater fra
+         Holdet.dk — fyldes fra Vueltaens etape 1. Live udgave: <a class="lnk" href="index.html">TdF 2026 → Pointmatrix</a>.</p></div>
+  </section>
+  <section class="panel" id="p-preds" role="tabpanel" aria-labelledby="t-preds" hidden>
+    <div class="empty"><div class="big">🔮</div>
+      <h3>Forudsigelser — klar til Vueltaen</h3>
+      <p>Model- og VeloScore-forudsigelser pr. etape med forventet vs. faktisk point. Kobles på når startlisten er kendt;
+         Giro-VeloScore ligger allerede klar som en del af kalibreringen. Live udgave: <a class="lnk" href="index.html">TdF 2026 → Forudsigelser</a>.</p></div>
+  </section>
+  <section class="panel" id="p-odds" role="tabpanel" aria-labelledby="t-odds" hidden>
+    <div class="empty"><div class="big">📡</div>
+      <h3>Odds &amp; kilder — klar til Vueltaen</h3>
+      <p>Bookmaker-odds og kildeoverblik pr. etape. Tændes når Vueltaens etaper lægges op hos udbyderne.</p></div>
+  </section>
+
   <div class="foot">
-    <b>Forslag 4 — datagrundlag:</b> kalibrerings-scoreboardet seedes af Tour-optakterne (Feltet.dk + Simon K. Kjær, etape 1–21)
-    og udvides med Giro- og Dauphiné-data, så vægtene står stærkere fra Vueltaens etape 1.
-    Bemærk: jeg finder <b>ingen Giro-optakter i repoet</b> endnu — kun Tour. Har du dem, så del dem (helst som HTML/tekst),
-    så folder jeg dem ind i grundlaget. &nbsp;·&nbsp; Al data på siden er illustrativ.
+    <b>Status:</b> cockpit / optakt / bonus viser et ægte ex ante-eksempel fra Tour-etape 21 (så mekanikken er til at forstå),
+    ikke Vuelta-data. De øvrige faner er tomme skaller til Vuelta-data kommer. <b>Datagrundlag:</b> kalibreringen seedes af
+    Tour-optakterne (Feltet.dk + Simon K. Kjær) og Giro-VeloScore, som ligger i repoet — Giro-optakterne mangler stadig.
   </div>
 </main>
 
 <script>
   (function(){
     var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
-    var panels = { 't-cockpit':'p-cockpit', 't-optakt':'p-optakt', 't-sprint':'p-sprint' };
+    function panelOf(t){ return document.getElementById(t.getAttribute('aria-controls')); }
     function select(tab){
       tabs.forEach(function(t){
         var on = t === tab;
         t.setAttribute('aria-selected', on ? 'true':'false');
-        document.getElementById(panels[t.id]).hidden = !on;
+        var p = panelOf(t); if(p) p.hidden = !on;
       });
       tab.focus();
     }
@@ -494,15 +547,8 @@
         }
       });
     });
-    // Etape-piller (kun visuel demo)
-    var pills = document.querySelectorAll('.pill');
-    pills.forEach(function(p){ p.addEventListener('click', function(){
-      pills.forEach(function(x){ x.removeAttribute('aria-current'); });
-      p.setAttribute('aria-current','true');
-    });});
   })();
 </script>
-
 <script src="nav.js"></script>
 </body>
 </html>
