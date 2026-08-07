@@ -11,7 +11,7 @@
   },
   "isaac-del-toro": {
     "rank": 3,
-    "pts": 3289.0,
+    "pts": 3282.0,
     "name": "DEL TORO Isaac"
   },
   "jonas-vingegaard": {
@@ -34,15 +34,15 @@
     "pts": 2014.0,
     "name": "PHILIPSEN Jasper"
   },
-  "paul-magnier": {
-    "rank": 8,
-    "pts": 1626.0,
-    "name": "MAGNIER Paul"
-  },
   "arnaud-de-lie": {
-    "rank": 9,
+    "rank": 8,
     "pts": 1594.0,
     "name": "DE LIE Arnaud"
+  },
+  "paul-magnier": {
+    "rank": 9,
+    "pts": 1576.0,
+    "name": "MAGNIER Paul"
   },
   "lenny-martinez": {
     "rank": 10,
@@ -66,7 +66,7 @@
   },
   "christian-scaroni": {
     "rank": 14,
-    "pts": 1411.0,
+    "pts": 1441.0,
     "name": "SCARONI Christian"
   },
   "richard-carapaz": {
@@ -109,20 +109,20 @@
     "pts": 1209.0,
     "name": "VAN AERT Wout"
   },
-  "romain-gregoire": {
+  "felix-gall": {
     "rank": 23,
+    "pts": 1177.0,
+    "name": "GALL Felix"
+  },
+  "romain-gregoire": {
+    "rank": 24,
     "pts": 1174.0,
     "name": "GRÉGOIRE Romain"
   },
   "florian-lipowitz": {
-    "rank": 24,
+    "rank": 25,
     "pts": 1154.0,
     "name": "LIPOWITZ Florian"
-  },
-  "felix-gall": {
-    "rank": 25,
-    "pts": 1147.0,
-    "name": "GALL Felix"
   },
   "jai-hindley": {
     "rank": 26,
@@ -216,7 +216,7 @@
   },
   "jan-christen": {
     "rank": 44,
-    "pts": 854.0,
+    "pts": 853.0,
     "name": "CHRISTEN Jan"
   },
   "soren-waerenskjold": {
@@ -261,7 +261,7 @@
   },
   "mathys-rondel": {
     "rank": 53,
-    "pts": 796.0,
+    "pts": 799.0,
     "name": "RONDEL Mathys"
   },
   "corbin-strong": {
@@ -356,7 +356,7 @@
   },
   "paul-lapeira": {
     "rank": 72,
-    "pts": 647.0,
+    "pts": 651.0,
     "name": "LAPEIRA Paul"
   },
   "yannis-voisard": {
@@ -399,15 +399,15 @@
     "pts": 596.0,
     "name": "JEGAT Jordan"
   },
-  "stanislaw-aniolkowski": {
-    "rank": 81,
-    "pts": 592.0,
-    "name": "ANIOŁKOWSKI Stanisław"
-  },
   "kevin-vauquelin": {
-    "rank": 82,
+    "rank": 81,
     "pts": 590.0,
     "name": "VAUQUELIN Kévin"
+  },
+  "stanislaw-aniolkowski": {
+    "rank": 82,
+    "pts": 585.0,
+    "name": "ANIOŁKOWSKI Stanisław"
   },
   "afonso-eulalio": {
     "rank": 83,
@@ -484,19 +484,19 @@
     "pts": 515.0,
     "name": "MULUBRHAN Henok"
   },
-  "marc-hirschi": {
+  "alberto-bettiol": {
     "rank": 98,
+    "pts": 514.0,
+    "name": "BETTIOL Alberto"
+  },
+  "marc-hirschi": {
+    "rank": 99,
     "pts": 512.0,
     "name": "HIRSCHI Marc"
   },
   "alessandro-fancellu": {
-    "rank": 99,
+    "rank": 100,
     "pts": 509.0,
     "name": "FANCELLU Alessandro"
-  },
-  "alberto-bettiol": {
-    "rank": 100,
-    "pts": 507.0,
-    "name": "BETTIOL Alberto"
   }
 }
