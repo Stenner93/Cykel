@@ -1,0 +1,268 @@
+{
+  "source": "Frederik Ingemann (Feltet) — Giro 2026 optakter",
+  "metric": "kaptajnvalg vs. faktisk vækst (giro2026_predictions.json)",
+  "stages_scored": 15,
+  "ingemann": {
+    "n": 15,
+    "hit1": 27,
+    "hit3": 40,
+    "hit5": 53,
+    "captured": 51,
+    "detail": [
+      {
+        "stage": 1,
+        "type": "sprint",
+        "captain": "Jonathan Milan",
+        "actual": 229000,
+        "rank": 4,
+        "best": 575000
+      },
+      {
+        "stage": 4,
+        "type": "hilly",
+        "captain": "Tobias Lund Andresen",
+        "actual": 0,
+        "rank": 58,
+        "best": 410000
+      },
+      {
+        "stage": 5,
+        "type": "sprint",
+        "captain": "Giulio Ciccone",
+        "actual": 29000,
+        "rank": 15,
+        "best": 544000
+      },
+      {
+        "stage": 6,
+        "type": "sprint",
+        "captain": "Paul Magnier",
+        "actual": 280000,
+        "rank": 3,
+        "best": 410000
+      },
+      {
+        "stage": 7,
+        "type": "mountain",
+        "captain": "Jonas Vingegaard",
+        "actual": 570000,
+        "rank": 1,
+        "best": 570000
+      },
+      {
+        "stage": 9,
+        "type": "mountain",
+        "captain": "Jonas Vingegaard",
+        "actual": 590000,
+        "rank": 1,
+        "best": 590000
+      },
+      {
+        "stage": 10,
+        "type": "tt",
+        "captain": "Filippo Ganna",
+        "actual": 335000,
+        "rank": 2,
+        "best": 353000
+      },
+      {
+        "stage": 11,
+        "type": "sprint",
+        "captain": "Afonso Eulálio",
+        "actual": 131000,
+        "rank": 8,
+        "best": 347000
+      },
+      {
+        "stage": 13,
+        "type": "sprint",
+        "captain": "Afonso Eulálio",
+        "actual": 101000,
+        "rank": 9,
+        "best": 412000
+      },
+      {
+        "stage": 14,
+        "type": "mountain",
+        "captain": "Jonas Vingegaard",
+        "actual": 605000,
+        "rank": 1,
+        "best": 605000
+      },
+      {
+        "stage": 15,
+        "type": "sprint",
+        "captain": "Jonathan Milan",
+        "actual": 36000,
+        "rank": 25,
+        "best": 425000
+      },
+      {
+        "stage": 16,
+        "type": "mountain",
+        "captain": "Jonas Vingegaard",
+        "actual": 605000,
+        "rank": 1,
+        "best": 605000
+      },
+      {
+        "stage": 17,
+        "type": "hilly",
+        "captain": "Jonas Vingegaard",
+        "actual": 135000,
+        "rank": 7,
+        "best": 350000
+      },
+      {
+        "stage": 18,
+        "type": "sprint",
+        "captain": "Jhonatan Narváez",
+        "actual": 3000,
+        "rank": 39,
+        "best": 435000
+      },
+      {
+        "stage": 19,
+        "type": "mountain",
+        "captain": "Jonas Vingegaard",
+        "actual": 319000,
+        "rank": 5,
+        "best": 726000
+      }
+    ]
+  },
+  "model": {
+    "n": 15,
+    "hit1": 7,
+    "hit3": 7,
+    "hit5": 40,
+    "captured": 24,
+    "detail": [
+      {
+        "stage": 1,
+        "type": "sprint",
+        "captain": "Jonathan Milan",
+        "actual": 229000,
+        "rank": 4,
+        "best": 575000
+      },
+      {
+        "stage": 4,
+        "type": "hilly",
+        "captain": "Christian Scaroni",
+        "actual": 0,
+        "rank": 35,
+        "best": 410000
+      },
+      {
+        "stage": 5,
+        "type": "sprint",
+        "captain": "Paul Magnier",
+        "actual": 0,
+        "rank": 21,
+        "best": 544000
+      },
+      {
+        "stage": 6,
+        "type": "sprint",
+        "captain": "Jonas Vingegaard",
+        "actual": 0,
+        "rank": 39,
+        "best": 410000
+      },
+      {
+        "stage": 7,
+        "type": "mountain",
+        "captain": "Jonas Vingegaard",
+        "actual": 570000,
+        "rank": 1,
+        "best": 570000
+      },
+      {
+        "stage": 9,
+        "type": "mountain",
+        "captain": "Thymen Arensman",
+        "actual": 218000,
+        "rank": 5,
+        "best": 590000
+      },
+      {
+        "stage": 10,
+        "type": "tt",
+        "captain": "Giulio Ciccone",
+        "actual": 0,
+        "rank": 30,
+        "best": 353000
+      },
+      {
+        "stage": 11,
+        "type": "sprint",
+        "captain": "Paul Magnier",
+        "actual": 0,
+        "rank": 28,
+        "best": 347000
+      },
+      {
+        "stage": 13,
+        "type": "sprint",
+        "captain": "Jonas Vingegaard",
+        "actual": 76000,
+        "rank": 10,
+        "best": 412000
+      },
+      {
+        "stage": 14,
+        "type": "mountain",
+        "captain": "Paul Magnier",
+        "actual": 0,
+        "rank": 26,
+        "best": 605000
+      },
+      {
+        "stage": 15,
+        "type": "sprint",
+        "captain": "Jonas Vingegaard",
+        "actual": 150000,
+        "rank": 6,
+        "best": 425000
+      },
+      {
+        "stage": 16,
+        "type": "mountain",
+        "captain": "Jhonatan Narváez",
+        "actual": 9000,
+        "rank": 20,
+        "best": 605000
+      },
+      {
+        "stage": 17,
+        "type": "hilly",
+        "captain": "Jhonatan Narváez",
+        "actual": 149000,
+        "rank": 5,
+        "best": 350000
+      },
+      {
+        "stage": 18,
+        "type": "sprint",
+        "captain": "Jonas Vingegaard",
+        "actual": 159000,
+        "rank": 5,
+        "best": 435000
+      },
+      {
+        "stage": 19,
+        "type": "mountain",
+        "captain": "Jonas Vingegaard",
+        "actual": 319000,
+        "rank": 5,
+        "best": 726000
+      }
+    ]
+  },
+  "head_to_head": {
+    "ingemann": 8,
+    "model": 3,
+    "tie": 4
+  }
+}
