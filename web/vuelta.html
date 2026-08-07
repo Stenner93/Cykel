@@ -338,6 +338,35 @@
       </div>
     </div>
 
+    <div class="card" style="margin-top:14px">
+      <div class="cardhead">
+        <h3>Ægte Giro-facit · tredje kilde: Ingemann-optakt vs. model</h3>
+        <span class="exlabel">Giro 2026 · 15 etaper med facit</span>
+      </div>
+      <div class="cardbody">
+        <p class="src" style="margin:0 0 12px;max-width:80ch">Samme test som på Touren, nu på et <b style="color:var(--ink)">helt uafhængigt
+           datasæt</b>: Frederik Ingemanns daglige Giro-optakter (Feltets ekspert, top-3 i alle tre grand tour-spil — hans egen
+           placering klatrede fra 3.497 til 865 undervejs) kodet til kaptajnvalg og scoret mod den faktiske vækst i
+           <span class="mono">giro2026_predictions.json</span>. Kaptajnen er den ene beslutning der dobler point, så den vejer tungest.</p>
+        <div class="scrollx"><table class="board">
+          <thead><tr><th>Kilde</th><th>Kaptajn = etapens #1</th><th>Top-3</th><th>Top-5</th><th>Andel af bedst mulige*</th></tr></thead>
+          <tbody>
+            <tr class="best"><td>Ingemann (optakt)</td><td class="win">27 %</td><td class="win">40 %</td><td class="win">53 %</td><td class="win">51 %</td></tr>
+            <tr><td>Model (højeste exp.)</td><td>7 %</td><td>7 %</td><td>40 %</td><td>24 %</td></tr>
+          </tbody>
+        </table></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+          <span class="chip good">Head-to-head: Ingemann bedre på 8 etaper</span>
+          <span class="chip bad">Model bedre på 3</span>
+          <span class="chip">lige på 4</span>
+        </div>
+        <p class="note" style="margin-top:12px">* Af den bedst mulige kaptajn hver etape (rytteren med størst faktisk vækst) — hvor stor en andel
+           fangede kildens kaptajn i snit. <b>Ingemann mere end fordoblede modellen (51 % mod 24 %).</b> Modellens svaghed er tydelig:
+           den kaptajnede gang på gang den dyre GC-stjerne (Vingegaard) eller en fast sprinter på forkert etapetype og fik nul —
+           præcis det fejlskud, optaktens etapelæsning retter.</p>
+      </div>
+    </div>
+
     <div class="flagbar">
       <span class="ic">⚑</span>
       <div class="tx"><b>Dagens lærestreg</b> — model, kaptajns-call og facit trak i hver sin retning
@@ -520,8 +549,9 @@
 
   <div class="foot">
     <b>Status:</b> cockpit / optakt / bonus viser et ægte ex ante-eksempel fra Tour-etape 21 (så mekanikken er til at forstå),
-    ikke Vuelta-data. De øvrige faner er tomme skaller til Vuelta-data kommer. <b>Datagrundlag:</b> kalibreringen seedes af
-    Tour-optakterne (Feltet.dk + Simon K. Kjær) og Giro-VeloScore, som ligger i repoet — Giro-optakterne mangler stadig.
+    ikke Vuelta-data. De øvrige faner er tomme skaller til Vuelta-data kommer. <b>Datagrundlag:</b> kalibreringen bygger nu på
+    tre scorede optakt-kilder — Tour-optakterne (Feltet.dk + Simon K. Kjær) og Giro-optakterne (Ingemann, 15 etaper med facit) —
+    plus Giro-VeloScore. Alle ligger i repoet.
   </div>
 </main>
 
