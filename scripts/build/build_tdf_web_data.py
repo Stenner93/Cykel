@@ -783,6 +783,10 @@ def main() -> None:
                 "disc":     round(p.get("disc_raw", 0) or 0, 1),
                 "disc_co":  round(p.get("disc_co_raw", 0) or 0, 1),
                 "disc_key": p.get("disc_key", "AVG"),
+                # Fulde CyclingOracle-ratings på tværs af ALLE discipliner (COB/HLL/MTN/GC/ITT/SPR),
+                # så scenarievælgeren kan om-rangere efter en hvilken som helst disciplin-blanding
+                # (fx reduceret spurt = HLL+SPR) — ikke kun etapens egen 'disc_key'.
+                "co":       co_data.get(rid, {}),
                 "signals":  [
                     round(sigs.get("veloscore") or 0, 3),
                     round(sigs.get("odds") or 0, 3),

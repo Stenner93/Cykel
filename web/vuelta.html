@@ -274,14 +274,15 @@
     <div class="scenariobar" role="group" aria-label="Vælg scenarie">
       <span class="sclabel">Scenarie</span>
       <button class="scbtn" data-sc="massespurt" type="button">Flad massespurt <small>model</small></button>
-      <button class="scbtn" data-sc="reduceret" type="button">Reduceret spurt · brosten <small>optakt</small></button>
-      <button class="scbtn" data-sc="udbrud" type="button">Udbrud</button>
+      <button class="scbtn" data-sc="bakket" type="button">Reduceret spurt · bakket <small>Vuelta-type</small></button>
+      <button class="scbtn" data-sc="brosten" type="button">Reduceret spurt · brosten <small>optakt</small></button>
+      <button class="scbtn" data-sc="bjerg" type="button">Bjergafslutning</button>
       <span class="scfacit" id="scFacit"></span>
     </div>
 
     <div class="cols-3" style="margin-bottom:14px">
       <div class="card">
-        <div class="cardhead"><h3>Kaptajn</h3><span class="chip opt" id="capChip">scenarie-drevet</span></div>
+        <div class="cardhead"><h3>Kaptajn</h3><span class="chip opt" id="capChip">CO · scenarie-drevet</span></div>
         <div class="cardbody" id="capBody"><!-- fyldes af scenarie-JS --></div>
       </div>
       <div class="card">
@@ -308,7 +309,7 @@
         <div class="cardhead"><h3>Top-picks — efter valgt scenarie</h3><span class="src">scenarie-fit · exp · facit (M)</span></div>
         <div class="cardbody">
           <div id="pickList"><!-- fyldes af scenarie-JS --></div>
-          <p class="src" style="margin:10px 0 0">Rangeret efter rytterens styrke i det valgte scenarie (disciplin-gated kaptajn).
+          <p class="src" style="margin:10px 0 0">Rangeret efter rytterens <b>CyclingOracle-fit</b> i det valgte scenarie (disciplin-gated kaptajn).
              <b>⚑ = dagens faktiske vinder.</b> Skift scenarie og se kaptajnen flippe.</p>
         </div>
       </div>
@@ -574,38 +575,40 @@
   })();
 </script>
 <script>
-  /* Scenarie-motor · Montmartre-demo (E21).
-     Kaptajn = rytteren med højeste styrke i det VALGTE scenaries disciplin (disciplin-gated).
-     Skift scenarie → kaptajn + rangering skifter. Tal er illustrative for eksemplet;
-     facit (act) matcher den faktiske E21-vækst. */
+  /* Scenarie-motor · Montmartre-demo (E21) — kører på ÆGTE CyclingOracle-ratings.
+     Hvert scenarie er en vægtning over CO-disciplinerne (COB/HLL/MTN/GC/ITT/SPR).
+     Kaptajn = bedste CO-fit for det valgte scenarie. Skift scenarie → kaptajn flipper.
+     co-tal er rytternes rigtige CO-ratings; exp/act matcher den faktiske E21-vækst. */
   (function(){
-    var RIDERS = [
-      {n:'Mathieu van der Poel', s:'Van der Poel', t:'Alpecin',   flad:82, red:98, brk:76, exp:0.00, act:0.45},
-      {n:'Jasper Philipsen',     s:'Philipsen',    t:'Alpecin',   flad:96, red:70, brk:22, exp:0.30, act:0.33},
-      {n:'Mads Pedersen',        s:'Pedersen',     t:'Lidl-Trek', flad:86, red:94, brk:66, exp:0.13, act:0.27},
-      {n:'Tadej Pogačar',        s:'Pogačar',      t:'UAE',       flad:42, red:90, brk:80, exp:0.11, act:0.13},
-      {n:'Rick Pluimers',        s:'Pluimers',     t:'Picnic',    flad:52, red:60, brk:84, exp:0.00, act:0.13},
-      {n:'Wout van Aert',        s:'Van Aert',     t:'Visma',     flad:80, red:92, brk:78, exp:0.09, act:0.10},
-      {n:'Dylan Groenewegen',    s:'Groenewegen',  t:'Jayco',     flad:92, red:44, brk:18, exp:0.12, act:0.05},
-      {n:'Jonas Abrahamsen',     s:'Abrahamsen',   t:'Uno-X',     flad:34, red:52, brk:90, exp:0.02, act:0.06}
+    var R = [
+      {n:'Mathieu van der Poel', s:'Van der Poel', t:'Alpecin',   co:{COB:99,HLL:92,MTN:61,GC:64,ITT:58,SPR:84}, exp:0.00, act:0.45},
+      {n:'Jasper Philipsen',     s:'Philipsen',    t:'Alpecin',   co:{COB:91,HLL:76,MTN:44,GC:49,ITT:29,SPR:99}, exp:0.30, act:0.33},
+      {n:'Mads Pedersen',        s:'Pedersen',     t:'Lidl-Trek', co:{COB:95,HLL:90,MTN:43,GC:61,ITT:75,SPR:90}, exp:0.13, act:0.27},
+      {n:'Tadej Pogačar',        s:'Pogačar',      t:'UAE',       co:{COB:97,HLL:99,MTN:99,GC:96,ITT:92,SPR:77}, exp:0.11, act:0.13},
+      {n:'Wout van Aert',        s:'Van Aert',     t:'Visma',     co:{COB:96,HLL:92,MTN:71,GC:49,ITT:88,SPR:91}, exp:0.09, act:0.10},
+      {n:'Rick Pluimers',        s:'Pluimers',     t:'Picnic',    co:{COB:72,HLL:76,MTN:33,GC:39,ITT:26,SPR:74}, exp:0.00, act:0.13},
+      {n:'Dylan Groenewegen',    s:'Groenewegen',  t:'Jayco',     co:{COB:39,HLL:59,MTN:25,GC:37,ITT:20,SPR:98}, exp:0.12, act:0.05},
+      {n:'Jonas Abrahamsen',     s:'Abrahamsen',   t:'Uno-X',     co:{COB:90,HLL:90,MTN:48,GC:41,ITT:29,SPR:73}, exp:0.02, act:0.06}
     ];
     var SCEN = {
-      massespurt:{by:'flad', label:'Flad massespurt', desc:'Modellens profil-læsning: bredt opløb, ren topfart afgør.'},
-      reduceret :{by:'red',  label:'Reduceret spurt · brosten', desc:'Optaktens læsning: Montmartre-brostenene tynder feltet — puncher/classics-kraft afgør.'},
-      udbrud    :{by:'brk',  label:'Udbrud', desc:'Udbruddet går hele vejen: angrebs- og udbrudsspecialister scorer.'}
+      massespurt:{label:'Flad massespurt',        w:{SPR:1},                 desc:'Modellens profil-læsning: bredt opløb, ren topfart (SPR) afgør.'},
+      bakket    :{label:'Reduceret spurt · bakket',w:{HLL:0.6, SPR:0.4},      desc:'Kuperet finale uden brosten: overlev stigningen (HLL) + kick (SPR). Den type kommer ofte i Vueltaen.'},
+      brosten   :{label:'Reduceret spurt · brosten',w:{COB:0.5,HLL:0.3,SPR:0.2},desc:'Montmartre-brostenene tynder feltet: brosten/classics-kraft (COB+HLL) afgør.'},
+      bjerg     :{label:'Bjergafslutning',         w:{MTN:1},                 desc:'Stigning til stregen: klatreevne (MTN) afgør.'}
     };
-    var winner = RIDERS.reduce(function(a,b){ return b.act>a.act ? b : a; });
+    function fit(r, sc){ var s=0,t=0,k; for(k in sc.w){ s+=sc.w[k]*(r.co[k]||0); t+=sc.w[k]; } return s/t; }
+    var winner = R.reduce(function(a,b){ return b.act>a.act ? b : a; });
     function fmt(v){ return v.toFixed(2).replace('.',','); }
 
     function render(key){
       var sc = SCEN[key];
-      var ranked = RIDERS.slice().sort(function(a,b){ return b[sc.by]-a[sc.by]; });
+      var ranked = R.slice().sort(function(a,b){ return fit(b,sc)-fit(a,sc); });
       var cap = ranked[0];
       var hit = cap === winner;
 
       document.getElementById('capBody').innerHTML =
         '<div class="bigcap"><span class="name">'+cap.n+'</span><span class="conf">'+sc.label+'</span></div>'+
-        '<p class="src">'+sc.desc+' <b>Kaptajn = bedste rytter for scenariet (disciplin-gated).</b></p>'+
+        '<p class="src">'+sc.desc+' <b>Kaptajn = bedste CO-fit for scenariet.</b></p>'+
         '<div style="margin-top:8px">'+(hit
           ? '<span class="chip good">Facit: +'+fmt(cap.act)+'M · ✓ dagens vinder</span>'
           : '<span class="chip warn">Facit: +'+fmt(cap.act)+'M · dagens bedste var '+winner.s+' +'+fmt(winner.act)+'M</span>')+'</div>';
@@ -614,7 +617,7 @@
         return '<div class="pick'+(i===0?' cap':'')+(r===winner&&i!==0?' disagree':'')+'">'+
           '<span class="rk tnum">'+(i+1)+'</span>'+
           '<span class="nm">'+r.n+(i===0?' <span class="star">★ kaptajn</span>':'')+
-            '<small>'+r.t+' · scenarie-fit '+r[sc.by]+'</small></span>'+
+            '<small>'+r.t+' · CO-fit '+Math.round(fit(r,sc))+'</small></span>'+
           '<span class="fuse"><span class="m mono">exp '+fmt(r.exp)+'</span><span class="arw">·</span>'+
             '<span class="f mono pos">'+fmt(r.act)+'</span>'+(r===winner?' <span class="star">⚑</span>':'')+'</span>'+
         '</div>';
@@ -632,7 +635,7 @@
     for (var i=0;i<btns.length;i++){
       (function(b){ b.addEventListener('click', function(){ render(b.getAttribute('data-sc')); }); })(btns[i]);
     }
-    render('massespurt');   // start på modellens default; klik "reduceret" for at se kaptajnen flippe
+    render('massespurt');   // start på modellens default; klik "brosten" for at se kaptajnen flippe til VdP
   })();
 </script>
 <script src="nav.js"></script>
