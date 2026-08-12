@@ -1,0 +1,31 @@
+name: 🔎 Probe Vuelta (validér spillet)
+
+# Engangs-validering: bekræfter at Vuelta-spillet er live på Holdet, henter
+# startliste og tjekker CO-dækning — FØR pipelinen wires. Kør manuelt.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    name: Probe Vuelta
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sæt Python op
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Installér afhængigheder
+        run: pip install -r requirements.txt
+
+      - name: Probe Vuelta-spillet
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python scripts/scrape/probe_vuelta.py
