@@ -88,7 +88,7 @@ CARTRIDGE_TO_PCS_RACE: dict[str, str] = {
     "giro-d-italia-2026":           "giro-d-italia/2026",
     "criterium-du-dauphine-2026":   "criterium-du-dauphine/2026",
     "tour-de-france-2026":          "tour-de-france/2026",
-    "vuelta-a-espana-2026":         "vuelta-a-espana/2026",
+    "vuelta-2026":                  "vuelta-a-espana/2026",
     # 2025 historical races (used as training data for 2026 calibration)
     "giro-d-italia-2025":           "giro-d-italia/2025",
     "tour-de-france-2025":          "tour-de-france/2025",
@@ -100,7 +100,7 @@ CARTRIDGE_RAW_CACHE: dict[str, Path] = {
     "giro-d-italia-2026":           CACHE_DIR / "giro2026_raw",
     "criterium-du-dauphine-2026":   CACHE_DIR / "dauphine2026_raw",
     "tour-de-france-2026":          CACHE_DIR / "tdf2026_raw",
-    "vuelta-a-espana-2026":         CACHE_DIR / "vuelta2026_raw",
+    "vuelta-2026":                  CACHE_DIR / "vuelta2026_raw",
     # 2025 historical
     "giro-d-italia-2025":           CACHE_DIR / "giro2025_raw",
     "tour-de-france-2025":          CACHE_DIR / "tdf2025_raw",
@@ -113,6 +113,7 @@ KNOWN_GAME_IDS: dict[str, int] = {
     "giro-d-italia-2026":           612,
     "criterium-du-dauphine-2026":   622,
     "tour-de-france-2026":          618,
+    "vuelta-2026":                  628,
     # 2025 historical
     "giro-d-italia-2025":           550,
     "tour-de-france-2025":          563,
