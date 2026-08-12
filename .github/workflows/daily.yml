@@ -87,6 +87,16 @@ jobs:
             --update-riders \
             || echo "⚠️  Holdet-scrape slog fejl (TdF ikke live endnu?) — fortsætter med cached data"
 
+      # ── 3a2. Scrape Holdet for VUELTA (priser + startliste) ───────────────
+      - name: Scrape Holdet.dk (Vuelta)
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python scripts/scrape/scrape_holdet.py \
+            --cartridge vuelta-2026 \
+            --update-riders \
+            || echo "⚠️  Vuelta-scrape slog fejl (spillet lukket?) — fortsætter med cached data"
+
       # ── 3b. Hent GT-etaperesultater (til ML rolling-form) ─────────────────
       - name: Hent GT-etaperesultater (ML)
         env:
@@ -128,6 +138,14 @@ jobs:
         run: |
           python scripts/build/build_tdf_web_data.py --delay 0.5 \
             || echo "⚠️  TdF build slog fejl — fortsætter"
+
+      # ── 4a2. Byg VUELTA spillerliste + dashboard-data ─────────────────────
+      - name: Byg Vuelta 2026 dashboard-data
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python scripts/build/build_vuelta_web_data.py --delay 0.5 \
+            || echo "⚠️  Vuelta build slog fejl — fortsætter"
 
       # ── 4b. Byg Analytik JSON (alle etaper, Holdet-ryttere, CO + PCS) ───────
       - name: Byg Analytik-data
@@ -198,6 +216,7 @@ jobs:
             data/cache/holdet_team_bonus.json \
             data/cache/dauphine2026_players.json \
             data/cache/tdf2026_players.json \
+            data/cache/vuelta2026_players.json \
             data/cache/pcs_stage_types.json \
             data/cache/pcs_profile_scores.json \
             data/cache/gt_stage_results.json \
