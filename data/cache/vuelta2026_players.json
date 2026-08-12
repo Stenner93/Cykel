@@ -1,0 +1,659 @@
+[
+  {
+    "id": "alberto_bettiol",
+    "full_name": "Alberto Bettiol",
+    "short_name": "A. Bettiol",
+    "team": "XDA",
+    "team_full": "XDS Astana Team",
+    "price": 4.0,
+    "holdet_person_id": 2608
+  },
+  {
+    "id": "alberto_dainese",
+    "full_name": "Alberto Dainese",
+    "short_name": "Dainese",
+    "team": "SQ",
+    "team_full": "Soudal Quick-Step",
+    "price": 5.5,
+    "holdet_person_id": 4390
+  },
+  {
+    "id": "alexander_hajek",
+    "full_name": "Alexander Hajek",
+    "short_name": "Hajek",
+    "team": "RBH",
+    "team_full": "Red Bull - BORA - hansgrohe",
+    "price": 3.0,
+    "holdet_person_id": 47173
+  },
+  {
+    "id": "axel_laurance",
+    "full_name": "Axel Laurance",
+    "short_name": "Laurance",
+    "team": "IGD",
+    "team_full": "Netcompany INEOS Cycling Team",
+    "price": 6.0,
+    "holdet_person_id": 4961
+  },
+  {
+    "id": "ben_tulett",
+    "full_name": "Ben Tulett",
+    "short_name": "Tulett",
+    "team": "VLB",
+    "team_full": "Team Visma | Lease a Bike",
+    "price": 6.5,
+    "holdet_person_id": 4633
+  },
+  {
+    "id": "bryan_coquard",
+    "full_name": "Bryan Coquard",
+    "short_name": "Coquard",
+    "team": "COF",
+    "team_full": "Cofidis",
+    "price": 5.5,
+    "holdet_person_id": 2570
+  },
+  {
+    "id": "carlos_rodriguez",
+    "full_name": "Carlos Rodriguez",
+    "short_name": "Rodriguez",
+    "team": "IGD",
+    "team_full": "Netcompany INEOS Cycling Team",
+    "price": 6.5,
+    "holdet_person_id": 4298
+  },
+  {
+    "id": "cian_uijtdebroeks",
+    "full_name": "Cian Uijtdebroeks",
+    "short_name": "Uijtdebroeks",
+    "team": "MOV",
+    "team_full": "Movistar Team",
+    "price": 8.0,
+    "holdet_person_id": 4898
+  },
+  {
+    "id": "clement_berthet",
+    "full_name": "Clement Berthet",
+    "short_name": "Berthet",
+    "team": "GFD",
+    "team_full": "Groupama - FDJ United",
+    "price": 4.0,
+    "holdet_person_id": 4894
+  },
+  {
+    "id": "clement_champoussin",
+    "full_name": "Clement Champoussin",
+    "short_name": "Champoussin",
+    "team": "XDA",
+    "team_full": "XDS Astana Team",
+    "price": 4.5,
+    "holdet_person_id": 4394
+  },
+  {
+    "id": "cristian_rodriguez_martin",
+    "full_name": "Cristian Rodriguez Martin",
+    "short_name": "Martin",
+    "team": "XDA",
+    "team_full": "XDS Astana Team",
+    "price": 6.0,
+    "holdet_person_id": 3269
+  },
+  {
+    "id": "david_de_la_cruz_melgarejo",
+    "full_name": "David de la Cruz Melgarejo",
+    "short_name": "D. L. De Cruz",
+    "team": "Q36",
+    "team_full": "Pinarello Q36.5 Pro Cycling Team",
+    "price": 3.5,
+    "holdet_person_id": 2585
+  },
+  {
+    "id": "davide_ballerini",
+    "full_name": "Davide Ballerini",
+    "short_name": "D. Ballerini",
+    "team": "XDA",
+    "team_full": "XDS Astana Team",
+    "price": 5.0,
+    "holdet_person_id": 3824
+  },
+  {
+    "id": "domen_novak",
+    "full_name": "Domen Novak",
+    "short_name": "Novak",
+    "team": "UAE",
+    "team_full": "UAE Team Emirates - XRG",
+    "price": 3.0,
+    "holdet_person_id": 3441
+  },
+  {
+    "id": "einer_rubio",
+    "full_name": "Einer Rubio",
+    "short_name": "E. Rubio",
+    "team": "MOV",
+    "team_full": "Movistar Team",
+    "price": 5.0,
+    "holdet_person_id": 4386
+  },
+  {
+    "id": "enric_mas",
+    "full_name": "Enric Mas",
+    "short_name": "E. Mas",
+    "team": "MOV",
+    "team_full": "Movistar Team",
+    "price": 8.0,
+    "holdet_person_id": 3543
+  },
+  {
+    "id": "erlend_blikra",
+    "full_name": "Erlend Blikra",
+    "short_name": "E. Blikra",
+    "team": "UXM",
+    "team_full": "Uno-X Mobility",
+    "price": 6.0,
+    "holdet_person_id": 4892
+  },
+  {
+    "id": "ethan_hayter",
+    "full_name": "Ethan Hayter",
+    "short_name": "Hayter",
+    "team": "SQ",
+    "team_full": "Soudal Quick-Step",
+    "price": 5.0,
+    "holdet_person_id": 4252
+  },
+  {
+    "id": "felix_gall",
+    "full_name": "Felix Gall",
+    "short_name": "F. Gall",
+    "team": "DAL",
+    "team_full": "Decathlon CMA CGM Team",
+    "price": 11.5,
+    "holdet_person_id": 4356
+  },
+  {
+    "id": "filippo_zana",
+    "full_name": "Filippo Zana",
+    "short_name": "F. Zana",
+    "team": "SQ",
+    "team_full": "Soudal Quick-Step",
+    "price": 4.0,
+    "holdet_person_id": 4508
+  },
+  {
+    "id": "gal_glivar",
+    "full_name": "Gal Glivar",
+    "short_name": "Glivar",
+    "team": "ALP",
+    "team_full": "Alpecin-Premier Tech",
+    "price": 3.0,
+    "holdet_person_id": 46795
+  },
+  {
+    "id": "gianni_vermeersch",
+    "full_name": "Gianni Vermeersch",
+    "short_name": "Vermeersch",
+    "team": "RBH",
+    "team_full": "Red Bull - BORA - hansgrohe",
+    "price": 3.5,
+    "holdet_person_id": 4528
+  },
+  {
+    "id": "guillaume_martin",
+    "full_name": "Guillaume Martin",
+    "short_name": "Martin",
+    "team": "GFD",
+    "team_full": "Groupama - FDJ United",
+    "price": 4.0,
+    "holdet_person_id": 3756
+  },
+  {
+    "id": "guillermo_juan_martinez",
+    "full_name": "Guillermo Juan Martinez",
+    "short_name": "Martinez",
+    "team": "TPP",
+    "team_full": "Team Picnic PostNL",
+    "price": 3.0,
+    "holdet_person_id": 46840
+  },
+  {
+    "id": "harold_martín_lópez",
+    "full_name": "Harold Martín López",
+    "short_name": "H. M. López",
+    "team": "BB",
+    "team_full": "Burgos Burpellet BH",
+    "price": 3.0,
+    "holdet_person_id": 2377
+  },
+  {
+    "id": "harold_tejada",
+    "full_name": "Harold Tejada",
+    "short_name": "Tejada",
+    "team": "XDA",
+    "team_full": "XDS Astana Team",
+    "price": 5.0,
+    "holdet_person_id": 4389
+  },
+  {
+    "id": "henok_mulubrhan",
+    "full_name": "Henok Mulubrhan",
+    "short_name": "Mulubrhan",
+    "team": "XDA",
+    "team_full": "XDS Astana Team",
+    "price": 4.0,
+    "holdet_person_id": 4736
+  },
+  {
+    "id": "hugo_houle",
+    "full_name": "Hugo Houle",
+    "short_name": "Houle",
+    "team": "ALP",
+    "team_full": "Alpecin-Premier Tech",
+    "price": 2.5,
+    "holdet_person_id": 1893
+  },
+  {
+    "id": "ivan_romeo",
+    "full_name": "Ivan Romeo",
+    "short_name": "Romeo",
+    "team": "MOV",
+    "team_full": "Movistar Team",
+    "price": 5.0,
+    "holdet_person_id": 4938
+  },
+  {
+    "id": "ivan_cobo_cayon",
+    "full_name": "Iván Cobo Cayón",
+    "short_name": "Cayón",
+    "team": "EKP",
+    "team_full": "Equipo Kern Pharma",
+    "price": 4.0,
+    "holdet_person_id": 50795
+  },
+  {
+    "id": "jan_hirt",
+    "full_name": "Jan Hirt",
+    "short_name": "J. Hirt",
+    "team": "NCT",
+    "team_full": "NSN Cycling Team",
+    "price": 4.5,
+    "holdet_person_id": 3078
+  },
+  {
+    "id": "jarno_widar",
+    "full_name": "Jarno Widar",
+    "short_name": "Widar",
+    "team": "INT",
+    "team_full": "Lotto Intermarché",
+    "price": 5.5,
+    "holdet_person_id": 50506
+  },
+  {
+    "id": "jay_vine",
+    "full_name": "Jay Vine",
+    "short_name": "J. Vine",
+    "team": "UAE",
+    "team_full": "UAE Team Emirates - XRG",
+    "price": 8.0,
+    "holdet_person_id": 4568
+  },
+  {
+    "id": "joao_almeida",
+    "full_name": "Joao Almeida",
+    "short_name": "J. Almeida",
+    "team": "UAE",
+    "team_full": "UAE Team Emirates - XRG",
+    "price": 10.0,
+    "holdet_person_id": 4388
+  },
+  {
+    "id": "jose_manuel_diaz",
+    "full_name": "José Manuel Diaz",
+    "short_name": "Diaz",
+    "team": "BB",
+    "team_full": "Burgos Burpellet BH",
+    "price": 3.0,
+    "holdet_person_id": 4774
+  },
+  {
+    "id": "jørgen_nordhagen",
+    "full_name": "Jørgen Nordhagen",
+    "short_name": "Nordhagen",
+    "team": "VLB",
+    "team_full": "Team Visma | Lease a Bike",
+    "price": 8.0,
+    "holdet_person_id": 46845
+  },
+  {
+    "id": "kevin_vermaerke",
+    "full_name": "Kevin Vermaerke",
+    "short_name": "Vermaerke",
+    "team": "UAE",
+    "team_full": "UAE Team Emirates - XRG",
+    "price": 4.5,
+    "holdet_person_id": 4750
+  },
+  {
+    "id": "laurens_de_plus",
+    "full_name": "Laurens De Plus",
+    "short_name": "Plus",
+    "team": "IGD",
+    "team_full": "Netcompany INEOS Cycling Team",
+    "price": 4.5,
+    "holdet_person_id": 3140
+  },
+  {
+    "id": "liam_tuckwell",
+    "full_name": "Liam Tuckwell",
+    "short_name": "L. Tuckwell",
+    "team": "RBH",
+    "team_full": "Red Bull - BORA - hansgrohe",
+    "price": 6.0,
+    "holdet_person_id": 50479
+  },
+  {
+    "id": "lorenzo_fortunato",
+    "full_name": "Lorenzo Fortunato",
+    "short_name": "L. Fortunato",
+    "team": "XDA",
+    "team_full": "XDS Astana Team",
+    "price": 5.5,
+    "holdet_person_id": 4510
+  },
+  {
+    "id": "luke_plapp",
+    "full_name": "Luke Plapp",
+    "short_name": "Plapp",
+    "team": "JAL",
+    "team_full": "Team Jayco AlUla",
+    "price": 5.5,
+    "holdet_person_id": 4694
+  },
+  {
+    "id": "leo_bisiaux",
+    "full_name": "Léo Bisiaux",
+    "short_name": "Bisiaux",
+    "team": "DAL",
+    "team_full": "Decathlon CMA CGM Team",
+    "price": 5.5,
+    "holdet_person_id": 46813
+  },
+  {
+    "id": "mads_pedersen",
+    "full_name": "Mads Pedersen",
+    "short_name": "M. Pedersen",
+    "team": "L-T",
+    "team_full": "Lidl - Trek",
+    "price": 12.0,
+    "holdet_person_id": 3564
+  },
+  {
+    "id": "magnus_cort",
+    "full_name": "Magnus Cort",
+    "short_name": "Cort",
+    "team": "UXM",
+    "team_full": "Uno-X Mobility",
+    "price": 5.5,
+    "holdet_person_id": 2978
+  },
+  {
+    "id": "marijn_van_den_berg",
+    "full_name": "Marijn van den Berg",
+    "short_name": "Berg",
+    "team": "EF",
+    "team_full": "EF Education - EasyPost",
+    "price": 5.0,
+    "holdet_person_id": 4682
+  },
+  {
+    "id": "mathias_norsgaard",
+    "full_name": "Mathias Norsgaard",
+    "short_name": "Norsgaard",
+    "team": "L-T",
+    "team_full": "Lidl - Trek",
+    "price": 2.5,
+    "holdet_person_id": 4296
+  },
+  {
+    "id": "matthew_brennan",
+    "full_name": "Matthew Brennan",
+    "short_name": "Brennan",
+    "team": "VLB",
+    "team_full": "Team Visma | Lease a Bike",
+    "price": 12.0,
+    "holdet_person_id": 46842
+  },
+  {
+    "id": "matthew_riccitello",
+    "full_name": "Matthew Riccitello",
+    "short_name": "Riccitello",
+    "team": "DAL",
+    "team_full": "Decathlon CMA CGM Team",
+    "price": 7.5,
+    "holdet_person_id": 4877
+  },
+  {
+    "id": "mattias_skjelmose",
+    "full_name": "Mattias Skjelmose",
+    "short_name": "Skjelmose",
+    "team": "L-T",
+    "team_full": "Lidl - Trek",
+    "price": 10.5,
+    "holdet_person_id": 4724
+  },
+  {
+    "id": "max_poole",
+    "full_name": "Max Poole",
+    "short_name": "M. Poole",
+    "team": "TPP",
+    "team_full": "Team Picnic PostNL",
+    "price": 5.5,
+    "holdet_person_id": 4919
+  },
+  {
+    "id": "menno_huising",
+    "full_name": "Menno Huising",
+    "short_name": "Huising",
+    "team": "VLB",
+    "team_full": "Team Visma | Lease a Bike",
+    "price": 2.5,
+    "holdet_person_id": 46844
+  },
+  {
+    "id": "mikel_landa",
+    "full_name": "Mikel Landa",
+    "short_name": "M. Landa",
+    "team": "SQ",
+    "team_full": "Soudal Quick-Step",
+    "price": 6.0,
+    "holdet_person_id": 2190
+  },
+  {
+    "id": "milan_vader",
+    "full_name": "Milan Vader",
+    "short_name": "Vader",
+    "team": "Q36",
+    "team_full": "Pinarello Q36.5 Pro Cycling Team",
+    "price": 3.0,
+    "holdet_person_id": 47042
+  },
+  {
+    "id": "nairo_quintana",
+    "full_name": "Nairo Quintana",
+    "short_name": "Quintana",
+    "team": "MOV",
+    "team_full": "Movistar Team",
+    "price": 3.5,
+    "holdet_person_id": 2381
+  },
+  {
+    "id": "nelson_oliveira",
+    "full_name": "Nelson Oliveira",
+    "short_name": "N. Oliveira",
+    "team": "UAE",
+    "team_full": "UAE Team Emirates - XRG",
+    "price": 4.5,
+    "holdet_person_id": 4208
+  },
+  {
+    "id": "pablo_castrillo",
+    "full_name": "Pablo Castrillo",
+    "short_name": "Castrillo",
+    "team": "MOV",
+    "team_full": "Movistar Team",
+    "price": 5.0,
+    "holdet_person_id": 5014
+  },
+  {
+    "id": "pablo_torres",
+    "full_name": "Pablo Torres",
+    "short_name": "Torres",
+    "team": "UAE",
+    "team_full": "UAE Team Emirates - XRG",
+    "price": 5.5,
+    "holdet_person_id": 46846
+  },
+  {
+    "id": "pau_miquel",
+    "full_name": "Pau Miquel",
+    "short_name": "Miquel",
+    "team": "TVM",
+    "team_full": "Bahrain - Victorious",
+    "price": 3.5,
+    "holdet_person_id": 4796
+  },
+  {
+    "id": "paul_double",
+    "full_name": "Paul Double",
+    "short_name": "Double",
+    "team": "JAL",
+    "team_full": "Team Jayco AlUla",
+    "price": 3.5,
+    "holdet_person_id": 4939
+  },
+  {
+    "id": "pavel_sivakov",
+    "full_name": "Pavel Sivakov",
+    "short_name": "Sivakov",
+    "team": "UAE",
+    "team_full": "UAE Team Emirates - XRG",
+    "price": 4.0,
+    "holdet_person_id": 3897
+  },
+  {
+    "id": "primoz_roglic",
+    "full_name": "Primoz Roglic",
+    "short_name": "Roglic",
+    "team": "RBH",
+    "team_full": "Red Bull - BORA - hansgrohe",
+    "price": 9.5,
+    "holdet_person_id": 3255
+  },
+  {
+    "id": "raul_garcia_pierna",
+    "full_name": "Raul Garcia Pierna",
+    "short_name": "Pierna",
+    "team": "MOV",
+    "team_full": "Movistar Team",
+    "price": 4.5,
+    "holdet_person_id": 4833
+  },
+  {
+    "id": "rudy_molard",
+    "full_name": "Rudy Molard",
+    "short_name": "Molard",
+    "team": "GFD",
+    "team_full": "Groupama - FDJ United",
+    "price": 3.0,
+    "holdet_person_id": 2574
+  },
+  {
+    "id": "steff_cras",
+    "full_name": "Steff Cras",
+    "short_name": "Cras",
+    "team": "SQ",
+    "team_full": "Soudal Quick-Step",
+    "price": 3.5,
+    "holdet_person_id": 4024
+  },
+  {
+    "id": "steven_kruijswijk",
+    "full_name": "Steven Kruijswijk",
+    "short_name": "Kruijswijk",
+    "team": "VLB",
+    "team_full": "Team Visma | Lease a Bike",
+    "price": 2.5,
+    "holdet_person_id": 1445
+  },
+  {
+    "id": "tadej_pogacar",
+    "full_name": "Tadej Pogacar",
+    "short_name": "Pogacar",
+    "team": "UAE",
+    "team_full": "UAE Team Emirates - XRG",
+    "price": 21.0,
+    "holdet_person_id": 4206
+  },
+  {
+    "id": "thibau_nys",
+    "full_name": "Thibau Nys",
+    "short_name": "Nys",
+    "team": "L-T",
+    "team_full": "Lidl - Trek",
+    "price": 7.5,
+    "holdet_person_id": 47168
+  },
+  {
+    "id": "tijmen_graat",
+    "full_name": "Tijmen Graat",
+    "short_name": "Graat",
+    "team": "VLB",
+    "team_full": "Team Visma | Lease a Bike",
+    "price": 3.0,
+    "holdet_person_id": 46843
+  },
+  {
+    "id": "valentin_paret-peintre",
+    "full_name": "Valentin Paret-Peintre",
+    "short_name": "Paret-Peintre",
+    "team": "SQ",
+    "team_full": "Soudal Quick-Step",
+    "price": 6.0,
+    "holdet_person_id": 4637
+  },
+  {
+    "id": "victor_langellotti",
+    "full_name": "Victor Langellotti",
+    "short_name": "Langellotti",
+    "team": "XDA",
+    "team_full": "XDS Astana Team",
+    "price": 3.0,
+    "holdet_person_id": 4835
+  },
+  {
+    "id": "walter_calzoni",
+    "full_name": "Walter Calzoni",
+    "short_name": "Calzoni",
+    "team": "Q36",
+    "team_full": "Pinarello Q36.5 Pro Cycling Team",
+    "price": 3.0,
+    "holdet_person_id": 47037
+  },
+  {
+    "id": "william_junior_lecerf",
+    "full_name": "William Junior Lecerf",
+    "short_name": "Lecerf",
+    "team": "SQ",
+    "team_full": "Soudal Quick-Step",
+    "price": 4.5,
+    "holdet_person_id": 5013
+  },
+  {
+    "id": "wout_van_aert",
+    "full_name": "Wout van Aert",
+    "short_name": "Aert",
+    "team": "VLB",
+    "team_full": "Team Visma | Lease a Bike",
+    "price": 11.5,
+    "holdet_person_id": 4197
+  }
+]
