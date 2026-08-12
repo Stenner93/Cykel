@@ -1,0 +1,72 @@
+name: 🌱 Bootstrap Vuelta (scrape + build + commit)
+
+# Engangs-opstart: scraper Vuelta-startliste/priser fra Holdet, bygger
+# vuelta2026_predictions.json + _scores.json, validerer og committer.
+# Kør manuelt. Når den er grøn, wires den daglige kørsel til Vueltaen.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Del kø med den daglige kørsel så to git-push ikke race'r.
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
+
+jobs:
+  bootstrap:
+    name: Bootstrap Vuelta
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sæt Python op
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Installér afhængigheder
+        run: pip install -r requirements.txt
+
+      - name: Scrape Holdet (Vuelta)
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python scripts/scrape/scrape_holdet.py \
+            --cartridge vuelta-2026 \
+            --update-riders \
+            || echo "⚠️  Holdet-scrape slog fejl — fortsætter med cached data"
+
+      - name: Byg Vuelta 2026 dashboard-data
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python scripts/build/build_vuelta_web_data.py --delay 0.5
+
+      - name: Validér output
+        run: |
+          python - <<'PY'
+          import json
+          d = json.load(open("web/data/vuelta2026_predictions.json", encoding="utf-8"))
+          st = d.get("stages", [])
+          nr = sum(len(s.get("riders", [])) for s in st)
+          co = sum(1 for s in st for r in s["riders"] if r.get("co"))
+          print(f"etaper={len(st)}  rytter-rækker={nr}  med CO={co}")
+          assert len(st) > 0 and nr > 0, "TOMT output!"
+          s = st[0]
+          top = sorted(s["riders"], key=lambda x: x.get("exp") or 0, reverse=True)[:6]
+          print(f"Etape 1 ({s.get('type')}) top-exp:")
+          for r in top:
+              print(f"  {r['name']:26} pris={r.get('price')}  exp={r.get('exp')}  co={bool(r.get('co'))}")
+          PY
+
+      - name: Commit Vuelta-data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add web/data/vuelta2026_predictions.json web/data/vuelta2026_scores.json
+          git add -f data/cache/vuelta2026_players.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "🌱 Bootstrap Vuelta 2026 data (scrape + build)"
+          git push
