@@ -12,8 +12,8 @@
     "full_name": "Alberto Bettiol",
     "short_name": "A. Bettiol",
     "team": "XDSAT",
-    "price": 3.5,
-    "own_pct": 0.0
+    "price": 4.0,
+    "own_pct": 0
   },
   {
     "id": "arnaud_de_lie",
@@ -276,8 +276,8 @@
     "full_name": "Davide Ballerini",
     "short_name": "D. Ballerini",
     "team": "XDSAT",
-    "price": 3.0,
-    "own_pct": 253.0
+    "price": 5.0,
+    "own_pct": 0
   },
   {
     "id": "damiano_caruso",
@@ -317,7 +317,7 @@
     "short_name": "D. L. De Cruz",
     "team": "QPCT",
     "price": 3.5,
-    "own_pct": 0.0
+    "own_pct": 0
   },
   {
     "id": "pablo_sevilla_diego",
@@ -397,15 +397,15 @@
     "short_name": "E. Blikra",
     "team": "UM",
     "price": 6.0,
-    "own_pct": 0.0
+    "own_pct": 0
   },
   {
     "id": "enric_mas",
     "full_name": "Enric Mas",
     "short_name": "E. Mas",
     "team": "MT",
-    "price": 7.0,
-    "own_pct": 0.0
+    "price": 8.0,
+    "own_pct": 0
   },
   {
     "id": "edward_planckaert",
@@ -429,7 +429,7 @@
     "short_name": "E. Rubio",
     "team": "MT",
     "price": 5.0,
-    "own_pct": 56.0
+    "own_pct": 0
   },
   {
     "id": "embret_svestad_bårdseng",
@@ -516,8 +516,8 @@
     "full_name": "Felix Gall",
     "short_name": "F. Gall",
     "team": "DALM",
-    "price": 9.0,
-    "own_pct": 0.0
+    "price": 11.5,
+    "own_pct": 0
   },
   {
     "id": "filippo_ganna",
@@ -572,8 +572,8 @@
     "full_name": "Filippo Zana",
     "short_name": "F. Zana",
     "team": "SQ",
-    "price": 4.5,
-    "own_pct": 0.0
+    "price": 4.0,
+    "own_pct": 0
   },
   {
     "id": "giovanni_aleotti",
@@ -661,7 +661,7 @@
     "short_name": "H. M. López",
     "team": "XDSAT",
     "price": 4.0,
-    "own_pct": 0.0
+    "own_pct": 0
   },
   {
     "id": "igor_arrieta",
@@ -693,7 +693,7 @@
     "short_name": "J. Almeida",
     "team": "UAETEXRG",
     "price": 10.0,
-    "own_pct": 0.0
+    "own_pct": 0
   },
   {
     "id": "jardi_christiaan_van_der_lee",
@@ -748,8 +748,8 @@
     "full_name": "Jan Hirt",
     "short_name": "J. Hirt",
     "team": "I-PT",
-    "price": 3.0,
-    "own_pct": 0.0
+    "price": 4.5,
+    "own_pct": 0
   },
   {
     "id": "johan_jacobs",
@@ -804,8 +804,8 @@
     "full_name": "Juan Pedro López",
     "short_name": "J. P. López",
     "team": "MT",
-    "price": 4.0,
-    "own_pct": 0.0
+    "price": 3.0,
+    "own_pct": 0
   },
   {
     "id": "johan_price_pejtersen",
@@ -877,7 +877,7 @@
     "short_name": "J. Vine",
     "team": "UAETEXRG",
     "price": 8.0,
-    "own_pct": 0.0
+    "own_pct": 0
   },
   {
     "id": "jonas_vingegaard",
@@ -932,8 +932,8 @@
     "full_name": "Lorenzo Fortunato",
     "short_name": "L. Fortunato",
     "team": "XDSAT",
-    "price": 5.0,
-    "own_pct": 0.0
+    "price": 5.5,
+    "own_pct": 0
   },
   {
     "id": "lorenzo_germani",
@@ -1004,8 +1004,8 @@
     "full_name": "Liam Tuckwell",
     "short_name": "L. Tuckwell",
     "team": "RB-B",
-    "price": 3.5,
-    "own_pct": 0.0
+    "price": 6.0,
+    "own_pct": 0
   },
   {
     "id": "lennert_van_eetvelt",
@@ -1084,8 +1084,8 @@
     "full_name": "Mikel Landa",
     "short_name": "M. Landa",
     "team": "SQ",
-    "price": 7.0,
-    "own_pct": 0.0
+    "price": 6.0,
+    "own_pct": 0
   },
   {
     "id": "mirco_maestri",
@@ -1140,8 +1140,8 @@
     "full_name": "Max Poole",
     "short_name": "M. Poole",
     "team": "TPP",
-    "price": 6.0,
-    "own_pct": 0.0
+    "price": 5.5,
+    "own_pct": 0
   },
   {
     "id": "mathis_rondel",
@@ -1557,6 +1557,6 @@
     "short_name": "M. Pedersen",
     "team": "L-T",
     "price": 12.0,
-    "own_pct": 4854.0
+    "own_pct": 0
   }
 ]
