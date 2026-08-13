@@ -95,6 +95,18 @@
   .scbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .scfacit{margin-left:auto;font-size:.83rem;font-weight:650}
   .pick .f.pos{color:var(--good)}
+  /* Vuelta live: etape-vælger + scenarie-knapper */
+  .vsel{display:inline-flex;align-items:center;gap:6px;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .vsel select{font-family:inherit;font-size:.85rem;font-weight:650;color:var(--ink);background:var(--card);
+    border:1px solid var(--border-2);border-radius:8px;padding:6px 10px;text-transform:none;letter-spacing:0;max-width:60vw}
+  .vscbtn{appearance:none;cursor:pointer;font-family:inherit;font-size:.8rem;font-weight:650;color:var(--ink-2);
+    background:var(--card);border:1px solid var(--border-2);border-radius:20px;padding:6px 12px;
+    display:inline-flex;gap:6px;align-items:center;transition:border-color .15s,color .15s,background .15s}
+  .vscbtn small{font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .vscbtn:hover{border-color:var(--accent);color:var(--ink)}
+  .vscbtn.active{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+  .vscbtn.active small{color:var(--accent)}
+  .vscbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .cols{display:grid;grid-template-columns:1.5fr 1fr;gap:14px}
   .cols-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .cardhead{display:flex;align-items:center;justify-content:space-between;gap:8px;
@@ -244,7 +256,8 @@
 
 <div class="tabs">
   <div class="tabs-in" role="tablist" aria-label="Vuelta-værktøjer">
-    <button class="tab" role="tab" aria-selected="true"  id="t-cockpit" aria-controls="p-cockpit">Dagligt cockpit</button>
+    <button class="tab" role="tab" aria-selected="true"  id="t-vuelta"  aria-controls="p-vuelta">Vuelta-etape</button>
+    <button class="tab" role="tab" aria-selected="false" id="t-cockpit" aria-controls="p-cockpit">Metode (eksempel)</button>
     <button class="tab" role="tab" aria-selected="false" id="t-optakt"  aria-controls="p-optakt">Optakt-konsol</button>
     <button class="tab" role="tab" aria-selected="false" id="t-sprint"  aria-controls="p-sprint">Sprint &amp; bonus</button>
     <span class="tabsep" aria-hidden="true"></span>
@@ -258,12 +271,49 @@
 <main>
   <p class="intro"><b>La Roja Manager</b> — Vuelta-arbejdsrummet, bygget på det Touren lærte os: hele efterslæbet lå i
     <b>sprint</b> og <b>holdbonus</b>, mens kaptajn og TT var styrker, og <b>optakterne slog modellen</b> på det
-    vigtigste valg (Simon K. Kjær ramte bedste kaptajn 52 % vs. modellens 33 %). De tre værktøjer nedenfor er fyldt med et
-    <b>ægte gennemgået eksempel — Tour-etape 21, alt vi vidste ex ante</b> — så mekanikken er til at forstå. De klassiske
-    faner (Pointmatrix, Forudsigelser m.fl.) tændes når Vueltaen åbner på Holdet.dk.</p>
+    vigtigste valg (Simon K. Kjær ramte bedste kaptajn 52 % vs. modellens 33 %). Fanen <b>Vuelta-etape</b> kører nu på
+    <b>ægte startliste, priser og CO-ratings</b> fra spillet — vælg etape + scenarie og se kaptajn og picks opdatere sig
+    øjeblikkeligt i browseren. Fanen <b>Metode (eksempel)</b> viser mekanikken gennemgået på et ægte eksempel (Tour-etape 21).
+    Pointmatrix/Forudsigelser tændes efterhånden som løbet giver resultater.</p>
 
-  <!-- ══════════ COCKPIT ══════════ -->
-  <section class="panel" id="p-cockpit" role="tabpanel" aria-labelledby="t-cockpit">
+  <!-- ══════════ VUELTA LIVE ══════════ -->
+  <section class="panel" id="p-vuelta" role="tabpanel" aria-labelledby="t-vuelta">
+    <div class="stagebar">
+      <span class="badge">VUELTA 2026</span>
+      <label class="vsel">Etape <select id="vStage"></select></label>
+      <span class="meta" id="vMeta">henter…</span>
+      <span class="exlabel" id="vFlag" style="margin-left:auto">ægte data · startliste fyldes</span>
+    </div>
+
+    <div class="scenariobar" role="group" aria-label="Vælg scenarie">
+      <span class="sclabel">Scenarie</span>
+      <button class="vscbtn" data-vsc="massespurt" type="button">Flad massespurt <small>SPR</small></button>
+      <button class="vscbtn" data-vsc="bakket" type="button">Reduceret · bakket <small>HLL+SPR</small></button>
+      <button class="vscbtn" data-vsc="brosten" type="button">Reduceret · brosten <small>COB</small></button>
+      <button class="vscbtn" data-vsc="bjerg" type="button">Bjergafslutning <small>MTN</small></button>
+      <button class="vscbtn" data-vsc="favorit" type="button">Favoritfinale <small>GC</small></button>
+      <button class="vscbtn" data-vsc="tt" type="button">Enkeltstart <small>ITT</small></button>
+    </div>
+
+    <div class="cols">
+      <div class="card">
+        <div class="cardhead"><h3>Kaptajn</h3><span class="chip opt">CO · scenarie-drevet</span></div>
+        <div class="cardbody" id="vCapBody"><p class="src">Henter Vuelta-data…</p></div>
+      </div>
+      <div class="card">
+        <div class="cardhead"><h3>Top-picks — efter valgt scenarie</h3><span class="src">CO-fit · pris · model-exp</span></div>
+        <div class="cardbody">
+          <div id="vPickList"></div>
+          <p class="src" style="margin:10px 0 0">Rangeret efter <b>CyclingOracle-fit</b> for scenariet på den ægte startliste
+             (<span id="vCov">–</span>). Kaptajn = bedste fit. <b>NB:</b> etapetyper/navne er foreløbige før løbet — vælg scenariet
+             manuelt indtil profildata er ude; VeloScore/optakt-lag lægges oveni.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ METODE / EKSEMPEL (E21) ══════════ -->
+  <section class="panel" id="p-cockpit" role="tabpanel" aria-labelledby="t-cockpit" hidden>
     <div class="stagebar">
       <span class="badge">TOUR · E21</span>
       <span class="arch">🁢 Paris · Montmartre-finale</span>
@@ -636,6 +686,83 @@
       (function(b){ b.addEventListener('click', function(){ render(b.getAttribute('data-sc')); }); })(btns[i]);
     }
     render('massespurt');   // start på modellens default; klik "brosten" for at se kaptajnen flippe til VdP
+  })();
+</script>
+<script>
+  /* Vuelta live · scenariemotor på ÆGTE data.
+     Læser web/data/vuelta2026_predictions.json (bygget af den daglige CI-kørsel),
+     og re-rangerer den valgte etapes startliste efter scenariets CO-disciplin-vægt.
+     100% i browseren — ingen server, ingen lokal kørsel. */
+  (function(){
+    var SCEN = {
+      massespurt:{label:'Flad massespurt',          w:{SPR:1}},
+      bakket    :{label:'Reduceret spurt · bakket',  w:{HLL:0.6, SPR:0.4}},
+      brosten   :{label:'Reduceret spurt · brosten', w:{COB:0.5, HLL:0.3, SPR:0.2}},
+      bjerg     :{label:'Bjergafslutning',           w:{MTN:1}},
+      favorit   :{label:'Favoritfinale (GC)',        w:{GC:0.6, MTN:0.4}},
+      tt        :{label:'Enkeltstart',               w:{ITT:1}}
+    };
+    var TYPE2SC = {sprint:'massespurt', hilly:'bakket', mountain:'bjerg', tt:'tt', cobbled:'brosten', flat:'massespurt'};
+
+    var stages = [], cur = 0, curScen = 'bakket';
+    function fmtM(v){ return (v==null) ? '–' : (v/1e6).toFixed(2).replace('.', ',') + 'M'; }
+    function fit(r, sc){ var s=0,t=0,k,co=r.co||{}; for(k in sc.w){ s += sc.w[k]*(co[k]||0); t += sc.w[k]; } return t? s/t : 0; }
+    function $(id){ return document.getElementById(id); }
+
+    function render(){
+      var st = stages[cur]; if(!st) return;
+      var sc = SCEN[curScen] || SCEN.bakket;
+      var all = st.riders || [];
+      var scored = all.filter(function(r){ return r.co && Object.keys(r.co).length; });
+      scored.sort(function(a,b){ return fit(b,sc) - fit(a,sc); });
+      var cap = scored[0];
+
+      $('vMeta').textContent = (st.name || ('Etape ' + st.num)) + ' · ' + st.type;
+      $('vCov').textContent = 'CO-dækning ' + scored.length + '/' + all.length;
+
+      if(cap){
+        $('vCapBody').innerHTML =
+          '<div class="bigcap"><span class="name">' + cap.name + '</span><span class="conf">' + sc.label + '</span></div>' +
+          '<p class="src">' + cap.team + ' · pris ' + cap.price + 'M · CO-fit ' + Math.round(fit(cap,sc)) +
+          ' · model-exp ' + fmtM(cap.exp) + '. <b>Kaptajn = bedste CO-fit for scenariet.</b></p>';
+      } else {
+        $('vCapBody').innerHTML = '<p class="src">Ingen ryttere med CO-data på denne etape endnu.</p>';
+      }
+
+      $('vPickList').innerHTML = scored.slice(0,12).map(function(r,i){
+        return '<div class="pick' + (i===0?' cap':'') + '">' +
+          '<span class="rk tnum">' + (i+1) + '</span>' +
+          '<span class="nm">' + r.name + (i===0?' <span class="star">★ kaptajn</span>':'') +
+            '<small>' + r.team + ' · ' + r.price + 'M</small></span>' +
+          '<span class="fuse"><span class="m mono">fit ' + Math.round(fit(r,sc)) + '</span>' +
+            '<span class="arw">·</span><span class="f mono">' + fmtM(r.exp) + '</span></span>' +
+        '</div>';
+      }).join('');
+
+      var b = document.querySelectorAll('.vscbtn');
+      for(var i=0;i<b.length;i++){ b[i].classList.toggle('active', b[i].getAttribute('data-vsc')===curScen); }
+    }
+
+    function setStage(i){ cur = i; curScen = TYPE2SC[(stages[cur]||{}).type] || 'bakket'; render(); }
+
+    fetch('data/vuelta2026_predictions.json', {cache:'no-cache'})
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(function(d){
+        stages = d.stages || [];
+        var sel = $('vStage');
+        sel.innerHTML = stages.map(function(s,i){
+          return '<option value="'+i+'">E'+s.num+' — '+(s.name || s.type)+'</option>';
+        }).join('');
+        sel.addEventListener('change', function(){ setStage(+sel.value); });
+        var btns = document.querySelectorAll('.vscbtn');
+        for(var i=0;i<btns.length;i++){
+          (function(bt){ bt.addEventListener('click', function(){ curScen = bt.getAttribute('data-vsc'); render(); }); })(btns[i]);
+        }
+        setStage(0);
+      })
+      .catch(function(e){
+        $('vCapBody').innerHTML = '<p class="src">Kunne ikke hente Vuelta-data ('+e.message+'). Den bygges af den daglige kørsel — prøv igen senere.</p>';
+      });
   })();
 </script>
 <script src="nav.js"></script>
