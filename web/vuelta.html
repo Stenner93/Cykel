@@ -107,6 +107,18 @@
   .vscbtn.active{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
   .vscbtn.active small{color:var(--accent)}
   .vscbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .teams3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .teams3 .team{border:1px solid var(--border);border-radius:12px;background:var(--surface);overflow:hidden}
+  .teams3 .team h4{margin:0;padding:9px 12px;font-size:.76rem;font-weight:750;letter-spacing:.05em;text-transform:uppercase;
+    border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+  .teams3 .team h4 .cost{font-family:var(--mono);font-weight:650;color:var(--muted);font-size:.72rem;text-transform:none;letter-spacing:0}
+  .teams3 .team.sikkert h4{color:var(--good)} .teams3 .team.value h4{color:var(--model)} .teams3 .team.sats h4{color:var(--warn)}
+  .teams3 .team ul{list-style:none;margin:0;padding:5px 0}
+  .teams3 .team li{display:flex;justify-content:space-between;gap:8px;padding:5px 12px;font-size:.82rem;align-items:baseline}
+  .teams3 .team li .rn{font-weight:600} .teams3 .team li .rn small{color:var(--muted);font-weight:500}
+  .teams3 .team li.cap .rn{color:var(--accent);font-weight:750}
+  .teams3 .team li .rp{font-family:var(--mono);color:var(--muted);font-size:.74rem;white-space:nowrap}
+  @media(max-width:820px){.teams3{grid-template-columns:1fr}}
   .cols{display:grid;grid-template-columns:1.5fr 1fr;gap:14px}
   .cols-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .cardhead{display:flex;align-items:center;justify-content:space-between;gap:8px;
@@ -249,7 +261,7 @@
 
 <div class="dash-topbar">
   <div class="dash-topbar-inner">
-    <a href="index.html" class="dash-logo">🚴 <span class="es">La Roja</span> Manager<small>Vuelta 2026</small></a>
+    <a href="vuelta.html" class="dash-logo">🚴 <span class="es">La Roja</span> Manager<small>Vuelta 2026</small></a>
     <nav class="page-nav" id="mainNav"></nav>
   </div>
 </div>
@@ -305,9 +317,18 @@
         <div class="cardbody">
           <div id="vPickList"></div>
           <p class="src" style="margin:10px 0 0">Rangeret efter <b>CyclingOracle-fit</b> for scenariet på den ægte startliste
-             (<span id="vCov">–</span>). Kaptajn = bedste fit. <b>NB:</b> etapetyper/navne er foreløbige før løbet — vælg scenariet
-             manuelt indtil profildata er ude; VeloScore/optakt-lag lægges oveni.</p>
+             (<span id="vCov">–</span>). Kaptajn = bedste fit. <b>NB:</b> etapetyper/navne er foreløbige før løbet — scenariet
+             sættes til det mest sandsynlige og kan skiftes; VeloScore/optakt-lag lægges oveni.</p>
         </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <div class="cardhead"><h3>Tre hold — efter valgt scenarie</h3><span class="src">8 ryttere · budget 50M · ★ = kaptajn</span></div>
+      <div class="cardbody">
+        <div class="teams3" id="vTeams"></div>
+        <p class="src" style="margin:10px 0 0"><b>Sikkert</b> = højest samlet CO-fit · <b>Value</b> = mest fit pr. krone ·
+           <b>Satsning</b> = én dyr stjerne-kaptajn + billige differentier. Greedy under 50M-budgettet; et hurtigt udgangspunkt, ikke facit.</p>
       </div>
     </div>
   </section>
@@ -593,8 +614,9 @@
   </section>
 
   <div class="foot">
-    <b>Status:</b> cockpit / optakt / bonus viser et ægte ex ante-eksempel fra Tour-etape 21 (så mekanikken er til at forstå),
-    ikke Vuelta-data. De øvrige faner er tomme skaller til Vuelta-data kommer. <b>Datagrundlag:</b> kalibreringen bygger nu på
+    <b>Status:</b> <b>Vuelta-etape</b> kører på ægte data (startliste, priser, CO-ratings) med scenariemotor + tre hold;
+    <b>Metode (eksempel)</b> viser mekanikken gennemgået på Tour-E21. Pointmatrix/Forudsigelser fyldes efterhånden som løbet
+    giver resultater. <b>Datagrundlag:</b> kalibreringen bygger nu på
     tre scorede optakt-kilder — Tour-optakterne (Feltet.dk + Simon K. Kjær) og Giro-optakterne (Ingemann, 15 etaper med facit) —
     plus Giro-VeloScore. Alle ligger i repoet.
   </div>
@@ -703,11 +725,56 @@
       tt        :{label:'Enkeltstart',               w:{ITT:1}}
     };
     var TYPE2SC = {sprint:'massespurt', hilly:'bakket', mountain:'bjerg', tt:'tt', cobbled:'brosten', flat:'massespurt'};
+    // Kuraterede etapetyper indtil PCS-profildata er ude (Holdet melder pt. alt som "hilly").
+    // Udvid efterhånden som ruten kendes → scenariet defaulter så korrekt pr. etape.
+    var SCEN_OVERRIDE = { 1: 'tt' };   // E1 er en enkeltstart
 
     var stages = [], cur = 0, curScen = 'bakket';
     function fmtM(v){ return (v==null) ? '–' : (v/1e6).toFixed(2).replace('.', ',') + 'M'; }
     function fit(r, sc){ var s=0,t=0,k,co=r.co||{}; for(k in sc.w){ s += sc.w[k]*(co[k]||0); t += sc.w[k]; } return t? s/t : 0; }
     function $(id){ return document.getElementById(id); }
+    function defaultScen(st){ return SCEN_OVERRIDE[st.num] || TYPE2SC[st.type] || 'bakket'; }
+    function currentIdx(){ for(var i=0;i<stages.length;i++){ if((stages[i].status||'none')!=='finished') return i; } return 0; }
+
+    // Byg et hold: 8 ryttere under 50M, grådigt efter 'metric'. forced = tvungen første rytter (sats-stjerne).
+    function buildTeam(pool, metric, forced){
+      var cand = pool.filter(function(r){ return r.price > 0; });
+      if(!cand.length) return {team:[], cost:0};
+      var minP = Math.min.apply(null, cand.map(function(r){ return r.price; }));
+      var team = [], cost = 0, SIZE = 8, BUD = 50;
+      if(forced){ team.push(forced); cost += forced.price; }
+      var ranked = cand.filter(function(r){ return team.indexOf(r) < 0; })
+                       .sort(function(a,b){ return metric(b) - metric(a); });
+      for(var i=0;i<ranked.length && team.length<SIZE;i++){
+        var r = ranked[i], reserve = (SIZE - team.length - 1) * minP;
+        if(cost + r.price + reserve <= BUD){ team.push(r); cost += r.price; }
+      }
+      if(team.length < SIZE){
+        var cheap = cand.filter(function(r){ return team.indexOf(r) < 0; }).sort(function(a,b){ return a.price - b.price; });
+        for(var j=0;j<cheap.length && team.length<SIZE;j++){ team.push(cheap[j]); cost += cheap[j].price; }
+      }
+      return {team:team, cost:cost};
+    }
+
+    function renderTeams(scored, sc){
+      var star = scored.slice().sort(function(a,b){ return fit(b,sc)-fit(a,sc); })[0];
+      var defs = [
+        {key:'sikkert', name:'Sikkert',  metric:function(r){ return fit(r,sc); }},
+        {key:'value',   name:'Value',    metric:function(r){ return fit(r,sc)/Math.max(r.price,0.1); }},
+        {key:'sats',    name:'Satsning', metric:function(r){ return fit(r,sc)/Math.max(r.price,0.1); }, forced:star}
+      ];
+      $('vTeams').innerHTML = defs.map(function(d){
+        var t = buildTeam(scored, d.metric, d.forced);
+        var sorted = t.team.slice().sort(function(a,b){ return fit(b,sc)-fit(a,sc); });
+        var cap = sorted[0];
+        var lis = sorted.map(function(r){
+          var isCap = r === cap;
+          return '<li'+(isCap?' class="cap"':'')+'><span class="rn">'+(isCap?'★ ':'')+r.name+
+            ' <small>'+r.team+'</small></span><span class="rp">'+r.price+'M · '+Math.round(fit(r,sc))+'</span></li>';
+        }).join('');
+        return '<div class="team '+d.key+'"><h4>'+d.name+'<span class="cost">'+t.cost.toFixed(1)+'/50M</span></h4><ul>'+lis+'</ul></div>';
+      }).join('');
+    }
 
     function render(){
       var st = stages[cur]; if(!st) return;
@@ -739,11 +806,13 @@
         '</div>';
       }).join('');
 
+      renderTeams(scored, sc);
+
       var b = document.querySelectorAll('.vscbtn');
       for(var i=0;i<b.length;i++){ b[i].classList.toggle('active', b[i].getAttribute('data-vsc')===curScen); }
     }
 
-    function setStage(i){ cur = i; curScen = TYPE2SC[(stages[cur]||{}).type] || 'bakket'; render(); }
+    function setStage(i){ cur = i; curScen = defaultScen(stages[cur] || {num:0}); render(); }
 
     fetch('data/vuelta2026_predictions.json', {cache:'no-cache'})
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
@@ -758,7 +827,9 @@
         for(var i=0;i<btns.length;i++){
           (function(bt){ bt.addEventListener('click', function(){ curScen = bt.getAttribute('data-vsc'); render(); }); })(btns[i]);
         }
-        setStage(0);
+        var ci = currentIdx();
+        sel.value = ci;
+        setStage(ci);
       })
       .catch(function(e){
         $('vCapBody').innerHTML = '<p class="src">Kunne ikke hente Vuelta-data ('+e.message+'). Den bygges af den daglige kørsel — prøv igen senere.</p>';
