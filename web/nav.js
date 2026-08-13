@@ -4,13 +4,16 @@
    here, every page updates. */
 (function () {
   var NAV = [
-    { href: 'index.html', label: 'TdF 2026', match: ['index.html', ''] },
-    { href: 'vuelta.html', label: 'Vuelta 2026', match: ['vuelta.html'] },
+    { href: 'vuelta.html', label: 'Vuelta 2026', match: ['vuelta.html', ''] },
     { href: 'evaluering.html', label: 'Analyse', match: ['evaluering.html', 'laer-af-touren.html'] },
     { href: 'riders.html',    label: 'Rytterdatabase', match: ['riders.html'] },
     { href: 'analytics.html', label: 'ML-Analyse',     match: ['analytics.html'] },
     { href: 'model.html',     label: 'Modelforklaring', match: ['model.html'] },
-    { href: 'giro.html', label: 'Arkiv', match: ['giro.html', 'dauphine.html'] }
+    { label: 'Arkiv', alignRight: true, match: ['index.html', 'giro.html', 'dauphine.html'], menu: [
+        { href: 'index.html',    label: 'Tour de France 2026' },
+        { href: 'giro.html',     label: "Giro d'Italia 2026" },
+        { href: 'dauphine.html', label: 'Dauphiné 2026' }
+    ] }
   ];
 
   // Self-contained nav styles — injected once so the nav renders identically
