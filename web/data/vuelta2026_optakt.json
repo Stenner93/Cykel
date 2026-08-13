@@ -1,0 +1,12 @@
+{
+  "note": "Per-etape optakt-signaler til La Roja Manager. Fyldes efterhånden som optakterne kommer (indsæt teksten i chatten → jeg encoder + committer her). Nøgle = etapenummer (streng). 'scenario' overstyrer default-scenariet; 'favorites'/'avoid' = rytternavne (delstreng-match, ikke case-følsomt); 'captain' og 'source' er valgfri.",
+  "schema": {
+    "scenario": "massespurt|bakket|brosten|bjerg|favorit|tt",
+    "captain": "rytternavn (valgfri)",
+    "favorites": ["rytternavn"],
+    "avoid": ["rytternavn"],
+    "note": "kort optakt-resumé (valgfri)",
+    "source": "Feltet / Simon / Ingemann ..."
+  },
+  "stages": {}
+}

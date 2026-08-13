@@ -273,9 +273,7 @@
     <button class="tab" role="tab" aria-selected="false" id="t-optakt"  aria-controls="p-optakt">Optakt-konsol</button>
     <button class="tab" role="tab" aria-selected="false" id="t-sprint"  aria-controls="p-sprint">Sprint &amp; bonus</button>
     <span class="tabsep" aria-hidden="true"></span>
-    <button class="tab soon" role="tab" aria-selected="false" id="t-hold"   aria-controls="p-hold">Holdanbefalinger</button>
     <button class="tab soon" role="tab" aria-selected="false" id="t-matrix" aria-controls="p-matrix">Pointmatrix</button>
-    <button class="tab soon" role="tab" aria-selected="false" id="t-preds"  aria-controls="p-preds">Forudsigelser</button>
     <button class="tab soon" role="tab" aria-selected="false" id="t-odds"   aria-controls="p-odds">Odds &amp; kilder</button>
   </div>
 </div>
@@ -331,6 +329,18 @@
         <div class="teams3" id="vTeams"></div>
         <p class="src" style="margin:10px 0 0"><b>Sikkert</b> = højest samlet CO-fit · <b>Value</b> = mest fit pr. krone ·
            <b>Satsning</b> = én dyr stjerne-kaptajn + billige differentier. Greedy under 50M-budgettet; et hurtigt udgangspunkt, ikke facit.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <div class="cardhead"><h3>Forudsigelser — hele feltet</h3><span class="src">rangeret efter scenarie · fit · exp · value</span></div>
+      <div class="cardbody">
+        <details>
+          <summary style="cursor:pointer;font-size:.85rem;font-weight:650;color:var(--accent)">Vis alle ryttere (<span id="vFieldN">–</span>)</summary>
+          <div class="scrollx" style="margin-top:10px"><table class="board" id="vField"></table></div>
+        </details>
+        <p class="src" style="margin:10px 0 0">Hele startlisten for den valgte etape, rangeret efter det valgte scenarie.
+           <b>value</b> = model-exp pr. mio. kr (billig-effektivitet). Kaptajn + tre hold ovenfor er scenarie-drevne holdanbefalinger.</p>
       </div>
     </div>
   </section>
@@ -591,23 +601,11 @@
   </section>
 
   <!-- ══════════ KOMMENDE FANER ══════════ -->
-  <section class="panel" id="p-hold" role="tabpanel" aria-labelledby="t-hold" hidden>
-    <div class="empty"><div class="big">🏆</div>
-      <h3>Holdanbefalinger — klar til Vueltaen</h3>
-      <p>De tre holdforslag (sikkert / value / satsning) pr. etape tændes når Vuelta-startlisten og priserne er kendt.
-         Se den live udgave på <a class="lnk" href="index.html">TdF 2026</a> imens.</p></div>
-  </section>
   <section class="panel" id="p-matrix" role="tabpanel" aria-labelledby="t-matrix" hidden>
     <div class="empty"><div class="big">📊</div>
       <h3>Pointmatrix — klar til Vueltaen</h3>
       <p>Den fulde rytter × etape-matrix med faktiske Holdet-point, sortering og filtre. Kræver løbende resultater fra
          Holdet.dk — fyldes fra Vueltaens etape 1. Live udgave: <a class="lnk" href="index.html">TdF 2026 → Pointmatrix</a>.</p></div>
-  </section>
-  <section class="panel" id="p-preds" role="tabpanel" aria-labelledby="t-preds" hidden>
-    <div class="empty"><div class="big">🔮</div>
-      <h3>Forudsigelser — klar til Vueltaen</h3>
-      <p>Model- og VeloScore-forudsigelser pr. etape med forventet vs. faktisk point. Kobles på når startlisten er kendt;
-         Giro-VeloScore ligger allerede klar som en del af kalibreringen. Live udgave: <a class="lnk" href="index.html">TdF 2026 → Forudsigelser</a>.</p></div>
   </section>
   <section class="panel" id="p-odds" role="tabpanel" aria-labelledby="t-odds" hidden>
     <div class="empty"><div class="big">📡</div>
@@ -737,7 +735,7 @@
       21:'bakket'
     };
 
-    var stages = [], cur = 0, curScen = 'bakket', typesVary = false;
+    var stages = [], cur = 0, curScen = 'bakket', typesVary = false, OPT = {};
     var mixMode = false, mixSet = {};   // lag 3: sandsynligheds-mix (lige vægt over valgte scenarier)
     function fmtM(v){ return (v==null) ? '–' : (v/1e6).toFixed(2).replace('.', ',') + 'M'; }
     function fit(r, sc){ var s=0,t=0,k,co=r.co||{}; for(k in sc.w){ s += sc.w[k]*(co[k]||0); t += sc.w[k]; } return t? s/t : 0; }
@@ -752,11 +750,32 @@
       if(mixMode){ var ks=mixKeys(); return ks.length ? ('Blanding: '+ks.map(function(k){ return SCEN[k].label.split(' ')[0]; }).join(' + ')) : 'Blanding — vælg scenarier'; }
       return (SCEN[curScen] || SCEN.bakket).label;
     }
-    // Når rigtige PCS-etapetyper er i data'en (så typerne varierer, ikke alt "hilly"),
-    // vinder de over den kuraterede presse-map. Ellers bruges presse-map'en.
+    // Optakt (hvis indlæst) > rigtige PCS-typer > kurateret presse-map.
     function defaultScen(st){
+      var o = OPT[st.num];
+      if(o && o.scenario && SCEN[o.scenario]) return o.scenario;
       if(typesVary && TYPE2SC[st.type]) return TYPE2SC[st.type];
       return SCEN_OVERRIDE[st.num] || TYPE2SC[st.type] || 'bakket';
+    }
+    function optOf(){ return OPT[(stages[cur]||{}).num] || null; }
+    function nrm(s){ return (s||'').toLowerCase(); }
+    function optMark(name){
+      var o = optOf(); if(!o) return '';
+      var n = nrm(name);
+      if((o.favorites||[]).some(function(f){ return n.indexOf(nrm(f))>=0; })) return ' <span class="chip opt" style="padding:1px 6px">optakt ★</span>';
+      if((o.avoid||[]).some(function(a){ return n.indexOf(nrm(a))>=0; })) return ' <span class="chip bad" style="padding:1px 6px">undgå</span>';
+      return '';
+    }
+    function fmtVal(r){ return ((r.exp||0)/Math.max(r.price,0.1)/1e6).toFixed(2).replace('.', ','); }
+    function renderField(scored){
+      $('vFieldN').textContent = scored.length;
+      $('vField').innerHTML =
+        '<thead><tr><th>#</th><th>Rytter</th><th>Hold</th><th>Pris</th><th>fit</th><th>exp</th><th>value</th></tr></thead><tbody>' +
+        scored.map(function(r,i){
+          return '<tr><td>'+(i+1)+'</td><td>'+r.name+optMark(r.name)+'</td><td>'+r.team+'</td>' +
+            '<td class="tnum">'+r.price+'</td><td class="tnum">'+Math.round(SCORE(r))+'</td>' +
+            '<td class="mono">'+fmtM(r.exp)+'</td><td class="mono">'+fmtVal(r)+'</td></tr>';
+        }).join('') + '</tbody>';
     }
     function currentIdx(){ for(var i=0;i<stages.length;i++){ if((stages[i].status||'none')!=='finished') return i; } return 0; }
 
@@ -811,10 +830,14 @@
       $('vCov').textContent = 'CO-dækning ' + scored.length + '/' + all.length;
 
       if(cap){
+        var o = optOf();
+        var optLine = (o && (o.scenario || o.source)) ?
+          '<p class="src" style="margin:6px 0 0"><span class="chip opt">optakt</span> ' +
+          (o.source ? (o.source + ': ') : '') + (o.note || ('foreslår ' + (SCEN[o.scenario] ? SCEN[o.scenario].label : o.scenario))) + '</p>' : '';
         $('vCapBody').innerHTML =
           '<div class="bigcap"><span class="name">' + cap.name + '</span><span class="conf">' + scenLabel() + '</span></div>' +
           '<p class="src">' + cap.team + ' · pris ' + cap.price + 'M · fit ' + Math.round(SCORE(cap)) +
-          ' · model-exp ' + fmtM(cap.exp) + '. <b>Kaptajn = bedste fit for '+(mixMode?'blandingen':'scenariet')+'.</b></p>';
+          ' · model-exp ' + fmtM(cap.exp) + '. <b>Kaptajn = bedste fit for '+(mixMode?'blandingen':'scenariet')+'.</b></p>' + optLine;
       } else {
         $('vCapBody').innerHTML = '<p class="src">Ingen ryttere med CO-data på denne etape endnu.</p>';
       }
@@ -822,7 +845,7 @@
       $('vPickList').innerHTML = scored.slice(0,12).map(function(r,i){
         return '<div class="pick' + (i===0?' cap':'') + '">' +
           '<span class="rk tnum">' + (i+1) + '</span>' +
-          '<span class="nm">' + r.name + (i===0?' <span class="star">★ kaptajn</span>':'') +
+          '<span class="nm">' + r.name + (i===0?' <span class="star">★ kaptajn</span>':'') + optMark(r.name) +
             '<small>' + r.team + ' · ' + r.price + 'M</small></span>' +
           '<span class="fuse"><span class="m mono">fit ' + Math.round(SCORE(r)) + '</span>' +
             '<span class="arw">·</span><span class="f mono">' + fmtM(r.exp) + '</span></span>' +
@@ -830,6 +853,7 @@
       }).join('');
 
       renderTeams(scored);
+      renderField(scored);
 
       var b = document.querySelectorAll('.vscbtn');
       for(var i=0;i<b.length;i++){
@@ -872,9 +896,10 @@
           if(mixMode && !mixKeys().length){ mixSet = {}; mixSet[curScen] = 1; }  // seed med nuværende
           render();
         }); }
-        var ci = currentIdx();
-        sel.value = ci;
-        setStage(ci);
+        fetch('data/vuelta2026_optakt.json', {cache:'no-cache'})
+          .then(function(r){ return r.ok ? r.json() : {}; })
+          .catch(function(){ return {}; })
+          .then(function(o){ OPT = (o && o.stages) || {}; var ci = currentIdx(); sel.value = ci; setStage(ci); });
       })
       .catch(function(e){
         $('vCapBody').innerHTML = '<p class="src">Kunne ikke hente Vuelta-data ('+e.message+'). Den bygges af den daglige kørsel — prøv igen senere.</p>';
