@@ -107,7 +107,9 @@
   .vscbtn.active{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
   .vscbtn.active small{color:var(--accent)}
   .vscbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .teams3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .teams3{display:grid;grid-template-columns:1fr;gap:10px}
+  .optbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px;padding:9px 12px;border-radius:10px;
+    font-size:.85rem;color:var(--ink-2);border:1px solid rgba(240,169,59,.4);background:rgba(240,169,59,.08)}
   .teams3 .team{border:1px solid var(--border);border-radius:12px;background:var(--surface);overflow:hidden}
   .teams3 .team h4{margin:0;padding:9px 12px;font-size:.76rem;font-weight:750;letter-spacing:.05em;text-transform:uppercase;
     border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
@@ -307,28 +309,25 @@
       <button class="vscbtn vmix" id="vMixBtn" type="button" aria-pressed="false" title="Bland flere scenarier (lige vægt)">⚖ Bland</button>
     </div>
 
+    <div id="vOptBar"></div>
+
     <div class="cols">
       <div class="card">
-        <div class="cardhead"><h3>Kaptajn</h3><span class="chip opt">CO · scenarie-drevet</span></div>
-        <div class="cardbody" id="vCapBody"><p class="src">Henter Vuelta-data…</p></div>
-      </div>
-      <div class="card">
-        <div class="cardhead"><h3>Top-picks — efter valgt scenarie</h3><span class="src">CO-fit · pris · model-exp</span></div>
+        <div class="cardhead"><h3>Top-picks — top 20</h3><span class="src">★ kaptajn · fit · pris · exp</span></div>
         <div class="cardbody">
           <div id="vPickList"></div>
-          <p class="src" style="margin:10px 0 0">Rangeret efter <b>CyclingOracle-fit</b> for scenariet på den ægte startliste
-             (<span id="vCov">–</span>). Kaptajn = bedste fit. <b>NB:</b> etapetyper/navne er foreløbige før løbet — scenariet
-             sættes til det mest sandsynlige og kan skiftes; VeloScore/optakt-lag lægges oveni.</p>
+          <p class="src" style="margin:10px 0 0">Rangeret efter <b>CyclingOracle-fit</b> for scenariet (<span id="vCov">–</span>).
+             ★ = kaptajn (bedste fit). Etapetyper er foreløbige før løbet — scenariet sættes til det mest sandsynlige og kan skiftes.</p>
         </div>
       </div>
-    </div>
-
-    <div class="card" style="margin-top:14px">
-      <div class="cardhead"><h3>Tre hold — efter valgt scenarie</h3><span class="src">8 ryttere · budget 50M · ★ = kaptajn</span></div>
-      <div class="cardbody">
-        <div class="teams3" id="vTeams"></div>
-        <p class="src" style="margin:10px 0 0"><b>Sikkert</b> = højest samlet CO-fit · <b>Value</b> = mest fit pr. krone ·
-           <b>Satsning</b> = én dyr stjerne-kaptajn + billige differentier. Greedy under 50M-budgettet; et hurtigt udgangspunkt, ikke facit.</p>
+      <div class="card">
+        <div class="cardhead"><h3>Tre hold</h3><span class="src">8 ryttere · 50M · ★ = kaptajn</span></div>
+        <div class="cardbody">
+          <div class="teams3" id="vTeams"></div>
+          <p class="src" style="margin:10px 0 0">Tre reelle bud der alle maksimerer forventet nytte og bruger budgettet:
+             <b>Optimalt</b> = bedste hold · <b>Uden <span id="vStarName">stjernen</span></b> = alternativ uden den dyreste ·
+             <b>Differential</b> = stærkt hold med mindst overlap.</p>
+        </div>
       </div>
     </div>
 
@@ -779,43 +778,64 @@
     }
     function currentIdx(){ for(var i=0;i<stages.length;i++){ if((stages[i].status||'none')!=='finished') return i; } return 0; }
 
-    // Byg et hold: 8 ryttere under 50M, grådigt efter 'metric'. forced = tvungen første rytter (sats-stjerne).
-    function buildTeam(pool, metric, forced){
-      var cand = pool.filter(function(r){ return r.price > 0; });
-      if(!cand.length) return {team:[], cost:0};
+    // Optimér et hold: 8 ryttere ≤50M der MAKSIMERER samlet nytte (og dermed bruger budgettet).
+    // opts.exclude = {id:1} udelukkes; opts.penalize = {id:1} straffes (til differential-hold).
+    function optimizeTeam(pool, opts){
+      opts = opts || {};
+      var SIZE = 8, BUD = 50;
+      var cand = pool.filter(function(r){ return r.price > 0 && !(opts.exclude && opts.exclude[r.id]); });
+      if(cand.length < SIZE) return {team:cand.slice(), cost:cand.reduce(function(s,r){ return s+r.price; },0)};
+      function val(r){ var v = SCORE(r); if(opts.penalize && opts.penalize[r.id]) v *= (opts.penalizeFactor||0.5); return v; }
       var minP = Math.min.apply(null, cand.map(function(r){ return r.price; }));
-      var team = [], cost = 0, SIZE = 8, BUD = 50;
-      if(forced){ team.push(forced); cost += forced.price; }
-      var ranked = cand.filter(function(r){ return team.indexOf(r) < 0; })
-                       .sort(function(a,b){ return metric(b) - metric(a); });
+      var ranked = cand.slice().sort(function(a,b){ return val(b) - val(a); });
+      var team = [], cost = 0, ids = {};
       for(var i=0;i<ranked.length && team.length<SIZE;i++){
         var r = ranked[i], reserve = (SIZE - team.length - 1) * minP;
-        if(cost + r.price + reserve <= BUD){ team.push(r); cost += r.price; }
+        if(cost + r.price + reserve <= BUD){ team.push(r); cost += r.price; ids[r.id]=1; }
       }
-      if(team.length < SIZE){
-        var cheap = cand.filter(function(r){ return team.indexOf(r) < 0; }).sort(function(a,b){ return a.price - b.price; });
-        for(var j=0;j<cheap.length && team.length<SIZE;j++){ team.push(cheap[j]); cost += cheap[j].price; }
+      // Hill-climb: bytt en rytter ud for en bedre, betalbar → hæver samlet nytte og bruger budgettet.
+      var guard = 0, improved = true;
+      while(improved && guard++ < 300){
+        improved = false;
+        for(var ti=0; ti<team.length; ti++){
+          var out = team[ti], budgetOut = BUD - (cost - out.price);
+          var best = null, bestGain = 1e-6;
+          for(var ci=0; ci<cand.length; ci++){
+            var cin = cand[ci];
+            if(ids[cin.id] || cin.price > budgetOut) continue;
+            var gain = val(cin) - val(out);
+            if(gain > bestGain){ bestGain = gain; best = cin; }
+          }
+          if(best){ delete ids[out.id]; ids[best.id]=1; cost += best.price - out.price; team[ti] = best; improved = true; }
+        }
       }
       return {team:team, cost:cost};
     }
+    function shortName(n){ return (n||'').split(' ').pop(); }
 
     function renderTeams(scored){
-      var star = scored.slice().sort(function(a,b){ return SCORE(b)-SCORE(a); })[0];
+      var priciest = scored.slice().sort(function(a,b){ return b.price - a.price; })[0];
+      var t1 = optimizeTeam(scored, {});
+      var ex = {}; if(priciest) ex[priciest.id] = 1;
+      var t2 = optimizeTeam(scored, {exclude: ex});
+      var pen = {}; t1.team.forEach(function(r){ pen[r.id] = 1; });
+      var t3 = optimizeTeam(scored, {penalize: pen, penalizeFactor: 0.5});
+      var sn = priciest ? shortName(priciest.name) : 'stjernen';
+      var snEl = $('vStarName'); if(snEl) snEl.textContent = sn;
       var defs = [
-        {key:'sikkert', name:'Sikkert',  metric:function(r){ return SCORE(r); }},
-        {key:'value',   name:'Value',    metric:function(r){ return SCORE(r)/Math.max(r.price,0.1); }},
-        {key:'sats',    name:'Satsning', metric:function(r){ return SCORE(r)/Math.max(r.price,0.1); }, forced:star}
+        {key:'sikkert', name:'Optimalt',     t:t1},
+        {key:'value',   name:'Uden '+sn,     t:t2},
+        {key:'sats',    name:'Differential', t:t3}
       ];
       $('vTeams').innerHTML = defs.map(function(d){
-        var t = buildTeam(scored, d.metric, d.forced);
-        var sorted = t.team.slice().sort(function(a,b){ return SCORE(b)-SCORE(a); });
+        var sorted = d.t.team.slice().sort(function(a,b){ return SCORE(b)-SCORE(a); });
         var cap = sorted[0];
         var lis = sorted.map(function(r){
           var isCap = r === cap;
           return '<li'+(isCap?' class="cap"':'')+'><span class="rn">'+(isCap?'★ ':'')+r.name+
             ' <small>'+r.team+'</small></span><span class="rp">'+r.price+'M · '+Math.round(SCORE(r))+'</span></li>';
         }).join('');
-        return '<div class="team '+d.key+'"><h4>'+d.name+'<span class="cost">'+t.cost.toFixed(1)+'/50M</span></h4><ul>'+lis+'</ul></div>';
+        return '<div class="team '+d.key+'"><h4>'+d.name+'<span class="cost">'+d.t.cost.toFixed(1)+'/50M</span></h4><ul>'+lis+'</ul></div>';
       }).join('');
     }
 
@@ -826,23 +846,16 @@
       scored.sort(function(a,b){ return SCORE(b) - SCORE(a); });
       var cap = scored[0];
 
-      $('vMeta').textContent = (st.name || ('Etape ' + st.num)) + ' · ' + st.type;
+      $('vMeta').textContent = (st.name || ('Etape ' + st.num)) + ' · ' + st.type + ' · ' + scenLabel();
       $('vCov').textContent = 'CO-dækning ' + scored.length + '/' + all.length;
 
-      if(cap){
-        var o = optOf();
-        var optLine = (o && (o.scenario || o.source)) ?
-          '<p class="src" style="margin:6px 0 0"><span class="chip opt">optakt</span> ' +
-          (o.source ? (o.source + ': ') : '') + (o.note || ('foreslår ' + (SCEN[o.scenario] ? SCEN[o.scenario].label : o.scenario))) + '</p>' : '';
-        $('vCapBody').innerHTML =
-          '<div class="bigcap"><span class="name">' + cap.name + '</span><span class="conf">' + scenLabel() + '</span></div>' +
-          '<p class="src">' + cap.team + ' · pris ' + cap.price + 'M · fit ' + Math.round(SCORE(cap)) +
-          ' · model-exp ' + fmtM(cap.exp) + '. <b>Kaptajn = bedste fit for '+(mixMode?'blandingen':'scenariet')+'.</b></p>' + optLine;
-      } else {
-        $('vCapBody').innerHTML = '<p class="src">Ingen ryttere med CO-data på denne etape endnu.</p>';
-      }
+      var o = optOf();
+      $('vOptBar').innerHTML = (o && (o.scenario || o.source)) ?
+        '<div class="optbar"><span class="chip opt">optakt</span><span>' +
+        (o.source ? ('<b>'+o.source+':</b> ') : '') +
+        (o.note || ('foreslår ' + (SCEN[o.scenario] ? SCEN[o.scenario].label : o.scenario))) + '</span></div>' : '';
 
-      $('vPickList').innerHTML = scored.slice(0,12).map(function(r,i){
+      $('vPickList').innerHTML = scored.slice(0,20).map(function(r,i){
         return '<div class="pick' + (i===0?' cap':'') + '">' +
           '<span class="rk tnum">' + (i+1) + '</span>' +
           '<span class="nm">' + r.name + (i===0?' <span class="star">★ kaptajn</span>':'') + optMark(r.name) +
@@ -902,7 +915,7 @@
           .then(function(o){ OPT = (o && o.stages) || {}; var ci = currentIdx(); sel.value = ci; setStage(ci); });
       })
       .catch(function(e){
-        $('vCapBody').innerHTML = '<p class="src">Kunne ikke hente Vuelta-data ('+e.message+'). Den bygges af den daglige kørsel — prøv igen senere.</p>';
+        $('vPickList').innerHTML = '<p class="src">Kunne ikke hente Vuelta-data ('+e.message+'). Den bygges af den daglige kørsel — prøv igen senere.</p>';
       });
   })();
 </script>
