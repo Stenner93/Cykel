@@ -725,9 +725,15 @@
       tt        :{label:'Enkeltstart',               w:{ITT:1}}
     };
     var TYPE2SC = {sprint:'massespurt', hilly:'bakket', mountain:'bjerg', tt:'tt', cobbled:'brosten', flat:'massespurt'};
-    // Kuraterede etapetyper indtil PCS-profildata er ude (Holdet melder pt. alt som "hilly").
-    // Udvid efterhånden som ruten kendes → scenariet defaulter så korrekt pr. etape.
-    var SCEN_OVERRIDE = { 1: 'tt' };   // E1 er en enkeltstart
+    // Kurateret Vuelta 2026-rute (fra presse-/rutekilder — PCS blokeres i dette miljø).
+    // Sætter default-scenariet pr. etape; kan altid skiftes manuelt. Ret hvis en type er forkert.
+    var SCEN_OVERRIDE = {
+      1:'tt',        2:'bakket',    3:'bjerg',     4:'bakket',    5:'bakket',
+      6:'massespurt',7:'bjerg',     8:'massespurt',9:'bjerg',     10:'bakket',
+      11:'bakket',   12:'massespurt',13:'bjerg',   14:'bakket',   15:'bakket',
+      16:'bakket',   17:'massespurt',18:'tt',      19:'bjerg',    20:'bjerg',
+      21:'bakket'
+    };
 
     var stages = [], cur = 0, curScen = 'bakket';
     function fmtM(v){ return (v==null) ? '–' : (v/1e6).toFixed(2).replace('.', ',') + 'M'; }
