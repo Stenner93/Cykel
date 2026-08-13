@@ -110,6 +110,11 @@
   .teams3{display:grid;grid-template-columns:1fr;gap:10px}
   .optbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px;padding:9px 12px;border-radius:10px;
     font-size:.85rem;color:var(--ink-2);border:1px solid rgba(240,169,59,.4);background:rgba(240,169,59,.08)}
+  .whysummary{cursor:pointer;font-size:.9rem;font-weight:700;color:var(--accent);list-style:none;
+    border:1px solid var(--border-2);border-radius:10px;padding:10px 14px;user-select:none}
+  .whysummary::-webkit-details-marker{display:none}
+  .whysummary::before{content:"▸ "}
+  details[open] > .whysummary::before{content:"▾ "}
   .teams3 .team{border:1px solid var(--border);border-radius:12px;background:var(--surface);overflow:hidden}
   .teams3 .team h4{margin:0;padding:9px 12px;font-size:.76rem;font-weight:750;letter-spacing:.05em;text-transform:uppercase;
     border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
@@ -271,7 +276,6 @@
 <div class="tabs">
   <div class="tabs-in" role="tablist" aria-label="Vuelta-værktøjer">
     <button class="tab" role="tab" aria-selected="true"  id="t-vuelta"  aria-controls="p-vuelta">Vuelta-etape</button>
-    <button class="tab" role="tab" aria-selected="false" id="t-cockpit" aria-controls="p-cockpit">Metode (eksempel)</button>
     <button class="tab" role="tab" aria-selected="false" id="t-optakt"  aria-controls="p-optakt">Optakt-konsol</button>
     <button class="tab" role="tab" aria-selected="false" id="t-sprint"  aria-controls="p-sprint">Sprint &amp; bonus</button>
     <span class="tabsep" aria-hidden="true"></span>
@@ -342,132 +346,55 @@
            <b>value</b> = model-exp pr. mio. kr (billig-effektivitet). Kaptajn + tre hold ovenfor er scenarie-drevne holdanbefalinger.</p>
       </div>
     </div>
-  </section>
 
-  <!-- ══════════ METODE / EKSEMPEL (E21) ══════════ -->
-  <section class="panel" id="p-cockpit" role="tabpanel" aria-labelledby="t-cockpit" hidden>
-    <div class="stagebar">
-      <span class="badge">TOUR · E21</span>
-      <span class="arch">🁢 Paris · Montmartre-finale</span>
-      <span class="meta">flad m. brostensstigning · sprint/puncher</span>
-      <span class="exlabel" style="margin-left:auto">Eksempel · ex ante før sidste Tour-etape</span>
-    </div>
+    <details style="margin-top:14px">
+      <summary class="whysummary">Hvorfor det virker · kalibrering (optakt slår modellen)</summary>
+      <div style="margin-top:12px;display:grid;gap:14px">
+        <div class="card">
+          <div class="cardhead"><h3>Kalibrering · selv-lærende</h3><span class="chip">track record · Tour</span></div>
+          <div class="cardbody">
+            <p class="src" style="margin:0 0 10px">Fusionsvægtene er kildernes målte hit-rate over hele Touren. Optakt-laget
+               vægtes tungest på kaptajn; modellen bruges til at screene billige oversete ryttere.</p>
+            <div class="scrollx"><table class="board">
+              <thead><tr><th>Kilde</th><th>Kaptajn #1</th><th>Top-3</th><th>Køb-pct*</th></tr></thead>
+              <tbody>
+                <tr><td>Model</td><td>33 %</td><td>57 %</td><td>0.82</td></tr>
+                <tr><td>Feltet.dk</td><td class="win">48 %</td><td>62 %</td><td>0.86</td></tr>
+                <tr class="best"><td>Simon K. Kjær</td><td class="win">52 %</td><td class="win">71 %</td><td>0.84</td></tr>
+              </tbody>
+            </table></div>
+            <p class="note">* Gennemsnitlig placering af anbefalede ryttere i etapens vækstfelt (1.0 = bedst).</p>
+          </div>
+        </div>
 
-    <div class="scenariobar" role="group" aria-label="Vælg scenarie">
-      <span class="sclabel">Scenarie</span>
-      <button class="scbtn" data-sc="massespurt" type="button">Flad massespurt <small>model</small></button>
-      <button class="scbtn" data-sc="bakket" type="button">Reduceret spurt · bakket <small>Vuelta-type</small></button>
-      <button class="scbtn" data-sc="brosten" type="button">Reduceret spurt · brosten <small>optakt</small></button>
-      <button class="scbtn" data-sc="bjerg" type="button">Bjergafslutning</button>
-      <span class="scfacit" id="scFacit"></span>
-    </div>
-
-    <div class="cols-3" style="margin-bottom:14px">
-      <div class="card">
-        <div class="cardhead"><h3>Kaptajn</h3><span class="chip opt" id="capChip">CO · scenarie-drevet</span></div>
-        <div class="cardbody" id="capBody"><!-- fyldes af scenarie-JS --></div>
-      </div>
-      <div class="card">
-        <div class="cardhead"><h3>Optakt-satsning</h3><span class="chip opt">stage-favoritter</span></div>
-        <div class="cardbody transfer">
-          <div class="io"><span class="tag in">SATS</span><span>Mathieu van der Poel + Mads Pedersen</span></div>
-          <div class="io"><span class="tag out">FINANSIÉR</span><span>fra de dyre klassementsryttere</span></div>
-          <p class="src" style="margin:8px 0 0">Optakt: "svært at forestille sig at Pedersen og VdP <em>ikke</em> skal køre om sejren."
-             Prosaen pegede på dagens vinder — kaptajns-labelet gjorde ikke.</p>
+        <div class="card">
+          <div class="cardhead">
+            <h3>Ægte Giro-facit · Ingemann-optakt vs. model</h3>
+            <span class="exlabel">Giro 2026 · 15 etaper med facit</span>
+          </div>
+          <div class="cardbody">
+            <p class="src" style="margin:0 0 12px;max-width:80ch">Samme test på et <b style="color:var(--ink)">helt uafhængigt datasæt</b>:
+               Frederik Ingemanns daglige Giro-optakter kodet til kaptajnvalg og scoret mod den faktiske vækst. Det er begrundelsen
+               for disciplin-gaten: modellens svaghed var at den kaptajnede den dyre GC-stjerne på forkert etapetype og fik nul.</p>
+            <div class="scrollx"><table class="board">
+              <thead><tr><th>Kilde</th><th>Kaptajn = etapens #1</th><th>Top-3</th><th>Top-5</th><th>Andel af bedst mulige*</th></tr></thead>
+              <tbody>
+                <tr class="best"><td>Ingemann (optakt)</td><td class="win">27 %</td><td class="win">40 %</td><td class="win">53 %</td><td class="win">51 %</td></tr>
+                <tr><td>Model (højeste exp.)</td><td>7 %</td><td>7 %</td><td>40 %</td><td>24 %</td></tr>
+              </tbody>
+            </table></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+              <span class="chip good">Head-to-head: Ingemann bedre på 8 etaper</span>
+              <span class="chip bad">Model bedre på 3</span>
+              <span class="chip">lige på 4</span>
+            </div>
+            <p class="note" style="margin-top:12px">* Andel af den bedst mulige kaptajn-vækst hver etape. <b>Ingemann mere end
+               fordoblede modellen (51 % mod 24 %)</b> — og en disciplin-gated model lukker ~⅔ af det gab. Det er hvorfor
+               scenariet + CO-disciplinen driver kaptajnvalget her.</p>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <div class="cardhead"><h3>Holdbonus / billig storform</h3><span class="chip warn">1 hul</span></div>
-        <div class="cardbody">
-          <div class="kv"><span class="k">Rick Pluimers (4,5M)</span><span class="v"><span class="down">✘ manglede</span></span></div>
-          <div class="kv"><span class="k">Ejet af top-10</span><span class="v">8 af 10 hold</span></div>
-          <p class="src" style="margin:8px 0 0">Optakt-storform-tip. Voksede +0,13M — en billig rytter 8/10 af de bedste havde, og vi ikke.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="cols">
-      <div class="card">
-        <div class="cardhead"><h3>Top-picks — efter valgt scenarie</h3><span class="src">scenarie-fit · exp · facit (M)</span></div>
-        <div class="cardbody">
-          <div id="pickList"><!-- fyldes af scenarie-JS --></div>
-          <p class="src" style="margin:10px 0 0">Rangeret efter rytterens <b>CyclingOracle-fit</b> i det valgte scenarie (disciplin-gated kaptajn).
-             <b>⚑ = dagens faktiske vinder.</b> Skift scenarie og se kaptajnen flippe.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="cardhead"><h3>Kalibrering · selv-lærende</h3><span class="chip">track record · Tour</span></div>
-        <div class="cardbody">
-          <p class="src" style="margin:0 0 10px">Fusionsvægtene er kildernes målte hit-rate over hele Touren, opdateret efter
-             hver etape. Seedes med Giro (VeloScore ligger klar) fra Vueltaens etape 1.</p>
-          <div class="scrollx"><table class="board">
-            <thead><tr><th>Kilde</th><th>Kaptajn #1</th><th>Top-3</th><th>Køb-pct*</th></tr></thead>
-            <tbody>
-              <tr><td>Model</td><td>33 %</td><td>57 %</td><td>0.82</td></tr>
-              <tr><td>Feltet.dk</td><td class="win">48 %</td><td>62 %</td><td>0.86</td></tr>
-              <tr class="best"><td>Simon K. Kjær</td><td class="win">52 %</td><td class="win">71 %</td><td>0.84</td></tr>
-            </tbody>
-          </table></div>
-          <p class="note">* Gennemsnitlig placering af anbefalede ryttere i etapens vækstfelt (1.0 = bedst).
-             <b>Optakten vægtes tungest på kaptajn; modellen bruges til at screene billige oversete ryttere.</b></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card" style="margin-top:14px">
-      <div class="cardhead">
-        <h3>Ægte Giro-facit · tredje kilde: Ingemann-optakt vs. model</h3>
-        <span class="exlabel">Giro 2026 · 15 etaper med facit</span>
-      </div>
-      <div class="cardbody">
-        <p class="src" style="margin:0 0 12px;max-width:80ch">Samme test som på Touren, nu på et <b style="color:var(--ink)">helt uafhængigt
-           datasæt</b>: Frederik Ingemanns daglige Giro-optakter (Feltets ekspert, top-3 i alle tre grand tour-spil — hans egen
-           placering klatrede fra 3.497 til 865 undervejs) kodet til kaptajnvalg og scoret mod den faktiske vækst i
-           <span class="mono">giro2026_predictions.json</span>. Kaptajnen er den ene beslutning der dobler point, så den vejer tungest.</p>
-        <div class="scrollx"><table class="board">
-          <thead><tr><th>Kilde</th><th>Kaptajn = etapens #1</th><th>Top-3</th><th>Top-5</th><th>Andel af bedst mulige*</th></tr></thead>
-          <tbody>
-            <tr class="best"><td>Ingemann (optakt)</td><td class="win">27 %</td><td class="win">40 %</td><td class="win">53 %</td><td class="win">51 %</td></tr>
-            <tr><td>Model (højeste exp.)</td><td>7 %</td><td>7 %</td><td>40 %</td><td>24 %</td></tr>
-          </tbody>
-        </table></div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-          <span class="chip good">Head-to-head: Ingemann bedre på 8 etaper</span>
-          <span class="chip bad">Model bedre på 3</span>
-          <span class="chip">lige på 4</span>
-        </div>
-        <p class="note" style="margin-top:12px">* Af den bedst mulige kaptajn hver etape (rytteren med størst faktisk vækst) — hvor stor en andel
-           fangede kildens kaptajn i snit. <b>Ingemann mere end fordoblede modellen (51 % mod 24 %).</b> Modellens svaghed er tydelig:
-           den kaptajnede gang på gang den dyre GC-stjerne (Vingegaard) eller en fast sprinter på forkert etapetype og fik nul —
-           præcis det fejlskud, optaktens etapelæsning retter.</p>
-      </div>
-    </div>
-
-    <div class="flagbar">
-      <span class="ic">⚑</span>
-      <div class="tx"><b>Dagens lærestreg</b> — model, kaptajns-call og facit trak i hver sin retning
-        <small>Model ville have Philipsen (0,30M forv.). Begge optakter kaptajnede Pogačar. Men dagens største vækst var Van der Poel — som modellen havde til 0 og optakt-<em>teksten</em> udpegede som medfavorit.</small></div>
-      <details class="reveal">
-        <summary>Se facit</summary>
-        <div class="drop">
-          <b>Sådan gik E21 (faktisk vækst):</b>
-          <table class="facit">
-            <thead><tr><th>Rytter</th><th>Model forv.</th><th>Faktisk</th></tr></thead>
-            <tbody>
-              <tr class="win"><td>Mathieu van der Poel</td><td>0,00</td><td>+0,45</td></tr>
-              <tr><td>Jasper Philipsen</td><td>0,30</td><td>+0,33</td></tr>
-              <tr><td>Mads Pedersen</td><td>0,13</td><td>+0,27</td></tr>
-              <tr><td>Rick Pluimers</td><td>0,00</td><td>+0,13</td></tr>
-              <tr><td>Tadej Pogačar</td><td>0,11</td><td>+0,13</td></tr>
-            </tbody>
-          </table>
-          <p style="margin:10px 0 0">Lektien til Vueltaen: <b>læs optaktens prosa, ikke kun kaptajns-labelet.</b> Optakten
-             havde dagens vinder (VdP) sort på hvidt som medfavorit, men spillede sikkert på Pogačar. Cockpittet løfter
-             derfor sejrsfavoritter op som selvstændige pick — ikke kun det ene kaptajns-navn.</p>
-        </div>
-      </details>
-    </div>
+    </details>
   </section>
 
   <!-- ══════════ OPTAKT-KONSOL ══════════ -->
@@ -643,70 +570,6 @@
         }
       });
     });
-  })();
-</script>
-<script>
-  /* Scenarie-motor · Montmartre-demo (E21) — kører på ÆGTE CyclingOracle-ratings.
-     Hvert scenarie er en vægtning over CO-disciplinerne (COB/HLL/MTN/GC/ITT/SPR).
-     Kaptajn = bedste CO-fit for det valgte scenarie. Skift scenarie → kaptajn flipper.
-     co-tal er rytternes rigtige CO-ratings; exp/act matcher den faktiske E21-vækst. */
-  (function(){
-    var R = [
-      {n:'Mathieu van der Poel', s:'Van der Poel', t:'Alpecin',   co:{COB:99,HLL:92,MTN:61,GC:64,ITT:58,SPR:84}, exp:0.00, act:0.45},
-      {n:'Jasper Philipsen',     s:'Philipsen',    t:'Alpecin',   co:{COB:91,HLL:76,MTN:44,GC:49,ITT:29,SPR:99}, exp:0.30, act:0.33},
-      {n:'Mads Pedersen',        s:'Pedersen',     t:'Lidl-Trek', co:{COB:95,HLL:90,MTN:43,GC:61,ITT:75,SPR:90}, exp:0.13, act:0.27},
-      {n:'Tadej Pogačar',        s:'Pogačar',      t:'UAE',       co:{COB:97,HLL:99,MTN:99,GC:96,ITT:92,SPR:77}, exp:0.11, act:0.13},
-      {n:'Wout van Aert',        s:'Van Aert',     t:'Visma',     co:{COB:96,HLL:92,MTN:71,GC:49,ITT:88,SPR:91}, exp:0.09, act:0.10},
-      {n:'Rick Pluimers',        s:'Pluimers',     t:'Picnic',    co:{COB:72,HLL:76,MTN:33,GC:39,ITT:26,SPR:74}, exp:0.00, act:0.13},
-      {n:'Dylan Groenewegen',    s:'Groenewegen',  t:'Jayco',     co:{COB:39,HLL:59,MTN:25,GC:37,ITT:20,SPR:98}, exp:0.12, act:0.05},
-      {n:'Jonas Abrahamsen',     s:'Abrahamsen',   t:'Uno-X',     co:{COB:90,HLL:90,MTN:48,GC:41,ITT:29,SPR:73}, exp:0.02, act:0.06}
-    ];
-    var SCEN = {
-      massespurt:{label:'Flad massespurt',        w:{SPR:1},                 desc:'Modellens profil-læsning: bredt opløb, ren topfart (SPR) afgør.'},
-      bakket    :{label:'Reduceret spurt · bakket',w:{HLL:0.6, SPR:0.4},      desc:'Kuperet finale uden brosten: overlev stigningen (HLL) + kick (SPR). Den type kommer ofte i Vueltaen.'},
-      brosten   :{label:'Reduceret spurt · brosten',w:{COB:0.5,HLL:0.3,SPR:0.2},desc:'Montmartre-brostenene tynder feltet: brosten/classics-kraft (COB+HLL) afgør.'},
-      bjerg     :{label:'Bjergafslutning',         w:{MTN:1},                 desc:'Stigning til stregen: klatreevne (MTN) afgør.'}
-    };
-    function fit(r, sc){ var s=0,t=0,k; for(k in sc.w){ s+=sc.w[k]*(r.co[k]||0); t+=sc.w[k]; } return s/t; }
-    var winner = R.reduce(function(a,b){ return b.act>a.act ? b : a; });
-    function fmt(v){ return v.toFixed(2).replace('.',','); }
-
-    function render(key){
-      var sc = SCEN[key];
-      var ranked = R.slice().sort(function(a,b){ return fit(b,sc)-fit(a,sc); });
-      var cap = ranked[0];
-      var hit = cap === winner;
-
-      document.getElementById('capBody').innerHTML =
-        '<div class="bigcap"><span class="name">'+cap.n+'</span><span class="conf">'+sc.label+'</span></div>'+
-        '<p class="src">'+sc.desc+' <b>Kaptajn = bedste CO-fit for scenariet.</b></p>'+
-        '<div style="margin-top:8px">'+(hit
-          ? '<span class="chip good">Facit: +'+fmt(cap.act)+'M · ✓ dagens vinder</span>'
-          : '<span class="chip warn">Facit: +'+fmt(cap.act)+'M · dagens bedste var '+winner.s+' +'+fmt(winner.act)+'M</span>')+'</div>';
-
-      document.getElementById('pickList').innerHTML = ranked.slice(0,5).map(function(r,i){
-        return '<div class="pick'+(i===0?' cap':'')+(r===winner&&i!==0?' disagree':'')+'">'+
-          '<span class="rk tnum">'+(i+1)+'</span>'+
-          '<span class="nm">'+r.n+(i===0?' <span class="star">★ kaptajn</span>':'')+
-            '<small>'+r.t+' · CO-fit '+Math.round(fit(r,sc))+'</small></span>'+
-          '<span class="fuse"><span class="m mono">exp '+fmt(r.exp)+'</span><span class="arw">·</span>'+
-            '<span class="f mono pos">'+fmt(r.act)+'</span>'+(r===winner?' <span class="star">⚑</span>':'')+'</span>'+
-        '</div>';
-      }).join('');
-
-      document.getElementById('scFacit').innerHTML = hit
-        ? '<span class="up">✓ Ramte dagens vinder ('+cap.s+' +'+fmt(cap.act)+'M)</span>'
-        : '<span class="flat">'+cap.s+' +'+fmt(cap.act)+'M · dagens bedste: '+winner.s+' +'+fmt(winner.act)+'M</span>';
-
-      var btns = document.querySelectorAll('.scbtn');
-      for (var i=0;i<btns.length;i++){ btns[i].classList.toggle('active', btns[i].getAttribute('data-sc')===key); }
-    }
-
-    var btns = document.querySelectorAll('.scbtn');
-    for (var i=0;i<btns.length;i++){
-      (function(b){ b.addEventListener('click', function(){ render(b.getAttribute('data-sc')); }); })(btns[i]);
-    }
-    render('massespurt');   // start på modellens default; klik "brosten" for at se kaptajnen flippe til VdP
   })();
 </script>
 <script>
