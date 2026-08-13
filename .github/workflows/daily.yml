@@ -94,6 +94,7 @@ jobs:
         run: |
           python scripts/scrape/scrape_holdet.py \
             --cartridge vuelta-2026 \
+            --my-team-id 7271757 \
             --update-riders \
             || echo "⚠️  Vuelta-scrape slog fejl (spillet lukket?) — fortsætter med cached data"
 
