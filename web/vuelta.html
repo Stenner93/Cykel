@@ -305,6 +305,8 @@
       <button class="vscbtn" data-vsc="bjerg" type="button">Bjergafslutning <small>MTN</small></button>
       <button class="vscbtn" data-vsc="favorit" type="button">Favoritfinale <small>GC</small></button>
       <button class="vscbtn" data-vsc="tt" type="button">Enkeltstart <small>ITT</small></button>
+      <span class="tabsep" aria-hidden="true"></span>
+      <button class="vscbtn vmix" id="vMixBtn" type="button" aria-pressed="false" title="Bland flere scenarier (lige vægt)">⚖ Bland</button>
     </div>
 
     <div class="cols">
@@ -735,11 +737,27 @@
       21:'bakket'
     };
 
-    var stages = [], cur = 0, curScen = 'bakket';
+    var stages = [], cur = 0, curScen = 'bakket', typesVary = false;
+    var mixMode = false, mixSet = {};   // lag 3: sandsynligheds-mix (lige vægt over valgte scenarier)
     function fmtM(v){ return (v==null) ? '–' : (v/1e6).toFixed(2).replace('.', ',') + 'M'; }
     function fit(r, sc){ var s=0,t=0,k,co=r.co||{}; for(k in sc.w){ s += sc.w[k]*(co[k]||0); t += sc.w[k]; } return t? s/t : 0; }
     function $(id){ return document.getElementById(id); }
-    function defaultScen(st){ return SCEN_OVERRIDE[st.num] || TYPE2SC[st.type] || 'bakket'; }
+    function mixKeys(){ return Object.keys(mixSet).filter(function(k){ return mixSet[k]; }); }
+    // Effektiv score: enkelt-scenarie, eller gennemsnit over de blandede scenarier.
+    function SCORE(r){
+      if(mixMode){ var ks=mixKeys(); if(!ks.length) return 0; var s=0; ks.forEach(function(k){ s+=fit(r,SCEN[k]); }); return s/ks.length; }
+      return fit(r, SCEN[curScen] || SCEN.bakket);
+    }
+    function scenLabel(){
+      if(mixMode){ var ks=mixKeys(); return ks.length ? ('Blanding: '+ks.map(function(k){ return SCEN[k].label.split(' ')[0]; }).join(' + ')) : 'Blanding — vælg scenarier'; }
+      return (SCEN[curScen] || SCEN.bakket).label;
+    }
+    // Når rigtige PCS-etapetyper er i data'en (så typerne varierer, ikke alt "hilly"),
+    // vinder de over den kuraterede presse-map. Ellers bruges presse-map'en.
+    function defaultScen(st){
+      if(typesVary && TYPE2SC[st.type]) return TYPE2SC[st.type];
+      return SCEN_OVERRIDE[st.num] || TYPE2SC[st.type] || 'bakket';
+    }
     function currentIdx(){ for(var i=0;i<stages.length;i++){ if((stages[i].status||'none')!=='finished') return i; } return 0; }
 
     // Byg et hold: 8 ryttere under 50M, grådigt efter 'metric'. forced = tvungen første rytter (sats-stjerne).
@@ -762,21 +780,21 @@
       return {team:team, cost:cost};
     }
 
-    function renderTeams(scored, sc){
-      var star = scored.slice().sort(function(a,b){ return fit(b,sc)-fit(a,sc); })[0];
+    function renderTeams(scored){
+      var star = scored.slice().sort(function(a,b){ return SCORE(b)-SCORE(a); })[0];
       var defs = [
-        {key:'sikkert', name:'Sikkert',  metric:function(r){ return fit(r,sc); }},
-        {key:'value',   name:'Value',    metric:function(r){ return fit(r,sc)/Math.max(r.price,0.1); }},
-        {key:'sats',    name:'Satsning', metric:function(r){ return fit(r,sc)/Math.max(r.price,0.1); }, forced:star}
+        {key:'sikkert', name:'Sikkert',  metric:function(r){ return SCORE(r); }},
+        {key:'value',   name:'Value',    metric:function(r){ return SCORE(r)/Math.max(r.price,0.1); }},
+        {key:'sats',    name:'Satsning', metric:function(r){ return SCORE(r)/Math.max(r.price,0.1); }, forced:star}
       ];
       $('vTeams').innerHTML = defs.map(function(d){
         var t = buildTeam(scored, d.metric, d.forced);
-        var sorted = t.team.slice().sort(function(a,b){ return fit(b,sc)-fit(a,sc); });
+        var sorted = t.team.slice().sort(function(a,b){ return SCORE(b)-SCORE(a); });
         var cap = sorted[0];
         var lis = sorted.map(function(r){
           var isCap = r === cap;
           return '<li'+(isCap?' class="cap"':'')+'><span class="rn">'+(isCap?'★ ':'')+r.name+
-            ' <small>'+r.team+'</small></span><span class="rp">'+r.price+'M · '+Math.round(fit(r,sc))+'</span></li>';
+            ' <small>'+r.team+'</small></span><span class="rp">'+r.price+'M · '+Math.round(SCORE(r))+'</span></li>';
         }).join('');
         return '<div class="team '+d.key+'"><h4>'+d.name+'<span class="cost">'+t.cost.toFixed(1)+'/50M</span></h4><ul>'+lis+'</ul></div>';
       }).join('');
@@ -784,10 +802,9 @@
 
     function render(){
       var st = stages[cur]; if(!st) return;
-      var sc = SCEN[curScen] || SCEN.bakket;
       var all = st.riders || [];
       var scored = all.filter(function(r){ return r.co && Object.keys(r.co).length; });
-      scored.sort(function(a,b){ return fit(b,sc) - fit(a,sc); });
+      scored.sort(function(a,b){ return SCORE(b) - SCORE(a); });
       var cap = scored[0];
 
       $('vMeta').textContent = (st.name || ('Etape ' + st.num)) + ' · ' + st.type;
@@ -795,9 +812,9 @@
 
       if(cap){
         $('vCapBody').innerHTML =
-          '<div class="bigcap"><span class="name">' + cap.name + '</span><span class="conf">' + sc.label + '</span></div>' +
-          '<p class="src">' + cap.team + ' · pris ' + cap.price + 'M · CO-fit ' + Math.round(fit(cap,sc)) +
-          ' · model-exp ' + fmtM(cap.exp) + '. <b>Kaptajn = bedste CO-fit for scenariet.</b></p>';
+          '<div class="bigcap"><span class="name">' + cap.name + '</span><span class="conf">' + scenLabel() + '</span></div>' +
+          '<p class="src">' + cap.team + ' · pris ' + cap.price + 'M · fit ' + Math.round(SCORE(cap)) +
+          ' · model-exp ' + fmtM(cap.exp) + '. <b>Kaptajn = bedste fit for '+(mixMode?'blandingen':'scenariet')+'.</b></p>';
       } else {
         $('vCapBody').innerHTML = '<p class="src">Ingen ryttere med CO-data på denne etape endnu.</p>';
       }
@@ -807,23 +824,31 @@
           '<span class="rk tnum">' + (i+1) + '</span>' +
           '<span class="nm">' + r.name + (i===0?' <span class="star">★ kaptajn</span>':'') +
             '<small>' + r.team + ' · ' + r.price + 'M</small></span>' +
-          '<span class="fuse"><span class="m mono">fit ' + Math.round(fit(r,sc)) + '</span>' +
+          '<span class="fuse"><span class="m mono">fit ' + Math.round(SCORE(r)) + '</span>' +
             '<span class="arw">·</span><span class="f mono">' + fmtM(r.exp) + '</span></span>' +
         '</div>';
       }).join('');
 
-      renderTeams(scored, sc);
+      renderTeams(scored);
 
       var b = document.querySelectorAll('.vscbtn');
-      for(var i=0;i<b.length;i++){ b[i].classList.toggle('active', b[i].getAttribute('data-vsc')===curScen); }
+      for(var i=0;i<b.length;i++){
+        var k = b[i].getAttribute('data-vsc');
+        var on = mixMode ? !!mixSet[k] : (k===curScen);
+        b[i].classList.toggle('active', on);
+      }
+      var mb = $('vMixBtn'); if(mb){ mb.classList.toggle('active', mixMode); mb.setAttribute('aria-pressed', mixMode?'true':'false'); }
     }
 
-    function setStage(i){ cur = i; curScen = defaultScen(stages[cur] || {num:0}); render(); }
+    function setStage(i){ cur = i; curScen = defaultScen(stages[cur] || {num:0}); mixMode = false; mixSet = {}; render(); }
 
     fetch('data/vuelta2026_predictions.json', {cache:'no-cache'})
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
       .then(function(d){
         stages = d.stages || [];
+        // Varierer etapetyperne? → rigtige PCS-typer er i data'en og overskriver presse-map'en.
+        var uniq = {}; stages.forEach(function(s){ uniq[s.type] = 1; });
+        typesVary = Object.keys(uniq).length > 1;
         var sel = $('vStage');
         sel.innerHTML = stages.map(function(s,i){
           return '<option value="'+i+'">E'+s.num+' — '+(s.name || s.type)+'</option>';
@@ -831,8 +856,22 @@
         sel.addEventListener('change', function(){ setStage(+sel.value); });
         var btns = document.querySelectorAll('.vscbtn');
         for(var i=0;i<btns.length;i++){
-          (function(bt){ bt.addEventListener('click', function(){ curScen = bt.getAttribute('data-vsc'); render(); }); })(btns[i]);
+          (function(bt){
+            var k = bt.getAttribute('data-vsc');
+            if(!k) return;   // spring mix-knappen over
+            bt.addEventListener('click', function(){
+              if(mixMode){ if(mixSet[k]) delete mixSet[k]; else mixSet[k]=1; }
+              else { curScen = k; }
+              render();
+            });
+          })(btns[i]);
         }
+        var mb = $('vMixBtn');
+        if(mb){ mb.addEventListener('click', function(){
+          mixMode = !mixMode;
+          if(mixMode && !mixKeys().length){ mixSet = {}; mixSet[curScen] = 1; }  // seed med nuværende
+          render();
+        }); }
         var ci = currentIdx();
         sel.value = ci;
         setStage(ci);
