@@ -43,12 +43,12 @@
     "is_out": false,
     "is_injured": false
   },
-  "alberto_bettiol": {
-    "holdet_name": "Alberto Bettiol",
-    "holdet_player_id": 53397,
-    "holdet_person_id": 2608,
-    "price_M": 4.0,
-    "start_price_M": 4.0,
+  "james_shaw": {
+    "holdet_name": "James Shaw",
+    "holdet_player_id": 54233,
+    "holdet_person_id": 3537,
+    "price_M": 3.0,
+    "start_price_M": 3.0,
     "own_pct": 0,
     "own_pct_change": 0,
     "is_out": false,
@@ -76,23 +76,23 @@
     "is_out": false,
     "is_injured": false
   },
-  "filippo_zana": {
-    "holdet_name": "Filippo Zana",
-    "holdet_player_id": 53416,
-    "holdet_person_id": 4508,
-    "price_M": 4.0,
-    "start_price_M": 4.0,
-    "own_pct": 0,
-    "own_pct_change": 0,
-    "is_out": false,
-    "is_injured": false
-  },
   "mikel_landa": {
     "holdet_name": "Mikel Landa",
     "holdet_player_id": 53449,
     "holdet_person_id": 2190,
     "price_M": 6.0,
     "start_price_M": 6.0,
+    "own_pct": 0,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
+  "filippo_zana": {
+    "holdet_name": "Filippo Zana",
+    "holdet_player_id": 53416,
+    "holdet_person_id": 4508,
+    "price_M": 4.0,
+    "start_price_M": 4.0,
     "own_pct": 0,
     "own_pct_change": 0,
     "is_out": false,
@@ -115,17 +115,6 @@
     "holdet_person_id": 3564,
     "price_M": 12.0,
     "start_price_M": 12.0,
-    "own_pct": 0,
-    "own_pct_change": 0,
-    "is_out": false,
-    "is_injured": false
-  },
-  "einer_rubio": {
-    "holdet_name": "Einer Augusto Rubio",
-    "holdet_player_id": 53411,
-    "holdet_person_id": 4386,
-    "price_M": 5.0,
-    "start_price_M": 5.0,
     "own_pct": 0,
     "own_pct_change": 0,
     "is_out": false,

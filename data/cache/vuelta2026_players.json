@@ -1,14 +1,5 @@
 [
   {
-    "id": "alberto_bettiol",
-    "full_name": "Alberto Bettiol",
-    "short_name": "A. Bettiol",
-    "team": "XDA",
-    "team_full": "XDS Astana Team",
-    "price": 4.0,
-    "holdet_person_id": 2608
-  },
-  {
     "id": "alberto_dainese",
     "full_name": "Alberto Dainese",
     "short_name": "Dainese",
@@ -34,6 +25,15 @@
     "team_full": "NSN Cycling Team",
     "price": 4.5,
     "holdet_person_id": 1918
+  },
+  {
+    "id": "alexis_renard",
+    "full_name": "Alexis Renard",
+    "short_name": "Renard",
+    "team": "COF",
+    "team_full": "Cofidis",
+    "price": 4.5,
+    "holdet_person_id": 4318
   },
   {
     "id": "andreas_kron",
@@ -144,6 +144,15 @@
     "holdet_person_id": 3824
   },
   {
+    "id": "diego_uriarte_belzunegi",
+    "full_name": "Diego Uriarte Belzunegi",
+    "short_name": "Belzunegi",
+    "team": "EKP",
+    "team_full": "Equipo Kern Pharma",
+    "price": 3.0,
+    "holdet_person_id": 50796
+  },
+  {
     "id": "domen_novak",
     "full_name": "Domen Novak",
     "short_name": "Novak",
@@ -151,15 +160,6 @@
     "team_full": "UAE Team Emirates - XRG",
     "price": 3.0,
     "holdet_person_id": 3441
-  },
-  {
-    "id": "einer_rubio",
-    "full_name": "Einer Rubio",
-    "short_name": "E. Rubio",
-    "team": "MOV",
-    "team_full": "Movistar Team",
-    "price": 5.0,
-    "holdet_person_id": 4386
   },
   {
     "id": "emanuel_buchmann",
@@ -297,6 +297,33 @@
     "holdet_person_id": 1893
   },
   {
+    "id": "ibon_ruiz",
+    "full_name": "Ibon Ruiz",
+    "short_name": "Ruiz",
+    "team": "EKP",
+    "team_full": "Equipo Kern Pharma",
+    "price": 4.0,
+    "holdet_person_id": 5024
+  },
+  {
+    "id": "inigo_elosegui",
+    "full_name": "Inigo Elosegui",
+    "short_name": "Elosegui",
+    "team": "EKP",
+    "team_full": "Equipo Kern Pharma",
+    "price": 2.5,
+    "holdet_person_id": 4393
+  },
+  {
+    "id": "ivan_ramiro_sosa",
+    "full_name": "Ivan Ramiro Sosa",
+    "short_name": "Sosa",
+    "team": "EKP",
+    "team_full": "Equipo Kern Pharma",
+    "price": 4.0,
+    "holdet_person_id": 3881
+  },
+  {
     "id": "ivan_romeo",
     "full_name": "Ivan Romeo",
     "short_name": "Romeo",
@@ -313,6 +340,15 @@
     "team_full": "Equipo Kern Pharma",
     "price": 4.0,
     "holdet_person_id": 50795
+  },
+  {
+    "id": "james_shaw",
+    "full_name": "James Shaw",
+    "short_name": "J. Shaw",
+    "team": "EF",
+    "team_full": "EF Education - EasyPost",
+    "price": 3.0,
+    "holdet_person_id": 3537
   },
   {
     "id": "jan_hirt",
@@ -468,6 +504,15 @@
     "holdet_person_id": 2978
   },
   {
+    "id": "marc_brustenga_masague",
+    "full_name": "Marc Brustenga Masague",
+    "short_name": "Masague",
+    "team": "EKP",
+    "team_full": "Equipo Kern Pharma",
+    "price": 4.0,
+    "holdet_person_id": 50794
+  },
+  {
     "id": "marco_brenner",
     "full_name": "Marco Brenner",
     "short_name": "Brenner",
@@ -493,6 +538,15 @@
     "team_full": "Lidl - Trek",
     "price": 2.5,
     "holdet_person_id": 4296
+  },
+  {
+    "id": "mats_wenzel",
+    "full_name": "Mats Wenzel",
+    "short_name": "Wenzel",
+    "team": "EKP",
+    "team_full": "Equipo Kern Pharma",
+    "price": 3.0,
+    "holdet_person_id": 46894
   },
   {
     "id": "matthew_brennan",
@@ -747,6 +801,15 @@
     "holdet_person_id": 46843
   },
   {
+    "id": "urko_berrade",
+    "full_name": "Urko Berrade",
+    "short_name": "Berrade",
+    "team": "EKP",
+    "team_full": "Equipo Kern Pharma",
+    "price": 3.5,
+    "holdet_person_id": 4782
+  },
+  {
     "id": "valentin_paret-peintre",
     "full_name": "Valentin Paret-Peintre",
     "short_name": "Paret-Peintre",
@@ -772,15 +835,6 @@
     "team_full": "Pinarello Q36.5 Pro Cycling Team",
     "price": 3.0,
     "holdet_person_id": 47037
-  },
-  {
-    "id": "william_junior_lecerf",
-    "full_name": "William Junior Lecerf",
-    "short_name": "Lecerf",
-    "team": "SQ",
-    "team_full": "Soudal Quick-Step",
-    "price": 4.5,
-    "holdet_person_id": 5013
   },
   {
     "id": "wout_van_aert",
