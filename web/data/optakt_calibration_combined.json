@@ -1,0 +1,35 @@
+{
+  "note": "Kaptajn-kalibrering, konsistent metrik, Tour+Giro. captured = andel af bedst mulige kaptajn-vækst.",
+  "rows": {
+    "Feltet · Tour": {
+      "n": 21,
+      "hit1": 48,
+      "hit3": 62,
+      "captured": 74
+    },
+    "Simon · Tour": {
+      "n": 21,
+      "hit1": 52,
+      "hit3": 71,
+      "captured": 79
+    },
+    "Ingemann · Giro": {
+      "n": 15,
+      "hit1": 27,
+      "hit3": 40,
+      "captured": 51
+    },
+    "Optakt samlet": {
+      "n": 57,
+      "hit1": 44,
+      "hit3": 60,
+      "captured": 70
+    },
+    "Model (samme etaper)": {
+      "n": 57,
+      "hit1": 26,
+      "hit3": 44,
+      "captured": 57
+    }
+  }
+}

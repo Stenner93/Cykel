@@ -349,48 +349,31 @@
 
     <details style="margin-top:14px">
       <summary class="whysummary">Hvorfor det virker · kalibrering (optakt slår modellen)</summary>
-      <div style="margin-top:12px;display:grid;gap:14px">
-        <div class="card">
-          <div class="cardhead"><h3>Kalibrering · selv-lærende</h3><span class="chip">track record · Tour</span></div>
-          <div class="cardbody">
-            <p class="src" style="margin:0 0 10px">Fusionsvægtene er kildernes målte hit-rate over hele Touren. Optakt-laget
-               vægtes tungest på kaptajn; modellen bruges til at screene billige oversete ryttere.</p>
-            <div class="scrollx"><table class="board">
-              <thead><tr><th>Kilde</th><th>Kaptajn #1</th><th>Top-3</th><th>Køb-pct*</th></tr></thead>
-              <tbody>
-                <tr><td>Model</td><td>33 %</td><td>57 %</td><td>0.82</td></tr>
-                <tr><td>Feltet.dk</td><td class="win">48 %</td><td>62 %</td><td>0.86</td></tr>
-                <tr class="best"><td>Simon K. Kjær</td><td class="win">52 %</td><td class="win">71 %</td><td>0.84</td></tr>
-              </tbody>
-            </table></div>
-            <p class="note">* Gennemsnitlig placering af anbefalede ryttere i etapens vækstfelt (1.0 = bedst).</p>
-          </div>
-        </div>
-
+      <div style="margin-top:12px">
         <div class="card">
           <div class="cardhead">
-            <h3>Ægte Giro-facit · Ingemann-optakt vs. model</h3>
-            <span class="exlabel">Giro 2026 · 15 etaper med facit</span>
+            <h3>Kalibrering · optakt vs. model</h3>
+            <span class="exlabel">Tour + Giro · 36 etaper med facit</span>
           </div>
           <div class="cardbody">
-            <p class="src" style="margin:0 0 12px;max-width:80ch">Samme test på et <b style="color:var(--ink)">helt uafhængigt datasæt</b>:
-               Frederik Ingemanns daglige Giro-optakter kodet til kaptajnvalg og scoret mod den faktiske vækst. Det er begrundelsen
-               for disciplin-gaten: modellens svaghed var at den kaptajnede den dyre GC-stjerne på forkert etapetype og fik nul.</p>
+            <p class="src" style="margin:0 0 12px;max-width:84ch">Eksperternes optakt-kaptajner scoret mod den faktiske vækst med
+               <b style="color:var(--ink)">samme metrik på tværs af begge grand tours</b> (Feltet + Simon på Touren, Ingemann på Giroen).
+               Kaptajnen dobler point, så den ene beslutning vejer tungest.</p>
             <div class="scrollx"><table class="board">
-              <thead><tr><th>Kilde</th><th>Kaptajn = etapens #1</th><th>Top-3</th><th>Top-5</th><th>Andel af bedst mulige*</th></tr></thead>
+              <thead><tr><th>Kilde</th><th>Etaper</th><th>Kaptajn = #1</th><th>Top-3</th><th>Andel af bedst mulige*</th></tr></thead>
               <tbody>
-                <tr class="best"><td>Ingemann (optakt)</td><td class="win">27 %</td><td class="win">40 %</td><td class="win">53 %</td><td class="win">51 %</td></tr>
-                <tr><td>Model (højeste exp.)</td><td>7 %</td><td>7 %</td><td>40 %</td><td>24 %</td></tr>
+                <tr><td>Feltet · Tour</td><td>21</td><td class="win">48 %</td><td>62 %</td><td>74 %</td></tr>
+                <tr><td>Simon K. Kjær · Tour</td><td>21</td><td class="win">52 %</td><td class="win">71 %</td><td>79 %</td></tr>
+                <tr><td>Ingemann · Giro</td><td>15</td><td>27 %</td><td>40 %</td><td>51 %</td></tr>
+                <tr class="best"><td>Optakt samlet</td><td>57 valg</td><td class="win">44 %</td><td class="win">60 %</td><td class="win">70 %</td></tr>
+                <tr><td>Model (samme etaper)</td><td>57</td><td>26 %</td><td>44 %</td><td>57 %</td></tr>
               </tbody>
             </table></div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-              <span class="chip good">Head-to-head: Ingemann bedre på 8 etaper</span>
-              <span class="chip bad">Model bedre på 3</span>
-              <span class="chip">lige på 4</span>
-            </div>
-            <p class="note" style="margin-top:12px">* Andel af den bedst mulige kaptajn-vækst hver etape. <b>Ingemann mere end
-               fordoblede modellen (51 % mod 24 %)</b> — og en disciplin-gated model lukker ~⅔ af det gab. Det er hvorfor
-               scenariet + CO-disciplinen driver kaptajnvalget her.</p>
+            <p class="note" style="margin-top:12px">* Andel af den bedst mulige kaptajn-vækst hver etape (kaptajnens vækst / etapens største).
+               <b>Over 57 kaptajn-valg på 36 grand tour-etaper ramte optakten den bedste kaptajn 44 % vs. modellens 26 %, og fangede
+               70 % af den bedst mulige vækst mod modellens 57 %.</b> Modellens svaghed: den kaptajnede gang på gang den dyre
+               GC-stjerne på forkert etapetype — en <b>disciplin-gated</b> model (som den her) lukker ~⅔ af gabet, og optaktens
+               etapelæsning resten. Genberegnes fra Vueltaens etape 1.</p>
           </div>
         </div>
       </div>
