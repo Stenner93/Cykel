@@ -37,9 +37,10 @@ INGE = {1:'Milan',4:'Lund',5:'Ciccone',6:'Magnier',7:'Vingegaard',9:'Vingegaard'
 
 # observations: (race_stages, stage_num, captain_name)
 SRC = {
-  "Feltet · Tour":   [(tdf,  n, c) for n,c in feltet.items() if c and n in tdf],
-  "Simon · Tour":    [(tdf,  n, c) for n,c in simon.items()  if c and n in tdf],
-  "Ingemann · Giro": [(giro, n, c) for n,c in INGE.items()   if n in giro],
+  # Frederik Ingemann ER Feltets ekspert → Feltet(Tour) + Ingemann(Giro) er samme kilde.
+  "Feltet (Ingemann)": ([(tdf,  n, c) for n,c in feltet.items() if c and n in tdf]
+                        + [(giro, n, c) for n,c in INGE.items()  if n in giro]),
+  "Simon K. Kjær":     [(tdf,  n, c) for n,c in simon.items()  if c and n in tdf],
 }
 
 def model_cap(stage): return max(stage["riders"], key=lambda x: x.get("exp") or 0)
@@ -70,5 +71,5 @@ out = {"note":"Kaptajn-kalibrering, konsistent metrik, Tour+Giro. captured = and
 json.dump(out, open(os.path.join(ROOT,"web/data/optakt_calibration_combined.json"),"w"), ensure_ascii=False, indent=2)
 
 print(f"{'Kilde':22}{'n':>4}{'Kaptajn=#1':>12}{'Top-3':>8}{'Andel fanget':>14}")
-for k in ["Model (samme etaper)","Feltet · Tour","Simon · Tour","Ingemann · Giro","Optakt samlet"]:
+for k in ["Model (samme etaper)","Feltet (Ingemann)","Simon K. Kjær","Optakt samlet"]:
     r=rows[k]; print(f"{k:22}{r['n']:>4}{r['hit1']:>11}%{r['hit3']:>7}%{r['captured']:>13}%")

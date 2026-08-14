@@ -1,23 +1,17 @@
 {
   "note": "Kaptajn-kalibrering, konsistent metrik, Tour+Giro. captured = andel af bedst mulige kaptajn-vækst.",
   "rows": {
-    "Feltet · Tour": {
-      "n": 21,
-      "hit1": 48,
-      "hit3": 62,
-      "captured": 74
+    "Feltet (Ingemann)": {
+      "n": 36,
+      "hit1": 39,
+      "hit3": 53,
+      "captured": 64
     },
-    "Simon · Tour": {
+    "Simon K. Kjær": {
       "n": 21,
       "hit1": 52,
       "hit3": 71,
       "captured": 79
-    },
-    "Ingemann · Giro": {
-      "n": 15,
-      "hit1": 27,
-      "hit3": 40,
-      "captured": 51
     },
     "Optakt samlet": {
       "n": 57,
