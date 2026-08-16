@@ -47,6 +47,31 @@ VUELTA_PCS_RACE  = "vuelta-a-espana/2026"
 VUELTA_RAW_DIR   = DATA / "cache" / "vuelta2026_raw"
 PLAYERS_CACHE = DATA / "cache" / "vuelta2026_players.json"
 
+
+def load_veloscore_stage(stage_num: int) -> list[dict]:
+    """Per-etape VeloScore-forudsigelser for Vuelta 2026.
+
+    VIGTIGT: Vuelta bruger sit EGET navnerum, data/vuelta_stage_NN_veloscore.json,
+    så vi ikke ved en fejl læser Tourens generiske data/stage_NN_veloscore.json
+    (samme etapenumre, andet løb). Indsæt filen manuelt pr. etape — veloscore.com
+    er blokeret i CI. Samme fil-format som run_daily.py: enten
+    {"stage": N, "predictions": [...]} eller en liste af sådanne.
+    Returnerer [] hvis filen mangler → modellen kører uden VeloScore-signalet.
+    """
+    f = DATA / f"vuelta_stage_{stage_num:02d}_veloscore.json"
+    if not f.exists():
+        return []
+    try:
+        data = json.loads(f.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return []
+    if isinstance(data, list):
+        for entry in data:
+            if entry.get("stage") == stage_num:
+                return entry.get("predictions", [])
+        return []
+    return data.get("predictions", [])
+
 # ── Rule labels (Danish) — same rule IDs as Giro (same Holdet platform) ───────
 RULE_LABELS: dict[int, str] = {
     849: "Etapesejr",  850: "2. plads",  851: "3. plads",
@@ -736,10 +761,14 @@ def main() -> None:
             finish_alt=float(finish_alt),
         )
 
+        veloscore_data = load_veloscore_stage(stage_num)
+        if veloscore_data:
+            print(f"    Etape {stage_num}: VeloScore anvendt ({len(veloscore_data)} ryttere)")
+
         preds = predict_all(
             riders=riders,
             stage_type=stype,
-            veloscore_data=None,        # no VeloScore integration for TdF web build
+            veloscore_data=veloscore_data or None,   # per-etape fil hvis den findes, ellers uden
             odds_data=odds_data,
             cyclingoracle_data=co_data,
             pcs_form_data=pcs_form,
