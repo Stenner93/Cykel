@@ -115,6 +115,16 @@
   .whysummary::-webkit-details-marker{display:none}
   .whysummary::before{content:"▸ "}
   details[open] > .whysummary::before{content:"▾ "}
+  .matrix{border-collapse:collapse;font-size:.78rem;white-space:nowrap}
+  .matrix th,.matrix td{padding:5px 8px;border-bottom:1px solid var(--border);text-align:right;font-variant-numeric:tabular-nums}
+  .matrix th{color:var(--muted);font-size:.66rem;font-weight:700;position:sticky;top:0;background:var(--surface);z-index:1}
+  .matrix .rn{text-align:left;position:sticky;left:0;background:var(--surface);font-weight:600;min-width:150px;z-index:2}
+  .matrix th.rn{z-index:3}
+  .matrix .rn small{color:var(--muted);font-weight:500;margin-left:4px}
+  .matrix .tot{font-weight:750;color:var(--accent)}
+  .matrix td.z{color:var(--muted)}
+  .matrix tbody tr:hover td{background:var(--card-2)}
+  .matrix tbody tr:hover .rn{background:var(--card-2)}
   .teams3 .team{border:1px solid var(--border);border-radius:12px;background:var(--surface);overflow:hidden}
   .teams3 .team h4{margin:0;padding:9px 12px;font-size:.76rem;font-weight:750;letter-spacing:.05em;text-transform:uppercase;
     border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
@@ -366,13 +376,16 @@
                 <tr><td>Simon K. Kjær</td><td>21</td><td class="win">52 %</td><td class="win">71 %</td><td>79 %</td></tr>
                 <tr class="best"><td>Optakt samlet</td><td>57 valg</td><td class="win">44 %</td><td class="win">60 %</td><td class="win">70 %</td></tr>
                 <tr><td>Model (samme etaper)</td><td>57</td><td>26 %</td><td>44 %</td><td>57 %</td></tr>
+                <tr><td>VeloScore (#1-pick)</td><td>27</td><td>22 %</td><td>26 %</td><td>40 %</td></tr>
               </tbody>
             </table></div>
             <p class="note" style="margin-top:12px">* Andel af den bedst mulige kaptajn-vækst hver etape (kaptajnens vækst / etapens største).
                <b>Over 57 kaptajn-valg på 36 grand tour-etaper ramte optakten den bedste kaptajn 44 % vs. modellens 26 %, og fangede
                70 % af den bedst mulige vækst mod modellens 57 %.</b> Modellens svaghed: den kaptajnede gang på gang den dyre
-               GC-stjerne på forkert etapetype — en <b>disciplin-gated</b> model (som den her) lukker ~⅔ af gabet, og optaktens
-               etapelæsning resten. Genberegnes fra Vueltaens etape 1.</p>
+               GC-stjerne på forkert etapetype — en <b>disciplin-gated</b> model (som den her) lukker ~⅔ af gabet.
+               <b>VeloScore</b> er taget med som sin #1-rangerede rytter pr. etape; den er ét enkelt signal (som modellen fusionerer
+               med form/CO/odds), så dens rå topvalg er en svagere kaptajn end den fulde model — derfor bruges den som input, ikke som beslutning.
+               Genberegnes fra Vueltaens etape 1.</p>
           </div>
         </div>
       </div>
@@ -510,10 +523,11 @@
 
   <!-- ══════════ KOMMENDE FANER ══════════ -->
   <section class="panel" id="p-matrix" role="tabpanel" aria-labelledby="t-matrix" hidden>
-    <div class="empty"><div class="big">📊</div>
-      <h3>Pointmatrix — klar til Vueltaen</h3>
-      <p>Den fulde rytter × etape-matrix med faktiske Holdet-point, sortering og filtre. Kræver løbende resultater fra
-         Holdet.dk — fyldes fra Vueltaens etape 1. Live udgave: <a class="lnk" href="index.html">TdF 2026 → Pointmatrix</a>.</p></div>
+    <div class="eyebrow">Pointmatrix · rytter × etape</div>
+    <h2 class="sec">Faktiske Holdet-point pr. etape</h2>
+    <p class="sec-sub">Hver rytters faktiske Holdet-vækst pr. etape (i tusinder kr), sorteret efter total. Fyldes automatisk
+      af den daglige kørsel efterhånden som etaperne afvikles.</p>
+    <div id="pmWrap"><p class="src">Henter…</p></div>
   </section>
   <section class="panel" id="p-odds" role="tabpanel" aria-labelledby="t-odds" hidden>
     <div class="empty"><div class="big">📡</div>
@@ -762,6 +776,36 @@
       .catch(function(e){
         $('vPickList').innerHTML = '<p class="src">Kunne ikke hente Vuelta-data ('+e.message+'). Den bygges af den daglige kørsel — prøv igen senere.</p>';
       });
+  })();
+</script>
+<script>
+  /* Pointmatrix · rytter × etape — faktiske Holdet-point (kr) fra vuelta2026_scores.json.
+     Fyldes af den daglige kørsel efterhånden som etaperne afvikles. Værdier i tusinder. */
+  (function(){
+    var wrap = document.getElementById('pmWrap');
+    if(!wrap) return;
+    fetch('data/vuelta2026_scores.json', {cache:'no-cache'})
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(function(d){
+        var stages = d.stages || [], riders = (d.riders || []).slice();
+        riders.forEach(function(r){ var t=0,p=r.pts||{}; for(var k in p) t+=(+p[k]||0); r._tot=t; });
+        var anyPts = riders.some(function(r){ return Object.keys(r.pts||{}).length; });
+        riders.sort(function(a,b){ return b._tot-a._tot || (b.price||0)-(a.price||0); });
+        function cell(v){ if(v==null||v==='') return '<td class="z">·</td>'; var k=Math.round(v/1000);
+          return '<td class="'+(k<0?'down':(k>0?'up':'z'))+'">'+k+'</td>'; }
+        var head = '<thead><tr><th class="rn">Rytter</th><th>Total</th>' +
+          stages.map(function(s){ return '<th title="'+String(s.name||'').replace(/"/g,'')+'">E'+s.num+'</th>'; }).join('') + '</tr></thead>';
+        var body = '<tbody>' + riders.map(function(r){
+          return '<tr><td class="rn">'+r.name+' <small>'+r.team+'</small></td>' +
+            '<td class="tot">'+(r._tot? Math.round(r._tot/1000) : '')+'</td>' +
+            stages.map(function(s){ var v=(r.pts||{})[s.num]; return cell(v===undefined?null:v); }).join('') +
+          '</tr>';
+        }).join('') + '</tbody>';
+        wrap.innerHTML = (anyPts ? '' :
+          '<div class="optbar" style="border-color:var(--border-2);background:var(--surface);color:var(--muted)">Ingen point endnu — matrixen fyldes automatisk fra etape 1 (værdier i tusinder kr).</div>') +
+          '<div class="scrollx"><table class="matrix">'+head+body+'</table></div>';
+      })
+      .catch(function(e){ wrap.innerHTML = '<p class="src">Kunne ikke hente pointmatrix ('+e.message+'). Bygges af den daglige kørsel.</p>'; });
   })();
 </script>
 <script src="nav.js"></script>

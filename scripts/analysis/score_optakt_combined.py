@@ -64,6 +64,22 @@ for src, obs in SRC.items():
     rows[src] = score(obs, opt)
 allobs = [o for obs in SRC.values() for o in obs]
 rows["Optakt samlet"] = score(allobs, opt)
+
+# ── VeloScore som kilde: dens #1-rangerede rytter pr. etape = dens "kaptajn" ──
+import glob
+vs_caps = {}
+for f in sorted(glob.glob(os.path.join(ROOT, "data/stage_*_veloscore.json"))):
+    d = json.load(open(f, encoding="utf-8"))
+    p = d.get("predictions", [])
+    if p: vs_caps[("tdf", d["stage"])] = p[0]["rider"]
+for s in load("archive/data/giro2026/veloscore.json"):
+    p = s.get("predictions", [])
+    if p: vs_caps[("giro", s["stage"])] = p[0]["rider"]
+vs_obs = [((tdf if race=="tdf" else giro), num, name)
+          for (race, num), name in vs_caps.items()
+          if num in (tdf if race=="tdf" else giro)]
+rows["VeloScore (#1)"] = score(vs_obs, opt)
+
 rows["Model (samme etaper)"] = score(allobs, mdl)
 
 out = {"note":"Kaptajn-kalibrering, konsistent metrik, Tour+Giro. captured = andel af bedst mulige kaptajn-vækst.",
@@ -71,5 +87,5 @@ out = {"note":"Kaptajn-kalibrering, konsistent metrik, Tour+Giro. captured = and
 json.dump(out, open(os.path.join(ROOT,"web/data/optakt_calibration_combined.json"),"w"), ensure_ascii=False, indent=2)
 
 print(f"{'Kilde':22}{'n':>4}{'Kaptajn=#1':>12}{'Top-3':>8}{'Andel fanget':>14}")
-for k in ["Model (samme etaper)","Feltet (Ingemann)","Simon K. Kjær","Optakt samlet"]:
+for k in ["Model (samme etaper)","VeloScore (#1)","Feltet (Ingemann)","Simon K. Kjær","Optakt samlet"]:
     r=rows[k]; print(f"{k:22}{r['n']:>4}{r['hit1']:>11}%{r['hit3']:>7}%{r['captured']:>13}%")
