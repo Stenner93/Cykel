@@ -316,6 +316,11 @@ def main():
                         help="Alternativ JSON-fil med rytterliste "
                              "(f.eks. data/cache/dauphine2026_players.json). "
                              "Henter kun ryttere der mangler i cachen.")
+    parser.add_argument("--refresh", action="store_true",
+                        help="Gen-hent OGSÅ ryttere der allerede er i cachen "
+                             "(opdaterer forældede ratings, fx fra Touren, og "
+                             "henter AVG). Gammel data bevares hvis hentning "
+                             "fejler. Uden flaget hentes kun manglende ryttere.")
     args = parser.parse_args()
 
     # Load or resume cache
@@ -333,9 +338,13 @@ def main():
         else:
             riders = [{"id": k, "full_name": v.get("holdet_name", k)}
                       for k, v in alt_data.items()]
-        # Only riders missing from cache
-        riders = [r for r in riders if r["id"] not in cache]
-        print(f"Ryttere fra {alt_path.name} manglende i cache: {len(riders)}")
+        # Only riders missing from cache — medmindre --refresh gen-henter alle
+        if args.refresh:
+            print(f"--refresh: gen-henter alle {len(riders)} ryttere fra "
+                  f"{alt_path.name} (overskriver cache ved succes)")
+        else:
+            riders = [r for r in riders if r["id"] not in cache]
+            print(f"Ryttere fra {alt_path.name} manglende i cache: {len(riders)}")
     else:
         riders = json.loads((DATA / "riders.json").read_text(encoding="utf-8"))
 
@@ -359,7 +368,7 @@ def main():
     rider_ids_in_run = {r["id"] for r in riders}
     applied = 0
     for rid, url in url_overrides.items():
-        if rid in rider_ids_in_run and rid not in cache:
+        if rid in rider_ids_in_run and (args.refresh or rid not in cache):
             # Overrides always win over algorithm matches (algorithm may find wrong URL)
             nl_url = url.replace("/en/riders/", "/nl/renners/")
             if matched_map.get(rid) != nl_url:
@@ -378,14 +387,16 @@ def main():
         )
     name_by_id = {r["id"]: r["full_name"] for r in riders}
     manual = 0
+    manual_ids: set = set()
     for rid, ratings in ratings_overrides.items():
-        if rid in rider_ids_in_run and rid not in cache:
+        if rid in rider_ids_in_run and (args.refresh or rid not in cache):
             cache[rid] = {
                 "name":    name_by_id.get(rid, rid),
                 "url":     "manual (head-to-head)",
                 "ratings": {k: float(v) for k, v in ratings.items()},
             }
             manual += 1
+            manual_ids.add(rid)
             print(f"  Manuel rating anvendt: {rid}")
     if manual:
         print(f"  Manuelle ratings i alt: {manual}")
@@ -394,11 +405,14 @@ def main():
             json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8"
         )
 
-    # Determine which still need scraping
+    # Determine which still need scraping. Med --refresh gen-hentes også ryttere
+    # der allerede er i cachen — men aldrig dem med manuel head-to-head-rating
+    # (deres CO-side er tom). Gammel data bevares hvis en gen-hentning fejler,
+    # fordi scrape_rider() returnerer None og cache[rid] så ikke røres.
     to_scrape = [
         (rid, url)
         for rid, url in matched_map.items()
-        if rid not in cache
+        if (args.refresh or rid not in cache) and rid not in manual_ids
     ]
     print(f"\nSkal scrapes: {len(to_scrape)} ryttere "
           f"({len(matched_map) - len(to_scrape)} i cache)")
