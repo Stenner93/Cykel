@@ -599,10 +599,23 @@
     function fit(r, sc){ var s=0,t=0,k,co=r.co||{}; for(k in sc.w){ s += sc.w[k]*(co[k]||0); t += sc.w[k]; } return t? s/t : 0; }
     function $(id){ return document.getElementById(id); }
     function mixKeys(){ return Object.keys(mixSet).filter(function(k){ return mixSet[k]; }); }
+    // Overordnet CO-niveau: AVG hvis den er scrapet, ellers gennemsnit af de 6
+    // discipliner. Bruges KUN som tie-break — ikke som selvstændigt signal.
+    function coAvg(r){
+      var co=r.co||{}; if(co.AVG!=null) return co.AVG;
+      var ks=['COB','HLL','MTN','GC','ITT','SPR'], s=0, n=0, i, v;
+      for(i=0;i<ks.length;i++){ v=co[ks[i]]; if(v!=null){ s+=v; n++; } }
+      return n? s/n : 0;
+    }
     // Effektiv score: enkelt-scenarie, eller gennemsnit over de blandede scenarier.
     function SCORE(r){
-      if(mixMode){ var ks=mixKeys(); if(!ks.length) return 0; var s=0; ks.forEach(function(k){ s+=fit(r,SCEN[k]); }); return s/ks.length; }
-      return fit(r, SCEN[curScen] || SCEN.bakket);
+      var f;
+      if(mixMode){ var ks=mixKeys(); if(!ks.length) return 0; var s=0; ks.forEach(function(k){ s+=fit(r,SCEN[k]); }); f=s/ks.length; }
+      else f = fit(r, SCEN[curScen] || SCEN.bakket);
+      // Tie-break: læg ≤0,01 til fra CO-snittet. Usynligt i visningen (rundes væk),
+      // men afgør rækkefølgen ved lige fit — fx Pogačar (højere snit) over Vine når
+      // begge har 93 i ITT. Antagelse: højere overordnet niveau = marginalt bedre.
+      return f + coAvg(r)*1e-4;
     }
     function scenLabel(){
       if(mixMode){ var ks=mixKeys(); return ks.length ? ('Blanding: '+ks.map(function(k){ return SCEN[k].label.split(' ')[0]; }).join(' + ')) : 'Blanding — vælg scenarier'; }
