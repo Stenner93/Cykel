@@ -4739,5 +4739,77 @@
       "stage_type": "sprint",
       "name": "Stage 21 | Carrefour Granada - Granada"
     }
+  },
+  "gp-internacional-beiras-e-serra-da-estrela/2025": {
+    "1": "hilly",
+    "2": "hilly",
+    "3": "hilly"
+  },
+  "gp-internacional-beiras-e-serra-da-estrela/2025_meta": {
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Almeida - Penamacor"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Figueira de Castelo Rodrigo - Celorico da Beira"
+    },
+    "3": {
+      "p_class": "4",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Pinhel - Seia"
+    }
+  },
+  "tour-of-estonia/2026": {
+    "0": "sprint",
+    "1": "hilly",
+    "2": "sprint"
+  },
+  "tour-of-estonia/2026_meta": {
+    "0": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Prologue | Tallinn - Tallinn"
+    },
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Tallinn - Tartu"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Tartu - Tartu"
+    }
+  },
+  "czech-tour/2026": {
+    "1": "sprint",
+    "2": "mountain",
+    "3": "mountain",
+    "4": "mountain"
+  },
+  "czech-tour/2026_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Prague - Karlovy Vary"
+    },
+    "2": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 2 | Mladá Boleslav - Ještěd"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Pardubice - Dlouhé stráně"
+    },
+    "4": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 4 | Kroměříž - Pustevny"
+    }
   }
 }
