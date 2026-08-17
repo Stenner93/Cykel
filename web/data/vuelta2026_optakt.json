@@ -1,12 +1,76 @@
 {
-  "note": "Per-etape optakt-signaler til La Roja Manager. Fyldes efterhånden som optakterne kommer (indsæt teksten i chatten → jeg encoder + committer her). Nøgle = etapenummer (streng). 'scenario' overstyrer default-scenariet; 'favorites'/'avoid' = rytternavne (delstreng-match, ikke case-følsomt); 'captain' og 'source' er valgfri.",
+  "note": "Per-etape optakt-signaler til La Roja Manager. To kilder (Feltet + Simon) pr. etape driver både Optakt-konsollen (kaptajn-duel, signaludtræk, enigheds-strip, krydstjek) og Vuelta-etape (scenarie + favoritter afledes automatisk). Send optakt-teksten + VeloScore-screenshot i chatten → jeg encoder + committer her. Nøgle = etapenummer (streng).",
   "schema": {
-    "scenario": "massespurt|bakket|brosten|bjerg|favorit|tt",
-    "captain": "rytternavn (valgfri)",
-    "favorites": ["rytternavn"],
-    "avoid": ["rytternavn"],
-    "note": "kort optakt-resumé (valgfri)",
-    "source": "Feltet / Simon / Ingemann ..."
+    "scenario": "massespurt|bakket|brosten|bjerg|favorit|tt  (default-scenarie til Vuelta-etape; kan udelades)",
+    "feltet": {
+      "captain": "rytternavn",
+      "favorites": [
+        "rytternavn"
+      ],
+      "avoid": [
+        "rytternavn"
+      ],
+      "note": "kort resumé"
+    },
+    "simon": {
+      "captain": "rytternavn",
+      "favorites": [
+        "rytternavn"
+      ],
+      "avoid": [
+        "rytternavn"
+      ],
+      "note": "kort resumé"
+    },
+    "train": {
+      "finisher": "rytternavn",
+      "leadout": "rytternavn",
+      "control_team": "holdnavn"
+    },
+    "storform": [
+      "billig rytter modellen rater lavt"
+    ],
+    "veloscore_top": [
+      "#1",
+      "#2",
+      "#3"
+    ],
+    "_kommentar": "favorites/avoid/captain afledes automatisk til konsensus hvis udeladt. Navne matches som delstreng (ikke case-følsomt)."
+  },
+  "_example": {
+    "21": {
+      "feltet": {
+        "captain": "Pogačar",
+        "favorites": [
+          "van der Poel",
+          "Mads Pedersen",
+          "Pluimers"
+        ],
+        "avoid": [
+          "Quinn Simmons"
+        ],
+        "note": "Sejrsfavoritter i spil; GC-bonus betaler kaptajnen."
+      },
+      "simon": {
+        "captain": "van der Poel",
+        "favorites": [
+          "van der Poel",
+          "Mads Pedersen",
+          "Stuyven"
+        ],
+        "avoid": [],
+        "note": "VdP bedst på brosten."
+      },
+      "train": {
+        "finisher": "van der Poel",
+        "leadout": "Philipsen",
+        "control_team": "Alpecin"
+      },
+      "storform": [
+        "Pluimers",
+        "Stuyven"
+      ]
+    }
   },
   "stages": {}
 }
