@@ -330,8 +330,9 @@
         <div class="cardhead"><h3>Top-picks — top 20</h3><span class="src">★ kaptajn · fit · pris · exp</span></div>
         <div class="cardbody">
           <div id="vPickList"></div>
-          <p class="src" style="margin:10px 0 0">Rangeret efter <b>CyclingOracle-fit</b> for scenariet (<span id="vCov">–</span>).
-             ★ = kaptajn (bedste fit). Etapetyper er foreløbige før løbet — scenariet sættes til det mest sandsynlige og kan skiftes.</p>
+          <p class="src" style="margin:10px 0 0">Rangeret efter en <b>blanding af CO-fit for scenariet og forventet vækst</b> (exp) — 50/50 (<span id="vCov">–</span>).
+             ★ = kaptajn (bedste blanding). <b>fit</b>-tallet er det rå CO-disciplin-match, <b>exp</b> er modellens forventede vækst; rækkefølgen vægter begge.
+             Etapetyper er foreløbige før løbet — scenariet sættes til det mest sandsynlige og kan skiftes.</p>
         </div>
       </div>
       <div class="card">
@@ -595,6 +596,8 @@
 
     var stages = [], cur = 0, curScen = 'bakket', typesVary = false, OPT = {};
     var mixMode = false, mixSet = {};   // lag 3: sandsynligheds-mix (lige vægt over valgte scenarier)
+    var curMaxExp = 1;                  // etapens højeste exp — sættes i render(), bruges til at normalisere exp
+    var W_EXP = 0.5;                    // vægt på forventet vækst i rangeringen (0 = ren fit, 1 = ren exp)
     function fmtK(v){ return (v==null) ? '–' : Math.round(v/1000) + 'k'; }
     function fit(r, sc){ var s=0,t=0,k,co=r.co||{}; for(k in sc.w){ s += sc.w[k]*(co[k]||0); t += sc.w[k]; } return t? s/t : 0; }
     function $(id){ return document.getElementById(id); }
@@ -607,15 +610,21 @@
       for(i=0;i<ks.length;i++){ v=co[ks[i]]; if(v!=null){ s+=v; n++; } }
       return n? s/n : 0;
     }
-    // Effektiv score: enkelt-scenarie, eller gennemsnit over de blandede scenarier.
+    // Ren scenarie-fit (0-100): enkelt-scenarie, eller gennemsnit over de blandede.
+    // Vises i 'fit'-kolonnen — det rå CO-disciplin-match, uden exp eller tie-break.
+    function fitScore(r){
+      if(mixMode){ var ks=mixKeys(); if(!ks.length) return 0; var s=0; ks.forEach(function(k){ s+=fit(r,SCEN[k]); }); return s/ks.length; }
+      return fit(r, SCEN[curScen] || SCEN.bakket);
+    }
+    // Forventet vækst normaliseret til 0-100 mod etapens højeste exp.
+    function expNorm(r){ return curMaxExp>0 ? 100*(r.exp||0)/curMaxExp : 0; }
+    // Rangeringsscore = BLANDING af scenarie-fit og forventet vækst. Derfor kan en
+    // superstjerne med kæmpe exp (Pogačar) toppe en billig specialist med marginalt
+    // højere fit (Vine), mens scenarie-knapperne stadig flytter rækkefølgen (fit er
+    // W_EXP-andelen). + ≤0,01 fra CO-snittet som tie-break ved fuldstændig lighed.
     function SCORE(r){
-      var f;
-      if(mixMode){ var ks=mixKeys(); if(!ks.length) return 0; var s=0; ks.forEach(function(k){ s+=fit(r,SCEN[k]); }); f=s/ks.length; }
-      else f = fit(r, SCEN[curScen] || SCEN.bakket);
-      // Tie-break: læg ≤0,01 til fra CO-snittet. Usynligt i visningen (rundes væk),
-      // men afgør rækkefølgen ved lige fit — fx Pogačar (højere snit) over Vine når
-      // begge har 93 i ITT. Antagelse: højere overordnet niveau = marginalt bedre.
-      return f + coAvg(r)*1e-4;
+      var blended = (1-W_EXP)*fitScore(r) + W_EXP*expNorm(r);
+      return blended + coAvg(r)*1e-4;
     }
     function scenLabel(){
       if(mixMode){ var ks=mixKeys(); return ks.length ? ('Blanding: '+ks.map(function(k){ return SCEN[k].label.split(' ')[0]; }).join(' + ')) : 'Blanding — vælg scenarier'; }
@@ -644,7 +653,7 @@
         '<thead><tr><th>#</th><th>Rytter</th><th>Hold</th><th>Pris</th><th>fit</th><th>exp</th><th>value</th></tr></thead><tbody>' +
         scored.map(function(r,i){
           return '<tr><td>'+(i+1)+'</td><td>'+r.name+optMark(r.name)+'</td><td>'+r.team+'</td>' +
-            '<td class="tnum">'+r.price+'</td><td class="tnum">'+Math.round(SCORE(r))+'</td>' +
+            '<td class="tnum">'+r.price+'</td><td class="tnum">'+Math.round(fitScore(r))+'</td>' +
             '<td class="mono">'+fmtK(r.exp)+'</td><td class="mono">'+fmtVal(r)+'</td></tr>';
         }).join('') + '</tbody>';
     }
@@ -705,7 +714,7 @@
         var lis = sorted.map(function(r){
           var isCap = r === cap;
           return '<li'+(isCap?' class="cap"':'')+'><span class="rn">'+(isCap?'★ ':'')+r.name+
-            ' <small>'+r.team+'</small></span><span class="rp">'+r.price+'M · '+Math.round(SCORE(r))+'</span></li>';
+            ' <small>'+r.team+'</small></span><span class="rp">'+r.price+'M · '+Math.round(fitScore(r))+'</span></li>';
         }).join('');
         return '<div class="team '+d.key+'"><h4>'+d.name+'<span class="cost">'+d.t.cost.toFixed(1)+'/50M</span></h4><ul>'+lis+'</ul></div>';
       }).join('');
@@ -714,6 +723,8 @@
     function render(){
       var st = stages[cur]; if(!st) return;
       var all = st.riders || [];
+      // Etapens højeste exp → normalisering af exp-andelen i SCORE. Sæt FØR sortering.
+      curMaxExp = Math.max.apply(null, all.map(function(r){ return r.exp||0; }).concat([1]));
       var scored = all.filter(function(r){ return r.co && Object.keys(r.co).length; });
       scored.sort(function(a,b){ return SCORE(b) - SCORE(a); });
       var cap = scored[0];
@@ -732,7 +743,7 @@
           '<span class="rk tnum">' + (i+1) + '</span>' +
           '<span class="nm">' + r.name + (i===0?' <span class="star">★ kaptajn</span>':'') + optMark(r.name) +
             '<small>' + r.team + ' · ' + r.price + 'M</small></span>' +
-          '<span class="fuse"><span class="m mono">fit ' + Math.round(SCORE(r)) + '</span>' +
+          '<span class="fuse"><span class="m mono">fit ' + Math.round(fitScore(r)) + '</span>' +
             '<span class="arw">·</span><span class="f mono">' + fmtK(r.exp) + '</span></span>' +
         '</div>';
       }).join('');
