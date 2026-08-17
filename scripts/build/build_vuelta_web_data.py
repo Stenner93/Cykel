@@ -786,6 +786,47 @@ def main() -> None:
             placement_data=stage_placement or None,
         )
 
+        # ── Per-scenarie exp ──────────────────────────────────────────────────
+        # Kør HELE modellen igen for hver scenarietype, så exp/value skifter når
+        # brugeren vælger et scenarie (ikke kun rangeringen). Samme rå-data, kun
+        # stage_type varierer → disciplin, vinderpoint, GC-bonus, form og
+        # sprint/KOM-bonus genberegnes ægte pr. scenarie. Robust: én fejlende
+        # scenarie falder tilbage til etapens rigtige exp.
+        SCEN_TYPES = {"massespurt": "sprint", "bakket": "hilly", "brosten": "cobbled",
+                      "bjerg": "mountain", "favorit": "gc", "tt": "tt"}
+        exp_by_scen: dict[str, dict[str, float]] = {}
+        for _scen, _sctype in SCEN_TYPES.items():
+            try:
+                _ml = compute_ml_scores(
+                    riders=riders, stage_type=_sctype, stage_num=stage_num,
+                    profile_score=profile_score, gt_results=gt_results_raw or None,
+                    pcs_form_raw=pcs_raw or None, pcs_rankings=pcs_rankings_raw or None,
+                    co_data=co_data or None, pcs_specialty_data=pcs_specialties or None,
+                    startlist_quality=1.0)
+                _hr = compute_holdet_raw_scores(
+                    riders=riders, stage_type=_sctype, stage_num=stage_num,
+                    gt_results=gt_results_raw or None, pcs_form_raw=pcs_raw or None,
+                    co_data=co_data or None, pcs_specialty_data=pcs_specialties or None)
+                _pl = compute_placement_scores(
+                    riders=riders, stage_type=_sctype, stage_num=stage_num,
+                    gt_results=gt_results_raw or None, pcs_form_raw=pcs_raw or None,
+                    co_data=co_data or None, pcs_specialty_data=pcs_specialties or None,
+                    startlist_quality=1.0, profile_score=float(profile_score or 100),
+                    p_class=p_class, finish_alt=float(finish_alt))
+                _pr = predict_all(
+                    riders=riders, stage_type=_sctype, veloscore_data=veloscore_data or None,
+                    odds_data=odds_data, cyclingoracle_data=co_data, pcs_form_data=pcs_form,
+                    pcs_form_long_data=pcs_form_long, current_gc=gc_standings or None,
+                    current_jerseys=jersey_leaders or None, profile_score=profile_score,
+                    winner_pts_override=VUELTA_WINNER_POINTS, rider_context=stage_ctx or None,
+                    pcs_specialty_data=pcs_specialties or None, ml_prob_data=_ml or None,
+                    pcs_rank_data=pcs_rank_data or None, pcs_n_results_data=pcs_n_results_data or None,
+                    holdet_raw_data=_hr or None, placement_data=_pl or None)
+                exp_by_scen[_scen] = {p["rider_id"]: round(p.get("expected_pts", 0)) for p in _pr}
+            except Exception as _e:
+                print(f"    [advarsel] exp-scenarie {_scen} (etape {stage_num}) fejlede: {_e}")
+                exp_by_scen[_scen] = {}
+
         stage_actuals = actuals.get(stage_num, {})
 
         # Best team (unconstrained)
@@ -807,6 +848,10 @@ def main() -> None:
                 "team":     p.get("team", ""),
                 "price":    p.get("price", 0),
                 "exp":      p.get("expected_pts", 0),
+                # Per-scenarie forventet vækst (kr) — exp/value skifter i frontend
+                # når scenariet vælges. Falder tilbage til etapens rigtige exp.
+                "exp_sc":   {sc: exp_by_scen.get(sc, {}).get(rid, p.get("expected_pts", 0))
+                             for sc in SCEN_TYPES},
                 "var":      p.get("variance", 0),
                 "form":     round(p.get("form_score", 0), 1),
                 "disc":     round(p.get("disc_raw", 0) or 0, 1),
