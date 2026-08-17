@@ -72897,5 +72897,742 @@
         "stage_type": "sprint"
       }
     ]
+  },
+  "asbjørn_hellemose": {
+    "name": "Asbjørn Hellemose",
+    "pcs_url": "https://www.procyclingstats.com/rider/asbjorn-hellemose",
+    "form_score": 4.3,
+    "form_by_type": {
+      "overall": 4.3,
+      "sprint": 1.8,
+      "mountain": 1.3,
+      "hilly": 4.4,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "form_long_by_type": {
+      "overall": 12.4,
+      "sprint": 5.5,
+      "mountain": 9.7,
+      "hilly": 3.5,
+      "tt": 0.2,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 62,
+      "gc": 162,
+      "tt": 0,
+      "sprint": 2,
+      "climber": 112,
+      "hills": 56
+    },
+    "n_results": 19,
+    "last_result_date": "12.07",
+    "results": [
+      {
+        "date": "12.07",
+        "result": 54,
+        "race": "S5 Stage 5 - Langenlois › Wien",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-austria/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-of-austria/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "11.07",
+        "result": 15,
+        "race": "S4 Stage 4 - Steyr › Steyr",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-austria/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-of-austria/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "10.07",
+        "result": 8,
+        "race": "S3 Stage 3 - Lienz › St. Johann Alpendorf 131k",
+        "pcs_pts": 1,
+        "stage_href": "race/tour-of-austria/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-of-austria/2026",
+        "stage_type": "hilly"
+      },
+      {
+        "date": "09.07",
+        "result": 12,
+        "race": "S2 Stage 2 - Bad Kleinkirchheim › Großglockner (Kaiser-Franz-Josef-Höhe)",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-austria/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-of-austria/2026",
+        "stage_type": "mountain"
+      },
+      {
+        "date": "08.07",
+        "result": 31,
+        "race": "S1 Stage 1 - Graz › Gamlitz",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-austria/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-of-austria/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "21.06",
+        "result": 72,
+        "race": "S5 Stage 5 - Villars-sur-Ollon › Villars-sur-Ollon",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-suisse/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-suisse/2026",
+        "stage_type": "mountain"
+      },
+      {
+        "date": "20.06",
+        "result": 111,
+        "race": "S4 (ITT) Stage 4 (ITT) - Aarburg › Aarburg",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-suisse/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-suisse/2026",
+        "stage_type": "tt"
+      },
+      {
+        "date": "19.06",
+        "result": 98,
+        "race": "S3 Stage 3 - Bad Ragaz › Bad Ragaz",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-suisse/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-suisse/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "18.06",
+        "result": 122,
+        "race": "S2 Stage 2 - Locarno › Locarno",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-suisse/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-suisse/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "17.06",
+        "result": 46,
+        "race": "S1 Stage 1 - Sondrio › Sondrio",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-suisse/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-suisse/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "03.06",
+        "result": 89,
+        "race": "S3 Stage 3 - Habay › Vaux-sur-Sûre",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-wallonie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-wallonie/2026",
+        "stage_type": "hilly"
+      },
+      {
+        "date": "02.06",
+        "result": 38,
+        "race": "S2 Stage 2 - Jodoigne › Libramont-Chevigny 75k",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-wallonie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-wallonie/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "01.06",
+        "result": 43,
+        "race": "S1 Stage 1 - Manage › Lobbes",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-wallonie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-wallonie/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "03.05",
+        "result": 46,
+        "race": "S5 Stage 5 - Lucens › Leysin 162k",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": "mountain"
+      },
+      {
+        "date": "02.05",
+        "result": 43,
+        "race": "S4 Stage 4 - Broc › Charmey",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-romandie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-romandie/2026",
+        "stage_type": "mountain"
+      }
+    ]
+  },
+  "christophe_laporte": {
+    "name": "Christophe Laporte",
+    "pcs_url": "https://www.procyclingstats.com/rider/christophe-laporte",
+    "form_score": 16.9,
+    "form_by_type": {
+      "overall": 16.9,
+      "sprint": 8.0,
+      "mountain": 7.4,
+      "hilly": 14.7,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "form_long_by_type": {
+      "overall": 73.1,
+      "sprint": 37.1,
+      "mountain": 35.1,
+      "hilly": 12.0,
+      "tt": 88.9,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 4815,
+      "gc": 1135,
+      "tt": 989,
+      "sprint": 2456,
+      "climber": 403,
+      "hills": 2044
+    },
+    "n_results": 9,
+    "last_result_date": "02.08",
+    "results": [
+      {
+        "date": "02.08",
+        "result": 15,
+        "race": "S5 Stage 5 - Køge › Rødovre",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-denmark/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-of-denmark/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "01.08",
+        "result": 9,
+        "race": "S4 Stage 4 - Rudkøbing › Faaborg",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-denmark/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-of-denmark/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "31.07",
+        "result": 3,
+        "race": "S3 Stage 3 - Fredericia › Vejle",
+        "pcs_pts": 12,
+        "stage_href": "race/tour-of-denmark/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-of-denmark/2026",
+        "stage_type": "hilly"
+      },
+      {
+        "date": "30.07",
+        "result": 43,
+        "race": "S2 Stage 2 - Glyngøre › Skive",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-denmark/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-of-denmark/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "29.07",
+        "result": 6,
+        "race": "S1 Stage 1 - Aalborg › Aalborg",
+        "pcs_pts": 3,
+        "stage_href": "race/tour-of-denmark/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-of-denmark/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "21.02",
+        "result": 5,
+        "race": "S4 Stage 4 - Montoro › Pozoblanco",
+        "pcs_pts": 4,
+        "stage_href": "race/ruta-del-sol/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": "hilly"
+      },
+      {
+        "date": "20.02",
+        "result": 3,
+        "race": "S3 Stage 3 - Jaén › Lopera",
+        "pcs_pts": 12,
+        "stage_href": "race/ruta-del-sol/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "19.02",
+        "result": 21,
+        "race": "S2 Stage 2 - Torrox › Otura",
+        "pcs_pts": 0,
+        "stage_href": "race/ruta-del-sol/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": "hilly"
+      },
+      {
+        "date": "18.02",
+        "result": 1,
+        "race": "S1 Stage 1 - Benahavís › Pizarra",
+        "pcs_pts": 30,
+        "stage_href": "race/ruta-del-sol/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "ruta-del-sol/2026",
+        "stage_type": "mountain"
+      }
+    ]
+  },
+  "finlay_pickering": {
+    "name": "Finlay Pickering",
+    "pcs_url": "https://www.procyclingstats.com/rider/finlay-pickering",
+    "form_score": 7.8,
+    "form_by_type": {
+      "overall": 7.8,
+      "sprint": 6.4,
+      "mountain": 2.0,
+      "hilly": 1.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "form_long_by_type": {
+      "overall": 19.7,
+      "sprint": 12.5,
+      "mountain": 12.4,
+      "hilly": 7.0,
+      "tt": 2.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 7,
+      "gc": 200,
+      "tt": 58,
+      "sprint": 0,
+      "climber": 274,
+      "hills": 69
+    },
+    "n_results": 20,
+    "last_result_date": "12.07",
+    "results": [
+      {
+        "date": "12.07",
+        "result": 56,
+        "race": "S5 Stage 5 - Langenlois › Wien",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-austria/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-of-austria/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "11.07",
+        "result": 10,
+        "race": "S4 Stage 4 - Steyr › Steyr",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-austria/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-of-austria/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "10.07",
+        "result": 32,
+        "race": "S3 Stage 3 - Lienz › St. Johann Alpendorf",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-austria/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-of-austria/2026",
+        "stage_type": "hilly"
+      },
+      {
+        "date": "09.07",
+        "result": 9,
+        "race": "S2 Stage 2 - Bad Kleinkirchheim › Großglockner (Kaiser-Franz-Josef-Höhe)",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-austria/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-of-austria/2026",
+        "stage_type": "mountain"
+      },
+      {
+        "date": "08.07",
+        "result": 7,
+        "race": "S1 Stage 1 - Graz › Gamlitz",
+        "pcs_pts": 2,
+        "stage_href": "race/tour-of-austria/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-of-austria/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "21.06",
+        "result": 28,
+        "race": "S5 Stage 5 - Villars-sur-Ollon › Villars-sur-Ollon",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-suisse/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-suisse/2026",
+        "stage_type": "mountain"
+      },
+      {
+        "date": "20.06",
+        "result": 64,
+        "race": "S4 (ITT) Stage 4 (ITT) - Aarburg › Aarburg",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-suisse/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-suisse/2026",
+        "stage_type": "tt"
+      },
+      {
+        "date": "19.06",
+        "result": 58,
+        "race": "S3 Stage 3 - Bad Ragaz › Bad Ragaz",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-suisse/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-suisse/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "18.06",
+        "result": 5,
+        "race": "S2 Stage 2 - Locarno › Locarno 106k",
+        "pcs_pts": 10,
+        "stage_href": "race/tour-de-suisse/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-suisse/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "17.06",
+        "result": 15,
+        "race": "S1 Stage 1 - Sondrio › Sondrio",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-suisse/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-suisse/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "16.05",
+        "result": 57,
+        "race": "S4 Stage 4 - Mohács › Pécs",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-hongrie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": "hilly"
+      },
+      {
+        "date": "15.05",
+        "result": 77,
+        "race": "S3 Stage 3 - Kaposvár › Szekszárd",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-hongrie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "14.05",
+        "result": 63,
+        "race": "S2 Stage 2 - Szarvas › Paks",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-hongrie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "13.05",
+        "result": 76,
+        "race": "S1 Stage 1 - Gyula › Békéscsaba",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-hongrie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-hongrie/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "24.04",
+        "result": 55,
+        "race": "S5 Stage 5 - Trento › Bozen/Bolzano",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-the-alps/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-of-the-alps/2026",
+        "stage_type": "mountain"
+      }
+    ]
+  },
+  "jose_luis_faura": {
+    "name": "Jose Luis Faura",
+    "pcs_url": "",
+    "form_score": 10.0,
+    "form_by_type": {
+      "overall": 10.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "form_long_by_type": {},
+    "n_results": 0,
+    "last_result_date": "",
+    "results": [],
+    "not_found": true
+  },
+  "mario_aparicio": {
+    "name": "Mario Aparicio",
+    "pcs_url": "",
+    "form_score": 10.0,
+    "form_by_type": {
+      "overall": 10.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "form_long_by_type": {},
+    "n_results": 0,
+    "last_result_date": "",
+    "results": [],
+    "not_found": true
+  },
+  "rudy_porter": {
+    "name": "Rudy Porter",
+    "pcs_url": "https://www.procyclingstats.com/rider/rudy-porter",
+    "form_score": 2.1,
+    "form_by_type": {
+      "overall": 2.1,
+      "sprint": 2.0,
+      "mountain": 0.9,
+      "hilly": 0.8,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "form_long_by_type": {
+      "overall": 3.5,
+      "sprint": 3.0,
+      "mountain": 2.4,
+      "hilly": 1.5,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "onedayraces": 56,
+      "gc": 147,
+      "tt": 1,
+      "sprint": 20,
+      "climber": 89,
+      "hills": 82
+    },
+    "n_results": 29,
+    "last_result_date": "09.08",
+    "results": [
+      {
+        "date": "09.08",
+        "result": 79,
+        "race": "S7 (ITT) Stage 7 (ITT) - Wieliczka › Wieliczka",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-pologne/2026/stage-7",
+        "stage_num": 7,
+        "race_base": "tour-de-pologne/2026",
+        "stage_type": "tt"
+      },
+      {
+        "date": "08.08",
+        "result": 104,
+        "race": "S6 Stage 6 - Bukovina Resort › Bukowina Tatrzańska",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-pologne/2026/stage-6",
+        "stage_num": 6,
+        "race_base": "tour-de-pologne/2026",
+        "stage_type": "hilly"
+      },
+      {
+        "date": "07.08",
+        "result": 48,
+        "race": "S5 Stage 5 - Opole › Kocierz Resort",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-pologne/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-pologne/2026",
+        "stage_type": "hilly"
+      },
+      {
+        "date": "06.08",
+        "result": 47,
+        "race": "S4 Stage 4 - Żagań › Karpacz",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-pologne/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-pologne/2026",
+        "stage_type": "hilly"
+      },
+      {
+        "date": "05.08",
+        "result": 40,
+        "race": "S3 Stage 3 - Gorzów Wielkopolski › Zielona Góra",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-pologne/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-pologne/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "04.08",
+        "result": 41,
+        "race": "S2 Stage 2 - Międzyzdroje › Szczecin",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-pologne/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-pologne/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "03.08",
+        "result": 52,
+        "race": "S1 Stage 1 - Gdynia › Koszalin",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-pologne/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-pologne/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "05.06",
+        "result": 37,
+        "race": "S5 Stage 5 - Bassenge › Aubel",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-wallonie/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-de-wallonie/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "04.06",
+        "result": 20,
+        "race": "S4 Stage 4 - Dison › Eupen",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-wallonie/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-de-wallonie/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "03.06",
+        "result": 52,
+        "race": "S3 Stage 3 - Habay › Vaux-sur-Sûre",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-wallonie/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-de-wallonie/2026",
+        "stage_type": "hilly"
+      },
+      {
+        "date": "02.06",
+        "result": 26,
+        "race": "S2 Stage 2 - Jodoigne › Libramont-Chevigny",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-wallonie/2026/stage-2",
+        "stage_num": 2,
+        "race_base": "tour-de-wallonie/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "01.06",
+        "result": 17,
+        "race": "S1 Stage 1 - Manage › Lobbes",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-de-wallonie/2026/stage-1",
+        "stage_num": 1,
+        "race_base": "tour-de-wallonie/2026",
+        "stage_type": "sprint"
+      },
+      {
+        "date": "24.04",
+        "result": 25,
+        "race": "S5 Stage 5 - Trento › Bozen/Bolzano",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-the-alps/2026/stage-5",
+        "stage_num": 5,
+        "race_base": "tour-of-the-alps/2026",
+        "stage_type": "mountain"
+      },
+      {
+        "date": "23.04",
+        "result": 14,
+        "race": "S4 Stage 4 - Arco › Trento",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-the-alps/2026/stage-4",
+        "stage_num": 4,
+        "race_base": "tour-of-the-alps/2026",
+        "stage_type": "mountain"
+      },
+      {
+        "date": "22.04",
+        "result": 12,
+        "race": "S3 Stage 3 - Latsch/Laces › Arco",
+        "pcs_pts": 0,
+        "stage_href": "race/tour-of-the-alps/2026/stage-3",
+        "stage_num": 3,
+        "race_base": "tour-of-the-alps/2026",
+        "stage_type": "mountain"
+      }
+    ]
+  },
+  "sergio_geovani_chumil": {
+    "name": "Sergio Geovani Chumil",
+    "pcs_url": "",
+    "form_score": 10.0,
+    "form_by_type": {
+      "overall": 10.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "form_long_by_type": {},
+    "n_results": 0,
+    "last_result_date": "",
+    "results": [],
+    "not_found": true
   }
 }
