@@ -9,6 +9,15 @@
     "holdet_person_id": 4390
   },
   {
+    "id": "alessandro_covi",
+    "full_name": "Alessandro Covi",
+    "short_name": "Covi",
+    "team": "JAL",
+    "team_full": "Team Jayco AlUla",
+    "price": 3.0,
+    "holdet_person_id": 4523
+  },
+  {
     "id": "alexander_hajek",
     "full_name": "Alexander Hajek",
     "short_name": "Hajek",
@@ -54,6 +63,15 @@
     "holdet_person_id": 4718
   },
   {
+    "id": "asbjørn_hellemose",
+    "full_name": "Asbjørn Hellemose",
+    "short_name": "Hellemose",
+    "team": "JAL",
+    "team_full": "Team Jayco AlUla",
+    "price": 3.5,
+    "holdet_person_id": 46836
+  },
+  {
     "id": "axel_laurance",
     "full_name": "Axel Laurance",
     "short_name": "Laurance",
@@ -88,6 +106,15 @@
     "team_full": "Netcompany INEOS Cycling Team",
     "price": 6.5,
     "holdet_person_id": 4298
+  },
+  {
+    "id": "christophe_laporte",
+    "full_name": "Christophe Laporte",
+    "short_name": "Laporte",
+    "team": "VLB",
+    "team_full": "Team Visma | Lease a Bike",
+    "price": 6.0,
+    "holdet_person_id": 3104
   },
   {
     "id": "cian_uijtdebroeks",
@@ -135,15 +162,6 @@
     "holdet_person_id": 2585
   },
   {
-    "id": "davide_ballerini",
-    "full_name": "Davide Ballerini",
-    "short_name": "D. Ballerini",
-    "team": "XDA",
-    "team_full": "XDS Astana Team",
-    "price": 5.0,
-    "holdet_person_id": 3824
-  },
-  {
     "id": "diego_uriarte_belzunegi",
     "full_name": "Diego Uriarte Belzunegi",
     "short_name": "Belzunegi",
@@ -180,15 +198,6 @@
     "holdet_person_id": 3543
   },
   {
-    "id": "erlend_blikra",
-    "full_name": "Erlend Blikra",
-    "short_name": "E. Blikra",
-    "team": "UXM",
-    "team_full": "Uno-X Mobility",
-    "price": 6.0,
-    "holdet_person_id": 4892
-  },
-  {
     "id": "ethan_hayter",
     "full_name": "Ethan Hayter",
     "short_name": "Hayter",
@@ -214,6 +223,15 @@
     "team_full": "Soudal Quick-Step",
     "price": 4.0,
     "holdet_person_id": 4508
+  },
+  {
+    "id": "finlay_pickering",
+    "full_name": "Finlay Pickering",
+    "short_name": "Pickering",
+    "team": "JAL",
+    "team_full": "Team Jayco AlUla",
+    "price": 4.0,
+    "holdet_person_id": 47115
   },
   {
     "id": "fredrik_dversnes",
@@ -259,6 +277,15 @@
     "team_full": "Team Picnic PostNL",
     "price": 3.0,
     "holdet_person_id": 46840
+  },
+  {
+    "id": "hamish_mckenzie",
+    "full_name": "Hamish McKenzie",
+    "short_name": "McKenzie",
+    "team": "JAL",
+    "team_full": "Team Jayco AlUla",
+    "price": 3.0,
+    "holdet_person_id": 50500
   },
   {
     "id": "harold_martín_lópez",
@@ -369,6 +396,15 @@
     "holdet_person_id": 50506
   },
   {
+    "id": "jasha_sutterlin",
+    "full_name": "Jasha Sütterlin",
+    "short_name": "Sütterlin",
+    "team": "JAL",
+    "team_full": "Team Jayco AlUla",
+    "price": 4.0,
+    "holdet_person_id": 2634
+  },
+  {
     "id": "jay_vine",
     "full_name": "Jay Vine",
     "short_name": "J. Vine",
@@ -396,6 +432,15 @@
     "holdet_person_id": 3237
   },
   {
+    "id": "jose_luis_faura",
+    "full_name": "Jose Luis Faura",
+    "short_name": "Faura",
+    "team": "BB",
+    "team_full": "Burgos Burpellet BH",
+    "price": 3.0,
+    "holdet_person_id": 47017
+  },
+  {
     "id": "jose_manuel_diaz",
     "full_name": "José Manuel Diaz",
     "short_name": "Diaz",
@@ -421,6 +466,15 @@
     "team_full": "UAE Team Emirates - XRG",
     "price": 4.5,
     "holdet_person_id": 4750
+  },
+  {
+    "id": "koen_bouwman",
+    "full_name": "Koen Bouwman",
+    "short_name": "K. Bouwman",
+    "team": "JAL",
+    "team_full": "Team Jayco AlUla",
+    "price": 4.0,
+    "holdet_person_id": 3250
   },
   {
     "id": "laurence_pithie",
@@ -466,15 +520,6 @@
     "team_full": "Alpecin-Premier Tech",
     "price": 3.0,
     "holdet_person_id": 5012
-  },
-  {
-    "id": "luke_plapp",
-    "full_name": "Luke Plapp",
-    "short_name": "Plapp",
-    "team": "JAL",
-    "team_full": "Team Jayco AlUla",
-    "price": 5.5,
-    "holdet_person_id": 4694
   },
   {
     "id": "leo_bisiaux",
@@ -529,6 +574,15 @@
     "team_full": "EF Education - EasyPost",
     "price": 5.0,
     "holdet_person_id": 4682
+  },
+  {
+    "id": "mario_aparicio",
+    "full_name": "Mario Aparicio",
+    "short_name": "Aparicio",
+    "team": "BB",
+    "team_full": "Burgos Burpellet BH",
+    "price": 3.0,
+    "holdet_person_id": 48580
   },
   {
     "id": "mathias_norsgaard",
@@ -738,6 +792,15 @@
     "holdet_person_id": 2574
   },
   {
+    "id": "rudy_porter",
+    "full_name": "Rudy Porter",
+    "short_name": "Porter",
+    "team": "JAL",
+    "team_full": "Team Jayco AlUla",
+    "price": 2.5,
+    "holdet_person_id": 50501
+  },
+  {
     "id": "santiago_buitrago",
     "full_name": "Santiago Buitrago",
     "short_name": "S. Buitrago",
@@ -745,6 +808,15 @@
     "team_full": "Bahrain - Victorious",
     "price": 6.0,
     "holdet_person_id": 4301
+  },
+  {
+    "id": "sergio_geovani_chumil",
+    "full_name": "Sergio Geovani Chumil",
+    "short_name": "Chumil",
+    "team": "BB",
+    "team_full": "Burgos Burpellet BH",
+    "price": 4.0,
+    "holdet_person_id": 48581
   },
   {
     "id": "stefan_kung",
@@ -799,6 +871,15 @@
     "team_full": "Team Visma | Lease a Bike",
     "price": 3.0,
     "holdet_person_id": 46843
+  },
+  {
+    "id": "torstein_træen",
+    "full_name": "Torstein Træen",
+    "short_name": "Træen",
+    "team": "UXM",
+    "team_full": "Uno-X Mobility",
+    "price": 4.5,
+    "holdet_person_id": 4885
   },
   {
     "id": "urko_berrade",

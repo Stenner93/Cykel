@@ -32,17 +32,6 @@
     "is_out": false,
     "is_injured": false
   },
-  "davide_ballerini": {
-    "holdet_name": "Davide Ballerini",
-    "holdet_player_id": 53409,
-    "holdet_person_id": 3824,
-    "price_M": 5.0,
-    "start_price_M": 5.0,
-    "own_pct": 0,
-    "own_pct_change": 0,
-    "is_out": false,
-    "is_injured": false
-  },
   "james_shaw": {
     "holdet_name": "James Shaw",
     "holdet_player_id": 54233,
@@ -131,6 +120,17 @@
     "is_out": false,
     "is_injured": false
   },
+  "koen_bouwman": {
+    "holdet_name": "Koen Bouwman",
+    "holdet_player_id": 54278,
+    "holdet_person_id": 3250,
+    "price_M": 4.0,
+    "start_price_M": 4.0,
+    "own_pct": 0,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
   "liam_tuckwell": {
     "holdet_name": "Luke Tuckwell",
     "holdet_player_id": 53439,
@@ -203,17 +203,6 @@
     "holdet_person_id": 4888,
     "price_M": 4.0,
     "start_price_M": 4.0,
-    "own_pct": 0,
-    "own_pct_change": 0,
-    "is_out": false,
-    "is_injured": false
-  },
-  "erlend_blikra": {
-    "holdet_name": "Erlend Blikra",
-    "holdet_player_id": 53413,
-    "holdet_person_id": 4892,
-    "price_M": 6.0,
-    "start_price_M": 6.0,
     "own_pct": 0,
     "own_pct_change": 0,
     "is_out": false,
