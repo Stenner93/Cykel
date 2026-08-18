@@ -4811,5 +4811,139 @@
       "stage_type": "mountain",
       "name": "Stage 4 | Kroměříž - Pustevny"
     }
+  },
+  "pune-grand-tour/2026": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint"
+  },
+  "pune-grand-tour/2026_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Mulshi - Haveli"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Pune - Maval"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Purander - Baramati"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Pune - Pune"
+    }
+  },
+  "tour-of-mentougou/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint"
+  },
+  "tour-of-mentougou/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Mentougou - Baipu Temple"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Mentougou - Mentougou"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Zhaitang - Zhaitang"
+    }
+  },
+  "tour-of-huangshan/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint"
+  },
+  "tour-of-huangshan/2025_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Tunxi District Century Square - Tunxi District Century Square"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Huizhou District Sports Center - Huangshan District Government Square"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Huangshan District Government Square - Yixian Gymnasium"
+    }
+  },
+  "arctic-race-of-norway/2026": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "hilly",
+    "4": "hilly"
+  },
+  "arctic-race-of-norway/2026_meta": {
+    "1": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Evenes - Myre"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Bø i Vesterålen - Andenes"
+    },
+    "3": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 3 | Stokmarknes - Storheia Summit (Melbu)"
+    },
+    "4": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 4 | Sortland - Narvik"
+    }
+  },
+  "tour-de-beauce/2025": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "mountain",
+    "4": "sprint",
+    "5": "sprint"
+  },
+  "tour-de-beauce/2025_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Saint-Gédéon-de-Beauce - Saint-Gédéon-de-Beauce"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Saint-Odilon-de-Cranbourne - Saint-Odilon-de-Cranbourne"
+    },
+    "3": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 3 | Lac-Mégantic - Mont Mégantic"
+    },
+    "4": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Québec - Québec"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Saint-Georges - Saint-Georges"
+    }
   }
 }
