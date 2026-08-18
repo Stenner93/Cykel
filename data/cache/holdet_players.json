@@ -10,17 +10,6 @@
     "is_out": false,
     "is_injured": false
   },
-  "harold_martín_lópez": {
-    "holdet_name": "Harold Martin Lopez",
-    "holdet_player_id": 53421,
-    "holdet_person_id": 5017,
-    "price_M": 4.0,
-    "start_price_M": 4.0,
-    "own_pct": 0,
-    "own_pct_change": 0,
-    "is_out": false,
-    "is_injured": false
-  },
   "lorenzo_fortunato": {
     "holdet_name": "Lorenzo Fortunato",
     "holdet_player_id": 53437,
@@ -65,17 +54,6 @@
     "is_out": false,
     "is_injured": false
   },
-  "mikel_landa": {
-    "holdet_name": "Mikel Landa",
-    "holdet_player_id": 53449,
-    "holdet_person_id": 2190,
-    "price_M": 6.0,
-    "start_price_M": 6.0,
-    "own_pct": 0,
-    "own_pct_change": 0,
-    "is_out": false,
-    "is_injured": false
-  },
   "filippo_zana": {
     "holdet_name": "Filippo Zana",
     "holdet_player_id": 53416,
@@ -87,12 +65,56 @@
     "is_out": false,
     "is_injured": false
   },
-  "max_poole": {
-    "holdet_name": "Max Poole",
-    "holdet_player_id": 53447,
-    "holdet_person_id": 4919,
-    "price_M": 5.5,
-    "start_price_M": 5.5,
+  "mikel_landa": {
+    "holdet_name": "Mikel Landa",
+    "holdet_player_id": 53449,
+    "holdet_person_id": 2190,
+    "price_M": 6.0,
+    "start_price_M": 6.0,
+    "own_pct": 0,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
+  "lorenzo_rota": {
+    "holdet_name": "Lorenzo Rota",
+    "holdet_player_id": 54338,
+    "holdet_person_id": 3571,
+    "price_M": 3.0,
+    "start_price_M": 3.0,
+    "own_pct": 0,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
+  "chris_hamilton": {
+    "holdet_name": "Chris Hamilton",
+    "holdet_player_id": 54318,
+    "holdet_person_id": 3559,
+    "price_M": 3.0,
+    "start_price_M": 3.0,
+    "own_pct": 0,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
+  "gijs_leemreize": {
+    "holdet_name": "Gijs Leemreize",
+    "holdet_player_id": 54324,
+    "holdet_person_id": 4740,
+    "price_M": 2.5,
+    "start_price_M": 2.5,
+    "own_pct": 0,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
+  "timo_de_jong": {
+    "holdet_name": "Timo de Jong",
+    "holdet_player_id": 54355,
+    "holdet_person_id": 50485,
+    "price_M": 4.0,
+    "start_price_M": 4.0,
     "own_pct": 0,
     "own_pct_change": 0,
     "is_out": false,
@@ -142,12 +164,23 @@
     "is_out": false,
     "is_injured": false
   },
-  "joao_almeida": {
-    "holdet_name": "Joao Almeida",
-    "holdet_player_id": 53431,
-    "holdet_person_id": 4388,
-    "price_M": 10.0,
-    "start_price_M": 10.0,
+  "frederik_wandahl": {
+    "holdet_name": "Frederik Wandahl",
+    "holdet_player_id": 54322,
+    "holdet_person_id": 4680,
+    "price_M": 2.5,
+    "start_price_M": 2.5,
+    "own_pct": 0,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
+  "gianni_moscon": {
+    "holdet_name": "Gianni Moscon",
+    "holdet_player_id": 54325,
+    "holdet_person_id": 3258,
+    "price_M": 2.5,
+    "start_price_M": 2.5,
     "own_pct": 0,
     "own_pct_change": 0,
     "is_out": false,
@@ -159,6 +192,17 @@
     "holdet_person_id": 4568,
     "price_M": 8.0,
     "start_price_M": 8.0,
+    "own_pct": 0,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
+  "joao_almeida": {
+    "holdet_name": "Joao Almeida",
+    "holdet_player_id": 53431,
+    "holdet_person_id": 4388,
+    "price_M": 10.0,
+    "start_price_M": 10.0,
     "own_pct": 0,
     "own_pct_change": 0,
     "is_out": false,

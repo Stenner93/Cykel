@@ -213,7 +213,7 @@
     "short_name": "C. Hamilton",
     "team": "TPP",
     "price": 3.0,
-    "own_pct": 0.0
+    "own_pct": 0
   },
   {
     "id": "chris_harper",
@@ -564,8 +564,8 @@
     "full_name": "Frederik Wandahl",
     "short_name": "F. Wandahl",
     "team": "RB-B",
-    "price": 3.0,
-    "own_pct": 0.0
+    "price": 2.5,
+    "own_pct": 0
   },
   {
     "id": "filippo_zana",
@@ -605,7 +605,7 @@
     "short_name": "G. Leemreize",
     "team": "TPP",
     "price": 2.5,
-    "own_pct": 0.0
+    "own_pct": 0
   },
   {
     "id": "giovanni_lonardi",
@@ -621,7 +621,7 @@
     "short_name": "G. Moscon",
     "team": "RB-B",
     "price": 2.5,
-    "own_pct": 0.0
+    "own_pct": 0
   },
   {
     "id": "gregor_mühlberger",
@@ -989,7 +989,7 @@
     "short_name": "L. Rota",
     "team": "LOTTO",
     "price": 3.0,
-    "own_pct": 0.0
+    "own_pct": 0
   },
   {
     "id": "liam_slock",
@@ -1444,8 +1444,8 @@
     "full_name": "Timo de Jong",
     "short_name": "T. De Jong",
     "team": "TPP",
-    "price": 3.0,
-    "own_pct": 0.0
+    "price": 4.0,
+    "own_pct": 0
   },
   {
     "id": "tord_gudmestad",
