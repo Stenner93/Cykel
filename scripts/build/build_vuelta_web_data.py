@@ -827,6 +827,15 @@ def main() -> None:
                 print(f"    [advarsel] exp-scenarie {_scen} (etape {stage_num}) fejlede: {_e}")
                 exp_by_scen[_scen] = {}
 
+        # Reduceret spurt (spurt-domineret): blanding af sprint- og bakke-exp
+        # (0,6/0,4) → fanger etaper hvor de rene sprintere sættes, men klatrerne
+        # ikke vinder. Kræver ingen ny model-etapetype; afledes af de to andre.
+        _ms, _bk = exp_by_scen.get("massespurt", {}), exp_by_scen.get("bakket", {})
+        exp_by_scen["redsprint"] = {
+            rid: round(0.6 * _ms.get(rid, 0) + 0.4 * _bk.get(rid, 0))
+            for rid in set(_ms) | set(_bk)
+        }
+
         stage_actuals = actuals.get(stage_num, {})
 
         # Best team (unconstrained)
@@ -851,7 +860,7 @@ def main() -> None:
                 # Per-scenarie forventet vækst (kr) — exp/value skifter i frontend
                 # når scenariet vælges. Falder tilbage til etapens rigtige exp.
                 "exp_sc":   {sc: exp_by_scen.get(sc, {}).get(rid, p.get("expected_pts", 0))
-                             for sc in SCEN_TYPES},
+                             for sc in exp_by_scen},
                 "var":      p.get("variance", 0),
                 "form":     round(p.get("form_score", 0), 1),
                 "disc":     round(p.get("disc_raw", 0) or 0, 1),

@@ -337,6 +337,7 @@
     <div class="scenariobar" role="group" aria-label="Vælg scenarie">
       <span class="sclabel">Scenarie</span>
       <button class="vscbtn" data-vsc="massespurt" type="button">Flad massespurt <small>SPR</small></button>
+      <button class="vscbtn" data-vsc="redsprint" type="button">Reduceret · spurt <small>SPR+HLL</small></button>
       <button class="vscbtn" data-vsc="bakket" type="button">Reduceret · bakket <small>HLL+SPR</small></button>
       <button class="vscbtn" data-vsc="brosten" type="button">Reduceret · brosten <small>COB</small></button>
       <button class="vscbtn" data-vsc="bjerg" type="button">Bjergafslutning <small>MTN</small></button>
@@ -542,7 +543,8 @@
      100% i browseren — ingen server, ingen lokal kørsel. */
   (function(){
     var SCEN = {
-      massespurt:{label:'Flad massespurt',          w:{SPR:1}},
+      massespurt:{label:'Flad massespurt',           w:{SPR:1}},
+      redsprint :{label:'Reduceret spurt · spurt',   w:{SPR:0.6, HLL:0.4}},
       bakket    :{label:'Reduceret spurt · bakket',  w:{HLL:0.6, SPR:0.4}},
       brosten   :{label:'Reduceret spurt · brosten', w:{COB:0.5, HLL:0.3, SPR:0.2}},
       bjerg     :{label:'Bjergafslutning',           w:{MTN:1}},
