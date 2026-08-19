@@ -412,6 +412,7 @@
                 <tr><td>VeloScore (#1-pick)</td><td>27</td><td>22 %</td><td>26 %</td><td>40 %</td></tr>
               </tbody>
             </table></div>
+            <div id="vCalLive" style="margin-top:16px"></div>
             <p class="note" style="margin-top:12px">* Andel af den bedst mulige kaptajn-vækst hver etape (kaptajnens vækst / etapens største).
                <b>Over 57 kaptajn-valg på 36 grand tour-etaper ramte optakten den bedste kaptajn 44 % vs. modellens 26 %, og fangede
                70 % af den bedst mulige vækst mod modellens 57 %.</b> Modellens svaghed: den kaptajnede gang på gang den dyre
@@ -1027,6 +1028,41 @@
           '<div class="scrollx"><table class="matrix">'+head+body+'</table></div>';
       })
       .catch(function(e){ wrap.innerHTML = '<p class="src">Kunne ikke hente pointmatrix ('+e.message+'). Bygges af den daglige kørsel.</p>'; });
+  })();
+</script>
+<script>
+  /* Live Vuelta-kalibrering — fylder efterhånden som etaper afvikles.
+     Læser vuelta_calibration_live.json (bygget af den daglige kørsel). */
+  (function(){
+    var wrap = document.getElementById('vCalLive');
+    if(!wrap) return;
+    var LABEL = {'Feltet':'Feltet (Ingemann)','Simon':'Simon K. Kjær',
+                 'Optakt samlet':'Optakt samlet','Model':'Model (samme etaper)'};
+    fetch('data/vuelta_calibration_live.json', {cache:'no-cache'})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .catch(function(){ return null; })
+      .then(function(d){
+        var n = d && d.stages_counted || 0;
+        if(!d || !n){
+          wrap.innerHTML = '<div class="optbar" style="border-color:var(--border-2);background:var(--surface);color:var(--muted)">'+
+            '<b style="color:var(--ink-2)">Vuelta 2026 (live):</b>&nbsp;afventer resultater — fylder automatisk fra E1, når optakterne er lagt ind og etaperne afvikles.</div>';
+          return;
+        }
+        var order = ['Feltet','Simon','Optakt samlet','Model'];
+        var rows = order.filter(function(k){ return d.rows[k] && d.rows[k].n; }).map(function(k){
+          var r=d.rows[k], best=(k==='Optakt samlet');
+          function c(v,win){ return '<td'+(win&&v>=50?' class="win"':'')+'>'+v+' %</td>'; }
+          return '<tr'+(best?' class="best"':'')+'><td>'+LABEL[k]+'</td><td>'+r.n+'</td>'+
+            c(r.hit1,true)+c(r.hit3,true)+c(r.captured,true)+'</tr>';
+        }).join('');
+        wrap.innerHTML =
+          '<div class="cardhead" style="padding:0 0 8px"><h3 style="font-size:1rem">Vuelta 2026 · live</h3>'+
+          '<span class="exlabel">'+n+' etape'+(n===1?'':'r')+' med facit</span></div>'+
+          '<div class="scrollx"><table class="board"><thead><tr><th>Kilde</th><th>Etaper</th>'+
+          '<th>Kaptajn = #1</th><th>Top-3</th><th>Andel af bedst mulige</th></tr></thead><tbody>'+
+          rows+'</tbody></table></div>'+
+          '<p class="note" style="margin-top:8px">Opdateres af den daglige kørsel. Første etaper er små tal — mønsteret bygger sig op undervejs.</p>';
+      });
   })();
 </script>
 <script src="nav.js"></script>
