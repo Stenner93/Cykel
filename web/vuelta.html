@@ -275,6 +275,13 @@
   .board td:first-child{font-family:var(--sans);font-weight:650}
   .board tr.best td{background:var(--accent-soft)}
   .board tr.best td:first-child{color:var(--accent)}
+  .board th.sortable{cursor:pointer;user-select:none;white-space:nowrap}
+  .board th.sortable:hover{color:var(--ink)}
+  .fieldctrl{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:10px}
+  .fclbl{font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:7px}
+  .fclbl select{font-family:inherit;font-size:.82rem;font-weight:600;color:var(--ink);background:var(--card);
+    border:1px solid var(--border-2);border-radius:8px;padding:5px 9px;text-transform:none;letter-spacing:0}
+  .fchint{font-size:.72rem;color:var(--muted)}
   .board .win{color:var(--good);font-weight:700}
   .note{font-size:.8rem;color:var(--muted);margin-top:10px;line-height:1.55}
   .note b{color:var(--ink-2)}
@@ -375,6 +382,7 @@
       <div class="cardbody">
         <details>
           <summary style="cursor:pointer;font-size:.85rem;font-weight:650;color:var(--accent)">Vis alle ryttere (<span id="vFieldN">–</span>)</summary>
+          <div id="vFieldCtrl" class="fieldctrl"></div>
           <div class="scrollx" style="margin-top:10px"><table class="board" id="vField"></table></div>
         </details>
         <p class="src" style="margin:10px 0 0">Hele startlisten for den valgte etape, rangeret efter det valgte scenarie.
@@ -636,15 +644,65 @@
       return '';
     }
     function fmtVal(r){ return (expOf(r)/Math.max(r.price,0.1)/1e6).toFixed(2).replace('.', ','); }
+    // Felt-tabel: sorterbar (klik på kolonne) + filtrer på hold.
+    var fieldSort = {col:'score', dir:-1};   // default: efter scenarie-SCORE, faldende
+    var fieldTeam = '';                        // '' = alle hold
+    var lastScored = [];                       // seneste felt, så filter/sort ikke kræver fuld render
+    function fieldVal(r, col){
+      switch(col){
+        case 'name':  return (r.name||'').toLowerCase();
+        case 'team':  return (r.team||'').toLowerCase();
+        case 'price': return r.price||0;
+        case 'fit':   return fitScore(r);
+        case 'exp':   return expOf(r);
+        case 'value': return expOf(r)/Math.max(r.price,0.1);
+        default:      return SCORE(r);   // 'score'
+      }
+    }
     function renderField(scored){
-      $('vFieldN').textContent = scored.length;
+      lastScored = scored;
+      // Hold-filter (bygges af det aktuelle felt)
+      var teams={}; scored.forEach(function(r){ if(r.team) teams[r.team]=1; });
+      if(fieldTeam && !teams[fieldTeam]) fieldTeam='';   // valgt hold ikke i denne etape
+      var opts = ['<option value="">Alle hold ('+scored.length+')</option>'].concat(
+        Object.keys(teams).sort().map(function(t){
+          return '<option value="'+t+'"'+(t===fieldTeam?' selected':'')+'>'+t+'</option>'; })).join('');
+      var ctrl=$('vFieldCtrl');
+      if(ctrl){
+        ctrl.innerHTML = '<label class="fclbl">Filtrér hold <select id="vFieldTeam">'+opts+'</select></label>'+
+          '<span class="fchint">klik en kolonne for at sortere</span>';
+        $('vFieldTeam').addEventListener('change', function(){ fieldTeam=this.value; renderField(lastScored); });
+      }
+      var rows = scored.filter(function(r){ return !fieldTeam || r.team===fieldTeam; });
+      var col=fieldSort.col, dir=fieldSort.dir;
+      rows = rows.slice().sort(function(a,b){
+        var va=fieldVal(a,col), vb=fieldVal(b,col);
+        if(typeof va==='string') return dir*va.localeCompare(vb, 'da');
+        return dir*((va||0)-(vb||0));
+      });
+      $('vFieldN').textContent = rows.length;
+      function th(c,label,cls){
+        var a = fieldSort.col===c ? (fieldSort.dir<0?' ▾':' ▴') : '';
+        return '<th class="sortable'+(cls?(' '+cls):'')+'" data-col="'+c+'">'+label+a+'</th>';
+      }
       $('vField').innerHTML =
-        '<thead><tr><th>#</th><th>Rytter</th><th>Hold</th><th>Pris</th><th>fit</th><th>exp</th><th>value</th></tr></thead><tbody>' +
-        scored.map(function(r,i){
+        '<thead><tr><th>#</th>'+th('name','Rytter')+th('team','Hold')+th('price','Pris')+
+          th('fit','fit')+th('exp','exp')+th('value','value')+'</tr></thead><tbody>' +
+        rows.map(function(r,i){
           return '<tr><td>'+(i+1)+'</td><td>'+r.name+optMark(r.name)+'</td><td>'+r.team+'</td>' +
             '<td class="tnum">'+r.price+'</td><td class="tnum">'+Math.round(fitScore(r))+'</td>' +
             '<td class="mono">'+fmtK(expOf(r))+'</td><td class="mono">'+fmtVal(r)+'</td></tr>';
         }).join('') + '</tbody>';
+      // klik på kolonne → skift sortering (samme kolonne = vend retning)
+      var ths=$('vField').querySelectorAll('th.sortable');
+      for(var i=0;i<ths.length;i++){ (function(el){
+        el.addEventListener('click', function(){
+          var c=el.getAttribute('data-col');
+          if(fieldSort.col===c) fieldSort.dir=-fieldSort.dir;
+          else { fieldSort.col=c; fieldSort.dir=(c==='name'||c==='team')?1:-1; }
+          renderField(lastScored);
+        });
+      })(ths[i]); }
     }
     function currentIdx(){ for(var i=0;i<stages.length;i++){ if((stages[i].status||'none')!=='finished') return i; } return 0; }
 
