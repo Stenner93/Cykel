@@ -919,6 +919,65 @@ def main() -> None:
             "odds_top":      odds_top,
         })
 
+    # ── Live Vuelta-kalibrering ───────────────────────────────────────────────
+    # Fylder efterhånden som etaper afvikles: hver kildes optakt-kaptajn (+ model)
+    # scoret mod den faktiske vækst — samme metrik som den historiske tabel.
+    def _cnorm(s):
+        return unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
+    optakt_stages = _load_json(WEB_DIR / "vuelta2026_optakt.json").get("stages", {})
+    def _cmatch(riders_out, name):
+        if not name:
+            return None
+        n = _cnorm(name)
+        for r in riders_out:
+            rn = _cnorm(r["name"])
+            if n in rn or rn in n:
+                return r
+        return None
+    def _cadd(acc, cap, ra):
+        order = sorted(ra, key=lambda x: x[1], reverse=True)
+        if not order:
+            return
+        maxa = order[0][1] or 1
+        ca = next((a for r, a in ra if r is cap), 0)
+        rank = next((i for i, (r, a) in enumerate(order, 1) if r is cap), None)
+        acc["n"] += 1
+        acc["h1"] += int(rank == 1)
+        acc["h3"] += int(rank is not None and rank <= 3)
+        acc["cap"] += (ca / maxa) if maxa else 0
+    _cal = {k: {"n": 0, "h1": 0, "h3": 0, "cap": 0.0}
+            for k in ["Feltet", "Simon", "Optakt samlet", "Model"]}
+    _counted = 0
+    for s in stages_pred:
+        if s.get("status") != "finished":
+            continue
+        ra = [(r, r.get("actual") or 0) for r in s["riders"] if r.get("actual") is not None]
+        if not ra:
+            continue
+        _counted += 1
+        o = optakt_stages.get(str(s["num"])) or optakt_stages.get(s["num"]) or {}
+        fcap = _cmatch(s["riders"], (o.get("feltet") or {}).get("captain"))
+        scap = _cmatch(s["riders"], (o.get("simon") or {}).get("captain"))
+        mcap = max(s["riders"], key=lambda r: r.get("exp") or 0)
+        if fcap:
+            _cadd(_cal["Feltet"], fcap, ra)
+            _cadd(_cal["Optakt samlet"], fcap, ra)
+        if scap:
+            _cadd(_cal["Simon"], scap, ra)
+            _cadd(_cal["Optakt samlet"], scap, ra)
+        if fcap or scap:                      # model scoret på samme etaper som optakten
+            _cadd(_cal["Model"], mcap, ra)
+    def _cfmt(a):
+        n = a["n"] or 0
+        return {"n": n,
+                "hit1": round(100 * a["h1"] / n) if n else 0,
+                "hit3": round(100 * a["h3"] / n) if n else 0,
+                "captured": round(100 * a["cap"] / n) if n else 0}
+    _cal_out = {"stages_counted": _counted, "rows": {k: _cfmt(v) for k, v in _cal.items()}}
+    (WEB_DIR / "vuelta_calibration_live.json").write_text(
+        json.dumps(_cal_out, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"  Live-kalibrering: {_counted} afsluttede etaper med facit")
+
     # ── Build score matrix ────────────────────────────────────────────────────
     print(f"  Bygger pointmatrix ({len(all_summaries)} etaper med data)…")
 
