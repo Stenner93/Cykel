@@ -446,56 +446,17 @@
   <!-- ══════════ SPRINT & BONUS ══════════ -->
   <section class="panel" id="p-sprint" role="tabpanel" aria-labelledby="t-sprint" hidden>
     <div class="eyebrow">Værktøj 2 · de to dyre huller</div>
-    <h2 class="sec">Sprint- &amp; holdbonus-modul <span class="exlabel" style="vertical-align:middle">Tour E21 · ex ante</span></h2>
-    <p class="sec-sub">Sprint (−1,10M) og holdbonus (−1,07M) var Tourens dyreste huller. Begge er dér optakten er stærkest —
-      den nævner altid toget og det kontrollerende hold.</p>
+    <h2 class="sec">Sprint- &amp; holdbonus-modul</h2>
+    <p class="sec-sub">Sprint (−1,10M) og holdbonus (−1,07M) var Tourens dyreste huller. <b>Sprint-toget</b> og det <b>kontrollerende hold</b>
+      kommer fra optakten (send en sprint-optakt → jeg encoder); <b>holdbonus-radaren</b> er modellens bud på de mest sandsynlige
+      top-3-hold for etapen, og <b>billig storform</b> er billige value-ryttere + optaktens storform-tips.</p>
 
-    <div class="card" style="margin-bottom:14px">
-      <div class="cardhead"><h3>Sprint-tog · sandsynlig afvikling</h3><span class="src">frisk <span class="fresh ok"></span> · træt <span class="fresh mid"></span></span></div>
-      <div class="cardbody">
-        <div class="train">
-          <div class="wagon"><div class="role">Tempo</div><div class="who"><span class="fresh ok"></span>Groenewegen-tog</div></div>
-          <div class="wagon"><div class="role">Positionering</div><div class="who"><span class="fresh ok"></span>Rickaert</div></div>
-          <div class="wagon"><div class="role">Sidste mand</div><div class="who"><span class="fresh mid"></span>Philipsen</div></div>
-          <div class="wagon leader"><div class="role">Afslutter ★</div><div class="who"><span class="fresh ok"></span>van der Poel</div></div>
-        </div>
-        <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:14px">
-          <div class="kv"><span class="k">Bedst på brosten</span><span class="v">van der Poel</span></div>
-          <div class="kv"><span class="k">Punch op ad rampe</span><span class="v">Pedersen</span></div>
-          <div class="kv"><span class="k">Billig joker</span><span class="v">Pluimers</span></div>
-        </div>
-      </div>
+    <div class="stagebar">
+      <span class="vsel">Etape <select id="spStage"></select></span>
+      <span class="meta" id="spMeta">–</span>
     </div>
 
-    <div class="cols">
-      <div class="card">
-        <div class="cardhead"><h3>Holdbonus-radar</h3><span class="src">sandsynligt top-3-hold · eksponering</span></div>
-        <div class="cardbody">
-          <div class="meter"><span class="lbl">Alpecin</span><span class="bar"><i style="width:82%"></i></span><span class="expo"><span class="up">✔</span> VdP/Philipsen</span></div>
-          <div class="meter"><span class="lbl">Lidl-Trek</span><span class="bar"><i style="width:64%"></i></span><span class="expo"><span class="up">✔</span> Pedersen</span></div>
-          <div class="meter"><span class="lbl">UAE</span><span class="bar"><i style="width:48%"></i></span><span class="expo"><span class="up">✔</span> Pogačar</span></div>
-          <div class="meter"><span class="lbl">Picnic PostNL</span><span class="bar"><i style="width:30%"></i></span><span class="expo"><span class="down">✘</span> → Pluimers</span></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="cardhead"><h3>Billig storform vi manglede</h3><span class="chip warn">facit</span></div>
-        <div class="cardbody">
-          <div class="pick">
-            <span class="rk">→</span>
-            <span class="nm">Rick Pluimers <small>Picnic PostNL · 4,5M</small></span>
-            <span class="fuse"><span class="f mono">+0,13M</span><span class="chip warn" style="margin-left:6px">8/10 top-hold ejede ham</span></span>
-          </div>
-          <div class="pick">
-            <span class="rk">→</span>
-            <span class="nm">Jasper Stuyven <small>Lidl-Trek · 3,6M</small></span>
-            <span class="fuse"><span class="f mono">+0,07M</span><span class="chip opt" style="margin-left:6px">optakt-tip</span></span>
-          </div>
-          <p class="src" style="margin:10px 0 0">Begge var billige optakt-storform-tips. Touren tabte 0,95M holdbonus på blot
-             5 sprint/bjerg-etaper ved at mangle netop den slags rytter på vinderholdet.</p>
-        </div>
-      </div>
-    </div>
+    <div id="spBody"></div>
   </section>
 
   <!-- ══════════ KOMMENDE FANER ══════════ -->
@@ -946,6 +907,70 @@
       body.innerHTML=html;
     }
 
+    // ── Sprint- & holdbonus-modul (levende, pr. etape) ─────────────────────────
+    function renderSprint(idx){
+      var body=$('spBody'); if(!body) return;
+      var st=stages[idx]; if(!st){ body.innerHTML=''; return; }
+      var o=OPT[st.num]||{}, tr=o.train||{};
+      var mEl=$('spMeta'); if(mEl) mEl.textContent=(st.name||('Etape '+st.num))+' · '+st.type+stageMeta(st);
+      var rs=(st.riders||[]);
+      function expReal(r){ return r.exp||0; }
+      var html='';
+
+      // Sprint-tog — fra optakt, ellers modellens bud (top sprint-exp)
+      html+='<div class="octitle">Sprint-tog · sandsynlig afvikling</div><div class="card"><div class="cardbody">';
+      if(tr.leadout || tr.finisher){
+        html+='<div class="train">';
+        if(tr.leadout)  html+='<div class="wagon"><div class="role">Sidste mand</div><div class="who">'+tr.leadout+'</div></div>';
+        if(tr.finisher) html+='<div class="wagon leader"><div class="role">Afslutter ★</div><div class="who">'+tr.finisher+'</div></div>';
+        html+='</div>';
+        if(tr.control_team) html+='<div class="kv" style="margin-top:10px"><span class="k">Kontrollerende hold (holdbonus)</span><span class="v">'+tr.control_team+'</span></div>';
+      } else {
+        var spr=rs.slice().sort(function(a,b){ var ea=(a.exp_sc&&a.exp_sc.massespurt!=null)?a.exp_sc.massespurt:expReal(a);
+          var eb=(b.exp_sc&&b.exp_sc.massespurt!=null)?b.exp_sc.massespurt:expReal(b); return eb-ea; }).slice(0,3);
+        html+='<p class="src" style="margin:0 0 8px">Ingen sprint-optakt endnu — modellens bud på afslutterne:</p><div class="train">';
+        spr.forEach(function(r,i){ html+='<div class="wagon'+(i===0?' leader':'')+'"><div class="role">'+(i===0?'Favorit ★':('#'+(i+1)))+'</div><div class="who">'+r.name+' <small>'+r.team+'</small></div></div>'; });
+        html+='</div>';
+      }
+      html+='</div></div>';
+
+      // Holdbonus-radar — hold rangeret efter samlet top-2 exp (proxy for top-3-hold)
+      var byTeam={}; rs.forEach(function(r){ if(r.team){ (byTeam[r.team]=byTeam[r.team]||[]).push(r); } });
+      var teams=Object.keys(byTeam).map(function(t){
+        var l=byTeam[t].slice().sort(function(a,b){ return expReal(b)-expReal(a); });
+        return {team:t, score:(expReal(l[0])+ (l[1]?expReal(l[1]):0)), top:l[0]};
+      }).filter(function(x){ return x.score>0; }).sort(function(a,b){ return b.score-a.score; }).slice(0,6);
+      var maxS=teams.length?teams[0].score:1;
+      html+='<div class="octitle">Holdbonus-radar · sandsynlige top-3-hold</div><div class="card"><div class="cardbody">';
+      if(teams.length){
+        teams.forEach(function(x){
+          var w=Math.round(100*x.score/maxS);
+          html+='<div class="meter"><span class="lbl">'+x.team+'</span><span class="bar"><i style="width:'+w+'%"></i></span>'+
+            '<span class="expo"><span class="up">▲</span> '+(x.top?x.top.name:'')+' ('+fmtK(expReal(x.top))+')</span></div>';
+        });
+      } else html+='<p class="src" style="margin:0">Afventer etape-data.</p>';
+      html+='</div></div>';
+
+      // Billig storform — optaktens storform-tips + billige value-ryttere
+      var storm=(o.storform||[]).map(function(n){ return riderByName(st,n); }).filter(Boolean);
+      var cheap=rs.filter(function(r){ return r.price>0 && r.price<=6 && expReal(r)>0; })
+        .sort(function(a,b){ return (expReal(b)/b.price)-(expReal(a)/a.price); }).slice(0,6);
+      html+='<div class="octitle">Billig storform · value under 6 mio.</div><div class="card"><div class="cardbody">';
+      storm.forEach(function(r){
+        html+='<div class="pick"><span class="rk">★</span><span class="nm">'+r.name+' <small>'+r.team+' · '+r.price+'M</small></span>'+
+          '<span class="fuse"><span class="f mono">'+fmtK(expReal(r))+'</span><span class="chip opt" style="margin-left:6px">optakt storform</span></span></div>';
+      });
+      cheap.forEach(function(r){
+        if(storm.indexOf(r)>=0) return;
+        html+='<div class="pick"><span class="rk">→</span><span class="nm">'+r.name+' <small>'+r.team+' · '+r.price+'M</small></span>'+
+          '<span class="fuse"><span class="f mono">'+fmtK(expReal(r))+'</span><span class="m mono" style="margin-left:6px">value '+(expReal(r)/r.price/1e6).toFixed(2).replace('.',',')+'</span></span></div>';
+      });
+      if(!storm.length && !cheap.length) html+='<p class="src" style="margin:0">Afventer etape-data.</p>';
+      html+='</div></div>';
+
+      body.innerHTML=html;
+    }
+
     function setStage(i){ cur = i; curScen = defaultScen(stages[cur] || {num:0}); mixMode = false; mixSet = {}; render(); }
 
     fetch('data/vuelta2026_predictions.json', {cache:'no-cache'})
@@ -992,6 +1017,14 @@
               oc.value = ci;
               oc.addEventListener('change', function(){ renderConsole(+oc.value); });
               renderConsole(ci);
+            }
+            // Sprint- & holdbonus-modul: egen etape-vælger
+            var sp = $('spStage');
+            if(sp){
+              sp.innerHTML = stages.map(function(s,i){ return '<option value="'+i+'">E'+s.num+' — '+(s.name||s.type)+'</option>'; }).join('');
+              sp.value = ci;
+              sp.addEventListener('change', function(){ renderSprint(+sp.value); });
+              renderSprint(ci);
             }
           });
       })
