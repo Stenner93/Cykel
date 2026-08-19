@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vuelta 2026 · La Roja Manager</title>
+<title>Vuelta 2026 · Vueltablet</title>
 <style>
   :root{
     color-scheme: dark;
@@ -301,7 +301,7 @@
 
 <div class="dash-topbar">
   <div class="dash-topbar-inner">
-    <a href="vuelta.html" class="dash-logo">🚴 <span class="es">La Roja</span> Manager<small>Vuelta 2026</small></a>
+    <a href="vuelta.html" class="dash-logo">🚴 <span class="es">Vueltablet</span><small>Vuelta 2026</small></a>
     <nav class="page-nav" id="mainNav"></nav>
   </div>
 </div>
@@ -318,7 +318,7 @@
 </div>
 
 <main>
-  <p class="intro"><b>La Roja Manager</b> — Vuelta-arbejdsrummet, bygget på det Touren lærte os: hele efterslæbet lå i
+  <p class="intro"><b>Vueltablet</b> — Vuelta-arbejdsrummet, bygget på det Touren lærte os: hele efterslæbet lå i
     <b>sprint</b> og <b>holdbonus</b>, mens kaptajn og TT var styrker, og <b>optakterne slog modellen</b> på det
     vigtigste valg (Simon K. Kjær ramte bedste kaptajn 52 % vs. modellens 33 %). Fanen <b>Vuelta-etape</b> kører nu på
     <b>ægte startliste, priser og CO-ratings</b> fra spillet — vælg etape + scenarie og se kaptajn og picks opdatere sig
@@ -567,6 +567,13 @@
     var curMaxExp = 1;                  // etapens højeste exp — sættes i render(), bruges til at normalisere exp
     var W_EXP = 0.5;                    // vægt på forventet vækst i rangeringen (0 = ren fit, 1 = ren exp)
     function fmtK(v){ return (v==null) ? '–' : Math.round(v/1000) + 'k'; }
+    // PCS-profilscore + højdemeter til etape-meta ("profil 90 · 1689 hm").
+    function stageMeta(st){
+      var p=st.profile_score, v=st.vmeters, parts=[];
+      if(p!=null && p!=='') parts.push('profil '+p);
+      if(v!=null && v!=='') parts.push(v+' hm');
+      return parts.length ? ' · ' + parts.join(' · ') : '';
+    }
     function fit(r, sc){ var s=0,t=0,k,co=r.co||{}; for(k in sc.w){ s += sc.w[k]*(co[k]||0); t += sc.w[k]; } return t? s/t : 0; }
     function $(id){ return document.getElementById(id); }
     function mixKeys(){ return Object.keys(mixSet).filter(function(k){ return mixSet[k]; }); }
@@ -613,6 +620,9 @@
     function defaultScen(st){
       var o = OPT[st.num];
       if(o && o.scenario && SCEN[o.scenario]) return o.scenario;
+      // Hård "sprint" (høj PCS-profil) → reduceret spurt frem for flad massespurt.
+      // Tærskel 70 rammer hullet i Vuelta-data (flade sprints ≤60, hårde ≥90).
+      if(typesVary && st.type==='sprint' && (st.profile_score||0) >= 70) return 'redsprint';
       if(typesVary && TYPE2SC[st.type]) return TYPE2SC[st.type];
       return SCEN_OVERRIDE[st.num] || TYPE2SC[st.type] || 'bakket';
     }
@@ -709,7 +719,7 @@
       scored.sort(function(a,b){ return SCORE(b) - SCORE(a); });
       var cap = scored[0];
 
-      $('vMeta').textContent = (st.name || ('Etape ' + st.num)) + ' · ' + st.type + ' · ' + scenLabel();
+      $('vMeta').textContent = (st.name || ('Etape ' + st.num)) + ' · ' + st.type + stageMeta(st) + ' · ' + scenLabel();
       $('vCov').textContent = 'CO-dækning ' + scored.length + '/' + all.length;
 
       var o = optOf();
@@ -777,7 +787,7 @@
       var body=$('ocBody'); if(!body) return;
       var st=stages[idx]; if(!st){ body.innerHTML=''; return; }
       var o=OPT[st.num];
-      var mEl=$('ocMeta'); if(mEl) mEl.textContent=(st.name||('Etape '+st.num))+' · '+st.type;
+      var mEl=$('ocMeta'); if(mEl) mEl.textContent=(st.name||('Etape '+st.num))+' · '+st.type+stageMeta(st);
       if(!hasOptakt(o)){
         body.innerHTML='<div class="empty"><span class="big">📝</span>'+
           '<h3>Ingen optakt for etape '+st.num+' endnu</h3>'+

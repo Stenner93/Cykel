@@ -510,6 +510,7 @@ def main() -> None:
     pcs_scores    = _load_json(DATA / "cache" / "pcs_profile_scores.json")
     stage_scores  = pcs_scores.get(VUELTA_PCS_RACE + "_scores", {})
     stage_finish_alts = pcs_scores.get(VUELTA_PCS_RACE + "_finish_alt", {})
+    stage_vmeters = pcs_scores.get(VUELTA_PCS_RACE + "_vmeters", {})
 
     pcs_types_cache = _load_json(DATA / "cache" / "pcs_stage_types.json")
     stage_types     = pcs_types_cache.get(VUELTA_PCS_RACE, {})
@@ -700,6 +701,7 @@ def main() -> None:
         )
 
         profile_score = stage_scores.get(stage_num) or stage_scores.get(str(stage_num))
+        vmeters = stage_vmeters.get(stage_num) or stage_vmeters.get(str(stage_num))
 
         _smeta     = stage_types_meta.get(str(stage_num), {})
         p_class    = int(_smeta.get("p_class") or 0) or -1
@@ -909,6 +911,7 @@ def main() -> None:
             "status":        status,
             "name":          info.get("name", f"Etape {stage_num}"),
             "profile_score": profile_score,
+            "vmeters":       vmeters,
             "riders":        riders_out,
             "best_team":     sorted(best_ids),
             "cap_id":        cap_id,
