@@ -1053,6 +1053,15 @@
     "holdet_person_id": 4724
   },
   {
+    "id": "mauri_vansevenant",
+    "full_name": "Mauri Vansevenant",
+    "short_name": "Vansevenant",
+    "team": "SQ",
+    "team_full": "Soudal Quick-Step",
+    "price": 3.5,
+    "holdet_person_id": 4370
+  },
+  {
     "id": "michael_gogl",
     "full_name": "Michael Gogl",
     "short_name": "Gogl",
@@ -1420,15 +1429,6 @@
     "team_full": "Tudor Pro Cycling Team",
     "price": 6.5,
     "holdet_person_id": 2955
-  },
-  {
-    "id": "steff_cras",
-    "full_name": "Steff Cras",
-    "short_name": "Cras",
-    "team": "SQ",
-    "team_full": "Soudal Quick-Step",
-    "price": 3.5,
-    "holdet_person_id": 4024
   },
   {
     "id": "steffen_de_schuyteneer",
