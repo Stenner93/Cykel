@@ -35888,16 +35888,17 @@
   "ivo_oliveira": {
     "name": "Ivo Oliveira",
     "pcs_url": "",
-    "form_score": 25.0,
+    "form_score": 10.0,
     "form_by_type": {
-      "overall": 25.0,
-      "sprint": 25.0,
-      "mountain": 25.0,
-      "hilly": 25.0,
-      "tt": 25.0,
-      "ttt": 25.0,
-      "cobbled": 25.0
+      "overall": 10.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
     },
+    "form_long_by_type": {},
     "n_results": 0,
     "last_result_date": "",
     "results": [],

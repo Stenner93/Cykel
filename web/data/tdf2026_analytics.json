@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-20T18:32:45.083229+00:00",
+  "generated": "2026-08-20T19:58:10.643573+00:00",
   "current_num": null,
   "stages": [
     {
@@ -840,7 +840,7 @@
             "cobbled": 0.0
           },
           "pcs_rank_pts": 1351.0,
-          "own_pct": 7.26,
+          "own_pct": 7.37,
           "own_pct_change": 0,
           "pcs_rank_norm": 29.3,
           "pcs_spec_norm": {
@@ -1064,7 +1064,7 @@
             "cobbled": 0.0
           },
           "pcs_rank_pts": 1242.0,
-          "own_pct": 36.28,
+          "own_pct": 36.31,
           "own_pct_change": 0,
           "pcs_rank_norm": 27.0,
           "pcs_spec_norm": {
@@ -1736,7 +1736,7 @@
             "cobbled": 0.0
           },
           "pcs_rank_pts": 910.0,
-          "own_pct": 1.42,
+          "own_pct": 1.49,
           "own_pct_change": 0,
           "pcs_rank_norm": 19.8,
           "pcs_spec_norm": {
@@ -6631,7 +6631,7 @@
             "odds": 0,
             "disc": 0.005,
             "form": 0.5,
-            "ml": 0.209,
+            "ml": 0.183,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -6646,16 +6646,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -10586,7 +10586,7 @@
             "cobbled": 0.0
           },
           "pcs_rank_pts": 1351.0,
-          "own_pct": 7.26,
+          "own_pct": 7.37,
           "own_pct_change": 0,
           "pcs_rank_norm": 29.3,
           "pcs_spec_norm": {
@@ -11258,7 +11258,7 @@
             "cobbled": 0.0
           },
           "pcs_rank_pts": 1242.0,
-          "own_pct": 36.28,
+          "own_pct": 36.31,
           "own_pct_change": 0,
           "pcs_rank_norm": 27.0,
           "pcs_spec_norm": {
@@ -11930,7 +11930,7 @@
             "cobbled": 0.0
           },
           "pcs_rank_pts": 910.0,
-          "own_pct": 1.42,
+          "own_pct": 1.49,
           "own_pct_change": 0,
           "pcs_rank_norm": 19.8,
           "pcs_spec_norm": {
@@ -16937,7 +16937,7 @@
             "odds": 0,
             "disc": 0.003,
             "form": 0.5,
-            "ml": 0.298,
+            "ml": 0.278,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -16952,16 +16952,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -20892,7 +20892,7 @@
             "cobbled": 0.0
           },
           "pcs_rank_pts": 1351.0,
-          "own_pct": 7.26,
+          "own_pct": 7.37,
           "own_pct_change": 0,
           "pcs_rank_norm": 29.3,
           "pcs_spec_norm": {
@@ -21564,7 +21564,7 @@
             "cobbled": 0.0
           },
           "pcs_rank_pts": 1242.0,
-          "own_pct": 36.28,
+          "own_pct": 36.31,
           "own_pct_change": 0,
           "pcs_rank_norm": 27.0,
           "pcs_spec_norm": {
@@ -22348,7 +22348,7 @@
             "cobbled": 0.0
           },
           "pcs_rank_pts": 910.0,
-          "own_pct": 1.42,
+          "own_pct": 1.49,
           "own_pct_change": 0,
           "pcs_rank_norm": 19.8,
           "pcs_spec_norm": {
@@ -27243,7 +27243,7 @@
             "odds": 0,
             "disc": 0.003,
             "form": 0.5,
-            "ml": 0.269,
+            "ml": 0.25,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -27258,16 +27258,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -39957,7 +39957,7 @@
             "odds": 0,
             "disc": 0.003,
             "form": 0.5,
-            "ml": 0.302,
+            "ml": 0.284,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -39972,16 +39972,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -49703,7 +49703,7 @@
             "odds": 0,
             "disc": 0.174,
             "form": 0.5,
-            "ml": 0.153,
+            "ml": 0.135,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -49718,16 +49718,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -60065,7 +60065,7 @@
             "odds": 0,
             "disc": 0.001,
             "form": 0.5,
-            "ml": 0.531,
+            "ml": 0.449,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -60080,16 +60080,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -69979,7 +69979,7 @@
             "odds": 0,
             "disc": 0.174,
             "form": 0.5,
-            "ml": 0.398,
+            "ml": 0.346,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -69994,16 +69994,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -80285,7 +80285,7 @@
             "odds": 0,
             "disc": 0.174,
             "form": 0.5,
-            "ml": 0.381,
+            "ml": 0.329,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -80300,16 +80300,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -90591,7 +90591,7 @@
             "odds": 0,
             "disc": 0.003,
             "form": 0.5,
-            "ml": 0.525,
+            "ml": 0.469,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -90606,16 +90606,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -100729,7 +100729,7 @@
             "odds": 0,
             "disc": 0.001,
             "form": 0.5,
-            "ml": 0.538,
+            "ml": 0.448,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -100744,16 +100744,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -110867,7 +110867,7 @@
             "odds": 0,
             "disc": 0.174,
             "form": 0.5,
-            "ml": 0.391,
+            "ml": 0.335,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -110882,16 +110882,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -121173,7 +121173,7 @@
             "odds": 0,
             "disc": 0.174,
             "form": 0.5,
-            "ml": 0.493,
+            "ml": 0.422,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -121188,16 +121188,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -131591,7 +131591,7 @@
             "odds": 0,
             "disc": 0.174,
             "form": 0.5,
-            "ml": 0.521,
+            "ml": 0.45,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -131606,16 +131606,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -141841,7 +141841,7 @@
             "odds": 0,
             "disc": 0.001,
             "form": 0.5,
-            "ml": 0.591,
+            "ml": 0.486,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -141856,16 +141856,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -152035,7 +152035,7 @@
             "odds": 0,
             "disc": 0.001,
             "form": 0.5,
-            "ml": 0.598,
+            "ml": 0.493,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -152050,16 +152050,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -162229,7 +162229,7 @@
             "odds": 0,
             "disc": 0.151,
             "form": 0.5,
-            "ml": 0.501,
+            "ml": 0.427,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -162244,16 +162244,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -172479,7 +172479,7 @@
             "odds": 0,
             "disc": 0.174,
             "form": 0.5,
-            "ml": 0.505,
+            "ml": 0.438,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -172494,16 +172494,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -182841,7 +182841,7 @@
             "odds": 0,
             "disc": 0.001,
             "form": 0.5,
-            "ml": 0.578,
+            "ml": 0.478,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -182856,16 +182856,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -192867,7 +192867,7 @@
             "odds": 0,
             "disc": 0.001,
             "form": 0.5,
-            "ml": 0.601,
+            "ml": 0.502,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -192882,16 +192882,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -202893,7 +202893,7 @@
             "odds": 0,
             "disc": 0.001,
             "form": 0.5,
-            "ml": 0.587,
+            "ml": 0.489,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -202908,16 +202908,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
@@ -212639,7 +212639,7 @@
             "odds": 0,
             "disc": 0.174,
             "form": 0.5,
-            "ml": 0.525,
+            "ml": 0.46,
             "pcs_rank": 0
           },
           "form_score": 50.0,
@@ -212654,16 +212654,16 @@
           },
           "pcs_spec": {},
           "pcs_form": {
-            "overall": 25.0,
-            "sprint": 25.0,
-            "mountain": 25.0,
-            "hilly": 25.0,
-            "tt": 25.0,
-            "ttt": 25.0,
-            "cobbled": 25.0
+            "overall": 10.0,
+            "sprint": 0.0,
+            "mountain": 0.0,
+            "hilly": 0.0,
+            "tt": 0.0,
+            "ttt": 0.0,
+            "cobbled": 0.0
           },
           "pcs_rank_pts": 0.0,
-          "own_pct": 21.1,
+          "own_pct": 21.4,
           "own_pct_change": 0,
           "pcs_rank_norm": 0,
           "pcs_spec_norm": {
