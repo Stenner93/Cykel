@@ -11,7 +11,7 @@
   },
   "isaac-del-toro": {
     "rank": 3,
-    "pts": 3144.0,
+    "pts": 3162.0,
     "name": "DEL TORO Isaac"
   },
   "jonas-vingegaard": {
@@ -26,7 +26,7 @@
   },
   "jasper-philipsen": {
     "rank": 6,
-    "pts": 1937.0,
+    "pts": 1987.0,
     "name": "PHILIPSEN Jasper"
   },
   "tom-pidcock": {
@@ -134,34 +134,34 @@
     "pts": 1072.0,
     "name": "GODON Dorian"
   },
-  "olav-kooij": {
-    "rank": 28,
-    "pts": 1039.0,
-    "name": "KOOIJ Olav"
-  },
   "giulio-ciccone": {
-    "rank": 29,
-    "pts": 1009.0,
+    "rank": 28,
+    "pts": 1021.0,
     "name": "CICCONE Giulio"
   },
   "egan-bernal": {
-    "rank": 30,
+    "rank": 29,
     "pts": 1006.0,
     "name": "BERNAL Egan"
   },
   "laurence-pithie": {
-    "rank": 31,
+    "rank": 30,
     "pts": 1003.0,
     "name": "PITHIE Laurence"
   },
   "matteo-jorgenson": {
-    "rank": 32,
+    "rank": 31,
     "pts": 997.0,
     "name": "JORGENSON Matteo"
   },
+  "olav-kooij": {
+    "rank": 32,
+    "pts": 989.0,
+    "name": "KOOIJ Olav"
+  },
   "tim-merlier": {
     "rank": 33,
-    "pts": 983.0,
+    "pts": 977.0,
     "name": "MERLIER Tim"
   },
   "ion-izagirre": {
@@ -199,135 +199,135 @@
     "pts": 893.0,
     "name": "RICCITELLO Matthew"
   },
-  "dylan-groenewegen": {
-    "rank": 41,
-    "pts": 880.0,
-    "name": "GROENEWEGEN Dylan"
-  },
-  "jonathan-milan": {
-    "rank": 42,
-    "pts": 878.0,
-    "name": "MILAN Jonathan"
-  },
   "soren-waerenskjold": {
-    "rank": 43,
-    "pts": 866.0,
+    "rank": 41,
+    "pts": 883.0,
     "name": "WÆRENSKJOLD Søren"
   },
+  "dylan-groenewegen": {
+    "rank": 42,
+    "pts": 870.0,
+    "name": "GROENEWEGEN Dylan"
+  },
   "jan-christen": {
-    "rank": 44,
+    "rank": 43,
     "pts": 863.0,
     "name": "CHRISTEN Jan"
   },
   "davide-piganzoli": {
-    "rank": 45,
+    "rank": 44,
     "pts": 862.0,
     "name": "PIGANZOLI Davide"
   },
-  "biniam-girmay": {
-    "rank": 46,
-    "pts": 855.0,
-    "name": "GIRMAY Biniam"
-  },
-  "matthew-brennan": {
-    "rank": 47,
-    "pts": 844.0,
-    "name": "BRENNAN Matthew"
+  "jonathan-milan": {
+    "rank": 45,
+    "pts": 860.0,
+    "name": "MILAN Jonathan"
   },
   "benoit-cosnefroy": {
-    "rank": 48,
+    "rank": 46,
     "pts": 843.0,
     "name": "COSNEFROY Benoît"
   },
+  "biniam-girmay": {
+    "rank": 47,
+    "pts": 842.0,
+    "name": "GIRMAY Biniam"
+  },
   "adam-yates": {
-    "rank": 49,
+    "rank": 48,
     "pts": 838.0,
     "name": "YATES Adam"
   },
   "mathys-rondel": {
-    "rank": 50,
+    "rank": 49,
     "pts": 838.0,
     "name": "RONDEL Mathys"
   },
   "thymen-arensman": {
-    "rank": 51,
+    "rank": 50,
     "pts": 834.0,
     "name": "ARENSMAN Thymen"
   },
   "joao-almeida": {
-    "rank": 52,
+    "rank": 51,
     "pts": 833.0,
     "name": "ALMEIDA João"
   },
   "michael-storer": {
-    "rank": 53,
+    "rank": 52,
     "pts": 815.0,
     "name": "STORER Michael"
+  },
+  "matthew-brennan": {
+    "rank": 53,
+    "pts": 814.0,
+    "name": "BRENNAN Matthew"
   },
   "lukas-kubis": {
     "rank": 54,
     "pts": 809.0,
     "name": "KUBIŠ Lukáš"
   },
-  "jhonatan-narvaez": {
+  "alex-aranburu": {
     "rank": 55,
+    "pts": 783.0,
+    "name": "ARANBURU Alex"
+  },
+  "jhonatan-narvaez": {
+    "rank": 56,
     "pts": 782.0,
     "name": "NARVÁEZ Jhonatan"
-  },
-  "alex-aranburu": {
-    "rank": 56,
-    "pts": 776.0,
-    "name": "ARANBURU Alex"
   },
   "max-kanter": {
     "rank": 57,
     "pts": 760.0,
     "name": "KANTER Max"
   },
-  "pavel-bittner": {
-    "rank": 58,
-    "pts": 745.0,
-    "name": "BITTNER Pavel"
-  },
   "harold-tejada": {
-    "rank": 59,
+    "rank": 58,
     "pts": 743.0,
     "name": "TEJADA Harold"
   },
   "alex-baudin": {
-    "rank": 60,
+    "rank": 59,
     "pts": 739.0,
     "name": "BAUDIN Alex"
   },
-  "emilien-jeanniere": {
-    "rank": 61,
-    "pts": 734.0,
-    "name": "JEANNIÈRE Emilien"
-  },
   "filippo-ganna": {
-    "rank": 62,
+    "rank": 60,
     "pts": 729.0,
     "name": "GANNA Filippo"
   },
-  "paul-lapeira": {
+  "emilien-jeanniere": {
+    "rank": 61,
+    "pts": 727.0,
+    "name": "JEANNIÈRE Emilien"
+  },
+  "pavel-bittner": {
+    "rank": 62,
+    "pts": 715.0,
+    "name": "BITTNER Pavel"
+  },
+  "natnael-tesfatsion": {
     "rank": 63,
     "pts": 709.0,
-    "name": "LAPEIRA Paul"
+    "name": "TESFATSION Natnael"
   },
   "jasper-stuyven": {
     "rank": 64,
     "pts": 706.0,
     "name": "STUYVEN Jasper"
   },
-  "natnael-tesfatsion": {
-    "rank": 65,
-    "pts": 702.0,
-    "name": "TESFATSION Natnael"
-  },
   "ben-tulett": {
-    "rank": 66,
+    "rank": 65,
     "pts": 700.0,
     "name": "TULETT Ben"
+  },
+  "paul-lapeira": {
+    "rank": 66,
+    "pts": 689.0,
+    "name": "LAPEIRA Paul"
   },
   "luke-plapp": {
     "rank": 67,
@@ -401,7 +401,7 @@
   },
   "alexandre-delettre": {
     "rank": 81,
-    "pts": 582.0,
+    "pts": 580.0,
     "name": "DELETTRE Alexandre"
   },
   "corbin-strong": {
@@ -496,7 +496,7 @@
   },
   "marc-hirschi": {
     "rank": 100,
-    "pts": 504.0,
+    "pts": 506.0,
     "name": "HIRSCHI Marc"
   }
 }

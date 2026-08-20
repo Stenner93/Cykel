@@ -108,6 +108,15 @@
     "holdet_person_id": 4253
   },
   {
+    "id": "axel_laurance",
+    "full_name": "Axel Laurance",
+    "short_name": "Laurance",
+    "team": "IGD",
+    "team_full": "Netcompany INEOS Cycling Team",
+    "price": 6.0,
+    "holdet_person_id": 4961
+  },
+  {
     "id": "bastien_tronchon",
     "full_name": "Bastien Tronchon",
     "short_name": "Tronchon",
@@ -124,6 +133,15 @@
     "team_full": "Team Visma | Lease a Bike",
     "price": 6.5,
     "holdet_person_id": 4633
+  },
+  {
+    "id": "ben_turner",
+    "full_name": "Ben Turner",
+    "short_name": "B. Turner",
+    "team": "IGD",
+    "team_full": "Netcompany INEOS Cycling Team",
+    "price": 6.0,
+    "holdet_person_id": 4698
   },
   {
     "id": "bruno_armirail",
@@ -183,10 +201,10 @@
     "id": "chris_hamilton",
     "full_name": "Chris Hamilton",
     "short_name": "C. Hamilton",
-    "team": "TPP",
-    "team_full": "Team Picnic PostNL",
-    "price": 3.0,
-    "holdet_person_id": 3559
+    "team": "IGD",
+    "team_full": "Netcompany INEOS Cycling Team",
+    "price": 2.5,
+    "holdet_person_id": 4006
   },
   {
     "id": "christophe_laporte",
@@ -313,6 +331,15 @@
     "team_full": "Cofidis",
     "price": 3.5,
     "holdet_person_id": 3101
+  },
+  {
+    "id": "embret_svestad_bårdseng",
+    "full_name": "Embret Svestad-Bårdseng",
+    "short_name": "E. S. bårdseng",
+    "team": "IGD",
+    "team_full": "Netcompany INEOS Cycling Team",
+    "price": 3.5,
+    "holdet_person_id": 46801
   },
   {
     "id": "enric_mas",
@@ -630,6 +657,15 @@
     "holdet_person_id": 4938
   },
   {
+    "id": "ivo_oliveira",
+    "full_name": "Ivo Oliveira",
+    "short_name": "I. Oliveira",
+    "team": "UAE",
+    "team_full": "UAE Team Emirates - XRG",
+    "price": 4.5,
+    "holdet_person_id": 4208
+  },
+  {
     "id": "ivan_cobo_cayon",
     "full_name": "Iván Cobo Cayón",
     "short_name": "Cayón",
@@ -637,6 +673,15 @@
     "team_full": "Equipo Kern Pharma",
     "price": 4.0,
     "holdet_person_id": 50795
+  },
+  {
+    "id": "jack_haig",
+    "full_name": "Jack Haig",
+    "short_name": "J. Haig",
+    "team": "IGD",
+    "team_full": "Netcompany INEOS Cycling Team",
+    "price": 3.0,
+    "holdet_person_id": 3242
   },
   {
     "id": "jacopo_mosca",
@@ -747,6 +792,15 @@
     "holdet_person_id": 47017
   },
   {
+    "id": "joshua_tarling",
+    "full_name": "Joshua Tarling",
+    "short_name": "Tarling",
+    "team": "IGD",
+    "team_full": "Netcompany INEOS Cycling Team",
+    "price": 9.0,
+    "holdet_person_id": 4843
+  },
+  {
     "id": "jose_manuel_diaz",
     "full_name": "José Manuel Diaz",
     "short_name": "Diaz",
@@ -826,15 +880,6 @@
     "team_full": "Lotto Intermarché",
     "price": 3.0,
     "holdet_person_id": 46861
-  },
-  {
-    "id": "laurens_de_plus",
-    "full_name": "Laurens De Plus",
-    "short_name": "Plus",
-    "team": "IGD",
-    "team_full": "Netcompany INEOS Cycling Team",
-    "price": 4.5,
-    "holdet_person_id": 3140
   },
   {
     "id": "lennard_kamna",
@@ -1096,15 +1141,6 @@
     "team_full": "NSN Cycling Team",
     "price": 3.0,
     "holdet_person_id": 52835
-  },
-  {
-    "id": "nelson_oliveira",
-    "full_name": "Nelson Oliveira",
-    "short_name": "N. Oliveira",
-    "team": "UAE",
-    "team_full": "UAE Team Emirates - XRG",
-    "price": 4.5,
-    "holdet_person_id": 4208
   },
   {
     "id": "nick_schultz",

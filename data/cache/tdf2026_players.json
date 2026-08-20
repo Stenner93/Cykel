@@ -585,6 +585,15 @@
     "holdet_person_id": 4928
   },
   {
+    "id": "ivo_oliveira",
+    "full_name": "Ivo Oliveira",
+    "short_name": "I. Oliveira",
+    "team": "MOV",
+    "team_full": "Movistar Team",
+    "price": 2.86,
+    "holdet_person_id": 2572
+  },
+  {
     "id": "jai_hindley",
     "full_name": "Jai Hindley",
     "short_name": "J. Hindley",
@@ -1159,15 +1168,6 @@
     "team_full": "Cofidis",
     "price": 6.89,
     "holdet_person_id": 47118
-  },
-  {
-    "id": "nelson_oliveira",
-    "full_name": "Nelson Oliveira",
-    "short_name": "N. Oliveira",
-    "team": "MOV",
-    "team_full": "Movistar Team",
-    "price": 2.86,
-    "holdet_person_id": 2572
   },
   {
     "id": "nico_denz",
