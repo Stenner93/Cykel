@@ -4945,5 +4945,123 @@
       "stage_type": "sprint",
       "name": "Stage 5 | Saint-Georges - Saint-Georges"
     }
+  },
+  "rhone-alpes-isere-tour/2026": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "mountain"
+  },
+  "rhone-alpes-isere-tour/2026_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Charvieux-Chavagneux - Charvieux-Chavagneux"
+    },
+    "2": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Saint-Martin de Vaulserre - Bourgoin-Jallieu"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Arandon-Passins - Corbas"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Saint-Maurice-l’Exil - Saint-Clair-du-Rhône"
+    },
+    "5": {
+      "p_class": "5",
+      "stage_type": "mountain",
+      "name": "Stage 5 | Le Cheylas - Miribel-les-Échelles"
+    }
+  },
+  "tour-of-rhodes/2026": {
+    "0": "sprint",
+    "1": "hilly",
+    "2": "hilly",
+    "3": "sprint"
+  },
+  "tour-of-rhodes/2026_meta": {
+    "0": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Prologue | Rhodes - Rhodes"
+    },
+    "1": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 1 | Maritsa - Maritsa"
+    },
+    "2": {
+      "p_class": "3",
+      "stage_type": "hilly",
+      "name": "Stage 2 | Rhodes - Kalithies"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Kremasti - Kremasti"
+    }
+  },
+  "circuit-des-ardennes/2026": {
+    "1": "sprint",
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint",
+    "5": "sprint"
+  },
+  "circuit-des-ardennes/2026_meta": {
+    "1": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 1 | Villers-Semeuse - Saint-Laurent"
+    },
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Rethel - Rethel"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Lac de Bairon - Lac des Vieilles Forges"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Fromelennes - Hargnies"
+    },
+    "5": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 5 | Centre Leclerc Sedan - Charleville-Mézières"
+    }
+  },
+  "course-cycliste-de-solidarnosc/2025": {
+    "2": "sprint",
+    "3": "sprint",
+    "4": "sprint"
+  },
+  "course-cycliste-de-solidarnosc/2025_meta": {
+    "2": {
+      "p_class": "1",
+      "stage_type": "sprint",
+      "name": "Stage 2 | Jedlicze - Dębica"
+    },
+    "3": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 3 | Jasło - Mielec"
+    },
+    "4": {
+      "p_class": "2",
+      "stage_type": "sprint",
+      "name": "Stage 4 | Kielce - Łódź"
+    }
   }
 }
