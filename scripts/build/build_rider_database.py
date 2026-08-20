@@ -41,11 +41,12 @@ def main() -> None:
     riders_json   = _load(DATA / "riders.json") or []
     dauphine_pool = _load(DATA / "cache" / "dauphine2026_players.json") or []
     tdf_pool      = _load(DATA / "cache" / "tdf2026_players.json") or []
+    vuelta_pool   = _load(DATA / "cache" / "vuelta2026_players.json") or []
 
     # rider_id -> {name, team, races: set}
     pool: dict[str, dict] = {}
 
-    def _add(entries: list[dict], race_tag: str):
+    def _add(entries: list[dict], race_tag: str, override: bool = False):
         for e in entries:
             rid = e.get("id")
             if not rid:
@@ -58,17 +59,25 @@ def main() -> None:
                     "races": set(),
                 }
             pool[rid]["races"].add(race_tag)
-            # Prefer the most complete team/name info available
-            if e.get("team") and not pool[rid]["team"]:
+            if override:
+                # Aktuelt løb vinder — holder navn/hold friske (fx Nelson Oliveira
+                # = UAE på Vueltaen, ikke det gamle Movistar-tag).
+                if e.get("full_name"):
+                    pool[rid]["name"] = e["full_name"]
+                if e.get("team"):
+                    pool[rid]["team"] = e["team"]
+            elif e.get("team") and not pool[rid]["team"]:
                 pool[rid]["team"] = e["team"]
 
     _add(riders_json,   "giro")       # riders.json was built for Giro/Dauphiné base pool
     _add(dauphine_pool, "dauphine")
     _add(tdf_pool,       "tdf")
+    _add(vuelta_pool,   "vuelta", override=True)   # nuværende løb: friske hold/navne vinder
 
     print(f"  riders.json:              {len(riders_json)}")
     print(f"  dauphine2026_players.json: {len(dauphine_pool)}")
     print(f"  tdf2026_players.json:      {len(tdf_pool)}")
+    print(f"  vuelta2026_players.json:   {len(vuelta_pool)}")
     print(f"  Unikke ryttere total:      {len(pool)}")
 
     # ── Join with CyclingOracle + PCS data ───────────────────────────────
