@@ -760,6 +760,10 @@ HOLDET_NAME_OVERRIDES: dict[str, str] = {
     # Holdet: "Rasmus Søjberg Pedersen" → riders.json: mads_pedersen
     # Holdet stores the civil name; the rider is known professionally as Mads Pedersen (Lidl-Trek)
     "rasmus sojberg pedersen":          "mads_pedersen",
+    # Holdet mislabels UAE's Oliveira twin as "Nelson"; the rider on UAE's
+    # Vuelta 2026 squad is Ivo Oliveira (Nelson rides for Movistar and is not
+    # in the race). Remap so we use Ivo's CO ratings and correct name.
+    "nelson oliveira":                  "ivo_oliveira",
 }
 
 
