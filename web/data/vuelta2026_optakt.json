@@ -72,5 +72,39 @@
       ]
     }
   },
-  "stages": {}
+  "stages": {
+    "1": {
+      "scenario": "tt",
+      "feltet": {
+        "captain": "Wout van Aert",
+        "favorites": [
+          "Wout van Aert",
+          "Stefan Küng",
+          "Ethan Hayter",
+          "Ivan Romeo",
+          "Nelson Oliveira",
+          "Christophe Laporte",
+          "Joshua Tarling",
+          "Ben Turner",
+          "Callum Thornley",
+          "Sander De Pestel",
+          "Oscar Chamberlain",
+          "Steven Kruijswijk",
+          "Julien Bernard",
+          "Bruno Armirail"
+        ],
+        "avoid": [
+          "Tadej Pogacar",
+          "Jay Vine",
+          "Fisher-Black"
+        ],
+        "note": "9,4 km teknisk enkeltstart i Monaco. Van Aert favorit + kaptajn. Går uden om Pogačar og Vine (for dyre); Mads Pedersen stærk, men skippes pga. budget/Top15-bonus. Tarling er en sen tilføjelse — sørgeugen kan hæmme ham. Billige fund: Thornley, De Pestel, Chamberlain; holdbonus via Kruijswijk/Bernard/Armirail."
+      },
+      "storform": [
+        "Callum Thornley",
+        "Oscar Chamberlain",
+        "Sander De Pestel"
+      ]
+    }
+  }
 }
