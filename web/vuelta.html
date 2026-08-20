@@ -828,9 +828,16 @@
         capCard('simon','Simon K. Kjær', sc, s.note||'')+
         capCard('model','Model · højest exp', mc, mc?('exp '+fmtK((mr.order[0]||{}).exp)):'')+
         '</div>';
-      html+= agree
-        ? '<div class="verdict ok">✔ Begge eksperter enige om kaptajn: <b style="margin:0 4px">'+fc+'</b> — historisk det stærkeste optakt-signal.</div>'
-        : '<div class="verdict split">◑ Uenige om kaptajn — Feltet: <b style="margin:0 4px">'+(fc||'–')+'</b> · Simon: <b style="margin:0 4px">'+(sc||'–')+'</b>. Ved uenighed rammer Simon oftest (52 % mod 39 %).</div>';
+      var oneOnly = (!!fc) !== (!!sc);   // præcis én kilde har vejet ind
+      var mDiff = function(cap){ return (mc && cap && mc!==cap) ? ' Modellen foreslår <b style="margin:0 4px">'+mc+'</b>.' : ''; };
+      if(agree){
+        html+='<div class="verdict ok">✔ Begge eksperter enige om kaptajn: <b style="margin:0 4px">'+fc+'</b> — historisk det stærkeste optakt-signal.'+mDiff(fc)+'</div>';
+      } else if(oneOnly){
+        var only=fc||sc, who=fc?'Feltet':'Simon';
+        html+='<div class="verdict split">◑ Kun '+who+' har vejet ind: <b style="margin:0 4px">'+only+'</b>.'+mDiff(only)+' Afventer den anden kilde.</div>';
+      } else {
+        html+='<div class="verdict split">◑ Uenige om kaptajn — Feltet: <b style="margin:0 4px">'+(fc||'–')+'</b> · Simon: <b style="margin:0 4px">'+(sc||'–')+'</b>. Ved uenighed rammer Simon oftest (52 % mod 39 %).</div>';
+      }
 
       // C · Enigheds-strip (ligheder / forskelle på favoritter)
       var ff={}, sf={}; ocArr(f.favorites).forEach(function(n){ ff[n]=1; }); ocArr(s.favorites).forEach(function(n){ sf[n]=1; });
