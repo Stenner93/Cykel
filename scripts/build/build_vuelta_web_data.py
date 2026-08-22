@@ -710,15 +710,27 @@ def main() -> None:
 
         print(f"    Etape {stage_num:2d} ({stype}, p{p_class}, status={status})…")
 
-        # For upcoming stages: fetch web predictions as odds signal
+        # For upcoming stages: odds signal. Manuel odds-fil (indsat pr. etape,
+        # da bookmaker-scrapen ofte er tom før løbsstart) vinder over web-scrapen.
         odds_data:   dict | None = None
         odds_source: str         = ""
         if status != "finished":
-            odds_data, odds_source = get_stage_predictions(
-                cartridge=VUELTA_CARTRIDGE,
-                stage_num=stage_num,
-                verbose=True,
-            )
+            _mo_path = DATA / f"vuelta_stage_{stage_num:02d}_odds.json"
+            if _mo_path.exists():
+                try:
+                    _mo = json.loads(_mo_path.read_text(encoding="utf-8"))
+                    odds_data = _mo.get("odds") or None
+                    odds_source = _mo.get("source", "manuel odds")
+                    if odds_data:
+                        print(f"    Etape {stage_num}: manuel odds ({len(odds_data)} ryttere, {odds_source})")
+                except (json.JSONDecodeError, OSError):
+                    odds_data = None
+            if not odds_data:
+                odds_data, odds_source = get_stage_predictions(
+                    cartridge=VUELTA_CARTRIDGE,
+                    stage_num=stage_num,
+                    verbose=True,
+                )
             if not odds_data:
                 odds_data = None
 
