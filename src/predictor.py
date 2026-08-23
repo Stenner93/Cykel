@@ -776,6 +776,20 @@ def predict_all(
     _placement_rank: dict[str, int] = {rid: i + 1 for i, (rid, _) in enumerate(_placement_ranked)}
     _n_placement = max(len(_placement_ranked), 1)
 
+    # Bookmaker-odds som ekstra base-signal. Placeringsmodellen (CO/form/ML)
+    # ignorerer odds og er GC-biased, så på fx en åbnings-TT begraver den
+    # bookmakerfavoritten. Når der ER odds (odds_data), blandes en odds-rangeret
+    # base ind i _calibrated_base for de ryttere odds dækker. Uden odds er
+    # _odds_by_rid tom → ingen ændring, og modellen kører præcis som før.
+    _odds_by_rid: dict[str, float] = {}
+    if odds_data:
+        for _p in results:
+            _op = odds_data.get((_p.get("full_name") or "").lower())
+            if _op and _op > 0:
+                _odds_by_rid[_p["rider_id"]] = _op
+    _odds_max = max(_odds_by_rid.values()) if _odds_by_rid else 1.0
+    W_ODDS = 0.6   # vægt på odds-basen for ryttere odds dækker (0 = ignorér, 1 = kun odds)
+
     for _i, pred in enumerate(results):
         _frac  = _i / max(_n - 1, 1)
         _wp    = pred.get("winner_pts", 500_000)
@@ -820,6 +834,17 @@ def predict_all(
             pred["placement_pred"]  = None
             pred["holdet_raw_pred"] = None
             pred["ml_source_used"]  = "rank"
+
+        # Bland odds-basen ind for ryttere odds dækker (uden odds: uændret).
+        # Odds-styrke = vinderchance / feltets største, skaleret mod point-basen
+        # for en sikker etapevinder → bevarer magnituden, så en klar favorit
+        # (fx 42 % mod næstes 17 %) topper, og de øvrige favoritter også løftes.
+        if rid in _odds_by_rid:
+            _top_base   = _norm_pos_to_stage_pts(1.0, _field_sz)
+            _o_strength = _odds_by_rid[rid] / _odds_max
+            _odds_base  = _o_strength * _top_base
+            _calibrated_base = round((1 - W_ODDS) * _calibrated_base + W_ODDS * _odds_base)
+            pred["odds_prob"] = round(_odds_by_rid[rid], 4)
 
         pred["expected_pts"] = _calibrated_base + _addon
 
