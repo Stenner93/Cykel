@@ -586,7 +586,7 @@ def fetch_my_team(
     cap = f", kaptajn: {captain}" if captain else ""
     print(f"  [info] {len(rider_names)} ryttere hentet (runde {round_num}, "
           f"kostede ~{spent_kr/1_000_000:.1f}M → bank ~{bank_M:.1f}M{cap})")
-    return {"bank_M": bank_M, "riders": rider_names}
+    return {"bank_M": bank_M, "riders": rider_names, "captain": captain, "round": round_num}
 
 
 def fetch_fantasy_actions(game_id: int, event_id: int) -> list[dict]:
@@ -863,6 +863,10 @@ def main() -> None:
     parser.add_argument("--my-team-id",   type=int, default=None,
                         help="Dit hold-ID fra holdet.dk (f.eks. 7145433) — henter dit "
                              "aktuelle hold og skriver til data/current_team.json")
+    parser.add_argument("--teams-file",   type=str, default=None,
+                        help="JSON-fil {label: hold-ID} — henter flere hold (dig + "
+                             "konkurrenter), akkumulerer runde-historik og skriver til "
+                             "web/data/vuelta2026_teams.json (til holdduel-fanen)")
     parser.add_argument("--delay",         type=float, default=1.0,
                         help="Sekunder mellem requests (default: 1.0)")
     args = parser.parse_args()
@@ -1147,6 +1151,43 @@ def main() -> None:
             print(f"  Bank: {my_team['bank_M']:.2f}M")
         else:
             print("  [WARN] Kunne ikke hente hold — current_team.json uændret")
+
+    # ── Fetch multiple teams (holdduel) → web/data/vuelta2026_teams.json ───────
+    if args.teams_file:
+        cfg_path = Path(args.teams_file)
+        try:
+            teams_cfg = json.loads(cfg_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            teams_cfg = {}
+            print(f"  [WARN] Kunne ikke læse {cfg_path}: {e}")
+        out_path = ROOT / "web" / "data" / "vuelta2026_teams.json"
+        store = {"teams": {}}
+        if out_path.exists():
+            try:
+                store = json.loads(out_path.read_text(encoding="utf-8"))
+            except Exception:
+                store = {"teams": {}}
+        store.setdefault("teams", {})
+        for label, tid in teams_cfg.items():
+            print(f"\n  Henter hold '{label}' (ID={tid})…")
+            t = fetch_my_team(game_id, int(tid), player_by_id, person_by_id, person_to_rid)
+            entry = store["teams"].setdefault(label, {"team_id": int(tid), "history": {}})
+            entry["team_id"] = int(tid)
+            entry.setdefault("history", {})
+            if t:
+                entry["current"] = {"riders": t["riders"], "captain": t.get("captain"),
+                                    "bank_M": t["bank_M"]}
+                rnd = t.get("round")
+                if rnd:
+                    # Gem runde-øjebliksbillede (til pointudvikling; overskrives hvis
+                    # holdet ændres inden deadline — sidste før lås gælder).
+                    entry["history"][str(rnd)] = {"riders": t["riders"], "captain": t.get("captain")}
+            else:
+                print(f"  [WARN] Kunne ikke hente hold '{label}'")
+        store["generated"] = _now_iso() if "_now_iso" in globals() else __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat()
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(json.dumps(store, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"\n  Gemt holdduel: {out_path} ({len(store['teams'])} hold)")
 
     # ── Summary ───────────────────────────────────────────────────────────────
     print("\n  === Klar ===")
