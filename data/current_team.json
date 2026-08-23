@@ -1,14 +1,14 @@
 {
   "_note": "Opdateres automatisk via scrape_holdet.py --my-team-id 7145433. Kan også redigeres manuelt: bank_M = din bank-saldo i millioner, riders = liste af navne.",
-  "bank_M": 0.0,
+  "bank_M": 3.0,
   "riders": [
-    "Tadej Pogacar",
-    "Jonas Rickaert",
-    "Jasper Stuyven",
-    "Mauro Schmid",
-    "Mads Pedersen",
-    "Remco Evenepoel",
-    "Mathieu van der Poel",
-    "Quinn Simmons"
+    "Wout van Aert",
+    "Léo Bisiaux",
+    "Pau Miquel",
+    "Ben Turner",
+    "Ethan Hayter",
+    "Finn Fisher-Black",
+    "Callum Thornley",
+    "Christophe Laporte"
   ]
 }
