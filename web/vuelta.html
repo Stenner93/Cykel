@@ -295,6 +295,7 @@
   .duelroster li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 8px;border-bottom:1px solid var(--border);font-size:.88rem}
   .duelroster li:last-child{border-bottom:0}
   .duelroster li.cap{background:var(--accent-soft);border-radius:6px}
+  .duelroster li.sep{border-bottom:0;padding:8px 8px 2px;font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
   .duelroster .pts{font-family:var(--mono);color:var(--ink-2)}
   .duelroster .uniq{font-size:.64rem;text-transform:uppercase;letter-spacing:.05em;color:var(--optakt);font-weight:700}
   .dueltot{display:flex;align-items:baseline;gap:8px;margin-top:8px}
@@ -1163,42 +1164,60 @@
       var td=res[0], sc=res[1];
       if(!td || !td.teams){ wrap.innerHTML='<div class="empty"><span class="big">👥</span><h3>Holdduel kommer</h3><p>Dit og Kaspers hold hentes af den daglige kørsel og vises her.</p></div>'; return; }
       var stages=(sc&&sc.stages)||[], riders=(sc&&sc.riders)||[];
-      // navn → pts-dict
-      var ptsByName={}; riders.forEach(function(r){ ptsByName[nrm(r.name)]=r.pts||{}; });
-      // etaper der faktisk er afviklet (nogen har fået point) → vises i tabellen
+      // navn → pts-dict + pris (til værdi-sortering)
+      var ptsByName={}, priceByName={};
+      riders.forEach(function(r){ ptsByName[nrm(r.name)]=r.pts||{}; priceByName[nrm(r.name)]=r.price||0; });
+      // etaper der faktisk er afviklet (nogen har fået point) → kan vises i tabellen
       var played={}; riders.forEach(function(r){ Object.keys(r.pts||{}).forEach(function(k){ played[String(k)]=1; }); });
-      var finished=stages.filter(function(s){ return (s.status||'')==='finished' || Object.keys((riders[0]||{}).pts||{}).length; });
       var labels=Object.keys(td.teams);
-      // point pr. hold pr. etape (kaptajn dobbelt)
+      // Point pr. hold pr. etape (kaptajn dobbelt). Krediterer det hold der
+      // FAKTISK var på i den runde (history[etape]) — IKKE det aktuelle hold.
+      // Returnerer null hvis rundens roster endnu ikke er kendt (så etapen ikke
+      // fejlagtigt tilskrives det nuværende hold).
       function teamStagePts(team, snum){
-        var hist=(team.history||{})[String(snum)] || team.current || {riders:[],captain:null};
+        var hist=(team.history||{})[String(snum)];
+        if(!hist || !(hist.riders||[]).length) return null;
         var cap=nrm(hist.captain||''); var tot=0;
-        (hist.riders||[]).forEach(function(rn){ var p=ptsByName[nrm(rn)]||{}; var v=+p[snum]||0; tot+=v; if(nrm(rn)===cap) tot+=v; });
+        hist.riders.forEach(function(rn){ var p=ptsByName[nrm(rn)]||{}; var v=+p[snum]||0; tot+=v; if(nrm(rn)===cap) tot+=v; });
         return tot;
       }
-      // kumulativ
+      // kumulativ (summerer kun etaper med kendt roster)
       var cum={}; labels.forEach(function(l){ cum[l]=0; });
       var perStage=stages.map(function(s){
-        var row={num:s.num,name:s.name}; labels.forEach(function(l){ var v=teamStagePts(td.teams[l],s.num); row[l]=v; cum[l]+=v; row['_cum_'+l]=cum[l]; }); return row;
-      }).filter(function(row){ return played[String(row.num)]; });
+        var row={num:s.num,name:s.name};
+        labels.forEach(function(l){ var v=teamStagePts(td.teams[l],s.num); row[l]=v; if(v!=null) cum[l]+=v; });
+        return row;
+      }).filter(function(row){ return played[String(row.num)] && labels.some(function(l){ return row[l]!=null; }); });
 
-      // rosters side om side (fælles/unikke)
-      function rosterSet(l){ var o={}; ((td.teams[l].current||{}).riders||[]).forEach(function(r){ o[nrm(r)]=r; }); return o; }
-      var sets={}; labels.forEach(function(l){ sets[l]=rosterSet(l); });
-      function isUniq(l,rn){ return !labels.some(function(o){ return o!==l && sets[o][nrm(rn)]; }); }
-      function totalPts(l){ return finished.reduce(function(a,s){ return a+teamStagePts(td.teams[l],s.num); },0) || cum[l]; }
+      // rosters: fælles vs. unikke (aktuelt hold)
+      function curRiders(l){ return ((td.teams[l].current||{}).riders)||[]; }
+      var sets={}; labels.forEach(function(l){ sets[l]={}; curRiders(l).forEach(function(r){ sets[l][nrm(r)]=r; }); });
+      function isShared(rn){ return labels.length>1 && labels.every(function(l){ return sets[l][nrm(rn)]; }); }
+      function val(rn){ return priceByName[nrm(rn)]||0; }         // værdi = pris (M)
+      function byVal(a,b){ return val(b)-val(a) || a.localeCompare(b,'da'); }
+      // Fælles rækkefølge (identisk i begge kort → fælles ryttere flugter linje-for-linje)
+      var sharedOrder = curRiders(labels[0]).filter(isShared).sort(byVal);
 
       function card(l,i){
         var t=td.teams[l], cur=t.current||{riders:[],captain:null,bank_M:null};
         var cap=nrm(cur.captain||'');
-        var lis=(cur.riders||[]).map(function(rn){
-          var isC=nrm(rn)===cap, uq=isUniq(l,rn);
-          return '<li'+(isC?' class="cap"':'')+'><span>'+(isC?'★ ':'')+rn+(uq?' <span class="uniq">kun her</span>':'')+'</span></li>';
-        }).join('') || '<li><span class="src">Afventer holddata…</span></li>';
+        var uniq=curRiders(l).filter(function(rn){ return !isShared(rn); }).sort(byVal);
+        function li(rn){
+          var isC=nrm(rn)===cap, sh=isShared(rn), v=val(rn);
+          return '<li'+(isC?' class="cap"':'')+'><span>'+(isC?'★ ':'')+rn+
+            (isC?' <span class="uniq" style="color:var(--accent)">kaptajn</span>':'')+
+            (!sh?' <span class="uniq">kun her</span>':'')+'</span>'+
+            '<span class="pts">'+(v?v+'M':'')+'</span></li>';
+        }
+        var body='';
+        sharedOrder.forEach(function(rn){ body+=li(rn); });
+        if(sharedOrder.length && uniq.length) body+='<li class="sep"><span class="src">kun på ét hold</span></li>';
+        uniq.forEach(function(rn){ body+=li(rn); });
+        if(!body) body='<li><span class="src">Afventer holddata…</span></li>';
         var tp=cum[l]||0;
         return '<div class="duelcard '+(i===0?'mine':'rival')+'"><h3>'+l+'</h3>'+
-          '<div class="sub">'+((cur.riders||[]).length)+' ryttere'+(cur.bank_M!=null?(' · bank '+cur.bank_M+'M'):'')+'</div>'+
-          '<ul class="duelroster">'+lis+'</ul>'+
+          '<div class="sub">'+(curRiders(l).length)+' ryttere'+(cur.bank_M!=null?(' · bank '+cur.bank_M+'M'):'')+'</div>'+
+          '<ul class="duelroster">'+body+'</ul>'+
           '<div class="dueltot"><span class="big">'+fmtV(tp)+'</span><span class="src">samlet vækst</span></div></div>';
       }
       var html='<div class="octitle">Holdene</div><div class="duelgrid">'+labels.map(card).join('')+'</div>';
@@ -1216,13 +1235,13 @@
         html+='<div class="scrollx" style="margin-top:12px"><table class="board"><thead><tr><th>Etape</th>'+
           labels.map(function(l){return '<th>'+l+'</th>';}).join('')+'<th>Forskel</th></tr></thead><tbody>'+
           perStage.map(function(row){
-            var a=row[labels[0]]||0, b=row[labels[1]]||0, diff=a-b;
-            return '<tr><td>E'+row.num+'</td>'+labels.map(function(l){return '<td class="mono">'+fmtV(row[l]||0)+'</td>';}).join('')+
-              '<td class="mono '+(diff>0?'up':(diff<0?'down':''))+'">'+(diff>0?'+':'')+fmtV(diff)+'</td></tr>';
+            var a=row[labels[0]], b=row[labels[1]], diff=(a!=null&&b!=null)?a-b:null;
+            return '<tr><td>E'+row.num+'</td>'+labels.map(function(l){return '<td class="mono">'+(row[l]==null?'–':fmtV(row[l]))+'</td>';}).join('')+
+              '<td class="mono '+(diff>0?'up':(diff<0?'down':''))+'">'+(diff==null?'–':((diff>0?'+':'')+fmtV(diff)))+'</td></tr>';
           }).join('')+'</tbody></table></div>';
-        html+='<p class="note" style="margin-top:8px">Beregnet fra pointmatrixen: sum af ejede rytteres vækst pr. etape, kaptajn tæller dobbelt. Bruger holdets roster for hver runde efterhånden som historikken bygges op.</p></div></div>';
+        html+='<p class="note" style="margin-top:8px">Beregnet fra pointmatrixen: hver etapes vækst krediteres det hold der var på i netop den runde (kaptajn dobbelt). Etaper hvis roster endnu ikke er hentet vises som &ndash; og fyldes af den daglige kørsel.</p></div></div>';
       } else {
-        html+='<div class="optbar" style="border-color:var(--border-2);background:var(--surface);color:var(--muted);margin-top:12px">Ingen afsluttede etaper endnu — pointudviklingen fyldes fra etape 1.</div>';
+        html+='<div class="optbar" style="border-color:var(--border-2);background:var(--surface);color:var(--muted);margin-top:12px">Pointudviklingen fyldes når den daglige kørsel har hentet holdenes roster for de afviklede etaper (krediteres det hold der var på i runden, ikke det aktuelle).</div>';
       }
       wrap.innerHTML=html;
     });
