@@ -788,7 +788,7 @@ def predict_all(
             if _op and _op > 0:
                 _odds_by_rid[_p["rider_id"]] = _op
     _odds_max = max(_odds_by_rid.values()) if _odds_by_rid else 1.0
-    W_ODDS = 0.6   # vægt på odds-basen for ryttere odds dækker (0 = ignorér, 1 = kun odds)
+    W_ODDS = 0.7   # vægt på odds-basen for ryttere odds dækker (0 = ignorér, 1 = kun odds)
 
     for _i, pred in enumerate(results):
         _frac  = _i / max(_n - 1, 1)
