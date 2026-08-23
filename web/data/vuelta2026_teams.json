@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-23T15:27:11.534552+00:00",
+  "generated": "2026-08-23T15:37:52.755104+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
@@ -17,16 +17,53 @@
         "captain": "Wout van Aert",
         "bank_M": 3.0
       },
-      "history": {}
+      "history": {
+        "2": {
+          "riders": [
+            "Wout van Aert",
+            "Léo Bisiaux",
+            "Pau Miquel",
+            "Ben Turner",
+            "Ethan Hayter",
+            "Finn Fisher-Black",
+            "Callum Thornley",
+            "Christophe Laporte"
+          ],
+          "captain": "Wout van Aert"
+        }
+      }
     },
     "Kasper": {
       "team_id": 7272262,
       "current": {
-        "riders": [],
-        "captain": null,
-        "bank_M": null
+        "riders": [
+          "Wout van Aert",
+          "Léo Bisiaux",
+          "Ethan Hayter",
+          "Pau Miquel",
+          "Christophe Laporte",
+          "Jordan Labrosse",
+          "Joshua Tarling",
+          "Finn Fisher-Black"
+        ],
+        "captain": "Wout van Aert",
+        "bank_M": 0.5
       },
-      "history": {}
+      "history": {
+        "2": {
+          "riders": [
+            "Wout van Aert",
+            "Léo Bisiaux",
+            "Ethan Hayter",
+            "Pau Miquel",
+            "Christophe Laporte",
+            "Jordan Labrosse",
+            "Joshua Tarling",
+            "Finn Fisher-Black"
+          ],
+          "captain": "Wout van Aert"
+        }
+      }
     }
   }
 }
