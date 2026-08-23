@@ -131,6 +131,38 @@
         ],
         "note": "Opdateret 10:15. Kaptajn fordelt på 6 hold: 4× Tarling, 1× Pogačar, 1× Wout. Højest tiltro (flest hold): Küng, Hayter, van Aert, Tarling. Stamme Tarling+van Aert+Küng på alle hold. Går uden om Pogačar (for dyr) og skeptisk over for Almeida. Køber Fisher-Black (flyvende, topkandidat til E2). Dagens sats: Jay Vine (C). Billige: Kluckers, De Pestel, Chamberlain, Hamilton (Tarling-holdbonus). NB: Turner tvivlsom søndag (3000 hm, INEOS har Laurance), men stærk på TT'en."
       }
+    },
+    "2": {
+      "scenario": "bakket",
+      "feltet": {
+        "captain": "Wout van Aert",
+        "favorites": [
+          "Wout van Aert",
+          "Mads Pedersen",
+          "Ben Turner",
+          "Orluis Aular",
+          "Bryan Coquard",
+          "Pau Miquel",
+          "Christophe Laporte",
+          "Ethan Hayter",
+          "Finn Fisher-Black",
+          "Steven Kruijswijk",
+          "Julien Bernard",
+          "Alessandro Romele",
+          "Jordan Labrosse"
+        ],
+        "avoid": [
+          "Tadej Pogacar",
+          "Jordi Meeus",
+          "Kaden Groves"
+        ],
+        "note": "Decimeret spurt på stigende finale (Monaco>Manosque). Kaptajn van Aert = soleklar favorit: jagter førertrøjen + indlagt spurt (20 pt/pointtrøje) + etapesejr = potentiale ~560k. Pedersen næsten lige så stærk vinderbud, men går efter etapen alene (~420k). Pogačar ikke prioritet (men behold hvis du har ham). Meeus/Groves: etapen for hård. Turner passer stigende finale (vandt lignende sidste år); Aular/Coquard klatrer bedre i år. Billig top-15: Miquel, Romele, Labrosse; holdbonus via Kruijswijk/Bernard."
+      },
+      "storform": [
+        "Pau Miquel",
+        "Alessandro Romele",
+        "Jordan Labrosse"
+      ]
     }
   }
 }
