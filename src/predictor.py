@@ -835,18 +835,19 @@ def predict_all(
             pred["holdet_raw_pred"] = None
             pred["ml_source_used"]  = "rank"
 
-        # Bland odds-basen ind for ryttere odds dækker (uden odds: uændret).
-        # Odds-styrke = vinderchance / feltets største, skaleret mod point-basen
-        # for en sikker etapevinder → bevarer magnituden, så en klar favorit
-        # (fx 42 % mod næstes 17 %) topper, og de øvrige favoritter også løftes.
+        pred["expected_pts"] = _calibrated_base + _addon
+
+        # Bland odds ind i det SAMLEDE estimat (efter GC-/trøje-/holdbonus), så en
+        # klar markedsfavorit faktisk topper. Blandes kun basen, holder GC-bonussen
+        # GC-stjernerne øverst selv når de er 5 %-bud. Odds-styrke = vinderchance /
+        # feltets største, skaleret mod point-basen for en sikker etapevinder.
+        # Uden odds er _odds_by_rid tom → ingen ændring, modellen kører som før.
         if rid in _odds_by_rid:
             _top_base   = _norm_pos_to_stage_pts(1.0, _field_sz)
             _o_strength = _odds_by_rid[rid] / _odds_max
-            _odds_base  = _o_strength * _top_base
-            _calibrated_base = round((1 - W_ODDS) * _calibrated_base + W_ODDS * _odds_base)
-            pred["odds_prob"] = round(_odds_by_rid[rid], 4)
-
-        pred["expected_pts"] = _calibrated_base + _addon
+            _odds_total = _o_strength * _top_base
+            pred["expected_pts"] = round((1 - W_ODDS) * pred["expected_pts"] + W_ODDS * _odds_total)
+            pred["odds_prob"]    = round(_odds_by_rid[rid], 4)
 
     # ── Context multipliers ──────────────────────────────────────────────────
     for pred in results:

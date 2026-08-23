@@ -871,6 +871,7 @@ def main() -> None:
                 "team":     p.get("team", ""),
                 "price":    p.get("price", 0),
                 "exp":      p.get("expected_pts", 0),
+                "odds_prob": p.get("odds_prob"),   # bookmaker-vinderchance hvis odds indlæst
                 # Per-scenarie forventet vækst (kr) — exp/value skifter i frontend
                 # når scenariet vælges. Falder tilbage til etapens rigtige exp.
                 "exp_sc":   {sc: exp_by_scen.get(sc, {}).get(rid, p.get("expected_pts", 0))
