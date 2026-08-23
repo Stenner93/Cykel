@@ -589,6 +589,88 @@ def fetch_my_team(
     return {"bank_M": bank_M, "riders": rider_names, "captain": captain, "round": round_num}
 
 
+def _map_lineup_item(it, player_by_id, person_by_id):
+    """Map ét lineup-item → (full_name, is_captain) eller None hvis ryttteren
+    ikke kan mappes. Bruges af historik-hentningen."""
+    if not isinstance(it, dict):
+        return None
+    pid = it.get("playerId")
+    if pid is None and isinstance(it.get("player"), dict):
+        pid = it["player"].get("id")
+    if pid is None:
+        return None
+    player = player_by_id.get(pid, {})
+    person = person_by_id.get(player.get("personId"), {})
+    name = person.get("fullName") or player.get("name", "")
+    if not name:
+        return None
+    return name, (it.get("role") == "captain")
+
+
+def fetch_team_history(
+    game_id: int,
+    team_id: int,
+    player_by_id: dict[int, dict],
+    person_by_id: dict[int, dict],
+) -> dict[str, dict]:
+    """Hent den FAKTISKE lineup for hver AFSLUTTET runde (rundens point tilhører
+    det hold der var på i netop den runde — ikke det aktuelle hold). Runde n =
+    etape n. Returnerer {str(runde): {"riders": [...], "captain": navn}}.
+
+    Kun runder hvis slut ligger i fortiden tælles med: deres lineup er låst og
+    afspejler præcis det hold der scorede. Rytterne i en rundes lineup ER netop
+    den rundes hold (endpointet er rundescopet), så vi tager alle mapbare items.
+    """
+    from datetime import datetime, timezone
+
+    def _parse_dt(s):
+        try:
+            return datetime.fromisoformat((s or "").replace("Z", "+00:00"))
+        except Exception:
+            return None
+
+    try:
+        rounds = HTTP.get(f"{BASE}/api/games/{game_id}/rounds").json().get("items", [])
+    except Exception as exc:
+        print(f"  [WARN] Kunne ikke hente runder (historik) for game {game_id}: {exc}")
+        return {}
+
+    now = datetime.now(timezone.utc)
+    completed = []
+    for r in rounds:
+        num = r.get("number")
+        end = _parse_dt(r.get("end") or r.get("endDate") or r.get("to"))
+        if isinstance(num, int) and end is not None and end <= now:
+            completed.append(num)
+    completed.sort()
+
+    history: dict[str, dict] = {}
+    for n in completed:
+        url = f"{BASE}/api/fantasyteams/{team_id}/rounds/{n}/lineup"
+        try:
+            payload = HTTP.get(url).json()
+        except Exception as exc:
+            print(f"  [WARN] Historik: kunne ikke hente lineup runde {n}: {exc}")
+            continue
+        its = payload.get("items", payload) if isinstance(payload, dict) else payload
+        if not isinstance(its, list) or not its:
+            continue
+        names, captain = [], None
+        for it in its:
+            m = _map_lineup_item(it, player_by_id, person_by_id)
+            if not m:
+                continue
+            nm, is_cap = m
+            names.append(nm)
+            if is_cap:
+                captain = nm
+        if names:
+            history[str(n)] = {"riders": names, "captain": captain}
+            print(f"  [info] historik runde {n}: {len(names)} ryttere"
+                  + (f", kaptajn {captain}" if captain else ""))
+    return history
+
+
 def fetch_fantasy_actions(game_id: int, event_id: int) -> list[dict]:
     """Fetch /api/games/{gameId}/events/{eventId}/fantasy-actions."""
     items = HTTP.get(
@@ -1177,13 +1259,14 @@ def main() -> None:
             if t:
                 entry["current"] = {"riders": t["riders"], "captain": t.get("captain"),
                                     "bank_M": t["bank_M"]}
-                rnd = t.get("round")
-                if rnd:
-                    # Gem runde-øjebliksbillede (til pointudvikling; overskrives hvis
-                    # holdet ændres inden deadline — sidste før lås gælder).
-                    entry["history"][str(rnd)] = {"riders": t["riders"], "captain": t.get("captain")}
             else:
-                print(f"  [WARN] Kunne ikke hente hold '{label}'")
+                print(f"  [WARN] Kunne ikke hente aktuelt hold '{label}'")
+            # Historik: hent den faktiske lineup for hver afsluttet runde, så
+            # pointudviklingen krediterer det hold der rent faktisk var på i den
+            # runde (ikke det aktuelle). Merges ind (nye runder tilføjes).
+            hist = fetch_team_history(game_id, int(tid), player_by_id, person_by_id)
+            for rnd, snap in hist.items():
+                entry["history"][rnd] = snap
         store["generated"] = _now_iso() if "_now_iso" in globals() else __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat()
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text(json.dumps(store, ensure_ascii=False, indent=2), encoding="utf-8")
