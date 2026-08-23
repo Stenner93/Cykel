@@ -838,16 +838,17 @@ def predict_all(
         pred["expected_pts"] = _calibrated_base + _addon
 
         # Bland odds ind i det SAMLEDE estimat (efter GC-/trøje-/holdbonus), så en
-        # klar markedsfavorit faktisk topper. Blandes kun basen, holder GC-bonussen
-        # GC-stjernerne øverst selv når de er 5 %-bud. Odds-styrke = vinderchance /
-        # feltets største, skaleret mod point-basen for en sikker etapevinder.
-        # Uden odds er _odds_by_rid tom → ingen ændring, modellen kører som før.
-        if rid in _odds_by_rid:
+        # klar markedsfavorit faktisk topper. Anvendes på HELE feltet når der er et
+        # odds-marked: ryttere odds IKKE dækker er markeds-outsidere (styrke 0) og
+        # dæmpes, så GC-klatrere ikke klumper over etapefavoritterne via GC-bonus.
+        # Uden odds (_odds_by_rid tom OG odds_data None) er der ingen ændring.
+        if odds_data:
             _top_base   = _norm_pos_to_stage_pts(1.0, _field_sz)
-            _o_strength = _odds_by_rid[rid] / _odds_max
+            _o_strength = _odds_by_rid.get(rid, 0.0) / _odds_max
             _odds_total = _o_strength * _top_base
             pred["expected_pts"] = round((1 - W_ODDS) * pred["expected_pts"] + W_ODDS * _odds_total)
-            pred["odds_prob"]    = round(_odds_by_rid[rid], 4)
+            if rid in _odds_by_rid:
+                pred["odds_prob"] = round(_odds_by_rid[rid], 4)
 
     # ── Context multipliers ──────────────────────────────────────────────────
     for pred in results:
