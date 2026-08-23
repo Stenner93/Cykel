@@ -71,6 +71,8 @@
   .chip.bad{color:var(--bad);border-color:rgba(255,122,89,.4);background:rgba(255,122,89,.10)}
   .chip.opt{color:var(--optakt);border-color:rgba(240,169,59,.4);background:rgba(240,169,59,.10)}
   .chip.mdl{color:var(--model);border-color:rgba(76,155,232,.4);background:rgba(76,155,232,.08)}
+  .chip.mine{color:var(--accent);border-color:rgba(228,0,43,.45);background:var(--accent-soft)}
+  tr.ownrow>td{background:var(--accent-soft)}
   .up{color:var(--good)} .down{color:var(--bad)} .flat{color:var(--muted)}
 
   .exlabel{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;font-weight:700;color:var(--optakt);
@@ -282,6 +284,24 @@
   .fclbl select{font-family:inherit;font-size:.82rem;font-weight:600;color:var(--ink);background:var(--card);
     border:1px solid var(--border-2);border-radius:8px;padding:5px 9px;text-transform:none;letter-spacing:0}
   .fchint{font-size:.72rem;color:var(--muted)}
+  /* ── Holdduel ── */
+  .duelgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .duelcard{border:1px solid var(--border);border-radius:12px;background:var(--surface);padding:14px}
+  .duelcard.mine{border-top:3px solid var(--accent)}
+  .duelcard.rival{border-top:3px solid var(--model)}
+  .duelcard h3{margin:0 0 2px;font-size:1.05rem}
+  .duelcard .sub{font-size:.78rem;color:var(--muted);margin-bottom:10px}
+  .duelroster{list-style:none;margin:0;padding:0}
+  .duelroster li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 8px;border-bottom:1px solid var(--border);font-size:.88rem}
+  .duelroster li:last-child{border-bottom:0}
+  .duelroster li.cap{background:var(--accent-soft);border-radius:6px}
+  .duelroster .pts{font-family:var(--mono);color:var(--ink-2)}
+  .duelroster .uniq{font-size:.64rem;text-transform:uppercase;letter-spacing:.05em;color:var(--optakt);font-weight:700}
+  .dueltot{display:flex;align-items:baseline;gap:8px;margin-top:8px}
+  .dueltot .big{font-size:1.5rem;font-weight:800;font-family:var(--mono)}
+  .duelbar{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;font-size:.82rem;padding:5px 0}
+  .duelbar .bar{height:10px;border-radius:5px;background:var(--card);overflow:hidden;position:relative}
+  .duelbar .bar i{position:absolute;top:0;bottom:0;left:0;border-radius:5px}
   .board .win{color:var(--good);font-weight:700}
   .note{font-size:.8rem;color:var(--muted);margin-top:10px;line-height:1.55}
   .note b{color:var(--ink-2)}
@@ -318,6 +338,7 @@
     <button class="tab" role="tab" aria-selected="true"  id="t-vuelta"  aria-controls="p-vuelta">Vuelta-etape</button>
     <button class="tab" role="tab" aria-selected="false" id="t-optakt"  aria-controls="p-optakt">Optakt-konsol</button>
     <button class="tab" role="tab" aria-selected="false" id="t-sprint"  aria-controls="p-sprint">Sprint &amp; bonus</button>
+    <button class="tab" role="tab" aria-selected="false" id="t-duel"    aria-controls="p-duel">Holdduel</button>
     <span class="tabsep" aria-hidden="true"></span>
     <button class="tab soon" role="tab" aria-selected="false" id="t-matrix" aria-controls="p-matrix">Pointmatrix</button>
     <button class="tab soon" role="tab" aria-selected="false" id="t-odds"   aria-controls="p-odds">Odds &amp; kilder</button>
@@ -459,6 +480,15 @@
     <div id="spBody"></div>
   </section>
 
+  <!-- ══════════ HOLDDUEL ══════════ -->
+  <section class="panel" id="p-duel" role="tabpanel" aria-labelledby="t-duel" hidden>
+    <div class="eyebrow">Værktøj 3 · dit hold vs. konkurrenten</div>
+    <h2 class="sec">Holdduel</h2>
+    <p class="sec-sub">Dit hold og Kaspers hold side om side — hvem I har inde, kaptajn, og pointudviklingen pr. etape
+      (beregnet fra pointmatrixen: ejede rytteres vækst, kaptajn dobbelt). Opdateres af den daglige kørsel.</p>
+    <div id="duelBody"></div>
+  </section>
+
   <!-- ══════════ KOMMENDE FANER ══════════ -->
   <section class="panel" id="p-matrix" role="tabpanel" aria-labelledby="t-matrix" hidden>
     <div class="eyebrow">Pointmatrix · rytter × etape</div>
@@ -533,6 +563,7 @@
     };
 
     var stages = [], cur = 0, curScen = 'bakket', typesVary = false, OPT = {};
+    var OWNED = {};                     // normaliserede navne i MIT hold (Anders) — markeres i picks/felt
     var mixMode = false, mixSet = {};   // lag 3: sandsynligheds-mix (lige vægt over valgte scenarier)
     var curMaxExp = 1;                  // etapens højeste exp — sættes i render(), bruges til at normalisere exp
     var W_EXP = 0.5;                    // vægt på forventet vækst i rangeringen (0 = ren fit, 1 = ren exp)
@@ -606,6 +637,8 @@
       return '';
     }
     function fmtVal(r){ return (expOf(r)/Math.max(r.price,0.1)/1e6).toFixed(2).replace('.', ','); }
+    // "på holdet"-badge hvis rytteren er i MIT hold (Anders).
+    function ownMark(name){ return OWNED[nrm(name)] ? ' <span class="chip mine" style="padding:1px 6px">på holdet</span>' : ''; }
     // Felt-tabel: sorterbar (klik på kolonne) + filtrer på hold.
     var fieldSort = {col:'score', dir:-1};   // default: efter scenarie-SCORE, faldende
     var fieldTeam = '';                        // '' = alle hold
@@ -651,7 +684,7 @@
         '<thead><tr><th>#</th>'+th('name','Rytter')+th('team','Hold')+th('price','Pris')+
           th('fit','fit')+th('exp','exp')+th('value','value')+'</tr></thead><tbody>' +
         rows.map(function(r,i){
-          return '<tr><td>'+(i+1)+'</td><td>'+r.name+optMark(r.name)+'</td><td>'+r.team+'</td>' +
+          return '<tr'+(OWNED[nrm(r.name)]?' class="ownrow"':'')+'><td>'+(i+1)+'</td><td>'+r.name+optMark(r.name)+ownMark(r.name)+'</td><td>'+r.team+'</td>' +
             '<td class="tnum">'+r.price+'</td><td class="tnum">'+Math.round(fitScore(r))+'</td>' +
             '<td class="mono">'+fmtK(expOf(r))+'</td><td class="mono">'+fmtVal(r)+'</td></tr>';
         }).join('') + '</tbody>';
@@ -751,7 +784,7 @@
       $('vPickList').innerHTML = scored.slice(0,20).map(function(r,i){
         return '<div class="pick' + (i===0?' cap':'') + '">' +
           '<span class="rk tnum">' + (i+1) + '</span>' +
-          '<span class="nm">' + r.name + (i===0?' <span class="star">★ kaptajn</span>':'') + optMark(r.name) +
+          '<span class="nm">' + r.name + (i===0?' <span class="star">★ kaptajn</span>':'') + optMark(r.name) + ownMark(r.name) +
             '<small>' + r.team + ' · ' + r.price + 'M</small></span>' +
           '<span class="fuse"><span class="m mono">fit ' + Math.round(fitScore(r)) + '</span>' +
             '<span class="arw">·</span><span class="f mono">' + fmtK(expOf(r)) + '</span></span>' +
@@ -1033,6 +1066,15 @@
               sp.addEventListener('change', function(){ renderSprint(+sp.value); });
               renderSprint(ci);
             }
+            // Mit hold (Anders) → markér ejede ryttere i picks/felt-tabel.
+            fetch('data/vuelta2026_teams.json', {cache:'no-cache'})
+              .then(function(r){ return r.ok ? r.json() : null; })
+              .catch(function(){ return null; })
+              .then(function(td){
+                var mine = td && td.teams && (td.teams.Anders || td.teams[Object.keys(td.teams)[0]]);
+                var rs = mine && mine.current && mine.current.riders;
+                if(rs && rs.length){ OWNED = {}; rs.forEach(function(n){ OWNED[nrm(n)] = 1; }); render(); }
+              });
           });
       })
       .catch(function(e){
@@ -1103,6 +1145,87 @@
           rows+'</tbody></table></div>'+
           '<p class="note" style="margin-top:8px">Opdateres af den daglige kørsel. Første etaper er små tal — mønsteret bygger sig op undervejs.</p>';
       });
+  })();
+</script>
+<script>
+  /* Holdduel — dit hold vs. konkurrentens, med pointudvikling fra pointmatrixen.
+     Læser vuelta2026_teams.json (roster+kaptajn pr. runde) + vuelta2026_scores.json (pts). */
+  (function(){
+    var wrap = document.getElementById('duelBody');
+    if(!wrap) return;
+    function nrm(s){ return (s||'').normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase().trim(); }
+    // Vækst i kr: k under 1 mio., ellers M med dansk komma (1,37M).
+    function fmtV(v){ v=v||0; return v>=1e6 ? (v/1e6).toFixed(2).replace('.',',')+'M' : Math.round(v/1000)+'k'; }
+    Promise.all([
+      fetch('data/vuelta2026_teams.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}),
+      fetch('data/vuelta2026_scores.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;})
+    ]).then(function(res){
+      var td=res[0], sc=res[1];
+      if(!td || !td.teams){ wrap.innerHTML='<div class="empty"><span class="big">👥</span><h3>Holdduel kommer</h3><p>Dit og Kaspers hold hentes af den daglige kørsel og vises her.</p></div>'; return; }
+      var stages=(sc&&sc.stages)||[], riders=(sc&&sc.riders)||[];
+      // navn → pts-dict
+      var ptsByName={}; riders.forEach(function(r){ ptsByName[nrm(r.name)]=r.pts||{}; });
+      // etaper der faktisk er afviklet (nogen har fået point) → vises i tabellen
+      var played={}; riders.forEach(function(r){ Object.keys(r.pts||{}).forEach(function(k){ played[String(k)]=1; }); });
+      var finished=stages.filter(function(s){ return (s.status||'')==='finished' || Object.keys((riders[0]||{}).pts||{}).length; });
+      var labels=Object.keys(td.teams);
+      // point pr. hold pr. etape (kaptajn dobbelt)
+      function teamStagePts(team, snum){
+        var hist=(team.history||{})[String(snum)] || team.current || {riders:[],captain:null};
+        var cap=nrm(hist.captain||''); var tot=0;
+        (hist.riders||[]).forEach(function(rn){ var p=ptsByName[nrm(rn)]||{}; var v=+p[snum]||0; tot+=v; if(nrm(rn)===cap) tot+=v; });
+        return tot;
+      }
+      // kumulativ
+      var cum={}; labels.forEach(function(l){ cum[l]=0; });
+      var perStage=stages.map(function(s){
+        var row={num:s.num,name:s.name}; labels.forEach(function(l){ var v=teamStagePts(td.teams[l],s.num); row[l]=v; cum[l]+=v; row['_cum_'+l]=cum[l]; }); return row;
+      }).filter(function(row){ return played[String(row.num)]; });
+
+      // rosters side om side (fælles/unikke)
+      function rosterSet(l){ var o={}; ((td.teams[l].current||{}).riders||[]).forEach(function(r){ o[nrm(r)]=r; }); return o; }
+      var sets={}; labels.forEach(function(l){ sets[l]=rosterSet(l); });
+      function isUniq(l,rn){ return !labels.some(function(o){ return o!==l && sets[o][nrm(rn)]; }); }
+      function totalPts(l){ return finished.reduce(function(a,s){ return a+teamStagePts(td.teams[l],s.num); },0) || cum[l]; }
+
+      function card(l,i){
+        var t=td.teams[l], cur=t.current||{riders:[],captain:null,bank_M:null};
+        var cap=nrm(cur.captain||'');
+        var lis=(cur.riders||[]).map(function(rn){
+          var isC=nrm(rn)===cap, uq=isUniq(l,rn);
+          return '<li'+(isC?' class="cap"':'')+'><span>'+(isC?'★ ':'')+rn+(uq?' <span class="uniq">kun her</span>':'')+'</span></li>';
+        }).join('') || '<li><span class="src">Afventer holddata…</span></li>';
+        var tp=cum[l]||0;
+        return '<div class="duelcard '+(i===0?'mine':'rival')+'"><h3>'+l+'</h3>'+
+          '<div class="sub">'+((cur.riders||[]).length)+' ryttere'+(cur.bank_M!=null?(' · bank '+cur.bank_M+'M'):'')+'</div>'+
+          '<ul class="duelroster">'+lis+'</ul>'+
+          '<div class="dueltot"><span class="big">'+fmtV(tp)+'</span><span class="src">samlet vækst</span></div></div>';
+      }
+      var html='<div class="octitle">Holdene</div><div class="duelgrid">'+labels.map(card).join('')+'</div>';
+
+      // pointudvikling
+      if(perStage.length){
+        var maxCum=Math.max.apply(null,[1].concat(labels.map(function(l){return cum[l];})));
+        html+='<div class="octitle">Pointudvikling</div><div class="card"><div class="cardbody">';
+        // kumulative barer
+        labels.forEach(function(l,i){
+          var w=Math.round(100*cum[l]/maxCum);
+          html+='<div class="duelbar"><span>'+l+'</span><span class="bar"><i style="width:'+w+'%;background:'+(i===0?'var(--accent)':'var(--model)')+'"></i></span><span class="mono">'+fmtV(cum[l])+'</span></div>';
+        });
+        // tabel pr. etape
+        html+='<div class="scrollx" style="margin-top:12px"><table class="board"><thead><tr><th>Etape</th>'+
+          labels.map(function(l){return '<th>'+l+'</th>';}).join('')+'<th>Forskel</th></tr></thead><tbody>'+
+          perStage.map(function(row){
+            var a=row[labels[0]]||0, b=row[labels[1]]||0, diff=a-b;
+            return '<tr><td>E'+row.num+'</td>'+labels.map(function(l){return '<td class="mono">'+fmtV(row[l]||0)+'</td>';}).join('')+
+              '<td class="mono '+(diff>0?'up':(diff<0?'down':''))+'">'+(diff>0?'+':'')+fmtV(diff)+'</td></tr>';
+          }).join('')+'</tbody></table></div>';
+        html+='<p class="note" style="margin-top:8px">Beregnet fra pointmatrixen: sum af ejede rytteres vækst pr. etape, kaptajn tæller dobbelt. Bruger holdets roster for hver runde efterhånden som historikken bygges op.</p></div></div>';
+      } else {
+        html+='<div class="optbar" style="border-color:var(--border-2);background:var(--surface);color:var(--muted);margin-top:12px">Ingen afsluttede etaper endnu — pointudviklingen fyldes fra etape 1.</div>';
+      }
+      wrap.innerHTML=html;
+    });
   })();
 </script>
 <script src="nav.js"></script>

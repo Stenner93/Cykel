@@ -1,0 +1,32 @@
+{
+  "generated": "2026-08-23T15:27:11.534552+00:00",
+  "teams": {
+    "Anders": {
+      "team_id": 7271757,
+      "current": {
+        "riders": [
+          "Wout van Aert",
+          "Léo Bisiaux",
+          "Pau Miquel",
+          "Ben Turner",
+          "Ethan Hayter",
+          "Finn Fisher-Black",
+          "Callum Thornley",
+          "Christophe Laporte"
+        ],
+        "captain": "Wout van Aert",
+        "bank_M": 3.0
+      },
+      "history": {}
+    },
+    "Kasper": {
+      "team_id": 7272262,
+      "current": {
+        "riders": [],
+        "captain": null,
+        "bank_M": null
+      },
+      "history": {}
+    }
+  }
+}
