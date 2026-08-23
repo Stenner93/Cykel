@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-23T15:37:52.755104+00:00",
+  "generated": "2026-08-23T16:05:11.382300+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
@@ -30,6 +30,19 @@
             "Christophe Laporte"
           ],
           "captain": "Wout van Aert"
+        },
+        "1": {
+          "riders": [
+            "Wout van Aert",
+            "Ethan Hayter",
+            "Ivan Romeo",
+            "Stefan Küng",
+            "Joshua Tarling",
+            "Finn Fisher-Black",
+            "Callum Thornley",
+            "Sander De Pestel"
+          ],
+          "captain": "Joshua Tarling"
         }
       }
     },
@@ -62,6 +75,19 @@
             "Finn Fisher-Black"
           ],
           "captain": "Wout van Aert"
+        },
+        "1": {
+          "riders": [
+            "Wout van Aert",
+            "Lucas Hamilton",
+            "Ethan Hayter",
+            "Ivan Romeo",
+            "Stefan Küng",
+            "Ivo Oliveira",
+            "Joshua Tarling",
+            "Finn Fisher-Black"
+          ],
+          "captain": "Joshua Tarling"
         }
       }
     }
