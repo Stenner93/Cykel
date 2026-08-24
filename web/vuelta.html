@@ -15,6 +15,7 @@
     --model:#4C9BE8;                  /* kvantitativ model = blå */
     --optakt:#F0A93B;                 /* kvalitativ optakt = guld  */
     --good:#25C685; --warn:#FFB020; --bad:#FF7A59; --info:#4C9BE8;
+    --storm:#B48CE8;                  /* storform-tip = lilla — bevidst IKKE gul/optakt, da storform ikke er bundet til én kilde */
     --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
     --sans:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
     --shadow:0 1px 2px rgba(0,0,0,.5),0 12px 32px rgba(0,0,0,.4);
@@ -72,6 +73,7 @@
   .chip.opt{color:var(--optakt);border-color:rgba(240,169,59,.4);background:rgba(240,169,59,.10)}
   .chip.mdl{color:var(--model);border-color:rgba(76,155,232,.4);background:rgba(76,155,232,.08)}
   .chip.mine{color:var(--accent);border-color:rgba(228,0,43,.45);background:var(--accent-soft)}
+  .chip.storm{color:var(--storm);border-color:rgba(180,140,232,.45);background:rgba(180,140,232,.10)}
   tr.ownrow>td{background:var(--accent-soft)}
   .up{color:var(--good)} .down{color:var(--bad)} .flat{color:var(--muted)}
 
@@ -226,11 +228,15 @@
   /* Levende konsol: kaptajn-duel + enigheds-strip + to-kilde signaler */
   .octitle{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
   .duel{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .duel2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
   .capcard{border:1px solid var(--border);border-top-width:3px;border-radius:12px;padding:11px 13px;background:var(--surface)}
   .capcard .who{font-size:.64rem;text-transform:uppercase;letter-spacing:.07em;font-weight:700;color:var(--muted)}
   .capcard .cap{font-weight:800;font-size:1.05rem;margin-top:3px;color:var(--ink)}
   .capcard .sub{font-size:.74rem;color:var(--muted);margin-top:3px}
   .capcard.feltet{border-top-color:var(--optakt)} .capcard.simon{border-top-color:var(--good)} .capcard.model{border-top-color:var(--model)}
+  .capcard .secblk{margin-top:8px}
+  .capcard .secblk h6{margin:0 0 2px;font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2);font-weight:700}
+  .capcard .secblk p{margin:0;font-size:.74rem;color:var(--muted);line-height:1.45}
   .verdict{display:flex;align-items:center;gap:9px;margin:12px 0 4px;padding:10px 13px;border-radius:10px;font-weight:650;font-size:.86rem;line-height:1.45}
   .verdict.ok{color:var(--good);border:1px solid rgba(37,198,133,.4);background:rgba(37,198,133,.08)}
   .verdict.split{color:var(--warn);border:1px solid rgba(255,176,32,.4);background:rgba(255,176,32,.08)}
@@ -277,8 +283,8 @@
   .board td:first-child{font-family:var(--sans);font-weight:650}
   .board tr.best td{background:var(--accent-soft)}
   .board tr.best td:first-child{color:var(--accent)}
-  .board th.sortable{cursor:pointer;user-select:none;white-space:nowrap}
-  .board th.sortable:hover{color:var(--ink)}
+  .board th.sortable,.matrix th.sortable{cursor:pointer;user-select:none;white-space:nowrap}
+  .board th.sortable:hover,.matrix th.sortable:hover{color:var(--ink)}
   .fieldctrl{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:10px}
   .fclbl{font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:7px}
   .fclbl select{font-family:inherit;font-size:.82rem;font-weight:600;color:var(--ink);background:var(--card);
@@ -587,12 +593,19 @@
       for(i=0;i<ks.length;i++){ v=co[ks[i]]; if(v!=null){ s+=v; n++; } }
       return n? s/n : 0;
     }
+    // Har rytteren CO-ratings overhovedet? ~15% af feltet mangler en CO-profil
+    // (unge/nye ryttere som Fisher-Black) — de vises stadig (exp kræver ikke CO),
+    // men fit kan ikke beregnes og vises som "–" i stedet for et vildledende 0.
+    function hasCO(r){ return !!(r.co && Object.keys(r.co).length); }
     // Ren scenarie-fit (0-100): enkelt-scenarie, eller gennemsnit over de blandede.
     // Vises i 'fit'-kolonnen — det rå CO-disciplin-match, uden exp eller tie-break.
+    // Returnerer null (ikke 0) uden CO-data, så det kan skelnes fra "dårlig fit".
     function fitScore(r){
+      if(!hasCO(r)) return null;
       if(mixMode){ var ks=mixKeys(); if(!ks.length) return 0; var s=0; ks.forEach(function(k){ s+=fit(r,SCEN[k]); }); return s/ks.length; }
       return fit(r, SCEN[curScen] || SCEN.bakket);
     }
+    function fitDisp(r){ var v=fitScore(r); return v==null ? '–' : Math.round(v); }
     // Forventet vækst for det valgte scenarie (kr). exp_sc har én værdi pr.
     // scenarie (genberegnet af modellen i buildet); i mix = snit over de valgte.
     // Falder tilbage til etapens rigtige exp hvis scenarie-data mangler.
@@ -611,7 +624,8 @@
     // højere fit (Vine), mens scenarie-knapperne stadig flytter rækkefølgen (fit er
     // W_EXP-andelen). + ≤0,01 fra CO-snittet som tie-break ved fuldstændig lighed.
     function SCORE(r){
-      var blended = (1-W_EXP)*fitScore(r) + W_EXP*expNorm(r);
+      var fs = fitScore(r); if(fs==null) fs = 0;   // ingen CO → ren exp-drevet rangering
+      var blended = (1-W_EXP)*fs + W_EXP*expNorm(r);
       return blended + coAvg(r)*1e-4;
     }
     function scenLabel(){
@@ -649,7 +663,7 @@
         case 'name':  return (r.name||'').toLowerCase();
         case 'team':  return (r.team||'').toLowerCase();
         case 'price': return r.price||0;
-        case 'fit':   return fitScore(r);
+        case 'fit':   return fitScore(r)||0;
         case 'exp':   return expOf(r);
         case 'value': return expOf(r)/Math.max(r.price,0.1);
         default:      return SCORE(r);   // 'score'
@@ -686,7 +700,7 @@
           th('fit','fit')+th('exp','exp')+th('value','value')+'</tr></thead><tbody>' +
         rows.map(function(r,i){
           return '<tr'+(OWNED[nrm(r.name)]?' class="ownrow"':'')+'><td>'+(i+1)+'</td><td>'+r.name+optMark(r.name)+ownMark(r.name)+'</td><td>'+r.team+'</td>' +
-            '<td class="tnum">'+r.price+'</td><td class="tnum">'+Math.round(fitScore(r))+'</td>' +
+            '<td class="tnum">'+r.price+'</td><td class="tnum"'+(hasCO(r)?'':' title="ingen CO-profil — kun exp-drevet"')+'>'+fitDisp(r)+'</td>' +
             '<td class="mono">'+fmtK(expOf(r))+'</td><td class="mono">'+fmtVal(r)+'</td></tr>';
         }).join('') + '</tbody>';
       // klik på kolonne → skift sortering (samme kolonne = vend retning)
@@ -757,7 +771,7 @@
         var lis = sorted.map(function(r){
           var isCap = r === cap;
           return '<li'+(isCap?' class="cap"':'')+'><span class="rn">'+(isCap?'★ ':'')+r.name+
-            ' <small>'+r.team+'</small></span><span class="rp">'+r.price+'M · '+Math.round(fitScore(r))+'</span></li>';
+            ' <small>'+r.team+'</small></span><span class="rp">'+r.price+'M · '+fitDisp(r)+'</span></li>';
         }).join('');
         return '<div class="team '+d.key+'"><h4>'+d.name+'<span class="cost">'+d.t.cost.toFixed(1)+'/50M</span></h4><ul>'+lis+'</ul></div>';
       }).join('');
@@ -769,12 +783,16 @@
       // Scenariets højeste exp → normalisering af exp-andelen i SCORE. Sæt FØR sortering
       // (expOf afhænger af curScen/mixMode, som allerede er sat her).
       curMaxExp = Math.max.apply(null, all.map(function(r){ return expOf(r); }).concat([1]));
-      var scored = all.filter(function(r){ return r.co && Object.keys(r.co).length; });
+      // ALLE Holdet-startere vises (exp kræver ikke CO) — kun fit mangler for de
+      // ~15% uden CO-profil (vises som "–", se fitDisp). At filtrere dem væk her
+      // gjorde optakt-favoritter som Fisher-Black usynlige i hele feltet/teams.
+      var scored = all.slice();
       scored.sort(function(a,b){ return SCORE(b) - SCORE(a); });
       var cap = scored[0];
+      var coN = all.filter(hasCO).length;
 
       $('vMeta').textContent = (st.name || ('Etape ' + st.num)) + ' · ' + st.type + stageMeta(st) + ' · ' + scenLabel();
-      $('vCov').textContent = 'CO-dækning ' + scored.length + '/' + all.length;
+      $('vCov').textContent = all.length + ' ryttere · CO-fit ' + coN + '/' + all.length;
 
       var o = optOf();
       $('vOptBar').innerHTML = (o && (o.scenario || o.source)) ?
@@ -787,7 +805,7 @@
           '<span class="rk tnum">' + (i+1) + '</span>' +
           '<span class="nm">' + r.name + (i===0?' <span class="star">★ kaptajn</span>':'') + optMark(r.name) + ownMark(r.name) +
             '<small>' + r.team + ' · ' + r.price + 'M</small></span>' +
-          '<span class="fuse"><span class="m mono">fit ' + Math.round(fitScore(r)) + '</span>' +
+          '<span class="fuse"><span class="m mono">fit ' + fitDisp(r) + '</span>' +
             '<span class="arw">·</span><span class="f mono">' + fmtK(expOf(r)) + '</span></span>' +
         '</div>';
       }).join('');
@@ -833,9 +851,14 @@
       var rs=(st.riders||[]).slice().sort(function(a,b){ return (b.exp||0)-(a.exp||0); });
       var m={}; rs.forEach(function(r,i){ m[r.id]=i+1; }); return {order:rs, rank:m};
     }
-    function capCard(cls, who, cap, sub){
+    // sections = valgfri liste af {h,t} underoverskrifter (Rute/Kaptajn/Favoritter osv.)
+    // for hurtigt at afkode en lang optakt — falder tilbage til flad note-tekst.
+    function capCard(cls, who, cap, sub, sections){
+      var body = (sections && sections.length)
+        ? sections.map(function(sec){ return '<div class="secblk"><h6>'+sec.h+'</h6><p>'+sec.t+'</p></div>'; }).join('')
+        : (sub ? ('<div class="sub">'+sub+'</div>') : '');
       return '<div class="capcard '+cls+'"><div class="who">'+who+'</div>'+
-        '<div class="cap">'+(cap||'–')+'</div>'+(sub?('<div class="sub">'+sub+'</div>'):'')+'</div>';
+        '<div class="cap">'+(cap||'–')+'</div>'+body+'</div>';
     }
     function renderConsole(idx){
       var body=$('ocBody'); if(!body) return;
@@ -858,8 +881,8 @@
 
       // A · Kaptajn-duel
       html+='<div class="octitle">Kaptajn-duel</div><div class="duel">'+
-        capCard('feltet','Feltet', fc, f.note||'')+
-        capCard('simon','Simon K. Kjær', sc, s.note||'')+
+        capCard('feltet','Feltet', fc, f.note||'', f.sections)+
+        capCard('simon','Simon K. Kjær', sc, s.note||'', s.sections)+
         capCard('model','Model · højest exp', mc, mc?('exp '+fmtK((mr.order[0]||{}).exp)):'')+
         '</div>';
       var oneOnly = (!!fc) !== (!!sc);   // præcis én kilde har vejet ind
@@ -888,6 +911,23 @@
           '<div class="line"><b>Kun Simon:</b> '+chips(onlyS,'src-s')+'</div></div>'+
         '</div>';
 
+      // C2 · Hold-valg — det faktiske hold kilden ender med (når teksten angiver
+      // det eksplicit, typisk kun via billede ellers). Genbruger samme farvekoder
+      // som resten af konsollen (gold=Feltet, grøn=Simon). Placeres FØR
+      // signaludtræk, som ønsket.
+      function teamCard(cls, who, team){
+        if(!team) return '';
+        var rows='';
+        if(team.keeps && team.keeps.length) rows+='<div class="line"><b>Beholder:</b> '+team.keeps.join(', ')+'</div>';
+        if(team.buys && team.buys.length) rows+='<div class="line"><b>Køber:</b> '+team.buys.join(', ')+'</div>';
+        if(team.captain) rows+='<div class="line"><b>Kaptajn:</b> '+team.captain+'</div>';
+        if(team.note) rows+='<div class="line" style="color:var(--muted)">'+team.note+'</div>';
+        if(!rows) return '';
+        return '<div class="capcard '+cls+'"><div class="who">'+who+'</div>'+rows+'</div>';
+      }
+      var teamHtml = teamCard('feltet','Feltets hold', f.team) + teamCard('simon','Simons hold', s.team);
+      if(teamHtml) html+='<div class="octitle">Hold-valg</div><div class="duel2">'+teamHtml+'</div>';
+
       // B · Signaludtræk pr. kilde + konsensus + model-exp
       var reg={};
       function regOf(n){ reg[n]=reg[n]||{name:n}; return reg[n]; }
@@ -899,13 +939,21 @@
       var list=Object.keys(reg).map(function(k){ return reg[k]; });
       function sc2(r){ return (r.f?1:0)+(r.s?1:0)+((r.f&&r.s)?2:0); }
       list.sort(function(a,b){ return sc2(b)-sc2(a); });
-      html+='<div class="octitle">Signaludtræk — to kilder</div><div class="sig">';
+      html+='<div class="octitle">Signaludtræk — to kilder</div>'+
+        '<p class="fchint" style="margin:0 0 8px">Farvekode: '+
+        '<span class="chip src-f" style="padding:1px 6px">Feltet</span> '+
+        '<span class="chip src-s" style="padding:1px 6px">Simon</span> '+
+        '<span class="chip cons" style="padding:1px 6px">konsensus (begge)</span> '+
+        '<span class="chip storm" style="padding:1px 6px">storform</span> (kurateret tip — ikke bundet til én kilde) '+
+        '<span class="chip bad" style="padding:1px 6px">undgå</span> '+
+        '<span class="chip mdl" style="padding:1px 6px">model lav</span></p>'+
+        '<div class="sig">';
       list.forEach(function(r){
         var mdl=riderByName(st, r.name), chipsH='';
         if(r.f&&r.s) chipsH+='<span class="chip cons">konsensus ▲▲</span>';
         else { if(r.f) chipsH+='<span class="chip src-f">Feltet</span>'; if(r.s) chipsH+='<span class="chip src-s">Simon</span>'; }
         if(r.fa||r.sa) chipsH+='<span class="chip bad">undgå'+((r.fa&&r.sa)?' (begge)':'')+'</span>';
-        if(r.storm) chipsH+='<span class="chip warn">storform</span>';
+        if(r.storm) chipsH+='<span class="chip storm">storform</span>';
         if(r.storm && mdl && (mr.rank[mdl.id]||99)>12) chipsH+='<span class="chip mdl">model lav</span>';
         var mx = mdl ? ('<span class="mx">exp '+fmtK(mdl.exp)+' · #'+(mr.rank[mdl.id]||'–')+'</span>') : '<span class="mx">ej i felt</span>';
         html+='<div class="row"><span class="nm">'+r.name+'</span>'+mx+'<span class="sp">'+chipsH+'</span></div>';
@@ -999,7 +1047,7 @@
       html+='<div class="octitle">Billig storform · value under 6 mio.</div><div class="card"><div class="cardbody">';
       storm.forEach(function(r){
         html+='<div class="pick"><span class="rk">★</span><span class="nm">'+r.name+' <small>'+r.team+' · '+r.price+'M</small></span>'+
-          '<span class="fuse"><span class="f mono">'+fmtK(expReal(r))+'</span><span class="chip opt" style="margin-left:6px">optakt storform</span></span></div>';
+          '<span class="fuse"><span class="f mono">'+fmtK(expReal(r))+'</span><span class="chip storm" style="margin-left:6px">storform</span></span></div>';
       });
       cheap.forEach(function(r){
         if(storm.indexOf(r)>=0) return;
@@ -1089,26 +1137,54 @@
   (function(){
     var wrap = document.getElementById('pmWrap');
     if(!wrap) return;
+    var pmSort = {col:'tot', dir:-1};   // default: Total, faldende
+    var STAGES=[], RIDERS=[], ANY_PTS=false;
+    function pmVal(r, col){
+      if(col==='name') return (r.name||'').toLowerCase();
+      if(col==='tot') return r._tot||0;
+      var v=(r.pts||{})[col]; return v==null ? -Infinity : +v;   // manglende etape sorterer sidst
+    }
+    function cell(v){ if(v==null||v==='') return '<td class="z">·</td>'; var k=Math.round(v/1000);
+      return '<td class="'+(k<0?'down':(k>0?'up':'z'))+'">'+k+'</td>'; }
+    function th(col, label, cls){
+      var a = pmSort.col===col ? (pmSort.dir<0?' ▾':' ▴') : '';
+      return '<th class="sortable'+(cls?(' '+cls):'')+'" data-col="'+col+'">'+label+a+'</th>';
+    }
+    function draw(){
+      var rows = RIDERS.slice().sort(function(a,b){
+        var va=pmVal(a,pmSort.col), vb=pmVal(b,pmSort.col);
+        if(typeof va==='string') return pmSort.dir*va.localeCompare(vb,'da');
+        return pmSort.dir*((va)-(vb));
+      });
+      var head = '<thead><tr>'+th('name','Rytter')+th('tot','Total')+
+        STAGES.map(function(s){ return th(String(s.num), 'E'+s.num); }).join('') + '</tr></thead>';
+      var body = '<tbody>' + rows.map(function(r){
+        return '<tr><td class="rn">'+r.name+' <small>'+r.team+'</small></td>' +
+          '<td class="tot">'+(r._tot? Math.round(r._tot/1000) : '')+'</td>' +
+          STAGES.map(function(s){ var v=(r.pts||{})[s.num]; return cell(v===undefined?null:v); }).join('') +
+        '</tr>';
+      }).join('') + '</tbody>';
+      wrap.innerHTML = (ANY_PTS ? '' :
+        '<div class="optbar" style="border-color:var(--border-2);background:var(--surface);color:var(--muted)">Ingen point endnu — matrixen fyldes automatisk fra etape 1 (værdier i tusinder kr).</div>') +
+        '<p class="fchint" style="margin:6px 0">klik en kolonne for at sortere</p>' +
+        '<div class="scrollx"><table class="matrix">'+head+body+'</table></div>';
+      var ths=wrap.querySelectorAll('th.sortable');
+      for(var i=0;i<ths.length;i++){ (function(el){
+        el.addEventListener('click', function(){
+          var c=el.getAttribute('data-col');
+          if(pmSort.col===c) pmSort.dir=-pmSort.dir;
+          else { pmSort.col=c; pmSort.dir=(c==='name'||c==='team')?1:-1; }
+          draw();
+        });
+      })(ths[i]); }
+    }
     fetch('data/vuelta2026_scores.json', {cache:'no-cache'})
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
       .then(function(d){
-        var stages = d.stages || [], riders = (d.riders || []).slice();
-        riders.forEach(function(r){ var t=0,p=r.pts||{}; for(var k in p) t+=(+p[k]||0); r._tot=t; });
-        var anyPts = riders.some(function(r){ return Object.keys(r.pts||{}).length; });
-        riders.sort(function(a,b){ return b._tot-a._tot || (b.price||0)-(a.price||0); });
-        function cell(v){ if(v==null||v==='') return '<td class="z">·</td>'; var k=Math.round(v/1000);
-          return '<td class="'+(k<0?'down':(k>0?'up':'z'))+'">'+k+'</td>'; }
-        var head = '<thead><tr><th class="rn">Rytter</th><th>Total</th>' +
-          stages.map(function(s){ return '<th title="'+String(s.name||'').replace(/"/g,'')+'">E'+s.num+'</th>'; }).join('') + '</tr></thead>';
-        var body = '<tbody>' + riders.map(function(r){
-          return '<tr><td class="rn">'+r.name+' <small>'+r.team+'</small></td>' +
-            '<td class="tot">'+(r._tot? Math.round(r._tot/1000) : '')+'</td>' +
-            stages.map(function(s){ var v=(r.pts||{})[s.num]; return cell(v===undefined?null:v); }).join('') +
-          '</tr>';
-        }).join('') + '</tbody>';
-        wrap.innerHTML = (anyPts ? '' :
-          '<div class="optbar" style="border-color:var(--border-2);background:var(--surface);color:var(--muted)">Ingen point endnu — matrixen fyldes automatisk fra etape 1 (værdier i tusinder kr).</div>') +
-          '<div class="scrollx"><table class="matrix">'+head+body+'</table></div>';
+        STAGES = d.stages || []; RIDERS = (d.riders || []).slice();
+        RIDERS.forEach(function(r){ var t=0,p=r.pts||{}; for(var k in p) t+=(+p[k]||0); r._tot=t; });
+        ANY_PTS = RIDERS.some(function(r){ return Object.keys(r.pts||{}).length; });
+        draw();
       })
       .catch(function(e){ wrap.innerHTML = '<p class="src">Kunne ikke hente pointmatrix ('+e.message+'). Bygges af den daglige kørsel.</p>'; });
   })();
