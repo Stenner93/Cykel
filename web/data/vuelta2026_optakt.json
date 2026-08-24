@@ -10,7 +10,23 @@
       "avoid": [
         "rytternavn"
       ],
-      "note": "kort resumé"
+      "note": "kort resumé — bruges KUN hvis 'sections' udelades",
+      "sections": [
+        {
+          "h": "Underoverskrift (fri, fx Ruten/Kaptajn/Favoritter/Undgå/Billigt)",
+          "t": "afsnittekst"
+        }
+      ],
+      "team": {
+        "keeps": [
+          "rytternavn beholdes"
+        ],
+        "buys": [
+          "rytternavn indkøbes"
+        ],
+        "captain": "kaptajnvalg i det faktiske hold",
+        "note": "fx transferantal/pris — kun når kilden eksplicit angiver holdet i tekst (ikke kun billede)"
+      }
     },
     "simon": {
       "captain": "rytternavn",
@@ -20,7 +36,23 @@
       "avoid": [
         "rytternavn"
       ],
-      "note": "kort resumé"
+      "note": "kort resumé — bruges KUN hvis 'sections' udelades",
+      "sections": [
+        {
+          "h": "Underoverskrift (fri)",
+          "t": "afsnittekst"
+        }
+      ],
+      "team": {
+        "keeps": [
+          "rytternavn beholdes"
+        ],
+        "buys": [
+          "rytternavn indkøbes"
+        ],
+        "captain": "kaptajnvalg i det faktiske hold",
+        "note": "fx transferantal/pris"
+      }
     },
     "train": {
       "finisher": "rytternavn",
@@ -35,7 +67,7 @@
       "#2",
       "#3"
     ],
-    "_kommentar": "favorites/avoid/captain afledes automatisk til konsensus hvis udeladt. Navne matches som delstreng (ikke case-følsomt)."
+    "_kommentar": "favorites/avoid/captain afledes automatisk til konsensus hvis udeladt. Navne matches som delstreng (ikke case-følsomt). 'sections' er FRIE underoverskrifter — vælges pr. optakt ud fra hvad teksten faktisk indeholder (ikke faste på tværs af kilder/etaper), og vises i kaptajn-duel-kortet i stedet for 'note'. 'team' er det faktiske hold kilden ender med (kun når eksplicit i tekst) — vises i et nyt 'Hold-valg'-afsnit FØR signaludtræk, med samme farvekoder som resten (gold=Feltet, grøn=Simon). storform er bevidst IKKE farvet som en kilde (lilla chip) — det er et kurateret tip, ikke nødvendigvis fra én bestemt kilde."
   },
   "_example": {
     "21": {
@@ -98,7 +130,29 @@
           "Jay Vine",
           "Fisher-Black"
         ],
-        "note": "9,4 km teknisk enkeltstart i Monaco. Van Aert favorit + kaptajn. Går uden om Pogačar og Vine (for dyre); Mads Pedersen stærk, men skippes pga. budget/Top15-bonus. Tarling er en sen tilføjelse — sørgeugen kan hæmme ham. Billige fund: Thornley, De Pestel, Chamberlain; holdbonus via Kruijswijk/Bernard/Armirail."
+        "note": "9,4 km teknisk enkeltstart i Monaco. Van Aert favorit + kaptajn. Går uden om Pogačar og Vine (for dyre); Mads Pedersen stærk, men skippes pga. budget/Top15-bonus. Tarling er en sen tilføjelse — sørgeugen kan hæmme ham. Billige fund: Thornley, De Pestel, Chamberlain; holdbonus via Kruijswijk/Bernard/Armirail.",
+        "sections": [
+          {
+            "h": "Ruten",
+            "t": "9,4 km teknisk enkeltstart i Monaco."
+          },
+          {
+            "h": "Kaptajn",
+            "t": "Van Aert favorit + kaptajn."
+          },
+          {
+            "h": "Undgå",
+            "t": "Går uden om Pogačar og Vine (for dyre); Mads Pedersen stærk, men skippes pga. budget/Top15-bonus."
+          },
+          {
+            "h": "Tvivlsomt",
+            "t": "Tarling er en sen tilføjelse — sørgeugen kan hæmme ham."
+          },
+          {
+            "h": "Billigt",
+            "t": "Thornley, De Pestel, Chamberlain; holdbonus via Kruijswijk/Bernard/Armirail."
+          }
+        ]
       },
       "storform": [
         "Callum Thornley",
@@ -129,7 +183,29 @@
           "Tadej Pogacar",
           "Joao Almeida"
         ],
-        "note": "Opdateret 10:15. Kaptajn fordelt på 6 hold: 4× Tarling, 1× Pogačar, 1× Wout. Højest tiltro (flest hold): Küng, Hayter, van Aert, Tarling. Stamme Tarling+van Aert+Küng på alle hold. Går uden om Pogačar (for dyr) og skeptisk over for Almeida. Køber Fisher-Black (flyvende, topkandidat til E2). Dagens sats: Jay Vine (C). Billige: Kluckers, De Pestel, Chamberlain, Hamilton (Tarling-holdbonus). NB: Turner tvivlsom søndag (3000 hm, INEOS har Laurance), men stærk på TT'en."
+        "note": "Opdateret 10:15. Kaptajn fordelt på 6 hold: 4× Tarling, 1× Pogačar, 1× Wout. Højest tiltro (flest hold): Küng, Hayter, van Aert, Tarling. Stamme Tarling+van Aert+Küng på alle hold. Går uden om Pogačar (for dyr) og skeptisk over for Almeida. Køber Fisher-Black (flyvende, topkandidat til E2). Dagens sats: Jay Vine (C). Billige: Kluckers, De Pestel, Chamberlain, Hamilton (Tarling-holdbonus). NB: Turner tvivlsom søndag (3000 hm, INEOS har Laurance), men stærk på TT'en.",
+        "sections": [
+          {
+            "h": "Kaptajnfordeling",
+            "t": "Opdateret 10:15. Kaptajn fordelt på 6 hold: 4× Tarling, 1× Pogačar, 1× Wout. Højest tiltro (flest hold): Küng, Hayter, van Aert, Tarling. Stamme Tarling+van Aert+Küng på alle hold."
+          },
+          {
+            "h": "Undgå",
+            "t": "Går uden om Pogačar (for dyr) og skeptisk over for Almeida."
+          },
+          {
+            "h": "Køb",
+            "t": "Køber Fisher-Black (flyvende, topkandidat til E2). Dagens sats: Jay Vine (C)."
+          },
+          {
+            "h": "Billigt",
+            "t": "Kluckers, De Pestel, Chamberlain, Hamilton (Tarling-holdbonus)."
+          },
+          {
+            "h": "NB",
+            "t": "Turner tvivlsom søndag (3000 hm, INEOS har Laurance), men stærk på TT'en."
+          }
+        ]
       }
     },
     "2": {
@@ -156,7 +232,29 @@
           "Jordi Meeus",
           "Kaden Groves"
         ],
-        "note": "Decimeret spurt på stigende finale (Monaco>Manosque). Kaptajn van Aert = soleklar favorit: jagter førertrøjen + indlagt spurt (20 pt/pointtrøje) + etapesejr = potentiale ~560k. Pedersen næsten lige så stærk vinderbud, men går efter etapen alene (~420k). Pogačar ikke prioritet (men behold hvis du har ham). Meeus/Groves: etapen for hård. Turner passer stigende finale (vandt lignende sidste år); Aular/Coquard klatrer bedre i år. Billig top-15: Miquel, Romele, Labrosse; holdbonus via Kruijswijk/Bernard."
+        "note": "Decimeret spurt på stigende finale (Monaco>Manosque). Kaptajn van Aert = soleklar favorit: jagter førertrøjen + indlagt spurt (20 pt/pointtrøje) + etapesejr = potentiale ~560k. Pedersen næsten lige så stærk vinderbud, men går efter etapen alene (~420k). Pogačar ikke prioritet (men behold hvis du har ham). Meeus/Groves: etapen for hård. Turner passer stigende finale (vandt lignende sidste år); Aular/Coquard klatrer bedre i år. Billig top-15: Miquel, Romele, Labrosse; holdbonus via Kruijswijk/Bernard.",
+        "sections": [
+          {
+            "h": "Ruten",
+            "t": "Decimeret spurt på stigende finale (Monaco>Manosque)."
+          },
+          {
+            "h": "Kaptajn",
+            "t": "Van Aert = soleklar favorit: jagter førertrøjen + indlagt spurt (20 pt/pointtrøje) + etapesejr = potentiale ~560k. Pedersen næsten lige så stærk vinderbud, men går efter etapen alene (~420k)."
+          },
+          {
+            "h": "Undgå",
+            "t": "Pogačar ikke prioritet (men behold hvis du har ham). Meeus/Groves: etapen for hård."
+          },
+          {
+            "h": "Godt til prisen",
+            "t": "Turner passer stigende finale (vandt lignende sidste år); Aular/Coquard klatrer bedre i år."
+          },
+          {
+            "h": "Billigt",
+            "t": "Miquel, Romele, Labrosse; holdbonus via Kruijswijk/Bernard."
+          }
+        ]
       },
       "storform": [
         "Pau Miquel",
@@ -185,7 +283,37 @@
           "Alessandro Romele"
         ],
         "avoid": [],
-        "note": "Kaptajn van Aert (ikke i tvivl). Dagens sats: Brennan (C). Van Aert + Pedersen indlysende, men SKIPPER Pedersen (differential mod hans enorme ejerskab) — beholder Tarling, køber Laporte + Bisiaux + Miquel. Har man Pedersen SKAL han kaptajneres. Sen bonusspurt (6-4-2 sek): Hayter/van Aert/Laporte/Tarling/Fisher-Black jagter førertrøjen. Fisher-Black krydser flere bokse (GC-bonus + spurt + Red Bull-støtte). Billigst: Miquel > Labrosse/Romele."
+        "note": "Kaptajn van Aert (ikke i tvivl). Dagens sats: Brennan (C). Van Aert + Pedersen indlysende, men SKIPPER Pedersen (differential mod hans enorme ejerskab) — beholder Tarling, køber Laporte + Bisiaux + Miquel. Har man Pedersen SKAL han kaptajneres. Sen bonusspurt (6-4-2 sek): Hayter/van Aert/Laporte/Tarling/Fisher-Black jagter førertrøjen. Fisher-Black krydser flere bokse (GC-bonus + spurt + Red Bull-støtte). Billigst: Miquel > Labrosse/Romele.",
+        "sections": [
+          {
+            "h": "Kaptajn",
+            "t": "Van Aert (ikke i tvivl). Dagens sats: Brennan (C)."
+          },
+          {
+            "h": "Transferstrategi",
+            "t": "Van Aert + Pedersen indlysende, men SKIPPER Pedersen (differential mod hans enorme ejerskab) — beholder Tarling, køber Laporte + Bisiaux + Miquel. Har man Pedersen SKAL han kaptajneres."
+          },
+          {
+            "h": "Bonusspurt",
+            "t": "Sen bonusspurt (6-4-2 sek): Hayter/van Aert/Laporte/Tarling/Fisher-Black jagter førertrøjen. Fisher-Black krydser flere bokse (GC-bonus + spurt + Red Bull-støtte)."
+          },
+          {
+            "h": "Billigst",
+            "t": "Miquel > Labrosse/Romele."
+          }
+        ],
+        "team": {
+          "keeps": [
+            "Joshua Tarling"
+          ],
+          "buys": [
+            "Christophe Laporte",
+            "Léo Bisiaux",
+            "Pau Miquel"
+          ],
+          "captain": "Wout van Aert",
+          "note": "Skipper Pedersen bevidst (differential mod hans store ejerskab), selvom han ville være topfavorit til kaptajn hvis man havde ham."
+        }
       },
       "veloscore_top": [
         "Wout van Aert",
@@ -227,7 +355,57 @@
           "Thibau Nys",
           "Paret-Peintre"
         ],
-        "note": "Optaktsholdet er #50 overall. Font Romeu: langt fladt indløb, så lange bjerge op over 1900 m (aldrig pokkers stejle) — for hårdt for spurterne (van Aert/Aular ude). Mulig udbrudsetape, men UAE kan føre for sejren. E3+E4 ses som en serie. Kaptajn Pogačar — modvilligt, for der er intet alternativt kaptajnvalg (Onley/Carapaz endnu ikke i samlet top-10). Must-haves: Fisher-Black + Bisiaux (toppen af klassementet, favoritter til udbrud + førertrøje). Udbrudsbud (tabte lidt tid, med i første gruppe søndag): Debruyne, Laurance, Brenner, Tulett, Tejada, Torres, Vine. GC-køb: Onley bedst over de næste to dage, lige foran Carapaz; Johannessen/Kuss/Mas god værdi. Vent med Gall/Skjelmose/Nordhagen til tirsdag. Undgå udbrudsryttere der har tabt tid: Romeo, Castrillo, Nys, Paret-Peintre. Dagens sats: Fisher-Black (C). A-hold: 6 transfers (-399k), køber Pogačar + Torres (holdbonus ved Pogačar-sejr) + Debruyne + Barta + Leemreize + Gaffuri."
+        "note": "Optaktsholdet er #50 overall. Font Romeu: langt fladt indløb, så lange bjerge op over 1900 m (aldrig pokkers stejle) — for hårdt for spurterne (van Aert/Aular ude). Mulig udbrudsetape, men UAE kan føre for sejren. E3+E4 ses som en serie. Kaptajn Pogačar — modvilligt, for der er intet alternativt kaptajnvalg (Onley/Carapaz endnu ikke i samlet top-10). Must-haves: Fisher-Black + Bisiaux (toppen af klassementet, favoritter til udbrud + førertrøje). Udbrudsbud (tabte lidt tid, med i første gruppe søndag): Debruyne, Laurance, Brenner, Tulett, Tejada, Torres, Vine. GC-køb: Onley bedst over de næste to dage, lige foran Carapaz; Johannessen/Kuss/Mas god værdi. Vent med Gall/Skjelmose/Nordhagen til tirsdag. Undgå udbrudsryttere der har tabt tid: Romeo, Castrillo, Nys, Paret-Peintre. Dagens sats: Fisher-Black (C). A-hold: 6 transfers (-399k), køber Pogačar + Torres (holdbonus ved Pogačar-sejr) + Debruyne + Barta + Leemreize + Gaffuri.",
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Optaktsholdet er #50 overall."
+          },
+          {
+            "h": "Rute",
+            "t": "Font Romeu: langt fladt indløb, så lange bjerge op over 1900 m (aldrig pokkers stejle) — for hårdt for spurterne (van Aert/Aular ude). Mulig udbrudsetape, men UAE kan føre for sejren. E3+E4 ses som en serie."
+          },
+          {
+            "h": "Kaptajn",
+            "t": "Pogačar — modvilligt, for der er intet alternativt kaptajnvalg (Onley/Carapaz endnu ikke i samlet top-10)."
+          },
+          {
+            "h": "Must-haves",
+            "t": "Fisher-Black + Bisiaux (toppen af klassementet, favoritter til udbrud + førertrøje)."
+          },
+          {
+            "h": "Udbrudsbud",
+            "t": "Debruyne, Laurance, Brenner, Tulett, Tejada, Torres, Vine (tabte lidt tid, med i første gruppe søndag)."
+          },
+          {
+            "h": "GC-køb",
+            "t": "Onley bedst over de næste to dage, lige foran Carapaz; Johannessen/Kuss/Mas god værdi. Vent med Gall/Skjelmose/Nordhagen til tirsdag."
+          },
+          {
+            "h": "Undgå",
+            "t": "Udbrudsryttere der har tabt tid: Romeo, Castrillo, Nys, Paret-Peintre."
+          },
+          {
+            "h": "Dagens sats",
+            "t": "Fisher-Black (C)."
+          }
+        ],
+        "team": {
+          "keeps": [
+            "Finn Fisher-Black",
+            "Léo Bisiaux"
+          ],
+          "buys": [
+            "Tadej Pogacar",
+            "Pablo Torres",
+            "Ramses Debruyne",
+            "William Barta",
+            "Gijs Leemreize",
+            "Mattia Gaffuri"
+          ],
+          "captain": "Tadej Pogacar",
+          "note": "A-hold: 6 transfers (-399k). Torres giver holdbonus ved Pogačar-sejr og trender under +50."
+        }
       },
       "storform": [
         "William Barta",
@@ -255,7 +433,33 @@
           "Julien Bernard"
         ],
         "avoid": [],
-        "note": "Ingemann (Feltet+), hold #2.630 overall. Lettere bjergetape med to lange, bløde stigninger — svær at spå, så atypisk strategi: hverken lyst til at skifte alt eller beholde alt. Eneste sikre valg: Pogačar (sikker på etapesejr + førertrøje hvis intet udbrud holder, og endnu mere oplagt i morgen) — soleklar kaptajn. Hvis feltet slås om sejren tror han UAE hærder finalen: Johannessen + Mas bedst til prisen blandt GC-ryttere, kan ramme Top 10 i dag og topresultat i morgen. Overvejede at beholde van Aert (jagter tabt førertrøje/pointtrøje i udbrud; kan i topform også matche GC-rytterne). Fisher-Black + Bisiaux interessante til begge scenarier, men lidt dyre og ikke favoritter i morgen. Størst tiltro til Debruyne (Top15-kandidat i favoritopgør + næse for rette udbrud, begge dage) og Tejada (samme profil, god spurt). Flad åbning gavner udbrudsspecialister Kron + Leknessund. Billigt: Aparicio (begrænser tidstab), Leemreize (i topform), Gaffuri (stærk på de første bjergetaper). Beholder Kruijswijk eller Bernard."
+        "note": "Ingemann (Feltet+), hold #2.630 overall. Lettere bjergetape med to lange, bløde stigninger — svær at spå, så atypisk strategi: hverken lyst til at skifte alt eller beholde alt. Eneste sikre valg: Pogačar (sikker på etapesejr + førertrøje hvis intet udbrud holder, og endnu mere oplagt i morgen) — soleklar kaptajn. Hvis feltet slås om sejren tror han UAE hærder finalen: Johannessen + Mas bedst til prisen blandt GC-ryttere, kan ramme Top 10 i dag og topresultat i morgen. Overvejede at beholde van Aert (jagter tabt førertrøje/pointtrøje i udbrud; kan i topform også matche GC-rytterne). Fisher-Black + Bisiaux interessante til begge scenarier, men lidt dyre og ikke favoritter i morgen. Størst tiltro til Debruyne (Top15-kandidat i favoritopgør + næse for rette udbrud, begge dage) og Tejada (samme profil, god spurt). Flad åbning gavner udbrudsspecialister Kron + Leknessund. Billigt: Aparicio (begrænser tidstab), Leemreize (i topform), Gaffuri (stærk på de første bjergetaper). Beholder Kruijswijk eller Bernard.",
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Ingemann (Feltet+), hold #2.630 overall."
+          },
+          {
+            "h": "Rute & strategi",
+            "t": "Lettere bjergetape med to lange, bløde stigninger — svær at spå, så atypisk strategi: hverken lyst til at skifte alt eller beholde alt."
+          },
+          {
+            "h": "Kaptajn",
+            "t": "Eneste sikre valg: Pogačar (sikker på etapesejr + førertrøje hvis intet udbrud holder, og endnu mere oplagt i morgen) — soleklar kaptajn."
+          },
+          {
+            "h": "Klassement",
+            "t": "Hvis feltet slås om sejren tror han UAE hærder finalen: Johannessen + Mas bedst til prisen blandt GC-ryttere, kan ramme Top 10 i dag og topresultat i morgen. Overvejede at beholde van Aert (jagter tabt førertrøje/pointtrøje i udbrud; kan i topform også matche GC-rytterne)."
+          },
+          {
+            "h": "Udbrudskandidater",
+            "t": "Fisher-Black + Bisiaux interessante til begge scenarier, men lidt dyre og ikke favoritter i morgen. Størst tiltro til Debruyne (Top15-kandidat i favoritopgør + næse for rette udbrud, begge dage) og Tejada (samme profil, god spurt). Flad åbning gavner udbrudsspecialister Kron + Leknessund."
+          },
+          {
+            "h": "Billigt",
+            "t": "Aparicio (begrænser tidstab), Leemreize (i topform), Gaffuri (stærk på de første bjergetaper). Beholder Kruijswijk eller Bernard."
+          }
+        ]
       },
       "veloscore_top": [
         "Tadej Pogacar",
