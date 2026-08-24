@@ -54,6 +54,8 @@ FIRST_NAME_ALIASES: dict[str, str] = {
     "mathieu": "mat",
     "alexander": "alex",
     "alex": "alexander",
+    "eddie": "edward",   # Holdet: "Eddie Dunbar" → CO: "Edward Dunbar"
+    "edward": "eddie",
 }
 
 OVERRIDES_PATH = CACHE_DIR / "co_url_overrides.json"
@@ -81,8 +83,17 @@ RATING_PAT  = re.compile(
 # ---------------------------------------------------------------------------
 
 def fetch_all_co_urls() -> list[str]:
+    """
+    Hardcoded to 3 sitemap sider fandt kun 703 ryttere — for lidt, da flere
+    kendte WorldTour-navne (Finn Fisher-Black, m.fl.) manglede helt fra
+    URL-listen (ikke et navnematch-problem: deres slugs findes ikke i de 3
+    hentede sider overhovedet). Bliver ved med at hente sider til en er tom
+    (eller vi rammer et sikkerhedsloft), så vi ikke er afhængige af at gætte
+    det rigtige sidetal.
+    """
     urls = []
-    for page in range(1, 4):
+    MAX_PAGES = 12   # sikkerhedsloft — CO har aldrig haft nær så mange sider
+    for page in range(1, MAX_PAGES + 1):
         sitemap = (
             f"https://www.cyclingoracle.com/nl/"
             f"sitemaps-1-section-riders-1-sitemap-p{page}.xml"
@@ -91,10 +102,13 @@ def fetch_all_co_urls() -> list[str]:
             r = requests.get(sitemap, headers=HEADERS, timeout=30)
             soup = BeautifulSoup(r.text, "xml")
             locs = [l.text for l in soup.find_all("loc") if "/renners/" in l.text]
-            urls.extend(locs)
             print(f"  Sitemap p{page}: {len(locs)} rider URLs")
+            if not locs:
+                break   # ingen flere sider
+            urls.extend(locs)
         except Exception as e:
             print(f"  Sitemap p{page} error: {e}")
+            break
         time.sleep(0.4)
     return urls
 

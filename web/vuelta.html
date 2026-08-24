@@ -724,12 +724,37 @@
       var cand = pool.filter(function(r){ return r.price > 0 && !(opts.exclude && opts.exclude[r.id]); });
       if(cand.length < SIZE) return {team:cand.slice(), cost:cand.reduce(function(s,r){ return s+r.price; },0)};
       function val(r){ var v = SCORE(r); if(opts.penalize && opts.penalize[r.id]) v *= (opts.penalizeFactor||0.5); return v; }
-      var minP = Math.min.apply(null, cand.map(function(r){ return r.price; }));
       var ranked = cand.slice().sort(function(a,b){ return val(b) - val(a); });
       var team = [], cost = 0, ids = {};
+      // Reserve til resterende pladser = summen af de N BILLIGSTE STADIG LEDIGE
+      // kandidater (ikke en statisk global minimumspris — hvis den billigste
+      // rytter allerede er brugt, eller ikke findes nok af dem, undervurderede
+      // en fast minP reserven og loven kunne løbe tør for budget FØR 8 pladser
+      // var fyldt, selvom der reelt var råd. Genberegnes pr. iteration (billig
+      // nok: ≤183 ryttere).
+      var byPrice = cand.slice().sort(function(a,b){ return a.price-b.price; });
+      function reserveFor(need){
+        var sum=0, n=0;
+        for(var k=0;k<byPrice.length && n<need;k++){
+          if(ids[byPrice[k].id]) continue;
+          sum += byPrice[k].price; n++;
+        }
+        return sum;
+      }
       for(var i=0;i<ranked.length && team.length<SIZE;i++){
-        var r = ranked[i], reserve = (SIZE - team.length - 1) * minP;
-        if(cost + r.price + reserve <= BUD){ team.push(r); cost += r.price; ids[r.id]=1; }
+        var r = ranked[i];
+        if(ids[r.id]) continue;
+        var reserve = reserveFor(SIZE - team.length - 1);
+        if(cost + r.price + reserve <= BUD + 1e-6){ team.push(r); cost += r.price; ids[r.id]=1; }
+      }
+      // Sikkerhedsnet: fyld resterende pladser med de billigste tilgængelige
+      // indenfor budget, uanset værdi-rangering — garanterer 8 ryttere når det
+      // overhovedet er muligt, selv i skæve edge-cases den grådige runde ikke ramte.
+      if(team.length < SIZE){
+        var rest = cand.filter(function(r){ return !ids[r.id]; }).sort(function(a,b){ return a.price-b.price; });
+        for(var j=0;j<rest.length && team.length<SIZE;j++){
+          if(cost + rest[j].price <= BUD + 1e-6){ team.push(rest[j]); cost += rest[j].price; ids[rest[j].id]=1; }
+        }
       }
       // Hill-climb: bytt en rytter ud for en bedre, betalbar → hæver samlet nytte og bruger budgettet.
       var guard = 0, improved = true;
@@ -740,7 +765,7 @@
           var best = null, bestGain = 1e-6;
           for(var ci=0; ci<cand.length; ci++){
             var cin = cand[ci];
-            if(ids[cin.id] || cin.price > budgetOut) continue;
+            if(ids[cin.id] || cin.price > budgetOut + 1e-6) continue;
             var gain = val(cin) - val(out);
             if(gain > bestGain){ bestGain = gain; best = cin; }
           }
