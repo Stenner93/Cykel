@@ -84,16 +84,23 @@ RATING_PAT  = re.compile(
 
 def fetch_all_co_urls() -> list[str]:
     """
-    Hardcoded to 3 sitemap sider fandt kun 703 ryttere — for lidt, da flere
+    Hardcoded til 3 sitemap-sider fandt kun 703 ryttere — for lidt, da flere
     kendte WorldTour-navne (Finn Fisher-Black, m.fl.) manglede helt fra
     URL-listen (ikke et navnematch-problem: deres slugs findes ikke i de 3
-    hentede sider overhovedet). Bliver ved med at hente sider til en er tom
-    (eller vi rammer et sikkerhedsloft), så vi ikke er afhængige af at gætte
-    det rigtige sidetal.
+    hentede sider overhovedet). Henter derfor et fast, større antal sider
+    i stedet for et gæt på 3.
+
+    VIGTIGT: forsøger ALLE sider uanset om en enkelt undervejs kommer tomt
+    tilbage (transient netværksfejl/rate-limit på præcis den side) — kun
+    en request-exception stopper løkken tidligt. En tidligere version brød
+    løkken ved første tomme side, hvilket viste sig skrøbeligt: en enkelt
+    tom p1 (fx pga. midlertidig rate-limiting) droppede ALLE sider og gav
+    0 matchede ryttere i en CI-kørsel, selvom p2/p3 sandsynligvis stadig
+    ville have virket (som i den gamle faste 3-siders-udgave).
     """
     urls = []
-    MAX_PAGES = 12   # sikkerhedsloft — CO har aldrig haft nær så mange sider
-    for page in range(1, MAX_PAGES + 1):
+    N_PAGES = 8   # fast antal — højere end de 3 der manglede kendte navne
+    for page in range(1, N_PAGES + 1):
         sitemap = (
             f"https://www.cyclingoracle.com/nl/"
             f"sitemaps-1-section-riders-1-sitemap-p{page}.xml"
@@ -102,14 +109,15 @@ def fetch_all_co_urls() -> list[str]:
             r = requests.get(sitemap, headers=HEADERS, timeout=30)
             soup = BeautifulSoup(r.text, "xml")
             locs = [l.text for l in soup.find_all("loc") if "/renners/" in l.text]
-            print(f"  Sitemap p{page}: {len(locs)} rider URLs")
-            if not locs:
-                break   # ingen flere sider
+            print(f"  Sitemap p{page}: HTTP {r.status_code}, {len(locs)} rider URLs")
             urls.extend(locs)
         except Exception as e:
             print(f"  Sitemap p{page} error: {e}")
-            break
         time.sleep(0.4)
+    if not urls:
+        print("  [ADVARSEL] Ingen sitemap-URLs hentet fra nogen side — "
+              "CyclingOracle kan være nede eller rate-limiter. "
+              "Ingen ryttere kan matches i denne kørsel; prøver igen næste kørsel.")
     return urls
 
 
@@ -362,7 +370,7 @@ def main():
     else:
         riders = json.loads((DATA / "riders.json").read_text(encoding="utf-8"))
 
-    print(f"\nHenter CyclingOracle sitemap URLs ({3} sider)...")
+    print("\nHenter CyclingOracle sitemap URLs...")
     co_urls = fetch_all_co_urls()
     print(f"Total CO rider URLs: {len(co_urls)}")
 
