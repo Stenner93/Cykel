@@ -82,25 +82,30 @@ RATING_PAT  = re.compile(
 # Step 1: Collect all CyclingOracle rider URLs
 # ---------------------------------------------------------------------------
 
-def fetch_all_co_urls() -> list[str]:
+def fetch_all_co_urls(max_pages: int = 3) -> list[str]:
     """
-    Hardcoded til 3 sitemap-sider fandt kun 703 ryttere — for lidt, da flere
-    kendte WorldTour-navne (Finn Fisher-Black, m.fl.) manglede helt fra
-    URL-listen (ikke et navnematch-problem: deres slugs findes ikke i de 3
-    hentede sider overhovedet). Henter derfor et fast, større antal sider
-    i stedet for et gæt på 3.
+    Hardcoded til 3 sitemap-sider fandt historisk kun 703 ryttere — for lidt,
+    da flere kendte WorldTour-navne (Finn Fisher-Black, m.fl.) manglede helt
+    fra URL-listen (ikke et navnematch-problem: deres slugs findes ikke i de
+    3 hentede sider overhovedet).
 
-    VIGTIGT: forsøger ALLE sider uanset om en enkelt undervejs kommer tomt
-    tilbage (transient netværksfejl/rate-limit på præcis den side) — kun
-    en request-exception stopper løkken tidligt. En tidligere version brød
-    løkken ved første tomme side, hvilket viste sig skrøbeligt: en enkelt
-    tom p1 (fx pga. midlertidig rate-limiting) droppede ALLE sider og gav
-    0 matchede ryttere i en CI-kørsel, selvom p2/p3 sandsynligvis stadig
-    ville have virket (som i den gamle faste 3-siders-udgave).
+    VIGTIGT om max_pages: 3 sider ad gangen har kørt problemfrit i lang tid.
+    Da vi forsøgsvist skruede op til 8 sider ubetinget hver kørsel, begyndte
+    CyclingOracle at svare HTTP 403 på ALLE sider — vedvarende i flere timer
+    på tværs af adskilte kørsler (verificeret i CI-logs). Mest sandsynlige
+    årsag: 8 hurtige requests til sitemap-endpointet (0.4s mellemrum) udløste
+    en WAF/rate-limit-regel som 3 requests aldrig gjorde. main() kalder derfor
+    denne funktion FØRST med max_pages=3 (det historisk sikre niveau), og
+    eskalerer kun til flere sider hvis der stadig mangler matches bagefter —
+    så det almindelige tilfælde forbliver så tæt på det velafprøvede mønster
+    som muligt, og de ekstra sider kun hentes når det faktisk er nødvendigt.
+
+    Forsøger ALLE sider op til max_pages uanset om en enkelt undervejs kommer
+    tomt tilbage — kun en request-exception stopper løkken tidligt (en
+    tidligere version brød ved første tomme side, hvilket var skrøbeligt).
     """
     urls = []
-    N_PAGES = 8   # fast antal — højere end de 3 der manglede kendte navne
-    for page in range(1, N_PAGES + 1):
+    for page in range(1, max_pages + 1):
         sitemap = (
             f"https://www.cyclingoracle.com/nl/"
             f"sitemaps-1-section-riders-1-sitemap-p{page}.xml"
@@ -370,18 +375,40 @@ def main():
     else:
         riders = json.loads((DATA / "riders.json").read_text(encoding="utf-8"))
 
-    print("\nHenter CyclingOracle sitemap URLs...")
-    co_urls = fetch_all_co_urls()
-    print(f"Total CO rider URLs: {len(co_urls)}")
+    # Sitemap-hentning var UBETINGET før — kørte på hver eneste daglige kørsel
+    # uanset om der overhovedet var noget at matche (typisk 0 manglende
+    # ryttere de fleste dage). Det er unødvendig belastning på CO's sitemap-
+    # endpoint (8 requests × flere kørsler/dag), som med al sandsynlighed er
+    # præcis det der udløste en HTTP 403 rate-limit i CI en dag med usædvanligt
+    # mange kørsler. Springes nu helt over når intet mangler.
+    if riders:
+        # Start med 3 sider (det historisk problemfri niveau). Eskalerer kun
+        # til flere sider hvis nogen ryttere stadig mangler bagefter — se
+        # fetch_all_co_urls()'s docstring for hvorfor (8 sider ubetinget
+        # udløste en vedvarende HTTP 403 fra CO).
+        print("\nHenter CyclingOracle sitemap URLs...")
+        co_urls = fetch_all_co_urls(max_pages=3)
+        print(f"Total CO rider URLs: {len(co_urls)}")
 
-    print(f"\nMatcher {len(riders)} ryttere mod CO URLs...")
-    matched_map, unmatched = match_riders(co_urls, riders)
-    print(f"  Matchede:    {len(matched_map)}")
-    print(f"  Ikke matchede: {len(unmatched)}")
-    if unmatched:
-        print("  Ikke matchede ryttere:")
-        for name in sorted(unmatched):
-            print(f"    - {name}")
+        print(f"\nMatcher {len(riders)} ryttere mod CO URLs...")
+        matched_map, unmatched = match_riders(co_urls, riders)
+
+        if unmatched and co_urls:
+            print(f"\n{len(unmatched)} ryttere ikke matchet i de første 3 sider — "
+                  f"prøver flere sider (deres profiler kan ligge længere ude)...")
+            co_urls = fetch_all_co_urls(max_pages=8)
+            print(f"Total CO rider URLs (udvidet): {len(co_urls)}")
+            matched_map, unmatched = match_riders(co_urls, riders)
+
+        print(f"  Matchede:    {len(matched_map)}")
+        print(f"  Ikke matchede: {len(unmatched)}")
+        if unmatched:
+            print("  Ikke matchede ryttere:")
+            for name in sorted(unmatched):
+                print(f"    - {name}")
+    else:
+        print("\nAlle ryttere allerede i cache — springer sitemap-hentning over.")
+        matched_map, unmatched = {}, []
 
     # Apply manual URL overrides for edge cases the algorithm can't match
     url_overrides: dict = {}
