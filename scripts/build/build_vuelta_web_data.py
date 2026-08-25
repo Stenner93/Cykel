@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import unicodedata
 from datetime import datetime, timezone
@@ -46,6 +47,28 @@ VUELTA_CARTRIDGE = "vuelta-2026"
 VUELTA_PCS_RACE  = "vuelta-a-espana/2026"
 VUELTA_RAW_DIR   = DATA / "cache" / "vuelta2026_raw"
 PLAYERS_CACHE = DATA / "cache" / "vuelta2026_players.json"
+
+_STAGE_NUM_PAT = re.compile(r"^\s*(\d+)\.\s*Etape")
+
+
+def _true_stage_num(eid: int, event_info: dict, fallback: int) -> int:
+    """
+    Etape 3 blev annulleret (vejr) og Holdet har lagt runde 3+4 sammen — deres
+    /api/schedules events-array har derfor ÉN post mindre end antal etaper, så
+    en simpel positionsbaseret enumerate(events, start=1) ville give en runde
+    et forkert (etape_nr - 1) "stage_num" fra og med etape 4 og fremefter. Det
+    ville sende profile_score/vmeters/stage-type-opslag (som er keyet efter
+    RIGTIGE PCS-etapenumre, uberørt af Holdets rundesammenlægning) galt af sted
+    for resten af løbet — samme for manuelle odds/veloscore/optakt-filer.
+
+    Holdets eget event-navn indeholder stadig det ægte etapenummer som tekst
+    (fx "4. Etape - Andorra la Vella > Andorra la Vella"), så vi udleder
+    stage_num derfra i stedet for array-positionen. Falder tilbage til
+    positionen hvis navnet ikke matcher det forventede mønster.
+    """
+    name = event_info.get(eid, {}).get("name", "")
+    m = _STAGE_NUM_PAT.match(name)
+    return int(m.group(1)) if m else fallback
 
 
 def load_veloscore_stage(stage_num: int) -> list[dict]:
@@ -583,7 +606,8 @@ def main() -> None:
     all_summaries: dict[int, dict[int, int]] = {}
     summary_available = False
 
-    for stage_num, eid in enumerate(events, start=1):
+    for _pos, eid in enumerate(events, start=1):
+        stage_num = _true_stage_num(eid, event_info, _pos)
         if event_info.get(eid, {}).get("status") != "finished":
             continue
 
@@ -689,7 +713,8 @@ def main() -> None:
 
     stages_pred: list[dict] = []
 
-    for stage_num, eid in enumerate(events, start=1):
+    for _pos, eid in enumerate(events, start=1):
+        stage_num = _true_stage_num(eid, event_info, _pos)
         info   = event_info.get(eid, {})
         status = info.get("status", "upcoming")
 
@@ -1000,7 +1025,8 @@ def main() -> None:
             act_idx.setdefault((snum, a["personId"]), []).append(a)
 
     stages_meta_matrix = []
-    for stage_num, eid in enumerate(events, start=1):
+    for _pos, eid in enumerate(events, start=1):
+        stage_num = _true_stage_num(eid, event_info, _pos)
         info  = event_info.get(eid, {})
         stype = (
             _h.pcs_override_stage_type(VUELTA_CARTRIDGE, stage_num)
