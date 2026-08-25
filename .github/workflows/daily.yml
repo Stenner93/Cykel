@@ -13,6 +13,12 @@ on:
     # For enhver deadline i vinduet får man automatisk en kørsel ~1 time før
     # OG ~0,5 time før (frisk pris/startliste + gen-beregnede point til deadline).
     - cron: '0,30 9-12 * * *'
+    # 15:00–18:30 dansk hver halve time: dækker selve etapen. Holdet serverer
+    # først en rundes lineup når transferruden er LÅST (typisk = etapestart),
+    # så dette er første chance for at hente det FAKTISKE hold — og løbende
+    # herefter fanges levende pointvækst i Holdduel mens etapen kører, i
+    # stedet for kun ved aftenopdateringen efter den er slut.
+    - cron: '0,30 13-16 * * *'
     - cron: '30 19 * * *'      # 21:30 dansk — aftenopdatering (efter etapen: GT-resultater m.m.)
 
   # 2. Manuel kørsel fra GitHub-app eller browser (også på telefon).
