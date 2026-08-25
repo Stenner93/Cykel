@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-25T17:05:43.105834+00:00",
+  "generated": "2026-08-25T19:57:04.564843+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
@@ -43,6 +43,19 @@
             "Sander De Pestel"
           ],
           "captain": "Joshua Tarling"
+        },
+        "3": {
+          "riders": [
+            "Tadej Pogacar",
+            "Léo Bisiaux",
+            "Pau Miquel",
+            "Fabio Van den Bossche",
+            "Steven Kruijswijk",
+            "Richard Carapaz",
+            "Domen Novak",
+            "Mario Aparicio"
+          ],
+          "captain": "Tadej Pogacar"
         }
       }
     },
@@ -88,6 +101,19 @@
             "Finn Fisher-Black"
           ],
           "captain": "Joshua Tarling"
+        },
+        "3": {
+          "riders": [
+            "Jakob Omrzel",
+            "Léo Bisiaux",
+            "Tadej Pogacar",
+            "Ramses Debruyne",
+            "Steven Kruijswijk",
+            "Jarno Widar",
+            "Mario Aparicio",
+            "Pau Miquel"
+          ],
+          "captain": "Tadej Pogacar"
         }
       }
     }
