@@ -613,13 +613,32 @@ def fetch_team_history(
     player_by_id: dict[int, dict],
     person_by_id: dict[int, dict],
 ) -> dict[str, dict]:
-    """Hent den FAKTISKE lineup for hver AFSLUTTET runde (rundens point tilhører
-    det hold der var på i netop den runde — ikke det aktuelle hold). Runde n =
-    etape n. Returnerer {str(runde): {"riders": [...], "captain": navn}}.
+    """Hent den FAKTISKE lineup for hver LÅST runde (rundens point tilhører
+    det hold der var på i netop den runde — ikke det aktuelle hold).
+    Returnerer {str(SAND etapenummer): {"riders": [...], "captain": navn}}.
 
-    Kun runder hvis slut ligger i fortiden tælles med: deres lineup er låst og
-    afspejler præcis det hold der scorede. Rytterne i en rundes lineup ER netop
-    den rundes hold (endpointet er rundescopet), så vi tager alle mapbare items.
+    To ting der let går galt her, begge pga. at Holdet lagde runde 3+4
+    sammen efter den annullerede 3. etape:
+
+    1. Holdets EGET rundenummer er forskudt -1 fra det RIGTIGE fysiske
+       etapenummer fra og med den sammenlagte runde (samme rodårsag som
+       _true_stage_num() i build_vuelta_web_data.py — se den for detaljer).
+       vuelta2026_scores.json bruger allerede det RIGTIGE etapenummer, så
+       hvis vi her gemte under Holdets rå rundenummer ville historikken
+       aldrig matche pointmatrixen (Holdduel ville vise "–" for enhver
+       etape fra og med sammenlægningen, selvom både roster og point
+       reelt findes). Udleder derfor sand etapenummer ved at krydstjekke
+       runde-positionen mod schedule-eventets navn (indeholder stadig det
+       ægte etapenummer som tekst), ligesom i build_vuelta_web_data.py.
+       Selve API-kaldet til /rounds/{n}/lineup skal stadig bruge Holdets
+       EGET rundenummer — kun NØGLEN i det returnerede dict ændres.
+
+    2. En runde er fetchable så snart dens transfervindue LÅSER (~runde-
+       START = etapestart), ikke først når etapen er FÆRDIGKØRT (runde-
+       SLUT). At filtrere på "slut i fortiden" udelod derfor den etape
+       der kører lige nu, selvom holdet allerede er låst og kan hentes —
+       brugeren efterlyste netop dagens hold mens etapen kørte. Bruger nu
+       samme "start i fortiden"-kriterie som fetch_my_team().
     """
     from datetime import datetime, timezone
 
@@ -635,17 +654,37 @@ def fetch_team_history(
         print(f"  [WARN] Kunne ikke hente runder (historik) for game {game_id}: {exc}")
         return {}
 
+    # Holdets rundenummer → sandt fysisk etapenummer, via positionsmatch
+    # mod schedule-events (samme sammenlægning rammer begge lister ens).
+    true_num_by_round: dict[int, int] = {}
+    try:
+        events, event_info = fetch_schedule(game_id)
+        stage_pat = re.compile(r"^\s*(\d+)\.\s*Etape")
+        rounds_sorted = sorted(
+            (r for r in rounds if isinstance(r.get("number"), int)),
+            key=lambda r: r["number"],
+        )
+        for i, r in enumerate(rounds_sorted):
+            if i >= len(events):
+                break
+            name = event_info.get(events[i], {}).get("name", "")
+            m = stage_pat.match(name)
+            true_num_by_round[r["number"]] = int(m.group(1)) if m else r["number"]
+    except Exception as exc:
+        print(f"  [WARN] Kunne ikke udlede sande etapenumre til historik ({exc}) — "
+              f"bruger Holdets rå rundenumre som fallback")
+
     now = datetime.now(timezone.utc)
-    completed = []
+    locked = []
     for r in rounds:
         num = r.get("number")
-        end = _parse_dt(r.get("end") or r.get("endDate") or r.get("to"))
-        if isinstance(num, int) and end is not None and end <= now:
-            completed.append(num)
-    completed.sort()
+        start = _parse_dt(r.get("start") or r.get("startDate") or r.get("from"))
+        if isinstance(num, int) and start is not None and start <= now:
+            locked.append(num)
+    locked.sort()
 
     history: dict[str, dict] = {}
-    for n in completed:
+    for n in locked:
         url = f"{BASE}/api/fantasyteams/{team_id}/rounds/{n}/lineup"
         try:
             payload = HTTP.get(url).json()
@@ -665,8 +704,9 @@ def fetch_team_history(
             if is_cap:
                 captain = nm
         if names:
-            history[str(n)] = {"riders": names, "captain": captain}
-            print(f"  [info] historik runde {n}: {len(names)} ryttere"
+            true_n = true_num_by_round.get(n, n)
+            history[str(true_n)] = {"riders": names, "captain": captain}
+            print(f"  [info] historik runde {n} (etape {true_n}): {len(names)} ryttere"
                   + (f", kaptajn {captain}" if captain else ""))
     return history
 
