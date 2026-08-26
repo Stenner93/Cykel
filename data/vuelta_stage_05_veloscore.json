@@ -1,0 +1,26 @@
+{
+  "stage": 5,
+  "source": "VeloScore (13 sources, 38 riders)",
+  "predictions": [
+    {"rank": 1, "rider": "Matthew Brennan", "veloscore": 9.7},
+    {"rank": 2, "rider": "Mads Pedersen", "veloscore": 8.1},
+    {"rank": 3, "rider": "Wout van Aert", "veloscore": 8.1},
+    {"rank": 4, "rider": "Orluis Aular", "veloscore": 5.7},
+    {"rank": 5, "rider": "Ben Turner", "veloscore": 4.9},
+    {"rank": 6, "rider": "Jordi Meeus", "veloscore": 4.8},
+    {"rank": 7, "rider": "Bryan Coquard", "veloscore": 4.6},
+    {"rank": 8, "rider": "Kaden Groves", "veloscore": 4.0},
+    {"rank": 9, "rider": "Hugo Hofstetter", "veloscore": 3.6},
+    {"rank": 10, "rider": "Pau Miquel", "veloscore": 3.4},
+    {"rank": 11, "rider": "Axel Laurance", "veloscore": 2.8},
+    {"rank": 12, "rider": "Alessandro Romele", "veloscore": 2.6},
+    {"rank": 13, "rider": "Finn Fisher-Black", "veloscore": 1.9},
+    {"rank": 14, "rider": "Alberto Dainese", "veloscore": 1.8},
+    {"rank": 15, "rider": "Christophe Laporte", "veloscore": 1.8},
+    {"rank": 16, "rider": "David González", "veloscore": 1.6},
+    {"rank": 17, "rider": "Steffen De Schuyteneer", "veloscore": 1.6},
+    {"rank": 18, "rider": "Magnus Cort", "veloscore": 1.4},
+    {"rank": 19, "rider": "Vito Braet", "veloscore": 1.0},
+    {"rank": 20, "rider": "Marc Brustenga Masague", "veloscore": 1.0}
+  ]
+}
