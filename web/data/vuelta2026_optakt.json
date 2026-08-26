@@ -636,6 +636,104 @@
         "Richard Carapaz",
         "Oscar Onley"
       ]
+    },
+    "5": {
+      "scenario": "redsprint",
+      "simon": {
+        "captain": "Matthew Brennan",
+        "favorites": [
+          "Tadej Pogacar",
+          "Matthew Brennan",
+          "Pau Miquel",
+          "Mads Pedersen",
+          "Orluis Aular",
+          "Alessandro Romele",
+          "Hugo Hofstetter",
+          "Ben Turner",
+          "Axel Laurance",
+          "Finn Fisher-Black",
+          "Vito Braet",
+          "Wout Van Aert",
+          "Bryan Coquard",
+          "David González",
+          "Marc Brustenga Masague",
+          "Steven Kruijswijk",
+          "Julien Bernard",
+          "Jordan Labrosse",
+          "Bastien Tronchon",
+          "Alessandro Covi"
+        ],
+        "avoid": [
+          "Jordi Meeus",
+          "Magnus Cort",
+          "Kaden Groves",
+          "Alexis Renard",
+          "Steffen De Schuyteneer"
+        ],
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Optaktsholdet er #156 overall — kostede 100 placeringer på tirsdagens skelsættende etape, men kun ca. 300k op til top-20."
+          },
+          {
+            "h": "Rute & finale",
+            "t": "Ventes med stor sandsynlighed at ende i en større spurtafgørelse, selvom det bakkede terræn kan friste Movistar eller LIDL-Trek til at prøve at sortere sprinterne ud — forventer dog stort felt til spurt. Finalen stiger 1,6% sidste km med et 90-graders sving 300 m fra mål, så positionering betyder alt."
+          },
+          {
+            "h": "Etapefavorit",
+            "t": "Brennan store favorit — van Aert og Laporte ventes som leadout, men i stand til selv at komme først gennem sidste sving. Mads Pedersen Brennans værste konkurrent, men minus at han ikke kører efter pointtrøjen (sår tvivl om han er sit prisskilt værd)."
+          },
+          {
+            "h": "Bedst til prisen",
+            "t": "Miquel bliver formentlig trendlistens mest populære — bevist højt niveau til god pris. Samme med Romele. Dernæst tillid til Aular, Coquard og Hofstetter (også prisen indregnet)."
+          },
+          {
+            "h": "INEOS-spurter",
+            "t": "Spændt på om INEOS kører for Turner eller Laurance — forventer dog at det er for briten (Turner)."
+          },
+          {
+            "h": "Billigt",
+            "t": "Braet (kan dog risikere at køre for De Schuyteneer), Labrosse, Tronchon og Gonzalez gode valg til prisen."
+          },
+          {
+            "h": "Undgå",
+            "t": "Ser bort fra Meeus, Cort, Groves, Renard og De Schuyteneer af forskellige årsager (pris og form)."
+          },
+          {
+            "h": "Med et øje på 6. etape",
+            "t": "Fisher-Black spændende indkøb — også god kandidat til 6. etape, modsat de fleste andre spurt-kandidater."
+          },
+          {
+            "h": "Transferstrategi",
+            "t": "Med udbrudsetape ventet på 6. etape, blød bjergetape (måske også udbrud) på 7. og enten reduceret spurt eller ny udbrudsafgørelse på 8., er der to veje: beholde Pogačar sikkert (bærer alle tre trøjer, sikre 175k vækst) eller satse og få råd til bedre sprintere. Klar tilhænger af at beholde sloveneren, selvom det går på kompromis med resten af holdets kvalitet."
+          },
+          {
+            "h": "Dagens sats",
+            "t": "Pedersen (C) — som differential-bud, adskilt fra det faktiske kaptajnvalg Brennan."
+          }
+        ],
+        "team": {
+          "keeps": [
+            "Tadej Pogacar",
+            "Steven Kruijswijk",
+            "Julien Bernard"
+          ],
+          "buys": [
+            "Matthew Brennan",
+            "Pau Miquel",
+            "David González",
+            "Alessandro Covi"
+          ],
+          "captain": "Matthew Brennan",
+          "note": "Kun Pogačar, Kruijswijk og Bernard beholdes. Havde ikke råd til Hofstetter efter Brennan+Miquel — Gonzalez (nr. 14 på E2) og Covi i stedet."
+        }
+      },
+      "storform": [
+        "David González",
+        "Alessandro Covi",
+        "Bastien Tronchon",
+        "Jordan Labrosse"
+      ]
     }
   }
 }
