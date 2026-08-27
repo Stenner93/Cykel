@@ -1,0 +1,26 @@
+{
+  "stage": 6,
+  "source": "VeloScore (18 sources, 59 riders)",
+  "predictions": [
+    {"rank": 1, "rider": "Tadej Pogacar", "veloscore": 8.9},
+    {"rank": 2, "rider": "Tobias Halland Johannessen", "veloscore": 6.3},
+    {"rank": 3, "rider": "Ben Tulett", "veloscore": 5.0},
+    {"rank": 4, "rider": "Lorenzo Fortunato", "veloscore": 4.2},
+    {"rank": 5, "rider": "Oscar Onley", "veloscore": 3.8},
+    {"rank": 6, "rider": "Léo Bisiaux", "veloscore": 3.2},
+    {"rank": 7, "rider": "Jay Vine", "veloscore": 3.1},
+    {"rank": 8, "rider": "Felix Gall", "veloscore": 3.1},
+    {"rank": 9, "rider": "Jarno Widar", "veloscore": 2.5},
+    {"rank": 10, "rider": "Primoz Roglic", "veloscore": 2.5},
+    {"rank": 11, "rider": "Pello Bilbao", "veloscore": 2.4},
+    {"rank": 12, "rider": "Santiago Buitrago", "veloscore": 2.3},
+    {"rank": 13, "rider": "Marco Brenner", "veloscore": 1.9},
+    {"rank": 14, "rider": "Harold Tejada", "veloscore": 1.9},
+    {"rank": 15, "rider": "Pablo Castrillo", "veloscore": 1.8},
+    {"rank": 16, "rider": "Enric Mas", "veloscore": 1.8},
+    {"rank": 17, "rider": "Wout van Aert", "veloscore": 1.6},
+    {"rank": 18, "rider": "Richard Carapaz", "veloscore": 1.5},
+    {"rank": 19, "rider": "Finn Fisher-Black", "veloscore": 1.5},
+    {"rank": 20, "rider": "Valentin Paret-Peintre", "veloscore": 1.4}
+  ]
+}
