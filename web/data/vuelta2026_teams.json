@@ -1,20 +1,20 @@
 {
-  "generated": "2026-08-27T08:58:11.471922+00:00",
+  "generated": "2026-08-27T15:59:35.004209+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
       "current": {
         "riders": [
           "Tadej Pogacar",
-          "Alessandro Romele",
-          "Pau Miquel",
+          "Jarno Widar",
+          "Mattia Gaffuri",
           "Julien Bernard",
-          "Matthew Brennan",
-          "Vito Braet",
+          "Harold Tejada",
+          "Ramses Debruyne",
           "Steven Kruijswijk",
-          "Henri-Francois Renard-Haquin"
+          "Enric Mas Nicolau"
         ],
-        "captain": "Matthew Brennan",
+        "captain": "Tadej Pogacar",
         "bank_M": 0.0
       },
       "history": {
@@ -69,6 +69,19 @@
             "Henri-Francois Renard-Haquin"
           ],
           "captain": "Matthew Brennan"
+        },
+        "6": {
+          "riders": [
+            "Tadej Pogacar",
+            "Jarno Widar",
+            "Mattia Gaffuri",
+            "Julien Bernard",
+            "Harold Tejada",
+            "Ramses Debruyne",
+            "Steven Kruijswijk",
+            "Enric Mas Nicolau"
+          ],
+          "captain": "Tadej Pogacar"
         }
       }
     },
@@ -76,14 +89,14 @@
       "team_id": 7272262,
       "current": {
         "riders": [
-          "Matthew Brennan",
-          "Vito Braet",
+          "Ramses Debruyne",
+          "Jarno Widar",
           "Tadej Pogacar",
-          "Alessandro Romele",
+          "Harold Tejada",
+          "Enric Mas Nicolau",
+          "Juan Felipe Rodriguez",
           "Steven Kruijswijk",
-          "Julien Bernard",
-          "Henri-Francois Renard-Haquin",
-          "Pau Miquel"
+          "Julien Bernard"
         ],
         "captain": "Tadej Pogacar",
         "bank_M": 0.0
@@ -138,6 +151,19 @@
             "Julien Bernard",
             "Henri-Francois Renard-Haquin",
             "Pau Miquel"
+          ],
+          "captain": "Tadej Pogacar"
+        },
+        "6": {
+          "riders": [
+            "Ramses Debruyne",
+            "Jarno Widar",
+            "Tadej Pogacar",
+            "Harold Tejada",
+            "Enric Mas Nicolau",
+            "Juan Felipe Rodriguez",
+            "Steven Kruijswijk",
+            "Julien Bernard"
           ],
           "captain": "Tadej Pogacar"
         }

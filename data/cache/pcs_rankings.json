@@ -1,7 +1,7 @@
 {
   "tadej-pogacar": {
     "rank": 1,
-    "pts": 4801.0,
+    "pts": 4881.0,
     "name": "POGAČAR Tadej"
   },
   "remco-evenepoel": {
@@ -16,7 +16,7 @@
   },
   "jonas-vingegaard": {
     "rank": 4,
-    "pts": 2615.0,
+    "pts": 2610.0,
     "name": "VINGEGAARD Jonas"
   },
   "jasper-philipsen": {
@@ -39,15 +39,15 @@
     "pts": 1733.0,
     "name": "MAGNIER Paul"
   },
-  "lenny-martinez": {
+  "mattias-skjelmose-jensen": {
     "rank": 9,
+    "pts": 1560.0,
+    "name": "SKJELMOSE Mattias"
+  },
+  "lenny-martinez": {
+    "rank": 10,
     "pts": 1556.0,
     "name": "MARTINEZ Lenny"
-  },
-  "mattias-skjelmose-jensen": {
-    "rank": 10,
-    "pts": 1554.0,
-    "name": "SKJELMOSE Mattias"
   },
   "christian-scaroni": {
     "rank": 11,
@@ -61,12 +61,12 @@
   },
   "richard-carapaz": {
     "rank": 13,
-    "pts": 1361.0,
+    "pts": 1386.0,
     "name": "CARAPAZ Richard"
   },
   "felix-gall": {
     "rank": 14,
-    "pts": 1359.0,
+    "pts": 1371.0,
     "name": "GALL Felix"
   },
   "giulio-pellizzari": {
@@ -124,25 +124,25 @@
     "pts": 1089.0,
     "name": "HINDLEY Jai"
   },
-  "jay-vine": {
-    "rank": 26,
-    "pts": 1068.0,
-    "name": "VINE Jay"
-  },
   "olav-kooij": {
-    "rank": 27,
+    "rank": 26,
     "pts": 1056.0,
     "name": "KOOIJ Olav"
   },
   "dorian-godon": {
-    "rank": 28,
-    "pts": 1047.0,
+    "rank": 27,
+    "pts": 1043.0,
     "name": "GODON Dorian"
   },
   "laurence-pithie": {
-    "rank": 29,
+    "rank": 28,
     "pts": 1003.0,
     "name": "PITHIE Laurence"
+  },
+  "jay-vine": {
+    "rank": 29,
+    "pts": 988.0,
+    "name": "VINE Jay"
   },
   "jordi-meeus": {
     "rank": 30,
@@ -151,7 +151,7 @@
   },
   "egan-bernal": {
     "rank": 31,
-    "pts": 963.0,
+    "pts": 961.0,
     "name": "BERNAL Egan"
   },
   "matteo-jorgenson": {
@@ -174,25 +174,25 @@
     "pts": 927.0,
     "name": "MERLIER Tim"
   },
-  "giulio-ciccone": {
-    "rank": 36,
-    "pts": 922.0,
-    "name": "CICCONE Giulio"
-  },
   "brandon-mcnulty": {
-    "rank": 37,
+    "rank": 36,
     "pts": 922.0,
     "name": "MCNULTY Brandon"
   },
-  "matthew-riccitello": {
-    "rank": 38,
-    "pts": 893.0,
-    "name": "RICCITELLO Matthew"
+  "giulio-ciccone": {
+    "rank": 37,
+    "pts": 918.0,
+    "name": "CICCONE Giulio"
   },
   "sepp-kuss": {
-    "rank": 39,
-    "pts": 892.0,
+    "rank": 38,
+    "pts": 897.0,
     "name": "KUSS Sepp"
+  },
+  "matthew-riccitello": {
+    "rank": 39,
+    "pts": 893.0,
+    "name": "RICCITELLO Matthew"
   },
   "guillermo-thomas-silva-coussan": {
     "rank": 40,
@@ -264,30 +264,30 @@
     "pts": 804.0,
     "name": "KUBIŠ Lukáš"
   },
-  "joao-almeida": {
-    "rank": 54,
-    "pts": 775.0,
-    "name": "ALMEIDA João"
-  },
   "soren-waerenskjold": {
-    "rank": 55,
+    "rank": 54,
     "pts": 774.0,
     "name": "WÆRENSKJOLD Søren"
   },
   "natnael-tesfatsion": {
-    "rank": 56,
+    "rank": 55,
     "pts": 770.0,
     "name": "TESFATSION Natnael"
   },
-  "max-kanter": {
-    "rank": 57,
-    "pts": 760.0,
-    "name": "KANTER Max"
+  "joao-almeida": {
+    "rank": 56,
+    "pts": 769.0,
+    "name": "ALMEIDA João"
   },
   "harold-tejada": {
-    "rank": 58,
-    "pts": 746.0,
+    "rank": 57,
+    "pts": 764.0,
     "name": "TEJADA Harold"
+  },
+  "max-kanter": {
+    "rank": 58,
+    "pts": 760.0,
+    "name": "KANTER Max"
   },
   "alex-baudin": {
     "rank": 59,
@@ -409,30 +409,30 @@
     "pts": 590.0,
     "name": "VAUQUELIN Kévin"
   },
-  "afonso-eulalio": {
+  "primoz-roglic": {
     "rank": 83,
+    "pts": 588.0,
+    "name": "ROGLIČ Primož"
+  },
+  "afonso-eulalio": {
+    "rank": 84,
     "pts": 584.0,
     "name": "EULÁLIO Afonso"
   },
   "stanislaw-aniolkowski": {
-    "rank": 84,
+    "rank": 85,
     "pts": 581.0,
     "name": "ANIOŁKOWSKI Stanisław"
   },
   "antonio-morgado": {
-    "rank": 85,
+    "rank": 86,
     "pts": 578.0,
     "name": "MORGADO António"
   },
   "corbin-strong": {
-    "rank": 86,
+    "rank": 87,
     "pts": 577.0,
     "name": "STRONG Corbin"
-  },
-  "primoz-roglic": {
-    "rank": 87,
-    "pts": 576.0,
-    "name": "ROGLIČ Primož"
   },
   "marco-brenner": {
     "rank": 88,
@@ -491,12 +491,12 @@
   },
   "antonio-tiberi": {
     "rank": 99,
-    "pts": 539.0,
+    "pts": 538.0,
     "name": "TIBERI Antonio"
   },
   "oscar-onley": {
     "rank": 100,
-    "pts": 531.0,
+    "pts": 535.0,
     "name": "ONLEY Oscar"
   }
 }
