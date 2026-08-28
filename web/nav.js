@@ -9,8 +9,8 @@
     { href: 'riders.html',    label: 'Rytterdatabase', match: ['riders.html'] },
     { href: 'analytics.html', label: 'ML-Analyse',     match: ['analytics.html'] },
     { href: 'model.html',     label: 'Modelforklaring', match: ['model.html'] },
-    { label: 'Arkiv', alignRight: true, match: ['index.html', 'giro.html', 'dauphine.html'], menu: [
-        { href: 'index.html',    label: 'Tour de France 2026' },
+    { label: 'Arkiv', alignRight: true, match: ['tdf.html', 'giro.html', 'dauphine.html'], menu: [
+        { href: 'tdf.html',      label: 'Tour de France 2026' },
         { href: 'giro.html',     label: "Giro d'Italia 2026" },
         { href: 'dauphine.html', label: 'Dauphiné 2026' }
     ] }
