@@ -31,7 +31,7 @@
   },
   "tom-pidcock": {
     "rank": 7,
-    "pts": 1907.0,
+    "pts": 1901.0,
     "name": "PIDCOCK Tom"
   },
   "paul-magnier": {
@@ -64,20 +64,20 @@
     "pts": 1386.0,
     "name": "CARAPAZ Richard"
   },
-  "felix-gall": {
+  "tobias-halland-johannessen": {
     "rank": 14,
     "pts": 1371.0,
+    "name": "JOHANNESSEN Tobias Halland"
+  },
+  "felix-gall": {
+    "rank": 15,
+    "pts": 1366.0,
     "name": "GALL Felix"
   },
   "giulio-pellizzari": {
-    "rank": 15,
-    "pts": 1346.0,
-    "name": "PELLIZZARI Giulio"
-  },
-  "tobias-halland-johannessen": {
     "rank": 16,
-    "pts": 1321.0,
-    "name": "JOHANNESSEN Tobias Halland"
+    "pts": 1344.0,
+    "name": "PELLIZZARI Giulio"
   },
   "tobias-lund-andresen": {
     "rank": 17,
@@ -99,10 +99,10 @@
     "pts": 1174.0,
     "name": "GRÉGOIRE Romain"
   },
-  "juan-ayuso-pesquera": {
+  "wout-van-aert": {
     "rank": 21,
-    "pts": 1170.0,
-    "name": "AYUSO Juan"
+    "pts": 1154.0,
+    "name": "VAN AERT Wout"
   },
   "florian-lipowitz": {
     "rank": 22,
@@ -114,14 +114,14 @@
     "pts": 1140.0,
     "name": "DE LIE Arnaud"
   },
-  "wout-van-aert": {
+  "juan-ayuso-pesquera": {
     "rank": 24,
-    "pts": 1119.0,
-    "name": "VAN AERT Wout"
+    "pts": 1090.0,
+    "name": "AYUSO Juan"
   },
   "jai-hindley": {
     "rank": 25,
-    "pts": 1089.0,
+    "pts": 1086.0,
     "name": "HINDLEY Jai"
   },
   "olav-kooij": {
@@ -129,35 +129,35 @@
     "pts": 1056.0,
     "name": "KOOIJ Olav"
   },
-  "dorian-godon": {
-    "rank": 27,
-    "pts": 1043.0,
-    "name": "GODON Dorian"
-  },
   "laurence-pithie": {
-    "rank": 28,
+    "rank": 27,
     "pts": 1003.0,
     "name": "PITHIE Laurence"
   },
   "jay-vine": {
-    "rank": 29,
+    "rank": 28,
     "pts": 988.0,
     "name": "VINE Jay"
   },
   "jordi-meeus": {
-    "rank": 30,
+    "rank": 29,
     "pts": 972.0,
     "name": "MEEUS Jordi"
   },
   "egan-bernal": {
-    "rank": 31,
+    "rank": 30,
     "pts": 961.0,
     "name": "BERNAL Egan"
   },
   "matteo-jorgenson": {
-    "rank": 32,
+    "rank": 31,
     "pts": 957.0,
     "name": "JORGENSON Matteo"
+  },
+  "dorian-godon": {
+    "rank": 32,
+    "pts": 953.0,
+    "name": "GODON Dorian"
   },
   "christophe-laporte": {
     "rank": 33,
@@ -166,7 +166,7 @@
   },
   "ion-izagirre": {
     "rank": 34,
-    "pts": 932.0,
+    "pts": 935.0,
     "name": "IZAGIRRE Ion"
   },
   "tim-merlier": {
@@ -181,12 +181,12 @@
   },
   "giulio-ciccone": {
     "rank": 37,
-    "pts": 918.0,
+    "pts": 914.0,
     "name": "CICCONE Giulio"
   },
   "sepp-kuss": {
     "rank": 38,
-    "pts": 897.0,
+    "pts": 896.0,
     "name": "KUSS Sepp"
   },
   "matthew-riccitello": {
@@ -279,15 +279,15 @@
     "pts": 769.0,
     "name": "ALMEIDA João"
   },
-  "harold-tejada": {
-    "rank": 57,
-    "pts": 764.0,
-    "name": "TEJADA Harold"
-  },
   "max-kanter": {
-    "rank": 58,
+    "rank": 57,
     "pts": 760.0,
     "name": "KANTER Max"
+  },
+  "harold-tejada": {
+    "rank": 58,
+    "pts": 739.0,
+    "name": "TEJADA Harold"
   },
   "alex-baudin": {
     "rank": 59,
@@ -329,135 +329,135 @@
     "pts": 665.0,
     "name": "BILBAO Pello"
   },
-  "jhonatan-narvaez": {
+  "andreas-leknessund": {
     "rank": 67,
+    "pts": 644.0,
+    "name": "LEKNESSUND Andreas"
+  },
+  "jhonatan-narvaez": {
+    "rank": 68,
     "pts": 642.0,
     "name": "NARVÁEZ Jhonatan"
   },
   "matteo-trentin": {
-    "rank": 68,
+    "rank": 69,
     "pts": 641.0,
     "name": "TRENTIN Matteo"
   },
   "paul-lapeira": {
-    "rank": 69,
+    "rank": 70,
     "pts": 641.0,
     "name": "LAPEIRA Paul"
   },
+  "milan-fretin": {
+    "rank": 71,
+    "pts": 640.0,
+    "name": "FRETIN Milan"
+  },
   "quinn-simmons": {
-    "rank": 70,
+    "rank": 72,
     "pts": 630.0,
     "name": "SIMMONS Quinn"
   },
   "clement-venturini": {
-    "rank": 71,
+    "rank": 73,
     "pts": 623.0,
     "name": "VENTURINI Clément"
   },
   "quinten-hermans": {
-    "rank": 72,
+    "rank": 74,
     "pts": 622.0,
     "name": "HERMANS Quinten"
   },
-  "milan-fretin": {
-    "rank": 73,
-    "pts": 622.0,
-    "name": "FRETIN Milan"
-  },
   "alessandro-fancellu": {
-    "rank": 74,
+    "rank": 75,
     "pts": 621.0,
     "name": "FANCELLU Alessandro"
   },
   "ivan-romeo": {
-    "rank": 75,
+    "rank": 76,
     "pts": 611.0,
     "name": "ROMEO Iván"
   },
   "marc-hirschi": {
-    "rank": 76,
+    "rank": 77,
     "pts": 608.0,
     "name": "HIRSCHI Marc"
   },
   "mike-teunissen": {
-    "rank": 77,
+    "rank": 78,
     "pts": 598.0,
     "name": "TEUNISSEN Mike"
   },
   "derek-gee": {
-    "rank": 78,
+    "rank": 79,
     "pts": 597.0,
     "name": "GEE-WEST Derek"
   },
   "jordan-jegat": {
-    "rank": 79,
+    "rank": 80,
     "pts": 596.0,
     "name": "JEGAT Jordan"
   },
   "cian-uijtdebroeks": {
-    "rank": 80,
+    "rank": 81,
     "pts": 595.0,
     "name": "UIJTDEBROEKS Cian"
   },
   "pavel-bittner": {
-    "rank": 81,
+    "rank": 82,
     "pts": 593.0,
     "name": "BITTNER Pavel"
   },
   "kevin-vauquelin": {
-    "rank": 82,
+    "rank": 83,
     "pts": 590.0,
     "name": "VAUQUELIN Kévin"
   },
   "primoz-roglic": {
-    "rank": 83,
+    "rank": 84,
     "pts": 588.0,
     "name": "ROGLIČ Primož"
   },
   "afonso-eulalio": {
-    "rank": 84,
+    "rank": 85,
     "pts": 584.0,
     "name": "EULÁLIO Afonso"
   },
   "stanislaw-aniolkowski": {
-    "rank": 85,
+    "rank": 86,
     "pts": 581.0,
     "name": "ANIOŁKOWSKI Stanisław"
   },
   "antonio-morgado": {
-    "rank": 86,
+    "rank": 87,
     "pts": 578.0,
     "name": "MORGADO António"
   },
   "corbin-strong": {
-    "rank": 87,
+    "rank": 88,
     "pts": 577.0,
     "name": "STRONG Corbin"
   },
+  "filippo-zana": {
+    "rank": 89,
+    "pts": 574.0,
+    "name": "ZANA Filippo"
+  },
   "marco-brenner": {
-    "rank": 88,
+    "rank": 90,
     "pts": 573.0,
     "name": "BRENNER Marco"
   },
   "yannis-voisard": {
-    "rank": 89,
+    "rank": 91,
     "pts": 572.0,
     "name": "VOISARD Yannis"
   },
-  "filippo-zana": {
-    "rank": 90,
-    "pts": 570.0,
-    "name": "ZANA Filippo"
-  },
   "paul-double": {
-    "rank": 91,
+    "rank": 92,
     "pts": 570.0,
     "name": "DOUBLE Paul"
-  },
-  "andreas-leknessund": {
-    "rank": 92,
-    "pts": 564.0,
-    "name": "LEKNESSUND Andreas"
   },
   "louis-barre": {
     "rank": 93,
