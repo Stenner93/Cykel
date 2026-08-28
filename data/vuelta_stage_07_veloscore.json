@@ -1,0 +1,26 @@
+{
+  "stage": 7,
+  "source": "VeloScore (18 sources, 52 riders)",
+  "predictions": [
+    {"rank": 1, "rider": "Tadej Pogacar", "veloscore": 6.9},
+    {"rank": 2, "rider": "Tobias Halland Johannessen", "veloscore": 6.8},
+    {"rank": 3, "rider": "Jay Vine", "veloscore": 5.6},
+    {"rank": 4, "rider": "Léo Bisiaux", "veloscore": 4.7},
+    {"rank": 5, "rider": "Ben Tulett", "veloscore": 4.6},
+    {"rank": 6, "rider": "Lorenzo Fortunato", "veloscore": 4.2},
+    {"rank": 7, "rider": "Felix Gall", "veloscore": 3.5},
+    {"rank": 8, "rider": "Enric Mas", "veloscore": 3.4},
+    {"rank": 9, "rider": "Santiago Buitrago", "veloscore": 3.2},
+    {"rank": 10, "rider": "Richard Carapaz", "veloscore": 2.6},
+    {"rank": 11, "rider": "Primoz Roglic", "veloscore": 2.4},
+    {"rank": 12, "rider": "Pablo Castrillo", "veloscore": 2.2},
+    {"rank": 13, "rider": "Ivan Romeo", "veloscore": 2.1},
+    {"rank": 14, "rider": "Oscar Onley", "veloscore": 2.0},
+    {"rank": 15, "rider": "Jarno Widar", "veloscore": 2.0},
+    {"rank": 16, "rider": "Pablo Torres", "veloscore": 2.0},
+    {"rank": 17, "rider": "Clement Berthet", "veloscore": 1.7},
+    {"rank": 18, "rider": "Paul Double", "veloscore": 1.7},
+    {"rank": 19, "rider": "Valentin Paret-Peintre", "veloscore": 1.6},
+    {"rank": 20, "rider": "Marco Brenner", "veloscore": 1.6}
+  ]
+}
