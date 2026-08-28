@@ -1,15 +1,15 @@
 {
-  "generated": "2026-08-28T10:47:48.160953+00:00",
+  "generated": "2026-08-28T12:46:27.774019+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
       "current": {
         "riders": [
           "Tadej Pogacar",
-          "Jarno Widar",
-          "Mattia Gaffuri",
-          "Julien Bernard",
-          "Harold Tejada",
+          "Léo Bisiaux",
+          "Mario Aparicio",
+          "Andreas Kron",
+          "Clement Berthet",
           "Ramses Debruyne",
           "Steven Kruijswijk",
           "Enric Mas Nicolau"
@@ -29,7 +29,17 @@
             "Callum Thornley",
             "Christophe Laporte"
           ],
-          "captain": "Wout van Aert"
+          "captain": "Wout van Aert",
+          "prices": {
+            "Wout van Aert": 11.997,
+            "Léo Bisiaux": 5.831,
+            "Pau Miquel": 3.738,
+            "Ben Turner": 5.858,
+            "Ethan Hayter": 5.355,
+            "Finn Fisher-Black": 6.209,
+            "Callum Thornley": 3.6,
+            "Christophe Laporte": 6.39
+          }
         },
         "1": {
           "riders": [
@@ -42,7 +52,17 @@
             "Callum Thornley",
             "Sander De Pestel"
           ],
-          "captain": "Joshua Tarling"
+          "captain": "Joshua Tarling",
+          "prices": {
+            "Wout van Aert": 11.997,
+            "Ethan Hayter": 5.355,
+            "Ivan Romeo": 4.922,
+            "Stefan Küng": 6.494,
+            "Joshua Tarling": 9.125,
+            "Finn Fisher-Black": 6.209,
+            "Callum Thornley": 3.6,
+            "Sander De Pestel": 2.879
+          }
         },
         "4": {
           "riders": [
@@ -55,7 +75,17 @@
             "Domen Novak",
             "Mario Aparicio"
           ],
-          "captain": "Tadej Pogacar"
+          "captain": "Tadej Pogacar",
+          "prices": {
+            "Tadej Pogacar": 23.248,
+            "Léo Bisiaux": 5.831,
+            "Pau Miquel": 3.738,
+            "Fabio Van den Bossche": 2.368,
+            "Steven Kruijswijk": 2.467,
+            "Richard Carapaz": 9.975,
+            "Domen Novak": 2.987,
+            "Mario Aparicio": 2.934
+          }
         },
         "5": {
           "riders": [
@@ -68,7 +98,17 @@
             "Steven Kruijswijk",
             "Henri-Francois Renard-Haquin"
           ],
-          "captain": "Matthew Brennan"
+          "captain": "Matthew Brennan",
+          "prices": {
+            "Tadej Pogacar": 23.248,
+            "Alessandro Romele": 3.103,
+            "Pau Miquel": 3.738,
+            "Julien Bernard": 2.344,
+            "Matthew Brennan": 12.639,
+            "Vito Braet": 3.549,
+            "Steven Kruijswijk": 2.467,
+            "Henri-Francois Renard-Haquin": 2.341
+          }
         },
         "6": {
           "riders": [
@@ -81,7 +121,40 @@
             "Steven Kruijswijk",
             "Enric Mas Nicolau"
           ],
-          "captain": "Tadej Pogacar"
+          "captain": "Tadej Pogacar",
+          "prices": {
+            "Tadej Pogacar": 23.248,
+            "Jarno Widar": 5.756,
+            "Mattia Gaffuri": 2.422,
+            "Julien Bernard": 2.344,
+            "Harold Tejada": 5.196,
+            "Ramses Debruyne": 4.837,
+            "Steven Kruijswijk": 2.467,
+            "Enric Mas Nicolau": 8.647
+          }
+        },
+        "7": {
+          "riders": [
+            "Tadej Pogacar",
+            "Léo Bisiaux",
+            "Mario Aparicio",
+            "Andreas Kron",
+            "Clement Berthet",
+            "Ramses Debruyne",
+            "Steven Kruijswijk",
+            "Enric Mas Nicolau"
+          ],
+          "captain": "Tadej Pogacar",
+          "prices": {
+            "Tadej Pogacar": 23.248,
+            "Léo Bisiaux": 5.831,
+            "Mario Aparicio": 2.934,
+            "Andreas Kron": 3.441,
+            "Clement Berthet": 4.085,
+            "Ramses Debruyne": 4.837,
+            "Steven Kruijswijk": 2.467,
+            "Enric Mas Nicolau": 8.647
+          }
         }
       }
     },
@@ -90,13 +163,13 @@
       "current": {
         "riders": [
           "Ramses Debruyne",
-          "Jarno Widar",
+          "Clement Berthet",
           "Tadej Pogacar",
           "Harold Tejada",
           "Enric Mas Nicolau",
           "Juan Felipe Rodriguez",
           "Steven Kruijswijk",
-          "Julien Bernard"
+          "Jakob Omrzel"
         ],
         "captain": "Tadej Pogacar",
         "bank_M": 0.0
@@ -113,7 +186,17 @@
             "Joshua Tarling",
             "Finn Fisher-Black"
           ],
-          "captain": "Wout van Aert"
+          "captain": "Wout van Aert",
+          "prices": {
+            "Wout van Aert": 11.997,
+            "Léo Bisiaux": 5.831,
+            "Ethan Hayter": 5.355,
+            "Pau Miquel": 3.738,
+            "Christophe Laporte": 6.39,
+            "Jordan Labrosse": 2.913,
+            "Joshua Tarling": 9.125,
+            "Finn Fisher-Black": 6.209
+          }
         },
         "1": {
           "riders": [
@@ -126,7 +209,17 @@
             "Joshua Tarling",
             "Finn Fisher-Black"
           ],
-          "captain": "Joshua Tarling"
+          "captain": "Joshua Tarling",
+          "prices": {
+            "Wout van Aert": 11.997,
+            "Lucas Hamilton": 2.358,
+            "Ethan Hayter": 5.355,
+            "Ivan Romeo": 4.922,
+            "Stefan Küng": 6.494,
+            "Ivo Oliveira": 4.541,
+            "Joshua Tarling": 9.125,
+            "Finn Fisher-Black": 6.209
+          }
         },
         "4": {
           "riders": [
@@ -139,7 +232,17 @@
             "Mario Aparicio",
             "Pau Miquel"
           ],
-          "captain": "Tadej Pogacar"
+          "captain": "Tadej Pogacar",
+          "prices": {
+            "Jakob Omrzel": 4.5,
+            "Léo Bisiaux": 5.831,
+            "Tadej Pogacar": 23.248,
+            "Ramses Debruyne": 4.837,
+            "Steven Kruijswijk": 2.467,
+            "Jarno Widar": 5.756,
+            "Mario Aparicio": 2.934,
+            "Pau Miquel": 3.738
+          }
         },
         "5": {
           "riders": [
@@ -152,7 +255,17 @@
             "Henri-Francois Renard-Haquin",
             "Pau Miquel"
           ],
-          "captain": "Tadej Pogacar"
+          "captain": "Tadej Pogacar",
+          "prices": {
+            "Matthew Brennan": 12.639,
+            "Vito Braet": 3.549,
+            "Tadej Pogacar": 23.248,
+            "Alessandro Romele": 3.103,
+            "Steven Kruijswijk": 2.467,
+            "Julien Bernard": 2.344,
+            "Henri-Francois Renard-Haquin": 2.341,
+            "Pau Miquel": 3.738
+          }
         },
         "6": {
           "riders": [
@@ -165,7 +278,40 @@
             "Steven Kruijswijk",
             "Julien Bernard"
           ],
-          "captain": "Tadej Pogacar"
+          "captain": "Tadej Pogacar",
+          "prices": {
+            "Ramses Debruyne": 4.837,
+            "Jarno Widar": 5.756,
+            "Tadej Pogacar": 23.248,
+            "Harold Tejada": 5.196,
+            "Enric Mas Nicolau": 8.647,
+            "Juan Felipe Rodriguez": 2.966,
+            "Steven Kruijswijk": 2.467,
+            "Julien Bernard": 2.344
+          }
+        },
+        "7": {
+          "riders": [
+            "Ramses Debruyne",
+            "Clement Berthet",
+            "Tadej Pogacar",
+            "Harold Tejada",
+            "Enric Mas Nicolau",
+            "Juan Felipe Rodriguez",
+            "Steven Kruijswijk",
+            "Jakob Omrzel"
+          ],
+          "captain": "Tadej Pogacar",
+          "prices": {
+            "Ramses Debruyne": 4.837,
+            "Clement Berthet": 4.085,
+            "Tadej Pogacar": 23.248,
+            "Harold Tejada": 5.196,
+            "Enric Mas Nicolau": 8.647,
+            "Juan Felipe Rodriguez": 2.966,
+            "Steven Kruijswijk": 2.467,
+            "Jakob Omrzel": 4.5
+          }
         }
       }
     }
