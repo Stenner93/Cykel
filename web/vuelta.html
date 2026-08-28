@@ -344,8 +344,8 @@
   <div class="tabs-in" role="tablist" aria-label="Vuelta-værktøjer">
     <button class="tab" role="tab" aria-selected="true"  id="t-vuelta"  aria-controls="p-vuelta">Vuelta-etape</button>
     <button class="tab" role="tab" aria-selected="false" id="t-optakt"  aria-controls="p-optakt">Optakt-konsol</button>
-    <button class="tab" role="tab" aria-selected="false" id="t-sprint"  aria-controls="p-sprint">Sprint &amp; bonus</button>
     <button class="tab" role="tab" aria-selected="false" id="t-duel"    aria-controls="p-duel">Holdduel</button>
+    <button class="tab" role="tab" aria-selected="false" id="t-sprint"  aria-controls="p-sprint">Sprint &amp; bonus</button>
     <span class="tabsep" aria-hidden="true"></span>
     <button class="tab soon" role="tab" aria-selected="false" id="t-matrix" aria-controls="p-matrix">Pointmatrix</button>
     <button class="tab soon" role="tab" aria-selected="false" id="t-odds"   aria-controls="p-odds">Odds &amp; kilder</button>
@@ -471,9 +471,18 @@
     <div id="ocBody"></div>
   </section>
 
+  <!-- ══════════ HOLDDUEL ══════════ -->
+  <section class="panel" id="p-duel" role="tabpanel" aria-labelledby="t-duel" hidden>
+    <div class="eyebrow">Værktøj 2 · dit hold vs. konkurrenten</div>
+    <h2 class="sec">Holdduel</h2>
+    <p class="sec-sub">Dit hold og Kaspers hold side om side — hvem I har inde, kaptajn, og pointudviklingen pr. etape
+      (beregnet fra pointmatrixen: ejede rytteres vækst, kaptajn dobbelt). Opdateres af den daglige kørsel.</p>
+    <div id="duelBody"></div>
+  </section>
+
   <!-- ══════════ SPRINT & BONUS ══════════ -->
   <section class="panel" id="p-sprint" role="tabpanel" aria-labelledby="t-sprint" hidden>
-    <div class="eyebrow">Værktøj 2 · de to dyre huller</div>
+    <div class="eyebrow">Værktøj 3 · de to dyre huller</div>
     <h2 class="sec">Sprint- &amp; holdbonus-modul</h2>
     <p class="sec-sub">Sprint (−1,10M) og holdbonus (−1,07M) var Tourens dyreste huller. <b>Sprint-toget</b> og det <b>kontrollerende hold</b>
       kommer fra optakten (send en sprint-optakt → jeg encoder); <b>holdbonus-radaren</b> er modellens bud på de mest sandsynlige
@@ -485,15 +494,6 @@
     </div>
 
     <div id="spBody"></div>
-  </section>
-
-  <!-- ══════════ HOLDDUEL ══════════ -->
-  <section class="panel" id="p-duel" role="tabpanel" aria-labelledby="t-duel" hidden>
-    <div class="eyebrow">Værktøj 3 · dit hold vs. konkurrenten</div>
-    <h2 class="sec">Holdduel</h2>
-    <p class="sec-sub">Dit hold og Kaspers hold side om side — hvem I har inde, kaptajn, og pointudviklingen pr. etape
-      (beregnet fra pointmatrixen: ejede rytteres vækst, kaptajn dobbelt). Opdateres af den daglige kørsel.</p>
-    <div id="duelBody"></div>
   </section>
 
   <!-- ══════════ KOMMENDE FANER ══════════ -->
@@ -516,7 +516,11 @@
     giver resultater. <b>Datagrundlag:</b> kalibreringen bygger nu på
     tre scorede optakt-kilder — Tour-optakterne (Feltet.dk + Simon K. Kjær) og Giro-optakterne (Ingemann, 15 etaper med facit) —
     plus Giro-VeloScore. Alle ligger i repoet.
-    <span id="lastUpdated" style="display:block;margin-top:6px;font-size:.72rem;color:var(--muted)"></span>
+    <div style="margin-top:6px;font-size:.72rem;color:var(--muted)">
+      <span id="lastUpdated"></span>
+      <a href="https://github.com/Stenner93/Cykel/actions/workflows/daily.yml" target="_blank" rel="noopener"
+         style="color:var(--accent);text-decoration:none;margin-left:10px">Opdater manuelt (GitHub Actions) →</a>
+    </div>
   </div>
 </main>
 
@@ -1272,6 +1276,10 @@
     function nrm(s){ return (s||'').normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase().trim(); }
     // Vækst i kr: k under 1 mio., ellers M med dansk komma (1,37M).
     function fmtV(v){ v=v||0; return v>=1e6 ? (v/1e6).toFixed(2).replace('.',',')+'M' : Math.round(v/1000)+'k'; }
+    // Fuld kr-præcision (dansk tusind-separator, som Holdets egen "Værdi"-kolonne)
+    // — bruges hvor to holds totaler sammenlignes direkte, så en reel forskel
+    // ikke drukner i afrunding (2 decimaler på et M-tal skjuler alt under 5.000 kr).
+    function fmtKr(v){ return Math.round(v||0).toLocaleString('da-DK') + ' kr'; }
     Promise.all([
       fetch('data/vuelta2026_teams.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}),
       fetch('data/vuelta2026_scores.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;})
@@ -1290,17 +1298,31 @@
       // hvilket kunne vise "forkert" holdførerskab her mens holdet.dk (der
       // trækker gebyret fra) viser noget andet — bekræftet: over 1M kr i
       // ophobede gebyrer pr. hold efter kun 4 transfervinduer, langt mere end
-      // den rå pointforskel mellem holdene. Estimeret ud fra AKTUEL pris (vi
-      // har ikke historiske priser pr. runde) — reelt gebyr kan afvige lidt,
-      // men størrelsesordenen er den rigtige.
+      // den rå pointforskel mellem holdene. Holdets "Værdi" på sin egen
+      // stilling (kræver login, ikke tilgængelig via det offentlige API —
+      // afprøvet) er 50M + nettovækst, samme formel som her: bekræftet ved at
+      // sammenligne Værdi−50M mod vores nettotal (samme størrelsesorden).
+      // Prisen på KØBSTIDSPUNKTET kender vi ikke præcist for gamle runder, så
+      // vi bruger den pris runden selv blev scrapet med (tæt på købsprisen,
+      // da runden hentes lige når transfervinduet låser) hvis den findes i
+      // data — ellers falder vi tilbage til dagens pris (ældre data uden
+      // per-runde prisøjebliksbillede). Kan stadig afvige lidt fra det
+      // faktiske gebyr, men er markant tættere end at bruge dagens pris for
+      // et køb der kan ligge mange runder tilbage.
       function teamFees(team){
         var rounds=Object.keys(team.history||{}).sort(function(a,b){return +a-+b;});
         var prev=null, fee=0;
         rounds.forEach(function(rnd){
-          var cur={}; (team.history[rnd].riders||[]).forEach(function(rn){ cur[nrm(rn)]=1; });
+          var snap=team.history[rnd];
+          var cur={}; (snap.riders||[]).forEach(function(rn){ cur[nrm(rn)]=1; });
+          var roundPrice={};
+          Object.keys(snap.prices||{}).forEach(function(nm){ roundPrice[nrm(nm)]=snap.prices[nm]; });
           if(prev){
             Object.keys(cur).forEach(function(rn){
-              if(!prev[rn]) fee += (priceByName[rn]||0) * 1e6 * 0.01;
+              if(!prev[rn]){
+                var p = roundPrice[rn]!=null ? roundPrice[rn] : (priceByName[rn]||0);
+                fee += p * 1e6 * 0.01;
+              }
             });
           }
           prev=cur;
@@ -1354,13 +1376,13 @@
         if(!body) body='<li><span class="src">Afventer holddata…</span></li>';
         var gross=cum[l]||0, fee=fees[l]||0, net=gross-fee;
         var feeLine = fee>0 ? ('<div class="kv" style="margin-top:6px;font-size:.78rem">'+
-          '<span class="k" style="color:var(--muted)">Brutto vækst</span><span class="v mono">'+fmtV(gross)+'</span></div>'+
+          '<span class="k" style="color:var(--muted)">Brutto vækst</span><span class="v mono">'+fmtKr(gross)+'</span></div>'+
           '<div class="kv" style="font-size:.78rem"><span class="k" style="color:var(--muted)">Transfergebyrer (est.)</span>'+
-          '<span class="v mono" style="color:var(--bad)">−'+fmtV(fee)+'</span></div>') : '';
+          '<span class="v mono" style="color:var(--bad)">−'+fmtKr(fee)+'</span></div>') : '';
         return '<div class="duelcard '+(i===0?'mine':'rival')+'"><h3>'+l+'</h3>'+
           '<div class="sub">'+(curRiders(l).length)+' ryttere'+(cur.bank_M!=null?(' · bank '+cur.bank_M+'M'):'')+'</div>'+
           '<ul class="duelroster">'+body+'</ul>'+
-          '<div class="dueltot"><span class="big">'+fmtV(net)+'</span><span class="src">netto vækst</span></div>'+
+          '<div class="dueltot"><span class="big" style="font-size:1.3rem">'+fmtKr(net)+'</span><span class="src">netto vækst</span></div>'+
           feeLine+'</div>';
       }
       var html='<div class="octitle">Holdene</div><div class="duelgrid">'+labels.map(card).join('')+'</div>';
@@ -1373,7 +1395,7 @@
         // kumulative barer (netto — matcher tallet i holdkortene ovenfor)
         labels.forEach(function(l,i){
           var w=Math.round(100*net[l]/maxCum);
-          html+='<div class="duelbar"><span>'+l+'</span><span class="bar"><i style="width:'+Math.max(w,0)+'%;background:'+(i===0?'var(--accent)':'var(--model)')+'"></i></span><span class="mono">'+fmtV(net[l])+'</span></div>';
+          html+='<div class="duelbar"><span>'+l+'</span><span class="bar"><i style="width:'+Math.max(w,0)+'%;background:'+(i===0?'var(--accent)':'var(--model)')+'"></i></span><span class="mono">'+fmtKr(net[l])+'</span></div>';
         });
         // tabel pr. etape (brutto — pr.-etape rytterpoint, gebyrer trækkes fra i totalen ovenfor)
         html+='<div class="scrollx" style="margin-top:12px"><table class="board"><thead><tr><th>Etape</th>'+
@@ -1383,7 +1405,7 @@
             return '<tr><td>E'+row.num+'</td>'+labels.map(function(l){return '<td class="mono">'+(row[l]==null?'–':fmtV(row[l]))+'</td>';}).join('')+
               '<td class="mono '+(diff>0?'up':(diff<0?'down':''))+'">'+(diff==null?'–':((diff>0?'+':'')+fmtV(diff)))+'</td></tr>';
           }).join('')+'</tbody></table></div>';
-        html+='<p class="note" style="margin-top:8px">Barerne ovenfor og holdkortene viser <b>netto vækst</b> (rytterpoint minus et estimeret 1%-transfergebyr pr. indkøbt rytter — Holdet giver ingen gratis transfers). Tabellen herunder viser <b>brutto</b> pr.-etape-rytterpoint (kaptajn dobbelt); gebyrer er ikke knyttet til en enkelt etape og trækkes kun fra i totalen. Gebyr-estimatet bruger AKTUEL pris (ikke prisen ved købstidspunktet), så det kan afvige lidt fra det faktiske — men størrelsesordenen bør være retvisende. Etaper hvis roster endnu ikke er hentet vises som &ndash; og fyldes af den daglige kørsel.</p></div></div>';
+        html+='<p class="note" style="margin-top:8px">Barerne ovenfor og holdkortene viser <b>netto vækst</b> (rytterpoint minus et estimeret 1%-transfergebyr pr. indkøbt rytter — Holdet giver ingen gratis transfers), vist i hele kr så en reel forskel ikke drukner i afrunding. Tabellen herunder viser <b>brutto</b> pr.-etape-rytterpoint (kaptajn dobbelt); gebyrer er ikke knyttet til en enkelt etape og trækkes kun fra i totalen. Gebyr-estimatet bruger rytterens pris <i>lige da runden låste</i> (tæt på købsprisen) hvis den er kendt, ellers dagens pris som fallback for ældre data — stadig et estimat, men markant tættere på det faktiske end at bruge dagens pris konsekvent. Holdets egen "Værdi" (kræver login, ikke tilgængelig via det offentlige API) følger samme formel: 50M + nettovækst. Etaper hvis roster endnu ikke er hentet vises som &ndash; og fyldes af den daglige kørsel.</p></div></div>';
       } else {
         html+='<div class="optbar" style="border-color:var(--border-2);background:var(--surface);color:var(--muted);margin-top:12px">Pointudviklingen fyldes når den daglige kørsel har hentet holdenes roster for de afviklede etaper (krediteres det hold der var på i runden, ikke det aktuelle).</div>';
       }
