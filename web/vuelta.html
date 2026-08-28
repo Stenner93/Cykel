@@ -516,6 +516,7 @@
     giver resultater. <b>Datagrundlag:</b> kalibreringen bygger nu på
     tre scorede optakt-kilder — Tour-optakterne (Feltet.dk + Simon K. Kjær) og Giro-optakterne (Ingemann, 15 etaper med facit) —
     plus Giro-VeloScore. Alle ligger i repoet.
+    <span id="lastUpdated" style="display:block;margin-top:6px;font-size:.72rem;color:var(--muted)"></span>
   </div>
 </main>
 
@@ -1250,6 +1251,19 @@
   })();
 </script>
 <script>
+  /* Seneste opdatering — viser hvornår den daglige kørsel sidst hentede/scrapede data. */
+  (function(){
+    var el = document.getElementById('lastUpdated');
+    if(!el) return;
+    fetch('data/vuelta2026_teams.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).then(function(d){
+      if(!d || !d.generated) return;
+      var dt = new Date(d.generated);
+      if(isNaN(dt)) return;
+      var txt = new Intl.DateTimeFormat('da-DK',{timeZone:'Europe/Copenhagen',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}).format(dt);
+      el.textContent = 'Seneste opdatering: ' + txt;
+    }).catch(function(){});
+  })();
+
   /* Holdduel — dit hold vs. konkurrentens, med pointudvikling fra pointmatrixen.
      Læser vuelta2026_teams.json (roster+kaptajn pr. runde) + vuelta2026_scores.json (pts). */
   (function(){
@@ -1271,6 +1285,29 @@
       // etaper der faktisk er afviklet (nogen har fået point) → kan vises i tabellen
       var played={}; riders.forEach(function(r){ Object.keys(r.pts||{}).forEach(function(k){ played[String(k)]=1; }); });
       var labels=Object.keys(td.teams);
+      // Transfergebyr: Holdet opkræver 1% af KØBSPRISEN for hver rytter der
+      // købes ind (ingen gratis transfers). Det blev slet ikke modregnet før,
+      // hvilket kunne vise "forkert" holdførerskab her mens holdet.dk (der
+      // trækker gebyret fra) viser noget andet — bekræftet: over 1M kr i
+      // ophobede gebyrer pr. hold efter kun 4 transfervinduer, langt mere end
+      // den rå pointforskel mellem holdene. Estimeret ud fra AKTUEL pris (vi
+      // har ikke historiske priser pr. runde) — reelt gebyr kan afvige lidt,
+      // men størrelsesordenen er den rigtige.
+      function teamFees(team){
+        var rounds=Object.keys(team.history||{}).sort(function(a,b){return +a-+b;});
+        var prev=null, fee=0;
+        rounds.forEach(function(rnd){
+          var cur={}; (team.history[rnd].riders||[]).forEach(function(rn){ cur[nrm(rn)]=1; });
+          if(prev){
+            Object.keys(cur).forEach(function(rn){
+              if(!prev[rn]) fee += (priceByName[rn]||0) * 1e6 * 0.01;
+            });
+          }
+          prev=cur;
+        });
+        return fee;
+      }
+      var fees={}; labels.forEach(function(l){ fees[l]=teamFees(td.teams[l]); });
       // Point pr. hold pr. etape (kaptajn dobbelt). Krediterer det hold der
       // FAKTISK var på i den runde (history[etape]) — IKKE det aktuelle hold.
       // Returnerer null hvis rundens roster endnu ikke er kendt (så etapen ikke
@@ -1315,24 +1352,30 @@
         if(sharedOrder.length && uniq.length) body+='<li class="sep"><span class="src">kun på ét hold</span></li>';
         uniq.forEach(function(rn){ body+=li(rn); });
         if(!body) body='<li><span class="src">Afventer holddata…</span></li>';
-        var tp=cum[l]||0;
+        var gross=cum[l]||0, fee=fees[l]||0, net=gross-fee;
+        var feeLine = fee>0 ? ('<div class="kv" style="margin-top:6px;font-size:.78rem">'+
+          '<span class="k" style="color:var(--muted)">Brutto vækst</span><span class="v mono">'+fmtV(gross)+'</span></div>'+
+          '<div class="kv" style="font-size:.78rem"><span class="k" style="color:var(--muted)">Transfergebyrer (est.)</span>'+
+          '<span class="v mono" style="color:var(--bad)">−'+fmtV(fee)+'</span></div>') : '';
         return '<div class="duelcard '+(i===0?'mine':'rival')+'"><h3>'+l+'</h3>'+
           '<div class="sub">'+(curRiders(l).length)+' ryttere'+(cur.bank_M!=null?(' · bank '+cur.bank_M+'M'):'')+'</div>'+
           '<ul class="duelroster">'+body+'</ul>'+
-          '<div class="dueltot"><span class="big">'+fmtV(tp)+'</span><span class="src">samlet vækst</span></div></div>';
+          '<div class="dueltot"><span class="big">'+fmtV(net)+'</span><span class="src">netto vækst</span></div>'+
+          feeLine+'</div>';
       }
       var html='<div class="octitle">Holdene</div><div class="duelgrid">'+labels.map(card).join('')+'</div>';
 
       // pointudvikling
       if(perStage.length){
-        var maxCum=Math.max.apply(null,[1].concat(labels.map(function(l){return cum[l];})));
+        var net={}; labels.forEach(function(l){ net[l]=(cum[l]||0)-(fees[l]||0); });
+        var maxCum=Math.max.apply(null,[1].concat(labels.map(function(l){return net[l];})));
         html+='<div class="octitle">Pointudvikling</div><div class="card"><div class="cardbody">';
-        // kumulative barer
+        // kumulative barer (netto — matcher tallet i holdkortene ovenfor)
         labels.forEach(function(l,i){
-          var w=Math.round(100*cum[l]/maxCum);
-          html+='<div class="duelbar"><span>'+l+'</span><span class="bar"><i style="width:'+w+'%;background:'+(i===0?'var(--accent)':'var(--model)')+'"></i></span><span class="mono">'+fmtV(cum[l])+'</span></div>';
+          var w=Math.round(100*net[l]/maxCum);
+          html+='<div class="duelbar"><span>'+l+'</span><span class="bar"><i style="width:'+Math.max(w,0)+'%;background:'+(i===0?'var(--accent)':'var(--model)')+'"></i></span><span class="mono">'+fmtV(net[l])+'</span></div>';
         });
-        // tabel pr. etape
+        // tabel pr. etape (brutto — pr.-etape rytterpoint, gebyrer trækkes fra i totalen ovenfor)
         html+='<div class="scrollx" style="margin-top:12px"><table class="board"><thead><tr><th>Etape</th>'+
           labels.map(function(l){return '<th>'+l+'</th>';}).join('')+'<th>Forskel</th></tr></thead><tbody>'+
           perStage.map(function(row){
@@ -1340,7 +1383,7 @@
             return '<tr><td>E'+row.num+'</td>'+labels.map(function(l){return '<td class="mono">'+(row[l]==null?'–':fmtV(row[l]))+'</td>';}).join('')+
               '<td class="mono '+(diff>0?'up':(diff<0?'down':''))+'">'+(diff==null?'–':((diff>0?'+':'')+fmtV(diff)))+'</td></tr>';
           }).join('')+'</tbody></table></div>';
-        html+='<p class="note" style="margin-top:8px">Beregnet fra pointmatrixen: hver etapes vækst krediteres det hold der var på i netop den runde (kaptajn dobbelt). Etaper hvis roster endnu ikke er hentet vises som &ndash; og fyldes af den daglige kørsel.</p></div></div>';
+        html+='<p class="note" style="margin-top:8px">Barerne ovenfor og holdkortene viser <b>netto vækst</b> (rytterpoint minus et estimeret 1%-transfergebyr pr. indkøbt rytter — Holdet giver ingen gratis transfers). Tabellen herunder viser <b>brutto</b> pr.-etape-rytterpoint (kaptajn dobbelt); gebyrer er ikke knyttet til en enkelt etape og trækkes kun fra i totalen. Gebyr-estimatet bruger AKTUEL pris (ikke prisen ved købstidspunktet), så det kan afvige lidt fra det faktiske — men størrelsesordenen bør være retvisende. Etaper hvis roster endnu ikke er hentet vises som &ndash; og fyldes af den daglige kørsel.</p></div></div>';
       } else {
         html+='<div class="optbar" style="border-color:var(--border-2);background:var(--surface);color:var(--muted);margin-top:12px">Pointudviklingen fyldes når den daglige kørsel har hentet holdenes roster for de afviklede etaper (krediteres det hold der var på i runden, ikke det aktuelle).</div>';
       }
