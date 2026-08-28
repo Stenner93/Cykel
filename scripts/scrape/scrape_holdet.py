@@ -590,8 +590,12 @@ def fetch_my_team(
 
 
 def _map_lineup_item(it, player_by_id, person_by_id):
-    """Map ét lineup-item → (full_name, is_captain) eller None hvis ryttteren
-    ikke kan mappes. Bruges af historik-hentningen."""
+    """Map ét lineup-item → (full_name, is_captain, price_M) eller None hvis
+    ryttteren ikke kan mappes. Bruges af historik-hentningen. price_M er
+    rytterens pris PÅ SCRAPE-TIDSPUNKTET (tættest muligt på købsprisen for en
+    nyligt tilkøbt rytter, da runden hentes lige efter transfervinduet låser —
+    langt mere præcist end at bruge dagens/nutidige pris for et køb der kan
+    ligge mange runder tilbage)."""
     if not isinstance(it, dict):
         return None
     pid = it.get("playerId")
@@ -604,7 +608,8 @@ def _map_lineup_item(it, player_by_id, person_by_id):
     name = person.get("fullName") or player.get("name", "")
     if not name:
         return None
-    return name, (it.get("role") == "captain")
+    price = player.get("price") or player.get("startPrice") or 0
+    return name, (it.get("role") == "captain"), round(price / 1_000_000, 3)
 
 
 def fetch_team_history(
@@ -615,7 +620,11 @@ def fetch_team_history(
 ) -> dict[str, dict]:
     """Hent den FAKTISKE lineup for hver LÅST runde (rundens point tilhører
     det hold der var på i netop den runde — ikke det aktuelle hold).
-    Returnerer {str(SAND etapenummer): {"riders": [...], "captain": navn}}.
+    Returnerer {str(SAND etapenummer): {"riders": [...], "captain": navn,
+    "prices": {rytternavn: pris_M}}}. "prices" er en snapshot af hver rytters
+    pris på scrape-tidspunktet for netop DENNE runde — bruges af Holdduel til
+    at estimere transfergebyrer ud fra prisen tæt på købstidspunktet i stedet
+    for dagens/nutidige pris (se web/vuelta.html's teamFees()).
 
     To ting der let går galt her, begge pga. at Holdet lagde runde 3+4
     sammen efter den annullerede 3. etape:
@@ -694,18 +703,19 @@ def fetch_team_history(
         its = payload.get("items", payload) if isinstance(payload, dict) else payload
         if not isinstance(its, list) or not its:
             continue
-        names, captain = [], None
+        names, captain, prices = [], None, {}
         for it in its:
             m = _map_lineup_item(it, player_by_id, person_by_id)
             if not m:
                 continue
-            nm, is_cap = m
+            nm, is_cap, price_M = m
             names.append(nm)
+            prices[nm] = price_M
             if is_cap:
                 captain = nm
         if names:
             true_n = true_num_by_round.get(n, n)
-            history[str(true_n)] = {"riders": names, "captain": captain}
+            history[str(true_n)] = {"riders": names, "captain": captain, "prices": prices}
             print(f"  [info] historik runde {n} (etape {true_n}): {len(names)} ryttere"
                   + (f", kaptajn {captain}" if captain else ""))
     return history

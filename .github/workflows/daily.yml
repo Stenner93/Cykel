@@ -7,19 +7,29 @@ on:
   #    Scraper Holdet (priser, GC, trøjer, startliste/DNS) + gen-beregner
   #    forudsigelser og holdanbefaling. CO/PCS blokerer CI's IP, men de er
   #    cachede/stabile — de ekstra kørsler henter frisk Holdet-data.
+  #
+  #    Minutterne er bevidst forskudt til :07/:37 i stedet for :00/:30.
+  #    GitHub advarer selv om at schedule-events kan blive FORSINKET ELLER
+  #    HELT DROPPET under høj belastning, "high load times include the start
+  #    of every hour" — og :00/:30 er præcis der hvor flest andre repos'
+  #    cron-jobs også ligger, så det er den mest trængte kø på hele GitHub
+  #    Actions. Bekræftet empirisk her: kørselshistorikken viste kun 7 af de
+  #    ~18 planlagte kørsler rent faktisk fyrede en given dag — resten blev
+  #    stille droppet, ikke bare forsinket. At flytte minuttallene væk fra
+  #    runde tal er GitHubs egen anbefalede afhjælpning.
   schedule:
-    - cron: '0 5 * * *'        # 07:00 dansk — morgenopdatering
-    # 11:00–14:30 dansk hver halve time: dækker den variable Holdet-deadline.
+    - cron: '7 5 * * *'        # 07:07 dansk — morgenopdatering
+    # 11:07–14:37 dansk hver halve time: dækker den variable Holdet-deadline.
     # For enhver deadline i vinduet får man automatisk en kørsel ~1 time før
     # OG ~0,5 time før (frisk pris/startliste + gen-beregnede point til deadline).
-    - cron: '0,30 9-12 * * *'
-    # 15:00–18:30 dansk hver halve time: dækker selve etapen. Holdet serverer
+    - cron: '7,37 9-12 * * *'
+    # 15:07–18:37 dansk hver halve time: dækker selve etapen. Holdet serverer
     # først en rundes lineup når transferruden er LÅST (typisk = etapestart),
     # så dette er første chance for at hente det FAKTISKE hold — og løbende
     # herefter fanges levende pointvækst i Holdduel mens etapen kører, i
     # stedet for kun ved aftenopdateringen efter den er slut.
-    - cron: '0,30 13-16 * * *'
-    - cron: '30 19 * * *'      # 21:30 dansk — aftenopdatering (efter etapen: GT-resultater m.m.)
+    - cron: '7,37 13-16 * * *'
+    - cron: '37 19 * * *'      # 21:37 dansk — aftenopdatering (efter etapen: GT-resultater m.m.)
 
   # 2. Manuel kørsel fra GitHub-app eller browser (også på telefon).
   #    Alle felter er valgfrie — lades de tomme, auto-detekteres etape + type
