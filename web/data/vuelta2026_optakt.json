@@ -1144,6 +1144,92 @@
         "Tobias Halland Johannessen",
         "Jay Vine"
       ]
+    },
+    "8": {
+      "scenario": "redsprint",
+      "simon": {
+        "captain": "Matthew Brennan",
+        "favorites": [
+          "Matthew Brennan",
+          "Alessandro Romele",
+          "Hugo Hofstetter",
+          "Pau Miquel",
+          "Vito Braet",
+          "Vincenzo Albanese",
+          "Jordi Meeus",
+          "Orluis Aular",
+          "Axel Laurance",
+          "Bryan Coquard",
+          "David González",
+          "Rasmus Tiller",
+          "Ben Turner",
+          "Tadej Pogacar",
+          "Steven Kruijswijk",
+          "Juan Felipe Rodriguez"
+        ],
+        "avoid": [
+          "Mads Pedersen",
+          "Steffen De Schuyteneer"
+        ],
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Optaktsholdet ligger nr. 18 samlet efter en stærk 7. etape — glæde over at kunne dele et \"managereventyr\" med læserne."
+          },
+          {
+            "h": "Rute",
+            "t": "8. etape (Puçol–Xeraco) er en sprintervenlig mellemstation mellem to bjergetaper, men den sidste stigning bør denne gang give den udskilning som seneste sprintetape ikke formåede."
+          },
+          {
+            "h": "Brennan suverænt bedste valg",
+            "t": "Det allerstørste must-have: med afstand hurtigste sprinter, i topform, kører glimrende opad — og Van Aert trættede sig selv godt og grundigt fredag, så der ikke bør være tvivl om at Visma-holdet kører for Brennan."
+          },
+          {
+            "h": "Pogačar spiser budgettet",
+            "t": "Da Pogačar beholdes (sikre point, oplagt kaptajnvalg søndag), er der ikke råd til sprintere over 4,6 mio. Springer derfor Meeus, Aular, Laurance (tvivler på Turners form) og Coquard over — kan alle lide, men ikke i et Pogačar-hold. Ikke interesseret i Mads P. eller De Schuyteneer."
+          },
+          {
+            "h": "Hofstetter frem for Albanese",
+            "t": "Hofstetter havde ingen problemer på tilsvarende stigning torsdag og viste enorm fart på 2. etape. Springer Albanese over — god rytter, men tror ikke han gentager 6. etapes succes, da dagens opløb ikke er stigende."
+          },
+          {
+            "h": "Romele og Miquel — næsten must-have",
+            "t": "Romele (form, fart, bakkeevner, pris) er tæt på et must-have — næsten 1:1 det samme for Pau Miquel."
+          },
+          {
+            "h": "Braet — mere risiko end normalt",
+            "t": "Sidste af tre pladser (samlet budget ca. 9,2 mio.) går til Braet, der deler karakteristika med Romele/Miquel, men med risiko: rides der for De Schuyteneer i stedet, og leadoutmanden Luca Van Boven styrtede grimt fredag. Tør alligevel løbe risikoen frem for alternativerne fra 3,4 mio. og nedefter."
+          },
+          {
+            "h": "Beholder Kruijswijk og JF Rodriguez",
+            "t": "Kruijswijk kan give holdbonus for Brennan. JF Rodriguez er blandt de bedste billige kandidater til søndagens bjergslag — ville kræve 62k vækst blot at gå lige, hvilket ikke forventes fra nogen i hans prisleje undtagen dem der købes ind i dag."
+          },
+          {
+            "h": "TheFantasyTool A-hold (konklusion)",
+            "t": "Kaptajn: Brennan. Kun Pogacar, Kruijswijk og JF Rodriguez beholdes — resten udskiftet."
+          }
+        ],
+        "team": {
+          "keeps": [
+            "Tadej Pogacar",
+            "Steven Kruijswijk",
+            "Juan Felipe Rodriguez"
+          ],
+          "buys": [
+            "Matthew Brennan",
+            "Hugo Hofstetter",
+            "Alessandro Romele",
+            "Pau Miquel",
+            "Vito Braet"
+          ],
+          "captain": "Matthew Brennan",
+          "note": "Kun Pogacar, Kruijswijk og JF Rodriguez beholdes — resten udskiftet."
+        }
+      },
+      "train": {
+        "finisher": "Matthew Brennan",
+        "control_team": "Visma | Lease a Bike"
+      }
     }
   }
 }
