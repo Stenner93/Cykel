@@ -1,20 +1,20 @@
 {
-  "generated": "2026-08-29T11:39:05.392758+00:00",
+  "generated": "2026-08-29T13:42:59.018057+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
       "current": {
         "riders": [
           "Tadej Pogacar",
-          "Léo Bisiaux",
-          "Mario Aparicio",
-          "Andreas Kron",
-          "Clement Berthet",
-          "Ramses Debruyne",
+          "Matthew Brennan",
+          "Alessandro Romele",
+          "Vito Braet",
+          "Pau Miquel",
+          "Hugo Hofstetter",
           "Steven Kruijswijk",
-          "Enric Mas Nicolau"
+          "Henri-Francois Renard-Haquin"
         ],
-        "captain": "Tadej Pogacar",
+        "captain": "Matthew Brennan",
         "bank_M": 0.0
       },
       "history": {
@@ -155,6 +155,29 @@
             "Steven Kruijswijk": 2.451,
             "Enric Mas Nicolau": 8.725
           }
+        },
+        "8": {
+          "riders": [
+            "Tadej Pogacar",
+            "Matthew Brennan",
+            "Alessandro Romele",
+            "Vito Braet",
+            "Pau Miquel",
+            "Hugo Hofstetter",
+            "Steven Kruijswijk",
+            "Henri-Francois Renard-Haquin"
+          ],
+          "captain": "Matthew Brennan",
+          "prices": {
+            "Tadej Pogacar": 23.386,
+            "Matthew Brennan": 12.59,
+            "Alessandro Romele": 3.025,
+            "Vito Braet": 3.489,
+            "Pau Miquel": 3.678,
+            "Hugo Hofstetter": 4.572,
+            "Steven Kruijswijk": 2.451,
+            "Henri-Francois Renard-Haquin": 2.275
+          }
         }
       }
     },
@@ -162,16 +185,16 @@
       "team_id": 7272262,
       "current": {
         "riders": [
-          "Ramses Debruyne",
-          "Clement Berthet",
+          "Matthew Brennan",
+          "Hugo Hofstetter",
           "Tadej Pogacar",
-          "Harold Tejada",
-          "Enric Mas Nicolau",
+          "Vito Braet",
+          "Pau Miquel",
           "Juan Felipe Rodriguez",
           "Steven Kruijswijk",
-          "Jakob Omrzel"
+          "Alessandro Romele"
         ],
-        "captain": "Tadej Pogacar",
+        "captain": "Matthew Brennan",
         "bank_M": 0.0
       },
       "history": {
@@ -311,6 +334,29 @@
             "Juan Felipe Rodriguez": 3.109,
             "Steven Kruijswijk": 2.451,
             "Jakob Omrzel": 4.665
+          }
+        },
+        "8": {
+          "riders": [
+            "Matthew Brennan",
+            "Hugo Hofstetter",
+            "Tadej Pogacar",
+            "Vito Braet",
+            "Pau Miquel",
+            "Juan Felipe Rodriguez",
+            "Steven Kruijswijk",
+            "Alessandro Romele"
+          ],
+          "captain": "Matthew Brennan",
+          "prices": {
+            "Matthew Brennan": 12.59,
+            "Hugo Hofstetter": 4.572,
+            "Tadej Pogacar": 23.386,
+            "Vito Braet": 3.489,
+            "Pau Miquel": 3.678,
+            "Juan Felipe Rodriguez": 3.109,
+            "Steven Kruijswijk": 2.451,
+            "Alessandro Romele": 3.025
           }
         }
       }
