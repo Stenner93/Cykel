@@ -152,7 +152,7 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
         run: |
-          git config user.name  "TdF Manager Bot"
+          git config user.name  "Cykel Manager Bot"
           git config user.email "bot@users.noreply.github.com"
 
           # Gem historikdata og begge model-outputs

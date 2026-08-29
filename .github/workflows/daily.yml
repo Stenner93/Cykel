@@ -1,4 +1,4 @@
-name: 🚴 TdF Manager — Daglig opdatering
+name: 🚴 Cykel Manager — Daglig opdatering
 
 # ── Hvornår kører workflowet? ────────────────────────────────────────────────
 on:
@@ -92,18 +92,12 @@ jobs:
       - name: Installér afhængigheder
         run: pip install -r requirements.txt
 
-      # ── 3. Scrape Holdet (priser + GC + trøjer + mit hold) ────────────────
-      - name: Scrape Holdet.dk
-        env:
-          PYTHONIOENCODING: utf-8
-        run: |
-          python scripts/scrape/scrape_holdet.py \
-            --cartridge tour-de-france-2026 \
-            --my-team-id 7145433 \
-            --update-riders \
-            || echo "⚠️  Holdet-scrape slog fejl (TdF ikke live endnu?) — fortsætter med cached data"
-
-      # ── 3a2. Scrape Holdet for VUELTA (priser + startliste) ───────────────
+      # ── 3. Scrape Holdet for VUELTA (priser + startliste) ─────────────────
+      #    TdF 2026's Holdet-spil er lukket (løbet er slut) — scrapet gav
+      #    byte-for-byte identisk output på tværs af kørsler i ugevis, kun
+      #    tidsstemplet ændrede sig. Fjernet for ikke at spilde CI-tid på et
+      #    spil der aldrig giver nyt data igen. tdf.html's data ligger frosset
+      #    i det sidste rigtige commit og ændres ikke af den grund.
       - name: Scrape Holdet.dk (Vuelta)
         env:
           PYTHONIOENCODING: utf-8
@@ -115,7 +109,7 @@ jobs:
             --update-riders \
             || echo "⚠️  Vuelta-scrape slog fejl (spillet lukket?) — fortsætter med cached data"
 
-      # ── 3b. Hent GT-etaperesultater (til ML rolling-form) ─────────────────
+      # ── 3a. Hent GT-etaperesultater (til ML rolling-form) ─────────────────
       - name: Hent GT-etaperesultater (ML)
         env:
           PYTHONIOENCODING: utf-8
@@ -123,7 +117,7 @@ jobs:
           python scripts/scrape/scrape_gt_results.py \
             || echo "⚠️  GT-resultater ikke tilgængelige endnu — fortsætter uden ML rolling-form"
 
-      # ── 3c. Hent PCS 12-måneders rangering (kvalitetssignal) ──────────────
+      # ── 3b. Hent PCS 12-måneders rangering (kvalitetssignal) ──────────────
       - name: Hent PCS rangering
         env:
           PYTHONIOENCODING: utf-8
@@ -131,7 +125,7 @@ jobs:
           python scripts/scrape/scrape_pcs_rankings.py \
             || echo "⚠️  PCS rangering ikke tilgængelig — fortsætter uden"
 
-      # ── 3d. Hent PCS form-scores (90-dages resultater, ~5 min) ───────────
+      # ── 3c. Hent PCS form-scores (90-dages resultater, ~5 min) ───────────
       - name: Hent PCS form-scores
         env:
           PYTHONIOENCODING: utf-8
@@ -140,7 +134,7 @@ jobs:
             --riders-file data/cache/vuelta2026_players.json \
             || echo "⚠️  PCS form-scores ikke tilgængelige — fortsætter med cached data"
 
-      # ── 3e. Hent CyclingOracle ratings (~4 min) ───────────────────────────
+      # ── 3d. Hent CyclingOracle ratings (~4 min) ───────────────────────────
       - name: Hent CyclingOracle ratings
         env:
           PYTHONIOENCODING: utf-8
@@ -149,15 +143,7 @@ jobs:
             --riders-file data/cache/vuelta2026_players.json \
             || echo "⚠️  CyclingOracle ikke tilgængeligt — fortsætter med cached data"
 
-      # ── 4. Byg TdF spillerliste (skal ske FØR run_daily.py så vi har aktuelle priser) ──
-      - name: Byg TdF 2026 dashboard-data
-        env:
-          PYTHONIOENCODING: utf-8
-        run: |
-          python scripts/build/build_tdf_web_data.py --delay 0.5 \
-            || echo "⚠️  TdF build slog fejl — fortsætter"
-
-      # ── 4a2. Byg VUELTA spillerliste + dashboard-data ─────────────────────
+      # ── 4. Byg VUELTA spillerliste + dashboard-data ────────────────────────
       - name: Byg Vuelta 2026 dashboard-data
         env:
           PYTHONIOENCODING: utf-8
@@ -165,7 +151,7 @@ jobs:
           python scripts/build/build_vuelta_web_data.py --delay 0.5 \
             || echo "⚠️  Vuelta build slog fejl — fortsætter"
 
-      # ── 4b. Byg Analytik JSON (alle etaper, Holdet-ryttere, CO + PCS) ───────
+      # ── 4a. Byg Analytik JSON (alle etaper, Holdet-ryttere, CO + PCS) ───────
       - name: Byg Analytik-data
         env:
           PYTHONIOENCODING: utf-8
@@ -195,15 +181,11 @@ jobs:
           python scripts/run_daily.py $ARGS \
             || echo "⚠️  Forudsigelser slog fejl (ingen aktiv etape?) — fortsætter"
 
-      # ── 6. Byg Dauphiné web-data ───────────────────────────────────────────
-      - name: Byg Dauphiné 2026 dashboard-data
-        env:
-          PYTHONIOENCODING: utf-8
-        run: |
-          python scripts/build/build_dauphine_web_data.py --delay 0.5 \
-            || echo "⚠️  Dauphiné build slog fejl — fortsætter"
+      # Dauphiné 2026 er også slut (samme mønster som TdF: byte-for-byte
+      # identisk output på tværs af kørsler) — build-trinnet fjernet. Data
+      # ligger frosset i det sidste rigtige commit.
 
-      # ── 7. Byg rytterdatabase (diagnostik-side, tvaers af alle loeb) ──────
+      # ── 6. Byg rytterdatabase (diagnostik-side, tvaers af alle loeb) ──────
       - name: Byg rytterdatabase
         env:
           PYTHONIOENCODING: utf-8
@@ -216,7 +198,7 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
         run: |
-          git config user.name  "TdF Manager Bot"
+          git config user.name  "Cykel Manager Bot"
           git config user.email "bot@users.noreply.github.com"
 
           # Tilføj web-output (predictions + scores — formålet med CI-kørslen)
