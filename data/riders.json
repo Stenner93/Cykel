@@ -60,7 +60,7 @@
     "full_name": "Andreas Leknessund",
     "short_name": "A. Leknessund",
     "team": "UM",
-    "price": 4.5,
+    "price": 4.0,
     "own_pct": 900.0
   },
   {
@@ -189,7 +189,7 @@
     "short_name": "B. Turner",
     "team": "INEOSG",
     "price": 6.0,
-    "own_pct": 268.0
+    "own_pct": 267.0
   },
   {
     "id": "ben_zwiehoff",
@@ -316,7 +316,7 @@
     "full_name": "David de la Cruz Melgarejo",
     "short_name": "D. L. De Cruz",
     "team": "QPCT",
-    "price": 3.5,
+    "price": 3.0,
     "own_pct": 318.0
   },
   {
@@ -340,8 +340,8 @@
     "full_name": "Darren Rafferty",
     "short_name": "D. Rafferty",
     "team": "EFEEP",
-    "price": 2.5,
-    "own_pct": 264.0
+    "price": 2.0,
+    "own_pct": 263.0
   },
   {
     "id": "dion_smith",
@@ -404,8 +404,8 @@
     "full_name": "Enric Mas",
     "short_name": "E. Mas",
     "team": "MT",
-    "price": 9.0,
-    "own_pct": 5628.0
+    "price": 9.5,
+    "own_pct": 5627.0
   },
   {
     "id": "edward_planckaert",
@@ -468,7 +468,7 @@
     "full_name": "Francesco Busatto",
     "short_name": "F. Busatto",
     "team": "A-D",
-    "price": 3.5,
+    "price": 3.0,
     "own_pct": 13.0
   },
   {
@@ -516,8 +516,8 @@
     "full_name": "Felix Gall",
     "short_name": "F. Gall",
     "team": "DALM",
-    "price": 12.0,
-    "own_pct": 5341.0
+    "price": 12.5,
+    "own_pct": 5340.0
   },
   {
     "id": "filippo_ganna",
@@ -620,7 +620,7 @@
     "full_name": "Gianni Moscon",
     "short_name": "G. Moscon",
     "team": "RB-B",
-    "price": 2.5,
+    "price": 2.0,
     "own_pct": 298.0
   },
   {
@@ -628,7 +628,7 @@
     "full_name": "Gregor Mühlberger",
     "short_name": "G. Mühlberger",
     "team": "DALM",
-    "price": 4.5,
+    "price": 5.0,
     "own_pct": 3259.0
   },
   {
@@ -804,7 +804,7 @@
     "full_name": "Juan Pedro López",
     "short_name": "J. P. López",
     "team": "MT",
-    "price": 3.0,
+    "price": 2.5,
     "own_pct": 229.0
   },
   {
@@ -876,7 +876,7 @@
     "full_name": "Jay Vine",
     "short_name": "J. Vine",
     "team": "UAETEXRG",
-    "price": 8.5,
+    "price": 8.0,
     "own_pct": 1336.0
   },
   {
@@ -989,7 +989,7 @@
     "short_name": "L. Rota",
     "team": "LOTTO",
     "price": 3.0,
-    "own_pct": 19.0
+    "own_pct": 20.0
   },
   {
     "id": "liam_slock",
@@ -1132,7 +1132,7 @@
     "full_name": "Mathijs Paasschens",
     "short_name": "M. Paasschens",
     "team": "B-V",
-    "price": 2.5,
+    "price": 2.0,
     "own_pct": 28.0
   },
   {
@@ -1244,7 +1244,7 @@
     "full_name": "Nick Schultz",
     "short_name": "N. Schultz",
     "team": "I-PT",
-    "price": 3.0,
+    "price": 2.5,
     "own_pct": 29.0
   },
   {
@@ -1301,7 +1301,7 @@
     "short_name": "R. Carapaz",
     "team": "EFEEP",
     "price": 10.0,
-    "own_pct": 1062.0
+    "own_pct": 1063.0
   },
   {
     "id": "rémi_cavagna",
@@ -1340,7 +1340,7 @@
     "full_name": "Remy Rochas",
     "short_name": "R. Rochas",
     "team": "G-F",
-    "price": 3.5,
+    "price": 3.0,
     "own_pct": 9.0
   },
   {
@@ -1404,8 +1404,8 @@
     "full_name": "Sepp Kuss",
     "short_name": "S. Kuss",
     "team": "TV|L",
-    "price": 8.0,
-    "own_pct": 4009.0
+    "price": 8.5,
+    "own_pct": 4008.0
   },
   {
     "id": "sean_quinn",
@@ -1444,7 +1444,7 @@
     "full_name": "Timo de Jong",
     "short_name": "T. De Jong",
     "team": "TPP",
-    "price": 4.0,
+    "price": 3.5,
     "own_pct": 17.0
   },
   {
@@ -1556,7 +1556,7 @@
     "full_name": "Mads Pedersen",
     "short_name": "M. Pedersen",
     "team": "L-T",
-    "price": 12.5,
+    "price": 12.0,
     "own_pct": 1783.0
   },
   {
@@ -1565,6 +1565,6 @@
     "short_name": "I. Oliveira",
     "team": "UAE",
     "price": 4.5,
-    "own_pct": 429.0
+    "own_pct": 428.0
   }
 ]
