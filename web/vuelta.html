@@ -1290,6 +1290,24 @@
       // navn → pts-dict + pris (til værdi-sortering)
       var ptsByName={}, priceByName={};
       riders.forEach(function(r){ ptsByName[nrm(r.name)]=r.pts||{}; priceByName[nrm(r.name)]=r.price||0; });
+      // Rytternavne kan afvige mellem Holdets hold-lister (Holdets API returnerer
+      // fx "Enric Mas Nicolau", begge spanske efternavne) og rytterfeltet i
+      // pointmatrixen ("Enric Mas", forkortet efter PCS/CyclingOracle-konvention)
+      // — samme person, forskellig kilde. Et rent nrm()-opslag fejler derfor
+      // stille (viser "ingen værdi" på rytteren og springer hans point over i
+      // holdets sum, uden fejl nogen steder) — bekræftet på Enric Mas, som
+      // begge hold har haft på i runde 6-7. Falder tilbage til delstreng-match
+      // (samme teknik som optaktens favorit-matching) og cacher opslaget.
+      var allRiderNorms = riders.map(function(r){ return nrm(r.name); });
+      var resolveCache = {};
+      function resolveKey(rn){
+        var n = nrm(rn);
+        if(priceByName[n]!=null || ptsByName[n]!=null) return n;
+        if(resolveCache[n]!=null) return resolveCache[n];
+        var hit = allRiderNorms.find(function(fn){ return fn && (fn.indexOf(n)>=0 || n.indexOf(fn)>=0); });
+        resolveCache[n] = hit || n;
+        return resolveCache[n];
+      }
       // etaper der faktisk er afviklet (nogen har fået point) → kan vises i tabellen
       var played={}; riders.forEach(function(r){ Object.keys(r.pts||{}).forEach(function(k){ played[String(k)]=1; }); });
       var labels=Object.keys(td.teams);
@@ -1320,7 +1338,7 @@
           if(prev){
             Object.keys(cur).forEach(function(rn){
               if(!prev[rn]){
-                var p = roundPrice[rn]!=null ? roundPrice[rn] : (priceByName[rn]||0);
+                var p = roundPrice[rn]!=null ? roundPrice[rn] : (priceByName[resolveKey(rn)]||0);
                 fee += p * 1e6 * 0.01;
               }
             });
@@ -1338,7 +1356,7 @@
         var hist=(team.history||{})[String(snum)];
         if(!hist || !(hist.riders||[]).length) return null;
         var cap=nrm(hist.captain||''); var tot=0;
-        hist.riders.forEach(function(rn){ var p=ptsByName[nrm(rn)]||{}; var v=+p[snum]||0; tot+=v; if(nrm(rn)===cap) tot+=v; });
+        hist.riders.forEach(function(rn){ var p=ptsByName[resolveKey(rn)]||{}; var v=+p[snum]||0; tot+=v; if(nrm(rn)===cap) tot+=v; });
         return tot;
       }
       // kumulativ (summerer kun etaper med kendt roster)
@@ -1353,7 +1371,7 @@
       function curRiders(l){ return ((td.teams[l].current||{}).riders)||[]; }
       var sets={}; labels.forEach(function(l){ sets[l]={}; curRiders(l).forEach(function(r){ sets[l][nrm(r)]=r; }); });
       function isShared(rn){ return labels.length>1 && labels.every(function(l){ return sets[l][nrm(rn)]; }); }
-      function val(rn){ return priceByName[nrm(rn)]||0; }         // værdi = pris (M)
+      function val(rn){ return priceByName[resolveKey(rn)]||0; }  // værdi = pris (M)
       function byVal(a,b){ return val(b)-val(a) || a.localeCompare(b,'da'); }
       // Fælles rækkefølge (identisk i begge kort → fælles ryttere flugter linje-for-linje)
       var sharedOrder = curRiders(labels[0]).filter(isShared).sort(byVal);
