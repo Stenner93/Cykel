@@ -1,20 +1,20 @@
 {
-  "generated": "2026-08-30T06:07:59.987035+00:00",
+  "generated": "2026-08-30T10:28:29.953561+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
       "current": {
         "riders": [
-          "Tadej Pogacar",
-          "Matthew Brennan",
-          "Alessandro Romele",
-          "Vito Braet",
-          "Pau Miquel",
-          "Hugo Hofstetter",
-          "Steven Kruijswijk",
-          "Henri-Francois Renard-Haquin"
+          "Enric Mas Nicolau",
+          "Felix Gall",
+          "Sepp Kuss",
+          "Harold Tejada",
+          "Primoz Roglic",
+          "Gregor Muhlberger",
+          "Clement Berthet",
+          "Steven Kruijswijk"
         ],
-        "captain": "Matthew Brennan",
+        "captain": "Felix Gall",
         "bank_M": 0.0
       },
       "history": {
@@ -178,6 +178,29 @@
             "Steven Kruijswijk": 2.445,
             "Henri-Francois Renard-Haquin": 2.275
           }
+        },
+        "9": {
+          "riders": [
+            "Enric Mas Nicolau",
+            "Felix Gall",
+            "Sepp Kuss",
+            "Harold Tejada",
+            "Primoz Roglic",
+            "Gregor Muhlberger",
+            "Clement Berthet",
+            "Steven Kruijswijk"
+          ],
+          "captain": "Felix Gall",
+          "prices": {
+            "Enric Mas Nicolau": 8.85,
+            "Felix Gall": 12.124,
+            "Sepp Kuss": 8.185,
+            "Harold Tejada": 5.231,
+            "Primoz Roglic": 10.232,
+            "Gregor Muhlberger": 4.69,
+            "Clement Berthet": 4.067,
+            "Steven Kruijswijk": 2.445
+          }
         }
       }
     },
@@ -185,16 +208,16 @@
       "team_id": 7272262,
       "current": {
         "riders": [
-          "Matthew Brennan",
-          "Hugo Hofstetter",
-          "Tadej Pogacar",
-          "Vito Braet",
-          "Pau Miquel",
-          "Juan Felipe Rodriguez",
-          "Steven Kruijswijk",
-          "Alessandro Romele"
+          "Clement Berthet",
+          "Tobias Halland Johannessen",
+          "Enric Mas Nicolau",
+          "Harold Tejada",
+          "Gregor Muhlberger",
+          "Felix Gall",
+          "Cristian Rodriguez Martin",
+          "Pablo Torres"
         ],
-        "captain": "Matthew Brennan",
+        "captain": "Felix Gall",
         "bank_M": 0.0
       },
       "history": {
@@ -357,6 +380,29 @@
             "Juan Felipe Rodriguez": 3.109,
             "Steven Kruijswijk": 2.445,
             "Alessandro Romele": 3.17
+          }
+        },
+        "9": {
+          "riders": [
+            "Clement Berthet",
+            "Tobias Halland Johannessen",
+            "Enric Mas Nicolau",
+            "Harold Tejada",
+            "Gregor Muhlberger",
+            "Felix Gall",
+            "Cristian Rodriguez Martin",
+            "Pablo Torres"
+          ],
+          "captain": "Felix Gall",
+          "prices": {
+            "Clement Berthet": 4.067,
+            "Tobias Halland Johannessen": 8.945,
+            "Enric Mas Nicolau": 8.85,
+            "Harold Tejada": 5.231,
+            "Gregor Muhlberger": 4.69,
+            "Felix Gall": 12.124,
+            "Cristian Rodriguez Martin": 6.069,
+            "Pablo Torres": 5.652
           }
         }
       }
