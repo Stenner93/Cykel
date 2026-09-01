@@ -655,6 +655,28 @@ def main() -> None:
                     stage_actuals[rider["id"]] = int(pts)
             actuals[stage_num] = stage_actuals
 
+    # ── DNF-udgåede ryttere (fx styrt midt i løbet) ──────────────────────────
+    # Holdet logger et DNF som en almindelig action (ruleId 1080) på selve
+    # udgangs-etapen — det bruges allerede korrekt til at score DEN etape
+    # (DNF_PEN). Men uden dette bliver rytteren aldrig udelukket fra kommende
+    # etapers FORUDSIGELSER: check_dns() ovenfor tjekker kun mod PCS' statiske
+    # startliste (hvem der startede løbet), ikke hvem der stadig er med — en
+    # rytter der styrtede ud på etape 8 stod derfor stadig som "Vuelta-etape"-
+    # fanens højeste exp-pick på etape 9, 10, ... Genbruger samme "dns"-status
+    # (0.00-multiplikator, se predictor.py) fra første etape EFTER udgangen.
+    dnf_stage_by_id: dict[str, int] = {}
+    for _snum in sorted(all_actions.keys()):
+        for _act in all_actions[_snum]:
+            if _act.get("ruleId") != 1080:
+                continue
+            _rider = pid_to_rider.get(_act.get("personId"))
+            if _rider and _rider["id"] not in dnf_stage_by_id:
+                dnf_stage_by_id[_rider["id"]] = _snum
+    if dnf_stage_by_id:
+        print(f"  DNF-udgåede ({len(dnf_stage_by_id)}): " + ", ".join(
+            f"{rid} (etape {sn})" for rid, sn in sorted(dnf_stage_by_id.items())
+        ))
+
     # ── GC + jerseys from last completed stage ───────────────────────────────
     gc_standings:   dict[str, int]       = {}
     jersey_leaders: dict[str, list[str]] = {}
@@ -759,11 +781,14 @@ def main() -> None:
             if not odds_data:
                 odds_data = None
 
-        # Build context with auto-DNS from startlist check
+        # Build context with auto-DNS from startlist check + DNF-udgåede
         stage_ctx = dict(all_stage_context.get(stage_num) or {})
         for dns_id in dns_ids:
             if dns_id not in stage_ctx:
                 stage_ctx[dns_id] = {"status": "dns", "note": "Ikke på PCS startliste"}
+        for dnf_id, dnf_snum in dnf_stage_by_id.items():
+            if stage_num > dnf_snum and dnf_id not in stage_ctx:
+                stage_ctx[dnf_id] = {"status": "dns", "note": f"Udgået (DNF etape {dnf_snum})"}
 
         stage_ml = compute_ml_scores(
             riders=riders,
