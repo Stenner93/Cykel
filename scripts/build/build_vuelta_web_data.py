@@ -656,18 +656,26 @@ def main() -> None:
             actuals[stage_num] = stage_actuals
 
     # ── DNF-udgåede ryttere (fx styrt midt i løbet) ──────────────────────────
-    # Holdet logger et DNF som en almindelig action (ruleId 1080) på selve
-    # udgangs-etapen — det bruges allerede korrekt til at score DEN etape
-    # (DNF_PEN). Men uden dette bliver rytteren aldrig udelukket fra kommende
-    # etapers FORUDSIGELSER: check_dns() ovenfor tjekker kun mod PCS' statiske
-    # startliste (hvem der startede løbet), ikke hvem der stadig er med — en
-    # rytter der styrtede ud på etape 8 stod derfor stadig som "Vuelta-etape"-
-    # fanens højeste exp-pick på etape 9, 10, ... Genbruger samme "dns"-status
-    # (0.00-multiplikator, se predictor.py) fra første etape EFTER udgangen.
+    # Holdet logger et DNF som en almindelig action på selve udgangs-etapen —
+    # det bruges allerede korrekt til at score DEN etape. Men uden dette
+    # bliver rytteren aldrig udelukket fra kommende etapers FORUDSIGELSER:
+    # check_dns() ovenfor tjekker kun mod PCS' statiske startliste (hvem der
+    # startede løbet), ikke hvem der stadig er med — en rytter der styrtede
+    # ud på etape 8 stod derfor stadig som "Vuelta-etape"-fanens højeste
+    # exp-pick på etape 9, 10, ... Genbruger samme "dns"-status (0.00-
+    # multiplikator, se predictor.py) fra første etape EFTER udgangen.
+    #
+    # ruleId 1805 er VERIFICERET direkte mod Pogačars faktiske stage-8-exit
+    # (via en engangsprobe, se PR #146) — IKKE 1080, som _action_pts() i
+    # denne fil ellers antager er DNF-reglen (den ser aldrig ud til at blive
+    # brugt af Holdet i praksis for en reel udgang; ruleId 1805 er den der
+    # faktisk optræder, med en enkelt action og et negativt unitPriceChange
+    # på selve udgangs-etapen — fx {"ruleId": 1805, "unitPriceChange":
+    # -90000} for Pogačar på etape 8).
     dnf_stage_by_id: dict[str, int] = {}
     for _snum in sorted(all_actions.keys()):
         for _act in all_actions[_snum]:
-            if _act.get("ruleId") != 1080:
+            if _act.get("ruleId") != 1805:
                 continue
             _rider = pid_to_rider.get(_act.get("personId"))
             if _rider and _rider["id"] not in dnf_stage_by_id:
