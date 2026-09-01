@@ -1458,6 +1458,177 @@
           }
         ]
       }
+    },
+    "10": {
+      "scenario": "redsprint",
+      "simon": {
+        "captain": "Matthew Brennan",
+        "favorites": [
+          "Matthew Brennan",
+          "Mads Pedersen",
+          "Bryan Coquard",
+          "Alessandro Romele",
+          "Axel Laurance",
+          "Hugo Hofstetter",
+          "Orluis Aular",
+          "Pau Miquel",
+          "Vito Braet",
+          "Jordan Labrosse",
+          "David González",
+          "Vincenzo Albanese",
+          "Bastien Tronchon",
+          "Wout van Aert",
+          "Marcel Camprubi",
+          "Ramses Debruyne",
+          "Andreas Leknessund",
+          "Kevin Vermaerke",
+          "Gianmarco Garofoli",
+          "Enric Mas",
+          "Primoz Roglic",
+          "Sepp Kuss"
+        ],
+        "avoid": [
+          "Jordi Meeus",
+          "Ben Turner"
+        ],
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Optaktsholdet holdt helt uhørt en 18. plads for 3. etape i streg, med alle syv indkøbte klassementsryttere i top-15 på Alto de Aitana."
+          },
+          {
+            "h": "Ruten — 50:50",
+            "t": "10. etape (Alcaraz–Elche de la Sierra) bør gøre forskelle og blive helt afgørende i Vueltaspillet: ses som 50:50 mellem udbrudssejr og reduceret massespurt."
+          },
+          {
+            "h": "Spurtscenariet",
+            "t": "Brennan storfavorit, dernæst Pedersen, Coquard, Romele, Laurance, Hofstetter og Aular. Value-for-money: Miquel, Braet og Labrosse — samt David Gonzalez, Albanese og Tronchon som top-15-kandidater. Svært at se nogen komme i nærheden af Brennan, medmindre Pedersen finder formen. Meeus og Turner ikke gode kandidater på en dag med 3.000 højdemeter."
+          },
+          {
+            "h": "Udbrudsscenariet",
+            "t": "Van Aert eller Mads Pedersen bør være favoritter fra et udbrud uanset sammensætning. Blandt ikke-spurtstærke udbrydere særlig fidus til Camprubi, Debruyne, Leknessund, Vermaerke og Garofoli."
+          },
+          {
+            "h": "Transferanalyse",
+            "t": "Kun 350.000 til etapevinderen, og det kræver en 7. plads at være et bedre kaptajnvalg end førertrøje-Mas. Onsdagens etape ender med allerstørste sandsynlighed i en spurt — dyrt at købe sig fattig i udbrudskandidater der skal skiftes ud igen med det samme."
+          },
+          {
+            "h": "Beholder Mas og Roglic",
+            "t": "Begge forbliver på holdet med deres sikre vækst."
+          },
+          {
+            "h": "Brennan bedste kaptajnvalg",
+            "t": "Bør vinde 99 ud af 100 gange i denne spurt givet Mads P.'s form. Eneste tvivl: holdkammerat Van Aert vil formentlig gøre alt for at sidde med i udbruddet, hvilket kan forhindre Visma i at jagte fra feltet selvom de har storfavoritten til en spurt. Fravælger bevidst både Van Aert og Mads Pedersen — for uforudsigeligt/dyrt at satse på i et Grand Tour-udbrud, og Pedersen ventes ikke slå Brennan i en spurt."
+          },
+          {
+            "h": "Romele og Miquel — etapens største must-have",
+            "t": "Romele bedste value-for-money og kan begå sig i både spurt og udbrud. Samme gælder Miquel, som trods 8. etapes styrt (eller involvering deri) blev en fin nr. 72 på Alto de Aitana. Begge indkøbes."
+          },
+          {
+            "h": "De sidste tre pladser",
+            "t": "Overvejede at beholde Gall og indkøbe Braet + Covi, men indså at der er 410.000 til vinderen af morgendagens formodede sprintetape — en Gall-plads ville ikke give en oplagt vej til Meeus eller Coquard, og det samme ville gælde ved indkøb af Mads P. eller Van Aert i stedet."
+          },
+          {
+            "h": "Beholder Kuss",
+            "t": "Giver 40k sikker vækst og mulig holdbonus for Brennan (eller Van Aert ved udbrudssejr) — og kan skiftes 1:1 til Meeus onsdag som eneste transfer i et stensikkert sprintscenarie."
+          },
+          {
+            "h": "TheFantasyTool A-hold (konklusion)",
+            "t": "Kaptajn: Brennan. Fem transfers: Gall→Brennan, Berthet→Romele, Tejada→Miquel, Aparicio→Coquard, Mühlberger→Hofstetter."
+          },
+          {
+            "h": "Dagens sats",
+            "t": "Van Aert (C) — differential-bud, adskilt fra det faktiske kaptajnvalg Brennan."
+          }
+        ],
+        "team": {
+          "keeps": [
+            "Enric Mas",
+            "Primoz Roglic",
+            "Sepp Kuss"
+          ],
+          "buys": [
+            "Matthew Brennan",
+            "Alessandro Romele",
+            "Pau Miquel",
+            "Bryan Coquard",
+            "Hugo Hofstetter"
+          ],
+          "captain": "Matthew Brennan",
+          "note": "Fem transfers: Gall→Brennan, Berthet→Romele, Tejada→Miquel, Aparicio→Coquard, Mühlberger→Hofstetter."
+        }
+      },
+      "feltet": {
+        "captain": "Wout van Aert",
+        "favorites": [
+          "Wout van Aert",
+          "Matthew Brennan",
+          "Mads Pedersen",
+          "Enric Mas",
+          "Primoz Roglic",
+          "Sepp Kuss",
+          "Axel Laurance",
+          "Finn Fisher-Black",
+          "Alessandro Romele",
+          "Pau Miquel",
+          "Vincenzo Albanese",
+          "Jordan Labrosse",
+          "Alessandro Covi",
+          "Henri-Francois Renard-Haquin",
+          "Andreas Kron",
+          "Marcel Camprubi",
+          "Bryan Coquard",
+          "Hugo Hofstetter",
+          "Vito Braet"
+        ],
+        "avoid": [],
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Team Feltet ligger nr. 679 samlet."
+          },
+          {
+            "h": "Satser kun på én Visma-stjerne ad gangen",
+            "t": "Sjældent mere 50-50 mellem spurt og udbrudssejr end i dag, hvor Visma kan vælge scenarie efter hvilket af deres to kort de spiller. Mads Pedersen burde være selvskrevet i begge scenarier, men Kim Andersen har sagt til Feltet at Pedersen ikke skal forventes i udbrud i dag — tør derfor ikke stole på ham uanset scenarie. Det kan tvinge én til at købe både Brennan og van Aert."
+          },
+          {
+            "h": "Van Aert i dag, Brennan i morgen",
+            "t": "Foretrækker at satse på udbrudssejr i dag og spurt i morgen — svært at gøre fyldestgørende med begge Visma-stjerner samtidig. Køber derfor kun van Aert med intention om at sælge ham til fordel for Brennan i morgen."
+          },
+          {
+            "h": "Beholder Mas og Roglic",
+            "t": "Strategien giver samtidig råd til at beholde begge — deres 125.000 og 90.000 i klassementsbonus er guld værd ved en udbrudssejr."
+          },
+          {
+            "h": "Beholder Kuss",
+            "t": "Må nøjes med sikre 40.000, men pæn sandsynlighed for holdbonus begge dage uanset scenarie gør at amerikaneren beholdes."
+          },
+          {
+            "h": "Laurance — stor fidus",
+            "t": "Suverænt valg i mellemlejet: kan kandidere til topresultat i både udbrud og spurt. Risikerer at skulle køre en spurt for Ben Turner, men det ser ikke sådan ud, og med tro på udbrudssejr er det ikke betænkeligt."
+          },
+          {
+            "h": "Fisher-Black også fidus, men for dyrt",
+            "t": "Meget fidus til Fisher-Black i begge scenarier — anser det for usandsynligt at Meeus kan overleve finalen ved en spurt — men budgettet prioriterer Laurance over newzealænderen."
+          },
+          {
+            "h": "Romele og Miquel umulige at komme udenom",
+            "t": "Billige kandidater der begår sig i begge scenarier — sammen med Albanese, Labrosse (dog akkurat uden for budget) og muligvis Covi (kan også beholdes til morgendagens etape) samt Renard-Haquin til nøds."
+          },
+          {
+            "h": "Rendyrkede udbrudskandidater",
+            "t": "Kron og Camprubi er værdiløse ved en spurt, men reelle vinderbud fra et udbrud."
+          },
+          {
+            "h": "Til morgendagens spurt",
+            "t": "Satser man i stedet på spurt, er Coquard, Hofstetter og Braet gode valg til hver af de næste to dage."
+          },
+          {
+            "h": "Kaptajnvalg (konklusion)",
+            "t": "Van Aert naturligt kaptajnvalg med denne strategi. Alternativet er Brennan — det ville Feltet personligt foretrække, hvis man er indstillet på at satse, da der uden tvivl er mest at vinde ved at sætte sin lid til en spurt allerede i dag (og dermed også ramme mange af de rigtige valg til i morgen)."
+          }
+        ]
+      }
     }
   }
 }
