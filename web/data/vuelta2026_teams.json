@@ -1,20 +1,20 @@
 {
-  "generated": "2026-09-01T10:33:44.498490+00:00",
+  "generated": "2026-09-01T10:54:42.249599+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
       "current": {
         "riders": [
           "Enric Mas Nicolau",
-          "Felix Gall",
+          "Alessandro Romele",
           "Sepp Kuss",
-          "Harold Tejada",
+          "Pau Miquel",
           "Primoz Roglic",
-          "Gregor Muhlberger",
-          "Clement Berthet",
-          "Steven Kruijswijk"
+          "Matthew Brennan",
+          "Axel Laurance",
+          "Jordan Labrosse"
         ],
-        "captain": "Felix Gall",
+        "captain": "Matthew Brennan",
         "bank_M": 0.0
       },
       "history": {
@@ -201,6 +201,29 @@
             "Clement Berthet": 4.1,
             "Steven Kruijswijk": 2.388
           }
+        },
+        "10": {
+          "riders": [
+            "Enric Mas Nicolau",
+            "Alessandro Romele",
+            "Sepp Kuss",
+            "Pau Miquel",
+            "Primoz Roglic",
+            "Matthew Brennan",
+            "Axel Laurance",
+            "Jordan Labrosse"
+          ],
+          "captain": "Matthew Brennan",
+          "prices": {
+            "Enric Mas Nicolau": 9.325,
+            "Alessandro Romele": 3.185,
+            "Sepp Kuss": 8.307,
+            "Pau Miquel": 3.615,
+            "Primoz Roglic": 10.529,
+            "Matthew Brennan": 12.601,
+            "Axel Laurance": 6.13,
+            "Jordan Labrosse": 3.005
+          }
         }
       }
     },
@@ -208,16 +231,16 @@
       "team_id": 7272262,
       "current": {
         "riders": [
-          "Clement Berthet",
-          "Tobias Halland Johannessen",
+          "Alessandro Romele",
+          "Pau Miquel",
           "Enric Mas Nicolau",
-          "Harold Tejada",
-          "Gregor Muhlberger",
-          "Felix Gall",
-          "Cristian Rodriguez Martin",
-          "Pablo Torres"
+          "Matthew Brennan",
+          "Wout van Aert",
+          "Axel Laurance",
+          "Jordan Labrosse",
+          "Hugo Hofstetter"
         ],
-        "captain": "Felix Gall",
+        "captain": "Wout van Aert",
         "bank_M": 0.0
       },
       "history": {
@@ -403,6 +426,29 @@
             "Felix Gall": 12.369,
             "Cristian Rodriguez Martin": 6.212,
             "Pablo Torres": 5.562
+          }
+        },
+        "10": {
+          "riders": [
+            "Alessandro Romele",
+            "Pau Miquel",
+            "Enric Mas Nicolau",
+            "Matthew Brennan",
+            "Wout van Aert",
+            "Axel Laurance",
+            "Jordan Labrosse",
+            "Hugo Hofstetter"
+          ],
+          "captain": "Wout van Aert",
+          "prices": {
+            "Alessandro Romele": 3.185,
+            "Pau Miquel": 3.615,
+            "Enric Mas Nicolau": 9.325,
+            "Matthew Brennan": 12.601,
+            "Wout van Aert": 12.419,
+            "Axel Laurance": 6.13,
+            "Jordan Labrosse": 3.005,
+            "Hugo Hofstetter": 4.65
           }
         }
       }
