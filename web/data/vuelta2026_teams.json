@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T13:33:27.733087+00:00",
+  "generated": "2026-09-02T17:07:13.682704+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
@@ -31,14 +31,14 @@
           ],
           "captain": "Wout van Aert",
           "prices": {
-            "Wout van Aert": 12.621,
+            "Wout van Aert": 12.918,
             "Léo Bisiaux": 5.919,
             "Pau Miquel": 3.615,
             "Ben Turner": 5.816,
-            "Ethan Hayter": 5.178,
-            "Finn Fisher-Black": 6.248,
-            "Callum Thornley": 3.463,
-            "Christophe Laporte": 6.251
+            "Ethan Hayter": 5.261,
+            "Finn Fisher-Black": 6.268,
+            "Callum Thornley": 3.483,
+            "Christophe Laporte": 6.311
           }
         },
         "1": {
@@ -54,13 +54,13 @@
           ],
           "captain": "Joshua Tarling",
           "prices": {
-            "Wout van Aert": 12.621,
-            "Ethan Hayter": 5.178,
-            "Ivan Romeo": 4.856,
+            "Wout van Aert": 12.918,
+            "Ethan Hayter": 5.261,
+            "Ivan Romeo": 4.826,
             "Stefan Küng": 6.461,
             "Joshua Tarling": 8.725,
-            "Finn Fisher-Black": 6.248,
-            "Callum Thornley": 3.463,
+            "Finn Fisher-Black": 6.268,
+            "Callum Thornley": 3.483,
             "Sander De Pestel": 2.765
           }
         },
@@ -80,10 +80,10 @@
             "Tadej Pogacar": 23.096,
             "Léo Bisiaux": 5.919,
             "Pau Miquel": 3.615,
-            "Fabio Van den Bossche": 2.209,
-            "Steven Kruijswijk": 2.358,
-            "Richard Carapaz": 10.276,
-            "Domen Novak": 2.753,
+            "Fabio Van den Bossche": 2.188,
+            "Steven Kruijswijk": 2.391,
+            "Richard Carapaz": 10.336,
+            "Domen Novak": 2.726,
             "Mario Aparicio": 2.892
           }
         },
@@ -101,12 +101,12 @@
           "captain": "Matthew Brennan",
           "prices": {
             "Tadej Pogacar": 23.096,
-            "Alessandro Romele": 3.346,
+            "Alessandro Romele": 3.496,
             "Pau Miquel": 3.615,
             "Julien Bernard": 2.286,
-            "Matthew Brennan": 12.598,
-            "Vito Braet": 3.457,
-            "Steven Kruijswijk": 2.358,
+            "Matthew Brennan": 13.008,
+            "Vito Braet": 3.545,
+            "Steven Kruijswijk": 2.391,
             "Henri-Francois Renard-Haquin": 2.085
           }
         },
@@ -127,10 +127,10 @@
             "Jarno Widar": 5.851,
             "Mattia Gaffuri": 2.102,
             "Julien Bernard": 2.286,
-            "Harold Tejada": 5.405,
+            "Harold Tejada": 5.435,
             "Ramses Debruyne": 4.814,
-            "Steven Kruijswijk": 2.358,
-            "Enric Mas Nicolau": 9.45
+            "Steven Kruijswijk": 2.391,
+            "Enric Mas Nicolau": 9.575
           }
         },
         "7": {
@@ -152,8 +152,8 @@
             "Andreas Kron": 3.474,
             "Clement Berthet": 4.16,
             "Ramses Debruyne": 4.814,
-            "Steven Kruijswijk": 2.358,
-            "Enric Mas Nicolau": 9.45
+            "Steven Kruijswijk": 2.391,
+            "Enric Mas Nicolau": 9.575
           }
         },
         "8": {
@@ -170,12 +170,12 @@
           "captain": "Matthew Brennan",
           "prices": {
             "Tadej Pogacar": 23.096,
-            "Matthew Brennan": 12.598,
-            "Alessandro Romele": 3.346,
-            "Vito Braet": 3.457,
+            "Matthew Brennan": 13.008,
+            "Alessandro Romele": 3.496,
+            "Vito Braet": 3.545,
             "Pau Miquel": 3.615,
-            "Hugo Hofstetter": 4.751,
-            "Steven Kruijswijk": 2.358,
+            "Hugo Hofstetter": 4.893,
+            "Steven Kruijswijk": 2.391,
             "Henri-Francois Renard-Haquin": 2.085
           }
         },
@@ -192,14 +192,14 @@
           ],
           "captain": "Felix Gall",
           "prices": {
-            "Enric Mas Nicolau": 9.45,
-            "Felix Gall": 12.449,
-            "Sepp Kuss": 8.347,
-            "Harold Tejada": 5.405,
-            "Primoz Roglic": 10.619,
-            "Gregor Muhlberger": 4.794,
+            "Enric Mas Nicolau": 9.575,
+            "Felix Gall": 12.529,
+            "Sepp Kuss": 8.447,
+            "Harold Tejada": 5.435,
+            "Primoz Roglic": 10.729,
+            "Gregor Muhlberger": 4.814,
             "Clement Berthet": 4.16,
-            "Steven Kruijswijk": 2.358
+            "Steven Kruijswijk": 2.391
           }
         },
         "10": {
@@ -215,14 +215,14 @@
           ],
           "captain": "Matthew Brennan",
           "prices": {
-            "Enric Mas Nicolau": 9.45,
-            "Alessandro Romele": 3.346,
-            "Sepp Kuss": 8.347,
+            "Enric Mas Nicolau": 9.575,
+            "Alessandro Romele": 3.496,
+            "Sepp Kuss": 8.447,
             "Pau Miquel": 3.615,
-            "Primoz Roglic": 10.619,
-            "Matthew Brennan": 12.598,
+            "Primoz Roglic": 10.729,
+            "Matthew Brennan": 13.008,
             "Axel Laurance": 6.13,
-            "Jordan Labrosse": 3.117
+            "Jordan Labrosse": 3.138
           }
         },
         "11": {
@@ -238,14 +238,14 @@
           ],
           "captain": "Matthew Brennan",
           "prices": {
-            "Enric Mas Nicolau": 9.45,
-            "Alessandro Romele": 3.346,
-            "Sepp Kuss": 8.347,
-            "Bastien Tronchon": 4.314,
-            "Primoz Roglic": 10.619,
-            "Matthew Brennan": 12.598,
+            "Enric Mas Nicolau": 9.575,
+            "Alessandro Romele": 3.496,
+            "Sepp Kuss": 8.447,
+            "Bastien Tronchon": 4.445,
+            "Primoz Roglic": 10.729,
+            "Matthew Brennan": 13.008,
             "Axel Laurance": 6.13,
-            "Jordan Labrosse": 3.117
+            "Jordan Labrosse": 3.138
           }
         }
       }
@@ -280,14 +280,14 @@
           ],
           "captain": "Wout van Aert",
           "prices": {
-            "Wout van Aert": 12.621,
+            "Wout van Aert": 12.918,
             "Léo Bisiaux": 5.919,
-            "Ethan Hayter": 5.178,
+            "Ethan Hayter": 5.261,
             "Pau Miquel": 3.615,
-            "Christophe Laporte": 6.251,
-            "Jordan Labrosse": 3.117,
+            "Christophe Laporte": 6.311,
+            "Jordan Labrosse": 3.138,
             "Joshua Tarling": 8.725,
-            "Finn Fisher-Black": 6.248
+            "Finn Fisher-Black": 6.268
           }
         },
         "1": {
@@ -303,14 +303,14 @@
           ],
           "captain": "Joshua Tarling",
           "prices": {
-            "Wout van Aert": 12.621,
+            "Wout van Aert": 12.918,
             "Lucas Hamilton": 2.256,
-            "Ethan Hayter": 5.178,
-            "Ivan Romeo": 4.856,
+            "Ethan Hayter": 5.261,
+            "Ivan Romeo": 4.826,
             "Stefan Küng": 6.461,
-            "Ivo Oliveira": 4.331,
+            "Ivo Oliveira": 4.313,
             "Joshua Tarling": 8.725,
-            "Finn Fisher-Black": 6.248
+            "Finn Fisher-Black": 6.268
           }
         },
         "4": {
@@ -326,11 +326,11 @@
           ],
           "captain": "Tadej Pogacar",
           "prices": {
-            "Jakob Omrzel": 4.71,
+            "Jakob Omrzel": 4.72,
             "Léo Bisiaux": 5.919,
             "Tadej Pogacar": 23.096,
             "Ramses Debruyne": 4.814,
-            "Steven Kruijswijk": 2.358,
+            "Steven Kruijswijk": 2.391,
             "Jarno Widar": 5.851,
             "Mario Aparicio": 2.892,
             "Pau Miquel": 3.615
@@ -349,11 +349,11 @@
           ],
           "captain": "Tadej Pogacar",
           "prices": {
-            "Matthew Brennan": 12.598,
-            "Vito Braet": 3.457,
+            "Matthew Brennan": 13.008,
+            "Vito Braet": 3.545,
             "Tadej Pogacar": 23.096,
-            "Alessandro Romele": 3.346,
-            "Steven Kruijswijk": 2.358,
+            "Alessandro Romele": 3.496,
+            "Steven Kruijswijk": 2.391,
             "Julien Bernard": 2.286,
             "Henri-Francois Renard-Haquin": 2.085,
             "Pau Miquel": 3.615
@@ -375,10 +375,10 @@
             "Ramses Debruyne": 4.814,
             "Jarno Widar": 5.851,
             "Tadej Pogacar": 23.096,
-            "Harold Tejada": 5.405,
-            "Enric Mas Nicolau": 9.45,
+            "Harold Tejada": 5.435,
+            "Enric Mas Nicolau": 9.575,
             "Juan Felipe Rodriguez": 3.1,
-            "Steven Kruijswijk": 2.358,
+            "Steven Kruijswijk": 2.391,
             "Julien Bernard": 2.286
           }
         },
@@ -398,11 +398,11 @@
             "Ramses Debruyne": 4.814,
             "Clement Berthet": 4.16,
             "Tadej Pogacar": 23.096,
-            "Harold Tejada": 5.405,
-            "Enric Mas Nicolau": 9.45,
+            "Harold Tejada": 5.435,
+            "Enric Mas Nicolau": 9.575,
             "Juan Felipe Rodriguez": 3.1,
-            "Steven Kruijswijk": 2.358,
-            "Jakob Omrzel": 4.71
+            "Steven Kruijswijk": 2.391,
+            "Jakob Omrzel": 4.72
           }
         },
         "8": {
@@ -418,14 +418,14 @@
           ],
           "captain": "Matthew Brennan",
           "prices": {
-            "Matthew Brennan": 12.598,
-            "Hugo Hofstetter": 4.751,
+            "Matthew Brennan": 13.008,
+            "Hugo Hofstetter": 4.893,
             "Tadej Pogacar": 23.096,
-            "Vito Braet": 3.457,
+            "Vito Braet": 3.545,
             "Pau Miquel": 3.615,
             "Juan Felipe Rodriguez": 3.1,
-            "Steven Kruijswijk": 2.358,
-            "Alessandro Romele": 3.346
+            "Steven Kruijswijk": 2.391,
+            "Alessandro Romele": 3.496
           }
         },
         "9": {
@@ -443,10 +443,10 @@
           "prices": {
             "Clement Berthet": 4.16,
             "Tobias Halland Johannessen": 8.921,
-            "Enric Mas Nicolau": 9.45,
-            "Harold Tejada": 5.405,
-            "Gregor Muhlberger": 4.794,
-            "Felix Gall": 12.449,
+            "Enric Mas Nicolau": 9.575,
+            "Harold Tejada": 5.435,
+            "Gregor Muhlberger": 4.814,
+            "Felix Gall": 12.529,
             "Cristian Rodriguez Martin": 6.212,
             "Pablo Torres": 5.462
           }
@@ -464,14 +464,14 @@
           ],
           "captain": "Wout van Aert",
           "prices": {
-            "Alessandro Romele": 3.346,
+            "Alessandro Romele": 3.496,
             "Pau Miquel": 3.615,
-            "Enric Mas Nicolau": 9.45,
-            "Matthew Brennan": 12.598,
-            "Wout van Aert": 12.621,
+            "Enric Mas Nicolau": 9.575,
+            "Matthew Brennan": 13.008,
+            "Wout van Aert": 12.918,
             "Axel Laurance": 6.13,
-            "Jordan Labrosse": 3.117,
-            "Hugo Hofstetter": 4.751
+            "Jordan Labrosse": 3.138,
+            "Hugo Hofstetter": 4.893
           }
         },
         "11": {
@@ -487,14 +487,14 @@
           ],
           "captain": "Matthew Brennan",
           "prices": {
-            "Alessandro Romele": 3.346,
+            "Alessandro Romele": 3.496,
             "Pau Miquel": 3.615,
-            "Enric Mas Nicolau": 9.45,
-            "Matthew Brennan": 12.598,
-            "Wout van Aert": 12.621,
-            "Bryan Coquard": 5.662,
-            "Jordan Labrosse": 3.117,
-            "Hugo Hofstetter": 4.751
+            "Enric Mas Nicolau": 9.575,
+            "Matthew Brennan": 13.008,
+            "Wout van Aert": 12.918,
+            "Bryan Coquard": 5.971,
+            "Jordan Labrosse": 3.138,
+            "Hugo Hofstetter": 4.893
           }
         }
       }
