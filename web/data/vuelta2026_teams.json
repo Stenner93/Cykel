@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T10:48:02.153742+00:00",
+  "generated": "2026-09-02T13:33:27.733087+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
@@ -8,7 +8,7 @@
           "Enric Mas Nicolau",
           "Alessandro Romele",
           "Sepp Kuss",
-          "Pau Miquel",
+          "Bastien Tronchon",
           "Primoz Roglic",
           "Matthew Brennan",
           "Axel Laurance",
@@ -224,6 +224,29 @@
             "Axel Laurance": 6.13,
             "Jordan Labrosse": 3.117
           }
+        },
+        "11": {
+          "riders": [
+            "Enric Mas Nicolau",
+            "Alessandro Romele",
+            "Sepp Kuss",
+            "Bastien Tronchon",
+            "Primoz Roglic",
+            "Matthew Brennan",
+            "Axel Laurance",
+            "Jordan Labrosse"
+          ],
+          "captain": "Matthew Brennan",
+          "prices": {
+            "Enric Mas Nicolau": 9.45,
+            "Alessandro Romele": 3.346,
+            "Sepp Kuss": 8.347,
+            "Bastien Tronchon": 4.314,
+            "Primoz Roglic": 10.619,
+            "Matthew Brennan": 12.598,
+            "Axel Laurance": 6.13,
+            "Jordan Labrosse": 3.117
+          }
         }
       }
     },
@@ -236,11 +259,11 @@
           "Enric Mas Nicolau",
           "Matthew Brennan",
           "Wout van Aert",
-          "Axel Laurance",
+          "Bryan Coquard",
           "Jordan Labrosse",
           "Hugo Hofstetter"
         ],
-        "captain": "Wout van Aert",
+        "captain": "Matthew Brennan",
         "bank_M": 0.0
       },
       "history": {
@@ -447,6 +470,29 @@
             "Matthew Brennan": 12.598,
             "Wout van Aert": 12.621,
             "Axel Laurance": 6.13,
+            "Jordan Labrosse": 3.117,
+            "Hugo Hofstetter": 4.751
+          }
+        },
+        "11": {
+          "riders": [
+            "Alessandro Romele",
+            "Pau Miquel",
+            "Enric Mas Nicolau",
+            "Matthew Brennan",
+            "Wout van Aert",
+            "Bryan Coquard",
+            "Jordan Labrosse",
+            "Hugo Hofstetter"
+          ],
+          "captain": "Matthew Brennan",
+          "prices": {
+            "Alessandro Romele": 3.346,
+            "Pau Miquel": 3.615,
+            "Enric Mas Nicolau": 9.45,
+            "Matthew Brennan": 12.598,
+            "Wout van Aert": 12.621,
+            "Bryan Coquard": 5.662,
             "Jordan Labrosse": 3.117,
             "Hugo Hofstetter": 4.751
           }
