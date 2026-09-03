@@ -1,20 +1,20 @@
 {
-  "generated": "2026-09-03T09:43:03.038033+00:00",
+  "generated": "2026-09-03T12:10:46.475686+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
       "current": {
         "riders": [
           "Enric Mas Nicolau",
-          "Alessandro Romele",
-          "Sepp Kuss",
-          "Bastien Tronchon",
+          "Harold Tejada",
+          "Cristian Rodriguez Martin",
+          "Jarno Widar",
           "Primoz Roglic",
-          "Matthew Brennan",
-          "Axel Laurance",
-          "Jordan Labrosse"
+          "Clement Berthet",
+          "Tobias Halland Johannessen",
+          "Santiago Buitrago"
         ],
-        "captain": "Matthew Brennan",
+        "captain": "Enric Mas Nicolau",
         "bank_M": 0.0
       },
       "history": {
@@ -247,6 +247,29 @@
             "Axel Laurance": 6.13,
             "Jordan Labrosse": 3.138
           }
+        },
+        "12": {
+          "riders": [
+            "Enric Mas Nicolau",
+            "Harold Tejada",
+            "Cristian Rodriguez Martin",
+            "Jarno Widar",
+            "Primoz Roglic",
+            "Clement Berthet",
+            "Tobias Halland Johannessen",
+            "Santiago Buitrago"
+          ],
+          "captain": "Enric Mas Nicolau",
+          "prices": {
+            "Enric Mas Nicolau": 9.575,
+            "Harold Tejada": 5.435,
+            "Cristian Rodriguez Martin": 6.212,
+            "Jarno Widar": 5.851,
+            "Primoz Roglic": 10.729,
+            "Clement Berthet": 4.16,
+            "Tobias Halland Johannessen": 8.921,
+            "Santiago Buitrago": 6.161
+          }
         }
       }
     },
@@ -254,16 +277,16 @@
       "team_id": 7272262,
       "current": {
         "riders": [
-          "Alessandro Romele",
-          "Pau Miquel",
+          "Juan Felipe Rodriguez",
+          "Harold Tejada",
           "Enric Mas Nicolau",
-          "Matthew Brennan",
-          "Wout van Aert",
-          "Bryan Coquard",
-          "Jordan Labrosse",
-          "Hugo Hofstetter"
+          "Oscar Onley",
+          "Primoz Roglic",
+          "Jarno Widar",
+          "Cristian Rodriguez Martin",
+          "Clement Berthet"
         ],
-        "captain": "Matthew Brennan",
+        "captain": "Enric Mas Nicolau",
         "bank_M": 0.0
       },
       "history": {
@@ -495,6 +518,29 @@
             "Bryan Coquard": 5.971,
             "Jordan Labrosse": 3.138,
             "Hugo Hofstetter": 4.893
+          }
+        },
+        "12": {
+          "riders": [
+            "Juan Felipe Rodriguez",
+            "Harold Tejada",
+            "Enric Mas Nicolau",
+            "Oscar Onley",
+            "Primoz Roglic",
+            "Jarno Widar",
+            "Cristian Rodriguez Martin",
+            "Clement Berthet"
+          ],
+          "captain": "Enric Mas Nicolau",
+          "prices": {
+            "Juan Felipe Rodriguez": 3.1,
+            "Harold Tejada": 5.435,
+            "Enric Mas Nicolau": 9.575,
+            "Oscar Onley": 11.698,
+            "Primoz Roglic": 10.729,
+            "Jarno Widar": 5.851,
+            "Cristian Rodriguez Martin": 6.212,
+            "Clement Berthet": 4.16
           }
         }
       }
