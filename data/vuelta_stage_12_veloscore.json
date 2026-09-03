@@ -1,0 +1,26 @@
+{
+  "stage": 12,
+  "source": "VeloScore (18 sources, 46 riders)",
+  "predictions": [
+    {"rank": 1, "rider": "Enric Mas", "veloscore": 7.5},
+    {"rank": 2, "rider": "Oscar Onley", "veloscore": 7.1},
+    {"rank": 3, "rider": "Tobias Halland Johannessen", "veloscore": 6.7},
+    {"rank": 4, "rider": "Felix Gall", "veloscore": 6.4},
+    {"rank": 5, "rider": "Santiago Buitrago", "veloscore": 6.3},
+    {"rank": 6, "rider": "Primoz Roglic", "veloscore": 5.0},
+    {"rank": 7, "rider": "Richard Carapaz", "veloscore": 4.3},
+    {"rank": 8, "rider": "Jarno Widar", "veloscore": 4.0},
+    {"rank": 9, "rider": "Pavel Sivakov", "veloscore": 3.5},
+    {"rank": 10, "rider": "Ramses Debruyne", "veloscore": 3.3},
+    {"rank": 11, "rider": "Jay Vine", "veloscore": 2.9},
+    {"rank": 12, "rider": "Sepp Kuss", "veloscore": 1.9},
+    {"rank": 13, "rider": "Mattias Skjelmose", "veloscore": 1.5},
+    {"rank": 14, "rider": "Valentin Paret-Peintre", "veloscore": 1.4},
+    {"rank": 15, "rider": "Carlos Rodriguez", "veloscore": 1.4},
+    {"rank": 16, "rider": "Cristian Rodriguez Martin", "veloscore": 1.3},
+    {"rank": 17, "rider": "Léo Bisiaux", "veloscore": 1.1},
+    {"rank": 18, "rider": "Harold Tejada", "veloscore": 1.0},
+    {"rank": 19, "rider": "Jakob Omrzel", "veloscore": 1.0},
+    {"rank": 20, "rider": "Filippo Zana", "veloscore": 0.9}
+  ]
+}
