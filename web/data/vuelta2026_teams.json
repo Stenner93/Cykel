@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-04T09:45:14.634719+00:00",
+  "generated": "2026-09-04T13:26:23.327271+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
@@ -7,14 +7,14 @@
         "riders": [
           "Enric Mas Nicolau",
           "Harold Tejada",
-          "Cristian Rodriguez Martin",
-          "Jarno Widar",
+          "Wout van Aert",
+          "Jakob Omrzel",
           "Primoz Roglic",
           "Clement Berthet",
-          "Tobias Halland Johannessen",
+          "Steven Kruijswijk",
           "Santiago Buitrago"
         ],
-        "captain": "Enric Mas Nicolau",
+        "captain": "Wout van Aert",
         "bank_M": 0.0
       },
       "history": {
@@ -270,6 +270,29 @@
             "Tobias Halland Johannessen": 8.864,
             "Santiago Buitrago": 6.498
           }
+        },
+        "13": {
+          "riders": [
+            "Enric Mas Nicolau",
+            "Harold Tejada",
+            "Wout van Aert",
+            "Jakob Omrzel",
+            "Primoz Roglic",
+            "Clement Berthet",
+            "Steven Kruijswijk",
+            "Santiago Buitrago"
+          ],
+          "captain": "Wout van Aert",
+          "prices": {
+            "Enric Mas Nicolau": 9.824,
+            "Harold Tejada": 5.427,
+            "Wout van Aert": 12.999,
+            "Jakob Omrzel": 5.14,
+            "Primoz Roglic": 10.924,
+            "Clement Berthet": 4.142,
+            "Steven Kruijswijk": 2.304,
+            "Santiago Buitrago": 6.498
+          }
         }
       }
     },
@@ -280,13 +303,13 @@
           "Juan Felipe Rodriguez",
           "Harold Tejada",
           "Enric Mas Nicolau",
-          "Oscar Onley",
+          "Wout van Aert",
           "Primoz Roglic",
-          "Jarno Widar",
+          "Jakob Omrzel",
           "Cristian Rodriguez Martin",
           "Clement Berthet"
         ],
-        "captain": "Enric Mas Nicolau",
+        "captain": "Wout van Aert",
         "bank_M": 0.0
       },
       "history": {
@@ -539,6 +562,29 @@
             "Oscar Onley": 11.825,
             "Primoz Roglic": 10.924,
             "Jarno Widar": 5.812,
+            "Cristian Rodriguez Martin": 6.194,
+            "Clement Berthet": 4.142
+          }
+        },
+        "13": {
+          "riders": [
+            "Juan Felipe Rodriguez",
+            "Harold Tejada",
+            "Enric Mas Nicolau",
+            "Wout van Aert",
+            "Primoz Roglic",
+            "Jakob Omrzel",
+            "Cristian Rodriguez Martin",
+            "Clement Berthet"
+          ],
+          "captain": "Wout van Aert",
+          "prices": {
+            "Juan Felipe Rodriguez": 3.067,
+            "Harold Tejada": 5.427,
+            "Enric Mas Nicolau": 9.824,
+            "Wout van Aert": 12.999,
+            "Primoz Roglic": 10.924,
+            "Jakob Omrzel": 5.14,
             "Cristian Rodriguez Martin": 6.194,
             "Clement Berthet": 4.142
           }
