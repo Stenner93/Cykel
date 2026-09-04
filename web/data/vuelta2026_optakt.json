@@ -1968,6 +1968,188 @@
         "Oscar Onley",
         "Tobias Halland Johannessen"
       ]
+    },
+    "13": {
+      "scenario": "bakket",
+      "simon": {
+        "captain": "Wout van Aert",
+        "favorites": [
+          "Wout van Aert",
+          "Marcel Camprubi",
+          "Andreas Leknessund",
+          "Alessandro Romele",
+          "Felix Gall",
+          "Jakob Omrzel",
+          "Gregor Mühlberger",
+          "Andreas Kron",
+          "Axel Laurance",
+          "Ivan Romeo",
+          "Fredrik Dversnes",
+          "Finn Fisher-Black",
+          "Thibau Nys",
+          "Jordan Labrosse",
+          "Alexey Lutsenko",
+          "Enric Mas",
+          "Primoz Roglic",
+          "Oscar Onley",
+          "Clement Berthet",
+          "Juan Felipe Rodriguez",
+          "Steven Kruijswijk"
+        ],
+        "avoid": [
+          "Tobias Halland Johannessen",
+          "Cristian Rodriguez Martin"
+        ],
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Optaktsholdet styrtdykkede til nr. 71 samlet — Johannessen blev tilsyneladende ramt af hedeslag efter at have nået udbruddet, og holdet var kun 50k fra at kunne indkøbe Buitrago i stedet (et swing på 400k vækst). Stort tillykke til Omrzel- og Buitrago-ejerne, mens Johannessen nærmer sig 'never again'-listen."
+          },
+          {
+            "h": "Ruten",
+            "t": "13. etape (Almuñécar–Loja) byder på godt 3.000 højdemeter men ender fladt — virker mere som en udbrudsetape end en sprintetape. Med kun 350k til vinderen og nedefter, og Sierra de la Pandera ventende lørdag, er upsiden ved at investere i udbrudsryttere særdeles begrænset."
+          },
+          {
+            "h": "Van Aert eneste favorit",
+            "t": "Umuligt at forestille sig andet end at Visma placerer ham i udbruddet, hvor han i old school-stil skal forsøge at vinde derfra."
+          },
+          {
+            "h": "Svært at satse på rendyrkede udbrydere",
+            "t": "De beskedne point gør det dyrt: en erstatning for fx Cristian Rodriguez (der ikke får GC-bonus) skal lave over 100k vækst, forudsat man vil have Astana-rytteren tilbage til lørdag. Har dog en vis tiltro til Camprubi, Leknessund og Romele i den rækkefølge, og i mindre grad Laurance, Nys, Dversnes, Lutsenko, Labrosse og Kron."
+          },
+          {
+            "h": "Transferanalyse — beholder Mas og Roglic",
+            "t": "Forventer at lørdagens etape bliver et GC-opgør, så Mas og Roglic beholdes naturligvis."
+          },
+          {
+            "h": "Van Aert ind på Johannessens plads",
+            "t": "Købes som den første og sikreste mand på holdet — kan skiftes 1:1 til Gall lørdag, eller måske beholdes."
+          },
+          {
+            "h": "Omrzel svær at komme udenom",
+            "t": "Med dagens resultat, pris og GC-placering giver han sikker vækst."
+          },
+          {
+            "h": "Onley beholdes efter moden overvejelse",
+            "t": "Skuffede stort i dag, formentlig grundet et tidligt styrt — men giver 75k sikker vækst plus mulig holdbonus for Laurance. Beholdes han, bliver det svært at indkøbe fx Mühlberger til lørdag, men han lader til at være sluppet relativt uskadt."
+          },
+          {
+            "h": "Sidste tre pladser",
+            "t": "Kun 9,7 mio. tilbage til tre ryttere. Beholder de to billigste klatrere, Berthet og JF Rodriguez — illustrerer at etapen ses som helt uden upside — og indkøber Kruijswijk som bedste billige valg for at skabe synergi med kaptajn Van Aert."
+          },
+          {
+            "h": "TheFantasyTool A-hold (konklusion)",
+            "t": "Kaptajn: Van Aert. Tre transfers: Johannessen→Van Aert, Tejada→Omrzel, C. Rodriguez→Kruijswijk."
+          },
+          {
+            "h": "Dagens sats",
+            "t": "Mas (C) — differential-bud, adskilt fra det faktiske kaptajnvalg Van Aert."
+          }
+        ],
+        "team": {
+          "keeps": [
+            "Enric Mas",
+            "Primoz Roglic",
+            "Oscar Onley",
+            "Clement Berthet",
+            "Juan Felipe Rodriguez"
+          ],
+          "buys": [
+            "Wout van Aert",
+            "Jakob Omrzel",
+            "Steven Kruijswijk"
+          ],
+          "captain": "Wout van Aert",
+          "note": "Tre transfers: Johannessen→Van Aert, Tejada→Omrzel, C. Rodriguez→Kruijswijk."
+        }
+      },
+      "feltet": {
+        "captain": "Wout van Aert",
+        "favorites": [
+          "Wout van Aert",
+          "Enric Mas",
+          "Primoz Roglic",
+          "Felix Gall",
+          "Richard Carapaz",
+          "Sepp Kuss",
+          "Thibau Nys",
+          "Axel Laurance",
+          "Alexey Lutsenko",
+          "Pavel Sivakov",
+          "Clement Berthet",
+          "Santiago Buitrago",
+          "Gregor Mühlberger",
+          "Harold Tejada",
+          "Jakob Omrzel",
+          "Andreas Kron",
+          "Marcel Camprubi",
+          "Jordan Labrosse",
+          "Juan Felipe Rodriguez"
+        ],
+        "avoid": [
+          "Oscar Onley",
+          "Cristian Rodriguez Martin"
+        ],
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Team Feltet ligger nr. 977 samlet."
+          },
+          {
+            "h": "Wout er et stort must",
+            "t": "En oplagt udbrudsetape klemt mellem to bjergdage er en åben invitation til at beholde sine klassementsryttere — især de dyre man gerne vil have igen i morgen. Beholder derfor naturligvis Mas og Roglic. Gall og Carapaz nærliggende, mens Onley efter gårsdagens styrt næppe bør indgå i fremadrettede planer."
+          },
+          {
+            "h": "Kuss beholdes alligevel",
+            "t": "Har skuffet siden styrtet på 8. etape, men troen er at tiden arbejder for ham — det er normalt netop nu Kuss plejer at blomstre i en Grand Tour."
+          },
+          {
+            "h": "Van Aert et must",
+            "t": "Uanset hvor mange klassementsryttere man foretrækker, er det en bunden opgave at få råd til Van Aert — favoritstatus, størst potentiale ved at støvsuge etapen for spurt- og bjergpoint, og det eneste tilnærmelsesvis sikre kort på en etape med stor vilkårlighed. Ses som et must, ikke mindst af hensyn til kaptajnvalget."
+          },
+          {
+            "h": "Lav tiltro til nye udbrydere",
+            "t": "Nys, Laurance og Lutsenko har lovende potentiale i prislejet under de dyreste, men ingen af dem eller andre vurderes at have stor chance for et resultat i dag med hård start og let finale. Foretrækker derfor at beholde de udbrudskandidater man allerede har."
+          },
+          {
+            "h": "Beholder de kendte udbrudskort",
+            "t": "Sivakov fortsat et af de bedste valg, trods lidt nervøsitet efter han pludselig forsvandt fra udbruddet i går. Berthet beholdes også, selvom hans udbrudschance i dag er tvivlsom, da han indgår i planerne for i morgen. Buitrago beholdes ligeledes — skal formentlig jagte flere bjergtrøje-point. Mühlberger og måske Tejada kan også beholdes af hensyn til i morgen."
+          },
+          {
+            "h": "Omrzel eneste nye dyre køb",
+            "t": "Købes mod udsigt til 50.000 i klassementsbonus og i forvisning om at ville have ham igen i morgen efter gårsdagens præstation. Har ikke råd til at beholde Cristian Rodriguez."
+          },
+          {
+            "h": "Galls nedtur åbner billige døre",
+            "t": "Særlig fidus til Kron og Camprubi, samt Labrosse, der ventes få større frihed nu Vuelta-sejren synes uden for Galls rækkevidde. JF Rodriguez nærliggende at beholde, da hans kørsel i går kan gøre ham relevant både i dag og i morgen."
+          },
+          {
+            "h": "Kaptajnvalg (konklusion)",
+            "t": "Van Aert, hvis potentiale er 495.000 med mulighed for 50.000 oveni som dagens mest angrebsivrige — det blegner Mas' 125.000, især da spanieren nok må nøjes med mindre ved et tidstab til en etapevinder fra udbrud."
+          }
+        ],
+        "team": {
+          "keeps": [
+            "Enric Mas",
+            "Primoz Roglic",
+            "Felix Gall",
+            "Richard Carapaz",
+            "Sepp Kuss",
+            "Pavel Sivakov",
+            "Clement Berthet",
+            "Santiago Buitrago",
+            "Gregor Mühlberger",
+            "Harold Tejada",
+            "Juan Felipe Rodriguez"
+          ],
+          "buys": [
+            "Wout van Aert",
+            "Jakob Omrzel"
+          ],
+          "captain": "Wout van Aert",
+          "note": "To transfers: Onley→van Aert, Rodriguez→Omrzel."
+        }
+      }
     }
   }
 }
