@@ -1,0 +1,26 @@
+{
+  "stage": 14,
+  "source": "VeloScore (14 sources, 48 riders)",
+  "predictions": [
+    {"rank": 1, "rider": "Enric Mas", "veloscore": 8.4},
+    {"rank": 2, "rider": "Santiago Buitrago", "veloscore": 6.9},
+    {"rank": 3, "rider": "Felix Gall", "veloscore": 5.8},
+    {"rank": 4, "rider": "Jarno Widar", "veloscore": 5.6},
+    {"rank": 5, "rider": "Primoz Roglic", "veloscore": 5.4},
+    {"rank": 6, "rider": "Richard Carapaz", "veloscore": 5.0},
+    {"rank": 7, "rider": "Sepp Kuss", "veloscore": 3.9},
+    {"rank": 8, "rider": "Léo Bisiaux", "veloscore": 3.5},
+    {"rank": 9, "rider": "Tobias Halland Johannessen", "veloscore": 3.2},
+    {"rank": 10, "rider": "Juan Felipe Rodriguez", "veloscore": 3.0},
+    {"rank": 11, "rider": "Oscar Onley", "veloscore": 3.0},
+    {"rank": 12, "rider": "Joao Almeida", "veloscore": 2.9},
+    {"rank": 13, "rider": "Urko Berrade", "veloscore": 2.5},
+    {"rank": 14, "rider": "Jakob Omrzel", "veloscore": 2.2},
+    {"rank": 15, "rider": "Mattias Skjelmose", "veloscore": 2.2},
+    {"rank": 16, "rider": "Cristian Rodriguez Martin", "veloscore": 2.1},
+    {"rank": 17, "rider": "Valentin Paret-Peintre", "veloscore": 2.0},
+    {"rank": 18, "rider": "Carlos Rodriguez", "veloscore": 1.9},
+    {"rank": 19, "rider": "Jørgen Nordhagen", "veloscore": 1.7},
+    {"rank": 20, "rider": "Matthew Riccitello", "veloscore": 1.6}
+  ]
+}
