@@ -1,20 +1,20 @@
 {
-  "generated": "2026-09-06T10:39:29.258180+00:00",
+  "generated": "2026-09-06T12:50:52.533070+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
       "current": {
         "riders": [
           "Enric Mas Nicolau",
-          "Harold Tejada",
-          "Cristian Rodriguez Martin",
+          "Alessandro Romele",
           "Jakob Omrzel",
-          "Primoz Roglic",
-          "Clement Berthet",
-          "Richard Carapaz",
-          "Santiago Buitrago"
+          "Matthew Brennan",
+          "Wout van Aert",
+          "Bryan Coquard",
+          "Magnus Cort",
+          "Hugo Hofstetter"
         ],
-        "captain": "Enric Mas Nicolau",
+        "captain": "Matthew Brennan",
         "bank_M": 0.0
       },
       "history": {
@@ -316,6 +316,29 @@
             "Richard Carapaz": 10.622,
             "Santiago Buitrago": 6.83
           }
+        },
+        "15": {
+          "riders": [
+            "Enric Mas Nicolau",
+            "Alessandro Romele",
+            "Jakob Omrzel",
+            "Matthew Brennan",
+            "Wout van Aert",
+            "Bryan Coquard",
+            "Magnus Cort",
+            "Hugo Hofstetter"
+          ],
+          "captain": "Matthew Brennan",
+          "prices": {
+            "Enric Mas Nicolau": 10.053,
+            "Alessandro Romele": 3.396,
+            "Jakob Omrzel": 5.246,
+            "Matthew Brennan": 13.164,
+            "Wout van Aert": 13.359,
+            "Bryan Coquard": 5.746,
+            "Magnus Cort": 5.5,
+            "Hugo Hofstetter": 4.719
+          }
         }
       }
     },
@@ -323,16 +346,16 @@
       "team_id": 7272262,
       "current": {
         "riders": [
-          "Juan Felipe Rodriguez",
-          "Harold Tejada",
-          "Enric Mas Nicolau",
+          "Matthew Brennan",
+          "Alessandro Romele",
+          "Jordi Meeus",
           "Wout van Aert",
-          "Primoz Roglic",
-          "Jakob Omrzel",
-          "Cristian Rodriguez Martin",
-          "Clement Berthet"
+          "Bryan Coquard",
+          "Vincenzo Albanese",
+          "Bastien Tronchon",
+          "Hugo Hofstetter"
         ],
-        "captain": "Enric Mas Nicolau",
+        "captain": "Matthew Brennan",
         "bank_M": 0.0
       },
       "history": {
@@ -633,6 +656,29 @@
             "Jakob Omrzel": 5.246,
             "Cristian Rodriguez Martin": 6.491,
             "Clement Berthet": 4.305
+          }
+        },
+        "15": {
+          "riders": [
+            "Matthew Brennan",
+            "Alessandro Romele",
+            "Jordi Meeus",
+            "Wout van Aert",
+            "Bryan Coquard",
+            "Vincenzo Albanese",
+            "Bastien Tronchon",
+            "Hugo Hofstetter"
+          ],
+          "captain": "Matthew Brennan",
+          "prices": {
+            "Matthew Brennan": 13.164,
+            "Alessandro Romele": 3.396,
+            "Jordi Meeus": 8.092,
+            "Wout van Aert": 13.359,
+            "Bryan Coquard": 5.746,
+            "Vincenzo Albanese": 4.153,
+            "Bastien Tronchon": 4.256,
+            "Hugo Hofstetter": 4.719
           }
         }
       }
