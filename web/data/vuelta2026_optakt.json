@@ -2306,6 +2306,82 @@
         "Santiago Buitrago",
         "Felix Gall"
       ]
+    },
+    "15": {
+      "scenario": "massespurt",
+      "feltet": {
+        "captain": "Wout van Aert",
+        "favorites": [
+          "Wout van Aert",
+          "Matthew Brennan",
+          "Enric Mas",
+          "Jakob Omrzel",
+          "Bryan Coquard",
+          "Hugo Hofstetter",
+          "Finn Fisher-Black",
+          "Andreas Kron",
+          "Vincenzo Albanese",
+          "Alessandro Romele"
+        ],
+        "avoid": [
+          "Primoz Roglic",
+          "Magnus Cort",
+          "Axel Laurance"
+        ],
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Team Feltet ligger nr. 979 samlet."
+          },
+          {
+            "h": "Visma satser på van Aert, ikke Brennan",
+            "t": "Brennan er på papiret den oplagte mand ved en spurt, men Visma vurderes at ville satse på Van Aert og en udbrudssejr for at undgå at miste pointtrøjen til briten over de kommende tre etaper, som potentielt alle kan blive vundet af ham."
+          },
+          {
+            "h": "Beholder Mas og Omrzel",
+            "t": "Ved en udbrudssejr vil de 125.000 og 50.000 i klassementsbonus være svære at finde andetsteds."
+          },
+          {
+            "h": "Sælger Roglic til fordel for Brennan",
+            "t": "Roglic er ligeledes sikret 80.000, men sælges alligevel — med udsigt til to sprinteretaper er det næsten risikofrit at investere i sprintere. Brennan foretrækkes, da han kan være i spil uanset scenarie i dag, inden han bliver ubestridt favorit på de næste to etaper."
+          },
+          {
+            "h": "Coquard og Hofstetter oplagte allerede i dag",
+            "t": "Tæt på risikofrit at købe sprintere allerede nu, da de i værste fald får deres chance på de to efterfølgende etaper."
+          },
+          {
+            "h": "Offensivt på udbruddet: Fisher-Black og Kron",
+            "t": "Tiltroen til udbruddet betyder mod til at gå offensivt, selvom det kræver flere gebyrer de kommende dage."
+          },
+          {
+            "h": "Cort og Laurance fravælges",
+            "t": "Ville normalt være selvskrevne til at begå sig i både spurt og udbrud, men Cort har skuffet i sine seneste udbrudsforsøg, mens Laurance fortsat er forslået efter sit styrt forleden."
+          },
+          {
+            "h": "Albanese og Romele som alsidige valg",
+            "t": "Evnen til at begå sig uanset scenarie taler for duoen, der også kan beholdes på de to næste rene sprinteretaper."
+          },
+          {
+            "h": "Kaptajnvalg (konklusion)",
+            "t": "Van Aert foretrækkes frem for Brennan, som følge af forventningen om at Visma satser på belgieren og en udbrudssejr."
+          },
+          {
+            "h": "Hold-valg (konklusion)",
+            "t": "Fem udskiftninger: Roglic→Brennan, Berthet→Romele, Hirt→Fisher-Black, Kuss→Kron, Felipe Rodriguez→Albanese."
+          }
+        ],
+        "team": {
+          "buys": [
+            "Matthew Brennan",
+            "Alessandro Romele",
+            "Finn Fisher-Black",
+            "Andreas Kron",
+            "Vincenzo Albanese"
+          ],
+          "captain": "Wout van Aert",
+          "note": "Fem transfers: Roglic→Brennan, Berthet→Romele, Hirt→Fisher-Black, Kuss→Kron, Felipe Rodriguez→Albanese."
+        }
+      }
     }
   }
 }
