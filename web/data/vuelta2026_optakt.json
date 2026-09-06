@@ -2309,6 +2309,71 @@
     },
     "15": {
       "scenario": "massespurt",
+      "simon": {
+        "captain": "Matthew Brennan",
+        "favorites": [
+          "Matthew Brennan",
+          "Wout van Aert",
+          "Jordi Meeus",
+          "Bryan Coquard",
+          "Hugo Hofstetter",
+          "Alessandro Romele",
+          "Magnus Cort",
+          "Bastien Tronchon"
+        ],
+        "avoid": [
+          "Vincenzo Albanese",
+          "Enric Mas"
+        ],
+        "sections": [
+          {
+            "h": "Spurt frem for udbrud",
+            "t": "Vuelta-arrangørerne har forkortet etapen til, hvad der ligner en spurt, og flyttet starttidspunktet frem. Enig med Axelgaards optakt i, at Visma primært bestemmer etapens udformning, men at hold som Cofidis og Red Bull vil gøre sig umage for en spurt — hælder derfor 70:30 til spurt over udbrud."
+          },
+          {
+            "h": "Otte sprintere som low risk-high reward",
+            "t": "Med udsigt til at også de næste to dage efter hviledagen bør ende i spurt, ses det som low risk-high reward at gå all-in med otte sprintere."
+          },
+          {
+            "h": "Van Aert kører for pointtrøjen, ikke udbrud",
+            "t": "Svært at se et udbrud uden Van Aert, som forventes at køre pointspurten og ikke stoppe sin egen spurt, selv hvis han skal leadout'e Brennan — der er favorit i en sprintafslutning, særligt ved en hård kørt etape mod et semi-stærkt udbrud."
+          },
+          {
+            "h": "Meeus og Coquard efter Brennan",
+            "t": "Meeus er Brennans største konkurrent — klatrer pænt og positionerer sig perfekt — og dernæst kommer driftsikre Coquard."
+          },
+          {
+            "h": "Hofstetter, Romele og Cort",
+            "t": "Fortsat tiltro til Hofstetter trods sub-topplaceringer siden 2. etape. Romele er value for money og kan blande sig i et udbrud, ligesom Cort — der dog er en booked transfer til enten Dainese eller De Schuyteneer på tirsdag."
+          },
+          {
+            "h": "Tronchon foran Albanese",
+            "t": "Sidste spot står mellem Tronchon og Albanese — foretrækker marginalt franskmanden, da troen på spurt er størst, og frygter at italieneren forgæves opsøger udbruddet og dermed ikke spurter med."
+          },
+          {
+            "h": "Alternativ: gardering mod udbrud",
+            "t": "Kunne holde Enric Mas frem for at købe Meeus, og gå med Albanese over Hofstetter for at gardere mere mod udbrud — men vurderes som et vanille valg. Foretrækker at opsøge den store etapebonus på 400.000, når muligheden er der. Ved fuld overbevisning om udbrudssejr bør Van Aert i stedet cappes."
+          },
+          {
+            "h": "TheFantasyTool A-hold (konklusion)",
+            "t": "Kaptajn: Brennan. Alle 8 ryttere skiftes ud."
+          }
+        ],
+        "team": {
+          "buys": [
+            "Matthew Brennan",
+            "Wout van Aert",
+            "Jordi Meeus",
+            "Bryan Coquard",
+            "Hugo Hofstetter",
+            "Alessandro Romele",
+            "Magnus Cort",
+            "Bastien Tronchon"
+          ],
+          "captain": "Matthew Brennan",
+          "note": "Alle 8 ryttere skiftes ud — fuldt sprinterhold til etapen."
+        }
+      },
       "feltet": {
         "captain": "Wout van Aert",
         "favorites": [
