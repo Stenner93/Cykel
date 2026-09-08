@@ -38,7 +38,9 @@ from pathlib import Path
 import requests
 
 # ── Config (TdF 2026) ─────────────────────────────────────────────────────────
-BASE      = "https://nexus-app-fantasy-fargate.holdet.dk"
+# Holdet moved its API onto holdet.dk itself under an "/api/season/" prefix
+# (confirmed 2026-09-08 — see scrape_holdet.py's BASE for the same fix).
+BASE      = "https://www.holdet.dk/api/season"
 CARTRIDGE = "tour-de-france-2026"
 GAME_ID   = 618
 
@@ -128,11 +130,11 @@ def _extract_team_ids(payload) -> list[int]:
 def discover_top_teams(league_id, n: int) -> list[int]:
     """Try several candidate leaderboard endpoints; return up to n team IDs."""
     candidates = [
-        f"{BASE}/api/fantasyleagues/{league_id}/standings?take={n}",
-        f"{BASE}/api/fantasyleagues/{league_id}/leaderboard?take={n}",
-        f"{BASE}/api/fantasyleagues/{league_id}/teams?take={n}&sort=rank",
-        f"{BASE}/api/games/{GAME_ID}/leaderboard?take={n}",
-        f"{BASE}/api/games/{GAME_ID}/standings?take={n}",
+        f"{BASE}/fantasyleagues/{league_id}/standings?take={n}",
+        f"{BASE}/fantasyleagues/{league_id}/leaderboard?take={n}",
+        f"{BASE}/fantasyleagues/{league_id}/teams?take={n}&sort=rank",
+        f"{BASE}/games/{GAME_ID}/leaderboard?take={n}",
+        f"{BASE}/games/{GAME_ID}/standings?take={n}",
     ]
     for url in candidates:
         if league_id is None and "fantasyleagues/None" in url:
@@ -159,20 +161,20 @@ def main():
 
     # 1. Reference data
     print("Henter reference-data …")
-    cart = HTTP.get(f"{BASE}/api/cartridges/{CARTRIDGE}")
+    cart = HTTP.get(f"{BASE}/cartridges/{CARTRIDGE}")
     league_id = (cart or {}).get("defaultFantasyLeagueId")
     dump(ref / "cartridge.json", cart, args.force)
 
-    rounds = HTTP.get(f"{BASE}/api/games/{GAME_ID}/rounds")
+    rounds = HTTP.get(f"{BASE}/games/{GAME_ID}/rounds")
     dump(ref / "rounds.json", rounds, args.force)
     round_nums = sorted(r["number"] for r in (rounds or {}).get("items", [])
                         if isinstance(r.get("number"), int))
     print(f"  runder: {round_nums}")
 
-    players = HTTP.get(f"{BASE}/api/games/{GAME_ID}/players")
+    players = HTTP.get(f"{BASE}/games/{GAME_ID}/players")
     dump(ref / "players.json", players, args.force)
 
-    schedule = HTTP.get(f"{BASE}/api/schedules/{GAME_ID}", tolerate=True)
+    schedule = HTTP.get(f"{BASE}/schedules/{GAME_ID}", tolerate=True)
     if schedule:
         dump(ref / "schedule.json", schedule, args.force)
     # The schedule's "events" is an ORDERED LIST OF EVENT-ID INTEGERS (index 0 =
@@ -198,7 +200,7 @@ def main():
     print(f"Henter fantasy-actions for {len(events)} etaper …")
     stage_results = {}   # stage_num -> {personId: {"pos": int|None, "pts": int}}
     for i, eid in enumerate(events, 1):
-        payload = HTTP.get(f"{BASE}/api/games/{GAME_ID}/events/{eid}/fantasy-actions",
+        payload = HTTP.get(f"{BASE}/games/{GAME_ID}/events/{eid}/fantasy-actions",
                            tolerate=True)
         if payload is None:
             continue
@@ -257,7 +259,7 @@ def main():
         label = OUR_TEAMS.get(t, "top-manager")
         got = 0
         for n in round_nums:
-            payload = HTTP.get(f"{BASE}/api/fantasyteams/{t}/rounds/{n}/lineup",
+            payload = HTTP.get(f"{BASE}/fantasyteams/{t}/rounds/{n}/lineup",
                                tolerate=True)
             if payload is not None:
                 dump(OUT / "teams" / str(t) / f"round_{n:02d}.json", payload, args.force)
