@@ -45,10 +45,14 @@ resp = get(f"/da/{CARTRIDGE}/cycling/statistics")
 if resp is not None:
     html = resp.text
     print(f"  {resp.status_code}  {len(html)} bytes  content-type={resp.headers.get('Content-Type')}")
-    print(f"  indeholder '__next_f': {'__next_f' in html}")
-    print(f"  indeholder '\"rows\"':  {'\"rows\"' in html}")
-    print(f"  indeholder 'personId': {'personId' in html}")
-    print(f"  indeholder 'fullName': {'fullName' in html}")
+    has_next_f  = "__next_f" in html
+    has_rows    = '"rows"' in html
+    has_pid_key = "personId" in html
+    has_name    = "fullName" in html
+    print(f"  indeholder '__next_f': {has_next_f}")
+    print(f"  indeholder rows-nøgle: {has_rows}")
+    print(f"  indeholder 'personId': {has_pid_key}")
+    print(f"  indeholder 'fullName': {has_name}")
     # dump a chunk around any personId occurrence, if present
     idx = html.find("personId")
     if idx == -1:
