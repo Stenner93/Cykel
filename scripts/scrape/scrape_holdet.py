@@ -275,76 +275,61 @@ def fetch_players_api(game_id: int) -> dict[int, dict]:
     return {p["id"]: p for p in items}
 
 
-def parse_stats_html(html: str) -> dict[int, dict]:
-    """
-    Parse player names + team info from statistics HTML.
-    Next.js embeds data in self.__next_f.push([id, "json-string"]) tags.
-    Returns {personId: {fullName, teamName, ...}}
-    """
-    decoder = json.JSONDecoder()
-    result: dict[int, dict] = {}
-
-    for m in re.finditer(r"self\.__next_f\.push\(", html):
-        pos = m.end()
-        try:
-            arr, _ = decoder.raw_decode(html, pos)
-        except json.JSONDecodeError:
-            continue
-        if not isinstance(arr, list) or len(arr) < 2 or not isinstance(arr[1], str):
-            continue
-        inner = arr[1]
-        if '"rows"' not in inner:
-            continue
-        try:
-            rows_idx  = inner.index('"rows":[')
-            arr_start = inner.index("[", rows_idx)
-            rows_list, _ = decoder.raw_decode(inner, arr_start)
-        except (ValueError, json.JSONDecodeError):
-            continue
-        for row in rows_list:
-            try:
-                person = row.get("person", {})
-                team   = row.get("team", {})
-                pid    = person.get("id")
-                if pid:
-                    result[pid] = {
-                        "fullName":      person.get("fullName", ""),
-                        "teamName":      team.get("name", ""),
-                        "teamSlug":      team.get("slug", ""),
-                        "playerId":      row.get("id"),
-                        "isInjured":     row.get("isInjured", False),
-                        "hasSuspension": row.get("hasSuspension", False),
-                        "isActive":      row.get("isActive", True),
-                        # Ownership: popularity is a 0-1 fraction; popularityChange
-                        # is Holdet's own recent delta (also a fraction).
-                        "popularity":       row.get("popularity") or 0,
-                        "popularityChange": row.get("popularityChange") or 0,
-                    }
-            except (AttributeError, TypeError):
-                continue
-        if result:
-            return result
-    return result
-
-
 def fetch_player_info(game_id: int, cartridge: str) -> tuple[dict[int, dict], dict[int, dict]]:
     """
     Returns:
       player_by_id  — {playerId:  {personId, startPrice, price, popularity, ...}}
       person_by_id  — {personId:  {fullName, teamName, ...}}
+
+    Names used to come from scraping the statistics page's embedded Next.js
+    data (self.__next_f.push([...])); that page still loads (confirmed
+    2026-09-08) but no longer embeds a "rows" payload with person/team info
+    at all — Holdet's frontend was evidently redeployed alongside the
+    /api/season/ move. Names now come from the per-player detail endpoint
+    instead: one request per player, but a stable JSON shape rather than
+    page markup that can silently change on any frontend redeploy.
     """
     print("  Henter spillerliste…")
     player_by_id = fetch_players_api(game_id)
     print(f"    {len(player_by_id)} spillere")
 
-    print("  Henter navne fra statistik-siden…")
-    stats_url = f"{SITE_BASE}/da/{cartridge}/cycling/statistics"
-    html = HTTP.get(stats_url).text
-    person_by_id = parse_stats_html(html)
+    print(f"  Henter navne for {len(player_by_id)} spillere…")
+    person_by_id: dict[int, dict] = {}
+    prev_delay, HTTP.delay = HTTP.delay, 0.25
+    try:
+        for pid, player in player_by_id.items():
+            person_id = player.get("personId")
+            if person_id is None:
+                continue
+            try:
+                detail = HTTP.get(f"{BASE}/games/{game_id}/players/{pid}").json()
+            except Exception:
+                continue
+            person = detail.get("person") or {}
+            team   = detail.get("team") or {}
+            full_name = " ".join(
+                x for x in (person.get("firstName"), person.get("lastName")) if x
+            ).strip()
+            if not full_name:
+                continue
+            person_by_id[person_id] = {
+                "fullName":         full_name,
+                "teamName":         team.get("name", ""),
+                "teamSlug":         team.get("slug", ""),
+                "playerId":         pid,
+                "isInjured":        False,
+                "hasSuspension":    False,
+                "isActive":         True,
+                "popularity":       player.get("popularity") or 0,
+                "popularityChange": 0,
+            }
+    finally:
+        HTTP.delay = prev_delay
+
     if not person_by_id:
-        print("  [WARNING] Kunne ikke parse statistik-HTML — navne er tomme")
+        print("  [WARNING] Kunne ikke hente rytternavne — navne er tomme")
     else:
-        print(f"    {len(person_by_id)} navne parset")
+        print(f"    {len(person_by_id)} navne hentet")
     return player_by_id, person_by_id
 
 
