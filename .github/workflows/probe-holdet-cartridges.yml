@@ -1,0 +1,25 @@
+name: 🔎 Probe — Holdet cartridge-discovery (engangs, slettes bagefter)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  probe:
+    name: Find korrekt Vuelta-slug/gameId på Holdet
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sæt Python op
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installér afhængigheder
+        run: pip install requests
+
+      - name: Kør probe
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python scripts/scrape/probe_holdet_cartridges.py
