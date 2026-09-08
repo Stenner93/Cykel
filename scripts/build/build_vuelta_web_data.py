@@ -228,7 +228,7 @@ def _save_raw(name: str, data) -> None:
 def fetch_stage_actions(game_id: int, event_id: int) -> list[dict]:
     """GET /api/games/{gameId}/events/{eventId}/fantasy-actions"""
     return _h.HTTP.get(
-        f"{_h.BASE}/api/games/{game_id}/events/{event_id}/fantasy-actions"
+        f"{_h.BASE}/games/{game_id}/events/{event_id}/fantasy-actions"
     ).json().get("items", [])
 
 
@@ -239,7 +239,7 @@ def fetch_scoring_summary(game_id: int, event_id: int) -> dict[int, int]:
     """
     try:
         resp = _h.HTTP.get(
-            f"{_h.BASE}/api/games/{game_id}/events/{event_id}/scoring-summary"
+            f"{_h.BASE}/games/{game_id}/events/{event_id}/scoring-summary"
         )
         data  = resp.json()
         items = data if isinstance(data, list) else data.get("items", [])
@@ -696,7 +696,7 @@ def main() -> None:
 
         if gc_cache is None and not args.no_holdet:
             actions = _h.HTTP.get(
-                f"{_h.BASE}/api/games/{VUELTA_GAME_ID}/events/{last_eid}/fantasy-actions"
+                f"{_h.BASE}/games/{VUELTA_GAME_ID}/events/{last_eid}/fantasy-actions"
             ).json().get("items", [])
             gc_by_person, jerseys_by_person = _h.extract_gc_and_jerseys(actions)
             gc_cache = {

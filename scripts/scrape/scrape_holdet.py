@@ -50,13 +50,19 @@ CACHE_DIR = DATA / "cache"
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 # ── Default config ──────────────────────────────────────────────────────────────
-# Update these once TdF 2026 goes live on Holdet.dk.
+# Update DEFAULT_CARTRIDGE whenever the "currently active" race changes.
 # Run `python scrape_holdet.py --discover` to find the correct values.
-DEFAULT_CARTRIDGE = "tour-de-france-2026"   # update if slug differs
+DEFAULT_CARTRIDGE = "vuelta-2026"           # update if slug differs
 DEFAULT_GAME_ID   = None                    # will be auto-discovered if None
 DEFAULT_LEAGUE_ID = None                    # global league, optional
 
-BASE = "https://nexus-app-fantasy-fargate.holdet.dk"
+# Holdet moved its API onto the main holdet.dk domain under an "/api/season/"
+# prefix (confirmed 2026-09-08 via browser DevTools — the old dedicated
+# nexus-app-fantasy-fargate.holdet.dk subdomain and bare "/api/..." paths now
+# 404/fall through to the SPA shell for every endpoint, not just Vuelta's).
+# gameIds themselves (KNOWN_GAME_IDS below) are unaffected — only base+prefix.
+SITE_BASE = "https://www.holdet.dk"          # bare site (for HTML pages)
+BASE = SITE_BASE + "/api/season"             # JSON API
 
 # For leaderboard pagination (Next.js Server Action ID — may change on deploy)
 NEXT_ACTION = "7ef01b31de58b5ab9cbb41e2d8a4b09018750b08f2"
@@ -204,7 +210,7 @@ def discover_cartridge(cartridge_slug: str) -> dict:
     Fetch /api/cartridges/{slug} and return gameId + defaultFantasyLeagueId.
     Returns empty dict if 404 or non-JSON response (game not live yet).
     """
-    url = f"{BASE}/api/cartridges/{cartridge_slug}"
+    url = f"{BASE}/cartridges/{cartridge_slug}"
     try:
         resp = HTTP.session.get(url, timeout=15)  # bypass rate-limiter for discovery
         if resp.status_code in (404, 400, 410):
@@ -265,7 +271,7 @@ def list_cycling_cartridges() -> list[dict]:
 
 def fetch_players_api(game_id: int) -> dict[int, dict]:
     """Fetch /api/games/{gameId}/players → {playerId: player_dict}."""
-    items = HTTP.get(f"{BASE}/api/games/{game_id}/players").json()["items"]
+    items = HTTP.get(f"{BASE}/games/{game_id}/players").json()["items"]
     return {p["id"]: p for p in items}
 
 
@@ -332,7 +338,7 @@ def fetch_player_info(game_id: int, cartridge: str) -> tuple[dict[int, dict], di
     print(f"    {len(player_by_id)} spillere")
 
     print("  Henter navne fra statistik-siden…")
-    stats_url = f"{BASE}/da/{cartridge}/cycling/statistics"
+    stats_url = f"{SITE_BASE}/da/{cartridge}/cycling/statistics"
     html = HTTP.get(stats_url).text
     person_by_id = parse_stats_html(html)
     if not person_by_id:
@@ -350,7 +356,7 @@ def fetch_schedule(game_id: int) -> tuple[list[int], dict[int, dict]]:
       events      — ordered list of eventIds (index 0 = stage 1)
       event_info  — {eventId: {stageType, name, status}}
     """
-    data = HTTP.get(f"{BASE}/api/schedules/{game_id}").json()
+    data = HTTP.get(f"{BASE}/schedules/{game_id}").json()
     events = data["events"]
     embedded = data.get("_embedded", {}).get("events", {})
     event_info = {
@@ -467,7 +473,7 @@ def fetch_my_team(
             return None
 
     try:
-        rounds = HTTP.get(f"{BASE}/api/games/{game_id}/rounds").json().get("items", [])
+        rounds = HTTP.get(f"{BASE}/games/{game_id}/rounds").json().get("items", [])
     except Exception as exc:
         print(f"  [WARN] Kunne ikke hente runder for game {game_id}: {exc}")
         return None
@@ -509,7 +515,7 @@ def fetch_my_team(
     round_num = None
     best_active = -1
     for n in candidates:
-        url = f"{BASE}/api/fantasyteams/{team_id}/rounds/{n}/lineup"
+        url = f"{BASE}/fantasyteams/{team_id}/rounds/{n}/lineup"
         try:
             payload = HTTP.get(url).json()
         except Exception as exc:
@@ -658,7 +664,7 @@ def fetch_team_history(
             return None
 
     try:
-        rounds = HTTP.get(f"{BASE}/api/games/{game_id}/rounds").json().get("items", [])
+        rounds = HTTP.get(f"{BASE}/games/{game_id}/rounds").json().get("items", [])
     except Exception as exc:
         print(f"  [WARN] Kunne ikke hente runder (historik) for game {game_id}: {exc}")
         return {}
@@ -694,7 +700,7 @@ def fetch_team_history(
 
     history: dict[str, dict] = {}
     for n in locked:
-        url = f"{BASE}/api/fantasyteams/{team_id}/rounds/{n}/lineup"
+        url = f"{BASE}/fantasyteams/{team_id}/rounds/{n}/lineup"
         try:
             payload = HTTP.get(url).json()
         except Exception as exc:
@@ -724,7 +730,7 @@ def fetch_team_history(
 def fetch_fantasy_actions(game_id: int, event_id: int) -> list[dict]:
     """Fetch /api/games/{gameId}/events/{eventId}/fantasy-actions."""
     items = HTTP.get(
-        f"{BASE}/api/games/{game_id}/events/{event_id}/fantasy-actions"
+        f"{BASE}/games/{game_id}/events/{event_id}/fantasy-actions"
     ).json().get("items", [])
     return items
 
