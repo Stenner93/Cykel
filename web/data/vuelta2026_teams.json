@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09T09:40:59.659893+00:00",
+  "generated": "2026-09-09T11:02:50.041263+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
@@ -11,7 +11,7 @@
           "Matthew Brennan",
           "Wout van Aert",
           "Bryan Coquard",
-          "Vito Braet",
+          "Alberto Dainese",
           "Hugo Hofstetter"
         ],
         "captain": "Matthew Brennan",
@@ -362,6 +362,29 @@
             "Vito Braet": 3.479,
             "Hugo Hofstetter": 4.826
           }
+        },
+        "17": {
+          "riders": [
+            "Jordi Meeus",
+            "Alessandro Romele",
+            "Bastien Tronchon",
+            "Matthew Brennan",
+            "Wout van Aert",
+            "Bryan Coquard",
+            "Alberto Dainese",
+            "Hugo Hofstetter"
+          ],
+          "captain": "Matthew Brennan",
+          "prices": {
+            "Jordi Meeus": 8.212,
+            "Alessandro Romele": 3.696,
+            "Bastien Tronchon": 4.39,
+            "Matthew Brennan": 13.571,
+            "Wout van Aert": 14.003,
+            "Bryan Coquard": 5.995,
+            "Alberto Dainese": 5.248,
+            "Hugo Hofstetter": 4.826
+          }
         }
       }
     },
@@ -374,11 +397,11 @@
           "Jordi Meeus",
           "Wout van Aert",
           "Bryan Coquard",
-          "Orluis Aular",
+          "Alberto Dainese",
           "Bastien Tronchon",
           "Hugo Hofstetter"
         ],
-        "captain": "Jordi Meeus",
+        "captain": "Matthew Brennan",
         "bank_M": 0.0
       },
       "history": {
@@ -723,6 +746,29 @@
             "Wout van Aert": 14.003,
             "Bryan Coquard": 5.995,
             "Orluis Aular": 6.43,
+            "Bastien Tronchon": 4.39,
+            "Hugo Hofstetter": 4.826
+          }
+        },
+        "17": {
+          "riders": [
+            "Matthew Brennan",
+            "Alessandro Romele",
+            "Jordi Meeus",
+            "Wout van Aert",
+            "Bryan Coquard",
+            "Alberto Dainese",
+            "Bastien Tronchon",
+            "Hugo Hofstetter"
+          ],
+          "captain": "Matthew Brennan",
+          "prices": {
+            "Matthew Brennan": 13.571,
+            "Alessandro Romele": 3.696,
+            "Jordi Meeus": 8.212,
+            "Wout van Aert": 14.003,
+            "Bryan Coquard": 5.995,
+            "Alberto Dainese": 5.248,
             "Bastien Tronchon": 4.39,
             "Hugo Hofstetter": 4.826
           }
