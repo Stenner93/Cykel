@@ -1,29 +1,29 @@
 {
-  "stages_counted": 15,
+  "stages_counted": 16,
   "rows": {
     "Feltet": {
-      "n": 15,
-      "hit1": 47,
-      "hit3": 53,
-      "captured": 69
+      "n": 16,
+      "hit1": 50,
+      "hit3": 56,
+      "captured": 71
     },
     "Simon": {
-      "n": 15,
-      "hit1": 40,
-      "hit3": 53,
-      "captured": 62
+      "n": 16,
+      "hit1": 44,
+      "hit3": 56,
+      "captured": 64
     },
     "Optakt samlet": {
-      "n": 30,
-      "hit1": 43,
-      "hit3": 53,
-      "captured": 65
+      "n": 32,
+      "hit1": 47,
+      "hit3": 56,
+      "captured": 68
     },
     "Model": {
-      "n": 15,
-      "hit1": 27,
-      "hit3": 53,
-      "captured": 59
+      "n": 16,
+      "hit1": 25,
+      "hit3": 50,
+      "captured": 57
     }
   }
 }
