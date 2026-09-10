@@ -2729,6 +2729,144 @@
           "note": "Ingen udskiftninger."
         }
       }
+    },
+    "18": {
+      "scenario": "tt",
+      "simon": {
+        "captain": "Wout van Aert",
+        "favorites": [
+          "Wout van Aert",
+          "Stefan Küng",
+          "Primoz Roglic",
+          "Ethan Hayter",
+          "Bruno Armirail",
+          "Joao Almeida",
+          "Callum Thornley",
+          "Ivan Romeo",
+          "Sander De Pestel",
+          "Mattias Skjelmose",
+          "Xabier Mikel Azparren",
+          "Pablo Castrillo",
+          "David de la Cruz Melgarejo",
+          "Jasha Sütterlin",
+          "Enric Mas"
+        ],
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Optaktsholdet ligger nr. 141 samlet — onsdagens etape rykkede ikke alverden, hvor De Schuyteneer langt om længe levede op til tilliden, men manden han erstattede, Cort, viste sig med uventet god placeringsevne i karrierens formentlig sidste massespurt."
+          },
+          {
+            "h": "Stort set hele holdet skiftes",
+            "t": "Flad enkeltstart på menuen i dag, men samtidig skal der tænkes frem mod fredagens etape (kan ende i udbrud eller GC-afgørelse) og lørdagens etape (bør afgøres blandt favoritterne)."
+          },
+          {
+            "h": "Top-15 powerranking",
+            "t": "1. Van Aert, 2. Küng, 3. Roglic, 4. Hayter, 5. Armirail, 6. Almeida, 7. Thornley, 8. Romeo, 9. De Pestel, 10. Skjelmose, 11. Azparren, 12. Castrillo, 13. De La Cruz, 14. Sütterlin, 15. Mas."
+          },
+          {
+            "h": "GC-bonus relativt mere værd",
+            "t": "Kun 320k til etapevinderen, 231k til 2'eren og 195k til 3'eren og nedefter, hvorfor klassementsbonus fra GC-ryttere bliver relativt mere værd — særligt fordi de alt andet lige kan beholdes ind i weekendens etaper. Omvendt kompromitterer GC-ryttere, der stensikkert ender uden for top-15, den store 400k-etapebonus."
+          },
+          {
+            "h": "Van Aert beholdes, Roglic og Küng købes",
+            "t": "Van Aert beholdes sikkert. Roglic købes ind som både top-3-kandidat på TT'en og samlet. Küng indkøbes dernæst som den største konkurrent til Van Aert."
+          },
+          {
+            "h": "Armirail og Mas som næste køb",
+            "t": "Armirail har flere veje til point via topplacering og holdbonus fra Van Aert. Mas har en realistisk mulighed for top-15, kommer med sikre 125k vækst og er en booked transfer til fredag — rammer han top-15, er den store 400.000-etapebonus inden for rækkevidde."
+          },
+          {
+            "h": "Hayter og Thornley",
+            "t": "Hayter indkøbes da han ankom i storform og har præsteret pænt på sine seneste enkeltstarter. Samme gælder Thornley, der desuden kan give holdbonus for Roglic — det ville overraske at se ham spare sig."
+          },
+          {
+            "h": "Sidste plads: Romeo foran De Pestel",
+            "t": "Begge i overhængende fare for at skulle spare sig, men Movistar giver efter alt at dømme Romeo chancen, mens Decathlon er to mand nede."
+          },
+          {
+            "h": "Dyre GC-ryttere og punts fravælges",
+            "t": "Skjelmose virker ikke flyvende, og et Almeida-indkøb er for satset, medmindre han rammer et udbrud fredag, som ovenikøbet skal holde hjem. Udkants-top-15-typer som Azparren, Sütterlin, Castrillo, Ivo Oliveira, Leknessund, Fisher-Black, De La Cruz og William Barta har ikke rigtig interessen."
+          },
+          {
+            "h": "TheFantasyTool A-hold (konklusion)",
+            "t": "Kaptajn: Van Aert. Transfers: Alle pånær Van Aert er nye på holdet."
+          },
+          {
+            "h": "Dagens sats",
+            "t": "Van Aert bliver kaptajn, men fuld forståelse for at cappe Roglic eller endda Küng som et sats."
+          }
+        ],
+        "team": {
+          "keeps": [
+            "Wout van Aert"
+          ],
+          "buys": [
+            "Primoz Roglic",
+            "Stefan Küng",
+            "Bruno Armirail",
+            "Enric Mas",
+            "Ethan Hayter",
+            "Callum Thornley",
+            "Ivan Romeo"
+          ],
+          "captain": "Wout van Aert",
+          "note": "Alle undtagen Van Aert er nye på holdet."
+        }
+      },
+      "feltet": {
+        "captain": "Wout van Aert",
+        "favorites": [
+          "Wout van Aert",
+          "Primoz Roglic",
+          "Enric Mas",
+          "Stefan Küng",
+          "Bruno Armirail",
+          "Ethan Hayter",
+          "Callum Thornley",
+          "Ivan Romeo",
+          "Pablo Castrillo",
+          "Xabier Mikel Azparren"
+        ],
+        "avoid": [
+          "Joao Almeida",
+          "Mattias Skjelmose"
+        ],
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Team Feltet ligger nr. 862 samlet."
+          },
+          {
+            "h": "Førertrøjen giver vinger",
+            "t": "Van Aert er selvskrevet som enkeltstartens formentlig største favorit — allerede at finde på de fleste managerhold. Roglic bør også være det: ikke vinderkandidaten han var for få år siden, men bør garantere Top 15, hvor 90.000 i klassementsbonus svarer til forskellen på en 4. og 12. plads. Oplagt valg til de efterfølgende bjergetaper også."
+          },
+          {
+            "h": "Mas overbevisende trods spørgsmålstegn",
+            "t": "Spørgsmålet er om han kører Top 15 i dag — det er der overbevisning om. Mas er muligvis bedre end nogensinde, og førertrøjen gør næppe noget dårligt for hans tempoevner, ikke mindst med Vueltaens vanlige store entourage af køretrøjer foran ham."
+          },
+          {
+            "h": "Almeida og Skjelmose fravælges",
+            "t": "Begge har potentiale til et topresultat, men det betvivles i deres nuværende forfatning — sparer hellere det høje transfergebyr."
+          },
+          {
+            "h": "Positiv melding på spansk VM-håb",
+            "t": "Küng, Armirail og Hayter er de mest oplagte valg i laget under de dyreste — alle har med rette ytret ambitioner på enkeltstarten og bør ende blandt dagens 15 bedste."
+          },
+          {
+            "h": "Usikkerhed om Thornley og Romeo",
+            "t": "Uvist om de kører igennem eller sparer sig af hensyn til deres kaptajner. Thornley er en reel vinderkandidat, så det vil overraske hvis han sparer sig — Romeo har ifølge spanske medier fået lov at give den gas som VM-forberedelse, ligesom holdkammeraten Castrillo."
+          },
+          {
+            "h": "Alternativ: Azparren",
+            "t": "Har sin force på flade enkeltstarter og virker bedst på hjemmebane — har vist god form i årets Vuelta, hvor han på 9. etape var tæt på at snyde sprinterne for sejren."
+          },
+          {
+            "h": "Kaptajnvalg (konklusion)",
+            "t": "Van Aert — favorit til etapesejren og den rytter, der er mest tryg ved kører Top 3. Garanteret 25.000 for pointtrøjen, med mulig holdbonus fra Armirail oveni."
+          }
+        ]
+      }
     }
   }
 }
