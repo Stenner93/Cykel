@@ -1,20 +1,20 @@
 {
-  "generated": "2026-09-10T09:40:24.619265+00:00",
+  "generated": "2026-09-10T13:33:00.336375+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
       "current": {
         "riders": [
-          "Jordi Meeus",
-          "Alessandro Romele",
-          "Bastien Tronchon",
-          "Matthew Brennan",
           "Wout van Aert",
-          "Bryan Coquard",
-          "Alberto Dainese",
-          "Hugo Hofstetter"
+          "Primoz Roglic",
+          "Stefan Küng",
+          "Ethan Hayter",
+          "Callum Thornley",
+          "Ivan Romeo",
+          "Enric Mas Nicolau",
+          "Bruno Armirail"
         ],
-        "captain": "Matthew Brennan",
+        "captain": "Stefan Küng",
         "bank_M": 0.0
       },
       "history": {
@@ -385,6 +385,29 @@
             "Alberto Dainese": 5.336,
             "Hugo Hofstetter": 4.935
           }
+        },
+        "18": {
+          "riders": [
+            "Wout van Aert",
+            "Primoz Roglic",
+            "Stefan Küng",
+            "Ethan Hayter",
+            "Callum Thornley",
+            "Ivan Romeo",
+            "Enric Mas Nicolau",
+            "Bruno Armirail"
+          ],
+          "captain": "Stefan Küng",
+          "prices": {
+            "Wout van Aert": 14.127,
+            "Primoz Roglic": 11.337,
+            "Stefan Küng": 6.462,
+            "Ethan Hayter": 5.0,
+            "Callum Thornley": 3.222,
+            "Ivan Romeo": 4.598,
+            "Enric Mas Nicolau": 10.422,
+            "Bruno Armirail": 5.654
+          }
         }
       }
     },
@@ -392,16 +415,16 @@
       "team_id": 7272262,
       "current": {
         "riders": [
-          "Matthew Brennan",
-          "Alessandro Romele",
-          "Jordi Meeus",
+          "Primoz Roglic",
+          "Stefan Küng",
+          "Ethan Hayter",
           "Wout van Aert",
-          "Bryan Coquard",
-          "Alberto Dainese",
-          "Bastien Tronchon",
-          "Hugo Hofstetter"
+          "Bruno Armirail",
+          "Callum Thornley",
+          "Ivan Romeo",
+          "Enric Mas Nicolau"
         ],
-        "captain": "Matthew Brennan",
+        "captain": "Stefan Küng",
         "bank_M": 0.0
       },
       "history": {
@@ -771,6 +794,29 @@
             "Alberto Dainese": 5.336,
             "Bastien Tronchon": 4.39,
             "Hugo Hofstetter": 4.935
+          }
+        },
+        "18": {
+          "riders": [
+            "Primoz Roglic",
+            "Stefan Küng",
+            "Ethan Hayter",
+            "Wout van Aert",
+            "Bruno Armirail",
+            "Callum Thornley",
+            "Ivan Romeo",
+            "Enric Mas Nicolau"
+          ],
+          "captain": "Stefan Küng",
+          "prices": {
+            "Primoz Roglic": 11.337,
+            "Stefan Küng": 6.462,
+            "Ethan Hayter": 5.0,
+            "Wout van Aert": 14.127,
+            "Bruno Armirail": 5.654,
+            "Callum Thornley": 3.222,
+            "Ivan Romeo": 4.598,
+            "Enric Mas Nicolau": 10.422
           }
         }
       }
