@@ -1,7 +1,7 @@
 {
   "stage": 17,
   "stage_type": "sprint",
-  "generated": "2026-09-10T05:21:23.516145+00:00",
+  "generated": "2026-09-10T09:42:20.384047+00:00",
   "ml_source": "historisk styrke (21 etaper kørt)",
   "ml_gt_stages": 21,
   "current_team": null,
@@ -308,13 +308,13 @@
         "risk_profile": "Lav",
         "teams_represented": [
           "XDA",
-          "JAL",
-          "SQ",
-          "T",
-          "TDR",
-          "INT",
           "DAL",
-          "ALP"
+          "INT",
+          "SQ",
+          "TDR",
+          "ALP",
+          "T",
+          "JAL"
         ],
         "n_teams": 8,
         "n_transfers": 0,
@@ -624,12 +624,12 @@
         "risk_profile": "Lav",
         "teams_represented": [
           "XDA",
-          "SQ",
-          "T",
-          "TDR",
           "INT",
           "L-T",
-          "NCT"
+          "SQ",
+          "TDR",
+          "NCT",
+          "T"
         ],
         "n_teams": 7,
         "n_transfers": 0,
@@ -939,12 +939,12 @@
         "risk_profile": "Lav",
         "teams_represented": [
           "XDA",
-          "JAL",
           "SQ",
-          "T",
           "TDR",
+          "NCT",
           "ALP",
-          "NCT"
+          "T",
+          "JAL"
         ],
         "n_teams": 7,
         "n_transfers": 0,
@@ -1255,12 +1255,12 @@
       "risk_profile": "Lav",
       "teams_represented": [
         "XDA",
-        "SQ",
-        "T",
-        "TDR",
         "INT",
+        "SQ",
+        "TDR",
+        "NCT",
         "ALP",
-        "NCT"
+        "T"
       ],
       "n_teams": 7,
       "n_transfers": 0,
