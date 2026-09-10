@@ -1,7 +1,7 @@
 {
   "stage": 17,
   "stage_type": "sprint",
-  "generated": "2026-09-10T13:34:57.566766+00:00",
+  "generated": "2026-09-10T17:01:43.512861+00:00",
   "ml_source": "historisk styrke (21 etaper kørt)",
   "ml_gt_stages": 21,
   "current_team": null,
@@ -307,14 +307,14 @@
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "XDA",
-          "ALP",
-          "INT",
-          "T",
           "JAL",
-          "DAL",
           "SQ",
-          "TDR"
+          "XDA",
+          "INT",
+          "TDR",
+          "DAL",
+          "T",
+          "ALP"
         ],
         "n_teams": 8,
         "n_transfers": 0,
@@ -436,9 +436,9 @@
           "team": "L-T",
           "price": 12.01,
           "expected_pts": 167700,
-          "win_prob": 0.5785,
+          "win_prob": 0.5783,
           "winner_pts": 500000,
-          "composite_base_pts": 289256,
+          "composite_base_pts": 289160,
           "variance": 0,
           "reasoning": "model-anbefaling",
           "disc_key": "SPR",
@@ -450,7 +450,7 @@
             "discipline": 0.756,
             "form": 0.349,
             "ml": 0.503,
-            "pcs_rank": 0.754
+            "pcs_rank": 0.753
           },
           "profile_scale": 1.0,
           "sprint_class_rank": null,
@@ -623,13 +623,13 @@
         "n_budget_riders": 3,
         "risk_profile": "Lav",
         "teams_represented": [
-          "XDA",
-          "T",
-          "INT",
           "SQ",
+          "XDA",
+          "NCT",
           "TDR",
+          "INT",
           "L-T",
-          "NCT"
+          "T"
         ],
         "n_teams": 7,
         "n_transfers": 0,
@@ -938,13 +938,13 @@
         "n_budget_riders": 3,
         "risk_profile": "Lav",
         "teams_represented": [
-          "XDA",
-          "ALP",
-          "T",
           "JAL",
           "SQ",
+          "XDA",
+          "NCT",
           "TDR",
-          "NCT"
+          "T",
+          "ALP"
         ],
         "n_teams": 7,
         "n_transfers": 0,
@@ -1254,13 +1254,13 @@
       "n_budget_riders": 3,
       "risk_profile": "Lav",
       "teams_represented": [
-        "XDA",
-        "ALP",
-        "INT",
-        "T",
         "SQ",
+        "XDA",
+        "INT",
         "TDR",
-        "NCT"
+        "NCT",
+        "T",
+        "ALP"
       ],
       "n_teams": 7,
       "n_transfers": 0,
@@ -1378,9 +1378,9 @@
       "team": "L-T",
       "price": 12.01,
       "expected_pts": 167700,
-      "win_prob": 0.5785,
+      "win_prob": 0.5783,
       "winner_pts": 500000,
-      "composite_base_pts": 289256,
+      "composite_base_pts": 289160,
       "variance": 0,
       "reasoning": "model-anbefaling",
       "disc_key": "SPR",
@@ -1392,7 +1392,7 @@
         "discipline": 0.756,
         "form": 0.349,
         "ml": 0.503,
-        "pcs_rank": 0.754
+        "pcs_rank": 0.753
       },
       "profile_scale": 1.0,
       "sprint_class_rank": null,
