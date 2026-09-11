@@ -1,0 +1,26 @@
+{
+  "stage": 19,
+  "source": "VeloScore (18 sources, 38 riders)",
+  "predictions": [
+    {"rank": 1, "rider": "Santiago Buitrago", "veloscore": 7.5},
+    {"rank": 2, "rider": "Joao Almeida", "veloscore": 6.8},
+    {"rank": 3, "rider": "Sepp Kuss", "veloscore": 6.2},
+    {"rank": 4, "rider": "Enric Mas", "veloscore": 5.9},
+    {"rank": 5, "rider": "Valentin Paret-Peintre", "veloscore": 5.9},
+    {"rank": 6, "rider": "Marco Brenner", "veloscore": 4.8},
+    {"rank": 7, "rider": "Felix Gall", "veloscore": 4.7},
+    {"rank": 8, "rider": "Jarno Widar", "veloscore": 4.1},
+    {"rank": 9, "rider": "Primoz Roglic", "veloscore": 3.6},
+    {"rank": 10, "rider": "Richard Carapaz", "veloscore": 3.5},
+    {"rank": 11, "rider": "Tobias Halland Johannessen", "veloscore": 3.1},
+    {"rank": 12, "rider": "Oscar Onley", "veloscore": 1.9},
+    {"rank": 13, "rider": "Filippo Zana", "veloscore": 1.9},
+    {"rank": 14, "rider": "Jørgen Nordhagen", "veloscore": 1.7},
+    {"rank": 15, "rider": "Georg Steinhauser", "veloscore": 1.5},
+    {"rank": 16, "rider": "Léo Bisiaux", "veloscore": 1.5},
+    {"rank": 17, "rider": "Andreas Leknessund", "veloscore": 1.4},
+    {"rank": 18, "rider": "Mattias Skjelmose", "veloscore": 1.4},
+    {"rank": 19, "rider": "Jakob Omrzel", "veloscore": 1.3},
+    {"rank": 20, "rider": "Urko Berrade", "veloscore": 1.2}
+  ]
+}
