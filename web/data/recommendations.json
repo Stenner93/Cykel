@@ -1,7 +1,7 @@
 {
   "stage": 18,
   "stage_type": "tt",
-  "generated": "2026-09-11T13:32:53.756501+00:00",
+  "generated": "2026-09-11T17:03:10.126087+00:00",
   "ml_source": "historisk styrke (21 etaper kørt)",
   "ml_gt_stages": 21,
   "current_team": null,
@@ -307,13 +307,13 @@
         "n_budget_riders": 5,
         "risk_profile": "Lav",
         "teams_represented": [
-          "UAE",
           "CRSR",
-          "TVM",
-          "JAL",
           "RBH",
+          "UAE",
+          "TPP",
+          "TVM",
           "SQ",
-          "TPP"
+          "JAL"
         ],
         "n_teams": 7,
         "n_transfers": 0,
@@ -435,9 +435,9 @@
           "team": "EF",
           "price": 10.16,
           "expected_pts": 152500,
-          "win_prob": 0.2129,
+          "win_prob": 0.2133,
           "winner_pts": 380000,
-          "composite_base_pts": 80898,
+          "composite_base_pts": 81045,
           "variance": 0,
           "reasoning": "model-anbefaling",
           "disc_key": "ITT",
@@ -449,7 +449,7 @@
             "discipline": 0.028,
             "form": 0.066,
             "ml": 0.036,
-            "pcs_rank": 0.909
+            "pcs_rank": 0.911
           },
           "profile_scale": 1.0,
           "sprint_class_rank": null,
@@ -622,13 +622,13 @@
         "n_budget_riders": 3,
         "risk_profile": "Lav",
         "teams_represented": [
-          "L-T",
-          "UAE",
-          "CRSR",
-          "JAL",
-          "RBH",
           "EF",
-          "SQ"
+          "CRSR",
+          "L-T",
+          "RBH",
+          "UAE",
+          "SQ",
+          "JAL"
         ],
         "n_teams": 7,
         "n_transfers": 0,
@@ -937,13 +937,13 @@
         "n_budget_riders": 4,
         "risk_profile": "Lav",
         "teams_represented": [
-          "L-T",
-          "VLB",
-          "GFD",
-          "UAE",
           "CRSR",
+          "VLB",
           "JAL",
-          "SQ"
+          "L-T",
+          "UAE",
+          "SQ",
+          "GFD"
         ],
         "n_teams": 7,
         "n_transfers": 0,
@@ -1253,13 +1253,13 @@
       "n_budget_riders": 4,
       "risk_profile": "Lav",
       "teams_represented": [
-        "L-T",
-        "VLB",
-        "UAE",
         "CRSR",
+        "VLB",
+        "L-T",
+        "UAE",
         "TVM",
-        "JAL",
-        "SQ"
+        "SQ",
+        "JAL"
       ],
       "n_teams": 7,
       "n_transfers": 0,
@@ -1411,9 +1411,9 @@
       "team": "EF",
       "price": 10.16,
       "expected_pts": 152500,
-      "win_prob": 0.2129,
+      "win_prob": 0.2133,
       "winner_pts": 380000,
-      "composite_base_pts": 80898,
+      "composite_base_pts": 81045,
       "variance": 0,
       "reasoning": "model-anbefaling",
       "disc_key": "ITT",
@@ -1425,7 +1425,7 @@
         "discipline": 0.028,
         "form": 0.066,
         "ml": 0.036,
-        "pcs_rank": 0.909
+        "pcs_rank": 0.911
       },
       "profile_scale": 1.0,
       "sprint_class_rank": null,

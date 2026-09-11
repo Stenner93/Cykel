@@ -19,15 +19,15 @@
     "pts": 2391.0,
     "name": "VINGEGAARD Jonas"
   },
-  "jasper-philipsen": {
-    "rank": 5,
-    "pts": 2162.0,
-    "name": "PHILIPSEN Jasper"
-  },
   "paul-seixas": {
-    "rank": 6,
+    "rank": 5,
     "pts": 2097.0,
     "name": "SEIXAS Paul"
+  },
+  "jasper-philipsen": {
+    "rank": 6,
+    "pts": 2082.0,
+    "name": "PHILIPSEN Jasper"
   },
   "tom-pidcock": {
     "rank": 7,
@@ -71,7 +71,7 @@
   },
   "richard-carapaz": {
     "rank": 15,
-    "pts": 1351.0,
+    "pts": 1354.0,
     "name": "CARAPAZ Richard"
   },
   "giulio-pellizzari": {
@@ -81,7 +81,7 @@
   },
   "felix-gall": {
     "rank": 17,
-    "pts": 1330.0,
+    "pts": 1334.0,
     "name": "GALL Felix"
   },
   "mathieu-van-der-poel": {
@@ -104,25 +104,25 @@
     "pts": 1125.0,
     "name": "ARANBURU Alex"
   },
-  "mads-pedersen": {
-    "rank": 22,
-    "pts": 1119.0,
-    "name": "PEDERSEN Mads"
-  },
   "jordi-meeus": {
-    "rank": 23,
+    "rank": 22,
     "pts": 1117.0,
     "name": "MEEUS Jordi"
   },
   "romain-gregoire": {
-    "rank": 24,
+    "rank": 23,
     "pts": 1116.0,
     "name": "GRÉGOIRE Romain"
   },
   "matthew-brennan": {
-    "rank": 25,
+    "rank": 24,
     "pts": 1092.0,
     "name": "BRENNAN Matthew"
+  },
+  "mads-pedersen": {
+    "rank": 25,
+    "pts": 1069.0,
+    "name": "PEDERSEN Mads"
   },
   "benoit-cosnefroy": {
     "rank": 26,
@@ -329,19 +329,19 @@
     "pts": 678.0,
     "name": "TRENTIN Matteo"
   },
-  "ben-tulett": {
+  "andreas-leknessund": {
     "rank": 67,
+    "pts": 674.0,
+    "name": "LEKNESSUND Andreas"
+  },
+  "ben-tulett": {
+    "rank": 68,
     "pts": 673.0,
     "name": "TULETT Ben"
   },
-  "andreas-leknessund": {
-    "rank": 68,
-    "pts": 659.0,
-    "name": "LEKNESSUND Andreas"
-  },
   "primoz-roglic": {
     "rank": 69,
-    "pts": 658.0,
+    "pts": 660.0,
     "name": "ROGLIČ Primož"
   },
   "milan-fretin": {
@@ -394,80 +394,80 @@
     "pts": 608.0,
     "name": "BITTNER Pavel"
   },
-  "ivan-romeo": {
+  "santiago-buitrago-sanchez": {
     "rank": 80,
+    "pts": 607.0,
+    "name": "BUITRAGO Santiago"
+  },
+  "ivan-romeo": {
+    "rank": 81,
     "pts": 606.0,
     "name": "ROMEO Iván"
   },
   "derek-gee": {
-    "rank": 81,
+    "rank": 82,
     "pts": 605.0,
     "name": "GEE-WEST Derek"
   },
   "joao-almeida": {
-    "rank": 82,
+    "rank": 83,
     "pts": 601.0,
     "name": "ALMEIDA João"
   },
   "mike-teunissen": {
-    "rank": 83,
+    "rank": 84,
     "pts": 598.0,
     "name": "TEUNISSEN Mike"
   },
   "antonio-tiberi": {
-    "rank": 84,
+    "rank": 85,
     "pts": 596.0,
     "name": "TIBERI Antonio"
   },
   "lewis-askey": {
-    "rank": 85,
+    "rank": 86,
     "pts": 595.0,
     "name": "ASKEY Lewis"
   },
   "kevin-vauquelin": {
-    "rank": 86,
+    "rank": 87,
     "pts": 590.0,
     "name": "VAUQUELIN Kévin"
   },
   "cian-uijtdebroeks": {
-    "rank": 87,
+    "rank": 88,
     "pts": 590.0,
     "name": "UIJTDEBROEKS Cian"
   },
   "filippo-zana": {
-    "rank": 88,
+    "rank": 89,
     "pts": 585.0,
     "name": "ZANA Filippo"
   },
   "antonio-morgado": {
-    "rank": 89,
+    "rank": 90,
     "pts": 583.0,
     "name": "MORGADO António"
   },
   "stanislaw-aniolkowski": {
-    "rank": 90,
-    "pts": 581.0,
+    "rank": 91,
+    "pts": 580.0,
     "name": "ANIOŁKOWSKI Stanisław"
   },
   "igor-arrieta-lizarraga": {
-    "rank": 91,
+    "rank": 92,
     "pts": 569.0,
     "name": "ARRIETA Igor"
   },
   "paul-double": {
-    "rank": 92,
+    "rank": 93,
     "pts": 562.0,
     "name": "DOUBLE Paul"
   },
   "matteo-malucelli": {
-    "rank": 93,
+    "rank": 94,
     "pts": 560.0,
     "name": "MALUCELLI Matteo"
-  },
-  "santiago-buitrago-sanchez": {
-    "rank": 94,
-    "pts": 557.0,
-    "name": "BUITRAGO Santiago"
   },
   "jorgen-nordhagen": {
     "rank": 95,
@@ -484,15 +484,15 @@
     "pts": 543.0,
     "name": "STRONG Corbin"
   },
-  "bryan-coquard": {
-    "rank": 98,
-    "pts": 538.0,
-    "name": "COQUARD Bryan"
-  },
   "alexandre-delettre": {
-    "rank": 99,
+    "rank": 98,
     "pts": 534.0,
     "name": "DELETTRE Alexandre"
+  },
+  "bryan-coquard": {
+    "rank": 99,
+    "pts": 533.0,
+    "name": "COQUARD Bryan"
   },
   "marc-hirschi": {
     "rank": 100,
