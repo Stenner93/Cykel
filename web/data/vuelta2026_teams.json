@@ -1,20 +1,20 @@
 {
-  "generated": "2026-09-11T09:37:37.700225+00:00",
+  "generated": "2026-09-11T10:01:12.257808+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
       "current": {
         "riders": [
-          "Wout van Aert",
-          "Primoz Roglic",
-          "Stefan Küng",
-          "Ethan Hayter",
-          "Callum Thornley",
-          "Ivan Romeo",
           "Enric Mas Nicolau",
-          "Bruno Armirail"
+          "Primoz Roglic",
+          "Santiago Buitrago",
+          "Jakob Omrzel",
+          "Felix Gall",
+          "Cristian Rodriguez Martin",
+          "Sepp Kuss",
+          "Juan Felipe Rodriguez"
         ],
-        "captain": "Stefan Küng",
+        "captain": "Santiago Buitrago",
         "bank_M": 0.0
       },
       "history": {
@@ -408,6 +408,29 @@
             "Enric Mas Nicolau": 10.614,
             "Bruno Armirail": 5.776
           }
+        },
+        "19": {
+          "riders": [
+            "Enric Mas Nicolau",
+            "Primoz Roglic",
+            "Santiago Buitrago",
+            "Jakob Omrzel",
+            "Felix Gall",
+            "Cristian Rodriguez Martin",
+            "Sepp Kuss",
+            "Juan Felipe Rodriguez"
+          ],
+          "captain": "Santiago Buitrago",
+          "prices": {
+            "Enric Mas Nicolau": 10.614,
+            "Primoz Roglic": 11.616,
+            "Santiago Buitrago": 6.882,
+            "Jakob Omrzel": 5.437,
+            "Felix Gall": 13.212,
+            "Cristian Rodriguez Martin": 6.622,
+            "Sepp Kuss": 8.753,
+            "Juan Felipe Rodriguez": 3.016
+          }
         }
       }
     },
@@ -416,15 +439,15 @@
       "current": {
         "riders": [
           "Primoz Roglic",
-          "Stefan Küng",
-          "Ethan Hayter",
-          "Wout van Aert",
-          "Bruno Armirail",
-          "Callum Thornley",
-          "Ivan Romeo",
+          "Harold Tejada",
+          "Joao Almeida",
+          "Richard Carapaz",
+          "Marco Brenner",
+          "Jakob Omrzel",
+          "Santiago Buitrago",
           "Enric Mas Nicolau"
         ],
-        "captain": "Stefan Küng",
+        "captain": "Enric Mas Nicolau",
         "bank_M": 0.0
       },
       "history": {
@@ -816,6 +839,29 @@
             "Bruno Armirail": 5.776,
             "Callum Thornley": 3.453,
             "Ivan Romeo": 4.583,
+            "Enric Mas Nicolau": 10.614
+          }
+        },
+        "19": {
+          "riders": [
+            "Primoz Roglic",
+            "Harold Tejada",
+            "Joao Almeida",
+            "Richard Carapaz",
+            "Marco Brenner",
+            "Jakob Omrzel",
+            "Santiago Buitrago",
+            "Enric Mas Nicolau"
+          ],
+          "captain": "Enric Mas Nicolau",
+          "prices": {
+            "Primoz Roglic": 11.616,
+            "Harold Tejada": 5.474,
+            "Joao Almeida": 10.037,
+            "Richard Carapaz": 10.893,
+            "Marco Brenner": 5.095,
+            "Jakob Omrzel": 5.437,
+            "Santiago Buitrago": 6.882,
             "Enric Mas Nicolau": 10.614
           }
         }
