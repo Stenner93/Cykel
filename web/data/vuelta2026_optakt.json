@@ -2875,6 +2875,100 @@
     },
     "19": {
       "scenario": "bjerg",
+      "simon": {
+        "captain": "Enric Mas",
+        "favorites": [
+          "Enric Mas",
+          "Felix Gall",
+          "Richard Carapaz",
+          "Primoz Roglic",
+          "Oscar Onley",
+          "Sepp Kuss",
+          "Cristian Rodriguez Martin",
+          "Jakob Omrzel",
+          "Harold Tejada",
+          "Clement Berthet",
+          "Mattias Skjelmose",
+          "Matthew Riccitello",
+          "Santiago Buitrago",
+          "Juan Felipe Rodriguez",
+          "Marco Brenner",
+          "Urko Berrade",
+          "Ivan Ramiro Sosa",
+          "Mario Aparicio",
+          "Joao Almeida",
+          "Jarno Widar"
+        ],
+        "avoid": [
+          "Jørgen Nordhagen",
+          "Léo Bisiaux",
+          "Georg Steinhauser",
+          "Valentin Paret-Peintre",
+          "Tobias Halland Johannessen"
+        ],
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Optaktsholdet ligger nr. 147 samlet — var på vej mod stensikre otte mand i Top 15, da en Movistar-ordre mellem 2. og 3. mellemtid forhindrede Romeo i at vinde etapen."
+          },
+          {
+            "h": "Definerende etape",
+            "t": "Bookmakere og meningsdannere forventer at udbruddet kører om sejren, men Simon hælder til at lørdagens etape afgøres blandt favoritterne, hvor Gall ventes at gå all-in. Holdsammensætningen handler derfor i høj grad om ratioen mellem udbruds- og GC-ryttere."
+          },
+          {
+            "h": "Bedste udbrudskandidater",
+            "t": "Buitrago (kører også efter bjergpoint) og en genopstået Almeida, som endelig viser lidt af sin eminente 2025-form. Brenner og Widar er svingende men glimrende kandidater — deres ulempe er at de ikke ligger til i klassementet (high risk-high reward). Johannessen nærmer sig i stedet blacklisten."
+          },
+          {
+            "h": "GC-ryttere i udbrud som sikkerhedsnet",
+            "t": "Typer som Tejada, Cristian Rodriguez, Berthet og måske Kuss bør se muligheder og GC-avancement i et udbrud, samtidig med sikkerheden i at de alle kører for et godt GC-resultat."
+          },
+          {
+            "h": "Billige bud og et klart nej",
+            "t": "Berrade, Sosa og JF Rodriguez er de bedste billige bud. Nordhagen, Bisiaux, Steinhauser eller Paret-Peintre røres ikke med en ildtang."
+          },
+          {
+            "h": "Styrkeforhold blandt GC-rytterne",
+            "t": "1. Mas, 2. Gall, 3. Carapaz, 4. Roglic, 5. Onley, 6. Kuss, 7. C. Rodriguez, 8. Omrzel, 9. Tejada, 10. Berthet, 11. Skjelmose (sygdom), 12. Riccitello. De sidste tre Top 15-pladser er umulige at spå om — måske Buitrago, Bisiaux, JF Rodriguez, Steinhauser, Widar eller Nordhagen."
+          },
+          {
+            "h": "Transferanalyse — kun Mas og Roglic beholdes",
+            "t": "Mas beholdes hævet over enhver tvivl, og Roglic beholdes også, selvom der ses en mulighed for at sælge sloveneren, hvis den optimale holdkombination går op uden ham. Carapaz og Gall indkøbes for sikker GC-vækst og som de første GC-ryttere i mål ved en udbrudssejr."
+          },
+          {
+            "h": "Buitrago og Brenner som udbrudskort",
+            "t": "Buitrago bør med bjergtrøjen være hypermotiveret for et udbrud. Suppleres af Brenner, der har et fordelagtigt prisskilt og har vist at han kan gøre det færdigt."
+          },
+          {
+            "h": "Tejada frem for Omrzel",
+            "t": "Omrzel fornemmes for tæt på podiet til at opsøge udbrud, så valget falder på Tejada, der bør have muligheden og i øvrigt kørte en fremragende enkeltstart. JF Rodriguez fylder sidste plads med de resterende 3 mio."
+          },
+          {
+            "h": "TheFantasyTool A-hold (konklusion)",
+            "t": "Kaptajn: Mas. Transfers: Kun Roglic og Mas beholdes."
+          },
+          {
+            "h": "Dagens sats",
+            "t": "Buitrago/Paret-Peintre/Almeida (C) — Mas gøres til kaptajn efter megen overvejelse, men det kan ændre sig, hvis alle pile peger på udbruddet."
+          }
+        ],
+        "team": {
+          "keeps": [
+            "Enric Mas",
+            "Primoz Roglic"
+          ],
+          "buys": [
+            "Richard Carapaz",
+            "Felix Gall",
+            "Santiago Buitrago",
+            "Marco Brenner",
+            "Harold Tejada",
+            "Juan Felipe Rodriguez"
+          ],
+          "captain": "Enric Mas",
+          "note": "Kun Roglic og Mas beholdes — resten af holdet er nyt."
+        }
+      },
       "feltet": {
         "favorites": [
           "Santiago Buitrago",
