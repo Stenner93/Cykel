@@ -1,0 +1,26 @@
+{
+  "stage": 20,
+  "source": "VeloScore (17 sources, 36 riders)",
+  "predictions": [
+    {"rank": 1, "rider": "Enric Mas", "veloscore": 8.7},
+    {"rank": 2, "rider": "Felix Gall", "veloscore": 7.0},
+    {"rank": 3, "rider": "Sepp Kuss", "veloscore": 7.0},
+    {"rank": 4, "rider": "Primoz Roglic", "veloscore": 6.1},
+    {"rank": 5, "rider": "Richard Carapaz", "veloscore": 5.9},
+    {"rank": 6, "rider": "Oscar Onley", "veloscore": 5.3},
+    {"rank": 7, "rider": "Santiago Buitrago", "veloscore": 4.8},
+    {"rank": 8, "rider": "Jarno Widar", "veloscore": 3.7},
+    {"rank": 9, "rider": "Joao Almeida", "veloscore": 3.2},
+    {"rank": 10, "rider": "Jakob Omrzel", "veloscore": 3.0},
+    {"rank": 11, "rider": "Valentin Paret-Peintre", "veloscore": 2.7},
+    {"rank": 12, "rider": "Marco Brenner", "veloscore": 2.7},
+    {"rank": 13, "rider": "Tobias Halland Johannessen", "veloscore": 2.0},
+    {"rank": 14, "rider": "Eddie Dunbar", "veloscore": 2.0},
+    {"rank": 15, "rider": "Cristian Rodriguez Martin", "veloscore": 1.8},
+    {"rank": 16, "rider": "Harold Tejada", "veloscore": 1.5},
+    {"rank": 17, "rider": "Matthew Riccitello", "veloscore": 1.5},
+    {"rank": 18, "rider": "Jørgen Nordhagen", "veloscore": 1.4},
+    {"rank": 19, "rider": "Urko Berrade", "veloscore": 1.4},
+    {"rank": 20, "rider": "Thomas Gloag", "veloscore": 1.2}
+  ]
+}
