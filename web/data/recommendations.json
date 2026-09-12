@@ -1,7 +1,7 @@
 {
   "stage": 19,
   "stage_type": "hilly",
-  "generated": "2026-09-12T10:55:16.804061+00:00",
+  "generated": "2026-09-12T12:52:38.281757+00:00",
   "ml_source": "historisk styrke (21 etaper kørt)",
   "ml_gt_stages": 21,
   "current_team": {
@@ -358,12 +358,12 @@
       "n_budget_riders": 5,
       "risk_profile": "Lav",
       "teams_represented": [
+        "L-T",
+        "COF",
+        "CRSR",
         "JAL",
         "UAE",
-        "COF",
-        "L-T",
-        "EF",
-        "CRSR"
+        "EF"
       ],
       "n_teams": 6,
       "n_transfers": 0,
