@@ -3021,6 +3021,83 @@
     },
     "20": {
       "scenario": "bjerg",
+      "simon": {
+        "captain": "Enric Mas",
+        "favorites": [
+          "Enric Mas",
+          "Felix Gall",
+          "Oscar Onley",
+          "Richard Carapaz",
+          "Primoz Roglic",
+          "Jakob Omrzel",
+          "Sepp Kuss",
+          "Clement Berthet",
+          "Harold Tejada",
+          "Cristian Rodriguez Martin",
+          "Matthew Riccitello",
+          "Jan Hirt",
+          "Léo Bisiaux",
+          "Mario Aparicio",
+          "Juan Felipe Rodriguez",
+          "Santiago Buitrago",
+          "Jarno Widar",
+          "Valentin Paret-Peintre",
+          "Marco Brenner"
+        ],
+        "avoid": [
+          "Jørgen Nordhagen"
+        ],
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Optaktsholdet ligger nr. 147 samlet. Gårsdagens etape blev lidt tam for Vueltaspillet — kun Buitrago ramte plet blandt de bedste udbrudskandidater, mens resten af de relativt upåagtede udbrydere udvandede væksten for klassementsrytterne."
+          },
+          {
+            "h": "D-dag for klassementet",
+            "t": "Godt 5.000 højdemeter og afslutning på stejle procenter — oplagt at opsøge otte GC-ryttere i Top 15. Powerranking: 1. Mas, 2. Gall, 3. Onley, 4. Carapaz, 5. Roglic, 6. Omrzel, 7. Kuss, 8. Berthet, 9. Tejada, 10. C. Rodriguez, 11. Riccitello, 12. Hirt, 13. Bisiaux, 14. Aparicio, 15. JF Rodriguez."
+          },
+          {
+            "h": "Om rangeringen",
+            "t": "Mas fortsat en anelse stærkere end Gall; Onley marginalt stærkere end Carapaz og Roglic. Omrzel og Kuss er tætte, men da Kuss også kan forsøge sig i udbrud, og Omrzel så stærkere ud i går, rangeres sloveneren højere — lige foran Berthet, der også imponerede. Tejada og Rodriguez har kørt et flot parløb, som bør fortsætte. Riccitello og Hirt er skabt til et bjergmaraton. Bisiaux er nu Galls løjtnant, og Aparicio ser en anelse stærkere ud end JF Rodriguez blandt de billige bud."
+          },
+          {
+            "h": "Udbrudspotentiale kan spolere yderpladserne",
+            "t": "De yderste Top 15-pladser kan meget vel spoleres af de bedste udbrydere — GC-ryttere med udbrudspotentiale foretrækkes. Første prioritet er Sepp Kuss, dernæst Tejada og C. Rodriguez' frihed, mens hverken Omrzel eller Berthet ventes at få chancen af favoritholdene. Øvrige non-GC-kandidater: Buitrago (også for bjergpoint), Widar, Hirt og Paret-Peintre. Fortsat ikke megen tiltro til Nordhagen."
+          },
+          {
+            "h": "Transferanalyse — Berthet og Omrzel ind",
+            "t": "De fire kanoner Mas, Gall, Roglic og Carapaz beholdes naturligvis, og Tejada ville kun byttes 1:1 til Omrzel, så colombianeren beholdes også. På de tre sidste pladser (Buitrago, Brenner, JF Rodriguez) er flere kreative modeller mulige — vælger at sælge Buitrago og JF Rodriguez for at indkøbe Berthet og Omrzel, med forventning om at GC-rytterne selv tager sig af Top 15."
+          },
+          {
+            "h": "Brenner beholdes som lottokupon",
+            "t": "Svært til umuligt at opnå otte i Top 15 med en konstellation af top-4 i GC, hvorfor Brenner beholdes, selvom han akkurat holder sig inden for budgettet og trender negativt — kunne sagtens erstattes af Hirt eller Aparicio."
+          },
+          {
+            "h": "TheFantasyTool A-hold (konklusion)",
+            "t": "Kaptajn: Mas — fortsat vurderet som stærkeste mand. Transfers: Buitrago & JF Rodriguez til Omrzel & Berthet."
+          },
+          {
+            "h": "Dagens sats",
+            "t": "Kuss eller Gall (C) — differentialbud, adskilt fra det faktiske kaptajnvalg Mas."
+          }
+        ],
+        "team": {
+          "keeps": [
+            "Enric Mas",
+            "Felix Gall",
+            "Primoz Roglic",
+            "Richard Carapaz",
+            "Harold Tejada",
+            "Marco Brenner"
+          ],
+          "buys": [
+            "Jakob Omrzel",
+            "Clement Berthet"
+          ],
+          "captain": "Enric Mas",
+          "note": "To transfers: Buitrago & JF Rodriguez → Omrzel & Berthet."
+        }
+      },
       "feltet": {
         "captain": "Enric Mas",
         "favorites": [
