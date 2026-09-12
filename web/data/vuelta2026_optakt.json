@@ -3018,6 +3018,81 @@
         "Joao Almeida",
         "Sepp Kuss"
       ]
+    },
+    "20": {
+      "scenario": "bjerg",
+      "feltet": {
+        "captain": "Enric Mas",
+        "favorites": [
+          "Enric Mas",
+          "Primoz Roglic",
+          "Richard Carapaz",
+          "Sepp Kuss",
+          "Jakob Omrzel",
+          "Clement Berthet",
+          "Cristian Rodriguez Martin",
+          "Harold Tejada",
+          "Santiago Buitrago",
+          "Matthew Riccitello",
+          "Juan Felipe Rodriguez",
+          "Gijs Leemreize"
+        ],
+        "avoid": [
+          "Felix Gall",
+          "Joao Almeida",
+          "Marco Brenner",
+          "Valentin Paret-Peintre"
+        ],
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Team Feltet ligger nr. 675 samlet."
+          },
+          {
+            "h": "Ekspertens personlige favorit",
+            "t": "Kongeetapens terræn er en invitation til de klassementsryttere, der er utilfredse med status quo, hvorfor lørdagens etape udelukkende bør blive en affære mellem løbets bedste klatrere. Mas og Roglic antages allerede ejet af de fleste — andre førende klassementsryttere er naturligvis også værd at beholde."
+          },
+          {
+            "h": "Gall eller Carapaz — kun én af dem",
+            "t": "De to største potentielle afsavn som reelle vinderkandidater. Gall er tydeligvis stærkest, men mest fidus til Carapaz, der i højere grad kan slippe afsted med et udbrud eller angreb, mens den dyrere Gall formentlig kun kan udmærke sig i en ren favoritfinale — ville ikke selv købe østrigeren i dag."
+          },
+          {
+            "h": "Kuss som personlig favorit",
+            "t": "Skabt til et stort bjergslag, og ville prioriteres over Mas/Roglic, medmindre man har dem i forvejen. Forsøgte i går at komme i udbrud men blev lukket ned — Visma har meldt ud, at de vil sende ham afsted med et par hjælpere i dag. Sker det, bliver han svær at fange."
+          },
+          {
+            "h": "Sælger Almeida",
+            "t": "Samme historie som Kuss, hvis han var velkørende — det lader ikke til at være tilfældet, og mest sandsynlige udfald er endnu et tab på over 30 minutter."
+          },
+          {
+            "h": "Tvivler på bjergtrøjen trods dagens mange point",
+            "t": "Omrzel og Berthet rangeres højest som pålidelige Top 15-bud til prisen, men har ingen frihed til at opsøge udbruddet, som tilskrives fine chancer. Fortsat begejstret for Cristian Rodriguez og Tejada, der kan begå sig i både favoritfinale og udbrudssejr."
+          },
+          {
+            "h": "Sælger de rendyrkede udbrydere",
+            "t": "Lunken ved Brenner og Paret-Peintre — ventes at få det svært og tabe oceaner af tid, hvis klassementsrytterne går med i udbrudsforsøgene. Eneste undtagelse er Buitrago, som dog også sælges, da han ikke længere har brug for etapens mange bjergpoint, i håb om en ekstra og ottende rytter i Top 15."
+          },
+          {
+            "h": "Erstatninger",
+            "t": "Peger på Tejada eller alternativt Matthew Riccitello, hjælper for Gall og dermed et sats, men kan resultere i holdbonus — måske endda frie tøjler til en udbrudssejr. I det billige leje fidus til Juan Felipe Rodriguez, der ikke længere behøver at spare sig, samt alternativt Gijs Leemreize, der frigør penge til at satse smallere."
+          },
+          {
+            "h": "Kaptajnvalg (konklusion)",
+            "t": "Står mellem Mas og Kuss baseret på risikovillighed. Kuss anses som favorit, men Mas foretrækkes alligevel, da der vurderes at være langt mere at tabe end at vinde ved at gå med amerikaneren."
+          },
+          {
+            "h": "Hold-valg (konklusion)",
+            "t": "Én udskiftning: Buitrago → Tejada."
+          }
+        ],
+        "team": {
+          "buys": [
+            "Harold Tejada"
+          ],
+          "captain": "Enric Mas",
+          "note": "Én transfer: Buitrago→Tejada."
+        }
+      }
     }
   }
 }
