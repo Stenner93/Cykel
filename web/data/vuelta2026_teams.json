@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-12T09:44:43.217509+00:00",
+  "generated": "2026-09-12T10:53:24.294166+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
@@ -7,14 +7,14 @@
         "riders": [
           "Enric Mas Nicolau",
           "Primoz Roglic",
-          "Santiago Buitrago",
+          "Harold Tejada",
           "Jakob Omrzel",
           "Felix Gall",
           "Cristian Rodriguez Martin",
           "Sepp Kuss",
-          "Juan Felipe Rodriguez"
+          "Clement Berthet"
         ],
-        "captain": "Santiago Buitrago",
+        "captain": "Enric Mas Nicolau",
         "bank_M": 0.0
       },
       "history": {
@@ -431,6 +431,29 @@
             "Sepp Kuss": 8.738,
             "Juan Felipe Rodriguez": 2.992
           }
+        },
+        "20": {
+          "riders": [
+            "Enric Mas Nicolau",
+            "Primoz Roglic",
+            "Harold Tejada",
+            "Jakob Omrzel",
+            "Felix Gall",
+            "Cristian Rodriguez Martin",
+            "Sepp Kuss",
+            "Clement Berthet"
+          ],
+          "captain": "Enric Mas Nicolau",
+          "prices": {
+            "Enric Mas Nicolau": 10.724,
+            "Primoz Roglic": 11.727,
+            "Harold Tejada": 5.469,
+            "Jakob Omrzel": 5.502,
+            "Felix Gall": 13.344,
+            "Cristian Rodriguez Martin": 6.637,
+            "Sepp Kuss": 8.738,
+            "Clement Berthet": 4.421
+          }
         }
       }
     },
@@ -440,14 +463,14 @@
         "riders": [
           "Primoz Roglic",
           "Harold Tejada",
-          "Joao Almeida",
+          "Clement Berthet",
           "Richard Carapaz",
-          "Marco Brenner",
+          "Cristian Rodriguez Martin",
           "Jakob Omrzel",
-          "Santiago Buitrago",
+          "Sepp Kuss",
           "Enric Mas Nicolau"
         ],
-        "captain": "Enric Mas Nicolau",
+        "captain": "Sepp Kuss",
         "bank_M": 0.0
       },
       "history": {
@@ -862,6 +885,29 @@
             "Marco Brenner": 5.008,
             "Jakob Omrzel": 5.502,
             "Santiago Buitrago": 7.165,
+            "Enric Mas Nicolau": 10.724
+          }
+        },
+        "20": {
+          "riders": [
+            "Primoz Roglic",
+            "Harold Tejada",
+            "Clement Berthet",
+            "Richard Carapaz",
+            "Cristian Rodriguez Martin",
+            "Jakob Omrzel",
+            "Sepp Kuss",
+            "Enric Mas Nicolau"
+          ],
+          "captain": "Sepp Kuss",
+          "prices": {
+            "Primoz Roglic": 11.727,
+            "Harold Tejada": 5.469,
+            "Clement Berthet": 4.421,
+            "Richard Carapaz": 10.997,
+            "Cristian Rodriguez Martin": 6.637,
+            "Jakob Omrzel": 5.502,
+            "Sepp Kuss": 8.738,
             "Enric Mas Nicolau": 10.724
           }
         }
