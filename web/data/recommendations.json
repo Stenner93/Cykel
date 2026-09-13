@@ -1,7 +1,7 @@
 {
   "stage": 20,
   "stage_type": "mountain",
-  "generated": "2026-09-13T12:59:44.563579+00:00",
+  "generated": "2026-09-13T13:50:20.321485+00:00",
   "ml_source": "historisk styrke (21 etaper kørt)",
   "ml_gt_stages": 21,
   "current_team": {
@@ -358,14 +358,14 @@
       "n_budget_riders": 5,
       "risk_profile": "Lav",
       "teams_represented": [
+        "TPP",
         "L-T",
-        "EF",
-        "UAE",
         "JAL",
         "SQ",
         "TVM",
         "CRSR",
-        "TPP"
+        "EF",
+        "UAE"
       ],
       "n_teams": 8,
       "n_transfers": 0,
