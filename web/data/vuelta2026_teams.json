@@ -1,20 +1,20 @@
 {
-  "generated": "2026-09-13T13:48:27.186772+00:00",
+  "generated": "2026-09-13T16:57:49.941221+00:00",
   "teams": {
     "Anders": {
       "team_id": 7271757,
       "current": {
         "riders": [
           "Enric Mas Nicolau",
-          "Primoz Roglic",
-          "Harold Tejada",
-          "Jakob Omrzel",
-          "Felix Gall",
-          "Cristian Rodriguez Martin",
+          "Magnus Cort",
+          "Wout van Aert",
+          "Alessandro Romele",
           "Sepp Kuss",
-          "Clement Berthet"
+          "Axel Laurance",
+          "Thibau Nys",
+          "Bastien Tronchon"
         ],
-        "captain": "Enric Mas Nicolau",
+        "captain": "Wout van Aert",
         "bank_M": 0.0
       },
       "history": {
@@ -454,6 +454,29 @@
             "Sepp Kuss": 8.9,
             "Clement Berthet": 4.421
           }
+        },
+        "21": {
+          "riders": [
+            "Enric Mas Nicolau",
+            "Magnus Cort",
+            "Wout van Aert",
+            "Alessandro Romele",
+            "Sepp Kuss",
+            "Axel Laurance",
+            "Thibau Nys",
+            "Bastien Tronchon"
+          ],
+          "captain": "Wout van Aert",
+          "prices": {
+            "Enric Mas Nicolau": 10.867,
+            "Magnus Cort": 5.715,
+            "Wout van Aert": 14.339,
+            "Alessandro Romele": 3.684,
+            "Sepp Kuss": 8.9,
+            "Axel Laurance": 5.894,
+            "Thibau Nys": 7.212,
+            "Bastien Tronchon": 4.243
+          }
         }
       }
     },
@@ -462,15 +485,15 @@
       "current": {
         "riders": [
           "Primoz Roglic",
-          "Harold Tejada",
-          "Clement Berthet",
+          "Wout van Aert",
+          "Alessandro Romele",
           "Richard Carapaz",
-          "Cristian Rodriguez Martin",
-          "Jakob Omrzel",
+          "Pau Miquel",
+          "Alessandro Covi",
           "Sepp Kuss",
           "Enric Mas Nicolau"
         ],
-        "captain": "Sepp Kuss",
+        "captain": "Wout van Aert",
         "bank_M": 0.0
       },
       "history": {
@@ -907,6 +930,29 @@
             "Richard Carapaz": 11.043,
             "Cristian Rodriguez Martin": 6.627,
             "Jakob Omrzel": 5.512,
+            "Sepp Kuss": 8.9,
+            "Enric Mas Nicolau": 10.867
+          }
+        },
+        "21": {
+          "riders": [
+            "Primoz Roglic",
+            "Wout van Aert",
+            "Alessandro Romele",
+            "Richard Carapaz",
+            "Pau Miquel",
+            "Alessandro Covi",
+            "Sepp Kuss",
+            "Enric Mas Nicolau"
+          ],
+          "captain": "Wout van Aert",
+          "prices": {
+            "Primoz Roglic": 11.814,
+            "Wout van Aert": 14.339,
+            "Alessandro Romele": 3.684,
+            "Richard Carapaz": 11.043,
+            "Pau Miquel": 3.959,
+            "Alessandro Covi": 2.475,
             "Sepp Kuss": 8.9,
             "Enric Mas Nicolau": 10.867
           }

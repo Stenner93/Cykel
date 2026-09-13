@@ -1,27 +1,26 @@
 {
   "stage": 20,
   "stage_type": "mountain",
-  "generated": "2026-09-13T13:50:20.321485+00:00",
+  "generated": "2026-09-13T16:59:43.197943+00:00",
   "ml_source": "historisk styrke (21 etaper kørt)",
   "ml_gt_stages": 21,
   "current_team": {
     "bank_M": 0.0,
     "rider_ids": [
       "joel_nicolau",
-      "harold_tejada",
-      "lenny_martinez",
-      "sepp_kuss",
-      "clement_berthet"
+      "magnus_cort",
+      "piet_allegaert",
+      "sepp_kuss"
     ],
     "rider_names": [
       "Enric Mas Nicolau",
-      "Primoz Roglic",
-      "Harold Tejada",
-      "Jakob Omrzel",
-      "Felix Gall",
-      "Cristian Rodriguez Martin",
+      "Magnus Cort",
+      "Wout van Aert",
+      "Alessandro Romele",
       "Sepp Kuss",
-      "Clement Berthet"
+      "Axel Laurance",
+      "Thibau Nys",
+      "Bastien Tronchon"
     ],
     "matched_riders": [
       {
@@ -31,28 +30,22 @@
         "price_M": 1.55
       },
       {
-        "rider_id": "harold_tejada",
-        "full_name": "Harold Tejada",
-        "team": "XDA",
-        "price_M": 5.06
+        "rider_id": "magnus_cort",
+        "full_name": "Magnus Cort",
+        "team": "UXM",
+        "price_M": 3.8
       },
       {
-        "rider_id": "lenny_martinez",
-        "full_name": "Lenny Martinez",
-        "team": "TVM",
-        "price_M": 9.66
+        "rider_id": "piet_allegaert",
+        "full_name": "Piet Allegaert",
+        "team": "COF",
+        "price_M": 1.5
       },
       {
         "rider_id": "sepp_kuss",
         "full_name": "Sepp Kuss",
         "team": "VLB",
         "price_M": 7.21
-      },
-      {
-        "rider_id": "clement_berthet",
-        "full_name": "Clement Berthet",
-        "team": "GFD",
-        "price_M": 1.5
       }
     ]
   },
@@ -136,9 +129,9 @@
         "team": "EF",
         "price": 10.16,
         "expected_pts": 152500,
-        "win_prob": 0.4718,
+        "win_prob": 0.4729,
         "winner_pts": 872035,
-        "composite_base_pts": 411392,
+        "composite_base_pts": 412405,
         "variance": 0,
         "reasoning": "hård etape (score 521)",
         "disc_key": "MTN",
@@ -150,7 +143,7 @@
           "discipline": 0.756,
           "form": 0.101,
           "ml": 0.129,
-          "pcs_rank": 0.907
+          "pcs_rank": 0.913
         },
         "profile_scale": 1.384,
         "sprint_class_rank": null,
@@ -358,14 +351,14 @@
       "n_budget_riders": 5,
       "risk_profile": "Lav",
       "teams_represented": [
+        "CRSR",
+        "JAL",
+        "UAE",
+        "TVM",
+        "EF",
         "TPP",
         "L-T",
-        "JAL",
-        "SQ",
-        "TVM",
-        "CRSR",
-        "EF",
-        "UAE"
+        "SQ"
       ],
       "n_teams": 8,
       "n_transfers": 0,
@@ -517,9 +510,9 @@
       "team": "EF",
       "price": 10.16,
       "expected_pts": 152500,
-      "win_prob": 0.4718,
+      "win_prob": 0.4729,
       "winner_pts": 872035,
-      "composite_base_pts": 411392,
+      "composite_base_pts": 412405,
       "variance": 0,
       "reasoning": "hård etape (score 521)",
       "disc_key": "MTN",
@@ -531,7 +524,7 @@
         "discipline": 0.756,
         "form": 0.101,
         "ml": 0.129,
-        "pcs_rank": 0.907
+        "pcs_rank": 0.913
       },
       "profile_scale": 1.384,
       "sprint_class_rank": null,
@@ -585,9 +578,9 @@
       "team": "RBH",
       "price": 10.33,
       "expected_pts": 130000,
-      "win_prob": 0.4715,
+      "win_prob": 0.4724,
       "winner_pts": 872035,
-      "composite_base_pts": 411122,
+      "composite_base_pts": 411966,
       "variance": 0,
       "reasoning": "hård etape (score 521)",
       "disc_key": "MTN",
@@ -599,7 +592,7 @@
         "discipline": 0.705,
         "form": 0.197,
         "ml": 0.184,
-        "pcs_rank": 0.777
+        "pcs_rank": 0.782
       },
       "profile_scale": 1.384,
       "sprint_class_rank": null,
@@ -653,9 +646,9 @@
       "team": "UXM",
       "price": 9.61,
       "expected_pts": 87000,
-      "win_prob": 0.2948,
+      "win_prob": 0.296,
       "winner_pts": 872035,
-      "composite_base_pts": 257090,
+      "composite_base_pts": 258103,
       "variance": 0,
       "reasoning": "hård etape (score 521)",
       "disc_key": "MTN",
@@ -667,7 +660,7 @@
         "discipline": 0.214,
         "form": 0.042,
         "ml": 0.207,
-        "pcs_rank": 0.951
+        "pcs_rank": 0.957
       },
       "profile_scale": 1.384,
       "sprint_class_rank": null,
@@ -687,9 +680,9 @@
       "team": "RBH",
       "price": 7.63,
       "expected_pts": 80800,
-      "win_prob": 0.4465,
+      "win_prob": 0.4475,
       "winner_pts": 872035,
-      "composite_base_pts": 389377,
+      "composite_base_pts": 390221,
       "variance": 0,
       "reasoning": "hård etape (score 521)",
       "disc_key": "MTN",
@@ -701,7 +694,7 @@
         "discipline": 0.657,
         "form": 0.276,
         "ml": 0.09,
-        "pcs_rank": 0.646
+        "pcs_rank": 0.651
       },
       "profile_scale": 1.384,
       "sprint_class_rank": null,
@@ -721,9 +714,9 @@
       "team": "L-T",
       "price": 11.23,
       "expected_pts": 80000,
-      "win_prob": 0.3624,
+      "win_prob": 0.3632,
       "winner_pts": 872035,
-      "composite_base_pts": 316006,
+      "composite_base_pts": 316681,
       "variance": 0,
       "reasoning": "hård etape (score 521)",
       "disc_key": "MTN",
@@ -735,7 +728,7 @@
         "discipline": 0.284,
         "form": 0.305,
         "ml": 0.233,
-        "pcs_rank": 0.685
+        "pcs_rank": 0.689
       },
       "profile_scale": 1.384,
       "sprint_class_rank": null,
@@ -789,9 +782,9 @@
       "team": "VLB",
       "price": 7.21,
       "expected_pts": 70800,
-      "win_prob": 0.4815,
+      "win_prob": 0.4823,
       "winner_pts": 872035,
-      "composite_base_pts": 419871,
+      "composite_base_pts": 420546,
       "variance": 0,
       "reasoning": "høj disciplinrating (MTN: 87), hård etape (score 521)",
       "disc_key": "MTN",
@@ -803,7 +796,7 @@
         "discipline": 0.869,
         "form": 0.216,
         "ml": 0.137,
-        "pcs_rank": 0.552
+        "pcs_rank": 0.556
       },
       "profile_scale": 1.384,
       "sprint_class_rank": null,
@@ -857,9 +850,9 @@
       "team": "UAE",
       "price": 6.34,
       "expected_pts": 55000,
-      "win_prob": 0.4396,
+      "win_prob": 0.4403,
       "winner_pts": 872035,
-      "composite_base_pts": 383313,
+      "composite_base_pts": 383988,
       "variance": 0,
       "reasoning": "høj disciplinrating (MTN: 81), hård etape (score 521)",
       "disc_key": "MTN",
@@ -871,7 +864,7 @@
         "discipline": 0.811,
         "form": 0.134,
         "ml": 0.165,
-        "pcs_rank": 0.563
+        "pcs_rank": 0.567
       },
       "profile_scale": 1.384,
       "sprint_class_rank": null,
@@ -891,9 +884,9 @@
       "team": "DAL",
       "price": 6.99,
       "expected_pts": 40000,
-      "win_prob": 0.2779,
+      "win_prob": 0.2785,
       "winner_pts": 872035,
-      "composite_base_pts": 242313,
+      "composite_base_pts": 242819,
       "variance": 0,
       "reasoning": "hård etape (score 521)",
       "disc_key": "MTN",
@@ -905,7 +898,7 @@
         "discipline": 0.463,
         "form": 0.016,
         "ml": 0.109,
-        "pcs_rank": 0.562
+        "pcs_rank": 0.565
       },
       "profile_scale": 1.384,
       "sprint_class_rank": null,
@@ -925,9 +918,9 @@
       "team": "L-T",
       "price": 12.01,
       "expected_pts": 22500,
-      "win_prob": 0.2921,
+      "win_prob": 0.2931,
       "winner_pts": 872035,
-      "composite_base_pts": 254734,
+      "composite_base_pts": 255578,
       "variance": 0,
       "reasoning": "hård etape (score 521)",
       "disc_key": "MTN",
@@ -939,7 +932,7 @@
         "discipline": 0.001,
         "form": 0.275,
         "ml": 0.425,
-        "pcs_rank": 0.72
+        "pcs_rank": 0.725
       },
       "profile_scale": 1.384,
       "sprint_class_rank": null,
@@ -959,9 +952,9 @@
       "team": "T",
       "price": 4.93,
       "expected_pts": 20000,
-      "win_prob": 0.1549,
+      "win_prob": 0.1555,
       "winner_pts": 872035,
-      "composite_base_pts": 135064,
+      "composite_base_pts": 135570,
       "variance": 0,
       "reasoning": "hård etape (score 521)",
       "disc_key": "MTN",
@@ -973,7 +966,7 @@
         "discipline": 0.049,
         "form": 0.093,
         "ml": 0.173,
-        "pcs_rank": 0.432
+        "pcs_rank": 0.435
       },
       "profile_scale": 1.384,
       "sprint_class_rank": null,
@@ -1027,9 +1020,9 @@
       "team": "TDR",
       "price": 4.02,
       "expected_pts": 10000,
-      "win_prob": 0.1219,
+      "win_prob": 0.1223,
       "winner_pts": 872035,
-      "composite_base_pts": 106276,
+      "composite_base_pts": 106613,
       "variance": 0,
       "reasoning": "hård etape (score 521)",
       "disc_key": "MTN",
@@ -1041,7 +1034,7 @@
         "discipline": 0.023,
         "form": 0.044,
         "ml": 0.22,
-        "pcs_rank": 0.364
+        "pcs_rank": 0.366
       },
       "profile_scale": 1.384,
       "sprint_class_rank": null,
