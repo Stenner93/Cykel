@@ -3178,6 +3178,108 @@
     },
     "21": {
       "scenario": "bakket",
+      "simon": {
+        "captain": "Wout van Aert",
+        "favorites": [
+          "Wout van Aert",
+          "Alessandro Romele",
+          "Thibau Nys",
+          "Richard Carapaz",
+          "Enric Mas",
+          "Primoz Roglic",
+          "Magnus Cort",
+          "Bastien Tronchon",
+          "Axel Laurance",
+          "Pau Miquel",
+          "Harold Tejada",
+          "Marcel Camprubi",
+          "Finn Fisher-Black",
+          "Steven Kruijswijk",
+          "Alessandro Covi",
+          "Felix Gall",
+          "Iván Cobo Cayón",
+          "Henok Mulubrhan",
+          "Andreas Leknessund",
+          "Andreas Kron",
+          "Orluis Aular"
+        ],
+        "avoid": [
+          "Matthew Brennan",
+          "Vincenzo Albanese",
+          "Bryan Coquard",
+          "Vito Braet"
+        ],
+        "sections": [
+          {
+            "h": "Placering",
+            "t": "Optaktsholdet ligger nr. 161 samlet — sidste Grand Tour-etape for i år og dermed sidste optakt i år for cykelspillene: en stor, tidskrævende fornøjelse ved siden af (mindst) 37-timers arbejdsuger under Tour og Vuelta."
+          },
+          {
+            "h": "Ruten",
+            "t": "Løbet slutter i Granada på en kuperet rundstrækning med en 2,2 km lang stigning på 6,6% som hovedattraktion. Der har været rygter om at tiden til klassementet tages inden sidste omgang, men det er ikke bekræftet — antager derfor at etapen køres som vanligt."
+          },
+          {
+            "h": "Van Aert favorit, Brennan svækket",
+            "t": "Så godt som umuligt at det bliver en spurt. Forventer at Brennan er mere end tilfreds med sine fem etapesejre, og at Visma giver Van Aert ubetinget støtte, så ingen farlig gruppe kører afsted uden belgieren — hvilket gør Brennan til et relativt dårligere valg."
+          },
+          {
+            "h": "Nys som værste konkurrent",
+            "t": "Van Aerts værste konkurrenter findes blandt eksplosive GC-folk og hårdføre afsluttere. Thibau Nys må være den værste — viste livstegn på 15. etape, passer glimrende til profilen og har ikke Skjelmoses GC at bekymre sig om."
+          },
+          {
+            "h": "Romele, Cort og Tronchon som hårdføre afsluttere",
+            "t": "Størst tiltro til disse tre i managersammenhæng, hvor transferomkostninger medregnes. Håber inderligt at Cort har formen til at sidde med over stigningen på sidste omgang — et flot punktum for en endnu flottere karriere."
+          },
+          {
+            "h": "Laurance og Miquel dalende",
+            "t": "Franskmandens form virker støt dalende, mens spanieren kørte sig helt ud til en 4.-plads på kongeetapen. Frygter det bliver for hårdt for Albanese, der måske skal hjælpe Carapaz. De øvrige semihårdføre sprintere Coquard og Braet nyder ikke tiltro, mens det er spændende om halvdyre Aular får chancen."
+          },
+          {
+            "h": "GC-rytterne",
+            "t": "Carapaz har klart de bedste vinderchancer. Ikke voldsom tiltro til at den glubske 2020-udgave af Roglic — for hvem etapen ville være guf — genopstår ud af det blå. Mas skal sikkert igennem, og Gall skal blot holde sit podium."
+          },
+          {
+            "h": "Værdi relativt til pris",
+            "t": "Camprubi, Iván Cobo, Covi og Mulubrhan ventes at gøre en god figur relativt til indkøbsprisen. Tejada kan muligvis også gøre det godt, men virkede ikke flyvende på kongeetapen. Uno-X ventes at være alle for Cort, selvom Leknessund og en tilsyneladende rask Kron er interessante kort."
+          },
+          {
+            "h": "Transferanalyse — ofrer Gall for Van Aert",
+            "t": "Kun 350k til vinderen og nedefter på en i forvejen uforudsigelig etape. Beholder derfor Mas, Roglic og bedste GC-bud på en topplacering, Carapaz. Brenner er et stensikkert sell og snarere en \"never again\"-rytter. Ofrer Galls sikre vækst for at indkøbe etapefavorit Van Aert — men kun en anbefaling, hvis han samtidig gøres til kaptajn."
+          },
+          {
+            "h": "De yderste to pladser kræver grundig overvejelse",
+            "t": "Berthet og Omrzel (sikret hhv. 30k og 40k vækst) kan laves til Nys og Kruijswijk (-95k i gebyr) eller alternativt Tronchon og Miquel (-82k i gebyr). Med sidstnævnte konstellation er det også muligt at sælge Tejada til Nys — hvilket efter nærmere eftertanke virker plausibelt givet høje forventninger til belgieren."
+          },
+          {
+            "h": "TheFantasyTool A-hold (konklusion)",
+            "t": "Kaptajn: Van Aert. Transfers: Gall→Van Aert, Brenner→Romele, Tejada→Nys, Omrzel→Miquel, Berthet→Tronchon."
+          },
+          {
+            "h": "Dagens sats",
+            "t": "Nys (C) — differentialbud, adskilt fra det faktiske kaptajnvalg Van Aert."
+          },
+          {
+            "h": "En afsked",
+            "t": "Tak for den modtagelse og opbakning optakterne har fået i år — uden læserne ville det være umuligt at prioritere dem i en travl hverdag."
+          }
+        ],
+        "team": {
+          "keeps": [
+            "Enric Mas",
+            "Primoz Roglic",
+            "Richard Carapaz"
+          ],
+          "buys": [
+            "Wout van Aert",
+            "Alessandro Romele",
+            "Thibau Nys",
+            "Pau Miquel",
+            "Bastien Tronchon"
+          ],
+          "captain": "Wout van Aert",
+          "note": "Fem transfers: Gall→Van Aert, Brenner→Romele, Tejada→Nys, Omrzel→Miquel, Berthet→Tronchon."
+        }
+      },
       "feltet": {
         "captain": "Wout van Aert",
         "favorites": [
