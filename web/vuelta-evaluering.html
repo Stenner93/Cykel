@@ -75,7 +75,7 @@
 <div class="wrap">
   <header>
     <div class="eyebrow">Vueltaspillet 2026 · efter-analyse</div>
-    <h1>Kilderne mod hinanden — og dig mod Kasper</h1>
+    <h1>Kilderne mod hinanden — og dig mod top-10</h1>
     <p class="lede">Ingen intern model i denne sammenligning — kun de eksterne kilder du faktisk kan bruge undervejs (Feltet.dk, Simon K. Kjær/TheFantasyTool, VeloScore, bookmaker-odds), målt direkte mod realiseret holdet-vækst.</p>
     <div class="strip">
       <div class="stat"><div class="n os">Feltet.dk</div><div class="k">bedst til at ramme etapens kaptajn (42%)</div></div>
@@ -92,14 +92,19 @@
   </div>
   <p class="note">Odds og VeloScore dækker ikke alle 20 etaper (hhv. 20 og 15 med data) — Feltet/Simon har næsten fuld dækning. VeloScore's lidt lavere etape-antal er fordi den kun findes for etaper hvor screenshots blev sendt undervejs.</p>
 
-  <h2>Manager-sammenligning: dig vs. Kasper</h2>
-  <p class="sub">Hver runde scorer et hold summen af sine 8 rytteres realiserede vækst, kaptajn dobbelt.</p>
+  <h2>Manager-sammenligning: dig, Kasper, TheFantasyTool og top-10</h2>
+  <p class="sub">Hver runde scorer et hold summen af sine 8 rytteres realiserede vækst, kaptajn dobbelt. Top-10 er hentet fra Vueltaspillets faktiske slutstilling (10 hold-ID'er du fandt manuelt, da Holdet's leaderboard-endpoint ikke virker via API).</p>
   <div class="card scroll">
     <table><thead><tr><th>#</th><th>Hold</th><th class="num">Total (M)</th><th class="num">Transfers</th><th class="num">Kaptajn (M)</th><th class="num">Kap-effektivitet</th></tr></thead>
     <tbody id="manager"></tbody></table>
   </div>
-  <div class="ask">
-    <b>Top-10 mangler.</b> Holdet's leaderboard-endpoint for Vueltaspillet virkede ikke ved auto-opdagelse, så jeg har kun jeres to hold. Send mig 5-10 hold-ID'er fra Vueltaspillets slutstilling (holdet.dk → stilling → åbn et hold → aflæs ID'et i URL'en, <span class="mono">…/fantasyteams/&lt;ID&gt;</span>), så tilføjer jeg en rigtig top-10-sammenligning som i Tourspillet.
+  <p class="note">Du endte <b>nr. 7 af 13</b> — 0,53M under top-10-medianen (10,59M) og 0,97M under den bedste (11,03M). TheFantasyTools eget hold endte nr. 11, under både dig og Kasper.</p>
+
+  <h2>Missede gevinster</h2>
+  <p class="sub">Ryttere top-10-holdene ejede i mindst én runde, som du aldrig havde.</p>
+  <div class="card scroll">
+    <table><thead><tr><th>Rytter</th><th class="num">Ejet i top-10-runder</th><th class="num">Sæson-vækst (M)</th></tr></thead>
+    <tbody id="missed"></tbody></table>
   </div>
 
   <div class="cols">
@@ -118,6 +123,7 @@
     <li><b>Ingen af kilderne dominerer alene</b> — Feltet er skarpest på kaptajn-ramning, Simon på bredere holdvalg, VeloScore stærkest på "mindst en af de tre bedste". Brug dem sammen, ikke isoleret.</li>
     <li><b>Kaptajnvalget var din svaghed denne gang</b> — fire af fem største fortrydelser var samme rytter (Brennan) på dage der ikke gik hans vej.</li>
     <li><b>GC-rytterne bar holdet</b> — Pogačar, van Aert og Roglič stod for langt størstedelen af den positive vækst.</li>
+    <li><b>Gabet til top-10 var Oscar Onley</b> — 16 af top-10-holdene ejede ham på et tidspunkt (+1,92M i sæson-vækst), du gjorde aldrig. Det er alene mere end forskellen mellem dig og top-10-medianen.</li>
   </ul>
 
   <p class="foot">Data: <span class="mono">web/data/vuelta2026_predictions.json</span>, <span class="mono">data/analysis/source_eval_vuelta.json</span>, <span class="mono">data/analysis/manager_eval_vuelta.json</span>. Kør selv: <span class="mono">python scripts/analysis/eval_sources.py --race vuelta2026</span> / <span class="mono">eval_managers.py --race vuelta2026</span>.</p>
@@ -135,11 +141,31 @@ document.getElementById('shootout').innerHTML = SRC.slice().sort((a,b)=>b.top1-a
 ).join('');
 
 const MGR=[
-  {t:"Kasper", tot:10.79, tr:81, cap:2.26, eff:0.463},
-  {t:"Os (Anders)", tot:10.06, tr:85, cap:1.61, eff:0.321}
+  {t:"top-10", tot:11.03, tr:76, cap:1.73, eff:0.347},
+  {t:"top-10", tot:10.82, tr:73, cap:1.73, eff:0.335},
+  {t:"Kasper", tot:10.79, tr:81, cap:2.26, eff:0.463, mine:true},
+  {t:"top-10", tot:10.71, tr:84, cap:1.77, eff:0.336},
+  {t:"top-10", tot:10.68, tr:75, cap:1.79, eff:0.337},
+  {t:"top-10", tot:10.59, tr:80, cap:1.71, eff:0.342},
+  {t:"Os (Anders)", tot:10.06, tr:85, cap:1.61, eff:0.321, mine:true},
+  {t:"top-10", tot:9.99, tr:76, cap:1.81, eff:0.373},
+  {t:"top-10", tot:9.90, tr:98, cap:1.63, eff:0.326},
+  {t:"top-10", tot:9.87, tr:79, cap:1.73, eff:0.381},
+  {t:"TheFantasyTool", tot:9.85, tr:83, cap:1.72, eff:0.356, mine:true},
+  {t:"top-10", tot:9.62, tr:89, cap:1.91, eff:0.435},
+  {t:"top-10", tot:8.90, tr:88, cap:1.78, eff:0.387}
 ];
 document.getElementById('manager').innerHTML = MGR.map((r,i)=>
-  `<tr><td class="mono">${i+1}</td><td>${r.t}</td><td class="num mono">${r.tot.toFixed(2)}</td><td class="num mono">${r.tr}</td><td class="num mono">${r.cap.toFixed(2)}</td><td class="num mono">${r.eff.toFixed(2)}</td></tr>`
+  `<tr${r.mine?' style="background:var(--line-2)"':''}><td class="mono">${i+1}</td><td>${r.mine?'<b>'+r.t+'</b>':r.t}</td><td class="num mono">${r.tot.toFixed(2)}</td><td class="num mono">${r.tr}</td><td class="num mono">${r.cap.toFixed(2)}</td><td class="num mono">${r.eff.toFixed(2)}</td></tr>`
+).join('');
+
+const MISSED=[
+  ["Oscar Onley",16,1.92],["Kevin Vermaerke",1,0.63],["Andreas Leknessund",1,0.60],
+  ["Urko Berrade",1,0.31],["Valentin Paret-Peintre",2,0.28],["Guillaume Martin",1,0.26],
+  ["Marco Brenner",5,0.02],["Vincenzo Albanese",7,0.01]
+];
+document.getElementById('missed').innerHTML = MISSED.map(([n,own,g])=>
+  `<tr><td>${n}</td><td class="num mono">${own}</td><td class="num mono neg">+${g.toFixed(2)}</td></tr>`
 ).join('');
 
 const BEST=[["Tadej Pogačar",2.288],["Wout van Aert",1.617],["Primož Roglič",1.383],["Jakob Omrzel",0.638],["Joshua Tarling",0.58],["Santiago Buitrago",0.437]];
