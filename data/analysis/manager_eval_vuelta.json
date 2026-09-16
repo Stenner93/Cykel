@@ -3,6 +3,22 @@
   "incomplete_teams_excluded": [],
   "ranking_total_M": [
     {
+      "team_id": 7287238,
+      "label": "top-10",
+      "total_M": 11.03,
+      "transfers": 76,
+      "captain_captured_M": 1.73,
+      "captain_eff_vs_own": 0.347
+    },
+    {
+      "team_id": 7301959,
+      "label": "top-10",
+      "total_M": 10.82,
+      "transfers": 73,
+      "captain_captured_M": 1.73,
+      "captain_eff_vs_own": 0.335
+    },
+    {
       "team_id": 7272262,
       "label": "Kasper",
       "total_M": 10.79,
@@ -11,12 +27,84 @@
       "captain_eff_vs_own": 0.463
     },
     {
+      "team_id": 7267851,
+      "label": "top-10",
+      "total_M": 10.71,
+      "transfers": 84,
+      "captain_captured_M": 1.77,
+      "captain_eff_vs_own": 0.336
+    },
+    {
+      "team_id": 7281857,
+      "label": "top-10",
+      "total_M": 10.68,
+      "transfers": 75,
+      "captain_captured_M": 1.79,
+      "captain_eff_vs_own": 0.337
+    },
+    {
+      "team_id": 7277732,
+      "label": "top-10",
+      "total_M": 10.59,
+      "transfers": 80,
+      "captain_captured_M": 1.71,
+      "captain_eff_vs_own": 0.342
+    },
+    {
       "team_id": 7271757,
       "label": "os (Anders)",
       "total_M": 10.06,
       "transfers": 85,
       "captain_captured_M": 1.61,
       "captain_eff_vs_own": 0.321
+    },
+    {
+      "team_id": 7295230,
+      "label": "top-10",
+      "total_M": 9.99,
+      "transfers": 76,
+      "captain_captured_M": 1.81,
+      "captain_eff_vs_own": 0.373
+    },
+    {
+      "team_id": 7284407,
+      "label": "top-10",
+      "total_M": 9.9,
+      "transfers": 98,
+      "captain_captured_M": 1.63,
+      "captain_eff_vs_own": 0.326
+    },
+    {
+      "team_id": 7301538,
+      "label": "top-10",
+      "total_M": 9.87,
+      "transfers": 79,
+      "captain_captured_M": 1.73,
+      "captain_eff_vs_own": 0.381
+    },
+    {
+      "team_id": 7285351,
+      "label": "optakt-skribent (TheFantasyTool)",
+      "total_M": 9.85,
+      "transfers": 83,
+      "captain_captured_M": 1.72,
+      "captain_eff_vs_own": 0.356
+    },
+    {
+      "team_id": 7286644,
+      "label": "top-10",
+      "total_M": 9.62,
+      "transfers": 89,
+      "captain_captured_M": 1.91,
+      "captain_eff_vs_own": 0.435
+    },
+    {
+      "team_id": 7303859,
+      "label": "top-10",
+      "total_M": 8.9,
+      "transfers": 88,
+      "captain_captured_M": 1.78,
+      "captain_eff_vs_own": 0.387
     }
   ],
   "curves_M": {
@@ -64,10 +152,75 @@
       10.25,
       10.79
     ],
-    "optakt": {},
-    "top10_median": [],
-    "top10_best": null,
-    "top10_best_id": null
+    "optakt": {
+      "7285351": [
+        1.57,
+        2.8,
+        2.8,
+        2.96,
+        3.4,
+        4.92,
+        4.84,
+        5.21,
+        5.27,
+        5.71,
+        5.93,
+        6.7,
+        6.96,
+        6.28,
+        7.12,
+        8.64,
+        9.06,
+        9.53,
+        9.87,
+        9.85
+      ]
+    },
+    "top10_median": [
+      1.57,
+      2.8,
+      2.8,
+      2.94,
+      3.37,
+      4.77,
+      4.49,
+      4.86,
+      4.95,
+      5.36,
+      5.68,
+      6.48,
+      7.07,
+      6.5,
+      7.37,
+      8.91,
+      9.34,
+      9.9,
+      10.26,
+      10.59
+    ],
+    "top10_best": [
+      1.57,
+      2.85,
+      2.85,
+      3.05,
+      3.49,
+      4.9,
+      4.83,
+      5.19,
+      5.11,
+      5.49,
+      5.76,
+      6.83,
+      7.14,
+      6.55,
+      7.42,
+      8.91,
+      9.35,
+      10.01,
+      10.73,
+      11.03
+    ],
+    "top10_best_id": 7287238
   },
   "our_best_picks_M": [
     {
@@ -121,7 +274,48 @@
       "contribution_M": -0.09
     }
   ],
-  "our_missed_gains": [],
+  "our_missed_gains": [
+    {
+      "rider": "Oscar Onley",
+      "top10_rounds_owned": 16,
+      "season_growth_M": 1.92
+    },
+    {
+      "rider": "Kevin Vermaerke",
+      "top10_rounds_owned": 1,
+      "season_growth_M": 0.63
+    },
+    {
+      "rider": "Andreas Leknessund",
+      "top10_rounds_owned": 1,
+      "season_growth_M": 0.6
+    },
+    {
+      "rider": "Urko Berrade",
+      "top10_rounds_owned": 1,
+      "season_growth_M": 0.31
+    },
+    {
+      "rider": "Valentin Paret-Peintre",
+      "top10_rounds_owned": 2,
+      "season_growth_M": 0.28
+    },
+    {
+      "rider": "Guillaume Martin",
+      "top10_rounds_owned": 1,
+      "season_growth_M": 0.26
+    },
+    {
+      "rider": "Marco Brenner",
+      "top10_rounds_owned": 5,
+      "season_growth_M": 0.02
+    },
+    {
+      "rider": "Vincenzo Albanese",
+      "top10_rounds_owned": 7,
+      "season_growth_M": 0.01
+    }
+  ],
   "our_captain_misses": [
     {
       "round": 4,
