@@ -1,0 +1,406 @@
+{
+  "note": "Optakter vs model on actual holdet growth, Vuelta 2026. buys percentile: 1.0=best in field, 0.5=field average.",
+  "skipped_stages_no_actual": [],
+  "model_baseline": {
+    "captain_top1_pct": 20.0,
+    "captain_top3_pct": 45.0,
+    "buys_mean_growth_percentile": 0.816
+  },
+  "sources": {
+    "feltet": {
+      "captain_top1_pct": 42.1,
+      "captain_top3_pct": 47.4,
+      "captain_stages": 19,
+      "buys_mean_growth_percentile": 0.861,
+      "buys_stages": 20,
+      "captain_vs_model_winrate": 52.6,
+      "disagreed_with_model_stages": 14,
+      "disagree_win": 10,
+      "disagree_loss": 4,
+      "disagree_tie": 0,
+      "disagree_source_landed_best": 5,
+      "disagree_model_landed_best": 1,
+      "disagree_chaos_neither": 8,
+      "per_stage": [
+        {
+          "stage": 1,
+          "captain_raw": "Wout van Aert",
+          "captain_rider": "Wout van Aert",
+          "cap_pct": 0.97,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.94
+        },
+        {
+          "stage": 2,
+          "captain_raw": "Wout van Aert",
+          "captain_rider": "Wout van Aert",
+          "cap_pct": 0.98,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.89
+        },
+        {
+          "stage": 4,
+          "captain_raw": "Tadej Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.89
+        },
+        {
+          "stage": 5,
+          "captain_raw": "Matthew Brennan",
+          "captain_rider": "Matthew Brennan",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.83
+        },
+        {
+          "stage": 6,
+          "captain_raw": "Tadej Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.88
+        },
+        {
+          "stage": 7,
+          "captain_raw": "Tadej Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.97,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.8
+        },
+        {
+          "stage": 8,
+          "captain_raw": "Matthew Brennan",
+          "captain_rider": "Matthew Brennan",
+          "cap_pct": 0.94,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.83
+        },
+        {
+          "stage": 9,
+          "captain_raw": "Felix Gall",
+          "captain_rider": "Felix Gall",
+          "cap_pct": 0.99,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.91
+        },
+        {
+          "stage": 10,
+          "captain_raw": "Wout van Aert",
+          "captain_rider": "Wout van Aert",
+          "cap_pct": 0.99,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.8
+        },
+        {
+          "stage": 11,
+          "captain_raw": "Matthew Brennan",
+          "captain_rider": "Matthew Brennan",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.89
+        },
+        {
+          "stage": 12,
+          "captain_raw": "Enric Mas",
+          "captain_rider": "Enric Mas",
+          "cap_pct": 0.99,
+          "cap_top1": false,
+          "cap_top3": true,
+          "buys_mean_pct": 0.91
+        },
+        {
+          "stage": 13,
+          "captain_raw": "Wout van Aert",
+          "captain_rider": "Wout van Aert",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.94
+        },
+        {
+          "stage": 14,
+          "captain_raw": "Enric Mas",
+          "captain_rider": "Enric Mas",
+          "cap_pct": 0.96,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.76
+        },
+        {
+          "stage": 15,
+          "captain_raw": "Wout van Aert",
+          "captain_rider": "Wout van Aert",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.77
+        },
+        {
+          "stage": 16,
+          "captain_raw": "Matthew Brennan",
+          "captain_rider": "Matthew Brennan",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.89
+        },
+        {
+          "stage": 17,
+          "captain_raw": "Matthew Brennan",
+          "captain_rider": "Matthew Brennan",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.94
+        },
+        {
+          "stage": 18,
+          "captain_raw": "Wout van Aert",
+          "captain_rider": "Wout van Aert",
+          "cap_pct": 0.98,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.91
+        },
+        {
+          "stage": 19,
+          "captain_raw": "",
+          "captain_rider": null,
+          "buys_mean_pct": 0.68
+        },
+        {
+          "stage": 20,
+          "captain_raw": "Enric Mas",
+          "captain_rider": "Enric Mas",
+          "cap_pct": 0.98,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.86
+        },
+        {
+          "stage": 21,
+          "captain_raw": "Wout van Aert",
+          "captain_rider": "Wout van Aert",
+          "cap_pct": 0.83,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.91
+        }
+      ]
+    },
+    "simon": {
+      "captain_top1_pct": 35.0,
+      "captain_top3_pct": 45.0,
+      "captain_stages": 20,
+      "buys_mean_growth_percentile": 0.875,
+      "buys_stages": 20,
+      "captain_vs_model_winrate": 50.0,
+      "disagreed_with_model_stages": 16,
+      "disagree_win": 10,
+      "disagree_loss": 6,
+      "disagree_tie": 0,
+      "disagree_source_landed_best": 5,
+      "disagree_model_landed_best": 2,
+      "disagree_chaos_neither": 9,
+      "per_stage": [
+        {
+          "stage": 1,
+          "captain_raw": "Joshua Tarling",
+          "captain_rider": "Joshua Tarling",
+          "cap_pct": 0.99,
+          "cap_top1": false,
+          "cap_top3": true,
+          "buys_mean_pct": 0.95
+        },
+        {
+          "stage": 2,
+          "captain_raw": "Wout van Aert",
+          "captain_rider": "Wout van Aert",
+          "cap_pct": 0.98,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.96
+        },
+        {
+          "stage": 4,
+          "captain_raw": "Tadej Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.71
+        },
+        {
+          "stage": 5,
+          "captain_raw": "Matthew Brennan",
+          "captain_rider": "Matthew Brennan",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.84
+        },
+        {
+          "stage": 6,
+          "captain_raw": "Tadej Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.92
+        },
+        {
+          "stage": 7,
+          "captain_raw": "Tadej Pogacar",
+          "captain_rider": "Tadej Pogacar",
+          "cap_pct": 0.97,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.72
+        },
+        {
+          "stage": 8,
+          "captain_raw": "Matthew Brennan",
+          "captain_rider": "Matthew Brennan",
+          "cap_pct": 0.94,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.91
+        },
+        {
+          "stage": 9,
+          "captain_raw": "Felix Gall",
+          "captain_rider": "Felix Gall",
+          "cap_pct": 0.99,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.95
+        },
+        {
+          "stage": 10,
+          "captain_raw": "Matthew Brennan",
+          "captain_rider": "Matthew Brennan",
+          "cap_pct": 0.54,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.82
+        },
+        {
+          "stage": 11,
+          "captain_raw": "Matthew Brennan",
+          "captain_rider": "Matthew Brennan",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.92
+        },
+        {
+          "stage": 12,
+          "captain_raw": "Enric Mas",
+          "captain_rider": "Enric Mas",
+          "cap_pct": 0.99,
+          "cap_top1": false,
+          "cap_top3": true,
+          "buys_mean_pct": 0.88
+        },
+        {
+          "stage": 13,
+          "captain_raw": "Wout van Aert",
+          "captain_rider": "Wout van Aert",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.93
+        },
+        {
+          "stage": 14,
+          "captain_raw": "Enric Mas",
+          "captain_rider": "Enric Mas",
+          "cap_pct": 0.96,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.88
+        },
+        {
+          "stage": 15,
+          "captain_raw": "Matthew Brennan",
+          "captain_rider": "Matthew Brennan",
+          "cap_pct": 0.91,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.8
+        },
+        {
+          "stage": 16,
+          "captain_raw": "Matthew Brennan",
+          "captain_rider": "Matthew Brennan",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.82
+        },
+        {
+          "stage": 17,
+          "captain_raw": "Matthew Brennan",
+          "captain_rider": "Matthew Brennan",
+          "cap_pct": 1.0,
+          "cap_top1": true,
+          "cap_top3": true,
+          "buys_mean_pct": 0.97
+        },
+        {
+          "stage": 18,
+          "captain_raw": "Wout van Aert",
+          "captain_rider": "Wout van Aert",
+          "cap_pct": 0.98,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.9
+        },
+        {
+          "stage": 19,
+          "captain_raw": "Enric Mas",
+          "captain_rider": "Enric Mas",
+          "cap_pct": 0.95,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.84
+        },
+        {
+          "stage": 20,
+          "captain_raw": "Enric Mas",
+          "captain_rider": "Enric Mas",
+          "cap_pct": 0.98,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.89
+        },
+        {
+          "stage": 21,
+          "captain_raw": "Wout van Aert",
+          "captain_rider": "Wout van Aert",
+          "cap_pct": 0.83,
+          "cap_top1": false,
+          "cap_top3": false,
+          "buys_mean_pct": 0.92
+        }
+      ]
+    }
+  },
+  "unmatched_names": {
+    "feltet": [],
+    "simon": []
+  }
+}

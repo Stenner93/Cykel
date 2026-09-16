@@ -14,16 +14,33 @@ For each stage we compare, on the realised `actual` growth:
     (0.5 = field average, 1.0 = best in field)
   - head-to-head captain: source's captain actual growth vs model's captain
 
-Prints a summary and writes data/analysis/optakt_eval.json.
+Prints a summary and writes data/analysis/optakt_eval[_<race>].json.
 """
+import argparse
 import json, unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-PRED = ROOT / "web/data/tdf2026_predictions.json"
-PICKS = {
-    "feltet": ROOT / "data/analysis/optakt_picks_feltet.json",
-    "simon":  ROOT / "data/analysis/optakt_picks_simon.json",
+
+RACES = {
+    "tdf2026": {
+        "label": "TdF 2026",
+        "pred": ROOT / "web/data/tdf2026_predictions.json",
+        "picks": {
+            "feltet": ROOT / "data/analysis/optakt_picks_feltet.json",
+            "simon":  ROOT / "data/analysis/optakt_picks_simon.json",
+        },
+        "out": ROOT / "data/analysis/optakt_eval.json",
+    },
+    "vuelta2026": {
+        "label": "Vuelta 2026",
+        "pred": ROOT / "web/data/vuelta2026_predictions.json",
+        "picks": {
+            "feltet": ROOT / "data/analysis/optakt_picks_feltet_vuelta.json",
+            "simon":  ROOT / "data/analysis/optakt_picks_simon_vuelta.json",
+        },
+        "out": ROOT / "data/analysis/optakt_eval_vuelta.json",
+    },
 }
 
 
@@ -63,11 +80,22 @@ def match(name, idx):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--race", default="tdf2026", choices=sorted(RACES))
+    args = ap.parse_args()
+    cfg = RACES[args.race]
+    PRED, PICKS, OUTP = cfg["pred"], cfg["picks"], cfg["out"]
+
     pred = json.loads(PRED.read_text())
-    stages = {s["num"]: s for s in pred["stages"]}
-    names = {r["name"] for s in pred["stages"] for r in s["riders"]}
+    all_stages = pred["stages"]
+    usable = [s for s in all_stages if any((r.get("actual") or 0) for r in s["riders"])]
+    skipped = [s["num"] for s in all_stages if s not in usable]
+    if skipped:
+        print(f"[note] skipping stage(s) with no actual-growth data: {skipped}")
+    stages = {s["num"]: s for s in usable}
+    names = {r["name"] for s in usable for r in s["riders"]}
     prominence = {}
-    for s in pred["stages"]:
+    for s in usable:
         for r in s["riders"]:
             prominence[r["name"]] = prominence.get(r["name"], 0) + (r.get("actual") or 0)
     idx = build_index(names, prominence)
@@ -171,24 +199,30 @@ def main():
         }
         unmatched[src] = sorted(umatch)
 
-    # model baseline (from indicator eval): captain 33.3/57.1; buys = top-8 by exp
+    # model baseline: captain = argmax(exp) hit-rate; buys = top-8 by exp
     model_buys_pcts = []
-    for st in pred["stages"]:
+    model_cap_top1 = model_cap_top3 = 0
+    for st in usable:
         best1, best3, pct, act = stage_tables(st)
+        model_cap = max(st["riders"], key=lambda r: (r.get("exp") or 0))["name"]
+        model_cap_top1 += int(model_cap == best1)
+        model_cap_top3 += int(model_cap in best3)
         top8 = sorted(st["riders"], key=lambda r: -(r.get("exp") or 0))[:8]
         model_buys_pcts.append(sum(pct.get(r["name"], 0) for r in top8) / 8)
     model_baseline = {
-        "captain_top1_pct": 33.3, "captain_top3_pct": 57.1,
+        "captain_top1_pct": round(100 * model_cap_top1 / len(usable), 1),
+        "captain_top3_pct": round(100 * model_cap_top3 / len(usable), 1),
         "buys_mean_growth_percentile": round(sum(model_buys_pcts) / len(model_buys_pcts), 3),
     }
 
-    out = {"note": "Optakter vs model on actual holdet growth. buys percentile: "
+    out = {"note": f"Optakter vs model on actual holdet growth, {cfg['label']}. buys percentile: "
                    "1.0=best in field, 0.5=field average.",
+           "skipped_stages_no_actual": skipped,
            "model_baseline": model_baseline, "sources": results, "unmatched_names": unmatched}
-    outp = ROOT / "data/analysis/optakt_eval.json"
+    outp = OUTP
     outp.write_text(json.dumps(out, indent=2, ensure_ascii=False))
 
-    print("OPTAKTER vs MODEL — actual holdet growth\n")
+    print(f"OPTAKTER vs MODEL — actual holdet growth ({cfg['label']})\n")
     print(f"{'source':10s} {'cap top1':>9s} {'cap top3':>9s} {'buys pct':>9s} {'beats model cap':>16s}")
     print(f"{'MODEL':10s} {model_baseline['captain_top1_pct']:>8.1f}% "
           f"{model_baseline['captain_top3_pct']:>8.1f}% "

@@ -1,0 +1,318 @@
+[
+  {
+    "stage": 1,
+    "captain": "Joshua Tarling",
+    "buys": [
+      "Joshua Tarling",
+      "Wout van Aert",
+      "Stefan Küng",
+      "Ethan Hayter",
+      "Ivan Romeo",
+      "Callum Thornley",
+      "Finn Fisher-Black",
+      "Arthur Kluckers"
+    ],
+    "avoid": [
+      "Tadej Pogacar",
+      "Joao Almeida"
+    ]
+  },
+  {
+    "stage": 2,
+    "captain": "Wout van Aert",
+    "buys": [
+      "Christophe Laporte",
+      "Léo Bisiaux",
+      "Pau Miquel"
+    ],
+    "avoid": []
+  },
+  {
+    "stage": 3,
+    "captain": "Tadej Pogacar",
+    "buys": [
+      "Tadej Pogacar",
+      "Pablo Torres",
+      "Ramses Debruyne",
+      "William Barta",
+      "Gijs Leemreize",
+      "Mattia Gaffuri"
+    ],
+    "avoid": [
+      "Wout van Aert",
+      "Orluis Aular",
+      "Ivan Romeo",
+      "Pablo Castrillo",
+      "Thibau Nys",
+      "Paret-Peintre"
+    ]
+  },
+  {
+    "stage": 4,
+    "captain": "Tadej Pogacar",
+    "buys": [
+      "Tadej Pogacar",
+      "Jay Vine",
+      "Jakob Omrzel",
+      "Markel Beloki",
+      "Mario Aparicio",
+      "Steven Kruijswijk",
+      "Julien Bernard"
+    ],
+    "avoid": []
+  },
+  {
+    "stage": 5,
+    "captain": "Matthew Brennan",
+    "buys": [
+      "Matthew Brennan",
+      "Pau Miquel",
+      "David González",
+      "Alessandro Covi"
+    ],
+    "avoid": [
+      "Jordi Meeus",
+      "Magnus Cort",
+      "Kaden Groves",
+      "Alexis Renard",
+      "Steffen De Schuyteneer"
+    ]
+  },
+  {
+    "stage": 6,
+    "captain": "Tadej Pogacar",
+    "buys": [
+      "Ramses Debruyne",
+      "Harold Tejada",
+      "Enric Mas",
+      "Jarno Widar",
+      "Juan Felipe Rodriguez"
+    ],
+    "avoid": [
+      "Finn Fisher-Black",
+      "Valentin Paret-Peintre",
+      "Tobias Halland Johannessen",
+      "Thibau Nys",
+      "Axel Laurance"
+    ]
+  },
+  {
+    "stage": 7,
+    "captain": "Tadej Pogacar",
+    "buys": [
+      "Mattia Gaffuri"
+    ],
+    "avoid": [
+      "Marco Brenner",
+      "Julien Bernard"
+    ]
+  },
+  {
+    "stage": 8,
+    "captain": "Matthew Brennan",
+    "buys": [
+      "Matthew Brennan",
+      "Hugo Hofstetter",
+      "Alessandro Romele",
+      "Pau Miquel",
+      "Vito Braet"
+    ],
+    "avoid": [
+      "Mads Pedersen",
+      "Steffen De Schuyteneer"
+    ]
+  },
+  {
+    "stage": 9,
+    "captain": "Felix Gall",
+    "buys": [
+      "Felix Gall",
+      "Enric Mas",
+      "Sepp Kuss",
+      "Harold Tejada",
+      "Clement Berthet",
+      "Gregor Mühlberger",
+      "Primoz Roglic",
+      "Mario Aparicio"
+    ],
+    "avoid": [
+      "Oscar Onley",
+      "Mattias Skjelmose"
+    ]
+  },
+  {
+    "stage": 10,
+    "captain": "Matthew Brennan",
+    "buys": [
+      "Matthew Brennan",
+      "Alessandro Romele",
+      "Pau Miquel",
+      "Bryan Coquard",
+      "Hugo Hofstetter"
+    ],
+    "avoid": [
+      "Jordi Meeus",
+      "Ben Turner"
+    ]
+  },
+  {
+    "stage": 11,
+    "captain": "Matthew Brennan",
+    "buys": [
+      "Matthew Brennan",
+      "Alessandro Romele",
+      "Bryan Coquard",
+      "Hugo Hofstetter",
+      "Pau Miquel",
+      "Vito Braet",
+      "Orluis Aular",
+      "Axel Laurance"
+    ],
+    "avoid": []
+  },
+  {
+    "stage": 12,
+    "captain": "Enric Mas",
+    "buys": [
+      "Oscar Onley",
+      "Harold Tejada",
+      "Cristian Rodriguez Martin",
+      "Juan Felipe Rodriguez",
+      "Clement Berthet"
+    ],
+    "avoid": [
+      "Mattias Skjelmose"
+    ]
+  },
+  {
+    "stage": 13,
+    "captain": "Wout van Aert",
+    "buys": [
+      "Wout van Aert",
+      "Jakob Omrzel",
+      "Steven Kruijswijk"
+    ],
+    "avoid": [
+      "Tobias Halland Johannessen",
+      "Cristian Rodriguez Martin"
+    ]
+  },
+  {
+    "stage": 14,
+    "captain": "Enric Mas",
+    "buys": [
+      "Richard Carapaz",
+      "Harold Tejada"
+    ],
+    "avoid": [
+      "Wout van Aert"
+    ]
+  },
+  {
+    "stage": 15,
+    "captain": "Matthew Brennan",
+    "buys": [
+      "Matthew Brennan",
+      "Wout van Aert",
+      "Jordi Meeus",
+      "Bryan Coquard",
+      "Hugo Hofstetter",
+      "Alessandro Romele",
+      "Magnus Cort",
+      "Bastien Tronchon"
+    ],
+    "avoid": [
+      "Vincenzo Albanese",
+      "Enric Mas"
+    ]
+  },
+  {
+    "stage": 16,
+    "captain": "Matthew Brennan",
+    "buys": [
+      "Steffen De Schuyteneer"
+    ],
+    "avoid": [
+      "Magnus Cort"
+    ]
+  },
+  {
+    "stage": 17,
+    "captain": "Matthew Brennan",
+    "buys": [
+      "Matthew Brennan",
+      "Jordi Meeus",
+      "Bryan Coquard",
+      "Hugo Hofstetter",
+      "Alessandro Romele",
+      "Wout van Aert",
+      "Alberto Dainese",
+      "Magnus Cort"
+    ],
+    "avoid": []
+  },
+  {
+    "stage": 18,
+    "captain": "Wout van Aert",
+    "buys": [
+      "Primoz Roglic",
+      "Stefan Küng",
+      "Bruno Armirail",
+      "Enric Mas",
+      "Ethan Hayter",
+      "Callum Thornley",
+      "Ivan Romeo"
+    ],
+    "avoid": []
+  },
+  {
+    "stage": 19,
+    "captain": "Enric Mas",
+    "buys": [
+      "Richard Carapaz",
+      "Felix Gall",
+      "Santiago Buitrago",
+      "Marco Brenner",
+      "Harold Tejada",
+      "Juan Felipe Rodriguez"
+    ],
+    "avoid": [
+      "Jørgen Nordhagen",
+      "Léo Bisiaux",
+      "Georg Steinhauser",
+      "Valentin Paret-Peintre",
+      "Tobias Halland Johannessen"
+    ]
+  },
+  {
+    "stage": 20,
+    "captain": "Enric Mas",
+    "buys": [
+      "Jakob Omrzel",
+      "Clement Berthet"
+    ],
+    "avoid": [
+      "Jørgen Nordhagen"
+    ]
+  },
+  {
+    "stage": 21,
+    "captain": "Wout van Aert",
+    "buys": [
+      "Wout van Aert",
+      "Alessandro Romele",
+      "Thibau Nys",
+      "Pau Miquel",
+      "Bastien Tronchon",
+      "Axel Laurance",
+      "Finn Fisher-Black",
+      "Magnus Cort"
+    ],
+    "avoid": [
+      "Matthew Brennan",
+      "Vincenzo Albanese",
+      "Bryan Coquard",
+      "Vito Braet"
+    ]
+  }
+]

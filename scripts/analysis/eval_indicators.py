@@ -1,24 +1,41 @@
 #!/usr/bin/env python3
 """
-Post-race evaluation — TdF 2026.
+Post-race evaluation — which model indicators / sub-predictors best explained
+the ACTUAL holdet value growth per rider per stage?
 
-Which model indicators / sub-predictors best explained the ACTUAL holdet value
-growth per rider per stage? Uses the fully-cached predictions file
-(web/data/tdf2026_predictions.json), which carries, for every rider on every
-stage: the 6 raw signals, the sub-model predictions, the composite expected
-value, and the realised `actual` growth.
+Uses the fully-cached predictions file (web/data/<race>_predictions.json),
+which carries, for every rider on every stage: the 6 raw signals, the
+sub-model predictions, the composite expected value, and the realised
+`actual` growth. Select the race with --race (default tdf2026).
 
 Outputs:
-  data/analysis/indicator_eval.json   (machine-readable)
+  data/analysis/indicator_eval[_<race>].json   (machine-readable)
   prints a human summary
 
 No network needed — all inputs are local.
 """
+import argparse
 import json, math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-PRED = ROOT / "web/data/tdf2026_predictions.json"
+
+# Per-race file locations. veloscore_glob takes a stage number (int) and
+# returns the path to that stage's transcribed VeloScore JSON, if any.
+RACES = {
+    "tdf2026": {
+        "label": "TdF 2026",
+        "pred": ROOT / "web/data/tdf2026_predictions.json",
+        "veloscore": lambda n: ROOT / f"data/stage_{n:02d}_veloscore.json",
+        "out": ROOT / "data/analysis/indicator_eval.json",
+    },
+    "vuelta2026": {
+        "label": "Vuelta 2026",
+        "pred": ROOT / "web/data/vuelta2026_predictions.json",
+        "veloscore": lambda n: ROOT / f"data/vuelta_stage_{n:02d}_veloscore.json",
+        "out": ROOT / "data/analysis/indicator_eval_vuelta.json",
+    },
+}
 
 # signals[] order, from src/predictor.py available_signals construction:
 SIGNAL_NAMES = ["veloscore", "odds", "discipline", "form", "ml", "pcs_rank"]
@@ -57,8 +74,23 @@ def spearman(xs, ys):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--race", default="tdf2026", choices=sorted(RACES))
+    args = ap.parse_args()
+    cfg = RACES[args.race]
+    PRED, VELOSCORE, OUTP = cfg["pred"], cfg["veloscore"], cfg["out"]
+
     pred = json.loads(PRED.read_text())
-    stages = pred["stages"]
+    all_stages = pred["stages"]
+
+    # Drop stages with no real 'actual' data at all (e.g. the pipeline never
+    # got a post-finish scrape in before the game froze) — every rider would
+    # tie at 0, which corrupts argmax/captain-accuracy stats rather than
+    # reflecting a real "nobody grew" day.
+    stages = [st for st in all_stages if any((r.get("actual") or 0) for r in st["riders"])]
+    skipped = [st["num"] for st in all_stages if st not in stages]
+    if skipped:
+        print(f"[note] skipping stage(s) with no actual-growth data: {skipped}")
 
     # ---- 1. Per-signal predictive power (per-stage Spearman, then averaged) ----
     sig_corr = {s: [] for s in SIGNAL_NAMES}
@@ -149,7 +181,7 @@ def main():
     vs_corr, vs_cap_top1, vs_cap_top3, vs_n = [], 0, 0, 0
     for st in stages:
         num = st["num"]
-        f = ROOT / f"data/stage_{num:02d}_veloscore.json"
+        f = VELOSCORE(num)
         if not f.exists():
             continue
         vs = json.loads(f.read_text())
@@ -188,9 +220,10 @@ def main():
     overall = spearman(all_exp, all_act)
 
     out = {
-        "note": "Post-race indicator evaluation, TdF 2026. Spearman rank corr vs "
+        "note": f"Post-race indicator evaluation, {cfg['label']}. Spearman rank corr vs "
                 "actual holdet value growth. Signal corr = mean of per-stage "
                 "correlations (stages where the signal was present).",
+        "skipped_stages_no_actual": skipped,
         "n_stages": len(stages),
         "n_rider_stage_rows": len(all_exp),
         "signal_ranking": [{"signal": n, "mean_spearman": c, "stages": k}
@@ -205,12 +238,12 @@ def main():
             for t, d in sig_corr_by_type.items()
         },
     }
-    outp = ROOT / "data/analysis/indicator_eval.json"
+    outp = OUTP
     outp.parent.mkdir(parents=True, exist_ok=True)
     outp.write_text(json.dumps(out, indent=2, ensure_ascii=False))
 
     # ---- human summary ----
-    print(f"TdF 2026 — indicator evaluation ({len(stages)} stages, {len(all_exp)} rows)\n")
+    print(f"{cfg['label']} — indicator evaluation ({len(stages)} stages, {len(all_exp)} rows)\n")
     print("SIGNAL predictive power (mean per-stage Spearman vs actual growth):")
     for n, c, k in signal_ranking:
         print(f"  {n:12s} {c:+.3f}   ({k} stages)")

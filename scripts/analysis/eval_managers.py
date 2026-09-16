@@ -15,23 +15,49 @@ NB: this is a points/growth-attribution model, not holdet's exact price/bank
 value (bank isn't in the snapshot). It answers "which rider & captain CHOICES
 created or cost value", which is the question we care about.
 
-Outputs data/analysis/manager_eval.json + a printed summary.
+Outputs data/analysis/manager_eval[_<race>].json + a printed summary.
 """
+import argparse
 import json, os, collections
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-H = ROOT / "data/sources/tdf2026/holdet"
 
-OUR = 7145433
-KASPER = 7132927
-OPTAKT = {7157567, 7132842}
+RACES = {
+    "tdf2026": {
+        "label": "TdF 2026",
+        "holdet_dir": ROOT / "data/sources/tdf2026/holdet",
+        "pred": ROOT / "web/data/tdf2026_predictions.json",
+        "our": 7145433, "kasper": 7132927, "optakt": {7157567, 7132842},
+        "out": ROOT / "data/analysis/manager_eval.json",
+    },
+    "vuelta2026": {
+        "label": "Vuelta 2026",
+        "holdet_dir": ROOT / "data/sources/vuelta2026/holdet",
+        "pred": ROOT / "web/data/vuelta2026_predictions.json",
+        "our": 7271757, "kasper": 7272262, "optakt": set(),
+        "out": ROOT / "data/analysis/manager_eval_vuelta.json",
+    },
+}
 
 
-def load():
-    pid2name = {v["holdet_player_id"]: v["holdet_name"]
-                for v in json.loads((ROOT / "data/cache/holdet_players.json").read_text()).values()}
-    pred = json.loads((ROOT / "web/data/tdf2026_predictions.json").read_text())
+def load(H, pred_path):
+    # Build playerId -> full name from the race's OWN saved reference dump,
+    # not the live data/cache/holdet_players.json — that cache reflects
+    # whichever cartridge the daily scraper currently tracks, so for any race
+    # other than the most recent one it silently returns the wrong season's
+    # names (or none at all), collapsing every roster to empty.
+    ref = json.loads((H / "reference/players.json").read_text())
+    persons = ref.get("_embedded", {}).get("persons", {})
+    pid2name = {}
+    for it in ref.get("items", []):
+        person = persons.get(str(it.get("personId"))) or persons.get(it.get("personId"))
+        if it.get("id") is None or not person:
+            continue
+        full = " ".join(x for x in (person.get("firstName"), person.get("lastName")) if x).strip()
+        if full:
+            pid2name[it["id"]] = full
+    pred = json.loads(pred_path.read_text())
     actual = {}          # stage -> {name: growth}
     field_best = {}      # stage -> best growth in whole field
     for s in pred["stages"]:
@@ -41,7 +67,7 @@ def load():
     return pid2name, actual, field_best
 
 
-def team_rounds(tid, pid2name):
+def team_rounds(H, tid, pid2name):
     """Return {round: {'roster': [names], 'captain': name}}."""
     out = {}
     tdir = H / "teams" / str(tid)
@@ -60,8 +86,8 @@ def team_rounds(tid, pid2name):
     return out
 
 
-def analyse_team(tid, pid2name, actual, field_best):
-    rounds = team_rounds(tid, pid2name)
+def analyse_team(H, tid, pid2name, actual, field_best):
+    rounds = team_rounds(H, tid, pid2name)
     cum, curve = 0, []
     contrib = collections.defaultdict(float)          # name -> total contribution
     cap_bonus_total = 0                                # extra from captain doubling
@@ -109,21 +135,36 @@ def analyse_team(tid, pid2name, actual, field_best):
 
 
 def main():
-    pid2name, actual, field_best = load()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--race", default="tdf2026", choices=sorted(RACES))
+    args = ap.parse_args()
+    cfg = RACES[args.race]
+    H, OUR, KASPER, OPTAKT = cfg["holdet_dir"], cfg["our"], cfg["kasper"], cfg["optakt"]
+
+    pid2name, actual, field_best = load(H, cfg["pred"])
     manifest = json.loads((H / "manifest.json").read_text())
     all_ids = [int(t) for t in os.listdir(H / "teams")]
-    top10 = [t for t in all_ids if t not in ({OUR, KASPER} | OPTAKT)]
+    top10_all = [t for t in all_ids if t not in ({OUR, KASPER} | OPTAKT)]
 
-    A = {t: analyse_team(t, pid2name, actual, field_best) for t in all_ids}
+    A = {t: analyse_team(H, t, pid2name, actual, field_best) for t in all_ids}
+
+    n = len(manifest.get("rounds", [])) or max((len(A[t]["curve_M"]) for t in all_ids), default=0)
+
+    # Only compare top-10 teams with a complete round-by-round curve — a team
+    # whose lineup-fetch failed for some rounds (holdet flakiness / privacy)
+    # would otherwise silently truncate the median/best comparison.
+    top10 = [t for t in top10_all if len(A[t]["curve_M"]) == n]
+    incomplete = [t for t in top10_all if t not in top10]
+    if incomplete:
+        print(f"[note] excluding {len(incomplete)} team(s) with incomplete round data: {incomplete}")
 
     # ---- cumulative comparison ----
     def curve(tid):
         return A[tid]["curve_M"]
 
-    n = 21
     top10_median = [round(sorted(A[t]["curve_M"][i] for t in top10)[len(top10) // 2], 2)
-                    for i in range(n)]
-    top10_best_id = max(top10, key=lambda t: A[t]["total_M"])
+                    for i in range(n)] if top10 else []
+    top10_best_id = max(top10, key=lambda t: A[t]["total_M"]) if top10 else None
 
     # ---- our team attribution ----
     our = A[OUR]
@@ -162,6 +203,7 @@ def main():
     out = {
         "note": "Growth-attribution comparison. score = sum(rider actual growth), "
                 "captain doubled. Not holdet's exact price/bank value.",
+        "incomplete_teams_excluded": incomplete,
         "ranking_total_M": sorted(
             [{"team_id": t, "label": manifest["our_teams"].get(str(t), "top-10"),
               "total_M": A[t]["total_M"], "transfers": A[t]["transfers"],
@@ -172,7 +214,8 @@ def main():
             "os": curve(OUR), "kasper": curve(KASPER),
             "optakt": {str(t): curve(t) for t in OPTAKT},
             "top10_median": top10_median,
-            "top10_best": curve(top10_best_id), "top10_best_id": top10_best_id,
+            "top10_best": curve(top10_best_id) if top10_best_id else None,
+            "top10_best_id": top10_best_id,
         },
         "our_best_picks_M": [{"rider": k, "contribution_M": v} for k, v in best],
         "our_worst_picks_M": [{"rider": k, "contribution_M": v} for k, v in worst],
@@ -180,18 +223,19 @@ def main():
                              for nm, own, g in missed[:12]],
         "our_captain_misses": cap_misses,
     }
-    (ROOT / "data/analysis/manager_eval.json").write_text(json.dumps(out, indent=2, ensure_ascii=False))
+    cfg["out"].write_text(json.dumps(out, indent=2, ensure_ascii=False))
 
     # ---- print ----
-    print("MANAGER-SAMMENLIGNING — TdF 2026 (vækst-attribution, kaptajn dobbelt)\n")
+    print(f"MANAGER-SAMMENLIGNING — {cfg['label']} (vækst-attribution, kaptajn dobbelt)\n")
     print(f"{'#':>2} {'hold':>9} {'label':16} {'total(M)':>9} {'transfers':>9} {'kaptajn(M)':>10} {'kap-eff':>7}")
     for i, row in enumerate(out["ranking_total_M"], 1):
         print(f"{i:>2} {row['team_id']:>9} {row['label']:16} {row['total_M']:>9.2f} "
               f"{row['transfers']:>9} {row['captain_captured_M']:>10.2f} "
               f"{(row['captain_eff_vs_own'] or 0):>7.2f}")
     our_rank = next(i for i, r in enumerate(out["ranking_total_M"], 1) if r["team_id"] == OUR)
-    print(f"\nVores hold: nr. {our_rank}/{len(all_ids)}   slut-total {A[OUR]['total_M']}M   "
-          f"top-10 median {top10_median[-1]}M   top-10 bedste {A[top10_best_id]['total_M']}M")
+    top10_line = (f"top-10 median {top10_median[-1]}M   top-10 bedste {A[top10_best_id]['total_M']}M"
+                  if top10_best_id else "(ingen komplette top-10 hold at sammenligne med)")
+    print(f"\nVores hold: nr. {our_rank}/{len(all_ids)}   slut-total {A[OUR]['total_M']}M   {top10_line}")
     print("\nVores BEDSTE ryttervalg (bidrag, M):")
     for p in out["our_best_picks_M"]:
         print(f"  +{p['contribution_M']:>6.2f}  {p['rider']}")
@@ -205,7 +249,7 @@ def main():
     print("\nMissede gevinster (ryttere top-10 havde, vi aldrig ejede):")
     for m in out["our_missed_gains"][:8]:
         print(f"  {m['season_growth_M']:>5.2f}M  {m['rider']:<24} (ejet i {m['top10_rounds_owned']} top-10 runder)")
-    print("\nWrote data/analysis/manager_eval.json")
+    print(f"\nWrote {cfg['out'].relative_to(ROOT)}")
 
 
 if __name__ == "__main__":
