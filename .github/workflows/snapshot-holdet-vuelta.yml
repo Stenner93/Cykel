@@ -1,0 +1,56 @@
+name: 📸 Snapshot Holdet (Vuelta post-race)
+
+# Midlertidigt, manuelt workflow: henter og fastfryser rå Holdet-data for
+# Vuelta 2026 (referencedata, etape-facit, hold-lineups runde for runde) FØR
+# holdet.dk lukker/fryser spillets API — se scripts/scrape/snapshot_holdet_teams.py.
+# Kører kun via workflow_dispatch, da Claude Code-sandboxens netværksproxy ikke
+# kan nå holdet.dk direkte (organisationspolitik), men GitHub Actions-runneren kan.
+# Fjernes igen når data er hentet og committet.
+on:
+  workflow_dispatch:
+    inputs:
+      top:
+        description: 'Antal top-hold at auto-finde (udover vores egne)'
+        required: false
+        default: '15'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    name: Hent Vuelta Holdet-snapshot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sæt Python op
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Installér afhængigheder
+        run: pip install -r requirements.txt
+
+      - name: Snapshot Vuelta 2026
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python scripts/scrape/snapshot_holdet_teams.py \
+            --race vuelta2026 \
+            --top ${{ inputs.top }}
+
+      - name: Commit og push snapshot
+        run: |
+          git config user.name  "Cykel Manager Bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/sources/vuelta2026/
+          if git diff --staged --quiet; then
+            echo "Ingen ændringer — intet at committe"
+          else
+            git commit -m "📸 Snapshot Holdet Vuelta 2026 (post-race, før API lukker)"
+            git push || (git pull --rebase --autostash origin main && git push)
+          fi

@@ -1,29 +1,33 @@
 #!/usr/bin/env python3
 """
-Post-race holdet.dk snapshot — RUN LOCALLY (needs holdet.dk network access).
+Post-race holdet.dk snapshot — needs holdet.dk network access (run via the
+GitHub Actions runner, e.g. a workflow_dispatch job, if your local/sandbox
+egress can't reach holdet.dk directly).
 
 Preserves everything we need for the manager-comparison analysis BEFORE holdet
-takes the game API down after the race:
+takes the game API down after the race. Race-specific (cartridge/game id/our
+team ids) is selected via --race (see RACE_DEFAULTS below):
 
-  1. Global reference   → data/sources/tdf2026/holdet/reference/
+  1. Global reference   → data/sources/<race>/holdet/reference/
        cartridge.json, rounds.json, players.json, schedule.json
-  2. Per-stage results  → data/sources/tdf2026/holdet/fantasy_actions/round_XX.json
+  2. Per-stage results  → data/sources/<race>/holdet/fantasy_actions/round_XX.json
        (actual per-rider holdet points/rules per stage — the real growth driver)
-  3. Per-team lineups   → data/sources/tdf2026/holdet/teams/<teamId>/round_XX.json
+  3. Per-team lineups   → data/sources/<race>/holdet/teams/<teamId>/round_XX.json
        for our two teams + the top-N final managers (raw, parse later)
 
 WHY RAW: the exact lineup value/growth fields are undocumented here, so we dump
 the raw JSON verbatim. The analysis step parses it; nothing is lost.
 
 USAGE
-    python scripts/scrape/snapshot_holdet_teams.py                # auto top-10
-    python scripts/scrape/snapshot_holdet_teams.py --top 25       # wider net
-    python scripts/scrape/snapshot_holdet_teams.py \
-        --team-ids 111111,222222,333333                           # manual list
+    python scripts/scrape/snapshot_holdet_teams.py --race tdf2026        # auto top-10
+    python scripts/scrape/snapshot_holdet_teams.py --race vuelta2026 --top 25
+    python scripts/scrape/snapshot_holdet_teams.py --race vuelta2026 \
+        --team-ids 111111,222222,333333                                  # manual list
 
 If auto-discovery of the leaderboard fails (holdet changes the endpoint), the
 script tells you how to read the team IDs off the standings page and pass them
-with --team-ids. Our own teams are always included.
+with --team-ids. Our own teams (RACE_DEFAULTS[race]["our_teams"]) are always
+included.
 
 Safe to re-run: it skips files already downloaded (use --force to refetch).
 """
@@ -37,25 +41,35 @@ from pathlib import Path
 
 import requests
 
-# ── Config (TdF 2026) ─────────────────────────────────────────────────────────
+# ── Config ─────────────────────────────────────────────────────────────────
 # Holdet moved its API onto holdet.dk itself under an "/api/season/" prefix
 # (confirmed 2026-09-08 — see scrape_holdet.py's BASE for the same fix).
-BASE      = "https://www.holdet.dk/api/season"
-CARTRIDGE = "tour-de-france-2026"
-GAME_ID   = 618
+BASE = "https://www.holdet.dk/api/season"
 
-# Always fetched (in addition to the auto-discovered top-N): our own teams plus
-# the two optakt authors' teams (Feltet.dk + Simon K. Kjær), so we can compare
-# directly against the sources we evaluated.
-OUR_TEAMS = {
-    7145433: "os (Anders)",
-    7132927: "Kasper",
-    7157567: "optakt-skribent",
-    7132842: "optakt-skribent",
+# Per-race defaults: cartridge slug, numeric game id, our own tracked teams,
+# and the output folder under data/sources/. Add a new race here when needed.
+RACE_DEFAULTS = {
+    "tdf2026": {
+        "cartridge": "tour-de-france-2026",
+        "game_id": 618,
+        "our_teams": {
+            7145433: "os (Anders)",
+            7132927: "Kasper",
+            7157567: "optakt-skribent",
+            7132842: "optakt-skribent",
+        },
+    },
+    "vuelta2026": {
+        "cartridge": "vuelta-2026",
+        "game_id": 628,
+        "our_teams": {
+            7271757: "os (Anders)",
+            7272262: "Kasper",
+        },
+    },
 }
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT  = ROOT / "data/sources/tdf2026/holdet"
 
 # ── HTTP with polite throttling + retry/backoff ───────────────────────────────
 class Http:
@@ -127,14 +141,14 @@ def _extract_team_ids(payload) -> list[int]:
     return ids
 
 
-def discover_top_teams(league_id, n: int) -> list[int]:
+def discover_top_teams(league_id, game_id: int, n: int) -> list[int]:
     """Try several candidate leaderboard endpoints; return up to n team IDs."""
     candidates = [
         f"{BASE}/fantasyleagues/{league_id}/standings?take={n}",
         f"{BASE}/fantasyleagues/{league_id}/leaderboard?take={n}",
         f"{BASE}/fantasyleagues/{league_id}/teams?take={n}&sort=rank",
-        f"{BASE}/games/{GAME_ID}/leaderboard?take={n}",
-        f"{BASE}/games/{GAME_ID}/standings?take={n}",
+        f"{BASE}/games/{game_id}/leaderboard?take={n}",
+        f"{BASE}/games/{game_id}/standings?take={n}",
     ]
     for url in candidates:
         if league_id is None and "fantasyleagues/None" in url:
@@ -152,15 +166,23 @@ def discover_top_teams(league_id, n: int) -> list[int]:
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--race", default="tdf2026", choices=sorted(RACE_DEFAULTS),
+                    help="which race config to use (default tdf2026)")
     ap.add_argument("--top", type=int, default=10, help="how many top managers (default 10)")
     ap.add_argument("--team-ids", default="", help="comma-separated team IDs (manual override)")
     ap.add_argument("--force", action="store_true", help="refetch even if file exists")
     args = ap.parse_args()
 
+    cfg = RACE_DEFAULTS[args.race]
+    CARTRIDGE = cfg["cartridge"]
+    GAME_ID = cfg["game_id"]
+    OUR_TEAMS = cfg["our_teams"]
+    OUT = ROOT / "data/sources" / args.race / "holdet"
+
     ref = OUT / "reference"
 
     # 1. Reference data
-    print("Henter reference-data …")
+    print(f"Henter reference-data ({args.race}: {CARTRIDGE}) …")
     cart = HTTP.get(f"{BASE}/cartridges/{CARTRIDGE}")
     league_id = (cart or {}).get("defaultFantasyLeagueId")
     dump(ref / "cartridge.json", cart, args.force)
@@ -235,7 +257,7 @@ def main():
         print(f"Bruger manuelle team-IDs: {top_ids}")
     else:
         print(f"Finder top {args.top} hold (league {league_id}) …")
-        top_ids = discover_top_teams(league_id, args.top)
+        top_ids = discover_top_teams(league_id, GAME_ID, args.top)
         if not top_ids:
             print("\n  [!] Kunne ikke auto-finde leaderboardet (holdet har nok ændret "
                   "endpointet).\n      Gå til slutstillingen på holdet.dk, åbn hvert af "
