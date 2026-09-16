@@ -15,7 +15,7 @@ on:
         default: '15'
         type: string
       team_ids:
-        description: 'Kommasepareret liste af hold-ID'"'"'er (manuel override, fx aflæst fra holdet.dk-URL'"'"'er)'
+        description: "Kommasepareret liste af hold-ID'er (manuel override, fx aflæst fra holdet.dk-URL'er)"
         required: false
         default: ''
         type: string
