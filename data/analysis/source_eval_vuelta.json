@@ -1,0 +1,40 @@
+{
+  "note": "Kilde-shootout, Vuelta 2026. Ingen model-baseline — kun eksterne kilder mod hinanden og mod realiseret holdet-vækst. buys percentile: 1.0=bedst i feltet, 0.5=feltets gennemsnit.",
+  "skipped_stages_no_actual": [],
+  "sources": {
+    "feltet": {
+      "captain_top1_pct": 42.1,
+      "captain_top3_pct": 47.4,
+      "captain_stages": 19,
+      "buys_mean_growth_percentile": 0.861,
+      "buys_stages": 20,
+      "unmatched_names": []
+    },
+    "simon": {
+      "captain_top1_pct": 35.0,
+      "captain_top3_pct": 45.0,
+      "captain_stages": 20,
+      "buys_mean_growth_percentile": 0.875,
+      "buys_stages": 20,
+      "unmatched_names": []
+    },
+    "veloscore": {
+      "captain_top1_pct": 40.0,
+      "captain_top3_pct": 53.3,
+      "captain_stages": 15,
+      "stages_with_data": 15,
+      "buys_mean_growth_percentile": 0.837,
+      "buys_stages": 15,
+      "unmatched_names": []
+    },
+    "odds": {
+      "captain_top1_pct": 35.0,
+      "captain_top3_pct": 45.0,
+      "captain_stages": 20,
+      "stages_with_data": 20,
+      "buys_mean_growth_percentile": 0.837,
+      "buys_stages": 20,
+      "unmatched_names": []
+    }
+  }
+}

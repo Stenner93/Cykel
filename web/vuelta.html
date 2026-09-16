@@ -325,6 +325,21 @@
   .foot{border-top:1px solid var(--border);margin-top:26px;padding-top:16px;color:var(--muted);font-size:.8rem;line-height:1.6}
   .foot b{color:var(--ink-2)}
 
+  /* ── Pointoversigt (Pointmatrix-fanen) ── */
+  .pm-toggle{display:inline-flex;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:2px 0 14px}
+  .pm-toggle button{font:inherit;font-size:.8rem;font-weight:700;padding:8px 14px;border:0;background:var(--card);color:var(--muted);cursor:pointer}
+  .pm-toggle button .sub{display:block;font-size:.64rem;font-weight:500;color:var(--muted)}
+  .pm-toggle button.on{background:var(--accent);color:#fff}
+  .pm-toggle button.on .sub{color:rgba(255,255,255,.8)}
+  .pm-scroll{overflow-x:auto;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+  .pm-tbl{width:100%;border-collapse:collapse;font-size:.78rem;min-width:1180px}
+  .pm-tbl th,.pm-tbl td{text-align:right;padding:5px 7px;border-bottom:1px solid var(--border);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .pm-tbl th{font-size:.62rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);font-weight:700}
+  .pm-tbl td:first-child,.pm-tbl th:first-child{text-align:left;position:sticky;left:0;background:var(--surface)}
+  .pm-tbl td.type{text-align:left}
+  .pm-grp1{border-left:2px solid var(--border-2)}
+  .pm-tbl thead tr.g th{background:var(--card);font-size:.58rem;padding:4px 7px;border-bottom:1px solid var(--border-2)}
+
   @media (max-width:820px){
     .cols,.cols-3,.console{grid-template-columns:1fr}
   }
@@ -347,7 +362,7 @@
     <button class="tab" role="tab" aria-selected="false" id="t-duel"    aria-controls="p-duel">Holdduel</button>
     <button class="tab" role="tab" aria-selected="false" id="t-sprint"  aria-controls="p-sprint">Sprint &amp; bonus</button>
     <span class="tabsep" aria-hidden="true"></span>
-    <button class="tab soon" role="tab" aria-selected="false" id="t-matrix" aria-controls="p-matrix">Pointmatrix</button>
+    <button class="tab" role="tab" aria-selected="false" id="t-matrix" aria-controls="p-matrix">Pointoversigt</button>
     <button class="tab soon" role="tab" aria-selected="false" id="t-odds"   aria-controls="p-odds">Odds &amp; kilder</button>
   </div>
 </div>
@@ -358,7 +373,7 @@
     vigtigste valg (Simon K. Kjær ramte bedste kaptajn 52 % vs. modellens 33 %). Fanen <b>Vuelta-etape</b> kører nu på
     <b>ægte startliste, priser og CO-ratings</b> fra spillet — vælg etape + scenarie og se kaptajn og picks opdatere sig
     øjeblikkeligt i browseren. Fanen <b>Metode (eksempel)</b> viser mekanikken gennemgået på et ægte eksempel (Tour-etape 21).
-    Pointmatrix/Forudsigelser tændes efterhånden som løbet giver resultater.</p>
+    Fanen <b>Pointoversigt</b> viser hvad hver placering er værd, etape for etape.</p>
 
   <!-- ══════════ VUELTA LIVE ══════════ -->
   <section class="panel" id="p-vuelta" role="tabpanel" aria-labelledby="t-vuelta">
@@ -498,10 +513,44 @@
 
   <!-- ══════════ KOMMENDE FANER ══════════ -->
   <section class="panel" id="p-matrix" role="tabpanel" aria-labelledby="t-matrix" hidden>
-    <div class="eyebrow">Pointmatrix · rytter × etape</div>
+    <div class="eyebrow">Pointoversigt · etape × placering</div>
+    <h2 class="sec">Hvad er en placering værd på hver etape?</h2>
+    <p class="sec-sub">Sprint- og KOM-klassifikationspoint (undervejs og ved mål) for nr. 1-15 pr. etape — samme opbygning som
+      TheFantasyTool's pointværktøj. Kilde: fuld DOM-eksport af
+      <span class="mono">thefantasytool.com/cycling-stagepoints-holdet-vuelta</span>, krydsvalideret internt
+      (Total-Finish = Points-Finish + KOM-Finish og Total-Combined = Total-Finish + Total-During-stage stemmer for alle 21 etaper).
+      "Climbs" viser stigningskategorier på etapen (1=hårdest af de almindelige, 3=lettest, HC=hors catégorie).</p>
+    <div class="pm-toggle" id="pmToggle">
+      <button data-mode="uci" class="on">Etapepoint<span class="sub">UCI-point</span></button>
+      <button data-mode="holdet">Holdet.dk-point<span class="sub">×3000, vist som k</span></button>
+    </div>
+    <div class="pm-scroll">
+      <table class="pm-tbl">
+        <thead>
+          <tr class="g">
+            <th></th><th></th>
+            <th colspan="5" class="pm-grp1">Points During stage</th>
+            <th colspan="5" class="pm-grp1">KOM During stage</th>
+            <th colspan="5" class="pm-grp1">Total — During stage</th>
+            <th colspan="15" class="pm-grp1">Points Finish</th>
+            <th colspan="6" class="pm-grp1">KOM Finish</th>
+            <th colspan="15" class="pm-grp1">Total — Finish</th>
+            <th colspan="15" class="pm-grp1">Total — Combined</th>
+          </tr>
+          <tr id="pmHeadRow"></tr>
+        </thead>
+        <tbody id="pmScheduleBody"><tr><td colspan="2">Henter…</td></tr></tbody>
+      </table>
+    </div>
+    <p class="note">"Holdet.dk-point" = klassifikationspoint × 3000 kr, jf. <span class="mono">sprint_kom_per_point</span> i
+      <span class="mono">data/scoring_rules.json</span> (bekræftet ved at alle rå UCI-point-tal er hele tal, og alle Holdet-kr-tal
+      er delelige med 3 i den enhed). Bemærk at disse point-tabeller kun dækker de sekundære klassifikationsbonusser — selve
+      etapeplaceringens grundværdi (200.000 kr for en sejr osv., se holdet.dk's officielle regler) og GC-/holdbonus er separate
+      komponenter og indgår ikke her.</p>
+
+    <div class="eyebrow" style="margin-top:26px">Pointmatrix · rytter × etape</div>
     <h2 class="sec">Faktiske Holdet-point pr. etape</h2>
-    <p class="sec-sub">Hver rytters faktiske Holdet-vækst pr. etape (i tusinder kr), sorteret efter total. Fyldes automatisk
-      af den daglige kørsel efterhånden som etaperne afvikles.</p>
+    <p class="sec-sub">Hver rytters faktiske Holdet-vækst pr. etape (i tusinder kr), sorteret efter total.</p>
     <div id="pmWrap"><p class="src">Henter…</p></div>
   </section>
   <section class="panel" id="p-odds" role="tabpanel" aria-labelledby="t-odds" hidden>
@@ -512,8 +561,8 @@
 
   <div class="foot">
     <b>Status:</b> <b>Vuelta-etape</b> kører på ægte data (startliste, priser, CO-ratings) med scenariemotor + tre hold;
-    <b>Metode (eksempel)</b> viser mekanikken gennemgået på Tour-E21. Pointmatrix/Forudsigelser fyldes efterhånden som løbet
-    giver resultater. <b>Datagrundlag:</b> kalibreringen bygger nu på
+    <b>Metode (eksempel)</b> viser mekanikken gennemgået på Tour-E21. <b>Pointoversigt</b> viser klassifikations-pointskemaet
+    pr. etape, og pointmatrixen forneden viser faktisk realiseret vækst nu løbet er slut. <b>Datagrundlag:</b> kalibreringen bygger nu på
     tre scorede optakt-kilder — Tour-optakterne (Feltet.dk + Simon K. Kjær) og Giro-optakterne (Ingemann, 15 etaper med facit) —
     plus Giro-VeloScore. Alle ligger i repoet.
     <div style="margin-top:6px;font-size:.72rem;color:var(--muted)">
@@ -1217,6 +1266,56 @@
         draw();
       })
       .catch(function(e){ wrap.innerHTML = '<p class="src">Kunne ikke hente pointmatrix ('+e.message+'). Bygges af den daglige kørsel.</p>'; });
+  })();
+</script>
+<script>
+  /* Pointoversigt pr. etape — sprint/KOM-klassifikationsschema, transskriberet fra
+     TheFantasyTool. Statisk data i data/vuelta2026_stage_points.json. */
+  (function(){
+    var body = document.getElementById('pmScheduleBody');
+    var headRow = document.getElementById('pmHeadRow');
+    var toggle = document.getElementById('pmToggle');
+    if(!body || !toggle) return;
+    var DATA = null, mode = 'uci';
+    var GROUPS = [
+      ['points_during', 5], ['kom_during', 5], ['total_during', 5],
+      ['points_finish', 15], ['kom_finish', 6], ['total_finish', 15], ['total_combined', 15]
+    ];
+    function fmt(v){
+      if(v===null||v===undefined) return '—';
+      var x = mode==='holdet' ? v*3000/1000 : v;
+      return Math.round(x*10)/10 + '';
+    }
+    function drawHead(){
+      var cells = '<th></th><th></th>';
+      GROUPS.forEach(function(g, gi){
+        for(var i=1;i<=g[1];i++) cells += '<th'+(i===1?' class="pm-grp1"':'')+'>#'+i+'</th>';
+      });
+      headRow.innerHTML = cells;
+    }
+    function draw(){
+      if(!DATA) return;
+      body.innerHTML = DATA.stages.map(function(s){
+        var tds = '<td class="mono">'+s.stage+'</td><td class="type">'+(s.type||'')+' <span style="color:var(--muted)">'+s.climbs+'</span></td>';
+        GROUPS.forEach(function(g){
+          var arr = s[g[0]] || [];
+          for(var i=0;i<g[1];i++) tds += '<td'+(i===0?' class="pm-grp1"':'')+'>'+fmt(arr[i])+'</td>';
+        });
+        return '<tr>'+tds+'</tr>';
+      }).join('');
+    }
+    toggle.addEventListener('click', function(e){
+      var btn = e.target.closest('button[data-mode]');
+      if(!btn) return;
+      mode = btn.getAttribute('data-mode');
+      toggle.querySelectorAll('button').forEach(function(b){ b.classList.toggle('on', b===btn); });
+      draw();
+    });
+    drawHead();
+    fetch('data/vuelta2026_stage_points.json', {cache:'no-cache'})
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(function(d){ DATA = d; draw(); })
+      .catch(function(e){ body.innerHTML = '<tr><td colspan="2">Kunne ikke hente pointoversigt ('+e.message+').</td></tr>'; });
   })();
 </script>
 <script>

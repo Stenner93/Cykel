@@ -8,19 +8,19 @@
   :root{
     --bg:#fcfcfb;--panel:#ffffff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;
     --line:#e7e6e1;--line-2:#efeee9;
-    --os:#c0661c;--kasper:#2f6db0;--feltet:#b8892b;--simon:#3b854f;--model:#8a9299;
+    --os:#c0661c;--kasper:#2f6db0;--feltet:#b8892b;--simon:#3b854f;--velo:#7a5cc4;--odds:#3f8f8f;
     --good:#3b854f;--bad:#b4472e;--accent:#c0661c;
     --shadow:0 1px 2px rgba(20,22,26,.05),0 8px 24px rgba(20,22,26,.05);
   }
   @media (prefers-color-scheme:dark){:root{
     --bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;
     --line:#2d3034;--line-2:#26282c;
-    --os:#e08a3c;--kasper:#5b96d8;--feltet:#d8a84a;--simon:#57b072;--model:#8b939b;
+    --os:#e08a3c;--kasper:#5b96d8;--feltet:#d8a84a;--simon:#57b072;--velo:#a48ce0;--odds:#5fb8b8;
     --good:#57b072;--bad:#e07a5f;--accent:#e08a3c;
     --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
   }}
-  :root[data-theme="light"]{--bg:#fcfcfb;--panel:#ffffff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;--line:#e7e6e1;--line-2:#efeee9;--os:#c0661c;--kasper:#2f6db0;--feltet:#b8892b;--simon:#3b854f;--model:#8a9299;--good:#3b854f;--bad:#b4472e;--accent:#c0661c;--shadow:0 1px 2px rgba(20,22,26,.05),0 8px 24px rgba(20,22,26,.05)}
-  :root[data-theme="dark"]{--bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;--line:#2d3034;--line-2:#26282c;--os:#e08a3c;--kasper:#5b96d8;--feltet:#d8a84a;--simon:#57b072;--model:#8b939b;--good:#57b072;--bad:#e07a5f;--accent:#e08a3c;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35)}
+  :root[data-theme="light"]{--bg:#fcfcfb;--panel:#ffffff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;--line:#e7e6e1;--line-2:#efeee9;--os:#c0661c;--kasper:#2f6db0;--feltet:#b8892b;--simon:#3b854f;--velo:#7a5cc4;--odds:#3f8f8f;--good:#3b854f;--bad:#b4472e;--accent:#c0661c;--shadow:0 1px 2px rgba(20,22,26,.05),0 8px 24px rgba(20,22,26,.05)}
+  :root[data-theme="dark"]{--bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;--line:#2d3034;--line-2:#26282c;--os:#e08a3c;--kasper:#5b96d8;--feltet:#d8a84a;--simon:#57b072;--velo:#a48ce0;--odds:#5fb8b8;--good:#57b072;--bad:#e07a5f;--accent:#e08a3c;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35)}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
   .wrap{max-width:980px;margin:0 auto;padding:clamp(1.2rem,4vw,3rem) clamp(1rem,4vw,2rem) 4rem}
@@ -33,7 +33,7 @@
   h2+.sub{color:var(--ink-3);font-size:.92rem;margin:0 0 1.1rem;max-width:70ch}
   .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin:1.8rem 0 0}
   .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem;box-shadow:var(--shadow)}
-  .stat .n{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;line-height:1}
+  .stat .n{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;line-height:1}
   .stat .n.os{color:var(--accent)}
   .stat .k{font-size:.8rem;color:var(--ink-3);margin-top:.45rem}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.35rem;box-shadow:var(--shadow)}
@@ -42,7 +42,6 @@
   th{font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);font-weight:600}
   td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
   .pos{color:var(--good);font-weight:600}.neg{color:var(--bad);font-weight:600}
-  .chip{font-size:.66rem;text-transform:uppercase;letter-spacing:.04em;padding:.08rem .4rem;border-radius:5px;background:var(--line-2);color:var(--ink-3)}
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
   @media(max-width:680px){.cols{grid-template-columns:1fr}.strip{grid-template-columns:1fr}}
   .takeaways{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:.7rem}
@@ -51,11 +50,8 @@
   .foot{color:var(--ink-3);font-size:.8rem;margin-top:2.6rem;border-top:1px solid var(--line);padding-top:1.1rem;max-width:74ch}
   .scroll{overflow-x:auto}
   .note{background:var(--line-2);border-radius:10px;padding:.7rem .9rem;font-size:.84rem;color:var(--ink-2);margin:.6rem 0 0}
-  .barrow{display:flex;align-items:center;gap:.6rem;margin:.35rem 0}
-  .barrow .lbl{width:110px;font-size:.82rem;color:var(--ink-2);flex-shrink:0}
-  .barrow .track{flex:1;background:var(--line-2);border-radius:6px;height:20px;position:relative;overflow:hidden}
-  .barrow .fill{height:100%;border-radius:6px}
-  .barrow .val{width:44px;text-align:right;font-size:.82rem;font-variant-numeric:tabular-nums;font-weight:700}
+  .ask{background:var(--line-2);border-left:3px solid var(--accent);border-radius:10px;padding:.8rem 1rem;font-size:.87rem;color:var(--ink-2);margin:.6rem 0 0}
+  .dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:.4rem}
 
   .dash-topbar{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,#161b22 0%,#0d1117 100%);border-bottom:2px solid #FFD700;padding:0 clamp(1rem,4vw,24px)}
   .dash-topbar-inner{max-width:1200px;margin:0 auto;min-height:60px;display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap;justify-content:space-between;padding:8px 0}
@@ -79,42 +75,39 @@
 <div class="wrap">
   <header>
     <div class="eyebrow">Vueltaspillet 2026 · efter-analyse</div>
-    <h1>Model, optakter og hold — hvad virkede?</h1>
-    <p class="lede">20 etaper (etape 3 er en hviledag i kildedata), 202 ryttere. Samme metode som TdF-evalueringen: Spearman-korrelation mod realiseret holdet-vækst, og en runde-for-runde sammenligning af dit hold mod Kasper.</p>
+    <h1>Kilderne mod hinanden — og dig mod Kasper</h1>
+    <p class="lede">Ingen intern model i denne sammenligning — kun de eksterne kilder du faktisk kan bruge undervejs (Feltet.dk, Simon K. Kjær/TheFantasyTool, VeloScore, bookmaker-odds), målt direkte mod realiseret holdet-vækst.</p>
     <div class="strip">
-      <div class="stat"><div class="n os">10,06M</div><div class="k">din slutværdi (vækst-attribution) — nr. 2 af 2 sammenlignede</div></div>
-      <div class="stat"><div class="n">0,32</div><div class="k">kaptajn-effektivitet — laveste af de to (mod 0,92 i TdF)</div></div>
-      <div class="stat"><div class="n">+0,33</div><div class="k">VeloScore Spearman — stærkeste enkeltsignal, igen</div></div>
+      <div class="stat"><div class="n os">Feltet.dk</div><div class="k">bedst til at ramme etapens kaptajn (42%)</div></div>
+      <div class="stat"><div class="n" style="color:var(--simon)">Simon K. Kjær</div><div class="k">bedst til at vælge en samlet stærk trup (0,875)</div></div>
+      <div class="stat"><div class="n" style="color:var(--velo)">VeloScore</div><div class="k">bedst til top-3 (53%) — stærk konsensus-check</div></div>
     </div>
-    <p class="note">Manager-sammenligningen dækker kun dig og Kasper og etape 1-20 — Holdet's leaderboard-endpoint til top-10-opdagelse virkede ikke for Vueltaspillets game-id, og etape 21's runde-lås var ikke tilgængelig på snapshot-tidspunktet. Se <a href="tvaers-af-spil.html" style="color:var(--accent)">På tværs af spil</a> for detaljer.</p>
   </header>
 
-  <h2>Hvilke signaler forudsagde faktisk vækst?</h2>
-  <p class="sub">Spearman rang-korrelation mellem signal og realiseret holdet-vækst, gennemsnit af per-etape korrelationer.</p>
-  <div class="card" id="sigcard"></div>
-
-  <h2>Kaptajns-ramning: model vs. VeloScore vs. optakter</h2>
-  <p class="sub">Rammer strategien etapens faktisk bedste rytter (top-1) eller en af de tre bedste (top-3)?</p>
+  <h2>Kilde-shootout: kaptajnvalg</h2>
+  <p class="sub">Rammer kildens topvalg etapens faktisk bedste rytter (top-1) eller en af de tre bedste (top-3)? "Køb-percentil" = gennemsnitlig placering af kildens 8 bedste bud i etapens vækstfelt (1.0 = feltets bedste).</p>
   <div class="card scroll">
-    <table><thead><tr><th>Kilde</th><th class="num">Top-1</th><th class="num">Top-3</th><th class="num">Køb-percentil</th></tr></thead>
-    <tbody id="capstrat"></tbody></table>
+    <table><thead><tr><th>Kilde</th><th class="num">Top-1</th><th class="num">Top-3</th><th class="num">Etaper</th><th class="num">Køb-percentil</th></tr></thead>
+    <tbody id="shootout"></tbody></table>
   </div>
-
-  <h2>Optakter vs. model — renset for kaos</h2>
-  <p class="sub">Når kilden var uenig med modellen om kaptajnen: hvem ramte faktisk etapens bedste rytter?</p>
-  <div class="card scroll">
-    <table><thead><tr><th>Kilde</th><th class="num">Uenige</th><th class="num">Kilde ramte #1</th><th class="num">Model ramte #1</th><th class="num">Kaos</th><th class="num">Rå win-loss</th></tr></thead>
-    <tbody id="disagree"></tbody></table>
-  </div>
+  <p class="note">Odds og VeloScore dækker ikke alle 20 etaper (hhv. 20 og 15 med data) — Feltet/Simon har næsten fuld dækning. VeloScore's lidt lavere etape-antal er fordi den kun findes for etaper hvor screenshots blev sendt undervejs.</p>
 
   <h2>Manager-sammenligning: dig vs. Kasper</h2>
+  <p class="sub">Hver runde scorer et hold summen af sine 8 rytteres realiserede vækst, kaptajn dobbelt.</p>
+  <div class="card scroll">
+    <table><thead><tr><th>#</th><th>Hold</th><th class="num">Total (M)</th><th class="num">Transfers</th><th class="num">Kaptajn (M)</th><th class="num">Kap-effektivitet</th></tr></thead>
+    <tbody id="manager"></tbody></table>
+  </div>
+  <div class="ask">
+    <b>Top-10 mangler.</b> Holdet's leaderboard-endpoint for Vueltaspillet virkede ikke ved auto-opdagelse, så jeg har kun jeres to hold. Send mig 5-10 hold-ID'er fra Vueltaspillets slutstilling (holdet.dk → stilling → åbn et hold → aflæs ID'et i URL'en, <span class="mono">…/fantasyteams/&lt;ID&gt;</span>), så tilføjer jeg en rigtig top-10-sammenligning som i Tourspillet.
+  </div>
+
   <div class="cols">
     <div class="card"><div style="color:var(--good);font-weight:600;font-size:.8rem;margin-bottom:.5rem">DINE BEDSTE BIDRAG (M)</div><table><tbody id="best"></tbody></table></div>
     <div class="card"><div style="color:var(--bad);font-weight:600;font-size:.8rem;margin-bottom:.5rem">MEST SPILDTE PLADS (M)</div><table><tbody id="worst"></tbody></table></div>
   </div>
 
   <h2>Kaptajns-fortrydelser</h2>
-  <p class="sub">De runder hvor din kaptajn gav mindst, mens en anden af dine egne ryttere gav mest.</p>
   <div class="card scroll">
     <table><thead><tr><th>Runde</th><th>Kaptajn valgt</th><th class="num">Kaptajns vækst</th><th class="num">Bedste egen</th><th class="num">Tabt (M)</th></tr></thead>
     <tbody id="capmiss"></tbody></table>
@@ -122,28 +115,38 @@
 
   <h2>Konklusioner</h2>
   <ul class="takeaways">
-    <li><b>VeloScore og optakter slog modellen igen</b> — andet løb i træk. Se den tværgående rapport for det fulde billede.</li>
-    <li><b>Kaptajnvalget var din svaghed denne gang</b>, modsat Touren — fire af fem største fortrydelser var samme rytter (Brennan) på dage der ikke gik hans vej.</li>
+    <li><b>Ingen af kilderne dominerer alene</b> — Feltet er skarpest på kaptajn-ramning, Simon på bredere holdvalg, VeloScore stærkest på "mindst en af de tre bedste". Brug dem sammen, ikke isoleret.</li>
+    <li><b>Kaptajnvalget var din svaghed denne gang</b> — fire af fem største fortrydelser var samme rytter (Brennan) på dage der ikke gik hans vej.</li>
     <li><b>GC-rytterne bar holdet</b> — Pogačar, van Aert og Roglič stod for langt størstedelen af den positive vækst.</li>
   </ul>
 
-  <p class="foot">Data: <span class="mono">web/data/vuelta2026_predictions.json</span>, <span class="mono">data/analysis/{indicator,optakt,manager}_eval_vuelta.json</span>. Fulde skriftlige rapporter i <span class="mono">data/analysis/*_report_vuelta.md</span>. Kør selv: <span class="mono">python scripts/analysis/eval_*.py --race vuelta2026</span>.</p>
+  <p class="foot">Data: <span class="mono">web/data/vuelta2026_predictions.json</span>, <span class="mono">data/analysis/source_eval_vuelta.json</span>, <span class="mono">data/analysis/manager_eval_vuelta.json</span>. Kør selv: <span class="mono">python scripts/analysis/eval_sources.py --race vuelta2026</span> / <span class="mono">eval_managers.py --race vuelta2026</span>.</p>
 </div>
 
 <script>
-const SIG=[{"signal":"veloscore","mean_spearman":0.334,"stages":15},{"signal":"discipline","mean_spearman":0.205,"stages":20},{"signal":"pcs_rank","mean_spearman":0.202,"stages":20},{"signal":"form","mean_spearman":0.046,"stages":20},{"signal":"ml","mean_spearman":-0.123,"stages":20}];
-const CAPSTRAT=[
-  {k:"Model (exp)",top1:20.0,top3:45.0,buys:0.816,c:'--model'},
-  {k:"VeloScore #1",top1:40.0,top3:53.3,buys:null,c:'--model'},
-  {k:"Feltet.dk",top1:42.1,top3:47.4,buys:0.861,c:'--feltet'},
-  {k:"Simon K. Kjær",top1:35.0,top3:45.0,buys:0.875,c:'--simon'}
+const SRC=[
+  {k:"Feltet.dk", c:'--feltet', top1:42.1, top3:47.4, n:19, buys:0.861},
+  {k:"Simon K. Kjær", c:'--simon', top1:35.0, top3:45.0, n:20, buys:0.875},
+  {k:"VeloScore", c:'--velo', top1:40.0, top3:53.3, n:15, buys:0.837},
+  {k:"Bookmaker-odds", c:'--odds', top1:35.0, top3:45.0, n:20, buys:0.837}
 ];
-const DISAGREE=[
-  {k:"Feltet.dk",n:14,src:5,mod:1,chaos:8,raw:"10-4"},
-  {k:"Simon K. Kjær",n:16,src:5,mod:2,chaos:9,raw:"10-6"}
+document.getElementById('shootout').innerHTML = SRC.slice().sort((a,b)=>b.top1-a.top1).map(r=>
+  `<tr><td><span class="dot" style="background:var(${r.c})"></span>${r.k}</td><td class="num mono">${r.top1.toFixed(1)}%</td><td class="num mono">${r.top3.toFixed(1)}%</td><td class="num mono">${r.n}</td><td class="num mono">${r.buys.toFixed(3)}</td></tr>`
+).join('');
+
+const MGR=[
+  {t:"Kasper", tot:10.79, tr:81, cap:2.26, eff:0.463},
+  {t:"Os (Anders)", tot:10.06, tr:85, cap:1.61, eff:0.321}
 ];
+document.getElementById('manager').innerHTML = MGR.map((r,i)=>
+  `<tr><td class="mono">${i+1}</td><td>${r.t}</td><td class="num mono">${r.tot.toFixed(2)}</td><td class="num mono">${r.tr}</td><td class="num mono">${r.cap.toFixed(2)}</td><td class="num mono">${r.eff.toFixed(2)}</td></tr>`
+).join('');
+
 const BEST=[["Tadej Pogačar",2.288],["Wout van Aert",1.617],["Primož Roglič",1.383],["Jakob Omrzel",0.638],["Joshua Tarling",0.58],["Santiago Buitrago",0.437]];
 const WORST=[["Steven Kruijswijk",-0.19],["Vito Braet",-0.153],["Magnus Cort",-0.147],["Henri-François Renard-Haquin",-0.135],["Axel Laurance",-0.09],["Thibau Nys",-0.09]];
+document.getElementById('best').innerHTML = BEST.map(([n,v])=>`<tr><td>${n}</td><td class="num mono pos">+${v.toFixed(2)}</td></tr>`).join('');
+document.getElementById('worst').innerHTML = WORST.map(([n,v])=>`<tr><td>${n}</td><td class="num mono neg">${v.toFixed(2)}</td></tr>`).join('');
+
 const CAPMISS=[
   {r:4,cap:"Matthew Brennan",cg:-0.072,bo:0.674,reg:0.746},
   {r:9,cap:"Matthew Brennan",cg:-0.09,bo:0.297,reg:0.387},
@@ -151,25 +154,6 @@ const CAPMISS=[
   {r:10,cap:"Matthew Brennan",cg:-0.003,bo:0.35,reg:0.353},
   {r:12,cap:"Wout van Aert",cg:0.081,bo:0.42,reg:0.339}
 ];
-
-document.getElementById('sigcard').innerHTML = SIG.map(s=>{
-  const w = Math.min(100, Math.abs(s.mean_spearman)/0.6*100);
-  const neg = s.mean_spearman < 0;
-  return `<div class="barrow"><div class="lbl">${s.signal}</div><div class="track"><div class="fill" style="width:${w}%;background:${neg?'var(--bad)':'var(--good)'};margin-left:${neg?100-w:0}%"></div></div><div class="val ${neg?'neg':'pos'}">${s.mean_spearman>0?'+':''}${s.mean_spearman.toFixed(3)}</div></div>`;
-}).join('') + `<div style="font-size:.76rem;color:var(--ink-3);margin-top:.5rem">Dækning: ${SIG.map(s=>s.signal+' ('+s.stages+' etaper)').join(', ')}</div>`;
-
-document.getElementById('capstrat').innerHTML = CAPSTRAT.map(r=>
-  `<tr><td><span style="display:inline-flex;align-items:center;gap:.4rem"><i style="width:8px;height:8px;border-radius:50%;background:var(${r.c});display:inline-block"></i>${r.k}</span></td>`+
-  `<td class="num mono">${r.top1.toFixed(1)}%</td><td class="num mono">${r.top3.toFixed(1)}%</td><td class="num mono">${r.buys!=null?r.buys.toFixed(3):'—'}</td></tr>`
-).join('');
-
-document.getElementById('disagree').innerHTML = DISAGREE.map(r=>
-  `<tr><td>${r.k}</td><td class="num mono">${r.n}</td><td class="num mono pos">${r.src}</td><td class="num mono">${r.mod}</td><td class="num mono">${r.chaos}</td><td class="num mono" style="color:var(--ink-3)">${r.raw}</td></tr>`
-).join('');
-
-document.getElementById('best').innerHTML = BEST.map(([n,v])=>`<tr><td>${n}</td><td class="num mono pos">+${v.toFixed(2)}</td></tr>`).join('');
-document.getElementById('worst').innerHTML = WORST.map(([n,v])=>`<tr><td>${n}</td><td class="num mono neg">${v.toFixed(2)}</td></tr>`).join('');
-
 document.getElementById('capmiss').innerHTML = CAPMISS.map(r=>
   `<tr><td class="mono">R${r.r}</td><td>${r.cap}</td><td class="num mono">${r.cg>=0?'+':''}${r.cg.toFixed(2)}</td><td class="num mono pos">+${r.bo.toFixed(2)}</td><td class="num mono neg">-${r.reg.toFixed(2)}</td></tr>`
 ).join('');
