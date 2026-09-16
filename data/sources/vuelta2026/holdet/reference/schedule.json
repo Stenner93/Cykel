@@ -1,0 +1,2378 @@
+{
+  "id": 628,
+  "name": "Vueltaspillet 2026",
+  "rounds": [
+    {
+      "start": "0001-01-01T00:00:00Z",
+      "close": "2026-08-22T14:17:00Z",
+      "end": "2026-08-22T21:00:00Z"
+    },
+    {
+      "start": "2026-08-22T21:00:00Z",
+      "close": "2026-08-23T10:00:00Z",
+      "end": "2026-08-23T18:30:00Z"
+    },
+    {
+      "start": "2026-08-23T18:30:00Z",
+      "close": "2026-08-25T12:49:00Z",
+      "end": "2026-08-25T18:30:00Z"
+    },
+    {
+      "start": "2026-08-25T18:30:00Z",
+      "close": "2026-08-26T11:34:00Z",
+      "end": "2026-08-26T18:30:00Z"
+    },
+    {
+      "start": "2026-08-26T18:30:00Z",
+      "close": "2026-08-27T11:11:00Z",
+      "end": "2026-08-27T18:30:00Z"
+    },
+    {
+      "start": "2026-08-27T18:30:00Z",
+      "close": "2026-08-28T11:40:00Z",
+      "end": "2026-08-28T18:30:00Z"
+    },
+    {
+      "start": "2026-08-28T18:30:00Z",
+      "close": "2026-08-29T11:42:00Z",
+      "end": "2026-08-29T18:30:00Z"
+    },
+    {
+      "start": "2026-08-29T18:30:00Z",
+      "close": "2026-08-30T10:26:00Z",
+      "end": "2026-08-30T18:30:00Z"
+    },
+    {
+      "start": "2026-08-30T18:30:00Z",
+      "close": "2026-09-01T10:45:00Z",
+      "end": "2026-09-01T18:30:00Z"
+    },
+    {
+      "start": "2026-09-01T18:30:00Z",
+      "close": "2026-09-02T11:50:00Z",
+      "end": "2026-09-02T18:30:00Z"
+    },
+    {
+      "start": "2026-09-02T18:30:00Z",
+      "close": "2026-09-03T11:07:00Z",
+      "end": "2026-09-03T18:30:00Z"
+    },
+    {
+      "start": "2026-09-03T18:30:00Z",
+      "close": "2026-09-04T10:20:00Z",
+      "end": "2026-09-04T18:30:00Z"
+    },
+    {
+      "start": "2026-09-04T18:30:00Z",
+      "close": "2026-09-05T11:15:00Z",
+      "end": "2026-09-05T18:30:00Z"
+    },
+    {
+      "start": "2026-09-05T18:30:00Z",
+      "close": "2026-09-06T12:50:00Z",
+      "end": "2026-09-06T18:30:00Z"
+    },
+    {
+      "start": "2026-09-06T18:30:00Z",
+      "close": "2026-09-08T11:05:00Z",
+      "end": "2026-09-08T18:30:00Z"
+    },
+    {
+      "start": "2026-09-08T18:30:00Z",
+      "close": "2026-09-09T11:00:00Z",
+      "end": "2026-09-09T18:30:00Z"
+    },
+    {
+      "start": "2026-09-09T18:30:00Z",
+      "close": "2026-09-10T12:06:00Z",
+      "end": "2026-09-10T18:30:00Z"
+    },
+    {
+      "start": "2026-09-10T18:30:00Z",
+      "close": "2026-09-11T09:50:00Z",
+      "end": "2026-09-11T18:30:00Z"
+    },
+    {
+      "start": "2026-09-11T18:30:00Z",
+      "close": "2026-09-12T10:30:00Z",
+      "end": "2026-09-12T18:30:00Z"
+    },
+    {
+      "start": "2026-09-12T18:30:00Z",
+      "close": "2026-09-13T14:20:00Z",
+      "end": "2026-09-13T18:30:00Z"
+    }
+  ],
+  "events": [
+    49598,
+    49599,
+    49601,
+    49602,
+    49603,
+    49604,
+    49605,
+    49606,
+    49607,
+    49608,
+    49609,
+    49610,
+    49611,
+    49612,
+    49613,
+    49614,
+    49615,
+    49616,
+    49617,
+    49618
+  ],
+  "_embedded": {
+    "events": {
+      "49598": {
+        "id": 49598,
+        "venueId": 89464,
+        "name": "1. Etape - Monaco > Monaco",
+        "start": "2026-08-22T14:17:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "9400",
+          "stageType": "IndividualTimeTrial"
+        }
+      },
+      "49599": {
+        "id": 49599,
+        "venueId": 89464,
+        "name": "2. Etape - Monaco > Manosque",
+        "start": "2026-08-23T10:00:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "215200",
+          "stageType": "Hilly"
+        }
+      },
+      "49601": {
+        "id": 49601,
+        "venueId": 89464,
+        "name": "4. Etape - Andorra la Vella > Andorra la Vella",
+        "start": "2026-08-25T12:49:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "104900",
+          "stageType": "Mountain"
+        }
+      },
+      "49602": {
+        "id": 49602,
+        "venueId": 89464,
+        "name": "5. Etape - Falset . Costa Daurada > Roquetes. Terres de l'Ebre",
+        "start": "2026-08-26T11:34:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "171100",
+          "stageType": "Hilly"
+        }
+      },
+      "49603": {
+        "id": 49603,
+        "venueId": 89464,
+        "name": "6. Etape - Alcossebre > Castelló",
+        "start": "2026-08-27T11:11:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "176800",
+          "stageType": "Hilly"
+        }
+      },
+      "49604": {
+        "id": 49604,
+        "venueId": 89464,
+        "name": "7. Etape - Vall d'Alba > Aramón Valdelinares",
+        "start": "2026-08-28T11:40:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "149900",
+          "stageType": "Mountain"
+        }
+      },
+      "49605": {
+        "id": 49605,
+        "venueId": 89464,
+        "name": "8. Etape - Puçol > Xeraco",
+        "start": "2026-08-29T11:42:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "176400",
+          "stageType": "Flat"
+        }
+      },
+      "49606": {
+        "id": 49606,
+        "venueId": 89464,
+        "name": "9. Etape - La Vila Joiosa/Villajoyosa > Alto de Aitana.C. Blanca",
+        "start": "2026-08-30T10:26:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "187500",
+          "stageType": "Mountain"
+        }
+      },
+      "49607": {
+        "id": 49607,
+        "venueId": 89464,
+        "name": "10. Etape - Alcaraz > Elche de la Sierra",
+        "start": "2026-09-01T10:45:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "184500",
+          "stageType": "Hilly"
+        }
+      },
+      "49608": {
+        "id": 49608,
+        "venueId": 89464,
+        "name": "11. Etape - Cartagena > Lorca",
+        "start": "2026-09-02T11:50:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "156100",
+          "stageType": "Flat"
+        }
+      },
+      "49609": {
+        "id": 49609,
+        "venueId": 89464,
+        "name": "12. Etape - Vera > Calar Alto",
+        "start": "2026-09-03T11:07:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "166500",
+          "stageType": "Mountain"
+        }
+      },
+      "49610": {
+        "id": 49610,
+        "venueId": 89464,
+        "name": "13. Etape - Almuñécar > Loja",
+        "start": "2026-09-04T10:20:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "193200",
+          "stageType": "Hilly"
+        }
+      },
+      "49611": {
+        "id": 49611,
+        "venueId": 89464,
+        "name": "14. Etape - Jaén > Sierra de La Pandera",
+        "start": "2026-09-05T11:15:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "152700",
+          "stageType": "Mountain"
+        }
+      },
+      "49612": {
+        "id": 49612,
+        "venueId": 89464,
+        "name": "15. Etape - Palma del Río > Córdoba",
+        "start": "2026-09-06T12:50:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "181200",
+          "stageType": "Hilly"
+        }
+      },
+      "49613": {
+        "id": 49613,
+        "venueId": 89464,
+        "name": "16. Etape - Cortegana > La Rábida. Palos de la Frontera",
+        "start": "2026-09-08T11:05:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "186000",
+          "stageType": "Hilly"
+        }
+      },
+      "49614": {
+        "id": 49614,
+        "venueId": 89464,
+        "name": "17. Etape - Dos Hermanas > Sevilla",
+        "start": "2026-09-09T11:00:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "189200",
+          "stageType": "Flat"
+        }
+      },
+      "49615": {
+        "id": 49615,
+        "venueId": 89464,
+        "name": "18. Etape - El Puerto de Santa María > Jerez de la Frontera",
+        "start": "2026-09-10T12:06:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "32500",
+          "stageType": "IndividualTimeTrial"
+        }
+      },
+      "49616": {
+        "id": 49616,
+        "venueId": 89464,
+        "name": "19. Etape - Vélez-Málaga > Peñas Blancas. Estepona",
+        "start": "2026-09-11T09:50:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "205100",
+          "stageType": "Hilly"
+        }
+      },
+      "49617": {
+        "id": 49617,
+        "venueId": 89464,
+        "name": "20. Etape - La Calahorra > Collado del Alguacil",
+        "start": "2026-09-12T10:30:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "187000",
+          "stageType": "Mountain"
+        }
+      },
+      "49618": {
+        "id": 49618,
+        "venueId": 89464,
+        "name": "21. Etape - Carrefour Granada > Granada",
+        "start": "2026-09-13T14:20:00Z",
+        "status": "finished",
+        "participants": [
+          {
+            "teamId": 192,
+            "type": "home"
+          },
+          {
+            "teamId": 194,
+            "type": "home"
+          },
+          {
+            "teamId": 198,
+            "type": "home"
+          },
+          {
+            "teamId": 200,
+            "type": "home"
+          },
+          {
+            "teamId": 201,
+            "type": "home"
+          },
+          {
+            "teamId": 202,
+            "type": "home"
+          },
+          {
+            "teamId": 204,
+            "type": "home"
+          },
+          {
+            "teamId": 205,
+            "type": "home"
+          },
+          {
+            "teamId": 206,
+            "type": "home"
+          },
+          {
+            "teamId": 207,
+            "type": "home"
+          },
+          {
+            "teamId": 213,
+            "type": "home"
+          },
+          {
+            "teamId": 215,
+            "type": "home"
+          },
+          {
+            "teamId": 217,
+            "type": "home"
+          },
+          {
+            "teamId": 221,
+            "type": "home"
+          },
+          {
+            "teamId": 233,
+            "type": "home"
+          },
+          {
+            "teamId": 443,
+            "type": "home"
+          },
+          {
+            "teamId": 459,
+            "type": "home"
+          },
+          {
+            "teamId": 467,
+            "type": "home"
+          },
+          {
+            "teamId": 475,
+            "type": "home"
+          },
+          {
+            "teamId": 483,
+            "type": "home"
+          },
+          {
+            "teamId": 489,
+            "type": "home"
+          },
+          {
+            "teamId": 492,
+            "type": "home"
+          },
+          {
+            "teamId": 1097,
+            "type": "home"
+          }
+        ],
+        "properties": {
+          "stageDistance": "99400",
+          "stageType": "Flat"
+        }
+      }
+    },
+    "teams": {
+      "192": {
+        "id": 192,
+        "slug": "decathlon_cma_cgm_team",
+        "abbreviation": "DAT",
+        "name": "Decathlon CMA CGM Team"
+      },
+      "194": {
+        "id": 194,
+        "slug": "xds_astana_team",
+        "abbreviation": "XAT",
+        "name": "XDS Astana Team"
+      },
+      "198": {
+        "id": 198,
+        "slug": "cofidis",
+        "abbreviation": "COF",
+        "name": "Cofidis"
+      },
+      "200": {
+        "id": 200,
+        "slug": "groupama_fdj_united",
+        "abbreviation": "GFC",
+        "name": "Groupama - FDJ United"
+      },
+      "201": {
+        "id": 201,
+        "slug": "ef_education_easypost",
+        "abbreviation": "EFE",
+        "name": "EF Education - EasyPost"
+      },
+      "202": {
+        "id": 202,
+        "slug": "bahrain_victorious",
+        "abbreviation": "TBV",
+        "name": "Bahrain - Victorious"
+      },
+      "204": {
+        "id": 204,
+        "slug": "soudal_quick_step",
+        "abbreviation": "SOQ",
+        "name": "Soudal Quick-Step"
+      },
+      "205": {
+        "id": 205,
+        "slug": "team_visma_lease_a_bike",
+        "abbreviation": "TVL",
+        "name": "Team Visma | Lease a Bike"
+      },
+      "206": {
+        "id": 206,
+        "slug": "lotto_intermarche",
+        "abbreviation": "LOI",
+        "name": "Lotto Intermarché"
+      },
+      "207": {
+        "id": 207,
+        "slug": "team_picnic_postnl",
+        "abbreviation": "DFP",
+        "name": "Team Picnic PostNL"
+      },
+      "213": {
+        "id": 213,
+        "slug": "lidl_trek",
+        "abbreviation": "LIT",
+        "name": "Lidl - Trek"
+      },
+      "215": {
+        "id": 215,
+        "slug": "ineos_grenadiers",
+        "abbreviation": "IGD",
+        "name": "Netcompany INEOS Cycling Team"
+      },
+      "217": {
+        "id": 217,
+        "slug": "movistar_team",
+        "abbreviation": "MOV",
+        "name": "Movistar Team"
+      },
+      "221": {
+        "id": 221,
+        "slug": "team_jayco_alula",
+        "abbreviation": "JAY",
+        "name": "Team Jayco AlUla"
+      },
+      "233": {
+        "id": 233,
+        "slug": "red_bull_bora_hansgrohe",
+        "abbreviation": "RBH",
+        "name": "Red Bull - BORA - hansgrohe"
+      },
+      "443": {
+        "id": 443,
+        "slug": "uae_team_emirates_xrg",
+        "abbreviation": "UAD",
+        "name": "UAE Team Emirates - XRG"
+      },
+      "459": {
+        "id": 459,
+        "slug": "nsn_cycling_team",
+        "abbreviation": "NSN",
+        "name": "NSN Cycling Team"
+      },
+      "467": {
+        "id": 467,
+        "slug": "burgos_burpellet_bh",
+        "abbreviation": "BBH",
+        "name": "Burgos Burpellet BH"
+      },
+      "475": {
+        "id": 475,
+        "slug": "alpecin_premier_tech",
+        "abbreviation": "APT",
+        "name": "Alpecin-Premier Tech"
+      },
+      "483": {
+        "id": 483,
+        "slug": "equipo_kern_pharma",
+        "abbreviation": "EKP",
+        "name": "Equipo Kern Pharma"
+      },
+      "489": {
+        "id": 489,
+        "slug": "uno_x_mobility",
+        "abbreviation": "UXM",
+        "name": "Uno-X Mobility"
+      },
+      "492": {
+        "id": 492,
+        "slug": "tudor_pro_cycling_team",
+        "abbreviation": "TUD",
+        "name": "Tudor Pro Cycling Team"
+      },
+      "1097": {
+        "id": 1097,
+        "slug": "pinarello_q36_5_pro_cycling_team",
+        "abbreviation": "Q36",
+        "name": "Pinarello Q36.5 Pro Cycling Team"
+      }
+    },
+    "venues": {
+      "89464": {
+        "id": 89464,
+        "name": "tba"
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "items": [
+    {
+      "playerId": 53412,
+      "role": "none",
+      "from": "2026-09-12T19:00:01.3503943Z",
+      "to": null
+    },
+    {
+      "playerId": 53441,
+      "role": "none",
+      "from": "2026-09-13T12:54:39.777334Z",
+      "to": null
+    },
+    {
+      "playerId": 53466,
+      "role": "captain",
+      "from": "2026-09-12T19:00:01.3503943Z",
+      "to": null
+    },
+    {
+      "playerId": 54314,
+      "role": "none",
+      "from": "2026-09-12T18:59:55.8655636Z",
+      "to": null
+    },
+    {
+      "playerId": 54484,
+      "role": "none",
+      "from": "2026-09-13T06:54:44.4572901Z",
+      "to": null
+    },
+    {
+      "playerId": 53400,
+      "role": "none",
+      "from": "2026-09-13T06:54:44.4572901Z",
+      "to": null
+    },
+    {
+      "playerId": 53463,
+      "role": "none",
+      "from": "2026-09-13T06:54:44.4572901Z",
+      "to": null
+    },
+    {
+      "playerId": 54393,
+      "role": "none",
+      "from": "2026-09-13T12:55:41.2488942Z",
+      "to": null
+    }
+  ],
+  "pageInfo": {
+    "hasNextPage": false
+  }
+}
