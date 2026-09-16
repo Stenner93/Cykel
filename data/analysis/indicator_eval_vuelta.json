@@ -1,0 +1,118 @@
+{
+  "note": "Post-race indicator evaluation, Vuelta 2026. Spearman rank corr vs actual holdet value growth. Signal corr = mean of per-stage correlations (stages where the signal was present).",
+  "skipped_stages_no_actual": [],
+  "n_stages": 20,
+  "n_rider_stage_rows": 4040,
+  "signal_ranking": [
+    {
+      "signal": "veloscore",
+      "mean_spearman": 0.334,
+      "stages": 15
+    },
+    {
+      "signal": "discipline",
+      "mean_spearman": 0.205,
+      "stages": 20
+    },
+    {
+      "signal": "pcs_rank",
+      "mean_spearman": 0.202,
+      "stages": 20
+    },
+    {
+      "signal": "form",
+      "mean_spearman": 0.046,
+      "stages": 20
+    },
+    {
+      "signal": "ml",
+      "mean_spearman": -0.123,
+      "stages": 20
+    }
+  ],
+  "submodel_ranking": [
+    {
+      "model": "exp",
+      "mean_spearman": 0.306,
+      "stages": 20
+    },
+    {
+      "model": "holdet_est",
+      "mean_spearman": 0.306,
+      "stages": 20
+    },
+    {
+      "model": "expected_pts",
+      "mean_spearman": 0.306,
+      "stages": 20
+    },
+    {
+      "model": "placement_pred",
+      "mean_spearman": 0.26,
+      "stages": 20
+    }
+  ],
+  "captain_accuracy": {
+    "model (exp)": {
+      "top1_pct": 20.0,
+      "top3_pct": 45.0,
+      "top1": 4,
+      "n": 20
+    },
+    "form": {
+      "top1_pct": 25.0,
+      "top3_pct": 35.0,
+      "top1": 5,
+      "n": 20
+    },
+    "ml": {
+      "top1_pct": 10.0,
+      "top3_pct": 15.0,
+      "top1": 2,
+      "n": 20
+    },
+    "placement_pred": {
+      "top1_pct": 20.0,
+      "top3_pct": 35.0,
+      "top1": 4,
+      "n": 20
+    }
+  },
+  "veloscore_source_eval": {
+    "stages_covered": 15,
+    "mean_spearman_vs_actual": 0.284,
+    "captain_top1_pct": 40.0,
+    "captain_top3_pct": 53.3
+  },
+  "overall_exp_vs_actual_spearman_pooled": 0.292,
+  "signal_by_stage_type": {
+    "tt": {
+      "discipline": 0.268,
+      "form": 0.046,
+      "ml": 0.019,
+      "pcs_rank": 0.136,
+      "veloscore": 0.453
+    },
+    "hilly": {
+      "veloscore": 0.326,
+      "discipline": 0.189,
+      "form": 0.025,
+      "ml": -0.006,
+      "pcs_rank": 0.222
+    },
+    "sprint": {
+      "veloscore": 0.291,
+      "discipline": 0.116,
+      "form": 0.018,
+      "ml": -0.138,
+      "pcs_rank": 0.22
+    },
+    "mountain": {
+      "veloscore": 0.377,
+      "discipline": 0.356,
+      "form": 0.113,
+      "ml": -0.246,
+      "pcs_rank": 0.18
+    }
+  }
+}

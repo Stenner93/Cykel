@@ -1,0 +1,162 @@
+{
+  "note": "Growth-attribution comparison. score = sum(rider actual growth), captain doubled. Not holdet's exact price/bank value.",
+  "incomplete_teams_excluded": [],
+  "ranking_total_M": [
+    {
+      "team_id": 7272262,
+      "label": "Kasper",
+      "total_M": 10.79,
+      "transfers": 81,
+      "captain_captured_M": 2.26,
+      "captain_eff_vs_own": 0.463
+    },
+    {
+      "team_id": 7271757,
+      "label": "os (Anders)",
+      "total_M": 10.06,
+      "transfers": 85,
+      "captain_captured_M": 1.61,
+      "captain_eff_vs_own": 0.321
+    }
+  ],
+  "curves_M": {
+    "os": [
+      1.47,
+      2.66,
+      2.66,
+      2.82,
+      3.24,
+      4.64,
+      4.36,
+      4.73,
+      4.85,
+      5.59,
+      5.77,
+      6.77,
+      7.07,
+      6.63,
+      7.44,
+      9.05,
+      9.34,
+      9.77,
+      10.1,
+      10.06
+    ],
+    "kasper": [
+      1.33,
+      2.57,
+      2.57,
+      3.48,
+      3.92,
+      5.44,
+      5.37,
+      5.52,
+      5.19,
+      5.81,
+      6.04,
+      6.74,
+      7.35,
+      6.69,
+      7.42,
+      9.03,
+      9.32,
+      9.97,
+      10.25,
+      10.79
+    ],
+    "optakt": {},
+    "top10_median": [],
+    "top10_best": null,
+    "top10_best_id": null
+  },
+  "our_best_picks_M": [
+    {
+      "rider": "Tadej Pogacar",
+      "contribution_M": 2.288
+    },
+    {
+      "rider": "Wout van Aert",
+      "contribution_M": 1.617
+    },
+    {
+      "rider": "Primoz Roglic",
+      "contribution_M": 1.383
+    },
+    {
+      "rider": "Jakob Omrzel",
+      "contribution_M": 0.638
+    },
+    {
+      "rider": "Joshua Tarling",
+      "contribution_M": 0.58
+    },
+    {
+      "rider": "Santiago Buitrago",
+      "contribution_M": 0.437
+    }
+  ],
+  "our_worst_picks_M": [
+    {
+      "rider": "Steven Kruijswijk",
+      "contribution_M": -0.19
+    },
+    {
+      "rider": "Vito Braet",
+      "contribution_M": -0.153
+    },
+    {
+      "rider": "Magnus Cort",
+      "contribution_M": -0.147
+    },
+    {
+      "rider": "Henri-Francois Renard-Haquin",
+      "contribution_M": -0.135
+    },
+    {
+      "rider": "Axel Laurance",
+      "contribution_M": -0.09
+    },
+    {
+      "rider": "Thibau Nys",
+      "contribution_M": -0.09
+    }
+  ],
+  "our_missed_gains": [],
+  "our_captain_misses": [
+    {
+      "round": 4,
+      "captain": "Matthew Brennan",
+      "cap_growth_M": -0.072,
+      "best_own_M": 0.674,
+      "regret_M": 0.746
+    },
+    {
+      "round": 9,
+      "captain": "Matthew Brennan",
+      "cap_growth_M": -0.09,
+      "best_own_M": 0.297,
+      "regret_M": 0.387
+    },
+    {
+      "round": 15,
+      "captain": "Matthew Brennan",
+      "cap_growth_M": 0.057,
+      "best_own_M": 0.414,
+      "regret_M": 0.357
+    },
+    {
+      "round": 10,
+      "captain": "Matthew Brennan",
+      "cap_growth_M": -0.003,
+      "best_own_M": 0.35,
+      "regret_M": 0.353
+    },
+    {
+      "round": 12,
+      "captain": "Wout van Aert",
+      "cap_growth_M": 0.081,
+      "best_own_M": 0.42,
+      "regret_M": 0.339
+    }
+  ]
+}
