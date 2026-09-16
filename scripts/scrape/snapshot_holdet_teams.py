@@ -65,6 +65,7 @@ RACE_DEFAULTS = {
         "our_teams": {
             7271757: "os (Anders)",
             7272262: "Kasper",
+            7285351: "optakt-skribent (TheFantasyTool)",
         },
     },
 }

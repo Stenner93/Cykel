@@ -35,7 +35,7 @@ RACES = {
         "label": "Vuelta 2026",
         "holdet_dir": ROOT / "data/sources/vuelta2026/holdet",
         "pred": ROOT / "web/data/vuelta2026_predictions.json",
-        "our": 7271757, "kasper": 7272262, "optakt": set(),
+        "our": 7271757, "kasper": 7272262, "optakt": {7285351},
         "out": ROOT / "data/analysis/manager_eval_vuelta.json",
     },
 }
