@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="da" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>På tværs af managerspil — TdF vs. Vuelta 2026</title>
+<style>
+  :root{--bg:#fcfcfb;--panel:#ffffff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;--line:#e7e6e1;--line-2:#efeee9;--tdf:#c0661c;--vue:#b4472e;--good:#3b854f;--bad:#b4472e;--accent:#c0661c;--shadow:0 1px 2px rgba(20,22,26,.05),0 8px 24px rgba(20,22,26,.05)}
+  @media (prefers-color-scheme:dark){:root{--bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;--line:#2d3034;--line-2:#26282c;--tdf:#e08a3c;--vue:#e07a5f;--good:#57b072;--bad:#e07a5f;--accent:#e08a3c;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35)}}
+  :root[data-theme="light"]{--bg:#fcfcfb;--panel:#fff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;--line:#e7e6e1;--line-2:#efeee9;--tdf:#c0661c;--vue:#b4472e;--good:#3b854f;--bad:#b4472e;--accent:#c0661c}
+  :root[data-theme="dark"]{--bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;--line:#2d3034;--line-2:#26282c;--tdf:#e08a3c;--vue:#e07a5f;--good:#57b072;--bad:#e07a5f;--accent:#e08a3c}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin:0 auto;padding:clamp(1.2rem,4vw,3rem) clamp(1rem,4vw,2rem) 4rem}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+  header{border-bottom:1px solid var(--line);padding-bottom:1.4rem;margin-bottom:2rem}
+  .eyebrow{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  h1{font-size:clamp(1.8rem,4.5vw,2.7rem);line-height:1.05;letter-spacing:-.02em;margin:.5rem 0 .4rem;font-weight:800;text-wrap:balance}
+  .lede{color:var(--ink-2);font-size:1.03rem;max-width:62ch;margin:0}
+  h2{font-size:1.22rem;letter-spacing:-.01em;margin:2.3rem 0 .4rem;font-weight:700;display:flex;align-items:center;gap:.5rem}
+  h2 .badge{font-size:.62rem;text-transform:uppercase;letter-spacing:.04em;padding:.15rem .5rem;border-radius:6px;font-weight:700}
+  h2 .badge.hold{background:var(--good);color:#fff}
+  h2 .badge.ny{background:var(--ink-3);color:#fff}
+  h2+.sub{color:var(--ink-3);font-size:.9rem;margin:0 0 1rem;max-width:68ch}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.2rem 1.3rem;box-shadow:var(--shadow);margin-bottom:.9rem}
+  .card.fix{border-left:3px solid var(--bad)}
+  .card.hold{border-left:3px solid var(--good)}
+  table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:.3rem}
+  th,td{text-align:left;padding:.4rem .5rem;border-bottom:1px solid var(--line-2)}
+  th{font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);font-weight:600}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .fixnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--bad);color:#fff;font-size:.72rem;font-weight:700;flex-shrink:0}
+  .fixhead{display:flex;align-items:center;gap:.6rem;font-weight:700;margin-bottom:.4rem}
+  ul.plain{margin:.3rem 0 0;padding-left:1.1rem}
+  ul.plain li{margin:.25rem 0}
+  .foot{color:var(--ink-3);font-size:.8rem;margin-top:2.4rem;border-top:1px solid var(--line);padding-top:1rem;max-width:74ch}
+
+  .dash-topbar{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,#161b22 0%,#0d1117 100%);border-bottom:2px solid #FFD700;padding:0 clamp(1rem,4vw,24px)}
+  .dash-topbar-inner{max-width:1200px;margin:0 auto;min-height:60px;display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap;justify-content:space-between;padding:8px 0}
+  .dash-logo{font-size:1.3rem;font-weight:700;color:#FFD700;letter-spacing:.5px;text-decoration:none;white-space:nowrap}
+  .dash-subnav{background:var(--panel);border-bottom:1px solid var(--line);padding:0 clamp(1rem,4vw,24px);position:sticky;top:60px;z-index:90}
+  .dash-subnav-inner{max-width:1200px;margin:0 auto;display:flex;gap:4px;overflow-x:auto}
+  .subtab{display:inline-block;padding:12px 20px;border-bottom:3px solid transparent;margin-bottom:-1px;color:var(--ink-3);font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:color .15s,border-color .15s}
+  .subtab:hover{color:var(--ink)}
+  .subtab.active{color:#FFD700;border-bottom-color:#FFD700}
+</style>
+</head>
+<body>
+<div class="dash-topbar"><div class="dash-topbar-inner"><a href="vuelta.html" class="dash-logo">🚴 Cykel Manager</a><nav class="page-nav" id="mainNav"></nav></div></div>
+<div class="dash-subnav"><div class="dash-subnav-inner">
+  <a href="evaluering.html" class="subtab">TdF: Evaluering</a>
+  <a href="laer-af-touren.html" class="subtab">TdF: Lær af Touren</a>
+  <a href="vuelta-evaluering.html" class="subtab">Vuelta: Evaluering</a>
+  <a href="tvaers-af-spil.html" class="subtab active">På tværs af spil</a>
+</div></div>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">TdF 2026 vs. Vuelta 2026</div>
+    <h1>Hvad holder på tværs af løb — og hvad var tilfældigt?</h1>
+    <p class="lede">To sæsoners post-race-analyse sammenlignet direkte. Fund der gentager sig i begge løb er langt mere til at stole på end fund fra ét løb alene.</p>
+  </header>
+
+  <h2><span class="badge hold">GENTAGER SIG</span> Ekstern konsensus slår modellens egne signaler</h2>
+  <p class="sub">Spearman-korrelation mod realiseret holdet-vækst, mean per etape.</p>
+  <div class="card">
+    <table><thead><tr><th>Signal</th><th class="num">TdF 2026</th><th class="num">Vuelta 2026</th></tr></thead>
+    <tbody>
+      <tr><td>VeloScore (ekstern konsensus)</td><td class="num mono pos">+0.56</td><td class="num mono pos">+0.33</td></tr>
+      <tr><td>discipline (etapetype-match)</td><td class="num mono pos">+0.38</td><td class="num mono pos">+0.21</td></tr>
+      <tr><td>pcs_rank</td><td class="num mono pos">+0.28</td><td class="num mono pos">+0.20</td></tr>
+      <tr><td>form</td><td class="num mono pos">+0.18</td><td class="num mono pos">+0.05</td></tr>
+      <tr><td><b>ml (LightGBM)</b></td><td class="num mono neg"><b>−0.16</b></td><td class="num mono neg"><b>−0.12</b></td></tr>
+    </tbody></table>
+  </div>
+
+  <h2><span class="badge hold">GENTAGER SIG</span> Optakterne slår modellen på kaptajnvalg</h2>
+  <div class="card">
+    <table><thead><tr><th>Kilde</th><th class="num">TdF top-1</th><th class="num">Vuelta top-1</th></tr></thead>
+    <tbody>
+      <tr><td>Model</td><td class="num mono">33%</td><td class="num mono">20%</td></tr>
+      <tr><td>Feltet.dk</td><td class="num mono pos">48%</td><td class="num mono pos">42%</td></tr>
+      <tr><td>Simon K. Kjær</td><td class="num mono pos">52%</td><td class="num mono pos">35%</td></tr>
+    </tbody></table>
+    <p style="font-size:.84rem;color:var(--ink-3);margin:.7rem 0 0">Renset for kaos-dage (ingen ramte rigtigt) er billedet endnu tydeligere: optakternes reelle dømmekraftsscore var 5-2/6-2 (TdF) og 5-1/5-2 (Vuelta) til deres fordel.</p>
+  </div>
+
+  <h2><span class="badge ny">VENDTE HELT</span> Kaptajn-effektivitet — fra bedst til dårligst</h2>
+  <p class="sub">Hvor stor en del af rytterens vækst du faktisk fangede ved at gøre ham til kaptajn (1.0 = perfekt).</p>
+  <div class="card">
+    <table><thead><tr><th>Hold</th><th class="num">TdF</th><th class="num">Vuelta</th></tr></thead>
+    <tbody>
+      <tr><td>Os (Anders)</td><td class="num mono pos">0.92 — <b>højeste af 14 hold</b></td><td class="num mono neg">0.32 — <b>laveste af 2 hold</b></td></tr>
+    </tbody></table>
+    <p style="font-size:.84rem;color:var(--ink-3);margin:.7rem 0 0">Drevet af gentagne Matthew Brennan-kaptajnvalg på dage der ikke gik hans vej (4 af de 5 største fortrydelser). Et vane-mønster, ikke et model- eller løbsmønster — værd at holde øje med selv, uafhængigt af værktøjerne.</p>
+  </div>
+
+  <h2>Andre fund der IKKE gentog sig</h2>
+  <div class="card">
+    <ul class="plain">
+      <li><b>placement_pred alene</b> slog den blandede model i TdF (+0.44 vs +0.39) men ikke i Vuelta (+0.26 vs +0.31, blandingen marginalt foran) — for tyndt datagrundlag til at konkludere noget generelt.</li>
+      <li><b>Kaos-andel</b> (uenighedsdage hvor ingen kilde ramte rigtigt) var højere i Vuelta (8-9 af 14-16) end TdF (4 af 11-12) — Vueltaen var samlet sværere at forudsige for alle kilder (lavere pooled Spearman: 0.29 mod 0.35).</li>
+    </ul>
+  </div>
+
+  <h2>Infrastruktur-huller fundet undervejs</h2>
+  <p class="sub">Skal rettes FØR Klassiker Manager i foråret 2027 — nogle af disse kan ikke genskabes bagefter.</p>
+
+  <div class="card fix">
+    <div class="fixhead"><span class="fixnum">1</span> build_analytics.py kørte hardcoded mod TdF hele Vuelta-sæsonen</div>
+    <p style="margin:0;font-size:.9rem">Har ALDRIG læst Vuelta-data, selvom <span class="mono">daily.yml</span> kaldte den dagligt. "Analytik"-dashboardet viste frossen TdF-data i månedsvis. <b>Konsekvens:</b> <span class="mono">data/cache/stage_snapshots.json</span> (etape-niveau pris/ejerskab-historik) findes kun for TdF — den tabte Vuelta-historik kan ikke genskabes. <b>Fix:</b> generalisér med samme <span class="mono">--race</span>-mønster som de øvrige scripts, og bekræft den rent faktisk kører mod det aktive løb.</p>
+  </div>
+
+  <div class="card hold">
+    <div class="fixhead" style="color:var(--good)"><span class="fixnum" style="background:var(--good)">✓</span> eval_managers.py — rettet denne session</div>
+    <p style="margin:0;font-size:.9rem">Byggede spiller-ID→navn af den delte, løbende opdaterede <span class="mono">data/cache/holdet_players.json</span> i stedet for løbets egen gemte reference — kollapsede stille til nul-værdier for ethvert løb der ikke er det aktuelt scrapede. Rettet til at bruge <span class="mono">reference/players.json</span> fra løbets eget gemte snapshot.</p>
+  </div>
+
+  <div class="card fix">
+    <div class="fixhead"><span class="fixnum">2</span> Holdet's leaderboard-endpoint er ikke ensartet på tværs af spil</div>
+    <p style="margin:0;font-size:.9rem"><span class="mono">games/628/leaderboard</span> (Vueltaspillet) gav ikke gyldig JSON. Vueltaens manager-sammenligning dækker derfor kun dig og Kasper, ikke top-10. <b>Fix:</b> find og hardcod det rigtige endpoint tidligt i Klassiker Manager, eller accepter manuel <span class="mono">--team-ids</span>-indtastning som fast rutine.</p>
+  </div>
+
+  <h2>Handling frem mod Klassiker Manager</h2>
+  <div class="card">
+    <ul class="plain">
+      <li>Vægt ekstern konsensus (VeloScore) og optakt-kaptajnvalg tungere end modellens eget <span class="mono">exp</span>/ML-lag — bekræftet to løb i træk.</li>
+      <li>Fjern eller gentræn ML-laget; det har kostet mere end det har givet begge gange.</li>
+      <li>Ret infrastrukturhullerne <b>før</b> løbet starter — vi får kun ét forsøg pr. sæson på etape-niveau-historikken.</li>
+      <li>Kør <span class="mono">snapshot_holdet_teams.py --race &lt;løb&gt;</span> proaktivt undervejs, ikke kun som brandslukning lige inden spillet lukker.</li>
+    </ul>
+  </div>
+
+  <p class="foot">Kilder: <span class="mono">data/analysis/cross_race_report.md</span> og de underliggende <span class="mono">*_eval[_vuelta].json</span>-filer. Se <a href="evaluering.html" style="color:var(--accent)">TdF-evalueringen</a> og <a href="vuelta-evaluering.html" style="color:var(--accent)">Vuelta-evalueringen</a> for detaljerne bag hvert tal.</p>
+</div>
+<script src="nav.js"></script>
+</body>
+</html>

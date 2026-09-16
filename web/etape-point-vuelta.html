@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="da" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Etape-pointoversigt — Vuelta 2026</title>
+<style>
+  :root{--bg:#fcfcfb;--panel:#ffffff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;--line:#e7e6e1;--line-2:#efeee9;--accent:#3b7a3b;--warn:#b4472e;--shadow:0 1px 2px rgba(20,22,26,.05),0 8px 24px rgba(20,22,26,.05)}
+  @media (prefers-color-scheme:dark){:root{--bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;--line:#2d3034;--line-2:#26282c;--accent:#57b072;--warn:#e07a5f;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35)}}
+  :root[data-theme="light"]{--bg:#fcfcfb;--panel:#fff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;--line:#e7e6e1;--line-2:#efeee9;--accent:#3b7a3b;--warn:#b4472e}
+  :root[data-theme="dark"]{--bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;--line:#2d3034;--line-2:#26282c;--accent:#57b072;--warn:#e07a5f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1100px;margin:0 auto;padding:clamp(1.2rem,4vw,3rem) clamp(1rem,4vw,2rem) 4rem}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+  header{border-bottom:1px solid var(--line);padding-bottom:1.4rem;margin-bottom:1.6rem}
+  .eyebrow{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.08;letter-spacing:-.02em;margin:.5rem 0 .4rem;font-weight:800;text-wrap:balance}
+  .lede{color:var(--ink-2);font-size:1rem;max-width:70ch;margin:0}
+  .note{background:var(--line-2);border-left:3px solid var(--warn);border-radius:10px;padding:.8rem 1rem;font-size:.85rem;color:var(--ink-2);margin:1rem 0 0}
+  .note b{color:var(--ink)}
+  .toggle{display:inline-flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:1.2rem 0 1.2rem}
+  .toggle button{font:inherit;font-size:.86rem;font-weight:700;padding:.7rem 1.3rem;border:0;background:var(--panel);color:var(--ink-2);cursor:pointer}
+  .toggle button .sub{display:block;font-size:.68rem;font-weight:500;color:var(--ink-3)}
+  .toggle button.on{background:var(--accent);color:#0d1117}
+  .toggle button.on .sub{color:#0d1117cc}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1rem;box-shadow:var(--shadow)}
+  .scroll{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:1000px}
+  th,td{text-align:right;padding:.4rem .55rem;border-bottom:1px solid var(--line-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+  th{font-size:.63rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);font-weight:700}
+  td:first-child,th:first-child{text-align:left;position:sticky;left:0;background:var(--panel)}
+  td.type{text-align:left}
+  .grp1{border-left:2px solid var(--line)}
+  thead tr.g th{background:var(--line-2);font-size:.6rem;padding:.3rem .55rem;border-bottom:1px solid var(--line)}
+  .chip{font-size:.62rem;text-transform:uppercase;letter-spacing:.03em;padding:.06rem .38rem;border-radius:5px;background:var(--line-2);color:var(--ink-3)}
+  tr.uncertain td{background:color-mix(in srgb, var(--warn) 10%, transparent)}
+  tr.uncertain td:first-child::after{content:" *";color:var(--warn);font-weight:700}
+  .foot{color:var(--ink-3);font-size:.8rem;margin-top:1.6rem;border-top:1px solid var(--line);padding-top:1rem;max-width:80ch}
+
+  .dash-topbar{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,#161b22 0%,#0d1117 100%);border-bottom:2px solid #FFD700;padding:0 clamp(1rem,4vw,24px)}
+  .dash-topbar-inner{max-width:1200px;margin:0 auto;min-height:60px;display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap;justify-content:space-between;padding:8px 0}
+  .dash-logo{font-size:1.3rem;font-weight:700;color:#FFD700;letter-spacing:.5px;text-decoration:none;white-space:nowrap}
+  .dash-subnav{background:var(--panel);border-bottom:1px solid var(--line);padding:0 clamp(1rem,4vw,24px);position:sticky;top:60px;z-index:90}
+  .dash-subnav-inner{max-width:1200px;margin:0 auto;display:flex;gap:4px;overflow-x:auto}
+  .subtab{display:inline-block;padding:12px 20px;border-bottom:3px solid transparent;margin-bottom:-1px;color:var(--ink-3);font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:color .15s,border-color .15s}
+  .subtab:hover{color:var(--ink)}
+  .subtab.active{color:#FFD700;border-bottom-color:#FFD700}
+</style>
+</head>
+<body>
+<div class="dash-topbar"><div class="dash-topbar-inner"><a href="vuelta.html" class="dash-logo">🚴 Cykel Manager</a><nav class="page-nav" id="mainNav"></nav></div></div>
+<div class="dash-subnav"><div class="dash-subnav-inner">
+  <a href="evaluering.html" class="subtab">TdF: Evaluering</a>
+  <a href="laer-af-touren.html" class="subtab">TdF: Lær af Touren</a>
+  <a href="vuelta-evaluering.html" class="subtab">Vuelta: Evaluering</a>
+  <a href="tvaers-af-spil.html" class="subtab">På tværs af spil</a>
+  <a href="etape-point-vuelta.html" class="subtab active">Etape-pointoversigt</a>
+</div></div>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Vueltaspillet 2026 · etape-for-etape</div>
+    <h1>Pointoversigt pr. etape</h1>
+    <p class="lede">Samme opbygning som TheFantasyTool's "Cycling Stage Points"-værktøj: klassifikationspoint (sprint/KOM, både undervejs og ved mål) og den samlede etapeværdi for nr. 1/2/3, i to enheder.</p>
+    <div class="note">
+      <b>Kilde og forbehold:</b> transskriberet fra dine skærmbilleder af TheFantasyTool, ikke hentet automatisk (holdet.dk/fantasytool er ikke tilgængelige fra denne sessions netværk). <b>Total-Finish/Total-Combined</b> er bekræftet internt konsistente (Combined = Finish + During-stage, tjekket for alle 21 etaper) — brug dem trygt. Nedbrydningen af Total-Finish i sprint- vs. KOM-andel er <b>ikke</b> fuldt afklaret (en "KOM Finish"-kolonne fandtes i kilden, men kunne ikke krydsvalideres sikkert til bestemte etaper og er udeladt). Etape 20 (markeret *) er usikkert aflæst. Se <span class="mono">web/data/vuelta2026_stage_points.json</span> for detaljer.
+    </div>
+  </header>
+
+  <div class="toggle" id="toggle">
+    <button data-mode="holdet" class="on">Holdet.dk-point<span class="sub">×3000, vist som k</span></button>
+    <button data-mode="uci">Etapepoint<span class="sub">UCI-point</span></button>
+  </div>
+
+  <div class="card scroll">
+    <table>
+      <thead>
+        <tr class="g">
+          <th></th><th></th>
+          <th colspan="3" class="grp1">Points Finish</th>
+          <th colspan="3" class="grp1">Points During stage</th>
+          <th colspan="3" class="grp1">KOM During stage</th>
+          <th colspan="3" class="grp1">Total — During stage</th>
+          <th colspan="3" class="grp1">Total — Finish</th>
+          <th colspan="3" class="grp1">Total — Combined</th>
+        </tr>
+        <tr>
+          <th>#</th><th class="type">Type</th>
+          <th class="grp1">#1</th><th>#2</th><th>#3</th>
+          <th class="grp1">#1</th><th>#2</th><th>#3</th>
+          <th class="grp1">#1</th><th>#2</th><th>#3</th>
+          <th class="grp1">#1</th><th>#2</th><th>#3</th>
+          <th class="grp1">#1</th><th>#2</th><th>#3</th>
+          <th class="grp1">#1</th><th>#2</th><th>#3</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <p class="foot">"Holdet.dk-point" = klassifikationspoint × 3000 kr (svarer til <span class="mono">sprint_kom_per_point</span> i <span class="mono">data/scoring_rules.json</span> — bekræftet ved at alle klassifikationstal er delelige med 3 i den enhed). "Total"-kolonnerne er tydeligt større end summen af Points+KOM alene og indeholder derfor også en base-placeringsværdi, som ikke er brudt separat ud i kildedataet. Kør selv: se <span class="mono">web/data/vuelta2026_stage_points.json</span>.</p>
+</div>
+
+<script>
+let DATA = null;
+const MODE = { cur: 'holdet' };
+
+function fmt(v) {
+  if (v === null || v === undefined) return '—';
+  const x = MODE.cur === 'uci' ? v / 3 : v;
+  return Number.isInteger(x) ? String(x) : x.toFixed(1);
+}
+
+function render() {
+  if (!DATA) return;
+  document.getElementById('rows').innerHTML = DATA.stages.map(s => {
+    const unc = s.confidence ? ' uncertain' : '';
+    const cells = [s.points_finish, s.points_during, s.kom_during, s.total_during, s.total_finish, s.total_combined]
+      .map((arr, gi) => arr.map((v, i) => `<td class="${i===0?'grp1':''}">${fmt(v)}</td>`).join(''))
+      .join('');
+    return `<tr class="${unc.trim()}"><td class="mono">${s.stage}</td><td class="type"><span class="chip">${s.type}</span></td>${cells}</tr>`;
+  }).join('');
+}
+
+document.getElementById('toggle').addEventListener('click', (e) => {
+  const btn = e.target.closest('button[data-mode]');
+  if (!btn) return;
+  MODE.cur = btn.dataset.mode;
+  document.querySelectorAll('#toggle button').forEach(b => b.classList.toggle('on', b === btn));
+  render();
+});
+
+fetch('data/vuelta2026_stage_points.json').then(r => r.json()).then(d => { DATA = d; render(); });
+</script>
+<script src="nav.js"></script>
+</body>
+</html>
