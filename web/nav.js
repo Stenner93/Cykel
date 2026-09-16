@@ -5,7 +5,7 @@
 (function () {
   var NAV = [
     { href: 'vuelta.html', label: 'Vuelta 2026', match: ['vuelta.html', ''] },
-    { href: 'evaluering.html', label: 'Analyse', match: ['evaluering.html', 'laer-af-touren.html', 'vuelta-evaluering.html', 'tvaers-af-spil.html', 'etape-point-vuelta.html'] },
+    { href: 'evaluering.html', label: 'Analyse', match: ['evaluering.html', 'laer-af-touren.html', 'vuelta-evaluering.html', 'tvaers-af-spil.html'] },
     { href: 'riders.html',    label: 'Rytterdatabase', match: ['riders.html'] },
     { href: 'analytics.html', label: 'ML-Analyse',     match: ['analytics.html'] },
     { href: 'model.html',     label: 'Modelforklaring', match: ['model.html'] },

@@ -1,4 +1,6 @@
 {
+  "_source": "Verificeret ordret mod holdet.dk's officielle 'Regler'-side for Vueltaspillet 2026 (indsat af brugeren 2026-09-16). Sandsynligvis identisk spilmotor på tværs af Holdets grand tour-spil (samme struktur som var antaget for TdF), men kun Vuelta-teksten er faktisk verificeret her.",
+  "_verified_for": ["vuelta2026"],
   "stage_position": {
     "1": 200000, "2": 150000, "3": 130000, "4": 120000, "5": 110000,
     "6": 100000, "7": 95000,  "8": 90000,  "9": 85000,  "10": 80000,
@@ -15,9 +17,10 @@
     "youth": 15000, "most_aggressive": 50000
   },
   "sprint_kom_per_point": 3000,
+  "captain_bonus_multiplier": 1,
   "late_arrival_per_minute": -3000,
   "late_arrival_max": -90000,
-  "dnf": -50000,
+  "dnf": -90000,
   "dns_per_remaining_stage": -100000,
   "etapebonus": {
     "8": 400000, "7": 220000, "6": 120000, "5": 65000,
