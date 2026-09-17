@@ -133,6 +133,8 @@ def simulate(rounds, growth, top15, start, rules, r2s):
     prev_roster = None
     per_round, transfers = [], 0
     cum_fees = cum_cap = cum_stagebonus = 0.0
+    contrib = collections.defaultdict(float)     # personId -> kr bidraget mens ejet
+    owned_rounds = collections.Counter()
 
     for rnd in sorted(rounds):
         roster = rounds[rnd]["roster"]
@@ -156,6 +158,9 @@ def simulate(rounds, growth, top15, start, rules, r2s):
 
         g = growth.get(rnd, {})
         rider_growth = sum(g.get(pe, 0) for pe in roster)
+        for pe in roster:
+            contrib[pe] += g.get(pe, 0)
+            owned_rounds[pe] += 1
 
         cap_growth = g.get(captain, 0) if captain else 0
         cap_bonus = max(0, cap_growth)        # "der gives kun positiv kaptajnbonus"
@@ -178,11 +183,16 @@ def simulate(rounds, growth, top15, start, rules, r2s):
             "captain_bonus_M": round(cap_bonus / 1e6, 3),
             "stage_bonus_M": round(sb / 1e6, 3), "top15": n_top15,
             "fee_M": round(fee / 1e6, 3), "bank_M": round(bank / 1e6, 3),
+            "captain": captain,
+            "cap_growth_M": round(cap_growth / 1e6, 3),
+            "best_own_M": round(max([g.get(pe, 0) for pe in roster] or [0]) / 1e6, 3),
         })
         prev_roster = roster
 
     return {
         "final_value_M": round(per_round[-1]["value_M"], 2),
+        "contrib": {pe: v for pe, v in contrib.items()},
+        "owned_rounds": {pe: n for pe, n in owned_rounds.items()},
         "transfers": transfers,
         "fees_M": round(cum_fees / 1e6, 2),
         "captain_bonus_M": round(cum_cap / 1e6, 2),
@@ -219,6 +229,35 @@ def main():
         teams[tid]["label"] = cfg["labels"].get(tid, "top-10")
 
     ranking = sorted(teams.items(), key=lambda kv: -kv[1]["final_value_M"])
+
+    # --- afledte indsigter for vores eget hold ---
+    our_id = next((t for t, v in teams.items() if v["label"].startswith("os")), None)
+    insights = {}
+    if our_id is not None:
+        our = teams[our_id]
+        contrib = sorted(our["contrib"].items(), key=lambda kv: kv[1])
+        insights["best_picks"] = [{"rider": name.get(pe, pe), "contribution_M": round(v / 1e6, 2)}
+                                  for pe, v in reversed(contrib[-6:])]
+        insights["worst_picks"] = [{"rider": name.get(pe, pe), "contribution_M": round(v / 1e6, 2)}
+                                   for pe, v in contrib[:6]]
+        regrets = [{"stage": r["stage"], "captain": name.get(r["captain"], "?"),
+                    "cap_growth_M": r["cap_growth_M"], "best_own_M": r["best_own_M"],
+                    "regret_M": round(r["best_own_M"] - r["cap_growth_M"], 3)}
+                   for r in our["per_round"]]
+        insights["captain_misses"] = sorted(regrets, key=lambda x: -x["regret_M"])[:5]
+
+        # ryttere top-10 ejede som vi aldrig havde, vægtet efter hvad de gav
+        top_ids = [t for t, v in teams.items() if v["label"] == "top-10"]
+        owned_by_top = collections.Counter()
+        for t in top_ids:
+            for pe, n in teams[t]["owned_rounds"].items():
+                owned_by_top[pe] += n
+        season = {pe: sum(growth[r].get(pe, 0) for r in growth) for pe in start}
+        missed = [{"rider": name.get(pe, pe), "top10_rounds_owned": n,
+                   "season_growth_M": round(season.get(pe, 0) / 1e6, 2)}
+                  for pe, n in owned_by_top.items()
+                  if pe not in our["owned_rounds"] and season.get(pe, 0) > 0]
+        insights["missed_gains"] = sorted(missed, key=lambda x: -x["season_growth_M"])[:8]
     out = {
         "note": "Faktisk holdværdi rekonstrueret af Holdets egne fantasy-actions "
                 "(ruleId × amount × unitPriceChange) + officielle regler for "
@@ -231,6 +270,7 @@ def main():
                      "captain_bonus_M": v["captain_bonus_M"],
                      "stage_bonus_M": v["stage_bonus_M"], "bank_M": v["bank_M"]}
                     for t, v in ranking],
+        "our_insights": insights,
         "curves_M": {str(t): v["curve_M"] for t, v in teams.items()},
         "per_round": {str(t): v["per_round"] for t, v in teams.items()},
     }
