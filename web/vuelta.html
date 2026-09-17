@@ -333,7 +333,10 @@
   .pm-tbl td:first-child,.pm-tbl th:first-child{text-align:left;position:sticky;left:0;background:var(--surface)}
   .pm-tbl td.type{text-align:left}
   .pm-grp1{border-left:2px solid var(--border-2)}
-  .pm-tbl thead tr.g th{background:var(--card);font-size:.58rem;padding:4px 7px;border-bottom:1px solid var(--border-2)}
+  .pm-tbl thead tr.g th{background:var(--card);font-size:.58rem;padding:4px 7px;border-bottom:1px solid var(--border-2);text-align:center}
+  .pm-tbl thead tr.g th.pm-toggle-h{cursor:pointer;user-select:none}
+  .pm-tbl thead tr.g th.pm-toggle-h:hover{color:var(--ink);background:var(--card-2)}
+  .pm-sign{color:var(--accent);font-weight:800}
 
   @media (max-width:820px){
     .cols,.cols-3,.console{grid-template-columns:1fr}
@@ -510,34 +513,26 @@
   <section class="panel" id="p-matrix" role="tabpanel" aria-labelledby="t-matrix" hidden>
     <div class="eyebrow">Pointoversigt · etape × placering</div>
     <h2 class="sec">Hvad er en placering værd på hver etape?</h2>
-    <p class="sec-sub">Sprint- og KOM-klassifikationspoint (undervejs og ved mål) for nr. 1-15 pr. etape, i Holdet.dk-kroner
-      (vist i tusinder — "k" i tabellen betyder tusind kr, fx 90k = 90.000 kr). Samme opbygning som TheFantasyTool's
-      pointværktøj. Kilde: fuld DOM-eksport af <span class="mono">thefantasytool.com/cycling-stagepoints-holdet-vuelta</span>,
-      krydsvalideret internt (Total-Finish = Points-Finish + KOM-Finish og Total-Combined = Total-Finish +
-      Total-During-stage stemmer for alle 21 etaper).
-      "Climbs" viser stigningskategorier på etapen (1=hårdest af de almindelige, 3=lettest, HC=hors catégorie).</p>
+    <p class="sec-sub">Hvad en måplacering er værd på hver etape, i kroner ("k" = tusind kr). <b>Total — Combined</b> og
+      <b>Total — Finish</b> står først; klik på en sektions-overskrift for at folde den ud fra top-3 til alle pladser.
+      Kilde: klassifikationspointene (sprint/KOM) er TheFantasyTool's tabel, og <b>etapeplaceringens grundværdi</b>
+      (200.000 kr for en sejr, 150.000 for andenpladsen osv.) er lagt til fra holdet.dk's officielle regler — den manglede
+      i FantasyTool-tabellen, og det var derfor tallene før så alt for lave ud.
+      "Climbs" viser stigningskategorier (1 = hårdest af de almindelige, 3 = lettest, HC = hors catégorie).</p>
     <div class="pm-scroll">
       <table class="pm-tbl">
         <thead>
-          <tr class="g">
-            <th></th><th></th>
-            <th colspan="5" class="pm-grp1">Points During stage</th>
-            <th colspan="5" class="pm-grp1">KOM During stage</th>
-            <th colspan="5" class="pm-grp1">Total — During stage</th>
-            <th colspan="15" class="pm-grp1">Points Finish</th>
-            <th colspan="6" class="pm-grp1">KOM Finish</th>
-            <th colspan="15" class="pm-grp1">Total — Finish</th>
-            <th colspan="15" class="pm-grp1">Total — Combined</th>
-          </tr>
+          <tr class="g" id="pmGroupRow"></tr>
           <tr id="pmHeadRow"></tr>
         </thead>
         <tbody id="pmScheduleBody"><tr><td colspan="2">Henter…</td></tr></tbody>
       </table>
     </div>
-    <p class="note">Tallene er klassifikationspoint × 3000 kr, jf. <span class="mono">sprint_kom_per_point</span> i
-      <span class="mono">data/scoring_rules.json</span>. Bemærk at disse point-tabeller kun dækker de sekundære
-      klassifikationsbonusser — selve etapeplaceringens grundværdi (200.000 kr for en sejr osv., se holdet.dk's officielle
-      regler) og GC-/holdbonus er separate komponenter og indgår ikke her.</p>
+    <p class="note">Valideret mod Holdets egne bogførte tal: for alle 20 kørte etaper matcher tabellens finish-point
+      præcis det etapevinderen faktisk fik (resten af hans point kommer fra undervejs-spurter).
+      <b>Ikke med i tabellen</b>, fordi det ikke afhænger af måplaceringen: holdbonus (60/30/20k), trøjer (25/25/25/15k),
+      løbsplacering i klassementet (100k ned til 10k) og mest angrebsivrige (50k). En etapevinder der også tager
+      trøjer og holdbonus kan derfor sagtens ende over 500k — fx fik Pogačar 563k på 5. etape.</p>
 
     <div class="eyebrow" style="margin-top:26px">Pointmatrix · rytter × etape</div>
     <h2 class="sec">Faktiske Holdet-point pr. etape</h2>
@@ -1260,40 +1255,67 @@
   })();
 </script>
 <script>
-  /* Pointoversigt pr. etape — sprint/KOM-klassifikationsschema, transskriberet fra
-     TheFantasyTool. Statisk data i data/vuelta2026_stage_points.json. */
+  /* Pointoversigt pr. etape. Data i data/vuelta2026_stage_points.json: alle tal
+     allerede i kroner (klassifikationspoint fra TheFantasyTool × 3000 kr, plus
+     etapeplaceringens grundværdi fra holdet.dk's officielle regler).
+     Sektionerne kan foldes ud fra top-3 til alle pladser, som i FantasyTool. */
   (function(){
     var body = document.getElementById('pmScheduleBody');
     var headRow = document.getElementById('pmHeadRow');
-    if(!body) return;
+    var groupRow = document.getElementById('pmGroupRow');
+    if(!body || !groupRow) return;
     var DATA = null;
+    var COLLAPSED = 3;                 // antal pladser når en sektion er foldet sammen
+    // Rækkefølge: de to totaler først, derefter komponenterne bag dem.
     var GROUPS = [
-      ['points_during', 5], ['kom_during', 5], ['total_during', 5],
-      ['points_finish', 15], ['kom_finish', 6], ['total_finish', 15], ['total_combined', 15]
+      {key:'total_combined_kr', label:'Total — Combined', n:15, open:false},
+      {key:'total_finish_kr',   label:'Total — Finish',   n:15, open:false},
+      {key:'placement_kr',      label:'Etapeplacering',   n:15, open:false},
+      {key:'points_finish_kr',  label:'Sprintpoint ved mål', n:15, open:false},
+      {key:'kom_finish_kr',     label:'KOM ved mål',      n:15, open:false},
+      {key:'total_during_kr',   label:'Total — undervejs', n:5, open:false},
+      {key:'points_during_kr',  label:'Sprintpoint undervejs', n:5, open:false},
+      {key:'kom_during_kr',     label:'KOM undervejs',    n:5, open:false}
     ];
+    function shown(g){ return g.open ? g.n : Math.min(COLLAPSED, g.n); }
     function fmt(v){
       if(v===null||v===undefined) return '—';
-      var x = Math.round(v*3000/1000*10)/10;
-      return x+'k';
+      var k = v/1000;
+      return (Math.abs(k%1) < 0.05 ? Math.round(k) : k.toFixed(1))+'k';
     }
     function drawHead(){
-      var cells = '<th></th><th></th>';
-      GROUPS.forEach(function(g, gi){
-        for(var i=1;i<=g[1];i++) cells += '<th'+(i===1?' class="pm-grp1"':'')+'>#'+i+'</th>';
-      });
-      headRow.innerHTML = cells;
+      groupRow.innerHTML = '<th></th><th></th>' + GROUPS.map(function(g, gi){
+        var more = g.n > COLLAPSED;
+        var sign = !more ? '' : (g.open ? ' −' : ' +');
+        return '<th colspan="'+shown(g)+'" class="pm-grp1'+(more?' pm-toggle-h':'')+'"'+
+               (more?' data-gi="'+gi+'" title="klik for at folde ud/sammen"':'')+'>'+
+               g.label+'<span class="pm-sign">'+sign+'</span></th>';
+      }).join('');
+      headRow.innerHTML = '<th>#</th><th class="type">Type / climbs</th>' + GROUPS.map(function(g){
+        var out = '';
+        for(var i=1;i<=shown(g);i++) out += '<th'+(i===1?' class="pm-grp1"':'')+'>#'+i+'</th>';
+        return out;
+      }).join('');
     }
     function draw(){
       if(!DATA) return;
+      drawHead();
       body.innerHTML = DATA.stages.map(function(s){
-        var tds = '<td class="mono">'+s.stage+'</td><td class="type">'+(s.type||'')+' <span style="color:var(--muted)">'+s.climbs+'</span></td>';
+        var tds = '<td class="mono">'+s.stage+'</td><td class="type">'+(s.type||'')+
+                  ' <span style="color:var(--muted)">'+s.climbs+'</span></td>';
         GROUPS.forEach(function(g){
-          var arr = s[g[0]] || [];
-          for(var i=0;i<g[1];i++) tds += '<td'+(i===0?' class="pm-grp1"':'')+'>'+fmt(arr[i])+'</td>';
+          var arr = s[g.key] || [];
+          for(var i=0;i<shown(g);i++) tds += '<td'+(i===0?' class="pm-grp1"':'')+'>'+fmt(arr[i])+'</td>';
         });
         return '<tr>'+tds+'</tr>';
       }).join('');
     }
+    groupRow.addEventListener('click', function(e){
+      var th = e.target.closest('th[data-gi]');
+      if(!th) return;
+      GROUPS[+th.getAttribute('data-gi')].open = !GROUPS[+th.getAttribute('data-gi')].open;
+      draw();
+    });
     drawHead();
     fetch('data/vuelta2026_stage_points.json', {cache:'no-cache'})
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })

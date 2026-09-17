@@ -93,12 +93,19 @@
   <p class="note">Odds og VeloScore dækker ikke alle 20 etaper (hhv. 20 og 15 med data) — Feltet/Simon har næsten fuld dækning. VeloScore's lidt lavere etape-antal er fordi den kun findes for etaper hvor screenshots blev sendt undervejs.</p>
 
   <h2>Manager-sammenligning: dig, Kasper, TheFantasyTool og top-10</h2>
-  <p class="sub">Hver runde scorer et hold summen af sine 8 rytteres realiserede vækst, kaptajn dobbelt. Top-10 er hentet fra Vueltaspillets faktiske slutstilling (10 hold-ID'er du fandt manuelt, da Holdet's leaderboard-endpoint ikke virker via API).</p>
+  <p class="sub">Faktisk holdværdi, rekonstrueret af <b>Holdets egne bogførte tal</b> (fantasy-actions: etapeplacering,
+    klassement, sprint-/bjergpoint, trøjer, holdbonus, straffe) plus de officielle regler for transfergebyr, etapebonus,
+    kaptajnbonus og bankrente. Koblingen sker på spiller-ID, ikke navne. Kontrol: alle 204 ryttere rammer Holdets egen
+    slutpris eksakt. Top-10 er de faktiske slutstillings-hold (ID'er du fandt manuelt, da Holdets leaderboard-endpoint
+    ikke virker via API).</p>
   <div class="card scroll">
-    <table><thead><tr><th>#</th><th>Hold</th><th class="num">Total (M)</th><th class="num">Transfers</th><th class="num">Kaptajn (M)</th><th class="num">Kap-effektivitet</th></tr></thead>
+    <table><thead><tr><th>#</th><th>Hold</th><th class="num">Slutværdi (M)</th><th class="num">Transfers</th><th class="num">Gebyr (M)</th><th class="num">Kaptajnbonus (M)</th><th class="num">Etapebonus (M)</th></tr></thead>
     <tbody id="manager"></tbody></table>
   </div>
-  <p class="note">Du endte <b>nr. 7 af 13</b> — 0,53M under top-10-medianen (10,59M) og 0,97M under den bedste (11,03M). TheFantasyTools eget hold endte nr. 11, under både dig og Kasper.</p>
+  <p class="note">Du endte <b>nr. 11 af 13</b> — samtlige ti top-hold over dig, med Kasper (12.) og TheFantasyTool (13.)
+    under. Det matcher den virkelige slutstilling. Afstanden er lille: 0,52M op til nærmeste top-10-hold og 2,08M til
+    nummer ét, ud af knap 69M. <b>Bemærk:</b> en tidligere version af denne side viste dig som nr. 7 med Kasper over dig —
+    det var forkert, se noten nederst.</p>
 
   <h2>Missede gevinster</h2>
   <p class="sub">Ryttere top-10-holdene ejede i mindst én runde, som du aldrig havde.</p>
@@ -114,19 +121,44 @@
 
   <h2>Kaptajns-fortrydelser</h2>
   <div class="card scroll">
-    <table><thead><tr><th>Runde</th><th>Kaptajn valgt</th><th class="num">Kaptajns vækst</th><th class="num">Bedste egen</th><th class="num">Tabt (M)</th></tr></thead>
+    <table><thead><tr><th>Etape</th><th>Kaptajn valgt</th><th class="num">Kaptajns vækst</th><th class="num">Bedste egen</th><th class="num">Tabt (M)</th></tr></thead>
     <tbody id="capmiss"></tbody></table>
   </div>
 
   <h2>Konklusioner</h2>
   <ul class="takeaways">
     <li><b>Ingen af kilderne dominerer alene</b> — Feltet er skarpest på kaptajn-ramning, Simon på bredere holdvalg, VeloScore stærkest på "mindst en af de tre bedste". Brug dem sammen, ikke isoleret.</li>
-    <li><b>Kaptajnvalget var din svaghed denne gang</b> — fire af fem største fortrydelser var samme rytter (Brennan) på dage der ikke gik hans vej.</li>
-    <li><b>GC-rytterne bar holdet</b> — Pogačar, van Aert og Roglič stod for langt størstedelen af den positive vækst.</li>
-    <li><b>Gabet til top-10 var Oscar Onley</b> — 16 af top-10-holdene ejede ham på et tidspunkt (+1,92M i sæson-vækst), du gjorde aldrig. Det er alene mere end forskellen mellem dig og top-10-medianen.</li>
+    <li><b>Kaptajnvalgene kostede ikke meget</b> — den dyreste enkelte fortrydelse var 0,36M (E15, Brennan), og de fem
+      største lagt sammen er ~1,2M. Det er reelt, men ikke der løbet blev afgjort.</li>
+    <li><b>Transfergebyret er den store post</b> — du betalte 5,28M i gebyr på 85 transfers. Holdet med færrest transfers
+      (73) betalte 4,60M. Hver transfer koster ~60k, så det er her en systematisk gevinst ligger at hente.</li>
+    <li><b>Gabet til top-10 var Oscar Onley</b> — top-10-holdene ejede ham i 16 runder tilsammen (+1,92M i sæsonvækst),
+      du aldrig. Det er alene mere end de 2,08M der skiller dig fra førstepladsen.</li>
   </ul>
 
-  <p class="foot">Data: <span class="mono">web/data/vuelta2026_predictions.json</span>, <span class="mono">data/analysis/source_eval_vuelta.json</span>, <span class="mono">data/analysis/manager_eval_vuelta.json</span>. Kør selv: <span class="mono">python scripts/analysis/eval_sources.py --race vuelta2026</span> / <span class="mono">eval_managers.py --race vuelta2026</span>.</p>
+  <h2>Rettelse: hvorfor rangeringen var forkert</h2>
+  <div class="card" style="font-size:.9rem">
+    <p style="margin:0 0 .6rem">Den første version af denne sammenligning viste dig som nr. 7 med Kasper over dig, hvilket
+      modsagde den virkelige slutstilling. Tre uafhængige fejl lå bag, alle nu rettet:</p>
+    <ol style="margin:0;padding-left:1.2rem">
+      <li style="margin:.3rem 0"><b>Navne-koblingen droppede ryttere i stilhed.</b> Holdets referencedata staver
+        "Enric Mas Nicolau", rytterdatabasen "Enric Mas" — så feltets største vækst (+2,99M) forsvandt fra <em>alle</em> 13
+        hold, og skævt, fordi holdene ejede ham i 11-15 runder hver. Koblingen sker nu på spiller-ID, og det der ikke kan
+        kobles bliver rapporteret i stedet for at forsvinde.</li>
+      <li style="margin:.3rem 0"><b>Vækst-tallene var en tilnærmelse.</b> <span class="mono">actual</span> i
+        prediktionsfilen er udledt af prisforskelle mellem scrapes og afveg fra Holdets egne tal på 2.568
+        rytter-etape-rækker. Nu bruges Holdets egne bogførte beløb.</li>
+      <li style="margin:.3rem 0"><b>Halvdelen af spillet manglede.</b> Den gamle metode lagde kun rytternes vækst sammen
+        og ignorerede transfergebyr (~5M pr. hold!), etapebonus, kaptajnbonus og bank — poster der er store nok til at
+        vende rangeringen helt.</li>
+    </ol>
+  </div>
+
+  <p class="foot">Data: <span class="mono">data/analysis/team_value_vuelta.json</span> (holdværdi),
+    <span class="mono">data/analysis/source_eval_vuelta.json</span> (kilde-shootout).
+    Kør selv: <span class="mono">python scripts/analysis/eval_team_value.py --race vuelta2026</span> /
+    <span class="mono">eval_sources.py --race vuelta2026</span>.
+    Dækker etape 1-20 — Holdet kørte 20 runder, da etape 3 ikke indgik i spillet.</p>
 </div>
 
 <script>
@@ -141,47 +173,68 @@ document.getElementById('shootout').innerHTML = SRC.slice().sort((a,b)=>b.top1-a
 ).join('');
 
 const MGR=[
-  {t:"top-10", tot:11.03, tr:76, cap:1.73, eff:0.347},
-  {t:"top-10", tot:10.82, tr:73, cap:1.73, eff:0.335},
-  {t:"Kasper", tot:10.79, tr:81, cap:2.26, eff:0.463, mine:true},
-  {t:"top-10", tot:10.71, tr:84, cap:1.77, eff:0.336},
-  {t:"top-10", tot:10.68, tr:75, cap:1.79, eff:0.337},
-  {t:"top-10", tot:10.59, tr:80, cap:1.71, eff:0.342},
-  {t:"Os (Anders)", tot:10.06, tr:85, cap:1.61, eff:0.321, mine:true},
-  {t:"top-10", tot:9.99, tr:76, cap:1.81, eff:0.373},
-  {t:"top-10", tot:9.90, tr:98, cap:1.63, eff:0.326},
-  {t:"top-10", tot:9.87, tr:79, cap:1.73, eff:0.381},
-  {t:"TheFantasyTool", tot:9.85, tr:83, cap:1.72, eff:0.356, mine:true},
-  {t:"top-10", tot:9.62, tr:89, cap:1.91, eff:0.435},
-  {t:"top-10", tot:8.90, tr:88, cap:1.78, eff:0.387}
+  {t:"top-10", val:70.89, tr:84, fee:5.13, cap:5.70, sb:1.23},
+  {t:"top-10", val:70.29, tr:79, fee:4.99, cap:5.03, sb:1.38},
+  {t:"top-10", val:70.14, tr:89, fee:6.23, cap:5.37, sb:1.66},
+  {t:"top-10", val:70.07, tr:88, fee:5.91, cap:5.69, sb:1.43},
+  {t:"top-10", val:69.88, tr:76, fee:5.04, cap:5.03, sb:1.33},
+  {t:"top-10", val:69.70, tr:98, fee:6.35, cap:5.54, sb:1.44},
+  {t:"top-10", val:69.62, tr:73, fee:4.60, cap:5.20, sb:1.11},
+  {t:"top-10", val:69.58, tr:75, fee:4.81, cap:5.58, sb:1.32},
+  {t:"top-10", val:69.35, tr:80, fee:5.12, cap:5.13, sb:1.25},
+  {t:"top-10", val:69.33, tr:76, fee:4.97, cap:5.14, sb:1.32},
+  {t:"Os (Anders)", val:68.81, tr:85, fee:5.28, cap:5.35, sb:1.10, mine:true},
+  {t:"Kasper", val:68.11, tr:81, fee:5.09, cap:5.05, sb:1.02, mine:true},
+  {t:"TheFantasyTool", val:68.02, tr:83, fee:5.28, cap:5.02, sb:1.18, mine:true}
 ];
 document.getElementById('manager').innerHTML = MGR.map((r,i)=>
-  `<tr${r.mine?' style="background:var(--line-2)"':''}><td class="mono">${i+1}</td><td>${r.mine?'<b>'+r.t+'</b>':r.t}</td><td class="num mono">${r.tot.toFixed(2)}</td><td class="num mono">${r.tr}</td><td class="num mono">${r.cap.toFixed(2)}</td><td class="num mono">${r.eff.toFixed(2)}</td></tr>`
+  `<tr${r.mine?' style="background:var(--line-2)"':''}><td class="mono">${i+1}</td><td>${r.mine?'<b>'+r.t+'</b>':r.t}</td><td class="num mono">${r.val.toFixed(2)}</td><td class="num mono">${r.tr}</td><td class="num mono neg">-${r.fee.toFixed(2)}</td><td class="num mono pos">+${r.cap.toFixed(2)}</td><td class="num mono pos">+${r.sb.toFixed(2)}</td></tr>`
 ).join('');
 
 const MISSED=[
-  ["Oscar Onley",16,1.92],["Kevin Vermaerke",1,0.63],["Andreas Leknessund",1,0.60],
-  ["Urko Berrade",1,0.31],["Valentin Paret-Peintre",2,0.28],["Guillaume Martin",1,0.26],
-  ["Marco Brenner",5,0.02],["Vincenzo Albanese",7,0.01]
+  ["Oscar Onley",16,1.92],
+  ["Kevin Vermaerke",1,0.63],
+  ["Andreas Leknessund",1,0.60],
+  ["Urko Berrade",1,0.31],
+  ["Valentin Paret-Peintre",2,0.28],
+  ["Guillaume Martin",1,0.26],
+  ["Marco Brenner",5,0.02],
+  ["Vincenzo Albanese",7,0.01]
 ];
 document.getElementById('missed').innerHTML = MISSED.map(([n,own,g])=>
   `<tr><td>${n}</td><td class="num mono">${own}</td><td class="num mono neg">+${g.toFixed(2)}</td></tr>`
 ).join('');
 
-const BEST=[["Tadej Pogačar",2.288],["Wout van Aert",1.617],["Primož Roglič",1.383],["Jakob Omrzel",0.638],["Joshua Tarling",0.58],["Santiago Buitrago",0.437]];
-const WORST=[["Steven Kruijswijk",-0.19],["Vito Braet",-0.153],["Magnus Cort",-0.147],["Henri-François Renard-Haquin",-0.135],["Axel Laurance",-0.09],["Thibau Nys",-0.09]];
-document.getElementById('best').innerHTML = BEST.map(([n,v])=>`<tr><td>${n}</td><td class="num mono pos">+${v.toFixed(2)}</td></tr>`).join('');
-document.getElementById('worst').innerHTML = WORST.map(([n,v])=>`<tr><td>${n}</td><td class="num mono neg">${v.toFixed(2)}</td></tr>`).join('');
+const BEST=[
+  ["Enric Mas Nicolau",2.32],
+  ["Wout van Aert",1.73],
+  ["Matthew Brennan",1.68],
+  ["Tadej Pogacar",1.46],
+  ["Alessandro Romele",1.42],
+  ["Primoz Roglic",1.32]
+];
+const WORST=[
+  ["Julien Bernard",-0.09],
+  ["Steven Kruijswijk",-0.09],
+  ["Fabio Van den Bossche",-0.07],
+  ["Mario Aparicio",-0.06],
+  ["Tobias Halland Johannessen",-0.06],
+  ["Jarno Widar",-0.05]
+];
+document.getElementById('best').innerHTML = BEST.map(([n,v])=>
+  `<tr><td>${n}</td><td class="num mono pos">+${v.toFixed(2)}</td></tr>`).join('');
+document.getElementById('worst').innerHTML = WORST.map(([n,v])=>
+  `<tr><td>${n}</td><td class="num mono neg">${v.toFixed(2)}</td></tr>`).join('');
 
 const CAPMISS=[
-  {r:4,cap:"Matthew Brennan",cg:-0.072,bo:0.674,reg:0.746},
-  {r:9,cap:"Matthew Brennan",cg:-0.09,bo:0.297,reg:0.387},
   {r:15,cap:"Matthew Brennan",cg:0.057,bo:0.414,reg:0.357},
-  {r:10,cap:"Matthew Brennan",cg:-0.003,bo:0.35,reg:0.353},
-  {r:12,cap:"Wout van Aert",cg:0.081,bo:0.42,reg:0.339}
+  {r:21,cap:"Wout van Aert",cg:0.025,bo:0.315,reg:0.290},
+  {r:9,cap:"Felix Gall",cg:0.245,bo:0.475,reg:0.230},
+  {r:14,cap:"Enric Mas Nicolau",cg:0.113,bo:0.289,reg:0.176},
+  {r:10,cap:"Matthew Brennan",cg:-0.003,bo:0.161,reg:0.164}
 ];
 document.getElementById('capmiss').innerHTML = CAPMISS.map(r=>
-  `<tr><td class="mono">R${r.r}</td><td>${r.cap}</td><td class="num mono">${r.cg>=0?'+':''}${r.cg.toFixed(2)}</td><td class="num mono pos">+${r.bo.toFixed(2)}</td><td class="num mono neg">-${r.reg.toFixed(2)}</td></tr>`
+  `<tr><td class="mono">E${r.r}</td><td>${r.cap}</td><td class="num mono">${r.cg>=0?'+':''}${r.cg.toFixed(2)}</td><td class="num mono pos">+${r.bo.toFixed(2)}</td><td class="num mono neg">-${r.reg.toFixed(2)}</td></tr>`
 ).join('');
 </script>
 <script src="nav.js"></script>
