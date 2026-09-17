@@ -18,7 +18,7 @@ created or cost value", which is the question we care about.
 Outputs data/analysis/manager_eval[_<race>].json + a printed summary.
 """
 import argparse
-import json, os, collections
+import json, os, collections, sys, unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -41,22 +41,58 @@ RACES = {
 }
 
 
+def norm(s):
+    s = unicodedata.normalize("NFKD", s or "")
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    s = s.replace("ø", "o").replace("Ø", "O").replace("æ", "ae").replace("å", "aa")
+    return " ".join("".join(c for c in s.lower() if c.isalnum() or c == " ").split())
+
+
+def resolve(ref_name, pred_names_norm):
+    """Map a holdet reference name onto the prediction file's canonical name.
+
+    Holdet's reference dump spells names differently from the rider database
+    ("Enric Mas Nicolau" vs "Enric Mas", "Gregor Muhlberger" vs "Gregor
+    Mühlberger"), so an exact string join silently drops riders — and dropping
+    them is invisible in the output, which is how a whole field's biggest
+    grower once vanished from every single roster at once. Match on normalised
+    text, then on one name being a token-prefix of the other, then on
+    first+last token. Deliberately NO surname-only fallback: "Lucas Hamilton"
+    must not collapse onto "Chris Hamilton".
+    """
+    n = norm(ref_name)
+    if n in pred_names_norm:
+        return pred_names_norm[n]
+    toks = n.split()
+    for cand_n, cand in pred_names_norm.items():
+        ct = cand_n.split()
+        if ct[: len(toks)] == toks or toks[: len(ct)] == ct:
+            return cand
+    if len(toks) >= 2:
+        key = (toks[0], toks[-1])
+        for cand_n, cand in pred_names_norm.items():
+            ct = cand_n.split()
+            if len(ct) >= 2 and (ct[0], ct[-1]) == key:
+                return cand
+    return None
+
+
 def load(H, pred_path):
-    # Build playerId -> full name from the race's OWN saved reference dump,
-    # not the live data/cache/holdet_players.json — that cache reflects
-    # whichever cartridge the daily scraper currently tracks, so for any race
-    # other than the most recent one it silently returns the wrong season's
-    # names (or none at all), collapsing every roster to empty.
+    # Build playerId -> canonical rider name. The names come from the race's
+    # OWN saved reference dump (not the live data/cache/holdet_players.json,
+    # which reflects whichever cartridge the daily scraper currently tracks),
+    # then get resolved onto the prediction file's spelling — see resolve().
     ref = json.loads((H / "reference/players.json").read_text())
     persons = ref.get("_embedded", {}).get("persons", {})
-    pid2name = {}
+    raw = {}
     for it in ref.get("items", []):
         person = persons.get(str(it.get("personId"))) or persons.get(it.get("personId"))
         if it.get("id") is None or not person:
             continue
         full = " ".join(x for x in (person.get("firstName"), person.get("lastName")) if x).strip()
         if full:
-            pid2name[it["id"]] = full
+            raw[it["id"]] = full
+
     pred = json.loads(pred_path.read_text())
     actual = {}          # stage -> {name: growth}
     field_best = {}      # stage -> best growth in whole field
@@ -64,6 +100,20 @@ def load(H, pred_path):
         d = {r["name"]: (r.get("actual") or 0) for r in s["riders"]}
         actual[s["num"]] = d
         field_best[s["num"]] = max(d.values()) if d else 0
+
+    pred_names_norm = {norm(r["name"]): r["name"]
+                       for s in pred["stages"] for r in s["riders"]}
+    pid2name, unresolved = {}, []
+    for pid, full in raw.items():
+        canon = resolve(full, pred_names_norm)
+        if canon is None:
+            unresolved.append(full)
+        else:
+            pid2name[pid] = canon
+    if unresolved:
+        print(f"[advarsel] {len(unresolved)} rytter(e) i Holdets referencedata kunne ikke "
+              f"kobles til prediktionsfilen og tæller derfor 0: {', '.join(sorted(unresolved))}",
+              file=sys.stderr)
     return pid2name, actual, field_best
 
 
@@ -74,14 +124,18 @@ def team_rounds(H, tid, pid2name):
     for rf in sorted(os.listdir(tdir)):
         r = int(rf.split("_")[1].split(".")[0])
         items = json.loads((tdir / rf).read_text())["items"]
-        roster, captain = [], None
+        roster, captain, dropped = [], None, 0
         for it in items:
             nm = pid2name.get(it["playerId"])
             if nm is None:
+                dropped += 1
                 continue
             roster.append(nm)
             if it["role"] == "captain":
                 captain = nm
+        if dropped:
+            print(f"[advarsel] hold {tid} runde {r}: {dropped} af {len(items)} ryttere "
+                  f"kunne ikke kobles og tæller 0", file=sys.stderr)
         out[r] = {"roster": roster, "captain": captain}
     return out
 
