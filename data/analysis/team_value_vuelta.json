@@ -1,5 +1,27 @@
 {
-  "note": "Faktisk holdværdi rekonstrueret af Holdets egne fantasy-actions (ruleId × amount × unitPriceChange) + officielle regler for transfergebyr, etapebonus, kaptajnbonus og bankrente. Dækker etape 1-20 (runde 21's lineup var ikke tilgængelig).",
+  "note": "Faktisk holdværdi rekonstrueret af Holdets egne fantasy-actions (ruleId × amount × unitPriceChange) + officielle regler for transfergebyr, etapebonus, kaptajnbonus og bankrente. Holdet kørte 20 runder; etape 3 indgik ikke i spillet, så 'stage' i per_round er løbets rigtige etapenummer, ikke runde-nummeret.",
+  "round_to_stage": {
+    "1": 1,
+    "2": 2,
+    "3": 4,
+    "4": 5,
+    "5": 6,
+    "6": 7,
+    "7": 8,
+    "8": 9,
+    "9": 10,
+    "10": 11,
+    "11": 12,
+    "12": 13,
+    "13": 14,
+    "14": 15,
+    "15": 16,
+    "16": 17,
+    "17": 18,
+    "18": 19,
+    "19": 20,
+    "20": 21
+  },
   "ranking": [
     {
       "team_id": 7267851,
@@ -424,6 +446,7 @@
     "7267851": [
       {
         "round": 1,
+        "stage": 1,
         "value_M": 51.441,
         "rider_growth_M": 1.029,
         "captain_bonus_M": 0.29,
@@ -434,6 +457,7 @@
       },
       {
         "round": 2,
+        "stage": 2,
         "value_M": 52.543,
         "rider_growth_M": 1.215,
         "captain_bonus_M": 0.201,
@@ -444,6 +468,7 @@
       },
       {
         "round": 3,
+        "stage": 4,
         "value_M": 53.545,
         "rider_growth_M": 0.828,
         "captain_bonus_M": 0.674,
@@ -454,6 +479,7 @@
       },
       {
         "round": 4,
+        "stage": 5,
         "value_M": 54.532,
         "rider_growth_M": 0.902,
         "captain_bonus_M": 0.35,
@@ -464,6 +490,7 @@
       },
       {
         "round": 5,
+        "stage": 6,
         "value_M": 55.895,
         "rider_growth_M": 1.077,
         "captain_bonus_M": 0.563,
@@ -474,6 +501,7 @@
       },
       {
         "round": 6,
+        "stage": 7,
         "value_M": 56.19,
         "rider_growth_M": 0.182,
         "captain_bonus_M": 0.138,
@@ -484,6 +512,7 @@
       },
       {
         "round": 7,
+        "stage": 8,
         "value_M": 56.79,
         "rider_growth_M": 0.583,
         "captain_bonus_M": 0.216,
@@ -494,6 +523,7 @@
       },
       {
         "round": 8,
+        "stage": 9,
         "value_M": 58.158,
         "rider_growth_M": 1.343,
         "captain_bonus_M": 0.245,
@@ -504,6 +534,7 @@
       },
       {
         "round": 9,
+        "stage": 10,
         "value_M": 58.829,
         "rider_growth_M": 0.73,
         "captain_bonus_M": 0.202,
@@ -514,6 +545,7 @@
       },
       {
         "round": 10,
+        "stage": 11,
         "value_M": 60.531,
         "rider_growth_M": 1.477,
         "captain_bonus_M": 0.41,
@@ -524,6 +556,7 @@
       },
       {
         "round": 11,
+        "stage": 12,
         "value_M": 61.248,
         "rider_growth_M": 0.825,
         "captain_bonus_M": 0.249,
@@ -534,6 +567,7 @@
       },
       {
         "round": 12,
+        "stage": 13,
         "value_M": 62.378,
         "rider_growth_M": 0.858,
         "captain_bonus_M": 0.425,
@@ -544,6 +578,7 @@
       },
       {
         "round": 13,
+        "stage": 14,
         "value_M": 63.308,
         "rider_growth_M": 0.817,
         "captain_bonus_M": 0.113,
@@ -554,6 +589,7 @@
       },
       {
         "round": 14,
+        "stage": 15,
         "value_M": 64.374,
         "rider_growth_M": 0.988,
         "captain_bonus_M": 0.414,
@@ -564,6 +600,7 @@
       },
       {
         "round": 15,
+        "stage": 16,
         "value_M": 66.099,
         "rider_growth_M": 1.307,
         "captain_bonus_M": 0.35,
@@ -574,6 +611,7 @@
       },
       {
         "round": 16,
+        "stage": 17,
         "value_M": 68.103,
         "rider_growth_M": 1.443,
         "captain_bonus_M": 0.41,
@@ -584,6 +622,7 @@
       },
       {
         "round": 17,
+        "stage": 18,
         "value_M": 69.463,
         "rider_growth_M": 1.403,
         "captain_bonus_M": 0.168,
@@ -594,6 +633,7 @@
       },
       {
         "round": 18,
+        "stage": 19,
         "value_M": 69.597,
         "rider_growth_M": 0.472,
         "captain_bonus_M": 0.11,
@@ -604,6 +644,7 @@
       },
       {
         "round": 19,
+        "stage": 20,
         "value_M": 70.263,
         "rider_growth_M": 0.515,
         "captain_bonus_M": 0.143,
@@ -614,6 +655,7 @@
       },
       {
         "round": 20,
+        "stage": 21,
         "value_M": 70.894,
         "rider_growth_M": 0.914,
         "captain_bonus_M": 0.025,
@@ -626,6 +668,7 @@
     "7271757": [
       {
         "round": 1,
+        "stage": 1,
         "value_M": 51.089,
         "rider_growth_M": 1.177,
         "captain_bonus_M": 0.29,
@@ -636,6 +679,7 @@
       },
       {
         "round": 2,
+        "stage": 2,
         "value_M": 52.095,
         "rider_growth_M": 0.99,
         "captain_bonus_M": 0.201,
@@ -646,6 +690,7 @@
       },
       {
         "round": 3,
+        "stage": 4,
         "value_M": 52.975,
         "rider_growth_M": 0.621,
         "captain_bonus_M": 0.674,
@@ -656,6 +701,7 @@
       },
       {
         "round": 4,
+        "stage": 5,
         "value_M": 54.084,
         "rider_growth_M": 0.958,
         "captain_bonus_M": 0.35,
@@ -666,6 +712,7 @@
       },
       {
         "round": 5,
+        "stage": 6,
         "value_M": 55.551,
         "rider_growth_M": 1.127,
         "captain_bonus_M": 0.563,
@@ -676,6 +723,7 @@
       },
       {
         "round": 6,
+        "stage": 7,
         "value_M": 55.776,
         "rider_growth_M": 0.246,
         "captain_bonus_M": 0.138,
@@ -686,6 +734,7 @@
       },
       {
         "round": 7,
+        "stage": 8,
         "value_M": 55.977,
         "rider_growth_M": 0.361,
         "captain_bonus_M": 0.101,
@@ -696,6 +745,7 @@
       },
       {
         "round": 8,
+        "stage": 9,
         "value_M": 57.252,
         "rider_growth_M": 1.343,
         "captain_bonus_M": 0.245,
@@ -706,6 +756,7 @@
       },
       {
         "round": 9,
+        "stage": 10,
         "value_M": 57.501,
         "rider_growth_M": 0.525,
         "captain_bonus_M": 0.0,
@@ -716,6 +767,7 @@
       },
       {
         "round": 10,
+        "stage": 11,
         "value_M": 58.95,
         "rider_growth_M": 1.047,
         "captain_bonus_M": 0.41,
@@ -726,6 +778,7 @@
       },
       {
         "round": 11,
+        "stage": 12,
         "value_M": 59.496,
         "rider_growth_M": 0.641,
         "captain_bonus_M": 0.249,
@@ -736,6 +789,7 @@
       },
       {
         "round": 12,
+        "stage": 13,
         "value_M": 60.531,
         "rider_growth_M": 0.798,
         "captain_bonus_M": 0.425,
@@ -746,6 +800,7 @@
       },
       {
         "round": 13,
+        "stage": 14,
         "value_M": 61.495,
         "rider_growth_M": 0.997,
         "captain_bonus_M": 0.113,
@@ -756,6 +811,7 @@
       },
       {
         "round": 14,
+        "stage": 15,
         "value_M": 61.999,
         "rider_growth_M": 0.898,
         "captain_bonus_M": 0.057,
@@ -766,6 +822,7 @@
       },
       {
         "round": 15,
+        "stage": 16,
         "value_M": 63.702,
         "rider_growth_M": 1.362,
         "captain_bonus_M": 0.35,
@@ -776,6 +833,7 @@
       },
       {
         "round": 16,
+        "stage": 17,
         "value_M": 65.521,
         "rider_growth_M": 1.321,
         "captain_bonus_M": 0.41,
@@ -786,6 +844,7 @@
       },
       {
         "round": 17,
+        "stage": 18,
         "value_M": 67.021,
         "rider_growth_M": 1.403,
         "captain_bonus_M": 0.32,
@@ -796,6 +855,7 @@
       },
       {
         "round": 18,
+        "stage": 19,
         "value_M": 67.561,
         "rider_growth_M": 0.677,
         "captain_bonus_M": 0.283,
@@ -806,6 +866,7 @@
       },
       {
         "round": 19,
+        "stage": 20,
         "value_M": 68.125,
         "rider_growth_M": 0.48,
         "captain_bonus_M": 0.143,
@@ -816,6 +877,7 @@
       },
       {
         "round": 20,
+        "stage": 21,
         "value_M": 68.814,
         "rider_growth_M": 1.005,
         "captain_bonus_M": 0.025,
@@ -828,6 +890,7 @@
     "7272262": [
       {
         "round": 1,
+        "stage": 1,
         "value_M": 51.476,
         "rider_growth_M": 1.064,
         "captain_bonus_M": 0.29,
@@ -838,6 +901,7 @@
       },
       {
         "round": 2,
+        "stage": 2,
         "value_M": 52.551,
         "rider_growth_M": 1.039,
         "captain_bonus_M": 0.201,
@@ -848,6 +912,7 @@
       },
       {
         "round": 3,
+        "stage": 4,
         "value_M": 53.689,
         "rider_growth_M": 0.862,
         "captain_bonus_M": 0.674,
@@ -858,6 +923,7 @@
       },
       {
         "round": 4,
+        "stage": 5,
         "value_M": 54.626,
         "rider_growth_M": 0.958,
         "captain_bonus_M": 0.175,
@@ -868,6 +934,7 @@
       },
       {
         "round": 5,
+        "stage": 6,
         "value_M": 56.075,
         "rider_growth_M": 1.115,
         "captain_bonus_M": 0.563,
@@ -878,6 +945,7 @@
       },
       {
         "round": 6,
+        "stage": 7,
         "value_M": 56.589,
         "rider_growth_M": 0.453,
         "captain_bonus_M": 0.138,
@@ -888,6 +956,7 @@
       },
       {
         "round": 7,
+        "stage": 8,
         "value_M": 56.813,
         "rider_growth_M": 0.361,
         "captain_bonus_M": 0.101,
@@ -898,6 +967,7 @@
       },
       {
         "round": 8,
+        "stage": 9,
         "value_M": 57.607,
         "rider_growth_M": 0.98,
         "captain_bonus_M": 0.245,
@@ -908,6 +978,7 @@
       },
       {
         "round": 9,
+        "stage": 10,
         "value_M": 58.098,
         "rider_growth_M": 0.698,
         "captain_bonus_M": 0.202,
@@ -918,6 +989,7 @@
       },
       {
         "round": 10,
+        "stage": 11,
         "value_M": 60.043,
         "rider_growth_M": 1.454,
         "captain_bonus_M": 0.41,
@@ -928,6 +1000,7 @@
       },
       {
         "round": 11,
+        "stage": 12,
         "value_M": 60.305,
         "rider_growth_M": 0.455,
         "captain_bonus_M": 0.249,
@@ -938,6 +1011,7 @@
       },
       {
         "round": 12,
+        "stage": 13,
         "value_M": 61.293,
         "rider_growth_M": 0.726,
         "captain_bonus_M": 0.425,
@@ -948,6 +1022,7 @@
       },
       {
         "round": 13,
+        "stage": 14,
         "value_M": 61.99,
         "rider_growth_M": 0.561,
         "captain_bonus_M": 0.113,
@@ -958,6 +1033,7 @@
       },
       {
         "round": 14,
+        "stage": 15,
         "value_M": 62.408,
         "rider_growth_M": 0.758,
         "captain_bonus_M": 0.057,
@@ -968,6 +1044,7 @@
       },
       {
         "round": 15,
+        "stage": 16,
         "value_M": 63.745,
         "rider_growth_M": 1.146,
         "captain_bonus_M": 0.177,
@@ -978,6 +1055,7 @@
       },
       {
         "round": 16,
+        "stage": 17,
         "value_M": 65.565,
         "rider_growth_M": 1.321,
         "captain_bonus_M": 0.41,
@@ -988,6 +1066,7 @@
       },
       {
         "round": 17,
+        "stage": 18,
         "value_M": 67.065,
         "rider_growth_M": 1.403,
         "captain_bonus_M": 0.32,
@@ -998,6 +1077,7 @@
       },
       {
         "round": 18,
+        "stage": 19,
         "value_M": 67.246,
         "rider_growth_M": 0.491,
         "captain_bonus_M": 0.11,
@@ -1008,6 +1088,7 @@
       },
       {
         "round": 19,
+        "stage": 20,
         "value_M": 67.655,
         "rider_growth_M": 0.415,
         "captain_bonus_M": 0.162,
@@ -1018,6 +1099,7 @@
       },
       {
         "round": 20,
+        "stage": 21,
         "value_M": 68.115,
         "rider_growth_M": 0.673,
         "captain_bonus_M": 0.025,
@@ -1030,6 +1112,7 @@
     "7277732": [
       {
         "round": 1,
+        "stage": 1,
         "value_M": 51.298,
         "rider_growth_M": 1.285,
         "captain_bonus_M": 0.29,
@@ -1040,6 +1123,7 @@
       },
       {
         "round": 2,
+        "stage": 2,
         "value_M": 52.393,
         "rider_growth_M": 1.101,
         "captain_bonus_M": 0.201,
@@ -1050,6 +1134,7 @@
       },
       {
         "round": 3,
+        "stage": 4,
         "value_M": 53.198,
         "rider_growth_M": 0.588,
         "captain_bonus_M": 0.674,
@@ -1060,6 +1145,7 @@
       },
       {
         "round": 4,
+        "stage": 5,
         "value_M": 54.263,
         "rider_growth_M": 0.958,
         "captain_bonus_M": 0.35,
@@ -1070,6 +1156,7 @@
       },
       {
         "round": 5,
+        "stage": 6,
         "value_M": 55.716,
         "rider_growth_M": 1.145,
         "captain_bonus_M": 0.563,
@@ -1080,6 +1167,7 @@
       },
       {
         "round": 6,
+        "stage": 7,
         "value_M": 56.085,
         "rider_growth_M": 0.258,
         "captain_bonus_M": 0.138,
@@ -1090,6 +1178,7 @@
       },
       {
         "round": 7,
+        "stage": 8,
         "value_M": 56.307,
         "rider_growth_M": 0.361,
         "captain_bonus_M": 0.101,
@@ -1100,6 +1189,7 @@
       },
       {
         "round": 8,
+        "stage": 9,
         "value_M": 57.583,
         "rider_growth_M": 1.343,
         "captain_bonus_M": 0.245,
@@ -1110,6 +1200,7 @@
       },
       {
         "round": 9,
+        "stage": 10,
         "value_M": 57.741,
         "rider_growth_M": 0.443,
         "captain_bonus_M": 0.0,
@@ -1120,6 +1211,7 @@
       },
       {
         "round": 10,
+        "stage": 11,
         "value_M": 59.422,
         "rider_growth_M": 1.335,
         "captain_bonus_M": 0.41,
@@ -1130,6 +1222,7 @@
       },
       {
         "round": 11,
+        "stage": 12,
         "value_M": 60.513,
         "rider_growth_M": 1.086,
         "captain_bonus_M": 0.249,
@@ -1140,6 +1233,7 @@
       },
       {
         "round": 12,
+        "stage": 13,
         "value_M": 61.603,
         "rider_growth_M": 0.816,
         "captain_bonus_M": 0.425,
@@ -1150,6 +1244,7 @@
       },
       {
         "round": 13,
+        "stage": 14,
         "value_M": 62.2,
         "rider_growth_M": 0.694,
         "captain_bonus_M": 0.113,
@@ -1160,6 +1255,7 @@
       },
       {
         "round": 14,
+        "stage": 15,
         "value_M": 62.518,
         "rider_growth_M": 0.812,
         "captain_bonus_M": 0.057,
@@ -1170,6 +1266,7 @@
       },
       {
         "round": 15,
+        "stage": 16,
         "value_M": 64.315,
         "rider_growth_M": 1.307,
         "captain_bonus_M": 0.35,
@@ -1180,6 +1277,7 @@
       },
       {
         "round": 16,
+        "stage": 17,
         "value_M": 66.311,
         "rider_growth_M": 1.443,
         "captain_bonus_M": 0.41,
@@ -1190,6 +1288,7 @@
       },
       {
         "round": 17,
+        "stage": 18,
         "value_M": 67.773,
         "rider_growth_M": 1.403,
         "captain_bonus_M": 0.279,
@@ -1200,6 +1299,7 @@
       },
       {
         "round": 18,
+        "stage": 19,
         "value_M": 68.171,
         "rider_growth_M": 0.726,
         "captain_bonus_M": 0.11,
@@ -1210,6 +1310,7 @@
       },
       {
         "round": 19,
+        "stage": 20,
         "value_M": 68.783,
         "rider_growth_M": 0.48,
         "captain_bonus_M": 0.143,
@@ -1220,6 +1321,7 @@
       },
       {
         "round": 20,
+        "stage": 21,
         "value_M": 69.347,
         "rider_growth_M": 0.892,
         "captain_bonus_M": 0.025,
@@ -1232,6 +1334,7 @@
     "7281857": [
       {
         "round": 1,
+        "stage": 1,
         "value_M": 51.298,
         "rider_growth_M": 1.285,
         "captain_bonus_M": 0.29,
@@ -1242,6 +1345,7 @@
       },
       {
         "round": 2,
+        "stage": 2,
         "value_M": 52.379,
         "rider_growth_M": 1.02,
         "captain_bonus_M": 0.201,
@@ -1252,6 +1356,7 @@
       },
       {
         "round": 3,
+        "stage": 4,
         "value_M": 53.226,
         "rider_growth_M": 0.588,
         "captain_bonus_M": 0.674,
@@ -1262,6 +1367,7 @@
       },
       {
         "round": 4,
+        "stage": 5,
         "value_M": 54.335,
         "rider_growth_M": 0.947,
         "captain_bonus_M": 0.35,
@@ -1272,6 +1378,7 @@
       },
       {
         "round": 5,
+        "stage": 6,
         "value_M": 55.782,
         "rider_growth_M": 1.115,
         "captain_bonus_M": 0.563,
@@ -1282,6 +1389,7 @@
       },
       {
         "round": 6,
+        "stage": 7,
         "value_M": 56.151,
         "rider_growth_M": 0.249,
         "captain_bonus_M": 0.138,
@@ -1292,6 +1400,7 @@
       },
       {
         "round": 7,
+        "stage": 8,
         "value_M": 56.354,
         "rider_growth_M": 0.361,
         "captain_bonus_M": 0.101,
@@ -1302,6 +1411,7 @@
       },
       {
         "round": 8,
+        "stage": 9,
         "value_M": 57.635,
         "rider_growth_M": 1.379,
         "captain_bonus_M": 0.245,
@@ -1312,6 +1422,7 @@
       },
       {
         "round": 9,
+        "stage": 10,
         "value_M": 58.348,
         "rider_growth_M": 0.771,
         "captain_bonus_M": 0.202,
@@ -1322,6 +1433,7 @@
       },
       {
         "round": 10,
+        "stage": 11,
         "value_M": 60.014,
         "rider_growth_M": 1.346,
         "captain_bonus_M": 0.41,
@@ -1332,6 +1444,7 @@
       },
       {
         "round": 11,
+        "stage": 12,
         "value_M": 60.32,
         "rider_growth_M": 0.437,
         "captain_bonus_M": 0.249,
@@ -1342,6 +1455,7 @@
       },
       {
         "round": 12,
+        "stage": 13,
         "value_M": 61.347,
         "rider_growth_M": 0.801,
         "captain_bonus_M": 0.425,
@@ -1352,6 +1466,7 @@
       },
       {
         "round": 13,
+        "stage": 14,
         "value_M": 61.84,
         "rider_growth_M": 0.4,
         "captain_bonus_M": 0.113,
@@ -1362,6 +1477,7 @@
       },
       {
         "round": 14,
+        "stage": 15,
         "value_M": 62.817,
         "rider_growth_M": 0.868,
         "captain_bonus_M": 0.414,
@@ -1372,6 +1488,7 @@
       },
       {
         "round": 15,
+        "stage": 16,
         "value_M": 64.712,
         "rider_growth_M": 1.43,
         "captain_bonus_M": 0.35,
@@ -1382,6 +1499,7 @@
       },
       {
         "round": 16,
+        "stage": 17,
         "value_M": 66.704,
         "rider_growth_M": 1.437,
         "captain_bonus_M": 0.41,
@@ -1392,6 +1510,7 @@
       },
       {
         "round": 17,
+        "stage": 18,
         "value_M": 68.057,
         "rider_growth_M": 1.403,
         "captain_bonus_M": 0.168,
@@ -1402,6 +1521,7 @@
       },
       {
         "round": 18,
+        "stage": 19,
         "value_M": 68.456,
         "rider_growth_M": 0.726,
         "captain_bonus_M": 0.11,
@@ -1412,6 +1532,7 @@
       },
       {
         "round": 19,
+        "stage": 20,
         "value_M": 69.113,
         "rider_growth_M": 0.477,
         "captain_bonus_M": 0.143,
@@ -1422,6 +1543,7 @@
       },
       {
         "round": 20,
+        "stage": 21,
         "value_M": 69.584,
         "rider_growth_M": 0.824,
         "captain_bonus_M": 0.025,
@@ -1434,6 +1556,7 @@
     "7284407": [
       {
         "round": 1,
+        "stage": 1,
         "value_M": 50.74,
         "rider_growth_M": 0.828,
         "captain_bonus_M": 0.29,
@@ -1444,6 +1567,7 @@
       },
       {
         "round": 2,
+        "stage": 2,
         "value_M": 51.7,
         "rider_growth_M": 1.073,
         "captain_bonus_M": 0.207,
@@ -1454,6 +1578,7 @@
       },
       {
         "round": 3,
+        "stage": 4,
         "value_M": 52.515,
         "rider_growth_M": 0.591,
         "captain_bonus_M": 0.674,
@@ -1464,6 +1589,7 @@
       },
       {
         "round": 4,
+        "stage": 5,
         "value_M": 53.584,
         "rider_growth_M": 0.958,
         "captain_bonus_M": 0.35,
@@ -1474,6 +1600,7 @@
       },
       {
         "round": 5,
+        "stage": 6,
         "value_M": 54.794,
         "rider_growth_M": 0.894,
         "captain_bonus_M": 0.563,
@@ -1484,6 +1611,7 @@
       },
       {
         "round": 6,
+        "stage": 7,
         "value_M": 54.899,
         "rider_growth_M": 0.134,
         "captain_bonus_M": 0.138,
@@ -1494,6 +1622,7 @@
       },
       {
         "round": 7,
+        "stage": 8,
         "value_M": 55.562,
         "rider_growth_M": 1.029,
         "captain_bonus_M": 0.101,
@@ -1504,6 +1633,7 @@
       },
       {
         "round": 8,
+        "stage": 9,
         "value_M": 56.761,
         "rider_growth_M": 1.284,
         "captain_bonus_M": 0.245,
@@ -1514,6 +1644,7 @@
       },
       {
         "round": 9,
+        "stage": 10,
         "value_M": 57.331,
         "rider_growth_M": 0.958,
         "captain_bonus_M": 0.0,
@@ -1524,6 +1655,7 @@
       },
       {
         "round": 10,
+        "stage": 11,
         "value_M": 59.405,
         "rider_growth_M": 1.578,
         "captain_bonus_M": 0.41,
@@ -1534,6 +1666,7 @@
       },
       {
         "round": 11,
+        "stage": 12,
         "value_M": 60.436,
         "rider_growth_M": 1.215,
         "captain_bonus_M": 0.249,
@@ -1544,6 +1677,7 @@
       },
       {
         "round": 12,
+        "stage": 13,
         "value_M": 61.521,
         "rider_growth_M": 0.844,
         "captain_bonus_M": 0.425,
@@ -1554,6 +1688,7 @@
       },
       {
         "round": 13,
+        "stage": 14,
         "value_M": 62.359,
         "rider_growth_M": 0.936,
         "captain_bonus_M": 0.113,
@@ -1564,6 +1699,7 @@
       },
       {
         "round": 14,
+        "stage": 15,
         "value_M": 63.252,
         "rider_growth_M": 0.934,
         "captain_bonus_M": 0.414,
@@ -1574,6 +1710,7 @@
       },
       {
         "round": 15,
+        "stage": 16,
         "value_M": 64.94,
         "rider_growth_M": 1.269,
         "captain_bonus_M": 0.35,
@@ -1584,6 +1721,7 @@
       },
       {
         "round": 16,
+        "stage": 17,
         "value_M": 66.882,
         "rider_growth_M": 1.443,
         "captain_bonus_M": 0.41,
@@ -1594,6 +1732,7 @@
       },
       {
         "round": 17,
+        "stage": 18,
         "value_M": 68.389,
         "rider_growth_M": 1.403,
         "captain_bonus_M": 0.32,
@@ -1604,6 +1743,7 @@
       },
       {
         "round": 18,
+        "stage": 19,
         "value_M": 68.758,
         "rider_growth_M": 0.657,
         "captain_bonus_M": 0.11,
@@ -1614,6 +1754,7 @@
       },
       {
         "round": 19,
+        "stage": 20,
         "value_M": 69.115,
         "rider_growth_M": 0.364,
         "captain_bonus_M": 0.143,
@@ -1624,6 +1765,7 @@
       },
       {
         "round": 20,
+        "stage": 21,
         "value_M": 69.696,
         "rider_growth_M": 1.011,
         "captain_bonus_M": 0.025,
@@ -1636,6 +1778,7 @@
     "7285351": [
       {
         "round": 1,
+        "stage": 1,
         "value_M": 51.298,
         "rider_growth_M": 1.285,
         "captain_bonus_M": 0.29,
@@ -1646,6 +1789,7 @@
       },
       {
         "round": 2,
+        "stage": 2,
         "value_M": 52.379,
         "rider_growth_M": 1.02,
         "captain_bonus_M": 0.201,
@@ -1656,6 +1800,7 @@
       },
       {
         "round": 3,
+        "stage": 4,
         "value_M": 53.184,
         "rider_growth_M": 0.588,
         "captain_bonus_M": 0.674,
@@ -1666,6 +1811,7 @@
       },
       {
         "round": 4,
+        "stage": 5,
         "value_M": 54.274,
         "rider_growth_M": 0.958,
         "captain_bonus_M": 0.35,
@@ -1676,6 +1822,7 @@
       },
       {
         "round": 5,
+        "stage": 6,
         "value_M": 55.721,
         "rider_growth_M": 1.115,
         "captain_bonus_M": 0.563,
@@ -1686,6 +1833,7 @@
       },
       {
         "round": 6,
+        "stage": 7,
         "value_M": 56.233,
         "rider_growth_M": 0.453,
         "captain_bonus_M": 0.138,
@@ -1696,6 +1844,7 @@
       },
       {
         "round": 7,
+        "stage": 8,
         "value_M": 56.456,
         "rider_growth_M": 0.361,
         "captain_bonus_M": 0.101,
@@ -1706,6 +1855,7 @@
       },
       {
         "round": 8,
+        "stage": 9,
         "value_M": 57.737,
         "rider_growth_M": 1.379,
         "captain_bonus_M": 0.245,
@@ -1716,6 +1866,7 @@
       },
       {
         "round": 9,
+        "stage": 10,
         "value_M": 58.02,
         "rider_growth_M": 0.566,
         "captain_bonus_M": 0.0,
@@ -1726,6 +1877,7 @@
       },
       {
         "round": 10,
+        "stage": 11,
         "value_M": 59.811,
         "rider_growth_M": 1.346,
         "captain_bonus_M": 0.41,
@@ -1736,6 +1888,7 @@
       },
       {
         "round": 11,
+        "stage": 12,
         "value_M": 60.116,
         "rider_growth_M": 0.437,
         "captain_bonus_M": 0.249,
@@ -1746,6 +1899,7 @@
       },
       {
         "round": 12,
+        "stage": 13,
         "value_M": 61.142,
         "rider_growth_M": 0.801,
         "captain_bonus_M": 0.425,
@@ -1756,6 +1910,7 @@
       },
       {
         "round": 13,
+        "stage": 14,
         "value_M": 61.597,
         "rider_growth_M": 0.498,
         "captain_bonus_M": 0.113,
@@ -1766,6 +1921,7 @@
       },
       {
         "round": 14,
+        "stage": 15,
         "value_M": 61.913,
         "rider_growth_M": 0.812,
         "captain_bonus_M": 0.057,
@@ -1776,6 +1932,7 @@
       },
       {
         "round": 15,
+        "stage": 16,
         "value_M": 63.456,
         "rider_growth_M": 1.166,
         "captain_bonus_M": 0.35,
@@ -1786,6 +1943,7 @@
       },
       {
         "round": 16,
+        "stage": 17,
         "value_M": 65.397,
         "rider_growth_M": 1.391,
         "captain_bonus_M": 0.41,
@@ -1796,6 +1954,7 @@
       },
       {
         "round": 17,
+        "stage": 18,
         "value_M": 66.743,
         "rider_growth_M": 1.403,
         "captain_bonus_M": 0.168,
@@ -1806,6 +1965,7 @@
       },
       {
         "round": 18,
+        "stage": 19,
         "value_M": 67.065,
         "rider_growth_M": 0.624,
         "captain_bonus_M": 0.11,
@@ -1816,6 +1976,7 @@
       },
       {
         "round": 19,
+        "stage": 20,
         "value_M": 67.407,
         "rider_growth_M": 0.284,
         "captain_bonus_M": 0.143,
@@ -1826,6 +1987,7 @@
       },
       {
         "round": 20,
+        "stage": 21,
         "value_M": 68.02,
         "rider_growth_M": 0.96,
         "captain_bonus_M": 0.025,
@@ -1838,6 +2000,7 @@
     "7286644": [
       {
         "round": 1,
+        "stage": 1,
         "value_M": 51.453,
         "rider_growth_M": 1.041,
         "captain_bonus_M": 0.29,
@@ -1848,6 +2011,7 @@
       },
       {
         "round": 2,
+        "stage": 2,
         "value_M": 52.575,
         "rider_growth_M": 1.132,
         "captain_bonus_M": 0.201,
@@ -1858,6 +2022,7 @@
       },
       {
         "round": 3,
+        "stage": 4,
         "value_M": 53.456,
         "rider_growth_M": 0.683,
         "captain_bonus_M": 0.674,
@@ -1868,6 +2033,7 @@
       },
       {
         "round": 4,
+        "stage": 5,
         "value_M": 54.564,
         "rider_growth_M": 0.946,
         "captain_bonus_M": 0.35,
@@ -1878,6 +2044,7 @@
       },
       {
         "round": 5,
+        "stage": 6,
         "value_M": 56.106,
         "rider_growth_M": 1.202,
         "captain_bonus_M": 0.563,
@@ -1888,6 +2055,7 @@
       },
       {
         "round": 6,
+        "stage": 7,
         "value_M": 56.277,
         "rider_growth_M": 0.029,
         "captain_bonus_M": 0.138,
@@ -1898,6 +2066,7 @@
       },
       {
         "round": 7,
+        "stage": 8,
         "value_M": 57.656,
         "rider_growth_M": 1.429,
         "captain_bonus_M": 0.101,
@@ -1908,6 +2077,7 @@
       },
       {
         "round": 8,
+        "stage": 9,
         "value_M": 58.926,
         "rider_growth_M": 1.371,
         "captain_bonus_M": 0.245,
@@ -1918,6 +2088,7 @@
       },
       {
         "round": 9,
+        "stage": 10,
         "value_M": 59.361,
         "rider_growth_M": 0.649,
         "captain_bonus_M": 0.202,
@@ -1928,6 +2099,7 @@
       },
       {
         "round": 10,
+        "stage": 11,
         "value_M": 61.337,
         "rider_growth_M": 1.522,
         "captain_bonus_M": 0.41,
@@ -1938,6 +2110,7 @@
       },
       {
         "round": 11,
+        "stage": 12,
         "value_M": 62.098,
         "rider_growth_M": 0.952,
         "captain_bonus_M": 0.249,
@@ -1948,6 +2121,7 @@
       },
       {
         "round": 12,
+        "stage": 13,
         "value_M": 62.763,
         "rider_growth_M": 0.526,
         "captain_bonus_M": 0.425,
@@ -1958,6 +2132,7 @@
       },
       {
         "round": 13,
+        "stage": 14,
         "value_M": 63.272,
         "rider_growth_M": 0.677,
         "captain_bonus_M": 0.113,
@@ -1968,6 +2143,7 @@
       },
       {
         "round": 14,
+        "stage": 15,
         "value_M": 63.596,
         "rider_growth_M": 0.812,
         "captain_bonus_M": 0.057,
@@ -1978,6 +2154,7 @@
       },
       {
         "round": 15,
+        "stage": 16,
         "value_M": 65.398,
         "rider_growth_M": 1.307,
         "captain_bonus_M": 0.35,
@@ -1988,6 +2165,7 @@
       },
       {
         "round": 16,
+        "stage": 17,
         "value_M": 67.399,
         "rider_growth_M": 1.443,
         "captain_bonus_M": 0.41,
@@ -1998,6 +2176,7 @@
       },
       {
         "round": 17,
+        "stage": 18,
         "value_M": 68.756,
         "rider_growth_M": 1.403,
         "captain_bonus_M": 0.168,
@@ -2008,6 +2187,7 @@
       },
       {
         "round": 18,
+        "stage": 19,
         "value_M": 69.245,
         "rider_growth_M": 0.623,
         "captain_bonus_M": 0.283,
@@ -2018,6 +2198,7 @@
       },
       {
         "round": 19,
+        "stage": 20,
         "value_M": 69.549,
         "rider_growth_M": 0.364,
         "captain_bonus_M": 0.111,
@@ -2028,6 +2209,7 @@
       },
       {
         "round": 20,
+        "stage": 21,
         "value_M": 70.144,
         "rider_growth_M": 1.044,
         "captain_bonus_M": 0.025,
@@ -2040,6 +2222,7 @@
     "7287238": [
       {
         "round": 1,
+        "stage": 1,
         "value_M": 51.298,
         "rider_growth_M": 1.285,
         "captain_bonus_M": 0.29,
@@ -2050,6 +2233,7 @@
       },
       {
         "round": 2,
+        "stage": 2,
         "value_M": 52.341,
         "rider_growth_M": 1.07,
         "captain_bonus_M": 0.207,
@@ -2060,6 +2244,7 @@
       },
       {
         "round": 3,
+        "stage": 4,
         "value_M": 53.226,
         "rider_growth_M": 0.718,
         "captain_bonus_M": 0.674,
@@ -2070,6 +2255,7 @@
       },
       {
         "round": 4,
+        "stage": 5,
         "value_M": 54.273,
         "rider_growth_M": 0.947,
         "captain_bonus_M": 0.35,
@@ -2080,6 +2266,7 @@
       },
       {
         "round": 5,
+        "stage": 6,
         "value_M": 55.72,
         "rider_growth_M": 1.115,
         "captain_bonus_M": 0.563,
@@ -2090,6 +2277,7 @@
       },
       {
         "round": 6,
+        "stage": 7,
         "value_M": 56.088,
         "rider_growth_M": 0.249,
         "captain_bonus_M": 0.138,
@@ -2100,6 +2288,7 @@
       },
       {
         "round": 7,
+        "stage": 8,
         "value_M": 56.31,
         "rider_growth_M": 0.361,
         "captain_bonus_M": 0.101,
@@ -2110,6 +2299,7 @@
       },
       {
         "round": 8,
+        "stage": 9,
         "value_M": 57.586,
         "rider_growth_M": 1.343,
         "captain_bonus_M": 0.245,
@@ -2120,6 +2310,7 @@
       },
       {
         "round": 9,
+        "stage": 10,
         "value_M": 57.777,
         "rider_growth_M": 0.526,
         "captain_bonus_M": 0.0,
@@ -2130,6 +2321,7 @@
       },
       {
         "round": 10,
+        "stage": 11,
         "value_M": 59.627,
         "rider_growth_M": 1.456,
         "captain_bonus_M": 0.41,
@@ -2140,6 +2332,7 @@
       },
       {
         "round": 11,
+        "stage": 12,
         "value_M": 60.845,
         "rider_growth_M": 1.284,
         "captain_bonus_M": 0.249,
@@ -2150,6 +2343,7 @@
       },
       {
         "round": 12,
+        "stage": 13,
         "value_M": 61.922,
         "rider_growth_M": 0.778,
         "captain_bonus_M": 0.425,
@@ -2160,6 +2354,7 @@
       },
       {
         "round": 13,
+        "stage": 14,
         "value_M": 62.942,
         "rider_growth_M": 1.017,
         "captain_bonus_M": 0.113,
@@ -2170,6 +2365,7 @@
       },
       {
         "round": 14,
+        "stage": 15,
         "value_M": 63.42,
         "rider_growth_M": 0.934,
         "captain_bonus_M": 0.057,
@@ -2180,6 +2376,7 @@
       },
       {
         "round": 15,
+        "stage": 16,
         "value_M": 65.106,
         "rider_growth_M": 1.271,
         "captain_bonus_M": 0.35,
@@ -2190,6 +2387,7 @@
       },
       {
         "round": 16,
+        "stage": 17,
         "value_M": 66.942,
         "rider_growth_M": 1.358,
         "captain_bonus_M": 0.41,
@@ -2200,6 +2398,7 @@
       },
       {
         "round": 17,
+        "stage": 18,
         "value_M": 68.713,
         "rider_growth_M": 1.613,
         "captain_bonus_M": 0.168,
@@ -2210,6 +2409,7 @@
       },
       {
         "round": 18,
+        "stage": 19,
         "value_M": 68.997,
         "rider_growth_M": 0.519,
         "captain_bonus_M": 0.11,
@@ -2220,6 +2420,7 @@
       },
       {
         "round": 19,
+        "stage": 20,
         "value_M": 69.347,
         "rider_growth_M": 0.348,
         "captain_bonus_M": 0.143,
@@ -2230,6 +2431,7 @@
       },
       {
         "round": 20,
+        "stage": 21,
         "value_M": 69.879,
         "rider_growth_M": 0.842,
         "captain_bonus_M": 0.025,
@@ -2242,6 +2444,7 @@
     "7295230": [
       {
         "round": 1,
+        "stage": 1,
         "value_M": 51.298,
         "rider_growth_M": 1.285,
         "captain_bonus_M": 0.29,
@@ -2252,6 +2455,7 @@
       },
       {
         "round": 2,
+        "stage": 2,
         "value_M": 52.379,
         "rider_growth_M": 1.02,
         "captain_bonus_M": 0.201,
@@ -2262,6 +2466,7 @@
       },
       {
         "round": 3,
+        "stage": 4,
         "value_M": 53.322,
         "rider_growth_M": 0.718,
         "captain_bonus_M": 0.674,
@@ -2272,6 +2477,7 @@
       },
       {
         "round": 4,
+        "stage": 5,
         "value_M": 54.332,
         "rider_growth_M": 0.887,
         "captain_bonus_M": 0.35,
@@ -2282,6 +2488,7 @@
       },
       {
         "round": 5,
+        "stage": 6,
         "value_M": 55.861,
         "rider_growth_M": 1.196,
         "captain_bonus_M": 0.563,
@@ -2292,6 +2499,7 @@
       },
       {
         "round": 6,
+        "stage": 7,
         "value_M": 56.215,
         "rider_growth_M": 0.21,
         "captain_bonus_M": 0.138,
@@ -2302,6 +2510,7 @@
       },
       {
         "round": 7,
+        "stage": 8,
         "value_M": 56.437,
         "rider_growth_M": 0.361,
         "captain_bonus_M": 0.101,
@@ -2312,6 +2521,7 @@
       },
       {
         "round": 8,
+        "stage": 9,
         "value_M": 57.631,
         "rider_growth_M": 1.26,
         "captain_bonus_M": 0.245,
@@ -2322,6 +2532,7 @@
       },
       {
         "round": 9,
+        "stage": 10,
         "value_M": 57.837,
         "rider_growth_M": 0.474,
         "captain_bonus_M": 0.0,
@@ -2332,6 +2543,7 @@
       },
       {
         "round": 10,
+        "stage": 11,
         "value_M": 59.378,
         "rider_growth_M": 1.095,
         "captain_bonus_M": 0.41,
@@ -2342,6 +2554,7 @@
       },
       {
         "round": 11,
+        "stage": 12,
         "value_M": 60.529,
         "rider_growth_M": 1.267,
         "captain_bonus_M": 0.193,
@@ -2352,6 +2565,7 @@
       },
       {
         "round": 12,
+        "stage": 13,
         "value_M": 61.486,
         "rider_growth_M": 0.693,
         "captain_bonus_M": 0.425,
@@ -2362,6 +2576,7 @@
       },
       {
         "round": 13,
+        "stage": 14,
         "value_M": 62.232,
         "rider_growth_M": 0.807,
         "captain_bonus_M": 0.113,
@@ -2372,6 +2587,7 @@
       },
       {
         "round": 14,
+        "stage": 15,
         "value_M": 62.551,
         "rider_growth_M": 0.812,
         "captain_bonus_M": 0.057,
@@ -2382,6 +2598,7 @@
       },
       {
         "round": 15,
+        "stage": 16,
         "value_M": 64.348,
         "rider_growth_M": 1.307,
         "captain_bonus_M": 0.35,
@@ -2392,6 +2609,7 @@
       },
       {
         "round": 16,
+        "stage": 17,
         "value_M": 66.344,
         "rider_growth_M": 1.443,
         "captain_bonus_M": 0.41,
@@ -2402,6 +2620,7 @@
       },
       {
         "round": 17,
+        "stage": 18,
         "value_M": 67.695,
         "rider_growth_M": 1.403,
         "captain_bonus_M": 0.168,
@@ -2412,6 +2631,7 @@
       },
       {
         "round": 18,
+        "stage": 19,
         "value_M": 68.056,
         "rider_growth_M": 0.515,
         "captain_bonus_M": 0.283,
@@ -2422,6 +2642,7 @@
       },
       {
         "round": 19,
+        "stage": 20,
         "value_M": 68.714,
         "rider_growth_M": 0.449,
         "captain_bonus_M": 0.143,
@@ -2432,6 +2653,7 @@
       },
       {
         "round": 20,
+        "stage": 21,
         "value_M": 69.333,
         "rider_growth_M": 0.96,
         "captain_bonus_M": 0.025,
@@ -2444,6 +2666,7 @@
     "7301538": [
       {
         "round": 1,
+        "stage": 1,
         "value_M": 51.672,
         "rider_growth_M": 1.159,
         "captain_bonus_M": 0.29,
@@ -2454,6 +2677,7 @@
       },
       {
         "round": 2,
+        "stage": 2,
         "value_M": 52.73,
         "rider_growth_M": 1.056,
         "captain_bonus_M": 0.207,
@@ -2464,6 +2688,7 @@
       },
       {
         "round": 3,
+        "stage": 4,
         "value_M": 53.52,
         "rider_growth_M": 0.588,
         "captain_bonus_M": 0.674,
@@ -2474,6 +2699,7 @@
       },
       {
         "round": 4,
+        "stage": 5,
         "value_M": 54.613,
         "rider_growth_M": 0.947,
         "captain_bonus_M": 0.35,
@@ -2484,6 +2710,7 @@
       },
       {
         "round": 5,
+        "stage": 6,
         "value_M": 56.004,
         "rider_growth_M": 1.058,
         "captain_bonus_M": 0.563,
@@ -2494,6 +2721,7 @@
       },
       {
         "round": 6,
+        "stage": 7,
         "value_M": 56.366,
         "rider_growth_M": 0.265,
         "captain_bonus_M": 0.138,
@@ -2504,6 +2732,7 @@
       },
       {
         "round": 7,
+        "stage": 8,
         "value_M": 57.261,
         "rider_growth_M": 1.119,
         "captain_bonus_M": 0.101,
@@ -2514,6 +2743,7 @@
       },
       {
         "round": 8,
+        "stage": 9,
         "value_M": 58.727,
         "rider_growth_M": 1.391,
         "captain_bonus_M": 0.245,
@@ -2524,6 +2754,7 @@
       },
       {
         "round": 9,
+        "stage": 10,
         "value_M": 59.014,
         "rider_growth_M": 0.566,
         "captain_bonus_M": 0.0,
@@ -2534,6 +2765,7 @@
       },
       {
         "round": 10,
+        "stage": 11,
         "value_M": 60.81,
         "rider_growth_M": 1.346,
         "captain_bonus_M": 0.41,
@@ -2544,6 +2776,7 @@
       },
       {
         "round": 11,
+        "stage": 12,
         "value_M": 61.377,
         "rider_growth_M": 0.597,
         "captain_bonus_M": 0.249,
@@ -2554,6 +2787,7 @@
       },
       {
         "round": 12,
+        "stage": 13,
         "value_M": 62.393,
         "rider_growth_M": 0.734,
         "captain_bonus_M": 0.425,
@@ -2564,6 +2798,7 @@
       },
       {
         "round": 13,
+        "stage": 14,
         "value_M": 63.025,
         "rider_growth_M": 0.703,
         "captain_bonus_M": 0.113,
@@ -2574,6 +2809,7 @@
       },
       {
         "round": 14,
+        "stage": 15,
         "value_M": 63.348,
         "rider_growth_M": 0.812,
         "captain_bonus_M": 0.057,
@@ -2584,6 +2820,7 @@
       },
       {
         "round": 15,
+        "stage": 16,
         "value_M": 65.149,
         "rider_growth_M": 1.307,
         "captain_bonus_M": 0.35,
@@ -2594,6 +2831,7 @@
       },
       {
         "round": 16,
+        "stage": 17,
         "value_M": 67.28,
         "rider_growth_M": 1.531,
         "captain_bonus_M": 0.41,
@@ -2604,6 +2842,7 @@
       },
       {
         "round": 17,
+        "stage": 18,
         "value_M": 68.636,
         "rider_growth_M": 1.403,
         "captain_bonus_M": 0.168,
@@ -2614,6 +2853,7 @@
       },
       {
         "round": 18,
+        "stage": 19,
         "value_M": 69.01,
         "rider_growth_M": 0.686,
         "captain_bonus_M": 0.11,
@@ -2624,6 +2864,7 @@
       },
       {
         "round": 19,
+        "stage": 20,
         "value_M": 69.699,
         "rider_growth_M": 0.607,
         "captain_bonus_M": 0.143,
@@ -2634,6 +2875,7 @@
       },
       {
         "round": 20,
+        "stage": 21,
         "value_M": 70.287,
         "rider_growth_M": 0.813,
         "captain_bonus_M": 0.025,
@@ -2646,6 +2888,7 @@
     "7301959": [
       {
         "round": 1,
+        "stage": 1,
         "value_M": 51.298,
         "rider_growth_M": 1.285,
         "captain_bonus_M": 0.29,
@@ -2656,6 +2899,7 @@
       },
       {
         "round": 2,
+        "stage": 2,
         "value_M": 52.379,
         "rider_growth_M": 1.02,
         "captain_bonus_M": 0.201,
@@ -2666,6 +2910,7 @@
       },
       {
         "round": 3,
+        "stage": 4,
         "value_M": 53.322,
         "rider_growth_M": 0.718,
         "captain_bonus_M": 0.674,
@@ -2676,6 +2921,7 @@
       },
       {
         "round": 4,
+        "stage": 5,
         "value_M": 54.332,
         "rider_growth_M": 0.887,
         "captain_bonus_M": 0.35,
@@ -2686,6 +2932,7 @@
       },
       {
         "round": 5,
+        "stage": 6,
         "value_M": 55.78,
         "rider_growth_M": 1.115,
         "captain_bonus_M": 0.563,
@@ -2696,6 +2943,7 @@
       },
       {
         "round": 6,
+        "stage": 7,
         "value_M": 56.161,
         "rider_growth_M": 0.237,
         "captain_bonus_M": 0.138,
@@ -2706,6 +2954,7 @@
       },
       {
         "round": 7,
+        "stage": 8,
         "value_M": 56.638,
         "rider_growth_M": 0.643,
         "captain_bonus_M": 0.101,
@@ -2716,6 +2965,7 @@
       },
       {
         "round": 8,
+        "stage": 9,
         "value_M": 57.93,
         "rider_growth_M": 1.391,
         "captain_bonus_M": 0.245,
@@ -2726,6 +2976,7 @@
       },
       {
         "round": 9,
+        "stage": 10,
         "value_M": 58.213,
         "rider_growth_M": 0.566,
         "captain_bonus_M": 0.0,
@@ -2736,6 +2987,7 @@
       },
       {
         "round": 10,
+        "stage": 11,
         "value_M": 60.006,
         "rider_growth_M": 1.346,
         "captain_bonus_M": 0.41,
@@ -2746,6 +2998,7 @@
       },
       {
         "round": 11,
+        "stage": 12,
         "value_M": 60.73,
         "rider_growth_M": 0.8,
         "captain_bonus_M": 0.249,
@@ -2756,6 +3009,7 @@
       },
       {
         "round": 12,
+        "stage": 13,
         "value_M": 61.801,
         "rider_growth_M": 0.848,
         "captain_bonus_M": 0.425,
@@ -2766,6 +3020,7 @@
       },
       {
         "round": 13,
+        "stage": 14,
         "value_M": 62.685,
         "rider_growth_M": 0.874,
         "captain_bonus_M": 0.113,
@@ -2776,6 +3031,7 @@
       },
       {
         "round": 14,
+        "stage": 15,
         "value_M": 63.296,
         "rider_growth_M": 0.934,
         "captain_bonus_M": 0.057,
@@ -2786,6 +3042,7 @@
       },
       {
         "round": 15,
+        "stage": 16,
         "value_M": 64.982,
         "rider_growth_M": 1.271,
         "captain_bonus_M": 0.35,
@@ -2796,6 +3053,7 @@
       },
       {
         "round": 16,
+        "stage": 17,
         "value_M": 66.817,
         "rider_growth_M": 1.358,
         "captain_bonus_M": 0.41,
@@ -2806,6 +3064,7 @@
       },
       {
         "round": 17,
+        "stage": 18,
         "value_M": 68.275,
         "rider_growth_M": 1.403,
         "captain_bonus_M": 0.168,
@@ -2816,6 +3075,7 @@
       },
       {
         "round": 18,
+        "stage": 19,
         "value_M": 68.877,
         "rider_growth_M": 0.743,
         "captain_bonus_M": 0.283,
@@ -2826,6 +3086,7 @@
       },
       {
         "round": 19,
+        "stage": 20,
         "value_M": 69.278,
         "rider_growth_M": 0.364,
         "captain_bonus_M": 0.143,
@@ -2836,6 +3097,7 @@
       },
       {
         "round": 20,
+        "stage": 21,
         "value_M": 69.619,
         "rider_growth_M": 0.552,
         "captain_bonus_M": 0.025,
@@ -2848,6 +3110,7 @@
     "7303859": [
       {
         "round": 1,
+        "stage": 1,
         "value_M": 51.122,
         "rider_growth_M": 0.765,
         "captain_bonus_M": 0.29,
@@ -2858,6 +3121,7 @@
       },
       {
         "round": 2,
+        "stage": 2,
         "value_M": 52.078,
         "rider_growth_M": 0.885,
         "captain_bonus_M": 0.201,
@@ -2868,6 +3132,7 @@
       },
       {
         "round": 3,
+        "stage": 4,
         "value_M": 52.962,
         "rider_growth_M": 0.674,
         "captain_bonus_M": 0.674,
@@ -2878,6 +3143,7 @@
       },
       {
         "round": 4,
+        "stage": 5,
         "value_M": 54.058,
         "rider_growth_M": 0.958,
         "captain_bonus_M": 0.35,
@@ -2888,6 +3154,7 @@
       },
       {
         "round": 5,
+        "stage": 6,
         "value_M": 55.276,
         "rider_growth_M": 0.896,
         "captain_bonus_M": 0.563,
@@ -2898,6 +3165,7 @@
       },
       {
         "round": 6,
+        "stage": 7,
         "value_M": 55.248,
         "rider_growth_M": -0.046,
         "captain_bonus_M": 0.138,
@@ -2908,6 +3176,7 @@
       },
       {
         "round": 7,
+        "stage": 8,
         "value_M": 56.267,
         "rider_growth_M": 1.135,
         "captain_bonus_M": 0.101,
@@ -2918,6 +3187,7 @@
       },
       {
         "round": 8,
+        "stage": 9,
         "value_M": 57.404,
         "rider_growth_M": 1.205,
         "captain_bonus_M": 0.245,
@@ -2928,6 +3198,7 @@
       },
       {
         "round": 9,
+        "stage": 10,
         "value_M": 57.916,
         "rider_growth_M": 0.685,
         "captain_bonus_M": 0.202,
@@ -2938,6 +3209,7 @@
       },
       {
         "round": 10,
+        "stage": 11,
         "value_M": 59.725,
         "rider_growth_M": 1.507,
         "captain_bonus_M": 0.41,
@@ -2948,6 +3220,7 @@
       },
       {
         "round": 11,
+        "stage": 12,
         "value_M": 60.891,
         "rider_growth_M": 1.284,
         "captain_bonus_M": 0.249,
@@ -2958,6 +3231,7 @@
       },
       {
         "round": 12,
+        "stage": 13,
         "value_M": 61.846,
         "rider_growth_M": 0.682,
         "captain_bonus_M": 0.425,
@@ -2968,6 +3242,7 @@
       },
       {
         "round": 13,
+        "stage": 14,
         "value_M": 62.803,
         "rider_growth_M": 1.017,
         "captain_bonus_M": 0.113,
@@ -2978,6 +3253,7 @@
       },
       {
         "round": 14,
+        "stage": 15,
         "value_M": 63.484,
         "rider_growth_M": 0.812,
         "captain_bonus_M": 0.414,
@@ -2988,6 +3264,7 @@
       },
       {
         "round": 15,
+        "stage": 16,
         "value_M": 65.286,
         "rider_growth_M": 1.307,
         "captain_bonus_M": 0.35,
@@ -2998,6 +3275,7 @@
       },
       {
         "round": 16,
+        "stage": 17,
         "value_M": 67.286,
         "rider_growth_M": 1.443,
         "captain_bonus_M": 0.41,
@@ -3008,6 +3286,7 @@
       },
       {
         "round": 17,
+        "stage": 18,
         "value_M": 68.753,
         "rider_growth_M": 1.403,
         "captain_bonus_M": 0.279,
@@ -3018,6 +3297,7 @@
       },
       {
         "round": 18,
+        "stage": 19,
         "value_M": 69.221,
         "rider_growth_M": 0.771,
         "captain_bonus_M": 0.11,
@@ -3028,6 +3308,7 @@
       },
       {
         "round": 19,
+        "stage": 20,
         "value_M": 69.601,
         "rider_growth_M": 0.288,
         "captain_bonus_M": 0.143,
@@ -3038,6 +3319,7 @@
       },
       {
         "round": 20,
+        "stage": 21,
         "value_M": 70.073,
         "rider_growth_M": 0.929,
         "captain_bonus_M": 0.025,

@@ -52,16 +52,40 @@ RACES = {
 RULE_TOP15 = 1795          # markør-regel: rytteren var i etapens top 15
 
 
+def round_to_stage(H):
+    """Holdets runde-nr -> løbets RIGTIGE etapenummer.
+
+    Vuelta 2026 havde 21 etaper, men Holdet kørte kun 20 runder: etape 3 indgår
+    ikke i spillet, så event-rækkefølgen (og dermed runde-nummeret) forskydes
+    fra etape 4 og frem. Det rigtige nummer står i eventets navn ("4. Etape -
+    …"), så det læses derfra i stedet for at antage at runde N = etape N.
+    """
+    sched = json.loads((H / "reference/schedule.json").read_text())
+    emb = sched["_embedded"]["events"]
+    order = [eid for eid in sched["events"]]
+    out = {}
+    for idx, eid in enumerate(order, 1):
+        nm = emb.get(str(eid), {}).get("name", "")
+        m = re.match(r"\s*(\d+)\.", nm)
+        out[idx] = int(m.group(1)) if m else idx
+    return out
+
+
 def load_actions(H):
-    """-> ({stage: {personId: kr}}, {stage: set(personId i top15)})"""
+    """-> ({runde: {personId: kr}}, {runde: set(personId i top15)})
+
+    Nøglet på Holdets runde-index (filernes rækkefølge), som er det lineup-
+    snapshottene bruger. Oversættelse til rigtige etapenumre sker via
+    round_to_stage() når der skal vises noget.
+    """
     growth = collections.defaultdict(lambda: collections.defaultdict(int))
     top15 = collections.defaultdict(set)
     for f in sorted(glob.glob(str(H / "fantasy_actions" / "*.json"))):
-        stage = int(re.search(r"stage_(\d+)_", f).group(1))
+        rnd = int(re.search(r"stage_(\d+)_", f).group(1))
         for it in json.loads(Path(f).read_text()).get("items", []):
-            growth[stage][it["personId"]] += it["amount"] * it["unitPriceChange"]
+            growth[rnd][it["personId"]] += it["amount"] * it["unitPriceChange"]
             if it["ruleId"] == RULE_TOP15:
-                top15[stage].add(it["personId"])
+                top15[rnd].add(it["personId"])
     return growth, top15
 
 
@@ -98,7 +122,7 @@ def team_rounds(H, tid, pl2pe):
     return out
 
 
-def simulate(rounds, growth, top15, start, rules):
+def simulate(rounds, growth, top15, start, rules, r2s):
     """Kør Holdets regnestykke runde for runde."""
     etapebonus = {int(k): v for k, v in rules["etapebonus"].items()}
     fee_pct = rules["transfer_fee_pct"]
@@ -149,7 +173,7 @@ def simulate(rounds, growth, top15, start, rules):
 
         value = sum(price.get(pe, 0) for pe in roster) + bank
         per_round.append({
-            "round": rnd, "value_M": round(value / 1e6, 3),
+            "round": rnd, "stage": r2s.get(rnd, rnd), "value_M": round(value / 1e6, 3),
             "rider_growth_M": round(rider_growth / 1e6, 3),
             "captain_bonus_M": round(cap_bonus / 1e6, 3),
             "stage_bonus_M": round(sb / 1e6, 3), "top15": n_top15,
@@ -178,6 +202,7 @@ def main():
 
     rules = json.loads(cfg["rules"].read_text())
     growth, top15 = load_actions(H)
+    r2s = round_to_stage(H)
     pl2pe, start, final, name = load_players(H)
 
     # Kontrol: startpris + al bogført vækst skal ramme Holdets egen slutpris.
@@ -190,7 +215,7 @@ def main():
 
     teams = {}
     for tid in sorted(int(t) for t in os.listdir(H / "teams")):
-        teams[tid] = simulate(team_rounds(H, tid, pl2pe), growth, top15, start, rules)
+        teams[tid] = simulate(team_rounds(H, tid, pl2pe), growth, top15, start, rules, r2s)
         teams[tid]["label"] = cfg["labels"].get(tid, "top-10")
 
     ranking = sorted(teams.items(), key=lambda kv: -kv[1]["final_value_M"])
@@ -198,7 +223,9 @@ def main():
         "note": "Faktisk holdværdi rekonstrueret af Holdets egne fantasy-actions "
                 "(ruleId × amount × unitPriceChange) + officielle regler for "
                 "transfergebyr, etapebonus, kaptajnbonus og bankrente. "
-                "Dækker etape 1-20 (runde 21's lineup var ikke tilgængelig).",
+                "Holdet kørte 20 runder; etape 3 indgik ikke i spillet, så "
+                "'stage' i per_round er løbets rigtige etapenummer, ikke runde-nummeret.",
+        "round_to_stage": {str(k): v for k, v in r2s.items()},
         "ranking": [{"team_id": t, "label": v["label"], "final_value_M": v["final_value_M"],
                      "transfers": v["transfers"], "fees_M": v["fees_M"],
                      "captain_bonus_M": v["captain_bonus_M"],
