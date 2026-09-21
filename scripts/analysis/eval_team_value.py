@@ -44,7 +44,8 @@ RACES = {
         "holdet_dir": ROOT / "data/sources/vuelta2026/holdet",
         "rules": ROOT / "data/scoring_rules.json",
         "labels": {7271757: "os (Anders)", 7272262: "Kasper",
-                   7285351: "optakt (TheFantasyTool)"},
+                   7285351: "optakt (TheFantasyTool)",
+                   7280380: "optakt (Feltet.dk)"},
         "out": ROOT / "data/analysis/team_value_vuelta.json",
     },
 }

@@ -66,6 +66,7 @@ RACE_DEFAULTS = {
             7271757: "os (Anders)",
             7272262: "Kasper",
             7285351: "optakt-skribent (TheFantasyTool)",
+            7280380: "optakt-skribent (Feltet.dk)",
         },
     },
 }
