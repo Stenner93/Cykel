@@ -69,15 +69,15 @@
     "pts": 1446.0,
     "name": "SKJELMOSE Mattias"
   },
-  "mauro-schmid": {
-    "rank": 15,
-    "pts": 1418.0,
-    "name": "SCHMID Mauro"
-  },
   "felix-gall": {
-    "rank": 16,
+    "rank": 15,
     "pts": 1404.0,
     "name": "GALL Felix"
+  },
+  "mauro-schmid": {
+    "rank": 16,
+    "pts": 1373.0,
+    "name": "SCHMID Mauro"
   },
   "mathieu-van-der-poel": {
     "rank": 17,
@@ -234,20 +234,20 @@
     "pts": 786.0,
     "name": "YATES Adam"
   },
-  "alex-baudin": {
-    "rank": 48,
-    "pts": 786.0,
-    "name": "BAUDIN Alex"
-  },
   "dylan-groenewegen": {
-    "rank": 49,
+    "rank": 48,
     "pts": 785.0,
     "name": "GROENEWEGEN Dylan"
   },
   "egan-bernal": {
-    "rank": 50,
+    "rank": 49,
     "pts": 780.0,
     "name": "BERNAL Egan"
+  },
+  "alex-baudin": {
+    "rank": 50,
+    "pts": 777.0,
+    "name": "BAUDIN Alex"
   },
   "alessandro-fancellu": {
     "rank": 51,
@@ -299,30 +299,30 @@
     "pts": 740.0,
     "name": "HINDLEY Jai"
   },
-  "brandon-mcnulty": {
-    "rank": 61,
-    "pts": 734.0,
-    "name": "MCNULTY Brandon"
-  },
   "kevin-vauquelin": {
-    "rank": 62,
+    "rank": 61,
     "pts": 715.0,
     "name": "VAUQUELIN Kévin"
   },
   "quinn-simmons": {
-    "rank": 63,
+    "rank": 62,
     "pts": 701.0,
     "name": "SIMMONS Quinn"
   },
   "biniam-girmay": {
-    "rank": 64,
+    "rank": 63,
     "pts": 689.0,
     "name": "GIRMAY Biniam"
   },
   "clement-venturini": {
-    "rank": 65,
+    "rank": 64,
     "pts": 688.0,
     "name": "VENTURINI Clément"
+  },
+  "brandon-mcnulty": {
+    "rank": 65,
+    "pts": 684.0,
+    "name": "MCNULTY Brandon"
   },
   "milan-fretin": {
     "rank": 66,
@@ -354,35 +354,35 @@
     "pts": 643.0,
     "name": "ARRIETA Igor"
   },
-  "filippo-zana": {
-    "rank": 72,
-    "pts": 634.0,
-    "name": "ZANA Filippo"
-  },
   "mathias-vacek": {
-    "rank": 73,
+    "rank": 72,
     "pts": 634.0,
     "name": "VACEK Mathias"
   },
   "matthew-riccitello": {
-    "rank": 74,
+    "rank": 73,
     "pts": 634.0,
     "name": "RICCITELLO Matthew"
   },
   "pello-bilbao": {
-    "rank": 75,
+    "rank": 74,
     "pts": 632.0,
     "name": "BILBAO Pello"
   },
   "andreas-leknessund": {
-    "rank": 76,
+    "rank": 75,
     "pts": 624.0,
     "name": "LEKNESSUND Andreas"
   },
   "ben-tulett": {
-    "rank": 77,
+    "rank": 76,
     "pts": 623.0,
     "name": "TULETT Ben"
+  },
+  "filippo-zana": {
+    "rank": 77,
+    "pts": 620.0,
+    "name": "ZANA Filippo"
   },
   "derek-gee": {
     "rank": 78,
