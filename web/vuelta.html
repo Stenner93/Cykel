@@ -511,35 +511,14 @@
 
   <!-- ══════════ KOMMENDE FANER ══════════ -->
   <section class="panel" id="p-matrix" role="tabpanel" aria-labelledby="t-matrix" hidden>
-    <div class="eyebrow">Pointoversigt · etape × placering</div>
-    <h2 class="sec">Hvad gav placeringen faktisk?</h2>
-    <p class="sec-sub">Det Holdet <b>rent faktisk udbetalte</b> til rytteren på hver måplacering, etape for etape, taget
-      direkte fra spillets egen bogføring. Alle tal i kroner ("k" = tusind kr). Klik på en sektions-overskrift for at folde
-      den ud fra top-3 til alle 15 pladser. <b>Vinderens nedbrydning</b> yderst til højre viser hvor pengene kom fra.</p>
-    <div class="pm-scroll">
-      <table class="pm-tbl">
-        <thead>
-          <tr class="g" id="pmActGroupRow"></tr>
-          <tr id="pmActHeadRow"></tr>
-        </thead>
-        <tbody id="pmActualBody"><tr><td colspan="2">Henter…</td></tr></tbody>
-      </table>
-    </div>
-    <p class="note"><b>Holdbonussen er reelt garanteret for vinderen</b> — hans eget hold vinder jo etapens holdbonus, så
-      alle 20 etapevindere fik mindst 60k oveni. Derfor er en etapesejr i praksis 320-350k på en "almindelig" dag, ikke
-      260-290k. Det matcher optakternes egne tal ("350.000 til etapesejren" skrev Feltet.dk på 7. og 8. etape, og Simon
-      "kun 350.000 til etapevinderen" på 10.). Har holdet to ryttere i top 3, får de <b>begge</b> holdbonusser — fx fik
-      Eddie Dunbars hold både 60k og 20k på 19. etape. Toppen er højere endnu når trøjer, klassement og mest angrebsivrige
-      falder sammen: Pogačar fik 674k på 4. etape.</p>
-
-    <div class="eyebrow" style="margin-top:26px">Teoretisk skema · den placeringsafhængige del</div>
-    <h2 class="sec">Hvad en placering <em>kan</em> give</h2>
-    <p class="sec-sub">Planlægningstabellen: etapeplaceringens grundværdi plus sprint- og KOM-point, som de ser ud på
-      forhånd. Klassifikationspointene er TheFantasyTools tabel, grundværdien fra holdet.dk's officielle regler.
-      Dette er et <b>maksimum for den placeringsafhængige del</b> — "Total — Combined" forudsætter at man både vinder
-      etapen og er først ved hver eneste undervejs-spurt og -stigning — og den udelader de betingede bonusser
-      (holdbonus, trøjer, klassement, mest angrebsivrige). Brug tabellen ovenfor til hvad det rent faktisk blev til.
-      "Climbs" viser stigningskategorier (1 = hårdest af de almindelige, 3 = lettest, HC = hors catégorie).</p>
+    <div class="eyebrow">Pointoversigt · beregnet af ruten</div>
+    <h2 class="sec">Hvad er en placering værd på hver etape?</h2>
+    <p class="sec-sub">Beregnet <b>på forhånd</b> ud fra ruten alene — etapens officielle kategori, de kategoriserede
+      stigninger og antal indlagte spurter — plus holdet.dk's regler. Ingen resultatdata indgår, så samme tabel kan
+      bygges til næste Grand Tour så snart løbsbogen er ude. Alle tal i kroner ("k" = tusind kr); klik på en
+      sektions-overskrift for at folde den ud fra top-3 til alle 15 pladser.
+      Kilde: <span class="mono">data/routes/vuelta2026.json</span> →
+      <span class="mono">scripts/analysis/build_prospective_points.py</span>.</p>
     <div class="pm-scroll">
       <table class="pm-tbl">
         <thead>
@@ -549,6 +528,43 @@
         <tbody id="pmScheduleBody"><tr><td colspan="2">Henter…</td></tr></tbody>
       </table>
     </div>
+    <p class="note"><b>Total — Combined er et loft</b>, ikke en forventning: det forudsætter at man både vinder etapen
+      og er først ved hver eneste indlagt spurt og stigning. Til gengæld mangler der noget nedad — <b>holdbonussen er
+      reelt garanteret for vinderen</b>, fordi hans eget hold tager den. Regnestykket "måplacering + holdbonus" giver
+      320-350k for en etapesejr på en almindelig dag, hvilket er præcis det tal optakterne selv arbejder med
+      ("350.000 til etapesejren" skrev Feltet.dk på 7. og 8. etape, Simon "kun 350.000 til etapevinderen" på 10.).</p>
+
+    <div class="eyebrow" style="margin-top:26px">Validering · forudsagt mod faktisk</div>
+    <h2 class="sec">Holder beregningen?</h2>
+    <p class="sec-sub">Forudsigelsen for en etapesejr (måplacering + spurt/KOM ved mål + den garanterede holdbonus)
+      holdt op mod hvad vinderen rent faktisk fik udbetalt af Holdet. Den rammer <b>eksakt på 9 af 20 etaper</b>, og hver
+      eneste afvigelse er fuldt forklaret af betingede poster, som per definition ikke kan udledes af ruten.</p>
+    <div class="pm-scroll">
+      <table class="pm-tbl" style="min-width:820px">
+        <thead><tr>
+          <th>#</th><th class="type">Vinder</th><th>Forudsagt</th><th>Faktisk</th><th>Diff</th>
+          <th class="type" style="text-align:left">Forskellen består af</th>
+        </tr></thead>
+        <tbody id="pmValBody"><tr><td colspan="6">Henter…</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class="eyebrow" style="margin-top:26px">Facit · hvad der faktisk blev udbetalt</div>
+    <h2 class="sec">Hvad gav placeringen i virkeligheden?</h2>
+    <p class="sec-sub">Holdets egen bogføring, placering for placering. Bruges til at validere beregningen ovenfor —
+      den kan naturligvis ikke laves på forhånd. <b>Vinderens nedbrydning</b> yderst til højre viser hvor pengene kom fra.</p>
+    <div class="pm-scroll">
+      <table class="pm-tbl">
+        <thead>
+          <tr class="g" id="pmActGroupRow"></tr>
+          <tr id="pmActHeadRow"></tr>
+        </thead>
+        <tbody id="pmActualBody"><tr><td colspan="2">Henter…</td></tr></tbody>
+      </table>
+    </div>
+    <p class="note">Har et hold to ryttere i top 3, får de <b>begge</b> holdbonusser — fx fik Eddie Dunbars hold både 60k
+      og 20k på 19. etape. Toppen er højere endnu når trøjer, klassement og angrebspræmie falder sammen: Pogačar fik
+      674k på 4. etape.</p>
 
     <div class="eyebrow" style="margin-top:26px">Pointmatrix · rytter × etape</div>
     <h2 class="sec">Faktiske Holdet-point pr. etape</h2>
@@ -1332,9 +1348,32 @@
   })();
 </script>
 <script>
-  /* Teoretisk skema pr. etape. Data i data/vuelta2026_stage_points.json: alle tal
-     allerede i kroner (klassifikationspoint fra TheFantasyTool × 3000 kr, plus
-     etapeplaceringens grundværdi fra holdet.dk's officielle regler).
+  /* Validering: forudsagt sejrsværdi mod hvad vinderen faktisk fik. */
+  (function(){
+    var body = document.getElementById('pmValBody');
+    if(!body) return;
+    function k(v){ return (v===null||v===undefined) ? '—' : Math.round(v/1000)+'k'; }
+    fetch('data/vuelta2026_points_validation.json', {cache:'no-cache'})
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(function(d){
+        body.innerHTML = d.rows.map(function(r){
+          var why = Object.keys(r.extras || {}).map(function(key){
+            return key+' '+(r.extras[key] > 0 ? '+' : '')+Math.round(r.extras[key]/1000)+'k';
+          }).join(', ') || '—';
+          var cls = r.diff_kr === 0 ? 'up' : '';
+          return '<tr><td class="mono">'+r.stage+'</td><td class="type">'+r.winner+'</td>'+
+                 '<td>'+k(r.predicted_kr)+'</td><td>'+k(r.actual_kr)+'</td>'+
+                 '<td class="'+cls+'">'+(r.diff_kr===0 ? '0' : '+'+Math.round(r.diff_kr/1000)+'k')+'</td>'+
+                 '<td class="type" style="text-align:left;color:var(--muted)">'+why+'</td></tr>';
+        }).join('');
+      })
+      .catch(function(e){ body.innerHTML = '<tr><td colspan="6">Kunne ikke hente ('+e.message+').</td></tr>'; });
+  })();
+</script>
+<script>
+  /* Prospektivt pointskema pr. etape — beregnet af ruten alene.
+     data/vuelta2026_stage_points.json, bygget af
+     scripts/analysis/build_prospective_points.py ud fra data/routes/vuelta2026.json.
      Sektionerne kan foldes ud fra top-3 til alle pladser, som i FantasyTool. */
   (function(){
     var body = document.getElementById('pmScheduleBody');
@@ -1356,7 +1395,7 @@
     ];
     function shown(g){ return g.open ? g.n : Math.min(COLLAPSED, g.n); }
     function fmt(v){
-      if(v===null||v===undefined) return '—';
+      if(v===null||v===undefined||v===0) return '—';
       var k = v/1000;
       return (Math.abs(k%1) < 0.05 ? Math.round(k) : k.toFixed(1))+'k';
     }
@@ -1368,7 +1407,7 @@
                (more?' data-gi="'+gi+'" title="klik for at folde ud/sammen"':'')+'>'+
                g.label+'<span class="pm-sign">'+sign+'</span></th>';
       }).join('');
-      headRow.innerHTML = '<th>#</th><th class="type">Type / climbs</th>' + GROUPS.map(function(g){
+      headRow.innerHTML = '<th>#</th><th class="type">Kategori / stigninger</th>' + GROUPS.map(function(g){
         var out = '';
         for(var i=1;i<=shown(g);i++) out += '<th'+(i===1?' class="pm-grp1"':'')+'>#'+i+'</th>';
         return out;
@@ -1378,8 +1417,8 @@
       if(!DATA) return;
       drawHead();
       body.innerHTML = DATA.stages.map(function(s){
-        var tds = '<td class="mono">'+s.stage+'</td><td class="type">'+(s.type||'')+
-                  ' <span style="color:var(--muted)">'+s.climbs+'</span></td>';
+        var tds = '<td class="mono">'+s.stage+'</td><td class="type">'+(s.category||s.type||'')+
+                  ' <span style="color:var(--muted)">'+s.climbs+(s.summit_finish?' ⛰':'')+'</span></td>';
         GROUPS.forEach(function(g){
           var arr = s[g.key] || [];
           for(var i=0;i<shown(g);i++) tds += '<td'+(i===0?' class="pm-grp1"':'')+'>'+fmt(arr[i])+'</td>';
