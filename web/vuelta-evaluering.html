@@ -92,7 +92,7 @@
   </div>
   <p class="note">Odds og VeloScore dækker ikke alle 20 etaper (hhv. 20 og 15 med data) — Feltet/Simon har næsten fuld dækning. VeloScore's lidt lavere etape-antal er fordi den kun findes for etaper hvor screenshots blev sendt undervejs.</p>
 
-  <h2>Manager-sammenligning: dig, Kasper, TheFantasyTool og top-10</h2>
+  <h2>Manager-sammenligning: dig, Kasper, begge optakt-hold og top-10</h2>
   <p class="sub">Faktisk holdværdi, rekonstrueret af <b>Holdets egne bogførte tal</b> (fantasy-actions: etapeplacering,
     klassement, sprint-/bjergpoint, trøjer, holdbonus, straffe) plus de officielle regler for transfergebyr, etapebonus,
     kaptajnbonus og bankrente. Koblingen sker på spiller-ID, ikke navne. Kontrol: alle 204 ryttere rammer Holdets egen
@@ -102,9 +102,8 @@
     <table><thead><tr><th>#</th><th>Hold</th><th class="num">Slutværdi (M)</th><th class="num">Transfers</th><th class="num">Gebyr (M)</th><th class="num">Kaptajnbonus (M)</th><th class="num">Etapebonus (M)</th></tr></thead>
     <tbody id="manager"></tbody></table>
   </div>
-  <p class="note">Du endte <b>nr. 11 af 13</b> — samtlige ti top-hold over dig, med Kasper (12.) og TheFantasyTool (13.)
-    under. Det matcher den virkelige slutstilling. Afstanden er lille: 0,52M op til nærmeste top-10-hold og 2,08M til
-    nummer ét, ud af knap 69M. <b>Bemærk:</b> en tidligere version af denne side viste dig som nr. 7 med Kasper over dig —
+  <p class="note">Du endte <b>nr. 11 af 14</b> — samtlige ti top-hold over dig, med Kasper (12.), TheFantasyTool (13.) og
+    Feltet.dk (14.) under. Det matcher den virkelige slutstilling. Afstanden er lille: 0,52M op til nærmeste top-10-hold og 2,08M til nummer ét, ud af knap 69M. <b>Bemærk:</b> en tidligere version af denne side viste dig som nr. 7 med Kasper over dig —
     det var forkert, se noten nederst.</p>
 
   <h2>Missede gevinster</h2>
@@ -185,7 +184,8 @@ const MGR=[
   {t:"top-10", val:69.33, tr:76, fee:4.97, cap:5.14, sb:1.32},
   {t:"Os (Anders)", val:68.81, tr:85, fee:5.28, cap:5.35, sb:1.10, mine:true},
   {t:"Kasper", val:68.11, tr:81, fee:5.09, cap:5.05, sb:1.02, mine:true},
-  {t:"TheFantasyTool", val:68.02, tr:83, fee:5.28, cap:5.02, sb:1.18, mine:true}
+  {t:"TheFantasyTool", val:68.02, tr:83, fee:5.28, cap:5.02, sb:1.18, mine:true},
+  {t:"Feltet.dk", val:66.86, tr:77, fee:4.81, cap:5.43, sb:0.72, mine:true}
 ];
 document.getElementById('manager').innerHTML = MGR.map((r,i)=>
   `<tr${r.mine?' style="background:var(--line-2)"':''}><td class="mono">${i+1}</td><td>${r.mine?'<b>'+r.t+'</b>':r.t}</td><td class="num mono">${r.val.toFixed(2)}</td><td class="num mono">${r.tr}</td><td class="num mono neg">-${r.fee.toFixed(2)}</td><td class="num mono pos">+${r.cap.toFixed(2)}</td><td class="num mono pos">+${r.sb.toFixed(2)}</td></tr>`
