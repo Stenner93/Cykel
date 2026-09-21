@@ -1,0 +1,205 @@
+{
+  "note": "Forudsagt sejrsværdi (kun ruteinformation + regler) mod Holdets faktiske udbetaling. Afvigelser er udelukkende betingede poster.",
+  "exact": 9,
+  "stages_compared": 20,
+  "rows": [
+    {
+      "stage": 1,
+      "winner": "Tadej Pogacar",
+      "predicted_kr": 320000,
+      "actual_kr": 470000,
+      "diff_kr": 150000,
+      "extras": {
+        "klassement": 100000,
+        "trøjer": 50000
+      }
+    },
+    {
+      "stage": 2,
+      "winner": "Matthew Brennan",
+      "predicted_kr": 350000,
+      "actual_kr": 445000,
+      "diff_kr": 95000,
+      "extras": {
+        "klassement": 80000,
+        "trøjer": 15000
+      }
+    },
+    {
+      "stage": 4,
+      "winner": "Tadej Pogacar",
+      "predicted_kr": 320000,
+      "actual_kr": 674000,
+      "diff_kr": 354000,
+      "extras": {
+        "klassement": 100000,
+        "trøjer": 75000,
+        "angrebspræmie": 50000,
+        "point undervejs": 129000
+      }
+    },
+    {
+      "stage": 5,
+      "winner": "Matthew Brennan",
+      "predicted_kr": 350000,
+      "actual_kr": 350000,
+      "diff_kr": 0,
+      "extras": {}
+    },
+    {
+      "stage": 6,
+      "winner": "Tadej Pogacar",
+      "predicted_kr": 320000,
+      "actual_kr": 563000,
+      "diff_kr": 243000,
+      "extras": {
+        "klassement": 100000,
+        "trøjer": 75000,
+        "angrebspræmie": 50000,
+        "point undervejs": 18000
+      }
+    },
+    {
+      "stage": 7,
+      "winner": "Andreas Leknessund",
+      "predicted_kr": 350000,
+      "actual_kr": 437000,
+      "diff_kr": 87000,
+      "extras": {
+        "ekstra holdbonus": 30000,
+        "point undervejs": 57000
+      }
+    },
+    {
+      "stage": 8,
+      "winner": "Bryan Coquard",
+      "predicted_kr": 350000,
+      "actual_kr": 350000,
+      "diff_kr": 0,
+      "extras": {}
+    },
+    {
+      "stage": 9,
+      "winner": "Enric Mas Nicolau",
+      "predicted_kr": 350000,
+      "actual_kr": 475000,
+      "diff_kr": 125000,
+      "extras": {
+        "klassement": 100000,
+        "trøjer": 25000
+      }
+    },
+    {
+      "stage": 10,
+      "winner": "Bastien Tronchon",
+      "predicted_kr": 350000,
+      "actual_kr": 350000,
+      "diff_kr": 0,
+      "extras": {}
+    },
+    {
+      "stage": 11,
+      "winner": "Matthew Brennan",
+      "predicted_kr": 410000,
+      "actual_kr": 410000,
+      "diff_kr": 0,
+      "extras": {}
+    },
+    {
+      "stage": 12,
+      "winner": "Jakob Omrzel",
+      "predicted_kr": 350000,
+      "actual_kr": 420000,
+      "diff_kr": 70000,
+      "extras": {
+        "klassement": 50000,
+        "ekstra holdbonus": 20000
+      }
+    },
+    {
+      "stage": 13,
+      "winner": "Wout van Aert",
+      "predicted_kr": 350000,
+      "actual_kr": 425000,
+      "diff_kr": 75000,
+      "extras": {
+        "trøjer": 25000,
+        "ekstra holdbonus": 20000,
+        "point undervejs": 30000
+      }
+    },
+    {
+      "stage": 14,
+      "winner": "Marco Brenner",
+      "predicted_kr": 350000,
+      "actual_kr": 350000,
+      "diff_kr": 0,
+      "extras": {}
+    },
+    {
+      "stage": 15,
+      "winner": "Wout van Aert",
+      "predicted_kr": 350000,
+      "actual_kr": 414000,
+      "diff_kr": 64000,
+      "extras": {
+        "trøjer": 25000,
+        "point undervejs": 39000
+      }
+    },
+    {
+      "stage": 16,
+      "winner": "Matthew Brennan",
+      "predicted_kr": 350000,
+      "actual_kr": 350000,
+      "diff_kr": 0,
+      "extras": {}
+    },
+    {
+      "stage": 17,
+      "winner": "Matthew Brennan",
+      "predicted_kr": 410000,
+      "actual_kr": 410000,
+      "diff_kr": 0,
+      "extras": {}
+    },
+    {
+      "stage": 18,
+      "winner": "Stefan Küng",
+      "predicted_kr": 320000,
+      "actual_kr": 320000,
+      "diff_kr": 0,
+      "extras": {}
+    },
+    {
+      "stage": 19,
+      "winner": "Eddie Dunbar",
+      "predicted_kr": 350000,
+      "actual_kr": 435000,
+      "diff_kr": 85000,
+      "extras": {
+        "angrebspræmie": 50000,
+        "ekstra holdbonus": 20000,
+        "point undervejs": 15000
+      }
+    },
+    {
+      "stage": 20,
+      "winner": "Mikel Landa",
+      "predicted_kr": 380000,
+      "actual_kr": 410000,
+      "diff_kr": 30000,
+      "extras": {
+        "point undervejs": 30000
+      }
+    },
+    {
+      "stage": 21,
+      "winner": "Tobias Halland Johannessen",
+      "predicted_kr": 350000,
+      "actual_kr": 350000,
+      "diff_kr": 0,
+      "extras": {}
+    }
+  ]
+}
