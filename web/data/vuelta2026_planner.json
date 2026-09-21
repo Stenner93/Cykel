@@ -1,0 +1,1060 @@
+{
+  "source": "Skitsedata: priser og hold som de stod ved Vuelta 2026's afslutning. I drift kommer begge dele fra det daglige Holdet-snapshot.",
+  "rules": {
+    "transfer_fee_pct": 0.01,
+    "budget": 50000000,
+    "team_size": 8,
+    "max_per_team": 2
+  },
+  "my_team": {
+    "riders": [
+      {
+        "name": "Enric Mas",
+        "price_m": 10.99
+      },
+      {
+        "name": "Magnus Cort",
+        "price_m": 5.78
+      },
+      {
+        "name": "Wout van Aert",
+        "price_m": 14.36
+      },
+      {
+        "name": "Alessandro Romele",
+        "price_m": 4.0
+      },
+      {
+        "name": "Sepp Kuss",
+        "price_m": 8.96
+      },
+      {
+        "name": "Axel Laurance",
+        "price_m": 6.07
+      },
+      {
+        "name": "Thibau Nys",
+        "price_m": 7.26
+      },
+      {
+        "name": "Bastien Tronchon",
+        "price_m": 4.44
+      }
+    ],
+    "captain": "Wout van Aert",
+    "bank_m": 0.0,
+    "value_m": 61.86
+  },
+  "riders": [
+    {
+      "name": "Tadej Pogacar",
+      "team": "UAE",
+      "price_m": 22.0
+    },
+    {
+      "name": "Wout van Aert",
+      "team": "VLB",
+      "price_m": 14.36
+    },
+    {
+      "name": "Matthew Brennan",
+      "team": "VLB",
+      "price_m": 14.01
+    },
+    {
+      "name": "Felix Gall",
+      "team": "DAL",
+      "price_m": 13.53
+    },
+    {
+      "name": "Oscar Onley",
+      "team": "IGD",
+      "price_m": 12.42
+    },
+    {
+      "name": "Primoz Roglic",
+      "team": "RBH",
+      "price_m": 11.9
+    },
+    {
+      "name": "Mattias Skjelmose",
+      "team": "L-T",
+      "price_m": 11.38
+    },
+    {
+      "name": "Richard Carapaz",
+      "team": "EF",
+      "price_m": 11.11
+    },
+    {
+      "name": "Mads Pedersen",
+      "team": "L-T",
+      "price_m": 11.09
+    },
+    {
+      "name": "Enric Mas",
+      "team": "MOV",
+      "price_m": 10.99
+    },
+    {
+      "name": "Joao Almeida",
+      "team": "UAE",
+      "price_m": 9.86
+    },
+    {
+      "name": "Tobias Halland Johannessen",
+      "team": "UXM",
+      "price_m": 9.45
+    },
+    {
+      "name": "Sepp Kuss",
+      "team": "VLB",
+      "price_m": 8.96
+    },
+    {
+      "name": "Jordi Meeus",
+      "team": "RBH",
+      "price_m": 8.3
+    },
+    {
+      "name": "Jørgen Nordhagen",
+      "team": "VLB",
+      "price_m": 8.28
+    },
+    {
+      "name": "Joshua Tarling",
+      "team": "IGD",
+      "price_m": 7.62
+    },
+    {
+      "name": "Thibau Nys",
+      "team": "L-T",
+      "price_m": 7.26
+    },
+    {
+      "name": "Santiago Buitrago",
+      "team": "TVM",
+      "price_m": 7.23
+    },
+    {
+      "name": "Matthew Riccitello",
+      "team": "DAL",
+      "price_m": 7.18
+    },
+    {
+      "name": "Jay Vine",
+      "team": "UAE",
+      "price_m": 7.14
+    },
+    {
+      "name": "Cristian Rodriguez Martin",
+      "team": "XDA",
+      "price_m": 6.67
+    },
+    {
+      "name": "Finn Fisher-Black",
+      "team": "RBH",
+      "price_m": 6.57
+    },
+    {
+      "name": "Stefan Küng",
+      "team": "TDR",
+      "price_m": 6.48
+    },
+    {
+      "name": "Valentin Paret-Peintre",
+      "team": "SQ",
+      "price_m": 6.28
+    },
+    {
+      "name": "Orluis Aular",
+      "team": "MOV",
+      "price_m": 6.24
+    },
+    {
+      "name": "Cian Uijtdebroeks",
+      "team": "MOV",
+      "price_m": 6.22
+    },
+    {
+      "name": "Carlos Rodriguez",
+      "team": "IGD",
+      "price_m": 6.12
+    },
+    {
+      "name": "Mikel Landa",
+      "team": "SQ",
+      "price_m": 6.09
+    },
+    {
+      "name": "Axel Laurance",
+      "team": "IGD",
+      "price_m": 6.07
+    },
+    {
+      "name": "Léo Bisiaux",
+      "team": "DAL",
+      "price_m": 6.04
+    },
+    {
+      "name": "Bryan Coquard",
+      "team": "COF",
+      "price_m": 5.95
+    },
+    {
+      "name": "Jarno Widar",
+      "team": "INT",
+      "price_m": 5.88
+    },
+    {
+      "name": "Magnus Cort",
+      "team": "UXM",
+      "price_m": 5.78
+    },
+    {
+      "name": "Liam Tuckwell",
+      "team": "RBH",
+      "price_m": 5.68
+    },
+    {
+      "name": "Bruno Armirail",
+      "team": "VLB",
+      "price_m": 5.61
+    },
+    {
+      "name": "Jakob Omrzel",
+      "team": "TVM",
+      "price_m": 5.55
+    },
+    {
+      "name": "Laurence Pithie",
+      "team": "RBH",
+      "price_m": 5.5
+    },
+    {
+      "name": "Harold Tejada",
+      "team": "XDA",
+      "price_m": 5.49
+    },
+    {
+      "name": "Pello Bilbao",
+      "team": "TVM",
+      "price_m": 5.49
+    },
+    {
+      "name": "Ben Tulett",
+      "team": "VLB",
+      "price_m": 5.48
+    },
+    {
+      "name": "Kaden Groves",
+      "team": "ALP",
+      "price_m": 5.45
+    },
+    {
+      "name": "Christophe Laporte",
+      "team": "VLB",
+      "price_m": 5.42
+    },
+    {
+      "name": "Steffen De Schuyteneer",
+      "team": "INT",
+      "price_m": 5.37
+    },
+    {
+      "name": "Lorenzo Fortunato",
+      "team": "XDA",
+      "price_m": 5.33
+    },
+    {
+      "name": "Alberto Dainese",
+      "team": "SQ",
+      "price_m": 5.2
+    },
+    {
+      "name": "Ramses Debruyne",
+      "team": "ALP",
+      "price_m": 5.19
+    },
+    {
+      "name": "Kevin Vermaerke",
+      "team": "UAE",
+      "price_m": 5.13
+    },
+    {
+      "name": "Marco Brenner",
+      "team": "TDR",
+      "price_m": 5.02
+    },
+    {
+      "name": "Ethan Hayter",
+      "team": "SQ",
+      "price_m": 4.97
+    },
+    {
+      "name": "Hugo Hofstetter",
+      "team": "NCT",
+      "price_m": 4.73
+    },
+    {
+      "name": "Ben Turner",
+      "team": "IGD",
+      "price_m": 4.72
+    },
+    {
+      "name": "Andreas Leknessund",
+      "team": "UXM",
+      "price_m": 4.6
+    },
+    {
+      "name": "Ivan Romeo",
+      "team": "MOV",
+      "price_m": 4.47
+    },
+    {
+      "name": "Pablo Castrillo",
+      "team": "MOV",
+      "price_m": 4.47
+    },
+    {
+      "name": "Clement Berthet",
+      "team": "GFD",
+      "price_m": 4.45
+    },
+    {
+      "name": "Bastien Tronchon",
+      "team": "GFD",
+      "price_m": 4.44
+    },
+    {
+      "name": "Jan Hirt",
+      "team": "NCT",
+      "price_m": 4.42
+    },
+    {
+      "name": "Raul Garcia Pierna",
+      "team": "MOV",
+      "price_m": 4.38
+    },
+    {
+      "name": "Pablo Torres",
+      "team": "UAE",
+      "price_m": 4.36
+    },
+    {
+      "name": "Ivo Oliveira",
+      "team": "UAE",
+      "price_m": 4.28
+    },
+    {
+      "name": "Guillaume Martin",
+      "team": "GFD",
+      "price_m": 4.26
+    },
+    {
+      "name": "Eddie Dunbar",
+      "team": "Q36",
+      "price_m": 4.15
+    },
+    {
+      "name": "Filippo Zana",
+      "team": "SQ",
+      "price_m": 4.15
+    },
+    {
+      "name": "Gianmarco Garofoli",
+      "team": "SQ",
+      "price_m": 4.09
+    },
+    {
+      "name": "Gregor Mühlberger",
+      "team": "DAL",
+      "price_m": 4.03
+    },
+    {
+      "name": "Vincenzo Albanese",
+      "team": "EF",
+      "price_m": 4.01
+    },
+    {
+      "name": "Alessandro Romele",
+      "team": "XDA",
+      "price_m": 4.0
+    },
+    {
+      "name": "Erlend Blikra",
+      "team": "UXM",
+      "price_m": 4.0
+    },
+    {
+      "name": "Rasmus Tiller",
+      "team": "UXM",
+      "price_m": 4.0
+    },
+    {
+      "name": "Pau Miquel",
+      "team": "TVM",
+      "price_m": 3.96
+    },
+    {
+      "name": "Henok Mulubrhan",
+      "team": "XDA",
+      "price_m": 3.88
+    },
+    {
+      "name": "Marcel Camprubi",
+      "team": "Q36",
+      "price_m": 3.83
+    },
+    {
+      "name": "Koen Bouwman",
+      "team": "JAL",
+      "price_m": 3.81
+    },
+    {
+      "name": "Urko Berrade",
+      "team": "EKP",
+      "price_m": 3.81
+    },
+    {
+      "name": "Alexey Lutsenko",
+      "team": "NCT",
+      "price_m": 3.75
+    },
+    {
+      "name": "Ivan Ramiro Sosa",
+      "team": "EKP",
+      "price_m": 3.69
+    },
+    {
+      "name": "Finlay Pickering",
+      "team": "JAL",
+      "price_m": 3.66
+    },
+    {
+      "name": "Alexis Renard",
+      "team": "COF",
+      "price_m": 3.63
+    },
+    {
+      "name": "Fredrik Dversnes",
+      "team": "UXM",
+      "price_m": 3.53
+    },
+    {
+      "name": "Luke Plapp",
+      "team": "JAL",
+      "price_m": 3.5
+    },
+    {
+      "name": "Max Poole",
+      "team": "TPP",
+      "price_m": 3.5
+    },
+    {
+      "name": "Ibon Ruiz",
+      "team": "EKP",
+      "price_m": 3.45
+    },
+    {
+      "name": "Carlos Canal",
+      "team": "MOV",
+      "price_m": 3.44
+    },
+    {
+      "name": "Andreas Kron",
+      "team": "UXM",
+      "price_m": 3.42
+    },
+    {
+      "name": "César Macías",
+      "team": "BB",
+      "price_m": 3.4
+    },
+    {
+      "name": "Iván Cobo Cayón",
+      "team": "EKP",
+      "price_m": 3.37
+    },
+    {
+      "name": "Georg Steinhauser",
+      "team": "EF",
+      "price_m": 3.34
+    },
+    {
+      "name": "Vito Braet",
+      "team": "INT",
+      "price_m": 3.34
+    },
+    {
+      "name": "Jasha Sütterlin",
+      "team": "JAL",
+      "price_m": 3.32
+    },
+    {
+      "name": "Embret Svestad-Bårdseng",
+      "team": "IGD",
+      "price_m": 3.3
+    },
+    {
+      "name": "Marc Brustenga Masague",
+      "team": "EKP",
+      "price_m": 3.3
+    },
+    {
+      "name": "Emanuel Buchmann",
+      "team": "COF",
+      "price_m": 3.29
+    },
+    {
+      "name": "Callum Thornley",
+      "team": "RBH",
+      "price_m": 3.28
+    },
+    {
+      "name": "Timo de Jong",
+      "team": "TPP",
+      "price_m": 3.27
+    },
+    {
+      "name": "Thomas Gloag",
+      "team": "Q36",
+      "price_m": 3.26
+    },
+    {
+      "name": "Mauri Vansevenant",
+      "team": "SQ",
+      "price_m": 3.24
+    },
+    {
+      "name": "Pavel Sivakov",
+      "team": "UAE",
+      "price_m": 3.17
+    },
+    {
+      "name": "Valentin Madouas",
+      "team": "GFD",
+      "price_m": 3.17
+    },
+    {
+      "name": "Davide Ballerini",
+      "team": "XDA",
+      "price_m": 3.0
+    },
+    {
+      "name": "Einer Rubio",
+      "team": "MOV",
+      "price_m": 3.0
+    },
+    {
+      "name": "Marijn van den Berg",
+      "team": "EF",
+      "price_m": 3.0
+    },
+    {
+      "name": "Gianni Vermeersch",
+      "team": "RBH",
+      "price_m": 2.99
+    },
+    {
+      "name": "Matevz Govekar",
+      "team": "TVM",
+      "price_m": 2.98
+    },
+    {
+      "name": "Remy Rochas",
+      "team": "GFD",
+      "price_m": 2.98
+    },
+    {
+      "name": "Juan Felipe Rodriguez",
+      "team": "EF",
+      "price_m": 2.94
+    },
+    {
+      "name": "David González",
+      "team": "Q36",
+      "price_m": 2.84
+    },
+    {
+      "name": "Floris Van Tricht",
+      "team": "NCT",
+      "price_m": 2.84
+    },
+    {
+      "name": "David de la Cruz Melgarejo",
+      "team": "Q36",
+      "price_m": 2.82
+    },
+    {
+      "name": "Mario Aparicio",
+      "team": "BB",
+      "price_m": 2.82
+    },
+    {
+      "name": "José Manuel Diaz",
+      "team": "BB",
+      "price_m": 2.78
+    },
+    {
+      "name": "Yevgeniy Fedorov",
+      "team": "XDA",
+      "price_m": 2.77
+    },
+    {
+      "name": "Simon Dalby",
+      "team": "UXM",
+      "price_m": 2.76
+    },
+    {
+      "name": "Jack Haig",
+      "team": "IGD",
+      "price_m": 2.73
+    },
+    {
+      "name": "Walter Calzoni",
+      "team": "Q36",
+      "price_m": 2.73
+    },
+    {
+      "name": "Patrick Konrad",
+      "team": "L-T",
+      "price_m": 2.72
+    },
+    {
+      "name": "Rudy Molard",
+      "team": "GFD",
+      "price_m": 2.7
+    },
+    {
+      "name": "Attila Valter",
+      "team": "TVM",
+      "price_m": 2.68
+    },
+    {
+      "name": "Sergio Samitier",
+      "team": "COF",
+      "price_m": 2.67
+    },
+    {
+      "name": "Asbjørn Hellemose",
+      "team": "JAL",
+      "price_m": 2.64
+    },
+    {
+      "name": "Milan Vader",
+      "team": "Q36",
+      "price_m": 2.64
+    },
+    {
+      "name": "William Barta",
+      "team": "TDR",
+      "price_m": 2.62
+    },
+    {
+      "name": "Xabier Mikel Azparren",
+      "team": "Q36",
+      "price_m": 2.62
+    },
+    {
+      "name": "Callum Scotson",
+      "team": "DAL",
+      "price_m": 2.6
+    },
+    {
+      "name": "George Bennett",
+      "team": "NCT",
+      "price_m": 2.59
+    },
+    {
+      "name": "Pau Marti",
+      "team": "NCT",
+      "price_m": 2.56
+    },
+    {
+      "name": "Clement Champoussin",
+      "team": "XDA",
+      "price_m": 2.5
+    },
+    {
+      "name": "Laurens De Plus",
+      "team": "IGD",
+      "price_m": 2.5
+    },
+    {
+      "name": "Torstein Træen",
+      "team": "UXM",
+      "price_m": 2.5
+    },
+    {
+      "name": "William Junior Lecerf",
+      "team": "SQ",
+      "price_m": 2.5
+    },
+    {
+      "name": "Lennard Kämna",
+      "team": "L-T",
+      "price_m": 2.49
+    },
+    {
+      "name": "Martin Tjøtta",
+      "team": "UXM",
+      "price_m": 2.49
+    },
+    {
+      "name": "Alessandro Covi",
+      "team": "JAL",
+      "price_m": 2.48
+    },
+    {
+      "name": "James Shaw",
+      "team": "EF",
+      "price_m": 2.47
+    },
+    {
+      "name": "Mats Wenzel",
+      "team": "EKP",
+      "price_m": 2.46
+    },
+    {
+      "name": "Paul Double",
+      "team": "JAL",
+      "price_m": 2.46
+    },
+    {
+      "name": "Oscar Chamberlain",
+      "team": "DAL",
+      "price_m": 2.45
+    },
+    {
+      "name": "Clément Alleno",
+      "team": "BB",
+      "price_m": 2.42
+    },
+    {
+      "name": "Lars Craps",
+      "team": "INT",
+      "price_m": 2.42
+    },
+    {
+      "name": "Harold Martín López",
+      "team": "BB",
+      "price_m": 2.41
+    },
+    {
+      "name": "Sylvain Moniquet",
+      "team": "COF",
+      "price_m": 2.41
+    },
+    {
+      "name": "Jose Luis Faura",
+      "team": "BB",
+      "price_m": 2.39
+    },
+    {
+      "name": "Sander De Pestel",
+      "team": "DAL",
+      "price_m": 2.37
+    },
+    {
+      "name": "Jorge Arcas Pena",
+      "team": "MOV",
+      "price_m": 2.35
+    },
+    {
+      "name": "Lorenzo Rota",
+      "team": "INT",
+      "price_m": 2.35
+    },
+    {
+      "name": "Darren Van Bekkum",
+      "team": "XDA",
+      "price_m": 2.34
+    },
+    {
+      "name": "Markel Beloki",
+      "team": "EF",
+      "price_m": 2.34
+    },
+    {
+      "name": "Gal Glivar",
+      "team": "ALP",
+      "price_m": 2.33
+    },
+    {
+      "name": "Steven Kruijswijk",
+      "team": "VLB",
+      "price_m": 2.32
+    },
+    {
+      "name": "Nick Schultz",
+      "team": "NCT",
+      "price_m": 2.29
+    },
+    {
+      "name": "Domen Novak",
+      "team": "UAE",
+      "price_m": 2.26
+    },
+    {
+      "name": "Larry Warbasse",
+      "team": "TDR",
+      "price_m": 2.26
+    },
+    {
+      "name": "Jordan Labrosse",
+      "team": "DAL",
+      "price_m": 2.25
+    },
+    {
+      "name": "Louis Rouland",
+      "team": "COF",
+      "price_m": 2.23
+    },
+    {
+      "name": "Gijs Leemreize",
+      "team": "TPP",
+      "price_m": 2.22
+    },
+    {
+      "name": "Alastair MacKellar",
+      "team": "EF",
+      "price_m": 2.21
+    },
+    {
+      "name": "Francesco Busatto",
+      "team": "ALP",
+      "price_m": 2.18
+    },
+    {
+      "name": "Enzo Paleni",
+      "team": "GFD",
+      "price_m": 2.17
+    },
+    {
+      "name": "Guillermo Juan Martinez",
+      "team": "TPP",
+      "price_m": 2.16
+    },
+    {
+      "name": "Hannes Wilksch",
+      "team": "TDR",
+      "price_m": 2.11
+    },
+    {
+      "name": "Sergio Geovani Chumil",
+      "team": "BB",
+      "price_m": 2.11
+    },
+    {
+      "name": "Fabian Weiss",
+      "team": "TDR",
+      "price_m": 2.1
+    },
+    {
+      "name": "Paul Ourselin",
+      "team": "COF",
+      "price_m": 2.09
+    },
+    {
+      "name": "Julien Bernard",
+      "team": "L-T",
+      "price_m": 2.04
+    },
+    {
+      "name": "Roland Thalmann",
+      "team": "TDR",
+      "price_m": 2.02
+    },
+    {
+      "name": "Reuben Thompson",
+      "team": "INT",
+      "price_m": 2.01
+    },
+    {
+      "name": "Alberto Bettiol",
+      "team": "XDA",
+      "price_m": 2.0
+    },
+    {
+      "name": "Frederik Wandahl",
+      "team": "RBH",
+      "price_m": 1.98
+    },
+    {
+      "name": "Michael Gogl",
+      "team": "ALP",
+      "price_m": 1.97
+    },
+    {
+      "name": "Rudy Porter",
+      "team": "JAL",
+      "price_m": 1.96
+    },
+    {
+      "name": "Mathijs Paasschens",
+      "team": "TVM",
+      "price_m": 1.93
+    },
+    {
+      "name": "Chris Hamilton",
+      "team": "IGD",
+      "price_m": 1.91
+    },
+    {
+      "name": "Jacopo Mosca",
+      "team": "L-T",
+      "price_m": 1.9
+    },
+    {
+      "name": "Roman Ermakov",
+      "team": "TVM",
+      "price_m": 1.9
+    },
+    {
+      "name": "Fabio Van den Bossche",
+      "team": "SQ",
+      "price_m": 1.86
+    },
+    {
+      "name": "Gianni Moscon",
+      "team": "RBH",
+      "price_m": 1.83
+    },
+    {
+      "name": "Sinuhe Fernandez",
+      "team": "BB",
+      "price_m": 1.83
+    },
+    {
+      "name": "Darren Rafferty",
+      "team": "EF",
+      "price_m": 1.79
+    },
+    {
+      "name": "Inigo Elosegui",
+      "team": "EKP",
+      "price_m": 1.75
+    },
+    {
+      "name": "Olivier Le Gac",
+      "team": "GFD",
+      "price_m": 1.74
+    },
+    {
+      "name": "Arthur Kluckers",
+      "team": "TDR",
+      "price_m": 1.7
+    },
+    {
+      "name": "Moritz Kretschy",
+      "team": "NCT",
+      "price_m": 1.67
+    },
+    {
+      "name": "Mathias Norsgaard",
+      "team": "L-T",
+      "price_m": 1.57
+    },
+    {
+      "name": "Hamish McKenzie",
+      "team": "JAL",
+      "price_m": 1.56
+    },
+    {
+      "name": "Sente Sentjens",
+      "team": "ALP",
+      "price_m": 1.56
+    },
+    {
+      "name": "Victor Langellotti",
+      "team": "XDA",
+      "price_m": 1.54
+    },
+    {
+      "name": "Nairo Quintana",
+      "team": "MOV",
+      "price_m": 1.5
+    },
+    {
+      "name": "Steff Cras",
+      "team": "SQ",
+      "price_m": 1.5
+    },
+    {
+      "name": "Diego Uriarte Belzunegi",
+      "team": "EKP",
+      "price_m": 1.35
+    },
+    {
+      "name": "Hugo Houle",
+      "team": "ALP",
+      "price_m": 1.32
+    },
+    {
+      "name": "Timo Roosen",
+      "team": "TPP",
+      "price_m": 1.18
+    },
+    {
+      "name": "Lindsay De Vylder",
+      "team": "ALP",
+      "price_m": 1.15
+    },
+    {
+      "name": "Oliver Peace",
+      "team": "TPP",
+      "price_m": 1.1
+    },
+    {
+      "name": "Alexander Hajek",
+      "team": "RBH",
+      "price_m": 1.0
+    },
+    {
+      "name": "Luca Vergallito",
+      "team": "ALP",
+      "price_m": 1.0
+    },
+    {
+      "name": "Mattia Gaffuri",
+      "team": "TPP",
+      "price_m": 1.0
+    },
+    {
+      "name": "Tijmen Graat",
+      "team": "VLB",
+      "price_m": 1.0
+    },
+    {
+      "name": "Henri-Francois Renard-Haquin",
+      "team": "TPP",
+      "price_m": 0.98
+    },
+    {
+      "name": "Luca Van Boven",
+      "team": "INT",
+      "price_m": 0.88
+    },
+    {
+      "name": "Roel van Sintmaartensdijk",
+      "team": "INT",
+      "price_m": 0.77
+    },
+    {
+      "name": "Alex Kirsch",
+      "team": "COF",
+      "price_m": 0.65
+    },
+    {
+      "name": "Menno Huising",
+      "team": "VLB",
+      "price_m": 0.5
+    },
+    {
+      "name": "Oscar Riesebeek",
+      "team": "ALP",
+      "price_m": 0.5
+    }
+  ]
+}

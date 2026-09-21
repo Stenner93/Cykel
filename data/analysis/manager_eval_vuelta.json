@@ -83,6 +83,14 @@
       "captain_eff_vs_own": 0.446
     },
     {
+      "team_id": 7280380,
+      "label": "optakt-skribent (Feltet.dk)",
+      "total_M": 12.5,
+      "transfers": 77,
+      "captain_captured_M": 2.19,
+      "captain_eff_vs_own": 0.401
+    },
+    {
       "team_id": 7295230,
       "label": "top-10",
       "total_M": 12.34,
@@ -177,26 +185,26 @@
       ]
     },
     "top10_median": [
-      1.57,
-      2.8,
-      2.8,
-      2.92,
+      1.45,
+      2.73,
+      2.73,
+      2.89,
       3.44,
-      5.2,
-      4.92,
-      5.47,
-      6.05,
-      6.58,
-      7.14,
-      8.15,
-      9.0,
-      8.53,
-      9.39,
-      11.09,
-      11.63,
-      12.47,
-      13.05,
-      13.53
+      5.12,
+      4.86,
+      5.4,
+      6.01,
+      6.57,
+      7.01,
+      7.95,
+      8.72,
+      8.21,
+      9.03,
+      10.68,
+      11.1,
+      11.94,
+      12.6,
+      12.82
     ],
     "top10_best": [
       1.57,
@@ -277,7 +285,7 @@
   "our_missed_gains": [
     {
       "rider": "Oscar Onley",
-      "top10_rounds_owned": 16,
+      "top10_rounds_owned": 17,
       "season_growth_M": 1.92
     },
     {
@@ -312,7 +320,7 @@
     },
     {
       "rider": "Vincenzo Albanese",
-      "top10_rounds_owned": 7,
+      "top10_rounds_owned": 11,
       "season_growth_M": 0.01
     }
   ],
