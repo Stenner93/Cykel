@@ -1,14 +1,19 @@
 {
   "race": "vuelta2026",
   "title": "Vuelta a España 2026",
-  "note": "Ruteinformation — alt her er kendt FØR løbet køres og skal hentes fra løbsbogen eller procyclingstats: 'category' er etapens officielle kategori (flad/middel/bjerg; enkeltstart bruger bjerg-skalaen), 'climbs' er de kategoriserede stigninger i rutens rækkefølge (HC/1/2/3), 'summit_finish' om den sidste af dem er målstigningen, og 'intermediate_sprints' antallet af indlagte spurter. Ingen resultatdata.",
+  "note": "Ruteinformation — alt her er kendt FØR løbet køres og hentes fra løbsbogen eller procyclingstats. Pointmotoren bruger: 'category' (etapens officielle kategori flad/middel/bjerg; enkeltstart bruger bjerg-skalaen), 'climbs' (de kategoriserede stigninger i rutens rækkefølge, HC/1/2/3), 'summit_finish' (om den sidste af dem er målstigningen) og 'intermediate_sprints' (antal indlagte spurter). Ruteplanlæggeren bruger desuden 'profile_score', 'vmeters', 'pcs_type' og 'name', som fyldes på af scripts/analysis/enrich_route_meta.py fra data/cache/pcs_profile_scores.json. Ingen resultatdata.",
+  "rest_after": [],
   "stages": [
     {
       "stage": 1,
       "category": "bjerg",
       "climbs": [],
       "summit_finish": false,
-      "intermediate_sprints": 0
+      "intermediate_sprints": 0,
+      "name": "1. Etape - Monaco > Monaco",
+      "pcs_type": "tt",
+      "profile_score": 2,
+      "vmeters": 55
     },
     {
       "stage": 2,
@@ -18,7 +23,11 @@
         "3"
       ],
       "summit_finish": false,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "2. Etape - Monaco > Manosque",
+      "pcs_type": "hilly",
+      "profile_score": 96,
+      "vmeters": 3028
     },
     {
       "stage": 3,
@@ -28,7 +37,11 @@
         "2"
       ],
       "summit_finish": true,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": null,
+      "pcs_type": null,
+      "profile_score": 203,
+      "vmeters": 2639
     },
     {
       "stage": 4,
@@ -40,7 +53,11 @@
         "3"
       ],
       "summit_finish": false,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "4. Etape - Andorra la Vella > Andorra la Vella",
+      "pcs_type": "hilly",
+      "profile_score": 252,
+      "vmeters": 3024
     },
     {
       "stage": 5,
@@ -49,7 +66,11 @@
         "3"
       ],
       "summit_finish": false,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "5. Etape - Falset . Costa Daurada > Roquetes. Terres de l'Ebre",
+      "pcs_type": "sprint",
+      "profile_score": 90,
+      "vmeters": 1689
     },
     {
       "stage": 6,
@@ -61,7 +82,11 @@
         "1"
       ],
       "summit_finish": false,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "6. Etape - Alcossebre > Castelló",
+      "pcs_type": "sprint",
+      "profile_score": 188,
+      "vmeters": 2984
     },
     {
       "stage": 7,
@@ -74,7 +99,11 @@
         "1"
       ],
       "summit_finish": true,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "7. Etape - Vall d'Alba > Aramón Valdelinares",
+      "pcs_type": "mountain",
+      "profile_score": 278,
+      "vmeters": 3597
     },
     {
       "stage": 8,
@@ -83,7 +112,11 @@
         "3"
       ],
       "summit_finish": false,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "8. Etape - Puçol > Xeraco",
+      "pcs_type": "sprint",
+      "profile_score": 41,
+      "vmeters": 1280
     },
     {
       "stage": 9,
@@ -97,7 +130,11 @@
         "1"
       ],
       "summit_finish": true,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "9. Etape - La Vila Joiosa/Villajoyosa > Alto de Aitana.C. Blanca",
+      "pcs_type": "mountain",
+      "profile_score": 349,
+      "vmeters": 4952
     },
     {
       "stage": 10,
@@ -108,7 +145,11 @@
         "3"
       ],
       "summit_finish": false,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "10. Etape - Alcaraz > Elche de la Sierra",
+      "pcs_type": "hilly",
+      "profile_score": 127,
+      "vmeters": 2669
     },
     {
       "stage": 11,
@@ -117,7 +158,11 @@
         "3"
       ],
       "summit_finish": false,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "11. Etape - Cartagena > Lorca",
+      "pcs_type": "sprint",
+      "profile_score": 60,
+      "vmeters": 1444
     },
     {
       "stage": 12,
@@ -130,7 +175,11 @@
         "1"
       ],
       "summit_finish": true,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "12. Etape - Vera > Calar Alto",
+      "pcs_type": "mountain",
+      "profile_score": 355,
+      "vmeters": 4475
     },
     {
       "stage": 13,
@@ -141,7 +190,11 @@
         "2"
       ],
       "summit_finish": false,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "13. Etape - Almuñécar > Loja",
+      "pcs_type": "sprint",
+      "profile_score": 130,
+      "vmeters": 3277
     },
     {
       "stage": 14,
@@ -152,7 +205,11 @@
         "1"
       ],
       "summit_finish": true,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "14. Etape - Jaén > Sierra de La Pandera",
+      "pcs_type": "mountain",
+      "profile_score": 373,
+      "vmeters": 4107
     },
     {
       "stage": 15,
@@ -162,28 +219,44 @@
         "3"
       ],
       "summit_finish": false,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "15. Etape - Palma del Río > Córdoba",
+      "pcs_type": "sprint",
+      "profile_score": 105,
+      "vmeters": 2853
     },
     {
       "stage": 16,
       "category": "middel",
       "climbs": [],
       "summit_finish": false,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "16. Etape - Cortegana > La Rábida. Palos de la Frontera",
+      "pcs_type": "sprint",
+      "profile_score": 54,
+      "vmeters": 1914
     },
     {
       "stage": 17,
       "category": "flad",
       "climbs": [],
       "summit_finish": false,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "17. Etape - Dos Hermanas > Sevilla",
+      "pcs_type": "sprint",
+      "profile_score": 14,
+      "vmeters": 930
     },
     {
       "stage": 18,
       "category": "bjerg",
       "climbs": [],
       "summit_finish": false,
-      "intermediate_sprints": 0
+      "intermediate_sprints": 0,
+      "name": "18. Etape - El Puerto de Santa María > Jerez de la Frontera",
+      "pcs_type": "tt",
+      "profile_score": 7,
+      "vmeters": 169
     },
     {
       "stage": 19,
@@ -194,7 +267,11 @@
         "1"
       ],
       "summit_finish": true,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "19. Etape - Vélez-Málaga > Peñas Blancas. Estepona",
+      "pcs_type": "hilly",
+      "profile_score": 271,
+      "vmeters": 3987
     },
     {
       "stage": 20,
@@ -207,14 +284,22 @@
         "HC"
       ],
       "summit_finish": true,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "20. Etape - La Calahorra > Collado del Alguacil",
+      "pcs_type": "mountain",
+      "profile_score": 521,
+      "vmeters": 4849
     },
     {
       "stage": 21,
       "category": "middel",
       "climbs": [],
       "summit_finish": false,
-      "intermediate_sprints": 1
+      "intermediate_sprints": 1,
+      "name": "21. Etape - Carrefour Granada > Granada",
+      "pcs_type": "sprint",
+      "profile_score": 93,
+      "vmeters": 1311
     }
   ]
 }

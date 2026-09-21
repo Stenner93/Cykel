@@ -18,8 +18,11 @@ created or cost value", which is the question we care about.
 Outputs data/analysis/manager_eval[_<race>].json + a printed summary.
 """
 import argparse
-import json, os, collections, sys, unicodedata
+import json, os, collections, sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from names import norm, resolve  # noqa: E402  — delt navnematchning
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -39,42 +42,6 @@ RACES = {
         "out": ROOT / "data/analysis/manager_eval_vuelta.json",
     },
 }
-
-
-def norm(s):
-    s = unicodedata.normalize("NFKD", s or "")
-    s = "".join(c for c in s if not unicodedata.combining(c))
-    s = s.replace("ø", "o").replace("Ø", "O").replace("æ", "ae").replace("å", "aa")
-    return " ".join("".join(c for c in s.lower() if c.isalnum() or c == " ").split())
-
-
-def resolve(ref_name, pred_names_norm):
-    """Map a holdet reference name onto the prediction file's canonical name.
-
-    Holdet's reference dump spells names differently from the rider database
-    ("Enric Mas Nicolau" vs "Enric Mas", "Gregor Muhlberger" vs "Gregor
-    Mühlberger"), so an exact string join silently drops riders — and dropping
-    them is invisible in the output, which is how a whole field's biggest
-    grower once vanished from every single roster at once. Match on normalised
-    text, then on one name being a token-prefix of the other, then on
-    first+last token. Deliberately NO surname-only fallback: "Lucas Hamilton"
-    must not collapse onto "Chris Hamilton".
-    """
-    n = norm(ref_name)
-    if n in pred_names_norm:
-        return pred_names_norm[n]
-    toks = n.split()
-    for cand_n, cand in pred_names_norm.items():
-        ct = cand_n.split()
-        if ct[: len(toks)] == toks or toks[: len(ct)] == ct:
-            return cand
-    if len(toks) >= 2:
-        key = (toks[0], toks[-1])
-        for cand_n, cand in pred_names_norm.items():
-            ct = cand_n.split()
-            if len(ct) >= 2 and (ct[0], ct[-1]) == key:
-                return cand
-    return None
 
 
 def load(H, pred_path):

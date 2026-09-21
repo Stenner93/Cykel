@@ -86,10 +86,16 @@ def stage_schedule(stage, rules):
 
     return {
         "stage": stage["stage"],
-        "name": stage.get("name", ""),
+        "name": stage.get("name") or "",
         "category": stage["category"],
         "climbs": "-".join(climbs) if climbs else "—",
         "summit_finish": summit,
+        # Ren ruteinformation, bæres videre så ruteplanlæggeren kan vise hele
+        # løbet uden at skulle læse rutefilen separat.
+        "intermediate_sprints": n_sprints,
+        "pcs_type": stage.get("pcs_type"),
+        "profile_score": stage.get("profile_score"),
+        "vmeters": stage.get("vmeters"),
         "placement_kr": placement,
         "points_finish_kr": kr(sprint_finish),
         "kom_finish_kr": kr(kom_finish),
@@ -122,6 +128,11 @@ def main():
 
     out = Path(args.out) if args.out else ROOT / f"web/data/{route['race']}_stage_points.json"
     out.write_text(json.dumps({
+        "race": route["race"],
+        "title": route.get("title", ""),
+        # Hviledage falder ikke ud af pointskemaet, men ruteplanlæggeren bruger
+        # dem som naturlige blokgrænser. Tom liste = ikke udfyldt i rutefilen.
+        "rest_after": route.get("rest_after", []),
         "source": f"Beregnet på forhånd af {Path(args.route).name} "
                   "(etapekategori, stigninger, indlagte spurter) + holdet.dk's regler. "
                   "Ingen resultatdata indgår.",
