@@ -45,1016 +45,2941 @@
     "bank_m": 0.0,
     "value_m": 61.86
   },
+  "archetypes": {
+    "source": "CyclingOracle-ratings som percentiler inden for dette løbs startliste. En mærkat betyder 'blandt feltets øverste 20 % på den dimension' — ikke en absolut vurdering. Kun til filtrering.",
+    "percentile": 0.8,
+    "dims": {
+      "SPR": "spurter",
+      "HLL": "puncher",
+      "MTN": "klatrer",
+      "GC": "gc",
+      "ITT": "tempo"
+    },
+    "without_data": [
+      "Juan Felipe Rodriguez",
+      "Moritz Kretschy"
+    ]
+  },
   "riders": [
     {
       "name": "Tadej Pogacar",
       "team": "UAE",
-      "price_m": 22.0
+      "price_m": 22.0,
+      "co": {
+        "SPR": 75.0,
+        "HLL": 99.0,
+        "MTN": 99.0,
+        "GC": 96.0,
+        "ITT": 93.0
+      },
+      "tags": [
+        "spurter",
+        "puncher",
+        "klatrer",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Wout van Aert",
       "team": "VLB",
-      "price_m": 14.36
+      "price_m": 14.36,
+      "co": {
+        "SPR": 90.0,
+        "HLL": 91.0,
+        "MTN": 66.0,
+        "GC": 54.0,
+        "ITT": 78.0
+      },
+      "tags": [
+        "spurter",
+        "puncher",
+        "tempo"
+      ]
     },
     {
       "name": "Matthew Brennan",
       "team": "VLB",
-      "price_m": 14.01
+      "price_m": 14.01,
+      "co": {
+        "SPR": 88.0,
+        "HLL": 79.0,
+        "MTN": 43.0,
+        "GC": 48.0,
+        "ITT": 49.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Felix Gall",
       "team": "DAL",
-      "price_m": 13.53
+      "price_m": 13.53,
+      "co": {
+        "SPR": 39.0,
+        "HLL": 78.0,
+        "MTN": 95.0,
+        "GC": 92.0,
+        "ITT": 44.0
+      },
+      "tags": [
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Oscar Onley",
       "team": "IGD",
-      "price_m": 12.42
+      "price_m": 12.42,
+      "co": {
+        "SPR": 51.0,
+        "HLL": 88.0,
+        "MTN": 90.0,
+        "GC": 89.0,
+        "ITT": 65.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Primoz Roglic",
       "team": "RBH",
-      "price_m": 11.9
+      "price_m": 11.9,
+      "co": {
+        "SPR": 47.0,
+        "HLL": 90.0,
+        "MTN": 92.0,
+        "GC": 90.0,
+        "ITT": 89.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Mattias Skjelmose",
       "team": "L-T",
-      "price_m": 11.38
+      "price_m": 11.38,
+      "co": {
+        "SPR": 54.0,
+        "HLL": 93.0,
+        "MTN": 91.0,
+        "GC": 90.0,
+        "ITT": 89.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Richard Carapaz",
       "team": "EF",
-      "price_m": 11.11
+      "price_m": 11.11,
+      "co": {
+        "SPR": 50.0,
+        "HLL": 90.0,
+        "MTN": 93.0,
+        "GC": 91.0,
+        "ITT": 55.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Mads Pedersen",
       "team": "L-T",
-      "price_m": 11.09
+      "price_m": 11.09,
+      "co": {
+        "SPR": 91.0,
+        "HLL": 91.0,
+        "MTN": 44.0,
+        "GC": 62.0,
+        "ITT": 73.0
+      },
+      "tags": [
+        "spurter",
+        "puncher",
+        "tempo"
+      ]
     },
     {
       "name": "Enric Mas",
       "team": "MOV",
-      "price_m": 10.99
+      "price_m": 10.99,
+      "co": {
+        "SPR": 47.0,
+        "HLL": 85.0,
+        "MTN": 90.0,
+        "GC": 87.0,
+        "ITT": 45.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Joao Almeida",
       "team": "UAE",
-      "price_m": 9.86
+      "price_m": 9.86,
+      "co": {
+        "SPR": 43.0,
+        "HLL": 82.0,
+        "MTN": 93.0,
+        "GC": 91.0,
+        "ITT": 86.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Tobias Halland Johannessen",
       "team": "UXM",
-      "price_m": 9.45
+      "price_m": 9.45,
+      "co": {
+        "SPR": 58.0,
+        "HLL": 91.0,
+        "MTN": 90.0,
+        "GC": 90.0,
+        "ITT": 44.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Sepp Kuss",
       "team": "VLB",
-      "price_m": 8.96
+      "price_m": 8.96,
+      "co": {
+        "SPR": 42.0,
+        "HLL": 77.0,
+        "MTN": 94.0,
+        "GC": 90.0,
+        "ITT": 44.0
+      },
+      "tags": [
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Jordi Meeus",
       "team": "RBH",
-      "price_m": 8.3
+      "price_m": 8.3,
+      "co": {
+        "SPR": 96.0,
+        "HLL": 77.0,
+        "MTN": 23.0,
+        "GC": 35.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Jørgen Nordhagen",
       "team": "VLB",
-      "price_m": 8.28
+      "price_m": 8.28,
+      "co": {
+        "SPR": 35.0,
+        "HLL": 73.0,
+        "MTN": 72.0,
+        "GC": 76.0,
+        "ITT": 49.0
+      },
+      "tags": [
+        "gc"
+      ]
     },
     {
       "name": "Joshua Tarling",
       "team": "IGD",
-      "price_m": 7.62
+      "price_m": 7.62,
+      "co": {
+        "SPR": 47.0,
+        "HLL": 46.0,
+        "MTN": 42.0,
+        "GC": 41.0,
+        "ITT": 93.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Thibau Nys",
       "team": "L-T",
-      "price_m": 7.26
+      "price_m": 7.26,
+      "co": {
+        "SPR": 37.0,
+        "HLL": 84.0,
+        "MTN": 53.0,
+        "GC": 39.0,
+        "ITT": 30.0
+      },
+      "tags": [
+        "puncher"
+      ]
     },
     {
       "name": "Santiago Buitrago",
       "team": "TVM",
-      "price_m": 7.23
+      "price_m": 7.23,
+      "co": {
+        "SPR": 47.0,
+        "HLL": 89.0,
+        "MTN": 86.0,
+        "GC": 83.0,
+        "ITT": 54.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Matthew Riccitello",
       "team": "DAL",
-      "price_m": 7.18
+      "price_m": 7.18,
+      "co": {
+        "SPR": 38.0,
+        "HLL": 74.0,
+        "MTN": 91.0,
+        "GC": 90.0,
+        "ITT": 66.0
+      },
+      "tags": [
+        "klatrer",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Jay Vine",
       "team": "UAE",
-      "price_m": 7.14
+      "price_m": 7.14,
+      "co": {
+        "SPR": 38.0,
+        "HLL": 82.0,
+        "MTN": 90.0,
+        "GC": 76.0,
+        "ITT": 93.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Cristian Rodriguez Martin",
       "team": "XDA",
-      "price_m": 6.67
+      "price_m": 6.67,
+      "co": {
+        "SPR": 36.0,
+        "HLL": 69.0,
+        "MTN": 87.0,
+        "GC": 79.0,
+        "ITT": 41.0
+      },
+      "tags": [
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Finn Fisher-Black",
       "team": "RBH",
-      "price_m": 6.57
+      "price_m": 6.57,
+      "co": {
+        "SPR": 64.0,
+        "HLL": 78.0,
+        "MTN": 60.0,
+        "GC": 73.0,
+        "ITT": 75.0
+      },
+      "tags": [
+        "spurter",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Stefan Küng",
       "team": "TDR",
-      "price_m": 6.48
+      "price_m": 6.48,
+      "co": {
+        "SPR": 52.0,
+        "HLL": 68.0,
+        "MTN": 45.0,
+        "GC": 41.0,
+        "ITT": 92.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Valentin Paret-Peintre",
       "team": "SQ",
-      "price_m": 6.28
+      "price_m": 6.28,
+      "co": {
+        "SPR": 37.0,
+        "HLL": 71.0,
+        "MTN": 88.0,
+        "GC": 76.0,
+        "ITT": 39.0
+      },
+      "tags": [
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Orluis Aular",
       "team": "MOV",
-      "price_m": 6.24
+      "price_m": 6.24,
+      "co": {
+        "SPR": 87.0,
+        "HLL": 77.0,
+        "MTN": 46.0,
+        "GC": 48.0,
+        "ITT": 40.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Cian Uijtdebroeks",
       "team": "MOV",
-      "price_m": 6.22
+      "price_m": 6.22,
+      "co": {
+        "SPR": 37.0,
+        "HLL": 88.0,
+        "MTN": 81.0,
+        "GC": 81.0,
+        "ITT": 42.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Carlos Rodriguez",
       "team": "IGD",
-      "price_m": 6.12
+      "price_m": 6.12,
+      "co": {
+        "SPR": 46.0,
+        "HLL": 75.0,
+        "MTN": 87.0,
+        "GC": 81.0,
+        "ITT": 57.0
+      },
+      "tags": [
+        "klatrer",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Mikel Landa",
       "team": "SQ",
-      "price_m": 6.09
+      "price_m": 6.09,
+      "co": {
+        "SPR": 39.0,
+        "HLL": 81.0,
+        "MTN": 88.0,
+        "GC": 83.0,
+        "ITT": 48.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Axel Laurance",
       "team": "IGD",
-      "price_m": 6.07
+      "price_m": 6.07,
+      "co": {
+        "SPR": 75.0,
+        "HLL": 85.0,
+        "MTN": 64.0,
+        "GC": 53.0,
+        "ITT": 28.0
+      },
+      "tags": [
+        "spurter",
+        "puncher"
+      ]
     },
     {
       "name": "Léo Bisiaux",
       "team": "DAL",
-      "price_m": 6.04
+      "price_m": 6.04,
+      "co": {
+        "SPR": 32.0,
+        "HLL": 88.0,
+        "MTN": 68.0,
+        "GC": 50.0,
+        "ITT": 36.0
+      },
+      "tags": [
+        "puncher"
+      ]
     },
     {
       "name": "Bryan Coquard",
       "team": "COF",
-      "price_m": 5.95
+      "price_m": 5.95,
+      "co": {
+        "SPR": 89.0,
+        "HLL": 69.0,
+        "MTN": 34.0,
+        "GC": 39.0,
+        "ITT": 24.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Jarno Widar",
       "team": "INT",
-      "price_m": 5.88
+      "price_m": 5.88,
+      "co": {
+        "SPR": 28.0,
+        "HLL": 61.0,
+        "MTN": 63.0,
+        "GC": 41.0,
+        "ITT": 26.0
+      },
+      "tags": []
     },
     {
       "name": "Magnus Cort",
       "team": "UXM",
-      "price_m": 5.78
+      "price_m": 5.78,
+      "co": {
+        "SPR": 76.0,
+        "HLL": 82.0,
+        "MTN": 45.0,
+        "GC": 51.0,
+        "ITT": 38.0
+      },
+      "tags": [
+        "spurter",
+        "puncher"
+      ]
     },
     {
       "name": "Liam Tuckwell",
       "team": "RBH",
-      "price_m": 5.68
+      "price_m": 5.68,
+      "co": {
+        "SPR": 28.0,
+        "HLL": 58.0,
+        "MTN": 68.0,
+        "GC": 74.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "gc"
+      ]
     },
     {
       "name": "Bruno Armirail",
       "team": "VLB",
-      "price_m": 5.61
+      "price_m": 5.61,
+      "co": {
+        "SPR": 40.0,
+        "HLL": 51.0,
+        "MTN": 80.0,
+        "GC": 67.0,
+        "ITT": 91.0
+      },
+      "tags": [
+        "klatrer",
+        "tempo"
+      ]
     },
     {
       "name": "Jakob Omrzel",
       "team": "TVM",
-      "price_m": 5.55
+      "price_m": 5.55,
+      "co": {
+        "SPR": 34.0,
+        "HLL": 63.0,
+        "MTN": 56.0,
+        "GC": 53.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Laurence Pithie",
       "team": "RBH",
-      "price_m": 5.5
+      "price_m": 5.5,
+      "co": {
+        "SPR": 89.0,
+        "HLL": 84.0,
+        "MTN": 39.0,
+        "GC": 52.0,
+        "ITT": 49.0
+      },
+      "tags": [
+        "spurter",
+        "puncher"
+      ]
     },
     {
       "name": "Harold Tejada",
       "team": "XDA",
-      "price_m": 5.49
+      "price_m": 5.49,
+      "co": {
+        "SPR": 56.0,
+        "HLL": 84.0,
+        "MTN": 90.0,
+        "GC": 86.0,
+        "ITT": 68.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Pello Bilbao",
       "team": "TVM",
-      "price_m": 5.49
+      "price_m": 5.49,
+      "co": {
+        "SPR": 52.0,
+        "HLL": 91.0,
+        "MTN": 82.0,
+        "GC": 81.0,
+        "ITT": 63.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Ben Tulett",
       "team": "VLB",
-      "price_m": 5.48
+      "price_m": 5.48,
+      "co": {
+        "SPR": 49.0,
+        "HLL": 91.0,
+        "MTN": 81.0,
+        "GC": 59.0,
+        "ITT": 43.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer"
+      ]
     },
     {
       "name": "Kaden Groves",
       "team": "ALP",
-      "price_m": 5.45
+      "price_m": 5.45,
+      "co": {
+        "SPR": 90.0,
+        "HLL": 82.0,
+        "MTN": 36.0,
+        "GC": 39.0,
+        "ITT": 28.0
+      },
+      "tags": [
+        "spurter",
+        "puncher"
+      ]
     },
     {
       "name": "Christophe Laporte",
       "team": "VLB",
-      "price_m": 5.42
+      "price_m": 5.42,
+      "co": {
+        "SPR": 81.0,
+        "HLL": 86.0,
+        "MTN": 34.0,
+        "GC": 51.0,
+        "ITT": 46.0
+      },
+      "tags": [
+        "spurter",
+        "puncher"
+      ]
     },
     {
       "name": "Steffen De Schuyteneer",
       "team": "INT",
-      "price_m": 5.37
+      "price_m": 5.37,
+      "co": {
+        "SPR": 91.0,
+        "HLL": 55.0,
+        "MTN": 24.0,
+        "GC": 43.0,
+        "ITT": 37.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Lorenzo Fortunato",
       "team": "XDA",
-      "price_m": 5.33
+      "price_m": 5.33,
+      "co": {
+        "SPR": 32.0,
+        "HLL": 81.0,
+        "MTN": 88.0,
+        "GC": 79.0,
+        "ITT": 27.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Alberto Dainese",
       "team": "SQ",
-      "price_m": 5.2
+      "price_m": 5.2,
+      "co": {
+        "SPR": 89.0,
+        "HLL": 49.0,
+        "MTN": 24.0,
+        "GC": 36.0,
+        "ITT": 25.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Ramses Debruyne",
       "team": "ALP",
-      "price_m": 5.19
+      "price_m": 5.19,
+      "co": {
+        "SPR": 38.0,
+        "HLL": 74.0,
+        "MTN": 58.0,
+        "GC": 47.0,
+        "ITT": 28.0
+      },
+      "tags": []
     },
     {
       "name": "Kevin Vermaerke",
       "team": "UAE",
-      "price_m": 5.13
+      "price_m": 5.13,
+      "co": {
+        "SPR": 46.0,
+        "HLL": 87.0,
+        "MTN": 77.0,
+        "GC": 69.0,
+        "ITT": 27.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Marco Brenner",
       "team": "TDR",
-      "price_m": 5.02
+      "price_m": 5.02,
+      "co": {
+        "SPR": 37.0,
+        "HLL": 79.0,
+        "MTN": 56.0,
+        "GC": 75.0,
+        "ITT": 47.0
+      },
+      "tags": [
+        "gc"
+      ]
     },
     {
       "name": "Ethan Hayter",
       "team": "SQ",
-      "price_m": 4.97
+      "price_m": 4.97,
+      "co": {
+        "SPR": 46.0,
+        "HLL": 45.0,
+        "MTN": 38.0,
+        "GC": 49.0,
+        "ITT": 89.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Hugo Hofstetter",
       "team": "NCT",
-      "price_m": 4.73
+      "price_m": 4.73,
+      "co": {
+        "SPR": 88.0,
+        "HLL": 55.0,
+        "MTN": 23.0,
+        "GC": 29.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Ben Turner",
       "team": "IGD",
-      "price_m": 4.72
+      "price_m": 4.72,
+      "co": {
+        "SPR": 86.0,
+        "HLL": 61.0,
+        "MTN": 45.0,
+        "GC": 49.0,
+        "ITT": 63.0
+      },
+      "tags": [
+        "spurter",
+        "tempo"
+      ]
     },
     {
       "name": "Andreas Leknessund",
       "team": "UXM",
-      "price_m": 4.6
+      "price_m": 4.6,
+      "co": {
+        "SPR": 38.0,
+        "HLL": 79.0,
+        "MTN": 68.0,
+        "GC": 62.0,
+        "ITT": 83.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Ivan Romeo",
       "team": "MOV",
-      "price_m": 4.47
+      "price_m": 4.47,
+      "co": {
+        "SPR": 40.0,
+        "HLL": 77.0,
+        "MTN": 62.0,
+        "GC": 72.0,
+        "ITT": 85.0
+      },
+      "tags": [
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Pablo Castrillo",
       "team": "MOV",
-      "price_m": 4.47
+      "price_m": 4.47,
+      "co": {
+        "SPR": 40.0,
+        "HLL": 73.0,
+        "MTN": 88.0,
+        "GC": 68.0,
+        "ITT": 81.0
+      },
+      "tags": [
+        "klatrer",
+        "tempo"
+      ]
     },
     {
       "name": "Clement Berthet",
       "team": "GFD",
-      "price_m": 4.45
+      "price_m": 4.45,
+      "co": {
+        "SPR": 40.0,
+        "HLL": 83.0,
+        "MTN": 68.0,
+        "GC": 63.0,
+        "ITT": 40.0
+      },
+      "tags": [
+        "puncher"
+      ]
     },
     {
       "name": "Bastien Tronchon",
       "team": "GFD",
-      "price_m": 4.44
+      "price_m": 4.44,
+      "co": {
+        "SPR": 70.0,
+        "HLL": 78.0,
+        "MTN": 37.0,
+        "GC": 49.0,
+        "ITT": 25.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Jan Hirt",
       "team": "NCT",
-      "price_m": 4.42
+      "price_m": 4.42,
+      "co": {
+        "SPR": 38.0,
+        "HLL": 45.0,
+        "MTN": 78.0,
+        "GC": 74.0,
+        "ITT": 26.0
+      },
+      "tags": [
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Raul Garcia Pierna",
       "team": "MOV",
-      "price_m": 4.38
+      "price_m": 4.38,
+      "co": {
+        "SPR": 41.0,
+        "HLL": 75.0,
+        "MTN": 75.0,
+        "GC": 61.0,
+        "ITT": 79.0
+      },
+      "tags": [
+        "klatrer",
+        "tempo"
+      ]
     },
     {
       "name": "Pablo Torres",
       "team": "UAE",
-      "price_m": 4.36
+      "price_m": 4.36,
+      "co": {
+        "SPR": 32.0,
+        "HLL": 54.0,
+        "MTN": 64.0,
+        "GC": 48.0,
+        "ITT": 42.0
+      },
+      "tags": []
     },
     {
       "name": "Ivo Oliveira",
       "team": "UAE",
-      "price_m": 4.28
+      "price_m": 4.28,
+      "co": {
+        "SPR": 64.0,
+        "HLL": 59.0,
+        "MTN": 35.0,
+        "GC": 40.0,
+        "ITT": 67.0
+      },
+      "tags": [
+        "spurter",
+        "tempo"
+      ]
     },
     {
       "name": "Guillaume Martin",
       "team": "GFD",
-      "price_m": 4.26
+      "price_m": 4.26,
+      "co": {
+        "SPR": 54.0,
+        "HLL": 87.0,
+        "MTN": 80.0,
+        "GC": 80.0,
+        "ITT": 34.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Eddie Dunbar",
       "team": "Q36",
-      "price_m": 4.15
+      "price_m": 4.15,
+      "co": {
+        "SPR": 32.0,
+        "HLL": 73.0,
+        "MTN": 73.0,
+        "GC": 68.0,
+        "ITT": 49.0
+      },
+      "tags": [
+        "klatrer"
+      ]
     },
     {
       "name": "Filippo Zana",
       "team": "SQ",
-      "price_m": 4.15
+      "price_m": 4.15,
+      "co": {
+        "SPR": 41.0,
+        "HLL": 90.0,
+        "MTN": 71.0,
+        "GC": 68.0,
+        "ITT": 38.0
+      },
+      "tags": [
+        "puncher"
+      ]
     },
     {
       "name": "Gianmarco Garofoli",
       "team": "SQ",
-      "price_m": 4.09
+      "price_m": 4.09,
+      "co": {
+        "SPR": 59.0,
+        "HLL": 80.0,
+        "MTN": 69.0,
+        "GC": 48.0,
+        "ITT": 40.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Gregor Mühlberger",
       "team": "DAL",
-      "price_m": 4.03
+      "price_m": 4.03,
+      "co": {
+        "SPR": 38.0,
+        "HLL": 70.0,
+        "MTN": 86.0,
+        "GC": 70.0,
+        "ITT": 30.0
+      },
+      "tags": [
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Vincenzo Albanese",
       "team": "EF",
-      "price_m": 4.01
+      "price_m": 4.01,
+      "co": {
+        "SPR": 71.0,
+        "HLL": 78.0,
+        "MTN": 33.0,
+        "GC": 43.0,
+        "ITT": 30.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Alessandro Romele",
       "team": "XDA",
-      "price_m": 4.0
+      "price_m": 4.0,
+      "co": {
+        "SPR": 64.0,
+        "HLL": 45.0,
+        "MTN": 27.0,
+        "GC": 38.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Erlend Blikra",
       "team": "UXM",
-      "price_m": 4.0
+      "price_m": 4.0,
+      "co": {
+        "SPR": 90.0,
+        "HLL": 52.0,
+        "MTN": 21.0,
+        "GC": 27.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Rasmus Tiller",
       "team": "UXM",
-      "price_m": 4.0
+      "price_m": 4.0,
+      "co": {
+        "SPR": 65.0,
+        "HLL": 76.0,
+        "MTN": 31.0,
+        "GC": 44.0,
+        "ITT": 28.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Pau Miquel",
       "team": "TVM",
-      "price_m": 3.96
+      "price_m": 3.96,
+      "co": {
+        "SPR": 64.0,
+        "HLL": 79.0,
+        "MTN": 41.0,
+        "GC": 34.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Henok Mulubrhan",
       "team": "XDA",
-      "price_m": 3.88
+      "price_m": 3.88,
+      "co": {
+        "SPR": 63.0,
+        "HLL": 59.0,
+        "MTN": 72.0,
+        "GC": 61.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Marcel Camprubi",
       "team": "Q36",
-      "price_m": 3.83
+      "price_m": 3.83,
+      "co": {
+        "SPR": 43.0,
+        "HLL": 79.0,
+        "MTN": 43.0,
+        "GC": 40.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Koen Bouwman",
       "team": "JAL",
-      "price_m": 3.81
+      "price_m": 3.81,
+      "co": {
+        "SPR": 37.0,
+        "HLL": 49.0,
+        "MTN": 55.0,
+        "GC": 43.0,
+        "ITT": 30.0
+      },
+      "tags": []
     },
     {
       "name": "Urko Berrade",
       "team": "EKP",
-      "price_m": 3.81
+      "price_m": 3.81,
+      "co": {
+        "SPR": 36.0,
+        "HLL": 73.0,
+        "MTN": 59.0,
+        "GC": 55.0,
+        "ITT": 54.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Alexey Lutsenko",
       "team": "NCT",
-      "price_m": 3.75
+      "price_m": 3.75,
+      "co": {
+        "SPR": 40.0,
+        "HLL": 64.0,
+        "MTN": 49.0,
+        "GC": 49.0,
+        "ITT": 47.0
+      },
+      "tags": []
     },
     {
       "name": "Ivan Ramiro Sosa",
       "team": "EKP",
-      "price_m": 3.69
+      "price_m": 3.69,
+      "co": {
+        "SPR": 25.0,
+        "HLL": 43.0,
+        "MTN": 78.0,
+        "GC": 50.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "klatrer"
+      ]
     },
     {
       "name": "Finlay Pickering",
       "team": "JAL",
-      "price_m": 3.66
+      "price_m": 3.66,
+      "co": {
+        "SPR": 28.0,
+        "HLL": 60.0,
+        "MTN": 60.0,
+        "GC": 52.0,
+        "ITT": 32.0
+      },
+      "tags": []
     },
     {
       "name": "Alexis Renard",
       "team": "COF",
-      "price_m": 3.63
+      "price_m": 3.63,
+      "co": {
+        "SPR": 89.0,
+        "HLL": 61.0,
+        "MTN": 23.0,
+        "GC": 32.0,
+        "ITT": 33.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Fredrik Dversnes",
       "team": "UXM",
-      "price_m": 3.53
+      "price_m": 3.53,
+      "co": {
+        "SPR": 56.0,
+        "HLL": 79.0,
+        "MTN": 43.0,
+        "GC": 49.0,
+        "ITT": 43.0
+      },
+      "tags": []
     },
     {
       "name": "Luke Plapp",
       "team": "JAL",
-      "price_m": 3.5
+      "price_m": 3.5,
+      "co": {
+        "SPR": 37.0,
+        "HLL": 77.0,
+        "MTN": 76.0,
+        "GC": 77.0,
+        "ITT": 88.0
+      },
+      "tags": [
+        "klatrer",
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Max Poole",
       "team": "TPP",
-      "price_m": 3.5
+      "price_m": 3.5,
+      "co": {
+        "SPR": 35.0,
+        "HLL": 58.0,
+        "MTN": 72.0,
+        "GC": 61.0,
+        "ITT": 51.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Ibon Ruiz",
       "team": "EKP",
-      "price_m": 3.45
+      "price_m": 3.45,
+      "co": {
+        "SPR": 38.0,
+        "HLL": 64.0,
+        "MTN": 67.0,
+        "GC": 54.0,
+        "ITT": 23.0
+      },
+      "tags": []
     },
     {
       "name": "Carlos Canal",
       "team": "MOV",
-      "price_m": 3.44
+      "price_m": 3.44,
+      "co": {
+        "SPR": 66.0,
+        "HLL": 84.0,
+        "MTN": 39.0,
+        "GC": 51.0,
+        "ITT": 26.0
+      },
+      "tags": [
+        "spurter",
+        "puncher"
+      ]
     },
     {
       "name": "Andreas Kron",
       "team": "UXM",
-      "price_m": 3.42
+      "price_m": 3.42,
+      "co": {
+        "SPR": 39.0,
+        "HLL": 85.0,
+        "MTN": 60.0,
+        "GC": 55.0,
+        "ITT": 29.0
+      },
+      "tags": [
+        "puncher"
+      ]
     },
     {
       "name": "César Macías",
       "team": "BB",
-      "price_m": 3.4
+      "price_m": 3.4,
+      "co": {
+        "SPR": 73.0,
+        "HLL": 50.0,
+        "MTN": 24.0,
+        "GC": 26.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Iván Cobo Cayón",
       "team": "EKP",
-      "price_m": 3.37
+      "price_m": 3.37,
+      "co": {
+        "SPR": 49.0,
+        "HLL": 71.0,
+        "MTN": 41.0,
+        "GC": 47.0,
+        "ITT": 31.0
+      },
+      "tags": []
     },
     {
       "name": "Georg Steinhauser",
       "team": "EF",
-      "price_m": 3.34
+      "price_m": 3.34,
+      "co": {
+        "SPR": 38.0,
+        "HLL": 66.0,
+        "MTN": 70.0,
+        "GC": 66.0,
+        "ITT": 45.0
+      },
+      "tags": []
     },
     {
       "name": "Vito Braet",
       "team": "INT",
-      "price_m": 3.34
+      "price_m": 3.34,
+      "co": {
+        "SPR": 73.0,
+        "HLL": 62.0,
+        "MTN": 28.0,
+        "GC": 38.0,
+        "ITT": 28.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Jasha Sütterlin",
       "team": "JAL",
-      "price_m": 3.32
+      "price_m": 3.32,
+      "co": {
+        "SPR": 40.0,
+        "HLL": 44.0,
+        "MTN": 34.0,
+        "GC": 40.0,
+        "ITT": 52.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Embret Svestad-Bårdseng",
       "team": "IGD",
-      "price_m": 3.3
+      "price_m": 3.3,
+      "co": {
+        "SPR": 45.0,
+        "HLL": 62.0,
+        "MTN": 76.0,
+        "GC": 65.0,
+        "ITT": 39.0
+      },
+      "tags": [
+        "klatrer"
+      ]
     },
     {
       "name": "Marc Brustenga Masague",
       "team": "EKP",
-      "price_m": 3.3
+      "price_m": 3.3,
+      "co": {
+        "SPR": 74.0,
+        "HLL": 49.0,
+        "MTN": 23.0,
+        "GC": 31.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Emanuel Buchmann",
       "team": "COF",
-      "price_m": 3.29
+      "price_m": 3.29,
+      "co": {
+        "SPR": 35.0,
+        "HLL": 53.0,
+        "MTN": 56.0,
+        "GC": 58.0,
+        "ITT": 27.0
+      },
+      "tags": []
     },
     {
       "name": "Callum Thornley",
       "team": "RBH",
-      "price_m": 3.28
+      "price_m": 3.28,
+      "co": {
+        "SPR": 44.0,
+        "HLL": 44.0,
+        "MTN": 38.0,
+        "GC": 32.0,
+        "ITT": 56.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Timo de Jong",
       "team": "TPP",
-      "price_m": 3.27
+      "price_m": 3.27,
+      "co": {
+        "SPR": 54.0,
+        "HLL": 40.0,
+        "MTN": 22.0,
+        "GC": 35.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Thomas Gloag",
       "team": "Q36",
-      "price_m": 3.26
+      "price_m": 3.26,
+      "co": {
+        "SPR": 36.0,
+        "HLL": 55.0,
+        "MTN": 50.0,
+        "GC": 51.0,
+        "ITT": 25.0
+      },
+      "tags": []
     },
     {
       "name": "Mauri Vansevenant",
       "team": "SQ",
-      "price_m": 3.24
+      "price_m": 3.24,
+      "co": {
+        "SPR": 42.0,
+        "HLL": 87.0,
+        "MTN": 57.0,
+        "GC": 48.0,
+        "ITT": 39.0
+      },
+      "tags": [
+        "puncher"
+      ]
     },
     {
       "name": "Pavel Sivakov",
       "team": "UAE",
-      "price_m": 3.17
+      "price_m": 3.17,
+      "co": {
+        "SPR": 40.0,
+        "HLL": 91.0,
+        "MTN": 81.0,
+        "GC": 69.0,
+        "ITT": 36.0
+      },
+      "tags": [
+        "puncher",
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Valentin Madouas",
       "team": "GFD",
-      "price_m": 3.17
+      "price_m": 3.17,
+      "co": {
+        "SPR": 57.0,
+        "HLL": 90.0,
+        "MTN": 60.0,
+        "GC": 69.0,
+        "ITT": 35.0
+      },
+      "tags": [
+        "puncher",
+        "gc"
+      ]
     },
     {
       "name": "Davide Ballerini",
       "team": "XDA",
-      "price_m": 3.0
+      "price_m": 3.0,
+      "co": {
+        "SPR": 88.0,
+        "HLL": 70.0,
+        "MTN": 28.0,
+        "GC": 41.0,
+        "ITT": 24.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Einer Rubio",
       "team": "MOV",
-      "price_m": 3.0
+      "price_m": 3.0,
+      "co": {
+        "SPR": 40.0,
+        "HLL": 71.0,
+        "MTN": 89.0,
+        "GC": 79.0,
+        "ITT": 30.0
+      },
+      "tags": [
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Marijn van den Berg",
       "team": "EF",
-      "price_m": 3.0
+      "price_m": 3.0,
+      "co": {
+        "SPR": 87.0,
+        "HLL": 69.0,
+        "MTN": 26.0,
+        "GC": 44.0,
+        "ITT": 28.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Gianni Vermeersch",
       "team": "RBH",
-      "price_m": 2.99
+      "price_m": 2.99,
+      "co": {
+        "SPR": 49.0,
+        "HLL": 89.0,
+        "MTN": 44.0,
+        "GC": 34.0,
+        "ITT": 25.0
+      },
+      "tags": [
+        "puncher"
+      ]
     },
     {
       "name": "Matevz Govekar",
       "team": "TVM",
-      "price_m": 2.98
+      "price_m": 2.98,
+      "co": {
+        "SPR": 79.0,
+        "HLL": 58.0,
+        "MTN": 26.0,
+        "GC": 34.0,
+        "ITT": 32.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Remy Rochas",
       "team": "GFD",
-      "price_m": 2.98
+      "price_m": 2.98,
+      "co": {
+        "SPR": 41.0,
+        "HLL": 72.0,
+        "MTN": 58.0,
+        "GC": 56.0,
+        "ITT": 24.0
+      },
+      "tags": []
     },
     {
       "name": "Juan Felipe Rodriguez",
       "team": "EF",
-      "price_m": 2.94
+      "price_m": 2.94,
+      "tags": [],
+      "co": null
     },
     {
       "name": "David González",
       "team": "Q36",
-      "price_m": 2.84
+      "price_m": 2.84,
+      "co": {
+        "SPR": 73.0,
+        "HLL": 58.0,
+        "MTN": 47.0,
+        "GC": 40.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Floris Van Tricht",
       "team": "NCT",
-      "price_m": 2.84
+      "price_m": 2.84,
+      "co": {
+        "SPR": 59.0,
+        "HLL": 55.0,
+        "MTN": 26.0,
+        "GC": 26.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "David de la Cruz Melgarejo",
       "team": "Q36",
-      "price_m": 2.82
+      "price_m": 2.82,
+      "co": {
+        "SPR": 35.0,
+        "HLL": 55.0,
+        "MTN": 70.0,
+        "GC": 71.0,
+        "ITT": 59.0
+      },
+      "tags": [
+        "gc",
+        "tempo"
+      ]
     },
     {
       "name": "Mario Aparicio",
       "team": "BB",
-      "price_m": 2.82
+      "price_m": 2.82,
+      "co": {
+        "SPR": 30.0,
+        "HLL": 46.0,
+        "MTN": 52.0,
+        "GC": 49.0,
+        "ITT": 31.0
+      },
+      "tags": []
     },
     {
       "name": "José Manuel Diaz",
       "team": "BB",
-      "price_m": 2.78
+      "price_m": 2.78,
+      "co": {
+        "SPR": 34.0,
+        "HLL": 67.0,
+        "MTN": 65.0,
+        "GC": 55.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Yevgeniy Fedorov",
       "team": "XDA",
-      "price_m": 2.77
+      "price_m": 2.77,
+      "co": {
+        "SPR": 78.0,
+        "HLL": 58.0,
+        "MTN": 32.0,
+        "GC": 35.0,
+        "ITT": 59.0
+      },
+      "tags": [
+        "spurter",
+        "tempo"
+      ]
     },
     {
       "name": "Simon Dalby",
       "team": "UXM",
-      "price_m": 2.76
+      "price_m": 2.76,
+      "co": {
+        "SPR": 29.0,
+        "HLL": 48.0,
+        "MTN": 42.0,
+        "GC": 44.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Jack Haig",
       "team": "IGD",
-      "price_m": 2.73
+      "price_m": 2.73,
+      "co": {
+        "SPR": 42.0,
+        "HLL": 70.0,
+        "MTN": 69.0,
+        "GC": 60.0,
+        "ITT": 45.0
+      },
+      "tags": []
     },
     {
       "name": "Walter Calzoni",
       "team": "Q36",
-      "price_m": 2.73
+      "price_m": 2.73,
+      "co": {
+        "SPR": 32.0,
+        "HLL": 61.0,
+        "MTN": 47.0,
+        "GC": 44.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Patrick Konrad",
       "team": "L-T",
-      "price_m": 2.72
+      "price_m": 2.72,
+      "co": {
+        "SPR": 44.0,
+        "HLL": 70.0,
+        "MTN": 49.0,
+        "GC": 51.0,
+        "ITT": 30.0
+      },
+      "tags": []
     },
     {
       "name": "Rudy Molard",
       "team": "GFD",
-      "price_m": 2.7
+      "price_m": 2.7,
+      "co": {
+        "SPR": 40.0,
+        "HLL": 81.0,
+        "MTN": 55.0,
+        "GC": 58.0,
+        "ITT": 29.0
+      },
+      "tags": [
+        "puncher"
+      ]
     },
     {
       "name": "Attila Valter",
       "team": "TVM",
-      "price_m": 2.68
+      "price_m": 2.68,
+      "co": {
+        "SPR": 39.0,
+        "HLL": 78.0,
+        "MTN": 61.0,
+        "GC": 57.0,
+        "ITT": 49.0
+      },
+      "tags": []
     },
     {
       "name": "Sergio Samitier",
       "team": "COF",
-      "price_m": 2.67
+      "price_m": 2.67,
+      "co": {
+        "SPR": 34.0,
+        "HLL": 59.0,
+        "MTN": 44.0,
+        "GC": 45.0,
+        "ITT": 23.0
+      },
+      "tags": []
     },
     {
       "name": "Asbjørn Hellemose",
       "team": "JAL",
-      "price_m": 2.64
+      "price_m": 2.64,
+      "co": {
+        "SPR": 31.0,
+        "HLL": 53.0,
+        "MTN": 39.0,
+        "GC": 42.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Milan Vader",
       "team": "Q36",
-      "price_m": 2.64
+      "price_m": 2.64,
+      "co": {
+        "SPR": 50.0,
+        "HLL": 70.0,
+        "MTN": 38.0,
+        "GC": 50.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "William Barta",
       "team": "TDR",
-      "price_m": 2.62
+      "price_m": 2.62,
+      "co": {
+        "SPR": 32.0,
+        "HLL": 65.0,
+        "MTN": 63.0,
+        "GC": 57.0,
+        "ITT": 58.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Xabier Mikel Azparren",
       "team": "Q36",
-      "price_m": 2.62
+      "price_m": 2.62,
+      "co": {
+        "SPR": 32.0,
+        "HLL": 39.0,
+        "MTN": 27.0,
+        "GC": 36.0,
+        "ITT": 70.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Callum Scotson",
       "team": "DAL",
-      "price_m": 2.6
+      "price_m": 2.6,
+      "co": {
+        "SPR": 33.0,
+        "HLL": 50.0,
+        "MTN": 71.0,
+        "GC": 56.0,
+        "ITT": 43.0
+      },
+      "tags": []
     },
     {
       "name": "George Bennett",
       "team": "NCT",
-      "price_m": 2.59
+      "price_m": 2.59,
+      "co": {
+        "SPR": 37.0,
+        "HLL": 74.0,
+        "MTN": 71.0,
+        "GC": 66.0,
+        "ITT": 35.0
+      },
+      "tags": []
     },
     {
       "name": "Pau Marti",
       "team": "NCT",
-      "price_m": 2.56
+      "price_m": 2.56,
+      "co": {
+        "SPR": 33.0,
+        "HLL": 67.0,
+        "MTN": 44.0,
+        "GC": 37.0,
+        "ITT": 23.0
+      },
+      "tags": []
     },
     {
       "name": "Clement Champoussin",
       "team": "XDA",
-      "price_m": 2.5
+      "price_m": 2.5,
+      "co": {
+        "SPR": 46.0,
+        "HLL": 90.0,
+        "MTN": 68.0,
+        "GC": 69.0,
+        "ITT": 29.0
+      },
+      "tags": [
+        "puncher",
+        "gc"
+      ]
     },
     {
       "name": "Laurens De Plus",
       "team": "IGD",
-      "price_m": 2.5
+      "price_m": 2.5,
+      "co": {
+        "SPR": 37.0,
+        "HLL": 49.0,
+        "MTN": 62.0,
+        "GC": 63.0,
+        "ITT": 40.0
+      },
+      "tags": []
     },
     {
       "name": "Torstein Træen",
       "team": "UXM",
-      "price_m": 2.5
+      "price_m": 2.5,
+      "co": {
+        "SPR": 35.0,
+        "HLL": 56.0,
+        "MTN": 80.0,
+        "GC": 76.0,
+        "ITT": 32.0
+      },
+      "tags": [
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "William Junior Lecerf",
       "team": "SQ",
-      "price_m": 2.5
+      "price_m": 2.5,
+      "co": {
+        "SPR": 45.0,
+        "HLL": 74.0,
+        "MTN": 81.0,
+        "GC": 82.0,
+        "ITT": 32.0
+      },
+      "tags": [
+        "klatrer",
+        "gc"
+      ]
     },
     {
       "name": "Lennard Kämna",
       "team": "L-T",
-      "price_m": 2.49
+      "price_m": 2.49,
+      "co": {
+        "SPR": 34.0,
+        "HLL": 56.0,
+        "MTN": 51.0,
+        "GC": 51.0,
+        "ITT": 42.0
+      },
+      "tags": []
     },
     {
       "name": "Martin Tjøtta",
       "team": "UXM",
-      "price_m": 2.49
+      "price_m": 2.49,
+      "co": {
+        "SPR": 35.0,
+        "HLL": 56.0,
+        "MTN": 53.0,
+        "GC": 43.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Alessandro Covi",
       "team": "JAL",
-      "price_m": 2.48
+      "price_m": 2.48,
+      "co": {
+        "SPR": 43.0,
+        "HLL": 73.0,
+        "MTN": 51.0,
+        "GC": 41.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "James Shaw",
       "team": "EF",
-      "price_m": 2.47
+      "price_m": 2.47,
+      "co": {
+        "SPR": 34.0,
+        "HLL": 60.0,
+        "MTN": 54.0,
+        "GC": 43.0,
+        "ITT": 28.0
+      },
+      "tags": []
     },
     {
       "name": "Mats Wenzel",
       "team": "EKP",
-      "price_m": 2.46
+      "price_m": 2.46,
+      "co": {
+        "SPR": 43.0,
+        "HLL": 56.0,
+        "MTN": 31.0,
+        "GC": 49.0,
+        "ITT": 35.0
+      },
+      "tags": []
     },
     {
       "name": "Paul Double",
       "team": "JAL",
-      "price_m": 2.46
+      "price_m": 2.46,
+      "co": {
+        "SPR": 35.0,
+        "HLL": 70.0,
+        "MTN": 60.0,
+        "GC": 74.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "gc"
+      ]
     },
     {
       "name": "Oscar Chamberlain",
       "team": "DAL",
-      "price_m": 2.45
+      "price_m": 2.45,
+      "co": {
+        "SPR": 43.0,
+        "HLL": 43.0,
+        "MTN": 23.0,
+        "GC": 33.0,
+        "ITT": 46.0
+      },
+      "tags": []
     },
     {
       "name": "Clément Alleno",
       "team": "BB",
-      "price_m": 2.42
+      "price_m": 2.42,
+      "co": {
+        "SPR": 45.0,
+        "HLL": 52.0,
+        "MTN": 37.0,
+        "GC": 43.0,
+        "ITT": 27.0
+      },
+      "tags": []
     },
     {
       "name": "Lars Craps",
       "team": "INT",
-      "price_m": 2.42
+      "price_m": 2.42,
+      "co": {
+        "SPR": 34.0,
+        "HLL": 55.0,
+        "MTN": 49.0,
+        "GC": 51.0,
+        "ITT": 24.0
+      },
+      "tags": []
     },
     {
       "name": "Harold Martín López",
       "team": "BB",
-      "price_m": 2.41
+      "price_m": 2.41,
+      "co": {
+        "SPR": 37.0,
+        "HLL": 62.0,
+        "MTN": 76.0,
+        "GC": 68.0,
+        "ITT": 26.0
+      },
+      "tags": [
+        "klatrer"
+      ]
     },
     {
       "name": "Sylvain Moniquet",
       "team": "COF",
-      "price_m": 2.41
+      "price_m": 2.41,
+      "co": {
+        "SPR": 32.0,
+        "HLL": 71.0,
+        "MTN": 51.0,
+        "GC": 55.0,
+        "ITT": 30.0
+      },
+      "tags": []
     },
     {
       "name": "Jose Luis Faura",
       "team": "BB",
-      "price_m": 2.39
+      "price_m": 2.39,
+      "co": {
+        "SPR": 25.0,
+        "HLL": 42.0,
+        "MTN": 49.0,
+        "GC": 43.0,
+        "ITT": 27.0
+      },
+      "tags": []
     },
     {
       "name": "Sander De Pestel",
       "team": "DAL",
-      "price_m": 2.37
+      "price_m": 2.37,
+      "co": {
+        "SPR": 53.0,
+        "HLL": 50.0,
+        "MTN": 34.0,
+        "GC": 38.0,
+        "ITT": 57.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Jorge Arcas Pena",
       "team": "MOV",
-      "price_m": 2.35
+      "price_m": 2.35,
+      "co": {
+        "SPR": 38.0,
+        "HLL": 43.0,
+        "MTN": 33.0,
+        "GC": 39.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Lorenzo Rota",
       "team": "INT",
-      "price_m": 2.35
+      "price_m": 2.35,
+      "co": {
+        "SPR": 44.0,
+        "HLL": 77.0,
+        "MTN": 33.0,
+        "GC": 37.0,
+        "ITT": 23.0
+      },
+      "tags": []
     },
     {
       "name": "Darren Van Bekkum",
       "team": "XDA",
-      "price_m": 2.34
+      "price_m": 2.34,
+      "co": {
+        "SPR": 34.0,
+        "HLL": 40.0,
+        "MTN": 48.0,
+        "GC": 38.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Markel Beloki",
       "team": "EF",
-      "price_m": 2.34
+      "price_m": 2.34,
+      "co": {
+        "SPR": 34.0,
+        "HLL": 66.0,
+        "MTN": 67.0,
+        "GC": 54.0,
+        "ITT": 50.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Gal Glivar",
       "team": "ALP",
-      "price_m": 2.33
+      "price_m": 2.33,
+      "co": {
+        "SPR": 41.0,
+        "HLL": 67.0,
+        "MTN": 31.0,
+        "GC": 42.0,
+        "ITT": 28.0
+      },
+      "tags": []
     },
     {
       "name": "Steven Kruijswijk",
       "team": "VLB",
-      "price_m": 2.32
+      "price_m": 2.32,
+      "co": {
+        "SPR": 25.0,
+        "HLL": 45.0,
+        "MTN": 51.0,
+        "GC": 50.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Nick Schultz",
       "team": "NCT",
-      "price_m": 2.29
+      "price_m": 2.29,
+      "co": {
+        "SPR": 40.0,
+        "HLL": 67.0,
+        "MTN": 43.0,
+        "GC": 41.0,
+        "ITT": 26.0
+      },
+      "tags": []
     },
     {
       "name": "Domen Novak",
       "team": "UAE",
-      "price_m": 2.26
+      "price_m": 2.26,
+      "co": {
+        "SPR": 25.0,
+        "HLL": 42.0,
+        "MTN": 33.0,
+        "GC": 38.0,
+        "ITT": 23.0
+      },
+      "tags": []
     },
     {
       "name": "Larry Warbasse",
       "team": "TDR",
-      "price_m": 2.26
+      "price_m": 2.26,
+      "co": {
+        "SPR": 41.0,
+        "HLL": 74.0,
+        "MTN": 45.0,
+        "GC": 42.0,
+        "ITT": 34.0
+      },
+      "tags": []
     },
     {
       "name": "Jordan Labrosse",
       "team": "DAL",
-      "price_m": 2.25
+      "price_m": 2.25,
+      "co": {
+        "SPR": 52.0,
+        "HLL": 82.0,
+        "MTN": 38.0,
+        "GC": 35.0,
+        "ITT": 38.0
+      },
+      "tags": [
+        "puncher"
+      ]
     },
     {
       "name": "Louis Rouland",
       "team": "COF",
-      "price_m": 2.23
+      "price_m": 2.23,
+      "co": {
+        "SPR": 40.0,
+        "HLL": 57.0,
+        "MTN": 46.0,
+        "GC": 46.0,
+        "ITT": 29.0
+      },
+      "tags": []
     },
     {
       "name": "Gijs Leemreize",
       "team": "TPP",
-      "price_m": 2.22
+      "price_m": 2.22,
+      "co": {
+        "SPR": 34.0,
+        "HLL": 55.0,
+        "MTN": 57.0,
+        "GC": 45.0,
+        "ITT": 27.0
+      },
+      "tags": []
     },
     {
       "name": "Alastair MacKellar",
       "team": "EF",
-      "price_m": 2.21
+      "price_m": 2.21,
+      "co": {
+        "SPR": 36.0,
+        "HLL": 38.0,
+        "MTN": 34.0,
+        "GC": 33.0,
+        "ITT": 28.0
+      },
+      "tags": []
     },
     {
       "name": "Francesco Busatto",
       "team": "ALP",
-      "price_m": 2.18
+      "price_m": 2.18,
+      "co": {
+        "SPR": 63.0,
+        "HLL": 80.0,
+        "MTN": 31.0,
+        "GC": 39.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Enzo Paleni",
       "team": "GFD",
-      "price_m": 2.17
+      "price_m": 2.17,
+      "co": {
+        "SPR": 42.0,
+        "HLL": 54.0,
+        "MTN": 33.0,
+        "GC": 43.0,
+        "ITT": 44.0
+      },
+      "tags": []
     },
     {
       "name": "Guillermo Juan Martinez",
       "team": "TPP",
-      "price_m": 2.16
+      "price_m": 2.16,
+      "co": {
+        "SPR": 29.0,
+        "HLL": 47.0,
+        "MTN": 49.0,
+        "GC": 45.0,
+        "ITT": 25.0
+      },
+      "tags": []
     },
     {
       "name": "Hannes Wilksch",
       "team": "TDR",
-      "price_m": 2.11
+      "price_m": 2.11,
+      "co": {
+        "SPR": 30.0,
+        "HLL": 59.0,
+        "MTN": 33.0,
+        "GC": 36.0,
+        "ITT": 27.0
+      },
+      "tags": []
     },
     {
       "name": "Sergio Geovani Chumil",
       "team": "BB",
-      "price_m": 2.11
+      "price_m": 2.11,
+      "co": {
+        "SPR": 28.0,
+        "HLL": 47.0,
+        "MTN": 64.0,
+        "GC": 45.0,
+        "ITT": 36.0
+      },
+      "tags": []
     },
     {
       "name": "Fabian Weiss",
       "team": "TDR",
-      "price_m": 2.1
+      "price_m": 2.1,
+      "co": {
+        "SPR": 38.0,
+        "HLL": 56.0,
+        "MTN": 30.0,
+        "GC": 28.0,
+        "ITT": 42.0
+      },
+      "tags": []
     },
     {
       "name": "Paul Ourselin",
       "team": "COF",
-      "price_m": 2.09
+      "price_m": 2.09,
+      "co": {
+        "SPR": 44.0,
+        "HLL": 50.0,
+        "MTN": 38.0,
+        "GC": 39.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Julien Bernard",
       "team": "L-T",
-      "price_m": 2.04
+      "price_m": 2.04,
+      "co": {
+        "SPR": 42.0,
+        "HLL": 75.0,
+        "MTN": 66.0,
+        "GC": 54.0,
+        "ITT": 32.0
+      },
+      "tags": []
     },
     {
       "name": "Roland Thalmann",
       "team": "TDR",
-      "price_m": 2.02
+      "price_m": 2.02,
+      "co": {
+        "SPR": 29.0,
+        "HLL": 43.0,
+        "MTN": 35.0,
+        "GC": 35.0,
+        "ITT": 32.0
+      },
+      "tags": []
     },
     {
       "name": "Reuben Thompson",
       "team": "INT",
-      "price_m": 2.01
+      "price_m": 2.01,
+      "co": {
+        "SPR": 36.0,
+        "HLL": 56.0,
+        "MTN": 44.0,
+        "GC": 41.0,
+        "ITT": 33.0
+      },
+      "tags": []
     },
     {
       "name": "Alberto Bettiol",
       "team": "XDA",
-      "price_m": 2.0
+      "price_m": 2.0,
+      "co": {
+        "SPR": 51.0,
+        "HLL": 90.0,
+        "MTN": 49.0,
+        "GC": 59.0,
+        "ITT": 71.0
+      },
+      "tags": [
+        "puncher",
+        "tempo"
+      ]
     },
     {
       "name": "Frederik Wandahl",
       "team": "RBH",
-      "price_m": 1.98
+      "price_m": 1.98,
+      "co": {
+        "SPR": 35.0,
+        "HLL": 64.0,
+        "MTN": 35.0,
+        "GC": 38.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Michael Gogl",
       "team": "ALP",
-      "price_m": 1.97
+      "price_m": 1.97,
+      "co": {
+        "SPR": 35.0,
+        "HLL": 54.0,
+        "MTN": 34.0,
+        "GC": 35.0,
+        "ITT": 23.0
+      },
+      "tags": []
     },
     {
       "name": "Rudy Porter",
       "team": "JAL",
-      "price_m": 1.96
+      "price_m": 1.96,
+      "co": {
+        "SPR": 38.0,
+        "HLL": 49.0,
+        "MTN": 43.0,
+        "GC": 41.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Mathijs Paasschens",
       "team": "TVM",
-      "price_m": 1.93
+      "price_m": 1.93,
+      "co": {
+        "SPR": 36.0,
+        "HLL": 48.0,
+        "MTN": 36.0,
+        "GC": 38.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Chris Hamilton",
       "team": "IGD",
-      "price_m": 1.91
+      "price_m": 1.91,
+      "co": {
+        "SPR": 41.0,
+        "HLL": 64.0,
+        "MTN": 50.0,
+        "GC": 53.0,
+        "ITT": 26.0
+      },
+      "tags": []
     },
     {
       "name": "Jacopo Mosca",
       "team": "L-T",
-      "price_m": 1.9
+      "price_m": 1.9,
+      "co": {
+        "SPR": 55.0,
+        "HLL": 59.0,
+        "MTN": 35.0,
+        "GC": 38.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Roman Ermakov",
       "team": "TVM",
-      "price_m": 1.9
+      "price_m": 1.9,
+      "co": {
+        "SPR": 29.0,
+        "HLL": 44.0,
+        "MTN": 31.0,
+        "GC": 36.0,
+        "ITT": 28.0
+      },
+      "tags": []
     },
     {
       "name": "Fabio Van den Bossche",
       "team": "SQ",
-      "price_m": 1.86
+      "price_m": 1.86,
+      "co": {
+        "SPR": 61.0,
+        "HLL": 52.0,
+        "MTN": 35.0,
+        "GC": 40.0,
+        "ITT": 22.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Gianni Moscon",
       "team": "RBH",
-      "price_m": 1.83
+      "price_m": 1.83,
+      "co": {
+        "SPR": 42.0,
+        "HLL": 42.0,
+        "MTN": 31.0,
+        "GC": 40.0,
+        "ITT": 27.0
+      },
+      "tags": []
     },
     {
       "name": "Sinuhe Fernandez",
       "team": "BB",
-      "price_m": 1.83
+      "price_m": 1.83,
+      "co": {
+        "SPR": 32.0,
+        "HLL": 42.0,
+        "MTN": 36.0,
+        "GC": 36.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Darren Rafferty",
       "team": "EF",
-      "price_m": 1.79
+      "price_m": 1.79,
+      "co": {
+        "SPR": 35.0,
+        "HLL": 52.0,
+        "MTN": 49.0,
+        "GC": 44.0,
+        "ITT": 58.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Inigo Elosegui",
       "team": "EKP",
-      "price_m": 1.75
+      "price_m": 1.75,
+      "co": {
+        "SPR": 32.0,
+        "HLL": 35.0,
+        "MTN": 26.0,
+        "GC": 31.0,
+        "ITT": 22.0
+      },
+      "tags": []
     },
     {
       "name": "Olivier Le Gac",
       "team": "GFD",
-      "price_m": 1.74
+      "price_m": 1.74,
+      "co": {
+        "SPR": 44.0,
+        "HLL": 43.0,
+        "MTN": 25.0,
+        "GC": 32.0,
+        "ITT": 23.0
+      },
+      "tags": []
     },
     {
       "name": "Arthur Kluckers",
       "team": "TDR",
-      "price_m": 1.7
+      "price_m": 1.7,
+      "co": {
+        "SPR": 36.0,
+        "HLL": 42.0,
+        "MTN": 27.0,
+        "GC": 35.0,
+        "ITT": 64.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Moritz Kretschy",
       "team": "NCT",
-      "price_m": 1.67
+      "price_m": 1.67,
+      "tags": [],
+      "co": null
     },
     {
       "name": "Mathias Norsgaard",
       "team": "L-T",
-      "price_m": 1.57
+      "price_m": 1.57,
+      "co": {
+        "SPR": 51.0,
+        "HLL": 47.0,
+        "MTN": 25.0,
+        "GC": 32.0,
+        "ITT": 27.0
+      },
+      "tags": []
     },
     {
       "name": "Hamish McKenzie",
       "team": "JAL",
-      "price_m": 1.56
+      "price_m": 1.56,
+      "co": {
+        "SPR": 39.0,
+        "HLL": 29.0,
+        "MTN": 22.0,
+        "GC": 27.0,
+        "ITT": 43.0
+      },
+      "tags": []
     },
     {
       "name": "Sente Sentjens",
       "team": "ALP",
-      "price_m": 1.56
+      "price_m": 1.56,
+      "co": {
+        "SPR": 65.0,
+        "HLL": 44.0,
+        "MTN": 23.0,
+        "GC": 28.0,
+        "ITT": 20.0
+      },
+      "tags": [
+        "spurter"
+      ]
     },
     {
       "name": "Victor Langellotti",
       "team": "XDA",
-      "price_m": 1.54
+      "price_m": 1.54,
+      "co": {
+        "SPR": 41.0,
+        "HLL": 62.0,
+        "MTN": 55.0,
+        "GC": 57.0,
+        "ITT": 32.0
+      },
+      "tags": []
     },
     {
       "name": "Nairo Quintana",
       "team": "MOV",
-      "price_m": 1.5
+      "price_m": 1.5,
+      "co": {
+        "SPR": 36.0,
+        "HLL": 70.0,
+        "MTN": 71.0,
+        "GC": 64.0,
+        "ITT": 27.0
+      },
+      "tags": []
     },
     {
       "name": "Steff Cras",
       "team": "SQ",
-      "price_m": 1.5
+      "price_m": 1.5,
+      "co": {
+        "SPR": 39.0,
+        "HLL": 71.0,
+        "MTN": 59.0,
+        "GC": 61.0,
+        "ITT": 41.0
+      },
+      "tags": []
     },
     {
       "name": "Diego Uriarte Belzunegi",
       "team": "EKP",
-      "price_m": 1.35
+      "price_m": 1.35,
+      "co": {
+        "SPR": 31.0,
+        "HLL": 41.0,
+        "MTN": 35.0,
+        "GC": 38.0,
+        "ITT": 47.0
+      },
+      "tags": []
     },
     {
       "name": "Hugo Houle",
       "team": "ALP",
-      "price_m": 1.32
+      "price_m": 1.32,
+      "co": {
+        "SPR": 40.0,
+        "HLL": 64.0,
+        "MTN": 36.0,
+        "GC": 39.0,
+        "ITT": 35.0
+      },
+      "tags": []
     },
     {
       "name": "Timo Roosen",
       "team": "TPP",
-      "price_m": 1.18
+      "price_m": 1.18,
+      "co": {
+        "SPR": 39.0,
+        "HLL": 31.0,
+        "MTN": 23.0,
+        "GC": 33.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Lindsay De Vylder",
       "team": "ALP",
-      "price_m": 1.15
+      "price_m": 1.15,
+      "co": {
+        "SPR": 51.0,
+        "HLL": 35.0,
+        "MTN": 21.0,
+        "GC": 26.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Oliver Peace",
       "team": "TPP",
-      "price_m": 1.1
+      "price_m": 1.1,
+      "co": {
+        "SPR": 29.0,
+        "HLL": 36.0,
+        "MTN": 29.0,
+        "GC": 34.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Alexander Hajek",
       "team": "RBH",
-      "price_m": 1.0
+      "price_m": 1.0,
+      "co": {
+        "SPR": 39.0,
+        "HLL": 59.0,
+        "MTN": 39.0,
+        "GC": 47.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Luca Vergallito",
       "team": "ALP",
-      "price_m": 1.0
+      "price_m": 1.0,
+      "co": {
+        "SPR": 31.0,
+        "HLL": 59.0,
+        "MTN": 50.0,
+        "GC": 55.0,
+        "ITT": 25.0
+      },
+      "tags": []
     },
     {
       "name": "Mattia Gaffuri",
       "team": "TPP",
-      "price_m": 1.0
+      "price_m": 1.0,
+      "co": {
+        "SPR": 26.0,
+        "HLL": 51.0,
+        "MTN": 50.0,
+        "GC": 45.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Tijmen Graat",
       "team": "VLB",
-      "price_m": 1.0
+      "price_m": 1.0,
+      "co": {
+        "SPR": 37.0,
+        "HLL": 61.0,
+        "MTN": 62.0,
+        "GC": 54.0,
+        "ITT": 22.0
+      },
+      "tags": []
     },
     {
       "name": "Henri-Francois Renard-Haquin",
       "team": "TPP",
-      "price_m": 0.98
+      "price_m": 0.98,
+      "co": {
+        "SPR": 52.0,
+        "HLL": 50.0,
+        "MTN": 23.0,
+        "GC": 33.0,
+        "ITT": 20.0
+      },
+      "tags": []
     },
     {
       "name": "Luca Van Boven",
       "team": "INT",
-      "price_m": 0.88
+      "price_m": 0.88,
+      "co": {
+        "SPR": 55.0,
+        "HLL": 64.0,
+        "MTN": 27.0,
+        "GC": 42.0,
+        "ITT": 23.0
+      },
+      "tags": []
     },
     {
       "name": "Roel van Sintmaartensdijk",
       "team": "INT",
-      "price_m": 0.77
+      "price_m": 0.77,
+      "co": {
+        "SPR": 48.0,
+        "HLL": 38.0,
+        "MTN": 27.0,
+        "GC": 36.0,
+        "ITT": 33.0
+      },
+      "tags": []
     },
     {
       "name": "Alex Kirsch",
       "team": "COF",
-      "price_m": 0.65
+      "price_m": 0.65,
+      "co": {
+        "SPR": 54.0,
+        "HLL": 48.0,
+        "MTN": 26.0,
+        "GC": 39.0,
+        "ITT": 55.0
+      },
+      "tags": [
+        "tempo"
+      ]
     },
     {
       "name": "Menno Huising",
       "team": "VLB",
-      "price_m": 0.5
+      "price_m": 0.5,
+      "co": {
+        "SPR": 40.0,
+        "HLL": 62.0,
+        "MTN": 37.0,
+        "GC": 39.0,
+        "ITT": 28.0
+      },
+      "tags": []
     },
     {
       "name": "Oscar Riesebeek",
       "team": "ALP",
-      "price_m": 0.5
+      "price_m": 0.5,
+      "co": {
+        "SPR": 36.0,
+        "HLL": 30.0,
+        "MTN": 23.0,
+        "GC": 32.0,
+        "ITT": 20.0
+      },
+      "tags": []
     }
   ]
 }

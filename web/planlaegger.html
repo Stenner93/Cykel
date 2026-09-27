@@ -79,6 +79,14 @@
   img.prof-img{display:block;height:auto;border-radius:4px;background:var(--line-2)}
   .pcs{color:var(--accent);font-size:.76rem;text-decoration:none;white-space:nowrap}
   .pcs:hover{text-decoration:underline}
+  .tag-r{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.04em;
+    text-transform:uppercase;border:1px solid var(--line);border-radius:20px;padding:0 6px;
+    margin-left:.25rem;color:var(--ink-3);vertical-align:1px}
+  .tag-r.t-spurter{color:var(--spurt);border-color:currentColor}
+  .tag-r.t-puncher{color:var(--kuperet);border-color:currentColor}
+  .tag-r.t-klatrer{color:var(--bjerg);border-color:currentColor}
+  .tag-r.t-gc{color:var(--accent);border-color:currentColor}
+  .tag-r.t-tempo{color:var(--itt);border-color:currentColor}
 
   .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.6rem;margin-top:.8rem}
   .kpi{background:var(--line-2);border-radius:10px;padding:.6rem .7rem}
@@ -240,6 +248,13 @@ plus det, de udgående selv ville have hentet i horisonten.</p>
       <label class="muted" style="font-size:.78rem"><input type="checkbox" id="affordable"> kun dem jeg har råd til</label>
     </div>
   </div>
+  <div class="row" style="margin-bottom:.6rem">
+    <span class="muted" style="font-size:.78rem">Type:</span>
+    <div class="switch" style="margin:0" id="tagFilter"></div>
+    <button id="tagSuggest" title="Sæt filteret efter scenarierne i horisonten">brug horisontens scenarier</button>
+    <button id="tagClear">ryd</button>
+  </div>
+  <div class="note" id="tagNote" style="margin:0 0 .6rem"></div>
   <div class="scroll tall"><table><thead><tr>
     <th></th><th>Rytter</th><th>Hold</th><th class="num">Pris</th><th class="num">Gebyr</th>
     <th class="num">Krævet vækst</th><th>Billigste resultat der dækker</th>
@@ -280,33 +295,22 @@ for alle 14 hold vi følger — top-10, Kasper, os og de to optaktshold.</p>
 </div>
 
 <div class="card" style="margin-top:1rem">
-  <h3 style="margin-top:0">Arketyperne — hvad du siger ja eller nej til</h3>
-  <p class="sub">Lige nu hænger arketypen på <i>etapen</i> (via scenariet). Spørgsmålet er om den også
-  skal hænge på <i>rytteren</i>. Konkret hvad de to svar ville betyde:</p>
-  <div class="cols">
-    <div class="card" style="box-shadow:none">
-      <b>Nej — som nu</b>
-      <p class="sub" style="margin:.4rem 0 0">Planlæggeren siger «E11 er en massespurt, så pointene går
-      til spurtere». Den siger ikke hvem der er spurter. Du ser hele feltet i punkt 4 og ved selv at
-      Brennan og Coquard er kandidaterne.</p>
-      <p class="sub" style="margin:.5rem 0 0"><b>Koster:</b> ingenting. <b>Mangler:</b> du kan ikke
-      filtrere feltet ned til «dem der passer til denne blok», og 202 navne er mange at skimme.</p>
-    </div>
-    <div class="card" style="box-shadow:none">
-      <b>Ja — rytteren mærkes</b>
-      <p class="sub" style="margin:.4rem 0 0">Hver rytter får en eller to typer, fx Brennan = spurter,
-      Van Aert = spurter + puncher, Vingegaard = klatrer/GC, Küng = tempo, Tronchon = udbrud. Så kan
-      feltet i punkt 4 filtreres til «kun dem der matcher horisontens scenarier», og blokpuljen kan
-      sige «du har 2 klatrere i en blok med 3 bjergetaper».</p>
-      <p class="sub" style="margin:.5rem 0 0"><b>Koster:</b> typerne skal komme et sted fra. Vi har
-      allerede PCS-specialitetstal i rytterdatabasen (climber / sprint / hills / tt / gc), så det kan
-      udledes automatisk med manuel override — samme mønster som alt andet her.
-      <b>Risiko:</b> et filter der skjuler folk er også et filter der vælger for dig. Det skal være et
-      filter du slår til, ikke en sortering du ikke kan se.</p>
-    </div>
-  </div>
-  <div class="ask">Mit forslag: <b>ja, men kun som filter</b>. Typerne vises som små mærkater ved navnet
-  og kan slås til som filter — tabellen viser stadig alle som udgangspunkt.</div>
+  <h3 style="margin-top:0">Arketyperne — bygget på CyclingOracle</h3>
+  <p class="sub">Besluttet: mærkater, og kun som filter du selv slår til. Tabellen viser alle, indtil
+  du trykker. Data kommer fra CyclingOracle, ikke PCS.</p>
+  <div class="scroll"><table><thead><tr>
+    <th>Mærkat</th><th>CO-dimension</th><th class="num">Ryttere i feltet</th><th>Betyder</th>
+  </tr></thead><tbody id="tbArch"></tbody></table></div>
+  <div class="note">Mærkaterne er <b>percentiler inden for netop dette løbs startliste</b>, ikke
+  absolutte vurderinger: en rytter får en mærkat hvis han ligger i feltets øverste 20 % på den
+  dimension. «Spurter» betyder altså «blandt de 20 % bedste spurtere i dette felt». Hold musen over
+  en mærkat i tabellerne for at se det rå CO-tal.</div>
+  <div class="ask"><b>Der er med vilje ingen «udbrudsrytter»-mærkat.</b> CO rater evne, ikke rolle, og
+  hvem der havner i udbrud afhænger af holdsituation og pris. Eddie Dunbar, der vandt E19 fra udbrud,
+  er i stedet «klatrer til 4,15M» — den kombination finder du med klatrer-filteret og maks-pris.
+  Jakob Omrzel, der vandt E12, havde ingen mærkat overhovedet; ingen udledning ville have fanget ham,
+  og værktøjet skal ikke lade som om.</div>
+  <div class="note" id="archMissing"></div>
 </div>
 
 <div class="foot" id="foot"></div>
@@ -351,16 +355,18 @@ var HARD={bjerg:1,kuperet:1};
 //    hente det, og hvad der er betinget i spil. Det er dét, der slår igennem
 //    på de øvrige parametre.
 var SCEN={
-  massespurt:{label:'Massespurt',  who:'Spurtere',        during:'Spurterne tager den indlagte spurt', cond:[]},
-  reduceret: {label:'Reduceret spurt',who:'Punchere',     during:'Udbruddet tager point undervejs',    cond:[]},
-  gc:        {label:'GC-opgør',    who:'Klatrere / GC',   during:'Udbruddet tager point undervejs',    cond:['klassement','trøjer']},
-  udbrud:    {label:'Udbrud går',  who:'Udbrudsryttere',  during:'Udbruddet tager alt undervejs',      cond:['angrebspræmie']},
-  enkeltstart:{label:'Enkeltstart',who:'Tempokørere / GC',during:'Ingen point undervejs',              cond:['klassement']}
+  massespurt: {label:'Massespurt',        who:'Spurtere',        during:'Spurterne tager den indlagte spurt', cond:[],                       tags:['spurter']},
+  reduceret:  {label:'Reduceret – bakke', who:'Punchere',        during:'Udbruddet tager point undervejs',    cond:[],                       tags:['puncher','spurter']},
+  favorit:    {label:'Favoritfinale',     who:'Klatrere / GC',   during:'Udbruddet tager point undervejs',    cond:['klassement','trøjer'],  tags:['gc','klatrer']},
+  bjergafslut:{label:'Bjergafslutning',   who:'Klatrere',        during:'Udbruddet tager point undervejs',    cond:['klassement','trøjer'],  tags:['klatrer','gc']},
+  udbrud:     {label:'Udbrud går',        who:'Udbrudsryttere',  during:'Udbruddet tager alt undervejs',      cond:['angrebspræmie'],        tags:['klatrer','puncher']},
+  enkeltstart:{label:'Enkeltstart',       who:'Tempokørere / GC',during:'Ingen point undervejs',              cond:['klassement'],           tags:['tempo','gc']}
 };
 function autoScen(s){
   if(s.pcs_type==='tt') return 'enkeltstart';
   var p=s.profile_score||0;
-  if(p>=200) return s.summit_finish?'gc':'udbrud';
+  if(s.summit_finish) return 'bjergafslut';
+  if(p>=200) return 'udbrud';
   if(p>=60)  return 'reduceret';
   return 'massespurt';
 }
@@ -616,8 +622,9 @@ function cheapest(req,blk){
 // samme handel. Man klikker en mand ud af holdet eller ind fra feltet, og
 // alt genberegnes — der er ingen separat "søg indkøb"-tilstand.
 // ─────────────────────────────────────────────────────────────────────────
-var out={},buy=[],teamIdx={};
+var out={},buy=[],teamIdx={},riderIdx={};
 function lookupTeam(name){ return teamIdx[name]||''; }
+function riderOf(name){ return riderIdx[name]||{}; }
 
 /** Alt hvad handlen koster og kræver. Ét sted, så de to tabeller ikke kan
  *  komme til at vise hver sit tal. */
@@ -636,6 +643,54 @@ function trade(){
 function onTeam(name){ return planner.my_team.riders.some(function(r){return r.name===name;}); }
 function inBuy(name){ return buy.some(function(r){return r.name===name;}); }
 
+
+// ── Rytterarketyper: KUN et filter ───────────────────────────────────────
+// Mærkaterne kommer fra CyclingOracles ratings som percentiler inden for
+// dette felt (top 20 % på en dimension). De bruges aldrig til at sortere
+// eller rangere — tabellen viser alle, indtil du selv slår et filter til.
+var TAG_ORDER=['spurter','puncher','klatrer','gc','tempo'];
+var tagOn={};
+function tagChips(r){
+  if(!r.tags||!r.tags.length) return '';
+  return r.tags.map(function(t){
+    var co=r.co?TAG_CO[t]:null;
+    var title=r.co?('CyclingOracle '+co+': '+r.co[co]+' — blandt feltets øverste 20 %'):'';
+    return '<span class="tag-r t-'+t+'" title="'+esc(title)+'">'+t+'</span>';
+  }).join('');
+}
+var TAG_CO={spurter:'SPR',puncher:'HLL',klatrer:'MTN',gc:'GC',tempo:'ITT'};
+function anyTagOn(){ return TAG_ORDER.some(function(t){return tagOn[t];}); }
+function tagMatch(r){
+  if(!anyTagOn()) return true;
+  return (r.tags||[]).some(function(t){return tagOn[t];});
+}
+function renderTagFilter(){
+  var counts={};
+  planner.riders.forEach(function(r){ (r.tags||[]).forEach(function(t){ counts[t]=(counts[t]||0)+1; }); });
+  el('tagFilter').innerHTML=TAG_ORDER.map(function(t){
+    return '<button class="tgF'+(tagOn[t]?' on':'')+'" data-t="'+t+'">'+t+' <span class="muted">'+
+      (counts[t]||0)+'</span></button>';
+  }).join('');
+  el('tagFilter').querySelectorAll('.tgF').forEach(function(n){
+    n.addEventListener('click',function(){ tagOn[n.dataset.t]=!tagOn[n.dataset.t]; renderTrade(); });
+  });
+  // Hvad horisontens scenarier peger på — et forslag, ikke en indstilling.
+  var want={};
+  hz().stages.forEach(function(s){ (SCEN[scenOf(s)].tags||[]).forEach(function(t){ want[t]=1; }); });
+  var w=Object.keys(want);
+  el('tagSuggest').style.display=w.length?'':'none';
+  el('tagNote').innerHTML= anyTagOn()
+    ? 'Filtrerer på <b>'+TAG_ORDER.filter(function(t){return tagOn[t];}).join(', ')+'</b>. '+
+      'Mærkaterne er CyclingOracle-ratings som percentiler <i>inden for dette felt</i> — «spurter» betyder '+
+      'blandt feltets 20 % bedste spurtere, ikke spurter i absolut forstand. Hold musen over en mærkat for tallet.'
+    : 'Ingen typefilter slået til — tabellen viser alle. Horisontens scenarier peger på <b>'+
+      (w.join(', ')||'ingenting')+'</b>. '+
+      'Der er med vilje ingen «udbrudsrytter»-mærkat: CO rater evne, ikke rolle. Udbrudskandidater '+
+      'finder du ved at kombinere <b>klatrer</b> med maks-pris.';
+  el('tagSuggest').onclick=function(){ tagOn={}; w.forEach(function(t){ tagOn[t]=true; }); renderTrade(); };
+  el('tagClear').onclick=function(){ tagOn={}; renderTrade(); };
+}
+
 function renderTeam(){
   var t=trade(),c=t.c,mine=t.mine;
   el('tbMine').innerHTML=mine.riders.map(function(r){
@@ -644,7 +699,8 @@ function renderTeam(){
     return '<tr'+(out[r.name]?' class="sel"':'')+'>'+
       '<td><button class="tgOut'+(out[r.name]?' on':'')+'" data-n="'+esc(r.name)+'" title="'+
         (out[r.name]?'fortryd salg':'sælg denne')+'">'+(out[r.name]?'sælges':'behold')+'</button></td>'+
-      '<td><b>'+esc(r.name)+'</b>'+(r.name===mine.captain?' <span class="muted">(kaptajn)</span>':'')+'</td>'+
+      '<td><b>'+esc(r.name)+'</b>'+tagChips(riderOf(r.name))+
+        (r.name===mine.captain?' <span class="muted">(kaptajn)</span>':'')+'</td>'+
       '<td class="muted">'+esc(lookupTeam(r.name))+'</td>'+
       '<td class="num">'+m(r.price_m)+'</td>'+
       '<td><select class="selExp" data-n="'+esc(r.name)+'">'+opts+'</select></td>'+
@@ -705,6 +761,7 @@ function renderRiders(){
     if(q&&r.name.toLowerCase().indexOf(q)<0&&(r.team||'').toLowerCase().indexOf(q)<0) return false;
     if(!isNaN(mx)&&r.price_m>mx) return false;
     if(onlyAfford&&r.price_m*(1+FEE_PCT)>budget) return false;
+    if(!tagMatch(r)) return false;
     return true;
   });
   var win=Math.max.apply(null,c.stages.map(function(s){return s.winner_incl_team_bonus_kr;}));
@@ -714,7 +771,7 @@ function renderRiders(){
     var picked=inBuy(r.name);
     return '<tr'+(picked?' class="sel"':'')+'><td><button class="tgBuy'+(picked?' on':'')+'" data-n="'+esc(r.name)+'">'+
       (picked?'valgt':'køb')+'</button></td>'+
-      '<td><b>'+esc(r.name)+'</b></td><td class="muted">'+esc(r.team)+'</td>'+
+      '<td><b>'+esc(r.name)+'</b>'+tagChips(r)+'</td><td class="muted">'+esc(r.team)+'</td>'+
       '<td class="num">'+m(r.price_m)+'</td><td class="num">'+kr(fee)+'</td>'+
       '<td class="num"><b>'+kr0(req)+'</b></td>'+
       '<td'+(ch.ok?'':' class="neg"')+'>'+esc(ch.txt)+'</td>'+
@@ -735,7 +792,7 @@ function renderRiders(){
     ' ('+kr(win)+'). Bliver «netto ved sejr» rød, kan selv en etapesejr ikke betale handlen hjem i dette vindue.';
 }
 
-function renderTrade(){ renderTeam(); renderRiders(); }
+function renderTrade(){ renderTagFilter(); renderTeam(); renderRiders(); }
 
 // ── Evidens: hvor tit blev der faktisk skiftet ut ────────────────────────
 var SCEN_PROP=[
@@ -774,6 +831,35 @@ function renderRhythm(rh){
   }).join('');
 }
 
+
+function renderArch(){
+  var a=planner.archetypes||{},counts={},ex={},best={};
+  // Eksemplet skal være den højest ratede på DEN dimension — ellers står
+  // Pogacar som eksempel på alt, fordi han har alle mærkater.
+  planner.riders.forEach(function(r){
+    (r.tags||[]).forEach(function(t){
+      counts[t]=(counts[t]||0)+1;
+      var v=r.co?r.co[TAG_CO[t]]:null;
+      if(v!=null&&(best[t]==null||v>best[t])){ best[t]=v; ex[t]=r.name; }
+    });
+  });
+  var MEAN={spurter:'kan vinde en massespurt i dette felt',
+            puncher:'kan følge med og afgøre en kuperet finale',
+            klatrer:'kan være med når det går opad',
+            gc:'kører klassement — og henter klassementpoint hver dag',
+            tempo:'kan køre enkeltstart og lange sololøb'};
+  el('tbArch').innerHTML=TAG_ORDER.map(function(t){
+    return '<tr><td><span class="tag-r t-'+t+'">'+t+'</span></td>'+
+      '<td class="mono">'+esc(TAG_CO[t])+'</td><td class="num">'+(counts[t]||0)+'</td>'+
+      '<td class="muted">'+esc(MEAN[t])+(ex[t]?' — højest i feltet: '+esc(ex[t])+' ('+best[t]+')':'')+'</td></tr>';
+  }).join('');
+  var miss=(a.without_data||[]);
+  el('archMissing').innerHTML=miss.length
+    ? '<b>'+miss.length+' ryttere uden CO-rating</b> og dermed uden mærkater: '+esc(miss.join(', '))+
+      '. De forsvinder ikke ud af tabellen — de matcher bare aldrig et typefilter, og det skal man vide.'
+    : 'Alle ryttere i feltet har CO-rating.';
+}
+
 function renderAll(skipEdit){
   renderBand(); renderTable(); renderBlock(); renderTrade();
   if(!skipEdit) el('stageEdit').innerHTML='';
@@ -793,7 +879,7 @@ Promise.all([
   raceId=res[0].race||'';
   realProfiles=res[2]&&res[2].files?res[2].files:{};
   stages.forEach(function(s){ byStage[s.stage]=s; maxProfile=Math.max(maxProfile,s.profile_score||0); });
-  planner.riders.forEach(function(r){ teamIdx[r.name]=r.team; });
+  planner.riders.forEach(function(r){ teamIdx[r.name]=r.team; riderIdx[r.name]=r; });
 
   // Første besøg: start på den første blok der rent faktisk er en blok. En
   // enkeltstart alene er en korrekt gruppering, men en ubrugelig horisont.
@@ -843,6 +929,7 @@ Promise.all([
     'Alt du ændrer gemmes kun i denne browser.';
 
   renderRhythm(res[3]);
+  renderArch();
   renderAll();
 }).catch(function(e){
   el('band').innerHTML='<div class="note neg">Kunne ikke hente data: '+esc(e.message)+'</div>';
