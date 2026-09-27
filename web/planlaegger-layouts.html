@@ -143,7 +143,9 @@
   .pslot{position:relative;width:100%;height:var(--ph,56px);border-radius:7px;overflow:hidden;
     background:var(--line-2);display:flex;align-items:flex-end}
   .pslot svg{width:100%;height:100%}
-  .pslot img{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  /* Må ikke starte som display:none — en skjult img med loading=lazy bliver
+     aldrig hentet. Den ligger ovenpå skitsen og skjuler den ved onload. */
+  .pslot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff}
 
   /* ══ D · Profilvæg ══ */
   .pwall{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.6rem}
@@ -418,8 +420,7 @@ function viewRows(list){
 // der ingenting — ingen brudte billeder, ingen hoppende layout.
 var haveImg=false;
 function pslotOk(img){
-  img.style.display='block';
-  var svg=img.parentNode.querySelector('svg'); if(svg) svg.style.visibility='hidden';
+  var svg=img.parentNode.querySelector('svg'); if(svg) svg.style.display='none';
   if(!haveImg){ haveImg=true; var b=el('imgnote'); if(b) b.style.display='none'; }
 }
 function pslotErr(img){
