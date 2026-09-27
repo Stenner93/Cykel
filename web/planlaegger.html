@@ -60,7 +60,6 @@
   .lg span{display:inline-flex;align-items:center;gap:.3rem}
   .lg i{width:10px;height:10px;border-radius:3px;display:inline-block}
   svg.prof{display:block;vertical-align:middle}
-  img.prof-img{display:block;height:auto;border-radius:4px;background:var(--line-2)}
   .pcs{color:var(--accent);font-size:.76rem;text-decoration:none;white-space:nowrap}
   .pcs:hover{text-decoration:underline}
   .tag-r{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.04em;
@@ -95,14 +94,11 @@
   .sc .top{display:flex;justify-content:space-between;align-items:baseline;gap:.35rem;margin-bottom:.3rem}
   .sc .e{font-size:.92rem;font-weight:800;letter-spacing:-.02em}
   .sc .v{font-size:.8rem;font-weight:800;font-variant-numeric:tabular-nums}
-  /* Profilpladsen: PCS-billedet har samme 2:1-format for alle etaper, så
-     kassen er den samme uanset om billedet findes eller skitsen tegnes. */
-  .pslot{position:relative;width:100%;aspect-ratio:2/1;border-radius:6px;overflow:hidden;
-    background:#fff;display:flex;align-items:flex-end}
+  /* Profilpladsen. Formen tegnes som SVG i etapens terrænfarve — samme
+     kasse for alle etaper, så højden kan sammenlignes på tværs. */
+  .pslot{position:relative;width:100%;aspect-ratio:3/1;border-radius:6px;overflow:hidden;
+    background:var(--line-2);display:flex;align-items:flex-end}
   .pslot svg{width:100%;height:100%}
-  /* Billedet ligger ovenpå skitsen. Det må IKKE starte som display:none —
-     en skjult img med loading=lazy bliver aldrig hentet. */
-  .pslot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff}
   .sc .nm{font-size:.7rem;color:var(--ink-3);margin-top:.3rem;overflow:hidden;
     text-overflow:ellipsis;white-space:nowrap}
   .sc .facts{display:flex;justify-content:space-between;gap:.15rem .45rem;flex-wrap:wrap;
@@ -352,7 +348,7 @@ var S={blocks:null,scen:{},sel:0,exp:{},hzN:0,maxBlk:3},fresh=true;
 try{var raw=localStorage.getItem(KEY); if(raw){ S=Object.assign(S,JSON.parse(raw)); fresh=false; }}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
 
-var stages=[],restAfter=[],planner=null,byStage={},pcsSlug=null,realProfiles={},raceId='';
+var stages=[],restAfter=[],planner=null,byStage={},pcsSlug=null,shapes={},maxVm=0;
 
 var FEE_PCT=0.01;
 function kr(v){ if(v===null||v===undefined||v===0) return '—'; return Math.round(v/1000)+'k'; }
@@ -408,13 +404,21 @@ function expValue(pos,blk){
   return best;
 }
 
-// ── Skematisk højdeprofil ────────────────────────────────────────────────
-// Tegnet af de kategoriserede stigninger i rutens rækkefølge. Det er IKKE
-// den rigtige højdeprofil — det er den form ruten har ifølge de data der
-// findes før løbet. Ligger der et rigtigt PCS-profilbillede i
-// web/img/profiles/<race>/, bruges det i stedet; se fetch_stage_profiles.py.
+// ── Højdeprofil ─────────────────────────────────────────────────────────
+// Tegnet af den FAKTISKE rute: formen er aflæst af PCS' profilbilleder og
+// ligger som tal i <race>_stage_shapes.json. Selve billedet vises aldrig —
+// det er kun råmateriale — så profilen får sidens egne farver og samme
+// enkle udtryk som resten.
+//
+// Tegningens HØJDE er etapens højdemeter i forhold til løbets hårdeste, så
+// en flad etape også ser flad ud. Y-aksen i PCS' billeder er skaleret
+// forskelligt fra etape til etape, så pixelhøjder kan ikke sammenlignes —
+// se trace_stage_profiles.py.
+//
+// Er formen ikke aflæst (nyt løb, billeder ikke hentet), falder vi tilbage
+// på skitsen ud fra de kategoriserede stigninger.
 var CLIMB_H={'HC':1,'1':.78,'2':.5,'3':.3};
-function profilePath(s,w,h){
+function schematicPath(s,w,h){
   var cl=(s.climbs&&s.climbs!=='—')?s.climbs.split('-'):[];
   var base=h-1,pts=[[0,base]];
   if(!cl.length){ pts.push([w,base-1.5]); }
@@ -429,24 +433,24 @@ function profilePath(s,w,h){
   }
   return pts.map(function(p,i){return (i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1);}).join(' ');
 }
+function tracedPath(s,w,h){
+  var sh=shapes[s.stage];
+  if(!sh||!sh.shape||!sh.shape.length) return null;
+  var frac=maxVm?Math.max(0.05,(sh.vmeters||0)/maxVm):1;
+  var usable=(h-2)*frac, base=h-1, n=sh.shape.length;
+  return sh.shape.map(function(v,i){
+    return (i?'L':'M')+(i*w/(n-1)).toFixed(1)+' '+(base-v*usable).toFixed(1);
+  }).join(' ');
+}
 function profileSvg(s,w,h){
-  var d=profilePath(s,w,h),col='var(--'+regime(s)+')';
+  var d=tracedPath(s,w,h)||schematicPath(s,w,h),col='var(--'+regime(s)+')';
   return '<svg class="prof" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" aria-hidden="true">'+
     '<path d="'+d+' L '+w+' '+h+' L 0 '+h+' Z" fill="'+col+'" opacity=".22"/>'+
-    '<path d="'+d+'" fill="none" stroke="'+col+'" stroke-width="1.4" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>'+
-    (s.summit_finish?'<circle cx="'+(w-1.5)+'" cy="2.5" r="2.2" fill="'+col+'"/>':'')+'</svg>';
+    '<path d="'+d+'" fill="none" stroke="'+col+'" stroke-width="1.4" stroke-linejoin="round" '+
+    'vector-effect="non-scaling-stroke"/></svg>';
 }
-// Rigtigt PCS-profilbillede hvis det er hentet ned, ellers skitsen.
-// Profilplads i fast 2:1-format — samme kasse uanset om PCS-billedet findes.
-// Skitsen tegnes altid nedenunder, så der aldrig er et tomt hul mens billedet
-// loader, og siden virker uændret hvis profilerne ikke er hentet.
-// Når det rigtige billede er der, er skitsen bag det overflødig.
-window.profOk=function(img){ var g=img.parentNode.querySelector('svg'); if(g) g.style.display='none'; };
 function profileImg(s,px){
-  var f=realProfiles[s.stage];
-  return '<div class="pslot"'+(px?' style="width:'+px+'px"':'')+'>'+profileSvg(s,200,100)+
-    (f?'<img src="img/profiles/'+raceId+'/'+esc(f)+'" alt="Højdeprofil E'+s.stage+
-       '" loading="lazy" onload="this.style.display=\'block\'">':'')+'</div>';
+  return '<div class="pslot"'+(px?' style="width:'+px+'px"':'')+'>'+profileSvg(s,300,100)+'</div>';
 }
 function pcsLink(s){
   if(!pcsSlug) return '';
@@ -535,8 +539,9 @@ function renderBand(){
   el('band').querySelectorAll('.sc').forEach(function(n){
     n.addEventListener('click',function(){ editStage(+n.dataset.s); });
   });
-  el('profSrc').textContent = Object.keys(realProfiles).length
-    ? 'Profiler: procyclingstats' : 'Profiler: skitse ud fra stigningerne';
+  el('profSrc').textContent = Object.keys(shapes).length
+    ? 'Profil tegnet efter ruten · højden = etapens højdemeter mod løbets hårdeste'
+    : 'Profil: skitse ud fra de kategoriserede stigninger';
 }
 function shortName(s){
   var n=s.name||'',m=n.match(/-\s*(.+)$/);
@@ -910,14 +915,13 @@ Promise.all([
   fetch('data/vuelta2026_stage_points.json').then(function(r){return r.json();}),
   fetch('data/vuelta2026_planner.json').then(function(r){return r.json();}),
   // Findes der hentede PCS-profiler? Hvis ikke, tegner vi bare skitsen.
-  fetch('img/profiles/vuelta2026/manifest.json').then(function(r){return r.ok?r.json():null;})
-                                                .catch(function(){return null;}),
+  fetch('data/vuelta2026_stage_shapes.json').then(function(r){return r.ok?r.json():null;})
+                                            .catch(function(){return null;}),
   fetch('data/vuelta2026_transfer_rhythm.json').then(function(r){return r.ok?r.json():null;})
                                                .catch(function(){return null;})
 ]).then(function(res){
   stages=res[0].stages; restAfter=res[0].rest_after||[]; pcsSlug=res[0].pcs_slug||null; planner=res[1];
-  raceId=res[0].race||'';
-  realProfiles=res[2]&&res[2].files?res[2].files:{};
+  if(res[2]&&res[2].stages){ shapes=res[2].stages; maxVm=res[2].max_vmeters||0; }
   stages.forEach(function(s){ byStage[s.stage]=s; maxProfile=Math.max(maxProfile,s.profile_score||0); });
   planner.riders.forEach(function(r){ teamIdx[r.name]=r.team; riderIdx[r.name]=r; });
 

@@ -5,7 +5,7 @@ Henter procyclingstats' etapeprofilbilleder ned til siden.
 Ruteplanlæggeren kan selv tegne en skematisk profil af de kategoriserede
 stigninger, men den rigtige højdeprofil siger mere: hvor stejlt, hvor langt
 fra mål, og alle de småknæk der aldrig bliver kategoriseret. Ligger
-billederne i web/img/profiles/<race>/, bruger planlæggeren dem automatisk.
+billederne i data/profiles/<race>/, bruger planlæggeren dem automatisk.
 
 Alle profilerne til et løb ligger på ÉN side — /race/<slug>/route/stage-profiles
 — så der hentes én side og derefter billederne. Ingen grund til at kalde 21
@@ -20,7 +20,7 @@ Brug:
     python scripts/scrape/fetch_stage_profiles.py \
         --slug vuelta-a-espana/2026 --race vuelta2026
 
-Derefter committes web/img/profiles/<race>/.
+Derefter committes data/profiles/<race>/.
 """
 from __future__ import annotations
 
@@ -83,7 +83,7 @@ def main():
                     help="sti til Chromium (default: PLAYWRIGHT_CHROMIUM eller /opt/pw-browsers/chromium)")
     args = ap.parse_args()
 
-    outdir = ROOT / "web/img/profiles" / args.race
+    outdir = ROOT / "data/profiles" / args.race
     outdir.mkdir(parents=True, exist_ok=True)
 
     launch_args = ["--disable-blink-features=AutomationControlled"]
@@ -151,7 +151,7 @@ def main():
         {"race": args.race, "slug": args.slug, "source": url,
          "files": {str(k): v for k, v in sorted(got.items())}},
         ensure_ascii=False, indent=2))
-    print(f"\n{len(got)} profiler i web/img/profiles/{args.race}/")
+    print(f"\n{len(got)} profiler i data/profiles/{args.race}/")
     missing = sorted(set(range(1, max(got) + 1)) - set(got)) if got else []
     if missing:
         print("Manglede: " + ", ".join(f"E{s}" for s in missing)

@@ -143,9 +143,6 @@
   .pslot{position:relative;width:100%;height:var(--ph,56px);border-radius:7px;overflow:hidden;
     background:var(--line-2);display:flex;align-items:flex-end}
   .pslot svg{width:100%;height:100%}
-  /* Må ikke starte som display:none — en skjult img med loading=lazy bliver
-     aldrig hentet. Den ligger ovenpå skitsen og skjuler den ved onload. */
-  .pslot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff}
 
   /* ══ D · Profilvæg ══ */
   .pwall{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.6rem}
@@ -209,7 +206,7 @@
     <span class="muted" style="font-size:.78rem" id="cnt"></span>
   </div>
 
-  <div class="note" id="imgnote" style="margin-bottom:1rem"><b>Profilerne er skitser lige nu.</b> Hver profilplads prøver først at hente den rigtige PCS-etapeprofil fra <span class="mono">img/profiles/&lt;race&gt;/stage-NN.jpg</span>. Findes den ikke, tegnes formen ud fra de kategoriserede stigninger i stedet. Kassen er den samme, så layoutet ser ens ud begge veje — og denne besked forsvinder af sig selv, så snart billederne er på plads.</div>
+  <div class="note" id="imgnote" style="margin-bottom:1rem"><b>Profilerne er tegnet efter den faktiske rute.</b> Formen er aflæst af procyclingstats profilbilleder og ligger som tal; billedet selv vises aldrig, så profilen får sidens egne farver. Tegningens højde er etapens højdemeter i forhold til løbets hårdeste — derfor ser en flad etape også flad ud.</div>
   <div id="view"></div>
 
   <h2>Hvad de hver især kan</h2>
@@ -272,13 +269,13 @@ function profilePts(s,w,h){
   return pts.map(function(p,i){return (i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1);}).join(' ');
 }
 function prof(s,w,h){
-  var d=(w==='fluid')?'':profilePts(s,w,h);
+  var d=(w==='fluid')?'':(tracedPath(s,w,h)||profilePts(s,w,h));
   var col='var(--'+regime(s)+')';
   // fluid: bredden sættes af CSS, viewBox strækkes, og stregen holder sin
   // tykkelse via non-scaling-stroke så profilen ikke bliver en flad streg.
   var fluid=(w==='fluid');
   var W=fluid?100:w;
-  var dd=fluid?profilePts(s,100,h):d;
+  var dd=fluid?(tracedPath(s,100,h)||profilePts(s,100,h)):d;
   return '<svg class="prof'+(fluid?' fluid':'')+'" '+(fluid?'':'width="'+w+'" ')+'height="'+h+'" '+
     'viewBox="0 0 '+W+' '+h+'" preserveAspectRatio="none" aria-hidden="true">'+
     '<path d="'+dd+' L '+W+' '+h+' L 0 '+h+' Z" fill="'+col+'" opacity=".22"/>'+
@@ -415,25 +412,20 @@ function viewRows(list){
   return h;
 }
 
-// Profilplads: skitsen tegnes altid, det rigtige PCS-billede lægger sig
-// ovenpå hvis det findes i web/img/profiles/<race>/. Findes det ikke, sker
-// der ingenting — ingen brudte billeder, ingen hoppende layout.
-var haveImg=false;
-function pslotOk(img){
-  var svg=img.parentNode.querySelector('svg'); if(svg) svg.style.display='none';
-  if(!haveImg){ haveImg=true; var b=el('imgnote'); if(b) b.style.display='none'; }
-}
-function pslotErr(img){
-  var alt=img.getAttribute('data-alt');
-  if(alt){ img.removeAttribute('data-alt'); img.src=alt; return; }
-  img.remove();
+// Profilplads. Formen er aflæst af PCS-profilbillederne og ligger som tal i
+// dataene; billedet selv vises aldrig. Tegningens højde er etapens
+// højdemeter i forhold til løbets hårdeste, så en flad etape ser flad ud.
+function tracedPath(s,w,h){
+  if(!s.shape||!s.shape.length) return null;
+  var mx=DATA.max_vmeters||0;
+  var frac=mx?Math.max(0.05,(s.vmeters||0)/mx):1;
+  var usable=(h-2)*frac, base=h-1, n=s.shape.length;
+  return s.shape.map(function(v,i){
+    return (i?'L':'M')+(i*w/(n-1)).toFixed(1)+' '+(base-v*usable).toFixed(1);
+  }).join(' ');
 }
 function pslot(s,h){
-  var n=s.stage<10?'0'+s.stage:''+s.stage;
-  var base='img/profiles/'+(DATA.race||'')+'/stage-'+n;
-  return '<div class="pslot" style="--ph:'+h+'px">'+prof(s,'fluid',h)+
-    '<img alt="" loading="lazy" src="'+base+'.jpg" data-alt="'+base+'.png" '+
-    'onload="pslotOk(this)" onerror="pslotErr(this)"></div>';
+  return '<div class="pslot" style="--ph:'+h+'px">'+prof(s,'fluid',h)+'</div>';
 }
 
 // ══ D · Profilvæg — etaperne i flere rækker i stedet for ét bredt bånd ═══
