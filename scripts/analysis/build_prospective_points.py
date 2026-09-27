@@ -130,6 +130,8 @@ def main():
     out.write_text(json.dumps({
         "race": route["race"],
         "title": route.get("title", ""),
+        # Bruges kun til at linke til etapens side på procyclingstats.
+        "pcs_slug": route.get("pcs_slug"),
         # Hviledage falder ikke ud af pointskemaet, men ruteplanlæggeren bruger
         # dem som naturlige blokgrænser. Tom liste = ikke udfyldt i rutefilen.
         "rest_after": route.get("rest_after", []),

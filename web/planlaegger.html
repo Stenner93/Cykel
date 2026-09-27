@@ -75,6 +75,10 @@
   .lg{display:flex;gap:.9rem;flex-wrap:wrap;font-size:.74rem;color:var(--ink-3);margin-top:-.5rem}
   .lg span{display:inline-flex;align-items:center;gap:.3rem}
   .lg i{width:10px;height:10px;border-radius:3px;display:inline-block}
+  svg.prof{display:block;vertical-align:middle}
+  img.prof-img{display:block;height:auto;border-radius:4px;background:var(--line-2)}
+  .pcs{color:var(--accent);font-size:.76rem;text-decoration:none;white-space:nowrap}
+  .pcs:hover{text-decoration:underline}
 
   .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.6rem;margin-top:.8rem}
   .kpi{background:var(--line-2);border-radius:10px;padding:.6rem .7rem}
@@ -171,7 +175,7 @@ ses begge steder.</p>
     </div>
     <div class="scroll tall"><table id="tblStages"><thead><tr>
       <th>Et.</th><th>Blok</th><th>Holdet</th><th>PCS</th><th class="num">Profil</th>
-      <th class="num">Hm</th><th>Stigninger</th><th class="num">Spurter</th>
+      <th class="num">Hm</th><th>Profil</th><th>Stigninger</th><th class="num">Spurter</th>
       <th class="num">Sejr</th><th class="num">Top-5</th><th class="num">Top-10</th>
       <th class="num">Undervejs</th><th>Scenarie</th><th>Hvem henter det</th><th>Betinget i spil</th>
     </tr></thead><tbody id="tbStages"></tbody></table></div>
@@ -184,7 +188,12 @@ ses begge steder.</p>
     <select id="selBlock"></select>
     <button id="mergePrev" title="Slå sammen med blokken før">← slå sammen</button>
     <button id="splitHere" title="Del blokken midt over">del</button>
-    <span class="muted" style="font-size:.78rem">Grænserne er et udkast — flyt dem som du vil.</span>
+    <label class="muted" style="font-size:.78rem">maks etaper pr. blok
+      <input type="number" id="maxBlk" min="2" max="8" step="1" style="width:56px"></label>
+  </div>
+  <div class="row" style="margin-top:.5rem">
+    <span class="muted" style="font-size:.78rem">Regn punkt 4 på:</span>
+    <div class="switch" style="margin:0" id="hzPick"></div>
   </div>
   <div class="kpis" id="blockKpis"></div>
   <div class="scroll" style="margin-top:.9rem"><table><thead><tr>
@@ -196,72 +205,109 @@ ses begge steder.</p>
 </div>
 
 <!-- ════════ PUNKT 4 ════════ -->
-<h2>4 · Gebyr og krævet vækst<span class="tag">udkast A + B</span></h2>
-<p class="sub">Gebyret er 1&nbsp;% af <i>købsprisen</i>. Regnestykket er derfor: den nye skal hente sit
-eget gebyr hjem <i>oven i</i> det, den udgående ville have hentet i samme blok. Begge dele vises i
-kroner, og oversættes til den billigste placering der faktisk dækker det.</p>
-<div class="switch">
-  <button id="pA" class="on">A · Alle ryttere</button>
-  <button id="pB">B · Holdskabelon</button>
+<h2>4 · Gebyr og krævet vækst<span class="tag">samlet</span></h2>
+<p class="sub">Holdskabelonen øverst, hele feltet nedenunder. Klik en rytter ud af holdet eller ind fra
+feltet — regnskabet opdaterer sig selv. Gebyret er 1&nbsp;% af <i>købsprisen</i>, og kravet er gebyret
+plus det, de udgående selv ville have hentet i horisonten.</p>
+
+<div class="card">
+  <div class="row" style="justify-content:space-between">
+    <h3 style="margin:0">Mit hold</h3>
+    <span class="muted" style="font-size:.78rem">Sæt en forventning på dem du overvejer at sælge — det er
+    dét tal den nye skal slå.</span>
+  </div>
+  <div class="scroll"><table><thead><tr>
+    <th></th><th>Rytter</th><th>Hold</th><th class="num">Pris</th>
+    <th>Forventning i horisonten</th><th class="num">= kr</th><th></th>
+  </tr></thead><tbody id="tbMine"></tbody></table></div>
+
+  <h3>Handlen</h3>
+  <div class="scroll"><table><thead><tr>
+    <th></th><th>Køber</th><th>Hold</th><th class="num">Pris</th><th class="num">Gebyr</th>
+    <th>Billigste resultat der dækker hans andel</th>
+  </tr></thead><tbody id="tbBuy"></tbody></table></div>
+  <div class="kpis" id="tradeKpis"></div>
+  <div class="note" id="tradeNote"></div>
 </div>
 
-<div id="paneP-A">
-  <div class="card">
-    <div class="row" style="margin-bottom:.6rem">
-      <label>Jeg sælger:
-        <select id="selSell"></select></label>
-      <label>og forventer at han ville hente
-        <select id="selSellExp"></select></label>
-      <input type="search" id="q" placeholder="søg rytter…" style="margin-left:auto;min-width:170px">
+<div class="card" style="margin-top:1rem">
+  <div class="row" style="justify-content:space-between;margin-bottom:.5rem">
+    <h3 style="margin:0">Hele feltet</h3>
+    <div class="row" style="gap:.5rem">
+      <input type="search" id="q" placeholder="søg rytter eller hold…" style="min-width:170px">
       <label class="muted" style="font-size:.78rem">maks pris
-        <input type="number" id="maxPrice" step="0.5" min="0" placeholder="M" style="width:70px"></label>
+        <input type="number" id="maxPrice" step="0.5" min="0" placeholder="M" style="width:66px"></label>
+      <label class="muted" style="font-size:.78rem"><input type="checkbox" id="affordable"> kun dem jeg har råd til</label>
     </div>
-    <div id="sellLine" class="note" style="margin-top:0"></div>
-    <div class="scroll tall" style="margin-top:.7rem"><table><thead><tr>
-      <th>#</th><th>Rytter</th><th>Hold</th><th class="num">Pris</th><th class="num">Gebyr</th>
-      <th class="num">Krævet vækst</th><th>Billigste resultat der dækker</th><th class="num">Sejr i blokken giver</th><th class="num">Netto ved sejr</th>
-    </tr></thead><tbody id="tbRiders"></tbody></table></div>
-    <div class="note" id="ridersNote"></div>
   </div>
+  <div class="scroll tall"><table><thead><tr>
+    <th></th><th>Rytter</th><th>Hold</th><th class="num">Pris</th><th class="num">Gebyr</th>
+    <th class="num">Krævet vækst</th><th>Billigste resultat der dækker</th>
+    <th class="num">Sejr giver</th><th class="num">Netto ved sejr</th>
+  </tr></thead><tbody id="tbRiders"></tbody></table></div>
+  <div class="note" id="ridersNote"></div>
 </div>
 
-<div id="paneP-B" style="display:none">
-  <div class="card">
-    <h3 style="margin-top:0">Mit hold</h3>
-    <p class="sub" style="margin-bottom:.6rem">Hak dem af du overvejer at sælge, og sæt hvad du tror de
-    henter i blokken. Vælg derefter indkøb nedenfor.</p>
-    <div class="scroll"><table><thead><tr>
-      <th>Ud?</th><th>Rytter</th><th class="num">Pris</th><th>Forventning i blokken</th><th class="num">= kr</th>
-    </tr></thead><tbody id="tbMine"></tbody></table></div>
-
-    <h3>Indkøb</h3>
-    <div class="row" style="margin-bottom:.5rem">
-      <input type="search" id="q2" placeholder="søg og tilføj rytter…" style="min-width:200px">
-      <span class="muted" style="font-size:.78rem" id="buyHint"></span>
-    </div>
-    <div id="buyResults" class="scroll" style="max-height:170px;overflow:auto"></div>
-    <div class="scroll" style="margin-top:.6rem"><table><thead><tr>
-      <th></th><th>Køber</th><th class="num">Pris</th><th class="num">Gebyr</th><th>Billigste resultat der dækker hans andel</th>
-    </tr></thead><tbody id="tbBuy"></tbody></table></div>
-
-    <h3>Regnskabet</h3>
-    <div class="kpis" id="tradeKpis"></div>
-    <div class="note" id="tradeNote"></div>
-  </div>
+<h2>Hvad de faktisk gjorde<span class="tag">evidens</span></h2>
+<p class="sub">Spørgsmålet om hvor lang en blok må være, behøver vi ikke gætte på. Holdet-snapshottene
+har hvert holds opstilling runde for runde, så antallet af indkøb mellem to runder kan læses direkte
+for alle 14 hold vi følger — top-10, Kasper, os og de to optaktshold.</p>
+<div class="kpis" id="rhKpis"></div>
+<div class="card" style="margin-top:.9rem">
+  <div class="scroll tall"><table><thead><tr>
+    <th>Til etape</th><th>Kat.</th><th class="num">Profil</th><th class="num">Hold der skiftede</th>
+    <th class="num">Indkøb i alt</th><th class="num">Snit pr. hold</th><th></th><th>Hviledag før</th>
+  </tr></thead><tbody id="tbRhythm"></tbody></table></div>
+  <div class="note" id="rhNote"></div>
 </div>
 
-<h2>Hvad jeg mangler svar på</h2>
-<ul class="sub" style="max-width:74ch">
-  <li><b>Blokstørrelse:</b> auto-udkastet skærer ved hviledage, ved skift mellem let og hårdt terræn, og
-  efter maks 5 etaper. Er 5 det rigtige loft, eller tænker du i kortere spring?</li>
-  <li><b>Hviledage</b> står ikke i rutefilen endnu (<span class="mono">rest_after: []</span>). De er den
-  stærkeste blokgrænse der findes — dem skal vi have ind til næste løb.</li>
-  <li><b>Scenarielisten:</b> massespurt / reduceret spurt / GC-opgør / udbrud / enkeltstart. Mangler der
-  en, du faktisk bruger når du tænker på en etape?</li>
-  <li><b>Arketyperne</b> (spurter, puncher, klatrer, udbrudsrytter, tempokører) er i skitsen knyttet til
-  scenariet, ikke til den enkelte rytter. Skal en rytter kunne mærkes med sin type, så tabellen i punkt 4
-  kan filtrere på "hvem passer til denne blok"?</li>
-</ul>
+<h2>Det jeg stadig mangler svar på</h2>
+<div class="card">
+  <h3 style="margin-top:0">Scenarielisten</h3>
+  <p class="sub">Dine Vueltablet-scenarier (favoritfinale, bjergafslutning, reduceret&nbsp;–&nbsp;bakke)
+  overlapper hinanden, og det er præcis pointen: en etape kan sagtens være både bjergafslutning
+  <i>og</i> favoritfinale. Derfor foreslår jeg at skille de to ting ad, så et scenarie aldrig kan
+  komme til at splitte blokke:</p>
+  <ul class="sub">
+    <li><b>Blokke</b> kommer udelukkende fra terræn og hviledage. Uændret.</li>
+    <li><b>Scenarier bliver mærkater</b> — flere pr. etape. "Bjergafslutning + favoritfinale" er én
+    etape med to mærkater, ikke to blokke.</li>
+    <li>Hver mærkat siger én ting om hvem der henter pointene, og de lægges oven på hinanden.</li>
+  </ul>
+  <p class="sub">Er det den rigtige model? Og er listen nedenfor dækkende?</p>
+  <div class="scroll"><table><thead><tr><th>Mærkat</th><th>Hvad den siger</th><th>Fra</th></tr></thead>
+  <tbody id="tbScenProp"></tbody></table></div>
+</div>
+
+<div class="card" style="margin-top:1rem">
+  <h3 style="margin-top:0">Arketyperne — hvad du siger ja eller nej til</h3>
+  <p class="sub">Lige nu hænger arketypen på <i>etapen</i> (via scenariet). Spørgsmålet er om den også
+  skal hænge på <i>rytteren</i>. Konkret hvad de to svar ville betyde:</p>
+  <div class="cols">
+    <div class="card" style="box-shadow:none">
+      <b>Nej — som nu</b>
+      <p class="sub" style="margin:.4rem 0 0">Planlæggeren siger «E11 er en massespurt, så pointene går
+      til spurtere». Den siger ikke hvem der er spurter. Du ser hele feltet i punkt 4 og ved selv at
+      Brennan og Coquard er kandidaterne.</p>
+      <p class="sub" style="margin:.5rem 0 0"><b>Koster:</b> ingenting. <b>Mangler:</b> du kan ikke
+      filtrere feltet ned til «dem der passer til denne blok», og 202 navne er mange at skimme.</p>
+    </div>
+    <div class="card" style="box-shadow:none">
+      <b>Ja — rytteren mærkes</b>
+      <p class="sub" style="margin:.4rem 0 0">Hver rytter får en eller to typer, fx Brennan = spurter,
+      Van Aert = spurter + puncher, Vingegaard = klatrer/GC, Küng = tempo, Tronchon = udbrud. Så kan
+      feltet i punkt 4 filtreres til «kun dem der matcher horisontens scenarier», og blokpuljen kan
+      sige «du har 2 klatrere i en blok med 3 bjergetaper».</p>
+      <p class="sub" style="margin:.5rem 0 0"><b>Koster:</b> typerne skal komme et sted fra. Vi har
+      allerede PCS-specialitetstal i rytterdatabasen (climber / sprint / hills / tt / gc), så det kan
+      udledes automatisk med manuel override — samme mønster som alt andet her.
+      <b>Risiko:</b> et filter der skjuler folk er også et filter der vælger for dig. Det skal være et
+      filter du slår til, ikke en sortering du ikke kan se.</p>
+    </div>
+  </div>
+  <div class="ask">Mit forslag: <b>ja, men kun som filter</b>. Typerne vises som små mærkater ved navnet
+  og kan slås til som filter — tabellen viser stadig alle som udgangspunkt.</div>
+</div>
 
 <div class="foot" id="foot"></div>
 </div>
@@ -277,11 +323,11 @@ kroner, og oversættes til den billigste placering der faktisk dækker det.</p>
 // AI-kørsel involveret. Se svaret i brødteksten: genberegning er aritmetik.
 // ─────────────────────────────────────────────────────────────────────────
 var KEY='planner.vuelta2026.v1';
-var S={blocks:null,scen:{},sel:0,exp:{}},fresh=true;
+var S={blocks:null,scen:{},sel:0,exp:{},hzN:0,maxBlk:3},fresh=true;
 try{var raw=localStorage.getItem(KEY); if(raw){ S=Object.assign(S,JSON.parse(raw)); fresh=false; }}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
 
-var stages=[],restAfter=[],planner=null,byStage={};
+var stages=[],restAfter=[],planner=null,byStage={},pcsSlug=null,realProfiles={},raceId='';
 
 var FEE_PCT=0.01;
 function kr(v){ if(v===null||v===undefined||v===0) return '—'; return Math.round(v/1000)+'k'; }
@@ -335,6 +381,46 @@ function expValue(pos,blk){
   return best;
 }
 
+// ── Skematisk højdeprofil ────────────────────────────────────────────────
+// Tegnet af de kategoriserede stigninger i rutens rækkefølge. Det er IKKE
+// den rigtige højdeprofil — det er den form ruten har ifølge de data der
+// findes før løbet. Ligger der et rigtigt PCS-profilbillede i
+// web/img/profiles/<race>/, bruges det i stedet; se fetch_stage_profiles.py.
+var CLIMB_H={'HC':1,'1':.78,'2':.5,'3':.3};
+function profilePath(s,w,h){
+  var cl=(s.climbs&&s.climbs!=='—')?s.climbs.split('-'):[];
+  var base=h-1,pts=[[0,base]];
+  if(!cl.length){ pts.push([w,base-1.5]); }
+  else{
+    var span=s.summit_finish?w:w*0.86;
+    cl.forEach(function(c,i){
+      var px=span*(i+1)/cl.length, py=base-(h-3)*(CLIMB_H[c]||.3), prev=pts[pts.length-1];
+      pts.push([(prev[0]+px)/2,base]);
+      pts.push([px,py]);
+    });
+    if(!s.summit_finish) pts.push([w,base]);
+  }
+  return pts.map(function(p,i){return (i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1);}).join(' ');
+}
+function profileSvg(s,w,h){
+  var d=profilePath(s,w,h),col='var(--'+regime(s)+')';
+  return '<svg class="prof" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'" aria-hidden="true">'+
+    '<path d="'+d+' L '+w+' '+h+' L 0 '+h+' Z" fill="'+col+'" opacity=".22"/>'+
+    '<path d="'+d+'" fill="none" stroke="'+col+'" stroke-width="1.4" stroke-linejoin="round"/>'+
+    (s.summit_finish?'<circle cx="'+(w-1.5)+'" cy="2.5" r="2.2" fill="'+col+'"/>':'')+'</svg>';
+}
+// Rigtigt PCS-profilbillede hvis det er hentet ned, ellers skitsen.
+function profileImg(s,w,h){
+  var f=realProfiles[s.stage];
+  if(!f) return profileSvg(s,w,h);
+  return '<img class="prof-img" src="img/profiles/'+raceId+'/'+f+'" width="'+w+'" alt="Højdeprofil E'+s.stage+'" loading="lazy">';
+}
+function pcsLink(s){
+  if(!pcsSlug) return '';
+  return '<a class="pcs" target="_blank" rel="noopener" href="https://www.procyclingstats.com/race/'+
+    pcsSlug+'/stage-'+s.stage+'">profil på PCS ↗</a>';
+}
+
 // ── Blokke: automatisk førsteudkast, derefter dine grænser ───────────────
 function autoBlocks(){
   var cuts=[],prev=null;
@@ -346,7 +432,8 @@ function autoBlocks(){
   var bounds=[0].concat(cuts,[stages.length]),out=[];
   for(var i=0;i<bounds.length-1;i++){
     var a=bounds[i],b=bounds[i+1];
-    while(b-a>5){ out.push([a,a+Math.ceil((b-a)/2)]); a=a+Math.ceil((b-a)/2); }
+    var cap=S.maxBlk||3;
+    while(b-a>cap){ out.push([a,a+Math.ceil((b-a)/2)]); a=a+Math.ceil((b-a)/2); }
     out.push([a,b]);
   }
   return out.map(function(p){ return {from:stages[p[0]].stage,to:stages[p[1]-1].stage}; });
@@ -366,7 +453,17 @@ function blocks(){
   });
 }
 function cur(){ var B=blocks(); return B[Math.min(S.sel,B.length-1)]; }
-function curName(){ var c=cur(); return c.name+' (E'+c.from+(c.to!==c.from?'–'+c.to:'')+')'; }
+// Horisonten er den valgte blok — eventuelt kun dens N første etaper. De
+// faktiske skifteomgange i Vuelta 2026 lå på 1-2 etaper, så en hel blok er
+// tit et for langt vindue at bedømme en handel i.
+function hz(){
+  var c=cur(),n=S.hzN||0;
+  if(!n||n>=c.stages.length) return c;
+  var ss=c.stages.slice(0,n);
+  return {from:ss[0].stage,to:ss[ss.length-1].stage,stages:ss,name:c.name,dom:c.dom,mix:c.mix,cut:true};
+}
+function curName(){ var c=hz(); return (c.cut?'E'+c.from+(c.to!==c.from?'–'+c.to:''):
+  c.name+' (E'+c.from+(c.to!==c.from?'–'+c.to:'')+')'); }
 
 // ─────────────────────────────────────────────────────────────────────────
 // Rendering
@@ -410,6 +507,7 @@ function editStage(num){
     '<b>E'+s.stage+'</b> <span class="muted">'+esc(s.name||('etape '+s.stage))+'</span>'+
     '<span class="muted">· '+esc(s.category)+' · profil '+(s.profile_score==null?'—':s.profile_score)+
     ' · '+(s.vmeters==null?'—':s.vmeters+' hm')+' · stigninger '+esc(s.climbs)+(s.summit_finish?' ⛰':'')+'</span>'+
+    profileImg(s,300,60)+pcsLink(s)+
     '<label style="margin-left:auto">Scenarie <select id="scPick">'+opts+'</select></label>'+
     '<button id="scAuto">tilbage til auto</button></div>'+
     '<div id="scWhat" style="margin-top:.4rem"></div></div>';
@@ -440,6 +538,7 @@ function renderTable(){
       '<td>'+esc(s.category)+'</td><td class="muted">'+esc(s.pcs_type||'—')+'</td>'+
       '<td class="num">'+(s.profile_score==null?'—':s.profile_score)+'</td>'+
       '<td class="num">'+(s.vmeters==null?'—':s.vmeters)+'</td>'+
+      '<td>'+profileImg(s,84,24)+'</td>'+
       '<td class="mono">'+esc(s.climbs)+(s.summit_finish?' ⛰':'')+'</td>'+
       '<td class="num">'+s.intermediate_sprints+'</td>'+
       '<td class="num"><b>'+kr(s.winner_incl_team_bonus_kr)+'</b></td>'+
@@ -483,8 +582,20 @@ function renderBlock(){
       '</td><td class="num">'+kr(p.t5)+'</td><td class="num">'+kr(p.t10)+'</td></tr>';
   }).join('');
 
+  // Horisont-knapperne: hele blokken, eller kun dens første 1-3 etaper.
+  var opts=[[0,'hele blokken']];
+  for(var i=1;i<Math.min(c.stages.length,4);i++) opts.push([i,i+(i===1?' etape':' etaper')]);
+  el('hzPick').innerHTML=opts.map(function(o){
+    return '<button class="hzB'+((S.hzN||0)===o[0]?' on':'')+'" data-n="'+o[0]+'">'+o[1]+'</button>';
+  }).join('');
+  el('hzPick').querySelectorAll('.hzB').forEach(function(n){
+    n.addEventListener('click',function(){ S.hzN=+n.dataset.n; save(); renderAll(); });
+  });
+
+  var H=hz(),hpot=H.stages.reduce(function(a,s){return a+s.winner_incl_team_bonus_kr;},0);
   el('hbHorizon').textContent=c.name+' · E'+c.from+(c.to!==c.from?'–'+c.to:'');
-  el('hbDetail').textContent='('+c.stages.length+' etaper · sejrspulje '+kr(pot)+')';
+  el('hbDetail').textContent='('+c.stages.length+' etaper · sejrspulje '+kr(pot)+')'+
+    (H.cut?'  ·  punkt 4 regner kun på E'+H.from+(H.to!==H.from?'–'+H.to:'')+' ('+kr(hpot)+')':'');
 }
 function kpi(n,k){ return '<div class="kpi"><div class="n">'+n+'</div><div class="k">'+esc(k)+'</div></div>'; }
 
@@ -500,131 +611,187 @@ function cheapest(req,blk){
   return {txt:(best.pos===1?'etapesejr':best.pos+'.-plads')+' på E'+best.stage+' ('+kr(best.v)+')',ok:true,pos:best.pos};
 }
 
-// ── Punkt 4 A: alle ryttere ──────────────────────────────────────────────
-function renderRiders(){
-  var c=cur(),sellName=el('selSell').value,sellExp=+el('selSellExp').value;
-  var sell=sellName?planner.riders.filter(function(r){return r.name===sellName;})[0]:null;
-  var sellKr=expValue(sellExp,c);
-  el('sellLine').innerHTML= sell
-    ? 'Sælger <b>'+esc(sell.name)+'</b> ('+m(sell.price_m)+'). Du tror han henter <b>'+kr0(sellKr)+
-      '</b> i '+esc(curName())+'. Enhver ny rytter skal altså hente <b>sit eget gebyr + '+kr0(sellKr)+'</b> for at handlen er i plus.'
-    : 'Ingen sælger valgt — kolonnen «krævet vækst» viser derfor kun gebyret, altså det absolutte minimum.';
+// ─────────────────────────────────────────────────────────────────────────
+// Punkt 4: ét regnestykke, to tabeller. Holdet øverst, feltet nedenunder,
+// samme handel. Man klikker en mand ud af holdet eller ind fra feltet, og
+// alt genberegnes — der er ingen separat "søg indkøb"-tilstand.
+// ─────────────────────────────────────────────────────────────────────────
+var out={},buy=[],teamIdx={};
+function lookupTeam(name){ return teamIdx[name]||''; }
 
-  var q=(el('q').value||'').toLowerCase(),mx=parseFloat(el('maxPrice').value);
-  var rows=planner.riders.filter(function(r){
-    if(sell&&r.name===sell.name) return false;
-    if(q&&r.name.toLowerCase().indexOf(q)<0&&(r.team||'').toLowerCase().indexOf(q)<0) return false;
-    if(!isNaN(mx)&&r.price_m>mx) return false;
-    return true;
+/** Alt hvad handlen koster og kræver. Ét sted, så de to tabeller ikke kan
+ *  komme til at vise hver sit tal. */
+function trade(){
+  var c=hz(),mine=planner.my_team,lost=0,proceeds=0,nOut=0;
+  mine.riders.forEach(function(r){
+    if(!out[r.name]) return;
+    nOut++; proceeds+=r.price_m; lost+=expValue(S.exp[r.name]||0,c);
   });
-  var win=Math.max.apply(null,c.stages.map(function(s){return s.winner_incl_team_bonus_kr;}));
-  var h=rows.slice(0,250).map(function(r,i){
-    var fee=Math.round(r.price_m*1e6*FEE_PCT),req=fee+sellKr,ch=cheapest(req,c),net=win-req;
-    return '<tr><td class="muted">'+(i+1)+'</td><td><b>'+esc(r.name)+'</b></td><td class="muted">'+esc(r.team)+
-      '</td><td class="num">'+m(r.price_m)+'</td><td class="num">'+kr(fee)+
-      '</td><td class="num"><b>'+kr(req)+'</b></td><td'+(ch.ok?'':' class="neg"')+'>'+esc(ch.txt)+
-      '</td><td class="num">'+kr(win)+'</td><td class="num '+(net>0?'pos':'neg')+'">'+(net>0?'+':'')+kr(Math.abs(net))+'</td></tr>';
-  }).join('');
-  el('tbRiders').innerHTML=h;
-  el('ridersNote').innerHTML='Viser '+Math.min(rows.length,250)+' af '+planner.riders.length+' ryttere. '+
-    '«Sejr i blokken» er den bedste enkeltetape i horisonten ('+kr(win)+'). «Netto ved sejr» er hvad der '+
-    'er tilbage når gebyret og den solgtes forventede udbytte er trukket fra — bliver den rød, kan selv '+
-    'en etapesejr ikke betale handlen hjem i dette vindue.';
+  var cost=buy.reduce(function(a,r){return a+r.price_m;},0);
+  var fee=Math.round(cost*1e6*FEE_PCT);
+  return {c:c,mine:mine,nOut:nOut,proceeds:proceeds,lost:lost,cost:cost,fee:fee,
+          req:fee+lost, cash:mine.bank_m+proceeds-cost-fee/1e6,
+          size:mine.riders.length-nOut+buy.length};
 }
+function onTeam(name){ return planner.my_team.riders.some(function(r){return r.name===name;}); }
+function inBuy(name){ return buy.some(function(r){return r.name===name;}); }
 
-// ── Punkt 4 B: holdskabelon ──────────────────────────────────────────────
-var out={},buy=[];
 function renderTeam(){
-  var c=cur(),mine=planner.my_team;
+  var t=trade(),c=t.c,mine=t.mine;
   el('tbMine').innerHTML=mine.riders.map(function(r){
     var e=S.exp[r.name]===undefined?0:S.exp[r.name];
     var opts=EXP.map(function(o){return '<option value="'+o[2]+'"'+(o[2]===e?' selected':'')+'>'+o[1]+'</option>';}).join('');
-    return '<tr'+(out[r.name]?' class="sel"':'')+'><td><input type="checkbox" class="cbOut" data-n="'+esc(r.name)+'"'+(out[r.name]?' checked':'')+'></td>'+
+    return '<tr'+(out[r.name]?' class="sel"':'')+'>'+
+      '<td><button class="tgOut'+(out[r.name]?' on':'')+'" data-n="'+esc(r.name)+'" title="'+
+        (out[r.name]?'fortryd salg':'sælg denne')+'">'+(out[r.name]?'sælges':'behold')+'</button></td>'+
       '<td><b>'+esc(r.name)+'</b>'+(r.name===mine.captain?' <span class="muted">(kaptajn)</span>':'')+'</td>'+
+      '<td class="muted">'+esc(lookupTeam(r.name))+'</td>'+
       '<td class="num">'+m(r.price_m)+'</td>'+
       '<td><select class="selExp" data-n="'+esc(r.name)+'">'+opts+'</select></td>'+
-      '<td class="num">'+kr(expValue(e,c))+'</td></tr>';
+      '<td class="num">'+kr(expValue(e,c))+'</td>'+
+      '<td class="muted" style="font-size:.76rem">'+(out[r.name]?'frigør '+m(r.price_m):'')+'</td></tr>';
   }).join('');
-  el('tbMine').querySelectorAll('.cbOut').forEach(function(n){
-    n.addEventListener('change',function(){ out[n.dataset.n]=this.checked; renderTeam(); });
+  el('tbMine').querySelectorAll('.tgOut').forEach(function(n){
+    n.addEventListener('click',function(){ out[n.dataset.n]=!out[n.dataset.n]; renderTrade(); });
   });
   el('tbMine').querySelectorAll('.selExp').forEach(function(n){
-    n.addEventListener('change',function(){ S.exp[n.dataset.n]=+this.value; save(); renderTeam(); });
+    n.addEventListener('change',function(){ S.exp[n.dataset.n]=+this.value; save(); renderTrade(); });
   });
-
-  var nOut=Object.keys(out).filter(function(k){return out[k];}).length;
-  el('buyHint').textContent=nOut?('du sælger '+nOut+' — vælg '+nOut+' ind for at holde 8 mand'):'hak nogen af ovenfor først';
-
-  var lostKr=0,proceeds=0;
-  mine.riders.forEach(function(r){ if(out[r.name]){ proceeds+=r.price_m; lostKr+=expValue(S.exp[r.name]||0,c); } });
-  var cost=buy.reduce(function(a,r){return a+r.price_m;},0);
-  var fee=Math.round(cost*1e6*FEE_PCT);
-  var req=fee+lostKr;
 
   el('tbBuy').innerHTML=buy.length?buy.map(function(r){
-    var share=buy.length?Math.round(req/buy.length):req,ch=cheapest(share,c);
-    return '<tr><td><button class="rm" data-n="'+esc(r.name)+'">✕</button></td><td><b>'+esc(r.name)+'</b> <span class="muted">'+esc(r.team)+
-      '</span></td><td class="num">'+m(r.price_m)+'</td><td class="num">'+kr(Math.round(r.price_m*1e6*FEE_PCT))+
-      '</td><td'+(ch.ok?'':' class="neg"')+'>'+esc(ch.txt)+'</td></tr>';
-  }).join(''):'<tr><td colspan="5" class="muted">Ingen valgt endnu.</td></tr>';
+    var share=Math.round(t.req/buy.length),ch=cheapest(share,c);
+    return '<tr><td><button class="rm" data-n="'+esc(r.name)+'">fjern</button></td>'+
+      '<td><b>'+esc(r.name)+'</b></td><td class="muted">'+esc(r.team)+'</td>'+
+      '<td class="num">'+m(r.price_m)+'</td><td class="num">'+kr(Math.round(r.price_m*1e6*FEE_PCT))+'</td>'+
+      '<td'+(ch.ok?'':' class="neg"')+'>'+esc(ch.txt)+'</td></tr>';
+  }).join(''):'<tr><td colspan="6" class="muted">Ingen indkøb valgt. Klik «køb» i feltet nedenfor — '+
+    (t.nOut?'du sælger '+t.nOut+', så vælg '+t.nOut+' ind for at holde '+planner.rules.team_size+' mand.'
+           :'eller sælg nogen ovenfor først.')+'</td></tr>';
   el('tbBuy').querySelectorAll('.rm').forEach(function(n){
-    n.addEventListener('click',function(){ buy=buy.filter(function(r){return r.name!==n.dataset.n;}); renderTeam(); });
+    n.addEventListener('click',function(){ buy=buy.filter(function(r){return r.name!==n.dataset.n;}); renderTrade(); });
   });
 
-  var cash=mine.bank_m+proceeds-cost-fee/1e6;
-  var size=mine.riders.length-nOut+buy.length;
   var teamCount={};
-  mine.riders.forEach(function(r){ if(!out[r.name]){ var t=lookupTeam(r.name); teamCount[t]=(teamCount[t]||0)+1; } });
+  mine.riders.forEach(function(r){ if(!out[r.name]){ var x=lookupTeam(r.name); teamCount[x]=(teamCount[x]||0)+1; } });
   buy.forEach(function(r){ teamCount[r.team]=(teamCount[r.team]||0)+1; });
-  var over=Object.keys(teamCount).filter(function(t){return teamCount[t]>planner.rules.max_per_team;});
+  var over=Object.keys(teamCount).filter(function(x){return teamCount[x]>planner.rules.max_per_team;});
 
   el('tradeKpis').innerHTML=
-    kpi(nOut+' → '+buy.length,'ud / ind')+
-    kpi(m(cost),'købssum')+
-    kpi(kr(fee),'gebyr (1 % af køb)')+
-    kpi('<span class="'+(cash<0?'neg':'pos')+'">'+m(cash)+'</span>','kontant efter handel')+
-    kpi('<span class="'+(size===planner.rules.team_size?'':'neg')+'">'+size+'</span>','mand på holdet')+
-    kpi('<b>'+kr(req)+'</b>','krævet nettovækst');
+    kpi(t.nOut+' → '+buy.length,'ud / ind')+
+    kpi(m(t.cost),'købssum')+
+    kpi(kr(t.fee),'gebyr (1 % af køb)')+
+    kpi('<span class="'+(t.cash<0?'neg':'pos')+'">'+m(t.cash)+'</span>','kontant efter handel')+
+    kpi('<span class="'+(t.size===planner.rules.team_size?'':'neg')+'">'+t.size+'</span>','mand på holdet')+
+    kpi('<b>'+kr0(t.req)+'</b>','krævet nettovækst');
+
   var probs=[];
-  if(size!==planner.rules.team_size) probs.push('holdet ender på '+size+' mand, ikke '+planner.rules.team_size);
-  if(cash<0) probs.push('du mangler '+m(-cash)+' i kassen');
+  if(t.size!==planner.rules.team_size) probs.push('holdet ender på '+t.size+' mand, ikke '+planner.rules.team_size);
+  if(t.cash<0) probs.push('du mangler '+m(-t.cash)+' i kassen');
   if(over.length) probs.push('mere end '+planner.rules.max_per_team+' fra '+over.join(', '));
   el('tradeNote').innerHTML=(probs.length?'<span class="neg"><b>Går ikke:</b> '+esc(probs.join(' · '))+'</span><br>':'')+
-    'Kravet <b>'+kr0(req)+'</b> er gebyret ('+kr0(fee)+') plus det, de solgte selv ville have hentet i '+
-    esc(curName())+' ('+kr0(lostKr)+'). Det er summen indkøbet skal slå — ikke gebyret alene.';
+    'Kravet <b>'+kr0(t.req)+'</b> er gebyret ('+kr0(t.fee)+') plus det, de solgte selv ville have hentet i '+
+    esc(curName())+' ('+kr0(t.lost)+'). Det er summen indkøbet skal slå — ikke gebyret alene.';
 }
-var teamIdx={};
-function lookupTeam(name){ return teamIdx[name]||''; }
 
-function renderBuySearch(){
-  var q=(el('q2').value||'').toLowerCase();
-  if(q.length<2){ el('buyResults').innerHTML=''; return; }
-  var hits=planner.riders.filter(function(r){
-    return r.name.toLowerCase().indexOf(q)>=0 && !buy.some(function(b){return b.name===r.name;});
-  }).slice(0,12);
-  el('buyResults').innerHTML='<table><tbody>'+hits.map(function(r){
-    return '<tr><td><button class="add" data-n="'+esc(r.name)+'">+</button></td><td>'+esc(r.name)+
-      '</td><td class="muted">'+esc(r.team)+'</td><td class="num">'+m(r.price_m)+'</td></tr>';
-  }).join('')+'</tbody></table>';
-  el('buyResults').querySelectorAll('.add').forEach(function(n){
+function renderRiders(){
+  var t=trade(),c=t.c;
+  var q=(el('q').value||'').toLowerCase(),mx=parseFloat(el('maxPrice').value);
+  var onlyAfford=el('affordable').checked;
+  // Råd til: hvad der er i kassen lige nu, altså efter de salg der allerede
+  // er hakket af. Det er dét tal der afgør om en handel overhovedet kan gøres.
+  var budget=t.cash;
+  var rows=planner.riders.filter(function(r){
+    if(onTeam(r.name)) return false;
+    if(q&&r.name.toLowerCase().indexOf(q)<0&&(r.team||'').toLowerCase().indexOf(q)<0) return false;
+    if(!isNaN(mx)&&r.price_m>mx) return false;
+    if(onlyAfford&&r.price_m*(1+FEE_PCT)>budget) return false;
+    return true;
+  });
+  var win=Math.max.apply(null,c.stages.map(function(s){return s.winner_incl_team_bonus_kr;}));
+  el('tbRiders').innerHTML=rows.slice(0,250).map(function(r){
+    // Kravet for ÉN ekstra mand: hans eget gebyr oven i det de udgående taber.
+    var fee=Math.round(r.price_m*1e6*FEE_PCT),req=fee+t.lost,ch=cheapest(req,c),net=win-req;
+    var picked=inBuy(r.name);
+    return '<tr'+(picked?' class="sel"':'')+'><td><button class="tgBuy'+(picked?' on':'')+'" data-n="'+esc(r.name)+'">'+
+      (picked?'valgt':'køb')+'</button></td>'+
+      '<td><b>'+esc(r.name)+'</b></td><td class="muted">'+esc(r.team)+'</td>'+
+      '<td class="num">'+m(r.price_m)+'</td><td class="num">'+kr(fee)+'</td>'+
+      '<td class="num"><b>'+kr0(req)+'</b></td>'+
+      '<td'+(ch.ok?'':' class="neg"')+'>'+esc(ch.txt)+'</td>'+
+      '<td class="num">'+kr(win)+'</td>'+
+      '<td class="num '+(net>0?'pos':'neg')+'">'+(net>0?'+':'−')+kr(Math.abs(net))+'</td></tr>';
+  }).join('');
+  el('tbRiders').querySelectorAll('.tgBuy').forEach(function(n){
     n.addEventListener('click',function(){
-      var r=planner.riders.filter(function(x){return x.name===n.dataset.n;})[0];
-      if(r){ buy.push(r); el('q2').value=''; el('buyResults').innerHTML=''; renderTeam(); }
+      var nm=n.dataset.n;
+      if(inBuy(nm)) buy=buy.filter(function(r){return r.name!==nm;});
+      else { var r=planner.riders.filter(function(x){return x.name===nm;})[0]; if(r) buy.push(r); }
+      renderTrade();
     });
   });
+  el('ridersNote').innerHTML='Viser '+Math.min(rows.length,250)+' af '+planner.riders.length+
+    ' ryttere (dit eget hold står ovenfor). «Krævet vækst» er hans gebyr plus '+kr0(t.lost)+
+    ' — det de udgående ville have hentet. «Sejr giver» er den bedste enkeltetape i '+esc(curName())+
+    ' ('+kr(win)+'). Bliver «netto ved sejr» rød, kan selv en etapesejr ikke betale handlen hjem i dette vindue.';
+}
+
+function renderTrade(){ renderTeam(); renderRiders(); }
+
+// ── Evidens: hvor tit blev der faktisk skiftet ut ────────────────────────
+var SCEN_PROP=[
+  ['Massespurt','Feltet samlet til mål; spurterne tager både mål og indlagt spurt','nuværende'],
+  ['Reduceret – bakke','Hårdt nok til at spurterne ryger; punchere og klassikerryttere om sejren','Vueltablet'],
+  ['Favoritfinale','GC-favoritterne kører om etapesejren; klassementpoint i spil','Vueltablet'],
+  ['Bjergafslutning','Målstigning; placeringen ved mål ER bjergpointene','Vueltablet'],
+  ['Udbrud går','Feltet slipper; placeringerne går til billige udbrudsryttere, angrebspræmie i spil','nuværende'],
+  ['Enkeltstart','Tempokørere og GC; ingen point undervejs','nuværende']
+];
+function renderRhythm(rh){
+  if(!rh){ el('rhNote').textContent='Kunne ikke hente skifteadfærden.'; return; }
+  var hi=rh.rounds.filter(function(r){return r.avg_per_team>=4;}).length;
+  el('rhKpis').innerHTML=
+    kpi(rh.avg_transfers_per_team_per_round,'indkøb pr. hold pr. runde')+
+    kpi(rh.total_transfers,'indkøb i alt, '+rh.teams+' hold')+
+    kpi(hi+'/'+rh.rounds.length,'runder med 4+ indkøb pr. hold')+
+    kpi(Math.round(rh.avg_transfers_per_team_per_round/8*100)+' %','af holdet udskiftet pr. runde');
+  var mx=Math.max.apply(null,rh.rounds.map(function(r){return r.avg_per_team;}));
+  el('tbRhythm').innerHTML=rh.rounds.map(function(r){
+    var w=Math.round(90*r.avg_per_team/mx);
+    return '<tr><td><b>E'+r.stage+'</b></td><td>'+esc(r.category||'—')+'</td>'+
+      '<td class="num">'+(r.profile_score==null?'—':r.profile_score)+'</td>'+
+      '<td class="num">'+r.teams_that_moved+'/'+r.teams+'</td>'+
+      '<td class="num">'+r.transfers+'</td><td class="num"><b>'+r.avg_per_team.toFixed(1)+'</b></td>'+
+      '<td><i style="display:block;height:8px;border-radius:3px;width:'+w+'px;background:var(--accent);opacity:.65"></i></td>'+
+      '<td class="muted">'+(r.after_rest_day?'ja':'')+'</td></tr>';
+  }).join('');
+  el('rhNote').innerHTML='Gennemsnittet er <b>'+rh.avg_transfers_per_team_per_round+' indkøb pr. hold pr. runde</b> '+
+    'ud af 8 mand. Feltet byggede altså over halvdelen af holdet om de fleste runder — og gjorde det '+
+    'stort set samtidig. Det er derfor jeg har sat loftet for en blok ned til 3 og gjort det indstilleligt, '+
+    'og derfor punkt 4 kan skæres ned til 1-2 etaper: et vindue på 5 etaper svarer ikke til den måde '+
+    'spillet rent faktisk blev spillet på.';
+  el('tbScenProp').innerHTML=SCEN_PROP.map(function(x){
+    return '<tr><td><b>'+esc(x[0])+'</b></td><td class="muted">'+esc(x[1])+'</td><td class="muted">'+esc(x[2])+'</td></tr>';
+  }).join('');
 }
 
 function renderAll(skipEdit){
-  renderBand(); renderTable(); renderBlock(); renderRiders(); renderTeam();
+  renderBand(); renderTable(); renderBlock(); renderTrade();
   if(!skipEdit) el('stageEdit').innerHTML='';
 }
 
 // ── Opstart ──────────────────────────────────────────────────────────────
 Promise.all([
   fetch('data/vuelta2026_stage_points.json').then(function(r){return r.json();}),
-  fetch('data/vuelta2026_planner.json').then(function(r){return r.json();})
+  fetch('data/vuelta2026_planner.json').then(function(r){return r.json();}),
+  // Findes der hentede PCS-profiler? Hvis ikke, tegner vi bare skitsen.
+  fetch('img/profiles/vuelta2026/manifest.json').then(function(r){return r.ok?r.json():null;})
+                                                .catch(function(){return null;}),
+  fetch('data/vuelta2026_transfer_rhythm.json').then(function(r){return r.ok?r.json():null;})
+                                               .catch(function(){return null;})
 ]).then(function(res){
-  stages=res[0].stages; restAfter=res[0].rest_after||[]; planner=res[1];
+  stages=res[0].stages; restAfter=res[0].rest_after||[]; pcsSlug=res[0].pcs_slug||null; planner=res[1];
+  raceId=res[0].race||'';
+  realProfiles=res[2]&&res[2].files?res[2].files:{};
   stages.forEach(function(s){ byStage[s.stage]=s; maxProfile=Math.max(maxProfile,s.profile_score||0); });
   planner.riders.forEach(function(r){ teamIdx[r.name]=r.team; });
 
@@ -636,16 +803,15 @@ Promise.all([
     S.sel=i;
   }
 
-  el('selSell').innerHTML='<option value="">— ingen, vis kun gebyret —</option>'+
-    planner.my_team.riders.map(function(r){return '<option value="'+esc(r.name)+'">'+esc(r.name)+' ('+m(r.price_m)+')</option>';}).join('');
-  el('selSellExp').innerHTML=EXP.map(function(o){return '<option value="'+o[2]+'">'+o[1]+'</option>';}).join('');
-
-  ['selSell','selSellExp','q','maxPrice'].forEach(function(id){
+  ['q','maxPrice','affordable'].forEach(function(id){
     el(id).addEventListener('input',renderRiders); el(id).addEventListener('change',renderRiders);
   });
-  el('q2').addEventListener('input',renderBuySearch);
   el('onlyHorizon').addEventListener('change',renderTable);
   el('selBlock').addEventListener('change',function(){ S.sel=+this.value; save(); renderAll(); });
+  el('maxBlk').value=S.maxBlk||3;
+  el('maxBlk').addEventListener('change',function(){
+    S.maxBlk=Math.max(2,Math.min(8,+this.value||3)); S.blocks=null; S.sel=0; save(); renderAll();
+  });
   el('mergePrev').addEventListener('click',function(){
     if(S.sel<1) return; var B=S.blocks;
     B[S.sel-1].to=B[S.sel].to; B.splice(S.sel,1); S.sel--; save(); renderAll();
@@ -658,7 +824,7 @@ Promise.all([
     B.splice(S.sel+1,0,{from:mid,to:to}); save(); renderAll();
   });
   el('btnReset').addEventListener('click',function(){
-    S={blocks:null,scen:{},sel:0,exp:{}}; out={}; buy=[]; save(); renderAll();
+    S={blocks:null,scen:{},sel:0,exp:{},hzN:0,maxBlk:3}; out={}; buy=[]; save(); renderAll();
   });
 
   function pane(a,b,ab){ return function(){
@@ -668,18 +834,15 @@ Promise.all([
   el('vA').addEventListener('click',pane(1,0,0));
   el('vB').addEventListener('click',pane(0,1,0));
   el('vAB').addEventListener('click',pane(1,1,1));
-  el('pA').addEventListener('click',function(){ el('pA').classList.add('on'); el('pB').classList.remove('on');
-    el('paneP-A').style.display=''; el('paneP-B').style.display='none'; });
-  el('pB').addEventListener('click',function(){ el('pB').classList.add('on'); el('pA').classList.remove('on');
-    el('paneP-B').style.display=''; el('paneP-A').style.display='none'; });
 
   el('foot').innerHTML='Skitsedata: '+esc(res[0].title||'Vuelta 2026')+'. Pointskemaet er beregnet på forhånd '+
     'af rutefilen (punkt 2) og valideret 126/126 mod FantasyTools tabel. Priser og hold er som ved løbets '+
     'afslutning — i drift ville de komme fra det daglige Holdet-snapshot. '+
-    (restAfter.length?'':'<b>Hviledage er ikke udfyldt i rutefilen</b>, så blokgrænserne er sat udelukkende '+
-    'på terrænskift og maks 5 etaper. ')+
+    (restAfter.length?'Hviledage efter E'+restAfter.join(' og E')+' er med som blokgrænser. '
+      :'<b>Hviledage er ikke udfyldt i rutefilen</b>, så blokgrænserne er sat på terrænskift alene. ')+
     'Alt du ændrer gemmes kun i denne browser.';
 
+  renderRhythm(res[3]);
   renderAll();
 }).catch(function(e){
   el('band').innerHTML='<div class="note neg">Kunne ikke hente data: '+esc(e.message)+'</div>';
