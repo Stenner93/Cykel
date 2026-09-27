@@ -68,7 +68,7 @@
   /* Blokkene ligger side om side så længe der er plads, i stedet for at
      hver blok tvinger en ny række og efterlader halvdelen af skærmen tom. */
   .bgroups{display:flex;flex-wrap:wrap;gap:.1rem 1.3rem}
-  .bgroup{flex:1 1 calc(var(--n) * 186px);max-width:100%;min-width:min(100%,186px)}
+  .bgroup{flex:1 1 calc(var(--n) * var(--cw,186px));max-width:100%;min-width:min(100%,var(--cw,186px))}
   .bgroup .blkhead{margin:.9rem 0 .45rem}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:.6rem}
   .scard{padding:.6rem .7rem .55rem}
@@ -135,17 +135,63 @@
   .pros b{display:block;margin-bottom:.15rem;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
   .pros .p b{color:var(--good)}.pros .m b{color:var(--bad)}
   @media(max-width:620px){.pros{grid-template-columns:1fr}}
+
+  /* ══ Profilpladsen ══
+     Samme kasse uanset om der ligger et rigtigt PCS-profilbillede eller ej.
+     Skitsen tegnes altid; billedet lægger sig ovenpå hvis det kan hentes, så
+     layoutet ikke hopper og aldrig viser et brudt billede. */
+  .pslot{position:relative;width:100%;height:var(--ph,56px);border-radius:7px;overflow:hidden;
+    background:var(--line-2);display:flex;align-items:flex-end}
+  .pslot svg{width:100%;height:100%}
+  .pslot img{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  /* ══ D · Profilvæg ══ */
+  .pwall{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.6rem}
+  .pw{padding:.45rem .5rem .5rem}
+  .pw .top{display:flex;justify-content:space-between;align-items:baseline;gap:.4rem;margin-bottom:.3rem}
+  .pw .e{font-size:.95rem;font-weight:800;letter-spacing:-.02em}
+  .pw .v{font-size:.82rem;font-weight:800;font-variant-numeric:tabular-nums}
+  /* Faktalinjen wrapper i stedet for at blive klippet af — på en telefon
+     står der to kort pr. række, og så er der ikke plads på én linje. */
+  .pw .bot{display:flex;justify-content:space-between;gap:.15rem .5rem;flex-wrap:wrap;
+    margin-top:.35rem;font-size:.7rem;color:var(--ink-3)}
+  .pw .bot span{white-space:nowrap}
+  .pw .bot.nm{display:block}
+  .pw .bot.nm span{display:block;overflow:hidden;text-overflow:ellipsis}
+  .pw select{width:100%;margin-top:.35rem;font-size:.73rem;padding:.2rem .35rem}
+
+  /* ══ E · Lang liste ══ */
+  .llist{display:grid;gap:.55rem;max-width:760px}
+  .lrow{padding:.6rem .75rem}
+  .lrow .hd{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap;margin-bottom:.4rem}
+  .lrow .e{font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
+  .lrow .nm{font-size:.84rem;color:var(--ink-3);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .lrow .sejr{margin-left:auto;font-size:1rem;font-weight:800;font-variant-numeric:tabular-nums}
+  .lrow .ft{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:.45rem}
+  .lrow select{margin-top:.45rem;width:100%;max-width:280px}
+
+  /* ══ F · Profilvæg + detalje ══ */
+  .wsplit{display:grid;grid-template-columns:1fr 340px;gap:.9rem;align-items:start}
+
+  .wsplit .pw{cursor:pointer}
+  .wsplit .pw.on{outline:2px solid var(--accent);outline-offset:-1px}
+  .wdet{padding:.9rem 1rem;position:sticky;top:64px}
+  @media(max-width:860px){
+    .wsplit{grid-template-columns:1fr}
+    .wdet{position:static}
+  }
   .foot{color:var(--ink-3);font-size:.78rem;margin-top:2.6rem;border-top:1px solid var(--line);padding-top:1rem}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="eyebrow">Layoutudkast · punkt 3</div>
-  <h1>Tre måder at vise ruten på</h1>
-  <p class="lede">Samme data, samme scenarie-tilstand, tre forskellige opstillinger. Ingen af dem
-  bruger en tabel med vandret scroll — det var dét der kom i vejen. Skift med fanebladene; de klæber
-  til toppen. Prøv også at gøre vinduet smalt: alle tre er bygget til at folde sig sammen til mobil,
-  og du kan se hvad hver især taber undervejs.</p>
+  <h1>Seks måder at vise ruten på</h1>
+  <p class="lede">Samme data, samme scenarie-tilstand, seks opstillinger. <b>D, E og F</b> er de nye:
+  de er bygget lange frem for brede, etaperne står i flere rækker, og etapeprofilen er det bærende
+  element i stedet for en søjle med profilscoren. <b>A, B og C</b> er de tre første udkast.
+  Ingen af dem bruger en tabel med vandret scroll. Skift med fanebladene; de klæber til toppen.
+  Prøv også at gøre vinduet smalt — det er der forskellene bliver tydelige.</p>
 
   <div class="tabs"><div class="tabs-in" id="tabs"></div></div>
 
@@ -161,6 +207,7 @@
     <span class="muted" style="font-size:.78rem" id="cnt"></span>
   </div>
 
+  <div class="note" id="imgnote" style="margin-bottom:1rem"><b>Profilerne er skitser lige nu.</b> Hver profilplads prøver først at hente den rigtige PCS-etapeprofil fra <span class="mono">img/profiles/&lt;race&gt;/stage-NN.jpg</span>. Findes den ikke, tegnes formen ud fra de kategoriserede stigninger i stedet. Kassen er den samme, så layoutet ser ens ud begge veje — og denne besked forsvinder af sig selv, så snart billederne er på plads.</div>
   <div id="view"></div>
 
   <h2>Hvad de hver især kan</h2>
@@ -366,7 +413,108 @@ function viewRows(list){
   return h;
 }
 
+// Profilplads: skitsen tegnes altid, det rigtige PCS-billede lægger sig
+// ovenpå hvis det findes i web/img/profiles/<race>/. Findes det ikke, sker
+// der ingenting — ingen brudte billeder, ingen hoppende layout.
+var haveImg=false;
+function pslotOk(img){
+  img.style.display='block';
+  var svg=img.parentNode.querySelector('svg'); if(svg) svg.style.visibility='hidden';
+  if(!haveImg){ haveImg=true; var b=el('imgnote'); if(b) b.style.display='none'; }
+}
+function pslotErr(img){
+  var alt=img.getAttribute('data-alt');
+  if(alt){ img.removeAttribute('data-alt'); img.src=alt; return; }
+  img.remove();
+}
+function pslot(s,h){
+  var n=s.stage<10?'0'+s.stage:''+s.stage;
+  var base='img/profiles/'+(DATA.race||'')+'/stage-'+n;
+  return '<div class="pslot" style="--ph:'+h+'px">'+prof(s,'fluid',h)+
+    '<img alt="" loading="lazy" src="'+base+'.jpg" data-alt="'+base+'.png" '+
+    'onload="pslotOk(this)" onerror="pslotErr(this)"></div>';
+}
+
+// ══ D · Profilvæg — etaperne i flere rækker i stedet for ét bredt bånd ═══
+function viewWall(list,opts){
+  opts=opts||{};
+  var cw=opts.pick?176:234;
+  var h='<div class="bgroups">';
+  blocks(list).forEach(function(b){
+    h+='<div class="bgroup" style="--n:'+b.stages.length+';--cw:'+cw+'px">'+
+       '<div class="blkhead"><b>'+b.name+'</b><span>E'+b.stages[0].stage+
+       (b.stages.length>1?'–'+b.stages[b.stages.length-1].stage:'')+'</span>'+
+       (b.rest?'<span class="rest">hviledag efter</span>':'')+'</div><div class="pwall">';
+    b.stages.forEach(function(s){
+      h+='<div class="card pw'+(opts.pick&&s.stage===S.sel?' on':'')+'" data-s="'+s.stage+'">'+
+        '<div class="top"><span class="e">E'+s.stage+'</span>'+chip(s)+
+        '<span class="v">'+kr(s.winner_incl_team_bonus_kr)+'</span></div>'+
+        pslot(s,opts.h||62)+
+        '<div class="bot nm"><span>'+esc(short(s))+'</span></div>'+
+        (opts.pick?'':'<div class="bot"><span>profil <b>'+(s.profile_score==null?'—':s.profile_score)+
+          '</b></span><span><b>'+(s.vmeters==null?'—':s.vmeters.toLocaleString('da-DK'))+'</b> hm</span>'+
+          '<span>'+esc(s.climbs)+(s.summit_finish?' ⛰':'')+'</span></div>'+scenSel(s))+
+        '</div>';
+    });
+    h+='</div></div>';
+  });
+  return h+'</div>';
+}
+
+// ══ E · Lang liste — én etape pr. række, profilen i fuld bredde ══════════
+function viewLong(list){
+  var h='';
+  blocks(list).forEach(function(b){
+    h+='<div class="blkhead"><b>'+b.name+'</b><span>E'+b.stages[0].stage+
+       (b.stages.length>1?'–'+b.stages[b.stages.length-1].stage:'')+'</span>'+
+       (b.rest?'<span class="rest">hviledag efter</span>':'')+'</div><div class="llist">';
+    b.stages.forEach(function(s){
+      h+='<div class="card lrow"><div class="hd"><span class="e">E'+s.stage+'</span>'+chip(s)+
+        '<span class="nm">'+esc(short(s))+'</span><span class="sejr">'+kr(s.winner_incl_team_bonus_kr)+'</span></div>'+
+        pslot(s,104)+
+        '<div class="ft">'+facts(s)+
+        '<span class="kv">top-5 <b>'+kr(s.top5_kr)+'</b></span>'+
+        '<span class="kv">undervejs <b>'+kr(s.during_kr)+'</b></span></div>'+
+        scenSel(s)+'</div>';
+    });
+    h+='</div>';
+  });
+  return h;
+}
+
+// ══ F · Profilvæg + detalje — A og B slået sammen ════════════════════════
+function viewWallDetail(list){
+  if(!S.sel||!list.some(function(x){return x.stage===S.sel;})) S.sel=list[0]&&list[0].stage;
+  var s=list.filter(function(x){return x.stage===S.sel;})[0]||list[0];
+  return '<div class="wsplit"><div>'+viewWall(list,{pick:true,h:52})+'</div>'+
+    '<div class="card wdet"><div class="row" style="justify-content:space-between">'+
+    '<h3 style="margin:0;font-size:1.2rem">Etape '+s.stage+'</h3>'+chip(s)+'</div>'+
+    '<div class="muted" style="font-size:.84rem">'+esc(short(s))+'</div>'+
+    '<div style="margin:.7rem 0">'+pslot(s,96)+'</div>'+
+    '<div class="mdgrid" style="margin:.7rem 0">'+
+      box(s.profile_score==null?'—':s.profile_score,'profilscore')+
+      box(s.vmeters==null?'—':s.vmeters.toLocaleString('da-DK'),'højdemeter')+
+      box(esc(s.climbs)+(s.summit_finish?' ⛰':''),'stigninger')+
+      box(s.intermediate_sprints,'indlagte spurter')+
+      box(kr(s.winner_incl_team_bonus_kr),'sejr')+
+      box(kr(s.top5_kr),'5.-plads')+
+      box(kr(s.top10_kr),'10.-plads')+
+      box(kr(s.during_kr),'undervejs')+
+    '</div>'+scenSel(s)+
+    (DATA.pcs_slug?'<div style="margin-top:.6rem"><a style="font-size:.78rem;color:var(--accent)" target="_blank" rel="noopener" href="https://www.procyclingstats.com/race/'+DATA.pcs_slug+'/stage-'+s.stage+'">profil på PCS ↗</a></div>':'')+
+    '</div></div>';
+}
+
 var VIEWS=[
+  {n:'D · Profilvæg', f:function(l){return viewWall(l);},
+   p:'Båndet foldet ud: etaperne står i flere rækker i stedet for én lang vandret stribe, så siden bliver lang frem for bred. Profilen fylder mest i hvert felt, og blokkene bliver overskrifter. På mobil falder den til én eller to spalter uden at noget klippes af.',
+   m:'Hvert felt er stadig smalt, så profilen er et miniaturebillede. God til at fornemme formen på hele løbet, ikke til at læse hvor den sidste stigning ligger.'},
+  {n:'E · Lang liste', f:viewLong,
+   p:'Den længste og den letteste at læse på telefon: én etape pr. række, profilen i fuld bredde og 104 px høj, så man faktisk kan se hvor stigningerne ligger. Tallene står under profilen i stedet for ved siden af.',
+   m:'21 rækker er meget at scrolle, og man ser sjældent mere end to-tre etaper ad gangen. Dårlig til overblik over en hel blok.'},
+  {n:'F · Profilvæg + detalje', f:viewWallDetail,
+   p:'A og B slået sammen: profilvæggen som oversigt, og den valgte etape i fuld dybde i en rude der klæber til siden. Du beholder overblikket mens du læser tallene for én etape. På mobil lægger detaljen sig under væggen.',
+   m:'Detaljeruden æder plads fra væggen på en normal skærm, så der er færre etaper pr. række end i D.'},
   {n:'A · Kort-gitter', f:viewCards,
    p:'Falder naturligt fra fire spalter til én. Alt om en etape står samlet ét sted, og der er plads til profilen i fuld bredde. Blokkene bliver til overskrifter, som er den mest læsbare form for gruppering.',
    m:'Fylder meget i højden — 21 kort er meget at scrolle igennem på mobil. Det er svært at sammenligne to etaper der ikke ligger ved siden af hinanden.'},
