@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 TMPL = Path(__file__).resolve().parent / "layout_drafts.tmpl.html"
 SRC = ROOT / "web/data/vuelta2026_stage_points.json"
+SHAPES = ROOT / "web/data/vuelta2026_stage_shapes.json"
 OUT = ROOT / "web/planlaegger-layouts.html"
 
 # Kun det layoutene rent faktisk viser — filen skal være lille nok til at
@@ -37,7 +38,13 @@ def main():
         row["during_kr"] = s["total_during_kr"][0]
         stages.append(row)
 
+    shapes = json.loads(SHAPES.read_text()) if SHAPES.exists() else {"stages": {}, "max_vmeters": 0}
+    for row in stages:
+        sh = shapes["stages"].get(str(row["stage"]))
+        row["shape"] = sh["shape"] if sh else None
+
     payload = {
+        "max_vmeters": shapes.get("max_vmeters", 0),
         "race": src.get("race"),
         "title": src.get("title"),
         "pcs_slug": src.get("pcs_slug"),
