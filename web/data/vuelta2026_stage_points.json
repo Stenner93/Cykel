@@ -1,7 +1,11 @@
 {
   "race": "vuelta2026",
   "title": "Vuelta a España 2026",
-  "rest_after": [],
+  "pcs_slug": "vuelta-a-espana/2026",
+  "rest_after": [
+    9,
+    15
+  ],
   "source": "Beregnet på forhånd af vuelta2026.json (etapekategori, stigninger, indlagte spurter) + holdet.dk's regler. Ingen resultatdata indgår.",
   "note": "Alle tal i kroner. total_finish = etapeplacering + spurt- og bjergpoint ved mål. total_during = point ved indlagte spurter/stigninger (efter placering DER, ikke ved mål). total_combined = summen, altså et maksimum der forudsætter man er først overalt. Holdbonus, trøjer, klassement og mest angrebsivrige er betingede og indgår ikke — undtagen i winner_incl_team_bonus_kr, hvor vinderens garanterede holdbonus er lagt til.",
   "stages": [

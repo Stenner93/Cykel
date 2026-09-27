@@ -1,8 +1,12 @@
 {
   "race": "vuelta2026",
   "title": "Vuelta a España 2026",
+  "pcs_slug": "vuelta-a-espana/2026",
   "note": "Ruteinformation — alt her er kendt FØR løbet køres og hentes fra løbsbogen eller procyclingstats. Pointmotoren bruger: 'category' (etapens officielle kategori flad/middel/bjerg; enkeltstart bruger bjerg-skalaen), 'climbs' (de kategoriserede stigninger i rutens rækkefølge, HC/1/2/3), 'summit_finish' (om den sidste af dem er målstigningen) og 'intermediate_sprints' (antal indlagte spurter). Ruteplanlæggeren bruger desuden 'profile_score', 'vmeters', 'pcs_type' og 'name', som fyldes på af scripts/analysis/enrich_route_meta.py fra data/cache/pcs_profile_scores.json. Ingen resultatdata.",
-  "rest_after": [],
+  "rest_after": [
+    9,
+    15
+  ],
   "stages": [
     {
       "stage": 1,
