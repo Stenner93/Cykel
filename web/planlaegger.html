@@ -54,22 +54,6 @@
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
   @media(max-width:820px){.cols{grid-template-columns:1fr}}
 
-  /* ── Rutebånd ── */
-  .band{display:flex;gap:3px;overflow-x:auto;padding:.4rem .1rem 1rem}
-  .blk{border:1px solid var(--line);border-radius:12px;padding:.35rem .25rem .45rem;background:var(--panel);flex:0 0 auto;cursor:pointer;transition:border-color .12s}
-  .blk:hover{border-color:var(--accent)}
-  .blk.sel{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 25%,transparent)}
-  .blk-h{display:flex;justify-content:space-between;gap:.6rem;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);padding:.1rem .3rem .3rem}
-  .blk-h b{color:var(--ink)}
-  .blk-s{display:flex;gap:2px}
-  .st{flex:0 0 auto;width:36px;border-radius:7px;background:var(--line-2);padding:.3rem .1rem .35rem;text-align:center;cursor:pointer;border:1px solid transparent}
-  .st:hover{border-color:var(--ink-3)}
-  .st.act{border-color:var(--accent)}
-  .st .n{font-size:.72rem;font-weight:700;line-height:1.1}
-  .st .bar{height:38px;display:flex;align-items:flex-end;justify-content:center;margin:.2rem 0}
-  .st .bar i{display:block;width:12px;border-radius:2px 2px 0 0}
-  .st .v{font-size:.6rem;color:var(--ink-3);font-variant-numeric:tabular-nums;line-height:1.2}
-  .st .ic{font-size:.66rem;line-height:1.2}
   .sw-spurt{background:var(--spurt)}.sw-kuperet{background:var(--kuperet)}
   .sw-bjerg{background:var(--bjerg)}.sw-enkeltstart{background:var(--itt)}
   .lg{display:flex;gap:.9rem;flex-wrap:wrap;font-size:.74rem;color:var(--ink-3);margin-top:-.5rem}
@@ -88,6 +72,43 @@
   .tag-r.t-gc{color:var(--accent);border-color:currentColor}
   .tag-r.t-tempo{color:var(--itt);border-color:currentColor}
 
+
+  /* ── Hele løbet: kort-gitter (layout A) ──
+     Blokkene ligger side om side så længe der er plads, så oversigten er lang
+     frem for bred og aldrig kræver vandret scroll. */
+  .bgroups{display:flex;flex-wrap:wrap;gap:.1rem 1.2rem;margin:.3rem 0 .8rem}
+  .bgroup{flex:1 1 calc(var(--n) * 206px);max-width:100%;min-width:min(100%,206px)}
+  .bgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:.55rem}
+  .bhead{display:flex;align-items:baseline;gap:.45rem;margin:.9rem 0 .4rem;cursor:pointer;
+    font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3)}
+  .bhead b{color:var(--ink);font-size:.85rem;letter-spacing:0;text-transform:none}
+  .bhead::after{content:"";flex:1;height:1px;background:var(--line)}
+  .bhead:hover b{color:var(--accent)}
+  .bhead.sel b{color:var(--accent)}
+  .bhead.sel::after{background:var(--accent)}
+  .rest{font-size:.66rem;color:var(--accent);border:1px dashed var(--accent);border-radius:20px;padding:0 6px}
+  .sc{padding:.42rem .45rem .48rem;background:var(--panel);border:1px solid var(--line);
+    border-radius:11px;cursor:pointer;transition:border-color .12s}
+  .sc:hover{border-color:var(--accent)}
+  .sc.act{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 22%,transparent)}
+  .sc.inblk{background:color-mix(in srgb,var(--accent) 7%,var(--panel))}
+  .sc .top{display:flex;justify-content:space-between;align-items:baseline;gap:.35rem;margin-bottom:.3rem}
+  .sc .e{font-size:.92rem;font-weight:800;letter-spacing:-.02em}
+  .sc .v{font-size:.8rem;font-weight:800;font-variant-numeric:tabular-nums}
+  /* Profilpladsen: PCS-billedet har samme 2:1-format for alle etaper, så
+     kassen er den samme uanset om billedet findes eller skitsen tegnes. */
+  .pslot{position:relative;width:100%;aspect-ratio:2/1;border-radius:6px;overflow:hidden;
+    background:#fff;display:flex;align-items:flex-end}
+  .pslot svg{width:100%;height:100%}
+  /* Billedet ligger ovenpå skitsen. Det må IKKE starte som display:none —
+     en skjult img med loading=lazy bliver aldrig hentet. */
+  .pslot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff}
+  .sc .nm{font-size:.7rem;color:var(--ink-3);margin-top:.3rem;overflow:hidden;
+    text-overflow:ellipsis;white-space:nowrap}
+  .sc .facts{display:flex;justify-content:space-between;gap:.15rem .45rem;flex-wrap:wrap;
+    font-size:.68rem;color:var(--ink-3);margin-top:.15rem}
+  .sc .facts span{white-space:nowrap}
+  .sc .facts b{color:var(--ink)}
   .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.6rem;margin-top:.8rem}
   .kpi{background:var(--line-2);border-radius:10px;padding:.6rem .7rem}
   .kpi .n{font-size:1.15rem;font-weight:800;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
@@ -146,29 +167,29 @@ en dårlig handel, hvis ham du sælger tager en 5.-plads i morgen.</div>
 
 <!-- ════════ PUNKT 3 ════════ -->
 <h2>3 · Ruteplanlægger<span class="tag">udkast A + B</span></h2>
-<p class="sub">Samme data, to visninger. A er horisonten — hele løbet på én skærm. B er tallene.
-Skift mellem dem, eller lad dem stå ved siden af hinanden; de deler tilstand, så en ændring ét sted
-ses begge steder.</p>
+<p class="sub">Samme data, to visninger. Kortene er horisonten — hele løbet med etapeprofilerne fra
+procyclingstats, i flere rækker så der aldrig er vandret scroll. Tabellen er tallene. De deler
+tilstand, så en ændring ét sted ses begge steder.</p>
 <div class="switch">
-  <button id="vA" class="on">A · Rutebånd</button>
-  <button id="vB">B · Etapetabel</button>
-  <button id="vAB">A + B</button>
+  <button id="vA" class="on">Kort</button>
+  <button id="vB">Tabel</button>
+  <button id="vAB">Begge</button>
 </div>
 
 <div id="paneA">
   <div class="card">
     <div class="row" style="justify-content:space-between">
       <h3 style="margin:0">Hele løbet</h3>
-      <span class="muted" style="font-size:.78rem">Klik en blok for at sætte horisonten · klik en etape for at ændre scenarie</span>
+      <span class="muted" style="font-size:.78rem">Klik en blokoverskrift for at sætte horisonten · klik en etape for at ændre scenarie</span>
     </div>
-    <div class="band" id="band"></div>
+    <div id="band"></div>
     <div class="lg">
       <span><i class="sw-spurt"></i> Spurt</span>
       <span><i class="sw-kuperet"></i> Kuperet</span>
       <span><i class="sw-bjerg"></i> Bjerg</span>
       <span><i class="sw-enkeltstart"></i> Enkeltstart</span>
       <span>⛰ målstigning</span>
-      <span>Søjlehøjde = profilscore · tallet = sejrsværdi</span>
+      <span id="profSrc"></span>
     </div>
     <div id="stageEdit"></div>
   </div>
@@ -410,16 +431,22 @@ function profilePath(s,w,h){
 }
 function profileSvg(s,w,h){
   var d=profilePath(s,w,h),col='var(--'+regime(s)+')';
-  return '<svg class="prof" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'" aria-hidden="true">'+
+  return '<svg class="prof" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" aria-hidden="true">'+
     '<path d="'+d+' L '+w+' '+h+' L 0 '+h+' Z" fill="'+col+'" opacity=".22"/>'+
-    '<path d="'+d+'" fill="none" stroke="'+col+'" stroke-width="1.4" stroke-linejoin="round"/>'+
+    '<path d="'+d+'" fill="none" stroke="'+col+'" stroke-width="1.4" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>'+
     (s.summit_finish?'<circle cx="'+(w-1.5)+'" cy="2.5" r="2.2" fill="'+col+'"/>':'')+'</svg>';
 }
 // Rigtigt PCS-profilbillede hvis det er hentet ned, ellers skitsen.
-function profileImg(s,w,h){
+// Profilplads i fast 2:1-format — samme kasse uanset om PCS-billedet findes.
+// Skitsen tegnes altid nedenunder, så der aldrig er et tomt hul mens billedet
+// loader, og siden virker uændret hvis profilerne ikke er hentet.
+// Når det rigtige billede er der, er skitsen bag det overflødig.
+window.profOk=function(img){ var g=img.parentNode.querySelector('svg'); if(g) g.style.display='none'; };
+function profileImg(s,px){
   var f=realProfiles[s.stage];
-  if(!f) return profileSvg(s,w,h);
-  return '<img class="prof-img" src="img/profiles/'+raceId+'/'+f+'" width="'+w+'" alt="Højdeprofil E'+s.stage+'" loading="lazy">';
+  return '<div class="pslot"'+(px?' style="width:'+px+'px"':'')+'>'+profileSvg(s,200,100)+
+    (f?'<img src="img/profiles/'+raceId+'/'+esc(f)+'" alt="Højdeprofil E'+s.stage+
+       '" loading="lazy" onload="this.style.display=\'block\'">':'')+'</div>';
 }
 function pcsLink(s){
   if(!pcsSlug) return '';
@@ -476,31 +503,44 @@ function curName(){ var c=hz(); return (c.cut?'E'+c.from+(c.to!==c.from?'–'+c.
 // ─────────────────────────────────────────────────────────────────────────
 var maxProfile=1;
 
+// Hele løbet som kort-gitter. Blokkene pakker sig side om side så længe der
+// er plads; klik på overskriften sætter horisonten, klik på et kort åbner
+// etapens scenarie.
 function renderBand(){
-  var B=blocks(),h='';
+  var B=blocks(),h='<div class="bgroups">';
   B.forEach(function(b,bi){
-    h+='<div class="blk'+(bi===S.sel?' sel':'')+'" data-b="'+bi+'">';
-    h+='<div class="blk-h"><b>'+esc(b.name)+'</b><span title="'+esc(b.mix)+'">E'+b.from+(b.to!==b.from?'–'+b.to:'')+'</span></div><div class="blk-s">';
+    h+='<div class="bgroup" style="--n:'+b.stages.length+'">'+
+      '<div class="bhead'+(bi===S.sel?' sel':'')+'" data-b="'+bi+'" title="'+esc(b.mix)+'">'+
+      '<b>'+esc(b.name)+'</b><span>E'+b.from+(b.to!==b.from?'–'+b.to:'')+'</span>'+
+      (restAfter.indexOf(b.to)>=0?'<span class="rest">hviledag efter</span>':'')+
+      '</div><div class="bgrid">';
     b.stages.forEach(function(s){
-      var r=regime(s),hgt=Math.max(3,Math.round(38*(s.profile_score||0)/maxProfile));
-      h+='<div class="st" data-s="'+s.stage+'"><div class="n">E'+s.stage+'</div>'+
-         '<div class="bar"><i class="sw-'+r+'" style="height:'+hgt+'px"></i></div>'+
-         '<div class="ic">'+(s.summit_finish?'⛰':'&nbsp;')+'</div>'+
-         '<div class="v">'+kr(s.winner_incl_team_bonus_kr)+'</div>'+
-         '<div class="v">p'+(s.profile_score==null?'—':s.profile_score)+'</div></div>';
+      h+='<div class="sc'+(bi===S.sel?' inblk':'')+'" data-s="'+s.stage+'">'+
+        '<div class="top"><span class="e">E'+s.stage+'</span>'+
+        '<span class="v">'+kr(s.winner_incl_team_bonus_kr)+'</span></div>'+
+        profileImg(s)+
+        '<div class="nm" title="'+esc(s.name||'')+'">'+esc(shortName(s))+'</div>'+
+        '<div class="facts"><span>'+esc(s.category)+'</span>'+
+        '<span>p<b>'+(s.profile_score==null?'—':s.profile_score)+'</b></span>'+
+        '<span><b>'+(s.vmeters==null?'—':s.vmeters.toLocaleString('da-DK'))+'</b> hm</span>'+
+        '<span><b>'+esc(s.climbs)+'</b>'+(s.summit_finish?' ⛰':'')+'</span></div>'+
+        '</div>';
     });
     h+='</div></div>';
   });
-  el('band').innerHTML=h;
-  el('band').querySelectorAll('.blk').forEach(function(n){
-    n.addEventListener('click',function(ev){
-      if(ev.target.closest('.st')) return;
-      S.sel=+n.dataset.b; save(); renderAll();
-    });
+  el('band').innerHTML=h+'</div>';
+  el('band').querySelectorAll('.bhead').forEach(function(n){
+    n.addEventListener('click',function(){ S.sel=+n.dataset.b; save(); renderAll(); });
   });
-  el('band').querySelectorAll('.st').forEach(function(n){
-    n.addEventListener('click',function(ev){ ev.stopPropagation(); editStage(+n.dataset.s); });
+  el('band').querySelectorAll('.sc').forEach(function(n){
+    n.addEventListener('click',function(){ editStage(+n.dataset.s); });
   });
+  el('profSrc').textContent = Object.keys(realProfiles).length
+    ? 'Profiler: procyclingstats' : 'Profiler: skitse ud fra stigningerne';
+}
+function shortName(s){
+  var n=s.name||'',m=n.match(/-\s*(.+)$/);
+  return m?m[1]:('etape '+s.stage);
 }
 
 function editStage(num){
@@ -513,7 +553,7 @@ function editStage(num){
     '<b>E'+s.stage+'</b> <span class="muted">'+esc(s.name||('etape '+s.stage))+'</span>'+
     '<span class="muted">· '+esc(s.category)+' · profil '+(s.profile_score==null?'—':s.profile_score)+
     ' · '+(s.vmeters==null?'—':s.vmeters+' hm')+' · stigninger '+esc(s.climbs)+(s.summit_finish?' ⛰':'')+'</span>'+
-    profileImg(s,300,60)+pcsLink(s)+
+    profileImg(s,320)+pcsLink(s)+
     '<label style="margin-left:auto">Scenarie <select id="scPick">'+opts+'</select></label>'+
     '<button id="scAuto">tilbage til auto</button></div>'+
     '<div id="scWhat" style="margin-top:.4rem"></div></div>';
@@ -544,7 +584,7 @@ function renderTable(){
       '<td>'+esc(s.category)+'</td><td class="muted">'+esc(s.pcs_type||'—')+'</td>'+
       '<td class="num">'+(s.profile_score==null?'—':s.profile_score)+'</td>'+
       '<td class="num">'+(s.vmeters==null?'—':s.vmeters)+'</td>'+
-      '<td>'+profileImg(s,84,24)+'</td>'+
+      '<td>'+profileImg(s,84)+'</td>'+
       '<td class="mono">'+esc(s.climbs)+(s.summit_finish?' ⛰':'')+'</td>'+
       '<td class="num">'+s.intermediate_sprints+'</td>'+
       '<td class="num"><b>'+kr(s.winner_incl_team_bonus_kr)+'</b></td>'+
