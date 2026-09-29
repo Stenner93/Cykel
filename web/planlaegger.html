@@ -290,10 +290,10 @@ hentet i horisonten.</p>
       <button id="sbClear">nulstil holdet</button>
     </div>
   </div>
-  <div class="squad" id="squad"></div>
   <div class="kpis" id="tradeKpis"></div>
   <div class="note" id="tradeNote"></div>
   <div class="note" id="tradeLog" style="display:none"></div>
+  <div class="squad" id="squad"></div>
 </div>
 
 <div class="card" style="margin-top:1rem">
@@ -847,7 +847,20 @@ function onSquad(name){ return slots.indexOf(name)>=0; }
 
 function renderSquad(){
   var t=trade(),c=t.c,base=baseNames(),nextEmpty=firstEmpty();
-  el('squad').innerHTML=slots.map(function(name,i){
+  // Rækkefølge: kaptajnen først uanset pris, så faldende værdi, og de tomme
+  // pladser til sidst i den rækkefølge de bliver fyldt.
+  var order=slots.map(function(n,i){return i;}).sort(function(x,y){
+    var a=slots[x],b2=slots[y];
+    if(a===null&&b2===null) return x-y;
+    if(a===null) return 1;
+    if(b2===null) return -1;
+    var cap=planner.my_team.captain;
+    if(a===cap) return -1;
+    if(b2===cap) return 1;
+    return priceOf(b2)-priceOf(a);
+  });
+  el('squad').innerHTML=order.map(function(i){
+    var name=slots[i];
     if(name===null){
       return '<div class="slot empty'+(i===nextEmpty?' next':'')+'" data-i="'+i+'">'+
         (i===nextEmpty?'<b>Tom plads</b><br>næste køb i feltet lander her':'Tom plads')+'</div>';
@@ -899,12 +912,24 @@ function renderSquad(){
 
   el('sbUndo').disabled = !hist.length;
   el('sbUndo').style.opacity = hist.length ? 1 : .45;
+  // Handlen vises som facit, ikke som mellemregninger. Har man byttet frem og
+  // tilbage om den samme plads, er det kun endestationen der er interessant:
+  // "Romele → Roglic", ikke otte linjer med Gall ind og ud.
+  var moves=[];
+  base.forEach(function(was,i){
+    var now=slots[i];
+    if(was===now) return;
+    moves.push(now===null ? '– '+esc(was) : esc(was)+' → <b>'+esc(now)+'</b>');
+  });
+  slots.forEach(function(now,i){
+    if(now!==null && base[i]===null) moves.push('+ <b>'+esc(now)+'</b>');
+  });
   var log=el('tradeLog');
-  if(hist.length){
+  if(moves.length){
     log.style.display='';
-    log.innerHTML='<b>Handlen indtil nu:</b> '+hist.map(function(h){
-      return (h.t==='sell'?'– ':'+ ')+esc(h.name);
-    }).join(' · ')+'  <span class="muted">(fortryd ruller ét skridt tilbage ad gangen)</span>';
+    log.innerHTML='<b>Handlen:</b> '+moves.join(' · ')+
+      (hist.length?'  <span class="muted">(fortryd ruller ét skridt tilbage ad gangen — '+
+        hist.length+' trin)</span>':'');
   } else { log.style.display='none'; }
 }
 
@@ -1042,9 +1067,13 @@ Promise.all([
     S.sel=i;
   }
 
-  ['q','maxPrice','affordable'].forEach(function(id){
-    el(id).addEventListener('input',renderRiders); el(id).addEventListener('change',renderRiders);
-  });
+  // Kun ÉN begivenhed pr. felt. Med både input og change gentegnede
+  // søgefeltet tabellen når det mistede fokus — og hvis man klikkede direkte
+  // fra søgefeltet over på «køb», blev knappen udskiftet mellem mousedown og
+  // mouseup, så klikket aldrig blev til et click. Handlen skete bare ikke.
+  el('q').addEventListener('input',renderRiders);
+  el('maxPrice').addEventListener('input',renderRiders);
+  el('affordable').addEventListener('change',renderRiders);
   el('onlyHorizon').addEventListener('change',renderTable);
   el('selBlock').addEventListener('change',function(){ S.sel=+this.value; save(); renderAll(); });
   el('maxBlk').value=S.maxBlk||3;
