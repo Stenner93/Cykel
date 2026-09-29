@@ -12,48 +12,21 @@ Brug:
 """
 from __future__ import annotations
 
-import json
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from stage_payload import render  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 TMPL = Path(__file__).resolve().parent / "layout_drafts.tmpl.html"
-SRC = ROOT / "web/data/vuelta2026_stage_points.json"
-SHAPES = ROOT / "web/data/vuelta2026_stage_shapes.json"
 OUT = ROOT / "web/planlaegger-layouts.html"
-
-# Kun det layoutene rent faktisk viser — filen skal være lille nok til at
-# kunne sendes som én fil.
-KEEP = ["stage", "name", "category", "pcs_type", "profile_score", "vmeters",
-        "climbs", "summit_finish", "intermediate_sprints",
-        "winner_incl_team_bonus_kr"]
 
 
 def main():
-    src = json.loads(SRC.read_text())
-    stages = []
-    for s in src["stages"]:
-        row = {k: s.get(k) for k in KEEP}
-        row["top5_kr"] = s["total_finish_kr"][4]
-        row["top10_kr"] = s["total_finish_kr"][9]
-        row["during_kr"] = s["total_during_kr"][0]
-        stages.append(row)
-
-    shapes = json.loads(SHAPES.read_text()) if SHAPES.exists() else {"stages": {}, "max_vmeters": 0}
-    for row in stages:
-        sh = shapes["stages"].get(str(row["stage"]))
-        row["shape"] = sh["shape"] if sh else None
-
-    payload = {
-        "max_vmeters": shapes.get("max_vmeters", 0),
-        "race": src.get("race"),
-        "title": src.get("title"),
-        "pcs_slug": src.get("pcs_slug"),
-        "rest_after": src.get("rest_after", []),
-        "stages": stages,
-    }
-    html = TMPL.read_text().replace("__STAGES__", json.dumps(payload, ensure_ascii=False))
-    OUT.write_text(html)
-    print(f"Skrev {OUT.relative_to(ROOT)} — {len(stages)} etaper, {len(html)//1024} kB")
+    data = render(TMPL, OUT)
+    print(f"Skrev {OUT.relative_to(ROOT)} — {len(data['stages'])} etaper, "
+          f"{OUT.stat().st_size // 1024} kB")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="da" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Den udvidede etapeboks — udkast</title>
+<style>
+  :root{
+    --bg:#fcfcfb;--panel:#ffffff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;
+    --line:#e7e6e1;--line-2:#efeee9;--accent:#c0661c;
+    --spurt:#3f8f8f;--kuperet:#b8892b;--bjerg:#b4472e;--enkeltstart:#7a5cc4;
+    --shadow:0 1px 2px rgba(20,22,26,.05),0 6px 20px rgba(20,22,26,.05);
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;
+    --line:#2d3034;--line-2:#26282c;--accent:#e08a3c;
+    --spurt:#5fb8b8;--kuperet:#d8a84a;--bjerg:#e07a5f;--enkeltstart:#a48ce0;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 26px rgba(0,0,0,.35);
+  }}
+  :root[data-theme="light"]{--bg:#fcfcfb;--panel:#fff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;--line:#e7e6e1;--line-2:#efeee9;--accent:#c0661c;--spurt:#3f8f8f;--kuperet:#b8892b;--bjerg:#b4472e;--enkeltstart:#7a5cc4;--shadow:0 1px 2px rgba(20,22,26,.05),0 6px 20px rgba(20,22,26,.05)}
+  :root[data-theme="dark"]{--bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;--line:#2d3034;--line-2:#26282c;--accent:#e08a3c;--spurt:#5fb8b8;--kuperet:#d8a84a;--bjerg:#e07a5f;--enkeltstart:#a48ce0;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 26px rgba(0,0,0,.35)}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);line-height:1.5;
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:1.4rem 16px 4rem}
+  .eyebrow{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:clamp(1.5rem,4.5vw,2.1rem);line-height:1.08;letter-spacing:-.02em;margin:.4rem 0 .5rem;font-weight:800}
+  .lede{color:var(--ink-2);font-size:.98rem;max-width:68ch;margin:0 0 1.3rem}
+  h2{font-size:1.02rem;margin:2.2rem 0 .15rem;font-weight:700}
+  .sub{color:var(--ink-3);font-size:.85rem;margin:0 0 .8rem;max-width:72ch}
+  .muted{color:var(--ink-3)}
+  .pick{display:flex;gap:.3rem;flex-wrap:wrap;margin:0 0 1.4rem;
+    padding:.7rem;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+  .pick button{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:7px;
+    padding:.2rem .5rem;font:inherit;font-size:.76rem;font-weight:700;cursor:pointer}
+  .pick button:hover{border-color:var(--accent);color:var(--accent)}
+  .pick button.on{background:var(--accent);border-color:var(--accent);color:#16171a}
+  select{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;
+    padding:.3rem .45rem;font:inherit;font-size:.82rem}
+  .chip{display:inline-flex;align-items:center;font-size:.64rem;font-weight:700;letter-spacing:.04em;
+    text-transform:uppercase;border:1px solid currentColor;border-radius:20px;padding:1px 8px}
+  .c-spurt{color:var(--spurt)}.c-kuperet{color:var(--kuperet)}
+  .c-bjerg{color:var(--bjerg)}.c-enkeltstart{color:var(--enkeltstart)}
+  .pslot{width:100%;border-radius:7px;overflow:hidden;background:var(--line-2);display:block}
+  .pslot svg{display:block;width:100%;height:100%}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow)}
+  .pcs{color:var(--accent);font-size:.76rem;text-decoration:none;white-space:nowrap}
+  .pcs:hover{text-decoration:underline}
+  .why{font-size:.8rem;color:var(--ink-2);background:var(--line-2);border-radius:9px;padding:.55rem .7rem}
+  .why b{color:var(--ink)}
+  .pros{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.7rem}
+  .pros div{background:var(--line-2);border-radius:9px;padding:.5rem .7rem;font-size:.82rem}
+  .pros b{display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.1rem}
+  .pros .p b{color:#57b072}.pros .m b{color:#e07a5f}
+  @media(max-width:620px){.pros{grid-template-columns:1fr}}
+
+  /* ── A · To spalter — tekst til venstre, profil til højre ── */
+  .vA{display:grid;grid-template-columns:1fr 300px;gap:1rem;padding:.9rem 1rem}
+  .vA .hd{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap;margin-bottom:.6rem}
+  .vA .e{font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
+  .vA .nm{font-size:.86rem;color:var(--ink-3)}
+  .vA .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:.4rem .8rem;margin-bottom:.7rem}
+  .vA .facts div{font-size:.72rem;color:var(--ink-3)}
+  .vA .facts b{display:block;font-size:.92rem;color:var(--ink);font-variant-numeric:tabular-nums}
+  .vA .facts b.txt,.vC .tiles .n.txt{font-size:.8rem;white-space:nowrap}
+  .vA .ctl{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.55rem}
+  .vA .right{display:flex;flex-direction:column;gap:.4rem}
+  @media(max-width:760px){.vA{grid-template-columns:1fr}.vA .right{order:-1}}
+
+  /* ── B · Kompakt kort — fylder ikke hele bredden ── */
+  .vB{max-width:520px;padding:.85rem .95rem}
+  .vB .hd{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.55rem}
+  .vB .e{font-size:1.1rem;font-weight:800;letter-spacing:-.02em}
+  .vB .nm{font-size:.82rem;color:var(--ink-3);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .vB .v{margin-left:auto;font-size:1rem;font-weight:800;font-variant-numeric:tabular-nums}
+  .vB .kv{display:grid;grid-template-columns:auto 1fr;gap:.18rem .8rem;font-size:.8rem;margin:.6rem 0}
+  .vB .kv span{color:var(--ink-3)}
+  .vB .kv b{text-align:right;font-variant-numeric:tabular-nums}
+  .vB select{width:100%;margin-bottom:.5rem}
+
+  /* ── C · Bånd — fuld bredde, men alt i spalter ── */
+  .vC{padding:.85rem 1rem}
+  .vC .hd{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin-bottom:.6rem}
+  .vC .e{font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
+  .vC .nm{font-size:.86rem;color:var(--ink-3)}
+  .vC .spacer{flex:1}
+  .vC .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:.5rem;margin:.7rem 0}
+  .vC .tiles div{background:var(--line-2);border-radius:9px;padding:.45rem .6rem}
+  .vC .tiles .n{font-size:.98rem;font-weight:800;line-height:1.15;font-variant-numeric:tabular-nums}
+  .vC .tiles .k{font-size:.66rem;color:var(--ink-3);margin-top:.05rem}
+  .vC .foot{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+  .vC .foot .why{flex:1;min-width:260px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Udkast · den udvidede etapeboks</div>
+  <h1>Tre måder at sætte boksen op</h1>
+  <p class="lede">Den nuværende boks har profil, tal, dropdown og knap på én flex-række med fælles
+  midterlinje. Elementerne er vidt forskellige i højden, og dét er grunden til at de virker forskudt.
+  Her er tre alternativer. Vælg en etape for at se dem alle tre med rigtige tal, og prøv at gøre
+  vinduet smalt.</p>
+
+  <div class="pick" id="pick"></div>
+
+  <h2>A · To spalter</h2>
+  <p class="sub">Din egen idé: alle tekstinformationer til venstre, ruteprofilen til højre i en fast
+  spalte. Profilen har sin egen kasse og trækker ikke i rækken af tal.</p>
+  <div class="box vA" id="boxA"></div>
+  <div class="pros">
+    <div class="p"><b>Taler for</b>Profilen får plads uden at skubbe til noget, og tallene står i et roligt gitter. Falder til én spalte på mobil med profilen øverst.</div>
+    <div class="m"><b>Taler imod</b>Fylder hele bredden, og på en bred skærm bliver venstre spalte luftig.</div>
+  </div>
+
+  <h2>B · Kompakt kort</h2>
+  <p class="sub">Fylder bevidst ikke hele bredden. Alt står under hinanden i én smal søjle, og
+  nøgletallene er en ren nøgle/værdi-liste med tallene højrestillet.</p>
+  <div class="box vB" id="boxB"></div>
+  <div class="pros">
+    <div class="p"><b>Taler for</b>Roligst af de tre. Intet er forskudt, fordi intet står side om side. Ser ens ud på pc og mobil.</div>
+    <div class="m"><b>Taler imod</b>Højere, så oversigten nedenunder skubbes længere ned. Profilen bliver smallere.</div>
+  </div>
+
+  <h2>C · Bånd</h2>
+  <p class="sub">Fuld bredde, men alt ligger i spalter: profilen som banner øverst, tallene som lige
+  store felter under, og scenarievalget på sin egen linje nederst.</p>
+  <div class="box vC" id="boxC"></div>
+  <div class="pros">
+    <div class="p"><b>Taler for</b>Profilen bliver bred nok til at man kan se hvor stigningerne ligger, og tallene står i et regulært gitter.</div>
+    <div class="m"><b>Taler imod</b>Den højeste af de tre på bred skærm, og profilbanneret er meget dominerende for en flad etape.</div>
+  </div>
+</div>
+
+<script>
+'use strict';
+var DATA = {"max_vmeters": 4952, "race": "vuelta2026", "title": "Vuelta a España 2026", "pcs_slug": "vuelta-a-espana/2026", "rest_after": [9, 15], "stages": [{"stage": 1, "name": "1. Etape - Monaco > Monaco", "category": "bjerg", "pcs_type": "tt", "profile_score": 2, "vmeters": 55, "climbs": "—", "summit_finish": false, "intermediate_sprints": 0, "winner_incl_team_bonus_kr": 320000, "top5_kr": 143000, "top10_kr": 98000, "during_kr": 0, "shape": [0.875, 0.942, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.99, 0.962, 0.962, 0.967, 1.0, 1.0, 0.977, 0.938, 0.851, 0.827, 0.868, 0.908, 0.971, 1.0, 1.0, 0.962, 0.962, 0.962, 0.962, 1.0, 1.0, 1.0, 0.995, 0.947, 0.838, 0.751, 0.664, 0.538, 0.443, 0.353, 0.29, 0.223, 0.17, 0.154, 0.121, 0.115, 0.115, 0.115, 0.079, 0.077, 0.115, 0.115, 0.115, 0.115, 0.115, 0.115, 0.115, 0.102, 0.077, 0.077, 0.077, 0.105, 0.115, 0.115, 0.15, 0.154, 0.187, 0.231, 0.269, 0.308, 0.308, 0.308, 0.268, 0.197, 0.154, 0.133, 0.115, 0.115, 0.093, 0.077, 0.077, 0.038, 0.038, 0.04, 0.077, 0.077, 0.077, 0.077, 0.077, 0.077, 0.077, 0.085, 0.115, 0.115, 0.115, 0.115, 0.115, 0.115, 0.115, 0.099, 0.077, 0.077, 0.038, 0.038, 0.006, 0.0, 0.038, 0.038, 0.077, 0.077, 0.091, 0.115, 0.115, 0.115, 0.115, 0.115, 0.115, 0.115, 0.077, 0.1, 0.13, 0.154, 0.154, 0.138, 0.115, 0.078, 0.077, 0.115, 0.115, 0.115, 0.115, 0.115, 0.115, 0.115, 0.115, 0.115, 0.115, 0.111, 0.077, 0.077, 0.0]}, {"stage": 2, "name": "2. Etape - Monaco > Manosque", "category": "middel", "pcs_type": "hilly", "profile_score": 96, "vmeters": 3028, "climbs": "3-3", "summit_finish": false, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 428000, "top5_kr": 161000, "top10_kr": 101000, "during_kr": 78000, "shape": [0.034, 0.028, 0.028, 0.01, 0.007, 0.001, 0.0, 0.0, 0.0, 0.008, 0.014, 0.027, 0.076, 0.17, 0.245, 0.281, 0.282, 0.329, 0.391, 0.474, 0.546, 0.567, 0.558, 0.559, 0.541, 0.51, 0.487, 0.431, 0.328, 0.284, 0.31, 0.326, 0.326, 0.31, 0.234, 0.308, 0.353, 0.355, 0.344, 0.265, 0.282, 0.297, 0.303, 0.337, 0.403, 0.411, 0.409, 0.381, 0.359, 0.366, 0.369, 0.372, 0.413, 0.446, 0.447, 0.427, 0.418, 0.418, 0.392, 0.437, 0.532, 0.627, 0.702, 0.702, 0.723, 0.848, 0.872, 0.872, 0.861, 0.83, 0.838, 0.877, 0.951, 0.994, 1.0, 0.984, 0.939, 0.889, 0.84, 0.819, 0.809, 0.802, 0.766, 0.73, 0.726, 0.704, 0.713, 0.725, 0.757, 0.759, 0.759, 0.746, 0.729, 0.665, 0.653, 0.625, 0.567, 0.546, 0.63, 0.75, 0.764, 0.755, 0.754, 0.748, 0.672, 0.631, 0.639, 0.645, 0.645, 0.619, 0.617, 0.592, 0.48, 0.472, 0.497, 0.535, 0.563, 0.591, 0.624, 0.662, 0.699, 0.741, 0.792, 0.806, 0.809, 0.805, 0.785, 0.761, 0.729, 0.69, 0.629, 0.569, 0.518, 0.438, 0.432, 0.487, 0.519, 0.555, 0.56, 0.55]}, {"stage": 3, "name": "", "category": "middel", "pcs_type": null, "profile_score": 203, "vmeters": 2639, "climbs": "1-2", "summit_finish": true, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 455000, "top5_kr": 161000, "top10_kr": 101000, "during_kr": 90000, "shape": [0.012, 0.012, 0.0, 0.005, 0.005, 0.005, 0.005, 0.003, 0.0, 0.001, 0.002, 0.003, 0.006, 0.014, 0.017, 0.011, 0.009, 0.008, 0.014, 0.016, 0.018, 0.018, 0.018, 0.009, 0.009, 0.009, 0.013, 0.014, 0.013, 0.006, 0.009, 0.021, 0.03, 0.038, 0.041, 0.041, 0.023, 0.008, 0.009, 0.009, 0.005, 0.005, 0.005, 0.001, 0.0, 0.002, 0.002, 0.002, 0.005, 0.005, 0.001, 0.003, 0.005, 0.005, 0.006, 0.009, 0.009, 0.009, 0.009, 0.013, 0.016, 0.018, 0.024, 0.033, 0.041, 0.045, 0.05, 0.05, 0.045, 0.04, 0.036, 0.037, 0.039, 0.045, 0.048, 0.05, 0.053, 0.057, 0.06, 0.064, 0.07, 0.076, 0.081, 0.087, 0.093, 0.106, 0.117, 0.122, 0.126, 0.133, 0.135, 0.135, 0.142, 0.158, 0.168, 0.173, 0.176, 0.183, 0.186, 0.207, 0.219, 0.232, 0.242, 0.25, 0.271, 0.29, 0.306, 0.309, 0.324, 0.337, 0.366, 0.395, 0.405, 0.425, 0.451, 0.487, 0.522, 0.559, 0.603, 0.642, 0.679, 0.723, 0.764, 0.788, 0.809, 0.813, 0.812, 0.815, 0.815, 0.8, 0.779, 0.793, 0.827, 0.866, 0.899, 0.934, 0.967, 0.996, 1.0, 0.999]}, {"stage": 4, "name": "4. Etape - Andorra la Vella > Andorra la Vella", "category": "bjerg", "pcs_type": "hilly", "profile_score": 252, "vmeters": 3024, "climbs": "1-1-1-3", "summit_finish": false, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 479000, "top5_kr": 143000, "top10_kr": 98000, "during_kr": 159000, "shape": [0.135, 0.159, 0.192, 0.221, 0.248, 0.284, 0.293, 0.317, 0.366, 0.379, 0.383, 0.401, 0.416, 0.436, 0.438, 0.452, 0.471, 0.497, 0.519, 0.548, 0.585, 0.613, 0.643, 0.681, 0.717, 0.733, 0.775, 0.809, 0.844, 0.881, 0.919, 0.954, 0.99, 1.0, 0.998, 0.974, 0.938, 0.902, 0.863, 0.828, 0.789, 0.765, 0.753, 0.753, 0.749, 0.752, 0.753, 0.739, 0.726, 0.703, 0.663, 0.622, 0.594, 0.562, 0.531, 0.508, 0.48, 0.458, 0.442, 0.42, 0.408, 0.386, 0.38, 0.367, 0.316, 0.29, 0.28, 0.252, 0.221, 0.198, 0.233, 0.296, 0.355, 0.41, 0.456, 0.481, 0.524, 0.563, 0.569, 0.565, 0.55, 0.522, 0.48, 0.441, 0.404, 0.352, 0.306, 0.262, 0.223, 0.213, 0.216, 0.251, 0.292, 0.328, 0.375, 0.42, 0.457, 0.493, 0.533, 0.568, 0.605, 0.646, 0.68, 0.696, 0.696, 0.685, 0.677, 0.677, 0.668, 0.631, 0.595, 0.575, 0.54, 0.501, 0.456, 0.415, 0.385, 0.365, 0.314, 0.29, 0.279, 0.249, 0.216, 0.189, 0.159, 0.134, 0.124, 0.158, 0.169, 0.175, 0.222, 0.243, 0.243, 0.228, 0.183, 0.144, 0.105, 0.059, 0.015, 0.0]}, {"stage": 5, "name": "5. Etape - Falset . Costa Daurada > Roquetes. Terres de l'Ebre", "category": "middel", "pcs_type": "sprint", "profile_score": 90, "vmeters": 1689, "climbs": "3", "summit_finish": false, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 419000, "top5_kr": 161000, "top10_kr": 101000, "during_kr": 69000, "shape": [0.714, 0.716, 0.614, 0.597, 0.597, 0.549, 0.488, 0.371, 0.376, 0.389, 0.383, 0.343, 0.177, 0.107, 0.116, 0.116, 0.11, 0.137, 0.141, 0.095, 0.093, 0.126, 0.245, 0.372, 0.389, 0.392, 0.415, 0.415, 0.453, 0.48, 0.514, 0.54, 0.578, 0.599, 0.64, 0.688, 0.688, 0.642, 0.551, 0.476, 0.417, 0.412, 0.365, 0.297, 0.202, 0.151, 0.091, 0.06, 0.063, 0.014, 0.011, 0.0, 0.012, 0.012, 0.012, 0.012, 0.012, 0.01, 0.012, 0.012, 0.012, 0.012, 0.009, 0.002, 0.012, 0.012, 0.012, 0.038, 0.051, 0.05, 0.013, 0.012, 0.012, 0.012, 0.012, 0.019, 0.025, 0.025, 0.025, 0.025, 0.038, 0.038, 0.033, 0.025, 0.038, 0.049, 0.051, 0.049, 0.051, 0.053, 0.051, 0.051, 0.078, 0.268, 0.434, 0.48, 0.476, 0.443, 0.344, 0.192, 0.088, 0.065, 0.169, 0.417, 0.517, 0.519, 0.569, 0.584, 0.582, 0.506, 0.398, 0.491, 0.596, 0.592, 0.54, 0.588, 0.797, 0.973, 1.0, 0.975, 0.831, 0.662, 0.59, 0.458, 0.39, 0.389, 0.367, 0.22, 0.074, 0.061, 0.101, 0.103, 0.08, 0.061, 0.051, 0.045, 0.034, 0.059, 0.064, 0.057]}, {"stage": 6, "name": "6. Etape - Alcossebre > Castelló", "category": "bjerg", "pcs_type": "sprint", "profile_score": 188, "vmeters": 2984, "climbs": "2-3-2-1", "summit_finish": false, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 449000, "top5_kr": 143000, "top10_kr": 98000, "during_kr": 129000, "shape": [0.117, 0.161, 0.175, 0.175, 0.182, 0.195, 0.264, 0.32, 0.345, 0.347, 0.323, 0.257, 0.295, 0.331, 0.331, 0.313, 0.247, 0.224, 0.253, 0.27, 0.278, 0.315, 0.35, 0.402, 0.46, 0.538, 0.636, 0.715, 0.801, 0.893, 0.946, 0.964, 0.962, 0.993, 1.0, 0.996, 0.966, 0.922, 0.857, 0.768, 0.671, 0.638, 0.639, 0.639, 0.643, 0.651, 0.646, 0.639, 0.74, 0.836, 0.925, 0.928, 0.917, 0.892, 0.887, 0.851, 0.773, 0.696, 0.606, 0.545, 0.471, 0.401, 0.406, 0.425, 0.428, 0.414, 0.369, 0.353, 0.337, 0.337, 0.328, 0.317, 0.324, 0.378, 0.407, 0.416, 0.416, 0.369, 0.31, 0.24, 0.163, 0.084, 0.034, 0.007, 0.0, 0.0, 0.007, 0.045, 0.107, 0.12, 0.119, 0.041, 0.012, 0.035, 0.086, 0.218, 0.319, 0.411, 0.454, 0.488, 0.488, 0.464, 0.395, 0.322, 0.238, 0.153, 0.098, 0.049, 0.011, 0.006, 0.006, 0.001, 0.0, 0.011, 0.052, 0.117, 0.248, 0.338, 0.438, 0.601, 0.772, 0.823, 0.828, 0.816, 0.696, 0.519, 0.433, 0.363, 0.283, 0.2, 0.123, 0.077, 0.029, 0.018, 0.018, 0.016, 0.01, 0.012, 0.011, 0.005]}, {"stage": 7, "name": "7. Etape - Vall d'Alba > Aramón Valdelinares", "category": "bjerg", "pcs_type": "mountain", "profile_score": 278, "vmeters": 3597, "climbs": "2-3-3-2-1", "summit_finish": true, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 458000, "top5_kr": 146000, "top10_kr": 98000, "during_kr": 108000, "shape": [0.026, 0.027, 0.004, 0.003, 0.005, 0.002, 0.005, 0.023, 0.023, 0.018, 0.003, 0.0, 0.003, 0.008, 0.016, 0.024, 0.046, 0.081, 0.086, 0.109, 0.122, 0.125, 0.128, 0.127, 0.117, 0.125, 0.128, 0.128, 0.128, 0.108, 0.073, 0.072, 0.073, 0.07, 0.088, 0.112, 0.131, 0.167, 0.197, 0.228, 0.268, 0.297, 0.32, 0.343, 0.359, 0.386, 0.414, 0.427, 0.427, 0.418, 0.399, 0.363, 0.334, 0.308, 0.271, 0.238, 0.222, 0.249, 0.282, 0.311, 0.329, 0.33, 0.325, 0.322, 0.321, 0.336, 0.353, 0.353, 0.351, 0.339, 0.322, 0.297, 0.243, 0.193, 0.157, 0.156, 0.155, 0.164, 0.185, 0.21, 0.22, 0.218, 0.214, 0.241, 0.248, 0.247, 0.24, 0.225, 0.22, 0.22, 0.229, 0.273, 0.33, 0.361, 0.408, 0.429, 0.44, 0.439, 0.438, 0.429, 0.427, 0.42, 0.411, 0.413, 0.432, 0.449, 0.455, 0.484, 0.505, 0.509, 0.509, 0.5, 0.488, 0.474, 0.38, 0.502, 0.528, 0.57, 0.609, 0.648, 0.659, 0.662, 0.672, 0.699, 0.741, 0.766, 0.764, 0.746, 0.705, 0.682, 0.717, 0.767, 0.816, 0.859, 0.888, 0.94, 0.989, 1.0, 1.0, 0.997]}, {"stage": 8, "name": "8. Etape - Puçol > Xeraco", "category": "middel", "pcs_type": "sprint", "profile_score": 41, "vmeters": 1280, "climbs": "3", "summit_finish": false, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 419000, "top5_kr": 161000, "top10_kr": 101000, "during_kr": 69000, "shape": [0.081, 0.081, 0.088, 0.089, 0.089, 0.089, 0.089, 0.089, 0.106, 0.119, 0.13, 0.145, 0.17, 0.172, 0.207, 0.243, 0.304, 0.373, 0.406, 0.436, 0.483, 0.483, 0.473, 0.413, 0.371, 0.327, 0.291, 0.33, 0.365, 0.376, 0.367, 0.335, 0.335, 0.302, 0.253, 0.272, 0.311, 0.311, 0.303, 0.278, 0.292, 0.322, 0.361, 0.393, 0.436, 0.528, 0.541, 0.585, 0.623, 0.622, 0.607, 0.609, 0.64, 0.664, 0.671, 0.686, 0.688, 0.654, 0.598, 0.629, 0.631, 0.611, 0.555, 0.572, 0.582, 0.581, 0.527, 0.448, 0.409, 0.376, 0.375, 0.361, 0.329, 0.316, 0.311, 0.309, 0.303, 0.287, 0.27, 0.25, 0.226, 0.195, 0.181, 0.171, 0.163, 0.142, 0.138, 0.124, 0.122, 0.118, 0.114, 0.107, 0.11, 0.114, 0.106, 0.097, 0.097, 0.097, 0.1, 0.119, 0.142, 0.168, 0.19, 0.235, 0.243, 0.29, 0.303, 0.311, 0.319, 0.267, 0.181, 0.0, 0.359, 0.528, 0.697, 0.837, 0.903, 0.945, 0.994, 1.0, 0.987, 0.807, 0.595, 0.446, 0.356, 0.254, 0.19, 0.143, 0.138, 0.134, 0.079, 0.065, 0.072, 0.073, 0.081, 0.081, 0.066, 0.056, 0.056, 0.048]}, {"stage": 9, "name": "9. Etape - La Vila Joiosa/Villajoyosa > Alto de Aitana.C. Blanca", "category": "bjerg", "pcs_type": "mountain", "profile_score": 349, "vmeters": 4952, "climbs": "2-1-3-2-2-1", "summit_finish": true, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 494000, "top5_kr": 146000, "top10_kr": 98000, "during_kr": 144000, "shape": [0.053, 0.08, 0.11, 0.106, 0.141, 0.155, 0.156, 0.149, 0.098, 0.056, 0.057, 0.083, 0.097, 0.097, 0.091, 0.081, 0.066, 0.087, 0.083, 0.067, 0.068, 0.103, 0.155, 0.217, 0.267, 0.315, 0.334, 0.334, 0.317, 0.314, 0.327, 0.356, 0.354, 0.334, 0.287, 0.224, 0.178, 0.13, 0.109, 0.106, 0.099, 0.056, 0.019, 0.012, 0.049, 0.067, 0.063, 0.034, 0.003, 0.0, 0.083, 0.198, 0.259, 0.348, 0.358, 0.349, 0.33, 0.362, 0.363, 0.363, 0.363, 0.373, 0.378, 0.381, 0.432, 0.481, 0.501, 0.5, 0.467, 0.471, 0.472, 0.462, 0.421, 0.408, 0.387, 0.356, 0.329, 0.324, 0.316, 0.304, 0.318, 0.362, 0.401, 0.417, 0.426, 0.446, 0.498, 0.557, 0.616, 0.635, 0.633, 0.619, 0.583, 0.553, 0.51, 0.465, 0.421, 0.413, 0.427, 0.478, 0.515, 0.596, 0.629, 0.63, 0.624, 0.581, 0.521, 0.501, 0.54, 0.541, 0.534, 0.49, 0.455, 0.37, 0.334, 0.276, 0.251, 0.25, 0.233, 0.23, 0.206, 0.173, 0.165, 0.187, 0.233, 0.279, 0.316, 0.35, 0.4, 0.455, 0.522, 0.578, 0.634, 0.713, 0.784, 0.863, 0.936, 0.996, 1.0, 0.998]}, {"stage": 10, "name": "10. Etape - Alcaraz > Elche de la Sierra", "category": "middel", "pcs_type": "hilly", "profile_score": 127, "vmeters": 2669, "climbs": "3-3-3", "summit_finish": false, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 437000, "top5_kr": 161000, "top10_kr": 101000, "during_kr": 87000, "shape": [0.464, 0.458, 0.455, 0.471, 0.521, 0.581, 0.585, 0.59, 0.648, 0.696, 0.717, 0.748, 0.779, 0.808, 0.855, 0.947, 1.0, 1.0, 0.976, 0.874, 0.753, 0.69, 0.664, 0.64, 0.622, 0.619, 0.587, 0.58, 0.573, 0.586, 0.59, 0.633, 0.713, 0.773, 0.803, 0.804, 0.799, 0.739, 0.689, 0.674, 0.698, 0.728, 0.744, 0.799, 0.804, 0.804, 0.759, 0.712, 0.694, 0.698, 0.706, 0.702, 0.657, 0.619, 0.526, 0.411, 0.33, 0.276, 0.308, 0.41, 0.473, 0.512, 0.557, 0.594, 0.597, 0.591, 0.562, 0.53, 0.505, 0.49, 0.455, 0.459, 0.461, 0.419, 0.332, 0.273, 0.242, 0.261, 0.267, 0.274, 0.325, 0.337, 0.335, 0.289, 0.251, 0.23, 0.183, 0.164, 0.154, 0.175, 0.192, 0.192, 0.183, 0.16, 0.0, 0.11, 0.096, 0.081, 0.06, 0.037, 0.022, 0.049, 0.08, 0.132, 0.143, 0.146, 0.146, 0.142, 0.083, 0.066, 0.096, 0.13, 0.202, 0.202, 0.165, 0.119, 0.129, 0.163, 0.211, 0.299, 0.357, 0.396, 0.4, 0.394, 0.334, 0.295, 0.271, 0.267, 0.233, 0.233, 0.233, 0.203, 0.15, 0.146, 0.145, 0.176, 0.22, 0.249, 0.25, 0.227]}, {"stage": 11, "name": "11. Etape - Cartagena > Lorca", "category": "flad", "pcs_type": "sprint", "profile_score": 60, "vmeters": 1444, "climbs": "3", "summit_finish": false, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 479000, "top5_kr": 158000, "top10_kr": 101000, "during_kr": 69000, "shape": [0.118, 0.145, 0.225, 0.328, 0.337, 0.321, 0.28, 0.257, 0.159, 0.061, 0.135, 0.216, 0.218, 0.21, 0.179, 0.148, 0.11, 0.071, 0.042, 0.028, 0.008, 0.0, 0.008, 0.015, 0.014, 0.008, 0.003, 0.003, 0.002, 0.003, 0.003, 0.003, 0.008, 0.011, 0.019, 0.027, 0.027, 0.027, 0.033, 0.037, 0.041, 0.049, 0.057, 0.063, 0.064, 0.069, 0.079, 0.088, 0.099, 0.119, 0.142, 0.161, 0.17, 0.17, 0.17, 0.174, 0.182, 0.183, 0.192, 0.194, 0.198, 0.206, 0.206, 0.214, 0.218, 0.216, 0.212, 0.212, 0.212, 0.214, 0.229, 0.237, 0.242, 0.254, 0.266, 0.28, 0.289, 0.289, 0.293, 0.304, 0.313, 0.328, 0.341, 0.343, 0.334, 0.311, 0.307, 0.321, 0.358, 0.36, 0.36, 0.343, 0.325, 0.325, 0.327, 0.331, 0.337, 0.36, 0.384, 0.382, 0.396, 0.444, 0.493, 0.557, 0.643, 0.734, 0.85, 0.947, 0.997, 1.0, 0.99, 0.96, 0.933, 0.908, 0.935, 0.955, 0.955, 0.947, 0.913, 0.899, 0.886, 0.872, 0.862, 0.838, 0.812, 0.785, 0.753, 0.703, 0.7, 0.663, 0.608, 0.577, 0.558, 0.54, 0.535, 0.526, 0.525, 0.542, 0.545, 0.539]}, {"stage": 12, "name": "12. Etape - Vera > Calar Alto", "category": "bjerg", "pcs_type": "mountain", "profile_score": 355, "vmeters": 4475, "climbs": "3-3-2-1-1", "summit_finish": true, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 473000, "top5_kr": 146000, "top10_kr": 98000, "during_kr": 123000, "shape": [0.0, 0.006, 0.01, 0.018, 0.025, 0.037, 0.053, 0.068, 0.081, 0.096, 0.119, 0.145, 0.17, 0.169, 0.168, 0.168, 0.159, 0.134, 0.11, 0.086, 0.071, 0.066, 0.069, 0.085, 0.096, 0.101, 0.112, 0.124, 0.136, 0.137, 0.134, 0.129, 0.114, 0.107, 0.107, 0.116, 0.138, 0.161, 0.179, 0.186, 0.186, 0.177, 0.168, 0.171, 0.203, 0.237, 0.26, 0.263, 0.261, 0.262, 0.294, 0.329, 0.349, 0.369, 0.372, 0.354, 0.366, 0.399, 0.403, 0.405, 0.438, 0.477, 0.503, 0.512, 0.511, 0.496, 0.484, 0.477, 0.486, 0.508, 0.539, 0.553, 0.549, 0.529, 0.493, 0.451, 0.412, 0.373, 0.345, 0.312, 0.285, 0.254, 0.238, 0.23, 0.218, 0.212, 0.195, 0.181, 0.173, 0.177, 0.191, 0.204, 0.218, 0.234, 0.251, 0.266, 0.278, 0.291, 0.306, 0.322, 0.351, 0.385, 0.442, 0.492, 0.553, 0.593, 0.631, 0.669, 0.709, 0.745, 0.786, 0.816, 0.83, 0.831, 0.837, 0.821, 0.789, 0.759, 0.73, 0.703, 0.673, 0.637, 0.599, 0.563, 0.578, 0.645, 0.697, 0.751, 0.802, 0.835, 0.864, 0.873, 0.877, 0.895, 0.902, 0.94, 0.98, 0.995, 1.0, 0.997]}, {"stage": 13, "name": "13. Etape - Almuñécar > Loja", "category": "middel", "pcs_type": "sprint", "profile_score": 130, "vmeters": 3277, "climbs": "1-2-2", "summit_finish": false, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 470000, "top5_kr": 161000, "top10_kr": 101000, "during_kr": 120000, "shape": [0.067, 0.056, 0.041, 0.015, 0.0, 0.011, 0.019, 0.03, 0.055, 0.065, 0.064, 0.1, 0.148, 0.177, 0.191, 0.235, 0.31, 0.379, 0.448, 0.512, 0.576, 0.602, 0.599, 0.586, 0.544, 0.515, 0.529, 0.525, 0.518, 0.49, 0.439, 0.435, 0.486, 0.52, 0.562, 0.605, 0.618, 0.618, 0.611, 0.595, 0.572, 0.57, 0.557, 0.554, 0.594, 0.609, 0.622, 0.633, 0.689, 0.728, 0.749, 0.755, 0.793, 0.848, 0.89, 0.948, 0.983, 0.999, 1.0, 0.999, 0.998, 0.983, 0.928, 0.866, 0.809, 0.761, 0.712, 0.677, 0.66, 0.634, 0.639, 0.67, 0.67, 0.658, 0.63, 0.658, 0.693, 0.723, 0.757, 0.763, 0.762, 0.74, 0.689, 0.634, 0.564, 0.512, 0.506, 0.501, 0.5, 0.483, 0.482, 0.48, 0.478, 0.478, 0.478, 0.478, 0.45, 0.423, 0.421, 0.42, 0.416, 0.426, 0.426, 0.42, 0.427, 0.464, 0.528, 0.594, 0.66, 0.723, 0.764, 0.771, 0.773, 0.759, 0.704, 0.632, 0.562, 0.524, 0.507, 0.497, 0.492, 0.477, 0.455, 0.442, 0.421, 0.406, 0.399, 0.38, 0.367, 0.355, 0.352, 0.356, 0.356, 0.346, 0.346, 0.351, 0.351, 0.356, 0.361, 0.356]}, {"stage": 14, "name": "14. Etape - Jaén > Sierra de La Pandera", "category": "bjerg", "pcs_type": "mountain", "profile_score": 373, "vmeters": 4107, "climbs": "2-2-1", "summit_finish": true, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 440000, "top5_kr": 146000, "top10_kr": 98000, "during_kr": 90000, "shape": [0.0, 0.015, 0.023, 0.047, 0.059, 0.067, 0.093, 0.12, 0.157, 0.188, 0.214, 0.234, 0.235, 0.231, 0.223, 0.21, 0.199, 0.17, 0.146, 0.134, 0.133, 0.161, 0.187, 0.2, 0.231, 0.248, 0.263, 0.29, 0.302, 0.302, 0.309, 0.356, 0.368, 0.368, 0.352, 0.346, 0.331, 0.313, 0.287, 0.268, 0.243, 0.27, 0.281, 0.293, 0.348, 0.353, 0.344, 0.302, 0.25, 0.216, 0.162, 0.106, 0.059, 0.1, 0.116, 0.119, 0.122, 0.11, 0.077, 0.04, 0.009, 0.047, 0.085, 0.103, 0.116, 0.121, 0.138, 0.171, 0.213, 0.234, 0.23, 0.206, 0.161, 0.151, 0.166, 0.219, 0.278, 0.334, 0.379, 0.426, 0.469, 0.514, 0.548, 0.548, 0.536, 0.519, 0.485, 0.459, 0.412, 0.352, 0.287, 0.239, 0.231, 0.208, 0.209, 0.206, 0.18, 0.162, 0.187, 0.226, 0.23, 0.226, 0.199, 0.201, 0.204, 0.202, 0.174, 0.174, 0.178, 0.177, 0.164, 0.192, 0.248, 0.278, 0.295, 0.346, 0.4, 0.445, 0.471, 0.473, 0.46, 0.418, 0.376, 0.355, 0.348, 0.389, 0.389, 0.397, 0.458, 0.517, 0.551, 0.626, 0.672, 0.726, 0.821, 0.916, 0.98, 1.0, 1.0, 0.994]}, {"stage": 15, "name": "15. Etape - Palma del Río > Córdoba", "category": "middel", "pcs_type": "sprint", "profile_score": 105, "vmeters": 2853, "climbs": "3-3", "summit_finish": false, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 428000, "top5_kr": 161000, "top10_kr": 101000, "during_kr": 78000, "shape": [0.0, 0.106, 0.109, 0.109, 0.109, 0.117, 0.118, 0.127, 0.127, 0.13, 0.147, 0.153, 0.153, 0.153, 0.153, 0.132, 0.122, 0.121, 0.137, 0.153, 0.153, 0.162, 0.162, 0.188, 0.07, 0.234, 0.284, 0.308, 0.31, 0.303, 0.27, 0.287, 0.308, 0.38, 0.424, 0.513, 0.589, 0.638, 0.679, 0.69, 0.769, 0.846, 0.878, 0.665, 0.861, 0.913, 0.921, 0.919, 0.936, 0.976, 1.0, 1.0, 0.971, 0.939, 0.899, 0.895, 0.889, 0.934, 0.972, 0.983, 0.983, 0.973, 0.944, 0.839, 0.78, 0.782, 0.778, 0.785, 0.79, 0.79, 0.782, 0.782, 0.766, 0.747, 0.747, 0.699, 0.607, 0.689, 0.75, 0.755, 0.443, 0.676, 0.588, 0.51, 0.452, 0.468, 0.553, 0.637, 0.712, 0.786, 0.856, 0.918, 0.913, 0.817, 0.818, 0.739, 0.691, 0.677, 0.711, 0.437, 0.738, 0.757, 0.781, 0.828, 0.871, 0.904, 0.904, 0.913, 0.939, 0.939, 0.912, 0.884, 0.959, 0.979, 1.0, 0.623, 0.952, 0.888, 0.821, 0.749, 0.671, 0.597, 0.523, 0.441, 0.388, 0.311, 0.253, 0.227, 0.217, 0.212, 0.2, 0.195, 0.188, 0.188, 0.187, 0.179, 0.179, 0.184, 0.188, 0.183]}, {"stage": 16, "name": "16. Etape - Cortegana > La Rábida. Palos de la Frontera", "category": "middel", "pcs_type": "sprint", "profile_score": 54, "vmeters": 1914, "climbs": "—", "summit_finish": false, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 410000, "top5_kr": 161000, "top10_kr": 101000, "during_kr": 60000, "shape": [0.794, 0.766, 0.723, 0.698, 0.695, 0.736, 0.784, 0.83, 0.845, 0.842, 0.839, 0.858, 0.955, 1.0, 0.999, 0.957, 0.919, 0.919, 0.932, 0.932, 0.918, 0.903, 0.907, 0.898, 0.887, 0.86, 0.808, 0.774, 0.734, 0.696, 0.696, 0.695, 0.669, 0.65, 0.617, 0.531, 0.545, 0.566, 0.595, 0.685, 0.691, 0.67, 0.594, 0.557, 0.534, 0.56, 0.56, 0.543, 0.536, 0.504, 0.465, 0.423, 0.434, 0.435, 0.39, 0.412, 0.423, 0.43, 0.442, 0.439, 0.338, 0.268, 0.268, 0.253, 0.308, 0.353, 0.406, 0.417, 0.414, 0.403, 0.362, 0.313, 0.29, 0.246, 0.176, 0.155, 0.157, 0.15, 0.133, 0.112, 0.107, 0.095, 0.094, 0.1, 0.101, 0.098, 0.101, 0.097, 0.089, 0.08, 0.075, 0.068, 0.05, 0.064, 0.094, 0.153, 0.169, 0.169, 0.158, 0.157, 0.162, 0.163, 0.157, 0.157, 0.121, 0.067, 0.021, 0.008, 0.008, 0.008, 0.01, 0.057, 0.076, 0.076, 0.052, 0.051, 0.051, 0.047, 0.044, 0.033, 0.055, 0.057, 0.05, 0.039, 0.039, 0.039, 0.039, 0.039, 0.045, 0.045, 0.045, 0.033, 0.023, 0.011, 0.014, 0.014, 0.014, 0.008, 0.008, 0.0]}, {"stage": 17, "name": "17. Etape - Dos Hermanas > Sevilla", "category": "flad", "pcs_type": "sprint", "profile_score": 14, "vmeters": 930, "climbs": "—", "summit_finish": false, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 470000, "top5_kr": 158000, "top10_kr": 101000, "during_kr": 60000, "shape": [0.344, 0.335, 0.334, 0.305, 0.295, 0.299, 0.302, 0.309, 0.332, 0.357, 0.357, 0.355, 0.354, 0.4, 0.423, 0.426, 0.44, 0.45, 0.456, 0.457, 0.477, 0.497, 0.561, 0.595, 0.598, 0.596, 0.598, 0.598, 0.61, 0.703, 0.704, 0.7, 0.724, 0.763, 0.792, 0.805, 0.846, 0.85, 0.923, 0.948, 0.934, 0.901, 0.927, 0.959, 0.971, 0.972, 0.946, 0.866, 0.815, 0.758, 0.703, 0.642, 0.613, 0.601, 0.577, 0.576, 0.555, 0.554, 0.554, 0.554, 0.538, 0.521, 0.521, 0.505, 0.489, 0.488, 0.488, 0.478, 0.477, 0.465, 0.436, 0.414, 0.412, 0.412, 0.412, 0.412, 0.449, 0.462, 0.478, 0.482, 0.561, 0.6, 0.606, 0.653, 0.685, 0.708, 0.729, 0.756, 0.789, 0.839, 0.858, 0.86, 0.857, 0.904, 0.919, 0.926, 0.951, 1.0, 0.998, 0.971, 0.868, 0.757, 0.67, 0.621, 0.584, 0.558, 0.538, 0.521, 0.501, 0.465, 0.45, 0.436, 0.416, 0.377, 0.368, 0.359, 0.346, 0.346, 0.346, 0.346, 0.334, 0.314, 0.312, 0.303, 0.0, 0.292, 0.292, 0.29, 0.292, 0.292, 0.292, 0.292, 0.289, 0.292, 0.292, 0.304, 0.335, 0.329, 0.301, 0.289]}, {"stage": 18, "name": "18. Etape - El Puerto de Santa María > Jerez de la Frontera", "category": "bjerg", "pcs_type": "tt", "profile_score": 7, "vmeters": 169, "climbs": "—", "summit_finish": false, "intermediate_sprints": 0, "winner_incl_team_bonus_kr": 320000, "top5_kr": 143000, "top10_kr": 98000, "during_kr": 0, "shape": [0.16, 0.135, 0.076, 0.04, 0.078, 0.08, 0.08, 0.08, 0.08, 0.08, 0.104, 0.12, 0.12, 0.12, 0.115, 0.08, 0.08, 0.08, 0.08, 0.085, 0.139, 0.176, 0.265, 0.346, 0.395, 0.616, 0.64, 0.64, 0.64, 0.652, 0.68, 0.68, 0.68, 0.68, 0.704, 0.72, 0.72, 0.717, 0.675, 0.61, 0.573, 0.537, 0.511, 0.52, 0.52, 0.52, 0.507, 0.395, 0.194, 0.12, 0.12, 0.12, 0.12, 0.079, 0.04, 0.029, 0.038, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.04, 0.04, 0.04, 0.04, 0.012, 0.0, 0.0, 0.0, 0.004, 0.04, 0.04, 0.04, 0.065, 0.08, 0.08, 0.08, 0.08, 0.08, 0.08, 0.116, 0.162, 0.229, 0.254, 0.319, 0.456, 0.732, 0.76, 0.76, 0.76, 0.696, 0.639, 0.773, 0.87, 0.96, 0.96, 0.955, 0.888, 0.773, 0.718, 0.644, 0.537, 0.455, 0.351, 0.244, 0.24, 0.24, 0.22, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.302, 0.36, 0.403, 0.478, 0.48, 0.489, 0.548, 0.56, 0.56, 0.618, 0.712, 0.749, 0.831, 0.84, 0.84, 0.907, 0.938, 0.96, 0.96, 0.985, 1.0, 1.0, 1.0, 0.99]}, {"stage": 19, "name": "19. Etape - Vélez-Málaga > Peñas Blancas. Estepona", "category": "bjerg", "pcs_type": "hilly", "profile_score": 271, "vmeters": 3987, "climbs": "2-2-1", "summit_finish": true, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 440000, "top5_kr": 146000, "top10_kr": 98000, "during_kr": 90000, "shape": [0.006, 0.007, 0.0, 0.001, 0.003, 0.003, 0.003, 0.003, 0.003, 0.012, 0.017, 0.013, 0.012, 0.012, 0.007, 0.007, 0.008, 0.012, 0.012, 0.014, 0.026, 0.032, 0.032, 0.028, 0.015, 0.017, 0.027, 0.027, 0.036, 0.042, 0.06, 0.062, 0.053, 0.052, 0.053, 0.066, 0.101, 0.118, 0.125, 0.137, 0.14, 0.136, 0.119, 0.152, 0.16, 0.154, 0.12, 0.132, 0.154, 0.172, 0.229, 0.264, 0.336, 0.398, 0.448, 0.46, 0.492, 0.552, 0.617, 0.641, 0.635, 0.596, 0.517, 0.476, 0.515, 0.601, 0.684, 0.723, 0.764, 0.764, 0.756, 0.777, 0.827, 0.828, 0.817, 0.761, 0.733, 0.681, 0.626, 0.599, 0.583, 0.573, 0.595, 0.674, 0.736, 0.749, 0.754, 0.788, 0.826, 0.852, 0.879, 0.882, 0.882, 0.838, 0.828, 0.833, 0.833, 0.833, 0.821, 0.744, 0.682, 0.646, 0.601, 0.534, 0.458, 0.409, 0.36, 0.309, 0.251, 0.212, 0.136, 0.068, 0.039, 0.03, 0.017, 0.012, 0.007, 0.007, 0.007, 0.007, 0.007, 0.007, 0.007, 0.009, 0.015, 0.064, 0.16, 0.219, 0.256, 0.348, 0.435, 0.516, 0.601, 0.682, 0.748, 0.823, 0.905, 0.99, 1.0, 0.998]}, {"stage": 20, "name": "20. Etape - La Calahorra > Collado del Alguacil", "category": "bjerg", "pcs_type": "mountain", "profile_score": 521, "vmeters": 4849, "climbs": "3-1-1-1-HC", "summit_finish": true, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 539000, "top5_kr": 155000, "top10_kr": 98000, "during_kr": 159000, "shape": [0.419, 0.43, 0.463, 0.468, 0.468, 0.468, 0.466, 0.455, 0.425, 0.4, 0.389, 0.366, 0.339, 0.324, 0.317, 0.298, 0.241, 0.194, 0.178, 0.173, 0.201, 0.21, 0.204, 0.222, 0.249, 0.285, 0.294, 0.298, 0.298, 0.249, 0.261, 0.295, 0.341, 0.405, 0.437, 0.459, 0.494, 0.495, 0.488, 0.438, 0.423, 0.393, 0.356, 0.342, 0.342, 0.31, 0.26, 0.223, 0.158, 0.113, 0.093, 0.079, 0.063, 0.048, 0.038, 0.031, 0.015, 0.0, 0.002, 0.018, 0.051, 0.093, 0.101, 0.193, 0.31, 0.411, 0.501, 0.604, 0.63, 0.661, 0.657, 0.607, 0.543, 0.474, 0.393, 0.308, 0.257, 0.19, 0.094, 0.038, 0.011, 0.006, 0.019, 0.058, 0.095, 0.103, 0.199, 0.318, 0.418, 0.506, 0.608, 0.632, 0.661, 0.654, 0.603, 0.54, 0.469, 0.389, 0.301, 0.218, 0.142, 0.143, 0.221, 0.256, 0.309, 0.32, 0.335, 0.34, 0.341, 0.396, 0.522, 0.612, 0.687, 0.776, 0.818, 0.816, 0.787, 0.735, 0.695, 0.623, 0.553, 0.488, 0.41, 0.325, 0.237, 0.162, 0.123, 0.207, 0.242, 0.301, 0.32, 0.333, 0.421, 0.518, 0.639, 0.759, 0.879, 0.987, 1.0, 0.996]}, {"stage": 21, "name": "21. Etape - Carrefour Granada > Granada", "category": "middel", "pcs_type": "sprint", "profile_score": 93, "vmeters": 1311, "climbs": "—", "summit_finish": false, "intermediate_sprints": 1, "winner_incl_team_bonus_kr": 410000, "top5_kr": 161000, "top10_kr": 101000, "during_kr": 60000, "shape": [0.352, 0.368, 0.368, 0.365, 0.334, 0.313, 0.277, 0.281, 0.281, 0.303, 0.329, 0.352, 0.378, 0.396, 0.423, 0.485, 0.545, 0.572, 0.591, 0.591, 0.623, 0.64, 0.664, 0.723, 0.72, 0.681, 0.646, 0.68, 0.749, 0.832, 0.867, 0.897, 0.901, 0.967, 1.0, 1.0, 0.97, 0.879, 0.835, 0.839, 0.813, 0.686, 0.633, 0.603, 0.597, 0.551, 0.51, 0.456, 0.421, 0.392, 0.392, 0.392, 0.357, 0.316, 0.284, 0.261, 0.23, 0.195, 0.182, 0.181, 0.144, 0.093, 0.063, 0.038, 0.019, 0.008, 0.0, 0.004, 0.008, 0.013, 0.041, 0.061, 0.086, 0.099, 0.119, 0.139, 0.198, 0.241, 0.302, 0.339, 0.368, 0.368, 0.372, 0.429, 0.442, 0.442, 0.465, 0.694, 0.882, 0.899, 0.875, 0.735, 0.556, 0.411, 0.39, 0.357, 0.368, 0.368, 0.399, 0.441, 0.442, 0.437, 0.594, 0.824, 0.901, 0.893, 0.806, 0.647, 0.452, 0.4, 0.368, 0.376, 0.405, 0.405, 0.553, 0.539, 0.892, 0.896, 0.831, 0.681, 0.479, 0.402, 0.379, 0.371, 0.403, 0.405, 0.507, 0.752, 0.895, 0.899, 0.853, 0.707, 0.513, 0.405, 0.384, 0.364, 0.401, 0.405, 0.395, 0.315]}]};
+var S = {stage: 20, scen: {}};
+
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function kr(v){ return (v===null||v===undefined||v===0)?'—':Math.round(v/1000)+'k'; }
+function el(id){ return document.getElementById(id); }
+function num(v){ return v==null?'—':v.toLocaleString('da-DK'); }
+
+function regime(s){
+  if(s.pcs_type==='tt') return 'enkeltstart';
+  var p=s.profile_score||0;
+  return p>=200?'bjerg':(p>=60?'kuperet':'spurt');
+}
+var REG={spurt:'Spurt',kuperet:'Kuperet',bjerg:'Bjerg',enkeltstart:'Enkeltstart'};
+var SCEN={
+  massespurt:{l:'Massespurt',who:'Spurtere',during:'Spurterne tager den indlagte spurt',cond:[]},
+  reduceret:{l:'Reduceret – bakke',who:'Punchere',during:'Udbruddet tager point undervejs',cond:[]},
+  favorit:{l:'Favoritfinale',who:'Klatrere / GC',during:'Udbruddet tager point undervejs',cond:['klassement','trøjer']},
+  bjergafslut:{l:'Bjergafslutning',who:'Klatrere',during:'Udbruddet tager point undervejs',cond:['klassement','trøjer']},
+  udbrud:{l:'Udbrud går',who:'Udbrudsryttere',during:'Udbruddet tager alt undervejs',cond:['angrebspræmie']},
+  enkeltstart:{l:'Enkeltstart',who:'Tempokørere / GC',during:'Ingen point undervejs',cond:['klassement']}
+};
+function autoScen(s){
+  if(s.pcs_type==='tt') return 'enkeltstart';
+  var p=s.profile_score||0;
+  if(s.summit_finish) return 'bjergafslut';
+  if(p>=200) return 'udbrud';
+  if(p>=60) return 'reduceret';
+  return 'massespurt';
+}
+function scenOf(s){ return S.scen[s.stage]||autoScen(s); }
+function scenSel(s,id){
+  var v=scenOf(s),o='';
+  Object.keys(SCEN).forEach(function(k){
+    o+='<option value="'+k+'"'+(k===v?' selected':'')+'>'+SCEN[k].l+(k===autoScen(s)?' (auto)':'')+'</option>';
+  });
+  return '<select class="scen" id="'+id+'">'+o+'</select>';
+}
+function why(s){
+  var d=SCEN[scenOf(s)];
+  return '<div class="why">Slår igennem på <b>'+esc(d.who)+'</b> · undervejs: '+esc(d.during)+
+    ' · betinget i spil: '+(d.cond.length?esc(d.cond.join(', ')):'ingenting')+
+    '. Sejrsværdien <b>'+kr(s.winner_incl_team_bonus_kr)+'</b> er uændret — skemaet følger ruten, ikke scenariet.</div>';
+}
+
+// Profilen: formen er aflæst af PCS-billederne; højden er etapens højdemeter
+// i forhold til løbets hårdeste, så en flad etape også ser flad ud.
+function prof(s,h){
+  var col='var(--'+regime(s)+')',W=300,d;
+  if(s.shape&&s.shape.length){
+    var mx=DATA.max_vmeters||0,frac=mx?Math.max(0.05,(s.vmeters||0)/mx):1;
+    var usable=(h-2)*frac,base=h-1,n=s.shape.length;
+    d=s.shape.map(function(v,i){
+      return (i?'L':'M')+(i*W/(n-1)).toFixed(1)+' '+(base-v*usable).toFixed(1);
+    }).join(' ');
+  } else { d='M0 '+(h-1)+' L'+W+' '+(h-1); }
+  return '<span class="pslot" style="height:'+h+'px">'+
+    '<svg viewBox="0 0 '+W+' '+h+'" preserveAspectRatio="none" aria-hidden="true">'+
+    '<path d="'+d+' L '+W+' '+h+' L 0 '+h+' Z" fill="'+col+'" opacity=".22"/>'+
+    '<path d="'+d+'" fill="none" stroke="'+col+'" stroke-width="1.4" stroke-linejoin="round" '+
+    'vector-effect="non-scaling-stroke"/></svg></span>';
+}
+function chip(s){ var r=regime(s); return '<span class="chip c-'+r+'">'+REG[r]+'</span>'; }
+function short(s){ var n=s.name||'',m=n.match(/-\s*(.+)$/); return m?m[1]:('etape '+s.stage); }
+function pcs(s){
+  return DATA.pcs_slug?'<a class="pcs" target="_blank" rel="noopener" href="https://www.procyclingstats.com/race/'+
+    DATA.pcs_slug+'/stage-'+s.stage+'">profil på PCS ↗</a>':'';
+}
+
+function render(){
+  var s=DATA.stages.filter(function(x){return x.stage===S.stage;})[0];
+
+  el('pick').innerHTML=DATA.stages.map(function(x){
+    return '<button data-s="'+x.stage+'"'+(x.stage===S.stage?' class="on"':'')+'>E'+x.stage+'</button>';
+  }).join('');
+  el('pick').querySelectorAll('button').forEach(function(n){
+    n.addEventListener('click',function(){ S.stage=+n.dataset.s; render(); });
+  });
+
+  // A · to spalter
+  el('boxA').innerHTML=
+    '<div><div class="hd"><span class="e">E'+s.stage+'</span>'+chip(s)+
+      '<span class="nm">'+esc(short(s))+'</span></div>'+
+    '<div class="facts">'+
+      '<div><b>'+num(s.profile_score)+'</b>profilscore</div>'+
+      '<div><b>'+num(s.vmeters)+'</b>højdemeter</div>'+
+      '<div><b class="txt">'+esc(s.climbs)+(s.summit_finish?' ⛰':'')+'</b>stigninger</div>'+
+      '<div><b>'+s.intermediate_sprints+'</b>indlagte spurter</div>'+
+      '<div><b>'+kr(s.winner_incl_team_bonus_kr)+'</b>sejr</div>'+
+      '<div><b>'+kr(s.top5_kr)+'</b>5.-plads</div>'+
+      '<div><b>'+kr(s.top10_kr)+'</b>10.-plads</div>'+
+      '<div><b>'+kr(s.during_kr)+'</b>undervejs</div>'+
+    '</div>'+
+    '<div class="ctl"><span class="muted" style="font-size:.8rem">Scenarie</span>'+scenSel(s,'selA')+
+      '<button class="pick-auto" data-t="A" style="background:none;border:1px solid var(--line);'+
+      'border-radius:8px;padding:.28rem .6rem;font:inherit;font-size:.78rem;color:var(--ink);cursor:pointer">tilbage til auto</button></div>'+
+    why(s)+'</div>'+
+    '<div class="right">'+prof(s,110)+
+      '<div class="muted" style="font-size:.74rem">'+esc(s.category)+' · PCS: '+esc(s.pcs_type||'—')+'</div>'+
+      pcs(s)+'</div>';
+
+  // B · kompakt kort
+  el('boxB').innerHTML=
+    '<div class="hd"><span class="e">E'+s.stage+'</span>'+chip(s)+
+      '<span class="v">'+kr(s.winner_incl_team_bonus_kr)+'</span></div>'+
+    '<div class="nm" style="font-size:.82rem;color:var(--ink-3);margin-bottom:.5rem">'+esc(short(s))+'</div>'+
+    prof(s,84)+
+    '<div class="kv">'+
+      '<span>Profilscore</span><b>'+num(s.profile_score)+'</b>'+
+      '<span>Højdemeter</span><b>'+num(s.vmeters)+'</b>'+
+      '<span>Stigninger</span><b>'+esc(s.climbs)+(s.summit_finish?' ⛰':'')+'</b>'+
+      '<span>Indlagte spurter</span><b>'+s.intermediate_sprints+'</b>'+
+      '<span>5.-plads / 10.-plads</span><b>'+kr(s.top5_kr)+' / '+kr(s.top10_kr)+'</b>'+
+      '<span>Point undervejs</span><b>'+kr(s.during_kr)+'</b>'+
+    '</div>'+
+    scenSel(s,'selB')+why(s)+
+    '<div style="margin-top:.5rem">'+pcs(s)+'</div>';
+
+  // C · bånd
+  el('boxC').innerHTML=
+    '<div class="hd"><span class="e">E'+s.stage+'</span>'+chip(s)+
+      '<span class="nm">'+esc(short(s))+'</span><span class="spacer"></span>'+pcs(s)+'</div>'+
+    prof(s,76)+
+    '<div class="tiles">'+
+      '<div><div class="n">'+num(s.profile_score)+'</div><div class="k">profilscore</div></div>'+
+      '<div><div class="n">'+num(s.vmeters)+'</div><div class="k">højdemeter</div></div>'+
+      '<div><div class="n txt">'+esc(s.climbs)+(s.summit_finish?' ⛰':'')+'</div><div class="k">stigninger</div></div>'+
+      '<div><div class="n">'+s.intermediate_sprints+'</div><div class="k">indlagte spurter</div></div>'+
+      '<div><div class="n">'+kr(s.winner_incl_team_bonus_kr)+'</div><div class="k">sejr</div></div>'+
+      '<div><div class="n">'+kr(s.top5_kr)+'</div><div class="k">5.-plads</div></div>'+
+      '<div><div class="n">'+kr(s.top10_kr)+'</div><div class="k">10.-plads</div></div>'+
+      '<div><div class="n">'+kr(s.during_kr)+'</div><div class="k">undervejs</div></div>'+
+    '</div>'+
+    '<div class="foot"><span class="muted" style="font-size:.8rem">Scenarie</span>'+scenSel(s,'selC')+
+      why(s)+'</div>';
+
+  document.querySelectorAll('select.scen').forEach(function(n){
+    n.addEventListener('change',function(){ S.scen[S.stage]=this.value; render(); });
+  });
+  document.querySelectorAll('.pick-auto').forEach(function(n){
+    n.addEventListener('click',function(){ delete S.scen[S.stage]; render(); });
+  });
+}
+render();
+</script>
+</body>
+</html>
