@@ -85,7 +85,8 @@
   .bhead:hover b{color:var(--accent)}
   .bhead.sel b{color:var(--accent)}
   .bhead.sel::after{background:var(--accent)}
-  .rest{font-size:.66rem;color:var(--accent);border:1px dashed var(--accent);border-radius:20px;padding:0 6px}
+  .rest{font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--accent);border:1px dashed var(--accent);border-radius:20px;padding:0 6px;margin-left:.3rem}
   .sc{padding:.42rem .45rem .48rem;background:var(--panel);border:1px solid var(--line);
     border-radius:11px;cursor:pointer;transition:border-color .12s}
   .sc:hover{border-color:var(--accent)}
@@ -215,6 +216,7 @@ tilstand, så en ændring ét sted ses begge steder.</p>
     <button id="splitHere" title="Del blokken midt over">del</button>
     <label class="muted" style="font-size:.78rem">maks etaper pr. blok
       <input type="number" id="maxBlk" min="2" max="8" step="1" style="width:56px"></label>
+    <span class="muted" style="font-size:.76rem">Blokke skæres kun ved terrænskift — ikke ved hviledage.</span>
   </div>
   <div class="row" style="margin-top:.5rem">
     <span class="muted" style="font-size:.78rem">Regn punkt 4 på:</span>
@@ -460,18 +462,25 @@ function pcsLink(s){
 
 // ── Blokke: automatisk førsteudkast, derefter dine grænser ───────────────
 function autoBlocks(){
+  // Kun terrænskift skærer. Hviledage gør det bevidst IKKE: ligger der to
+  // ens etaper på hver side af en hviledag, beholder man stadig sine
+  // ryttere hen over den, og blokken er et transfervindue — ikke en kalender.
   var cuts=[],prev=null;
   stages.forEach(function(s,i){
     var fam=HARD[regime(s)]?'h':'l';
-    if(i>0 && (fam!==prev || restAfter.indexOf(stages[i-1].stage)>=0)) cuts.push(i);
+    if(i>0 && fam!==prev) cuts.push(i);
     prev=fam;
   });
   var bounds=[0].concat(cuts,[stages.length]),out=[];
   for(var i=0;i<bounds.length-1;i++){
     var a=bounds[i],b=bounds[i+1];
-    var cap=S.maxBlk||3;
-    while(b-a>cap){ out.push([a,a+Math.ceil((b-a)/2)]); a=a+Math.ceil((b-a)/2); }
-    out.push([a,b]);
+    // Deles i så få lige store stykker som muligt, der alle holder sig under
+    // loftet — halvering gav blokke på 4 selvom loftet var 3.
+    var cap=S.maxBlk||3, len=b-a, k=Math.ceil(len/cap);
+    for(var j=0;j<k;j++){
+      var from=a+Math.round(j*len/k), to=a+Math.round((j+1)*len/k);
+      if(to>from) out.push([from,to]);
+    }
   }
   return out.map(function(p){ return {from:stages[p[0]].stage,to:stages[p[1]-1].stage}; });
 }
@@ -516,11 +525,11 @@ function renderBand(){
     h+='<div class="bgroup" style="--n:'+b.stages.length+'">'+
       '<div class="bhead'+(bi===S.sel?' sel':'')+'" data-b="'+bi+'" title="'+esc(b.mix)+'">'+
       '<b>'+esc(b.name)+'</b><span>E'+b.from+(b.to!==b.from?'–'+b.to:'')+'</span>'+
-      (restAfter.indexOf(b.to)>=0?'<span class="rest">hviledag efter</span>':'')+
       '</div><div class="bgrid">';
     b.stages.forEach(function(s){
       h+='<div class="sc'+(bi===S.sel?' inblk':'')+'" data-s="'+s.stage+'">'+
         '<div class="top"><span class="e">E'+s.stage+'</span>'+
+        (restAfter.indexOf(s.stage)>=0?'<span class="rest" title="hviledag efter denne etape">hviledag</span>':'')+
         '<span class="v">'+kr(s.winner_incl_team_bonus_kr)+'</span></div>'+
         profileImg(s)+
         '<div class="nm" title="'+esc(s.name||'')+'">'+esc(shortName(s))+'</div>'+
@@ -968,8 +977,8 @@ Promise.all([
   el('foot').innerHTML='Skitsedata: '+esc(res[0].title||'Vuelta 2026')+'. Pointskemaet er beregnet på forhånd '+
     'af rutefilen (punkt 2) og valideret 126/126 mod FantasyTools tabel. Priser og hold er som ved løbets '+
     'afslutning — i drift ville de komme fra det daglige Holdet-snapshot. '+
-    (restAfter.length?'Hviledage efter E'+restAfter.join(' og E')+' er med som blokgrænser. '
-      :'<b>Hviledage er ikke udfyldt i rutefilen</b>, så blokgrænserne er sat på terrænskift alene. ')+
+    (restAfter.length?'Hviledage efter E'+restAfter.join(' og E')+' er markeret på etapen, men skærer '+
+      'ikke blokke — en blok er et transfervindue, ikke en kalender. ':'')+
     'Alt du ændrer gemmes kun i denne browser.';
 
   renderRhythm(res[3]);
