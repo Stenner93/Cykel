@@ -69493,10 +69493,10 @@
   },
   "jose_manuel_diaz": {
     "name": "José Manuel Diaz",
-    "pcs_url": "",
-    "form_score": 10.0,
+    "pcs_url": "https://www.procyclingstats.com/rider/jose-manuel-diaz",
+    "form_score": 0.0,
     "form_by_type": {
-      "overall": 10.0,
+      "overall": 0.0,
       "sprint": 0.0,
       "mountain": 0.0,
       "hilly": 0.0,
@@ -69504,11 +69504,25 @@
       "ttt": 0.0,
       "cobbled": 0.0
     },
-    "form_long_by_type": {},
+    "form_long_by_type": {
+      "overall": 0.0,
+      "sprint": 0.0,
+      "mountain": 0.0,
+      "hilly": 0.0,
+      "tt": 0.0,
+      "ttt": 0.0,
+      "cobbled": 0.0
+    },
+    "pcs_specialties": {
+      "gc": 0,
+      "tt": 0,
+      "sprint": 0,
+      "climber": 0,
+      "hills": 0
+    },
     "n_results": 0,
     "last_result_date": "",
-    "results": [],
-    "not_found": true
+    "results": []
   },
   "laurence_pithie": {
     "name": "Laurence Pithie",
