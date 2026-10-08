@@ -4,12 +4,9 @@
    here, every page updates. */
 (function () {
   var NAV = [
-    { href: 'vuelta.html', label: 'Vuelta 2026', match: ['vuelta.html', ''] },
-    { href: 'planlaegger.html', label: 'Planlægger', match: ['planlaegger.html'] },
+    { href: 'vuelta.html', label: 'Vuelta 2026', match: ['vuelta.html', '', 'planlaegger.html'] },
     { href: 'evaluering.html', label: 'Analyse', match: ['evaluering.html', 'laer-af-touren.html', 'vuelta-evaluering.html', 'tvaers-af-spil.html'] },
     { href: 'riders.html',    label: 'Rytterdatabase', match: ['riders.html'] },
-    { href: 'analytics.html', label: 'ML-Analyse',     match: ['analytics.html'] },
-    { href: 'model.html',     label: 'Modelforklaring', match: ['model.html'] },
     { label: 'Arkiv', alignRight: true, match: ['tdf.html', 'giro.html', 'dauphine.html'], menu: [
         { href: 'tdf.html',      label: 'Tour de France 2026' },
         { href: 'giro.html',     label: "Giro d'Italia 2026" },
@@ -18,7 +15,7 @@
   ];
 
   // Self-contained nav styles — injected once so the nav renders identically
-  // on every page, including analytics.html which does not load style.css.
+  // on every page, også dem der ikke loader style.css.
   var CSS = [
     '.page-nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap}',
     '.page-nav .nav-link{display:inline-block;color:#7B82A0;background:none;border:1px solid #2E3450;',

@@ -151,14 +151,6 @@ jobs:
           python scripts/build/build_vuelta_web_data.py --delay 0.5 \
             || echo "⚠️  Vuelta build slog fejl — fortsætter"
 
-      # ── 4a. Byg Analytik JSON (alle etaper, Holdet-ryttere, CO + PCS) ───────
-      - name: Byg Analytik-data
-        env:
-          PYTHONIOENCODING: utf-8
-        run: |
-          python scripts/build/build_analytics.py \
-            || echo "⚠️  Analytik-build slog fejl — fortsætter"
-
       # ── 5. Kør forudsigelser ────────────────────────────────────────────────
       #    Altid — enten med bruger-angivne værdier eller auto-detekteret etape.
       #    Scriptet finder selv etape + type fra Holdets program hvis ikke angivet.

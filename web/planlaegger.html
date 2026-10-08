@@ -155,23 +155,49 @@
   .kpi .n{font-size:1.15rem;font-weight:800;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
   .kpi .k{font-size:.7rem;color:var(--ink-3);margin-top:.2rem}
   .flow{display:grid;gap:.5rem;margin-top:.9rem}
-  .flow .step{display:grid;grid-template-columns:78px 1fr;gap:.8rem;align-items:start;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:.7rem .9rem}
+  .flow .step{display:grid;grid-template-columns:96px 1fr;gap:.8rem;align-items:start;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:.7rem .9rem}
   .flow .step .p{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding-top:.15rem}
   .flow .step .t{font-size:.88rem;color:var(--ink-2)}
   .flow .step .t b{color:var(--ink)}
   .arrow{text-align:center;color:var(--ink-3);font-size:.9rem;line-height:1}
   .foot{color:var(--ink-3);font-size:.8rem;margin-top:3rem;border-top:1px solid var(--line);padding-top:1.1rem;max-width:78ch}
 
+
+  /* Fanerækken fra Vuelta-siden */
+  .vtabs{background:var(--panel);border-bottom:1px solid var(--line);padding:0 clamp(1rem,4vw,24px);
+    position:sticky;top:60px;z-index:95}
+  .vtabs-in{max-width:1180px;margin:0 auto;display:flex;gap:2px;align-items:center;
+    overflow-x:auto;scrollbar-width:none}
+  .vtabs-in::-webkit-scrollbar{display:none}
+  .vtab{display:inline-block;padding:11px 16px;border-bottom:3px solid transparent;margin-bottom:-1px;
+    color:var(--ink-3);font-size:.8rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;
+    text-decoration:none;white-space:nowrap;transition:color .15s,border-color .15s}
+  .vtab:hover{color:var(--ink)}
+  .vtab.on{color:var(--accent);border-bottom-color:var(--accent)}
+  .vtabsep{width:1px;height:18px;background:var(--line);margin:0 8px;flex:0 0 auto}
   .dash-topbar{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,#161b22 0%,#0d1117 100%);border-bottom:2px solid #FFD700;padding:0 clamp(1rem,4vw,24px)}
   .dash-topbar-inner{max-width:1200px;margin:0 auto;min-height:60px;display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap;justify-content:space-between;padding:8px 0}
   .dash-logo{font-size:1.3rem;font-weight:700;color:#FFD700;letter-spacing:.5px;text-decoration:none;white-space:nowrap}
-  .hbar{position:sticky;top:60px;z-index:90;background:var(--panel);border-bottom:1px solid var(--line);padding:.5rem clamp(1rem,4vw,24px)}
+  .hbar{position:sticky;top:103px;z-index:90;background:var(--panel);border-bottom:1px solid var(--line);padding:.5rem clamp(1rem,4vw,24px)}
   .hbar-in{max-width:1180px;margin:0 auto;display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;font-size:.84rem}
   .hbar b{color:var(--accent)}
 </style>
 </head>
 <body>
 <div class="dash-topbar"><div class="dash-topbar-inner"><a href="vuelta.html" class="dash-logo">🚴 Cykel Manager</a><nav class="page-nav" id="mainNav"></nav></div></div>
+
+<!-- Samme fanerække som på Vuelta-siden, så Planlæggeren hører synligt til
+     samme arbejdsrum. De andre faner er links tilbage med et mærke i
+     adressen, så vuelta.html åbner på den rigtige fane. -->
+<div class="vtabs"><div class="vtabs-in">
+  <a class="vtab" href="vuelta.html#vuelta">Vuelta-etape</a>
+  <a class="vtab" href="vuelta.html#optakt">Optakt-konsol</a>
+  <a class="vtab" href="vuelta.html#duel">Holdduel</a>
+  <a class="vtab" href="vuelta.html#sprint">Sprint &amp; bonus</a>
+  <span class="vtabsep" aria-hidden="true"></span>
+  <a class="vtab" href="vuelta.html#matrix">Pointoversigt</a>
+  <span class="vtab on" aria-current="page">Planlægger</span>
+</div></div>
 
 <div class="hbar"><div class="hbar-in">
   <span class="muted">Horisont:</span> <b id="hbHorizon">—</b>
@@ -182,32 +208,80 @@
 
 <div class="wrap">
 <header class="top">
-  <div class="eyebrow">Skitse — til gennemsyn, ikke besluttet</div>
-  <h1>Ruteplanlægger &amp; gebyrregner</h1>
-  <p class="lede">Udkast til punkt 3 og 4. Alt på siden regner på Vuelta 2026 som prøveløb, men bruger
-  kun ruteinformation og priser — ingen modelforudsigelser. Du er overdommer: baseline er genereret,
-  og alt du ændrer slår igennem med det samme i tallene nedenunder.</p>
+  <div class="eyebrow">Vuelta a España 2026</div>
+  <h1>Planlægger</h1>
+  <p class="lede">Ryttervælgeren øverst regner på hvad en handel koster og hvad den nye skal levere.
+  Ruteplanlæggeren nedenunder sætter vinduet den skal levere det i. Alt bygger på ruteinformation og
+  priser — ingen modelforudsigelser. Du er overdommer: baseline er genereret, og alt du ændrer slår
+  igennem med det samme.</p>
 </header>
 
 <!-- ════════ SAMMENHÆNGEN ════════ -->
-<h2>Sådan hænger 2, 3 og 4 sammen<span class="tag">samlet skitse</span></h2>
-<p class="sub">Det korte svar på dit spørgsmål om de skal være ét eller to værktøjer: ét værktøj, tre lag.
-Punkt 2 leverer tallene, punkt 3 vælger horisonten, punkt 4 omsætter det til en beslutning.</p>
+<h2>Sådan hænger det sammen</h2>
+<p class="sub">Ét værktøj, tre lag: pointskemaet leverer tallene, ruteplanlæggeren vælger vinduet, og
+ryttervælgeren omsætter det til en beslutning.</p>
 <div class="flow">
-  <div class="step"><div class="p">Punkt 2</div><div class="t"><b>Pointskema pr. etape</b> — beregnet på forhånd af rutefilen alene. Hvad er en 1.-plads, en 5.-plads, en 10.-plads værd på hver etape? <span class="muted">Findes og er valideret 126/126 mod FantasyTool.</span></div></div>
+  <div class="step"><div class="p">Pointskema</div><div class="t"><b>Hvad er en placering værd?</b> Beregnet på forhånd af rutefilen alene, etape for etape. <span class="muted">Valideret 126/126 mod FantasyTool.</span></div></div>
   <div class="arrow">↓</div>
-  <div class="step"><div class="p">Punkt 3</div><div class="t"><b>Blokke og scenarier</b> — hvilke etaper hører sammen, og hvem forventer du henter pointene på hver af dem? Auto-udkast, du overskriver.</div></div>
+  <div class="step"><div class="p">Ruteplan</div><div class="t"><b>Blokke og scenarier</b> — hvilke etaper hører sammen, og hvem forventer du henter pointene på hver af dem? Auto-udkast, du overskriver.</div></div>
   <div class="arrow">↓</div>
-  <div class="step"><div class="p">Bro</div><div class="t"><b>Horisonten</b> — den valgte blok er det vindue gebyret skal tjenes hjem i. Det er her 3 og 4 rører hinanden: skifter du blok, skifter alle krav i punkt 4.</div></div>
+  <div class="step"><div class="p">Horisont</div><div class="t"><b>Vinduet</b> — den valgte blok er det vindue gebyret skal tjenes hjem i. Skifter du blok, skifter alle krav i ryttervælgeren.</div></div>
   <div class="arrow">↓</div>
-  <div class="step"><div class="p">Punkt 4</div><div class="t"><b>Gebyr og krævet vækst</b> — hvad koster handlen, og hvilket resultat skal den nye rytter levere <i>inden for horisonten</i> for at det var det værd?</div></div>
+  <div class="step"><div class="p">Valget</div><div class="t"><b>Gebyr og krævet vækst</b> — hvad koster handlen, og hvilket resultat skal den nye rytter levere <i>inden for horisonten</i> for at det var det værd?</div></div>
 </div>
 <div class="ask"><b>Det vigtigste tal på hele siden:</b> barren er ikke gebyret. Den er gebyret
 <i>plus</i> det, rytteren du dropper ville have hentet i samme vindue. En gratis transfer er stadig
 en dårlig handel, hvis ham du sælger tager en 5.-plads i morgen.</div>
 
-<!-- ════════ PUNKT 3 ════════ -->
-<h2>3 · Ruteplanlægger<span class="tag">udkast A + B</span></h2>
+<!-- ════════ RYTTERVÆLGER ════════ -->
+<h2>Ryttervælger<span class="tag">sandkasse</span></h2>
+<p class="sub">Dit hold står som otte pladser. Sælger du en, bliver pladsen tom, og næste rytter du
+køber i feltet nedenunder glider ind i det første tomme hul — som på holdet.dk. Alt kan fortrydes.
+Gebyret er 1&nbsp;% af <i>købsprisen</i>, og kravet er gebyret plus det, de udgående selv ville have
+hentet i horisonten. <b>Horisonten sætter du i Ruteplanlæggeren nedenfor</b> — den står altid øverst
+på skærmen.</p>
+
+<div class="card">
+  <div class="row" style="justify-content:space-between;margin-bottom:.2rem">
+    <h3 style="margin:0">Mit hold</h3>
+    <div class="row" style="gap:.4rem">
+      <button id="sbUndo">↶ fortryd</button>
+      <button id="sbClear">nulstil holdet</button>
+    </div>
+  </div>
+  <div class="kpis" id="tradeKpis"></div>
+  <div class="note" id="tradeNote"></div>
+  <div class="note" id="tradeLog" style="display:none"></div>
+  <div class="squad" id="squad"></div>
+</div>
+
+<div class="card" style="margin-top:1rem">
+  <div class="row" style="justify-content:space-between;margin-bottom:.5rem">
+    <h3 style="margin:0">Hele feltet</h3>
+    <div class="row" style="gap:.5rem">
+      <input type="search" id="q" placeholder="søg rytter eller hold…" style="min-width:170px">
+      <label class="muted" style="font-size:.78rem">maks pris
+        <input type="number" id="maxPrice" step="0.5" min="0" placeholder="M" style="width:66px"></label>
+      <label class="muted" style="font-size:.78rem"><input type="checkbox" id="affordable"> kun dem jeg har råd til</label>
+    </div>
+  </div>
+  <div class="row" style="margin-bottom:.6rem">
+    <span class="muted" style="font-size:.78rem">Type:</span>
+    <div class="switch" style="margin:0" id="tagFilter"></div>
+    <button id="tagSuggest" title="Sæt filteret efter scenarierne i horisonten">brug horisontens scenarier</button>
+    <button id="tagClear">ryd</button>
+  </div>
+  <div class="note" id="tagNote" style="margin:0 0 .6rem"></div>
+  <div class="scroll tall"><table><thead><tr>
+    <th></th><th>Rytter</th><th>Hold</th><th class="num">Pris</th><th class="num">Gebyr</th>
+    <th class="num">Krævet vækst</th><th>Billigste resultat der dækker</th>
+    <th class="num">Sejr giver</th><th class="num">Netto ved sejr</th>
+  </tr></thead><tbody id="tbRiders"></tbody></table></div>
+  <div class="note" id="ridersNote"></div>
+</div>
+
+<!-- ════════ RUTEPLANLÆGGER ════════ -->
+<h2>Ruteplanlægger</h2>
 <p class="sub">Samme data, to visninger. Kortene er horisonten — hele løbet med etapeprofilerne fra
 procyclingstats, i flere rækker så der aldrig er vandret scroll. Tabellen er tallene. De deler
 tilstand, så en ændring ét sted ses begge steder.</p>
@@ -275,79 +349,13 @@ tilstand, så en ændring ét sted ses begge steder.</p>
   det er dit kald. Den siger hvad der overhovedet er at spille om, og hvem der kan hente det under dit scenarie.</div>
 </div>
 
-<!-- ════════ PUNKT 4 ════════ -->
-<h2>4 · Gebyr og krævet vækst<span class="tag">sandkasse</span></h2>
-<p class="sub">Dit hold står som otte pladser. Sælger du en, bliver pladsen tom, og næste rytter du
-køber i feltet nedenunder glider ind i det første tomme hul — som på holdet.dk. Alt kan fortrydes.
-Gebyret er 1&nbsp;% af <i>købsprisen</i>, og kravet er gebyret plus det, de udgående selv ville have
-hentet i horisonten.</p>
-
-<div class="card">
-  <div class="row" style="justify-content:space-between;margin-bottom:.2rem">
-    <h3 style="margin:0">Mit hold</h3>
-    <div class="row" style="gap:.4rem">
-      <button id="sbUndo">↶ fortryd</button>
-      <button id="sbClear">nulstil holdet</button>
-    </div>
-  </div>
-  <div class="kpis" id="tradeKpis"></div>
-  <div class="note" id="tradeNote"></div>
-  <div class="note" id="tradeLog" style="display:none"></div>
-  <div class="squad" id="squad"></div>
-</div>
-
-<div class="card" style="margin-top:1rem">
-  <div class="row" style="justify-content:space-between;margin-bottom:.5rem">
-    <h3 style="margin:0">Hele feltet</h3>
-    <div class="row" style="gap:.5rem">
-      <input type="search" id="q" placeholder="søg rytter eller hold…" style="min-width:170px">
-      <label class="muted" style="font-size:.78rem">maks pris
-        <input type="number" id="maxPrice" step="0.5" min="0" placeholder="M" style="width:66px"></label>
-      <label class="muted" style="font-size:.78rem"><input type="checkbox" id="affordable"> kun dem jeg har råd til</label>
-    </div>
-  </div>
-  <div class="row" style="margin-bottom:.6rem">
-    <span class="muted" style="font-size:.78rem">Type:</span>
-    <div class="switch" style="margin:0" id="tagFilter"></div>
-    <button id="tagSuggest" title="Sæt filteret efter scenarierne i horisonten">brug horisontens scenarier</button>
-    <button id="tagClear">ryd</button>
-  </div>
-  <div class="note" id="tagNote" style="margin:0 0 .6rem"></div>
-  <div class="scroll tall"><table><thead><tr>
-    <th></th><th>Rytter</th><th>Hold</th><th class="num">Pris</th><th class="num">Gebyr</th>
-    <th class="num">Krævet vækst</th><th>Billigste resultat der dækker</th>
-    <th class="num">Sejr giver</th><th class="num">Netto ved sejr</th>
-  </tr></thead><tbody id="tbRiders"></tbody></table></div>
-  <div class="note" id="ridersNote"></div>
-</div>
-
-<h2>Hvad de faktisk gjorde<span class="tag">evidens</span></h2>
-<p class="sub">Spørgsmålet om hvor lang en blok må være, behøver vi ikke gætte på. Holdet-snapshottene
-har hvert holds opstilling runde for runde, så antallet af indkøb mellem to runder kan læses direkte
-for alle 14 hold vi følger — top-10, Kasper, os og de to optaktshold.</p>
-<div class="kpis" id="rhKpis"></div>
-<div class="card" style="margin-top:.9rem">
-  <div class="scroll tall"><table><thead><tr>
-    <th>Til etape</th><th>Kat.</th><th class="num">Profil</th><th class="num">Hold der skiftede</th>
-    <th class="num">Indkøb i alt</th><th class="num">Snit pr. hold</th><th></th><th>Hviledag før</th>
-  </tr></thead><tbody id="tbRhythm"></tbody></table></div>
-  <div class="note" id="rhNote"></div>
-</div>
-
-<h2>Det jeg stadig mangler svar på</h2>
+<h2>Om scenarier og arketyper</h2>
 <div class="card">
   <h3 style="margin-top:0">Scenarielisten</h3>
-  <p class="sub">Dine Vueltablet-scenarier (favoritfinale, bjergafslutning, reduceret&nbsp;–&nbsp;bakke)
-  overlapper hinanden, og det er præcis pointen: en etape kan sagtens være både bjergafslutning
-  <i>og</i> favoritfinale. Derfor foreslår jeg at skille de to ting ad, så et scenarie aldrig kan
-  komme til at splitte blokke:</p>
-  <ul class="sub">
-    <li><b>Blokke</b> kommer udelukkende fra terræn og hviledage. Uændret.</li>
-    <li><b>Scenarier bliver mærkater</b> — flere pr. etape. "Bjergafslutning + favoritfinale" er én
-    etape med to mærkater, ikke to blokke.</li>
-    <li>Hver mærkat siger én ting om hvem der henter pointene, og de lægges oven på hinanden.</li>
-  </ul>
-  <p class="sub">Er det den rigtige model? Og er listen nedenfor dækkende?</p>
+  <p class="sub">Scenarier og blokke er bevidst skilt ad. <b>Blokke</b> kommer udelukkende fra
+  terrænskift — ikke fra hviledage, for en blok er et transfervindue, ikke en kalender.
+  <b>Scenariet</b> lægger sig oven på den enkelte etape og siger hvem der henter pointene. Derfor kan
+  en etape sagtens være både bjergafslutning og favoritfinale uden at det splitter noget.</p>
   <div class="scroll"><table><thead><tr><th>Mærkat</th><th>Hvad den siger</th><th>Fra</th></tr></thead>
   <tbody id="tbScenProp"></tbody></table></div>
 </div>
@@ -972,7 +980,7 @@ function renderRiders(){
 
 function renderTrade(){ renderTagFilter(); renderSquad(); renderRiders(); }
 
-// ── Evidens: hvor tit blev der faktisk skiftet ut ────────────────────────
+// Scenarielisten som den står i værktøjet — vist som reference nederst.
 var SCEN_PROP=[
   ['Massespurt','Feltet samlet til mål; spurterne tager både mål og indlagt spurt','nuværende'],
   ['Reduceret – bakke','Hårdt nok til at spurterne ryger; punchere og klassikerryttere om sejren','Vueltablet'],
@@ -981,34 +989,11 @@ var SCEN_PROP=[
   ['Udbrud går','Feltet slipper; placeringerne går til billige udbrudsryttere, angrebspræmie i spil','nuværende'],
   ['Enkeltstart','Tempokørere og GC; ingen point undervejs','nuværende']
 ];
-function renderRhythm(rh){
-  if(!rh){ el('rhNote').textContent='Kunne ikke hente skifteadfærden.'; return; }
-  var hi=rh.rounds.filter(function(r){return r.avg_per_team>=4;}).length;
-  el('rhKpis').innerHTML=
-    kpi(rh.avg_transfers_per_team_per_round,'indkøb pr. hold pr. runde')+
-    kpi(rh.total_transfers,'indkøb i alt, '+rh.teams+' hold')+
-    kpi(hi+'/'+rh.rounds.length,'runder med 4+ indkøb pr. hold')+
-    kpi(Math.round(rh.avg_transfers_per_team_per_round/8*100)+' %','af holdet udskiftet pr. runde');
-  var mx=Math.max.apply(null,rh.rounds.map(function(r){return r.avg_per_team;}));
-  el('tbRhythm').innerHTML=rh.rounds.map(function(r){
-    var w=Math.round(90*r.avg_per_team/mx);
-    return '<tr><td><b>E'+r.stage+'</b></td><td>'+esc(r.category||'—')+'</td>'+
-      '<td class="num">'+(r.profile_score==null?'—':r.profile_score)+'</td>'+
-      '<td class="num">'+r.teams_that_moved+'/'+r.teams+'</td>'+
-      '<td class="num">'+r.transfers+'</td><td class="num"><b>'+r.avg_per_team.toFixed(1)+'</b></td>'+
-      '<td><i style="display:block;height:8px;border-radius:3px;width:'+w+'px;background:var(--accent);opacity:.65"></i></td>'+
-      '<td class="muted">'+(r.after_rest_day?'ja':'')+'</td></tr>';
-  }).join('');
-  el('rhNote').innerHTML='Gennemsnittet er <b>'+rh.avg_transfers_per_team_per_round+' indkøb pr. hold pr. runde</b> '+
-    'ud af 8 mand. Feltet byggede altså over halvdelen af holdet om de fleste runder — og gjorde det '+
-    'stort set samtidig. Det er derfor jeg har sat loftet for en blok ned til 3 og gjort det indstilleligt, '+
-    'og derfor punkt 4 kan skæres ned til 1-2 etaper: et vindue på 5 etaper svarer ikke til den måde '+
-    'spillet rent faktisk blev spillet på.';
+function renderScenList(){
   el('tbScenProp').innerHTML=SCEN_PROP.map(function(x){
     return '<tr><td><b>'+esc(x[0])+'</b></td><td class="muted">'+esc(x[1])+'</td><td class="muted">'+esc(x[2])+'</td></tr>';
   }).join('');
 }
-
 
 function renderArch(){
   var a=planner.archetypes||{},counts={},ex={},best={};
@@ -1049,9 +1034,7 @@ Promise.all([
   fetch('data/vuelta2026_planner.json').then(function(r){return r.json();}),
   // Findes der hentede PCS-profiler? Hvis ikke, tegner vi bare skitsen.
   fetch('data/vuelta2026_stage_shapes.json').then(function(r){return r.ok?r.json():null;})
-                                            .catch(function(){return null;}),
-  fetch('data/vuelta2026_transfer_rhythm.json').then(function(r){return r.ok?r.json():null;})
-                                               .catch(function(){return null;})
+                                            .catch(function(){return null;})
 ]).then(function(res){
   stages=res[0].stages; restAfter=res[0].rest_after||[]; pcsSlug=res[0].pcs_slug||null; planner=res[1];
   if(res[2]&&res[2].stages){ shapes=res[2].stages; maxVm=res[2].max_vmeters||0; }
@@ -1059,12 +1042,13 @@ Promise.all([
   planner.riders.forEach(function(r){ teamIdx[r.name]=r.team; riderIdx[r.name]=r; });
   initSquad();
 
-  // Første besøg: start på den første blok der rent faktisk er en blok. En
-  // enkeltstart alene er en korrekt gruppering, men en ubrugelig horisont.
+  // Første besøg: stil skarpt på den kommende etape — blokken den ligger i
+  // bliver horisont, og dens boks åbnes. Er løbet slut, er det sidste etape.
   if(fresh){
+    var up=planner.upcoming_stage||stages[stages.length-1].stage;
     var B=blocks(),i=0;
-    while(i<B.length-1 && B[i].stages.length<2) i++;
-    S.sel=i;
+    for(var k=0;k<B.length;k++){ if(up>=B[k].from && up<=B[k].to){ i=k; break; } }
+    S.sel=i; S.open=up;
   }
 
   // Kun ÉN begivenhed pr. felt. Med både input og change gentegnede
@@ -1112,7 +1096,7 @@ Promise.all([
       'ikke blokke — en blok er et transfervindue, ikke en kalender. ':'')+
     'Alt du ændrer gemmes kun i denne browser.';
 
-  renderRhythm(res[3]);
+  renderScenList();
   renderArch();
   renderAll();
 }).catch(function(e){

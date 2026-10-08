@@ -1,4 +1,5 @@
 {
+  "upcoming_stage": 21,
   "source": "Skitsedata: priser og hold som de stod ved Vuelta 2026's afslutning. I drift kommer begge dele fra det daglige Holdet-snapshot.",
   "rules": {
     "transfer_fee_pct": 0.01,
