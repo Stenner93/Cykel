@@ -124,6 +124,19 @@
     <tbody id="capmiss"></tbody></table>
   </div>
 
+  <h2>Skifterytmen: hvor tit blev der faktisk handlet?</h2>
+  <p class="sub">Holdet-snapshottene har hvert holds opstilling runde for runde, så antallet af indkøb
+  mellem to runder kan læses direkte for alle 14 hold vi følger — top-10, Kasper, os og de to
+  optaktshold. Det er ren adfærdsdata, joinet på personId.</p>
+  <div class="strip" id="rhKpis" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))"></div>
+  <div class="card scroll" style="margin-top:1rem">
+    <table><thead><tr>
+      <th>Til etape</th><th>Kat.</th><th class="num">Profil</th><th class="num">Hold der skiftede</th>
+      <th class="num">Indkøb i alt</th><th class="num">Snit pr. hold</th><th></th><th>Hviledag før</th>
+    </tr></thead><tbody id="tbRhythm"></tbody></table>
+  </div>
+  <div class="note" id="rhNote"></div>
+
   <h2>Konklusioner</h2>
   <ul class="takeaways">
     <li><b>Ingen af kilderne dominerer alene</b> — Feltet er skarpest på kaptajn-ramning, Simon på bredere holdvalg, VeloScore stærkest på "mindst en af de tre bedste". Brug dem sammen, ikke isoleret.</li>
@@ -131,6 +144,10 @@
       største lagt sammen er ~1,2M. Det er reelt, men ikke der løbet blev afgjort.</li>
     <li><b>Transfergebyret er den store post</b> — du betalte 5,28M i gebyr på 85 transfers. Holdet med færrest transfers
       (73) betalte 4,60M. Hver transfer koster ~60k, så det er her en systematisk gevinst ligger at hente.</li>
+    <li><b>Alle handlede, og de handlede samtidig</b> — 4,3 indkøb pr. hold pr. runde ud af 8 mand.
+      Feltet byggede over halvdelen af holdet om de fleste runder, og de store runder var de samme for
+      alle: ind til E10 efter hviledagen rørte <em>alle 14 hold</em> deres hold. Der er altså ingen
+      gevinst i bare at handle mere end de andre — kun i at handle på de rigtige etaper.</li>
     <li><b>Gabet til top-10 var Oscar Onley</b> — top-10-holdene ejede ham i 16 runder tilsammen (+1,92M i sæsonvækst),
       du aldrig. Det er alene mere end de 2,08M der skiller dig fra førstepladsen.</li>
   </ul>
@@ -236,6 +253,32 @@ const CAPMISS=[
 document.getElementById('capmiss').innerHTML = CAPMISS.map(r=>
   `<tr><td class="mono">E${r.r}</td><td>${r.cap}</td><td class="num mono">${r.cg>=0?'+':''}${r.cg.toFixed(2)}</td><td class="num mono pos">+${r.bo.toFixed(2)}</td><td class="num mono neg">-${r.reg.toFixed(2)}</td></tr>`
 ).join('');
+</script>
+<script>
+// ── Skifterytme ──────────────────────────────────────────────────────────
+fetch('data/vuelta2026_transfer_rhythm.json').then(r=>r.ok?r.json():null).then(rh=>{
+  if(!rh){ document.getElementById('rhNote').textContent='Kunne ikke hente skifteadfærden.'; return; }
+  const hi=rh.rounds.filter(r=>r.avg_per_team>=4).length;
+  const stat=(n,k)=>`<div class="stat"><div class="n">${n}</div><div class="k">${k}</div></div>`;
+  document.getElementById('rhKpis').innerHTML=
+    stat(rh.avg_transfers_per_team_per_round,'indkøb pr. hold pr. runde')+
+    stat(rh.total_transfers,`indkøb i alt, ${rh.teams} hold`)+
+    stat(`${hi}/${rh.rounds.length}`,'runder med 4+ indkøb pr. hold')+
+    stat(Math.round(rh.avg_transfers_per_team_per_round/8*100)+' %','af holdet udskiftet pr. runde');
+  const mx=Math.max(...rh.rounds.map(r=>r.avg_per_team));
+  document.getElementById('tbRhythm').innerHTML=rh.rounds.map(r=>`<tr>
+      <td><b>E${r.stage}</b></td><td>${r.category||'—'}</td>
+      <td class="num">${r.profile_score==null?'—':r.profile_score}</td>
+      <td class="num">${r.teams_that_moved}/${r.teams}</td>
+      <td class="num">${r.transfers}</td><td class="num"><b>${r.avg_per_team.toFixed(1)}</b></td>
+      <td><i style="display:block;height:8px;border-radius:3px;width:${Math.round(90*r.avg_per_team/mx)}px;background:var(--accent);opacity:.65"></i></td>
+      <td style="color:var(--ink-3)">${r.after_rest_day?'ja':''}</td></tr>`).join('');
+  document.getElementById('rhNote').innerHTML=
+    `Gennemsnittet er <b>${rh.avg_transfers_per_team_per_round} indkøb pr. hold pr. runde</b> ud af 8 mand. `+
+    'De stille runder er lige så oplysende: ind til E17 skiftede kun 4 af 14 hold, i alt 4 indkøb — '+
+    'feltet holdt igennem de flade etaper og ladede om til enkeltstarten på E18, hvor 95 indkøb ramte '+
+    'på én gang. Det er dét mønster ruteplanlæggeren er bygget til at kunne se på forhånd.';
+}).catch(()=>{});
 </script>
 <script src="nav.js"></script>
 </body>

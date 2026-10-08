@@ -47,6 +47,7 @@
   .tab{appearance:none;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;
     padding:13px 15px;color:var(--muted);font-family:inherit;font-size:.8rem;font-weight:700;
     letter-spacing:.03em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:color .15s,border-color .15s}
+  .tab{text-decoration:none}
   .tab:hover{color:var(--ink)}
   .tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
   .tab:focus-visible{outline:2px solid var(--accent);outline-offset:-4px;border-radius:4px}
@@ -361,7 +362,7 @@
     <button class="tab" role="tab" aria-selected="false" id="t-sprint"  aria-controls="p-sprint">Sprint &amp; bonus</button>
     <span class="tabsep" aria-hidden="true"></span>
     <button class="tab" role="tab" aria-selected="false" id="t-matrix" aria-controls="p-matrix">Pointoversigt</button>
-    <button class="tab soon" role="tab" aria-selected="false" id="t-odds"   aria-controls="p-odds">Odds &amp; kilder</button>
+    <a class="tab" role="tab" href="planlaegger.html" aria-selected="false">Planlægger</a>
   </div>
 </div>
 
@@ -571,16 +572,11 @@
     <p class="sec-sub">Hver rytters faktiske Holdet-vækst pr. etape (i tusinder kr), sorteret efter total.</p>
     <div id="pmWrap"><p class="src">Henter…</p></div>
   </section>
-  <section class="panel" id="p-odds" role="tabpanel" aria-labelledby="t-odds" hidden>
-    <div class="empty"><div class="big">📡</div>
-      <h3>Odds &amp; kilder — klar til Vueltaen</h3>
-      <p>Bookmaker-odds og kildeoverblik pr. etape. Tændes når Vueltaens etaper lægges op hos udbyderne.</p></div>
-  </section>
-
   <div class="foot">
     <b>Status:</b> <b>Vuelta-etape</b> kører på ægte data (startliste, priser, CO-ratings) med scenariemotor + tre hold;
     <b>Metode (eksempel)</b> viser mekanikken gennemgået på Tour-E21. <b>Pointoversigt</b> viser klassifikations-pointskemaet
-    pr. etape, og pointmatrixen forneden viser faktisk realiseret vækst nu løbet er slut. <b>Datagrundlag:</b> kalibreringen bygger nu på
+    pr. etape, og pointmatrixen forneden viser faktisk realiseret vækst nu løbet er slut.
+    <b>Planlægger</b> er ryttervælger og ruteplanlægger. <b>Datagrundlag:</b> kalibreringen bygger nu på
     tre scorede optakt-kilder — Tour-optakterne (Feltet.dk + Simon K. Kjær) og Giro-optakterne (Ingemann, 15 etaper med facit) —
     plus Giro-VeloScore. Alle ligger i repoet.
     <div style="margin-top:6px;font-size:.72rem;color:var(--muted)">
@@ -593,7 +589,8 @@
 
 <script>
   (function(){
-    var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'))
+      .filter(function(t){ return t.tagName==='BUTTON'; });
     function panelOf(t){ return document.getElementById(t.getAttribute('aria-controls')); }
     function select(tab){
       tabs.forEach(function(t){
@@ -603,8 +600,23 @@
       });
       tab.focus();
     }
+    // En fane kan udpeges i adressen (#optakt), så links fra Planlæggeren
+    // lander det rigtige sted. Valget skrives tilbage, så siden kan deles.
+    function byHash(){
+      var h=(location.hash||'').replace('#','');
+      return h ? document.getElementById('t-'+h) : null;
+    }
+    var start = byHash();
+    if(start && start.tagName==='BUTTON') select(start);
+    window.addEventListener('hashchange', function(){
+      var t=byHash(); if(t && t.tagName==='BUTTON') select(t);
+    });
     tabs.forEach(function(t, i){
-      t.addEventListener('click', function(){ select(t); });
+      t.addEventListener('click', function(){
+        if(t.tagName!=='BUTTON') return;          // Planlæggeren er et link
+        select(t);
+        history.replaceState(null,'','#'+t.id.replace('t-',''));
+      });
       t.addEventListener('keydown', function(e){
         if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
           e.preventDefault();

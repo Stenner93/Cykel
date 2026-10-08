@@ -103,9 +103,9 @@
   <h2>Infrastruktur-huller fundet undervejs</h2>
   <p class="sub">Skal rettes FØR Klassiker Manager i foråret 2027 — nogle af disse kan ikke genskabes bagefter.</p>
 
-  <div class="card fix">
-    <div class="fixhead"><span class="fixnum">1</span> build_analytics.py kørte hardcoded mod TdF hele Vuelta-sæsonen</div>
-    <p style="margin:0;font-size:.9rem">Har ALDRIG læst Vuelta-data, selvom <span class="mono">daily.yml</span> kaldte den dagligt. <b>Konsekvens:</b> <span class="mono">data/cache/stage_snapshots.json</span> (etape-niveau pris/ejerskab-historik) findes kun for TdF — den tabte Vuelta-historik kan ikke genskabes. <b>Fix:</b> generalisér med samme <span class="mono">--race</span>-mønster som de øvrige scripts, og bekræft den rent faktisk kører mod det aktive løb.</p>
+  <div class="card hold">
+    <div class="fixhead" style="color:var(--good)"><span class="fixnum" style="background:var(--good)">✓</span> build_analytics.py kørte hardcoded mod TdF hele Vuelta-sæsonen — nu fjernet</div>
+    <p style="margin:0;font-size:.9rem">Har ALDRIG læst Vuelta-data, selvom <span class="mono">daily.yml</span> kaldte den dagligt. <b>Konsekvens:</b> <span class="mono">data/cache/stage_snapshots.json</span> (etape-niveau pris/ejerskab-historik) findes kun for TdF — den tabte Vuelta-historik kan ikke genskabes. <b>Afsluttet:</b> ML-Analyse-siden den fodrede er lukket ned, og scriptet og dets daglige CI-trin er fjernet. <b>Husk til Klassiker Manager:</b> bygger vi noget tilsvarende igen, skal det have samme <span class="mono">--race</span>-mønster som de øvrige scripts fra dag ét — og det skal bekræftes at det rent faktisk kører mod det aktive løb.</p>
   </div>
 
   <div class="card hold">

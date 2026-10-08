@@ -117,7 +117,14 @@ def main():
     if missing:
         raise SystemExit(f"Ryttere uden pris — navnene matcher ikke: {missing}")
 
+    # Næste etape = den første der ikke er kørt. Er løbet slut, er det den
+    # sidste, så planlæggeren altid åbner et sted der giver mening.
+    sched = scores.get("stages", [])
+    upcoming = next((st["num"] for st in sched if st.get("status") != "finished"),
+                    sched[-1]["num"] if sched else None)
+
     out = {
+        "upcoming_stage": upcoming,
         "source": "Skitsedata: priser og hold som de stod ved Vuelta 2026's afslutning. "
                   "I drift kommer begge dele fra det daglige Holdet-snapshot.",
         "rules": {
@@ -147,6 +154,7 @@ def main():
     for r in riders:
         for t in r["tags"]:
             counts[t] = counts.get(t, 0) + 1
+    print(f"Næste etape: E{upcoming}")
     print(f"Skrev web/data/vuelta2026_planner.json — {len(riders)} ryttere, "
           f"holdværdi {out['my_team']['value_m']:.2f}M + bank {out['my_team']['bank_m']:.2f}M")
     print("  mærkater: " + ", ".join(f"{t} {n}" for t, n in sorted(counts.items(), key=lambda kv: -kv[1]))
