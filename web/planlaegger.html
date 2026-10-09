@@ -8,21 +8,24 @@
   :root{
     --bg:#fcfcfb;--panel:#ffffff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;
     --line:#e7e6e1;--line-2:#efeee9;
-    --accent:#c0661c;--good:#3b854f;--bad:#b4472e;
-    --spurt:#3f8f8f;--kuperet:#b8892b;--bjerg:#b4472e;--itt:#7a5cc4;
+    --accent:#C8102E;--good:#3b854f;--bad:#b4472e;
+    --spurt:#3f8f8f;--kuperet:#b8892b;--bjerg:#b4472e;--itt:#7a5cc4;--gcblue:#2f6db0;
     --shadow:0 1px 2px rgba(20,22,26,.05),0 8px 24px rgba(20,22,26,.05);
   }
   @media (prefers-color-scheme:dark){:root{
     --bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;
     --line:#2d3034;--line-2:#26282c;
-    --accent:#e08a3c;--good:#57b072;--bad:#e07a5f;
-    --spurt:#5fb8b8;--kuperet:#d8a84a;--bjerg:#e07a5f;--itt:#a48ce0;
+    --accent:#E4002B;--good:#57b072;--bad:#e07a5f;
+    --spurt:#5fb8b8;--kuperet:#d8a84a;--bjerg:#e07a5f;--itt:#a48ce0;--gcblue:#5b96d8;
     --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
   }}
-  :root[data-theme="light"]{--bg:#fcfcfb;--panel:#fff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;--line:#e7e6e1;--line-2:#efeee9;--accent:#c0661c;--good:#3b854f;--bad:#b4472e;--spurt:#3f8f8f;--kuperet:#b8892b;--bjerg:#b4472e;--itt:#7a5cc4;--shadow:0 1px 2px rgba(20,22,26,.05),0 8px 24px rgba(20,22,26,.05)}
-  :root[data-theme="dark"]{--bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;--line:#2d3034;--line-2:#26282c;--accent:#e08a3c;--good:#57b072;--bad:#e07a5f;--spurt:#5fb8b8;--kuperet:#d8a84a;--bjerg:#e07a5f;--itt:#a48ce0;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35)}
+  :root[data-theme="light"]{--bg:#fcfcfb;--panel:#fff;--ink:#17181a;--ink-2:#4b4f52;--ink-3:#7d8388;--line:#e7e6e1;--line-2:#efeee9;--accent:#C8102E;--good:#3b854f;--bad:#b4472e;--spurt:#3f8f8f;--kuperet:#b8892b;--bjerg:#b4472e;--itt:#7a5cc4;--gcblue:#2f6db0;--shadow:0 1px 2px rgba(20,22,26,.05),0 8px 24px rgba(20,22,26,.05)}
+  :root[data-theme="dark"]{--bg:#16171a;--panel:#1e2023;--ink:#ecece9;--ink-2:#b0b4b7;--ink-3:#7f8589;--line:#2d3034;--line-2:#26282c;--accent:#E4002B;--good:#57b072;--bad:#e07a5f;--spurt:#5fb8b8;--kuperet:#d8a84a;--bjerg:#e07a5f;--itt:#a48ce0;--gcblue:#5b96d8;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35)}
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  body{margin:0;background:
+      radial-gradient(1100px 480px at 82% -8%, rgba(228,0,43,.10), transparent 60%),
+      radial-gradient(900px 420px at 6% 4%, rgba(228,0,43,.04), transparent 55%),
+      var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
   .wrap{max-width:1180px;margin:0 auto;padding:clamp(1.2rem,4vw,2.4rem) clamp(1rem,4vw,2rem) 5rem}
   .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
   header.top{border-bottom:1px solid var(--line);padding-bottom:1.5rem;margin-bottom:1.8rem}
@@ -68,8 +71,11 @@
   .tag-r.t-spurter{color:var(--spurt);border-color:currentColor}
   .tag-r.t-puncher{color:var(--kuperet);border-color:currentColor}
   .tag-r.t-klatrer{color:var(--bjerg);border-color:currentColor}
-  .tag-r.t-gc{color:var(--accent);border-color:currentColor}
+  .tag-r.t-gc{color:var(--gcblue);border-color:currentColor}
   .tag-r.t-tempo{color:var(--itt);border-color:currentColor}
+  .fit-hi{color:var(--good);font-weight:700}
+  .fit-mid{color:var(--ink);font-weight:600}
+  .fit-lo{color:var(--ink-3)}
 
 
   /* ── Hele løbet: kort-gitter (layout A) ──
@@ -175,9 +181,9 @@
   .vtab:hover{color:var(--ink)}
   .vtab.on{color:var(--accent);border-bottom-color:var(--accent)}
   .vtabsep{width:1px;height:18px;background:var(--line);margin:0 8px;flex:0 0 auto}
-  .dash-topbar{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,#161b22 0%,#0d1117 100%);border-bottom:2px solid #FFD700;padding:0 clamp(1rem,4vw,24px)}
+  .dash-topbar{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,#161b22 0%,#0d1117 100%);border-bottom:2px solid var(--accent);padding:0 clamp(1rem,4vw,24px)}
   .dash-topbar-inner{max-width:1200px;margin:0 auto;min-height:60px;display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap;justify-content:space-between;padding:8px 0}
-  .dash-logo{font-size:1.3rem;font-weight:700;color:#FFD700;letter-spacing:.5px;text-decoration:none;white-space:nowrap}
+  .dash-logo{font-size:1.3rem;font-weight:700;color:var(--accent);letter-spacing:.5px;text-decoration:none;white-space:nowrap}
   .hbar{position:sticky;top:103px;z-index:90;background:var(--panel);border-bottom:1px solid var(--line);padding:.5rem clamp(1rem,4vw,24px)}
   .hbar-in{max-width:1180px;margin:0 auto;display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;font-size:.84rem}
   .hbar b{color:var(--accent)}
@@ -263,6 +269,12 @@ på skærmen.</p>
       <label class="muted" style="font-size:.78rem">maks pris
         <input type="number" id="maxPrice" step="0.5" min="0" placeholder="M" style="width:66px"></label>
       <label class="muted" style="font-size:.78rem"><input type="checkbox" id="affordable"> kun dem jeg har råd til</label>
+      <label class="muted" style="font-size:.78rem">sortér
+        <select id="sortBy">
+          <option value="price">pris</option>
+          <option value="fit">fit</option>
+          <option value="req">krævet vækst</option>
+        </select></label>
     </div>
   </div>
   <div class="row" style="margin-bottom:.6rem">
@@ -273,7 +285,9 @@ på skærmen.</p>
   </div>
   <div class="note" id="tagNote" style="margin:0 0 .6rem"></div>
   <div class="scroll tall"><table><thead><tr>
-    <th></th><th>Rytter</th><th>Hold</th><th class="num">Pris</th><th class="num">Gebyr</th>
+    <th></th><th>Rytter</th><th>Hold</th><th class="num">Pris</th>
+    <th class="num" id="thFit" title="CO-evner vægtet efter horisontens scenarier">Fit</th>
+    <th class="num">Gebyr</th>
     <th class="num">Krævet vækst</th><th>Billigste resultat der dækker</th>
     <th class="num">Sejr giver</th><th class="num">Netto ved sejr</th>
   </tr></thead><tbody id="tbRiders"></tbody></table></div>
@@ -421,13 +435,50 @@ var HARD={bjerg:1,kuperet:1};
 //    hente det, og hvad der er betinget i spil. Det er dét, der slår igennem
 //    på de øvrige parametre.
 var SCEN={
-  massespurt: {label:'Massespurt',        who:'Spurtere',        during:'Spurterne tager den indlagte spurt', cond:[],                       tags:['spurter']},
-  reduceret:  {label:'Reduceret – bakke', who:'Punchere',        during:'Udbruddet tager point undervejs',    cond:[],                       tags:['puncher','spurter']},
-  favorit:    {label:'Favoritfinale',     who:'Klatrere / GC',   during:'Udbruddet tager point undervejs',    cond:['klassement','trøjer'],  tags:['gc','klatrer']},
-  bjergafslut:{label:'Bjergafslutning',   who:'Klatrere',        during:'Udbruddet tager point undervejs',    cond:['klassement','trøjer'],  tags:['klatrer','gc']},
-  udbrud:     {label:'Udbrud går',        who:'Udbrudsryttere',  during:'Udbruddet tager alt undervejs',      cond:['angrebspræmie'],        tags:['klatrer','puncher']},
-  enkeltstart:{label:'Enkeltstart',       who:'Tempokørere / GC',during:'Ingen point undervejs',              cond:['klassement'],           tags:['tempo','gc']}
+  massespurt: {label:'Massespurt',        who:'Spurtere',        during:'Spurterne tager den indlagte spurt', cond:[],                       tags:['spurter'],          w:{SPR:1}},
+  reduceret:  {label:'Reduceret – bakke', who:'Punchere',        during:'Udbruddet tager point undervejs',    cond:[],                       tags:['puncher','spurter'],w:{HLL:0.6, SPR:0.4}},
+  favorit:    {label:'Favoritfinale',     who:'Klatrere / GC',   during:'Udbruddet tager point undervejs',    cond:['klassement','trøjer'],  tags:['gc','klatrer'],     w:{GC:0.6, MTN:0.4}},
+  bjergafslut:{label:'Bjergafslutning',   who:'Klatrere',        during:'Udbruddet tager point undervejs',    cond:['klassement','trøjer'],  tags:['klatrer','gc'],     w:{MTN:1}},
+  udbrud:     {label:'Udbrud går',        who:'Udbrudsryttere',  during:'Udbruddet tager alt undervejs',      cond:['angrebspræmie'],        tags:['klatrer','puncher'],w:{MTN:0.6, HLL:0.4}},
+  enkeltstart:{label:'Enkeltstart',       who:'Tempokørere / GC',during:'Ingen point undervejs',              cond:['klassement'],           tags:['tempo','gc'],       w:{ITT:1}}
 };
+
+// ── Fit: hvor godt passer rytteren til horisonten ────────────────────────
+// Rytterens CO-evner vægtet efter hvad scenariet kalder på — præcis samme
+// regnestykke som fit-kolonnen på Vuelta-etape-fanen, bare med
+// planlæggerens egne scenarier og over en hel blok i stedet for én etape.
+// Det er rene CO-tal: ingen model, ingen forventet vækst, ingen rangering.
+// Skala 0-100. Uden CO-data returneres null — ikke 0, for "vi ved det ikke"
+// er noget andet end "han er dårlig".
+function fitOne(r,sc){
+  var co=r.co; if(!co) return null;
+  var s=0,t=0;
+  for(var k in sc.w){ if(co[k]==null) continue; s+=sc.w[k]*co[k]; t+=sc.w[k]; }
+  return t ? s/t : null;
+}
+function fitHz(r){
+  var st=hz().stages,s=0,n=0;
+  st.forEach(function(x){ var v=fitOne(r,SCEN[scenOf(x)]); if(v!=null){ s+=v; n++; } });
+  return n ? s/n : null;
+}
+/** Hvilke CO-discipliner horisonten faktisk vejer, til kolonneoverskrift og tooltip. */
+function fitDims(){
+  var w={};
+  hz().stages.forEach(function(x){
+    var sc=SCEN[scenOf(x)];
+    for(var k in sc.w) w[k]=(w[k]||0)+sc.w[k];
+  });
+  var tot=0; for(var k in w) tot+=w[k];
+  return Object.keys(w).sort(function(a,b){return w[b]-w[a];})
+    .map(function(k){ return {dim:k, pct:Math.round(100*w[k]/tot)}; });
+}
+function fitCell(r){
+  var v=fitHz(r);
+  if(v==null) return '<span class="muted" title="ingen CO-rating">–</span>';
+  var co=r.co||{},parts=fitDims().map(function(d){ return d.dim+' '+(co[d.dim]==null?'–':co[d.dim]); });
+  var cls=v>=70?'fit-hi':(v>=50?'fit-mid':'fit-lo');
+  return '<span class="'+cls+'" title="'+esc(parts.join(' · '))+'">'+Math.round(v)+'</span>';
+}
 function autoScen(s){
   if(s.pcs_type==='tt') return 'enkeltstart';
   var p=s.profile_score||0;
@@ -880,7 +931,8 @@ function renderSquad(){
     }).join('');
     return '<div class="slot'+(isNew?' new':'')+'">'+
       '<div class="nm">'+esc(name)+tagChips(riderOf(name))+'</div>'+
-      '<div class="sub2"><span>'+esc(lookupTeam(name))+'</span><b>'+m(priceOf(name))+'</b></div>'+
+      '<div class="sub2"><span>'+esc(lookupTeam(name))+'</span>'+
+        '<span>fit '+fitCell(riderOf(name))+'</span><b>'+m(priceOf(name))+'</b></div>'+
       (isNew?'<span class="badge ny">ny</span>'
             :(name===planner.my_team.captain?'<span class="badge cap">kaptajn</span>':''))+
       '<select class="selExp" data-n="'+esc(name)+'">'+opts+'</select>'+
@@ -954,13 +1006,31 @@ function renderRiders(){
     return true;
   });
   var win=Math.max.apply(null,c.stages.map(function(s){return s.winner_incl_team_bonus_kr;}));
+
+  // Sortering er et valg du træffer, ikke noget værktøjet gør for dig.
+  // Standard er pris, som er den rækkefølge feltet leveres i.
+  var by=el('sortBy').value;
+  if(by==='fit') rows=rows.slice().sort(function(a,b){
+    var x=fitHz(a),y=fitHz(b);
+    if(x==null&&y==null) return b.price_m-a.price_m;
+    if(x==null) return 1;
+    if(y==null) return -1;
+    return y-x;
+  });
+  // Krævet vækst = gebyr + de udgåendes tabte udbytte. Det sidste led er det
+  // samme for alle kandidater, og gebyret er en fast procentdel af prisen, så
+  // stigende pris ER stigende krav.
+  else if(by==='req') rows=rows.slice().sort(function(a,b){ return a.price_m-b.price_m; });
+
   el('tbRiders').innerHTML=rows.slice(0,250).map(function(r){
     // Kravet for ÉN ekstra mand: hans eget gebyr oven i det de udgående taber.
     var fee=Math.round(r.price_m*1e6*FEE_PCT),req=fee+t.lost,ch=cheapest(req,c),net=win-req;
     return '<tr><td><button class="tgBuy" data-n="'+esc(r.name)+'"'+(free?'':' disabled')+
       ' title="'+(free?'sæt ind på første tomme plads':'sælg en rytter først')+'">køb</button></td>'+
       '<td><b>'+esc(r.name)+'</b>'+tagChips(r)+'</td><td class="muted">'+esc(r.team)+'</td>'+
-      '<td class="num">'+m(r.price_m)+'</td><td class="num">'+kr(fee)+'</td>'+
+      '<td class="num">'+m(r.price_m)+'</td>'+
+      '<td class="num">'+fitCell(r)+'</td>'+
+      '<td class="num">'+kr(fee)+'</td>'+
       '<td class="num"><b>'+kr0(req)+'</b></td>'+
       '<td'+(ch.ok?'':' class="neg"')+'>'+esc(ch.txt)+'</td>'+
       '<td class="num">'+kr(win)+'</td>'+
@@ -969,13 +1039,20 @@ function renderRiders(){
   el('tbRiders').querySelectorAll('.tgBuy').forEach(function(n){
     n.addEventListener('click',function(){ if(!n.disabled) buy(n.dataset.n); });
   });
+  var dims=fitDims().map(function(d){ return d.dim+(d.pct<100?' '+d.pct+'%':''); }).join(' · ');
+  el('thFit').innerHTML='Fit<br><span class="muted" style="font-weight:400;font-size:.62rem;'+
+    'text-transform:none;letter-spacing:0">'+esc(dims)+'</span>';
+  el('thFit').title='CO-evner vægtet efter horisontens scenarier: '+dims;
   el('ridersNote').innerHTML=(free
       ? 'Der er en tom plads — klik «køb» og rytteren glider ind. '
       : '<b>Holdet er fuldt.</b> Sælg en rytter ovenfor, så bliver «køb» aktivt. ')+
     'Viser '+Math.min(rows.length,250)+' af '+planner.riders.length+' ryttere. '+
     '«Krævet vækst» er hans gebyr plus '+kr0(t.lost)+' — det de udgående ville have hentet. '+
     '«Sejr giver» er den bedste enkeltetape i '+esc(curName())+' ('+kr(win)+'). Bliver «netto ved '+
-    'sejr» rød, kan selv en etapesejr ikke betale handlen hjem i dette vindue.';
+    'sejr» rød, kan selv en etapesejr ikke betale handlen hjem i dette vindue. '+
+    '<b>Fit</b> er rytterens CyclingOracle-evner vægtet efter horisontens scenarier ('+esc(dims)+
+    ') — rene CO-tal, 0-100, ingen model og ingen forventet vækst. Hold musen over tallet for de '+
+    'enkelte discipliner. «–» betyder at rytteren ikke har en CO-profil, ikke at han er dårlig.';
 }
 
 function renderTrade(){ renderTagFilter(); renderSquad(); renderRiders(); }
@@ -1058,6 +1135,7 @@ Promise.all([
   el('q').addEventListener('input',renderRiders);
   el('maxPrice').addEventListener('input',renderRiders);
   el('affordable').addEventListener('change',renderRiders);
+  el('sortBy').addEventListener('change',renderRiders);
   el('onlyHorizon').addEventListener('change',renderTable);
   el('selBlock').addEventListener('change',function(){ S.sel=+this.value; save(); renderAll(); });
   el('maxBlk').value=S.maxBlk||3;
