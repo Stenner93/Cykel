@@ -59,6 +59,17 @@ RACE_DEFAULTS = {
             7132842: "optakt-skribent",
         },
     },
+    # Manager-formatet (ruleset "Cycling classic 2025"): ingen transfergebyr,
+    # intet budget, ryttere i fire kategorier og rene point i stedet for
+    # værdivækst. Det er SAMME regelsæt-familie som Klassiker Manager, så
+    # dette spil er vores eneste levende eksempel på formatet — og API'et
+    # lukkes efter løbet. Hentes uden hold (ingen leaderboard i dette spil);
+    # det er referencedata og pointfacit vi er ude efter.
+    "vueltamanager2026": {
+        "cartridge": "vuelta-manager-2026",
+        "game_id": 629,
+        "our_teams": {},
+    },
     "vuelta2026": {
         "cartridge": "vuelta-2026",
         "game_id": 628,

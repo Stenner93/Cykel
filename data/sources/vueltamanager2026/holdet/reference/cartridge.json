@@ -1,0 +1,58 @@
+{
+  "id": 80,
+  "gameId": 629,
+  "slug": "vuelta-manager-2026",
+  "name": "Vuelta Manager",
+  "themeId": 11,
+  "defaultFantasyLeagueId": 10077520,
+  "properties": {},
+  "_embedded": {
+    "games": {
+      "629": {
+        "id": 629,
+        "scheduleId": 629,
+        "rulesetId": 118
+      }
+    },
+    "rulesets": {
+      "118": {
+        "id": 118,
+        "name": "Cycling classic 2025",
+        "transferFee": 0,
+        "interestRate": 0,
+        "salaryCap": 0,
+        "captainBonusAssets": 0,
+        "captainBonusPoints": 1,
+        "properties": {
+          "Format": "cycling"
+        },
+        "positions": [
+          {
+            "id": 265,
+            "name": "category_1",
+            "title": "Kategori 1",
+            "order": 1
+          },
+          {
+            "id": 266,
+            "name": "category_2",
+            "title": "Kategori 2",
+            "order": 2
+          },
+          {
+            "id": 267,
+            "name": "category_3",
+            "title": "Kategori 3",
+            "order": 3
+          },
+          {
+            "id": 268,
+            "name": "category_4",
+            "title": "Kategori 4",
+            "order": 4
+          }
+        ]
+      }
+    }
+  }
+}
