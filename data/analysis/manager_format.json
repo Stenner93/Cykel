@@ -1,0 +1,581 @@
+{
+ "assumptions": [
+  "Klassikerspillet bruger samme placeringsskala som Vuelta Manager (ruleset 118).",
+  "Kun placeringen giver point i et endagsløb.",
+  "Kaptajnen fordobler sine point.",
+  "Alle 'optimale' hold er bagklogskab — de kender resultaterne på forhånd."
+ ],
+ "rules": {
+  "slots": {
+   "1": 2,
+   "2": 3,
+   "3": 3,
+   "4": 4
+  },
+  "transfers": 35,
+  "scale_sample": {
+   "1": 250,
+   "2": 210,
+   "3": 180,
+   "5": 140,
+   "10": 100,
+   "15": 82,
+   "20": 72,
+   "30": 52,
+   "50": 31,
+   "75": 6,
+   "80": 5,
+   "100": 2,
+   "176": 2
+  }
+ },
+ "vuelta_manager_2026": {
+  "total_points": 118106,
+  "by_source": {
+   "StagePosition": 0.7434,
+   "OverallTeamPosition": 0.1264,
+   "OverallPosition": 0.0444,
+   "OverallSprintPosition": 0.0444,
+   "OverallClimbPosition": 0.0415
+  },
+  "stage_points_by_band": {
+   "1-3": 0.1458,
+   "4-10": 0.197,
+   "11-15": 0.0979,
+   "16-30": 0.2255,
+   "31-75": 0.287,
+   "76+": 0.0467
+  },
+  "categories": {
+   "1": {
+    "riders": 10,
+    "slots": 2,
+    "best_slot_avg": 3371,
+    "median_rider": 2085,
+    "top": [
+     {
+      "name": "Wout van Aert",
+      "points": 3734,
+      "popularity": 0.2872
+     },
+     {
+      "name": "Matthew Brennan",
+      "points": 3008,
+      "popularity": 0.0375
+     },
+     {
+      "name": "Felix Gall",
+      "points": 2533,
+      "popularity": 0.2402
+     },
+     {
+      "name": "Primoz Roglic",
+      "points": 2275,
+      "popularity": 0.0095
+     },
+     {
+      "name": "Tadej Pogacar",
+      "points": 2098,
+      "popularity": 0.9405
+     }
+    ]
+   },
+   "2": {
+    "riders": 32,
+    "slots": 3,
+    "best_slot_avg": 2389,
+    "median_rider": 704,
+    "top": [
+     {
+      "name": "Enric Mas Nicolau",
+      "points": 3365,
+      "popularity": 0.5351
+     },
+     {
+      "name": "Santiago Buitrago",
+      "points": 2134,
+      "popularity": 0.0797
+     },
+     {
+      "name": "Léo Bisiaux",
+      "points": 1667,
+      "popularity": 0.0321
+     },
+     {
+      "name": "Sepp Kuss",
+      "points": 1532,
+      "popularity": 0.1576
+     },
+     {
+      "name": "Cristian Rodriguez Martin",
+      "points": 1402,
+      "popularity": 0.0202
+     }
+    ]
+   },
+   "3": {
+    "riders": 56,
+    "slots": 3,
+    "best_slot_avg": 1562,
+    "median_rider": 483,
+    "top": [
+     {
+      "name": "Jakob Omrzel",
+      "points": 1722,
+      "popularity": 0.1201
+     },
+     {
+      "name": "Harold Tejada",
+      "points": 1508,
+      "popularity": 0.2093
+     },
+     {
+      "name": "Bryan Coquard",
+      "points": 1456,
+      "popularity": 0.0696
+     },
+     {
+      "name": "Clement Berthet",
+      "points": 1418,
+      "popularity": 0.0315
+     },
+     {
+      "name": "Bastien Tronchon",
+      "points": 1416,
+      "popularity": 0.0024
+     }
+    ]
+   },
+   "4": {
+    "riders": 106,
+    "slots": 4,
+    "best_slot_avg": 1428,
+    "median_rider": 298,
+    "top": [
+     {
+      "name": "Alessandro Romele",
+      "points": 2121,
+      "popularity": 0.0071
+     },
+     {
+      "name": "Andreas Leknessund",
+      "points": 1439,
+      "popularity": 0.2509
+     },
+     {
+      "name": "Pau Miquel",
+      "points": 1178,
+      "popularity": 0.0339
+     },
+     {
+      "name": "Embret Svestad-Bårdseng",
+      "points": 974,
+      "popularity": 0.0327
+     },
+     {
+      "name": "Urko Berrade",
+      "points": 959,
+      "popularity": 0.069
+     }
+    ]
+   }
+  },
+  "low_owned_high_scorers": [
+   {
+    "name": "Matthew Brennan",
+    "points": 3008,
+    "popularity": 0.0375,
+    "cat": 1
+   },
+   {
+    "name": "Primoz Roglic",
+    "points": 2275,
+    "popularity": 0.0095,
+    "cat": 1
+   },
+   {
+    "name": "Alessandro Romele",
+    "points": 2121,
+    "popularity": 0.0071,
+    "cat": 4
+   },
+   {
+    "name": "Richard Carapaz",
+    "points": 1965,
+    "popularity": 0.0499,
+    "cat": 1
+   },
+   {
+    "name": "Léo Bisiaux",
+    "points": 1667,
+    "popularity": 0.0321,
+    "cat": 2
+   },
+   {
+    "name": "Clement Berthet",
+    "points": 1418,
+    "popularity": 0.0315,
+    "cat": 3
+   },
+   {
+    "name": "Bastien Tronchon",
+    "points": 1416,
+    "popularity": 0.0024,
+    "cat": 3
+   },
+   {
+    "name": "Cristian Rodriguez Martin",
+    "points": 1402,
+    "popularity": 0.0202,
+    "cat": 2
+   }
+  ]
+ },
+ "classics_2026_simulated": {
+  "races": [
+   {
+    "race": "Omloop Het Nieuwsblad",
+    "block": "brosten",
+    "date": "28 February 2026",
+    "profile_score": 68
+   },
+   {
+    "race": "Strade Bianche",
+    "block": "brosten",
+    "date": "7 March 2026",
+    "profile_score": 182
+   },
+   {
+    "race": "Milano-Sanremo",
+    "block": "brosten",
+    "date": "21 March 2026",
+    "profile_score": 82
+   },
+   {
+    "race": "Classic Brugge-De Panne",
+    "block": "brosten",
+    "date": "25 March 2026",
+    "profile_score": 2
+   },
+   {
+    "race": "E3 Saxo Classic",
+    "block": "brosten",
+    "date": "27 March 2026",
+    "profile_score": 73
+   },
+   {
+    "race": "Gent-Wevelgem",
+    "block": "brosten",
+    "date": "29 March 2026",
+    "profile_score": 42
+   },
+   {
+    "race": "Dwars door Vlaanderen",
+    "block": "brosten",
+    "date": "1 April 2026",
+    "profile_score": 45
+   },
+   {
+    "race": "Ronde van Vlaanderen",
+    "block": "brosten",
+    "date": "5 April 2026",
+    "profile_score": 93
+   },
+   {
+    "race": "Paris-Roubaix",
+    "block": "brosten",
+    "date": "12 April 2026",
+    "profile_score": 14
+   },
+   {
+    "race": "Amstel Gold Race",
+    "block": "ardenner",
+    "date": "19 April 2026",
+    "profile_score": 135
+   },
+   {
+    "race": "La Flèche Wallonne",
+    "block": "ardenner",
+    "date": "22 April 2026",
+    "profile_score": 172
+   },
+   {
+    "race": "Liège-Bastogne-Liège",
+    "block": "ardenner",
+    "date": "26 April 2026",
+    "profile_score": 199
+   },
+   {
+    "race": "Eschborn-Frankfurt",
+    "block": "ardenner",
+    "date": "1 May 2026",
+    "profile_score": 139
+   }
+  ],
+  "matched_riders": 509,
+  "unmatched_top30": [
+   "BARCELÓ Fernando",
+   "BARONCINI Filippo",
+   "BUITRAGO Santiago",
+   "BURGAUDEAU Mathieu",
+   "CRAS Steff",
+   "DEBRUYNE Ramses",
+   "FRIGO Marco",
+   "HINDLEY Jai",
+   "LEKNESSUND Andreas",
+   "MAIRE Adrien",
+   "MOLARD Rudy",
+   "O'CONNOR Ben",
+   "OLDANI Stefano",
+   "PERICAS Adrià",
+   "VERSCHUREN Killian"
+  ],
+  "points_by_band": {
+   "1-3": 0.1573,
+   "4-10": 0.2088,
+   "11-15": 0.1057,
+   "16-30": 0.2231,
+   "31-75": 0.2792,
+   "76+": 0.0258
+  },
+  "categories": {
+   "1": {
+    "riders": 12,
+    "slots": 2,
+    "best_slot_avg": 1118,
+    "top": [
+     {
+      "name": "T. Pogačar",
+      "total": 1210,
+      "starts": 5
+     },
+     {
+      "name": "M. Van Der Poel",
+      "total": 1026,
+      "starts": 6
+     },
+     {
+      "name": "W. Van Aert",
+      "total": 952,
+      "starts": 6
+     },
+     {
+      "name": "M. Pedersen",
+      "total": 625,
+      "starts": 5
+     },
+     {
+      "name": "R. Evenepoel",
+      "total": 610,
+      "starts": 3
+     }
+    ]
+   },
+   "2": {
+    "riders": 37,
+    "slots": 3,
+    "best_slot_avg": 784,
+    "top": [
+     {
+      "name": "C. Laporte",
+      "total": 905,
+      "starts": 8
+     },
+     {
+      "name": "R. Grégoire",
+      "total": 778,
+      "starts": 8
+     },
+     {
+      "name": "F. Vermeersch",
+      "total": 670,
+      "starts": 9
+     },
+     {
+      "name": "P. Seixas",
+      "total": 670,
+      "starts": 3
+     },
+     {
+      "name": "J. Stuyven",
+      "total": 610,
+      "starts": 5
+     }
+    ]
+   },
+   "3": {
+    "riders": 121,
+    "slots": 3,
+    "best_slot_avg": 585,
+    "top": [
+     {
+      "name": "T. L. Andresen",
+      "total": 644,
+      "starts": 6
+     },
+     {
+      "name": "G. Vermeersch",
+      "total": 587,
+      "starts": 8
+     },
+     {
+      "name": "J. Abrahamsen",
+      "total": 525,
+      "starts": 7
+     },
+     {
+      "name": "M. Schmid",
+      "total": 480,
+      "starts": 4
+     },
+     {
+      "name": "J. Berckmoes",
+      "total": 456,
+      "starts": 8
+     }
+    ]
+   },
+   "4": {
+    "riders": 339,
+    "slots": 4,
+    "best_slot_avg": 436,
+    "top": [
+     {
+      "name": "A. De Gendt",
+      "total": 493,
+      "starts": 6
+     },
+     {
+      "name": "P. S. Hagenes",
+      "total": 420,
+      "starts": 7
+     },
+     {
+      "name": "A. Huens",
+      "total": 415,
+      "starts": 7
+     },
+     {
+      "name": "J. Barrenetxea",
+      "total": 415,
+      "starts": 8
+     },
+     {
+      "name": "S. Dewulf",
+      "total": 393,
+      "starts": 9
+     }
+    ]
+   }
+  },
+  "kat4_thesis": {
+   "share_of_kat4_points_from_riders_with_8plus_starts": 0.145,
+   "top20_kat4_median_starts": 6
+  },
+  "transfer_value_by_category": {
+   "1": {
+    "fast_bedste_hold": 2236,
+    "bedste_hvert_løb": 4520,
+    "skifter_det_kræver": 16,
+    "point_pr_skifte": 143,
+    "skifter_i_35_planen": 9,
+    "flest_starter_hold": 1978,
+    "flest_starter_navne": [
+     "M. Van Der Poel (6)",
+     "W. Van Aert (6)"
+    ]
+   },
+   "2": {
+    "fast_bedste_hold": 2353,
+    "bedste_hvert_løb": 5237,
+    "skifter_det_kræver": 27,
+    "point_pr_skifte": 107,
+    "skifter_i_35_planen": 8,
+    "flest_starter_hold": 2017,
+    "flest_starter_navne": [
+     "M. Mohorič (10)",
+     "F. Vermeersch (9)",
+     "C. Laporte (8)"
+    ]
+   },
+   "3": {
+    "fast_bedste_hold": 1756,
+    "bedste_hvert_løb": 5247,
+    "skifter_det_kræver": 32,
+    "point_pr_skifte": 109,
+    "skifter_i_35_planen": 9,
+    "flest_starter_hold": 1199,
+    "flest_starter_navne": [
+     "M. F. Honoré (11)",
+     "G. Vermeersch (8)",
+     "J. Berckmoes (8)"
+    ]
+   },
+   "4": {
+    "fast_bedste_hold": 1743,
+    "bedste_hvert_løb": 4862,
+    "skifter_det_kræver": 43,
+    "point_pr_skifte": 73,
+    "skifter_i_35_planen": 8,
+    "flest_starter_hold": 714,
+    "flest_starter_navne": [
+     "P. Miquel (10)",
+     "S. Dewulf (9)",
+     "K. Heiduk (9)",
+     "F. Maciejuk (9)"
+    ]
+   }
+  },
+  "scenarios": {
+   "ingen_skifter": {
+    "points": 10563,
+    "captain_points": 2475,
+    "transfers": 0,
+    "team": [
+     "T. Pogačar",
+     "M. Van Der Poel",
+     "C. Laporte",
+     "R. Grégoire",
+     "F. Vermeersch",
+     "T. L. Andresen",
+     "G. Vermeersch",
+     "J. Abrahamsen",
+     "A. De Gendt",
+     "P. S. Hagenes",
+     "A. Huens",
+     "J. Barrenetxea"
+    ]
+   },
+   "to_blokke": {
+    "points": 14579,
+    "transfers": 12
+   },
+   "35_skifter_graadigt": {
+    "points": 18043,
+    "transfers": 34,
+    "window": 2,
+    "min_gain_per_transfer": 160,
+    "transfers_per_round": [
+     0,
+     3,
+     3,
+     5,
+     3,
+     3,
+     1,
+     2,
+     0,
+     7,
+     3,
+     3,
+     1
+    ]
+   },
+   "ubegraenset": {
+    "points": 23116,
+    "captain_points": 3250,
+    "transfers": 118
+   }
+  }
+ }
+}

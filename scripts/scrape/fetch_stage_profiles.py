@@ -7,18 +7,17 @@ stigninger, men den rigtige højdeprofil siger mere: hvor stejlt, hvor langt
 fra mål, og alle de småknæk der aldrig bliver kategoriseret. Ligger
 billederne i data/profiles/<race>/, bruger planlæggeren dem automatisk.
 
-Alle profilerne til et løb ligger på ÉN side — /race/<slug>/route/stage-profiles
-— så der hentes én side og derefter billederne. Ingen grund til at kalde 21
-etapesider.
+Først prøves oversigtssiden /race/<slug>/route/stage-profiles, som ofte har
+alle profiler på ét opslag. For et afsluttet løb viser PCS dog resultater
+dér i stedet, og så hentes de manglende profiler fra de enkelte etapesider.
+Allerede hentede profiler bevares altid.
 
-PCS ligger bag Cloudflare, som afviser almindelige HTTP-klienter med en
-udfordring ("Just a moment..."). Derfor køres det gennem Playwrights
-Chromium, som er en rigtig browser og kommer igennem som enhver anden
-besøgende. Kør pænt: det er ét sideopslag plus ~21 billeder, én gang pr. løb.
+Browseropsætningen (Cloudflare, proxy-CA) bor i pcs_browser.py. Kør pænt:
+det er ét sideopslag plus ~21 billeder, én gang pr. løb.
 
 Brug:
     python scripts/scrape/fetch_stage_profiles.py \
-        --slug vuelta-a-espana/2026 --race vuelta2026
+        --slug vuelta-a-espana/2026 --race vuelta2026 --stages 21
 
 Derefter committes data/profiles/<race>/.
 """
@@ -26,57 +25,61 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import re
-import subprocess
 import sys
 from pathlib import Path
 
-try:
-    from playwright.sync_api import sync_playwright
-except ImportError:
-    sys.exit("kræver playwright: pip install playwright && playwright install chromium")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from pcs_browser import BASE, pcs_page  # noqa: E402  — fælles PCS-browser
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = "https://www.procyclingstats.com"
-UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-      "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36")
 STAGE_IN_NAME = re.compile(r"-stage-(\d+)-")
 
-# Nogle kørselsmiljøer (bl.a. Claudes sandkasse) sender HTTPS gennem en proxy
-# der terminerer TLS med sit eget CA. curl og python læser den fra CA-bundlet,
-# men Chromiums egen certifikatverifikation gør ikke. Derfor udpeges netop de
-# CA'er ved deres offentlige nøgle, så browseren stoler på dem og kun dem.
-# Det er ikke det samme som at slå certifikatkontrol fra.
-CA_BUNDLES = ["/root/.ccr/ca-bundle.crt"]
-INTERCEPTION_CA = re.compile(r"proxy|egress|inspection|intercept", re.I)
 
+def capture(page, url, timeout, wanted=None):
+    """Indlæs en side og grib de profilbilleder SIDEN selv henter.
 
-def proxy_ca_pins() -> list[str]:
-    pins = []
-    for path in CA_BUNDLES:
-        p = Path(path)
-        if not p.exists():
-            continue
-        for pem in re.findall(r"-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----",
-                              p.read_text(), re.S):
-            subj = subprocess.run(["openssl", "x509", "-noout", "-subject"],
-                                  input=pem, capture_output=True, text=True).stdout
-            if not INTERCEPTION_CA.search(subj):
-                continue
-            spki = subprocess.run(
-                "openssl x509 -pubkey -noout | openssl pkey -pubin -outform der "
-                "| openssl dgst -sha256 -binary | openssl enc -base64",
-                input=pem, shell=True, capture_output=True, text=True).stdout.strip()
-            if spki and spki not in pins:
-                pins.append(spki)
-    return pins
+    Et separat kald bagefter bliver afvist af Cloudflare, fordi det mangler
+    browserens egne headere — men netop derfor har vi originalbytes her.
+    -> {etape: (url, bytes)}"""
+    grabbed = {}
+
+    def on_response(resp):
+        u = resp.url
+        if "/images/profiles/" not in u or not resp.ok:
+            return
+        m = STAGE_IN_NAME.search(u)
+        if not m:
+            return
+        st = int(m.group(1))
+        if wanted is not None and st != wanted:
+            return
+        try:
+            grabbed.setdefault(st, (u, resp.body()))
+        except Exception:
+            pass
+
+    page.on("response", on_response)
+    try:
+        resp = page.goto(url, wait_until="domcontentloaded", timeout=timeout)
+        if not resp or resp.status != 200:
+            return {}
+        page.wait_for_timeout(3500)
+        # Billederne indlæses dovent, så siden rulles i trin til bunden.
+        for _ in range(8):
+            page.mouse.wheel(0, 1400)
+            page.wait_for_timeout(500)
+        page.wait_for_timeout(1500)
+    finally:
+        page.remove_listener("response", on_response)
+    return grabbed
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--slug", required=True, help="fx vuelta-a-espana/2026")
-    ap.add_argument("--race", required=True, help="fx vuelta2026 — mappen under web/img/profiles")
+    ap.add_argument("--race", required=True, help="fx vuelta2026 — mappen under data/profiles")
+    ap.add_argument("--stages", type=int, help="antal etaper (til opsamling på etapesiderne)")
     ap.add_argument("--timeout", type=int, default=60000)
     # Nogle miljøer har Chromium liggende uden for Playwrights egen mappe.
     ap.add_argument("--chromium", default=None,
@@ -86,76 +89,51 @@ def main():
     outdir = ROOT / "data/profiles" / args.race
     outdir.mkdir(parents=True, exist_ok=True)
 
-    launch_args = ["--disable-blink-features=AutomationControlled"]
-    pins = proxy_ca_pins()
-    if pins:
-        launch_args.append("--ignore-certificate-errors-spki-list=" + ",".join(pins))
-        print(f"Stoler på {len(pins)} proxy-CA'er ved deres offentlige nøgle")
+    # Det der allerede er hentet, bevares. En kørsel der finder færre
+    # billeder end sidst, må aldrig skrumpe manifestet — det skete én gang,
+    # da PCS ændrede oversigtssiden, og 20 af 21 profiler forsvandt.
+    mf = outdir / "manifest.json"
+    have = {}
+    if mf.exists():
+        have = {int(k): v for k, v in json.loads(mf.read_text()).get("files", {}).items()
+                if (outdir / v).exists()}
 
-    exe = args.chromium or os.environ.get("PLAYWRIGHT_CHROMIUM") or "/opt/pw-browsers/chromium"
-    launch = {"args": launch_args}
-    if Path(exe).exists():
-        launch["executable_path"] = exe
+    with pcs_page(args.chromium) as (page, ctx):
+        # 1) Oversigtssiden: alle profiler på ét opslag, når PCS viser dem dér.
+        grabbed = capture(page, f"{BASE}/race/{args.slug}/route/stage-profiles", args.timeout)
+        print(f"Oversigtssiden gav {len(grabbed)} profiler")
 
-    url = f"{BASE}/race/{args.slug}/route/stage-profiles"
-    with sync_playwright() as p:
-        browser = p.chromium.launch(**launch)
-        ctx = browser.new_context(locale="en-US", user_agent=UA,
-                                  viewport={"width": 1400, "height": 1000})
-        page = ctx.new_page()
+        # 2) Resten hentes på de enkelte etapesider. PCS har ladet oversigten
+        #    vise resultater i stedet for profiler for et afsluttet løb.
+        n = args.stages or (max(grabbed) if grabbed else 0)
+        for st in range(1, n + 1):
+            if st in grabbed:
+                continue
+            got1 = capture(page, f"{BASE}/race/{args.slug}/stage-{st}", args.timeout, wanted=st)
+            grabbed.update(got1)
+            print(f"  E{st:>2} via etapesiden: {'ok' if st in got1 else '—'}")
 
-        # Billederne gribes mens SIDEN selv henter dem. Et separat kald bagefter
-        # bliver afvist af Cloudflare, fordi det mangler browserens egne headere
-        # — men netop derfor har vi allerede originalbytes her.
-        grabbed = {}
+    for st in sorted(grabbed):
+        src, data = grabbed[st]
+        ext = ".png" if src.lower().split("?")[0].endswith(".png") else ".jpg"
+        name = f"stage-{st:02d}{ext}"
+        (outdir / name).write_bytes(data)
+        have[st] = name
+        print(f"  E{st:>2}  {name}  {len(data)//1024} kB")
 
-        def on_response(resp):
-            u = resp.url
-            if "/images/profiles/" not in u:
-                return
-            m = STAGE_IN_NAME.search(u)
-            if not m or not resp.ok:
-                return
-            try:
-                grabbed[int(m.group(1))] = (u, resp.body())
-            except Exception:
-                pass
-
-        page.on("response", on_response)
-
-        resp = page.goto(url, wait_until="domcontentloaded", timeout=args.timeout)
-        if not resp or resp.status != 200:
-            browser.close()
-            sys.exit(f"{url} svarede {resp.status if resp else 'intet'}")
-        page.wait_for_timeout(5000)
-        # Billederne indlæses dovent, så siden rulles i trin til bunden.
-        for _ in range(12):
-            page.mouse.wheel(0, 1400)
-            page.wait_for_timeout(700)
-        page.wait_for_timeout(3000)
-
-        got = {}
-        for stage in sorted(grabbed):
-            src, data = grabbed[stage]
-            ext = ".png" if src.lower().split("?")[0].endswith(".png") else ".jpg"
-            name = f"stage-{stage:02d}{ext}"
-            (outdir / name).write_bytes(data)
-            got[stage] = name
-            print(f"  E{stage:>2}  {name}  {len(data)//1024} kB")
-        if not got:
-            browser.close()
-            sys.exit("ingen profilbilleder blev hentet — er løbets slug rigtig?")
-        browser.close()
-
-    (outdir / "manifest.json").write_text(json.dumps(
-        {"race": args.race, "slug": args.slug, "source": url,
-         "files": {str(k): v for k, v in sorted(got.items())}},
+    if not have:
+        sys.exit("ingen profilbilleder — er løbets slug rigtig?")
+    mf.write_text(json.dumps(
+        {"race": args.race, "slug": args.slug,
+         "source": f"{BASE}/race/{args.slug}",
+         "files": {str(k): v for k, v in sorted(have.items())}},
         ensure_ascii=False, indent=2))
-    print(f"\n{len(got)} profiler i data/profiles/{args.race}/")
-    missing = sorted(set(range(1, max(got) + 1)) - set(got)) if got else []
-    if missing:
-        print("Manglede: " + ", ".join(f"E{s}" for s in missing)
-              + " — planlæggeren tegner skitsen for dem.")
+    print(f"\n{len(have)} profiler i data/profiles/{args.race}/ ({len(grabbed)} hentet i denne kørsel)")
+    if args.stages:
+        missing = sorted(set(range(1, args.stages + 1)) - set(have))
+        if missing:
+            print("Mangler stadig: " + ", ".join(f"E{s}" for s in missing)
+                  + " — planlæggeren tegner skitsen for dem.")
 
 
 if __name__ == "__main__":
