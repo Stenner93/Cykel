@@ -1,8 +1,8 @@
 {
  "assumptions": [
-  "Klassikerspillet bruger samme placeringsskala som Vuelta Manager (ruleset 118).",
-  "Kun placeringen giver point i et endagsløb.",
-  "Kaptajnen fordobler sine point.",
+  "Holdbonus: 25 til hver rytter fra vinderens hold der startede løbet, vinderen inklusive.",
+  "Kaptajnen fordobler alle sine point, bonusser inklusive.",
+  "DNF/DNS giver 0.",
   "Alle 'optimale' hold er bagklogskab — de kender resultaterne på forhånd."
  ],
  "rules": {
@@ -13,21 +13,44 @@
    "4": 4
   },
   "transfers": 35,
-  "scale_sample": {
-   "1": 250,
-   "2": 210,
-   "3": 180,
-   "5": 140,
-   "10": 100,
-   "15": 82,
-   "20": 72,
-   "30": 52,
-   "50": 31,
-   "75": 6,
-   "80": 5,
-   "100": 2,
-   "176": 2
-  }
+  "classics_scale_sample": {
+   "1": 350,
+   "2": 300,
+   "3": 250,
+   "5": 180,
+   "10": 120,
+   "11": 100,
+   "15": 80,
+   "16": 78,
+   "20": 70,
+   "30": 50,
+   "31": 49,
+   "50": 30,
+   "51": 25,
+   "56": 20,
+   "61": 15,
+   "66": 10,
+   "120": 10
+  },
+  "monuments": [
+   "liege-bastogne-liege",
+   "milano-sanremo",
+   "paris-roubaix",
+   "ronde-van-vlaanderen"
+  ],
+  "monument_bonus": [
+   150,
+   125,
+   100,
+   85,
+   75,
+   65,
+   55,
+   45,
+   35,
+   25
+  ],
+  "team_bonus": 25
  },
  "vuelta_manager_2026": {
   "total_points": 118106,
@@ -331,167 +354,214 @@
    "VERSCHUREN Killian"
   ],
   "points_by_band": {
-   "1-3": 0.1573,
-   "4-10": 0.2088,
-   "11-15": 0.1057,
-   "16-30": 0.2231,
-   "31-75": 0.2792,
-   "76+": 0.0258
+   "1-3": 0.1884,
+   "4-10": 0.2243,
+   "11-15": 0.0942,
+   "16-30": 0.1843,
+   "31-65": 0.2078,
+   "66+": 0.101
+  },
+  "points_by_source": {
+   "placering": 62092,
+   "monumentbonus": 3040,
+   "holdbonus": 2175
   },
   "categories": {
    "1": {
     "riders": 12,
     "slots": 2,
-    "best_slot_avg": 1118,
+    "best_slot_avg": 2050,
     "top": [
      {
       "name": "T. Pogačar",
-      "total": 1210,
+      "total": 2375,
       "starts": 5
      },
      {
       "name": "M. Van Der Poel",
-      "total": 1026,
+      "total": 1725,
       "starts": 6
      },
      {
       "name": "W. Van Aert",
-      "total": 952,
+      "total": 1640,
       "starts": 6
      },
      {
-      "name": "M. Pedersen",
-      "total": 625,
-      "starts": 5
+      "name": "R. Evenepoel",
+      "total": 1075,
+      "starts": 3
      },
      {
-      "name": "R. Evenepoel",
-      "total": 610,
-      "starts": 3
+      "name": "M. Pedersen",
+      "total": 1005,
+      "starts": 5
      }
     ]
    },
    "2": {
     "riders": 37,
     "slots": 3,
-    "best_slot_avg": 784,
+    "best_slot_avg": 1121,
     "top": [
      {
       "name": "C. Laporte",
-      "total": 905,
+      "total": 1283,
       "starts": 8
-     },
-     {
-      "name": "R. Grégoire",
-      "total": 778,
-      "starts": 8
-     },
-     {
-      "name": "F. Vermeersch",
-      "total": 670,
-      "starts": 9
      },
      {
       "name": "P. Seixas",
-      "total": 670,
+      "total": 1100,
       "starts": 3
      },
      {
+      "name": "R. Grégoire",
+      "total": 981,
+      "starts": 8
+     },
+     {
       "name": "J. Stuyven",
-      "total": 610,
+      "total": 978,
       "starts": 5
+     },
+     {
+      "name": "F. Vermeersch",
+      "total": 969,
+      "starts": 9
      }
     ]
    },
    "3": {
     "riders": 121,
     "slots": 3,
-    "best_slot_avg": 585,
+    "best_slot_avg": 717,
     "top": [
      {
       "name": "T. L. Andresen",
-      "total": 644,
+      "total": 805,
       "starts": 6
      },
      {
       "name": "G. Vermeersch",
-      "total": 587,
+      "total": 736,
       "starts": 8
-     },
-     {
-      "name": "J. Abrahamsen",
-      "total": 525,
-      "starts": 7
      },
      {
       "name": "M. Schmid",
-      "total": 480,
+      "total": 609,
       "starts": 4
      },
      {
-      "name": "J. Berckmoes",
-      "total": 456,
-      "starts": 8
+      "name": "B. Cosnefroy",
+      "total": 592,
+      "starts": 5
+     },
+     {
+      "name": "B. Tulett",
+      "total": 590,
+      "starts": 4
      }
     ]
    },
    "4": {
     "riders": 339,
     "slots": 4,
-    "best_slot_avg": 436,
+    "best_slot_avg": 510,
     "top": [
      {
       "name": "A. De Gendt",
-      "total": 493,
+      "total": 565,
       "starts": 6
      },
      {
       "name": "P. S. Hagenes",
-      "total": 420,
+      "total": 520,
       "starts": 7
      },
      {
-      "name": "A. Huens",
-      "total": 415,
-      "starts": 7
-     },
-     {
-      "name": "J. Barrenetxea",
-      "total": 415,
-      "starts": 8
+      "name": "E. Verstrynge",
+      "total": 495,
+      "starts": 5
      },
      {
       "name": "S. Dewulf",
-      "total": 393,
+      "total": 462,
       "starts": 9
+     },
+     {
+      "name": "J. Barrenetxea",
+      "total": 414,
+      "starts": 8
      }
     ]
    }
   },
   "kat4_thesis": {
-   "share_of_kat4_points_from_riders_with_8plus_starts": 0.145,
+   "share_of_kat4_points_from_riders_with_8plus_starts": 0.144,
    "top20_kat4_median_starts": 6
   },
   "transfer_value_by_category": {
    "1": {
-    "fast_bedste_hold": 2236,
-    "bedste_hvert_løb": 4520,
+    "kurve": {
+     "0": 4100,
+     "1": 4100,
+     "2": 4282,
+     "3": 4850,
+     "4": 5475,
+     "5": 6087,
+     "6": 6462,
+     "8": 6942,
+     "10": 7335,
+     "12": 7335,
+     "15": 7627,
+     "20": 7627,
+     "25": 7627,
+     "30": 7627,
+     "40": 7627
+    },
+    "de_første_3": 750,
+    "de_første_5": 1987,
+    "skifte_6_til_10_pr_stk": 250,
+    "skifte_11_til_20_pr_stk": 29,
+    "fast_bedste_hold": 4100,
+    "bedste_hvert_løb": 7627,
     "skifter_det_kræver": 16,
-    "point_pr_skifte": 143,
-    "skifter_i_35_planen": 9,
-    "flest_starter_hold": 1978,
+    "gennemsnit_pr_skifte": 220,
+    "skifter_i_35_planen": 8,
+    "flest_starter_hold": 3365,
     "flest_starter_navne": [
      "M. Van Der Poel (6)",
      "W. Van Aert (6)"
     ]
    },
    "2": {
-    "fast_bedste_hold": 2353,
-    "bedste_hvert_løb": 5237,
-    "skifter_det_kræver": 27,
-    "point_pr_skifte": 107,
-    "skifter_i_35_planen": 8,
-    "flest_starter_hold": 2017,
+    "kurve": {
+     "0": 3364,
+     "1": 3542,
+     "2": 4330,
+     "3": 4919,
+     "4": 5464,
+     "5": 5484,
+     "6": 5703,
+     "8": 5853,
+     "10": 6234,
+     "12": 6400,
+     "15": 6800,
+     "20": 7250,
+     "25": 7484,
+     "30": 7505,
+     "40": 7505
+    },
+    "de_første_3": 1555,
+    "de_første_5": 2120,
+    "skifte_6_til_10_pr_stk": 150,
+    "skifte_11_til_20_pr_stk": 102,
+    "fast_bedste_hold": 3364,
+    "bedste_hvert_løb": 7505,
+    "skifter_det_kræver": 28,
+    "gennemsnit_pr_skifte": 148,
+    "skifter_i_35_planen": 9,
+    "flest_starter_hold": 2751,
     "flest_starter_navne": [
      "M. Mohorič (10)",
      "F. Vermeersch (9)",
@@ -499,12 +569,33 @@
     ]
    },
    "3": {
-    "fast_bedste_hold": 1756,
-    "bedste_hvert_løb": 5247,
+    "kurve": {
+     "0": 2150,
+     "1": 2525,
+     "2": 2878,
+     "3": 3343,
+     "4": 3898,
+     "5": 4267,
+     "6": 4536,
+     "8": 4689,
+     "10": 4974,
+     "12": 5409,
+     "15": 5603,
+     "20": 6118,
+     "25": 6762,
+     "30": 7105,
+     "40": 7180
+    },
+    "de_første_3": 1193,
+    "de_første_5": 2117,
+    "skifte_6_til_10_pr_stk": 141,
+    "skifte_11_til_20_pr_stk": 114,
+    "fast_bedste_hold": 2150,
+    "bedste_hvert_løb": 7180,
     "skifter_det_kræver": 32,
-    "point_pr_skifte": 109,
-    "skifter_i_35_planen": 9,
-    "flest_starter_hold": 1199,
+    "gennemsnit_pr_skifte": 157,
+    "skifter_i_35_planen": 11,
+    "flest_starter_hold": 1364,
     "flest_starter_navne": [
      "M. F. Honoré (11)",
      "G. Vermeersch (8)",
@@ -512,12 +603,33 @@
     ]
    },
    "4": {
-    "fast_bedste_hold": 1743,
-    "bedste_hvert_løb": 4862,
-    "skifter_det_kræver": 43,
-    "point_pr_skifte": 73,
-    "skifter_i_35_planen": 8,
-    "flest_starter_hold": 714,
+    "kurve": {
+     "0": 2042,
+     "1": 2042,
+     "2": 2234,
+     "3": 2558,
+     "4": 2797,
+     "5": 3002,
+     "6": 3016,
+     "8": 3341,
+     "10": 3588,
+     "12": 3752,
+     "15": 4124,
+     "20": 4628,
+     "25": 4924,
+     "30": 5295,
+     "40": 5653
+    },
+    "de_første_3": 516,
+    "de_første_5": 960,
+    "skifte_6_til_10_pr_stk": 117,
+    "skifte_11_til_20_pr_stk": 104,
+    "fast_bedste_hold": 2042,
+    "bedste_hvert_løb": 5698,
+    "skifter_det_kræver": 44,
+    "gennemsnit_pr_skifte": 83,
+    "skifter_i_35_planen": 7,
+    "flest_starter_hold": 873,
     "flest_starter_navne": [
      "P. Miquel (10)",
      "S. Dewulf (9)",
@@ -526,55 +638,209 @@
     ]
    }
   },
+  "examples": {
+   "1": {
+    "fixed": [
+     {
+      "name": "T. Pogačar",
+      "points": [
+       0,
+       375,
+       525,
+       0,
+       0,
+       0,
+       0,
+       525,
+       425,
+       0,
+       0,
+       525,
+       0
+      ],
+      "starts": 5
+     },
+     {
+      "name": "M. Van Der Poel",
+      "points": [
+       375,
+       0,
+       185,
+       0,
+       375,
+       70,
+       0,
+       425,
+       295,
+       0,
+       0,
+       0,
+       0
+      ],
+      "starts": 6
+     }
+    ],
+    "best_available_per_race": [
+     375,
+     375,
+     525,
+     300,
+     375,
+     375,
+     300,
+     525,
+     525,
+     375,
+     180,
+     525,
+     300
+    ]
+   },
+   "4": {
+    "fixed": [
+     {
+      "name": "A. De Gendt",
+      "points": [
+       180,
+       0,
+       0,
+       0,
+       60,
+       140,
+       38,
+       95,
+       52,
+       0,
+       0,
+       0,
+       0
+      ],
+      "starts": 6
+     },
+     {
+      "name": "P. S. Hagenes",
+      "points": [
+       64,
+       0,
+       0,
+       0,
+       300,
+       0,
+       25,
+       76,
+       45,
+       0,
+       0,
+       0,
+       10
+      ],
+      "starts": 7
+     },
+     {
+      "name": "E. Verstrynge",
+      "points": [
+       0,
+       10,
+       10,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       180,
+       0,
+       295,
+       0
+      ],
+      "starts": 5
+     },
+     {
+      "name": "S. Dewulf",
+      "points": [
+       37,
+       0,
+       0,
+       68,
+       210,
+       0,
+       41,
+       38,
+       43,
+       0,
+       25,
+       0,
+       0
+      ],
+      "starts": 9
+     }
+    ],
+    "best_available_per_race": [
+     180,
+     100,
+     70,
+     250,
+     300,
+     180,
+     130,
+     95,
+     90,
+     180,
+     105,
+     295,
+     205
+    ]
+   }
+  },
   "scenarios": {
    "ingen_skifter": {
-    "points": 10563,
-    "captain_points": 2475,
+    "points": 15979,
+    "captain_points": 4323,
     "transfers": 0,
     "team": [
      "T. Pogačar",
      "M. Van Der Poel",
      "C. Laporte",
+     "P. Seixas",
      "R. Grégoire",
-     "F. Vermeersch",
      "T. L. Andresen",
      "G. Vermeersch",
-     "J. Abrahamsen",
+     "M. Schmid",
      "A. De Gendt",
      "P. S. Hagenes",
-     "A. Huens",
-     "J. Barrenetxea"
+     "E. Verstrynge",
+     "S. Dewulf"
     ]
    },
    "to_blokke": {
-    "points": 14579,
+    "points": 21286,
     "transfers": 12
    },
    "35_skifter_graadigt": {
-    "points": 18043,
-    "transfers": 34,
+    "points": 26154,
+    "transfers": 35,
     "window": 2,
-    "min_gain_per_transfer": 160,
+    "min_gain_per_transfer": 190,
     "transfers_per_round": [
      0,
      3,
+     4,
      3,
      5,
      3,
      3,
-     1,
      2,
-     0,
-     7,
-     3,
-     3,
-     1
+     1,
+     6,
+     4,
+     1,
+     0
     ]
    },
    "ubegraenset": {
-    "points": 23116,
-    "captain_points": 3250,
-    "transfers": 118
+    "points": 33485,
+    "captain_points": 5475,
+    "transfers": 120
    }
   }
  }
