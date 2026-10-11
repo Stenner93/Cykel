@@ -15,14 +15,21 @@ Holdets sammensætning og transferloft er dine oplysninger: 2 / 3 / 3 / 4
 ryttere fra Kategori 1-4, præcis, og 35 udskiftninger fra runde 2 (det
 første hold er gratis). Én runde = ét løb.
 
-ANTAGELSER der skal bekræftes, før tallene bruges til noget:
-  - At klassikerspillet bruger samme placeringsskala som Vuelta Manager
-    (250 for sejren, ned til 2 point for 91.-176.-pladsen). Regelsættet er
-    det samme, men skalaen kan være justeret.
-  - At der ikke er andre pointkilder i et endagsløb end placeringen.
-    Vuelta Manager gav også hold- og klassementspoint; dem har et endagsløb
-    ikke på samme måde.
-  - At kaptajnen fordobler sine point (captainBonusPoints = 1 i regelsættet).
+Klassikerspillets pointsystem (fra spillets regelside, givet af Anders):
+  - Placering: 350, 300, 250, 210, 180, 160, 150, 140, 130, 120 for top-10,
+    så 100, 95, 90, 85, 80 for 11.-15., derefter -2 pr. plads til 30. (50),
+    -1 pr. plads til 50. (30), 25 for 51.-55., 20 for 56.-60., 15 for
+    61.-65. og 10 for 66. og ned.
+  - Monumentbonus til top-10 i Sanremo, Flandern, Roubaix og Liège:
+    150, 125, 100, 85, 75, 65, 55, 45, 35, 25.
+  - Holdbonus: 25 point til vinderens hold.
+
+ANTAGELSER der stadig skal bekræftes:
+  - Holdbonussen: her gives 25 til hver rytter fra vinderens hold der STARTEDE
+    løbet, vinderen selv inklusive — samme mekanik som i GT-spillene.
+  - Kaptajnen fordobler alle sine point i løbet, bonusser inklusive
+    (captainBonusPoints = 1 i regelsættet).
+  - Ryttere der udgår eller ikke starter får 0.
 
 Alle "optimale" hold her er bagklogskab: de kender resultaterne på forhånd.
 De siger ikke hvad man burde have valgt, kun hvor meget der var at hente,
@@ -51,7 +58,36 @@ TRANSFERS = 35                          # fra runde 2; første hold er gratis
 CAT_OF_POS = {265: 1, 266: 2, 267: 3, 268: 4}
 
 
-# ── Pointskalaen, læst af Holdets egen bogføring ─────────────────────────
+# ── Klassikerspillets pointsystem ────────────────────────────────────────
+TOP10 = [350, 300, 250, 210, 180, 160, 150, 140, 130, 120]
+P11_15 = [100, 95, 90, 85, 80]
+MONUMENTS = {"milano-sanremo", "ronde-van-vlaanderen", "paris-roubaix", "liege-bastogne-liege"}
+MONUMENT_BONUS = [150, 125, 100, 85, 75, 65, 55, 45, 35, 25]
+TEAM_BONUS = 25
+
+
+def classics_scale(pos):
+    """Placeringspoint i Klassiker Manager. None (DNF/DNS) giver 0."""
+    if not pos:
+        return 0
+    if pos <= 10:
+        return TOP10[pos - 1]
+    if pos <= 15:
+        return P11_15[pos - 11]
+    if pos <= 30:
+        return 78 - 2 * (pos - 16)      # 16.=78 … 30.=50
+    if pos <= 50:
+        return 49 - (pos - 31)          # 31.=49 … 50.=30
+    if pos <= 55:
+        return 25
+    if pos <= 60:
+        return 20
+    if pos <= 65:
+        return 15
+    return 10
+
+
+# ── Vuelta Managers pointskala, læst af Holdets egen bogføring ───────────
 def manager_scale():
     """-> (funktion placering -> point, regelnavn -> point)"""
     names, pts = {}, {}
@@ -195,6 +231,14 @@ def classics_2026(scale):
     starts = collections.Counter()
     meta, unmatched = {}, set()
     band = collections.Counter()
+    source = collections.Counter()   # placering / monument / hold
+
+    # Vinderens hold pr. løb — til holdbonussen.
+    winner_team = {}
+    for x in res["results"]:
+        if x["year"] == 2026 and x["rank"] == 1:
+            winner_team[x["race_slug"]] = x["team"]
+
     for x in res["results"]:
         if x["year"] != 2026:
             continue
@@ -204,14 +248,20 @@ def classics_2026(scale):
                 unmatched.add(x["rider_name"])
             continue
         i = order.index(x["race_slug"])
-        p = scale(x["rank"])
-        pts[x["rider_slug"]][i] = p
+        place = scale(x["rank"])
+        mon = (MONUMENT_BONUS[x["rank"] - 1]
+               if x["race_slug"] in MONUMENTS and x["rank"] and x["rank"] <= 10 else 0)
+        team = TEAM_BONUS if x["team"] and x["team"] == winner_team.get(x["race_slug"]) else 0
+        pts[x["rider_slug"]][i] = place + mon + team
+        source["placering"] += place
+        source["monumentbonus"] += mon
+        source["holdbonus"] += team
         starts[x["rider_slug"]] += 1
         meta[x["rider_slug"]] = {"name": hit[0], "cat": hit[1]}
         if x["rank"]:
             q = x["rank"]
             band["1-3" if q <= 3 else "4-10" if q <= 10 else "11-15" if q <= 15
-                 else "16-30" if q <= 30 else "31-75" if q <= 75 else "76+"] += p
+                 else "16-30" if q <= 30 else "31-65" if q <= 65 else "66+"] += place
 
     riders = {s: {**meta[s], "points": pts[s], "total": sum(pts[s]), "starts": starts[s]}
               for s in meta}
@@ -280,31 +330,88 @@ def classics_2026(scale):
     g_pts, g_used, g_W, g_lam, g_plan = best_g
     used_per_round = [0] + [len(set(g_plan[i]) - set(g_plan[i - 1])) for i in range(1, R)]
 
-    # d2) Hvor gør et skifte mest gavn? Pr. kategori: forskellen mellem det
-    #     bedste faste valg og det bedste valg til hvert løb, delt med det
-    #     antal skifter det kræver. Det er dit spørgsmål om Kat 4 i tal.
+    # d2) Hvor gør et skifte mest gavn? Kategori for kategori: hvor mange
+    #     point giver de første k skifter i DEN kategori, hvis man bruger dem
+    #     bedst muligt? Det er den MARGINALE værdi — hvad skifte nr. 1, 5, 10
+    #     er værd — og det er den man skal sammenligne på tværs, ikke et
+    #     gennemsnit. (Kaptajnen er udeladt her; den går på tværs af
+    #     kategorierne.)
+    def cat_points(plan):
+        return sum(sum(riders[s]["points"][i] for s in plan[i]) for i in range(R))
+
+    def cat_greedy(c, n, k, W, lam, start):
+        team = list(start)
+        plan, used = [], 0
+        for i in range(R):
+            if i > 0 and used < k:
+                win = lambda s: sum(riders[s]["points"][i:i + W])
+                tgt = best(c, i, i + W, n)
+                outs = sorted([s for s in team if s not in tgt], key=win)
+                ins = sorted([s for s in tgt if s not in team], key=win, reverse=True)
+                for o, nw in zip(outs, ins):
+                    if used >= k or win(nw) - win(o) < lam:
+                        break
+                    team = [nw if s == o else s for s in team]
+                    used += 1
+            plan.append(list(team))
+        return cat_points(plan), used
+
+    KS = [0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 25, 30, 40]
+    curves = {}
+    for c, n in SLOTS.items():
+        starts_opts = [best(c, 0, R, n)] + [best(c, 0, W, n) for W in (1, 2, 3, 4)]
+        curve = {}
+        prev = 0
+        for k in KS:
+            top = cat_points([best(c, 0, R, n)] * R) if k == 0 else prev
+            if k:
+                for st in starts_opts:
+                    for W in (1, 2, 3, 4):
+                        for lam in (0, 20, 40, 60, 100, 150, 200, 300):
+                            pp, u = cat_greedy(c, n, k, W, lam, st)
+                            if u <= k and pp > top:
+                                top = pp
+            curve[k] = top
+            prev = top
+        curves[c] = curve
+
     per_cat_value = {}
     for c, n in SLOTS.items():
-        fixed = best(c, 0, R, n)
-        fixed_pts = sum(sum(riders[s]["points"]) for s in fixed)
+        cv = curves[c]
         races_best = [best(c, i, i + 1, n) for i in range(R)]
         free_pts = sum(sum(riders[s]["points"][i] for s in races_best[i]) for i in range(R))
-        need = len(set(races_best[0]) - set(fixed)) * 0 + sum(
-            len(set(races_best[i]) - set(races_best[i - 1])) for i in range(1, R))
+        need = sum(len(set(races_best[i]) - set(races_best[i - 1])) for i in range(1, R))
         g_tr = sum(len(set(x for x in g_plan[i] if riders[x]["cat"] == c)
                        - set(x for x in g_plan[i - 1] if riders[x]["cat"] == c)) for i in range(1, R))
-        # Kat 4-tesen: de 4 med flest starter blandt dem der faktisk scorer
+        # Kat 4-tesen: de n med flest starter blandt dem der faktisk scorer
         many = sorted([s for s in by_cat[c] if riders[s]["total"] > 0],
                       key=lambda s: (-riders[s]["starts"], -riders[s]["total"]))[:n]
         per_cat_value[c] = {
-            "fast_bedste_hold": fixed_pts,
+            "kurve": cv,
+            "de_første_3": cv[3] - cv[0],
+            "de_første_5": cv[5] - cv[0],
+            "skifte_6_til_10_pr_stk": round((cv[10] - cv[5]) / 5),
+            "skifte_11_til_20_pr_stk": round((cv[20] - cv[10]) / 10),
+            "fast_bedste_hold": cv[0],
             "bedste_hvert_løb": free_pts,
             "skifter_det_kræver": need,
-            "point_pr_skifte": round((free_pts - fixed_pts) / max(1, need)),
+            "gennemsnit_pr_skifte": round((free_pts - cv[0]) / max(1, need)),
             "skifter_i_35_planen": g_tr,
             "flest_starter_hold": sum(sum(riders[s]["points"]) for s in many),
             "flest_starter_navne": [f"{riders[s]['name']} ({riders[s]['starts']})" for s in many],
         }
+
+    # Eksempel: det faste hold i Kat 1 og Kat 4, løb for løb. Det er her
+    # forskellen kan ses med det blotte øje.
+    examples = {}
+    for c in (1, 4):
+        fixed = best(c, 0, R, SLOTS[c])
+        rows = []
+        for s in fixed:
+            rows.append({"name": riders[s]["name"], "points": riders[s]["points"],
+                         "starts": riders[s]["starts"]})
+        best_avail = [max((riders[x]["points"][i] for x in by_cat[c]), default=0) for i in range(R)]
+        examples[c] = {"fixed": rows, "best_available_per_race": best_avail}
 
     # e) Kategoriernes værdi: hvad gav de bedste n pr. kategori, og hvor
     #    afhængigt var det af antal starter?
@@ -330,7 +437,8 @@ def classics_2026(scale):
         "matched_riders": len(riders),
         "unmatched_top30": sorted(unmatched),
         "points_by_band": {b: round(band[b] / bt, 4)
-                           for b in ["1-3", "4-10", "11-15", "16-30", "31-75", "76+"]},
+                           for b in ["1-3", "4-10", "11-15", "16-30", "31-65", "66+"]},
+        "points_by_source": {k: v for k, v in source.most_common()},
         "categories": cats,
         "kat4_thesis": {
             "share_of_kat4_points_from_riders_with_8plus_starts":
@@ -339,6 +447,7 @@ def classics_2026(scale):
                 if k4_best else None,
         },
         "transfer_value_by_category": per_cat_value,
+        "examples": examples,
         "scenarios": {
             "ingen_skifter": {"points": static_pts, "captain_points": static_cap, "transfers": 0,
                               "team": [riders[s]["name"] for s in static]},
@@ -363,17 +472,20 @@ RACE_ORDER = [
 def main():
     scale, raw_scale = manager_scale()
     vm = vuelta_manager()
-    cl = classics_2026(scale)
+    cl = classics_2026(classics_scale)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({
         "assumptions": [
-            "Klassikerspillet bruger samme placeringsskala som Vuelta Manager (ruleset 118).",
-            "Kun placeringen giver point i et endagsløb.",
-            "Kaptajnen fordobler sine point.",
+            "Holdbonus: 25 til hver rytter fra vinderens hold der startede løbet, vinderen inklusive.",
+            "Kaptajnen fordobler alle sine point, bonusser inklusive.",
+            "DNF/DNS giver 0.",
             "Alle 'optimale' hold er bagklogskab — de kender resultaterne på forhånd.",
         ],
-        "rules": {"slots": SLOTS, "transfers": TRANSFERS, "scale_sample":
-                  {p: scale(p) for p in (1, 2, 3, 5, 10, 15, 20, 30, 50, 75, 80, 100, 176)}},
+        "rules": {"slots": SLOTS, "transfers": TRANSFERS,
+                  "classics_scale_sample": {p: classics_scale(p) for p in
+                                            (1, 2, 3, 5, 10, 11, 15, 16, 20, 30, 31, 50, 51, 56, 61, 66, 120)},
+                  "monuments": sorted(MONUMENTS), "monument_bonus": MONUMENT_BONUS,
+                  "team_bonus": TEAM_BONUS},
         "vuelta_manager_2026": vm,
         "classics_2026_simulated": cl,
     }, ensure_ascii=False, indent=1))
@@ -386,21 +498,32 @@ def main():
         print(f"  Kat {c}: {d['riders']:>3} ryttere, {d['slots']} pladser, snit for de bedste "
               f"{d['slots']}: {d['best_slot_avg']} pt (median-rytter {d['median_rider']})")
 
-    print("\nKLASSIKERNE 2026 SIMULERET (PCS-resultater × Manager-skala × dine kategorier)")
+    print("\nKLASSIKERNE 2026 SIMULERET (PCS-resultater × klassikerspillets pointsystem × dine kategorier)")
     print(f"  {cl['matched_riders']} ryttere koblet; ukoblede i top-30: {len(cl['unmatched_top30'])}")
-    print("  Point fordelt på placering:",
+    print("  Placeringspoint fordelt:",
           " · ".join(f"{k}: {v*100:.0f}%" for k, v in cl["points_by_band"].items()))
+    src = cl["points_by_source"]; st = sum(src.values()) or 1
+    print("  Pointkilder:", " · ".join(f"{k} {v} ({v*100/st:.0f}%)" for k, v in src.items()))
     for c, d in cl["categories"].items():
         tops = ", ".join(f"{t['name']} {t['total']} ({t['starts']} løb)" for t in d["top"][:d["slots"]])
         print(f"  Kat {c}: snit for de bedste {d['slots']}: {d['best_slot_avg']} pt — {tops}")
     k4 = cl["kat4_thesis"]
     print(f"  Kat 4: {k4['share_of_kat4_points_from_riders_with_8plus_starts']*100:.0f}% af pointene "
           f"kom fra ryttere med 8+ starter; de 20 bedste havde median {k4['top20_kat4_median_starts']} starter")
-    print("\n  Hvor gør et skifte mest gavn (pr. kategori, uden kaptajn):")
+    print("\n  Hvad de første skifter er værd, kategori for kategori (uden kaptajn):")
+    print(f"    {'':6} {'fast hold':>9} {'+3 skifter':>11} {'+5 skifter':>11} {'nr. 6-10':>10} {'nr. 11-20':>10}")
     for c, v in cl["transfer_value_by_category"].items():
-        print(f"    Kat {c}: fast hold {v['fast_bedste_hold']:>5} → bedste hvert løb {v['bedste_hvert_løb']:>5}"
-              f"  = {v['point_pr_skifte']:>3} pt pr. skifte ({v['skifter_det_kræver']} skifter);"
-              f" 35-planen brugte {v['skifter_i_35_planen']}; flest-starter-holdet gav {v['flest_starter_hold']}")
+        print(f"    Kat {c}: {v['fast_bedste_hold']:>9} {v['de_første_3']:>+11} {v['de_første_5']:>+11}"
+              f" {v['skifte_6_til_10_pr_stk']:>+7}/stk {v['skifte_11_til_20_pr_stk']:>+7}/stk")
+    for c, v in cl["transfer_value_by_category"].items():
+        print(f"    Kat {c}: flest-starter-holdet gav {v['flest_starter_hold']} mod {v['fast_bedste_hold']} for det bedste faste")
+    races_short = [r["race"].split()[0][:6] for r in cl["races"]]
+    for c, ex in cl["examples"].items():
+        print(f"\n  Det faste Kat {c}-hold, løb for løb:")
+        print("    " + " ".join(f"{x:>6}" for x in races_short))
+        for r in ex["fixed"]:
+            print("    " + " ".join(f"{p:>6}" for p in r["points"]) + f"   {r['name']} ({r['starts']} starter)")
+        print("    " + " ".join(f"{p:>6}" for p in ex["best_available_per_race"]) + "   ← bedste i kategorien det løb")
     print("\n  Hvad var der at hente (bagklogskab, kaptajn medregnet):")
     for k, v in cl["scenarios"].items():
         extra = ""
