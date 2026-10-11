@@ -19,17 +19,23 @@ Klassikerspillets pointsystem (fra spillets regelside, givet af Anders):
   - Placering: 350, 300, 250, 210, 180, 160, 150, 140, 130, 120 for top-10,
     så 100, 95, 90, 85, 80 for 11.-15., derefter -2 pr. plads til 30. (50),
     -1 pr. plads til 50. (30), 25 for 51.-55., 20 for 56.-60., 15 for
-    61.-65. og 10 for 66. og ned.
+    61.-65., og så fortløbende 10, 9, 8 … fra 66. til 1 point på 75.;
+    76. og ned giver 0.
   - Monumentbonus til top-10 i Sanremo, Flandern, Roubaix og Liège:
     150, 125, 100, 85, 75, 65, 55, 45, 35, 25.
   - Holdbonus: 25 point til vinderens hold.
 
-ANTAGELSER der stadig skal bekræftes:
-  - Holdbonussen: her gives 25 til hver rytter fra vinderens hold der STARTEDE
-    løbet, vinderen selv inklusive — samme mekanik som i GT-spillene.
-  - Kaptajnen fordobler alle sine point i løbet, bonusser inklusive
-    (captainBonusPoints = 1 i regelsættet).
-  - Ryttere der udgår eller ikke starter får 0.
+Bekræftet af Anders:
+  - Holdbonus til alle fra vinderens hold, vinderen inklusive.
+  - Kaptajnen fordobler sine point. Kaptajnen kan skiftes frit mellem ens
+    egne ryttere; at skifte selve rytteren ud koster en kontrakt som alle andre.
+  - DNF/DNS giver 0.
+  - Kategorierne er faste hele sæsonen.
+  - Kalenderen antages at være de samme 13 løb i 2027.
+
+Stadig antaget:
+  - Holdbonussen gives kun til ryttere der startede løbet.
+  - Kaptajnens fordobling gælder også monument- og holdbonus.
 
 Alle "optimale" hold her er bagklogskab: de kender resultaterne på forhånd.
 De siger ikke hvad man burde have valgt, kun hvor meget der var at hente,
@@ -84,7 +90,8 @@ def classics_scale(pos):
         return 20
     if pos <= 65:
         return 15
-    return 10
+    # Fortløbende nedad fra 66.: 10, 9, 8 … 1 point på 75.-pladsen, 0 derefter.
+    return max(0, 10 - (pos - 66))
 
 
 # ── Vuelta Managers pointskala, læst af Holdets egen bogføring ───────────
@@ -261,7 +268,7 @@ def classics_2026(scale):
         if x["rank"]:
             q = x["rank"]
             band["1-3" if q <= 3 else "4-10" if q <= 10 else "11-15" if q <= 15
-                 else "16-30" if q <= 30 else "31-65" if q <= 65 else "66+"] += place
+                 else "16-30" if q <= 30 else "31-65" if q <= 65 else "66-75"] += place
 
     riders = {s: {**meta[s], "points": pts[s], "total": sum(pts[s]), "starts": starts[s]}
               for s in meta}
@@ -437,7 +444,7 @@ def classics_2026(scale):
         "matched_riders": len(riders),
         "unmatched_top30": sorted(unmatched),
         "points_by_band": {b: round(band[b] / bt, 4)
-                           for b in ["1-3", "4-10", "11-15", "16-30", "31-65", "66+"]},
+                           for b in ["1-3", "4-10", "11-15", "16-30", "31-65", "66-75"]},
         "points_by_source": {k: v for k, v in source.most_common()},
         "categories": cats,
         "kat4_thesis": {
@@ -476,14 +483,13 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({
         "assumptions": [
-            "Holdbonus: 25 til hver rytter fra vinderens hold der startede løbet, vinderen inklusive.",
-            "Kaptajnen fordobler alle sine point, bonusser inklusive.",
-            "DNF/DNS giver 0.",
+            "Holdbonus gives kun til ryttere fra vinderens hold der startede løbet.",
+            "Kaptajnens fordobling gælder også monument- og holdbonus.",
             "Alle 'optimale' hold er bagklogskab — de kender resultaterne på forhånd.",
         ],
         "rules": {"slots": SLOTS, "transfers": TRANSFERS,
                   "classics_scale_sample": {p: classics_scale(p) for p in
-                                            (1, 2, 3, 5, 10, 11, 15, 16, 20, 30, 31, 50, 51, 56, 61, 66, 120)},
+                                            (1, 2, 3, 5, 10, 11, 15, 16, 20, 30, 31, 50, 51, 56, 61, 66, 70, 75, 76, 120)},
                   "monuments": sorted(MONUMENTS), "monument_bonus": MONUMENT_BONUS,
                   "team_bonus": TEAM_BONUS},
         "vuelta_manager_2026": vm,

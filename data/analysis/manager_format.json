@@ -1,8 +1,7 @@
 {
  "assumptions": [
-  "Holdbonus: 25 til hver rytter fra vinderens hold der startede løbet, vinderen inklusive.",
-  "Kaptajnen fordobler alle sine point, bonusser inklusive.",
-  "DNF/DNS giver 0.",
+  "Holdbonus gives kun til ryttere fra vinderens hold der startede løbet.",
+  "Kaptajnens fordobling gælder også monument- og holdbonus.",
   "Alle 'optimale' hold er bagklogskab — de kender resultaterne på forhånd."
  ],
  "rules": {
@@ -30,7 +29,10 @@
    "56": 20,
    "61": 15,
    "66": 10,
-   "120": 10
+   "70": 6,
+   "75": 1,
+   "76": 0,
+   "120": 0
   },
   "monuments": [
    "liege-bastogne-liege",
@@ -354,15 +356,15 @@
    "VERSCHUREN Killian"
   ],
   "points_by_band": {
-   "1-3": 0.1884,
-   "4-10": 0.2243,
-   "11-15": 0.0942,
-   "16-30": 0.1843,
-   "31-65": 0.2078,
-   "66+": 0.101
+   "1-3": 0.2074,
+   "4-10": 0.247,
+   "11-15": 0.1037,
+   "16-30": 0.2029,
+   "31-65": 0.2287,
+   "66-75": 0.0103
   },
   "points_by_source": {
-   "placering": 62092,
+   "placering": 56402,
    "monumentbonus": 3040,
    "holdbonus": 2175
   },
@@ -426,7 +428,7 @@
      },
      {
       "name": "F. Vermeersch",
-      "total": 969,
+      "total": 959,
       "starts": 9
      }
     ]
@@ -434,7 +436,7 @@
    "3": {
     "riders": 121,
     "slots": 3,
-    "best_slot_avg": 717,
+    "best_slot_avg": 713,
     "top": [
      {
       "name": "T. L. Andresen",
@@ -443,7 +445,7 @@
      },
      {
       "name": "G. Vermeersch",
-      "total": 736,
+      "total": 726,
       "starts": 8
      },
      {
@@ -466,7 +468,7 @@
    "4": {
     "riders": 339,
     "slots": 4,
-    "best_slot_avg": 510,
+    "best_slot_avg": 505,
     "top": [
      {
       "name": "A. De Gendt",
@@ -475,12 +477,12 @@
      },
      {
       "name": "P. S. Hagenes",
-      "total": 520,
+      "total": 516,
       "starts": 7
      },
      {
       "name": "E. Verstrynge",
-      "total": 495,
+      "total": 478,
       "starts": 5
      },
      {
@@ -489,15 +491,15 @@
       "starts": 9
      },
      {
-      "name": "J. Barrenetxea",
-      "total": 414,
-      "starts": 8
+      "name": "A. Huens",
+      "total": 413,
+      "starts": 7
      }
     ]
    }
   },
   "kat4_thesis": {
-   "share_of_kat4_points_from_riders_with_8plus_starts": 0.144,
+   "share_of_kat4_points_from_riders_with_8plus_starts": 0.138,
    "top20_kat4_median_starts": 6
   },
   "transfer_value_by_category": {
@@ -527,7 +529,7 @@
     "bedste_hvert_løb": 7627,
     "skifter_det_kræver": 16,
     "gennemsnit_pr_skifte": 220,
-    "skifter_i_35_planen": 8,
+    "skifter_i_35_planen": 9,
     "flest_starter_hold": 3365,
     "flest_starter_navne": [
      "M. Van Der Poel (6)",
@@ -537,14 +539,14 @@
    "2": {
     "kurve": {
      "0": 3364,
-     "1": 3542,
-     "2": 4330,
-     "3": 4919,
-     "4": 5464,
-     "5": 5484,
-     "6": 5703,
-     "8": 5853,
-     "10": 6234,
+     "1": 3614,
+     "2": 4320,
+     "3": 4909,
+     "4": 5454,
+     "5": 5474,
+     "6": 5693,
+     "8": 5843,
+     "10": 6227,
      "12": 6400,
      "15": 6800,
      "20": 7250,
@@ -552,16 +554,16 @@
      "30": 7505,
      "40": 7505
     },
-    "de_første_3": 1555,
-    "de_første_5": 2120,
-    "skifte_6_til_10_pr_stk": 150,
+    "de_første_3": 1545,
+    "de_første_5": 2110,
+    "skifte_6_til_10_pr_stk": 151,
     "skifte_11_til_20_pr_stk": 102,
     "fast_bedste_hold": 3364,
     "bedste_hvert_løb": 7505,
     "skifter_det_kræver": 28,
     "gennemsnit_pr_skifte": 148,
-    "skifter_i_35_planen": 9,
-    "flest_starter_hold": 2751,
+    "skifter_i_35_planen": 8,
+    "flest_starter_hold": 2741,
     "flest_starter_navne": [
      "M. Mohorič (10)",
      "F. Vermeersch (9)",
@@ -570,32 +572,32 @@
    },
    "3": {
     "kurve": {
-     "0": 2150,
-     "1": 2525,
-     "2": 2878,
-     "3": 3343,
+     "0": 2140,
+     "1": 2515,
+     "2": 2868,
+     "3": 3333,
      "4": 3898,
      "5": 4267,
-     "6": 4536,
+     "6": 4526,
      "8": 4689,
      "10": 4974,
      "12": 5409,
      "15": 5603,
-     "20": 6118,
-     "25": 6762,
+     "20": 6108,
+     "25": 6852,
      "30": 7105,
      "40": 7180
     },
     "de_første_3": 1193,
-    "de_første_5": 2117,
+    "de_første_5": 2127,
     "skifte_6_til_10_pr_stk": 141,
-    "skifte_11_til_20_pr_stk": 114,
-    "fast_bedste_hold": 2150,
+    "skifte_11_til_20_pr_stk": 113,
+    "fast_bedste_hold": 2140,
     "bedste_hvert_løb": 7180,
     "skifter_det_kræver": 32,
-    "gennemsnit_pr_skifte": 157,
-    "skifter_i_35_planen": 11,
-    "flest_starter_hold": 1364,
+    "gennemsnit_pr_skifte": 158,
+    "skifter_i_35_planen": 12,
+    "flest_starter_hold": 1343,
     "flest_starter_navne": [
      "M. F. Honoré (11)",
      "G. Vermeersch (8)",
@@ -604,32 +606,32 @@
    },
    "4": {
     "kurve": {
-     "0": 2042,
-     "1": 2042,
-     "2": 2234,
-     "3": 2558,
-     "4": 2797,
-     "5": 3002,
-     "6": 3016,
-     "8": 3341,
-     "10": 3588,
-     "12": 3752,
-     "15": 4124,
+     "0": 2021,
+     "1": 2021,
+     "2": 2208,
+     "3": 2554,
+     "4": 2783,
+     "5": 2988,
+     "6": 2997,
+     "8": 3328,
+     "10": 3592,
+     "12": 3852,
+     "15": 4114,
      "20": 4628,
      "25": 4924,
      "30": 5295,
      "40": 5653
     },
-    "de_første_3": 516,
-    "de_første_5": 960,
-    "skifte_6_til_10_pr_stk": 117,
+    "de_første_3": 533,
+    "de_første_5": 967,
+    "skifte_6_til_10_pr_stk": 121,
     "skifte_11_til_20_pr_stk": 104,
-    "fast_bedste_hold": 2042,
+    "fast_bedste_hold": 2021,
     "bedste_hvert_løb": 5698,
     "skifter_det_kræver": 44,
-    "gennemsnit_pr_skifte": 83,
-    "skifter_i_35_planen": 7,
-    "flest_starter_hold": 873,
+    "gennemsnit_pr_skifte": 84,
+    "skifter_i_35_planen": 5,
+    "flest_starter_hold": 765,
     "flest_starter_navne": [
      "P. Miquel (10)",
      "S. Dewulf (9)",
@@ -732,7 +734,7 @@
        0,
        0,
        0,
-       10
+       6
       ],
       "starts": 7
      },
@@ -740,8 +742,8 @@
       "name": "E. Verstrynge",
       "points": [
        0,
-       10,
-       10,
+       3,
+       0,
        0,
        0,
        0,
@@ -794,7 +796,7 @@
   },
   "scenarios": {
    "ingen_skifter": {
-    "points": 15979,
+    "points": 15948,
     "captain_points": 4323,
     "transfers": 0,
     "team": [
@@ -813,28 +815,28 @@
     ]
    },
    "to_blokke": {
-    "points": 21286,
+    "points": 21266,
     "transfers": 12
    },
    "35_skifter_graadigt": {
-    "points": 26154,
-    "transfers": 35,
+    "points": 26038,
+    "transfers": 34,
     "window": 2,
-    "min_gain_per_transfer": 190,
+    "min_gain_per_transfer": 210,
     "transfers_per_round": [
      0,
-     3,
+     2,
      4,
      3,
-     5,
-     3,
-     3,
+     4,
      2,
+     3,
+     3,
      1,
      6,
-     4,
-     1,
-     0
+     3,
+     2,
+     1
     ]
    },
    "ubegraenset": {
