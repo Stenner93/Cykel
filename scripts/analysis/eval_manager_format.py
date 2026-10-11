@@ -6,10 +6,12 @@ To kilder:
   1. Vuelta Manager 2026 (Holdets eget pointfacit, ruleset "Cycling classic
      2025"). Det er SAMME regelsæt-familie som Klassiker Manager, så det
      viser hvordan pointskalaen faktisk fordeler sig.
-  2. Klassikerne 2026, simuleret: de rigtige PCS-resultater for spillets 13
-     løb, dine kategorier fra Master-arket, og Manager-formatets
-     placeringsskala fra punkt 1. Det giver et bud på hvad hver rytter
-     ville have scoret, og dermed hvad en plads i hver kategori er værd.
+  2. Klassikerne simuleret, sæson for sæson: de rigtige PCS-resultater for
+     spillets 13 løb, kategorierne fra dine noter (2026: Master-arket,
+     2025: Oversigten) og klassikerspillets pointsystem. Det giver et bud
+     på hvad hver rytter ville have scoret, og dermed hvad en plads — og et
+     skifte — i hver kategori er værd. 2024 regnes også, med 2025-
+     kategorierne lagt ned over, som kontrol (det var ikke et rigtigt spil).
 
 Holdets sammensætning og transferloft er dine oplysninger: 2 / 3 / 3 / 4
 ryttere fra Kategori 1-4, præcis, og 35 udskiftninger fra runde 2 (det
@@ -19,8 +21,8 @@ Klassikerspillets pointsystem (fra spillets regelside, givet af Anders):
   - Placering: 350, 300, 250, 210, 180, 160, 150, 140, 130, 120 for top-10,
     så 100, 95, 90, 85, 80 for 11.-15., derefter -2 pr. plads til 30. (50),
     -1 pr. plads til 50. (30), 25 for 51.-55., 20 for 56.-60., 15 for
-    61.-65., og så fortløbende 10, 9, 8 … fra 66. til 1 point på 75.;
-    76. og ned giver 0.
+    61.-65. Fra 66. er uafklaret (se classics_scale); standard er
+    fortløbende 10, 9, 8 … til 1 point på 75.
   - Monumentbonus til top-10 i Sanremo, Flandern, Roubaix og Liège:
     150, 125, 100, 85, 75, 65, 55, 45, 35, 25.
   - Holdbonus: 25 point til vinderens hold.
@@ -33,9 +35,14 @@ Bekræftet af Anders:
   - Kategorierne er faste hele sæsonen.
   - Kalenderen antages at være de samme 13 løb i 2027.
 
-Stadig antaget:
-  - Holdbonussen gives kun til ryttere der startede løbet.
-  - Kaptajnens fordobling gælder også monument- og holdbonus.
+  - Holdbonussen gives kun til ryttere der startede løbet (DNS får intet).
+
+Stadig antaget (begge regnes også om i følsomhedsafsnittet):
+  - Udgåede (DNF) fra vinderens hold får holdbonus — de startede jo.
+  - Kaptajnens fordobling gælder også monument- og holdbonus. (I
+    Vueltaspillet bogføres holdbonus som en del af rytterens værdistigning,
+    og kaptajnbonus er netop den stigning, så dér gælder den.)
+  - Pointhalen fra 66. plads.
 
 Alle "optimale" hold her er bagklogskab: de kender resultaterne på forhånd.
 De siger ikke hvad man burde have valgt, kun hvor meget der var at hente,
@@ -72,8 +79,14 @@ MONUMENT_BONUS = [150, 125, 100, 85, 75, 65, 55, 45, 35, 25]
 TEAM_BONUS = 25
 
 
-def classics_scale(pos):
-    """Placeringspoint i Klassiker Manager. None (DNF/DNS) giver 0."""
+def classics_scale(pos, tail="fortloebende"):
+    """Placeringspoint i Klassiker Manager. None (DNF/DNS) giver 0.
+
+    Halen fra 66. plads er uafklaret, så den kan vælges:
+      fortloebende — 10, 9, 8 … 1 point på 75., 0 derefter (Anders' erindring)
+      flad         — 10 point til alle i mål fra 66. (regelsidens "66.-osv. Plads 10 Point")
+      til70        — 10 point til 66.-70., 0 derefter (opslagstabellen i 2025-noterne)
+    """
     if not pos:
         return 0
     if pos <= 10:
@@ -90,8 +103,15 @@ def classics_scale(pos):
         return 20
     if pos <= 65:
         return 15
+    if tail == "flad":
+        return 10
+    if tail == "til70":
+        return 10 if pos <= 70 else 0
     # Fortløbende nedad fra 66.: 10, 9, 8 … 1 point på 75.-pladsen, 0 derefter.
     return max(0, 10 - (pos - 66))
+
+
+TAILS = ("fortloebende", "flad", "til70")
 
 
 # ── Vuelta Managers pointskala, læst af Holdets egen bogføring ───────────
@@ -177,7 +197,7 @@ def vuelta_manager():
     }
 
 
-# ── 2. Klassikerne 2026 simuleret ────────────────────────────────────────
+# ── 2. Klassikerne simuleret, sæson for sæson ────────────────────────────────────────
 def norm(s):
     s = unicodedata.normalize("NFKD", s or "")
     s = "".join(c for c in s if not unicodedata.combining(c)).replace("ł", "l").replace("Ł", "L")
@@ -204,10 +224,19 @@ def notes_key(name):
     return norm(ini[0])[:1], norm(" ".join(sur))
 
 
-def classics_2026(scale):
+def classics_season(year, scale, cats_year=None, dnf_team_bonus=True, curves_on=True):
+    """Simulér én klassikersæson.
+
+    year            — hvilke PCS-resultater
+    cats_year       — hvilket års kategorier (default samme år). 2024 med
+                      2025-kategorier er en kontrol, ikke et rigtigt spil.
+    dnf_team_bonus  — får en udgået rytter fra vinderens hold holdbonus?
+                      DNS får den aldrig (startede ikke).
+    """
+    cats_year = cats_year or year
     res = json.loads((CLASSICS / "results.json").read_text())
-    cats_raw = json.loads((CLASSICS / "categories_2026.json").read_text())["categories"]
-    races = sorted([r for r in res["races"] if r["year"] == 2026],
+    cats_raw = json.loads((CLASSICS / f"categories_{cats_year}.json").read_text())["categories"]
+    races = sorted([r for r in res["races"] if r["year"] == year],
                    key=lambda r: [x[0] for x in RACE_ORDER].index(r["race_slug"]))
     order = [r["race_slug"] for r in races]
 
@@ -239,15 +268,16 @@ def classics_2026(scale):
     meta, unmatched = {}, set()
     band = collections.Counter()
     source = collections.Counter()   # placering / monument / hold
+    dnf_tb = [0]                     # heraf holdbonus til udgåede ryttere
 
     # Vinderens hold pr. løb — til holdbonussen.
     winner_team = {}
     for x in res["results"]:
-        if x["year"] == 2026 and x["rank"] == 1:
+        if x["year"] == year and x["rank"] == 1:
             winner_team[x["race_slug"]] = x["team"]
 
     for x in res["results"]:
-        if x["year"] != 2026:
+        if x["year"] != year:
             continue
         hit = lookup(x["rider_name"])
         if not hit:
@@ -255,15 +285,24 @@ def classics_2026(scale):
                 unmatched.add(x["rider_name"])
             continue
         i = order.index(x["race_slug"])
+        rel = re.search(r"relegated from \d+ to (\d+)", x.get("status") or "")
+        if rel:                     # PCS skriver nedrykningen i placeringscellen
+            x = {**x, "rank": int(rel.group(1)), "status": None}
         place = scale(x["rank"])
         mon = (MONUMENT_BONUS[x["rank"] - 1]
                if x["race_slug"] in MONUMENTS and x["rank"] and x["rank"] <= 10 else 0)
-        team = TEAM_BONUS if x["team"] and x["team"] == winner_team.get(x["race_slug"]) else 0
+        status = (x.get("status") or "").upper()
+        started = status != "DNS"
+        same_team = bool(x["team"]) and x["team"] == winner_team.get(x["race_slug"])
+        team = TEAM_BONUS if same_team and started and (x["rank"] or dnf_team_bonus) else 0
         pts[x["rider_slug"]][i] = place + mon + team
         source["placering"] += place
         source["monumentbonus"] += mon
         source["holdbonus"] += team
-        starts[x["rider_slug"]] += 1
+        if same_team and started and not x["rank"]:
+            dnf_tb[0] += TEAM_BONUS if dnf_team_bonus else 0
+        if started:
+            starts[x["rider_slug"]] += 1
         meta[x["rider_slug"]] = {"name": hit[0], "cat": hit[1]}
         if x["rank"]:
             q = x["rank"]
@@ -361,30 +400,43 @@ def classics_2026(scale):
                     team = [nw if s == o else s for s in team]
                     used += 1
             plan.append(list(team))
-        return cat_points(plan), used
+        return cat_points(plan), used, plan
+
+    # Samme kurve, men regnet på HELE holdet med kaptajn: de andre
+    # kategorier står fast på det bedste sæsonhold, og kaptajnen er den
+    # bedste af de 12 i hvert løb. Det er her Kat 1 får sin rigtige værdi:
+    # et Kat 1-skifte flytter ofte også kaptajnen.
+    def full_with_captain(c, plan_c):
+        rest = [s for cc, n in SLOTS.items() if cc != c for s in best(cc, 0, R, n)]
+        return score([plan_c[i] + rest for i in range(R)])[0]
 
     KS = [0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 25, 30, 40]
-    curves = {}
-    for c, n in SLOTS.items():
+    curves, curves_cap = {}, {}
+    for c, n in (SLOTS.items() if curves_on else []):
         starts_opts = [best(c, 0, R, n)] + [best(c, 0, W, n) for W in (1, 2, 3, 4)]
-        curve = {}
-        prev = 0
+        curve, curve_cap = {}, {}
+        prev = prev_cap = 0
         for k in KS:
-            top = cat_points([best(c, 0, R, n)] * R) if k == 0 else prev
-            if k:
+            if k == 0:
+                fixed = [best(c, 0, R, n)] * R
+                top, top_cap = cat_points(fixed), full_with_captain(c, fixed)
+            else:
+                top, top_cap = prev, prev_cap
                 for st in starts_opts:
                     for W in (1, 2, 3, 4):
                         for lam in (0, 20, 40, 60, 100, 150, 200, 300):
-                            pp, u = cat_greedy(c, n, k, W, lam, st)
-                            if u <= k and pp > top:
-                                top = pp
-            curve[k] = top
-            prev = top
-        curves[c] = curve
+                            pp, u, plan_c = cat_greedy(c, n, k, W, lam, st)
+                            if u > k:
+                                continue
+                            top = max(top, pp)
+                            top_cap = max(top_cap, full_with_captain(c, plan_c))
+            curve[k], curve_cap[k] = top, top_cap
+            prev, prev_cap = top, top_cap
+        curves[c], curves_cap[c] = curve, curve_cap
 
     per_cat_value = {}
-    for c, n in SLOTS.items():
-        cv = curves[c]
+    for c, n in (SLOTS.items() if curves_on else []):
+        cv, cc = curves[c], curves_cap[c]
         races_best = [best(c, i, i + 1, n) for i in range(R)]
         free_pts = sum(sum(riders[s]["points"][i] for s in races_best[i]) for i in range(R))
         need = sum(len(set(races_best[i]) - set(races_best[i - 1])) for i in range(1, R))
@@ -395,6 +447,12 @@ def classics_2026(scale):
                       key=lambda s: (-riders[s]["starts"], -riders[s]["total"]))[:n]
         per_cat_value[c] = {
             "kurve": cv,
+            "kurve_med_kaptajn": {k: v - cc[0] for k, v in cc.items()},
+            "de_første_5_med_kaptajn": cc[5] - cc[0],
+            "skifte_6_til_10_pr_stk_med_kaptajn": round((cc[10] - cc[5]) / 5),
+            "skifte_11_til_20_pr_stk_med_kaptajn": round((cc[20] - cc[10]) / 10),
+            "ryttere_i_kategorien": len(by_cat[c]),
+            "ryttere_med_point": sum(1 for s in by_cat[c] if riders[s]["total"] > 0),
             "de_første_3": cv[3] - cv[0],
             "de_første_5": cv[5] - cv[0],
             "skifte_6_til_10_pr_stk": round((cv[10] - cv[5]) / 5),
@@ -439,6 +497,7 @@ def classics_2026(scale):
 
     bt = sum(band.values()) or 1
     return {
+        "year": year, "categories_from": cats_year, "dnf_team_bonus": dnf_team_bonus,
         "races": [{"race": r["race"], "block": r["block"], "date": r.get("date"),
                    "profile_score": r.get("profile_score")} for r in races],
         "matched_riders": len(riders),
@@ -446,6 +505,7 @@ def classics_2026(scale):
         "points_by_band": {b: round(band[b] / bt, 4)
                            for b in ["1-3", "4-10", "11-15", "16-30", "31-65", "66-75"]},
         "points_by_source": {k: v for k, v in source.most_common()},
+        "team_bonus_to_dnf": dnf_tb[0],
         "categories": cats,
         "kat4_thesis": {
             "share_of_kat4_points_from_riders_with_8plus_starts":
@@ -476,14 +536,46 @@ RACE_ORDER = [
 ]
 
 
+SEASONS = [            # (resultatår, kategoriår, rolle)
+    (2026, 2026, "spil"),
+    (2025, 2025, "spil"),
+    (2024, 2025, "kontrol"),   # 2025-kategorierne lagt ned over 2024 — intet rigtigt spil
+]
+
+
 def main():
     scale, raw_scale = manager_scale()
     vm = vuelta_manager()
-    cl = classics_2026(classics_scale)
+    seasons = {}
+    for year, cy, role in SEASONS:
+        key = str(year) if cy == year else f"{year}_med_{cy}_kategorier"
+        seasons[key] = classics_season(year, classics_scale, cy) | {"rolle": role}
+
+    # Følsomhed: de to uafklarede regler, regnet på de rigtige sæsoner.
+    #   1) halen fra 66. plads  2) holdbonus til udgåede fra vinderens hold
+    sens = {}
+    for year, cy, role in SEASONS:
+        if role != "spil":
+            continue
+        for tail in TAILS:
+            for dnf in (True, False):
+                if tail != "fortloebende" and not dnf:
+                    continue
+                cl = classics_season(year, lambda q, t=tail: classics_scale(q, t), cy,
+                                     dnf_team_bonus=dnf)
+                sens[f"{year} hale={tail} dnf_holdbonus={'ja' if dnf else 'nej'}"] = {
+                    "35_skifter": cl["scenarios"]["35_skifter_graadigt"]["points"],
+                    "ingen_skifter": cl["scenarios"]["ingen_skifter"]["points"],
+                    "placeringspoint_i_alt": cl["points_by_source"]["placering"],
+                    "første_5_med_kaptajn": {c: v["de_første_5_med_kaptajn"]
+                                             for c, v in cl["transfer_value_by_category"].items()},
+                }
+
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({
         "assumptions": [
-            "Holdbonus gives kun til ryttere fra vinderens hold der startede løbet.",
+            "Holdbonus gives kun til ryttere fra vinderens hold der startede løbet "
+            "(DNS aldrig; DNF som udgangspunkt ja — se følsomheden).",
             "Kaptajnens fordobling gælder også monument- og holdbonus.",
             "Alle 'optimale' hold er bagklogskab — de kender resultaterne på forhånd.",
         ],
@@ -493,7 +585,8 @@ def main():
                   "monuments": sorted(MONUMENTS), "monument_bonus": MONUMENT_BONUS,
                   "team_bonus": TEAM_BONUS},
         "vuelta_manager_2026": vm,
-        "classics_2026_simulated": cl,
+        "classics_seasons": seasons,
+        "sensitivity": sens,
     }, ensure_ascii=False, indent=1))
 
     # ── Udskrift ─────────────────────────────────────────────────────────
@@ -504,38 +597,32 @@ def main():
         print(f"  Kat {c}: {d['riders']:>3} ryttere, {d['slots']} pladser, snit for de bedste "
               f"{d['slots']}: {d['best_slot_avg']} pt (median-rytter {d['median_rider']})")
 
-    print("\nKLASSIKERNE 2026 SIMULERET (PCS-resultater × klassikerspillets pointsystem × dine kategorier)")
-    print(f"  {cl['matched_riders']} ryttere koblet; ukoblede i top-30: {len(cl['unmatched_top30'])}")
-    print("  Placeringspoint fordelt:",
-          " · ".join(f"{k}: {v*100:.0f}%" for k, v in cl["points_by_band"].items()))
-    src = cl["points_by_source"]; st = sum(src.values()) or 1
-    print("  Pointkilder:", " · ".join(f"{k} {v} ({v*100/st:.0f}%)" for k, v in src.items()))
-    for c, d in cl["categories"].items():
-        tops = ", ".join(f"{t['name']} {t['total']} ({t['starts']} løb)" for t in d["top"][:d["slots"]])
-        print(f"  Kat {c}: snit for de bedste {d['slots']}: {d['best_slot_avg']} pt — {tops}")
-    k4 = cl["kat4_thesis"]
-    print(f"  Kat 4: {k4['share_of_kat4_points_from_riders_with_8plus_starts']*100:.0f}% af pointene "
-          f"kom fra ryttere med 8+ starter; de 20 bedste havde median {k4['top20_kat4_median_starts']} starter")
-    print("\n  Hvad de første skifter er værd, kategori for kategori (uden kaptajn):")
-    print(f"    {'':6} {'fast hold':>9} {'+3 skifter':>11} {'+5 skifter':>11} {'nr. 6-10':>10} {'nr. 11-20':>10}")
-    for c, v in cl["transfer_value_by_category"].items():
-        print(f"    Kat {c}: {v['fast_bedste_hold']:>9} {v['de_første_3']:>+11} {v['de_første_5']:>+11}"
-              f" {v['skifte_6_til_10_pr_stk']:>+7}/stk {v['skifte_11_til_20_pr_stk']:>+7}/stk")
-    for c, v in cl["transfer_value_by_category"].items():
-        print(f"    Kat {c}: flest-starter-holdet gav {v['flest_starter_hold']} mod {v['fast_bedste_hold']} for det bedste faste")
-    races_short = [r["race"].split()[0][:6] for r in cl["races"]]
-    for c, ex in cl["examples"].items():
-        print(f"\n  Det faste Kat {c}-hold, løb for løb:")
-        print("    " + " ".join(f"{x:>6}" for x in races_short))
-        for r in ex["fixed"]:
-            print("    " + " ".join(f"{p:>6}" for p in r["points"]) + f"   {r['name']} ({r['starts']} starter)")
-        print("    " + " ".join(f"{p:>6}" for p in ex["best_available_per_race"]) + "   ← bedste i kategorien det løb")
-    print("\n  Hvad var der at hente (bagklogskab, kaptajn medregnet):")
-    for k, v in cl["scenarios"].items():
-        extra = ""
-        if k == "35_skifter_graadigt":
-            extra = f"  vindue {v['window']} løb, skifter pr. runde {v['transfers_per_round']}"
-        print(f"    {k:22} {v['points']:>6} pt   {v['transfers']:>3} skifter{extra}")
+    for key, cl in seasons.items():
+        print(f"\nKLASSIKERNE {key} SIMULERET ({cl['rolle']})")
+        print(f"  {cl['matched_riders']} ryttere koblet; ukoblede i top-30: {len(cl['unmatched_top30'])}")
+        src = cl["points_by_source"]; st = sum(src.values()) or 1
+        print("  Pointkilder:", " · ".join(f"{k} {v} ({v*100/st:.0f}%)" for k, v in src.items()),
+              f"— heraf holdbonus til udgåede: {cl['team_bonus_to_dnf']}")
+        for c, d in cl["categories"].items():
+            tops = ", ".join(f"{t['name']} {t['total']} ({t['starts']} løb)" for t in d["top"][:d["slots"]])
+            print(f"  Kat {c}: snit for de bedste {d['slots']}: {d['best_slot_avg']} pt — {tops}")
+        print("  Skifteværdi pr. kategori (point; 'kapt.' = hele holdet med kaptajn):")
+        print(f"    {'':6} {'ryttere':>8} {'fast':>6} {'1-5 i alt':>10} {'kapt.':>6} "
+              f"{'6-10/stk':>9} {'kapt.':>6} {'11-20/stk':>10} {'kapt.':>6} {'i 35-plan':>9}")
+        for c, v in cl["transfer_value_by_category"].items():
+            print(f"    Kat {c}: {v['ryttere_med_point']:>4}/{v['ryttere_i_kategorien']:<3} "
+                  f"{v['fast_bedste_hold']:>6} {v['de_første_5']:>+10} {v['de_første_5_med_kaptajn']:>+6} "
+                  f"{v['skifte_6_til_10_pr_stk']:>+9} {v['skifte_6_til_10_pr_stk_med_kaptajn']:>+6} "
+                  f"{v['skifte_11_til_20_pr_stk']:>+10} {v['skifte_11_til_20_pr_stk_med_kaptajn']:>+6} "
+                  f"{v['skifter_i_35_planen']:>9}")
+        for k, v in cl["scenarios"].items():
+            print(f"    {k:22} {v['points']:>6} pt   {v['transfers']:>3} skifter")
+
+    print("\nFØLSOMHED (35-skifterplan / fast hold / placeringspoint i alt / første 5 skifter m. kaptajn Kat1-4)")
+    for k, v in sens.items():
+        f5 = v["første_5_med_kaptajn"]
+        f5s = " ".join(f"{f5[c]:>5}" for c in sorted(f5)) if f5 else "    (kurver ikke regnet)"
+        print(f"  {k:45} {v['35_skifter']:>6} {v['ingen_skifter']:>6} {v['placeringspoint_i_alt']:>6}   {f5s}")
     print(f"\nSkrev {OUT.relative_to(ROOT)}")
 
 
