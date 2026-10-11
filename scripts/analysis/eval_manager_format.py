@@ -21,8 +21,8 @@ Klassikerspillets pointsystem (fra spillets regelside, givet af Anders):
   - Placering: 350, 300, 250, 210, 180, 160, 150, 140, 130, 120 for top-10,
     så 100, 95, 90, 85, 80 for 11.-15., derefter -2 pr. plads til 30. (50),
     -1 pr. plads til 50. (30), 25 for 51.-55., 20 for 56.-60., 15 for
-    61.-65. Fra 66. er uafklaret (se classics_scale); standard er
-    fortløbende 10, 9, 8 … til 1 point på 75.
+    61.-65., og så fortløbende 10, 9, 8 … fra 66. til 1 point på 75.;
+    76. og ned giver 0 (bekræftet af Anders).
   - Monumentbonus til top-10 i Sanremo, Flandern, Roubaix og Liège:
     150, 125, 100, 85, 75, 65, 55, 45, 35, 25.
   - Holdbonus: 25 point til vinderens hold.
@@ -42,7 +42,7 @@ Stadig antaget (begge regnes også om i følsomhedsafsnittet):
   - Kaptajnens fordobling gælder også monument- og holdbonus. (I
     Vueltaspillet bogføres holdbonus som en del af rytterens værdistigning,
     og kaptajnbonus er netop den stigning, så dér gælder den.)
-  - Pointhalen fra 66. plads.
+
 
 Alle "optimale" hold her er bagklogskab: de kender resultaterne på forhånd.
 De siger ikke hvad man burde have valgt, kun hvor meget der var at hente,
@@ -82,8 +82,9 @@ TEAM_BONUS = 25
 def classics_scale(pos, tail="fortloebende"):
     """Placeringspoint i Klassiker Manager. None (DNF/DNS) giver 0.
 
-    Halen fra 66. plads er uafklaret, så den kan vælges:
-      fortloebende — 10, 9, 8 … 1 point på 75., 0 derefter (Anders' erindring)
+    Halen fra 66. plads: fortløbende er bekræftet af Anders. De to andre
+    læsninger kan stadig vælges, til følsomhedstjek:
+      fortloebende — 10, 9, 8 … 1 point på 75., 0 derefter (bekræftet)
       flad         — 10 point til alle i mål fra 66. (regelsidens "66.-osv. Plads 10 Point")
       til70        — 10 point til 66.-70., 0 derefter (opslagstabellen i 2025-noterne)
     """
@@ -224,27 +225,15 @@ def notes_key(name):
     return norm(ini[0])[:1], norm(" ".join(sur))
 
 
-def classics_season(year, scale, cats_year=None, dnf_team_bonus=True, curves_on=True):
-    """Simulér én klassikersæson.
+def category_lookup(cats_raw):
+    """-> funktion(PCS-navn) -> (navn i noterne, kategori) | None.
 
-    year            — hvilke PCS-resultater
-    cats_year       — hvilket års kategorier (default samme år). 2024 med
-                      2025-kategorier er en kontrol, ikke et rigtigt spil.
-    dnf_team_bonus  — får en udgået rytter fra vinderens hold holdbonus?
-                      DNS får den aldrig (startede ikke).
+    Dine noter skriver "T. Pogačar", PCS "POGAČAR Tadej". Først matches på
+    fornavnsinitial + hele efternavnet; dernæst på initial + SIDSTE
+    efternavnsled, fordi noterne skriver sammensatte efternavne som en
+    ekstra initial ("I. G. Cortina" = García Cortina, "S. K. Andersen" =
+    Kragh Andersen). Den anden nøgle bruges kun hvis den er entydig.
     """
-    cats_year = cats_year or year
-    res = json.loads((CLASSICS / "results.json").read_text())
-    cats_raw = json.loads((CLASSICS / f"categories_{cats_year}.json").read_text())["categories"]
-    races = sorted([r for r in res["races"] if r["year"] == year],
-                   key=lambda r: [x[0] for x in RACE_ORDER].index(r["race_slug"]))
-    order = [r["race_slug"] for r in races]
-
-    # Kategori pr. rytter: dine noter skriver "T. Pogačar", PCS "POGAČAR Tadej".
-    # Først på fornavnsinitial + hele efternavnet; dernæst på initial + SIDSTE
-    # efternavnsled, fordi noterne skriver sammensatte efternavne som en
-    # ekstra initial ("I. G. Cortina" = García Cortina, "S. K. Andersen" =
-    # Kragh Andersen). Den anden nøgle bruges kun hvis den er entydig.
     by_key, by_last, clash = {}, {}, set()
     for n, c in cats_raw.items():
         k = notes_key(n)
@@ -263,6 +252,26 @@ def classics_season(year, scale, cats_year=None, dnf_team_bonus=True, curves_on=
         if not k:
             return None
         return by_key.get(k) or by_last.get((k[0], k[1].split()[-1]))
+    return lookup
+
+
+def classics_season(year, scale, cats_year=None, dnf_team_bonus=True, curves_on=True):
+    """Simulér én klassikersæson.
+
+    year            — hvilke PCS-resultater
+    cats_year       — hvilket års kategorier (default samme år). 2024 med
+                      2025-kategorier er en kontrol, ikke et rigtigt spil.
+    dnf_team_bonus  — får en udgået rytter fra vinderens hold holdbonus?
+                      DNS får den aldrig (startede ikke).
+    """
+    cats_year = cats_year or year
+    res = json.loads((CLASSICS / "results.json").read_text())
+    cats_raw = json.loads((CLASSICS / f"categories_{cats_year}.json").read_text())["categories"]
+    races = sorted([r for r in res["races"] if r["year"] == year],
+                   key=lambda r: [x[0] for x in RACE_ORDER].index(r["race_slug"]))
+    order = [r["race_slug"] for r in races]
+
+    lookup = category_lookup(cats_raw)
     pts = collections.defaultdict(lambda: [0] * len(order))   # rider_slug -> pr. løb
     starts = collections.Counter()
     meta, unmatched = {}, set()

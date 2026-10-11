@@ -1,0 +1,4008 @@
+{
+ "known_ahead": 2,
+ "races": [
+  "Omloop",
+  "Strade",
+  "Sanremo",
+  "Brugge",
+  "E3",
+  "Gent-W",
+  "Dwars",
+  "Flandern",
+  "Roubaix",
+  "Amstel",
+  "Flèche",
+  "Liège",
+  "Eschborn"
+ ],
+ "seasons": {
+  "2026": {
+   "grid": {
+    "fri W1 λ25": [
+     11292,
+     35
+    ],
+    "fri W1 λ50": [
+     12867,
+     35
+    ],
+    "fri W1 λ75": [
+     14301,
+     35
+    ],
+    "fri W1 λ100": [
+     16360,
+     35
+    ],
+    "fri W1 λ150": [
+     14302,
+     18
+    ],
+    "fri W1 λ200": [
+     14281,
+     14
+    ],
+    "fri W1 λ300": [
+     12728,
+     5
+    ],
+    "fri W2 λ25": [
+     13351,
+     35
+    ],
+    "fri W2 λ50": [
+     13536,
+     35
+    ],
+    "fri W2 λ75": [
+     16852,
+     35
+    ],
+    "fri W2 λ100": [
+     16422,
+     28
+    ],
+    "fri W2 λ150": [
+     15856,
+     20
+    ],
+    "fri W2 λ200": [
+     13766,
+     13
+    ],
+    "fri W2 λ300": [
+     12099,
+     5
+    ],
+    "fri W3 λ25": [
+     14575,
+     35
+    ],
+    "fri W3 λ50": [
+     15323,
+     35
+    ],
+    "fri W3 λ75": [
+     16909,
+     35
+    ],
+    "fri W3 λ100": [
+     15555,
+     26
+    ],
+    "fri W3 λ150": [
+     15318,
+     17
+    ],
+    "fri W3 λ200": [
+     13877,
+     11
+    ],
+    "fri W3 λ300": [
+     12313,
+     5
+    ],
+    "fri W4 λ25": [
+     13576,
+     35
+    ],
+    "fri W4 λ50": [
+     15073,
+     35
+    ],
+    "fri W4 λ75": [
+     16582,
+     35
+    ],
+    "fri W4 λ100": [
+     15499,
+     26
+    ],
+    "fri W4 λ150": [
+     15742,
+     18
+    ],
+    "fri W4 λ200": [
+     14121,
+     10
+    ],
+    "fri W4 λ300": [
+     12943,
+     5
+    ],
+    "fri W6 λ25": [
+     14683,
+     35
+    ],
+    "fri W6 λ50": [
+     16243,
+     35
+    ],
+    "fri W6 λ75": [
+     16148,
+     33
+    ],
+    "fri W6 λ100": [
+     15874,
+     24
+    ],
+    "fri W6 λ150": [
+     15426,
+     19
+    ],
+    "fri W6 λ200": [
+     14179,
+     10
+    ],
+    "fri W6 λ300": [
+     13442,
+     5
+    ],
+    "kerne W1 λ25": [
+     13136,
+     35
+    ],
+    "kerne W1 λ50": [
+     12972,
+     35
+    ],
+    "kerne W1 λ75": [
+     14411,
+     35
+    ],
+    "kerne W1 λ100": [
+     13545,
+     25
+    ],
+    "kerne W1 λ150": [
+     10977,
+     6
+    ],
+    "kerne W1 λ200": [
+     10977,
+     6
+    ],
+    "kerne W1 λ300": [
+     10411,
+     1
+    ],
+    "kerne W2 λ25": [
+     12262,
+     35
+    ],
+    "kerne W2 λ50": [
+     13978,
+     35
+    ],
+    "kerne W2 λ75": [
+     15192,
+     33
+    ],
+    "kerne W2 λ100": [
+     14262,
+     20
+    ],
+    "kerne W2 λ150": [
+     13361,
+     13
+    ],
+    "kerne W2 λ200": [
+     11626,
+     6
+    ],
+    "kerne W2 λ300": [
+     10448,
+     2
+    ],
+    "kerne W3 λ25": [
+     13969,
+     35
+    ],
+    "kerne W3 λ50": [
+     14514,
+     35
+    ],
+    "kerne W3 λ75": [
+     14989,
+     31
+    ],
+    "kerne W3 λ100": [
+     13635,
+     21
+    ],
+    "kerne W3 λ150": [
+     13273,
+     12
+    ],
+    "kerne W3 λ200": [
+     11622,
+     6
+    ],
+    "kerne W3 λ300": [
+     10863,
+     2
+    ],
+    "kerne W4 λ25": [
+     13298,
+     35
+    ],
+    "kerne W4 λ50": [
+     14944,
+     35
+    ],
+    "kerne W4 λ75": [
+     15412,
+     31
+    ],
+    "kerne W4 λ100": [
+     14259,
+     21
+    ],
+    "kerne W4 λ150": [
+     13717,
+     13
+    ],
+    "kerne W4 λ200": [
+     12246,
+     6
+    ],
+    "kerne W4 λ300": [
+     11493,
+     2
+    ],
+    "kerne W6 λ25": [
+     14188,
+     35
+    ],
+    "kerne W6 λ50": [
+     15073,
+     31
+    ],
+    "kerne W6 λ75": [
+     14908,
+     28
+    ],
+    "kerne W6 λ100": [
+     14634,
+     19
+    ],
+    "kerne W6 λ150": [
+     13520,
+     14
+    ],
+    "kerne W6 λ200": [
+     12706,
+     5
+    ],
+    "kerne W6 λ300": [
+     12112,
+     2
+    ],
+    "kerne1 W1 λ25": [
+     11662,
+     35
+    ],
+    "kerne1 W1 λ50": [
+     12797,
+     35
+    ],
+    "kerne1 W1 λ75": [
+     15218,
+     35
+    ],
+    "kerne1 W1 λ100": [
+     16240,
+     34
+    ],
+    "kerne1 W1 λ150": [
+     13402,
+     13
+    ],
+    "kerne1 W1 λ200": [
+     13811,
+     12
+    ],
+    "kerne1 W1 λ300": [
+     12216,
+     6
+    ],
+    "kerne1 W2 λ25": [
+     12714,
+     35
+    ],
+    "kerne1 W2 λ50": [
+     14561,
+     35
+    ],
+    "kerne1 W2 λ75": [
+     16402,
+     35
+    ],
+    "kerne1 W2 λ100": [
+     15792,
+     26
+    ],
+    "kerne1 W2 λ150": [
+     14891,
+     19
+    ],
+    "kerne1 W2 λ200": [
+     12646,
+     11
+    ],
+    "kerne1 W2 λ300": [
+     11499,
+     6
+    ],
+    "kerne1 W3 λ25": [
+     14186,
+     35
+    ],
+    "kerne1 W3 λ50": [
+     14710,
+     35
+    ],
+    "kerne1 W3 λ75": [
+     16129,
+     35
+    ],
+    "kerne1 W3 λ100": [
+     14775,
+     25
+    ],
+    "kerne1 W3 λ150": [
+     14413,
+     16
+    ],
+    "kerne1 W3 λ200": [
+     12252,
+     9
+    ],
+    "kerne1 W3 λ300": [
+     11113,
+     4
+    ],
+    "kerne1 W4 λ25": [
+     13216,
+     35
+    ],
+    "kerne1 W4 λ50": [
+     14460,
+     35
+    ],
+    "kerne1 W4 λ75": [
+     15872,
+     35
+    ],
+    "kerne1 W4 λ100": [
+     14719,
+     25
+    ],
+    "kerne1 W4 λ150": [
+     14627,
+     17
+    ],
+    "kerne1 W4 λ200": [
+     12496,
+     8
+    ],
+    "kerne1 W4 λ300": [
+     11743,
+     4
+    ],
+    "kerne1 W6 λ25": [
+     14357,
+     35
+    ],
+    "kerne1 W6 λ50": [
+     15533,
+     35
+    ],
+    "kerne1 W6 λ75": [
+     15368,
+     32
+    ],
+    "kerne1 W6 λ100": [
+     15094,
+     23
+    ],
+    "kerne1 W6 λ150": [
+     14311,
+     18
+    ],
+    "kerne1 W6 λ200": [
+     12656,
+     8
+    ],
+    "kerne1 W6 λ300": [
+     12242,
+     4
+    ],
+    "reserve4 W2 λ50": [
+     15106,
+     35
+    ],
+    "reserve4 W2 λ100": [
+     16020,
+     27
+    ],
+    "reserve4 W2 λ150": [
+     15406,
+     19
+    ],
+    "reserve4 W3 λ50": [
+     15485,
+     35
+    ],
+    "reserve4 W3 λ100": [
+     15743,
+     27
+    ],
+    "reserve4 W3 λ150": [
+     15506,
+     19
+    ],
+    "reserve4 W4 λ50": [
+     15073,
+     35
+    ],
+    "reserve4 W4 λ100": [
+     15499,
+     26
+    ],
+    "reserve4 W4 λ150": [
+     15742,
+     18
+    ],
+    "reserve6 W2 λ50": [
+     14802,
+     35
+    ],
+    "reserve6 W2 λ100": [
+     16020,
+     27
+    ],
+    "reserve6 W2 λ150": [
+     15406,
+     19
+    ],
+    "reserve6 W3 λ50": [
+     15485,
+     35
+    ],
+    "reserve6 W3 λ100": [
+     15743,
+     27
+    ],
+    "reserve6 W3 λ150": [
+     15506,
+     19
+    ],
+    "reserve6 W4 λ50": [
+     15073,
+     35
+    ],
+    "reserve6 W4 λ100": [
+     15499,
+     26
+    ],
+    "reserve6 W4 λ150": [
+     15742,
+     18
+    ],
+    "reserve8 W2 λ50": [
+     15577,
+     35
+    ],
+    "reserve8 W2 λ100": [
+     16020,
+     27
+    ],
+    "reserve8 W2 λ150": [
+     15406,
+     19
+    ],
+    "reserve8 W3 λ50": [
+     15485,
+     35
+    ],
+    "reserve8 W3 λ100": [
+     15743,
+     27
+    ],
+    "reserve8 W3 λ150": [
+     15506,
+     19
+    ],
+    "reserve8 W4 λ50": [
+     15073,
+     35
+    ],
+    "reserve8 W4 λ100": [
+     15499,
+     26
+    ],
+    "reserve8 W4 λ150": [
+     15742,
+     18
+    ],
+    "reserve10 W2 λ50": [
+     15148,
+     35
+    ],
+    "reserve10 W2 λ100": [
+     16020,
+     27
+    ],
+    "reserve10 W2 λ150": [
+     15406,
+     19
+    ],
+    "reserve10 W3 λ50": [
+     15908,
+     35
+    ],
+    "reserve10 W3 λ100": [
+     15743,
+     27
+    ],
+    "reserve10 W3 λ150": [
+     15506,
+     19
+    ],
+    "reserve10 W4 λ50": [
+     15073,
+     35
+    ],
+    "reserve10 W4 λ100": [
+     15499,
+     26
+    ],
+    "reserve10 W4 λ150": [
+     15742,
+     18
+    ]
+   },
+   "fast": 8919,
+   "to_blokke": [
+    12841,
+    12
+   ],
+   "details": {
+    "fri": {
+     "points": 16909,
+     "transfers": 35,
+     "per_round": [
+      0,
+      2,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      5,
+      4,
+      4,
+      3
+     ],
+     "dead_slots_per_race": [
+      2,
+      6,
+      3,
+      8,
+      0,
+      1,
+      1,
+      0,
+      2,
+      4,
+      4,
+      1,
+      5
+     ],
+     "kat1_idle_slots": 8,
+     "hindsight_captain": 17834,
+     "points_per_race": [
+      1047,
+      896,
+      1174,
+      143,
+      1668,
+      1068,
+      1428,
+      2548,
+      1747,
+      1140,
+      808,
+      1942,
+      1300
+     ],
+     "kat1_per_race": [
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "W. Van Aert"
+      ],
+      [
+       "M. Van Der Poel",
+       "W. Van Aert"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Skjelmose",
+       "T. Pogacar"
+      ],
+      [
+       "M. Skjelmose",
+       "T. Pogacar"
+      ],
+      [
+       "T. Pidcock",
+       "T. Pogacar"
+      ],
+      [
+       "T. Pidcock",
+       "T. Pogacar"
+      ]
+     ],
+     "captain_per_race": [
+      "M. Van Der Poel",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "J. Molano",
+      "M. Van Der Poel",
+      "M. Van Der Poel",
+      "W. Van Aert",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "M. Skjelmose",
+      "K. Vauquelin",
+      "T. Pogacar",
+      "T. Pidcock"
+     ],
+     "start_team": [
+      "M. Van Der Poel (K1)",
+      "T. Pogacar (K1)",
+      "C. Laporte (K2)",
+      "M. Mohoric (K2)",
+      "F. Ganna (K2)",
+      "R. Adria (K3)",
+      "M. Trentin (K3)",
+      "A. Valter (K3)",
+      "B. Van Moer (K4)",
+      "D. De Bondt (K4)",
+      "P. Allegaert (K4)",
+      "C. Pedersen (K4)"
+     ]
+    },
+    "kerne1": {
+     "points": 16129,
+     "transfers": 35,
+     "per_round": [
+      0,
+      2,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      4,
+      4,
+      3,
+      5
+     ],
+     "dead_slots_per_race": [
+      2,
+      6,
+      3,
+      8,
+      0,
+      1,
+      1,
+      0,
+      2,
+      5,
+      5,
+      2,
+      4
+     ],
+     "kat1_idle_slots": 11,
+     "hindsight_captain": 17304,
+     "points_per_race": [
+      1047,
+      896,
+      1174,
+      143,
+      1668,
+      1068,
+      1428,
+      2548,
+      1747,
+      540,
+      628,
+      1942,
+      1300
+     ],
+     "kat1_per_race": [
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "W. Van Aert"
+      ],
+      [
+       "M. Van Der Poel",
+       "W. Van Aert"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pidcock"
+      ]
+     ],
+     "captain_per_race": [
+      "M. Van Der Poel",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "J. Molano",
+      "M. Van Der Poel",
+      "M. Van Der Poel",
+      "W. Van Aert",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "M. Hirschi",
+      "K. Vauquelin",
+      "T. Pogacar",
+      "T. Pidcock"
+     ],
+     "start_team": [
+      "M. Van Der Poel (K1)",
+      "T. Pogacar (K1)",
+      "C. Laporte (K2)",
+      "M. Mohoric (K2)",
+      "F. Ganna (K2)",
+      "R. Adria (K3)",
+      "M. Trentin (K3)",
+      "A. Valter (K3)",
+      "B. Van Moer (K4)",
+      "D. De Bondt (K4)",
+      "P. Allegaert (K4)",
+      "C. Pedersen (K4)"
+     ]
+    },
+    "kerne": {
+     "points": 14989,
+     "transfers": 31,
+     "per_round": [
+      0,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2,
+      4,
+      4,
+      3,
+      4
+     ],
+     "dead_slots_per_race": [
+      2,
+      6,
+      3,
+      8,
+      1,
+      2,
+      2,
+      0,
+      2,
+      5,
+      5,
+      2,
+      5
+     ],
+     "kat1_idle_slots": 15,
+     "hindsight_captain": 16474,
+     "points_per_race": [
+      1047,
+      896,
+      1174,
+      143,
+      1538,
+      1018,
+      978,
+      2548,
+      1747,
+      540,
+      628,
+      1942,
+      790
+     ],
+     "kat1_per_race": [
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ]
+     ],
+     "captain_per_race": [
+      "M. Van Der Poel",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "J. Molano",
+      "M. Van Der Poel",
+      "M. Van Der Poel",
+      "C. Laporte",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "M. Hirschi",
+      "K. Vauquelin",
+      "T. Pogacar",
+      "M. Cort"
+     ],
+     "start_team": [
+      "M. Van Der Poel (K1)",
+      "T. Pogacar (K1)",
+      "C. Laporte (K2)",
+      "M. Mohoric (K2)",
+      "F. Ganna (K2)",
+      "R. Adria (K3)",
+      "M. Trentin (K3)",
+      "A. Valter (K3)",
+      "B. Van Moer (K4)",
+      "D. De Bondt (K4)",
+      "P. Allegaert (K4)",
+      "C. Pedersen (K4)"
+     ]
+    },
+    "reserve": {
+     "points": 16794,
+     "transfers": 35,
+     "per_round": [
+      0,
+      2,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      6,
+      3,
+      6,
+      1
+     ],
+     "dead_slots_per_race": [
+      2,
+      6,
+      3,
+      8,
+      0,
+      1,
+      1,
+      0,
+      2,
+      3,
+      3,
+      1,
+      6
+     ],
+     "kat1_idle_slots": 8,
+     "hindsight_captain": 17719,
+     "points_per_race": [
+      1047,
+      896,
+      1174,
+      143,
+      1668,
+      1068,
+      1428,
+      2548,
+      1747,
+      1255,
+      778,
+      2022,
+      1020
+     ],
+     "kat1_per_race": [
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "W. Van Aert"
+      ],
+      [
+       "M. Van Der Poel",
+       "W. Van Aert"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Skjelmose",
+       "T. Pogacar"
+      ],
+      [
+       "M. Skjelmose",
+       "T. Pogacar"
+      ],
+      [
+       "T. Pidcock",
+       "T. Pogacar"
+      ],
+      [
+       "T. Pidcock",
+       "T. Pogacar"
+      ]
+     ],
+     "captain_per_race": [
+      "M. Van Der Poel",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "J. Molano",
+      "M. Van Der Poel",
+      "M. Van Der Poel",
+      "W. Van Aert",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "M. Skjelmose",
+      "K. Vauquelin",
+      "T. Pogacar",
+      "T. Pidcock"
+     ],
+     "start_team": [
+      "M. Van Der Poel (K1)",
+      "T. Pogacar (K1)",
+      "C. Laporte (K2)",
+      "M. Mohoric (K2)",
+      "F. Ganna (K2)",
+      "R. Adria (K3)",
+      "M. Trentin (K3)",
+      "A. Valter (K3)",
+      "B. Van Moer (K4)",
+      "D. De Bondt (K4)",
+      "P. Allegaert (K4)",
+      "C. Pedersen (K4)"
+     ]
+    },
+    "marginal_per_transfer": {
+     "33": 16629,
+     "35": 16909,
+     "37": 16909,
+     "pr_skifte": 70
+    }
+   },
+   "kat1_idle": {
+    "kerne": [
+     "M. Van Der Poel",
+     "T. Pogacar"
+    ],
+    "kerne_starter": [
+     6,
+     5
+    ],
+    "kerne_point": [
+     1725,
+     2375
+    ],
+    "idle_races": [
+     {
+      "race": "Omloop",
+      "idle": [
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "J. Philipsen",
+      "forventet_bedste_fik": 25,
+      "forventet_point": 153,
+      "faktisk_bedste": "T. Pidcock 32"
+     },
+     {
+      "race": "Strade",
+      "idle": [
+       "M. Van Der Poel"
+      ],
+      "forventet_bedste": "W. Van Aert",
+      "forventet_bedste_fik": 120,
+      "forventet_point": 227,
+      "faktisk_bedste": "I. Del Toro 275"
+     },
+     {
+      "race": "Brugge",
+      "idle": [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "J. Philipsen",
+      "forventet_bedste_fik": 300,
+      "forventet_point": 169,
+      "faktisk_bedste": "J. Philipsen 300"
+     },
+     {
+      "race": "E3",
+      "idle": [
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "M. Pedersen",
+      "forventet_bedste_fik": 130,
+      "forventet_point": 226,
+      "faktisk_bedste": "M. Pedersen 130"
+     },
+     {
+      "race": "Gent-W",
+      "idle": [
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "W. Van Aert",
+      "forventet_bedste_fik": 50,
+      "forventet_point": 243,
+      "faktisk_bedste": "J. Philipsen 375"
+     },
+     {
+      "race": "Dwars",
+      "idle": [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "W. Van Aert",
+      "forventet_bedste_fik": 300,
+      "forventet_point": 205,
+      "faktisk_bedste": "W. Van Aert 300"
+     },
+     {
+      "race": "Amstel",
+      "idle": [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "R. Evenepoel",
+      "forventet_bedste_fik": 375,
+      "forventet_point": 201,
+      "faktisk_bedste": "R. Evenepoel 375"
+     },
+     {
+      "race": "Flèche",
+      "idle": [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "M. Skjelmose",
+      "forventet_bedste_fik": 180,
+      "forventet_point": 109,
+      "faktisk_bedste": "M. Skjelmose 180"
+     },
+     {
+      "race": "Liège",
+      "idle": [
+       "M. Van Der Poel"
+      ],
+      "forventet_bedste": "T. Pidcock",
+      "forventet_bedste_fik": 0,
+      "forventet_point": 197,
+      "faktisk_bedste": "R. Evenepoel 350"
+     },
+     {
+      "race": "Eschborn",
+      "idle": [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "T. Pidcock",
+      "forventet_bedste_fik": 300,
+      "forventet_point": 158,
+      "faktisk_bedste": "T. Pidcock 300"
+     }
+    ]
+   },
+   "ardennes_swap": {
+    "points_by_swaps": {
+     "0": 77,
+     "1": 1189,
+     "2": 1265,
+     "3": 2239,
+     "4": 2239,
+     "5": 2763,
+     "6": 2911,
+     "7": 2974,
+     "8": 3519,
+     "9": 3544,
+     "10": 3576,
+     "11": 3576,
+     "12": 3999
+    },
+    "brosten_riders_starting_ardennes": 4
+   },
+   "race_value": [
+    {
+     "race": "Omloop",
+     "max_points": 2471,
+     "monument": false
+    },
+    {
+     "race": "Strade",
+     "max_points": 2430,
+     "monument": false
+    },
+    {
+     "race": "Sanremo",
+     "max_points": 2738,
+     "monument": true
+    },
+    {
+     "race": "Brugge",
+     "max_points": 2300,
+     "monument": false
+    },
+    {
+     "race": "E3",
+     "max_points": 2523,
+     "monument": false
+    },
+    {
+     "race": "Gent-W",
+     "max_points": 2503,
+     "monument": false
+    },
+    {
+     "race": "Dwars",
+     "max_points": 2490,
+     "monument": false
+    },
+    {
+     "race": "Flandern",
+     "max_points": 2763,
+     "monument": true
+    },
+    {
+     "race": "Roubaix",
+     "max_points": 3072,
+     "monument": true
+    },
+    {
+     "race": "Amstel",
+     "max_points": 2410,
+     "monument": false
+    },
+    {
+     "race": "Flèche",
+     "max_points": 2167,
+     "monument": false
+    },
+    {
+     "race": "Liège",
+     "max_points": 3205,
+     "monument": true
+    },
+    {
+     "race": "Eschborn",
+     "max_points": 2413,
+     "monument": false
+    }
+   ]
+  },
+  "2025": {
+   "grid": {
+    "fri W1 λ25": [
+     11285,
+     35
+    ],
+    "fri W1 λ50": [
+     11587,
+     35
+    ],
+    "fri W1 λ75": [
+     10752,
+     35
+    ],
+    "fri W1 λ100": [
+     14005,
+     35
+    ],
+    "fri W1 λ150": [
+     13548,
+     23
+    ],
+    "fri W1 λ200": [
+     12231,
+     10
+    ],
+    "fri W1 λ300": [
+     10469,
+     7
+    ],
+    "fri W2 λ25": [
+     12528,
+     35
+    ],
+    "fri W2 λ50": [
+     13921,
+     35
+    ],
+    "fri W2 λ75": [
+     15124,
+     35
+    ],
+    "fri W2 λ100": [
+     14857,
+     32
+    ],
+    "fri W2 λ150": [
+     14725,
+     20
+    ],
+    "fri W2 λ200": [
+     14182,
+     18
+    ],
+    "fri W2 λ300": [
+     11255,
+     7
+    ],
+    "fri W3 λ25": [
+     14531,
+     35
+    ],
+    "fri W3 λ50": [
+     15061,
+     35
+    ],
+    "fri W3 λ75": [
+     15472,
+     35
+    ],
+    "fri W3 λ100": [
+     14419,
+     28
+    ],
+    "fri W3 λ150": [
+     14222,
+     17
+    ],
+    "fri W3 λ200": [
+     12850,
+     15
+    ],
+    "fri W3 λ300": [
+     9948,
+     5
+    ],
+    "fri W4 λ25": [
+     14364,
+     35
+    ],
+    "fri W4 λ50": [
+     14310,
+     35
+    ],
+    "fri W4 λ75": [
+     14854,
+     35
+    ],
+    "fri W4 λ100": [
+     14009,
+     28
+    ],
+    "fri W4 λ150": [
+     13345,
+     15
+    ],
+    "fri W4 λ200": [
+     12877,
+     13
+    ],
+    "fri W4 λ300": [
+     11553,
+     5
+    ],
+    "fri W6 λ25": [
+     14526,
+     35
+    ],
+    "fri W6 λ50": [
+     14711,
+     35
+    ],
+    "fri W6 λ75": [
+     14974,
+     30
+    ],
+    "fri W6 λ100": [
+     13708,
+     22
+    ],
+    "fri W6 λ150": [
+     13436,
+     16
+    ],
+    "fri W6 λ200": [
+     13368,
+     13
+    ],
+    "fri W6 λ300": [
+     11433,
+     6
+    ],
+    "kerne W1 λ25": [
+     13485,
+     35
+    ],
+    "kerne W1 λ50": [
+     13723,
+     35
+    ],
+    "kerne W1 λ75": [
+     12953,
+     35
+    ],
+    "kerne W1 λ100": [
+     13182,
+     29
+    ],
+    "kerne W1 λ150": [
+     12079,
+     12
+    ],
+    "kerne W1 λ200": [
+     11673,
+     3
+    ],
+    "kerne W1 λ300": [
+     10331,
+     0
+    ],
+    "kerne W2 λ25": [
+     13612,
+     35
+    ],
+    "kerne W2 λ50": [
+     13788,
+     35
+    ],
+    "kerne W2 λ75": [
+     14363,
+     31
+    ],
+    "kerne W2 λ100": [
+     13873,
+     23
+    ],
+    "kerne W2 λ150": [
+     13831,
+     13
+    ],
+    "kerne W2 λ200": [
+     13288,
+     11
+    ],
+    "kerne W2 λ300": [
+     10896,
+     2
+    ],
+    "kerne W3 λ25": [
+     13515,
+     35
+    ],
+    "kerne W3 λ50": [
+     14012,
+     35
+    ],
+    "kerne W3 λ75": [
+     14468,
+     31
+    ],
+    "kerne W3 λ100": [
+     13293,
+     21
+    ],
+    "kerne W3 λ150": [
+     13236,
+     12
+    ],
+    "kerne W3 λ200": [
+     12259,
+     11
+    ],
+    "kerne W3 λ300": [
+     10905,
+     2
+    ],
+    "kerne W4 λ25": [
+     13025,
+     35
+    ],
+    "kerne W4 λ50": [
+     13815,
+     35
+    ],
+    "kerne W4 λ75": [
+     14061,
+     30
+    ],
+    "kerne W4 λ100": [
+     12988,
+     23
+    ],
+    "kerne W4 λ150": [
+     12279,
+     12
+    ],
+    "kerne W4 λ200": [
+     11887,
+     9
+    ],
+    "kerne W4 λ300": [
+     10745,
+     1
+    ],
+    "kerne W6 λ25": [
+     13974,
+     35
+    ],
+    "kerne W6 λ50": [
+     14420,
+     35
+    ],
+    "kerne W6 λ75": [
+     14077,
+     23
+    ],
+    "kerne W6 λ100": [
+     12570,
+     16
+    ],
+    "kerne W6 λ150": [
+     12706,
+     11
+    ],
+    "kerne W6 λ200": [
+     12458,
+     8
+    ],
+    "kerne W6 λ300": [
+     10355,
+     1
+    ],
+    "kerne1 W1 λ25": [
+     12286,
+     35
+    ],
+    "kerne1 W1 λ50": [
+     11008,
+     35
+    ],
+    "kerne1 W1 λ75": [
+     14429,
+     35
+    ],
+    "kerne1 W1 λ100": [
+     14568,
+     35
+    ],
+    "kerne1 W1 λ150": [
+     13275,
+     17
+    ],
+    "kerne1 W1 λ200": [
+     11994,
+     8
+    ],
+    "kerne1 W1 λ300": [
+     10589,
+     3
+    ],
+    "kerne1 W2 λ25": [
+     12642,
+     35
+    ],
+    "kerne1 W2 λ50": [
+     13965,
+     35
+    ],
+    "kerne1 W2 λ75": [
+     15466,
+     35
+    ],
+    "kerne1 W2 λ100": [
+     14976,
+     28
+    ],
+    "kerne1 W2 λ150": [
+     14844,
+     17
+    ],
+    "kerne1 W2 λ200": [
+     14301,
+     15
+    ],
+    "kerne1 W2 λ300": [
+     10616,
+     4
+    ],
+    "kerne1 W3 λ25": [
+     14436,
+     35
+    ],
+    "kerne1 W3 λ50": [
+     14481,
+     35
+    ],
+    "kerne1 W3 λ75": [
+     15529,
+     35
+    ],
+    "kerne1 W3 λ100": [
+     14354,
+     25
+    ],
+    "kerne1 W3 λ150": [
+     14157,
+     15
+    ],
+    "kerne1 W3 λ200": [
+     13135,
+     13
+    ],
+    "kerne1 W3 λ300": [
+     10233,
+     3
+    ],
+    "kerne1 W4 λ25": [
+     14414,
+     35
+    ],
+    "kerne1 W4 λ50": [
+     14405,
+     35
+    ],
+    "kerne1 W4 λ75": [
+     15122,
+     34
+    ],
+    "kerne1 W4 λ100": [
+     13864,
+     26
+    ],
+    "kerne1 W4 λ150": [
+     13200,
+     14
+    ],
+    "kerne1 W4 λ200": [
+     12732,
+     12
+    ],
+    "kerne1 W4 λ300": [
+     11758,
+     4
+    ],
+    "kerne1 W6 λ25": [
+     14526,
+     35
+    ],
+    "kerne1 W6 λ50": [
+     14847,
+     35
+    ],
+    "kerne1 W6 λ75": [
+     15079,
+     28
+    ],
+    "kerne1 W6 λ100": [
+     13813,
+     20
+    ],
+    "kerne1 W6 λ150": [
+     13541,
+     15
+    ],
+    "kerne1 W6 λ200": [
+     13473,
+     12
+    ],
+    "kerne1 W6 λ300": [
+     11538,
+     5
+    ],
+    "reserve4 W2 λ50": [
+     14986,
+     35
+    ],
+    "reserve4 W2 λ100": [
+     14857,
+     33
+    ],
+    "reserve4 W2 λ150": [
+     14480,
+     20
+    ],
+    "reserve4 W3 λ50": [
+     15133,
+     35
+    ],
+    "reserve4 W3 λ100": [
+     14119,
+     28
+    ],
+    "reserve4 W3 λ150": [
+     14222,
+     17
+    ],
+    "reserve4 W4 λ50": [
+     14310,
+     35
+    ],
+    "reserve4 W4 λ100": [
+     14009,
+     28
+    ],
+    "reserve4 W4 λ150": [
+     13345,
+     15
+    ],
+    "reserve6 W2 λ50": [
+     14857,
+     35
+    ],
+    "reserve6 W2 λ100": [
+     14857,
+     33
+    ],
+    "reserve6 W2 λ150": [
+     14480,
+     20
+    ],
+    "reserve6 W3 λ50": [
+     14030,
+     35
+    ],
+    "reserve6 W3 λ100": [
+     14119,
+     28
+    ],
+    "reserve6 W3 λ150": [
+     14222,
+     17
+    ],
+    "reserve6 W4 λ50": [
+     14412,
+     35
+    ],
+    "reserve6 W4 λ100": [
+     14009,
+     28
+    ],
+    "reserve6 W4 λ150": [
+     13345,
+     15
+    ],
+    "reserve8 W2 λ50": [
+     14022,
+     35
+    ],
+    "reserve8 W2 λ100": [
+     14857,
+     33
+    ],
+    "reserve8 W2 λ150": [
+     14480,
+     20
+    ],
+    "reserve8 W3 λ50": [
+     14347,
+     35
+    ],
+    "reserve8 W3 λ100": [
+     14119,
+     28
+    ],
+    "reserve8 W3 λ150": [
+     14222,
+     17
+    ],
+    "reserve8 W4 λ50": [
+     14412,
+     35
+    ],
+    "reserve8 W4 λ100": [
+     14009,
+     28
+    ],
+    "reserve8 W4 λ150": [
+     13345,
+     15
+    ],
+    "reserve10 W2 λ50": [
+     14283,
+     35
+    ],
+    "reserve10 W2 λ100": [
+     14857,
+     33
+    ],
+    "reserve10 W2 λ150": [
+     14480,
+     20
+    ],
+    "reserve10 W3 λ50": [
+     14140,
+     35
+    ],
+    "reserve10 W3 λ100": [
+     14119,
+     28
+    ],
+    "reserve10 W3 λ150": [
+     14222,
+     17
+    ],
+    "reserve10 W4 λ50": [
+     14317,
+     35
+    ],
+    "reserve10 W4 λ100": [
+     14009,
+     28
+    ],
+    "reserve10 W4 λ150": [
+     13345,
+     15
+    ]
+   },
+   "fast": 7905,
+   "to_blokke": [
+    10858,
+    12
+   ],
+   "details": {
+    "fri": {
+     "points": 15472,
+     "transfers": 35,
+     "per_round": [
+      0,
+      3,
+      5,
+      2,
+      4,
+      3,
+      2,
+      4,
+      3,
+      5,
+      1,
+      1,
+      2
+     ],
+     "dead_slots_per_race": [
+      3,
+      4,
+      0,
+      4,
+      1,
+      2,
+      1,
+      0,
+      4,
+      1,
+      2,
+      2,
+      8
+     ],
+     "kat1_idle_slots": 6,
+     "hindsight_captain": 16450,
+     "points_per_race": [
+      455,
+      1296,
+      1721,
+      376,
+      1463,
+      1146,
+      1395,
+      1839,
+      1743,
+      1242,
+      1625,
+      838,
+      333
+     ],
+     "kat1_per_race": [
+      [
+       "T. Pogacar",
+       "W. Van Aert"
+      ],
+      [
+       "T. Pogacar",
+       "J. Philipsen"
+      ],
+      [
+       "M. Van Der Poel",
+       "J. Philipsen"
+      ],
+      [
+       "M. Van Der Poel",
+       "J. Philipsen"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "R. Evenepoel",
+       "T. Pogacar"
+      ],
+      [
+       "R. Evenepoel",
+       "T. Pogacar"
+      ],
+      [
+       "R. Evenepoel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Hirschi",
+       "T. Pogacar"
+      ]
+     ],
+     "captain_per_race": [
+      "W. Van Aert",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "J. Philipsen",
+      "M. Van Der Poel",
+      "M. Pedersen",
+      "M. Jorgenson",
+      "M. Van Der Poel",
+      "M. Van Der Poel",
+      "T. Pogacar",
+      "T. Pogacar",
+      "R. Evenepoel",
+      "A. Aranburu"
+     ],
+     "start_team": [
+      "T. Pogacar (K1)",
+      "W. Van Aert (K1)",
+      "M. Mohoric (K2)",
+      "N. Politt (K2)",
+      "T. Wellens (K2)",
+      "J. Tratnik (K3)",
+      "T. Skujins (K3)",
+      "O. Naesen (K3)",
+      "D. Formolo (K4)",
+      "A. Pasqualon (K4)",
+      "G. Serrano (K4)",
+      "M. Louvel (K4)"
+     ]
+    },
+    "kerne1": {
+     "points": 15529,
+     "transfers": 35,
+     "per_round": [
+      0,
+      3,
+      5,
+      1,
+      4,
+      3,
+      2,
+      4,
+      3,
+      4,
+      1,
+      1,
+      4
+     ],
+     "dead_slots_per_race": [
+      4,
+      4,
+      1,
+      4,
+      2,
+      2,
+      1,
+      0,
+      4,
+      2,
+      3,
+      3,
+      6
+     ],
+     "kat1_idle_slots": 10,
+     "hindsight_captain": 16273,
+     "points_per_race": [
+      285,
+      1296,
+      1696,
+      376,
+      1433,
+      1088,
+      1278,
+      1839,
+      1682,
+      992,
+      1495,
+      1323,
+      746
+     ],
+     "kat1_per_race": [
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "J. Philipsen"
+      ],
+      [
+       "M. Van Der Poel",
+       "J. Philipsen"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Hirschi"
+      ]
+     ],
+     "captain_per_race": [
+      "N. Politt",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "J. Philipsen",
+      "M. Van Der Poel",
+      "M. Pedersen",
+      "M. Jorgenson",
+      "M. Van Der Poel",
+      "M. Van Der Poel",
+      "T. Pogacar",
+      "T. Pogacar",
+      "T. Pogacar",
+      "A. Aranburu"
+     ],
+     "start_team": [
+      "M. Van Der Poel (K1)",
+      "T. Pogacar (K1)",
+      "M. Mohoric (K2)",
+      "N. Politt (K2)",
+      "T. Wellens (K2)",
+      "J. Tratnik (K3)",
+      "T. Skujins (K3)",
+      "O. Naesen (K3)",
+      "D. Formolo (K4)",
+      "A. Pasqualon (K4)",
+      "G. Serrano (K4)",
+      "M. Louvel (K4)"
+     ]
+    },
+    "kerne": {
+     "points": 14468,
+     "transfers": 31,
+     "per_round": [
+      0,
+      3,
+      4,
+      1,
+      3,
+      3,
+      2,
+      3,
+      3,
+      4,
+      1,
+      1,
+      3
+     ],
+     "dead_slots_per_race": [
+      4,
+      4,
+      1,
+      5,
+      3,
+      3,
+      2,
+      0,
+      4,
+      2,
+      3,
+      3,
+      7
+     ],
+     "kat1_idle_slots": 15,
+     "hindsight_captain": 15275,
+     "points_per_race": [
+      285,
+      1296,
+      2021,
+      310,
+      1133,
+      388,
+      1098,
+      1839,
+      1682,
+      992,
+      1495,
+      1323,
+      606
+     ],
+     "kat1_per_race": [
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ]
+     ],
+     "captain_per_race": [
+      "N. Politt",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "O. Kooij",
+      "M. Van Der Poel",
+      "M. Jorgenson",
+      "M. Jorgenson",
+      "M. Van Der Poel",
+      "M. Van Der Poel",
+      "T. Pogacar",
+      "T. Pogacar",
+      "T. Pogacar",
+      "A. Aranburu"
+     ],
+     "start_team": [
+      "M. Van Der Poel (K1)",
+      "T. Pogacar (K1)",
+      "M. Mohoric (K2)",
+      "N. Politt (K2)",
+      "T. Wellens (K2)",
+      "J. Tratnik (K3)",
+      "T. Skujins (K3)",
+      "O. Naesen (K3)",
+      "D. Formolo (K4)",
+      "A. Pasqualon (K4)",
+      "G. Serrano (K4)",
+      "M. Louvel (K4)"
+     ]
+    },
+    "reserve": {
+     "points": 15371,
+     "transfers": 35,
+     "per_round": [
+      0,
+      3,
+      5,
+      2,
+      4,
+      3,
+      2,
+      4,
+      3,
+      4,
+      3,
+      1,
+      1
+     ],
+     "dead_slots_per_race": [
+      3,
+      4,
+      0,
+      4,
+      1,
+      2,
+      1,
+      0,
+      4,
+      2,
+      2,
+      2,
+      9
+     ],
+     "kat1_idle_slots": 6,
+     "hindsight_captain": 16349,
+     "points_per_race": [
+      455,
+      1296,
+      1721,
+      376,
+      1463,
+      1146,
+      1395,
+      1839,
+      1743,
+      1186,
+      1625,
+      838,
+      288
+     ],
+     "kat1_per_race": [
+      [
+       "T. Pogacar",
+       "W. Van Aert"
+      ],
+      [
+       "T. Pogacar",
+       "J. Philipsen"
+      ],
+      [
+       "M. Van Der Poel",
+       "J. Philipsen"
+      ],
+      [
+       "M. Van Der Poel",
+       "J. Philipsen"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "M. Pedersen"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "R. Evenepoel",
+       "T. Pogacar"
+      ],
+      [
+       "R. Evenepoel",
+       "T. Pogacar"
+      ],
+      [
+       "R. Evenepoel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Hirschi",
+       "T. Pogacar"
+      ]
+     ],
+     "captain_per_race": [
+      "W. Van Aert",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "J. Philipsen",
+      "M. Van Der Poel",
+      "M. Pedersen",
+      "M. Jorgenson",
+      "M. Van Der Poel",
+      "M. Van Der Poel",
+      "T. Pogacar",
+      "T. Pogacar",
+      "R. Evenepoel",
+      "A. Aranburu"
+     ],
+     "start_team": [
+      "T. Pogacar (K1)",
+      "W. Van Aert (K1)",
+      "M. Mohoric (K2)",
+      "N. Politt (K2)",
+      "T. Wellens (K2)",
+      "J. Tratnik (K3)",
+      "T. Skujins (K3)",
+      "O. Naesen (K3)",
+      "D. Formolo (K4)",
+      "A. Pasqualon (K4)",
+      "G. Serrano (K4)",
+      "M. Louvel (K4)"
+     ]
+    },
+    "marginal_per_transfer": {
+     "33": 15287,
+     "35": 15472,
+     "37": 15510,
+     "pr_skifte": 56
+    }
+   },
+   "kat1_idle": {
+    "kerne": [
+     "M. Van Der Poel",
+     "T. Pogacar"
+    ],
+    "kerne_starter": [
+     4,
+     7
+    ],
+    "kerne_point": [
+     1775,
+     2875
+    ],
+    "idle_races": [
+     {
+      "race": "Omloop",
+      "idle": [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "W. Van Aert",
+      "forventet_bedste_fik": 100,
+      "forventet_point": 270,
+      "faktisk_bedste": "J. Philipsen 250"
+     },
+     {
+      "race": "Strade",
+      "idle": [
+       "M. Van Der Poel"
+      ],
+      "forventet_bedste": "T. Pidcock",
+      "forventet_bedste_fik": 300,
+      "forventet_point": 192,
+      "faktisk_bedste": "T. Pidcock 300"
+     },
+     {
+      "race": "Brugge",
+      "idle": [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "J. Philipsen",
+      "forventet_bedste_fik": 33,
+      "forventet_point": 277,
+      "faktisk_bedste": "J. Milan 300"
+     },
+     {
+      "race": "E3",
+      "idle": [
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "W. Van Aert",
+      "forventet_bedste_fik": 80,
+      "forventet_point": 270,
+      "faktisk_bedste": "M. Pedersen 300"
+     },
+     {
+      "race": "Gent-W",
+      "idle": [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "M. Pedersen",
+      "forventet_bedste_fik": 375,
+      "forventet_point": 235,
+      "faktisk_bedste": "M. Pedersen 375"
+     },
+     {
+      "race": "Dwars",
+      "idle": [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "W. Van Aert",
+      "forventet_bedste_fik": 300,
+      "forventet_point": 149,
+      "faktisk_bedste": "W. Van Aert 300"
+     },
+     {
+      "race": "Amstel",
+      "idle": [
+       "M. Van Der Poel"
+      ],
+      "forventet_bedste": "R. Evenepoel",
+      "forventet_bedste_fik": 250,
+      "forventet_point": 260,
+      "faktisk_bedste": "R. Evenepoel 250"
+     },
+     {
+      "race": "Flèche",
+      "idle": [
+       "M. Van Der Poel"
+      ],
+      "forventet_bedste": "R. Evenepoel",
+      "forventet_bedste_fik": 130,
+      "forventet_point": 223,
+      "faktisk_bedste": "T. Pidcock 250"
+     },
+     {
+      "race": "Liège",
+      "idle": [
+       "M. Van Der Poel"
+      ],
+      "forventet_bedste": "R. Evenepoel",
+      "forventet_bedste_fik": 20,
+      "forventet_point": 324,
+      "faktisk_bedste": "T. Pidcock 165"
+     },
+     {
+      "race": "Eschborn",
+      "idle": [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      "forventet_bedste": "M. Hirschi",
+      "forventet_bedste_fik": 140,
+      "forventet_point": 128,
+      "faktisk_bedste": "M. Hirschi 140"
+     }
+    ]
+   },
+   "ardennes_swap": {
+    "points_by_swaps": {
+     "0": 536,
+     "1": 1126,
+     "2": 2411,
+     "3": 2736,
+     "4": 2881,
+     "5": 3136,
+     "6": 3271,
+     "7": 3285,
+     "8": 3219,
+     "9": 3353,
+     "10": 3459,
+     "11": 3489,
+     "12": 3489
+    },
+    "brosten_riders_starting_ardennes": 5
+   },
+   "race_value": [
+    {
+     "race": "Omloop",
+     "max_points": 2344,
+     "monument": false
+    },
+    {
+     "race": "Strade",
+     "max_points": 2408,
+     "monument": false
+    },
+    {
+     "race": "Sanremo",
+     "max_points": 3201,
+     "monument": true
+    },
+    {
+     "race": "Brugge",
+     "max_points": 1978,
+     "monument": false
+    },
+    {
+     "race": "E3",
+     "max_points": 2485,
+     "monument": false
+    },
+    {
+     "race": "Gent-W",
+     "max_points": 2302,
+     "monument": false
+    },
+    {
+     "race": "Dwars",
+     "max_points": 2595,
+     "monument": false
+    },
+    {
+     "race": "Flandern",
+     "max_points": 2811,
+     "monument": true
+    },
+    {
+     "race": "Roubaix",
+     "max_points": 2737,
+     "monument": true
+    },
+    {
+     "race": "Amstel",
+     "max_points": 2275,
+     "monument": false
+    },
+    {
+     "race": "Flèche",
+     "max_points": 2222,
+     "monument": false
+    },
+    {
+     "race": "Liège",
+     "max_points": 2946,
+     "monument": true
+    },
+    {
+     "race": "Eschborn",
+     "max_points": 2080,
+     "monument": false
+    }
+   ]
+  },
+  "2024 (kat. 2025)": {
+   "grid": {
+    "fri W1 λ25": [
+     12686,
+     35
+    ],
+    "fri W1 λ50": [
+     10892,
+     35
+    ],
+    "fri W1 λ75": [
+     13920,
+     35
+    ],
+    "fri W1 λ100": [
+     15116,
+     35
+    ],
+    "fri W1 λ150": [
+     12435,
+     22
+    ],
+    "fri W1 λ200": [
+     11119,
+     8
+    ],
+    "fri W1 λ300": [
+     9708,
+     6
+    ],
+    "fri W2 λ25": [
+     13235,
+     35
+    ],
+    "fri W2 λ50": [
+     13927,
+     35
+    ],
+    "fri W2 λ75": [
+     13786,
+     35
+    ],
+    "fri W2 λ100": [
+     13860,
+     33
+    ],
+    "fri W2 λ150": [
+     12557,
+     17
+    ],
+    "fri W2 λ200": [
+     12379,
+     14
+    ],
+    "fri W2 λ300": [
+     11402,
+     8
+    ],
+    "fri W3 λ25": [
+     13549,
+     35
+    ],
+    "fri W3 λ50": [
+     13705,
+     35
+    ],
+    "fri W3 λ75": [
+     13768,
+     35
+    ],
+    "fri W3 λ100": [
+     13617,
+     31
+    ],
+    "fri W3 λ150": [
+     11798,
+     18
+    ],
+    "fri W3 λ200": [
+     11762,
+     15
+    ],
+    "fri W3 λ300": [
+     10447,
+     7
+    ],
+    "fri W4 λ25": [
+     13587,
+     35
+    ],
+    "fri W4 λ50": [
+     14264,
+     35
+    ],
+    "fri W4 λ75": [
+     13973,
+     35
+    ],
+    "fri W4 λ100": [
+     13354,
+     30
+    ],
+    "fri W4 λ150": [
+     12064,
+     18
+    ],
+    "fri W4 λ200": [
+     11534,
+     12
+    ],
+    "fri W4 λ300": [
+     10447,
+     7
+    ],
+    "fri W6 λ25": [
+     12035,
+     35
+    ],
+    "fri W6 λ50": [
+     12562,
+     35
+    ],
+    "fri W6 λ75": [
+     12803,
+     31
+    ],
+    "fri W6 λ100": [
+     12542,
+     26
+    ],
+    "fri W6 λ150": [
+     11023,
+     14
+    ],
+    "fri W6 λ200": [
+     10096,
+     9
+    ],
+    "fri W6 λ300": [
+     9198,
+     6
+    ],
+    "kerne W1 λ25": [
+     10928,
+     35
+    ],
+    "kerne W1 λ50": [
+     10413,
+     35
+    ],
+    "kerne W1 λ75": [
+     10903,
+     35
+    ],
+    "kerne W1 λ100": [
+     10347,
+     27
+    ],
+    "kerne W1 λ150": [
+     8368,
+     13
+    ],
+    "kerne W1 λ200": [
+     7728,
+     3
+    ],
+    "kerne W1 λ300": [
+     7698,
+     2
+    ],
+    "kerne W2 λ25": [
+     11096,
+     35
+    ],
+    "kerne W2 λ50": [
+     11567,
+     35
+    ],
+    "kerne W2 λ75": [
+     11206,
+     33
+    ],
+    "kerne W2 λ100": [
+     10780,
+     26
+    ],
+    "kerne W2 λ150": [
+     9495,
+     12
+    ],
+    "kerne W2 λ200": [
+     8687,
+     9
+    ],
+    "kerne W2 λ300": [
+     7542,
+     2
+    ],
+    "kerne W3 λ25": [
+     11204,
+     35
+    ],
+    "kerne W3 λ50": [
+     11627,
+     35
+    ],
+    "kerne W3 λ75": [
+     11237,
+     30
+    ],
+    "kerne W3 λ100": [
+     10406,
+     21
+    ],
+    "kerne W3 λ150": [
+     9158,
+     12
+    ],
+    "kerne W3 λ200": [
+     9081,
+     10
+    ],
+    "kerne W3 λ300": [
+     7727,
+     3
+    ],
+    "kerne W4 λ25": [
+     11180,
+     35
+    ],
+    "kerne W4 λ50": [
+     11633,
+     35
+    ],
+    "kerne W4 λ75": [
+     10848,
+     28
+    ],
+    "kerne W4 λ100": [
+     10450,
+     21
+    ],
+    "kerne W4 λ150": [
+     9534,
+     14
+    ],
+    "kerne W4 λ200": [
+     9004,
+     8
+    ],
+    "kerne W4 λ300": [
+     7727,
+     3
+    ],
+    "kerne W6 λ25": [
+     10662,
+     35
+    ],
+    "kerne W6 λ50": [
+     10887,
+     35
+    ],
+    "kerne W6 λ75": [
+     10579,
+     25
+    ],
+    "kerne W6 λ100": [
+     10178,
+     19
+    ],
+    "kerne W6 λ150": [
+     9197,
+     11
+    ],
+    "kerne W6 λ200": [
+     8270,
+     6
+    ],
+    "kerne W6 λ300": [
+     7313,
+     3
+    ],
+    "kerne1 W1 λ25": [
+     12095,
+     35
+    ],
+    "kerne1 W1 λ50": [
+     10133,
+     35
+    ],
+    "kerne1 W1 λ75": [
+     12182,
+     35
+    ],
+    "kerne1 W1 λ100": [
+     11905,
+     35
+    ],
+    "kerne1 W1 λ150": [
+     9705,
+     17
+    ],
+    "kerne1 W1 λ200": [
+     9038,
+     6
+    ],
+    "kerne1 W1 λ300": [
+     8443,
+     5
+    ],
+    "kerne1 W2 λ25": [
+     12091,
+     35
+    ],
+    "kerne1 W2 λ50": [
+     12820,
+     35
+    ],
+    "kerne1 W2 λ75": [
+     13116,
+     35
+    ],
+    "kerne1 W2 λ100": [
+     12770,
+     32
+    ],
+    "kerne1 W2 λ150": [
+     10954,
+     17
+    ],
+    "kerne1 W2 λ200": [
+     10506,
+     13
+    ],
+    "kerne1 W2 λ300": [
+     9422,
+     5
+    ],
+    "kerne1 W3 λ25": [
+     12552,
+     35
+    ],
+    "kerne1 W3 λ50": [
+     13436,
+     35
+    ],
+    "kerne1 W3 λ75": [
+     13265,
+     35
+    ],
+    "kerne1 W3 λ100": [
+     12475,
+     27
+    ],
+    "kerne1 W3 λ150": [
+     11095,
+     16
+    ],
+    "kerne1 W3 λ200": [
+     11018,
+     14
+    ],
+    "kerne1 W3 λ300": [
+     9467,
+     5
+    ],
+    "kerne1 W4 λ25": [
+     12750,
+     35
+    ],
+    "kerne1 W4 λ50": [
+     13487,
+     35
+    ],
+    "kerne1 W4 λ75": [
+     12876,
+     33
+    ],
+    "kerne1 W4 λ100": [
+     12424,
+     26
+    ],
+    "kerne1 W4 λ150": [
+     11471,
+     18
+    ],
+    "kerne1 W4 λ200": [
+     10237,
+     10
+    ],
+    "kerne1 W4 λ300": [
+     9467,
+     5
+    ],
+    "kerne1 W6 λ25": [
+     11587,
+     35
+    ],
+    "kerne1 W6 λ50": [
+     12035,
+     35
+    ],
+    "kerne1 W6 λ75": [
+     11857,
+     28
+    ],
+    "kerne1 W6 λ100": [
+     11402,
+     22
+    ],
+    "kerne1 W6 λ150": [
+     10430,
+     13
+    ],
+    "kerne1 W6 λ200": [
+     9503,
+     8
+    ],
+    "kerne1 W6 λ300": [
+     7943,
+     4
+    ],
+    "reserve4 W2 λ50": [
+     13567,
+     35
+    ],
+    "reserve4 W2 λ100": [
+     13987,
+     34
+    ],
+    "reserve4 W2 λ150": [
+     12659,
+     18
+    ],
+    "reserve4 W3 λ50": [
+     13651,
+     35
+    ],
+    "reserve4 W3 λ100": [
+     13547,
+     30
+    ],
+    "reserve4 W3 λ150": [
+     11798,
+     18
+    ],
+    "reserve4 W4 λ50": [
+     14264,
+     35
+    ],
+    "reserve4 W4 λ100": [
+     13354,
+     30
+    ],
+    "reserve4 W4 λ150": [
+     12064,
+     18
+    ],
+    "reserve6 W2 λ50": [
+     14204,
+     35
+    ],
+    "reserve6 W2 λ100": [
+     13987,
+     34
+    ],
+    "reserve6 W2 λ150": [
+     12659,
+     18
+    ],
+    "reserve6 W3 λ50": [
+     13651,
+     35
+    ],
+    "reserve6 W3 λ100": [
+     13547,
+     30
+    ],
+    "reserve6 W3 λ150": [
+     11798,
+     18
+    ],
+    "reserve6 W4 λ50": [
+     14264,
+     35
+    ],
+    "reserve6 W4 λ100": [
+     13354,
+     30
+    ],
+    "reserve6 W4 λ150": [
+     12064,
+     18
+    ],
+    "reserve8 W2 λ50": [
+     13779,
+     35
+    ],
+    "reserve8 W2 λ100": [
+     13987,
+     34
+    ],
+    "reserve8 W2 λ150": [
+     12659,
+     18
+    ],
+    "reserve8 W3 λ50": [
+     13925,
+     35
+    ],
+    "reserve8 W3 λ100": [
+     13547,
+     30
+    ],
+    "reserve8 W3 λ150": [
+     11798,
+     18
+    ],
+    "reserve8 W4 λ50": [
+     14308,
+     35
+    ],
+    "reserve8 W4 λ100": [
+     13354,
+     30
+    ],
+    "reserve8 W4 λ150": [
+     12064,
+     18
+    ],
+    "reserve10 W2 λ50": [
+     13868,
+     35
+    ],
+    "reserve10 W2 λ100": [
+     13987,
+     34
+    ],
+    "reserve10 W2 λ150": [
+     12659,
+     18
+    ],
+    "reserve10 W3 λ50": [
+     13377,
+     35
+    ],
+    "reserve10 W3 λ100": [
+     13547,
+     30
+    ],
+    "reserve10 W3 λ150": [
+     11798,
+     18
+    ],
+    "reserve10 W4 λ50": [
+     14308,
+     35
+    ],
+    "reserve10 W4 λ100": [
+     13354,
+     30
+    ],
+    "reserve10 W4 λ150": [
+     12064,
+     18
+    ]
+   },
+   "fast": 7737,
+   "to_blokke": [
+    9100,
+    12
+   ],
+   "details": {
+    "fri": {
+     "points": 13768,
+     "transfers": 35,
+     "per_round": [
+      0,
+      3,
+      4,
+      4,
+      5,
+      2,
+      2,
+      3,
+      3,
+      5,
+      2,
+      0,
+      2
+     ],
+     "dead_slots_per_race": [
+      4,
+      2,
+      1,
+      6,
+      2,
+      1,
+      2,
+      1,
+      2,
+      6,
+      4,
+      4,
+      9
+     ],
+     "kat1_idle_slots": 7,
+     "hindsight_captain": 14709,
+     "points_per_race": [
+      1016,
+      1388,
+      1193,
+      1123,
+      1185,
+      871,
+      917,
+      1440,
+      1915,
+      1226,
+      527,
+      672,
+      295
+     ],
+     "kat1_per_race": [
+      [
+       "W. Van Aert",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "W. Van Aert",
+       "J. Philipsen"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "M. Pedersen",
+       "M. Van Der Poel"
+      ],
+      [
+       "T. Pidcock",
+       "M. Van Der Poel"
+      ],
+      [
+       "T. Pidcock",
+       "R. Evenepoel"
+      ],
+      [
+       "T. Pidcock",
+       "M. Hirschi"
+      ],
+      [
+       "T. Pidcock",
+       "M. Hirschi"
+      ],
+      [
+       "T. Pidcock",
+       "M. Hirschi"
+      ]
+     ],
+     "captain_per_race": [
+      "W. Van Aert",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "J. Philipsen",
+      "W. Van Aert",
+      "M. Van Der Poel",
+      "W. Van Aert",
+      "M. Van Der Poel",
+      "M. Van Der Poel",
+      "T. Pidcock",
+      "M. Skjelmose",
+      "S. Buitrago",
+      "M. Hirschi"
+     ],
+     "start_team": [
+      "W. Van Aert (K1)",
+      "T. Pogacar (K1)",
+      "C. Laporte (K2)",
+      "M. Mohoric (K2)",
+      "D. Van Baarle (K2)",
+      "N. Powless (K3)",
+      "A. Valter (K3)",
+      "I. Garcia Cortina (K3)",
+      "A. Pasqualon (K4)",
+      "G. Serrano (K4)",
+      "D. Formolo (K4)",
+      "F. Senechal (K4)"
+     ]
+    },
+    "kerne1": {
+     "points": 13265,
+     "transfers": 35,
+     "per_round": [
+      0,
+      2,
+      5,
+      3,
+      5,
+      2,
+      2,
+      2,
+      2,
+      5,
+      1,
+      1,
+      5
+     ],
+     "dead_slots_per_race": [
+      4,
+      2,
+      2,
+      6,
+      2,
+      1,
+      2,
+      2,
+      3,
+      6,
+      5,
+      5,
+      6
+     ],
+     "kat1_idle_slots": 12,
+     "hindsight_captain": 14037,
+     "points_per_race": [
+      1016,
+      1388,
+      843,
+      1123,
+      1185,
+      871,
+      917,
+      1374,
+      1839,
+      1226,
+      527,
+      527,
+      429
+     ],
+     "kat1_per_race": [
+      [
+       "W. Van Aert",
+       "T. Pogacar"
+      ],
+      [
+       "W. Van Aert",
+       "T. Pogacar"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "J. Philipsen"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "T. Pidcock"
+      ],
+      [
+       "W. Van Aert",
+       "T. Pidcock"
+      ],
+      [
+       "W. Van Aert",
+       "M. Hirschi"
+      ],
+      [
+       "W. Van Aert",
+       "M. Hirschi"
+      ]
+     ],
+     "captain_per_race": [
+      "W. Van Aert",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "J. Philipsen",
+      "W. Van Aert",
+      "M. Van Der Poel",
+      "W. Van Aert",
+      "M. Van Der Poel",
+      "M. Van Der Poel",
+      "T. Pidcock",
+      "M. Skjelmose",
+      "S. Buitrago",
+      "M. Hirschi"
+     ],
+     "start_team": [
+      "W. Van Aert (K1)",
+      "T. Pogacar (K1)",
+      "C. Laporte (K2)",
+      "M. Mohoric (K2)",
+      "D. Van Baarle (K2)",
+      "N. Powless (K3)",
+      "A. Valter (K3)",
+      "I. Garcia Cortina (K3)",
+      "A. Pasqualon (K4)",
+      "G. Serrano (K4)",
+      "D. Formolo (K4)",
+      "F. Senechal (K4)"
+     ]
+    },
+    "kerne": {
+     "points": 11237,
+     "transfers": 30,
+     "per_round": [
+      0,
+      2,
+      4,
+      2,
+      4,
+      2,
+      2,
+      2,
+      2,
+      4,
+      1,
+      1,
+      4
+     ],
+     "dead_slots_per_race": [
+      4,
+      3,
+      2,
+      7,
+      2,
+      1,
+      2,
+      2,
+      3,
+      6,
+      6,
+      6,
+      7
+     ],
+     "kat1_idle_slots": 16,
+     "hindsight_captain": 12807,
+     "points_per_race": [
+      1016,
+      758,
+      843,
+      373,
+      1185,
+      871,
+      917,
+      1374,
+      1839,
+      608,
+      527,
+      722,
+      204
+     ],
+     "kat1_per_race": [
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ]
+     ],
+     "captain_per_race": [
+      "W. Van Aert",
+      "C. Laporte",
+      "M. Van Der Poel",
+      "M. Walscheid",
+      "W. Van Aert",
+      "M. Van Der Poel",
+      "W. Van Aert",
+      "M. Van Der Poel",
+      "M. Van Der Poel",
+      "M. Van Der Poel",
+      "M. Skjelmose",
+      "S. Buitrago",
+      "A. Kristoff"
+     ],
+     "start_team": [
+      "W. Van Aert (K1)",
+      "M. Van Der Poel (K1)",
+      "C. Laporte (K2)",
+      "M. Mohoric (K2)",
+      "D. Van Baarle (K2)",
+      "N. Powless (K3)",
+      "A. Valter (K3)",
+      "I. Garcia Cortina (K3)",
+      "A. Pasqualon (K4)",
+      "G. Serrano (K4)",
+      "D. Formolo (K4)",
+      "F. Senechal (K4)"
+     ]
+    },
+    "reserve": {
+     "points": 13698,
+     "transfers": 35,
+     "per_round": [
+      0,
+      3,
+      4,
+      4,
+      5,
+      2,
+      2,
+      3,
+      3,
+      5,
+      2,
+      0,
+      2
+     ],
+     "dead_slots_per_race": [
+      4,
+      2,
+      1,
+      6,
+      2,
+      1,
+      2,
+      1,
+      2,
+      6,
+      4,
+      4,
+      9
+     ],
+     "kat1_idle_slots": 7,
+     "hindsight_captain": 14639,
+     "points_per_race": [
+      1016,
+      1388,
+      1193,
+      1123,
+      1185,
+      871,
+      917,
+      1440,
+      1915,
+      1156,
+      527,
+      672,
+      295
+     ],
+     "kat1_per_race": [
+      [
+       "W. Van Aert",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "M. Van Der Poel",
+       "T. Pogacar"
+      ],
+      [
+       "W. Van Aert",
+       "J. Philipsen"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      [
+       "M. Pedersen",
+       "M. Van Der Poel"
+      ],
+      [
+       "T. Pidcock",
+       "M. Van Der Poel"
+      ],
+      [
+       "T. Pidcock",
+       "R. Evenepoel"
+      ],
+      [
+       "T. Pidcock",
+       "M. Hirschi"
+      ],
+      [
+       "T. Pidcock",
+       "M. Hirschi"
+      ],
+      [
+       "T. Pidcock",
+       "M. Hirschi"
+      ]
+     ],
+     "captain_per_race": [
+      "W. Van Aert",
+      "T. Pogacar",
+      "M. Van Der Poel",
+      "J. Philipsen",
+      "W. Van Aert",
+      "M. Van Der Poel",
+      "W. Van Aert",
+      "M. Van Der Poel",
+      "M. Van Der Poel",
+      "T. Pidcock",
+      "M. Skjelmose",
+      "S. Buitrago",
+      "M. Hirschi"
+     ],
+     "start_team": [
+      "W. Van Aert (K1)",
+      "T. Pogacar (K1)",
+      "C. Laporte (K2)",
+      "M. Mohoric (K2)",
+      "D. Van Baarle (K2)",
+      "N. Powless (K3)",
+      "A. Valter (K3)",
+      "I. Garcia Cortina (K3)",
+      "A. Pasqualon (K4)",
+      "G. Serrano (K4)",
+      "D. Formolo (K4)",
+      "F. Senechal (K4)"
+     ]
+    },
+    "marginal_per_transfer": {
+     "33": 13733,
+     "35": 13768,
+     "37": 14187,
+     "pr_skifte": 114
+    }
+   },
+   "kat1_idle": {
+    "kerne": [
+     "W. Van Aert",
+     "M. Van Der Poel"
+    ],
+    "kerne_starter": [
+     3,
+     7
+    ],
+    "kerne_point": [
+     550,
+     2311
+    ],
+    "idle_races": [
+     {
+      "race": "Omloop",
+      "idle": [
+       "M. Van Der Poel"
+      ],
+      "forventet_bedste": "T. Pidcock",
+      "forventet_bedste_fik": 140,
+      "forventet_point": 123,
+      "faktisk_bedste": "T. Pidcock 140"
+     },
+     {
+      "race": "Strade",
+      "idle": [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      "forventet_bedste": "T. Pogacar",
+      "forventet_bedste_fik": 375,
+      "forventet_point": 274,
+      "faktisk_bedste": "T. Pogacar 375"
+     },
+     {
+      "race": "Sanremo",
+      "idle": [
+       "W. Van Aert"
+      ],
+      "forventet_bedste": "T. Pogacar",
+      "forventet_bedste_fik": 350,
+      "forventet_point": 282,
+      "faktisk_bedste": "J. Philipsen 525"
+     },
+     {
+      "race": "Brugge",
+      "idle": [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      "forventet_bedste": "J. Philipsen",
+      "forventet_bedste_fik": 375,
+      "forventet_point": 244,
+      "faktisk_bedste": "J. Philipsen 375"
+     },
+     {
+      "race": "Gent-W",
+      "idle": [
+       "W. Van Aert"
+      ],
+      "forventet_bedste": "M. Pedersen",
+      "forventet_bedste_fik": 375,
+      "forventet_point": 165,
+      "faktisk_bedste": "M. Pedersen 375"
+     },
+     {
+      "race": "Dwars",
+      "idle": [
+       "M. Van Der Poel"
+      ],
+      "forventet_bedste": "J. Philipsen",
+      "forventet_bedste_fik": 80,
+      "forventet_point": 162,
+      "faktisk_bedste": "J. Milan 150"
+     },
+     {
+      "race": "Flandern",
+      "idle": [
+       "W. Van Aert"
+      ],
+      "forventet_bedste": "M. Pedersen",
+      "forventet_bedste_fik": 66,
+      "forventet_point": 200,
+      "faktisk_bedste": "M. Pedersen 66"
+     },
+     {
+      "race": "Roubaix",
+      "idle": [
+       "W. Van Aert"
+      ],
+      "forventet_bedste": "J. Philipsen",
+      "forventet_bedste_fik": 450,
+      "forventet_point": 246,
+      "faktisk_bedste": "J. Philipsen 450"
+     },
+     {
+      "race": "Amstel",
+      "idle": [
+       "W. Van Aert"
+      ],
+      "forventet_bedste": "T. Pidcock",
+      "forventet_bedste_fik": 375,
+      "forventet_point": 198,
+      "faktisk_bedste": "T. Pidcock 375"
+     },
+     {
+      "race": "Flèche",
+      "idle": [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      "forventet_bedste": "T. Pidcock",
+      "forventet_bedste_fik": 0,
+      "forventet_point": 139,
+      "faktisk_bedste": "M. Van Gils 250"
+     },
+     {
+      "race": "Liège",
+      "idle": [
+       "W. Van Aert"
+      ],
+      "forventet_bedste": "T. Pidcock",
+      "forventet_bedste_fik": 145,
+      "forventet_point": 218,
+      "faktisk_bedste": "T. Pogacar 525"
+     },
+     {
+      "race": "Eschborn",
+      "idle": [
+       "W. Van Aert",
+       "M. Van Der Poel"
+      ],
+      "forventet_bedste": "M. Hirschi",
+      "forventet_bedste_fik": 130,
+      "forventet_point": 157,
+      "faktisk_bedste": "M. Van Gils 375"
+     }
+    ]
+   },
+   "ardennes_swap": {
+    "points_by_swaps": {
+     "0": 1037,
+     "1": 1167,
+     "2": 1791,
+     "3": 1976,
+     "4": 2076,
+     "5": 2499,
+     "6": 2550,
+     "7": 2134,
+     "8": 2152,
+     "9": 2222,
+     "10": 2356,
+     "11": 2356,
+     "12": 2400
+    },
+    "brosten_riders_starting_ardennes": 5
+   },
+   "race_value": [
+    {
+     "race": "Omloop",
+     "max_points": 2508,
+     "monument": false
+    },
+    {
+     "race": "Strade",
+     "max_points": 2263,
+     "monument": false
+    },
+    {
+     "race": "Sanremo",
+     "max_points": 2836,
+     "monument": true
+    },
+    {
+     "race": "Brugge",
+     "max_points": 2265,
+     "monument": false
+    },
+    {
+     "race": "E3",
+     "max_points": 2348,
+     "monument": false
+    },
+    {
+     "race": "Gent-W",
+     "max_points": 2143,
+     "monument": false
+    },
+    {
+     "race": "Dwars",
+     "max_points": 2520,
+     "monument": false
+    },
+    {
+     "race": "Flandern",
+     "max_points": 2984,
+     "monument": true
+    },
+    {
+     "race": "Roubaix",
+     "max_points": 3140,
+     "monument": true
+    },
+    {
+     "race": "Amstel",
+     "max_points": 2245,
+     "monument": false
+    },
+    {
+     "race": "Flèche",
+     "max_points": 2114,
+     "monument": false
+    },
+    {
+     "race": "Liège",
+     "max_points": 2898,
+     "monument": true
+    },
+    {
+     "race": "Eschborn",
+     "max_points": 2279,
+     "monument": false
+    }
+   ]
+  }
+ }
+}
