@@ -36,7 +36,7 @@
   },
   "paul-magnier": {
     "rank": 8,
-    "pts": 1603.0,
+    "pts": 1553.0,
     "name": "MAGNIER Paul"
   },
   "tobias-halland-johannessen": {
@@ -124,19 +124,19 @@
     "pts": 1094.0,
     "name": "MCNULTY Brandon"
   },
-  "tobias-lund-andresen": {
-    "rank": 26,
-    "pts": 1083.0,
-    "name": "ANDRESEN Tobias Lund"
-  },
   "mads-pedersen": {
-    "rank": 27,
+    "rank": 26,
     "pts": 1079.0,
     "name": "PEDERSEN Mads"
   },
+  "tobias-lund-andresen": {
+    "rank": 27,
+    "pts": 1076.0,
+    "name": "ANDRESEN Tobias Lund"
+  },
   "jordi-meeus": {
     "rank": 28,
-    "pts": 1074.0,
+    "pts": 1056.0,
     "name": "MEEUS Jordi"
   },
   "matteo-jorgenson": {
@@ -154,20 +154,20 @@
     "pts": 1021.0,
     "name": "ARANBURU Alex"
   },
-  "olav-kooij": {
+  "matthew-brennan": {
     "rank": 32,
-    "pts": 1019.0,
+    "pts": 1017.0,
+    "name": "BRENNAN Matthew"
+  },
+  "olav-kooij": {
+    "rank": 33,
+    "pts": 1007.0,
     "name": "KOOIJ Olav"
   },
   "tim-merlier": {
-    "rank": 33,
-    "pts": 1018.0,
-    "name": "MERLIER Tim"
-  },
-  "matthew-brennan": {
     "rank": 34,
-    "pts": 1017.0,
-    "name": "BRENNAN Matthew"
+    "pts": 998.0,
+    "name": "MERLIER Tim"
   },
   "dorian-godon": {
     "rank": 35,
@@ -294,25 +294,25 @@
     "pts": 731.0,
     "name": "VAUQUELIN Kévin"
   },
-  "max-kanter": {
-    "rank": 60,
-    "pts": 730.0,
-    "name": "KANTER Max"
-  },
   "antonio-tiberi": {
-    "rank": 61,
+    "rank": 60,
     "pts": 720.0,
     "name": "TIBERI Antonio"
   },
   "jai-hindley": {
-    "rank": 62,
+    "rank": 61,
     "pts": 713.0,
     "name": "HINDLEY Jai"
   },
   "harold-tejada": {
-    "rank": 63,
+    "rank": 62,
     "pts": 705.0,
     "name": "TEJADA Harold"
+  },
+  "max-kanter": {
+    "rank": 63,
+    "pts": 700.0,
+    "name": "KANTER Max"
   },
   "santiago-buitrago-sanchez": {
     "rank": 64,
