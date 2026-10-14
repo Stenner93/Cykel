@@ -1,0 +1,6315 @@
+{
+ "year": 2026,
+ "updated": "2026-10-14",
+ "source": "Forventede startlister (fantasytool), importeret med import_klassiker_sheets.py",
+ "races": [
+  "omloop-het-nieuwsblad",
+  "strade-bianche",
+  "milano-sanremo",
+  "classic-brugge-de-panne",
+  "e3-harelbeke",
+  "gent-wevelgem",
+  "dwars-door-vlaanderen",
+  "ronde-van-vlaanderen",
+  "paris-roubaix",
+  "amstel-gold-race",
+  "la-fleche-wallonne",
+  "liege-bastogne-liege",
+  "eschborn-frankfurt"
+ ],
+ "riders": {
+  "A. Aranburu": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 3
+  },
+  "A. Bagioli": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 3
+  },
+  "A. Balmer": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "A. Bastiaens": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "A. Baudin": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "A. Benito": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "A. Bettiol": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 2
+  },
+  "A. Boichis": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "A. Borgo": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "A. Brunel": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "A. Bruttomesso": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "A. Buttigieg": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "A. Capiot": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "A. Covi": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "A. De Gendt": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "A. De Kleijn": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 3
+  },
+  "A. De Lie": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 2
+  },
+  "A. Delettre": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "A. Dockx": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "A. Eulálio": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "A. F. Prost": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "A. Fancellu": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "A. Foldager": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "A. Gate": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "A. H. Johannessen": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "A. Hatherly": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "A. Huens": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "A. Iacchi": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "A. Kirsch": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "A. Kluckers": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "A. Kron": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "A. Kuzmin": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "A. L'hote": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "A. Laurance": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "A. Livyns": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 3
+  },
+  "A. Mackellar": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "A. Marit": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 3
+  },
+  "A. Martinelli": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "A. Mayer": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "A. Mikutis": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "A. Molenaar": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "A. Morgado": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 3
+  },
+  "A. P. peintre": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "A. Peron": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "A. Pietrobon": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "A. Pinarello": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "A. Piras": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "A. Polga": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "A. R. Noviero": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "A. Renard": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "A. Romele": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "A. Segaert": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "A. Shmidt": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "A. Skaarseth": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "A. Stockman": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "A. Tolio": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "A. Torney": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "A. Torres": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "A. Turgis": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 3
+  },
+  "A. Valter": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 3
+  },
+  "A. Vendrame": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "A. Verre": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "A. W. Philipsen": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "A. Zingle": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "A. Ťoupalík": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "B. Coquard": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 3
+  },
+  "B. Cosnefroy": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "B. Deman": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "B. Girmay": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 2
+  },
+  "B. Granger": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "B. Healy": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 1
+  },
+  "B. Koerdt": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "B. Mcnulty": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 2
+  },
+  "B. Mollema": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "B. Rolland": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "B. S. Rivera": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "B. Thomas": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "B. Tronchon": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "B. Tulett": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "B. Turner": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 3
+  },
+  "B. Vadic": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "B. Van Lerberghe": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "B. Van Moer": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "B. Zwiehoff": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "C. Alleno": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "C. B. Afonso": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "C. B. Christophersen": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "C. Barthe": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "C. Beullens": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "C. Bol": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "C. Canal": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "C. Champoussin": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "C. Charret": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "C. F. Bévort": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "C. Izquierdo": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "C. J. jensen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "C. Laporte": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 2
+  },
+  "C. Macías": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "C. Pedersen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "C. Russo": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "C. Scaroni": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "C. Simmons": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "C. Strong": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 3
+  },
+  "C. Swift": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 4
+  },
+  "C. Thornley": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "C. Uijtdebroeks": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "C. Venturini": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "D. Ballerini": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "D. Caruso": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 3
+  },
+  "D. Cavia": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "D. Corkery": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "D. De Bondt": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "D. De Pooter": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "D. De Pretto": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "D. F. Martínez": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "D. Giuliano": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "D. Godon": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "D. Groenewegen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 2
+  },
+  "D. Hoole": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "D. I. Belletta": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "D. Lozano": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "D. Novak": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "D. P. Sevilla": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "D. Pescador": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "D. Skerl": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "D. Smith": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "D. Teuns": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "D. Toneatti": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "D. Ulissi": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "D. Van Baarle": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 2
+  },
+  "D. Van Bekkum": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "D. Van Gestel": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "D. Van Poppel": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 3
+  },
+  "D. Vandenstorme": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "E. A. Fagúndez": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "E. Affini": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 3
+  },
+  "E. Blikra": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "E. Costiou": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "E. Herzog": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "E. Jeannière": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 3
+  },
+  "E. Liepiņš": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "E. Maris": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "E. N. Resell": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "E. Planckaert": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "E. Reinders": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "E. Theuns": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "E. Verstrynge": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "E. Zambanini": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "E. Zamperini": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "F. Archibold": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "F. Biesterbos": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "F. Busatto": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "F. Christen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 3
+  },
+  "F. Conca": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "F. D. Van Bossche": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "F. D. Van Broek": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "F. Dauphin": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "F. Dversnes": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "F. F. black": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "F. Fiorelli": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "F. Frison": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "F. Ganna": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 2
+  },
+  "F. Geeraerts": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "F. Großschartner": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 3
+  },
+  "F. Jakobsen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 3
+  },
+  "F. Lienhard": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "F. Maciejuk": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "gent-wevelgem": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "F. Magli": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "F. Miholjević": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "F. Muñoz": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "F. Ridolfo": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "F. Stork": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "F. Sénéchal": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "F. Turconi": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "F. Van Tricht": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "F. Vermeersch": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 2
+  },
+  "F. Weiss": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "F. Wright": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "F. Zana": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "G. Bennett": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "G. Bessega": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "G. Boivin": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "G. Bouglas": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "G. Brussenskiy": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   }
+  },
+  "G. Ciccone": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 2
+  },
+  "G. Garofoli": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "G. Glivar": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "G. Lonardi": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "G. Martin": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "G. Moscon": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 3
+  },
+  "G. Mühlberger": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "G. Pellizzari": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 2
+  },
+  "G. Pollefliet": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 4
+  },
+  "G. Raccagni": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "G. Serrano": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "G. Syritsa": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "G. T. Silva": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "G. Thijssen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 3
+  },
+  "G. Vermeersch": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 3
+  },
+  "G. Zimmermann": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 3
+  },
+  "H. Armitt": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "H. Artz": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "H. De Vries": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "H. F. R. haquin": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "H. Hofstetter": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "H. L. De Calle": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "H. Page": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "H. Pedersen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "H. Sweeny": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 4
+  },
+  "H. Wilksch": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "I. Del Toro": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 1
+  },
+  "I. Einhorn": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "I. G. Cortina": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "I. Izagirre": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 3
+  },
+  "I. Van Wilder": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 3
+  },
+  "J. Abrahamsen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "J. Alaphilippe": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 3
+  },
+  "J. Ayuso": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 2
+  },
+  "J. Barrenetxea": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 4
+  },
+  "J. Berckmoes": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 3
+  },
+  "J. Biermans": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "J. Blackmore": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 3
+  },
+  "J. Bloem": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "J. Burnett": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "J. Christen": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 2
+  },
+  "J. D. Van Berg": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "J. De Buyst": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "J. Degenkolb": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 3
+  },
+  "J. Drizners": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "J. Eriksson": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "J. Geens": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "J. Giddings": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "J. Haig": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "J. Hesters": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "J. Jacobs": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "J. Johannink": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "J. Johansen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "J. Knox": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "J. Krijnsen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "J. Labrosse": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "J. Lecerf": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "J. Maas": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "J. Meeus": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 2
+  },
+  "J. Milan": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 1
+  },
+  "J. Mosca": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "J. Otruba": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "J. Philipsen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 1
+  },
+  "J. Rickaert": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "J. Rutsch": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "J. S. Molano": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 3
+  },
+  "J. Sainbayar": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "J. Shaw": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "J. Stuyven": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 2
+  },
+  "J. Suter": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "J. Söderqvist": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "J. Sütterlin": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "J. Tarling": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 2
+  },
+  "J. Tesson": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "J. Tratnik": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "J. Vervenne": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "J. Widar": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 3
+  },
+  "K. Asgreen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "K. Bouwman": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "K. Geniets": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "K. Gradek": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "K. Groves": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 2
+  },
+  "K. Heiduk": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 4
+  },
+  "K. L. Feldmann": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "K. Małecki": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "K. Neilands": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "K. O'brien": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "K. Vauquelin": {
+   "flags": {
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 2
+  },
+  "K. Vermaerke": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 3
+  },
+  "L. Askey": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "L. Barré": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 3
+  },
+  "L. Bisiaux": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 4
+  },
+  "L. Bower": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "L. Colnaghi": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "L. Conforti": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "L. Cretti": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "L. Durbridge": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "L. Germani": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "L. Giaimi": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   }
+  },
+  "L. Gonov": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "L. Hamilton": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "L. Kubiš": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "L. Kämna": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 3
+  },
+  "L. Lamperti": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "L. Loockx": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "L. Manzin": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "L. Martinez": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "L. Mezgec": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 3
+  },
+  "L. Milesi": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 4
+  },
+  "L. Mozzato": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 3
+  },
+  "L. Nerurkar": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "L. Nespoli": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "L. Paletti": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "L. Pithie": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 2
+  },
+  "L. Quartucci": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "L. Rex": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 3
+  },
+  "L. Rota": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "L. Slock": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "L. Taminiaux": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "L. Van Boven": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "L. Van Eetvelt": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 2
+  },
+  "L. Van Hautegem": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "L. Verrando": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "L. Vervaeke": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "L. Warbasse": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "L. Wirtgen": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. Bais": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. Ballerstedt": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "M. Bjerg": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "M. Brennan": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 2
+  },
+  "M. Budziński": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "M. Camprubí": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "M. Cattaneo": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 3
+  },
+  "M. Cort": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 2
+  },
+  "M. D. Van Berg": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 3
+  },
+  "M. D. Van Haute": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "M. Dina": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "M. Dinham": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "M. Donovan": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. F. Honoré": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "M. Fox": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. Fretin": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 3
+  },
+  "M. Gaffuri": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. Gogl": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "M. Govekar": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "M. Grisel": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. Haller": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 3
+  },
+  "M. Hirschi": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 2
+  },
+  "M. Hoelgaard": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 3
+  },
+  "M. Jorgenson": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 2
+  },
+  "M. Kanter": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "M. Kockelmann": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. Kopecký": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 4
+  },
+  "M. Kudus": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "M. Kwiatkowski": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "M. Lambrecht": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "M. Lanhove": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "M. Louvel": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "M. Maestri": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. Manenti": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. Marcellusi": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. Matthews": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 1
+  },
+  "M. Mayrhofer": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "M. Mihkels": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "M. Milan": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "M. Mohorič": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 2
+  },
+  "M. Moro": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "M. Norsgaard": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "M. Pedersen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 1
+  },
+  "M. Rasenberg": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "M. Schachmann": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 3
+  },
+  "M. Schmid": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "M. Schrettl": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. Schwarzbacher": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "M. Sheffield": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 3
+  },
+  "M. Skjelmose": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 1
+  },
+  "M. Sobrero": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 3
+  },
+  "M. Stenico": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. Svrček": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. Tarozzi": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "M. Teunissen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "M. Trentin": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 3
+  },
+  "M. Vacek": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "M. Vader": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 4
+  },
+  "M. Valgren": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "M. Van Der Poel": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 1
+  },
+  "M. Van Dijke": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "M. Van Gils": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 2
+  },
+  "M. Vansevenant": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 3
+  },
+  "M. Walscheid": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "M. Zijlaard": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "N. Debeaumarché": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "N. Huysmans": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "N. Isidore": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "N. Larsen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "N. Marcerou": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "N. Märkl": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "N. Politt": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 3
+  },
+  "N. Raisberg": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "N. Schultz": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "N. Tesfatsion": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "N. Vandenbranden": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "N. Vinokurov": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "N. Zukowsky": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "O. Aular": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 3
+  },
+  "O. Chamberlain": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "O. Doull": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "O. Geleijn": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "O. Kogut": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "O. Naesen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "O. Peace": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "O. Riesebeek": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "O. Stockwell": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "O. Vergaerde": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "P. A. Côté": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "P. Ackermann": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 3
+  },
+  "P. Allegaert": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "P. Bauhaus": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 3
+  },
+  "P. Bilbao": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 2
+  },
+  "P. Bittner": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "P. Gautherat": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 4
+  },
+  "P. Kelemen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "P. Konrad": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "P. Lapeira": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 3
+  },
+  "P. Magnier": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 2
+  },
+  "P. Martí": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "P. Mattio": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "P. Miquel": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "P. Novák": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "P. Ourselin": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "P. Penhoët": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "P. Reinderink": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "P. Roglič": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 2
+  },
+  "P. S. Hagenes": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "P. Seixas": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 2
+  },
+  "P. Sivakov": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "P. Thierry": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "Q. Hermans": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "Q. Pacher": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "Q. Simmons": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 2
+  },
+  "R. Adrià": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "R. Augé": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "R. Boulahoite": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "R. Carapaz": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 2
+  },
+  "R. Dhondt": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "R. Donaldson": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "R. Ermakov": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "R. Evenepoel": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 1
+  },
+  "R. Froidevaux": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "R. Ghys": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "R. Grégoire": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 2
+  },
+  "R. Herregodts": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "R. Mullen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "R. Oliveira": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "R. Orins": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "R. Pluimers": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "R. S. Pedersen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "R. Sheehan": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "R. Tene": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "R. Thalmann": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "R. Thompson": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "R. Tiller": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 3
+  },
+  "R. Van Sintmaartensdijk": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "R. Álvarez": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "S. Aniołkowski": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "S. Bissegger": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "S. Brand": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "S. Christian": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "S. Consonni": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "S. De Pestel": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "S. De Schuyteneer": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "S. Dehairs": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "S. Deweirdt": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "S. Dewulf": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "S. Dillier": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "S. Dujardin": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 3
+  },
+  "S. E. Bystrøm": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "S. Flynn": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 4
+  },
+  "S. Fredheim": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "S. Grignard": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "S. Gualdi": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "S. Ingebrigtsen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "S. K. Andersen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 3
+  },
+  "S. K. Changizi": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 4
+  },
+  "S. K. Løland": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "S. Leroux": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 4
+  },
+  "S. Meris": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "S. Thonnon": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "S. Velasco": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 3
+  },
+  "S. Watson": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 3
+  },
+  "S. Welsford": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 2
+  },
+  "S. Wærenskjold": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "S. Zoccarato": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "T. Aerts": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "T. Bayer": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "T. Bonnet": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "T. Crabbe": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "T. De Jong": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "T. Del Grosso": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 3
+  },
+  "T. Donnenwirth": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "T. Fontaine": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "T. Gachignard": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 4
+  },
+  "T. Graat": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "T. Gruel": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "T. Gudmestad": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "T. H. Johannessen": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 2
+  },
+  "T. Kielich": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "T. Kopecký": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "T. Koyama": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "T. L. Andresen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 3
+  },
+  "T. Marsman": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "T. Müller": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "T. Naberman": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "T. Nencini": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "T. Pidcock": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 1
+  },
+  "T. Pogačar": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 1
+  },
+  "T. Rex": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1
+   },
+   "cat": 4
+  },
+  "T. Roosen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "T. T. Teutenberg": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 4
+  },
+  "T. Van Asbroeck": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "T. Van Dijke": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 3
+  },
+  "T. Wellens": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 1
+   },
+   "cat": 2
+  },
+  "U. Poli": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   }
+  },
+  "Unknown": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 1
+   }
+  },
+  "V. Albanese": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 3
+  },
+  "V. Braet": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1
+   },
+   "cat": 4
+  },
+  "V. Campenaerts": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 3
+  },
+  "V. Ferron": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 4
+  },
+  "V. Kmínek": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "V. Lafay": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0
+   },
+   "cat": 3
+  },
+  "V. Langellotti": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 0,
+    "la-fleche-wallonne": 0,
+    "liege-bastogne-liege": 1,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "V. Madouas": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "amstel-gold-race": 1
+   },
+   "cat": 2
+  },
+  "V. S. Laengen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "V. Van Hemelen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "V. Van Mechelen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "V. Vercouillie": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "W. B. Levy": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "W. Mouris": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  },
+  "W. Poels": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0
+   },
+   "cat": 3
+  },
+  "W. Van Aert": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 1
+  },
+  "W. Vangheluwe": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1
+   },
+   "cat": 4
+  },
+  "W. Vanhoof": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 4
+  },
+  "X. M. Azparren": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "X. Meurisse": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0,
+    "amstel-gold-race": 1,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "Y. Fedorov": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 0
+   },
+   "cat": 3
+  },
+  "Y. Lampaert": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 1,
+    "gent-wevelgem": 1,
+    "dwars-door-vlaanderen": 1,
+    "ronde-van-vlaanderen": 1,
+    "paris-roubaix": 1
+   },
+   "cat": 3
+  },
+  "Y. Voisard": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 0,
+    "la-fleche-wallonne": 1,
+    "liege-bastogne-liege": 0,
+    "eschborn-frankfurt": 0
+   },
+   "cat": 4
+  },
+  "Å. Holter": {
+   "flags": {
+    "strade-bianche": 1,
+    "milano-sanremo": 1,
+    "classic-brugge-de-panne": 0,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 0,
+    "dwars-door-vlaanderen": 0,
+    "ronde-van-vlaanderen": 0,
+    "paris-roubaix": 0
+   },
+   "cat": 4
+  },
+  "Ž. Eržen": {
+   "flags": {
+    "strade-bianche": 0,
+    "milano-sanremo": 0,
+    "classic-brugge-de-panne": 1,
+    "e3-harelbeke": 0,
+    "gent-wevelgem": 1
+   },
+   "cat": 4
+  }
+ }
+}
