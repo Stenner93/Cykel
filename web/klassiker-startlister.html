@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="da" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forventede startlister · Klassikerbord</title>
+<link rel="stylesheet" href="klassiker.css">
+<style>
+  .up{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 16px}
+  .up textarea{width:100%;min-height:92px;font-family:var(--mono);font-size:.72rem}
+  .status{font-size:.82rem;color:var(--ink-2)}
+  .status b{color:var(--ink)}
+  #slTbl td.f{text-align:center;min-width:54px}
+  #slTbl td.f .h{font-size:.62rem;color:var(--muted);margin-left:3px}
+  #slTbl td.f.loc{box-shadow:inset 0 -2px 0 var(--info)}
+  #slTbl td.f .act{font-size:.6rem;margin-left:2px}
+  #slTbl td.f .act.y{color:var(--good)} #slTbl td.f .act.n{color:#6b6450}
+  #slTbl tr.cnt td{background:var(--card);font-weight:700;font-size:.7rem}
+  @media (max-width:820px){ .up{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div class="dash-topbar"><div class="dash-topbar-inner">
+  <a href="klassiker.html" class="dash-logo">🦁 Klassikerbord<small id="gameName">Klassiker Manager</small></a>
+  <nav class="page-nav" id="mainNav"></nav>
+</div></div>
+<div class="tabs"><div class="tabs-in">
+  <a class="tab" href="klassiker.html#loeb">Løb &amp; blokke</a>
+  <a class="tab" href="klassiker.html#plan">Planlægger</a>
+  <a class="tab" href="klassiker.html#optakt">Optakt-konsol</a>
+  <a class="tab" href="klassiker.html#duel">Holdduel</a>
+  <a class="tab" href="klassiker.html#point">Pointoversigt</a>
+  <span class="tabsep" aria-hidden="true"></span>
+  <a class="tab" href="klassiker-startlister.html" aria-selected="true">Startlister</a>
+  <a class="tab" href="klassiker-historik.html">Rytterhistorik</a>
+</div></div>
+
+<main class="wide">
+  <div class="eyebrow">Hvem kører hvad</div>
+  <h2 class="sec">Forventede startlister</h2>
+  <p class="sec-sub">Fluebenene fra fantasytool: ✅ forventes at køre, ❌ forventes ikke, tom = ukendt.
+    Det lille tal i cellen er <b>hvor mange gange rytteren har kørt løbet før</b>
+    (<span id="histSpan"></span>), og det er nok det bedste gæt, når fluebenet mangler.
+    Når løbet er kørt, viser en prik om han faktisk startede: <span class="yes">●</span> startede, <span class="no">●</span> startede ikke.</p>
+
+  <div class="up">
+    <div class="card">
+      <b>Upload ny version</b>
+      <p class="note">xlsx (vælger arket "Kalender", hvis det findes), csv, eller tekst kopieret direkte fra Excel/fantasytool.
+        Nye flueben flettes ind, og tomme celler overskriver aldrig et flueben du allerede har. Det gemmes kun i
+        <b>denne browser</b>. Send også filen til assistenten, så den lægges fast ind for alle dine enheder.</p>
+      <div class="toolbar"><input type="file" id="upFile" accept=".xlsx,.xlsm,.csv,.txt,.tsv"></div>
+      <textarea id="upText" placeholder="…eller indsæt tabellen her (Ctrl+V fra Excel)"></textarea>
+      <div class="toolbar" style="margin-top:8px"><button class="primary" id="upGo">Indlæs</button><span class="note" id="upMsg"></span></div>
+    </div>
+    <div class="card status" id="status"></div>
+  </div>
+
+  <div class="toolbar">
+    <input type="search" id="q" placeholder="Søg rytter…">
+    <span id="cats"></span>
+    <label class="note">Forventet i <select id="onlyRace"><option value="">alle løb</option></select></label>
+    <label class="note">Sortér <select id="sort">
+      <option value="cat">kategori, så navn</option><option value="exp">flest forventede starter</option>
+      <option value="hist">flest starter før</option><option value="name">navn</option></select></label>
+    <label class="note"><input type="checkbox" id="onlyFlag" checked> kun ryttere med flueben eller kategori</label>
+    <span class="sp"></span><span class="note" id="nShown"></span>
+  </div>
+  <div class="scroll" style="max-height:74vh"><table class="grid" id="slTbl"></table></div>
+</main>
+
+<script src="nav.js"></script>
+<script src="klassiker-common.js"></script>
+<script>
+(function () {
+  var $ = KM.$, esc = KM.esc, D, Y, cats = { 1: 1, 2: 1, 3: 1, 4: 1, 0: 1 }, histYears = [];
+  KM.load().then(function () {
+    D = KM.D; Y = String(D.data_year);
+    $('gameName').textContent = D.game;
+    // "Kørt før" = årene før det år startlisterne gælder.
+    var slYear = D.startlists ? D.startlists.year : D.season;
+    histYears = D.history_years.filter(function (y) { return y < slYear; });
+    $('histSpan').textContent = histYears.length ? histYears[0] + '–' + histYears[histYears.length - 1] : 'ingen år';
+    $('onlyRace').innerHTML += KM.races.map(function (r, i) { return '<option value="' + i + '">' + esc(r.short) + '</option>'; }).join('');
+    $('cats').innerHTML = [1, 2, 3, 4, 0].map(function (c) {
+      return '<button class="chip" aria-pressed="true" data-c="' + c + '">' + (c ? 'Kat ' + c : 'uden kat.') + '</button>';
+    }).join(' ');
+    $('cats').querySelectorAll('.chip').forEach(function (b) {
+      b.addEventListener('click', function () { var c = b.dataset.c; cats[c] = cats[c] ? 0 : 1; b.setAttribute('aria-pressed', !!cats[c]); draw(); });
+    });
+    ['q', 'onlyRace', 'sort', 'onlyFlag'].forEach(function (id) { $(id).addEventListener(id === 'q' ? 'input' : 'change', draw); });
+    status(); draw();
+  });
+
+  function status() {
+    var sl = D.startlists, loc = KM.localStart();
+    $('status').innerHTML = '<b>Datafilen</b> (fast i siden): ' + (sl ? 'startlister for ' + sl.year + ', opdateret ' + esc(sl.updated || '?') +
+      ', ' + Object.keys(sl.flags).length + ' ryttere.' : 'ingen endnu.') +
+      '<br><br><b>Din lokale version</b>: ' + (loc ? 'opdateret ' + esc(loc.updated) + ', ' + Object.keys(loc.flags).length +
+        ' ryttere. Celler fra den har en blå streg. <button class="ghost" id="locDel">Fjern lokal version</button>' : 'ingen.') +
+      '<br><br><span class="note">Opdatering for alle enheder: send filen til assistenten, som kører ' +
+      '<span class="mono">import_klassiker_sheets.py startlists</span> og bygger siden igen.</span>';
+    if ($('locDel')) $('locDel').addEventListener('click', function () {
+      if (confirm('Fjerne din lokale version af startlisterne?')) { KM.del(KM.key('startlists')); status(); draw(); }
+    });
+  }
+
+  $('upGo').addEventListener('click', function () {
+    var f = $('upFile').files[0], t = $('upText').value.trim();
+    if (!f && !t) { $('upMsg').textContent = 'Vælg en fil eller indsæt tekst først.'; return; }
+    $('upMsg').textContent = 'Læser…';
+    KM.readRows(f || t).then(function (res) {
+      var parsed = KM.parseStartTable(res.rows);
+      var m = KM.mergeLocalStart(parsed);
+      $('upMsg').innerHTML = (res.sheet ? 'Ark "' + esc(res.sheet) + '": ' : '') + parsed.found + ' løb genkendt, ' + parsed.rows.length +
+        ' ryttere · ' + m.nNew + ' nye flueben, ' + m.nChg + ' ændrede' + (parsed.shifted ? ' (kolonner forskudt, rettet)' : '') +
+        (m.unknown.length ? ' · ukendte navne: ' + esc(m.unknown.slice(0, 8).join(', ')) + (m.unknown.length > 8 ? ' …' : '') : '');
+      $('upText').value = ''; $('upFile').value = '';
+      status(); draw();
+    }).catch(function (e) { $('upMsg').textContent = 'Fejl: ' + e.message; });
+  });
+
+  function rowsAll() {
+    var loc = KM.localStart() || { flags: {}, extra: {} }, ids = {};
+    KM.riders.forEach(function (r) { ids[r.id] = r; });
+    Object.keys(loc.extra || {}).forEach(function (id) {
+      if (!ids[id]) ids[id] = { id: id, name: loc.extra[id].name, cat: loc.extra[id].cat, _tb: {} };
+    });
+    return Object.keys(ids).map(function (id) {
+      var r = ids[id], flags = [], hist = [], exp = 0, hsum = 0, anyFlag = false;
+      for (var i = 0; i < KM.R; i++) {
+        var f = KM.flag(id, i); flags.push(f); if (f === 1) exp++; if (f != null) anyFlag = true;
+        var n = 0; histYears.forEach(function (y) { if (KM.started(r, String(y), i)) n++; });
+        hist.push(n); hsum += n;
+      }
+      return { r: r, flags: flags, hist: hist, exp: exp, hsum: hsum, any: anyFlag,
+        loc: loc.flags[id] || null };
+    });
+  }
+
+  function draw() {
+    var q = KM.norm($('q').value), only = $('onlyRace').value, sort = $('sort').value, onlyFlag = $('onlyFlag').checked;
+    var B = KM.blocks();
+    var rows = rowsAll().filter(function (x) {
+      var c = x.r.cat || 0;
+      if (!cats[c]) return false;
+      if (q && KM.norm(x.r.name).indexOf(q) === -1) return false;
+      if (only !== '' && x.flags[+only] !== 1) return false;
+      if (onlyFlag && !x.any && !x.r.cat) return false;
+      return true;
+    });
+    rows.sort(function (a, b) {
+      if (sort === 'exp') return b.exp - a.exp || b.hsum - a.hsum;
+      if (sort === 'hist') return b.hsum - a.hsum;
+      if (sort === 'name') return a.r.name.localeCompare(b.r.name, 'da');
+      return (a.r.cat || 9) - (b.r.cat || 9) || a.r.name.localeCompare(b.r.name, 'da');
+    });
+    $('nShown').textContent = rows.length + ' ryttere';
+    var isB = function (i) { return B.some(function (b) { return b.start === i; }) ? ' bl' : ''; };
+    var h = '<thead><tr class="g"><th class="stick"></th><th></th><th></th><th></th>' + B.map(function (b) {
+      return '<th colspan="' + (b.end - b.start + 1) + '" class="bl">' + esc(b.name) + '</th>'; }).join('') + '</tr><tr>' +
+      '<th class="l stick">Rytter</th><th>Kat</th><th class="l">Hold</th><th title="Forventede starter (✅)">✅</th>' +
+      KM.races.map(function (r, i) { return '<th class="c' + isB(i) + '" title="' + esc(r.name) + '">' + esc(r.short) +
+        (r.monument ? ' <span style="color:var(--mon)">●</span>' : '') + '</th>'; }).join('') + '</tr></thead><tbody>';
+    // Antal forventede pr. løb (af de viste)
+    var cnt = KM.races.map(function (r, i) { return rows.filter(function (x) { return x.flags[i] === 1; }).length; });
+    h += '<tr class="cnt"><td class="l stick">Forventet til start (viste)</td><td></td><td></td><td></td>' +
+      cnt.map(function (n, i) { return '<td class="c' + isB(i) + '">' + n + '</td>'; }).join('') + '</tr>';
+    var hasRes = KM.races.map(function (r) { return r.starters > 0 && D.startlists && D.startlists.year === D.data_year; });
+    h += rows.slice(0, 600).map(function (x) {
+      return '<tr><td class="l stick">' + esc(x.r.name) + '</td><td class="c">' + KM.kat(x.r.cat) + '</td><td class="l muted">' +
+        esc(shortTeam(x.r.team)) + '</td><td>' + (x.exp || '') + '</td>' +
+        x.flags.map(function (f, i) {
+          var sym = f === 1 ? '<span class="yes">✅</span>' : f === 0 ? '<span class="no">❌</span>' : '';
+          var act = '';
+          if (hasRes[i] && (f != null)) {
+            var st = KM.started(x.r, Y, i);
+            act = '<span class="act ' + (st ? 'y' : 'n') + '">●</span>';
+          }
+          var loc = x.loc && x.loc[i] != null ? ' loc' : '';
+          return '<td class="f' + loc + isB(i) + '" title="' + esc(KM.races[i].name) + ': kørt ' + x.hist[i] + ' gange ' + $('histSpan').textContent + '">' +
+            sym + act + (x.hist[i] ? '<span class="h">' + x.hist[i] + '</span>' : '') + '</td>';
+        }).join('') + '</tr>';
+    }).join('');
+    if (rows.length > 600) h += '<tr><td class="l stick" colspan="5">… ' + (rows.length - 600) + ' flere — brug søgning eller filtre</td></tr>';
+    $('slTbl').innerHTML = h + '</tbody>';
+    KM.stickHead($('slTbl'));
+  }
+  function shortTeam(t) { return t ? String(t).split(' - ')[0].slice(0, 22) : ''; }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{
+ "_om": "Styrefil for Klassiker Manager-siden. Når en ny sæson starter, rettes det her — se data/klassiker/README.md.",
+ "game": "Klassiker Manager 2027",
+ "season": 2027,
+ "data_year": 2026,
+ "categories_year": 2026,
+ "history_years": [2021, 2022, 2023, 2024, 2025, 2026],
+ "holdet": {"cartridge": null, "game_id": null},
+ "rules": {
+  "slots": {"1": 2, "2": 3, "3": 3, "4": 4},
+  "transfers": 35,
+  "transfers_note": "Første hold er gratis; skifterne tæller fra runde 2.",
+  "captain_factor": 2,
+  "team_bonus": 25,
+  "team_bonus_note": "Til alle fra vinderens hold der startede, vinderen inklusive.",
+  "monument_bonus": [150, 125, 100, 85, 75, 65, 55, 45, 35, 25]
+ },
+ "races": [
+  {"slug": "omloop-het-nieuwsblad",   "name": "Omloop Het Nieuwsblad",   "short": "Omloop",   "group": "vlaanderen"},
+  {"slug": "strade-bianche",          "name": "Strade Bianche",          "short": "Strade",   "group": "strade"},
+  {"slug": "milano-sanremo",          "name": "Milano-Sanremo",          "short": "Sanremo",  "group": "sprint",     "monument": true},
+  {"slug": "classic-brugge-de-panne", "name": "Classic Brugge-De Panne", "short": "Brugge",   "group": "sprint"},
+  {"slug": "e3-harelbeke",            "name": "E3 Saxo Classic",         "short": "E3",       "group": "vlaanderen"},
+  {"slug": "gent-wevelgem",           "name": "Gent-Wevelgem",           "short": "Gent-W",   "group": "vlaanderen"},
+  {"slug": "dwars-door-vlaanderen",   "name": "Dwars door Vlaanderen",   "short": "Dwars",    "group": "vlaanderen"},
+  {"slug": "ronde-van-vlaanderen",    "name": "Ronde van Vlaanderen",    "short": "Flandern", "group": "vlaanderen", "monument": true},
+  {"slug": "paris-roubaix",           "name": "Paris-Roubaix",           "short": "Roubaix",  "group": "roubaix",    "monument": true},
+  {"slug": "amstel-gold-race",        "name": "Amstel Gold Race",        "short": "Amstel",   "group": "ardenner"},
+  {"slug": "la-fleche-wallonne",      "name": "La Flèche Wallonne",      "short": "Flèche",   "group": "ardenner"},
+  {"slug": "liege-bastogne-liege",    "name": "Liège-Bastogne-Liège",    "short": "Liège",    "group": "ardenner",   "monument": true},
+  {"slug": "eschborn-frankfurt",      "name": "Eschborn-Frankfurt",      "short": "Eschborn", "group": "sprint"}
+ ],
+ "blocks": [
+  {"name": "Brosten", "first": "omloop-het-nieuwsblad"},
+  {"name": "Ardennerne", "first": "amstel-gold-race"}
+ ],
+ "groups": {
+  "vlaanderen": "Vlaanderen-brosten",
+  "roubaix": "Roubaix",
+  "sprint": "Sprinterklassikere",
+  "strade": "Strade (grus)",
+  "ardenner": "Ardennerne"
+ },
+ "optakt_sources": ["Feltet.dk", "Simon K. Kjær"],
+ "duel": {
+  "ours": {"label": "Dig", "team_id": null},
+  "rival": {"label": "Modstanderen", "team_id": null}
+ }
+}

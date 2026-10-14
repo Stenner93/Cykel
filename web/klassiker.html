@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="da" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klassiker Manager · Klassikerbord</title>
+<link rel="stylesheet" href="klassiker.css">
+<style>
+  /* Løb & blokke */
+  .blk{margin:0 0 22px}
+  .blk-h{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 10px;padding:8px 12px;border-radius:10px;
+    background:var(--card);border:1px solid var(--border-2)}
+  .blk-h input{font-weight:800;font-size:.95rem;background:none;border:1px solid transparent;padding:3px 6px;min-width:0;width:220px}
+  .blk-h input:hover,.blk-h input:focus{border-color:var(--border-2)}
+  .blk-h .meta{color:var(--muted);font-size:.78rem}
+  .races{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
+  .rc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+  .rc.mon{border-color:rgba(232,99,58,.45)}
+  .rc-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .rc-h .no{color:var(--muted);font-weight:800;font-size:.8rem}
+  .rc-h b{font-size:1rem}
+  .rc-h .d{margin-left:auto;color:var(--muted);font-size:.76rem}
+  .rc img{width:100%;border-radius:8px;background:#fff;display:block;cursor:zoom-in}
+  .rc .noimg{height:90px;border:1px dashed var(--border-2);border-radius:8px;display:grid;place-items:center;color:var(--muted);font-size:.78rem}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+  .facts div{background:var(--card);border-radius:8px;padding:5px 7px}
+  .facts b{display:block;font-size:.9rem;font-variant-numeric:tabular-nums}
+  .facts span{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+  .pod{font-size:.78rem;color:var(--ink-2)}
+  .pod b{color:var(--ink)}
+  .exp{font-size:.74rem;color:var(--muted)}
+  .rc .split{align-self:flex-start;font-size:.7rem;padding:3px 8px}
+
+  /* Planlægger */
+  #planGrid td.cell{cursor:pointer;text-align:left;min-width:92px;border-left:1px solid var(--border)}
+  #planGrid td.cell:hover{background:var(--card-2)!important}
+  #planGrid td.cell .n{font-weight:700;font-size:.76rem}
+  #planGrid td.cell .s{display:flex;gap:6px;font-size:.66rem;color:var(--muted)}
+  #planGrid td.cell.new{box-shadow:inset 3px 0 0 var(--info)}
+  #planGrid td.cell.out .n{color:#7d7558;text-decoration:line-through}
+  #planGrid td.cell.cap{background:var(--accent-soft)}
+  #planGrid td.cell.cap .n::before{content:"★ ";color:var(--accent)}
+  #planGrid td.cell.dup{outline:2px solid var(--bad);outline-offset:-2px}
+  #planGrid td.cell.empty .n{color:var(--muted);font-weight:400}
+  #planGrid tr.sum td{background:var(--card);font-weight:700}
+  #planGrid tr.sum td.over{color:var(--bad)}
+  #planGrid .slot{text-align:left;color:var(--muted);font-size:.7rem}
+  #planGrid tr.katstart td{border-top:2px solid var(--border-2)}
+  .ed-list{max-height:52vh;overflow:auto;border:1px solid var(--border);border-radius:10px;margin-top:10px}
+  .ed-list table{width:100%}
+  .ed-list tr{cursor:pointer}
+  .ed-list tr.cur td{background:var(--accent-soft)}
+  .ed-acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+
+  /* Optakt + duel */
+  .src-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+  .src{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+  .src h4{margin:0 0 6px;font-size:.9rem}
+  .src ul{margin:4px 0 0;padding-left:18px;font-size:.84rem}
+</style>
+</head>
+<body>
+
+<div class="dash-topbar">
+  <div class="dash-topbar-inner">
+    <a href="klassiker.html" class="dash-logo">🦁 Klassikerbord<small id="gameName">Klassiker Manager</small></a>
+    <nav class="page-nav" id="mainNav"></nav>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tabs-in" role="tablist" aria-label="Klassiker-værktøjer">
+    <button class="tab" role="tab" aria-selected="true"  id="t-loeb"   aria-controls="p-loeb">Løb &amp; blokke</button>
+    <button class="tab" role="tab" aria-selected="false" id="t-plan"   aria-controls="p-plan">Planlægger</button>
+    <button class="tab" role="tab" aria-selected="false" id="t-optakt" aria-controls="p-optakt">Optakt-konsol</button>
+    <button class="tab" role="tab" aria-selected="false" id="t-duel"   aria-controls="p-duel">Holdduel</button>
+    <button class="tab" role="tab" aria-selected="false" id="t-point"  aria-controls="p-point">Pointoversigt</button>
+    <span class="tabsep" aria-hidden="true"></span>
+    <a class="tab" href="klassiker-startlister.html">Startlister</a>
+    <a class="tab" href="klassiker-historik.html">Rytterhistorik</a>
+  </div>
+</div>
+
+<main>
+  <p class="intro" id="intro">Henter…</p>
+
+  <!-- ══════════ LØB & BLOKKE ══════════ -->
+  <section class="panel" id="p-loeb" role="tabpanel" aria-labelledby="t-loeb">
+    <div class="eyebrow">Kalender · runde = løb</div>
+    <h2 class="sec">Løbene og blokkene</h2>
+    <p class="sec-sub">Én runde pr. løb. <b>Blokkene</b> er dine transfervinduer: del en blok med knappen på et løb,
+      slå to sammen fra blokoverskriften, og omdøb ved at skrive i navnet. Ændringerne gemmes i din browser og
+      bruges også i Planlæggeren, Startlister og Rytterhistorik. Profiler, distance og resultater er fra
+      <span id="dataYear1"></span> og byttes ud, når næste års ruter er ude.</p>
+    <div class="toolbar"><button id="blkReset" class="ghost">Nulstil blokke</button><span class="note" id="blkNote"></span></div>
+    <div id="raceBody"></div>
+  </section>
+
+  <!-- ══════════ PLANLÆGGER ══════════ -->
+  <section class="panel" id="p-plan" role="tabpanel" aria-labelledby="t-plan" hidden>
+    <div class="eyebrow">Holdet runde for runde</div>
+    <h2 class="sec">Planlægger</h2>
+    <p class="sec-sub">Tolv pladser fordelt på kategorierne, og én kolonne pr. løb. <b>Klik en plads</b> for at
+      skifte rytter eller vælge kaptajn. Et skifte gælder som udgangspunkt fra den runde og frem.
+      Ingen værdi og intet gebyr: det der tæller er <b>kategorierne</b>, <b>pointene</b> og
+      <b>skifterne</b> (første hold er gratis, derefter <span id="trMax"></span>).
+      Pointene er de faktiske fra <span id="dataYear2"></span>, med kaptajnen dobbelt.
+      Er der ikke valgt kaptajn, foreslås den med den bedste historik i løbet blandt dem der forventes at starte (markeret "auto").</p>
+    <div class="kpis" id="planKpis"></div>
+    <div class="toolbar">
+      <button id="planReset">Nulstil til udkastet</button>
+      <button id="planClear" class="ghost">Tom plan</button>
+      <button id="planExport" class="ghost">Gem som fil</button>
+      <label class="ghost" style="display:inline-flex;align-items:center;gap:6px;font-size:.82rem;cursor:pointer">
+        <input type="file" id="planImport" accept=".json" style="display:none"><span style="border:1px solid var(--border-2);border-radius:8px;padding:6px 10px">Hent fra fil</span></label>
+      <span class="sp"></span><span class="note" id="planSrc"></span>
+    </div>
+    <div class="scroll"><table class="grid" id="planGrid"></table></div>
+    <p class="note">Tegn i cellerne: ✓ startede · DNF udgik · – startede ikke (når resultaterne findes); ellers forventet ✅ / ❌ / ? fra startlisterne.
+      Blå kant = ny på holdet i den runde (et skifte). Rød kant = samme rytter to gange.</p>
+  </section>
+
+  <!-- ══════════ OPTAKT-KONSOL ══════════ -->
+  <section class="panel" id="p-optakt" role="tabpanel" aria-labelledby="t-optakt" hidden>
+    <div class="eyebrow">Optakt → signal</div>
+    <h2 class="sec">Optakt-konsol</h2>
+    <p class="sec-sub">Optakterne til hvert løb stillet op mod hinanden: favoritter, kaptajnbud og outsidere.
+      Du sender optakten (tekst eller screenshot) til assistenten, og den lægges ind her.
+      <b>Når flere kilder peger på samme rytter, er det det stærkeste signal.</b></p>
+    <div class="toolbar"><label>Løb <select id="ocRace"></select></label><span class="note" id="ocMeta"></span></div>
+    <div id="ocBody"></div>
+  </section>
+
+  <!-- ══════════ HOLDDUEL ══════════ -->
+  <section class="panel" id="p-duel" role="tabpanel" aria-labelledby="t-duel" hidden>
+    <div class="eyebrow">Dig mod modstanderen</div>
+    <h2 class="sec">Holdduel</h2>
+    <p class="sec-sub">Dit hold og modstanderens side om side, runde for runde: hvem I har inde, kaptajn og point.</p>
+    <div id="duelBody"></div>
+  </section>
+
+  <!-- ══════════ POINTOVERSIGT ══════════ -->
+  <section class="panel" id="p-point" role="tabpanel" aria-labelledby="t-point" hidden>
+    <div class="eyebrow">Klassikerspillets pointsystem</div>
+    <h2 class="sec">Hvad er en placering værd?</h2>
+    <p class="sec-sub">Samme skala i alle løb, plus <b>monumentbonus</b> til top-10 i de fire monumenter og
+      <b>holdbonus</b> til alle startende fra vinderens hold. Kaptajnen fordobler alt.
+      DNF og DNS giver 0, og point gives kun til og med 75. plads.</p>
+    <div class="scroll"><table class="grid" id="scaleTbl"></table></div>
+    <h3 id="ptsHead">Rytternes point</h3>
+    <div class="toolbar">
+      <input type="search" id="ptSearch" placeholder="Søg rytter…">
+      <span id="ptCats"></span>
+      <label class="note"><input type="checkbox" id="ptOnlyStart" checked> kun ryttere der startede mindst ét løb</label>
+    </div>
+    <div class="scroll" style="max-height:70vh"><table class="grid" id="ptTbl"></table></div>
+  </section>
+</main>
+
+<dialog id="edDlg"><button class="x ghost" id="edClose">Luk</button><div id="edBody"></div></dialog>
+
+<script src="nav.js"></script>
+<script src="klassiker-common.js"></script>
+<script>
+(function () {
+  var $ = KM.$, esc = KM.esc, D, Y;
+  var MON = ['januar','februar','marts','april','maj','juni','juli','august','september','oktober','november','december'];
+  var EN = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+  function dkDate(s) {
+    if (!s) return '';
+    var m = s.match(/(\d+)\s+(\w+)\s+(\d{4})/); if (!m) return s;
+    var k = EN.indexOf(m[2].toLowerCase());
+    return m[1] + '. ' + (k >= 0 ? MON[k] : m[2]) + ' ' + m[3];
+  }
+  function surname(n) { return String(n || '').replace(/^([A-ZÀ-Þ]\.\s*)+/, ''); }
+
+  KM.load().then(function () {
+    D = KM.D; Y = String(D.data_year);
+    $('gameName').textContent = D.game;
+    document.title = D.game + ' · Klassikerbord';
+    ['dataYear1', 'dataYear2'].forEach(function (id) { $(id).textContent = D.data_year; });
+    $('trMax').textContent = D.rules.transfers + ' skifter';
+    $('intro').innerHTML = '<b>' + esc(D.game) + '</b>: skabelonen er klar, og indtil spillet åbner på holdet.dk, kører den på <b>' +
+      D.data_year + '-data</b>: løb, profiler, resultater, dine kategorier og forventede startlister fra ' + D.data_year +
+      ', og dit holdudkast som eksempel. Når ' + D.season + '-spillet åbner, kommer det hele ind i én samlet opdatering. ' +
+      '<span class="muted">Data bygget ' + esc(D.built) + '.</span>';
+    renderRaces(); renderPlan(); renderOptakt(); renderDuel(); renderPoints();
+    KM.tabs(function (t) { if (t === 'plan') renderPlan(); if (t === 'duel') renderDuel(); });
+  }).catch(function (e) { $('intro').textContent = 'Kunne ikke hente data: ' + e.message; });
+
+  // ══════════ LØB & BLOKKE ══════════
+  function renderRaces() {
+    var B = KM.blocks(), h = '';
+    B.forEach(function (b, k) {
+      var mons = 0; for (var i = b.start; i <= b.end; i++) if (KM.races[i].monument) mons++;
+      h += '<div class="blk"><div class="blk-h"><input value="' + esc(b.name) + '" data-blk="' + k + '" aria-label="Bloknavn">' +
+        '<span class="meta">' + (b.end - b.start + 1) + ' løb · runde ' + (b.start + 1) + (b.end > b.start ? '–' + (b.end + 1) : '') +
+        (mons ? ' · ' + mons + ' monument' + (mons > 1 ? 'er' : '') : '') + '</span>' +
+        (k > 0 ? '<button class="ghost" data-merge="' + k + '">← slå sammen med forrige</button>' : '') + '</div><div class="races">';
+      for (i = b.start; i <= b.end; i++) h += raceCard(i, i > b.start);
+      h += '</div></div>';
+    });
+    $('raceBody').innerHTML = h;
+    $('blkNote').textContent = KM.get(KM.key('blocks'), null) ? 'Dine egne blokke er i brug.' : 'Standardblokkene fra opsætningen.';
+    $('raceBody').querySelectorAll('input[data-blk]').forEach(function (inp) {
+      inp.addEventListener('change', function () { var B2 = KM.blocks(); B2[+inp.dataset.blk].name = inp.value || 'Blok'; KM.saveBlocks(B2); renderRaces(); });
+    });
+    $('raceBody').querySelectorAll('[data-merge]').forEach(function (bt) {
+      bt.addEventListener('click', function () { var B2 = KM.blocks(); B2.splice(+bt.dataset.merge, 1); KM.saveBlocks(B2); renderRaces(); });
+    });
+    $('raceBody').querySelectorAll('[data-split]').forEach(function (bt) {
+      bt.addEventListener('click', function () {
+        var i = +bt.dataset.split, B2 = KM.blocks();
+        B2.push({ name: 'Ny blok fra ' + KM.races[i].short, start: i, end: i });
+        B2.sort(function (a, b) { return a.start - b.start; });
+        KM.saveBlocks(B2); renderRaces();
+      });
+    });
+  }
+  $('blkReset').addEventListener('click', function () { KM.resetBlocks(); renderRaces(); });
+
+  function raceCard(i, canSplit) {
+    var r = KM.races[i], cnt = { 1: 0, 2: 0, 3: 0, 4: 0 }, any = false;
+    KM.riders.forEach(function (x) { if (x.cat && KM.flag(x.id, i) === 1) { cnt[x.cat]++; any = true; } });
+    var img = r.profile_img ? '<a href="' + esc(r.profile_img) + '" target="_blank" rel="noopener"><img loading="lazy" src="' +
+      esc(r.profile_img) + '" alt="Profil ' + esc(r.name) + '"></a>' : '<div class="noimg">Ingen profil endnu</div>';
+    var pod = r.podium && r.podium.length ? r.podium.map(function (p) {
+      return p.rank + '. <b>' + esc(p.name) + '</b>';
+    }).join(' · ') : '<span class="muted">Ingen resultat endnu</span>';
+    var f = function (v, u) { return v == null ? '–' : v + (u || ''); };
+    return '<article class="rc' + (r.monument ? ' mon' : '') + '">' +
+      '<div class="rc-h"><span class="no">' + (i + 1) + '</span><b>' + esc(r.name) + '</b>' +
+      (r.monument ? '<span class="tag mon">Monument</span>' : '') +
+      '<span class="tag grp">' + esc(D.groups[r.group] || r.group) + '</span><span class="d">' + esc(dkDate(r.date)) + '</span></div>' +
+      img +
+      '<div class="facts"><div><b>' + f(r.distance_km, ' km') + '</b><span>Distance</span></div><div><b>' + f(r.vmeters, ' m') +
+      '</b><span>Højdemeter</span></div><div><b>' + f(r.profile_score) + '</b><span>Profilscore</span></div><div><b>' +
+      f(r.startlist_quality) + '</b><span>Feltkvalitet</span></div></div>' +
+      '<div class="pod">' + D.data_year + ': ' + pod + (r.won_how ? ' <span class="muted">(' + esc(r.won_how) + ')</span>' : '') + '</div>' +
+      '<div class="exp">' + (any ? 'Forventet til start: ' + [1, 2, 3, 4].map(function (c) { return KM.kat(c) + ' ' + cnt[c]; }).join(' &nbsp;') :
+        'Ingen forventet startliste endnu') + '</div>' +
+      (canSplit ? '<button class="ghost split" data-split="' + i + '">✂ ny blok herfra</button>' : '') +
+      '</article>';
+  }
+
+  // ══════════ PLANLÆGGER ══════════
+  var SLOTS = [];
+  function slots() {
+    if (!SLOTS.length) Object.keys(D.rules.slots).forEach(function (c) { for (var k = 0; k < D.rules.slots[c]; k++) SLOTS.push(+c); });
+    return SLOTS;
+  }
+  function seedPlan() {
+    var n = slots().length;
+    if (D.plan) return { rounds: D.plan.rounds.map(function (r) { return r.slice(); }), captains: D.plan.captains.slice(), seed: true };
+    return { rounds: KM.races.map(function () { return new Array(n).fill(null); }), captains: new Array(KM.R).fill(null) };
+  }
+  function getPlan() { return KM.get(KM.key('plan'), null) || seedPlan(); }
+  function savePlan(p) { p.seed = false; KM.set(KM.key('plan'), p); }
+
+  // Historisk forventning i løb i: snit pr. start før dataåret, ellers blokkens snit.
+  function histAvg(r, i) {
+    var tot = 0, n = 0;
+    D.history_years.forEach(function (y) {
+      if (y >= D.data_year) return;
+      var p = KM.points(r, String(y), i); if (p) { tot += p.pts; n++; }
+    });
+    return n ? tot / n : 0;
+  }
+  function expectStart(r, i) {
+    var f = KM.flag(r.id, i);
+    if (f != null) return f === 1;
+    return null;
+  }
+  function autoCaptain(team, i) {
+    var best = null, bv = -1;
+    team.forEach(function (id) {
+      if (!id) return; var r = KM.byId[id]; if (!r) return;
+      if (expectStart(r, i) === false) return;
+      var v = histAvg(r, i) + (expectStart(r, i) ? 1 : 0);
+      if (v > bv) { bv = v; best = id; }
+    });
+    return best;
+  }
+  function raceHasResults(i) { return KM.races[i].starters > 0; }
+
+  function renderPlan() {
+    var P = getPlan(), S = slots(), B = KM.blocks();
+    var used = 0, total = 0, capTotal = 0, rows = [];
+    var trR = [], ptsR = [], outR = [], caps = [];
+    for (var i = 0; i < KM.R; i++) {
+      var team = P.rounds[i], prev = i ? P.rounds[i - 1] : null;
+      var t = 0;
+      if (prev) team.forEach(function (id) { if (id && prev.indexOf(id) === -1) t++; });
+      trR.push(t); used += t;
+      var cap = P.captains[i] || autoCaptain(team, i); caps.push(cap);
+      var pts = 0, out = 0;
+      team.forEach(function (id) {
+        if (!id) return; var r = KM.byId[id];
+        var p = KM.points(r, Y, i); pts += p ? p.pts : 0;
+        if (raceHasResults(i) ? !KM.started(r, Y, i) : expectStart(r, i) === false) out++;
+      });
+      var cp = cap ? KM.pts(KM.byId[cap], Y, i) : 0;
+      ptsR.push(pts + cp); outR.push(out); total += pts + cp; capTotal += cp;
+    }
+    var left = D.rules.transfers - used;
+    $('planKpis').innerHTML =
+      '<div class="kpi' + (left < 0 ? ' bad' : '') + '"><b>' + used + ' / ' + D.rules.transfers + '</b><span>Skifter brugt</span></div>' +
+      '<div class="kpi' + (left < 0 ? ' bad' : ' good') + '"><b>' + left + '</b><span>Skifter tilbage</span></div>' +
+      '<div class="kpi"><b>' + total.toLocaleString('da-DK') + '</b><span>Point ' + D.data_year + ' (inkl. kaptajn)</span></div>' +
+      '<div class="kpi"><b>' + capTotal.toLocaleString('da-DK') + '</b><span>Heraf kaptajn</span></div>' +
+      '<div class="kpi"><b>' + (outR.reduce(function (a, b) { return a + b; }, 0) / KM.R).toFixed(1) + '</b><span>Ikke-startende pr. løb</span></div>';
+    $('planSrc').textContent = P.seed && D.plan ? 'Viser: ' + (D.plan.label || 'udkast') : 'Viser: din egen plan (gemt i browseren)';
+
+    var h = '<thead><tr class="g"><th class="stick"></th>';
+    B.forEach(function (b) { h += '<th colspan="' + (b.end - b.start + 1) + '" class="bl">' + esc(b.name) + '</th>'; });
+    h += '</tr><tr><th class="stick l">Plads</th>';
+    KM.races.forEach(function (r, i) {
+      var bl = B.some(function (b) { return b.start === i; }) ? ' bl' : '';
+      h += '<th class="l' + bl + '" title="' + esc(r.name) + '">' + (i + 1) + '. ' + esc(r.short) + (r.monument ? ' <span style="color:var(--mon)">●</span>' : '') + '</th>';
+    });
+    h += '</tr></thead><tbody>';
+    var katNo = {};
+    S.forEach(function (c, k) {
+      katNo[c] = (katNo[c] || 0) + 1;
+      h += '<tr' + (katNo[c] === 1 ? ' class="katstart"' : '') + '><td class="stick slot">' + KM.kat(c) + ' ' + katNo[c] + '</td>';
+      for (var i = 0; i < KM.R; i++) {
+        var id = P.rounds[i][k], r = id ? KM.byId[id] : null;
+        var cls = ['cell'], bl = B.some(function (b) { return b.start === i; }) ? ' bl' : '';
+        if (!r) { h += '<td class="cell empty' + bl + '" data-i="' + i + '" data-k="' + k + '"><div class="n">+ vælg</div></td>'; continue; }
+        if (i && P.rounds[i - 1].indexOf(id) === -1) cls.push('new');
+        if (caps[i] === id) cls.push('cap');
+        if (P.rounds[i].filter(function (x) { return x === id; }).length > 1) cls.push('dup');
+        var st, p = KM.points(r, Y, i);
+        if (raceHasResults(i)) {
+          var code = KM.code(r, Y, i);
+          st = code == null || code === KM.DNS ? '–' : code < 0 ? '<span class="dnf">DNF</span>' : '✓ ' + code + '.';
+          if (code == null || code === KM.DNS) cls.push('out');
+        } else {
+          var f = KM.flag(id, i); st = f === 1 ? '✅' : f === 0 ? '❌' : '?';
+          if (f === 0) cls.push('out');
+        }
+        var ptxt = p ? (caps[i] === id ? p.pts * 2 : p.pts) + ' p' : '';
+        h += '<td class="' + cls.join(' ') + bl + '" data-i="' + i + '" data-k="' + k + '" title="' + esc(r.name) + (caps[i] === id && !P.captains[i] ? ' — kaptajn (auto)' : '') +
+          '"><div class="n">' + esc(surname(r.name)) + '</div><div class="s"><span>' + st + '</span><span>' + ptxt + '</span>' +
+          (caps[i] === id && !P.captains[i] ? '<span>auto</span>' : '') + '</div></td>';
+      }
+      h += '</tr>';
+    });
+    var cum = 0;
+    h += '<tr class="sum"><td class="stick slot">Skifter</td>' + trR.map(function (t, i) { return '<td class="l' + (B.some(function (b) { return b.start === i; }) ? ' bl' : '') + '">' + (i ? t : '–') + '</td>'; }).join('') + '</tr>';
+    h += '<tr class="sum"><td class="stick slot">Skifter i alt</td>' + trR.map(function (t, i) { cum += t; return '<td class="l' + (cum > D.rules.transfers ? ' over' : '') + (B.some(function (b) { return b.start === i; }) ? ' bl' : '') + '">' + cum + '</td>'; }).join('') + '</tr>';
+    h += '<tr class="sum"><td class="stick slot">Point</td>' + ptsR.map(function (p, i) { return '<td class="l' + (B.some(function (b) { return b.start === i; }) ? ' bl' : '') + '">' + (raceHasResults(i) ? p : '–') + '</td>'; }).join('') + '</tr>';
+    h += '<tr class="sum"><td class="stick slot">Ikke-startende</td>' + outR.map(function (o, i) { return '<td class="l' + (B.some(function (b) { return b.start === i; }) ? ' bl' : '') + '">' + o + '</td>'; }).join('') + '</tr>';
+    h += '</tbody>';
+    $('planGrid').innerHTML = h;
+    KM.stickHead($('planGrid'));
+    $('planGrid').querySelectorAll('td.cell').forEach(function (td) {
+      td.addEventListener('click', function () { openEditor(+td.dataset.i, +td.dataset.k); });
+    });
+  }
+
+  function openEditor(i, k) {
+    var P = getPlan(), c = slots()[k], cur = P.rounds[i][k], race = KM.races[i];
+    var q = '';
+    function list() {
+      var rows = KM.riders.filter(function (r) { return r.cat === c && (!q || KM.norm(r.name).indexOf(KM.norm(q)) !== -1); });
+      rows.forEach(function (r) {
+        var f = KM.flag(r.id, i), st = 0, best = null;
+        D.history_years.forEach(function (y) {
+          if (y >= D.data_year) return;
+          var code = KM.code(r, String(y), i);
+          if (code != null && code !== KM.DNS) { st++; if (code > 0 && (best == null || code < best)) best = code; }
+        });
+        r._ed = { f: f, st: st, best: best, avg: histAvg(r, i), now: KM.points(r, Y, i) };
+      });
+      rows.sort(function (a, b) {
+        var fa = a._ed.f === 1 ? 0 : a._ed.f == null ? 1 : 2, fb = b._ed.f === 1 ? 0 : b._ed.f == null ? 1 : 2;
+        return fa - fb || b._ed.avg - a._ed.avg || b._ed.st - a._ed.st;
+      });
+      var inTeam = P.rounds[i];
+      return '<table class="grid"><thead><tr><th class="l">Rytter</th><th>Forv.</th><th>Starter før</th><th>Bedste</th><th>Snit p/start</th><th>' +
+        D.data_year + '</th></tr></thead><tbody>' + rows.slice(0, 150).map(function (r) {
+          var e = r._ed, onTeam = inTeam.indexOf(r.id) !== -1;
+          return '<tr data-id="' + esc(r.id) + '"' + (r.id === cur ? ' class="cur"' : '') + '><td class="l">' + esc(r.name) +
+            (onTeam ? ' <span class="muted">(på holdet)</span>' : '') + '</td><td class="c">' + (e.f === 1 ? '✅' : e.f === 0 ? '❌' : '?') +
+            '</td><td>' + e.st + '</td><td>' + (e.best ? KM.placeHtml(e.best) : '–') + '</td><td>' + Math.round(e.avg) + '</td><td>' +
+            (e.now ? KM.placeHtml(e.now.code) + ' · ' + e.now.pts + ' p' : '') + '</td></tr>';
+        }).join('') + '</tbody></table>';
+    }
+    var curR = cur ? KM.byId[cur] : null;
+    $('edBody').innerHTML = '<h3>' + (i + 1) + '. ' + esc(race.name) + ' · ' + KM.kat(c) + '-plads</h3>' +
+      '<p class="note">Nu: <b>' + (curR ? esc(curR.name) : 'tom') + '</b>. Vælg en rytter på listen. Sorteret efter forventet start, ' +
+      'så snitpoint i løbet før ' + D.data_year + '.</p>' +
+      '<div class="ed-acts"><input type="search" id="edQ" placeholder="Søg i Kat ' + c + '…">' +
+      (cur ? '<button id="edCap">' + (P.captains[i] === cur ? 'Fjern som kaptajn' : '★ Kaptajn i denne runde') + '</button>' : '') +
+      (cur ? '<button id="edClear" class="ghost">Fjern fra denne runde og frem</button>' : '') + '</div>' +
+      '<div class="ed-acts"><label class="note"><input type="radio" name="edMode" value="fwd" checked> skift fra denne runde og frem</label>' +
+      '<label class="note"><input type="radio" name="edMode" value="one"> kun denne runde (koster typisk 2 skifter)</label></div>' +
+      '<div class="ed-list" id="edList">' + list() + '</div>';
+    function bindList() {
+      $('edList').querySelectorAll('tr[data-id]').forEach(function (tr) {
+        tr.addEventListener('click', function () {
+          var mode = (document.querySelector('input[name=edMode]:checked') || {}).value;
+          place(P, i, k, tr.dataset.id, mode === 'one'); savePlan(P); $('edDlg').close(); renderPlan();
+        });
+      });
+    }
+    bindList();
+    $('edQ').addEventListener('input', function (e) { q = e.target.value; $('edList').innerHTML = list(); bindList(); });
+    if ($('edCap')) $('edCap').addEventListener('click', function () {
+      P.captains[i] = P.captains[i] === cur ? null : cur; savePlan(P); $('edDlg').close(); renderPlan();
+    });
+    if ($('edClear')) $('edClear').addEventListener('click', function () {
+      place(P, i, k, null, false); savePlan(P); $('edDlg').close(); renderPlan();
+    });
+    $('edDlg').showModal();
+  }
+  // Sæt rytter på plads k i runde i. Fremad: alle følgende runder hvor
+  // pladsen havde samme rytter som før, får den nye (som et rigtigt skifte).
+  function place(P, i, k, id, onlyOne) {
+    var old = P.rounds[i][k];
+    P.rounds[i][k] = id;
+    if (P.captains[i] === old) P.captains[i] = null;
+    for (var j = i + 1; j < KM.R && !onlyOne; j++) {
+      if (P.rounds[j][k] !== old) break;
+      P.rounds[j][k] = id;
+      if (P.captains[j] === old) P.captains[j] = null;
+    }
+  }
+  $('edClose').addEventListener('click', function () { $('edDlg').close(); });
+  $('planReset').addEventListener('click', function () {
+    if (confirm('Slette din plan og gå tilbage til udkastet?')) { KM.del(KM.key('plan')); renderPlan(); }
+  });
+  $('planClear').addEventListener('click', function () {
+    if (!confirm('Starte forfra med en tom plan?')) return;
+    var p = seedPlan(); p.rounds = p.rounds.map(function (r) { return r.map(function () { return null; }); });
+    p.captains = p.captains.map(function () { return null; }); savePlan(p); renderPlan();
+  });
+  $('planExport').addEventListener('click', function () {
+    var blob = new Blob([JSON.stringify(getPlan(), null, 1)], { type: 'application/json' });
+    var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = 'klassiker-plan-' + D.season + '.json'; a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  });
+  $('planImport').addEventListener('change', function (e) {
+    var f = e.target.files[0]; if (!f) return;
+    f.text().then(function (t) {
+      var p = JSON.parse(t);
+      if (!p.rounds || p.rounds.length !== KM.R) throw new Error('filen passer ikke til ' + KM.R + ' runder');
+      savePlan(p); renderPlan();
+    }).catch(function (err) { alert('Kunne ikke læse planen: ' + err.message); });
+  });
+
+  // ══════════ OPTAKT-KONSOL ══════════
+  function renderOptakt() {
+    $('ocRace').innerHTML = KM.races.map(function (r, i) { return '<option value="' + i + '">' + (i + 1) + '. ' + esc(r.name) + '</option>'; }).join('');
+    $('ocRace').addEventListener('change', drawOptakt);
+    drawOptakt();
+  }
+  function drawOptakt() {
+    var i = +$('ocRace').value, r = KM.races[i], O = D.optakt || {}, data = (O.races || {})[r.slug];
+    var srcs = O.sources || [];
+    $('ocMeta').textContent = srcs.length ? 'Kilder: ' + srcs.join(' · ') : '';
+    if (!data) {
+      $('ocBody').innerHTML = '<div class="empty"><b>Ingen optakter endnu til ' + esc(r.name) + '.</b><br>' +
+        'Skallen er klar. Når en optakt kommer, sender du den til assistenten, og så står hver kilde her med ' +
+        '<b>favoritter</b>, <b>kaptajnbud</b>, <b>outsidere</b> og <b>noter</b>, og ryttere nævnt af flere kilder samles øverst som ' +
+        '<b>konsensus</b>. Ligger i <span class="mono">data/klassiker/optakt_' + D.season + '.json</span>.</div>' +
+        '<div class="src-grid" style="margin-top:12px">' + srcs.map(function (s) {
+          return '<div class="src"><h4>' + esc(s) + '</h4><p class="note">Afventer optakt</p></div>';
+        }).join('') + '</div>';
+      return;
+    }
+    var votes = {};
+    Object.keys(data).forEach(function (s) {
+      var d = data[s];
+      (d.favoritter || []).concat(d.kaptajn ? [d.kaptajn] : []).forEach(function (n) { votes[n] = (votes[n] || 0) + 1; });
+    });
+    var cons = Object.keys(votes).filter(function (n) { return votes[n] > 1; }).sort(function (a, b) { return votes[b] - votes[a]; });
+    var h = cons.length ? '<div class="card" style="margin-bottom:12px"><b>Konsensus:</b> ' + cons.map(function (n) {
+      return esc(n) + ' <span class="muted">(' + votes[n] + ')</span>'; }).join(' · ') + '</div>' : '';
+    h += '<div class="src-grid">' + Object.keys(data).map(function (s) {
+      var d = data[s], li = function (a) { return a && a.length ? '<ul>' + a.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : '<p class="note">–</p>'; };
+      return '<div class="src"><h4>' + esc(s) + '</h4>' + (d.kaptajn ? '<p>★ Kaptajn: <b>' + esc(d.kaptajn) + '</b></p>' : '') +
+        '<div class="note">Favoritter</div>' + li(d.favoritter) + '<div class="note">Outsidere</div>' + li(d.outsidere) +
+        (d.noter ? '<p class="note">' + esc(d.noter) + '</p>' : '') + '</div>';
+    }).join('') + '</div>';
+    $('ocBody').innerHTML = h;
+  }
+
+  // ══════════ HOLDDUEL ══════════
+  function renderDuel() {
+    var du = D.duel || {}, ours = du.ours || {}, rival = du.rival || {};
+    var have = du.teams && du.teams.ours && du.teams.rival;
+    if (!have) {
+      var P = getPlan(), rows = '';
+      for (var i = 0; i < KM.R; i++) {
+        var team = P.rounds[i], cap = P.captains[i] || autoCaptain(team, i), pts = 0;
+        team.forEach(function (id) { if (id) pts += KM.pts(KM.byId[id], Y, i) * (id === cap ? 2 : 1); });
+        rows += '<tr><td class="l">' + (i + 1) + '. ' + esc(KM.races[i].short) + '</td><td>' + (raceHasResults(i) ? pts : '–') +
+          '</td><td class="l">' + (cap ? esc(KM.byId[cap].name) : '–') + '</td><td>–</td><td class="l muted">afventer</td></tr>';
+      }
+      $('duelBody').innerHTML = '<div class="empty"><b>Duellen starter, når ' + D.season + '-spillet åbner.</b><br>' +
+        'Der skal bruges to hold-ID\'er fra holdet.dk: dit eget og ' + esc((rival.label || 'modstanderen').toLowerCase()) + 's (som i Vuelta-duellen). ' +
+        'De sættes i <span class="mono">data/klassiker/config.json</span> under <span class="mono">duel</span>, og så henter den daglige ' +
+        'kørsel begge hold runde for runde. Indtil da står din egen plan i venstre side.</div>' +
+        '<div class="scroll" style="margin-top:12px"><table class="grid"><thead><tr><th class="l">Runde</th><th>' + esc(ours.label || 'Dig') +
+        ' (plan)</th><th class="l">Kaptajn</th><th>' + esc(rival.label || 'Modstander') + '</th><th class="l">Kaptajn</th></tr></thead><tbody>' +
+        rows + '</tbody></table></div>';
+      return;
+    }
+  }
+
+  // ══════════ POINTOVERSIGT ══════════
+  function renderPoints() {
+    var ru = D.rules, B = KM.blocks();
+    var bands = [];
+    for (var p = 1; p <= 15; p++) bands.push([p, p]);
+    bands.push([16, 20], [21, 25], [26, 30], [31, 40], [41, 50], [51, 55], [56, 60], [61, 65], [66, 70], [71, 75]);
+    var h = '<thead><tr><th class="l stick">Placering</th>' + KM.races.map(function (r, i) {
+      return '<th' + (B.some(function (b) { return b.start === i; }) ? ' class="bl"' : '') + '>' + esc(r.short) +
+        (r.monument ? ' <span style="color:var(--mon)">●</span>' : '') + '</th>';
+    }).join('') + '</tr></thead><tbody>';
+    bands.forEach(function (b) {
+      var lab = b[0] === b[1] ? b[0] + '.' : b[0] + '.–' + b[1] + '.';
+      h += '<tr><td class="l stick">' + lab + '</td>';
+      KM.races.forEach(function (r, i) {
+        var lo = ru.scale[b[1] - 1], hi = ru.scale[b[0] - 1];
+        var mon = r.monument && b[0] <= 10 ? ru.monument_bonus[b[0] - 1] : 0;
+        var txt = b[0] === b[1] ? String(hi + mon) : (lo === hi ? String(hi) : hi + '–' + lo);
+        h += '<td' + (B.some(function (x) { return x.start === i; }) ? ' class="bl"' : '') + '>' +
+          (mon ? '<b style="color:var(--mon)">' + txt + '</b>' : txt) + '</td>';
+      });
+      h += '</tr>';
+    });
+    h += '<tr><td class="l stick">76.–</td>' + KM.races.map(function () { return '<td class="muted">0</td>'; }).join('') + '</tr>';
+    h += '<tr><td class="l stick">Holdbonus</td>' + KM.races.map(function () { return '<td>+' + ru.team_bonus + '</td>'; }).join('') + '</tr>';
+    h += '<tr><td class="l stick">Kaptajn</td>' + KM.races.map(function () { return '<td>×' + ru.captain_factor + '</td>'; }).join('') + '</tr></tbody>';
+    $('scaleTbl').innerHTML = h;
+
+    $('ptsHead').textContent = 'Rytternes point ' + D.data_year + ' (placering + monumentbonus + holdbonus, uden kaptajn)';
+    var cats = { 1: true, 2: true, 3: true, 4: true }, sortCol = 'tot', sortDir = -1;
+    $('ptCats').innerHTML = [1, 2, 3, 4].map(function (c) { return '<button class="chip" aria-pressed="true" data-c="' + c + '">Kat ' + c + '</button>'; }).join(' ');
+    $('ptCats').querySelectorAll('.chip').forEach(function (b) {
+      b.addEventListener('click', function () { var c = b.dataset.c; cats[c] = !cats[c]; b.setAttribute('aria-pressed', cats[c]); draw(); });
+    });
+    $('ptSearch').addEventListener('input', draw);
+    $('ptOnlyStart').addEventListener('change', draw);
+    var base = KM.riders.filter(function (r) { return r.cat; }).map(function (r) {
+      var pts = KM.races.map(function (x, i) { return KM.points(r, Y, i); });
+      return { r: r, pts: pts, tot: pts.reduce(function (a, p) { return a + (p ? p.pts : 0); }, 0),
+        st: pts.filter(Boolean).length };
+    });
+    function draw() {
+      var q = KM.norm($('ptSearch').value), only = $('ptOnlyStart').checked;
+      var rows = base.filter(function (x) {
+        return cats[x.r.cat] && (!q || KM.norm(x.r.name).indexOf(q) !== -1) && (!only || x.st > 0);
+      });
+      rows.sort(function (a, b) {
+        var va = sortCol === 'tot' ? a.tot : sortCol === 'st' ? a.st : sortCol === 'name' ? a.r.name : (a.pts[sortCol] ? a.pts[sortCol].pts : -1);
+        var vb = sortCol === 'tot' ? b.tot : sortCol === 'st' ? b.st : sortCol === 'name' ? b.r.name : (b.pts[sortCol] ? b.pts[sortCol].pts : -1);
+        return (va < vb ? -1 : va > vb ? 1 : 0) * sortDir;
+      });
+      var th = function (k, lab, cls) { return '<th class="sort' + (cls ? ' ' + cls : '') + (sortCol == k ? ' sorted' : '') + '" data-s="' + k + '">' + lab + (sortCol == k ? (sortDir < 0 ? ' ▾' : ' ▴') : '') + '</th>'; };
+      var h2 = '<thead><tr>' + th('name', 'Rytter', 'l stick') + '<th>Kat</th>' + th('st', 'Starter') + th('tot', 'I alt') +
+        KM.races.map(function (r, i) { return th(i, esc(r.short), B.some(function (b) { return b.start === i; }) ? 'bl' : ''); }).join('') + '</tr></thead><tbody>';
+      h2 += rows.slice(0, 400).map(function (x) {
+        return '<tr><td class="l stick">' + esc(x.r.name) + '</td><td class="c">' + KM.kat(x.r.cat) + '</td><td>' + x.st + '</td><td><b>' + x.tot + '</b></td>' +
+          x.pts.map(function (p, i) {
+            var bl = B.some(function (b) { return b.start === i; }) ? ' class="bl"' : '';
+            if (!p) return '<td' + bl + '></td>';
+            var tip = 'placering ' + (p.code > 0 ? p.code + '.' : 'DNF') + ': ' + p.place + (p.mon ? ' + monument ' + p.mon : '') + (p.tb ? ' + holdbonus ' + p.tb : '');
+            return '<td' + bl + ' title="' + tip + '">' + (p.pts ? p.pts : '<span class="pl0">0</span>') + ' <span class="muted" style="font-size:.66rem">' + (p.code > 0 ? p.code : 'DNF') + '</span></td>';
+          }).join('') + '</tr>';
+      }).join('') + '</tbody>';
+      $('ptTbl').innerHTML = h2;
+      KM.stickHead($('ptTbl'));
+      $('ptTbl').querySelectorAll('th.sort').forEach(function (t) {
+        t.addEventListener('click', function () {
+          var k = t.dataset.s; k = /^\d+$/.test(k) ? +k : k;
+          if (sortCol === k) sortDir = -sortDir; else { sortCol = k; sortDir = k === 'name' ? 1 : -1; }
+          draw();
+        });
+      });
+    }
+    draw();
+  }
+})();
+</script>
+</body>
+</html>

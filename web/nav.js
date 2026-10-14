@@ -4,6 +4,7 @@
    here, every page updates. */
 (function () {
   var NAV = [
+    { href: 'klassiker.html', label: 'Klassikere', match: ['klassiker.html', 'klassiker-startlister.html', 'klassiker-historik.html'] },
     { href: 'vuelta.html', label: 'Vuelta 2026', match: ['vuelta.html', '', 'planlaegger.html'] },
     { href: 'evaluering.html', label: 'Analyse', match: ['evaluering.html', 'laer-af-touren.html', 'vuelta-evaluering.html', 'tvaers-af-spil.html'] },
     { href: 'riders.html',    label: 'Rytterdatabase', match: ['riders.html'] },

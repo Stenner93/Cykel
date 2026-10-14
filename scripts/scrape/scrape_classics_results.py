@@ -56,6 +56,17 @@ RACES = [
     ("eschborn-frankfurt",    "Eschborn-Frankfurt",    "ardenner"),
 ]
 
+# Findes Klassiker Manager-opsætningen, er det den der bestemmer løbene —
+# så et nyt eller udskiftet løb i 2027 kun skal rettes ét sted. Blokken
+# ("brosten"/"ardenner") følger opsætningens anden blok.
+_CFG = ROOT / "data/klassiker/config.json"
+if _CFG.exists():
+    _c = json.loads(_CFG.read_text())
+    _slugs = [r["slug"] for r in _c["races"]]
+    _split = _slugs.index(_c["blocks"][1]["first"]) if len(_c.get("blocks", [])) > 1 else len(_slugs)
+    RACES = [(r["slug"], r["name"], "brosten" if i < _split else "ardenner")
+             for i, r in enumerate(_c["races"])]
+
 META = {
     "date": r"Date\s*([0-9]{1,2} \w+ [0-9]{4})",
     "profile_score": r"Profile score:\s*(\d+)",

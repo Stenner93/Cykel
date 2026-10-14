@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="da" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rytterhistorik · Klassikerbord</title>
+<link rel="stylesheet" href="klassiker.css">
+<style>
+  #hTbl td.nm{cursor:pointer;font-weight:600}
+  #hTbl td.nm:hover{color:var(--accent)}
+  #hTbl th.g0{border-left:2px solid var(--border-2)}
+  #hTbl td.g0{border-left:2px solid var(--border-2)}
+  .help{font-size:.76rem;color:var(--muted)}
+  .help code{font-family:var(--mono);color:var(--ink-2);background:var(--card);padding:0 4px;border-radius:4px}
+  #dlgBody table{font-size:.76rem}
+</style>
+</head>
+<body>
+<div class="dash-topbar"><div class="dash-topbar-inner">
+  <a href="klassiker.html" class="dash-logo">🦁 Klassikerbord<small id="gameName">Klassiker Manager</small></a>
+  <nav class="page-nav" id="mainNav"></nav>
+</div></div>
+<div class="tabs"><div class="tabs-in">
+  <a class="tab" href="klassiker.html#loeb">Løb &amp; blokke</a>
+  <a class="tab" href="klassiker.html#plan">Planlægger</a>
+  <a class="tab" href="klassiker.html#optakt">Optakt-konsol</a>
+  <a class="tab" href="klassiker.html#duel">Holdduel</a>
+  <a class="tab" href="klassiker.html#point">Pointoversigt</a>
+  <span class="tabsep" aria-hidden="true"></span>
+  <a class="tab" href="klassiker-startlister.html">Startlister</a>
+  <a class="tab" href="klassiker-historik.html" aria-selected="true">Rytterhistorik</a>
+</div></div>
+
+<main class="wide">
+  <div class="eyebrow">Har han kørt det før, og hvordan gik det?</div>
+  <h2 class="sec">Rytterhistorik</h2>
+  <p class="sec-sub">Alle ryttere med kategori i spillet, plus alle der har kørt et af løbene de seneste tre år.
+    Vælg periode og visning, søg på navn, <b>klik en kolonneoverskrift for at sortere</b>, og skriv i feltet under
+    overskriften for at filtrere. <b>Klik et navn</b> for hele historikken løb for løb.
+    Point er klassikerspillets (placering + monumentbonus + holdbonus, uden kaptajn).</p>
+
+  <div class="toolbar">
+    <input type="search" id="q" placeholder="Søg rytter eller hold…">
+    <span id="cats"></span>
+    <label class="note"><input type="checkbox" id="inGame"> kun ryttere i spillet</label>
+  </div>
+  <div class="toolbar">
+    <label class="note">Visning <select id="view">
+      <option value="over">Overblik</option><option value="grp">Løbsgrupper</option><option value="race">Løb × år</option></select></label>
+    <label class="note">År fra <select id="y0"></select> til <select id="y1"></select></label>
+    <label class="note">Top-grænse <select id="topN"><option>10</option><option>15</option><option>30</option>
+      <option selected>55</option><option>75</option></select></label>
+    <button class="ghost" id="clr">Nulstil filtre</button>
+    <span class="sp"></span><span class="note" id="nShown"></span>
+  </div>
+  <p class="help">Filtre: <code>&gt;10</code> <code>&gt;=3</code> <code>&lt;5</code> <code>2-6</code> <code>0</code>,
+    eller tekst i tekstkolonner. I Løb × år er tallet placeringen; DNF sorteres sidst.</p>
+  <div class="scroll" style="max-height:72vh"><table class="grid" id="hTbl"></table></div>
+  <div class="toolbar" style="margin-top:8px"><button id="more" class="ghost" hidden>Vis alle</button></div>
+</main>
+
+<dialog id="dlg"><button class="x ghost" id="dlgX">Luk</button><div id="dlgBody"></div></dialog>
+
+<script src="nav.js"></script>
+<script src="klassiker-common.js"></script>
+<script>
+(function () {
+  var $ = KM.$, esc = KM.esc, D;
+  var ST = { view: 'over', y0: null, y1: null, topN: 55, cats: { 1: 1, 2: 1, 3: 1, 4: 1, 0: 1 }, inGame: false,
+    sort: { key: 'pts', dir: -1 }, flt: {}, all: false };
+  var COLS = [], ROWS = [];
+
+  KM.load().then(function () {
+    D = KM.D;
+    $('gameName').textContent = D.game;
+    var saved = KM.get(KM.key('hist_ui'), null);
+    if (saved) ['view', 'y0', 'y1', 'topN', 'inGame'].forEach(function (k) { if (saved[k] != null) ST[k] = saved[k]; });
+    var ys = D.history_years;
+    if (ST.y0 == null || ys.indexOf(ST.y0) === -1) ST.y0 = ys[Math.max(0, ys.length - 4)];
+    if (ST.y1 == null || ys.indexOf(ST.y1) === -1) ST.y1 = ys[ys.length - 1];
+    var opt = ys.map(function (y) { return '<option>' + y + '</option>'; }).join('');
+    $('y0').innerHTML = opt; $('y1').innerHTML = opt;
+    $('y0').value = ST.y0; $('y1').value = ST.y1; $('view').value = ST.view; $('topN').value = ST.topN; $('inGame').checked = ST.inGame;
+    $('cats').innerHTML = [1, 2, 3, 4, 0].map(function (c) {
+      return '<button class="chip" aria-pressed="true" data-c="' + c + '">' + (c ? 'Kat ' + c : 'uden kat.') + '</button>'; }).join(' ');
+    $('cats').querySelectorAll('.chip').forEach(function (b) {
+      b.addEventListener('click', function () { var c = b.dataset.c; ST.cats[c] = ST.cats[c] ? 0 : 1; b.setAttribute('aria-pressed', !!ST.cats[c]); draw(); });
+    });
+    $('q').addEventListener('input', draw);
+    $('inGame').addEventListener('change', function () { ST.inGame = this.checked; persist(); draw(); });
+    ['view', 'y0', 'y1', 'topN'].forEach(function (id) {
+      $(id).addEventListener('change', function () {
+        ST[id] = id === 'view' ? this.value : +this.value;
+        if (ST.y0 > ST.y1) { var t = ST.y0; ST.y0 = ST.y1; ST.y1 = t; $('y0').value = ST.y0; $('y1').value = ST.y1; }
+        if (id === 'view' || id === 'y0' || id === 'y1') { ST.flt = {}; if (id === 'view') ST.sort = { key: 'pts', dir: -1 }; }
+        persist(); build(); draw();
+      });
+    });
+    $('clr').addEventListener('click', function () { ST.flt = {}; $('q').value = ''; draw(); });
+    $('more').addEventListener('click', function () { ST.all = true; draw(); });
+    $('dlgX').addEventListener('click', function () { $('dlg').close(); });
+    build(); draw();
+  });
+  function persist() { KM.set(KM.key('hist_ui'), { view: ST.view, y0: ST.y0, y1: ST.y1, topN: ST.topN, inGame: ST.inGame }); }
+
+  function years() { return D.history_years.filter(function (y) { return y >= ST.y0 && y <= ST.y1; }); }
+
+  // ── Tal pr. rytter for den valgte periode ──
+  function build() {
+    var Y = years(), N = ST.topN, B = KM.blocks(), G = Object.keys(D.groups);
+    ROWS = KM.riders.map(function (r) {
+      var o = { r: r, name: r.name, team: r.team || '', cat: r.cat || null, st: 0, top: 0, top10: 0, win: 0, dnf: 0,
+        pts: 0, plsum: 0, plN: 0, act: 0, bst: {}, btop: {}, gst: {}, gtop: {}, gpts: {}, race: {} };
+      var e = KM.expectedCount(r.id); o.exp = e.known ? e.yes : null;
+      Y.forEach(function (y) {
+        var any = false;
+        for (var i = 0; i < KM.R; i++) {
+          var c = KM.code(r, String(y), i);
+          o.race[y + ':' + i] = c == null || c === KM.DNS ? null : c > 0 ? c : 900;   // DNF sorteres sidst
+          if (c == null || c === KM.DNS) continue;
+          any = true; o.st++;
+          var bk = KM.blockOf(i), g = KM.races[i].group;
+          o.bst[bk] = (o.bst[bk] || 0) + 1; o.gst[g] = (o.gst[g] || 0) + 1;
+          o.race['n:' + i] = (o.race['n:' + i] || 0) + 1;
+          var p = KM.points(r, String(y), i); o.pts += p.pts; o.gpts[g] = (o.gpts[g] || 0) + p.pts;
+          if (c < 0) { o.dnf++; continue; }
+          o.plsum += c; o.plN++;
+          if (c <= N) { o.top++; o.btop[bk] = (o.btop[bk] || 0) + 1; o.gtop[g] = (o.gtop[g] || 0) + 1; }
+          if (c <= 10) o.top10++;
+          if (c === 1) o.win++;
+        }
+        if (any) o.act++;
+      });
+      o.avg = o.plN ? Math.round(o.plsum / o.plN * 10) / 10 : null;
+      o.pps = o.st ? Math.round(o.pts / o.st) : null;
+      return o;
+    });
+
+    var num = function (key, label, get, extra) { return Object.assign({ key: key, label: label, type: 'num', get: get }, extra || {}); };
+    COLS = [
+      { key: 'name', label: 'Rytter', type: 'text', get: function (o) { return o.name; }, cls: 'l stick nm' },
+      num('cat', 'Kat', function (o) { return o.cat; }, { html: function (o) { return KM.kat(o.cat); }, cls: 'c' }),
+      { key: 'team', label: 'Hold', type: 'text', get: function (o) { return o.team; }, cls: 'l muted', html: function (o) { return esc(String(o.team).split(' - ')[0].slice(0, 24)); } }
+    ];
+    if (ST.view === 'over') {
+      COLS.push(num('exp', 'Forv. ✅', function (o) { return o.exp; }, { tip: 'Forventede starter i startlisterne' }),
+        num('act', 'Sæsoner', function (o) { return o.act; }, { tip: 'Sæsoner i perioden med mindst én start' }),
+        num('st', 'Starter', function (o) { return o.st; }, { g0: 1 }));
+      B.forEach(function (b, k) { COLS.push(num('bst' + k, 'St. ' + b.name, function (o) { return o.bst[k] || 0; })); });
+      COLS.push(num('top', 'Top-' + ST.topN, function (o) { return o.top; }, { g0: 1 }));
+      B.forEach(function (b, k) { COLS.push(num('btop' + k, 'Top-' + ST.topN + ' ' + b.name, function (o) { return o.btop[k] || 0; })); });
+      COLS.push(num('top10', 'Top-10', function (o) { return o.top10; }, { g0: 1 }),
+        num('win', 'Sejre', function (o) { return o.win; }),
+        num('avg', 'Gns. plac.', function (o) { return o.avg; }, { tip: 'Snitplacering blandt løb han gennemførte', asc: 1 }),
+        num('dnf', 'DNF', function (o) { return o.dnf; }),
+        num('pts', 'Point', function (o) { return o.pts; }, { g0: 1, bold: 1 }),
+        num('pps', 'Point/start', function (o) { return o.pps; }));
+    } else if (ST.view === 'grp') {
+      Object.keys(D.groups).forEach(function (g) {
+        COLS.push(num('gst' + g, 'Starter', function (o) { return o.gst[g] || 0; }, { grp: D.groups[g], g0: 1 }),
+          num('gtop' + g, 'Top-' + ST.topN, function (o) { return o.gtop[g] || 0; }, { grp: D.groups[g] }),
+          num('gpts' + g, 'Point', function (o) { return o.gpts[g] || 0; }, { grp: D.groups[g] }));
+      });
+      COLS.push(num('pts', 'Point i alt', function (o) { return o.pts; }, { g0: 1, bold: 1 }));
+    } else {
+      var yd = Y.slice().reverse();
+      KM.races.forEach(function (rc, i) {
+        COLS.push(num('n' + i, 'St.', function (o) { return o.race['n:' + i] || 0; }, { grp: rc.short, g0: 1, tip: 'Starter i ' + rc.name + ' i perioden' }));
+        yd.forEach(function (y) {
+          COLS.push(num(y + ':' + i, "'" + String(y).slice(2), function (o) { return o.race[y + ':' + i]; },
+            { grp: rc.short, asc: 1, html: function (o) { var v = o.race[y + ':' + i]; return v == null ? '' : v === 900 ? '<span class="dnf">DNF</span>' : KM.placeHtml(v); } }));
+        });
+      });
+    }
+    if (!COLS.some(function (c) { return c.key === ST.sort.key; })) ST.sort = { key: 'name', dir: 1 };
+  }
+
+  function draw() {
+    var q = KM.norm($('q').value);
+    var fl = {};
+    Object.keys(ST.flt).forEach(function (k) { var f = KM.filterFn(ST.flt[k]); if (f) fl[k] = f; });
+    var rows = ROWS.filter(function (o) {
+      if (!ST.cats[o.cat || 0]) return false;
+      if (ST.inGame && !o.cat) return false;
+      if (q && KM.norm(o.name + ' ' + o.team).indexOf(q) === -1) return false;
+      for (var k in fl) {
+        var c = COLS.find(function (x) { return x.key === k; }); if (!c) continue;
+        var v = c.get(o); if (v === 900) v = null;
+        if (!fl[k](v)) return false;
+      }
+      return true;
+    });
+    var sc = COLS.find(function (c) { return c.key === ST.sort.key; }) || COLS[0], dir = ST.sort.dir;
+    rows.sort(function (a, b) {
+      var va = sc.get(a), vb = sc.get(b);
+      if (va == null && vb == null) return 0; if (va == null) return 1; if (vb == null) return -1;
+      if (sc.type === 'text') return String(va).localeCompare(String(vb), 'da') * dir;
+      return (va - vb) * dir;
+    });
+    $('nShown').textContent = rows.length + ' af ' + ROWS.length + ' ryttere';
+    var lim = ST.all ? rows.length : 300;
+    $('more').hidden = rows.length <= lim;
+    $('more').textContent = 'Vis alle ' + rows.length;
+
+    var hasGrp = COLS.some(function (c) { return c.grp; });
+    var h = '<thead>';
+    if (hasGrp) {
+      h += '<tr class="g">'; var i = 0;
+      while (i < COLS.length) {
+        var g = COLS[i].grp, n = 1;
+        while (i + n < COLS.length && COLS[i + n].grp === g && g) n++;
+        h += '<th colspan="' + n + '" class="' + (i === 0 ? 'stick ' : '') + (g ? 'g0' : '') + '">' + esc(g || '') + '</th>'; i += n;
+      }
+      h += '</tr>';
+    }
+    h += '<tr>' + COLS.map(function (c) {
+      var on = c.key === ST.sort.key;
+      return '<th class="sort ' + (c.cls || '') + (c.g0 ? ' g0' : '') + (on ? ' sorted' : '') + '" data-k="' + esc(c.key) + '"' +
+        (c.tip ? ' title="' + esc(c.tip) + '"' : '') + '>' + esc(c.label) + (on ? (dir < 0 ? ' ▾' : ' ▴') : '') + '</th>';
+    }).join('') + '</tr>';
+    h += '<tr class="f">' + COLS.map(function (c) {
+      return '<th class="' + (c.cls && c.cls.indexOf('stick') !== -1 ? 'stick' : '') + (c.g0 ? ' g0' : '') + '"><input class="flt" data-k="' + esc(c.key) +
+        '" value="' + esc(ST.flt[c.key] || '') + '" placeholder="' + (c.type === 'num' ? '>…' : '…') + '" aria-label="Filter ' + esc(c.label) + '"></th>';
+    }).join('') + '</tr></thead><tbody>';
+    h += rows.slice(0, lim).map(function (o) {
+      return '<tr>' + COLS.map(function (c) {
+        var v = c.get(o), cell = c.html ? c.html(o) : (v == null ? '' : esc(v));
+        if (c.bold && v) cell = '<b>' + cell + '</b>';
+        if (c.type === 'num' && v === 0 && !c.html) cell = '<span class="pl0">0</span>';
+        return '<td class="' + (c.cls || '') + (c.g0 ? ' g0' : '') + '"' + (c.key === 'name' ? ' data-id="' + esc(o.r.id) + '"' : '') + '>' + cell + '</td>';
+      }).join('') + '</tr>';
+    }).join('') + '</tbody>';
+    var focus = document.activeElement && document.activeElement.classList.contains('flt') ? document.activeElement.dataset.k : null;
+    $('hTbl').innerHTML = h;
+    KM.stickHead($('hTbl'));
+    if (focus) { var el = $('hTbl').querySelector('input.flt[data-k="' + focus + '"]'); if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); } }
+    $('hTbl').querySelectorAll('th.sort').forEach(function (t) {
+      t.addEventListener('click', function () {
+        var k = t.dataset.k, c = COLS.find(function (x) { return x.key === k; });
+        if (ST.sort.key === k) ST.sort.dir = -ST.sort.dir;
+        else ST.sort = { key: k, dir: c.type === 'text' || c.asc ? 1 : -1 };
+        draw();
+      });
+    });
+    $('hTbl').querySelectorAll('input.flt').forEach(function (inp) {
+      inp.addEventListener('input', function () { ST.flt[inp.dataset.k] = inp.value; ST.all = false; draw(); });
+    });
+    $('hTbl').querySelectorAll('td.nm').forEach(function (td) {
+      td.addEventListener('click', function () { detail(KM.byId[td.dataset.id]); });
+    });
+  }
+
+  function detail(r) {
+    if (!r) return;
+    var Y = D.history_years.slice().reverse(), B = KM.blocks();
+    var h = '<h3>' + esc(r.name) + ' ' + KM.kat(r.cat) + ' <span class="muted" style="font-size:.8rem">' + esc(r.team || '') + '</span></h3>';
+    h += '<div class="scroll"><table class="grid"><thead><tr><th class="l">År</th>' + KM.races.map(function (rc, i) {
+      return '<th class="c' + (B.some(function (b) { return b.start === i; }) ? ' bl' : '') + '">' + esc(rc.short) + '</th>'; }).join('') +
+      '<th>Starter</th><th>Point</th></tr></thead><tbody>';
+    var fl = KM.races.map(function (rc, i) { return KM.flag(r.id, i); });
+    if (fl.some(function (f) { return f != null; })) {
+      h += '<tr><td class="l">Forventet</td>' + fl.map(function (f, i) {
+        return '<td class="c' + (B.some(function (b) { return b.start === i; }) ? ' bl' : '') + '">' + (f === 1 ? '✅' : f === 0 ? '❌' : '') + '</td>'; }).join('') + '<td></td><td></td></tr>';
+    }
+    Y.forEach(function (y) {
+      var st = 0, pt = 0;
+      h += '<tr><td class="l">' + y + '</td>' + KM.races.map(function (rc, i) {
+        var p = KM.points(r, String(y), i), bl = B.some(function (b) { return b.start === i; }) ? ' bl' : '';
+        if (!p) return '<td class="c' + bl + '">' + (KM.code(r, String(y), i) === KM.DNS ? '<span class="dns">DNS</span>' : '') + '</td>';
+        st++; pt += p.pts;
+        return '<td class="c' + bl + '" title="' + p.pts + ' point">' + (p.code > 0 ? KM.placeHtml(p.code) : '<span class="dnf">DNF</span>') +
+          (p.pts ? '<div class="muted" style="font-size:.62rem">' + p.pts + ' p</div>' : '') + '</td>';
+      }).join('') + '<td>' + st + '</td><td><b>' + pt + '</b></td></tr>';
+    });
+    h += '</tbody></table></div><p class="note">Point = placering + monumentbonus + holdbonus (uden kaptajn).</p>';
+    $('dlgBody').innerHTML = h;
+    $('dlg').showModal();
+  }
+})();
+</script>
+</body>
+</html>
