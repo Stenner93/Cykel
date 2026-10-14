@@ -1,0 +1,1233 @@
+{
+ "year": 2026,
+ "source": "Aflæst manuelt fra PCS' profilbilleder (La Flamme Rouge). Km fra stregernes position i billedet (trace_classics_profiles.py). Navne og typer kan indeholde aflæsningsfejl; nøgle-markeringen (★) er et skøn.",
+ "types": {
+  "c": "stigning",
+  "p": "brosten",
+  "cp": "brostensstigning",
+  "g": "grus",
+  "w": "vindudsat"
+ },
+ "races": {
+  "omloop-het-nieuwsblad": [
+   {
+    "km": 42.9,
+    "t": "p",
+    "name": "Paddestraat",
+    "n": 1
+   },
+   {
+    "km": 59.8,
+    "t": "p",
+    "name": "Haaghoek",
+    "n": 2
+   },
+   {
+    "km": 60.9,
+    "t": "c",
+    "name": "Leberg"
+   },
+   {
+    "km": 74.1,
+    "t": "cp",
+    "name": "Eikenberg",
+    "n": 3
+   },
+   {
+    "km": 115.2,
+    "t": "p",
+    "name": "Lange Munte",
+    "n": 4
+   },
+   {
+    "km": 131.7,
+    "t": "p",
+    "name": "Haaghoek",
+    "n": 5
+   },
+   {
+    "km": 132.8,
+    "t": "c",
+    "name": "Leberg"
+   },
+   {
+    "km": 146.0,
+    "t": "cp",
+    "name": "Eikenberg",
+    "n": 6
+   },
+   {
+    "km": 148.0,
+    "t": "p",
+    "name": "Holleweg",
+    "n": 7
+   },
+   {
+    "km": 150.0,
+    "t": "c",
+    "name": "Wolvenberg"
+   },
+   {
+    "km": 155.1,
+    "t": "p",
+    "name": "Kerkgate",
+    "n": 8
+   },
+   {
+    "km": 157.7,
+    "t": "p",
+    "name": "Jagerij",
+    "n": 9
+   },
+   {
+    "km": 162.6,
+    "t": "c",
+    "name": "Molenberg"
+   },
+   {
+    "km": 168.7,
+    "t": "p",
+    "name": "Haaghoek",
+    "n": 10
+   },
+   {
+    "km": 169.8,
+    "t": "c",
+    "name": "Leberg"
+   },
+   {
+    "km": 174.2,
+    "t": "c",
+    "name": "Berendries"
+   },
+   {
+    "km": 181.5,
+    "t": "c",
+    "name": "Tenbosse"
+   },
+   {
+    "km": 184.6,
+    "t": "c",
+    "name": "Parkeberg"
+   },
+   {
+    "km": 191.8,
+    "t": "cp",
+    "name": "Muur (Geraardsbergen)",
+    "n": 12,
+    "key": true
+   },
+   {
+    "km": 195.8,
+    "t": "cp",
+    "name": "Bosberg",
+    "n": 13,
+    "key": true
+   }
+  ],
+  "strade-bianche": [
+   {
+    "km": 12.0,
+    "t": "g",
+    "name": "Vidritta"
+   },
+   {
+    "km": 19.1,
+    "t": "g",
+    "name": "Bagnaia"
+   },
+   {
+    "km": 29.8,
+    "t": "g",
+    "name": "Radi"
+   },
+   {
+    "km": 40.1,
+    "t": "g",
+    "name": "Grussektor ved Buonconvento"
+   },
+   {
+    "km": 54.8,
+    "t": "c",
+    "name": "Montalcino (5,5 km · 5,2 %)"
+   },
+   {
+    "km": 69.0,
+    "t": "g",
+    "name": "Lucignano d'Asso"
+   },
+   {
+    "km": 85.3,
+    "t": "g",
+    "name": "Pieve a Salti"
+   },
+   {
+    "km": 108.2,
+    "t": "g",
+    "name": "San Martino in Grania"
+   },
+   {
+    "km": 120.9,
+    "t": "g",
+    "name": "Monte Sante Marie",
+    "key": true
+   },
+   {
+    "km": 150.0,
+    "t": "g",
+    "name": "Monteaperti"
+   },
+   {
+    "km": 154.5,
+    "t": "g",
+    "name": "Colle Pinzuto",
+    "key": true
+   },
+   {
+    "km": 161.2,
+    "t": "g",
+    "name": "Le Tolfe",
+    "key": true
+   },
+   {
+    "km": 164.5,
+    "t": "g",
+    "name": "Strada del Castagno"
+   },
+   {
+    "km": 177.2,
+    "t": "g",
+    "name": "San Giovanni a Cerreto"
+   },
+   {
+    "km": 185.0,
+    "t": "g",
+    "name": "Colle Pinzuto",
+    "key": true
+   },
+   {
+    "km": 191.6,
+    "t": "g",
+    "name": "Le Tolfe",
+    "key": true
+   },
+   {
+    "km": 202.3,
+    "t": "c",
+    "name": "Santa Caterina (rampe)",
+    "key": true
+   }
+  ],
+  "milano-sanremo": [
+   {
+    "km": 148.7,
+    "t": "c",
+    "name": "Passo del Turchino"
+   },
+   {
+    "km": 247.2,
+    "t": "c",
+    "name": "Capo Mele"
+   },
+   {
+    "km": 252.0,
+    "t": "c",
+    "name": "Capo Cervo"
+   },
+   {
+    "km": 260.5,
+    "t": "c",
+    "name": "Capo Berta"
+   },
+   {
+    "km": 277.9,
+    "t": "c",
+    "name": "Cipressa",
+    "key": true
+   },
+   {
+    "km": 294.3,
+    "t": "c",
+    "name": "Poggio di Sanremo",
+    "key": true
+   }
+  ],
+  "classic-brugge-de-panne": [
+   {
+    "km": 54.4,
+    "t": "p",
+    "name": "Brieversweg",
+    "n": 1
+   },
+   {
+    "km": 113.8,
+    "t": "p",
+    "name": "Brieversweg",
+    "n": 2
+   },
+   {
+    "km": 173.3,
+    "t": "p",
+    "name": "Brieversweg",
+    "n": 3
+   }
+  ],
+  "e3-harelbeke": [
+   {
+    "km": 32.3,
+    "t": "cp",
+    "name": "Katteberg",
+    "n": 1
+   },
+   {
+    "km": 34.7,
+    "t": "p",
+    "name": "Holleweg",
+    "n": 2
+   },
+   {
+    "km": 46.9,
+    "t": "p",
+    "name": "Paddestraat",
+    "n": 3
+   },
+   {
+    "km": 77.6,
+    "t": "c",
+    "name": "La Houppe"
+   },
+   {
+    "km": 85.7,
+    "t": "c",
+    "name": "Berg ten Stene"
+   },
+   {
+    "km": 108.3,
+    "t": "cp",
+    "name": "Oude Kruisberg",
+    "n": 4
+   },
+   {
+    "km": 114.9,
+    "t": "c",
+    "name": "E3 Col – Karnemelkbeekstraat"
+   },
+   {
+    "km": 123.8,
+    "t": "cp",
+    "name": "Oude Kwaremont (ny side)",
+    "n": 5
+   },
+   {
+    "km": 127.1,
+    "t": "c",
+    "name": "Hotondberg"
+   },
+   {
+    "km": 133.8,
+    "t": "c",
+    "name": "Kortekeer"
+   },
+   {
+    "km": 138.4,
+    "t": "c",
+    "name": "Taaienberg"
+   },
+   {
+    "km": 145.4,
+    "t": "c",
+    "name": "Boigneberg"
+   },
+   {
+    "km": 150.0,
+    "t": "cp",
+    "name": "Eikenberg",
+    "n": 7
+   },
+   {
+    "km": 163.3,
+    "t": "c",
+    "name": "Kapelberg"
+   },
+   {
+    "km": 167.0,
+    "t": "cp",
+    "name": "Paterberg",
+    "n": 8,
+    "key": true
+   },
+   {
+    "km": 172.2,
+    "t": "cp",
+    "name": "Oude Kwaremont",
+    "n": 9,
+    "key": true
+   },
+   {
+    "km": 178.9,
+    "t": "c",
+    "name": "E3 Col – Karnemelkbeekstraat"
+   },
+   {
+    "km": 187.0,
+    "t": "p",
+    "name": "Varentstraat",
+    "n": 10
+   },
+   {
+    "km": 190.0,
+    "t": "c",
+    "name": "Tiegemberg"
+   }
+  ],
+  "gent-wevelgem": [
+   {
+    "km": 78.8,
+    "t": "w",
+    "name": "De Moeren (vindudsat)"
+   },
+   {
+    "km": 88.6,
+    "t": "p",
+    "name": "Beauvoordestraat",
+    "n": 1
+   },
+   {
+    "km": 92.7,
+    "t": "p",
+    "name": "Veurnestraat",
+    "n": 2
+   },
+   {
+    "km": 134.7,
+    "t": "c",
+    "name": "Scherpenberg"
+   },
+   {
+    "km": 143.8,
+    "t": "c",
+    "name": "Baneberg"
+   },
+   {
+    "km": 150.0,
+    "t": "c",
+    "name": "Monteberg"
+   },
+   {
+    "km": 151.3,
+    "t": "c",
+    "name": "Kemmelberg (Belvedère)",
+    "key": true
+   },
+   {
+    "km": 165.8,
+    "t": "g",
+    "name": "Hill 63"
+   },
+   {
+    "km": 167.9,
+    "t": "g",
+    "name": "Christmas Truce"
+   },
+   {
+    "km": 169.4,
+    "t": "g",
+    "name": "The Catacombs"
+   },
+   {
+    "km": 182.0,
+    "t": "c",
+    "name": "Monteberg"
+   },
+   {
+    "km": 183.7,
+    "t": "cp",
+    "name": "Kemmelberg (Belvedère)",
+    "n": 7,
+    "key": true
+   },
+   {
+    "km": 191.1,
+    "t": "c",
+    "name": "Scherpenberg"
+   },
+   {
+    "km": 200.3,
+    "t": "c",
+    "name": "Baneberg"
+   },
+   {
+    "km": 205.4,
+    "t": "c",
+    "name": "Kemmelberg (Ossuaire)",
+    "key": true
+   }
+  ],
+  "dwars-door-vlaanderen": [
+   {
+    "km": 47.5,
+    "t": "c",
+    "name": "Hellestraat"
+   },
+   {
+    "km": 65.7,
+    "t": "cp",
+    "name": "Volkegemberg",
+    "n": 1
+   },
+   {
+    "km": 76.1,
+    "t": "c",
+    "name": "Berg Ten Houte"
+   },
+   {
+    "km": 93.1,
+    "t": "c",
+    "name": "Knokteberg"
+   },
+   {
+    "km": 96.7,
+    "t": "c",
+    "name": "Hotond"
+   },
+   {
+    "km": 104.2,
+    "t": "p",
+    "name": "Maria Borrestraat",
+    "n": 2
+   },
+   {
+    "km": 107.0,
+    "t": "c",
+    "name": "Onderbossenaarstraat"
+   },
+   {
+    "km": 113.0,
+    "t": "c",
+    "name": "Berg Ten Houte"
+   },
+   {
+    "km": 130.4,
+    "t": "c",
+    "name": "Knokteberg"
+   },
+   {
+    "km": 133.6,
+    "t": "c",
+    "name": "Hotond"
+   },
+   {
+    "km": 141.5,
+    "t": "p",
+    "name": "Maria Borrestraat",
+    "n": 3
+   },
+   {
+    "km": 145.7,
+    "t": "c",
+    "name": "Eikenberg"
+   },
+   {
+    "km": 156.3,
+    "t": "p",
+    "name": "Doorn",
+    "n": 4
+   },
+   {
+    "km": 159.8,
+    "t": "p",
+    "name": "Huisepontweg",
+    "n": 5
+   },
+   {
+    "km": 163.0,
+    "t": "c",
+    "name": "Nokereberg",
+    "key": true
+   },
+   {
+    "km": 166.8,
+    "t": "p",
+    "name": "Herlegemstraat",
+    "n": 6
+   },
+   {
+    "km": 175.8,
+    "t": "c",
+    "name": "Nokereberg",
+    "key": true
+   },
+   {
+    "km": 179.7,
+    "t": "p",
+    "name": "Herlegemstraat",
+    "n": 7,
+    "key": true
+   }
+  ],
+  "ronde-van-vlaanderen": [
+   {
+    "km": 110.8,
+    "t": "p",
+    "name": "Lippenhovestraat",
+    "n": 1
+   },
+   {
+    "km": 112.8,
+    "t": "p",
+    "name": "Paddestraat",
+    "n": 2
+   },
+   {
+    "km": 142.3,
+    "t": "cp",
+    "name": "Oude Kwaremont",
+    "n": 3
+   },
+   {
+    "km": 158.5,
+    "t": "p",
+    "name": "Holleweg",
+    "n": 5
+   },
+   {
+    "km": 160.5,
+    "t": "cp",
+    "name": "Eikenberg",
+    "n": 4
+   },
+   {
+    "km": 162.5,
+    "t": "c",
+    "name": "Wolvenberg"
+   },
+   {
+    "km": 167.4,
+    "t": "p",
+    "name": "Kerkgate",
+    "n": 6
+   },
+   {
+    "km": 169.9,
+    "t": "p",
+    "name": "Jagerij",
+    "n": 7
+   },
+   {
+    "km": 174.8,
+    "t": "cp",
+    "name": "Molenberg"
+   },
+   {
+    "km": 179.0,
+    "t": "p",
+    "name": "Marlboroughstraat"
+   },
+   {
+    "km": 183.2,
+    "t": "c",
+    "name": "Berendries"
+   },
+   {
+    "km": 191.3,
+    "t": "c",
+    "name": "Valkenberg"
+   },
+   {
+    "km": 204.1,
+    "t": "cp",
+    "name": "Berg Ten Houte"
+   },
+   {
+    "km": 213.7,
+    "t": "c",
+    "name": "Nieuwe Kruisberg/Hotond"
+   },
+   {
+    "km": 223.5,
+    "t": "cp",
+    "name": "Oude Kwaremont",
+    "key": true
+   },
+   {
+    "km": 227.0,
+    "t": "cp",
+    "name": "Paterberg",
+    "n": 11,
+    "key": true
+   },
+   {
+    "km": 233.1,
+    "t": "cp",
+    "name": "Koppenberg",
+    "key": true
+   },
+   {
+    "km": 238.3,
+    "t": "p",
+    "name": "Mariaborrestraat",
+    "n": 13
+   },
+   {
+    "km": 241.8,
+    "t": "cp",
+    "name": "Taaienberg"
+   },
+   {
+    "km": 250.4,
+    "t": "c",
+    "name": "Oude Kruisberg/Hotond",
+    "n": 15
+   },
+   {
+    "km": 262.0,
+    "t": "cp",
+    "name": "Oude Kwaremont",
+    "n": 16,
+    "key": true
+   },
+   {
+    "km": 265.4,
+    "t": "cp",
+    "name": "Paterberg",
+    "key": true
+   }
+  ],
+  "paris-roubaix": [
+   {
+    "km": 97.8,
+    "t": "p",
+    "name": "Troisvilles à Inchy",
+    "n": 30
+   },
+   {
+    "km": 104.1,
+    "t": "p",
+    "name": "Viesly à Quiévy",
+    "n": 29
+   },
+   {
+    "km": 108.7,
+    "t": "p",
+    "name": "Quiévy à Fontaine-au-Tertre",
+    "n": 28
+   },
+   {
+    "km": 114.1,
+    "t": "p",
+    "name": "Viesly à Briastre",
+    "n": 27
+   },
+   {
+    "km": 115.7,
+    "t": "p",
+    "name": "Saint-Python",
+    "n": 26
+   },
+   {
+    "km": 124.6,
+    "t": "p",
+    "name": "Solesmes à Haussy",
+    "n": 25
+   },
+   {
+    "km": 131.9,
+    "t": "p",
+    "name": "Saulzoir à Verchain-Maugré",
+    "n": 24
+   },
+   {
+    "km": 136.4,
+    "t": "p",
+    "name": "Verchain-Maugré à Quérénaing",
+    "n": 23
+   },
+   {
+    "km": 140.1,
+    "t": "p",
+    "name": "Quérénaing à Maing",
+    "n": 22
+   },
+   {
+    "km": 142.8,
+    "t": "p",
+    "name": "Maing à Monchaux-sur-Écaillon",
+    "n": 21
+   },
+   {
+    "km": 156.9,
+    "t": "p",
+    "name": "Haveluy à Wallers",
+    "n": 20
+   },
+   {
+    "km": 166.0,
+    "t": "p",
+    "name": "Trouée d'Arenberg",
+    "n": 19,
+    "key": true
+   },
+   {
+    "km": 171.4,
+    "t": "p",
+    "name": "Wallers à Hélesmes",
+    "n": 18
+   },
+   {
+    "km": 180.1,
+    "t": "p",
+    "name": "Hornaing à Wandignies",
+    "n": 17
+   },
+   {
+    "km": 186.4,
+    "t": "p",
+    "name": "Warlaing à Brillon",
+    "n": 16
+   },
+   {
+    "km": 189.9,
+    "t": "p",
+    "name": "Tilloy à Sars-et-Rosières",
+    "n": 15
+   },
+   {
+    "km": 195.3,
+    "t": "p",
+    "name": "Beuvry-la-Forêt à Orchies",
+    "n": 14
+   },
+   {
+    "km": 200.5,
+    "t": "p",
+    "name": "Orchies",
+    "n": 13
+   },
+   {
+    "km": 207.8,
+    "t": "p",
+    "name": "Auchy-lez-Orchies à Bersée",
+    "n": 12
+   },
+   {
+    "km": 213.5,
+    "t": "p",
+    "name": "Mons-en-Pévèle",
+    "n": 11,
+    "key": true
+   },
+   {
+    "km": 217.1,
+    "t": "p",
+    "name": "Mérignies à Avelin",
+    "n": 10
+   },
+   {
+    "km": 221.5,
+    "t": "p",
+    "name": "Pont-Thibault à Ennevelin",
+    "n": 9
+   },
+   {
+    "km": 225.6,
+    "t": "p",
+    "name": "Templeuve (L'Épinette / Moulin-de-Vertain)",
+    "n": 8
+   },
+   {
+    "km": 233.5,
+    "t": "p",
+    "name": "Cysoing à Bourghelles",
+    "n": 7
+   },
+   {
+    "km": 236.0,
+    "t": "p",
+    "name": "Bourghelles à Wannehain",
+    "n": 6
+   },
+   {
+    "km": 241.0,
+    "t": "p",
+    "name": "Camphin-en-Pévèle",
+    "n": 5
+   },
+   {
+    "km": 244.2,
+    "t": "p",
+    "name": "Carrefour de l'Arbre",
+    "n": 4,
+    "key": true
+   },
+   {
+    "km": 245.6,
+    "t": "p",
+    "name": "Gruson",
+    "n": 3
+   },
+   {
+    "km": 252.4,
+    "t": "p",
+    "name": "Willems à Hem",
+    "n": 2
+   },
+   {
+    "km": 258.1,
+    "t": "p",
+    "name": "Roubaix (Espace Crupelandt)",
+    "n": 1
+   }
+  ],
+  "amstel-gold-race": [
+   {
+    "km": 12.6,
+    "t": "c",
+    "name": "Maasberg"
+   },
+   {
+    "km": 49.3,
+    "t": "c",
+    "name": "Bergseweg"
+   },
+   {
+    "km": 50.9,
+    "t": "c",
+    "name": "Korenweg"
+   },
+   {
+    "km": 56.4,
+    "t": "c",
+    "name": "Nijswillerweg"
+   },
+   {
+    "km": 66.7,
+    "t": "c",
+    "name": "Rijksweg N278"
+   },
+   {
+    "km": 87.3,
+    "t": "c",
+    "name": "Wolfsberg"
+   },
+   {
+    "km": 90.5,
+    "t": "c",
+    "name": "Loorberg"
+   },
+   {
+    "km": 102.8,
+    "t": "c",
+    "name": "Schweibergerweg"
+   },
+   {
+    "km": 110.3,
+    "t": "c",
+    "name": "Camerig"
+   },
+   {
+    "km": 121.5,
+    "t": "c",
+    "name": "Vaalserberg"
+   },
+   {
+    "km": 124.5,
+    "t": "c",
+    "name": "Gemmenich"
+   },
+   {
+    "km": 128.8,
+    "t": "c",
+    "name": "Epenerbaan/Vijlenerbos"
+   },
+   {
+    "km": 137.5,
+    "t": "c",
+    "name": "Eperheide"
+   },
+   {
+    "km": 145.5,
+    "t": "c",
+    "name": "Gulperberg"
+   },
+   {
+    "km": 149.8,
+    "t": "c",
+    "name": "Plettenberg"
+   },
+   {
+    "km": 153.0,
+    "t": "c",
+    "name": "Eyserweg"
+   },
+   {
+    "km": 155.8,
+    "t": "c",
+    "name": "Schanternelsweg"
+   },
+   {
+    "km": 160.6,
+    "t": "c",
+    "name": "Vrakelberg"
+   },
+   {
+    "km": 169.7,
+    "t": "c",
+    "name": "Sibbergrubbe"
+   },
+   {
+    "km": 173.1,
+    "t": "c",
+    "name": "Cauberg"
+   },
+   {
+    "km": 178.2,
+    "t": "c",
+    "name": "Geulhemmerberg"
+   },
+   {
+    "km": 185.2,
+    "t": "c",
+    "name": "Heerderberg"
+   },
+   {
+    "km": 188.4,
+    "t": "c",
+    "name": "Bemelerberg"
+   },
+   {
+    "km": 204.2,
+    "t": "c",
+    "name": "Loorberg"
+   },
+   {
+    "km": 211.1,
+    "t": "c",
+    "name": "Gulperberg"
+   },
+   {
+    "km": 215.9,
+    "t": "c",
+    "name": "Kruisberg"
+   },
+   {
+    "km": 218.1,
+    "t": "c",
+    "name": "Eyserbosweg"
+   },
+   {
+    "km": 222.3,
+    "t": "c",
+    "name": "Fromberg"
+   },
+   {
+    "km": 226.6,
+    "t": "c",
+    "name": "Keutenberg",
+    "key": true
+   },
+   {
+    "km": 236.6,
+    "t": "c",
+    "name": "Cauberg",
+    "key": true
+   },
+   {
+    "km": 241.2,
+    "t": "c",
+    "name": "Geulhemmerberg"
+   },
+   {
+    "km": 248.3,
+    "t": "c",
+    "name": "Bemelerberg",
+    "key": true
+   },
+   {
+    "km": 256.8,
+    "t": "c",
+    "name": "Cauberg"
+   }
+  ],
+  "la-fleche-wallonne": [
+   {
+    "km": 31.0,
+    "t": "c",
+    "name": "Côte de Trasenster"
+   },
+   {
+    "km": 39.8,
+    "t": "c",
+    "name": "Côte des Forges"
+   },
+   {
+    "km": 76.3,
+    "t": "c",
+    "name": "Hermanne"
+   },
+   {
+    "km": 107.5,
+    "t": "c",
+    "name": "Côte d'Ereffe"
+   },
+   {
+    "km": 120.4,
+    "t": "c",
+    "name": "Côte de Cherave"
+   },
+   {
+    "km": 126.2,
+    "t": "c",
+    "name": "Mur de Huy"
+   },
+   {
+    "km": 145.2,
+    "t": "c",
+    "name": "Côte d'Ereffe"
+   },
+   {
+    "km": 157.7,
+    "t": "c",
+    "name": "Côte de Cherave"
+   },
+   {
+    "km": 163.4,
+    "t": "c",
+    "name": "Mur de Huy"
+   },
+   {
+    "km": 182.4,
+    "t": "c",
+    "name": "Côte d'Ereffe"
+   },
+   {
+    "km": 195.2,
+    "t": "c",
+    "name": "Côte de Cherave",
+    "key": true
+   },
+   {
+    "km": 200.0,
+    "t": "c",
+    "name": "Mur de Huy",
+    "key": true
+   }
+  ],
+  "liege-bastogne-liege": [
+   {
+    "km": 83.5,
+    "t": "c",
+    "name": "Côte de Saint-Roch"
+   },
+   {
+    "km": 132.3,
+    "t": "c",
+    "name": "Col de la Haussire"
+   },
+   {
+    "km": 171.0,
+    "t": "c",
+    "name": "Côte de Wanne"
+   },
+   {
+    "km": 177.9,
+    "t": "c",
+    "name": "Côte de Stockeu"
+   },
+   {
+    "km": 182.0,
+    "t": "c",
+    "name": "Côte de la Haute-Levée"
+   },
+   {
+    "km": 196.6,
+    "t": "c",
+    "name": "Col du Rosier"
+   },
+   {
+    "km": 209.3,
+    "t": "c",
+    "name": "Col du Maquisard"
+   },
+   {
+    "km": 213.2,
+    "t": "c",
+    "name": "Côte de Desnié"
+   },
+   {
+    "km": 225.8,
+    "t": "c",
+    "name": "Côte de la Redoute",
+    "key": true
+   },
+   {
+    "km": 230.3,
+    "t": "c",
+    "name": "Côte de Cornémont"
+   },
+   {
+    "km": 236.7,
+    "t": "c",
+    "name": "Côte des Forges"
+   },
+   {
+    "km": 246.7,
+    "t": "c",
+    "name": "Côte de la Roche-aux-Faucons",
+    "key": true
+   }
+  ],
+  "eschborn-frankfurt": [
+   {
+    "km": 38.9,
+    "t": "c",
+    "name": "Sandplacken"
+   },
+   {
+    "km": 47.9,
+    "t": "c",
+    "name": "Burgweg"
+   },
+   {
+    "km": 52.0,
+    "t": "c",
+    "name": "Feldberg"
+   },
+   {
+    "km": 64.0,
+    "t": "c",
+    "name": "Burgweg"
+   },
+   {
+    "km": 102.1,
+    "t": "c",
+    "name": "Mammolshain"
+   },
+   {
+    "km": 112.2,
+    "t": "c",
+    "name": "Feldberg"
+   },
+   {
+    "km": 124.2,
+    "t": "c",
+    "name": "Burgweg"
+   },
+   {
+    "km": 126.3,
+    "t": "c",
+    "name": "Rotes Kreuz"
+   },
+   {
+    "km": 162.2,
+    "t": "c",
+    "name": "Mammolshain"
+   },
+   {
+    "km": 177.0,
+    "t": "c",
+    "name": "Mammolshain",
+    "key": true
+   }
+  ]
+ }
+}

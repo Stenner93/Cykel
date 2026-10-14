@@ -12,6 +12,8 @@ Input:
   data/sources/classics/startlists_<år>.json      forventede startlister (import_klassiker_sheets.py)
   data/sources/classics/plan_<år>.json            holdudkast (import_klassiker_sheets.py plan)
   data/klassiker/optakt_<sæson>.json              optakter (valgfri — tom skal indtil da)
+  data/klassiker/profile_trace_<år>.json         profilform + mørke billeder (trace_classics_profiles.py)
+  data/klassiker/route_marks_<år>.json           stigninger/pavéer pr. løb (aflæst i hånden)
   web/data/klassiker/profiles/<år>/manifest.json  profilbilleder (fetch_classics_profiles.py)
 
 Output:
@@ -195,6 +197,12 @@ def main():
     # ── Løb ─────────────────────────────────────────────────────────────
     prof_dir = WEB / "klassiker/profiles" / str(data_year)
     prof = json.loads((prof_dir / "manifest.json").read_text())["files"] if (prof_dir / "manifest.json").exists() else {}
+    # Piktogrammet: profilens form (aflæst af billedet) + stigninger/pavéer
+    # (aflæst i hånden). Mangler en af dem, viser siden kun billedet.
+    trace_f = ROOT / f"data/klassiker/profile_trace_{data_year}.json"
+    marks_f = ROOT / f"data/klassiker/route_marks_{data_year}.json"
+    traces = json.loads(trace_f.read_text())["races"] if trace_f.exists() else {}
+    marks = json.loads(marks_f.read_text())["races"] if marks_f.exists() else {}
     race_out = []
     for r in races:
         m = meta.get((data_year, r["slug"]), {})
@@ -209,6 +217,10 @@ def main():
             "startlist_quality": m.get("startlist_quality"), "won_how": won,
             "starters": m.get("starters"), "finishers": m.get("finishers"),
             "profile_img": f"data/klassiker/profiles/{data_year}/{prof[r['slug']]}" if r["slug"] in prof else None,
+            "profile_dark": (f"data/klassiker/profiles/{data_year}/{r['slug']}_dark.png"
+                             if (prof_dir / f"{r['slug']}_dark.png").exists() else None),
+            "route": ({"shape": traces[r["slug"]]["shape"], "marks": marks.get(r["slug"], [])}
+                      if r["slug"] in traces else None),
             "podium": [{"rank": a, "name": short_name(b), "team": c} for a, b, c in sorted(podium[r["slug"]])],
         })
 

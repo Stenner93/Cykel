@@ -22,6 +22,11 @@ Der er intet årstal i filnavnene, så selve HTML-siderne skal ikke rettes fra
 3. **Ruteprofiler:** når PCS har 2027-profilerne, køres
    `python scripts/scrape/fetch_classics_profiles.py --year 2027`.
    Siden viser profilerne for `data_year`, så sæt `data_year` til 2027, når ruterne er ude.
+   Kør derefter `python scripts/analysis/trace_classics_profiles.py --year 2027`. Det laver de
+   mørke PCS-billeder og aflæser profilernes form og stregernes km.
+   Piktogrammets stigninger og pavéer (`route_marks_2027.json`) aflæses i hånden fra billederne:
+   navn, type (c, p, cp, g eller w), sektornummer og ★, med km fra `profile_trace_2027.json`.
+   Bed assistenten om det. Findes filen ikke, viser siden bare PCS-billedet.
 4. **Startlister:** filen fra fantasytool (som Kalender-fanen) importeres med
    `python scripts/analysis/import_klassiker_sheets.py startlists <fil> --sheet Kalender --year 2027`.
    Nye flueben flettes ind, og tomme celler sletter aldrig et gammelt flueben.
@@ -42,7 +47,9 @@ Der er intet årstal i filnavnene, så selve HTML-siderne skal ikke rettes fra
 | `data/sources/classics/categories_<år>.json` | kategorier | `import_holdet_categories.py` / `import_classics_notes.py` |
 | `data/sources/classics/startlists_<år>.json` | forventede startlister | `import_klassiker_sheets.py startlists` |
 | `data/sources/classics/plan_<år>.json` | holdudkast til Planlæggeren | `import_klassiker_sheets.py plan` |
-| `web/data/klassiker/profiles/<år>/` | profilbilleder | `fetch_classics_profiles.py` |
+| `web/data/klassiker/profiles/<år>/` | profilbilleder (+ mørke `_dark.png`) | `fetch_classics_profiles.py` / `trace_classics_profiles.py` |
+| `profile_trace_<år>.json` | profilform og stregernes km | `trace_classics_profiles.py` |
+| `route_marks_<år>.json` | stigninger, pavéer og grus til piktogrammet | aflæst i hånden |
 | `optakt_<sæson>.json` | optakter (valgfri) | assistenten |
 
 Blokke, plan, egne startlister og tabelvalg, som du ændrer på siden, gemmes i
