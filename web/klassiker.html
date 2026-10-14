@@ -13,14 +13,20 @@
   .blk-h input{font-weight:800;font-size:.95rem;background:none;border:1px solid transparent;padding:3px 6px;min-width:0;width:220px}
   .blk-h input:hover,.blk-h input:focus{border-color:var(--border-2)}
   .blk-h .meta{color:var(--muted);font-size:.78rem}
-  .races{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
+  .races{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,560px),1fr));gap:12px}
   .rc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
   .rc.mon{border-color:rgba(232,99,58,.45)}
   .rc-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
   .rc-h .no{color:var(--muted);font-weight:800;font-size:.8rem}
   .rc-h b{font-size:1rem}
   .rc-h .d{margin-left:auto;color:var(--muted);font-size:.76rem}
-  .rc img{width:100%;border-radius:8px;background:#fff;display:block;cursor:zoom-in}
+  .rc img{width:100%;border-radius:8px;display:block;cursor:zoom-in}
+  .picto{overflow-x:auto}
+  .picto svg{display:block;width:100%;min-width:540px}
+  .picto .leg{font-size:.68rem;color:var(--muted);margin-top:2px}
+  .picto .sum{font-size:.74rem;color:var(--ink-2)}
+  .pcs-t{align-self:flex-start;font-size:.7rem;padding:3px 8px}
+  .pcs-img[hidden]{display:none}
   .rc .noimg{height:90px;border:1px dashed var(--border-2);border-radius:8px;display:grid;place-items:center;color:var(--muted);font-size:.78rem}
   .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
   .facts div{background:var(--card);border-radius:8px;padding:5px 7px}
@@ -218,12 +224,77 @@
     });
   }
   $('blkReset').addEventListener('click', function () { KM.resetBlocks(); renderRaces(); });
+  // Knappen "Vis PCS-profilen" (delegeret, så den overlever gentegning)
+  $('raceBody').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-pcs]'); if (!b) return;
+    var box = $('pcs' + b.dataset.pcs); box.hidden = !box.hidden;
+    b.textContent = box.hidden ? 'Vis PCS-profilen' : 'Skjul PCS-profilen';
+  });
+
+  // ── Piktogram: profilens form i sidens farver + stigninger og pavéer ──
+  // Formen er aflæst af PCS-billedet (trace_classics_profiles.py); højden
+  // skaleres efter løbets højdemeter i forhold til det hårdeste løb, så
+  // Roubaix også ser flad ud. Markørerne er aflæst i hånden
+  // (data/klassiker/route_marks_<år>.json).
+  var MK = {
+    c:  { lab: 'stigning', col: '#F2EEDF' },
+    cp: { lab: 'brostensstigning', col: '#F2EEDF' },
+    p:  { lab: 'brosten', col: '#CFC6A8' },
+    g:  { lab: 'grus', col: '#D9C38F' },
+    w:  { lab: 'vindudsat', col: '#7FB6E8' }
+  };
+  function picto(r) {
+    var W = 640, pad = 8, top = 178, H = 72, base = top + H, w = W - 2 * pad, dist = r.distance_km || 1;
+    var maxVm = Math.max.apply(null, KM.races.map(function (x) { return x.vmeters || 0; })) || 1;
+    var frac = Math.max(0.22, (r.vmeters || 0) / maxVm);
+    var sh = r.route.shape, n = sh.length;
+    var X = function (k) { return pad + w * k / dist; };
+    var yAt = function (k) { var i = Math.min(n - 1, Math.max(0, Math.round(k / dist * (n - 1)))); return base - sh[i] * H * frac; };
+    var d = sh.map(function (v, i) { return (i ? 'L' : 'M') + (pad + w * i / (n - 1)).toFixed(1) + ' ' + (base - v * H * frac).toFixed(1); }).join(' ');
+    var s = '<svg viewBox="0 0 ' + W + ' ' + (base + 24) + '" role="img" aria-label="Profil og stigninger, ' + esc(r.name) + '" font-family="Segoe UI,system-ui,sans-serif">';
+    s += '<path d="' + d + ' L ' + (W - pad) + ' ' + base + ' L ' + pad + ' ' + base + ' Z" fill="#F5C400" opacity=".13"/>';
+    s += '<path d="' + d + '" fill="none" stroke="#F5C400" stroke-width="1.6" stroke-linejoin="round"/>';
+    s += '<line x1="' + pad + '" x2="' + (W - pad) + '" y1="' + base + '" y2="' + base + '" stroke="#4B4429"/>';
+    for (var k = 0; k <= dist - 15; k += 50) s += '<text x="' + X(k) + '" y="' + (base + 13) + '" fill="#9A916F" font-size="9" text-anchor="middle">' + k + '</text>';
+    s += '<text x="' + (W - pad) + '" y="' + (base + 13) + '" fill="#9A916F" font-size="9" text-anchor="end">' + dist + ' km</text>';
+    var lx = -99, cnt = {};
+    (r.route.marks || []).forEach(function (m) {
+      cnt[m.t] = (cnt[m.t] || 0) + 1;
+      var x = X(m.km), y = yAt(m.km), t = MK[m.t] || MK.c, tx = Math.max(x, lx + 10.6); lx = tx;
+      var col = m.key ? '#F5C400' : t.col, climb = m.t === 'c' || m.t === 'cp', surf = m.t === 'p' || m.t === 'cp' || m.t === 'g' || m.t === 'w';
+      var tip = (m.n ? 'Sektor ' + m.n + ': ' : '') + m.name + ' · km ' + m.km + ' (' + Math.round((dist - m.km) * 10) / 10 + ' km før mål) · ' + t.lab;
+      s += '<g><title>' + esc(tip) + '</title>';
+      s += '<path d="M' + tx + ' ' + (top - 4) + ' L' + tx + ' ' + (top + 4) + ' L' + x + ' ' + (y - 9) + '" fill="none" stroke="' + col + '" stroke-opacity=".4"/>';
+      if (surf) {
+        var sc = m.t === 'g' ? '#D9C38F' : m.t === 'w' ? '#7FB6E8' : (m.key ? '#E8633A' : '#8C8062');
+        s += '<rect x="' + (x - 2.2) + '" y="' + (base - 5) + '" width="4.4" height="5" fill="' + sc + '"/>';
+      }
+      if (climb) s += '<path d="M' + (x - 4) + ' ' + (y - 1) + ' L' + x + ' ' + (y - 8) + ' L' + (x + 4) + ' ' + (y - 1) + ' Z" fill="' + (m.key ? '#F5C400' : '#F2EEDF') + '"/>';
+      var lab = (m.n ? m.n + ' · ' : '') + m.name + (m.key ? ' ★' : '');
+      s += '<text transform="translate(' + (tx + 3) + ',' + (top - 6) + ') rotate(-90)" fill="' + col + '" font-size="9.6" font-weight="' + (m.key ? 800 : 500) + '">' + esc(lab) + '</text></g>';
+    });
+    s += '</svg>';
+    var parts = [];
+    if (cnt.p || cnt.cp) parts.push(((cnt.p || 0) + (cnt.cp || 0)) + ' med brosten');
+    if (cnt.c || cnt.cp) parts.push(((cnt.c || 0) + (cnt.cp || 0)) + ' stigninger');
+    if (cnt.g) parts.push(cnt.g + ' grussektorer');
+    return '<div class="picto">' + s + '<div class="leg">▲ stigning · <span style="color:#8C8062">▬</span> brosten · ' +
+      '<span style="color:#D9C38F">▬</span> grus · <span style="color:#F5C400">★</span> nøglepunkt · tal = sektornummer · hold musen over et punkt for km</div>' +
+      (parts.length ? '<div class="sum">' + parts.join(' · ') + '</div>' : '') + '</div>';
+  }
 
   function raceCard(i, canSplit) {
     var r = KM.races[i], cnt = { 1: 0, 2: 0, 3: 0, 4: 0 }, any = false;
     KM.riders.forEach(function (x) { if (x.cat && KM.flag(x.id, i) === 1) { cnt[x.cat]++; any = true; } });
-    var img = r.profile_img ? '<a href="' + esc(r.profile_img) + '" target="_blank" rel="noopener"><img loading="lazy" src="' +
-      esc(r.profile_img) + '" alt="Profil ' + esc(r.name) + '"></a>' : '<div class="noimg">Ingen profil endnu</div>';
+    // Piktogrammet først; PCS-profilen (mørk udgave) bag et klik. Findes der
+    // ingen aflæst form, vises billedet direkte.
+    var pcs = r.profile_img ? '<a href="' + esc(r.profile_img) + '" target="_blank" rel="noopener" title="Åbn originalen fra PCS">' +
+      '<img loading="lazy" src="' + esc(r.profile_dark || r.profile_img) + '" alt="PCS-profil ' + esc(r.name) + '"></a>' : '';
+    var img;
+    if (r.route && r.route.shape) {
+      img = picto(r) + (pcs ? '<button class="ghost pcs-t" data-pcs="' + i + '">Vis PCS-profilen</button>' +
+        '<div class="pcs-img" id="pcs' + i + '" hidden>' + pcs + '</div>' : '');
+    } else img = pcs || '<div class="noimg">Ingen profil endnu</div>';
     var pod = r.podium && r.podium.length ? r.podium.map(function (p) {
       return p.rank + '. <b>' + esc(p.name) + '</b>';
     }).join(' · ') : '<span class="muted">Ingen resultat endnu</span>';
