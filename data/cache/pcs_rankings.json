@@ -34,15 +34,15 @@
     "pts": 1871.0,
     "name": "VINGEGAARD Jonas"
   },
-  "paul-magnier": {
-    "rank": 8,
-    "pts": 1583.0,
-    "name": "MAGNIER Paul"
-  },
   "christian-scaroni": {
-    "rank": 9,
+    "rank": 8,
     "pts": 1534.0,
     "name": "SCARONI Christian"
+  },
+  "paul-magnier": {
+    "rank": 9,
+    "pts": 1533.0,
+    "name": "MAGNIER Paul"
   },
   "tobias-halland-johannessen": {
     "rank": 10,
@@ -134,20 +134,20 @@
     "pts": 1076.0,
     "name": "ANDRESEN Tobias Lund"
   },
-  "jordi-meeus": {
-    "rank": 28,
-    "pts": 1061.0,
-    "name": "MEEUS Jordi"
-  },
   "matteo-jorgenson": {
-    "rank": 29,
+    "rank": 28,
     "pts": 1054.0,
     "name": "JORGENSON Matteo"
   },
   "enric-mas": {
-    "rank": 30,
+    "rank": 29,
     "pts": 1050.0,
     "name": "MAS Enric"
+  },
+  "jordi-meeus": {
+    "rank": 30,
+    "pts": 1049.0,
+    "name": "MEEUS Jordi"
   },
   "olav-kooij": {
     "rank": 31,
@@ -284,20 +284,20 @@
     "pts": 748.0,
     "name": "KUBIŠ Lukáš"
   },
-  "natnael-tesfatsion": {
+  "milan-fretin": {
     "rank": 58,
+    "pts": 734.0,
+    "name": "FRETIN Milan"
+  },
+  "natnael-tesfatsion": {
+    "rank": 59,
     "pts": 732.0,
     "name": "TESFATSION Natnael"
   },
   "kevin-vauquelin": {
-    "rank": 59,
+    "rank": 60,
     "pts": 731.0,
     "name": "VAUQUELIN Kévin"
-  },
-  "max-kanter": {
-    "rank": 60,
-    "pts": 724.0,
-    "name": "KANTER Max"
   },
   "antonio-tiberi": {
     "rank": 61,
@@ -309,25 +309,25 @@
     "pts": 713.0,
     "name": "HINDLEY Jai"
   },
-  "harold-tejada": {
+  "max-kanter": {
     "rank": 63,
+    "pts": 706.0,
+    "name": "KANTER Max"
+  },
+  "harold-tejada": {
+    "rank": 64,
     "pts": 705.0,
     "name": "TEJADA Harold"
   },
   "santiago-buitrago-sanchez": {
-    "rank": 64,
+    "rank": 65,
     "pts": 699.0,
     "name": "BUITRAGO Santiago"
   },
   "biniam-girmay": {
-    "rank": 65,
+    "rank": 66,
     "pts": 689.0,
     "name": "GIRMAY Biniam"
-  },
-  "milan-fretin": {
-    "rank": 66,
-    "pts": 684.0,
-    "name": "FRETIN Milan"
   },
   "marco-brenner": {
     "rank": 67,
