@@ -146,7 +146,7 @@
   },
   "jordi-meeus": {
     "rank": 30,
-    "pts": 1049.0,
+    "pts": 1031.0,
     "name": "MEEUS Jordi"
   },
   "olav-kooij": {
@@ -211,7 +211,7 @@
   },
   "christophe-laporte": {
     "rank": 43,
-    "pts": 871.0,
+    "pts": 859.0,
     "name": "LAPORTE Christophe"
   },
   "dylan-groenewegen": {
@@ -281,7 +281,7 @@
   },
   "lukas-kubis": {
     "rank": 57,
-    "pts": 748.0,
+    "pts": 741.0,
     "name": "KUBIŠ Lukáš"
   },
   "milan-fretin": {
@@ -299,20 +299,20 @@
     "pts": 731.0,
     "name": "VAUQUELIN Kévin"
   },
-  "antonio-tiberi": {
+  "max-kanter": {
     "rank": 61,
+    "pts": 724.0,
+    "name": "KANTER Max"
+  },
+  "antonio-tiberi": {
+    "rank": 62,
     "pts": 720.0,
     "name": "TIBERI Antonio"
   },
   "jai-hindley": {
-    "rank": 62,
+    "rank": 63,
     "pts": 713.0,
     "name": "HINDLEY Jai"
-  },
-  "max-kanter": {
-    "rank": 63,
-    "pts": 706.0,
-    "name": "KANTER Max"
   },
   "harold-tejada": {
     "rank": 64,
@@ -479,24 +479,24 @@
     "pts": 544.0,
     "name": "BISIAUX Léo"
   },
-  "pavel-bittner": {
-    "rank": 97,
-    "pts": 535.0,
-    "name": "BITTNER Pavel"
-  },
   "quinten-hermans": {
-    "rank": 98,
+    "rank": 97,
     "pts": 534.0,
     "name": "HERMANS Quinten"
   },
   "andrea-vendrame": {
-    "rank": 99,
+    "rank": 98,
     "pts": 529.0,
     "name": "VENDRAME Andrea"
   },
   "cristian-rodriguez": {
-    "rank": 100,
+    "rank": 99,
     "pts": 528.0,
     "name": "RODRÍGUEZ Cristián"
+  },
+  "alec-segaert": {
+    "rank": 100,
+    "pts": 528.0,
+    "name": "SEGAERT Alec"
   }
 }
