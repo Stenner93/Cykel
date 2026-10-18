@@ -6,7 +6,7 @@
   },
   "remco-evenepoel": {
     "rank": 2,
-    "pts": 3256.0,
+    "pts": 3331.0,
     "name": "EVENEPOEL Remco"
   },
   "isaac-del-toro": {
@@ -89,35 +89,35 @@
     "pts": 1219.0,
     "name": "CICCONE Giulio"
   },
-  "giulio-pellizzari": {
+  "brandon-mcnulty": {
     "rank": 19,
+    "pts": 1219.0,
+    "name": "MCNULTY Brandon"
+  },
+  "giulio-pellizzari": {
+    "rank": 20,
     "pts": 1215.0,
     "name": "PELLIZZARI Giulio"
   },
   "florian-lipowitz": {
-    "rank": 20,
+    "rank": 21,
     "pts": 1169.0,
     "name": "LIPOWITZ Florian"
   },
   "benoit-cosnefroy": {
-    "rank": 21,
+    "rank": 22,
     "pts": 1163.0,
     "name": "COSNEFROY Benoît"
   },
   "laurence-pithie": {
-    "rank": 22,
+    "rank": 23,
     "pts": 1111.0,
     "name": "PITHIE Laurence"
   },
   "romain-gregoire": {
-    "rank": 23,
+    "rank": 24,
     "pts": 1107.0,
     "name": "GRÉGOIRE Romain"
-  },
-  "brandon-mcnulty": {
-    "rank": 24,
-    "pts": 1094.0,
-    "name": "MCNULTY Brandon"
   },
   "mads-pedersen": {
     "rank": 25,
@@ -149,25 +149,25 @@
     "pts": 1039.0,
     "name": "AYUSO Juan"
   },
-  "jordi-meeus": {
+  "tim-merlier": {
     "rank": 31,
+    "pts": 1034.0,
+    "name": "MERLIER Tim"
+  },
+  "jordi-meeus": {
+    "rank": 32,
     "pts": 1028.0,
     "name": "MEEUS Jordi"
   },
   "olav-kooij": {
-    "rank": 32,
+    "rank": 33,
     "pts": 1018.0,
     "name": "KOOIJ Olav"
   },
   "matthew-brennan": {
-    "rank": 33,
+    "rank": 34,
     "pts": 1017.0,
     "name": "BRENNAN Matthew"
-  },
-  "tim-merlier": {
-    "rank": 34,
-    "pts": 1014.0,
-    "name": "MERLIER Tim"
   },
   "alex-aranburu": {
     "rank": 35,
@@ -206,7 +206,7 @@
   },
   "dylan-groenewegen": {
     "rank": 42,
-    "pts": 855.0,
+    "pts": 867.0,
     "name": "GROENEWEGEN Dylan"
   },
   "ion-izagirre": {
@@ -254,25 +254,25 @@
     "pts": 778.0,
     "name": "ONLEY Oscar"
   },
-  "jan-christen": {
+  "christophe-laporte": {
     "rank": 52,
+    "pts": 777.0,
+    "name": "LAPORTE Christophe"
+  },
+  "jan-christen": {
+    "rank": 53,
     "pts": 771.0,
     "name": "CHRISTEN Jan"
   },
   "alessandro-fancellu": {
-    "rank": 53,
+    "rank": 54,
     "pts": 769.0,
     "name": "FANCELLU Alessandro"
   },
   "jonathan-milan": {
-    "rank": 54,
+    "rank": 55,
     "pts": 769.0,
     "name": "MILAN Jonathan"
-  },
-  "christophe-laporte": {
-    "rank": 55,
-    "pts": 757.0,
-    "name": "LAPORTE Christophe"
   },
   "paul-lapeira": {
     "rank": 56,
@@ -331,7 +331,7 @@
   },
   "lukas-kubis": {
     "rank": 67,
-    "pts": 671.0,
+    "pts": 684.0,
     "name": "KUBIŠ Lukáš"
   },
   "pello-bilbao": {
@@ -459,44 +459,44 @@
     "pts": 574.0,
     "name": "NARVÁEZ Jhonatan"
   },
-  "jakob-omrzel": {
+  "finn-fisher-black": {
     "rank": 93,
+    "pts": 573.0,
+    "name": "FISHER-BLACK Finn"
+  },
+  "jakob-omrzel": {
+    "rank": 94,
     "pts": 573.0,
     "name": "OMRZEL Jakob"
   },
   "luke-plapp": {
-    "rank": 94,
+    "rank": 95,
     "pts": 565.0,
     "name": "PLAPP Luke"
   },
   "leo-bisiaux": {
-    "rank": 95,
+    "rank": 96,
     "pts": 564.0,
     "name": "BISIAUX Léo"
   },
   "per-strand-hagenes": {
-    "rank": 96,
+    "rank": 97,
     "pts": 548.0,
     "name": "HAGENES Per Strand"
   },
   "mike-teunissen": {
-    "rank": 97,
+    "rank": 98,
     "pts": 542.0,
     "name": "TEUNISSEN Mike"
   },
+  "alec-segaert": {
+    "rank": 99,
+    "pts": 536.0,
+    "name": "SEGAERT Alec"
+  },
   "quinten-hermans": {
-    "rank": 98,
+    "rank": 100,
     "pts": 534.0,
     "name": "HERMANS Quinten"
-  },
-  "andrea-vendrame": {
-    "rank": 99,
-    "pts": 529.0,
-    "name": "VENDRAME Andrea"
-  },
-  "cristian-rodriguez": {
-    "rank": 100,
-    "pts": 528.0,
-    "name": "RODRÍGUEZ Cristián"
   }
 }
