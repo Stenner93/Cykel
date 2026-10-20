@@ -1,13 +1,13 @@
 {
-  "gregor_mühlberger": {
-    "holdet_name": "Gregor Muhlberger",
-    "holdet_player_id": 54427,
-    "holdet_person_id": 3405,
-    "price_M": 4.03,
-    "start_price_M": 4.5,
-    "own_pct": 2.37,
+  "felix_gall": {
+    "holdet_name": "Felix Gall",
+    "holdet_player_id": 53415,
+    "holdet_person_id": 4356,
+    "price_M": 13.53,
+    "start_price_M": 11.5,
+    "own_pct": 25.12,
     "own_pct_change": 0,
-    "is_out": true,
+    "is_out": false,
     "is_injured": false
   },
   "callum_scotson": {
@@ -21,24 +21,13 @@
     "is_out": false,
     "is_injured": false
   },
-  "felix_gall": {
-    "holdet_name": "Felix Gall",
-    "holdet_player_id": 53415,
-    "holdet_person_id": 4356,
-    "price_M": 13.53,
-    "start_price_M": 11.5,
-    "own_pct": 25.12,
-    "own_pct_change": 0,
-    "is_out": false,
-    "is_injured": false
-  },
-  "harold_martín_lópez": {
-    "holdet_name": "Harold Martin Lopez",
-    "holdet_player_id": 53421,
-    "holdet_person_id": 5017,
-    "price_M": 2.0,
-    "start_price_M": 4.0,
-    "own_pct": 0.09,
+  "gregor_mühlberger": {
+    "holdet_name": "Gregor Muhlberger",
+    "holdet_player_id": 54427,
+    "holdet_person_id": 3405,
+    "price_M": 4.03,
+    "start_price_M": 4.5,
+    "own_pct": 2.37,
     "own_pct_change": 0,
     "is_out": true,
     "is_injured": false
@@ -76,6 +65,17 @@
     "is_out": true,
     "is_injured": false
   },
+  "harold_martín_lópez": {
+    "holdet_name": "Harold Martin Lopez",
+    "holdet_player_id": 53421,
+    "holdet_person_id": 5017,
+    "price_M": 2.0,
+    "start_price_M": 4.0,
+    "own_pct": 0.09,
+    "own_pct_change": 0,
+    "is_out": true,
+    "is_injured": false
+  },
   "remy_rochas": {
     "holdet_name": "Remy Rochas",
     "holdet_player_id": 54480,
@@ -83,28 +83,6 @@
     "price_M": 2.98,
     "start_price_M": 3.5,
     "own_pct": 0.15,
-    "own_pct_change": 0,
-    "is_out": false,
-    "is_injured": false
-  },
-  "james_shaw": {
-    "holdet_name": "James Shaw",
-    "holdet_player_id": 54233,
-    "holdet_person_id": 3537,
-    "price_M": 2.47,
-    "start_price_M": 3.0,
-    "own_pct": 1.46,
-    "own_pct_change": 0,
-    "is_out": false,
-    "is_injured": false
-  },
-  "richard_carapaz": {
-    "holdet_name": "Richard Carapaz",
-    "holdet_player_id": 54195,
-    "holdet_person_id": 3539,
-    "price_M": 11.11,
-    "start_price_M": 9.5,
-    "own_pct": 16.59,
     "own_pct_change": 0,
     "is_out": false,
     "is_injured": false
@@ -120,13 +98,24 @@
     "is_out": false,
     "is_injured": false
   },
-  "mathijs_paasschens": {
-    "holdet_name": "Mathijs Paasschens",
-    "holdet_player_id": 54453,
-    "holdet_person_id": 46806,
-    "price_M": 1.93,
-    "start_price_M": 2.5,
-    "own_pct": 0.27,
+  "richard_carapaz": {
+    "holdet_name": "Richard Carapaz",
+    "holdet_player_id": 54195,
+    "holdet_person_id": 3539,
+    "price_M": 11.11,
+    "start_price_M": 9.5,
+    "own_pct": 16.59,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
+  "james_shaw": {
+    "holdet_name": "James Shaw",
+    "holdet_player_id": 54233,
+    "holdet_person_id": 3537,
+    "price_M": 2.47,
+    "start_price_M": 3.0,
+    "own_pct": 1.46,
     "own_pct_change": 0,
     "is_out": false,
     "is_injured": false
@@ -153,6 +142,28 @@
     "is_out": false,
     "is_injured": false
   },
+  "mathijs_paasschens": {
+    "holdet_name": "Mathijs Paasschens",
+    "holdet_player_id": 54453,
+    "holdet_person_id": 46806,
+    "price_M": 1.93,
+    "start_price_M": 2.5,
+    "own_pct": 0.27,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
+  "gianmarco_garofoli": {
+    "holdet_name": "Gianmarco Garofoli",
+    "holdet_player_id": 54426,
+    "holdet_person_id": 5025,
+    "price_M": 4.09,
+    "start_price_M": 4.5,
+    "own_pct": 0.29,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
   "mikel_landa": {
     "holdet_name": "Mikel Landa",
     "holdet_player_id": 53449,
@@ -175,17 +186,6 @@
     "is_out": false,
     "is_injured": false
   },
-  "gianmarco_garofoli": {
-    "holdet_name": "Gianmarco Garofoli",
-    "holdet_player_id": 54426,
-    "holdet_person_id": 5025,
-    "price_M": 4.09,
-    "start_price_M": 4.5,
-    "own_pct": 0.29,
-    "own_pct_change": 0,
-    "is_out": false,
-    "is_injured": false
-  },
   "sepp_kuss": {
     "holdet_name": "Sepp Kuss",
     "holdet_player_id": 54484,
@@ -204,17 +204,6 @@
     "price_M": 2.35,
     "start_price_M": 3.0,
     "own_pct": 0.2,
-    "own_pct_change": 0,
-    "is_out": false,
-    "is_injured": false
-  },
-  "timo_de_jong": {
-    "holdet_name": "Timo de Jong",
-    "holdet_player_id": 54355,
-    "holdet_person_id": 50485,
-    "price_M": 3.27,
-    "start_price_M": 4.0,
-    "own_pct": 0.13,
     "own_pct_change": 0,
     "is_out": false,
     "is_injured": false
@@ -252,6 +241,17 @@
     "is_out": true,
     "is_injured": false
   },
+  "timo_de_jong": {
+    "holdet_name": "Timo de Jong",
+    "holdet_player_id": 54355,
+    "holdet_person_id": 50485,
+    "price_M": 3.27,
+    "start_price_M": 4.0,
+    "own_pct": 0.13,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
   "mads_pedersen": {
     "holdet_name": "Mads Pedersen",
     "holdet_player_id": 53440,
@@ -261,17 +261,6 @@
     "own_pct": 8.26,
     "own_pct_change": 0,
     "is_out": true,
-    "is_injured": false
-  },
-  "embret_svestad_bårdseng": {
-    "holdet_name": "Embret Svestad-Bårdseng",
-    "holdet_player_id": 54522,
-    "holdet_person_id": 46801,
-    "price_M": 3.3,
-    "start_price_M": 3.5,
-    "own_pct": 1.26,
-    "own_pct_change": 0,
-    "is_out": false,
     "is_injured": false
   },
   "ben_turner": {
@@ -296,13 +285,13 @@
     "is_out": false,
     "is_injured": false
   },
-  "enric_mas": {
-    "holdet_name": "Enric Mas Nicolau",
-    "holdet_player_id": 53412,
-    "holdet_person_id": 3543,
-    "price_M": 10.99,
-    "start_price_M": 8.0,
-    "own_pct": 58.4,
+  "embret_svestad_bårdseng": {
+    "holdet_name": "Embret Svestad-Bårdseng",
+    "holdet_player_id": 54522,
+    "holdet_person_id": 46801,
+    "price_M": 3.3,
+    "start_price_M": 3.5,
+    "own_pct": 1.26,
     "own_pct_change": 0,
     "is_out": false,
     "is_injured": false
@@ -316,6 +305,17 @@
     "own_pct": 0.11,
     "own_pct_change": 0,
     "is_out": true,
+    "is_injured": false
+  },
+  "enric_mas": {
+    "holdet_name": "Enric Mas Nicolau",
+    "holdet_player_id": 53412,
+    "holdet_person_id": 3543,
+    "price_M": 10.99,
+    "start_price_M": 8.0,
+    "own_pct": 58.4,
+    "own_pct_change": 0,
+    "is_out": false,
     "is_injured": false
   },
   "orluis_aular": {
@@ -340,13 +340,13 @@
     "is_out": false,
     "is_injured": false
   },
-  "liam_tuckwell": {
-    "holdet_name": "Luke Tuckwell",
-    "holdet_player_id": 53439,
-    "holdet_person_id": 50479,
-    "price_M": 5.68,
-    "start_price_M": 6.0,
-    "own_pct": 0.91,
+  "frederik_wandahl": {
+    "holdet_name": "Frederik Wandahl",
+    "holdet_player_id": 54322,
+    "holdet_person_id": 4680,
+    "price_M": 1.98,
+    "start_price_M": 2.5,
+    "own_pct": 7.2,
     "own_pct_change": 0,
     "is_out": false,
     "is_injured": false
@@ -362,13 +362,24 @@
     "is_out": false,
     "is_injured": false
   },
-  "frederik_wandahl": {
-    "holdet_name": "Frederik Wandahl",
-    "holdet_player_id": 54322,
-    "holdet_person_id": 4680,
-    "price_M": 1.98,
-    "start_price_M": 2.5,
-    "own_pct": 7.2,
+  "liam_tuckwell": {
+    "holdet_name": "Luke Tuckwell",
+    "holdet_player_id": 53439,
+    "holdet_person_id": 50479,
+    "price_M": 5.68,
+    "start_price_M": 6.0,
+    "own_pct": 0.91,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
+  "joao_almeida": {
+    "holdet_name": "Joao Almeida",
+    "holdet_player_id": 53431,
+    "holdet_person_id": 4388,
+    "price_M": 9.86,
+    "start_price_M": 10.0,
+    "own_pct": 3.67,
     "own_pct_change": 0,
     "is_out": false,
     "is_injured": false
@@ -384,17 +395,6 @@
     "is_out": true,
     "is_injured": false
   },
-  "joao_almeida": {
-    "holdet_name": "Joao Almeida",
-    "holdet_player_id": 53431,
-    "holdet_person_id": 4388,
-    "price_M": 9.86,
-    "start_price_M": 10.0,
-    "own_pct": 3.67,
-    "own_pct_change": 0,
-    "is_out": false,
-    "is_injured": false
-  },
   "ivo_oliveira": {
     "holdet_name": "Ivo Oliveira",
     "holdet_player_id": 53426,
@@ -402,17 +402,6 @@
     "price_M": 4.28,
     "start_price_M": 4.5,
     "own_pct": 3.91,
-    "own_pct_change": 0,
-    "is_out": false,
-    "is_injured": false
-  },
-  "nick_schultz": {
-    "holdet_name": "Nick Schultz",
-    "holdet_player_id": 54456,
-    "holdet_person_id": 3812,
-    "price_M": 2.29,
-    "start_price_M": 3.0,
-    "own_pct": 0.3,
     "own_pct_change": 0,
     "is_out": false,
     "is_injured": false
@@ -428,6 +417,17 @@
     "is_out": false,
     "is_injured": false
   },
+  "nick_schultz": {
+    "holdet_name": "Nick Schultz",
+    "holdet_player_id": 54456,
+    "holdet_person_id": 3812,
+    "price_M": 2.29,
+    "start_price_M": 3.0,
+    "own_pct": 0.3,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
   "juan_pedro_lópez": {
     "holdet_name": "Jesus Herrada Lopez",
     "holdet_player_id": 53430,
@@ -439,13 +439,13 @@
     "is_out": false,
     "is_injured": false
   },
-  "francesco_busatto": {
-    "holdet_name": "Francesco Busatto",
-    "holdet_player_id": 54424,
-    "holdet_person_id": 47158,
-    "price_M": 2.18,
-    "start_price_M": 3.5,
-    "own_pct": 0.05,
+  "luca_vergallito": {
+    "holdet_name": "Luca Vergallito",
+    "holdet_player_id": 54191,
+    "holdet_person_id": 5012,
+    "price_M": 1.0,
+    "start_price_M": 3.0,
+    "own_pct": 0.07,
     "own_pct_change": 0,
     "is_out": true,
     "is_injured": false
@@ -461,26 +461,26 @@
     "is_out": true,
     "is_injured": false
   },
-  "luca_vergallito": {
-    "holdet_name": "Luca Vergallito",
-    "holdet_player_id": 54191,
-    "holdet_person_id": 5012,
-    "price_M": 1.0,
-    "start_price_M": 3.0,
-    "own_pct": 0.07,
+  "francesco_busatto": {
+    "holdet_name": "Francesco Busatto",
+    "holdet_player_id": 54424,
+    "holdet_person_id": 47158,
+    "price_M": 2.18,
+    "start_price_M": 3.5,
+    "own_pct": 0.05,
     "own_pct_change": 0,
     "is_out": true,
     "is_injured": false
   },
-  "martin_tjøtta": {
-    "holdet_name": "Martin Tjøtta",
-    "holdet_player_id": 54451,
-    "holdet_person_id": 46802,
-    "price_M": 2.49,
-    "start_price_M": 3.0,
-    "own_pct": 0.25,
+  "erlend_blikra": {
+    "holdet_name": "Erlend Blikra",
+    "holdet_player_id": 53413,
+    "holdet_person_id": 4892,
+    "price_M": 4.0,
+    "start_price_M": 6.0,
+    "own_pct": 0.04,
     "own_pct_change": 0,
-    "is_out": false,
+    "is_out": true,
     "is_injured": false
   },
   "andreas_leknessund": {
@@ -505,24 +505,13 @@
     "is_out": false,
     "is_injured": false
   },
-  "erlend_blikra": {
-    "holdet_name": "Erlend Blikra",
-    "holdet_player_id": 53413,
-    "holdet_person_id": 4892,
-    "price_M": 4.0,
-    "start_price_M": 6.0,
-    "own_pct": 0.04,
-    "own_pct_change": 0,
-    "is_out": true,
-    "is_injured": false
-  },
-  "larry_warbasse": {
-    "holdet_name": "Larry Warbasse",
-    "holdet_player_id": 54440,
-    "holdet_person_id": 2122,
-    "price_M": 2.26,
-    "start_price_M": 2.5,
-    "own_pct": 1.34,
+  "martin_tjøtta": {
+    "holdet_name": "Martin Tjøtta",
+    "holdet_player_id": 54451,
+    "holdet_person_id": 46802,
+    "price_M": 2.49,
+    "start_price_M": 3.0,
+    "own_pct": 0.25,
     "own_pct_change": 0,
     "is_out": false,
     "is_injured": false
@@ -534,6 +523,17 @@
     "price_M": 2.62,
     "start_price_M": 3.0,
     "own_pct": 0.19,
+    "own_pct_change": 0,
+    "is_out": false,
+    "is_injured": false
+  },
+  "larry_warbasse": {
+    "holdet_name": "Larry Warbasse",
+    "holdet_player_id": 54440,
+    "holdet_person_id": 2122,
+    "price_M": 2.26,
+    "start_price_M": 2.5,
+    "own_pct": 1.34,
     "own_pct_change": 0,
     "is_out": false,
     "is_injured": false
