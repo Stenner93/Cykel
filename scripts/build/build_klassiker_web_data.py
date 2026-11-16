@@ -12,6 +12,7 @@ Input:
   data/sources/classics/startlists_<år>.json      forventede startlister (import_klassiker_sheets.py)
   data/sources/classics/plan_<år>.json            holdudkast (import_klassiker_sheets.py plan)
   data/klassiker/optakt_<sæson>.json              optakter (valgfri — tom skal indtil da)
+  data/klassiker/deadlines_<sæson>.json           deadlines med klokkeslæt (import_holdet_deadlines.py)
   data/klassiker/profile_trace_<år>.json         profilform + mørke billeder (trace_classics_profiles.py)
   data/klassiker/route_marks_<år>.json           stigninger/pavéer pr. løb (aflæst i hånden)
   web/data/klassiker/profiles/<år>/manifest.json  profilbilleder (fetch_classics_profiles.py)
@@ -224,6 +225,11 @@ def main():
             "podium": [{"rank": a, "name": short_name(b), "team": c} for a, b, c in sorted(podium[r["slug"]])],
         })
 
+    # Deadlines (dato + klokkeslæt) for sæsonens runder — fra Holdets
+    # spilprogram (import_holdet_deadlines.py) eller rettet i hånden.
+    dl_file = ROOT / f"data/klassiker/deadlines_{season}.json"
+    deadlines = json.loads(dl_file.read_text()).get("deadlines", {}) if dl_file.exists() else {}
+
     optakt_file = ROOT / f"data/klassiker/optakt_{season}.json"
     optakt = json.loads(optakt_file.read_text()) if optakt_file.exists() else {"races": {}}
 
@@ -235,7 +241,7 @@ def main():
         "built": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         "game": cfg["game"], "season": season, "data_year": data_year,
         "categories_year": cfg["categories_year"], "history_years": years,
-        "holdet": cfg["holdet"],
+        "holdet": cfg["holdet"], "deadlines": deadlines,
         "rules": rules, "races": race_out, "blocks": cfg["blocks"], "groups": cfg["groups"],
         "plan": plan, "startlists": startlists,
         "optakt": {"sources": cfg.get("optakt_sources", []), **optakt},

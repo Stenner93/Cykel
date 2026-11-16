@@ -16,6 +16,10 @@ Der er intet årstal i filnavnene, så selve HTML-siderne skal ikke rettes fra
 
 1. **Spillet:** Sæt `holdet.cartridge` og `holdet.game_id` i `config.json`.
    Ret løbslisten, hvis kalenderen er ændret: rækkefølge, navne, `monument` og `group`.
+   Hent derefter deadlines med klokkeslæt:
+   `python scripts/analysis/import_holdet_deadlines.py`. Deadline er løbets starttid i Holdets
+   spilprogram, og tiderne gemmes i `deadlines_2027.json`, som kan rettes i hånden, hvis Holdet
+   flytter en tid. Forsiden viser dato, klokkeslæt (dansk tid) og en nedtælling.
 2. **Kategorier fra Holdet:**
    `python scripts/analysis/import_holdet_categories.py --game-id <id> --year 2027`
    Sæt derefter `categories_year` til 2027.
@@ -50,6 +54,7 @@ Der er intet årstal i filnavnene, så selve HTML-siderne skal ikke rettes fra
 | `web/data/klassiker/profiles/<år>/` | profilbilleder (+ mørke `_dark.png`) | `fetch_classics_profiles.py` / `trace_classics_profiles.py` |
 | `profile_trace_<år>.json` | profilform og stregernes km | `trace_classics_profiles.py` |
 | `route_marks_<år>.json` | stigninger, pavéer og grus til piktogrammet | aflæst i hånden |
+| `deadlines_<sæson>.json` | deadline (dato + klokkeslæt) pr. løb | `import_holdet_deadlines.py` |
 | `optakt_<sæson>.json` | optakter (valgfri) | assistenten |
 
 Blokke, plan, egne startlister og tabelvalg, som du ændrer på siden, gemmes i
