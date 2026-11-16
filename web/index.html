@@ -92,6 +92,24 @@
   var MON = ['januar','februar','marts','april','maj','juni','juli','august','september','oktober','november','december'];
   var EN = ['january','february','march','april','may','june','july','august','september','october','november','december'];
   function dk(s) { var m = String(s || '').match(/(\d+)\s+(\w+)\s+(\d{4})/); if (!m) return s || ''; var k = EN.indexOf(m[2].toLowerCase()); return m[1] + '. ' + (k >= 0 ? MON[k] : m[2]) + ' ' + m[3]; }
+  var TZ = 'Europe/Copenhagen';
+  function dkTime(iso) {   // "søn. 5. april kl. 10.45" i dansk tid
+    var d = new Date(iso);
+    var day = d.toLocaleDateString('da-DK', { timeZone: TZ, weekday: 'short', day: 'numeric', month: 'long' });
+    var t = d.toLocaleTimeString('da-DK', { timeZone: TZ, hour: '2-digit', minute: '2-digit' }).replace(':', '.');
+    return day + ' kl. ' + t;
+  }
+  function countdown(iso) {
+    var ms = new Date(iso) - new Date();
+    if (ms <= 0) return 'Låst';
+    var m = Math.floor(ms / 60000), d = Math.floor(m / 1440), h = Math.floor((m % 1440) / 60), mi = m % 60;
+    return d ? d + ' d ' + h + ' t' : h ? h + ' t ' + mi + ' m' : mi + ' min';
+  }
+  function dlSub(iso) {
+    var past = new Date(iso) <= new Date();
+    return (past ? 'Låste ' : '') + '<b>' + esc(dkTime(iso)) + '</b> · ' + esc(KM.races[curIdx()].name) + (past ? ' køres nu · venter på resultat' : ' låser');
+  }
+  var curIdx = function () { return 0; };
   function sur(n) { return String(n || '').replace(/^([A-ZÀ-Þ]\.\s*)+/, ''); }
 
   KM.load().then(function () {
@@ -170,7 +188,8 @@
           : i === NOW ? '<span class="p" style="color:var(--accent)">' + (over ? 'SLUT' : 'NU') + '</span><span class="t">' + (i && tr[i] ? tr[i] + ' skift planlagt' : '') + '</span>'
           : '<span class="t">' + (tr[i] ? tr[i] + ' planlagt' : '') + '</span>';
         h += '<a class="r ' + cls + (r.monument ? ' mon' : '') + '" href="klassiker.html#plan" title="' + esc(r.name) + '"><b>' + (i + 1) + '. ' + esc(r.short) + '</b>' +
-          '<span class="muted">' + esc(dk(r.date).replace(/\s\d{4}$/, '')) + '</span>' + body + '</a>';
+          '<span class="muted">' + (!demo && D.deadlines && D.deadlines[r.slug] ? esc(dkTime(D.deadlines[r.slug]).replace(/^\S+\s/, '')) :
+            esc(dk(r.date).replace(/\s\d{4}$/, ''))) + '</span>' + body + '</a>';
       }
       box.innerHTML = h + '</div>';
     }
@@ -179,6 +198,7 @@
 
     // ── Byggesten ──
     var cur = races[NOW], nxt = races[NOW + 1], team = teamOf(NOW), cap = captain(NOW);
+    curIdx = function () { return NOW; };
     var card = function (no, inner, cls) {
       return '<div class="card' + (cls ? ' ' + cls : '') + '">' + inner.replace('<div class="lbl">', '<div class="lbl"><span class="no">' + no + '</span>') + '</div>';
     };
@@ -213,13 +233,19 @@
         '<div class="sub">' + (known ? 'Af dine ' + teamOf(i).length + ' forventes <b>' + mine + '</b> til start' : 'Ingen forventet startliste for dine ryttere endnu') + '</div></div>';
     }
 
-    // 1 Deadline
+    // 1 Deadline — dato OG klokkeslæt (dansk tid). Tiden kommer fra Holdets
+    // spilprogram (data/klassiker/deadlines_<sæson>.json); mangler den, siges det.
+    var dlIso = !demo && D.deadlines ? D.deadlines[cur.slug] : null;
     var dl;
     if (over) dl = '<div class="big">Slut</div><div class="sub">Alle ' + R + ' runder er kørt.</div>';
-    else if (demo) dl = '<div class="big">' + esc(dk(cur.date)) + '</div><div class="sub">' + esc(cur.name) + ' låser ved løbsstart</div>';
-    else if (!D.holdet.game_id) dl = '<div class="mid">Afventer spillet</div><div class="sub">Første deadline er <b>' + esc(races[0].name) +
-      '</b>. Tidspunktet kommer, når ' + esc(D.game) + ' åbner på holdet.dk.</div>';
-    else dl = '<div class="big">' + esc(dk(cur.date)) + '</div><div class="sub">' + esc(cur.name) + ' låser ved løbsstart</div>';
+    else if (dlIso) {
+      dl = '<div class="big" id="cd">' + countdown(dlIso) + '</div><div class="sub" id="cdsub">' + dlSub(dlIso) + '</div>';
+      setInterval(function () { var a = $('cd'), b = $('cdsub'); if (a) a.innerHTML = countdown(dlIso); if (b) b.innerHTML = dlSub(dlIso); }, 30000);
+    }
+    else if (demo) dl = '<div class="big">' + esc(dk(cur.date)) + '</div><div class="sub">' + esc(cur.name) +
+      ' låser ved løbsstart · <b>kl. –.–</b> (klokkeslættet kommer fra holdet.dk, når spillet er åbent)</div>';
+    else dl = '<div class="mid">Afventer spillet</div><div class="sub">Første deadline er <b>' + esc(races[0].name) +
+      '</b>. Dato og klokkeslæt kommer, når ' + esc(D.game) + ' åbner på holdet.dk.</div>';
     var notCur = team.filter(function (id) { return KM.flag(id, NOW) === 0; });
     var sl = KM.localStart() ? KM.localStart().updated : (D.startlists && D.startlists.updated);
     var slOld = !demo && D.startlists && D.startlists.year !== D.season && !KM.localStart();
