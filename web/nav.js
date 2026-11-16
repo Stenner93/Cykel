@@ -4,8 +4,9 @@
    here, every page updates. */
 (function () {
   var NAV = [
+    { href: 'index.html', label: 'Start', match: ['index.html', ''] },
     { href: 'klassiker.html', label: 'Klassikere', match: ['klassiker.html', 'klassiker-startlister.html', 'klassiker-historik.html'] },
-    { href: 'vuelta.html', label: 'Vuelta 2026', match: ['vuelta.html', '', 'planlaegger.html'] },
+    { href: 'vuelta.html', label: 'Vuelta 2026', match: ['vuelta.html', 'planlaegger.html'] },
     { href: 'evaluering.html', label: 'Analyse', match: ['evaluering.html', 'laer-af-touren.html', 'vuelta-evaluering.html', 'tvaers-af-spil.html'] },
     { href: 'riders.html',    label: 'Rytterdatabase', match: ['riders.html'] },
     { label: 'Arkiv', alignRight: true, match: ['tdf.html', 'giro.html', 'dauphine.html'], menu: [

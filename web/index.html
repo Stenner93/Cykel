@@ -1,13 +1,310 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="da" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=vuelta.html">
-<link rel="canonical" href="vuelta.html">
-<title>Vueltablet</title>
-<script>location.replace('vuelta.html');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Startside · Cykelbord</title>
+<link rel="stylesheet" href="klassiker.css">
+<style>
+  .lbl{font-size:.66rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;margin:0 0 6px}
+  .lbl .no{color:var(--border-2);margin-right:6px}
+  .games{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+  .game{display:flex;align-items:center;gap:8px;border:1px solid var(--border-2);border-radius:10px;padding:6px 10px;
+    font-size:.78rem;background:var(--card);text-decoration:none;color:var(--ink)}
+  a.game:hover{border-color:var(--accent)}
+  .game.on{border-color:var(--accent);background:var(--accent-soft)}
+  .game b{font-size:.82rem}.game .st{color:var(--muted);font-size:.7rem}
+  .dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:0 0 auto}
+  .demo{border:1px solid rgba(255,176,32,.45);background:rgba(255,176,32,.08);color:var(--ink-2);border-radius:10px;
+    padding:8px 12px;font-size:.8rem;margin:0 0 12px}
+  .demo b{color:var(--warn)}
+  .big{font-size:1.9rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1;white-space:nowrap}
+  .mid{font-size:1.15rem;font-weight:800;font-variant-numeric:tabular-nums}
+  .sub{font-size:.78rem;color:var(--ink-2)}
+  .sub b{color:var(--ink)}
+  .bar{height:9px;border-radius:5px;background:var(--card-2);overflow:hidden;margin:6px 0 3px}
+  .bar i{display:block;height:100%;background:var(--accent)}
+  .bar i.over{background:var(--bad)}
+
+  /* Tidslinjen: runden før den aktuelle først, så så mange som der er plads til */
+  .tlwrap{margin:0 0 14px}
+  .tlinfo{display:flex;justify-content:space-between;gap:8px;font-size:.68rem;color:var(--muted);margin:0 0 4px;min-height:1em}
+  .tl{display:grid;gap:4px}
+  .tl a.r{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:6px 6px 5px;font-size:.66rem;min-height:80px;
+    display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink);min-width:0}
+  .tl a.r:hover{border-color:var(--border-2)}
+  .tl .r b{font-size:.72rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tl .r.done{opacity:.82}
+  .tl .r.now{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset;background:var(--accent-soft)}
+  .tl .r.next{border-style:dashed;border-color:var(--border-2)}
+  .tl .r.mon{border-top:3px solid var(--mon)}
+  .tl .r .p{font-size:.8rem;font-weight:800;font-variant-numeric:tabular-nums}
+  .tl .r .t{color:var(--info)}
+
+  /* Kasserne følger hinanden i fast rækkefølge, række for række */
+  .flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .flow .card{min-width:0}
+  .flow .wide{grid-column:1/-1}
+  @media (max-width:980px){.flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+
+  .team{display:grid;grid-template-columns:1fr 1fr;gap:3px 12px;font-size:.8rem}
+  .team div{display:flex;gap:6px;align-items:center;white-space:nowrap;overflow:hidden}
+  .team .x{color:#6b6450;text-decoration:line-through}
+  .team .cap{color:var(--accent);font-weight:800}
+  .team .emp{color:var(--muted);font-style:italic}
+  .race h4{margin:2px 0 0;font-size:.95rem}
+  .race .meta{font-size:.72rem;color:var(--muted)}
+  svg.mini{display:block;width:100%;margin:4px 0}
+  .alert{display:flex;gap:8px;align-items:flex-start;font-size:.8rem;padding:6px 0;border-top:1px solid var(--border)}
+  .alert:first-of-type{border-top:0}
+  .alert .ic{width:20px;text-align:center;flex:0 0 auto}
+  .links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .links a{font-size:.74rem;border:1px solid var(--border-2);border-radius:999px;padding:3px 10px;text-decoration:none;color:var(--ink-2)}
+  .links a:hover{border-color:var(--accent);color:var(--accent)}
+</style>
 </head>
 <body>
-<p>Videresender til <a href="vuelta.html">Vueltablet — Vuelta 2026</a>…</p>
+<div class="dash-topbar"><div class="dash-topbar-inner">
+  <a href="index.html" class="dash-logo">🚴 Cykelbord<small>Startside</small></a>
+  <nav class="page-nav" id="mainNav"></nav>
+</div></div>
+
+<main>
+  <div class="games" id="games"></div>
+  <div id="demo"></div>
+  <div class="tlwrap" id="tl"></div>
+  <div class="flow" id="flow"><div class="card">Henter…</div></div>
+</main>
+
+<script src="nav.js"></script>
+<script src="klassiker-common.js"></script>
+<script>
+/* Startsiden. Viser kun rigtige data:
+   - Er sæsonen i gang (der er resultater for sæsonåret), er den aktuelle
+     runde den første uden resultat.
+   - Før sæsonen er runde 1 aktuel, og deadline/duel står som "afventer".
+   - ?runde=N viser siden som den ville have set ud før runde N i dataåret
+     (i dag 2026), med dit holdudkast og de rigtige resultater — som eksempel.
+   Holdet er din egen plan fra Planlæggeren (gemt i browseren), ellers udkastet. */
+(function () {
+  var $ = KM.$, esc = KM.esc;
+  var MON = ['januar','februar','marts','april','maj','juni','juli','august','september','oktober','november','december'];
+  var EN = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+  function dk(s) { var m = String(s || '').match(/(\d+)\s+(\w+)\s+(\d{4})/); if (!m) return s || ''; var k = EN.indexOf(m[2].toLowerCase()); return m[1] + '. ' + (k >= 0 ? MON[k] : m[2]) + ' ' + m[3]; }
+  function sur(n) { return String(n || '').replace(/^([A-ZÀ-Þ]\.\s*)+/, ''); }
+
+  KM.load().then(function () {
+    var D = KM.D, R = KM.R, races = KM.races;
+    var demoRound = +(new URLSearchParams(location.search).get('runde') || 0);
+    var demo = demoRound >= 1 && demoRound <= R;
+    var Y = String(demo ? D.data_year : D.season);
+    var inSeason = D.data_year === D.season;
+    var hasRes = function (i) { return (demo || inSeason) && races[i].starters > 0; };
+    var NOW = 0;
+    if (demo) NOW = demoRound - 1;
+    else if (inSeason) { while (NOW < R && hasRes(NOW)) NOW++; }
+    var over = NOW >= R;
+    if (over) NOW = R - 1;
+
+    // Plan: din egen fra Planlæggeren, ellers udkastet
+    var nSlots = Object.keys(D.rules.slots).reduce(function (a, c) { return a + D.rules.slots[c]; }, 0);
+    var P = KM.get(KM.key('plan'), null) || (D.plan ? { rounds: D.plan.rounds, captains: D.plan.captains } :
+      { rounds: races.map(function () { return new Array(nSlots).fill(null); }), captains: new Array(R).fill(null) });
+    var ownPlan = !!KM.get(KM.key('plan'), null);
+    var teamOf = function (i) { return (P.rounds[i] || []).filter(Boolean); };
+
+    function histAvg(id, i) {
+      var r = KM.byId[id], t = 0, n = 0;
+      D.history_years.forEach(function (y) { if (y >= +Y) return; var p = KM.points(r, String(y), i); if (p) { t += p.pts; n++; } });
+      return n ? t / n : 0;
+    }
+    function captain(i) {
+      if (P.captains && P.captains[i]) return { id: P.captains[i], auto: false };
+      var best = null, bv = -1;
+      teamOf(i).forEach(function (id) {
+        if (KM.flag(id, i) === 0) return;
+        var v = histAvg(id, i) + (KM.flag(id, i) === 1 ? 1 : 0);
+        if (v > bv) { bv = v; best = id; }
+      });
+      return { id: best, auto: true };
+    }
+    var tr = [], pts = [];
+    for (var i = 0; i < R; i++) {
+      var t = teamOf(i), prev = i ? teamOf(i - 1) : null;
+      tr.push(prev ? t.filter(function (id) { return prev.indexOf(id) < 0; }).length : 0);
+      if (hasRes(i)) {
+        var c = captain(i).id, s = 0;
+        t.forEach(function (id) { s += KM.pts(KM.byId[id], Y, i) * (id === c ? D.rules.captain_factor : 1); });
+        pts.push(s);
+      } else pts.push(null);
+    }
+
+    // ── Spil-vælger ──
+    var stTxt = over ? 'Sæsonen er slut' : (hasRes(0) || demo ? 'Runde ' + (NOW + 1) + ' af ' + R : 'Før sæsonstart · runde 1: ' + races[0].short);
+    $('games').innerHTML = [
+      { href: 'klassiker.html', name: D.game, st: stTxt, col: '#3CC98A', on: true },
+      { href: 'vuelta.html', name: 'Vuelta 2026', st: 'Afsluttet', col: '#5AA8F0' },
+      { href: 'tdf.html', name: 'Tour de France 2026', st: 'Arkiv', col: '#9A916F' },
+      { href: 'giro.html', name: "Giro d'Italia 2026", st: 'Arkiv', col: '#9A916F' }
+    ].map(function (g) {
+      return '<a class="game' + (g.on ? ' on' : '') + '" href="' + g.href + '"><span class="dot" style="background:' + g.col + '"></span><div><b>' +
+        esc(g.name) + '</b><div class="st">' + esc(g.st) + '</div></div></a>';
+    }).join('');
+
+    if (demo) $('demo').innerHTML = '<div class="demo"><b>Eksempel:</b> sådan ville siden have set ud før runde ' + demoRound + ' (' +
+      esc(races[NOW].name) + ') i ' + D.data_year + ', med dit holdudkast og de rigtige resultater. <a href="index.html">Til den rigtige forside</a></div>';
+
+    // ── Tidslinjen ──
+    function timeline() {
+      var box = $('tl'), W = box.clientWidth, MIN = 76, GAP = 4;
+      var fit = Math.max(3, Math.floor((W + GAP) / (MIN + GAP)));
+      var n = Math.min(R, fit), start = Math.max(0, Math.min(NOW - 1, R - n));
+      var h = '<div class="tlinfo"><span>' + (start > 0 ? '‹ ' + start + ' tidligere runde' + (start > 1 ? 'r' : '') + ' skjult' : '') + '</span>' +
+        '<span>' + (n < R ? 'Runde ' + (start + 1) + '–' + (start + n) + ' af ' + R : '') + '</span><span>' +
+        (start + n < R ? (R - start - n) + ' runde' + (R - start - n > 1 ? 'r' : '') + ' mere ›' : '') + '</span></div>';
+      h += '<div class="tl" style="grid-template-columns:repeat(' + n + ',minmax(0,1fr))">';
+      for (var i = start; i < start + n; i++) {
+        var r = races[i], cls = hasRes(i) && i < NOW ? 'done' : i === NOW ? 'now' : i === NOW + 1 ? 'next' : '';
+        var body = i < NOW && pts[i] != null ? '<span class="p">' + pts[i] + '</span><span class="t">' + (tr[i] ? '+' + tr[i] + ' skift' : '') + '</span>'
+          : i === NOW ? '<span class="p" style="color:var(--accent)">' + (over ? 'SLUT' : 'NU') + '</span><span class="t">' + (i && tr[i] ? tr[i] + ' skift planlagt' : '') + '</span>'
+          : '<span class="t">' + (tr[i] ? tr[i] + ' planlagt' : '') + '</span>';
+        h += '<a class="r ' + cls + (r.monument ? ' mon' : '') + '" href="klassiker.html#plan" title="' + esc(r.name) + '"><b>' + (i + 1) + '. ' + esc(r.short) + '</b>' +
+          '<span class="muted">' + esc(dk(r.date).replace(/\s\d{4}$/, '')) + '</span>' + body + '</a>';
+      }
+      box.innerHTML = h + '</div>';
+    }
+    timeline();
+    window.addEventListener('resize', timeline);
+
+    // ── Byggesten ──
+    var cur = races[NOW], nxt = races[NOW + 1], team = teamOf(NOW), cap = captain(NOW);
+    var card = function (no, inner, cls) {
+      return '<div class="card' + (cls ? ' ' + cls : '') + '">' + inner.replace('<div class="lbl">', '<div class="lbl"><span class="no">' + no + '</span>') + '</div>';
+    };
+    function mini(r) {
+      if (!r.route || !r.route.shape) return '';
+      var W = 320, H = 60, pad = 2, sh = r.route.shape, n = sh.length, dist = r.distance_km || 1, base = H - 12;
+      var maxVm = Math.max.apply(null, races.map(function (x) { return x.vmeters || 0; })) || 1;
+      var fr = Math.max(.22, (r.vmeters || 0) / maxVm);
+      var X = function (k) { return pad + (W - 2 * pad) * k / dist; };
+      var yA = function (k) { var j = Math.min(n - 1, Math.round(k / dist * (n - 1))); return base - sh[j] * (base - 6) * fr; };
+      var d = sh.map(function (v, j) { return (j ? 'L' : 'M') + (pad + (W - 2 * pad) * j / (n - 1)).toFixed(1) + ' ' + (base - v * (base - 6) * fr).toFixed(1); }).join(' ');
+      var s = '<svg class="mini" viewBox="0 0 ' + W + ' ' + H + '" aria-hidden="true"><path d="' + d + ' L' + (W - pad) + ' ' + base + ' L' + pad + ' ' + base +
+        'Z" fill="#F5C400" opacity=".14"/><path d="' + d + '" fill="none" stroke="#F5C400" stroke-width="1.4"/>';
+      (r.route.marks || []).forEach(function (m) {
+        var x = X(m.km);
+        if (m.t !== 'c') s += '<rect x="' + (x - 1.5) + '" y="' + (base - 4) + '" width="3" height="4" fill="' + (m.t === 'g' ? '#D9C38F' : m.key ? '#E8633A' : '#8C8062') + '"/>';
+        if (m.t === 'c' || m.t === 'cp') s += '<path d="M' + (x - 3) + ' ' + (yA(m.km) - 1) + 'L' + x + ' ' + (yA(m.km) - 6) + 'L' + (x + 3) + ' ' + (yA(m.km) - 1) + 'Z" fill="' + (m.key ? '#F5C400' : '#F2EEDF') + '"/>';
+      });
+      return s + '<text x="' + (W - pad) + '" y="' + (H - 1) + '" fill="#9A916F" font-size="9" text-anchor="end">' + dist + ' km</text></svg>';
+    }
+    function keys(r) {
+      return ((r.route && r.route.marks) || []).filter(function (m) { return m.key; }).map(function (m) { return m.name; })
+        .filter(function (v, j, a) { return a.indexOf(v) === j; }).join(' · ');
+    }
+    function raceBlock(r, i) {
+      var mine = teamOf(i).filter(function (id) { return KM.flag(id, i) === 1; }).length;
+      var known = teamOf(i).filter(function (id) { return KM.flag(id, i) != null; }).length;
+      return '<div class="race"><h4>' + (i + 1) + '. ' + esc(r.name) + (r.monument ? ' <span class="tag mon">Monument</span>' : '') + '</h4>' +
+        '<div class="meta">' + esc(dk(r.date)) + ' · ' + (r.distance_km || '–') + ' km · ' + (r.vmeters || '–') + ' hm' +
+        (D.data_year !== D.season && !demo ? ' · rute fra ' + D.data_year : '') + '</div>' + mini(r) +
+        (keys(r) ? '<div class="sub">Nøglepunkter: ' + esc(keys(r)) + '</div>' : '') +
+        '<div class="sub">' + (known ? 'Af dine ' + teamOf(i).length + ' forventes <b>' + mine + '</b> til start' : 'Ingen forventet startliste for dine ryttere endnu') + '</div></div>';
+    }
+
+    // 1 Deadline
+    var dl;
+    if (over) dl = '<div class="big">Slut</div><div class="sub">Alle ' + R + ' runder er kørt.</div>';
+    else if (demo) dl = '<div class="big">' + esc(dk(cur.date)) + '</div><div class="sub">' + esc(cur.name) + ' låser ved løbsstart</div>';
+    else if (!D.holdet.game_id) dl = '<div class="mid">Afventer spillet</div><div class="sub">Første deadline er <b>' + esc(races[0].name) +
+      '</b>. Tidspunktet kommer, når ' + esc(D.game) + ' åbner på holdet.dk.</div>';
+    else dl = '<div class="big">' + esc(dk(cur.date)) + '</div><div class="sub">' + esc(cur.name) + ' låser ved løbsstart</div>';
+    var notCur = team.filter(function (id) { return KM.flag(id, NOW) === 0; });
+    var sl = KM.localStart() ? KM.localStart().updated : (D.startlists && D.startlists.updated);
+    var slOld = !demo && D.startlists && D.startlists.year !== D.season && !KM.localStart();
+    dl += '<div class="sub" style="margin-top:6px">' + (sl ? 'Startlister opdateret ' + esc(sl) + (slOld ? ' (fra ' + D.startlists.year + ', skabelon)' : '') : 'Ingen startlister endnu') +
+      (notCur.length ? ' · <b>' + notCur.length + '</b> af dine ryttere forventes ikke til start' : '') + '</div>';
+
+    // 2 Skifter
+    var used = 0; for (i = 1; i < NOW; i++) used += tr[i];
+    var left = D.rules.transfers - used, planTot = tr.reduce(function (a, b) { return a + b; }, 0);
+    var roundsLeft = Math.max(1, R - Math.max(NOW, 1));
+    var sk = '<div class="big">' + left + ' <span class="sub">tilbage af ' + D.rules.transfers + '</span></div>' +
+      '<div class="bar"><i class="' + (planTot > D.rules.transfers ? 'over' : '') + '" style="width:' + Math.min(100, used / D.rules.transfers * 100) + '%"></i></div>' +
+      '<div class="sub">' + used + ' brugt · ' + roundsLeft + ' runder med skifter tilbage → <b>' + (left / roundsLeft).toFixed(1) + '</b> pr. runde</div>' +
+      '<div class="sub" style="margin-top:4px">Planlagt: <b>' + (NOW ? tr[NOW] : 0) + '</b> til ' + esc(cur.short) + (nxt ? ', <b>' + tr[NOW + 1] + '</b> til ' + esc(nxt.short) : '') +
+      ' · hele planen: <b' + (planTot > D.rules.transfers ? ' style="color:var(--bad)"' : '') + '>' + planTot + '</b> af ' + D.rules.transfers + '</div>' +
+      (NOW === 0 ? '<div class="sub">Første hold er gratis.</div>' : '');
+
+    // 3 Holdduel
+    var ours = pts.slice(0, NOW).reduce(function (a, b) { return a + (b || 0); }, 0);
+    var du = D.duel || {}, rival = du.rival || {};
+    var duel = '<div style="display:grid;grid-template-columns:1fr 1fr;text-align:center;gap:8px"><div><div class="sub">' + esc((du.ours || {}).label || 'Dig') +
+      '</div><div class="big">' + ours.toLocaleString('da-DK') + '</div></div><div><div class="sub">' + esc(rival.label || 'Modstanderen') +
+      '</div><div class="big" style="color:var(--muted)">–</div></div></div>' +
+      '<div class="sub" style="text-align:center;margin-top:4px">' + (rival.team_id ? 'Henter modstanderens hold…' :
+        'Afventer modstanderens hold-ID. Det sættes, når spillet åbner.') + '</div>' +
+      (demo ? '<div class="sub" style="text-align:center">Dine point er udkastets point i ' + D.data_year + ' (kaptajn dobbelt).</div>' : '');
+
+    // 4 Dit hold nu
+    var cats = {}; team.forEach(function (id) { var r = KM.byId[id]; if (r) (cats[r.cat] = cats[r.cat] || []).push(r); });
+    var th = '<div class="team">';
+    [1, 2, 3, 4].forEach(function (c) {
+      (cats[c] || []).forEach(function (r) {
+        var f = KM.flag(r.id, NOW), cl = f === 0 ? 'x' : r.id === cap.id ? 'cap' : '';
+        th += '<div>' + KM.kat(c) + ' <span class="' + cl + '">' + (r.id === cap.id ? '★ ' : '') + esc(sur(r.name)) + '</span>' +
+          '<span class="muted" style="font-size:.7rem">' + (f === 1 ? '✅' : f === 0 ? '❌' : '?') + '</span></div>';
+      });
+    });
+    th += team.length ? '</div>' : '<div class="emp">Intet hold endnu — lav det i Planlæggeren.</div></div>';
+    var hold = '<div class="lbl">Dit hold nu · runde ' + (NOW + 1) + '</div>' + th +
+      '<div class="sub" style="margin:4px 0 8px">★ kaptajn' + (cap.auto && cap.id ? ' (forslag)' : '') + ' · ✅ forventet · ❌ kører ikke · ? ukendt</div>' + raceBlock(cur, NOW);
+
+    // 5 Næste runde
+    var nx;
+    if (nxt) {
+      var ins = teamOf(NOW + 1).filter(function (id) { return team.indexOf(id) < 0; });
+      var outs = team.filter(function (id) { return teamOf(NOW + 1).indexOf(id) < 0; });
+      nx = '<div class="lbl">Næste runde · ' + (NOW + 2) + '</div>' + raceBlock(nxt, NOW + 1) +
+        '<div class="sub" style="margin-top:6px">Planlagte skifter: ' + (ins.length ? ins.map(function (id) { return '<b>' + esc(sur(KM.byId[id].name)) + '</b>'; }).join(', ') +
+          ' ind for ' + outs.map(function (id) { return esc(sur(KM.byId[id].name)); }).join(', ') : 'ingen') + '</div>';
+    } else nx = '<div class="lbl">Næste runde</div><div class="sub">' + esc(cur.name) + ' er sidste runde.</div>';
+
+    // 6 Det skal du vide
+    var A = [];
+    notCur.forEach(function (id) { A.push(['⛔', '<b>' + esc(KM.byId[id].name) + '</b> forventes ikke til start i ' + esc(cur.short) + '.']); });
+    var unknown = team.filter(function (id) { return KM.flag(id, NOW) == null; });
+    if (unknown.length) A.push(['?', unknown.length + ' af dine ryttere har intet flueben for ' + esc(cur.short) + ' endnu.']);
+    if (nxt) {
+      var back = notCur.filter(function (id) { return KM.flag(id, NOW + 1) === 1; });
+      if (back.length) A.push(['↩', 'Kører igen i ' + esc(nxt.short) + ': ' + back.map(function (id) { return esc(sur(KM.byId[id].name)); }).join(', ') + '.']);
+    }
+    if (cap.id) A.push(['★', (cap.auto ? 'Kaptajnforslag: ' : 'Kaptajn: ') + '<b>' + esc(KM.byId[cap.id].name) + '</b>' + (cap.auto ? ' (bedste historik i ' + esc(cur.short) + ' blandt dem der forventes at starte).' : '.')]);
+    if (planTot > D.rules.transfers) A.push(['⚠', 'Planen bruger <b>' + planTot + '</b> skifter, men der er kun ' + D.rules.transfers + '.']);
+    var srcs = (D.optakt && D.optakt.sources) || [], got = Object.keys(((D.optakt || {}).races || {})[cur.slug] || {});
+    if (srcs.length) A.push(['📰', 'Optakt til ' + esc(cur.short) + ': ' + (got.length ? got.length + ' af ' + srcs.length + ' kilder inde (' + esc(got.join(', ')) + ')' : 'ingen af ' + srcs.length + ' kilder endnu') + '.']);
+    if (!ownPlan && D.plan) A.push(['📝', 'Holdet er udkastet fra dit regneark. Ændrer du det i Planlæggeren, vises din plan her.']);
+    var know = '<div class="lbl">Det skal du vide før deadline</div>' + (A.length ? A.map(function (x) {
+      return '<div class="alert"><span class="ic">' + x[0] + '</span><span>' + x[1] + '</span></div>'; }).join('') : '<div class="sub">Intet at bemærke.</div>') +
+      '<div class="links"><a href="klassiker.html#plan">Planlægger</a><a href="klassiker-startlister.html">Startlister</a><a href="klassiker-historik.html">Rytterhistorik</a><a href="klassiker.html#optakt">Optakt-konsol</a><a href="klassiker.html#point">Pointoversigt</a></div>';
+
+    // 7 Sidste runde
+    var last;
+    var li = NOW - 1;
+    if (over && hasRes(R - 1)) li = R - 1;
+    if (li >= 0 && pts[li] != null) {
+      var c2 = captain(li).id;
+      var rows = teamOf(li).map(function (id) { return [KM.byId[id], KM.pts(KM.byId[id], Y, li) * (id === c2 ? D.rules.captain_factor : 1), id === c2]; })
+        .sort(function (a, b) { return b[1] - a[1]; }).slice(0, 4);
+      last = '<div class="lbl">Sidste runde · ' + esc(races[li].name) + '</div><div class="mid">' + pts[li] + ' point</div>' +
+        rows.map(function (x) { return '<div class="sub">' + esc(x[0].name) + (x[2] ? ' ★' : '') + ' · ' + x[1] + '</div>'; }).join('');
+    } else last = '<div class="lbl">Sidste runde</div><div class="sub">Ingen runder kørt endnu.</div>';
+
+    $('flow').innerHTML = card(1, '<div class="lbl">Næste deadline</div>' + dl) + card(2, '<div class="lbl">Skifter</div>' + sk) +
+      card(3, '<div class="lbl">Holdduel</div>' + duel) + card(4, hold) + card(5, nx) + card(6, know) + card(7, last, 'wide');
+  }).catch(function (e) { KM.$('flow').innerHTML = '<div class="card">Kunne ikke hente data: ' + KM.esc(e.message) + '</div>'; });
+})();
+</script>
 </body>
 </html>
